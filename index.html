@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AQA GCSE Biology Revision</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --b1: #0d9488;
+      --b2: #e85d4a;
+      --b3: #f59e0b;
+      --b4: #22c55e;
+      --b5: #8b5cf6;
+      --b6: #3b82f6;
+      --b7: #16a34a;
+      --bg: #f8fafc;
+      --text: #1e293b;
+      --subtext: #64748b;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+      color: white;
+      padding: 2.5rem 1.5rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 50%;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 250px; height: 250px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 50%;
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #93c5fd;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-family: 'Nunito', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 span {
+      color: #60a5fa;
+    }
+
+    header p {
+      color: #94a3b8;
+      font-size: 1.05rem;
+      max-width: 480px;
+      margin: 0 auto 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: white;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* LOGIN STRIP */
+    .login-strip {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .login-strip p {
+      font-size: 0.875rem;
+      color: var(--subtext);
+    }
+
+    .btn-login {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #4285f4;
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 0.5rem 1.1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-login:hover { background: #3367d6; }
+
+    /* MAIN */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .section-label {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--subtext);
+      margin-bottom: 1.5rem;
+    }
+
+    /* MODULE GRID */
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .module-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .module-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    }
+
+    .card-header {
+      padding: 1.4rem 1.4rem 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .module-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .module-info { flex: 1; }
+
+    .module-tag {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 0.2rem;
+    }
+
+    .module-title {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      line-height: 1.3;
+      color: var(--text);
+    }
+
+    .card-features {
+      padding: 0 1.4rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .feature-chip {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 100px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--subtext);
+    }
+
+    .card-footer {
+      margin-top: auto;
+      padding: 0.9rem 1.4rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-footer span {
+      font-size: 0.8rem;
+      color: var(--subtext);
+    }
+
+    .arrow-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1rem;
+    }
+
+    /* colour accents per module */
+    .b1 .module-icon, .b1 .arrow-btn { background: var(--b1); }
+    .b2 .module-icon, .b2 .arrow-btn { background: var(--b2); }
+    .b3 .module-icon, .b3 .arrow-btn { background: var(--b3); }
+    .b4 .module-icon, .b4 .arrow-btn { background: var(--b4); }
+    .b5 .module-icon, .b5 .arrow-btn { background: var(--b5); }
+    .b6 .module-icon, .b6 .arrow-btn { background: var(--b6); }
+    .b7 .module-icon, .b7 .arrow-btn { background: var(--b7); }
+
+    .b1 .module-tag { color: var(--b1); }
+    .b2 .module-tag { color: var(--b2); }
+    .b3 .module-tag { color: var(--b3); }
+    .b4 .module-tag { color: var(--b4); }
+    .b5 .module-tag { color: var(--b5); }
+    .b6 .module-tag { color: var(--b6); }
+    .b7 .module-tag { color: var(--b7); }
+
+    .b1 { border-top: 3px solid var(--b1); }
+    .b2 { border-top: 3px solid var(--b2); }
+    .b3 { border-top: 3px solid var(--b3); }
+    .b4 { border-top: 3px solid var(--b4); }
+    .b5 { border-top: 3px solid var(--b5); }
+    .b6 { border-top: 3px solid var(--b6); }
+    .b7 { border-top: 3px solid var(--b7); }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--subtext);
+      font-size: 0.8rem;
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .modules-grid { grid-template-columns: 1fr; }
+      .header-stats { gap: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-badge">AQA Combined Science · Biology</div>
+    <h1>GCSE Biology<br><span>Revision Hub</span></h1>
+    <p>Everything you need to revise Biology — keywords, practice questions, and AI-marked feedback.</p>
+    <div class="header-stats">
+      <div class="stat">
+        <div class="stat-number">7</div>
+        <div class="stat-label">Modules</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">700+</div>
+        <div class="stat-label">Keywords</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">100+</div>
+        <div class="stat-label">Questions</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="login-strip">
+    <p>Sign in to track your progress and save your scores.</p>
+    <a href="login.html" class="btn-login">
+      <svg width="16" height="16" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M43.611 20.083H42V20H24v8h11.303C33.973 32.617 29.418 36 24 36c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z" fill="#FFF"/></svg>
+      Sign in with Google
+    </a>
+  </div>
+
+  <main>
+    <p class="section-label">Select a module to begin</p>
+    <div class="modules-grid">
+
+      <a href="module.html?module=b1" class="module-card b1">
+        <div class="card-header">
+          <div class="module-icon">B1</div>
+          <div class="module-info">
+            <div class="module-tag">Module 1</div>
+            <div class="module-title">Cell Biology</div>
+          </div>
+        </div>
+        <div class="card-features">
+          <span class="feature-chip">📋 Specification</span>
+          <span class="feature-chip">📖 Revision Notes</span>
+          <span class="feature-chip">🔤 Keywords Game</span>
+          <span class="feature-chip">✏️ Practice Questions</span>
+        </div>
+        <div class="card-footer">
+          <span>Cells · Microscopy · Transport</span>
+          <div class="arrow-btn">→</div>
+        </div>
+      </a>
+
+      <a href="module.html?module=b2" class="module-card b2">
+        <div class="card-header">
+          <div class="module-icon">B2</div>
+          <div class="module-info">
+            <div class="module-tag">Module 2</div>
+            <div class="module-title">Organisation</div>
+          </div>
+        </div>
+        <div class="card-features">
+          <span class="feature-chip">📋 Specification</span>
+          <span class="feature-chip">📖 Revision Notes</span>
+          <span class="feature-chip">🔤 Keywords Game</span>
+          <span class="feature-chip">✏️ Practice Questions</span>
+        </div>
+        <div class="card-footer">
+          <span>Digestion · Heart · Cancer</span>
+          <div class="arrow-btn">→</div>
+        </div>
+      </a>
+
+      <a href="module.html?module=b3" class="module-card b3">
+        <div class="card-header">
+          <div class="module-icon">B3</div>
+          <div class="module-info">
+            <div class="module-tag">Module 3</div>
+            <div class="module-title">Infection & Response</div>
+          </div>
+        </div>
+        <div class="card-features">
+          <span class="feature-chip">📋 Specification</span>
+          <span class="feature-chip">📖 Revision Notes</span>
+          <span class="feature-chip">🔤 Keywords Game</span>
+          <span class="feature-chip">✏️ Practice Questions</span>
+        </div>
+        <div class="card-footer">
+          <span>Pathogens · Immunity · Drugs</span>
+          <div class="arrow-btn">→</div>
+        </div>
+      </a>
+
+      <a href="module.html?module=b4" class="module-card b4">
+        <div class="card-header">
+          <div class="module-icon">B4</div>
+          <div class="module-info">
+            <div class="module-tag">Module 4</div>
+            <div class="module-title">Bioenergetics</div>
+          </div>
+        </div>
+        <div class="card-features">
+          <span class="feature-chip">📋 Specification</span>
+          <span class="feature-chip">📖 Revision Notes</span>
+          <span class="feature-chip">🔤 Keywords Game</span>
+          <span class="feature-chip">✏️ Practice Questions</span>
+        </div>
+        <div class="card-footer">
+          <span>Photosynthesis · Respiration</span>
+          <div class="arrow-btn">→</div>
+        </div>
+      </a>
+
+      <a href="module.html?module=b5" class="module-card b5">
+        <div class="card-header">
+          <div class="module-icon">B5</div>
+          <div class="module-info">
+            <div class="module-tag">Module 5</div>
+            <div class="module-title">Homeostasis & Response</div>
+          </div>
+        </div>
+        <div class="card-features">
+          <span class="feature-chip">📋 Specification</span>
+          <span class="feature-chip">📖 Revision Notes</span>
+          <span class="feature-chip">🔤 Keywords Game</span>
+          <span class="feature-chip">✏️ Practice Questions</span>
+        </div>
+        <div class="card-footer">
+          <span>Nervous System · Hormones</span>
+          <div class="arrow-btn">→</div>
+        </div>
+      </a>
+
+      <a href="module.html?module=b6" class="module-card b6">
+        <div class="card-header">
+          <div class="module-icon">B6</div>
+          <div class="module-info">
+            <div class="module-tag">Module 6</div>
+            <div class="module-title">Inheritance, Variation & Evolution</div>
+          </div>
+        </div>
+        <div class="card-features">
+          <span class="feature-chip">📋 Specification</span>
+          <span class="feature-chip">📖 Revision Notes</span>
+          <span class="feature-chip">🔤 Keywords Game</span>
+          <span class="feature-chip">✏️ Practice Questions</span>
+        </div>
+        <div class="card-footer">
+          <span>DNA · Genetics · Evolution</span>
+          <div class="arrow-btn">→</div>
+        </div>
+      </a>
+
+      <a href="module.html?module=b7" class="module-card b7">
+        <div class="card-header">
+          <div class="module-icon">B7</div>
+          <div class="module-info">
+            <div class="module-tag">Module 7</div>
+            <div class="module-title">Ecology</div>
+          </div>
+        </div>
+        <div class="card-features">
+          <span class="feature-chip">📋 Specification</span>
+          <span class="feature-chip">📖 Revision Notes</span>
+          <span class="feature-chip">🔤 Keywords Game</span>
+          <span class="feature-chip">✏️ Practice Questions</span>
+        </div>
+        <div class="card-footer">
+          <span>Ecosystems · Food Webs · Climate</span>
+          <div class="arrow-btn">→</div>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Built for AQA GCSE Combined Science (8464) · Biology content only · Not affiliated with AQA</p>
+  </footer>
+
+</body>
+</html>
