@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module — AQA GCSE Biology</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --accent: #0d9488;
+      --bg: #f8fafc;
+      --text: #1e293b;
+      --subtext: #64748b;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Nunito Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+    /* NAV */
+    .topnav {
+      background: #0f172a;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topnav a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+    .topnav a:hover { color: white; }
+    .topnav-title {
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      margin-left: auto;
+    }
+
+    /* MODULE HEADER */
+    .module-header {
+      padding: 2rem 1.5rem 0;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .module-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: white;
+      background: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .module-header h1 {
+      font-family: 'Nunito', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .module-header p {
+      color: var(--subtext);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* TABS */
+    .tabs-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .tabs {
+      display: flex;
+      gap: 0.25rem;
+      border-bottom: 2px solid var(--border);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 0.75rem 1.1rem;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--subtext);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      white-space: nowrap;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* TAB PANELS */
+    .tab-panel { display: none; padding: 2rem 0; }
+    .tab-panel.active { display: block; }
+
+    /* SPEC PANEL */
+    .spec-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+    }
+    .spec-card h2 {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .spec-card p {
+      color: var(--subtext);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent);
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 10px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.88; }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: white;
+      color: var(--accent);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 2px solid var(--accent);
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-left: 0.75rem;
+    }
+    .btn-secondary:hover { background: #f0fdfa; }
+
+    /* REVISION PANEL */
+    .revision-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+    }
+    .revision-card h2 {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .revision-card p { color: var(--subtext); margin-bottom: 1.5rem; font-size: 0.95rem; }
+
+    /* KEYWORDS PANEL */
+    #keywords-panel { max-width: 700px; }
+
+    .game-status {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .timer-display {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+    }
+    .timer-display.warning { color: #ef4444; }
+    .score-display {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--subtext);
+    }
+
+    .game-area {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .words-col, .defs-col { display: flex; flex-direction: column; gap: 0.6rem; }
+
+    .word-chip {
+      background: var(--accent);
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      cursor: grab;
+      user-select: none;
+      text-align: center;
+      transition: opacity 0.2s, transform 0.15s;
+      touch-action: none;
+    }
+    .word-chip:active { cursor: grabbing; opacity: 0.8; transform: scale(1.03); }
+    .word-chip.matched { opacity: 0.35; cursor: default; background: #94a3b8; }
+    .word-chip.dragging { opacity: 0.5; }
+
+    .def-drop {
+      background: white;
+      border: 2px dashed var(--border);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      font-size: 0.825rem;
+      color: var(--subtext);
+      line-height: 1.45;
+      min-height: 54px;
+      transition: border-color 0.2s, background 0.2s;
+      display: flex;
+      align-items: center;
+    }
+    .def-drop.drag-over {
+      border-color: var(--accent);
+      background: #f0fdfa;
+    }
+    .def-drop.correct {
+      border-color: #22c55e;
+      background: #f0fdf4;
+      color: var(--text);
+      font-weight: 600;
+    }
+    .def-drop.incorrect {
+      border-color: #ef4444;
+      background: #fef2f2;
+    }
+
+    .game-result {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      display: none;
+    }
+    .result-time {
+      font-family: 'Nunito', sans-serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--accent);
+    }
+    .result-label { color: var(--subtext); margin-bottom: 1.5rem; }
+    .result-score { font-family: 'Nunito', sans-serif; font-weight: 700; margin-bottom: 1.5rem; color: var(--text); }
+
+    /* PRACTICE PANEL */
+    #practice-panel { max-width: 700px; }
+
+    .practice-intro {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .practice-intro h2 {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .practice-intro p { color: var(--subtext); margin-bottom: 1.5rem; font-size: 0.95rem; }
+
+    .question-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .question-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+      flex-wrap: wrap;
+    }
+    .marks-badge {
+      background: var(--accent);
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.65rem;
+      border-radius: 100px;
+    }
+    .command-badge {
+      background: #f1f5f9;
+      color: var(--subtext);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.65rem;
+      border-radius: 100px;
+    }
+    .question-text {
+      font-size: 0.975rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    .answer-box {
+      width: 100%;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      resize: vertical;
+      min-height: 90px;
+      transition: border-color 0.2s;
+      color: var(--text);
+    }
+    .answer-box:focus { outline: none; border-color: var(--accent); }
+
+    .submit-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .total-marks {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      color: var(--subtext);
+      font-size: 0.9rem;
+    }
+
+    /* MARKING RESULTS */
+    .marking-section { display: none; }
+    .result-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .result-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .result-q-text { font-size: 0.9rem; font-weight: 600; flex: 1; }
+    .marks-awarded {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+    }
+    .marks-full { background: #dcfce7; color: #16a34a; }
+    .marks-partial { background: #fef9c3; color: #ca8a04; }
+    .marks-zero { background: #fee2e2; color: #dc2626; }
+
+    .feedback-section { margin-top: 0.75rem; }
+    .feedback-label {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--subtext);
+      margin-bottom: 0.3rem;
+    }
+    .feedback-text {
+      font-size: 0.875rem;
+      line-height: 1.55;
+      color: var(--text);
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 0.65rem 0.9rem;
+      border: 1px solid var(--border);
+    }
+    .student-answer-text {
+      font-size: 0.875rem;
+      color: var(--subtext);
+      font-style: italic;
+      margin-bottom: 0.75rem;
+      padding: 0.5rem 0.75rem;
+      background: #f8fafc;
+      border-radius: 8px;
+      border-left: 3px solid var(--border);
+    }
+
+    .overall-result {
+      background: linear-gradient(135deg, #0f172a, #1e3a5f);
+      color: white;
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .overall-score {
+      font-family: 'Nunito', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .overall-out-of { color: #94a3b8; font-size: 1rem; margin-bottom: 1rem; }
+    .overall-grade {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
+      padding: 0.4rem 1.2rem;
+      border-radius: 100px;
+    }
+
+    .loading-overlay {
+      display: none;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .spinner {
+      width: 40px; height: 40px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 1rem;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loading-overlay p { color: var(--subtext); font-size: 0.9rem; }
+
+    /* MOBILE */
+    @media (max-width: 580px) {
+      .game-area { grid-template-columns: 1fr; }
+      .words-col { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+      .word-chip { flex: 1; min-width: 120px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="index.html">← Back</a>
+  <span class="topnav-title" id="nav-title">Biology Revision</span>
+</nav>
+
+<div class="module-header">
+  <div class="module-badge" id="module-badge">B1</div>
+  <h1 id="module-title">Cell Biology</h1>
+  <p id="module-subtitle">Cells, microscopy, cell division, transport in cells</p>
+</div>
+
+<div class="tabs-wrapper">
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="spec">📋 Specification</button>
+    <button class="tab-btn" data-tab="revision">📖 Revision</button>
+    <button class="tab-btn" data-tab="keywords">🔤 Keywords</button>
+    <button class="tab-btn" data-tab="practice">✏️ Practice</button>
+  </div>
+
+  <!-- SPECIFICATION TAB -->
+  <div class="tab-panel active" id="tab-spec">
+    <div class="spec-card">
+      <h2>AQA Specification</h2>
+      <p>View the official AQA specification for this topic. Use it to make sure you know everything that could be examined.</p>
+      <a id="spec-link" href="https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification" target="_blank" class="btn-primary">
+        📄 Open Specification
+      </a>
+    </div>
+  </div>
+
+  <!-- REVISION TAB -->
+  <div class="tab-panel" id="tab-revision">
+    <div class="revision-card">
+      <h2>Revision Slides</h2>
+      <p id="revision-desc">Your teacher has provided revision slides and notes for this topic. Open them below.</p>
+      <a id="revision-link" href="#" class="btn-primary">📖 Open Revision Slides</a>
+      <a id="revision-link2" href="#" class="btn-secondary" style="display:none">📄 Extra Notes</a>
+    </div>
+  </div>
+
+  <!-- KEYWORDS TAB -->
+  <div class="tab-panel" id="tab-keywords">
+    <div id="keywords-panel">
+      <div class="game-status">
+        <div>
+          <div class="timer-display" id="timer-display">0:00</div>
+          <div style="font-size:0.75rem; color:var(--subtext); margin-top:0.2rem">Time elapsed</div>
+        </div>
+        <div class="score-display" id="score-display">Match the keywords to their definitions</div>
+        <button class="btn-primary" id="start-game-btn">▶ Start Game</button>
+      </div>
+
+      <div class="game-area" id="game-area" style="display:none">
+        <div class="words-col" id="words-col"></div>
+        <div class="defs-col" id="defs-col"></div>
+      </div>
+
+      <div class="game-result" id="game-result">
+        <div class="result-time" id="result-time">0:00</div>
+        <div class="result-label">Time to complete</div>
+        <div class="result-score" id="result-score-text"></div>
+        <button class="btn-primary" id="play-again-btn">🔄 Play Again</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRACTICE TAB -->
+  <div class="tab-panel" id="tab-practice">
+    <div id="practice-panel">
+      <div class="practice-intro" id="practice-intro">
+        <h2>Practice Questions</h2>
+        <p>You'll get 10 marks worth of questions — at least one longer question (4–6 marks) and a mix of shorter questions. Answer all questions then submit for AI marking with detailed feedback.</p>
+        <button class="btn-primary" id="start-practice-btn">▶ Start Practice</button>
+      </div>
+
+      <div id="questions-section" style="display:none">
+        <div id="questions-container"></div>
+        <div class="submit-row">
+          <span class="total-marks" id="total-marks-display">Total: 10 marks</span>
+          <button class="btn-primary" id="submit-btn">Submit for Marking →</button>
+        </div>
+      </div>
+
+      <div class="loading-overlay" id="loading-overlay">
+        <div class="spinner"></div>
+        <p>AI is marking your answers...</p>
+      </div>
+
+      <div class="marking-section" id="marking-section">
+        <div class="overall-result" id="overall-result"></div>
+        <div id="results-container"></div>
+        <div style="text-align:center; margin-top:1rem">
+          <button class="btn-primary" id="try-again-btn">🔄 Try Another Set</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── MODULE DATA ─────────────────────────────────────────────────────────────
+const MODULE_META = {
+  b1: {
+    title: "Cell Biology",
+    subtitle: "Cells, microscopy, cell division, transport in cells",
+    colour: "#0d9488",
+    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
+    revisionLink: "#", // Replace with your slides link
+  },
+  b2: {
+    title: "Organisation",
+    subtitle: "Cells, tissues, organs · Digestion · Heart & blood vessels · Cancer",
+    colour: "#e85d4a",
+    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
+    revisionLink: "#",
+  },
+  b3: {
+    title: "Infection & Response",
+    subtitle: "Pathogens · Immune system · Vaccines · Drugs",
+    colour: "#f59e0b",
+    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
+    revisionLink: "#",
+  },
+  b4: {
+    title: "Bioenergetics",
+    subtitle: "Photosynthesis · Aerobic & anaerobic respiration",
+    colour: "#22c55e",
+    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
+    revisionLink: "#",
+  },
+  b5: {
+    title: "Homeostasis & Response",
+    subtitle: "Nervous system · Hormones · Diabetes · Reproduction",
+    colour: "#8b5cf6",
+    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
+    revisionLink: "#",
+  },
+  b6: {
+    title: "Inheritance, Variation & Evolution",
+    subtitle: "DNA · Inheritance · Variation · Evolution · Classification",
+    colour: "#3b82f6",
+    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
+    revisionLink: "#",
+  },
+  b7: {
+    title: "Ecology",
+    subtitle: "Ecosystems · Food webs · Biodiversity · Climate change",
+    colour: "#16a34a",
+    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
+    revisionLink: "#",
+  },
+};
+
+// ─── INIT ─────────────────────────────────────────────────────────────────────
+const params = new URLSearchParams(window.location.search);
+const moduleId = params.get('module') || 'b1';
+const meta = MODULE_META[moduleId] || MODULE_META.b1;
+
+document.title = `${meta.title} — AQA GCSE Biology`;
+document.getElementById('nav-title').textContent = meta.title;
+document.getElementById('module-badge').textContent = moduleId.toUpperCase();
+document.getElementById('module-badge').style.background = meta.colour;
+document.getElementById('module-title').textContent = meta.title;
+document.getElementById('module-subtitle').textContent = meta.subtitle;
+document.getElementById('spec-link').href = meta.specLink;
+document.getElementById('revision-link').href = meta.revisionLink;
+document.querySelector('.tab-btn.active') && (document.querySelector('.tab-btn').style.setProperty('--accent', meta.colour));
+document.documentElement.style.setProperty('--accent', meta.colour);
+
+// ─── TABS ─────────────────────────────────────────────────────────────────────
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+// ─── KEYWORDS GAME ───────────────────────────────────────────────────────────
+let timerInterval = null;
+let secondsElapsed = 0;
+let matchedCount = 0;
+let totalPairs = 0;
+let draggedWord = null;
+let keywords = [];
+
+async function loadKeywords() {
+  try {
+    const res = await fetch(`data/${moduleId}-keywords.json`);
+    keywords = await res.json();
+  } catch(e) {
+    keywords = []; // will show error state
+  }
+}
+
+function formatTime(s) {
+  const m = Math.floor(s / 60);
+  const sec = s % 60;
+  return `${m}:${sec.toString().padStart(2, '0')}`;
+}
+
+function startGame() {
+  if (keywords.length === 0) {
+    document.getElementById('score-display').textContent = 'Keywords not loaded yet.';
+    return;
+  }
+  secondsElapsed = 0;
+  matchedCount = 0;
+
+  // Pick 5 random pairs
+  const shuffled = [...keywords].sort(() => Math.random() - 0.5);
+  const pairs = shuffled.slice(0, 5);
+  totalPairs = pairs.length;
+
+  // Shuffle definitions separately
+  const defs = [...pairs].sort(() => Math.random() - 0.5);
+
+  document.getElementById('start-game-btn').style.display = 'none';
+  document.getElementById('game-area').style.display = 'grid';
+  document.getElementById('game-result').style.display = 'none';
+  document.getElementById('timer-display').textContent = '0:00';
+  document.getElementById('score-display').textContent = `0 / ${totalPairs} matched`;
+
+  // Build words column
+  const wordsCol = document.getElementById('words-col');
+  wordsCol.innerHTML = '';
+  pairs.forEach(pair => {
+    const chip = document.createElement('div');
+    chip.className = 'word-chip';
+    chip.textContent = pair.word;
+    chip.dataset.word = pair.word;
+    chip.draggable = true;
+
+    // Desktop drag
+    chip.addEventListener('dragstart', e => {
+      draggedWord = pair.word;
+      chip.classList.add('dragging');
+    });
+    chip.addEventListener('dragend', () => chip.classList.remove('dragging'));
+
+    // Touch drag
+    chip.addEventListener('touchstart', handleTouchStart, { passive: false });
+    chip.addEventListener('touchmove', handleTouchMove, { passive: false });
+    chip.addEventListener('touchend', handleTouchEnd);
+
+    wordsCol.appendChild(chip);
+  });
+
+  // Build defs column
+  const defsCol = document.getElementById('defs-col');
+  defsCol.innerHTML = '';
+  defs.forEach(pair => {
+    const drop = document.createElement('div');
+    drop.className = 'def-drop';
+    drop.textContent = pair.definition;
+    drop.dataset.word = pair.word;
+
+    drop.addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('drag-over'); });
+    drop.addEventListener('dragleave', () => drop.classList.remove('drag-over'));
+    drop.addEventListener('drop', e => { e.preventDefault(); drop.classList.remove('drag-over'); checkMatch(drop); });
+    defsCol.appendChild(drop);
+  });
+
+  // Start timer
+  clearInterval(timerInterval);
+  timerInterval = setInterval(() => {
+    secondsElapsed++;
+    const display = document.getElementById('timer-display');
+    display.textContent = formatTime(secondsElapsed);
+    if (secondsElapsed > 120) display.classList.add('warning');
+  }, 1000);
+}
+
+function checkMatch(dropEl) {
+  if (!draggedWord) return;
+  if (dropEl.classList.contains('correct')) return;
+
+  if (draggedWord === dropEl.dataset.word) {
+    dropEl.classList.add('correct');
+    // Mark the word chip as matched
+    document.querySelectorAll('.word-chip').forEach(chip => {
+      if (chip.dataset.word === draggedWord) chip.classList.add('matched');
+    });
+    matchedCount++;
+    document.getElementById('score-display').textContent = `${matchedCount} / ${totalPairs} matched`;
+    if (matchedCount === totalPairs) endGame();
+  } else {
+    dropEl.classList.add('incorrect');
+    setTimeout(() => dropEl.classList.remove('incorrect'), 600);
+  }
+  draggedWord = null;
+}
+
+function endGame() {
+  clearInterval(timerInterval);
+  document.getElementById('game-area').style.display = 'none';
+  const result = document.getElementById('game-result');
+  result.style.display = 'block';
+  document.getElementById('result-time').textContent = formatTime(secondsElapsed);
+  document.getElementById('result-score-text').textContent = `All ${totalPairs} keywords matched correctly!`;
+}
+
+// Touch drag support
+let touchClone = null;
+let touchOrigin = null;
+
+function handleTouchStart(e) {
+  const chip = e.currentTarget;
+  draggedWord = chip.dataset.word;
+  touchOrigin = chip;
+  const touch = e.touches[0];
+  touchClone = chip.cloneNode(true);
+  touchClone.style.cssText = `position:fixed;top:${touch.clientY - 20}px;left:${touch.clientX - 60}px;width:120px;opacity:0.85;z-index:999;pointer-events:none;`;
+  document.body.appendChild(touchClone);
+  e.preventDefault();
+}
+
+function handleTouchMove(e) {
+  if (!touchClone) return;
+  const touch = e.touches[0];
+  touchClone.style.top = `${touch.clientY - 20}px`;
+  touchClone.style.left = `${touch.clientX - 60}px`;
+  e.preventDefault();
+}
+
+function handleTouchEnd(e) {
+  if (touchClone) { touchClone.remove(); touchClone = null; }
+  const touch = e.changedTouches[0];
+  const el = document.elementFromPoint(touch.clientX, touch.clientY);
+  if (el && el.classList.contains('def-drop')) checkMatch(el);
+  draggedWord = null;
+}
+
+document.getElementById('start-game-btn').addEventListener('click', startGame);
+document.getElementById('play-again-btn').addEventListener('click', () => {
+  document.getElementById('start-game-btn').style.display = '';
+  document.getElementById('game-area').style.display = 'none';
+  document.getElementById('game-result').style.display = 'none';
+  document.getElementById('timer-display').textContent = '0:00';
+  document.getElementById('timer-display').classList.remove('warning');
+  document.getElementById('score-display').textContent = 'Match the keywords to their definitions';
+  startGame();
+});
+
+// ─── PRACTICE QUESTIONS ──────────────────────────────────────────────────────
+let questions = [];
+let selectedQuestions = [];
+
+async function loadQuestions() {
+  try {
+    const res = await fetch(`data/${moduleId}-questions.json`);
+    questions = await res.json();
+  } catch(e) {
+    questions = [];
+  }
+}
+
+function selectQuestions() {
+  // Pick one large question (4-6 marks) first
+  const large = questions.filter(q => q.marks >= 4 && q.marks <= 6);
+  const small = questions.filter(q => q.marks >= 1 && q.marks <= 3);
+
+  if (large.length === 0 || small.length === 0) return [];
+
+  const picked = [];
+  const bigQ = large[Math.floor(Math.random() * large.length)];
+  picked.push(bigQ);
+  let remaining = 10 - bigQ.marks;
+
+  const smallShuffled = [...small].sort(() => Math.random() - 0.5);
+  for (const q of smallShuffled) {
+    if (remaining <= 0) break;
+    if (q.marks <= remaining) {
+      picked.push(q);
+      remaining -= q.marks;
+    }
+  }
+  return picked;
+}
+
+function renderQuestions(qs) {
+  const container = document.getElementById('questions-container');
+  container.innerHTML = '';
+  const total = qs.reduce((s, q) => s + q.marks, 0);
+  document.getElementById('total-marks-display').textContent = `Total: ${total} marks`;
+
+  qs.forEach((q, i) => {
+    const card = document.createElement('div');
+    card.className = 'question-card';
+    card.innerHTML = `
+      <div class="question-meta">
+        <span class="marks-badge">${q.marks} mark${q.marks > 1 ? 's' : ''}</span>
+        <span class="command-badge">${q.command_word}</span>
+        <span style="font-size:0.75rem;color:var(--subtext)">${q.topic}</span>
+      </div>
+      <div class="question-text">Q${i + 1}. ${q.question}</div>
+      <textarea class="answer-box" id="answer-${q.id}" placeholder="Write your answer here..."></textarea>
+    `;
+    container.appendChild(card);
+  });
+}
+
+document.getElementById('start-practice-btn').addEventListener('click', async () => {
+  if (questions.length === 0) await loadQuestions();
+  selectedQuestions = selectQuestions();
+  if (selectedQuestions.length === 0) {
+    alert('Questions not loaded. Please refresh and try again.');
+    return;
+  }
+  document.getElementById('practice-intro').style.display = 'none';
+  document.getElementById('questions-section').style.display = 'block';
+  renderQuestions(selectedQuestions);
+});
+
+document.getElementById('submit-btn').addEventListener('click', async () => {
+  // Collect answers
+  const answers = selectedQuestions.map(q => ({
+    question: q.question,
+    marks: q.marks,
+    command_word: q.command_word,
+    mark_scheme: q.mark_scheme || '',
+    student_answer: document.getElementById(`answer-${q.id}`)?.value?.trim() || '',
+    id: q.id,
+  }));
+
+  const unanswered = answers.filter(a => !a.student_answer);
+  if (unanswered.length > 0) {
+    if (!confirm('You have unanswered questions. Submit anyway?')) return;
+  }
+
+  document.getElementById('questions-section').style.display = 'none';
+  document.getElementById('loading-overlay').style.display = 'block';
+
+  try {
+    const results = await markAnswers(answers);
+    displayResults(results, answers);
+  } catch(e) {
+    document.getElementById('loading-overlay').style.display = 'none';
+    document.getElementById('questions-section').style.display = 'block';
+    alert('Marking failed. Please check your internet connection and try again.');
+  }
+});
+
+async function markAnswers(answers) {
+  const results = [];
+  for (const a of answers) {
+    const prompt = `You are an AQA GCSE Biology examiner. Mark the following student answer.
+
+Question: ${a.question}
+Marks available: ${a.marks}
+Command word: ${a.command_word}
+${a.mark_scheme ? `Mark scheme guidance: ${a.mark_scheme}` : 'Use your knowledge of AQA GCSE Combined Science Biology to mark this answer.'}
+
+Student's answer: "${a.student_answer || '[No answer given]'}"
+
+Mark leniently but fairly — reward understanding even if wording is not perfect. 
+Respond ONLY with a JSON object in this exact format (no markdown, no extra text):
+{
+  "marks_awarded": <number>,
+  "feedback": "<specific feedback on what was good and what was missing>",
+  "missed_points": "<key points the student missed, if any>",
+  "model_answer": "<a model answer for this question>",
+  "command_word_check": "<did the student answer the command word correctly? e.g. did they explain rather than just describe?>"
+}`;
+
+    const res = await fetch('/.netlify/functions/mark-answer', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt }),
+    });
+
+    if (!res.ok) throw new Error('Marking API failed');
+    const data = await res.json();
+    results.push({ ...data, id: a.id, marks_available: a.marks });
+  }
+  return results;
+}
+
+function displayResults(results, answers) {
+  document.getElementById('loading-overlay').style.display = 'none';
+  const section = document.getElementById('marking-section');
+  section.style.display = 'block';
+
+  const totalAwarded = results.reduce((s, r) => s + (r.marks_awarded || 0), 0);
+  const totalAvail = results.reduce((s, r) => s + r.marks_available, 0);
+  const pct = Math.round((totalAwarded / totalAvail) * 100);
+
+  let grade = '';
+  if (pct >= 80) grade = '🌟 Excellent';
+  else if (pct >= 60) grade = '👍 Good';
+  else if (pct >= 40) grade = '📚 Developing';
+  else grade = '💪 Keep Practising';
+
+  document.getElementById('overall-result').innerHTML = `
+    <div class="overall-score">${totalAwarded}/${totalAvail}</div>
+    <div class="overall-out-of">${pct}% — ${grade}</div>
+  `;
+
+  const container = document.getElementById('results-container');
+  container.innerHTML = '';
+
+  results.forEach((r, i) => {
+    const a = answers[i];
+    const pctQ = r.marks_available > 0 ? r.marks_awarded / r.marks_available : 0;
+    const cls = pctQ === 1 ? 'marks-full' : pctQ > 0 ? 'marks-partial' : 'marks-zero';
+
+    const card = document.createElement('div');
+    card.className = 'result-card';
+    card.innerHTML = `
+      <div class="result-header">
+        <div class="result-q-text">Q${i+1}. ${a.question}</div>
+        <span class="marks-awarded ${cls}">${r.marks_awarded}/${r.marks_available}</span>
+      </div>
+      <div class="student-answer-text">Your answer: ${a.student_answer || '<em>No answer given</em>'}</div>
+      <div class="feedback-section">
+        <div class="feedback-label">Feedback</div>
+        <div class="feedback-text">${r.feedback || 'No feedback available.'}</div>
+      </div>
+      ${r.missed_points ? `
+      <div class="feedback-section" style="margin-top:0.6rem">
+        <div class="feedback-label">What you missed</div>
+        <div class="feedback-text">${r.missed_points}</div>
+      </div>` : ''}
+      ${r.command_word_check ? `
+      <div class="feedback-section" style="margin-top:0.6rem">
+        <div class="feedback-label">Command word check</div>
+        <div class="feedback-text">${r.command_word_check}</div>
+      </div>` : ''}
+      <div class="feedback-section" style="margin-top:0.6rem">
+        <div class="feedback-label">Model answer</div>
+        <div class="feedback-text" style="border-left:3px solid var(--accent)">${r.model_answer || 'See your specification for guidance.'}</div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+document.getElementById('try-again-btn').addEventListener('click', () => {
+  document.getElementById('marking-section').style.display = 'none';
+  document.getElementById('practice-intro').style.display = 'block';
+  selectedQuestions = [];
+});
+
+// ─── LOAD DATA ON TAB CLICK ───────────────────────────────────────────────────
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    if (btn.dataset.tab === 'keywords' && keywords.length === 0) await loadKeywords();
+    if (btn.dataset.tab === 'practice' && questions.length === 0) await loadQuestions();
+  });
+});
+
+// Preload on page load
+loadKeywords();
+loadQuestions();
+</script>
+</body>
+</html>
