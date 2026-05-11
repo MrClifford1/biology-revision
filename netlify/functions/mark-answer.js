@@ -11,6 +11,10 @@ exports.handler = async function (event, context) {
     }
 
     const apiKey = process.env.ANTHROPIC_API_KEY;
+    console.log('API key present:', !!apiKey);
+    console.log('API key length:', apiKey ? apiKey.length : 0);
+    console.log('API key starts with:', apiKey ? apiKey.substring(0, 10) : 'none');
+
     if (!apiKey) {
       return { statusCode: 500, body: JSON.stringify({ error: 'API key not configured' }) };
     }
@@ -29,13 +33,25 @@ exports.handler = async function (event, context) {
       }),
     });
 
+    console.log('Anthropic response status:', response.status);
+    const responseText = await response.text();
+    console.log('Anthropic response body:', responseText);
+
     if (!response.ok) {
-      const err = await response.text();
-      console.error('Anthropic API error:', err);
-      return { statusCode: 502, body: JSON.stringify({ error: 'Anthropic API request failed' }) };
+      return { 
+        statusCode: 200,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          marks_awarded: 0,
+          feedback: `API error: ${response.status} - ${responseText.substring(0, 200)}`,
+          missed_points: '',
+          model_answer: '',
+          command_word_check: '',
+        }),
+      };
     }
 
-    const data = await response.json();
+    const data = JSON.parse(responseText);
     const rawText = data?.content?.[0]?.text || '';
 
     const cleaned = rawText.replace(/```json|```/g, '').trim();
@@ -44,12 +60,11 @@ exports.handler = async function (event, context) {
     try {
       parsed = JSON.parse(cleaned);
     } catch (e) {
-      console.error('JSON parse error:', cleaned);
       return {
         statusCode: 200,
         body: JSON.stringify({
           marks_awarded: 0,
-          feedback: 'Marking could not be completed. Please try again.',
+          feedback: 'Could not parse AI response: ' + cleaned.substring(0, 200),
           missed_points: '',
           model_answer: '',
           command_word_check: '',
@@ -63,10 +78,16 @@ exports.handler = async function (event, context) {
       body: JSON.stringify(parsed),
     };
   } catch (err) {
-    console.error('Function error:', err);
+    console.error('Function error:', err.message);
     return {
-      statusCode: 500,
-      body: JSON.stringify({ error: 'Internal server error' }),
+      statusCode: 200,
+      body: JSON.stringify({ 
+        marks_awarded: 0,
+        feedback: 'Function error: ' + err.message,
+        missed_points: '',
+        model_answer: '',
+        command_word_check: ''
+      }),
     };
   }
 };
