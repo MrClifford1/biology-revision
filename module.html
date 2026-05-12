@@ -45,7 +45,7 @@
       margin-left: auto;
     }
 
-    /* MODULE HEADER - smaller, accent strip */
+    /* MODULE HEADER */
     .module-header {
       background: white;
       padding: 1.2rem 2rem 0;
@@ -85,7 +85,7 @@
       margin-top: 0.15rem;
     }
 
-    /* TABS - sit flush against header */
+    /* TABS */
     .tabs-wrapper {
       max-width: 1300px;
       margin: 0 auto;
@@ -123,7 +123,7 @@
       border-bottom-color: var(--accent);
     }
 
-    /* CONTENT - wider, denser */
+    /* CONTENT */
     .content-wrapper {
       max-width: 1300px;
       margin: 0 auto;
@@ -133,7 +133,7 @@
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
 
-    /* COMPACT TWO-COLUMN GRID for Spec/Revision */
+    /* TWO-COLUMN GRID */
     .two-col-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -215,7 +215,6 @@
     }
     .btn-secondary:hover { background: var(--accent-light); }
 
-    /* SPEC / REVISION combined view */
     #tab-spec .checklist-card,
     #tab-revision .checklist-card {
       background: white;
@@ -246,7 +245,7 @@
       border-left: 3px solid var(--accent);
     }
 
-    /* KEYWORDS - wider game area */
+    /* KEYWORDS */
     #keywords-panel { max-width: 100%; }
 
     .game-status {
@@ -353,7 +352,7 @@
     .result-label { color: var(--subtext); margin: 0.25rem 0 1rem; font-size: 0.875rem; }
     .result-score { font-family: 'Nunito', sans-serif; font-weight: 700; margin-bottom: 1rem; color: var(--text); font-size: 0.95rem; }
 
-    /* PRACTICE - tighter */
+    /* PRACTICE */
     #practice-panel { max-width: 900px; margin: 0 auto; }
 
     .practice-intro {
@@ -455,7 +454,6 @@
       font-size: 0.95rem;
     }
 
-    /* MARKING RESULTS - denser */
     .marking-section { display: none; }
     .result-card {
       background: white;
@@ -576,7 +574,6 @@
     @keyframes spin { to { transform: rotate(360deg); } }
     .loading-overlay p { color: var(--subtext); font-size: 0.875rem; }
 
-    /* MOBILE */
     @media (max-width: 800px) {
       .module-header, .tabs-wrapper, .content-wrapper { padding-left: 1rem; padding-right: 1rem; }
       .two-col-grid { grid-template-columns: 1fr; }
@@ -616,7 +613,6 @@
 
 <div class="content-wrapper">
 
-  <!-- SPECIFICATION TAB -->
   <div class="tab-panel active" id="tab-spec">
     <div class="two-col-grid">
       <div class="info-card">
@@ -626,7 +622,7 @@
         </div>
         <p>The official AQA specification document — find every topic you could be examined on.</p>
         <div class="info-card-actions">
-          <a id="spec-link" href="https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification" target="_blank" class="btn-primary">📄 Open Specification</a>
+          <a id="spec-link" href="#" target="_blank" class="btn-primary">📄 Open Specification</a>
         </div>
       </div>
 
@@ -643,27 +639,11 @@
     </div>
 
     <div class="checklist-card">
-      <h3 id="checklist-title">B1 Cell Biology — Topics</h3>
-      <ul class="topic-list" id="topic-list">
-        <li>Animal & plant cells</li>
-        <li>Eukaryotes & prokaryotes</li>
-        <li>Bacterial cell structure</li>
-        <li>Microscopy & magnification</li>
-        <li>Cell specialisation</li>
-        <li>Cell differentiation</li>
-        <li>Chromosomes & mitosis</li>
-        <li>The cell cycle</li>
-        <li>Stem cells</li>
-        <li>Therapeutic cloning</li>
-        <li>Diffusion</li>
-        <li>Osmosis (required practical)</li>
-        <li>Active transport</li>
-        <li>Exchange surfaces</li>
-      </ul>
+      <h3 id="checklist-title">Topics</h3>
+      <ul class="topic-list" id="topic-list"></ul>
     </div>
   </div>
 
-  <!-- REVISION TAB -->
   <div class="tab-panel" id="tab-revision">
     <div class="two-col-grid">
       <div class="info-card">
@@ -712,7 +692,6 @@
     </div>
   </div>
 
-  <!-- KEYWORDS TAB -->
   <div class="tab-panel" id="tab-keywords">
     <div id="keywords-panel">
       <div class="game-status">
@@ -740,7 +719,6 @@
     </div>
   </div>
 
-  <!-- PRACTICE TAB -->
   <div class="tab-panel" id="tab-practice">
     <div id="practice-panel">
       <div class="practice-intro" id="practice-intro">
@@ -777,7 +755,6 @@
 </div>
 
 <script>
-// ─── MODULE DATA ─────────────────────────────────────────────────────────────
 const MODULE_META = {
   b1: {
     title: "Cell Biology",
@@ -785,7 +762,7 @@ const MODULE_META = {
     colour: "#0d9488",
     colourLight: "#ccfbf1",
     specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
+    revisionLink: "https://docs.google.com/presentation/d/1AWG1LipVuPBfsA5LYB2ZgF0jUjKQjRFpueV3rfh8lwI/preview",
     topics: ["Animal & plant cells", "Eukaryotes & prokaryotes", "Bacterial cell structure", "Microscopy & magnification", "Cell specialisation", "Cell differentiation", "Chromosomes & mitosis", "The cell cycle", "Stem cells", "Therapeutic cloning", "Diffusion", "Osmosis (required practical)", "Active transport", "Exchange surfaces"]
   },
   b2: {
@@ -794,7 +771,7 @@ const MODULE_META = {
     colour: "#e85d4a",
     colourLight: "#fee2e2",
     specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
+    revisionLink: "https://docs.google.com/presentation/d/1MahxBELZandBWlbZsCgfxtUUE2BUyMJ1D0G1mnjFlFA/preview",
     topics: ["Tissues, organs, organ systems", "The human digestive system", "Enzymes", "Food tests (required practical)", "The effect of pH on amylase", "The heart", "Blood vessels", "Blood", "Coronary heart disease", "Health & disease", "Cancer", "Plant tissues & organs", "Transpiration & translocation"]
   },
   b3: {
@@ -803,7 +780,7 @@ const MODULE_META = {
     colour: "#f59e0b",
     colourLight: "#fef3c7",
     specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
+    revisionLink: "https://docs.google.com/presentation/d/1PZoK5h0pdvLWI4-Aw-hA1ryy6nsT6gJ_hwTP_7vTOrY/preview",
     topics: ["Pathogens & disease", "Viral diseases", "Bacterial diseases", "Fungal & protist diseases", "Human defence systems", "Vaccination", "Antibiotics & painkillers", "Discovery & development of drugs"]
   },
   b4: {
@@ -812,7 +789,7 @@ const MODULE_META = {
     colour: "#22c55e",
     colourLight: "#dcfce7",
     specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
+    revisionLink: "https://docs.google.com/presentation/d/1wtgvLbPbQwOhy18WMyaI2PqC8_5_yrSLYZSAcbh_LS0/preview",
     topics: ["Photosynthesis reaction", "Rate of photosynthesis (required practical)", "Limiting factors", "Uses of glucose from photosynthesis", "Aerobic respiration", "Anaerobic respiration", "Response to exercise", "Metabolism"]
   },
   b5: {
@@ -821,7 +798,7 @@ const MODULE_META = {
     colour: "#8b5cf6",
     colourLight: "#ede9fe",
     specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
+    revisionLink: "https://docs.google.com/presentation/d/1C2Vg2thgaEdlF1olKi22hgLCMretnQBk2BzXEAjdcj4/preview",
     topics: ["Homeostasis", "The nervous system", "Reflex actions", "Reaction time (required practical)", "The endocrine system", "Control of blood glucose", "Diabetes", "Hormones in reproduction", "Contraception"]
   },
   b6: {
@@ -830,7 +807,7 @@ const MODULE_META = {
     colour: "#3b82f6",
     colourLight: "#dbeafe",
     specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
+    revisionLink: "https://docs.google.com/presentation/d/1OWww3mZegMyWq8oR-oSAYqyZhKdxIfC3Q1XCxBsZprE/preview",
     topics: ["Sexual & asexual reproduction", "Meiosis", "DNA & the genome", "Genetic inheritance", "Inherited disorders", "Sex determination", "Variation", "Evolution", "Selective breeding", "Genetic engineering", "Fossils & extinction", "Classification"]
   },
   b7: {
@@ -844,7 +821,6 @@ const MODULE_META = {
   },
 };
 
-// ─── INIT ─────────────────────────────────────────────────────────────────────
 const params = new URLSearchParams(window.location.search);
 const moduleId = params.get('module') || 'b1';
 const meta = MODULE_META[moduleId] || MODULE_META.b1;
@@ -859,7 +835,6 @@ document.getElementById('spec-link').href = meta.specLink;
 document.getElementById('revision-link').href = meta.revisionLink;
 document.getElementById('checklist-title').textContent = `${moduleId.toUpperCase()} ${meta.title} — Topics`;
 
-// Render topic list
 const topicList = document.getElementById('topic-list');
 topicList.innerHTML = '';
 meta.topics.forEach(t => {
@@ -871,7 +846,6 @@ meta.topics.forEach(t => {
 document.documentElement.style.setProperty('--accent', meta.colour);
 document.documentElement.style.setProperty('--accent-light', meta.colourLight);
 
-// ─── TABS ─────────────────────────────────────────────────────────────────────
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -881,7 +855,6 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   });
 });
 
-// ─── KEYWORDS GAME ───────────────────────────────────────────────────────────
 let timerInterval = null;
 let secondsElapsed = 0;
 let matchedCount = 0;
@@ -1036,7 +1009,6 @@ document.getElementById('play-again-btn').addEventListener('click', () => {
   startGame();
 });
 
-// ─── PRACTICE QUESTIONS ──────────────────────────────────────────────────────
 let questions = [];
 let selectedQuestions = [];
 
@@ -1241,7 +1213,6 @@ document.getElementById('try-again-btn').addEventListener('click', () => {
   selectedQuestions = [];
 });
 
-// ─── LOAD DATA ───────────────────────────────────────────────────────────────
 loadKeywords();
 loadQuestions();
 </script>
