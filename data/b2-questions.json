@@ -1,0 +1,506 @@
+[
+  {
+    "id": "B2-MC-001",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Organisation",
+    "question": "What is the correct order of organisation in the human body?",
+    "options": [
+      "Organ → Cell → Tissue → Organ system",
+      "Cell → Tissue → Organ → Organ system",
+      "Tissue → Cell → Organ → Organ system",
+      "Cell → Organ → Tissue → Organ system"
+    ],
+    "correct": "Cell → Tissue → Organ → Organ system"
+  },
+  {
+    "id": "B2-MC-002",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Digestion",
+    "question": "What is the role of bile in digestion?",
+    "options": [
+      "It digests proteins into amino acids",
+      "It emulsifies fats and neutralises stomach acid",
+      "It breaks down starch into sugars",
+      "It absorbs water from undigested food"
+    ],
+    "correct": "It emulsifies fats and neutralises stomach acid"
+  },
+  {
+    "id": "B2-MC-003",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Digestion",
+    "question": "Which enzyme breaks down starch?",
+    "options": ["Protease", "Lipase", "Amylase", "Bile"],
+    "correct": "Amylase"
+  },
+  {
+    "id": "B2-MC-004",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Digestion",
+    "question": "What happens to an enzyme when it is denatured?",
+    "options": [
+      "It speeds up faster",
+      "Its active site changes shape permanently",
+      "It becomes a different enzyme",
+      "It dissolves in water"
+    ],
+    "correct": "Its active site changes shape permanently"
+  },
+  {
+    "id": "B2-MC-005",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Digestion",
+    "question": "Where is bile produced?",
+    "options": ["Pancreas", "Stomach", "Liver", "Small intestine"],
+    "correct": "Liver"
+  },
+  {
+    "id": "B2-MC-006",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Heart and Circulation",
+    "question": "Which blood vessel carries oxygenated blood away from the heart to the body?",
+    "options": ["Vena cava", "Pulmonary vein", "Aorta", "Pulmonary artery"],
+    "correct": "Aorta"
+  },
+  {
+    "id": "B2-MC-007",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Heart and Circulation",
+    "question": "Which chambers of the heart pump blood out to the lungs and body?",
+    "options": ["Atria", "Ventricles", "Valves", "Coronary arteries"],
+    "correct": "Ventricles"
+  },
+  {
+    "id": "B2-MC-008",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Heart and Circulation",
+    "question": "What is the function of valves in the heart?",
+    "options": [
+      "To pump blood around the body",
+      "To prevent the backflow of blood",
+      "To carry oxygen to heart muscle",
+      "To produce red blood cells"
+    ],
+    "correct": "To prevent the backflow of blood"
+  },
+  {
+    "id": "B2-MC-009",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Heart and Circulation",
+    "question": "Which blood vessel has the thickest walls?",
+    "options": ["Vein", "Capillary", "Artery", "Lymph vessel"],
+    "correct": "Artery"
+  },
+  {
+    "id": "B2-MC-010",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Cancer",
+    "question": "What is a malignant tumour?",
+    "options": [
+      "A tumour that stays in one place and does not spread",
+      "A tumour that spreads to other parts of the body",
+      "A tumour caused only by smoking",
+      "A tumour that is always fatal"
+    ],
+    "correct": "A tumour that spreads to other parts of the body"
+  },
+  {
+    "id": "B2-MC-011",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Blood",
+    "question": "Which component of blood carries oxygen around the body?",
+    "options": ["Plasma", "Platelets", "White blood cells", "Red blood cells"],
+    "correct": "Red blood cells"
+  },
+  {
+    "id": "B2-MC-012",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Plant Organisation",
+    "question": "Which tissue transports water and mineral ions up the plant?",
+    "options": ["Phloem", "Xylem", "Meristem", "Epidermis"],
+    "correct": "Xylem"
+  },
+  {
+    "id": "B2-MC-013",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Plant Organisation",
+    "question": "What controls the opening and closing of stomata?",
+    "options": ["Xylem cells", "Palisade cells", "Guard cells", "Root hair cells"],
+    "correct": "Guard cells"
+  },
+  {
+    "id": "B2-MC-014",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Heart Disease",
+    "question": "What causes coronary heart disease?",
+    "options": [
+      "A viral infection of the heart muscle",
+      "A build-up of fatty plaques in the coronary arteries",
+      "A lack of red blood cells",
+      "Damage to the heart valves by bacteria"
+    ],
+    "correct": "A build-up of fatty plaques in the coronary arteries"
+  },
+  {
+    "id": "B2-MC-015",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Digestion",
+    "question": "What do villi do in the small intestine?",
+    "options": [
+      "Produce digestive enzymes",
+      "Increase the surface area for absorption",
+      "Push food along by peristalsis",
+      "Neutralise stomach acid"
+    ],
+    "correct": "Increase the surface area for absorption"
+  },
+  {
+    "id": "B2-FIB-001",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Digestion",
+    "question": "An enzyme's shape is changed permanently by high temperatures. This is called being __________.",
+    "correct": "denatured",
+    "acceptable": ["denatured", "denaturation"]
+  },
+  {
+    "id": "B2-FIB-002",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Digestion",
+    "question": "The enzyme __________ breaks down proteins into amino acids.",
+    "correct": "protease",
+    "acceptable": ["protease"]
+  },
+  {
+    "id": "B2-FIB-003",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Digestion",
+    "question": "Bile is produced by the __________ and stored in the gall bladder.",
+    "correct": "liver",
+    "acceptable": ["liver"]
+  },
+  {
+    "id": "B2-FIB-004",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Heart and Circulation",
+    "question": "The __________ are the upper chambers of the heart that receive blood.",
+    "correct": "atria",
+    "acceptable": ["atria", "atriums", "atrium"]
+  },
+  {
+    "id": "B2-FIB-005",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Heart and Circulation",
+    "question": "Blood vessels called __________ carry blood away from the heart.",
+    "correct": "arteries",
+    "acceptable": ["arteries", "artery"]
+  },
+  {
+    "id": "B2-FIB-006",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Blood",
+    "question": "The liquid part of blood that carries dissolved substances is called __________.",
+    "correct": "plasma",
+    "acceptable": ["plasma"]
+  },
+  {
+    "id": "B2-FIB-007",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Plant Organisation",
+    "question": "The loss of water vapour from plant leaves through the stomata is called __________.",
+    "correct": "transpiration",
+    "acceptable": ["transpiration"]
+  },
+  {
+    "id": "B2-FIB-008",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Plant Organisation",
+    "question": "__________ tissue transports dissolved sugars from leaves to the rest of the plant.",
+    "correct": "phloem",
+    "acceptable": ["phloem"]
+  },
+  {
+    "id": "B2-FIB-009",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Cancer",
+    "question": "A tumour that spreads to other parts of the body is described as __________.",
+    "correct": "malignant",
+    "acceptable": ["malignant"]
+  },
+  {
+    "id": "B2-FIB-010",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Digestion",
+    "question": "The wave-like muscular contractions that move food along the digestive system are called __________.",
+    "correct": "peristalsis",
+    "acceptable": ["peristalsis"]
+  },
+  {
+    "id": "B2-MATCH-001",
+    "type": "match",
+    "marks": 3,
+    "topic": "Digestion",
+    "question": "Match each enzyme to the food molecule it breaks down.",
+    "pairs": [
+      { "term": "Amylase", "definition": "Breaks down starch into sugars" },
+      { "term": "Protease", "definition": "Breaks down proteins into amino acids" },
+      { "term": "Lipase", "definition": "Breaks down lipids into fatty acids and glycerol" }
+    ]
+  },
+  {
+    "id": "B2-MATCH-002",
+    "type": "match",
+    "marks": 3,
+    "topic": "Heart and Circulation",
+    "question": "Match each blood vessel to its correct description.",
+    "pairs": [
+      { "term": "Artery", "definition": "Carries blood away from the heart, thick muscular walls, no valves" },
+      { "term": "Vein", "definition": "Carries blood towards the heart, thin walls, has valves" },
+      { "term": "Capillary", "definition": "One cell thick, site of exchange between blood and tissues" }
+    ]
+  },
+  {
+    "id": "B2-MATCH-003",
+    "type": "match",
+    "marks": 3,
+    "topic": "Digestion",
+    "question": "Match each digestive organ to its function.",
+    "pairs": [
+      { "term": "Stomach", "definition": "Produces protease and hydrochloric acid to digest proteins" },
+      { "term": "Liver", "definition": "Produces bile to emulsify fats" },
+      { "term": "Pancreas", "definition": "Produces amylase, protease and lipase enzymes" },
+      { "term": "Small intestine", "definition": "Main site of digestion and absorption of nutrients" },
+      { "term": "Large intestine", "definition": "Absorbs water from undigested food to form faeces" }
+    ]
+  },
+  {
+    "id": "B2-MATCH-004",
+    "type": "match",
+    "marks": 2,
+    "topic": "Plant Organisation",
+    "question": "Match each plant tissue to its function.",
+    "pairs": [
+      { "term": "Xylem", "definition": "Transports water and mineral ions from roots to leaves" },
+      { "term": "Phloem", "definition": "Transports dissolved sugars from leaves to the rest of the plant" },
+      { "term": "Guard cells", "definition": "Control the opening and closing of stomata" },
+      { "term": "Palisade mesophyll", "definition": "Packed with chloroplasts — main site of photosynthesis in the leaf" }
+    ]
+  },
+  {
+    "id": "B2-MATCH-005",
+    "type": "match",
+    "marks": 2,
+    "topic": "Blood",
+    "question": "Match each blood component to its function.",
+    "pairs": [
+      { "term": "Red blood cells", "definition": "Carry oxygen around the body using haemoglobin" },
+      { "term": "White blood cells", "definition": "Defend the body against infection" },
+      { "term": "Platelets", "definition": "Help blood to clot at a wound" },
+      { "term": "Plasma", "definition": "Liquid that carries dissolved nutrients, hormones and waste" }
+    ]
+  },
+  {
+    "id": "B2-SA-001",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Digestion",
+    "question": "State what is meant by the term enzyme.",
+    "mark_scheme": "A biological catalyst (1) that speeds up chemical reactions without being used up (1) — accept either point."
+  },
+  {
+    "id": "B2-SA-002",
+    "type": "written",
+    "marks": 1,
+    "command_word": "Name",
+    "topic": "Heart and Circulation",
+    "question": "Name the blood vessel that supplies the heart muscle with oxygenated blood.",
+    "mark_scheme": "Coronary artery (1)."
+  },
+  {
+    "id": "B2-SA-003",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Cancer",
+    "question": "State the difference between a benign and a malignant tumour.",
+    "mark_scheme": "Benign tumour stays in one place / does not spread (1); malignant tumour spreads to other parts of the body (1) — accept either point for 1 mark."
+  },
+  {
+    "id": "B2-SA-004",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Plant Organisation",
+    "question": "State the function of stomata in a leaf.",
+    "mark_scheme": "Allow gas exchange (1) / allow water vapour to escape during transpiration (1) — accept either."
+  },
+  {
+    "id": "B2-SA-005",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Digestion",
+    "question": "Explain why enzymes are described as specific.",
+    "mark_scheme": "Each enzyme has a specific active site (1); only one substrate fits the active site — lock and key model (1); so each enzyme only catalyses one type of reaction (1) — any two."
+  },
+  {
+    "id": "B2-SA-006",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Digestion",
+    "question": "Explain why the small intestine is well adapted for absorption.",
+    "mark_scheme": "Villi increase the surface area (1); villi have a good blood supply to maintain a concentration gradient (1); villi have thin walls for a short diffusion distance (1) — any two."
+  },
+  {
+    "id": "B2-SA-007",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Heart and Circulation",
+    "question": "Describe the function of arteries and veins.",
+    "mark_scheme": "Arteries carry blood away from the heart (1); veins carry blood towards the heart (1); arteries have thick muscular walls (1); veins have valves to prevent backflow (1) — any two."
+  },
+  {
+    "id": "B2-SA-008",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Plant Organisation",
+    "question": "Explain how guard cells control the opening of stomata.",
+    "mark_scheme": "When guard cells gain water they become turgid and change shape (1); this opens the stomata (1); when they lose water they become flaccid and stomata close (1) — any two."
+  },
+  {
+    "id": "B2-SA-009",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Heart Disease",
+    "question": "Explain how a stent is used to treat coronary heart disease.",
+    "mark_scheme": "A stent is a metal mesh tube (1); inserted into a narrowed coronary artery (1); it holds the artery open / restores blood flow to the heart muscle (1) — any two."
+  },
+  {
+    "id": "B2-SA-010",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Digestion",
+    "question": "Explain the role of bile in the digestion of fats.",
+    "mark_scheme": "Bile is produced in the liver (1); stored in the gall bladder (1); emulsifies fats — breaks large fat droplets into smaller ones (1); increases surface area for lipase to work (1); bile is alkaline and neutralises stomach acid (1) — any three."
+  },
+  {
+    "id": "B2-SA-011",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Heart and Circulation",
+    "question": "Describe the structure and function of capillaries.",
+    "mark_scheme": "Capillaries are the smallest blood vessels (1); walls are one cell thick (1); short diffusion distance for exchange of substances (1); large network provides large surface area (1); substances such as oxygen and glucose diffuse into tissues (1) — any three."
+  },
+  {
+    "id": "B2-SA-012",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Digestion",
+    "question": "Explain how increasing temperature affects enzyme activity, including what happens above the optimum temperature.",
+    "mark_scheme": "Increasing temperature increases rate of reaction (1); more enzyme-substrate collisions (1); above optimum temperature the enzyme denatures (1); active site changes shape (1); substrate no longer fits (1) — any three."
+  },
+  {
+    "id": "B2-SA-013",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Plant Organisation",
+    "question": "Explain what transpiration is and describe the factors that affect its rate.",
+    "mark_scheme": "Transpiration is the loss of water vapour from leaves through stomata (1); light intensity — more light increases rate (1); temperature — higher temperature increases rate (1); humidity — lower humidity increases rate (1); wind speed — more wind increases rate (1) — any three."
+  },
+  {
+    "id": "B2-LA-001",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Digestion",
+    "question": "Explain how the digestive system breaks down a meal containing starch, protein and fat, naming the enzymes involved and where they act.",
+    "mark_scheme": "Amylase breaks down starch in the mouth and small intestine (1); protease breaks down proteins in the stomach and small intestine (1); lipase breaks down fats in the small intestine (1); bile emulsifies fats increasing surface area for lipase (1); products absorbed in the small intestine (1) — any four."
+  },
+  {
+    "id": "B2-LA-002",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Heart and Circulation",
+    "question": "Describe the double circulation of blood in the human body, including the role of the heart.",
+    "mark_scheme": "Blood travels from the heart to the lungs to pick up oxygen (1); returns to the heart (1); then pumped to the rest of the body (1); heart has four chambers — two atria and two ventricles (1); left side pumps oxygenated blood to body (1); right side pumps deoxygenated blood to lungs (1) — any four."
+  },
+  {
+    "id": "B2-LA-003",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Evaluate",
+    "topic": "Heart Disease",
+    "question": "Evaluate the use of statins and stents as treatments for coronary heart disease.",
+    "mark_scheme": "Statins lower cholesterol levels (1); reduce risk of fatty plaques forming (1); must be taken long-term / side effects possible (1); stents hold arteries open physically (1); immediate effect (1); risk of surgery / blood clots (1); statins are a preventive treatment, stents are a cure (1) — any four."
+  },
+  {
+    "id": "B2-LA-004",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Cancer",
+    "question": "Explain what cancer is and describe the difference between benign and malignant tumours. Include risk factors for cancer in your answer.",
+    "mark_scheme": "Cancer is uncontrolled cell division (1); benign tumour stays in one place (1); malignant tumour spreads to other tissues / metastasis (1); risk factors include smoking / UV radiation / viral infections / inherited genes (1); lifestyle factors can increase or decrease risk (1) — any four."
+  },
+  {
+    "id": "B2-LA-005",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Digestion",
+    "question": "Explain how the structure of the small intestine is adapted to maximise the absorption of digested food molecules.",
+    "mark_scheme": "Villi increase the surface area for absorption (1); microvilli on villi further increase surface area (1); villi have a rich blood supply — maintains concentration gradient (1); walls are one cell thick — short diffusion distance (1); large intestine absorbs water (1); lacteals in villi absorb fatty acids and glycerol (1) — any five."
+  },
+  {
+    "id": "B2-LA-006",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Heart and Circulation",
+    "question": "A patient is diagnosed with coronary heart disease. Explain what causes this condition, the symptoms it produces, and the treatments available.",
+    "mark_scheme": "Fatty plaques build up in the coronary arteries (1); arteries become narrowed (1); blood flow to heart muscle is restricted (1); heart muscle receives less oxygen (1); symptoms include chest pain / angina / heart attack (1); treatments: statins lower cholesterol (1); stents hold arteries open (1); bypass surgery uses another blood vessel to go around the blockage (1) — any six."
+  },
+  {
+    "id": "B2-LA-007",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Heart Disease",
+    "question": "Evaluate the lifestyle changes and medical treatments available to reduce the risk of cardiovascular disease. In your answer, refer to both advantages and disadvantages.",
+    "mark_scheme": "Lifestyle: healthy diet reduces cholesterol (1); exercise strengthens heart muscle (1); stopping smoking reduces risk (1); no side effects from lifestyle changes (1); requires willpower and long-term commitment (1). Medical: statins reduce cholesterol effectively (1); may have side effects (1); stents give immediate relief (1); surgery carries risk (1); medical treatments may be needed when lifestyle changes are insufficient (1) — any six."
+  }
+]
