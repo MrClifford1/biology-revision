@@ -10,7 +10,6 @@
       --navy: #1a2a4f;
       --navy-dark: #0f1d3d;
       --red: #c8202c;
-      --red-dark: #9a1820;
       --gold: #d4a534;
       --b1: #0d9488;
       --b2: #e85d4a;
@@ -27,15 +26,9 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Nunito Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
 
-    body {
-      font-family: 'Nunito Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-    }
-
-    /* TOP BAR — School identity */
+    /* TOP BAR */
     .top-bar {
       background: var(--navy-dark);
       color: white;
@@ -47,11 +40,7 @@
       flex-wrap: wrap;
       gap: 0.5rem;
     }
-    .top-bar a {
-      color: #a8b4d4;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
+    .top-bar a { color: #a8b4d4; text-decoration: none; transition: color 0.2s; }
     .top-bar a:hover { color: white; }
     .top-bar-school {
       font-family: 'Nunito', sans-serif;
@@ -61,11 +50,11 @@
       color: #a8b4d4;
     }
 
-    /* HERO HEADER */
+    /* HEADER */
     header {
       background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
       color: white;
-      padding: 2.5rem 1.5rem 3rem;
+      padding: 2rem 1.5rem 2.5rem;
       position: relative;
       overflow: hidden;
     }
@@ -74,65 +63,45 @@
       position: absolute;
       top: -100px; right: -80px;
       width: 350px; height: 350px;
-      background: radial-gradient(circle, rgba(212, 165, 52, 0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(212,165,52,0.08) 0%, transparent 70%);
       border-radius: 50%;
     }
-    header::after {
-      content: '';
-      position: absolute;
-      bottom: -100px; left: -60px;
-      width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(200, 32, 44, 0.07) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-
     .hero-inner {
       max-width: 1100px;
       margin: 0 auto;
       display: flex;
       align-items: center;
-      gap: 2rem;
+      gap: 1.5rem;
       position: relative;
       z-index: 1;
       flex-wrap: wrap;
     }
-
-    /* Shield logo */
     .hero-shield {
-      width: 88px;
-      height: 100px;
+      width: 72px; height: 82px;
       flex-shrink: 0;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .hero-shield svg {
-      width: 100%;
-      height: 100%;
-    }
+    .hero-shield svg { width: 100%; height: 100%; }
     .hero-shield-text {
       position: absolute;
       font-family: 'Nunito', sans-serif;
       font-weight: 900;
       color: white;
-      font-size: 1.5rem;
-      letter-spacing: 0.05em;
-      top: 50%;
-      left: 50%;
+      font-size: 1.25rem;
+      top: 50%; left: 50%;
       transform: translate(-50%, -55%);
-      line-height: 0.9;
       text-align: center;
     }
-
-    .hero-text { flex: 1; min-width: 280px; }
-
+    .hero-text { flex: 1; min-width: 260px; }
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      background: rgba(212, 165, 52, 0.15);
-      border: 1px solid rgba(212, 165, 52, 0.3);
+      background: rgba(212,165,52,0.15);
+      border: 1px solid rgba(212,165,52,0.3);
       color: var(--gold);
       font-family: 'Nunito', sans-serif;
       font-size: 0.7rem;
@@ -141,74 +110,36 @@
       text-transform: uppercase;
       padding: 0.3rem 0.85rem;
       border-radius: 100px;
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.6rem;
     }
-
     header h1 {
       font-family: 'Nunito', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
       font-weight: 900;
       line-height: 1.1;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
     }
     header h1 .accent { color: var(--gold); }
+    header p.tagline { color: #c5cee8; font-size: 0.9rem; }
 
-    header p.tagline {
-      color: #c5cee8;
-      font-size: 1rem;
-      max-width: 540px;
-      margin-bottom: 1.25rem;
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-    .stat {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .stat-number {
-      font-family: 'Nunito', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 900;
-      color: white;
-    }
-    .stat-label {
-      font-size: 0.75rem;
-      color: #a8b4d4;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 700;
-    }
-
-    /* PRIDE strip */
+    /* PRIDE STRIP */
     .pride-strip {
       background: var(--red);
       color: white;
-      padding: 0.65rem 1.5rem;
+      padding: 0.55rem 1.5rem;
       text-align: center;
       font-family: 'Nunito', sans-serif;
       font-weight: 800;
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
-    .pride-strip span {
-      display: inline-block;
-      margin: 0 0.4rem;
-    }
-    .pride-strip .pride-dot {
-      color: var(--gold);
-      margin: 0 0.65rem;
-    }
+    .pride-strip .pride-dot { color: var(--gold); margin: 0 0.5rem; }
 
     /* LOGIN STRIP */
     .login-strip-wrapper { background: white; border-bottom: 1px solid var(--border); }
     .login-strip {
-      padding: 0.75rem 1.5rem;
+      padding: 0.65rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -217,10 +148,7 @@
       max-width: 1100px;
       margin: 0 auto;
     }
-    .login-strip p {
-      font-size: 0.875rem;
-      color: var(--subtext);
-    }
+    .login-strip p { font-size: 0.825rem; color: var(--subtext); }
     .btn-login {
       display: inline-flex;
       align-items: center;
@@ -229,8 +157,8 @@
       color: white;
       font-family: 'Nunito', sans-serif;
       font-weight: 700;
-      font-size: 0.875rem;
-      padding: 0.5rem 1.1rem;
+      font-size: 0.825rem;
+      padding: 0.45rem 1rem;
       border-radius: 8px;
       text-decoration: none;
       border: none;
@@ -243,39 +171,35 @@
     main {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem 3rem;
+      padding: 2rem 1.5rem 3rem;
     }
-
     .section-header {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
       flex-wrap: wrap;
+      gap: 0.5rem;
     }
     .section-label {
       font-family: 'Nunito', sans-serif;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: 900;
       color: var(--navy);
     }
-    .section-sub {
-      font-size: 0.875rem;
-      color: var(--subtext);
-    }
+    .section-sub { font-size: 0.825rem; color: var(--subtext); }
 
     /* MODULE GRID */
     .modules-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1.1rem;
     }
 
     .module-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 14px;
+      border-radius: 16px;
       overflow: hidden;
       text-decoration: none;
       color: inherit;
@@ -283,401 +207,384 @@
       flex-direction: column;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       cursor: pointer;
-      position: relative;
     }
     .module-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 28px rgba(26, 42, 79, 0.12);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(26,42,79,0.13);
     }
 
-    .card-stripe {
-      height: 5px;
-      width: 100%;
-    }
-
-    .card-header {
-      padding: 1.3rem 1.4rem 0.85rem;
+    /* IMAGE AREA */
+    .card-image {
+      height: 130px;
       display: flex;
-      align-items: flex-start;
-      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
     }
+    .card-image svg { width: 100%; height: 100%; }
 
+    /* CARD BODY */
+    .card-body {
+      padding: 1rem 1.1rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
     .module-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 12px;
+      width: 42px; height: 42px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'Nunito', sans-serif;
       font-weight: 900;
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       color: white;
       flex-shrink: 0;
     }
-
     .module-info { flex: 1; }
-
-    .module-tag {
-      font-family: 'Nunito', sans-serif;
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      opacity: 0.7;
-      margin-bottom: 0.15rem;
-    }
-
     .module-title {
       font-family: 'Nunito', sans-serif;
-      font-size: 1.05rem;
+      font-size: 0.975rem;
       font-weight: 800;
-      line-height: 1.3;
       color: var(--text);
+      line-height: 1.2;
     }
-
-    .card-features {
-      padding: 0 1.4rem 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-    }
-
-    .feature-chip {
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 0.22rem 0.6rem;
-      border-radius: 100px;
-      background: var(--bg);
-      border: 1px solid var(--border);
+    .module-sub {
+      font-size: 0.75rem;
       color: var(--subtext);
+      margin-top: 0.15rem;
     }
-
-    .card-footer {
-      margin-top: auto;
-      padding: 0.85rem 1.4rem;
-      border-top: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .card-footer span {
-      font-size: 0.78rem;
-      color: var(--subtext);
-    }
-
     .arrow-btn {
-      width: 30px;
-      height: 30px;
+      width: 28px; height: 28px;
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 700;
+      flex-shrink: 0;
     }
 
-    /* colour accents per module */
-    .b1 .module-icon, .b1 .arrow-btn, .b1 .card-stripe { background: var(--b1); }
-    .b2 .module-icon, .b2 .arrow-btn, .b2 .card-stripe { background: var(--b2); }
-    .b3 .module-icon, .b3 .arrow-btn, .b3 .card-stripe { background: var(--b3); }
-    .b4 .module-icon, .b4 .arrow-btn, .b4 .card-stripe { background: var(--b4); }
-    .b5 .module-icon, .b5 .arrow-btn, .b5 .card-stripe { background: var(--b5); }
-    .b6 .module-icon, .b6 .arrow-btn, .b6 .card-stripe { background: var(--b6); }
-    .b7 .module-icon, .b7 .arrow-btn, .b7 .card-stripe { background: var(--b7); }
-
-    .b1 .module-tag { color: var(--b1); }
-    .b2 .module-tag { color: var(--b2); }
-    .b3 .module-tag { color: var(--b3); }
-    .b4 .module-tag { color: var(--b4); }
-    .b5 .module-tag { color: var(--b5); }
-    .b6 .module-tag { color: var(--b6); }
-    .b7 .module-tag { color: var(--b7); }
-
-    /* INFO BANNER */
-    .info-banner {
-      background: white;
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--gold);
-      border-radius: 10px;
-      padding: 1rem 1.25rem;
-      margin-top: 2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      font-size: 0.875rem;
-      color: var(--subtext);
-    }
-    .info-banner-icon {
-      font-size: 1.4rem;
-    }
-    .info-banner strong { color: var(--text); }
+    /* colours */
+    .b1 .module-icon, .b1 .arrow-btn { background: var(--b1); }
+    .b2 .module-icon, .b2 .arrow-btn { background: var(--b2); }
+    .b3 .module-icon, .b3 .arrow-btn { background: var(--b3); }
+    .b4 .module-icon, .b4 .arrow-btn { background: var(--b4); }
+    .b5 .module-icon, .b5 .arrow-btn { background: var(--b5); }
+    .b6 .module-icon, .b6 .arrow-btn { background: var(--b6); }
+    .b7 .module-icon, .b7 .arrow-btn { background: var(--b7); }
 
     /* FOOTER */
     footer {
       background: var(--navy);
       color: #a8b4d4;
-      padding: 2rem 1.5rem 1.5rem;
-      margin-top: 2rem;
+      padding: 1.5rem;
       text-align: center;
-      font-size: 0.825rem;
+      font-size: 0.8rem;
+      margin-top: 1rem;
     }
-    footer .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    footer p { margin-bottom: 0.25rem; }
-    footer .small {
-      font-size: 0.72rem;
-      color: #6b7a9c;
-      margin-top: 0.75rem;
-    }
+    footer p { margin-bottom: 0.2rem; }
+    footer .small { font-size: 0.7rem; color: #6b7a9c; margin-top: 0.5rem; }
 
-    /* MOBILE */
     @media (max-width: 600px) {
       .modules-grid { grid-template-columns: 1fr; }
-      .hero-stats { gap: 1.2rem; }
-      .pride-strip { font-size: 0.65rem; letter-spacing: 0.1em; }
-      .pride-strip .pride-dot { margin: 0 0.3rem; }
     }
   </style>
 </head>
 <body>
 
-  <div class="top-bar">
-    <div class="top-bar-school">The Streetly Academy · Science Department</div>
-    <div>
-      <a href="https://www.streetly.academy/" target="_blank">School Website ↗</a>
+<div class="top-bar">
+  <div class="top-bar-school">The Streetly Academy · Science Department</div>
+  <a href="https://www.streetly.academy/" target="_blank">School Website ↗</a>
+</div>
+
+<header>
+  <div class="hero-inner">
+    <div class="hero-shield">
+      <svg viewBox="0 0 88 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M44 0 L88 14 L88 50 Q88 80 44 100 Q0 80 0 50 L0 14 Z" fill="#c8202c" stroke="#d4a534" stroke-width="2"/>
+        <path d="M44 6 L82 18 L82 50 Q82 76 44 93 Q6 76 6 50 L6 18 Z" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+      </svg>
+      <div class="hero-shield-text">SSH</div>
+    </div>
+    <div class="hero-text">
+      <div class="hero-badge">⚡ AQA GCSE Combined Science</div>
+      <h1>Streetly Science<br><span class="accent">Revision Hub</span></h1>
+      <p class="tagline">Keywords · AI-marked questions · Revision slides — all in one place.</p>
     </div>
   </div>
+</header>
 
-  <header>
-    <div class="hero-inner">
-      <div class="hero-shield">
-        <svg viewBox="0 0 88 100" xmlns="http://www.w3.org/2000/svg">
-          <path d="M44 0 L88 14 L88 50 Q88 80 44 100 Q0 80 0 50 L0 14 Z" fill="#c8202c" stroke="#d4a534" stroke-width="2"/>
-          <path d="M44 6 L82 18 L82 50 Q82 76 44 93 Q6 76 6 50 L6 18 Z" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+<div class="pride-strip">
+  <span>Personal Excellence</span><span class="pride-dot">●</span>
+  <span>Respect</span><span class="pride-dot">●</span>
+  <span>Inspiration</span><span class="pride-dot">●</span>
+  <span>Determination</span><span class="pride-dot">●</span>
+  <span>Equality</span>
+</div>
+
+<div class="login-strip-wrapper">
+  <div class="login-strip">
+    <p>Sign in to track your progress and save your scores.</p>
+    <a href="login.html" class="btn-login">
+      <svg width="14" height="14" viewBox="0 0 48 48" fill="none"><path d="M43.611 20.083H42V20H24v8h11.303C33.973 32.617 29.418 36 24 36c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z" fill="#FFF"/></svg>
+      Sign in with Google
+    </a>
+  </div>
+</div>
+
+<main>
+  <div class="section-header">
+    <div class="section-label">Biology Modules</div>
+    <div class="section-sub">Select a module to begin</div>
+  </div>
+
+  <div class="modules-grid">
+
+    <!-- B1 Cell Biology -->
+    <a href="module.html?module=b1" class="module-card b1">
+      <div class="card-image">
+        <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg">
+          <rect width="290" height="130" fill="#0d9488" opacity="0.12"/>
+          <!-- Cell outline -->
+          <ellipse cx="145" cy="65" rx="80" ry="52" fill="none" stroke="#0d9488" stroke-width="2.5" opacity="0.6"/>
+          <!-- Nucleus -->
+          <ellipse cx="145" cy="65" rx="28" ry="22" fill="#0d9488" opacity="0.25"/>
+          <ellipse cx="145" cy="65" rx="28" ry="22" fill="none" stroke="#0d9488" stroke-width="2" opacity="0.7"/>
+          <!-- Nucleolus -->
+          <circle cx="145" cy="65" r="8" fill="#0d9488" opacity="0.5"/>
+          <!-- Mitochondria -->
+          <ellipse cx="90" cy="50" rx="14" ry="8" fill="none" stroke="#0d9488" stroke-width="1.8" opacity="0.55"/>
+          <path d="M90 42 Q97 50 90 58" fill="none" stroke="#0d9488" stroke-width="1.2" opacity="0.45"/>
+          <!-- Vacuole -->
+          <circle cx="195" cy="75" r="14" fill="none" stroke="#0d9488" stroke-width="1.8" opacity="0.45"/>
+          <!-- Ribosomes dots -->
+          <circle cx="115" cy="85" r="3" fill="#0d9488" opacity="0.4"/>
+          <circle cx="170" cy="45" r="3" fill="#0d9488" opacity="0.4"/>
+          <circle cx="190" cy="50" r="3" fill="#0d9488" opacity="0.4"/>
+          <circle cx="100" cy="75" r="3" fill="#0d9488" opacity="0.4"/>
         </svg>
-        <div class="hero-shield-text">SSH</div>
       </div>
-      <div class="hero-text">
-        <div class="hero-badge">⚡ AQA GCSE Combined Science</div>
-        <h1>Streetly Science<br><span class="accent">Revision Hub</span></h1>
-        <p class="tagline">Practise. Improve. Master your Biology. Keywords, AI-marked questions, and revision content for every B1–B7 topic.</p>
-        <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-number">7</span>
-            <span class="stat-label">Modules</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">700+</span>
-            <span class="stat-label">Keywords</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">AI</span>
-            <span class="stat-label">Marking</span>
-          </div>
+      <div class="card-body">
+        <div class="module-icon">B1</div>
+        <div class="module-info">
+          <div class="module-title">Cell Biology</div>
+          <div class="module-sub">Cells · Microscopy · Transport</div>
         </div>
+        <div class="arrow-btn">→</div>
       </div>
-    </div>
-  </header>
+    </a>
 
-  <div class="pride-strip">
-    <span>Personal Excellence</span>
-    <span class="pride-dot">●</span>
-    <span>Respect</span>
-    <span class="pride-dot">●</span>
-    <span>Inspiration</span>
-    <span class="pride-dot">●</span>
-    <span>Determination</span>
-    <span class="pride-dot">●</span>
-    <span>Equality</span>
+    <!-- B2 Organisation -->
+    <a href="module.html?module=b2" class="module-card b2">
+      <div class="card-image">
+        <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg">
+          <rect width="290" height="130" fill="#e85d4a" opacity="0.1"/>
+          <!-- Heart shape -->
+          <path d="M145 95 C100 70 65 55 65 35 C65 18 80 10 95 10 C110 10 125 20 145 38 C165 20 180 10 195 10 C210 10 225 18 225 35 C225 55 190 70 145 95Z" fill="#e85d4a" opacity="0.2" stroke="#e85d4a" stroke-width="2.5" opacity="0.6"/>
+          <!-- Heartbeat line -->
+          <polyline points="55,65 90,65 100,45 110,82 120,55 130,65 175,65 185,40 195,80 205,65 240,65" fill="none" stroke="#e85d4a" stroke-width="2" opacity="0.7"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="module-icon">B2</div>
+        <div class="module-info">
+          <div class="module-title">Organisation</div>
+          <div class="module-sub">Digestion · Heart · Cancer</div>
+        </div>
+        <div class="arrow-btn">→</div>
+      </div>
+    </a>
+
+    <!-- B3 Infection & Response -->
+    <a href="module.html?module=b3" class="module-card b3">
+      <div class="card-image">
+        <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg">
+          <rect width="290" height="130" fill="#f59e0b" opacity="0.1"/>
+          <!-- Virus shape 1 -->
+          <circle cx="110" cy="60" r="28" fill="#f59e0b" opacity="0.18" stroke="#f59e0b" stroke-width="2"/>
+          <!-- Spikes -->
+          <line x1="110" y1="32" x2="110" y2="22" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+          <line x1="110" y1="88" x2="110" y2="98" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+          <line x1="82" y1="60" x2="72" y2="60" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+          <line x1="138" y1="60" x2="148" y2="60" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+          <line x1="90" y1="40" x2="83" y2="33" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+          <line x1="130" y1="40" x2="137" y2="33" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+          <line x1="90" y1="80" x2="83" y2="87" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+          <line x1="130" y1="80" x2="137" y2="87" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+          <!-- Inner circle -->
+          <circle cx="110" cy="60" r="14" fill="#f59e0b" opacity="0.35"/>
+          <!-- Smaller virus -->
+          <circle cx="190" cy="55" r="18" fill="#f59e0b" opacity="0.15" stroke="#f59e0b" stroke-width="1.8"/>
+          <line x1="190" y1="37" x2="190" y2="30" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+          <line x1="190" y1="73" x2="190" y2="80" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+          <line x1="172" y1="55" x2="165" y2="55" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+          <line x1="208" y1="55" x2="215" y2="55" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+          <circle cx="190" cy="55" r="9" fill="#f59e0b" opacity="0.3"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="module-icon">B3</div>
+        <div class="module-info">
+          <div class="module-title">Infection & Response</div>
+          <div class="module-sub">Pathogens · Immunity · Drugs</div>
+        </div>
+        <div class="arrow-btn">→</div>
+      </div>
+    </a>
+
+    <!-- B4 Bioenergetics -->
+    <a href="module.html?module=b4" class="module-card b4">
+      <div class="card-image">
+        <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg">
+          <rect width="290" height="130" fill="#22c55e" opacity="0.1"/>
+          <!-- Leaf shape -->
+          <path d="M145 110 C145 110 80 85 75 45 C70 15 145 10 145 10 C145 10 220 15 215 45 C210 85 145 110 145 110Z" fill="#22c55e" opacity="0.2" stroke="#22c55e" stroke-width="2.5" opacity="0.6"/>
+          <!-- Leaf veins -->
+          <line x1="145" y1="10" x2="145" y2="110" stroke="#22c55e" stroke-width="2" opacity="0.5"/>
+          <line x1="145" y1="40" x2="105" y2="65" stroke="#22c55e" stroke-width="1.5" opacity="0.4"/>
+          <line x1="145" y1="55" x2="185" y2="70" stroke="#22c55e" stroke-width="1.5" opacity="0.4"/>
+          <line x1="145" y1="70" x2="112" y2="85" stroke="#22c55e" stroke-width="1.5" opacity="0.4"/>
+          <line x1="145" y1="55" x2="115" y2="50" stroke="#22c55e" stroke-width="1.5" opacity="0.4"/>
+          <line x1="145" y1="40" x2="178" y2="52" stroke="#22c55e" stroke-width="1.5" opacity="0.4"/>
+          <!-- Sun rays -->
+          <circle cx="230" cy="25" r="12" fill="#22c55e" opacity="0.25"/>
+          <line x1="230" y1="8" x2="230" y2="2" stroke="#22c55e" stroke-width="2" opacity="0.5"/>
+          <line x1="243" y1="12" x2="247" y2="8" stroke="#22c55e" stroke-width="2" opacity="0.5"/>
+          <line x1="247" y1="25" x2="253" y2="25" stroke="#22c55e" stroke-width="2" opacity="0.5"/>
+          <line x1="217" y1="12" x2="213" y2="8" stroke="#22c55e" stroke-width="2" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="module-icon">B4</div>
+        <div class="module-info">
+          <div class="module-title">Bioenergetics</div>
+          <div class="module-sub">Photosynthesis · Respiration</div>
+        </div>
+        <div class="arrow-btn">→</div>
+      </div>
+    </a>
+
+    <!-- B5 Homeostasis -->
+    <a href="module.html?module=b5" class="module-card b5">
+      <div class="card-image">
+        <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg">
+          <rect width="290" height="130" fill="#8b5cf6" opacity="0.1"/>
+          <!-- Brain outline -->
+          <path d="M110 90 C80 90 60 75 60 55 C60 38 72 28 85 28 C88 20 98 15 110 18 C118 12 132 12 140 18 C150 12 165 15 170 25 C183 25 200 35 200 52 C200 70 185 82 170 85 C165 92 150 95 140 90 C132 96 118 96 110 90Z" fill="#8b5cf6" opacity="0.18" stroke="#8b5cf6" stroke-width="2.2"/>
+          <!-- Brain lines -->
+          <path d="M120 30 Q130 45 120 60 Q130 72 125 82" fill="none" stroke="#8b5cf6" stroke-width="1.8" opacity="0.5"/>
+          <path d="M150 28 Q142 42 152 55 Q145 68 150 80" fill="none" stroke="#8b5cf6" stroke-width="1.8" opacity="0.5"/>
+          <!-- Neuron lines -->
+          <line x1="60" y1="55" x2="35" y2="40" stroke="#8b5cf6" stroke-width="1.5" opacity="0.4"/>
+          <line x1="35" y1="40" x2="20" y2="50" stroke="#8b5cf6" stroke-width="1.5" opacity="0.4"/>
+          <line x1="35" y1="40" x2="22" y2="30" stroke="#8b5cf6" stroke-width="1.5" opacity="0.4"/>
+          <circle cx="20" cy="50" r="4" fill="#8b5cf6" opacity="0.4"/>
+          <circle cx="22" cy="30" r="4" fill="#8b5cf6" opacity="0.4"/>
+          <line x1="200" y1="52" x2="225" y2="40" stroke="#8b5cf6" stroke-width="1.5" opacity="0.4"/>
+          <line x1="225" y1="40" x2="245" y2="32" stroke="#8b5cf6" stroke-width="1.5" opacity="0.4"/>
+          <line x1="225" y1="40" x2="248" y2="50" stroke="#8b5cf6" stroke-width="1.5" opacity="0.4"/>
+          <circle cx="245" cy="32" r="4" fill="#8b5cf6" opacity="0.4"/>
+          <circle cx="248" cy="50" r="4" fill="#8b5cf6" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="module-icon">B5</div>
+        <div class="module-info">
+          <div class="module-title">Homeostasis & Response</div>
+          <div class="module-sub">Nervous System · Hormones</div>
+        </div>
+        <div class="arrow-btn">→</div>
+      </div>
+    </a>
+
+    <!-- B6 Inheritance -->
+    <a href="module.html?module=b6" class="module-card b6">
+      <div class="card-image">
+        <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg">
+          <rect width="290" height="130" fill="#3b82f6" opacity="0.1"/>
+          <!-- DNA double helix -->
+          <path d="M120 10 C140 25 160 40 120 55 C140 70 160 85 120 100 C140 115 160 125 120 130" fill="none" stroke="#3b82f6" stroke-width="2.5" opacity="0.6"/>
+          <path d="M170 10 C150 25 130 40 170 55 C150 70 130 85 170 100 C150 115 130 125 170 130" fill="none" stroke="#3b82f6" stroke-width="2.5" opacity="0.6"/>
+          <!-- Rungs -->
+          <line x1="120" y1="10" x2="170" y2="10" stroke="#3b82f6" stroke-width="1.8" opacity="0.45"/>
+          <line x1="128" y1="22" x2="162" y2="22" stroke="#3b82f6" stroke-width="1.8" opacity="0.45"/>
+          <line x1="143" y1="35" x2="147" y2="35" stroke="#3b82f6" stroke-width="1.8" opacity="0.45"/>
+          <line x1="120" y1="55" x2="170" y2="55" stroke="#3b82f6" stroke-width="1.8" opacity="0.45"/>
+          <line x1="128" y1="67" x2="162" y2="67" stroke="#3b82f6" stroke-width="1.8" opacity="0.45"/>
+          <line x1="143" y1="80" x2="147" y2="80" stroke="#3b82f6" stroke-width="1.8" opacity="0.45"/>
+          <line x1="120" y1="100" x2="170" y2="100" stroke="#3b82f6" stroke-width="1.8" opacity="0.45"/>
+          <line x1="128" y1="112" x2="162" y2="112" stroke="#3b82f6" stroke-width="1.8" opacity="0.45"/>
+          <!-- Punnett square hint -->
+          <rect x="195" y="30" width="60" height="60" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.4"/>
+          <line x1="225" y1="30" x2="225" y2="90" stroke="#3b82f6" stroke-width="1.5" opacity="0.4"/>
+          <line x1="195" y1="60" x2="255" y2="60" stroke="#3b82f6" stroke-width="1.5" opacity="0.4"/>
+          <text x="205" y="50" font-family="Nunito" font-size="11" font-weight="800" fill="#3b82f6" opacity="0.5">B</text>
+          <text x="235" y="50" font-family="Nunito" font-size="11" font-weight="800" fill="#3b82f6" opacity="0.5">b</text>
+          <text x="205" y="80" font-family="Nunito" font-size="11" font-weight="800" fill="#3b82f6" opacity="0.5">b</text>
+          <text x="235" y="80" font-family="Nunito" font-size="11" font-weight="800" fill="#3b82f6" opacity="0.5">bb</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="module-icon">B6</div>
+        <div class="module-info">
+          <div class="module-title">Inheritance & Evolution</div>
+          <div class="module-sub">DNA · Genetics · Evolution</div>
+        </div>
+        <div class="arrow-btn">→</div>
+      </div>
+    </a>
+
+    <!-- B7 Ecology -->
+    <a href="module.html?module=b7" class="module-card b7">
+      <div class="card-image">
+        <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg">
+          <rect width="290" height="130" fill="#16a34a" opacity="0.1"/>
+          <!-- Ground -->
+          <rect x="0" y="95" width="290" height="35" fill="#16a34a" opacity="0.12"/>
+          <!-- Tree 1 -->
+          <rect x="72" y="70" width="6" height="28" fill="#16a34a" opacity="0.4"/>
+          <ellipse cx="75" cy="55" rx="22" ry="26" fill="#16a34a" opacity="0.25" stroke="#16a34a" stroke-width="1.5"/>
+          <!-- Tree 2 -->
+          <rect x="138" y="65" width="7" height="32" fill="#16a34a" opacity="0.4"/>
+          <ellipse cx="142" cy="48" rx="28" ry="30" fill="#16a34a" opacity="0.22" stroke="#16a34a" stroke-width="1.5"/>
+          <!-- Tree 3 -->
+          <rect x="205" y="72" width="6" height="26" fill="#16a34a" opacity="0.4"/>
+          <ellipse cx="208" cy="57" rx="20" ry="24" fill="#16a34a" opacity="0.25" stroke="#16a34a" stroke-width="1.5"/>
+          <!-- Sun -->
+          <circle cx="245" cy="25" r="14" fill="#16a34a" opacity="0.2" stroke="#16a34a" stroke-width="1.8"/>
+          <line x1="245" y1="6" x2="245" y2="0" stroke="#16a34a" stroke-width="2" opacity="0.4"/>
+          <line x1="260" y1="10" x2="264" y2="6" stroke="#16a34a" stroke-width="2" opacity="0.4"/>
+          <line x1="265" y1="25" x2="271" y2="25" stroke="#16a34a" stroke-width="2" opacity="0.4"/>
+          <line x1="230" y1="10" x2="226" y2="6" stroke="#16a34a" stroke-width="2" opacity="0.4"/>
+          <!-- Food chain arrow -->
+          <text x="30" y="118" font-family="Nunito" font-size="9" fill="#16a34a" opacity="0.55">Plant → Rabbit → Fox</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="module-icon">B7</div>
+        <div class="module-info">
+          <div class="module-title">Ecology</div>
+          <div class="module-sub">Ecosystems · Food Webs · Climate</div>
+        </div>
+        <div class="arrow-btn">→</div>
+      </div>
+    </a>
+
   </div>
+</main>
 
-  <div class="login-strip-wrapper">
-    <div class="login-strip">
-      <p>Sign in to track your progress and save your scores.</p>
-      <a href="login.html" class="btn-login">
-        <svg width="16" height="16" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M43.611 20.083H42V20H24v8h11.303C33.973 32.617 29.418 36 24 36c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z" fill="#FFF"/></svg>
-        Sign in with Google
-      </a>
-    </div>
+<footer>
+  <div>
+    <p><strong style="color:white">Streetly Science Revision Hub</strong></p>
+    <p>Built for AQA GCSE Combined Science (8464) — Biology</p>
+    <p class="small">A teaching resource for The Streetly Academy · Not affiliated with AQA</p>
   </div>
-
-  <main>
-    <div class="section-header">
-      <div class="section-label">Biology Modules</div>
-      <div class="section-sub">Tap a module to begin revision</div>
-    </div>
-
-    <div class="modules-grid">
-
-      <a href="module.html?module=b1" class="module-card b1">
-        <div class="card-stripe"></div>
-        <div class="card-header">
-          <div class="module-icon">B1</div>
-          <div class="module-info">
-            <div class="module-tag">Module 1</div>
-            <div class="module-title">Cell Biology</div>
-          </div>
-        </div>
-        <div class="card-features">
-          <span class="feature-chip">📋 Spec</span>
-          <span class="feature-chip">📖 Revision</span>
-          <span class="feature-chip">🔤 Keywords</span>
-          <span class="feature-chip">✏️ Snippet Mock</span>
-        </div>
-        <div class="card-footer">
-          <span>Cells · Microscopy · Transport</span>
-          <div class="arrow-btn">→</div>
-        </div>
-      </a>
-
-      <a href="module.html?module=b2" class="module-card b2">
-        <div class="card-stripe"></div>
-        <div class="card-header">
-          <div class="module-icon">B2</div>
-          <div class="module-info">
-            <div class="module-tag">Module 2</div>
-            <div class="module-title">Organisation</div>
-          </div>
-        </div>
-        <div class="card-features">
-          <span class="feature-chip">📋 Spec</span>
-          <span class="feature-chip">📖 Revision</span>
-          <span class="feature-chip">🔤 Keywords</span>
-          <span class="feature-chip">✏️ Snippet Mock</span>
-        </div>
-        <div class="card-footer">
-          <span>Digestion · Heart · Cancer</span>
-          <div class="arrow-btn">→</div>
-        </div>
-      </a>
-
-      <a href="module.html?module=b3" class="module-card b3">
-        <div class="card-stripe"></div>
-        <div class="card-header">
-          <div class="module-icon">B3</div>
-          <div class="module-info">
-            <div class="module-tag">Module 3</div>
-            <div class="module-title">Infection & Response</div>
-          </div>
-        </div>
-        <div class="card-features">
-          <span class="feature-chip">📋 Spec</span>
-          <span class="feature-chip">📖 Revision</span>
-          <span class="feature-chip">🔤 Keywords</span>
-          <span class="feature-chip">✏️ Snippet Mock</span>
-        </div>
-        <div class="card-footer">
-          <span>Pathogens · Immunity · Drugs</span>
-          <div class="arrow-btn">→</div>
-        </div>
-      </a>
-
-      <a href="module.html?module=b4" class="module-card b4">
-        <div class="card-stripe"></div>
-        <div class="card-header">
-          <div class="module-icon">B4</div>
-          <div class="module-info">
-            <div class="module-tag">Module 4</div>
-            <div class="module-title">Bioenergetics</div>
-          </div>
-        </div>
-        <div class="card-features">
-          <span class="feature-chip">📋 Spec</span>
-          <span class="feature-chip">📖 Revision</span>
-          <span class="feature-chip">🔤 Keywords</span>
-          <span class="feature-chip">✏️ Snippet Mock</span>
-        </div>
-        <div class="card-footer">
-          <span>Photosynthesis · Respiration</span>
-          <div class="arrow-btn">→</div>
-        </div>
-      </a>
-
-      <a href="module.html?module=b5" class="module-card b5">
-        <div class="card-stripe"></div>
-        <div class="card-header">
-          <div class="module-icon">B5</div>
-          <div class="module-info">
-            <div class="module-tag">Module 5</div>
-            <div class="module-title">Homeostasis & Response</div>
-          </div>
-        </div>
-        <div class="card-features">
-          <span class="feature-chip">📋 Spec</span>
-          <span class="feature-chip">📖 Revision</span>
-          <span class="feature-chip">🔤 Keywords</span>
-          <span class="feature-chip">✏️ Snippet Mock</span>
-        </div>
-        <div class="card-footer">
-          <span>Nervous System · Hormones</span>
-          <div class="arrow-btn">→</div>
-        </div>
-      </a>
-
-      <a href="module.html?module=b6" class="module-card b6">
-        <div class="card-stripe"></div>
-        <div class="card-header">
-          <div class="module-icon">B6</div>
-          <div class="module-info">
-            <div class="module-tag">Module 6</div>
-            <div class="module-title">Inheritance & Evolution</div>
-          </div>
-        </div>
-        <div class="card-features">
-          <span class="feature-chip">📋 Spec</span>
-          <span class="feature-chip">📖 Revision</span>
-          <span class="feature-chip">🔤 Keywords</span>
-          <span class="feature-chip">✏️ Snippet Mock</span>
-        </div>
-        <div class="card-footer">
-          <span>DNA · Genetics · Evolution</span>
-          <div class="arrow-btn">→</div>
-        </div>
-      </a>
-
-      <a href="module.html?module=b7" class="module-card b7">
-        <div class="card-stripe"></div>
-        <div class="card-header">
-          <div class="module-icon">B7</div>
-          <div class="module-info">
-            <div class="module-tag">Module 7</div>
-            <div class="module-title">Ecology</div>
-          </div>
-        </div>
-        <div class="card-features">
-          <span class="feature-chip">📋 Spec</span>
-          <span class="feature-chip">📖 Revision</span>
-          <span class="feature-chip">🔤 Keywords</span>
-          <span class="feature-chip">✏️ Snippet Mock</span>
-        </div>
-        <div class="card-footer">
-          <span>Ecosystems · Food Webs · Climate</span>
-          <div class="arrow-btn">→</div>
-        </div>
-      </a>
-
-    </div>
-
-    <div class="info-banner">
-      <div class="info-banner-icon">💡</div>
-      <div>
-        <strong>How to use this site:</strong> Pick a module, work through the keywords drag-and-drop game, then test yourself with AI-marked practice questions. Every question gives detailed feedback so you know exactly what to work on next.
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-      <p><strong style="color: white;">Streetly Science Revision Hub</strong></p>
-      <p>Built for AQA GCSE Combined Science (8464) — Biology content</p>
-      <p class="small">A teaching resource for The Streetly Academy · Not affiliated with AQA</p>
-    </div>
-  </footer>
+</footer>
 
 </body>
 </html>
