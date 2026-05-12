@@ -1,0 +1,504 @@
+[
+  {
+    "id": "B6-MC-001",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "DNA and Genome",
+    "question": "What is a gene?",
+    "options": [
+      "The complete set of DNA in an organism",
+      "A section of DNA that codes for a specific protein",
+      "A type of chromosome found in gametes",
+      "A mutation in the DNA sequence"
+    ],
+    "correct": "A section of DNA that codes for a specific protein"
+  },
+  {
+    "id": "B6-MC-002",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Inheritance",
+    "question": "What does homozygous mean?",
+    "options": [
+      "Having two different alleles for a gene",
+      "Having one dominant and one recessive allele",
+      "Having two identical alleles for a gene",
+      "Having no alleles for a gene"
+    ],
+    "correct": "Having two identical alleles for a gene"
+  },
+  {
+    "id": "B6-MC-003",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Inheritance",
+    "question": "A dominant allele is represented by B and recessive by b. Which genotype would show the recessive phenotype?",
+    "options": ["BB", "Bb", "bB", "bb"],
+    "correct": "bb"
+  },
+  {
+    "id": "B6-MC-004",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Inheritance",
+    "question": "What type of cell division produces gametes?",
+    "options": ["Mitosis", "Binary fission", "Meiosis", "Budding"],
+    "correct": "Meiosis"
+  },
+  {
+    "id": "B6-MC-005",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Inherited Disorders",
+    "question": "Cystic fibrosis is caused by a recessive allele. Two carrier parents (Ff × Ff) have a child. What is the probability the child has cystic fibrosis?",
+    "options": ["0%", "25%", "50%", "75%"],
+    "correct": "25%"
+  },
+  {
+    "id": "B6-MC-006",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Inherited Disorders",
+    "question": "Which statement about polydactyly is correct?",
+    "options": [
+      "It is caused by a recessive allele and causes thick mucus in the lungs",
+      "It is caused by a dominant allele and results in extra fingers or toes",
+      "It is caused by a recessive allele and results in extra fingers or toes",
+      "It is caused by a dominant allele and causes thick mucus in the lungs"
+    ],
+    "correct": "It is caused by a dominant allele and results in extra fingers or toes"
+  },
+  {
+    "id": "B6-MC-007",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Inherited Disorders",
+    "question": "What sex chromosomes does a human male have?",
+    "options": ["XX", "XY", "YY", "X only"],
+    "correct": "XY"
+  },
+  {
+    "id": "B6-MC-008",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Variation and Evolution",
+    "question": "Which of the following is an example of continuous variation?",
+    "options": ["Blood group", "Tongue rolling", "Height", "Attached or free earlobes"],
+    "correct": "Height"
+  },
+  {
+    "id": "B6-MC-009",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Variation and Evolution",
+    "question": "What is natural selection?",
+    "options": [
+      "Humans selecting organisms with desirable traits to breed",
+      "The process by which better adapted individuals survive and pass on their genes",
+      "A random change in the DNA sequence",
+      "The formation of new species through isolation"
+    ],
+    "correct": "The process by which better adapted individuals survive and pass on their genes"
+  },
+  {
+    "id": "B6-MC-010",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Evidence for Evolution",
+    "question": "Who proposed the theory of evolution by natural selection?",
+    "options": ["Gregor Mendel", "Louis Pasteur", "Charles Darwin", "Alexander Fleming"],
+    "correct": "Charles Darwin"
+  },
+  {
+    "id": "B6-MC-011",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Selective Breeding and Genetic Engineering",
+    "question": "What is selective breeding?",
+    "options": [
+      "Inserting a gene from one organism into another",
+      "Humans choosing organisms with desired traits and breeding them together",
+      "The natural process of evolution over millions of years",
+      "A type of mutation that improves an organism's characteristics"
+    ],
+    "correct": "Humans choosing organisms with desired traits and breeding them together"
+  },
+  {
+    "id": "B6-MC-012",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Selective Breeding and Genetic Engineering",
+    "question": "How is human insulin now produced commercially?",
+    "options": [
+      "By extracting it from pigs and cows",
+      "By inserting the human insulin gene into bacteria",
+      "By synthesising it entirely from chemicals",
+      "By selective breeding of insulin-producing animals"
+    ],
+    "correct": "By inserting the human insulin gene into bacteria"
+  },
+  {
+    "id": "B6-MC-013",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Evidence for Evolution",
+    "question": "What do fossils provide evidence for?",
+    "options": [
+      "How organisms are classified into kingdoms",
+      "How species have changed over millions of years",
+      "The exact DNA sequence of extinct organisms",
+      "How genetic engineering works"
+    ],
+    "correct": "How species have changed over millions of years"
+  },
+  {
+    "id": "B6-MC-014",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Variation and Evolution",
+    "question": "What is a mutation?",
+    "options": [
+      "The passing of alleles from parent to offspring",
+      "A random change in the DNA sequence",
+      "The fusion of two gametes at fertilisation",
+      "The separation of chromosomes during meiosis"
+    ],
+    "correct": "A random change in the DNA sequence"
+  },
+  {
+    "id": "B6-MC-015",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Classification",
+    "question": "What does the binomial nomenclature system give each organism?",
+    "options": [
+      "A common name in English",
+      "A two-part Latin name consisting of genus and species",
+      "A number based on its position in the food chain",
+      "A classification into one of five kingdoms"
+    ],
+    "correct": "A two-part Latin name consisting of genus and species"
+  },
+  {
+    "id": "B6-FIB-001",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "DNA and Genome",
+    "question": "The complete set of genetic information of an organism is called its __________.",
+    "correct": "genome",
+    "acceptable": ["genome"]
+  },
+  {
+    "id": "B6-FIB-002",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Inheritance",
+    "question": "Different versions of the same gene are called __________.",
+    "correct": "alleles",
+    "acceptable": ["alleles", "allele"]
+  },
+  {
+    "id": "B6-FIB-003",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Inheritance",
+    "question": "The observable characteristics of an organism are called its __________.",
+    "correct": "phenotype",
+    "acceptable": ["phenotype"]
+  },
+  {
+    "id": "B6-FIB-004",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Inheritance",
+    "question": "The alleles an organism carries for a gene is called its __________.",
+    "correct": "genotype",
+    "acceptable": ["genotype"]
+  },
+  {
+    "id": "B6-FIB-005",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Inheritance",
+    "question": "Cell division that produces four genetically different haploid cells is called __________.",
+    "correct": "meiosis",
+    "acceptable": ["meiosis"]
+  },
+  {
+    "id": "B6-FIB-006",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Inherited Disorders",
+    "question": "Cystic fibrosis is caused by a __________ allele.",
+    "correct": "recessive",
+    "acceptable": ["recessive"]
+  },
+  {
+    "id": "B6-FIB-007",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Variation and Evolution",
+    "question": "A random change in the DNA sequence is called a __________.",
+    "correct": "mutation",
+    "acceptable": ["mutation"]
+  },
+  {
+    "id": "B6-FIB-008",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Evidence for Evolution",
+    "question": "The preserved remains of ancient organisms found in rock are called __________.",
+    "correct": "fossils",
+    "acceptable": ["fossils", "fossil"]
+  },
+  {
+    "id": "B6-FIB-009",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Selective Breeding and Genetic Engineering",
+    "question": "The process of modifying an organism's genome by inserting a gene from another organism is called __________ engineering.",
+    "correct": "genetic",
+    "acceptable": ["genetic"]
+  },
+  {
+    "id": "B6-FIB-010",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Variation and Evolution",
+    "question": "The change in inherited characteristics of a population over many generations is called __________.",
+    "correct": "evolution",
+    "acceptable": ["evolution"]
+  },
+  {
+    "id": "B6-MATCH-001",
+    "type": "match",
+    "marks": 3,
+    "topic": "Inheritance",
+    "question": "Match each genetic term to its correct definition.",
+    "pairs": [
+      { "term": "Dominant allele", "definition": "Always expressed in the phenotype even if only one copy is present" },
+      { "term": "Recessive allele", "definition": "Only expressed when two copies are present" },
+      { "term": "Homozygous", "definition": "Having two identical alleles for a gene" },
+      { "term": "Heterozygous", "definition": "Having two different alleles for a gene" }
+    ]
+  },
+  {
+    "id": "B6-MATCH-002",
+    "type": "match",
+    "marks": 3,
+    "topic": "Inherited Disorders",
+    "question": "Match each inherited disorder to its correct description.",
+    "pairs": [
+      { "term": "Cystic fibrosis", "definition": "Caused by a recessive allele — thick mucus in lungs and digestive system" },
+      { "term": "Polydactyly", "definition": "Caused by a dominant allele — extra fingers or toes" }
+    ]
+  },
+  {
+    "id": "B6-MATCH-003",
+    "type": "match",
+    "marks": 3,
+    "topic": "Variation and Evolution",
+    "question": "Match each type of variation to its correct example.",
+    "pairs": [
+      { "term": "Continuous variation", "definition": "Height — shows a range of values with no distinct categories" },
+      { "term": "Discontinuous variation", "definition": "Blood group — falls into distinct categories" },
+      { "term": "Genetic variation", "definition": "Caused by mutations or sexual reproduction" },
+      { "term": "Environmental variation", "definition": "A scar or a suntan — caused by the environment not genes" }
+    ]
+  },
+  {
+    "id": "B6-MATCH-004",
+    "type": "match",
+    "marks": 2,
+    "topic": "Evidence for Evolution",
+    "question": "Match each piece of evidence to how it supports evolution.",
+    "pairs": [
+      { "term": "Fossils", "definition": "Show how species have changed over millions of years" },
+      { "term": "Antibiotic resistance", "definition": "Shows natural selection happening in bacteria in real time" },
+      { "term": "DNA comparison", "definition": "Similar DNA sequences show common ancestry between species" }
+    ]
+  },
+  {
+    "id": "B6-MATCH-005",
+    "type": "match",
+    "marks": 2,
+    "topic": "Selective Breeding and Genetic Engineering",
+    "question": "Match each technique to its correct description.",
+    "pairs": [
+      { "term": "Selective breeding", "definition": "Humans breed organisms with desired traits over many generations" },
+      { "term": "Genetic engineering", "definition": "A gene is inserted from one organism into another to give a desired characteristic" },
+      { "term": "Cloning", "definition": "Producing genetically identical copies of an organism" }
+    ]
+  },
+  {
+    "id": "B6-SA-001",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "DNA and Genome",
+    "question": "State what is meant by the term genome.",
+    "mark_scheme": "The complete set of genetic information / DNA of an organism (1)."
+  },
+  {
+    "id": "B6-SA-002",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Inheritance",
+    "question": "State the difference between genotype and phenotype.",
+    "mark_scheme": "Genotype is the alleles an organism carries (1); phenotype is the observable characteristics resulting from the genotype (1) — accept either for 1 mark."
+  },
+  {
+    "id": "B6-SA-003",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Inherited Disorders",
+    "question": "State the sex chromosomes found in a human female.",
+    "mark_scheme": "XX (1)."
+  },
+  {
+    "id": "B6-SA-004",
+    "type": "written",
+    "marks": 1,
+    "command_word": "Name",
+    "topic": "Evidence for Evolution",
+    "question": "Name the scientist who proposed the theory of evolution by natural selection.",
+    "mark_scheme": "Charles Darwin (1)."
+  },
+  {
+    "id": "B6-SA-005",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Inheritance",
+    "question": "Explain why meiosis is important for sexual reproduction.",
+    "mark_scheme": "Meiosis produces haploid gametes (1); containing half the normal number of chromosomes (1); so when two gametes fuse at fertilisation the full chromosome number is restored (1); produces genetic variation in offspring (1) — any two."
+  },
+  {
+    "id": "B6-SA-006",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Variation and Evolution",
+    "question": "Explain how a mutation can lead to a new phenotype.",
+    "mark_scheme": "A mutation is a random change in the DNA sequence (1); changes the sequence of bases (1); may alter the protein produced (1); this can result in a new or altered characteristic (1) — any two."
+  },
+  {
+    "id": "B6-SA-007",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Selective Breeding and Genetic Engineering",
+    "question": "Describe how selective breeding is carried out.",
+    "mark_scheme": "Identify individuals with the desired characteristic (1); breed these individuals together (1); select offspring with the desired characteristic (1); repeat over many generations (1) — any two."
+  },
+  {
+    "id": "B6-SA-008",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Evidence for Evolution",
+    "question": "Explain how antibiotic resistance in bacteria is an example of natural selection.",
+    "mark_scheme": "Random mutation produces some resistant bacteria (1); antibiotics kill non-resistant bacteria (1); resistant bacteria survive and reproduce (1); resistance genes passed to offspring (1) — any two."
+  },
+  {
+    "id": "B6-SA-009",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Inherited Disorders",
+    "question": "Two parents are both carriers of cystic fibrosis (Ff). Explain the possible outcomes for their children.",
+    "mark_scheme": "FF — unaffected and not a carrier (1); Ff — carrier but unaffected (1); ff — has cystic fibrosis (1); 25% chance of having the condition (1) — any two."
+  },
+  {
+    "id": "B6-SA-010",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Variation and Evolution",
+    "question": "Explain the process of natural selection using an example.",
+    "mark_scheme": "Variation exists within a population (1); some individuals have characteristics better suited to the environment (1); these individuals are more likely to survive and reproduce (1); they pass advantageous alleles to offspring (1); over many generations the advantageous characteristic becomes more common (1) — any three."
+  },
+  {
+    "id": "B6-SA-011",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Selective Breeding and Genetic Engineering",
+    "question": "Describe how genetic engineering is used to produce human insulin.",
+    "mark_scheme": "The gene for human insulin is identified and cut out (1); using enzymes (1); the gene is inserted into a bacterial plasmid (1); the bacteria reproduce and produce human insulin (1); insulin is harvested and purified (1) — any three."
+  },
+  {
+    "id": "B6-SA-012",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Inheritance",
+    "question": "Explain how sex is determined in humans.",
+    "mark_scheme": "Humans have 23 pairs of chromosomes (1); one pair are sex chromosomes (1); females are XX, males are XY (1); sperm carry either X or Y chromosome (1); eggs always carry X chromosome (1); if Y sperm fertilises egg — male; if X sperm — female (1) — any three."
+  },
+  {
+    "id": "B6-LA-001",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Variation and Evolution",
+    "question": "Explain how Darwin's theory of evolution by natural selection works, and why it was not immediately accepted.",
+    "mark_scheme": "Variation exists in a population (1); individuals better adapted survive and reproduce (1); advantageous alleles passed to offspring (1); over many generations species change (1). Not accepted because: lack of fossil evidence at the time (1); conflicted with religious beliefs (1); mechanism of inheritance not understood (1) — any four."
+  },
+  {
+    "id": "B6-LA-002",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Inheritance",
+    "question": "Tall plants (T) are dominant over dwarf plants (t). Two heterozygous tall plants are crossed. Use a Punnett square to explain the expected ratio of tall to dwarf plants in the offspring.",
+    "mark_scheme": "Both parents are Tt (1); Punnett square gives TT, Tt, Tt, tt (1); 3 tall : 1 dwarf ratio (1); TT and Tt show tall phenotype (1); only tt shows dwarf phenotype (1) — any four."
+  },
+  {
+    "id": "B6-LA-003",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Evaluate",
+    "topic": "Selective Breeding and Genetic Engineering",
+    "question": "Evaluate the advantages and disadvantages of selective breeding.",
+    "mark_scheme": "Advantages: produces organisms with desired characteristics (1); can increase food production / disease resistance (1); has been practised successfully for thousands of years (1). Disadvantages: reduces genetic variation — inbreeding (1); may make populations vulnerable to new diseases (1); can cause health problems in animals e.g. hip problems in dogs (1) — any four."
+  },
+  {
+    "id": "B6-LA-004",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Evidence for Evolution",
+    "question": "Explain what fossils are and describe three types of evidence they provide for evolution.",
+    "mark_scheme": "Fossils are preserved remains of ancient organisms (1); found in rock layers (1); show that organisms have changed over time (1); show common ancestors between species (1); gaps in fossil record show extinction events (1); older fossils in deeper rock layers (1) — any four."
+  },
+  {
+    "id": "B6-LA-005",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Inherited Disorders",
+    "question": "Explain how cystic fibrosis is inherited. In your answer, use a genetic cross to show the possible outcomes when two carrier parents have children.",
+    "mark_scheme": "Cystic fibrosis caused by recessive allele (1); carriers are heterozygous Ff (1); Punnett square: FF, Ff, Ff, ff (1); 25% chance of having cystic fibrosis (ff) (1); 50% chance of being a carrier (Ff) (1); 25% chance of being unaffected non-carrier (FF) (1) — any five."
+  },
+  {
+    "id": "B6-LA-006",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Selective Breeding and Genetic Engineering",
+    "question": "Evaluate the use of genetic engineering in medicine and agriculture. Include both advantages and disadvantages in your answer.",
+    "mark_scheme": "Advantages: produces human insulin for diabetics (1); can produce disease-resistant crops (1); faster than selective breeding (1); can introduce entirely new characteristics (1). Disadvantages: ethical concerns about 'playing God' (1); GM crops may affect ecosystems (1); long-term effects unknown (1); patented seeds may be expensive for farmers (1); risk of genes spreading to wild plants (1) — any six."
+  },
+  {
+    "id": "B6-LA-007",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Variation and Evolution",
+    "question": "Explain how speciation occurs when populations become geographically isolated. Include the roles of variation, natural selection and mutation in your answer.",
+    "mark_scheme": "A population becomes geographically isolated (1); no interbreeding between groups (1); variation exists within each group (1); different environmental pressures cause different natural selection (1); mutations occur randomly in each group (1); different alleles become more common in each group (1); over time the groups become so different they can no longer interbreed (1); a new species has formed (1) — any six."
+  }
+]
