@@ -3,10 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AQA GCSE Biology Revision</title>
+  <title>Streetly Science Hub — Biology Revision</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
+      --navy: #1a2a4f;
+      --navy-dark: #0f1d3d;
+      --red: #c8202c;
+      --red-dark: #9a1820;
+      --gold: #d4a534;
       --b1: #0d9488;
       --b2: #e85d4a;
       --b3: #f59e0b;
@@ -14,11 +19,11 @@
       --b5: #8b5cf6;
       --b6: #3b82f6;
       --b7: #16a34a;
-      --bg: #f8fafc;
-      --text: #1e293b;
-      --subtext: #64748b;
+      --bg: #f5f6fa;
+      --text: #1a2a4f;
+      --subtext: #5a6885;
       --card-bg: #ffffff;
-      --border: #e2e8f0;
+      --border: #e2e6f0;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,121 +35,197 @@
       min-height: 100vh;
     }
 
-    /* HEADER */
+    /* TOP BAR — School identity */
+    .top-bar {
+      background: var(--navy-dark);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      font-size: 0.78rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .top-bar a {
+      color: #a8b4d4;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .top-bar a:hover { color: white; }
+    .top-bar-school {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #a8b4d4;
+    }
+
+    /* HERO HEADER */
     header {
-      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
       color: white;
       padding: 2.5rem 1.5rem 3rem;
-      text-align: center;
       position: relative;
       overflow: hidden;
     }
-
     header::before {
       content: '';
       position: absolute;
-      top: -60px; right: -60px;
-      width: 300px; height: 300px;
-      background: rgba(255,255,255,0.03);
+      top: -100px; right: -80px;
+      width: 350px; height: 350px;
+      background: radial-gradient(circle, rgba(212, 165, 52, 0.08) 0%, transparent 70%);
       border-radius: 50%;
     }
-
     header::after {
       content: '';
       position: absolute;
-      bottom: -80px; left: -40px;
-      width: 250px; height: 250px;
-      background: rgba(255,255,255,0.04);
+      bottom: -100px; left: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(200, 32, 44, 0.07) 0%, transparent 70%);
       border-radius: 50%;
     }
 
-    .header-badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: #93c5fd;
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+      flex-wrap: wrap;
+    }
+
+    /* Shield logo */
+    .hero-shield {
+      width: 88px;
+      height: 100px;
+      flex-shrink: 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-shield svg {
+      width: 100%;
+      height: 100%;
+    }
+    .hero-shield-text {
+      position: absolute;
       font-family: 'Nunito', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 700;
+      font-weight: 900;
+      color: white;
+      font-size: 1.5rem;
+      letter-spacing: 0.05em;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -55%);
+      line-height: 0.9;
+      text-align: center;
+    }
+
+    .hero-text { flex: 1; min-width: 280px; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(212, 165, 52, 0.15);
+      border: 1px solid rgba(212, 165, 52, 0.3);
+      color: var(--gold);
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 800;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 0.35rem 1rem;
+      padding: 0.3rem 0.85rem;
       border-radius: 100px;
-      margin-bottom: 1rem;
+      margin-bottom: 0.85rem;
     }
 
     header h1 {
       font-family: 'Nunito', sans-serif;
-      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
       font-weight: 900;
       line-height: 1.1;
-      margin-bottom: 0.75rem;
-      position: relative;
-      z-index: 1;
+      margin-bottom: 0.4rem;
+    }
+    header h1 .accent { color: var(--gold); }
+
+    header p.tagline {
+      color: #c5cee8;
+      font-size: 1rem;
+      max-width: 540px;
+      margin-bottom: 1.25rem;
     }
 
-    header h1 span {
-      color: #60a5fa;
-    }
-
-    header p {
-      color: #94a3b8;
-      font-size: 1.05rem;
-      max-width: 480px;
-      margin: 0 auto 1.5rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .header-stats {
+    .hero-stats {
       display: flex;
-      justify-content: center;
-      gap: 2rem;
+      gap: 1.5rem;
       flex-wrap: wrap;
-      position: relative;
-      z-index: 1;
     }
-
     .stat {
-      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
-
     .stat-number {
       font-family: 'Nunito', sans-serif;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 900;
       color: white;
     }
-
     .stat-label {
       font-size: 0.75rem;
-      color: #64748b;
+      color: #a8b4d4;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      font-weight: 700;
+    }
+
+    /* PRIDE strip */
+    .pride-strip {
+      background: var(--red);
+      color: white;
+      padding: 0.65rem 1.5rem;
+      text-align: center;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .pride-strip span {
+      display: inline-block;
+      margin: 0 0.4rem;
+    }
+    .pride-strip .pride-dot {
+      color: var(--gold);
+      margin: 0 0.65rem;
     }
 
     /* LOGIN STRIP */
+    .login-strip-wrapper { background: white; border-bottom: 1px solid var(--border); }
     .login-strip {
-      background: white;
-      border-bottom: 1px solid var(--border);
       padding: 0.75rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 0.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
     }
-
     .login-strip p {
       font-size: 0.875rem;
       color: var(--subtext);
     }
-
     .btn-login {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: #4285f4;
+      background: var(--navy);
       color: white;
       font-family: 'Nunito', sans-serif;
       font-weight: 700;
@@ -156,24 +237,32 @@
       cursor: pointer;
       transition: background 0.2s;
     }
-
-    .btn-login:hover { background: #3367d6; }
+    .btn-login:hover { background: var(--navy-dark); }
 
     /* MAIN */
     main {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem 4rem;
+      padding: 2.5rem 1.5rem 3rem;
     }
 
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
     .section-label {
       font-family: 'Nunito', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--navy);
+    }
+    .section-sub {
+      font-size: 0.875rem;
       color: var(--subtext);
-      margin-bottom: 1.5rem;
     }
 
     /* MODULE GRID */
@@ -186,7 +275,7 @@
     .module-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 14px;
       overflow: hidden;
       text-decoration: none;
       color: inherit;
@@ -194,30 +283,35 @@
       flex-direction: column;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       cursor: pointer;
+      position: relative;
     }
-
     .module-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+      box-shadow: 0 12px 28px rgba(26, 42, 79, 0.12);
+    }
+
+    .card-stripe {
+      height: 5px;
+      width: 100%;
     }
 
     .card-header {
-      padding: 1.4rem 1.4rem 1rem;
+      padding: 1.3rem 1.4rem 0.85rem;
       display: flex;
       align-items: flex-start;
       gap: 1rem;
     }
 
     .module-icon {
-      width: 48px;
-      height: 48px;
+      width: 50px;
+      height: 50px;
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'Nunito', sans-serif;
       font-weight: 900;
-      font-size: 1rem;
+      font-size: 1.05rem;
       color: white;
       flex-shrink: 0;
     }
@@ -226,12 +320,12 @@
 
     .module-tag {
       font-family: 'Nunito', sans-serif;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       opacity: 0.7;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.15rem;
     }
 
     .module-title {
@@ -246,13 +340,13 @@
       padding: 0 1.4rem 1rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
+      gap: 0.35rem;
     }
 
     .feature-chip {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 600;
-      padding: 0.25rem 0.65rem;
+      padding: 0.22rem 0.6rem;
       border-radius: 100px;
       background: var(--bg);
       border: 1px solid var(--border);
@@ -261,7 +355,7 @@
 
     .card-footer {
       margin-top: auto;
-      padding: 0.9rem 1.4rem;
+      padding: 0.85rem 1.4rem;
       border-top: 1px solid var(--border);
       display: flex;
       align-items: center;
@@ -269,29 +363,30 @@
     }
 
     .card-footer span {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--subtext);
     }
 
     .arrow-btn {
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
       font-size: 1rem;
+      font-weight: 700;
     }
 
     /* colour accents per module */
-    .b1 .module-icon, .b1 .arrow-btn { background: var(--b1); }
-    .b2 .module-icon, .b2 .arrow-btn { background: var(--b2); }
-    .b3 .module-icon, .b3 .arrow-btn { background: var(--b3); }
-    .b4 .module-icon, .b4 .arrow-btn { background: var(--b4); }
-    .b5 .module-icon, .b5 .arrow-btn { background: var(--b5); }
-    .b6 .module-icon, .b6 .arrow-btn { background: var(--b6); }
-    .b7 .module-icon, .b7 .arrow-btn { background: var(--b7); }
+    .b1 .module-icon, .b1 .arrow-btn, .b1 .card-stripe { background: var(--b1); }
+    .b2 .module-icon, .b2 .arrow-btn, .b2 .card-stripe { background: var(--b2); }
+    .b3 .module-icon, .b3 .arrow-btn, .b3 .card-stripe { background: var(--b3); }
+    .b4 .module-icon, .b4 .arrow-btn, .b4 .card-stripe { background: var(--b4); }
+    .b5 .module-icon, .b5 .arrow-btn, .b5 .card-stripe { background: var(--b5); }
+    .b6 .module-icon, .b6 .arrow-btn, .b6 .card-stripe { background: var(--b6); }
+    .b7 .module-icon, .b7 .arrow-btn, .b7 .card-stripe { background: var(--b7); }
 
     .b1 .module-tag { color: var(--b1); }
     .b2 .module-tag { color: var(--b2); }
@@ -301,65 +396,126 @@
     .b6 .module-tag { color: var(--b6); }
     .b7 .module-tag { color: var(--b7); }
 
-    .b1 { border-top: 3px solid var(--b1); }
-    .b2 { border-top: 3px solid var(--b2); }
-    .b3 { border-top: 3px solid var(--b3); }
-    .b4 { border-top: 3px solid var(--b4); }
-    .b5 { border-top: 3px solid var(--b5); }
-    .b6 { border-top: 3px solid var(--b6); }
-    .b7 { border-top: 3px solid var(--b7); }
+    /* INFO BANNER */
+    .info-banner {
+      background: white;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-size: 0.875rem;
+      color: var(--subtext);
+    }
+    .info-banner-icon {
+      font-size: 1.4rem;
+    }
+    .info-banner strong { color: var(--text); }
 
     /* FOOTER */
     footer {
+      background: var(--navy);
+      color: #a8b4d4;
+      padding: 2rem 1.5rem 1.5rem;
+      margin-top: 2rem;
       text-align: center;
-      padding: 2rem;
-      border-top: 1px solid var(--border);
-      color: var(--subtext);
-      font-size: 0.8rem;
+      font-size: 0.825rem;
+    }
+    footer .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    footer p { margin-bottom: 0.25rem; }
+    footer .small {
+      font-size: 0.72rem;
+      color: #6b7a9c;
+      margin-top: 0.75rem;
     }
 
     /* MOBILE */
     @media (max-width: 600px) {
       .modules-grid { grid-template-columns: 1fr; }
-      .header-stats { gap: 1.2rem; }
+      .hero-stats { gap: 1.2rem; }
+      .pride-strip { font-size: 0.65rem; letter-spacing: 0.1em; }
+      .pride-strip .pride-dot { margin: 0 0.3rem; }
     }
   </style>
 </head>
 <body>
 
+  <div class="top-bar">
+    <div class="top-bar-school">The Streetly Academy · Science Department</div>
+    <div>
+      <a href="https://www.streetly.academy/" target="_blank">School Website ↗</a>
+    </div>
+  </div>
+
   <header>
-    <div class="header-badge">AQA Combined Science · Biology</div>
-    <h1>GCSE Biology<br><span>Revision Hub</span></h1>
-    <p>Everything you need to revise Biology — keywords, practice questions, and AI-marked feedback.</p>
-    <div class="header-stats">
-      <div class="stat">
-        <div class="stat-number">7</div>
-        <div class="stat-label">Modules</div>
+    <div class="hero-inner">
+      <div class="hero-shield">
+        <svg viewBox="0 0 88 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M44 0 L88 14 L88 50 Q88 80 44 100 Q0 80 0 50 L0 14 Z" fill="#c8202c" stroke="#d4a534" stroke-width="2"/>
+          <path d="M44 6 L82 18 L82 50 Q82 76 44 93 Q6 76 6 50 L6 18 Z" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+        </svg>
+        <div class="hero-shield-text">SSH</div>
       </div>
-      <div class="stat">
-        <div class="stat-number">700+</div>
-        <div class="stat-label">Keywords</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">100+</div>
-        <div class="stat-label">Questions</div>
+      <div class="hero-text">
+        <div class="hero-badge">⚡ AQA GCSE Combined Science</div>
+        <h1>Streetly Science<br><span class="accent">Revision Hub</span></h1>
+        <p class="tagline">Practise. Improve. Master your Biology. Keywords, AI-marked questions, and revision content for every B1–B7 topic.</p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">7</span>
+            <span class="stat-label">Modules</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">700+</span>
+            <span class="stat-label">Keywords</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">AI</span>
+            <span class="stat-label">Marking</span>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
-  <div class="login-strip">
-    <p>Sign in to track your progress and save your scores.</p>
-    <a href="login.html" class="btn-login">
-      <svg width="16" height="16" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M43.611 20.083H42V20H24v8h11.303C33.973 32.617 29.418 36 24 36c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z" fill="#FFF"/></svg>
-      Sign in with Google
-    </a>
+  <div class="pride-strip">
+    <span>Personal Excellence</span>
+    <span class="pride-dot">●</span>
+    <span>Respect</span>
+    <span class="pride-dot">●</span>
+    <span>Inspiration</span>
+    <span class="pride-dot">●</span>
+    <span>Determination</span>
+    <span class="pride-dot">●</span>
+    <span>Equality</span>
+  </div>
+
+  <div class="login-strip-wrapper">
+    <div class="login-strip">
+      <p>Sign in to track your progress and save your scores.</p>
+      <a href="login.html" class="btn-login">
+        <svg width="16" height="16" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M43.611 20.083H42V20H24v8h11.303C33.973 32.617 29.418 36 24 36c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z" fill="#FFF"/></svg>
+        Sign in with Google
+      </a>
+    </div>
   </div>
 
   <main>
-    <p class="section-label">Select a module to begin</p>
+    <div class="section-header">
+      <div class="section-label">Biology Modules</div>
+      <div class="section-sub">Tap a module to begin revision</div>
+    </div>
+
     <div class="modules-grid">
 
       <a href="module.html?module=b1" class="module-card b1">
+        <div class="card-stripe"></div>
         <div class="card-header">
           <div class="module-icon">B1</div>
           <div class="module-info">
@@ -368,10 +524,10 @@
           </div>
         </div>
         <div class="card-features">
-          <span class="feature-chip">📋 Specification</span>
-          <span class="feature-chip">📖 Revision Notes</span>
-          <span class="feature-chip">🔤 Keywords Game</span>
-          <span class="feature-chip">✏️ Practice Questions</span>
+          <span class="feature-chip">📋 Spec</span>
+          <span class="feature-chip">📖 Revision</span>
+          <span class="feature-chip">🔤 Keywords</span>
+          <span class="feature-chip">✏️ Practice</span>
         </div>
         <div class="card-footer">
           <span>Cells · Microscopy · Transport</span>
@@ -380,6 +536,7 @@
       </a>
 
       <a href="module.html?module=b2" class="module-card b2">
+        <div class="card-stripe"></div>
         <div class="card-header">
           <div class="module-icon">B2</div>
           <div class="module-info">
@@ -388,10 +545,10 @@
           </div>
         </div>
         <div class="card-features">
-          <span class="feature-chip">📋 Specification</span>
-          <span class="feature-chip">📖 Revision Notes</span>
-          <span class="feature-chip">🔤 Keywords Game</span>
-          <span class="feature-chip">✏️ Practice Questions</span>
+          <span class="feature-chip">📋 Spec</span>
+          <span class="feature-chip">📖 Revision</span>
+          <span class="feature-chip">🔤 Keywords</span>
+          <span class="feature-chip">✏️ Practice</span>
         </div>
         <div class="card-footer">
           <span>Digestion · Heart · Cancer</span>
@@ -400,6 +557,7 @@
       </a>
 
       <a href="module.html?module=b3" class="module-card b3">
+        <div class="card-stripe"></div>
         <div class="card-header">
           <div class="module-icon">B3</div>
           <div class="module-info">
@@ -408,10 +566,10 @@
           </div>
         </div>
         <div class="card-features">
-          <span class="feature-chip">📋 Specification</span>
-          <span class="feature-chip">📖 Revision Notes</span>
-          <span class="feature-chip">🔤 Keywords Game</span>
-          <span class="feature-chip">✏️ Practice Questions</span>
+          <span class="feature-chip">📋 Spec</span>
+          <span class="feature-chip">📖 Revision</span>
+          <span class="feature-chip">🔤 Keywords</span>
+          <span class="feature-chip">✏️ Practice</span>
         </div>
         <div class="card-footer">
           <span>Pathogens · Immunity · Drugs</span>
@@ -420,6 +578,7 @@
       </a>
 
       <a href="module.html?module=b4" class="module-card b4">
+        <div class="card-stripe"></div>
         <div class="card-header">
           <div class="module-icon">B4</div>
           <div class="module-info">
@@ -428,10 +587,10 @@
           </div>
         </div>
         <div class="card-features">
-          <span class="feature-chip">📋 Specification</span>
-          <span class="feature-chip">📖 Revision Notes</span>
-          <span class="feature-chip">🔤 Keywords Game</span>
-          <span class="feature-chip">✏️ Practice Questions</span>
+          <span class="feature-chip">📋 Spec</span>
+          <span class="feature-chip">📖 Revision</span>
+          <span class="feature-chip">🔤 Keywords</span>
+          <span class="feature-chip">✏️ Practice</span>
         </div>
         <div class="card-footer">
           <span>Photosynthesis · Respiration</span>
@@ -440,6 +599,7 @@
       </a>
 
       <a href="module.html?module=b5" class="module-card b5">
+        <div class="card-stripe"></div>
         <div class="card-header">
           <div class="module-icon">B5</div>
           <div class="module-info">
@@ -448,10 +608,10 @@
           </div>
         </div>
         <div class="card-features">
-          <span class="feature-chip">📋 Specification</span>
-          <span class="feature-chip">📖 Revision Notes</span>
-          <span class="feature-chip">🔤 Keywords Game</span>
-          <span class="feature-chip">✏️ Practice Questions</span>
+          <span class="feature-chip">📋 Spec</span>
+          <span class="feature-chip">📖 Revision</span>
+          <span class="feature-chip">🔤 Keywords</span>
+          <span class="feature-chip">✏️ Practice</span>
         </div>
         <div class="card-footer">
           <span>Nervous System · Hormones</span>
@@ -460,18 +620,19 @@
       </a>
 
       <a href="module.html?module=b6" class="module-card b6">
+        <div class="card-stripe"></div>
         <div class="card-header">
           <div class="module-icon">B6</div>
           <div class="module-info">
             <div class="module-tag">Module 6</div>
-            <div class="module-title">Inheritance, Variation & Evolution</div>
+            <div class="module-title">Inheritance & Evolution</div>
           </div>
         </div>
         <div class="card-features">
-          <span class="feature-chip">📋 Specification</span>
-          <span class="feature-chip">📖 Revision Notes</span>
-          <span class="feature-chip">🔤 Keywords Game</span>
-          <span class="feature-chip">✏️ Practice Questions</span>
+          <span class="feature-chip">📋 Spec</span>
+          <span class="feature-chip">📖 Revision</span>
+          <span class="feature-chip">🔤 Keywords</span>
+          <span class="feature-chip">✏️ Practice</span>
         </div>
         <div class="card-footer">
           <span>DNA · Genetics · Evolution</span>
@@ -480,6 +641,7 @@
       </a>
 
       <a href="module.html?module=b7" class="module-card b7">
+        <div class="card-stripe"></div>
         <div class="card-header">
           <div class="module-icon">B7</div>
           <div class="module-info">
@@ -488,10 +650,10 @@
           </div>
         </div>
         <div class="card-features">
-          <span class="feature-chip">📋 Specification</span>
-          <span class="feature-chip">📖 Revision Notes</span>
-          <span class="feature-chip">🔤 Keywords Game</span>
-          <span class="feature-chip">✏️ Practice Questions</span>
+          <span class="feature-chip">📋 Spec</span>
+          <span class="feature-chip">📖 Revision</span>
+          <span class="feature-chip">🔤 Keywords</span>
+          <span class="feature-chip">✏️ Practice</span>
         </div>
         <div class="card-footer">
           <span>Ecosystems · Food Webs · Climate</span>
@@ -500,10 +662,21 @@
       </a>
 
     </div>
+
+    <div class="info-banner">
+      <div class="info-banner-icon">💡</div>
+      <div>
+        <strong>How to use this site:</strong> Pick a module, work through the keywords drag-and-drop game, then test yourself with AI-marked practice questions. Every question gives detailed feedback so you know exactly what to work on next.
+      </div>
+    </div>
   </main>
 
   <footer>
-    <p>Built for AQA GCSE Combined Science (8464) · Biology content only · Not affiliated with AQA</p>
+    <div class="footer-inner">
+      <p><strong style="color: white;">Streetly Science Revision Hub</strong></p>
+      <p>Built for AQA GCSE Combined Science (8464) — Biology content</p>
+      <p class="small">A teaching resource for The Streetly Academy · Not affiliated with AQA</p>
+    </div>
   </footer>
 
 </body>
