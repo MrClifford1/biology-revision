@@ -1,0 +1,493 @@
+[
+  {
+    "id": "P5-MC-001",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Scalars and Vectors",
+    "question": "Which of the following is a vector quantity?",
+    "options": ["Speed", "Mass", "Temperature", "Velocity"],
+    "correct": "Velocity"
+  },
+  {
+    "id": "P5-MC-002",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Forces",
+    "question": "What is the weight of a 5 kg object on Earth? (g = 10 N/kg)",
+    "options": ["5 N", "0.5 N", "50 N", "500 N"],
+    "correct": "50 N"
+  },
+  {
+    "id": "P5-MC-003",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Newton's Laws",
+    "question": "A car travels at a constant speed on a straight road. What can we conclude about the forces acting on it?",
+    "options": [
+      "There are no forces acting on it",
+      "The driving force is greater than friction",
+      "The resultant force is zero",
+      "The resultant force is in the direction of motion"
+    ],
+    "correct": "The resultant force is zero"
+  },
+  {
+    "id": "P5-MC-004",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Newton's Laws",
+    "question": "A resultant force of 30 N acts on a 6 kg object. What is its acceleration?",
+    "options": ["0.2 m/s²", "180 m/s²", "5 m/s²", "24 m/s²"],
+    "correct": "5 m/s²"
+  },
+  {
+    "id": "P5-MC-005",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Elasticity",
+    "question": "A spring has a spring constant of 40 N/m. What force is needed to extend it by 0.25 m?",
+    "options": ["160 N", "0.00625 N", "10 N", "40.25 N"],
+    "correct": "10 N"
+  },
+  {
+    "id": "P5-MC-006",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Motion",
+    "question": "What does the gradient of a distance-time graph represent?",
+    "options": ["Acceleration", "Force", "Speed", "Momentum"],
+    "correct": "Speed"
+  },
+  {
+    "id": "P5-MC-007",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Motion",
+    "question": "What does the area under a velocity-time graph represent?",
+    "options": ["Speed", "Acceleration", "Force", "Distance travelled"],
+    "correct": "Distance travelled"
+  },
+  {
+    "id": "P5-MC-008",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Stopping Distances",
+    "question": "Which of the following would increase the braking distance of a car?",
+    "options": [
+      "Dry road conditions",
+      "New tyres",
+      "Worn brake pads",
+      "Slower speed"
+    ],
+    "correct": "Worn brake pads"
+  },
+  {
+    "id": "P5-MC-009",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Momentum",
+    "question": "A 2 kg ball moves at 5 m/s. What is its momentum?",
+    "options": ["2.5 kg m/s", "10 kg m/s", "7 kg m/s", "0.4 kg m/s"],
+    "correct": "10 kg m/s"
+  },
+  {
+    "id": "P5-MC-010",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Newton's Laws",
+    "question": "Newton's Third Law states that forces act in pairs. Which statement correctly describes these pairs?",
+    "options": [
+      "Both forces act on the same object in opposite directions",
+      "The forces act on different objects and are equal and opposite",
+      "One force is always larger than the other",
+      "The forces only act when objects are in contact"
+    ],
+    "correct": "The forces act on different objects and are equal and opposite"
+  },
+  {
+    "id": "P5-MC-011",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Work Done",
+    "question": "A force of 25 N moves an object 4 m in the direction of the force. How much work is done?",
+    "options": ["6.25 J", "100 J", "29 J", "21 J"],
+    "correct": "100 J"
+  },
+  {
+    "id": "P5-MC-012",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Elasticity",
+    "question": "What is elastic deformation?",
+    "options": [
+      "When an object stretches and does not return to its original shape",
+      "When an object returns to its original shape after the force is removed",
+      "When an object breaks under a large force",
+      "When an object compresses permanently"
+    ],
+    "correct": "When an object returns to its original shape after the force is removed"
+  },
+  {
+    "id": "P5-MC-013",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Stopping Distances",
+    "question": "Which of the following affects thinking distance?",
+    "options": [
+      "Road surface condition",
+      "Tyre tread depth",
+      "Driver reaction time",
+      "Brake pad condition"
+    ],
+    "correct": "Driver reaction time"
+  },
+  {
+    "id": "P5-MC-014",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Momentum",
+    "question": "Two objects collide and stick together. Which law applies to this collision?",
+    "options": [
+      "Conservation of energy",
+      "Newton's First Law",
+      "Conservation of momentum",
+      "Hooke's Law"
+    ],
+    "correct": "Conservation of momentum"
+  },
+  {
+    "id": "P5-MC-015",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Scalars and Vectors",
+    "question": "A car travels 100 m north then 60 m south. What is its displacement?",
+    "options": ["160 m north", "40 m north", "40 m south", "160 m"],
+    "correct": "40 m north"
+  },
+  {
+    "id": "P5-FIB-001",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Newton's Laws",
+    "question": "Newton's Second Law states that force = mass × __________.",
+    "correct": "acceleration",
+    "acceptable": ["acceleration"]
+  },
+  {
+    "id": "P5-FIB-002",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Forces",
+    "question": "Weight = mass × gravitational field __________.",
+    "correct": "strength",
+    "acceptable": ["strength"]
+  },
+  {
+    "id": "P5-FIB-003",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Elasticity",
+    "question": "Hooke's Law states that extension is proportional to force, provided the __________ limit is not exceeded.",
+    "correct": "elastic",
+    "acceptable": ["elastic"]
+  },
+  {
+    "id": "P5-FIB-004",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Momentum",
+    "question": "Momentum = mass × __________.",
+    "correct": "velocity",
+    "acceptable": ["velocity"]
+  },
+  {
+    "id": "P5-FIB-005",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Stopping Distances",
+    "question": "Stopping distance = thinking distance + __________ distance.",
+    "correct": "braking",
+    "acceptable": ["braking"]
+  },
+  {
+    "id": "P5-FIB-006",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Motion",
+    "question": "The gradient of a velocity-time graph gives the __________.",
+    "correct": "acceleration",
+    "acceptable": ["acceleration"]
+  },
+  {
+    "id": "P5-FIB-007",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Work Done",
+    "question": "Work done = __________ × distance.",
+    "correct": "force",
+    "acceptable": ["force"]
+  },
+  {
+    "id": "P5-FIB-008",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Scalars and Vectors",
+    "question": "Speed is a __________ quantity, while velocity is a vector quantity.",
+    "correct": "scalar",
+    "acceptable": ["scalar"]
+  },
+  {
+    "id": "P5-FIB-009",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Newton's Laws",
+    "question": "An object's tendency to resist changes in motion is called __________.",
+    "correct": "inertia",
+    "acceptable": ["inertia"]
+  },
+  {
+    "id": "P5-FIB-010",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Momentum",
+    "question": "The total momentum before a collision equals the total after — this is the law of conservation of __________.",
+    "correct": "momentum",
+    "acceptable": ["momentum"]
+  },
+  {
+    "id": "P5-MATCH-001",
+    "type": "match",
+    "marks": 3,
+    "topic": "Scalars and Vectors",
+    "question": "Match each quantity to whether it is a scalar or vector.",
+    "pairs": [
+      { "term": "Speed", "definition": "Scalar — magnitude only" },
+      { "term": "Velocity", "definition": "Vector — magnitude and direction" },
+      { "term": "Distance", "definition": "Scalar — magnitude only" },
+      { "term": "Displacement", "definition": "Vector — magnitude and direction" },
+      { "term": "Force", "definition": "Vector — magnitude and direction" }
+    ]
+  },
+  {
+    "id": "P5-MATCH-002",
+    "type": "match",
+    "marks": 3,
+    "topic": "Newton's Laws",
+    "question": "Match each Newton's Law to its correct statement.",
+    "pairs": [
+      { "term": "Newton's First Law", "definition": "An object stays at rest or moves at constant velocity unless a resultant force acts" },
+      { "term": "Newton's Second Law", "definition": "Resultant force = mass × acceleration" },
+      { "term": "Newton's Third Law", "definition": "Every action has an equal and opposite reaction on a different object" }
+    ]
+  },
+  {
+    "id": "P5-MATCH-003",
+    "type": "match",
+    "marks": 3,
+    "topic": "Motion",
+    "question": "Match each graph description to what it tells us about motion.",
+    "pairs": [
+      { "term": "Steep gradient on distance-time graph", "definition": "Object moving at high speed" },
+      { "term": "Horizontal line on distance-time graph", "definition": "Object is stationary" },
+      { "term": "Steep gradient on velocity-time graph", "definition": "Large acceleration" },
+      { "term": "Area under velocity-time graph", "definition": "Distance travelled" }
+    ]
+  },
+  {
+    "id": "P5-MATCH-004",
+    "type": "match",
+    "marks": 2,
+    "topic": "Stopping Distances",
+    "question": "Match each factor to whether it affects thinking distance or braking distance.",
+    "pairs": [
+      { "term": "Driver tiredness", "definition": "Thinking distance — increases reaction time" },
+      { "term": "Wet roads", "definition": "Braking distance — reduces friction" },
+      { "term": "Worn tyres", "definition": "Braking distance — reduces grip" },
+      { "term": "Alcohol", "definition": "Thinking distance — slows reaction time" }
+    ]
+  },
+  {
+    "id": "P5-MATCH-005",
+    "type": "match",
+    "marks": 2,
+    "topic": "Forces",
+    "question": "Match each force to whether it is a contact or non-contact force.",
+    "pairs": [
+      { "term": "Friction", "definition": "Contact force — objects must be touching" },
+      { "term": "Gravity", "definition": "Non-contact force — acts at a distance" },
+      { "term": "Tension", "definition": "Contact force — objects must be touching" },
+      { "term": "Magnetic force", "definition": "Non-contact force — acts at a distance" }
+    ]
+  },
+  {
+    "id": "P5-SA-001",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Newton's Laws",
+    "question": "State Newton's First Law of motion.",
+    "mark_scheme": "An object remains at rest or continues at constant velocity (1); unless acted on by a resultant force (1) — accept either."
+  },
+  {
+    "id": "P5-SA-002",
+    "type": "written",
+    "marks": 1,
+    "command_word": "Calculate",
+    "topic": "Forces",
+    "question": "Calculate the weight of a 70 kg person on Earth. (g = 10 N/kg)",
+    "mark_scheme": "W = mg = 70 × 10 = 700 N (1)."
+  },
+  {
+    "id": "P5-SA-003",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Elasticity",
+    "question": "State what Hooke's Law tells us about a spring.",
+    "mark_scheme": "Extension is directly proportional to force applied (1); provided elastic limit is not exceeded (1) — accept either."
+  },
+  {
+    "id": "P5-SA-004",
+    "type": "written",
+    "marks": 1,
+    "command_word": "Calculate",
+    "topic": "Momentum",
+    "question": "Calculate the momentum of a 1500 kg car travelling at 20 m/s.",
+    "mark_scheme": "p = mv = 1500 × 20 = 30 000 kg m/s (1)."
+  },
+  {
+    "id": "P5-SA-005",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Stopping Distances",
+    "question": "Explain why a tired driver has a longer stopping distance than an alert driver.",
+    "mark_scheme": "A tired driver has a slower reaction time (1); thinking distance increases (1); overall stopping distance is longer (1) — any two."
+  },
+  {
+    "id": "P5-SA-006",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Elasticity",
+    "question": "Describe how you would investigate Hooke's Law using a spring in the laboratory.",
+    "mark_scheme": "Hang known masses on the spring and measure the extension (1); plot a graph of force against extension (1); straight line through origin shows F proportional to extension (1); identify elastic limit where graph curves (1) — any two."
+  },
+  {
+    "id": "P5-SA-007",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Newton's Laws",
+    "question": "A skydiver reaches terminal velocity. Explain what this means in terms of forces.",
+    "mark_scheme": "At terminal velocity the resultant force is zero (1); weight downwards equals air resistance upwards (1); no resultant force so no acceleration (1) — any two."
+  },
+  {
+    "id": "P5-SA-008",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Calculate",
+    "topic": "Motion",
+    "question": "A car accelerates from 10 m/s to 30 m/s in 5 seconds. Calculate its acceleration.",
+    "mark_scheme": "a = (v - u) / t = (30 - 10) / 5 (1) = 4 m/s² (1)."
+  },
+  {
+    "id": "P5-SA-009",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Newton's Laws",
+    "question": "Explain, using Newton's Third Law, what happens when a rocket expels gas downwards.",
+    "mark_scheme": "The rocket pushes gas downwards (1); by Newton's Third Law the gas pushes the rocket upwards with an equal and opposite force (1)."
+  },
+  {
+    "id": "P5-SA-010",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Momentum",
+    "question": "Explain why crumple zones in cars reduce the risk of injury in a collision.",
+    "mark_scheme": "Crumple zones increase the time taken for the car to stop (1); impulse = force × time = change in momentum (1); same change in momentum over longer time means smaller force (1); smaller force means less injury to passengers (1) — any three."
+  },
+  {
+    "id": "P5-SA-011",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Motion",
+    "question": "Describe the motion of an object from a velocity-time graph that shows: a positive gradient, then a horizontal line, then a negative gradient.",
+    "mark_scheme": "Positive gradient: object accelerating (1); horizontal line: object moving at constant velocity (1); negative gradient: object decelerating (1); if line reaches zero the object has stopped (1) — any three."
+  },
+  {
+    "id": "P5-SA-012",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Forces",
+    "question": "Explain the difference between mass and weight, and describe how they would differ on the Moon compared to Earth.",
+    "mark_scheme": "Mass is the amount of matter in an object — measured in kg (1); weight is the gravitational force acting on it — measured in N (1); mass stays the same on the Moon (1); weight is less on the Moon because gravitational field strength is lower (1) — any three."
+  },
+  {
+    "id": "P5-LA-001",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Newton's Laws",
+    "question": "A car of mass 1200 kg accelerates from rest to 24 m/s in 8 seconds. Calculate the resultant force and explain what happens to the acceleration if the driving force stays the same but the car gains passengers.",
+    "mark_scheme": "a = (24 - 0) / 8 = 3 m/s² (1); F = ma = 1200 × 3 = 3600 N (1); more passengers increases total mass (1); same force on larger mass gives smaller acceleration (1)."
+  },
+  {
+    "id": "P5-LA-002",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Evaluate",
+    "topic": "Stopping Distances",
+    "question": "Evaluate the factors that affect the stopping distance of a vehicle travelling at high speed on a wet road at night.",
+    "mark_scheme": "High speed increases both thinking and braking distance (1); wet road reduces friction increasing braking distance (1); night driving may cause tiredness increasing reaction time (1); poor visibility means hazard seen later (1); worn tyres would further increase braking distance (1) — any four."
+  },
+  {
+    "id": "P5-LA-003",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Calculate",
+    "topic": "Momentum",
+    "question": "A 3 kg ball moving at 6 m/s collides with a stationary 2 kg ball. After the collision they move together. Calculate their combined velocity after the collision.",
+    "mark_scheme": "Total momentum before = 3 × 6 + 2 × 0 = 18 kg m/s (1); conservation of momentum: total after = 18 kg m/s (1); (3 + 2) × v = 18 (1); v = 18 ÷ 5 = 3.6 m/s (1)."
+  },
+  {
+    "id": "P5-LA-004",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Elasticity",
+    "question": "A student plots a force-extension graph for a spring and finds the line curves after a certain point. Explain what this shows and calculate the spring constant for the linear section if a force of 8 N causes an extension of 0.04 m.",
+    "mark_scheme": "Straight line shows Hooke's Law is obeyed (1); curve shows elastic limit exceeded (1); beyond elastic limit inelastic deformation occurs (1); k = F/e = 8 ÷ 0.04 = 200 N/m (1)."
+  },
+  {
+    "id": "P5-LA-005",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Motion",
+    "question": "Describe and explain the motion of a skydiver from leaving the plane to landing safely, referring to forces and velocity throughout.",
+    "mark_scheme": "Weight greater than air resistance so accelerates downward (1); as speed increases air resistance increases (1); eventually air resistance equals weight — terminal velocity (1); parachute opens: air resistance greatly increases (1); resultant force upward so decelerates (1); new lower terminal velocity reached (1); lands safely (1) — any five."
+  },
+  {
+    "id": "P5-LA-006",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Momentum",
+    "question": "Evaluate the safety features in modern cars that reduce the risk of injury in a collision. Refer to momentum, impulse and force in your answer.",
+    "mark_scheme": "In a collision momentum changes rapidly (1); impulse = force × time = change in momentum (1); to reduce force, time must increase (1); crumple zones increase collision time reducing force (1); seatbelts stretch increasing deceleration time (1); airbags cushion impact (1); headrests prevent whiplash (1) — any six."
+  },
+  {
+    "id": "P5-LA-007",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Newton's Laws",
+    "question": "A rocket launches from Earth. Explain, using all three of Newton's Laws, how the rocket accelerates, reaches constant velocity, and how it could decelerate.",
+    "mark_scheme": "First Law: rocket stays still until thrust acts (1); Second Law: thrust greater than weight so resultant force causes acceleration F = ma (1); as fuel burns rocket lighter so acceleration increases (1); Third Law: rocket expels gas down, gas pushes rocket up with equal and opposite force (1); air resistance increases with speed — eventually equals thrust giving constant velocity (1); to decelerate, thrust reduced so resultant force opposes motion (1) — any six."
+  }
+]
