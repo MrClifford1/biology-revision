@@ -1403,38 +1403,22 @@ document.getElementById('submit-btn').addEventListener('click', async () => {
 });
 
 async function markAnswers(answers) {
-  const results = [];
-  for (const a of answers) {
-    const prompt = `You are an AQA GCSE Biology examiner. Mark the following student answer.
+  // Send ALL answers in a single API call instead of one per question
+  const res = await fetch('/.netlify/functions/mark-answer', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ answers }),
+  });
 
-Question: ${a.question}
-Marks available: ${a.marks}
-Command word: ${a.command_word}
-${a.mark_scheme ? `Mark scheme guidance: ${a.mark_scheme}` : 'Use your knowledge of AQA GCSE Combined Science Biology to mark this answer.'}
+  if (!res.ok) throw new Error('Marking API failed');
+  const results = await res.json();
 
-Student's answer: "${a.student_answer || '[No answer given]'}"
-
-Mark leniently but fairly — reward understanding even if wording is not perfect. 
-Respond ONLY with a JSON object in this exact format (no markdown, no extra text):
-{
-  "marks_awarded": <number>,
-  "feedback": "<specific feedback on what was good and what was missing>",
-  "missed_points": "<key points the student missed, if any>",
-  "model_answer": "<a model answer for this question>",
-  "command_word_check": "<did the student answer the command word correctly?>"
-}`;
-
-    const res = await fetch('/.netlify/functions/mark-answer', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prompt }),
-    });
-
-    if (!res.ok) throw new Error('Marking API failed');
-    const data = await res.json();
-    results.push({ ...data, id: a.id, marks_available: a.marks });
-  }
-  return results;
+  // Attach id and marks_available back onto each result
+  return results.map((r, i) => ({
+    ...r,
+    id: answers[i].id,
+    marks_available: answers[i].marks,
+  }));
 }
 
 // ── DISPLAY RESULTS ───────────────────────────────────────────────────────────
