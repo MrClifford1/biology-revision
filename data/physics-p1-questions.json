@@ -1,0 +1,491 @@
+[
+  {
+    "id": "P1-MC-001",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Energy Stores",
+    "question": "Which of the following is a store of energy?",
+    "options": ["Power", "Force", "Gravitational potential energy", "Velocity"],
+    "correct": "Gravitational potential energy"
+  },
+  {
+    "id": "P1-MC-002",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Energy Stores",
+    "question": "A ball is thrown upwards. As it rises, which energy transfer occurs?",
+    "options": [
+      "Kinetic → Thermal",
+      "Kinetic → Gravitational potential",
+      "Gravitational potential → Kinetic",
+      "Chemical → Kinetic"
+    ],
+    "correct": "Kinetic → Gravitational potential"
+  },
+  {
+    "id": "P1-MC-003",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Energy Transfer",
+    "question": "What is the unit of power?",
+    "options": ["Joule", "Newton", "Watt", "Pascal"],
+    "correct": "Watt"
+  },
+  {
+    "id": "P1-MC-004",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Efficiency",
+    "question": "A machine has a total input energy of 500 J and a useful output energy of 350 J. What is its efficiency?",
+    "options": ["35%", "50%", "70%", "85%"],
+    "correct": "70%"
+  },
+  {
+    "id": "P1-MC-005",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Efficiency",
+    "question": "Which of the following would increase the efficiency of a motor?",
+    "options": [
+      "Increasing the input energy",
+      "Lubricating the moving parts",
+      "Increasing the speed of operation",
+      "Using a stronger magnet"
+    ],
+    "correct": "Lubricating the moving parts"
+  },
+  {
+    "id": "P1-MC-006",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Specific Heat Capacity",
+    "question": "What does specific heat capacity tell us?",
+    "options": [
+      "The energy needed to melt 1 kg of a substance",
+      "The energy needed to raise 1 kg of a substance by 1°C",
+      "The rate at which a substance loses heat",
+      "The temperature at which a substance boils"
+    ],
+    "correct": "The energy needed to raise 1 kg of a substance by 1°C"
+  },
+  {
+    "id": "P1-MC-007",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Energy Resources",
+    "question": "Which of the following is a renewable energy resource?",
+    "options": ["Coal", "Natural gas", "Nuclear fuel", "Wind"],
+    "correct": "Wind"
+  },
+  {
+    "id": "P1-MC-008",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Energy Resources",
+    "question": "What is a disadvantage of solar energy?",
+    "options": [
+      "It produces greenhouse gases",
+      "It only generates electricity when the sun is shining",
+      "It uses non-renewable fuel",
+      "It produces radioactive waste"
+    ],
+    "correct": "It only generates electricity when the sun is shining"
+  },
+  {
+    "id": "P1-MC-009",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Energy Transfer",
+    "question": "A force of 20 N moves an object 5 m. How much work is done?",
+    "options": ["4 J", "25 J", "100 J", "15 J"],
+    "correct": "100 J"
+  },
+  {
+    "id": "P1-MC-010",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Energy Transfer",
+    "question": "Which statement best describes the conservation of energy?",
+    "options": [
+      "Energy is created when fuel is burned",
+      "Energy can be destroyed when it becomes heat",
+      "Energy cannot be created or destroyed, only transferred between stores",
+      "Useful energy is always greater than input energy"
+    ],
+    "correct": "Energy cannot be created or destroyed, only transferred between stores"
+  },
+  {
+    "id": "P1-MC-011",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Energy Resources",
+    "question": "Which energy resource uses the gravitational potential energy of water?",
+    "options": ["Tidal power", "Wind power", "Hydroelectric power", "Wave power"],
+    "correct": "Hydroelectric power"
+  },
+  {
+    "id": "P1-MC-012",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Energy Stores",
+    "question": "A stretched spring stores energy in which store?",
+    "options": ["Kinetic", "Chemical", "Elastic potential", "Thermal"],
+    "correct": "Elastic potential"
+  },
+  {
+    "id": "P1-MC-013",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Efficiency",
+    "question": "Where does wasted energy usually end up?",
+    "options": [
+      "Back in the input energy store",
+      "In the useful output store",
+      "Dissipated as thermal energy to the surroundings",
+      "Converted into nuclear energy"
+    ],
+    "correct": "Dissipated as thermal energy to the surroundings"
+  },
+  {
+    "id": "P1-MC-014",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Energy Resources",
+    "question": "What is a disadvantage of fossil fuels?",
+    "options": [
+      "They are unreliable and intermittent",
+      "They produce greenhouse gases contributing to climate change",
+      "They are very expensive to extract",
+      "They only work in sunny conditions"
+    ],
+    "correct": "They produce greenhouse gases contributing to climate change"
+  },
+  {
+    "id": "P1-MC-015",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Energy Transfer",
+    "question": "A device transfers 600 J of energy in 2 minutes. What is its power output?",
+    "options": ["300 W", "1200 W", "5 W", "30 W"],
+    "correct": "5 W"
+  },
+  {
+    "id": "P1-FIB-001",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Energy Transfer",
+    "question": "Energy cannot be created or destroyed — this is the law of conservation of __________.",
+    "correct": "energy",
+    "acceptable": ["energy"]
+  },
+  {
+    "id": "P1-FIB-002",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Energy Transfer",
+    "question": "Work done = force × __________.",
+    "correct": "distance",
+    "acceptable": ["distance", "displacement"]
+  },
+  {
+    "id": "P1-FIB-003",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Efficiency",
+    "question": "Efficiency = useful output energy ÷ __________ input energy.",
+    "correct": "total",
+    "acceptable": ["total"]
+  },
+  {
+    "id": "P1-FIB-004",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Specific Heat Capacity",
+    "question": "The energy needed to raise 1 kg of a material by 1°C is called its specific __________ capacity.",
+    "correct": "heat",
+    "acceptable": ["heat"]
+  },
+  {
+    "id": "P1-FIB-005",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Energy Resources",
+    "question": "Coal, oil and natural gas are examples of __________ fuels.",
+    "correct": "fossil",
+    "acceptable": ["fossil"]
+  },
+  {
+    "id": "P1-FIB-006",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Energy Resources",
+    "question": "An energy resource that will not run out is described as __________.",
+    "correct": "renewable",
+    "acceptable": ["renewable"]
+  },
+  {
+    "id": "P1-FIB-007",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Energy Transfer",
+    "question": "Power is measured in __________, where 1 unit equals 1 joule per second.",
+    "correct": "watts",
+    "acceptable": ["watts", "watt", "W"]
+  },
+  {
+    "id": "P1-FIB-008",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Efficiency",
+    "question": "The spreading of energy into the surroundings as thermal energy is called __________.",
+    "correct": "dissipation",
+    "acceptable": ["dissipation", "dissipated"]
+  },
+  {
+    "id": "P1-FIB-009",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Energy Stores",
+    "question": "A moving object has __________ energy.",
+    "correct": "kinetic",
+    "acceptable": ["kinetic"]
+  },
+  {
+    "id": "P1-FIB-010",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Energy Resources",
+    "question": "The network that distributes electricity across the country is called the National __________.",
+    "correct": "grid",
+    "acceptable": ["grid", "Grid"]
+  },
+  {
+    "id": "P1-MATCH-001",
+    "type": "match",
+    "marks": 3,
+    "topic": "Energy Stores",
+    "question": "Match each energy store to its correct description.",
+    "pairs": [
+      { "term": "Kinetic energy", "definition": "Energy due to an object's motion" },
+      { "term": "Gravitational potential energy", "definition": "Energy due to an object's height above the ground" },
+      { "term": "Elastic potential energy", "definition": "Energy stored in a stretched or compressed object" },
+      { "term": "Chemical energy", "definition": "Energy stored in the bonds of chemical substances" },
+      { "term": "Thermal energy", "definition": "Energy stored due to the motion of particles" }
+    ]
+  },
+  {
+    "id": "P1-MATCH-002",
+    "type": "match",
+    "marks": 3,
+    "topic": "Energy Resources",
+    "question": "Match each energy resource to whether it is renewable or non-renewable.",
+    "pairs": [
+      { "term": "Wind", "definition": "Renewable — will not run out" },
+      { "term": "Coal", "definition": "Non-renewable — will eventually run out" },
+      { "term": "Solar", "definition": "Renewable — replenished by the sun" },
+      { "term": "Nuclear fuel", "definition": "Non-renewable — uses uranium which is finite" },
+      { "term": "Hydroelectric", "definition": "Renewable — uses the water cycle" }
+    ]
+  },
+  {
+    "id": "P1-MATCH-003",
+    "type": "match",
+    "marks": 3,
+    "topic": "Energy Transfer",
+    "question": "Match each equation to its correct quantity.",
+    "pairs": [
+      { "term": "E = mcΔT", "definition": "Energy needed to heat a substance" },
+      { "term": "W = Fs", "definition": "Work done by a force" },
+      { "term": "P = E/t", "definition": "Power — rate of energy transfer" },
+      { "term": "Ek = ½mv²", "definition": "Kinetic energy of a moving object" }
+    ]
+  },
+  {
+    "id": "P1-MATCH-004",
+    "type": "match",
+    "marks": 2,
+    "topic": "Efficiency",
+    "question": "Match each term to its correct definition.",
+    "pairs": [
+      { "term": "Efficiency", "definition": "Useful output energy ÷ total input energy" },
+      { "term": "Dissipation", "definition": "Energy spreading into surroundings as thermal energy" },
+      { "term": "Lubrication", "definition": "Reducing friction to decrease wasted energy" },
+      { "term": "Wasted energy", "definition": "Energy transferred to an unwanted store" }
+    ]
+  },
+  {
+    "id": "P1-MATCH-005",
+    "type": "match",
+    "marks": 2,
+    "topic": "Energy Resources",
+    "question": "Match each renewable energy source to how it generates electricity.",
+    "pairs": [
+      { "term": "Wind turbine", "definition": "Uses kinetic energy of moving air" },
+      { "term": "Solar cell", "definition": "Converts light energy directly into electricity" },
+      { "term": "Hydroelectric", "definition": "Uses gravitational potential energy of water" },
+      { "term": "Tidal power", "definition": "Uses kinetic energy of tidal water movement" }
+    ]
+  },
+  {
+    "id": "P1-SA-001",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Energy Transfer",
+    "question": "State the principle of conservation of energy.",
+    "mark_scheme": "Energy cannot be created or destroyed (1); it can only be transferred from one store to another (1) — accept either point."
+  },
+  {
+    "id": "P1-SA-002",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Efficiency",
+    "question": "State what is meant by the term efficiency.",
+    "mark_scheme": "The proportion of input energy that is usefully transferred (1) / useful output ÷ total input (1) — accept either."
+  },
+  {
+    "id": "P1-SA-003",
+    "type": "written",
+    "marks": 1,
+    "command_word": "Name",
+    "topic": "Energy Resources",
+    "question": "Name two renewable energy resources.",
+    "mark_scheme": "Any two from: wind, solar, hydroelectric, tidal, wave, geothermal, biomass (1 mark each) — 2 marks total."
+  },
+  {
+    "id": "P1-SA-004",
+    "type": "written",
+    "marks": 1,
+    "command_word": "Calculate",
+    "topic": "Energy Transfer",
+    "question": "A force of 50 N moves an object 8 m. Calculate the work done.",
+    "mark_scheme": "W = Fs = 50 × 8 = 400 J (1)."
+  },
+  {
+    "id": "P1-SA-005",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Efficiency",
+    "question": "Explain why no machine is 100% efficient.",
+    "mark_scheme": "Some energy is always transferred to unwanted stores (1); usually as thermal energy due to friction / sound (1); this energy is dissipated to the surroundings (1) — any two."
+  },
+  {
+    "id": "P1-SA-006",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Energy Stores",
+    "question": "Describe the energy transfers that occur when a ball is dropped from a height.",
+    "mark_scheme": "Gravitational potential energy decreases (1); kinetic energy increases as ball falls (1); on hitting the ground, kinetic energy transferred to thermal/sound energy (1) — any two."
+  },
+  {
+    "id": "P1-SA-007",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Calculate",
+    "topic": "Specific Heat Capacity",
+    "question": "Calculate the energy needed to heat 2 kg of water by 10°C. The specific heat capacity of water is 4200 J/kg°C.",
+    "mark_scheme": "E = mcΔT = 2 × 4200 × 10 (1) = 84 000 J (1)."
+  },
+  {
+    "id": "P1-SA-008",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Compare",
+    "topic": "Energy Resources",
+    "question": "Compare the environmental impact of fossil fuels and wind energy.",
+    "mark_scheme": "Fossil fuels release CO₂ / greenhouse gases contributing to climate change (1); wind energy produces no greenhouse gases / carbon emissions (1); wind turbines may affect wildlife / landscape (1) — any two."
+  },
+  {
+    "id": "P1-SA-009",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Energy Resources",
+    "question": "Explain why countries are increasing their use of renewable energy resources.",
+    "mark_scheme": "Fossil fuels are non-renewable and will eventually run out (1); fossil fuels produce greenhouse gases / CO₂ causing climate change (1); renewable resources will not run out (1); renewable resources produce little or no greenhouse gases (1); advances in technology have reduced costs (1) — any three."
+  },
+  {
+    "id": "P1-SA-010",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Specific Heat Capacity",
+    "question": "Describe how you would determine the specific heat capacity of a metal block in the laboratory.",
+    "mark_scheme": "Heat the metal block using an immersion heater (1); measure the temperature change using a thermometer (1); measure the energy supplied using a joulemeter / calculate using P × t (1); use E = mcΔT to calculate specific heat capacity (1); insulate the block to reduce energy losses (1) — any three."
+  },
+  {
+    "id": "P1-SA-011",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Efficiency",
+    "question": "Explain three ways in which the efficiency of a car engine can be increased.",
+    "mark_scheme": "Lubricate moving parts to reduce friction (1); use more aerodynamic design to reduce air resistance (1); use regenerative braking to recover kinetic energy (1); use lighter materials to reduce mass (1) — any three."
+  },
+  {
+    "id": "P1-LA-001",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Evaluate",
+    "topic": "Energy Resources",
+    "question": "Evaluate the use of nuclear power as an energy resource. Include advantages and disadvantages in your answer.",
+    "mark_scheme": "Advantages: produces large amounts of electricity (1); no greenhouse gas emissions during operation (1); reliable — not dependent on weather (1). Disadvantages: produces radioactive waste that is difficult to dispose of (1); risk of accidents e.g. Chernobyl / Fukushima (1); high cost to build and decommission (1); uses non-renewable uranium fuel (1) — any four."
+  },
+  {
+    "id": "P1-LA-002",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Energy Transfer",
+    "question": "A rollercoaster starts from rest at the top of a hill. Explain the energy transfers that take place as it travels down the hill and comes to a stop at the bottom.",
+    "mark_scheme": "At the top: large gravitational potential energy store (1); as it descends GPE decreases and kinetic energy increases (1); some energy transferred to thermal energy by friction (1); at the bottom kinetic energy is greatest (1); brakes transfer kinetic energy to thermal energy (1) — any four."
+  },
+  {
+    "id": "P1-LA-003",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Calculate",
+    "topic": "Specific Heat Capacity",
+    "question": "A 3 kg block of aluminium is heated using a 50 W heater for 5 minutes. The temperature rises from 20°C to 80°C. Calculate the specific heat capacity of aluminium and suggest why your answer may differ from the accepted value.",
+    "mark_scheme": "Energy supplied = P × t = 50 × 300 = 15 000 J (1); E = mcΔT → c = E ÷ (m × ΔT) = 15 000 ÷ (3 × 60) (1) = 83.3 J/kg°C (1); answer differs because energy is lost to surroundings / block not perfectly insulated (1)."
+  },
+  {
+    "id": "P1-LA-004",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Energy Resources",
+    "question": "Explain how the National Grid distributes electricity efficiently across the country.",
+    "mark_scheme": "Power stations generate electricity at low voltage (1); transformers step up the voltage for transmission (1); high voltage means low current (1); lower current means less energy wasted as heat in cables (1); step-down transformers reduce voltage for safe use in homes (1) — any four."
+  },
+  {
+    "id": "P1-LA-005",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Energy Resources",
+    "question": "Evaluate the advantages and disadvantages of wind energy as a replacement for fossil fuels.",
+    "mark_scheme": "Advantages: renewable — will not run out (1); no greenhouse gas emissions during operation (1); low running costs once built (1); can be built offshore (1). Disadvantages: intermittent — only generates when wind blows (1); visual and noise pollution (1); large areas of land needed (1); expensive to build and maintain (1); may harm birds / wildlife (1) — any five."
+  },
+  {
+    "id": "P1-LA-006",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Energy Resources",
+    "question": "The UK needs to meet its energy demands while reducing carbon emissions. Evaluate the options available, including both renewable and non-renewable sources, and suggest which combination of energy resources the UK should use.",
+    "mark_scheme": "Fossil fuels are reliable but produce CO₂ / contribute to climate change (1); nuclear is reliable with no CO₂ emissions but produces radioactive waste (1); wind and solar are clean but intermittent (1); hydroelectric is reliable and renewable but limited locations (1); combination of sources provides reliability and reduces emissions (1); energy storage (batteries) needed to deal with intermittency (1); energy conservation also important to reduce demand (1); accept any well-reasoned suggestion for UK energy mix with justification (1) — any six."
+  },
+  {
+    "id": "P1-LA-007",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Efficiency",
+    "question": "A student investigates the efficiency of a motor lifting a weight. The motor uses 200 J of electrical energy to lift a 5 kg weight by 3 m. Explain how to calculate the efficiency of the motor and suggest reasons why it is less than 100%.",
+    "mark_scheme": "GPE gained = mgh = 5 × 10 × 3 = 150 J (1); efficiency = useful output ÷ total input = 150 ÷ 200 = 0.75 or 75% (1); efficiency is less than 100% because some energy is wasted (1); wasted as thermal energy due to friction in motor (1); wasted as sound energy (1); energy dissipated to surroundings (1); cannot be recovered for useful work (1) — any six."
+  }
+]
