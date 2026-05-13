@@ -1289,22 +1289,13 @@ function renderQuestions(qs) {
 
 // ── MULTIPLE CHOICE INSTANT CHECK ────────────────────────────────────────────
 function checkMC(q, selected) {
-  const correct = selected === q.correct;
-  autoMarkedResults[q.id] = { marks_awarded: correct ? q.marks : 0, marks_available: q.marks, type: 'auto' };
-
-  const resultEl = document.getElementById(`auto-result-${q.id}`);
-  resultEl.style.display = 'block';
-  resultEl.className = `auto-result ${correct ? 'auto-correct' : 'auto-wrong'}`;
-  resultEl.innerHTML = correct
-    ? `✅ Correct! <strong>+${q.marks} mark${q.marks > 1 ? 's' : ''}</strong>`
-    : `❌ Incorrect. The correct answer is: <strong>${q.correct}</strong>`;
-
-  // Highlight options
-  document.querySelectorAll(`#mc-${q.id} .mc-option`).forEach(label => {
-    const val = label.querySelector('input').value;
-    if (val === q.correct) label.classList.add('mc-correct');
-    else if (val === selected && !correct) label.classList.add('mc-wrong');
-  });
+  // Just record the answer — feedback shown after submission only
+  autoMarkedResults[q.id] = {
+    marks_awarded: selected === q.correct ? q.marks : 0,
+    marks_available: q.marks,
+    type: 'auto',
+    selected_answer: selected
+  };
 }
 
 // ── MATCH INTERACTION ────────────────────────────────────────────────────────
@@ -1326,13 +1317,14 @@ function wireMatchInteraction(q, card) {
   drops.forEach(dropEl => {
     dropEl.addEventListener('click', () => {
       if (!selectedTerm) return;
+
       // Remove this term from any previous assignment
       Object.keys(matchMap).forEach(t => {
         if (matchMap[t] === dropEl.dataset.def) delete matchMap[t];
       });
       matchMap[selectedTerm] = dropEl.dataset.def;
 
-      // Update assigned labels
+      // Update assigned labels (no colour feedback yet)
       drops.forEach(d => {
         const assignedEl = d.querySelector('.match-assigned');
         const assigned = Object.keys(matchMap).find(t => matchMap[t] === d.dataset.def);
@@ -1345,25 +1337,18 @@ function wireMatchInteraction(q, card) {
       terms.forEach(t => t.classList.remove('match-selected'));
       selectedTerm = null;
 
-      // Check if all matched
-      if (Object.keys(matchMap).length === q.pairs.length) {
-        let correct = 0;
-        q.pairs.forEach(p => { if (matchMap[p.term] === p.term) correct++; });
-        const marksAwarded = Math.round((correct / q.pairs.length) * q.marks);
-        autoMarkedResults[q.id] = { marks_awarded: marksAwarded, marks_available: q.marks, type: 'auto', correct, total: q.pairs.length };
-
-        // Show results on drops
-        drops.forEach(d => {
-          const assignedTerm = Object.keys(matchMap).find(t => matchMap[t] === d.dataset.def);
-          if (assignedTerm === d.dataset.def) d.classList.add('match-correct');
-          else if (assignedTerm) d.classList.add('match-wrong');
-        });
-
-        const resultEl = document.getElementById(`auto-result-${q.id}`);
-        resultEl.style.display = 'block';
-        resultEl.className = `auto-result ${marksAwarded === q.marks ? 'auto-correct' : marksAwarded > 0 ? 'auto-partial' : 'auto-wrong'}`;
-        resultEl.innerHTML = `${marksAwarded === q.marks ? '✅' : marksAwarded > 0 ? '⚠️' : '❌'} ${correct}/${q.pairs.length} correct — <strong>${marksAwarded}/${q.marks} marks</strong>`;
-      }
+      // Just record the current state — no feedback shown yet
+      let correct = 0;
+      q.pairs.forEach(p => { if (matchMap[p.term] === p.term) correct++; });
+      const marksAwarded = Math.round((correct / q.pairs.length) * q.marks);
+      autoMarkedResults[q.id] = {
+        marks_awarded: marksAwarded,
+        marks_available: q.marks,
+        type: 'auto',
+        correct,
+        total: q.pairs.length,
+        matchMap: { ...matchMap }
+      };
     });
   });
 }
@@ -1500,26 +1485,55 @@ function displayResults(writtenResults, writtenAnswers) {
       // Auto-marked question
       const r = autoMarkedResults[q.id];
       const cls = r.marks_awarded === r.marks_available ? 'marks-full' : r.marks_awarded > 0 ? 'marks-partial' : 'marks-zero';
-      let answerText = '';
-      if (q.type === 'fill_in_blank') answerText = `Your answer: <em>${r.student_answer || 'No answer'}</em>`;
-      else if (q.type === 'multiple_choice') answerText = '';
-      else if (q.type === 'match') answerText = `${r.correct}/${r.total} pairs matched correctly`;
+
+      let bodyHTML = '';
+
+      if (q.type === 'multiple_choice') {
+        const correct = r.selected_answer === q.correct;
+        bodyHTML = `
+          <div class="student-answer-text">Your answer: <em>${r.selected_answer || 'No answer selected'}</em></div>
+          <div class="feedback-grid">
+            <div class="feedback-section">
+              <div class="feedback-label">${correct ? '✅ Correct!' : '❌ Incorrect'}</div>
+              <div class="feedback-text">Correct answer: <strong>${q.correct}</strong></div>
+            </div>
+          </div>`;
+
+      } else if (q.type === 'fill_in_blank') {
+        bodyHTML = `
+          <div class="student-answer-text">Your answer: <em>${r.student_answer || 'No answer'}</em></div>
+          ${r.marks_awarded === 0 ? `
+          <div class="feedback-grid">
+            <div class="feedback-section">
+              <div class="feedback-label">❌ Incorrect</div>
+              <div class="feedback-text">Correct answer: <strong>${q.correct}</strong></div>
+            </div>
+          </div>` : `<div class="auto-result auto-correct" style="margin-top:0.5rem">✅ Correct!</div>`}`;
+
+      } else if (q.type === 'match') {
+        const pairs = q.pairs.map(p => {
+          const studentAnswer = r.matchMap ? r.matchMap[p.term] : null;
+          const isCorrect = studentAnswer === p.term;
+          return `<div style="padding:0.3rem 0; font-size:0.82rem; color: ${isCorrect ? '#16a34a' : '#dc2626'}">
+            ${isCorrect ? '✅' : '❌'} <strong>${p.term}</strong> → ${p.definition}
+            ${!isCorrect && studentAnswer ? `<span style="color:#64748b;font-size:0.75rem"> (you matched: ${studentAnswer})</span>` : ''}
+            ${!isCorrect && !studentAnswer ? `<span style="color:#64748b;font-size:0.75rem"> (not matched)</span>` : ''}
+          </div>`;
+        }).join('');
+        bodyHTML = `
+          <div class="student-answer-text">${r.correct || 0}/${r.total || q.pairs.length} pairs matched correctly</div>
+          <div class="feedback-section" style="margin-top:0.5rem">
+            <div class="feedback-label">Results</div>
+            <div class="feedback-text">${pairs}</div>
+          </div>`;
+      }
 
       card.innerHTML = `
         <div class="result-header">
           <div class="result-q-text">Q${i+1}. ${q.question}</div>
           <span class="marks-awarded ${cls}">${r.marks_awarded}/${r.marks_available}</span>
         </div>
-        ${answerText ? `<div class="student-answer-text">${answerText}</div>` : ''}
-        ${q.type === 'fill_in_blank' && r.marks_awarded === 0 ? `
-          <div class="feedback-text" style="margin-top:0.5rem">
-            <strong>Correct answer:</strong> ${q.correct}
-          </div>` : ''}
-        ${q.type === 'match' ? `
-          <div class="feedback-text" style="margin-top:0.5rem">
-            <strong>Correct matches:</strong><br>
-            ${q.pairs.map(p => `${p.term} → ${p.definition}`).join('<br>')}
-          </div>` : ''}
+        ${bodyHTML}
       `;
 
     } else if (writtenMap[q.id]) {
