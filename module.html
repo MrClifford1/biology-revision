@@ -1463,7 +1463,7 @@ function displayResults(writtenResults, writtenAnswers) {
 
   // Save score to Firebase
   if (window.saveScoreToFirebase) {
-    window.saveScoreToFirebase(totalAwarded, totalAvail, writtenResults, writtenAnswers);
+    window.saveScoreToFirebase(totalAwarded, totalAvail, selectedQuestions, writtenResults, writtenAnswers);
   }
 
   const container = document.getElementById('results-container');
@@ -1580,68 +1580,73 @@ loadQuestions();
 <script type="module">
   import { onAuthChange, saveRAG, loadRAG, saveMockScore } from './firebase.js';
 
-  let currentUser = null;
+  // Store user globally so all handlers can access it
+  window._currentUser = null;
 
   onAuthChange(async user => {
-    // Gate the whole site — redirect to login if not signed in
+    // Gate — redirect to login if not signed in
     if (!user) {
       window.location.href = `login.html?redirect=module.html?module=${moduleId}`;
       return;
     }
+
+    window._currentUser = user;
+
+    // Update nav with user's first name
     const navTitle = document.getElementById('nav-title');
-    if (user) {
-      navTitle.innerHTML = `${meta.title} &nbsp;·&nbsp; <span style="color:#94a3b8;font-size:0.8rem">${user.displayName?.split(' ')[0]}</span>`;
-    }
+    if (navTitle) navTitle.innerHTML = `${meta.title} &nbsp;·&nbsp; <span style="color:#94a3b8;font-size:0.8rem">${user.displayName?.split(' ')[0] || ''}</span>`;
 
     // Show progress link
-    if (user) {
-      const pl = document.getElementById('progress-link');
-      if (pl) pl.style.display = 'flex';
-    }
-    if (user) {
-      try {
-        const cloudRAG = await loadRAG(user.uid, moduleId);
-        if (Object.keys(cloudRAG).length > 0) {
-          // Update the displayed RAG items with cloud state
-          const items = document.querySelectorAll('.topic-item');
-          items.forEach((item, i) => {
-            item.classList.remove('rag-red', 'rag-amber', 'rag-green');
-            const state = cloudRAG[i];
-            if (state) item.classList.add(`rag-${state}`);
-          });
-          // Also update local ragState variable via custom event
-          window._cloudRAG = cloudRAG;
-        }
-      } catch(e) {
-        console.log('Could not load cloud RAG:', e);
+    const pl = document.getElementById('progress-link');
+    if (pl) pl.style.display = 'flex';
+
+    // Load RAG state from Firebase and update displayed items
+    try {
+      const cloudRAG = await loadRAG(user.uid, moduleId);
+      if (Object.keys(cloudRAG).length > 0) {
+        const items = document.querySelectorAll('.topic-item');
+        items.forEach((item, i) => {
+          item.classList.remove('rag-red', 'rag-amber', 'rag-green');
+          if (cloudRAG[i]) item.classList.add(`rag-${cloudRAG[i]}`);
+        });
+        // Sync local ragState with cloud state
+        Object.assign(ragState, cloudRAG);
       }
+    } catch(e) {
+      console.log('Could not load cloud RAG:', e);
     }
   });
 
-  // Override RAG click handler to also save to Firebase
+  // Save RAG to Firebase whenever a topic is clicked
   document.addEventListener('rag-updated', async (e) => {
-    if (currentUser) {
-      try {
-        await saveRAG(currentUser.uid, moduleId, e.detail);
-      } catch(err) {
-        console.log('Could not save RAG to cloud:', err);
-      }
+    if (!window._currentUser) return;
+    try {
+      await saveRAG(window._currentUser.uid, moduleId, e.detail);
+    } catch(err) {
+      console.log('Could not save RAG to cloud:', err);
     }
   });
 
   // Save mock score to Firebase after marking
-  window.saveScoreToFirebase = async (totalAwarded, totalAvail, results, answers) => {
-    if (!currentUser) return;
+  window.saveScoreToFirebase = async (totalAwarded, totalAvail, allQuestions, writtenResults, writtenAnswers) => {
+    if (!window._currentUser) return;
     try {
-      const questions = answers.map((a, i) => ({
-        id: a.id,
-        topic: selectedQuestions.find(q => q.id === a.id)?.topic || '',
-        marks: a.marks,
-        awarded: results[i]?.marks_awarded || 0,
-      }));
-      await saveMockScore(currentUser.uid, moduleId, totalAwarded, totalAvail, questions);
+      const questions = allQuestions.map(q => {
+        let awarded = 0;
+        if (autoMarkedResults[q.id]) {
+          awarded = autoMarkedResults[q.id].marks_awarded || 0;
+        } else {
+          const wi = writtenAnswers.findIndex(a => a.id === q.id);
+          if (wi >= 0 && writtenResults[wi]) awarded = writtenResults[wi].marks_awarded || 0;
+        }
+        return { id: q.id, topic: q.topic || '', marks: q.marks, awarded };
+      });
+      await saveMockScore(window._currentUser.uid, moduleId, totalAwarded, totalAvail, questions);
+      console.log('Score saved to Firebase ✅');
     } catch(err) {
       console.log('Could not save score to cloud:', err);
     }
   };
 </script>
+</body>
+</html>
