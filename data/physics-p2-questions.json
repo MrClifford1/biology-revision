@@ -1,0 +1,493 @@
+[
+  {
+    "id": "P2-MC-001",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Basic Electricity",
+    "question": "What is the unit of electrical resistance?",
+    "options": ["Ampere", "Volt", "Ohm", "Watt"],
+    "correct": "Ohm"
+  },
+  {
+    "id": "P2-MC-002",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Basic Electricity",
+    "question": "A resistor has a voltage of 12 V across it and a current of 3 A flowing through it. What is its resistance?",
+    "options": ["36 Ω", "4 Ω", "9 Ω", "0.25 Ω"],
+    "correct": "4 Ω"
+  },
+  {
+    "id": "P2-MC-003",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Circuits",
+    "question": "In a series circuit with two resistors, what is true about the current?",
+    "options": [
+      "It is different through each resistor",
+      "It is the same through each resistor",
+      "It is shared between the resistors",
+      "It is zero through one of the resistors"
+    ],
+    "correct": "It is the same through each resistor"
+  },
+  {
+    "id": "P2-MC-004",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Circuits",
+    "question": "Which component has a resistance that decreases as temperature increases?",
+    "options": ["LDR", "Diode", "Thermistor", "Filament lamp"],
+    "correct": "Thermistor"
+  },
+  {
+    "id": "P2-MC-005",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Circuits",
+    "question": "How should a voltmeter be connected in a circuit?",
+    "options": [
+      "In series with the component",
+      "In parallel with the component",
+      "Between the battery terminals only",
+      "In series with the ammeter"
+    ],
+    "correct": "In parallel with the component"
+  },
+  {
+    "id": "P2-MC-006",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Domestic Electricity",
+    "question": "What colour is the live wire in a UK plug?",
+    "options": ["Blue", "Green and yellow", "Brown", "Red"],
+    "correct": "Brown"
+  },
+  {
+    "id": "P2-MC-007",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Domestic Electricity",
+    "question": "What is the frequency of mains AC electricity in the UK?",
+    "options": ["25 Hz", "100 Hz", "60 Hz", "50 Hz"],
+    "correct": "50 Hz"
+  },
+  {
+    "id": "P2-MC-008",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Domestic Electricity",
+    "question": "What is the purpose of the earth wire in a plug?",
+    "options": [
+      "To carry current to the appliance",
+      "To complete the circuit back to the supply",
+      "To provide a safety path for current if a fault occurs",
+      "To measure the voltage of the supply"
+    ],
+    "correct": "To provide a safety path for current if a fault occurs"
+  },
+  {
+    "id": "P2-MC-009",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Power and Energy",
+    "question": "A device has a power of 2 kW and is used for 3 hours. How many kWh of energy does it use?",
+    "options": ["1.5 kWh", "6 kWh", "0.67 kWh", "5 kWh"],
+    "correct": "6 kWh"
+  },
+  {
+    "id": "P2-MC-010",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Power and Energy",
+    "question": "Why is electricity transmitted at high voltage across the National Grid?",
+    "options": [
+      "To increase the current and reduce energy loss",
+      "To reduce the current and reduce energy loss as heat",
+      "To make it safer for workers",
+      "To increase the speed of electricity"
+    ],
+    "correct": "To reduce the current and reduce energy loss as heat"
+  },
+  {
+    "id": "P2-MC-011",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Circuits",
+    "question": "Which component only allows current to flow in one direction?",
+    "options": ["Resistor", "Thermistor", "Diode", "LDR"],
+    "correct": "Diode"
+  },
+  {
+    "id": "P2-MC-012",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Basic Electricity",
+    "question": "What does Q = It calculate?",
+    "options": ["Power", "Resistance", "Charge", "Energy"],
+    "correct": "Charge"
+  },
+  {
+    "id": "P2-MC-013",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Domestic Electricity",
+    "question": "What is the difference between a fuse and a circuit breaker?",
+    "options": [
+      "A fuse can be reset; a circuit breaker must be replaced",
+      "A circuit breaker can be reset; a fuse must be replaced",
+      "A fuse measures current; a circuit breaker measures voltage",
+      "They are identical in function and design"
+    ],
+    "correct": "A circuit breaker can be reset; a fuse must be replaced"
+  },
+  {
+    "id": "P2-MC-014",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Circuits",
+    "question": "In a parallel circuit, what is true about the voltage across each branch?",
+    "options": [
+      "It is shared between branches",
+      "It is zero in one branch",
+      "It is the same across each branch",
+      "It depends on the resistance of each branch"
+    ],
+    "correct": "It is the same across each branch"
+  },
+  {
+    "id": "P2-MC-015",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Static Electricity",
+    "question": "How is static electricity produced on an insulating material?",
+    "options": [
+      "By heating the material",
+      "By friction transferring electrons between surfaces",
+      "By connecting it to a battery",
+      "By exposing it to a magnetic field"
+    ],
+    "correct": "By friction transferring electrons between surfaces"
+  },
+  {
+    "id": "P2-FIB-001",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Basic Electricity",
+    "question": "The equation V = IR is known as __________ Law.",
+    "correct": "ohm's",
+    "acceptable": ["ohm's", "ohms", "Ohm's", "Ohms"]
+  },
+  {
+    "id": "P2-FIB-002",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Circuits",
+    "question": "An ammeter is connected in __________ to measure current.",
+    "correct": "series",
+    "acceptable": ["series"]
+  },
+  {
+    "id": "P2-FIB-003",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Domestic Electricity",
+    "question": "The __________ wire in a UK plug is brown and carries current from the supply.",
+    "correct": "live",
+    "acceptable": ["live"]
+  },
+  {
+    "id": "P2-FIB-004",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Domestic Electricity",
+    "question": "UK mains electricity is __________ current, which regularly reverses direction.",
+    "correct": "alternating",
+    "acceptable": ["alternating", "AC", "ac"]
+  },
+  {
+    "id": "P2-FIB-005",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Power and Energy",
+    "question": "Power = current × __________.",
+    "correct": "voltage",
+    "acceptable": ["voltage", "potential difference", "pd", "v"]
+  },
+  {
+    "id": "P2-FIB-006",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Circuits",
+    "question": "A component whose resistance decreases as light intensity increases is called an __________.",
+    "correct": "ldr",
+    "acceptable": ["ldr", "LDR", "light dependent resistor", "light-dependent resistor"]
+  },
+  {
+    "id": "P2-FIB-007",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Power and Energy",
+    "question": "A __________ transformer increases voltage for efficient transmission across the National Grid.",
+    "correct": "step-up",
+    "acceptable": ["step-up", "step up"]
+  },
+  {
+    "id": "P2-FIB-008",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Basic Electricity",
+    "question": "Electric charge is measured in __________.",
+    "correct": "coulombs",
+    "acceptable": ["coulombs", "coulomb", "C"]
+  },
+  {
+    "id": "P2-FIB-009",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Circuits",
+    "question": "A filament lamp is a __________ component because its resistance changes with temperature.",
+    "correct": "non-ohmic",
+    "acceptable": ["non-ohmic", "non ohmic", "nonohmic"]
+  },
+  {
+    "id": "P2-FIB-010",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Static Electricity",
+    "question": "The region around a charged object where another charge experiences a force is called an electric __________.",
+    "correct": "field",
+    "acceptable": ["field"]
+  },
+  {
+    "id": "P2-MATCH-001",
+    "type": "match",
+    "marks": 3,
+    "topic": "Circuits",
+    "question": "Match each circuit component to its correct description.",
+    "pairs": [
+      { "term": "Thermistor", "definition": "Resistance decreases as temperature increases" },
+      { "term": "LDR", "definition": "Resistance decreases as light intensity increases" },
+      { "term": "Diode", "definition": "Only allows current to flow in one direction" },
+      { "term": "Filament lamp", "definition": "Resistance increases as temperature increases — non-ohmic" }
+    ]
+  },
+  {
+    "id": "P2-MATCH-002",
+    "type": "match",
+    "marks": 3,
+    "topic": "Domestic Electricity",
+    "question": "Match each wire in a plug to its correct colour and function.",
+    "pairs": [
+      { "term": "Live wire", "definition": "Brown — carries current from the supply at high voltage" },
+      { "term": "Neutral wire", "definition": "Blue — completes the circuit back to the supply at 0 V" },
+      { "term": "Earth wire", "definition": "Green and yellow — safety wire to prevent electric shock" }
+    ]
+  },
+  {
+    "id": "P2-MATCH-003",
+    "type": "match",
+    "marks": 3,
+    "topic": "Basic Electricity",
+    "question": "Match each equation to what it calculates.",
+    "pairs": [
+      { "term": "V = IR", "definition": "Voltage across a component" },
+      { "term": "Q = It", "definition": "Charge that flows in a given time" },
+      { "term": "P = IV", "definition": "Power of a device" },
+      { "term": "E = Pt", "definition": "Energy transferred by a device" }
+    ]
+  },
+  {
+    "id": "P2-MATCH-004",
+    "type": "match",
+    "marks": 2,
+    "topic": "Circuits",
+    "question": "Match each circuit type to its correct property.",
+    "pairs": [
+      { "term": "Series circuit", "definition": "Current is the same throughout; voltage is shared" },
+      { "term": "Parallel circuit", "definition": "Voltage is the same across each branch; current is shared" }
+    ]
+  },
+  {
+    "id": "P2-MATCH-005",
+    "type": "match",
+    "marks": 2,
+    "topic": "Power and Energy",
+    "question": "Match each transformer type to its function in the National Grid.",
+    "pairs": [
+      { "term": "Step-up transformer", "definition": "Increases voltage for efficient long-distance transmission" },
+      { "term": "Step-down transformer", "definition": "Decreases voltage to a safe level for homes and businesses" }
+    ]
+  },
+  {
+    "id": "P2-SA-001",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Basic Electricity",
+    "question": "State Ohm's Law.",
+    "mark_scheme": "Voltage = current × resistance / V = IR (1); for an ohmic conductor at constant temperature (1) — accept either."
+  },
+  {
+    "id": "P2-SA-002",
+    "type": "written",
+    "marks": 1,
+    "command_word": "Calculate",
+    "topic": "Basic Electricity",
+    "question": "A current of 2 A flows through a resistor with a resistance of 15 Ω. Calculate the voltage across it.",
+    "mark_scheme": "V = IR = 2 × 15 = 30 V (1)."
+  },
+  {
+    "id": "P2-SA-003",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Domestic Electricity",
+    "question": "State the voltage and frequency of UK mains electricity.",
+    "mark_scheme": "230 V (1) and 50 Hz (1) — both needed for the mark."
+  },
+  {
+    "id": "P2-SA-004",
+    "type": "written",
+    "marks": 1,
+    "command_word": "Name",
+    "topic": "Circuits",
+    "question": "Name the component that allows current to flow in one direction only.",
+    "mark_scheme": "Diode (1)."
+  },
+  {
+    "id": "P2-SA-005",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Circuits",
+    "question": "Explain why the resistance of a thermistor decreases as temperature increases.",
+    "mark_scheme": "As temperature increases, more electrons are freed from atoms (1); more charge carriers available (1); current increases for same voltage so resistance decreases (1) — any two."
+  },
+  {
+    "id": "P2-SA-006",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Domestic Electricity",
+    "question": "Describe how a fuse protects an electrical appliance.",
+    "mark_scheme": "If current exceeds the fuse rating (1); the wire in the fuse melts / breaks the circuit (1); preventing further current flow / preventing damage or fire (1) — any two."
+  },
+  {
+    "id": "P2-SA-007",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Calculate",
+    "topic": "Power and Energy",
+    "question": "A kettle has a power rating of 2.5 kW. Calculate the energy transferred in 4 minutes. Give your answer in joules.",
+    "mark_scheme": "E = Pt = 2500 × 240 (1) = 600 000 J (1)."
+  },
+  {
+    "id": "P2-SA-008",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Power and Energy",
+    "question": "Explain why the National Grid uses high voltages to transmit electricity.",
+    "mark_scheme": "High voltage means lower current (1); lower current means less energy wasted as heat in the cables (1); makes transmission more efficient (1) — any two."
+  },
+  {
+    "id": "P2-SA-009",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Static Electricity",
+    "question": "Explain how a plastic rod becomes negatively charged when rubbed with a cloth.",
+    "mark_scheme": "Friction between rod and cloth (1); electrons transferred from cloth to rod (1); rod gains electrons so becomes negatively charged (1) — any two."
+  },
+  {
+    "id": "P2-SA-010",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Circuits",
+    "question": "Describe how you would investigate the I-V characteristic of a filament lamp in the lab.",
+    "mark_scheme": "Set up circuit with lamp, variable resistor, ammeter in series (1); voltmeter connected in parallel across the lamp (1); vary the resistance to change the current (1); record current and voltage readings (1); plot I-V graph (1); curve shows resistance increases as temperature increases (1) — any three."
+  },
+  {
+    "id": "P2-SA-011",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Basic Electricity",
+    "question": "Explain the difference between an ohmic and a non-ohmic conductor. Give one example of each.",
+    "mark_scheme": "Ohmic conductor: current proportional to voltage (1); resistance stays constant (1); example: resistor (1). Non-ohmic: resistance changes with temperature or other factors (1); example: filament lamp / thermistor / diode (1) — any three."
+  },
+  {
+    "id": "P2-SA-012",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Circuits",
+    "question": "Explain why adding more lamps in parallel to a circuit increases the total current drawn from the battery.",
+    "mark_scheme": "Each lamp is connected in a separate branch (1); voltage across each lamp is the same as the supply voltage (1); each lamp draws its own current (1); total current = sum of currents in each branch (1); more branches = more total current (1) — any three."
+  },
+  {
+    "id": "P2-LA-001",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Domestic Electricity",
+    "question": "Explain why AC is used for mains electricity rather than DC, and describe the role of transformers in the National Grid.",
+    "mark_scheme": "AC can easily be stepped up or down using transformers (1); DC cannot be transformed (1); high voltage used for transmission reduces current (1); lower current means less energy wasted as heat in cables (1); step-down transformers reduce voltage to safe level for homes (1) — any four."
+  },
+  {
+    "id": "P2-LA-002",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Circuits",
+    "question": "Describe the differences between series and parallel circuits. Include what happens to current and voltage in each.",
+    "mark_scheme": "Series: single loop, one path for current (1); current same throughout (1); voltage shared between components (1). Parallel: multiple branches (1); voltage same across each branch (1); current shared between branches (1); total resistance lower in parallel (1) — any four."
+  },
+  {
+    "id": "P2-LA-003",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Calculate",
+    "topic": "Power and Energy",
+    "question": "A heater operates at 230 V and draws a current of 8 A. Calculate its power, and the energy transferred in 2 hours. Give your answer in kWh.",
+    "mark_scheme": "P = IV = 230 × 8 = 1840 W (1); convert to kW: 1.84 kW (1); E = Pt = 1.84 × 2 = 3.68 kWh (1); correct unit stated (1)."
+  },
+  {
+    "id": "P2-LA-004",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Static Electricity",
+    "question": "Explain how static electricity builds up on a van de Graaff generator and describe the risks of static electricity in fuelling aircraft.",
+    "mark_scheme": "Friction between belt and roller transfers electrons (1); charge builds up on the dome (1); large potential difference created (1). Fuelling aircraft: fuel flowing through pipe causes static build-up (1); spark could ignite fuel vapour causing fire / explosion (1); aircraft earthed to prevent build-up (1) — any four."
+  },
+  {
+    "id": "P2-LA-005",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Circuits",
+    "question": "A student tests three different resistors and plots their I-V graphs. Resistor A gives a straight line through the origin. Resistor B gives a curve that flattens at higher voltages. Resistor C only allows current to flow in one direction. Evaluate what each graph tells us about the component.",
+    "mark_scheme": "Resistor A: straight line shows constant resistance / ohmic conductor (1); current proportional to voltage (1). Resistor B: resistance increases as voltage increases (1); likely a filament lamp as resistance increases with temperature (1). Resistor C: only conducts one way (1); must be a diode (1); very high resistance in reverse direction (1) — any five."
+  },
+  {
+    "id": "P2-LA-006",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Domestic Electricity",
+    "question": "Explain how the wiring in a plug keeps users safe, including the roles of the live, neutral and earth wires, and the fuse.",
+    "mark_scheme": "Live wire (brown) carries current at high voltage (1); neutral wire (blue) completes the circuit at ~0 V (1); earth wire (green/yellow) connects metal case to earth (1); if fault causes case to become live, large current flows through earth wire (1); this blows the fuse (1); fuse melts and breaks the circuit (1); prevents electric shock / fire (1) — any six."
+  },
+  {
+    "id": "P2-LA-007",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Power and Energy",
+    "question": "A household is deciding between using a gas boiler and an electric heat pump for heating. Evaluate both options considering efficiency, running costs and environmental impact.",
+    "mark_scheme": "Gas boiler: burns fossil fuel (1); produces CO₂ contributing to climate change (1); relatively cheap fuel but prices variable (1). Heat pump: uses electricity (1); moves heat rather than generating it — efficiency over 100% (1); running costs depend on electricity price (1); environmental impact depends on how electricity is generated (1); if renewable electricity used then very low carbon (1) — any six."
+  }
+]
