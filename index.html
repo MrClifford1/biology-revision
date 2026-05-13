@@ -302,6 +302,15 @@
 </head>
 <body>
 
+<!-- Auth loading overlay — hidden once auth state is known -->
+<div id="auth-loading" style="position:fixed;inset:0;background:#0f1d3d;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;">
+  <svg width="64" height="72" viewBox="0 0 88 100" xmlns="http://www.w3.org/2000/svg">
+    <path d="M44 0 L88 14 L88 50 Q88 80 44 100 Q0 80 0 50 L0 14 Z" fill="#c8202c" stroke="#d4a534" stroke-width="2"/>
+  </svg>
+  <div style="color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:1.1rem;margin-top:1rem">Streetly Science Hub</div>
+  <div style="color:#94a3b8;font-size:0.8rem;margin-top:0.4rem">Loading...</div>
+</div>
+
 <div class="top-bar">
   <div class="top-bar-school">The Streetly Academy · Science Department</div>
   <a href="https://www.streetly.academy/" target="_blank">School Website ↗</a>
@@ -347,7 +356,14 @@
 <script type="module">
   import { onAuthChange, signOutUser } from './firebase.js';
 
+  // Gate the whole site — redirect to login if not signed in
   onAuthChange(user => {
+    if (!user) {
+      window.location.href = 'login.html';
+      return;
+    }
+    // User is signed in — hide loading overlay and show content
+    document.getElementById('auth-loading').style.display = 'none';
     const status = document.getElementById('auth-status');
     const buttons = document.getElementById('auth-buttons');
     if (user) {
