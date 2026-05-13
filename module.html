@@ -93,34 +93,43 @@
     }
     .tabs {
       display: flex;
-      gap: 0.25rem;
-      border-bottom: 2px solid var(--border);
+      gap: 0.6rem;
       overflow-x: auto;
       scrollbar-width: none;
-      margin-top: 1rem;
+      margin-top: 1.1rem;
+      margin-bottom: 0.5rem;
+      border-bottom: none;
+      padding-bottom: 0;
     }
     .tabs::-webkit-scrollbar { display: none; }
     .tab-btn {
-      background: none;
-      border: none;
-      padding: 0.7rem 1.1rem;
+      background: #f1f5f9;
+      border: 1.5px solid var(--border);
+      padding: 0.55rem 1.2rem;
       font-family: 'Nunito', sans-serif;
       font-size: 0.875rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--subtext);
       cursor: pointer;
-      border-bottom: 2px solid transparent;
-      margin-bottom: -2px;
+      border-radius: 10px;
       white-space: nowrap;
-      transition: color 0.2s;
+      transition: all 0.18s;
       display: flex;
       align-items: center;
       gap: 0.4rem;
     }
-    .tab-btn:hover { color: var(--text); }
-    .tab-btn.active {
+    .tab-btn:hover {
+      background: white;
+      border-color: var(--accent);
       color: var(--accent);
-      border-bottom-color: var(--accent);
+      transform: translateY(-1px);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+    .tab-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
     }
 
     /* CONTENT */
@@ -227,23 +236,66 @@
       font-family: 'Nunito', sans-serif;
       font-weight: 800;
       font-size: 0.95rem;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
       color: var(--text);
     }
+    .checklist-legend {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 0.85rem;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      color: var(--subtext);
+      font-weight: 600;
+    }
+    .legend-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .legend-dot.red { background: #ef4444; }
+    .legend-dot.amber { background: #f59e0b; }
+    .legend-dot.green { background: #22c55e; }
     .topic-list {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 0.4rem;
       list-style: none;
     }
-    .topic-list li {
-      padding: 0.4rem 0.75rem;
+    .topic-item {
+      padding: 0.45rem 0.75rem;
       background: var(--bg);
       border-radius: 8px;
       font-size: 0.825rem;
       color: var(--text);
-      border-left: 3px solid var(--accent);
+      border-left: 4px solid #e2e8f0;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      transition: background 0.15s, border-color 0.15s;
     }
+    .topic-item:hover { background: #f0f4ff; }
+    .topic-item.rag-red { border-left-color: #ef4444; background: #fef2f2; }
+    .topic-item.rag-amber { border-left-color: #f59e0b; background: #fffbeb; }
+    .topic-item.rag-green { border-left-color: #22c55e; background: #f0fdf4; }
+    .topic-rag-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: #e2e8f0;
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .topic-item.rag-red .topic-rag-dot { background: #ef4444; }
+    .topic-item.rag-amber .topic-rag-dot { background: #f59e0b; }
+    .topic-item.rag-green .topic-rag-dot { background: #22c55e; }
 
     /* KEYWORDS */
     #keywords-panel { max-width: 100%; }
@@ -683,10 +735,10 @@
 
 <div class="tabs-wrapper">
   <div class="tabs">
-    <button class="tab-btn active" data-tab="spec">📋 Specification</button>
-    <button class="tab-btn" data-tab="revision">📖 Revision</button>
-    <button class="tab-btn" data-tab="keywords">🔤 Keywords</button>
-    <button class="tab-btn" data-tab="practice">✏️ Snippet Mock</button>
+    <button class="tab-btn active" data-tab="spec">📋 Spec</button>
+    <button class="tab-btn" data-tab="revision">📖 Revise</button>
+    <button class="tab-btn" data-tab="keywords">🔤 Words</button>
+    <button class="tab-btn" data-tab="practice">✏️ Mini Mock</button>
   </div>
 </div>
 
@@ -719,6 +771,12 @@
 
     <div class="checklist-card">
       <h3 id="checklist-title">Topics</h3>
+      <div class="checklist-legend">
+        <div class="legend-item"><div class="legend-dot red"></div> Not confident</div>
+        <div class="legend-item"><div class="legend-dot amber"></div> Getting there</div>
+        <div class="legend-item"><div class="legend-dot green"></div> Confident</div>
+        <span style="font-size:0.72rem;color:var(--subtext);margin-left:auto">Click each topic to rate yourself</span>
+      </div>
       <ul class="topic-list" id="topic-list"></ul>
     </div>
   </div>
@@ -802,8 +860,8 @@
     <div id="practice-panel">
       <div class="practice-intro" id="practice-intro">
         <div class="practice-intro-text">
-          <h2>Snippet Mock</h2>
-          <p>10 marks worth of randomly selected questions — at least one longer question (4–6 marks) and a mix of shorter questions. Answer all questions then submit for AI marking with detailed feedback.</p>
+          <h2>Mini Mock</h2>
+          <p>10 marks worth of randomly selected questions — at least one longer question (4–6 marks) and a mix of shorter questions. Answer all questions then submit for smart marking with detailed feedback.</p>
         </div>
         <button class="btn-primary" id="start-practice-btn">▶ Start</button>
       </div>
@@ -818,7 +876,7 @@
 
       <div class="loading-overlay" id="loading-overlay">
         <div class="spinner"></div>
-        <p>AI is marking your answers...</p>
+        <p>Smart marking in progress...</p>
       </div>
 
       <div class="marking-section" id="marking-section">
@@ -912,13 +970,28 @@ document.getElementById('module-title').textContent = meta.title;
 document.getElementById('module-subtitle').textContent = meta.subtitle;
 document.getElementById('spec-link').href = meta.specLink;
 document.getElementById('revision-link').href = meta.revisionLink;
-document.getElementById('checklist-title').textContent = `${moduleId.toUpperCase()} ${meta.title} — Topics`;
+document.getElementById('checklist-title').textContent = `${moduleId.toUpperCase()} ${meta.title} — Topic Checklist`;
 
 const topicList = document.getElementById('topic-list');
 topicList.innerHTML = '';
-meta.topics.forEach(t => {
+const ragKey = `rag-${moduleId}`;
+let ragState = {};
+try { ragState = JSON.parse(localStorage.getItem(ragKey) || '{}'); } catch(e) {}
+
+meta.topics.forEach((t, i) => {
   const li = document.createElement('li');
-  li.textContent = t;
+  li.className = 'topic-item';
+  const state = ragState[i] || '';
+  if (state) li.classList.add(`rag-${state}`);
+  li.innerHTML = `<span>${t}</span><div class="topic-rag-dot"></div>`;
+  li.addEventListener('click', () => {
+    const cur = ragState[i] || '';
+    const next = cur === '' ? 'red' : cur === 'red' ? 'amber' : cur === 'amber' ? 'green' : '';
+    li.classList.remove('rag-red', 'rag-amber', 'rag-green');
+    if (next) li.classList.add(`rag-${next}`);
+    ragState[i] = next;
+    try { localStorage.setItem(ragKey, JSON.stringify(ragState)); } catch(e) {}
+  });
   topicList.appendChild(li);
 });
 
