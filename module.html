@@ -719,9 +719,9 @@
 <body>
 
 <nav class="topnav">
-  <a href="index.html">← Home</a>
+  <a href="javascript:history.back()">← Back</a>
   <a href="progress.html" id="progress-link" style="display:none">📊 My Progress</a>
-  <span class="topnav-title" id="nav-title">Biology Revision</span>
+  <span class="topnav-title" id="nav-title">Revision</span>
 </nav>
 
 <div class="module-header">
@@ -957,13 +957,80 @@ const MODULE_META = {
     revisionLink: "https://docs.google.com/presentation/d/1siuk5izCcQdwq_FhThSqON8f_0THS9DXpKOLZ4J5NmE/preview",
     topics: ["Communities", "Abiotic & biotic factors", "Adaptations", "Levels of organisation", "Sampling (required practical)", "Cycling materials", "Decomposition", "Biodiversity", "Global warming", "Maintaining biodiversity"]
   },
+  // ── PHYSICS ─────────────────────────────────────────────────────────────────
+  p1: {
+    title: "Energy",
+    subtitle: "Energy stores · Transfer · Efficiency · Resources",
+    colour: "#f59e0b",
+    colourLight: "#fef3c7",
+    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
+    revisionLink: "#",
+    topics: ["Energy stores and systems", "Kinetic energy", "Gravitational potential energy", "Elastic potential energy", "Specific heat capacity", "Power", "Efficiency", "Energy resources", "Renewable energy sources", "Non-renewable energy sources", "Trends in energy use"]
+  },
+  p2: {
+    title: "Electricity",
+    subtitle: "Circuits · Resistance · Domestic electricity · Charge",
+    colour: "#6366f1",
+    colourLight: "#e0e7ff",
+    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
+    revisionLink: "#",
+    topics: ["Standard circuit symbols", "Series and parallel circuits", "Current, voltage and resistance", "Ohm's Law", "I-V characteristics", "Resistance of components", "Domestic electricity", "AC and DC current", "Power and energy", "The National Grid", "Static electricity", "Electric fields"]
+  },
+  p3: {
+    title: "Particle Model of Matter",
+    subtitle: "States of matter · Density · Specific heat · Gas pressure",
+    colour: "#0ea5e9",
+    colourLight: "#e0f2fe",
+    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
+    revisionLink: "#",
+    topics: ["States of matter", "Changes of state", "Particle model", "Density", "Specific heat capacity (required practical)", "Specific latent heat", "Particle motion in gases", "Temperature and pressure", "Atmospheric pressure"]
+  },
+  p4: {
+    title: "Atomic Structure",
+    subtitle: "Atoms · Radioactive decay · Nuclear radiation · Half-life",
+    colour: "#e85d4a",
+    colourLight: "#fee2e2",
+    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
+    revisionLink: "#",
+    topics: ["The structure of the atom", "The development of the atomic model", "Isotopes", "Radioactive decay", "Nuclear radiation — alpha, beta, gamma", "Half-life", "Radioactive contamination", "Background radiation", "Nuclear fission", "Nuclear fusion"]
+  },
+  p5: {
+    title: "Forces",
+    subtitle: "Contact forces · Motion · Newton's Laws · Momentum",
+    colour: "#22c55e",
+    colourLight: "#dcfce7",
+    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
+    revisionLink: "#",
+    topics: ["Scalar and vector quantities", "Contact and non-contact forces", "Gravity and weight", "Resultant forces", "Work done and energy transfer", "Forces and elasticity (required practical)", "Distance-time graphs", "Velocity-time graphs", "Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Stopping distances", "Momentum", "Changes in momentum"]
+  },
+  p6: {
+    title: "Waves",
+    subtitle: "Wave properties · EM spectrum · Sound · Light",
+    colour: "#8b5cf6",
+    colourLight: "#ede9fe",
+    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
+    revisionLink: "#",
+    topics: ["Transverse and longitudinal waves", "Wave properties — amplitude, wavelength, frequency", "Wave speed equation", "Measuring wave speed (required practical)", "Reflection and refraction", "Sound waves", "The electromagnetic spectrum", "Uses of EM waves", "Dangers of EM waves", "Radio waves and microwaves", "Infrared, visible and UV", "X-rays and gamma rays", "Black body radiation"]
+  },
+  p7: {
+    title: "Magnetism & Electromagnetism",
+    subtitle: "Magnets · Motor effect · Generators · Transformers",
+    colour: "#ec4899",
+    colourLight: "#fce7f3",
+    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
+    revisionLink: "#",
+    topics: ["Permanent and induced magnets", "Magnetic fields", "Electromagnetism — the solenoid", "Fleming's left-hand rule", "The motor effect", "Electric motors", "Induced potential", "Generators", "Microphones and speakers", "Transformers", "The National Grid"]
+  },
 };
 
 const params = new URLSearchParams(window.location.search);
+const subjectId = params.get('subject') || 'biology';
 const moduleId = params.get('module') || 'b1';
 const meta = MODULE_META[moduleId] || MODULE_META.b1;
+const subjectLabel = subjectId === 'physics' ? 'Physics' : subjectId === 'chemistry' ? 'Chemistry' : 'Biology';
+const subjectPage = subjectId === 'physics' ? 'physics.html' : subjectId === 'chemistry' ? 'chemistry.html' : 'biology.html';
 
-document.title = `${meta.title} — AQA GCSE Biology`;
+document.title = `${meta.title} — AQA GCSE ${subjectLabel}`;
 document.getElementById('nav-title').textContent = meta.title;
 document.getElementById('module-badge').textContent = moduleId.toUpperCase();
 document.getElementById('module-badge').style.background = meta.colour;
@@ -975,7 +1042,7 @@ document.getElementById('checklist-title').textContent = `${moduleId.toUpperCase
 
 const topicList = document.getElementById('topic-list');
 topicList.innerHTML = '';
-const ragKey = `rag-${moduleId}`;
+const ragKey = `rag-${subjectId}-${moduleId}`;
 let ragState = {};
 try { ragState = JSON.parse(localStorage.getItem(ragKey) || '{}'); } catch(e) {}
 
@@ -1019,7 +1086,9 @@ let keywords = [];
 
 async function loadKeywords() {
   try {
-    const res = await fetch(`data/${moduleId}-keywords.json`);
+    // Support both new naming (biology-b1-keywords.json) and legacy (b1-keywords.json)
+    let res = await fetch(`data/${subjectId}-${moduleId}-keywords.json`);
+    if (!res.ok) res = await fetch(`data/${moduleId}-keywords.json`);
     keywords = await res.json();
   } catch(e) {
     keywords = [];
@@ -1171,7 +1240,9 @@ let autoMarkedResults = {};
 
 async function loadQuestions() {
   try {
-    const res = await fetch(`data/${moduleId}-questions.json`);
+    // Support both new naming (biology-b1-questions.json) and legacy (b1-questions.json)
+    let res = await fetch(`data/${subjectId}-${moduleId}-questions.json`);
+    if (!res.ok) res = await fetch(`data/${moduleId}-questions.json`);
     questions = await res.json();
   } catch(e) {
     questions = [];
@@ -1602,7 +1673,7 @@ loadQuestions();
 
     // Load RAG state from Firebase and update displayed items
     try {
-      const cloudRAG = await loadRAG(user.uid, moduleId);
+      const cloudRAG = await loadRAG(user.uid, `${subjectId}-${moduleId}`);
       if (Object.keys(cloudRAG).length > 0) {
         const items = document.querySelectorAll('.topic-item');
         items.forEach((item, i) => {
@@ -1621,7 +1692,7 @@ loadQuestions();
   document.addEventListener('rag-updated', async (e) => {
     if (!window._currentUser) return;
     try {
-      await saveRAG(window._currentUser.uid, moduleId, e.detail);
+      await saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, e.detail);
     } catch(err) {
       console.log('Could not save RAG to cloud:', err);
     }
@@ -1641,7 +1712,7 @@ loadQuestions();
         }
         return { id: q.id, topic: q.topic || '', marks: q.marks, awarded };
       });
-      await saveMockScore(window._currentUser.uid, moduleId, totalAwarded, totalAvail, questions);
+      await saveMockScore(window._currentUser.uid, `${subjectId}-${moduleId}`, totalAwarded, totalAvail, questions);
       console.log('Score saved to Firebase ✅');
     } catch(err) {
       console.log('Could not save score to cloud:', err);
