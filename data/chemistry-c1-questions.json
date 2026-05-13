@@ -1,0 +1,523 @@
+[
+  {
+    "id": "C1-MC-001",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Atomic Structure",
+    "question": "What is the relative charge of a proton?",
+    "options": ["-1", "0", "+1", "+2"],
+    "correct": "+1"
+  },
+  {
+    "id": "C1-MC-002",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Atomic Structure",
+    "question": "Which subatomic particle has no charge?",
+    "options": ["Proton", "Electron", "Neutron", "Ion"],
+    "correct": "Neutron"
+  },
+  {
+    "id": "C1-MC-003",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Atomic Structure",
+    "question": "Where are protons and neutrons found in an atom?",
+    "options": ["In the electron shells", "In the nucleus", "Around the nucleus", "Evenly spread throughout"],
+    "correct": "In the nucleus"
+  },
+  {
+    "id": "C1-MC-004",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Atomic Structure",
+    "question": "An atom has atomic number 11 and mass number 23. How many neutrons does it have?",
+    "options": ["11", "23", "12", "34"],
+    "correct": "12"
+  },
+  {
+    "id": "C1-MC-005",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Atomic Structure",
+    "question": "What are isotopes?",
+    "options": [
+      "Atoms of different elements with the same mass number",
+      "Atoms of the same element with different numbers of neutrons",
+      "Atoms of the same element with different numbers of electrons",
+      "Atoms of different elements with the same number of protons"
+    ],
+    "correct": "Atoms of the same element with different numbers of neutrons"
+  },
+  {
+    "id": "C1-MC-006",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "The Periodic Table",
+    "question": "How are elements arranged in the modern periodic table?",
+    "options": [
+      "In order of increasing atomic mass",
+      "In order of increasing atomic number",
+      "Alphabetically by symbol",
+      "In order of reactivity"
+    ],
+    "correct": "In order of increasing atomic number"
+  },
+  {
+    "id": "C1-MC-007",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "The Periodic Table",
+    "question": "What do elements in the same group of the periodic table have in common?",
+    "options": [
+      "The same number of neutrons",
+      "The same number of electron shells",
+      "The same number of electrons in their outer shell",
+      "The same mass number"
+    ],
+    "correct": "The same number of electrons in their outer shell"
+  },
+  {
+    "id": "C1-MC-008",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Groups",
+    "question": "Which group of the periodic table contains the alkali metals?",
+    "options": ["Group 0", "Group 1", "Group 7", "Group 2"],
+    "correct": "Group 1"
+  },
+  {
+    "id": "C1-MC-009",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Groups",
+    "question": "What is produced when potassium reacts with water?",
+    "options": [
+      "Potassium chloride and oxygen",
+      "Potassium hydroxide and hydrogen",
+      "Potassium oxide and water",
+      "Potassium carbonate and carbon dioxide"
+    ],
+    "correct": "Potassium hydroxide and hydrogen"
+  },
+  {
+    "id": "C1-MC-010",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Groups",
+    "question": "Which halogen is the most reactive?",
+    "options": ["Iodine", "Bromine", "Chlorine", "Fluorine"],
+    "correct": "Fluorine"
+  },
+  {
+    "id": "C1-MC-011",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Groups",
+    "question": "Why are noble gases unreactive?",
+    "options": [
+      "They have no protons",
+      "They have a full outer shell of electrons",
+      "They are gases at room temperature",
+      "They have very low mass numbers"
+    ],
+    "correct": "They have a full outer shell of electrons"
+  },
+  {
+    "id": "C1-MC-012",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "History of the Atom",
+    "question": "What did Rutherford's alpha scattering experiment prove?",
+    "options": [
+      "Electrons orbit in fixed shells",
+      "The atom is a solid sphere",
+      "The atom has a small, dense, positively charged nucleus",
+      "Atoms contain negatively charged electrons"
+    ],
+    "correct": "The atom has a small, dense, positively charged nucleus"
+  },
+  {
+    "id": "C1-MC-013",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "History of the Atom",
+    "question": "Which model of the atom described electrons embedded in a sphere of positive charge?",
+    "options": ["Nuclear model", "Bohr model", "Plum pudding model", "Shell model"],
+    "correct": "Plum pudding model"
+  },
+  {
+    "id": "C1-MC-014",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Atomic Structure",
+    "question": "An atom of sodium has the electronic configuration 2,8,1. How many electron shells does it have?",
+    "options": ["1", "2", "3", "4"],
+    "correct": "3"
+  },
+  {
+    "id": "C1-MC-015",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Groups",
+    "question": "Chlorine water is added to a solution of potassium iodide. What would you observe?",
+    "options": [
+      "No reaction — chlorine is less reactive than iodine",
+      "The solution turns brown as iodine is displaced",
+      "The solution turns green as chlorine dissolves",
+      "A white precipitate forms"
+    ],
+    "correct": "The solution turns brown as iodine is displaced"
+  },
+  {
+    "id": "C1-FIB-001",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Atomic Structure",
+    "question": "The number of protons in an atom is called the __________ number.",
+    "correct": "atomic",
+    "acceptable": ["atomic", "proton"]
+  },
+  {
+    "id": "C1-FIB-002",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Atomic Structure",
+    "question": "The total number of protons and neutrons in the nucleus is called the __________ number.",
+    "correct": "mass",
+    "acceptable": ["mass", "nucleon"]
+  },
+  {
+    "id": "C1-FIB-003",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Atomic Structure",
+    "question": "Atoms of the same element with different numbers of neutrons are called __________.",
+    "correct": "isotopes",
+    "acceptable": ["isotopes"]
+  },
+  {
+    "id": "C1-FIB-004",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "The Periodic Table",
+    "question": "Elements in the same vertical column of the periodic table are in the same __________.",
+    "correct": "group",
+    "acceptable": ["group"]
+  },
+  {
+    "id": "C1-FIB-005",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "The Periodic Table",
+    "question": "Elements in the same horizontal row of the periodic table are in the same __________.",
+    "correct": "period",
+    "acceptable": ["period"]
+  },
+  {
+    "id": "C1-FIB-006",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Groups",
+    "question": "Group 1 metals react with water to produce a metal hydroxide and __________ gas.",
+    "correct": "hydrogen",
+    "acceptable": ["hydrogen"]
+  },
+  {
+    "id": "C1-FIB-007",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Groups",
+    "question": "The reactivity of Group 1 metals __________ going down the group.",
+    "correct": "increases",
+    "acceptable": ["increases", "gets greater", "gets higher"]
+  },
+  {
+    "id": "C1-FIB-008",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Groups",
+    "question": "Halogens exist as __________ molecules, for example Cl₂ and Br₂.",
+    "correct": "diatomic",
+    "acceptable": ["diatomic"]
+  },
+  {
+    "id": "C1-FIB-009",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "History of the Atom",
+    "question": "The alpha scattering experiment led to the replacement of the plum pudding model with the __________ model.",
+    "correct": "nuclear",
+    "acceptable": ["nuclear"]
+  },
+  {
+    "id": "C1-FIB-010",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Atomic Structure",
+    "question": "A charged particle formed when an atom gains or loses electrons is called an __________.",
+    "correct": "ion",
+    "acceptable": ["ion"]
+  },
+  {
+    "id": "C1-MATCH-001",
+    "type": "match",
+    "marks": 3,
+    "topic": "Atomic Structure",
+    "question": "Match each subatomic particle to its relative charge and mass.",
+    "pairs": [
+      { "term": "Proton", "definition": "Relative charge +1, relative mass 1" },
+      { "term": "Neutron", "definition": "Relative charge 0, relative mass 1" },
+      { "term": "Electron", "definition": "Relative charge -1, relative mass negligible" }
+    ]
+  },
+  {
+    "id": "C1-MATCH-002",
+    "type": "match",
+    "marks": 3,
+    "topic": "The Periodic Table",
+    "question": "Match each term to its correct definition.",
+    "pairs": [
+      { "term": "Element", "definition": "A substance made of only one type of atom" },
+      { "term": "Compound", "definition": "Two or more elements chemically bonded together" },
+      { "term": "Mixture", "definition": "Two or more substances not chemically combined" },
+      { "term": "Isotope", "definition": "Atoms of the same element with different numbers of neutrons" }
+    ]
+  },
+  {
+    "id": "C1-MATCH-003",
+    "type": "match",
+    "marks": 3,
+    "topic": "Groups",
+    "question": "Match each group to its correct description.",
+    "pairs": [
+      { "term": "Group 1", "definition": "Alkali metals — very reactive, one outer electron, react with water" },
+      { "term": "Group 7", "definition": "Halogens — reactive non-metals, seven outer electrons, exist as diatomic molecules" },
+      { "term": "Group 0", "definition": "Noble gases — full outer shell, very unreactive, monatomic" },
+      { "term": "Transition metals", "definition": "Hard, dense metals in the centre of the periodic table, form coloured compounds" }
+    ]
+  },
+  {
+    "id": "C1-MATCH-004",
+    "type": "match",
+    "marks": 3,
+    "topic": "History of the Atom",
+    "question": "Match each atomic model to its key feature.",
+    "pairs": [
+      { "term": "Plum pudding model", "definition": "Electrons embedded in a sphere of positive charge" },
+      { "term": "Nuclear model", "definition": "Small, dense, positively charged nucleus with electrons orbiting around it" },
+      { "term": "Bohr model", "definition": "Electrons orbit the nucleus in fixed energy levels (shells)" }
+    ]
+  },
+  {
+    "id": "C1-MATCH-005",
+    "type": "match",
+    "marks": 3,
+    "topic": "Groups",
+    "question": "Match each halogen to its state at room temperature.",
+    "pairs": [
+      { "term": "Fluorine", "definition": "Pale yellow gas" },
+      { "term": "Chlorine", "definition": "Green gas" },
+      { "term": "Bromine", "definition": "Orange-brown liquid" },
+      { "term": "Iodine", "definition": "Grey-black solid" }
+    ]
+  },
+  {
+    "id": "C1-SA-001",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Atomic Structure",
+    "question": "State what is meant by the atomic number of an element.",
+    "mark_scheme": "The number of protons in the nucleus of an atom (1)."
+  },
+  {
+    "id": "C1-SA-002",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Atomic Structure",
+    "question": "State what is meant by the mass number of an atom.",
+    "mark_scheme": "The total number of protons and neutrons in the nucleus (1)."
+  },
+  {
+    "id": "C1-SA-003",
+    "type": "written",
+    "marks": 1,
+    "command_word": "Define",
+    "topic": "Atomic Structure",
+    "question": "Define the term isotope.",
+    "mark_scheme": "Atoms of the same element with the same number of protons but different numbers of neutrons (1)."
+  },
+  {
+    "id": "C1-SA-004",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Groups",
+    "question": "State the trend in reactivity going down Group 1.",
+    "mark_scheme": "Reactivity increases going down Group 1 (1)."
+  },
+  {
+    "id": "C1-SA-005",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Atomic Structure",
+    "question": "State the number of protons, neutrons, and electrons in an atom of carbon-12 (atomic number 6).",
+    "mark_scheme": "6 protons (1); 6 neutrons (1); 6 electrons (1) — any two for 2 marks."
+  },
+  {
+    "id": "C1-SA-006",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "The Periodic Table",
+    "question": "Explain why elements in the same group of the periodic table have similar chemical properties.",
+    "mark_scheme": "Elements in the same group have the same number of electrons in their outer shell (1); the number of outer electrons determines how an element reacts chemically (1)."
+  },
+  {
+    "id": "C1-SA-007",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Groups",
+    "question": "Describe what is observed when lithium is added to water.",
+    "mark_scheme": "Lithium floats and moves around the surface (1); fizzing / bubbling as hydrogen gas is produced (1); lithium dissolves to form a colourless solution of lithium hydroxide (1) — any two."
+  },
+  {
+    "id": "C1-SA-008",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Groups",
+    "question": "Explain why the reactivity of Group 1 metals increases going down the group.",
+    "mark_scheme": "Going down the group, the outer electron is in a higher energy shell / further from the nucleus (1); it is more easily lost / less attracted to the nucleus (1)."
+  },
+  {
+    "id": "C1-SA-009",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Groups",
+    "question": "Explain why the reactivity of halogens decreases going down Group 7.",
+    "mark_scheme": "Going down the group, the outer shell is further from the nucleus (1); electrons are gained less easily / the atom is less able to attract an additional electron (1)."
+  },
+  {
+    "id": "C1-SA-010",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "History of the Atom",
+    "question": "Describe the plum pudding model of the atom.",
+    "mark_scheme": "The atom was modelled as a sphere of positive charge (1); with electrons embedded throughout it like plums in a pudding (1)."
+  },
+  {
+    "id": "C1-SA-011",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "History of the Atom",
+    "question": "Explain what the results of the alpha scattering experiment showed about the structure of the atom.",
+    "mark_scheme": "Most alpha particles passed straight through — the atom is mostly empty space (1); some were deflected at large angles — there is a small, dense, positively charged nucleus (1)."
+  },
+  {
+    "id": "C1-SA-012",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Groups",
+    "question": "State two properties of transition metals that differ from Group 1 metals.",
+    "mark_scheme": "Any two from: higher melting points (1); harder / denser (1); less reactive (1); can form coloured compounds (1); can act as catalysts (1)."
+  },
+  {
+    "id": "C1-SA-013",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Groups",
+    "question": "Explain what happens in a halogen displacement reaction. Use chlorine and potassium bromide as an example.",
+    "mark_scheme": "Chlorine is more reactive than bromine (1); chlorine displaces bromine from potassium bromide solution (1); potassium chloride and bromine are formed / solution turns orange-brown (1)."
+  },
+  {
+    "id": "C1-SA-014",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Atomic Structure",
+    "question": "Describe how electrons are arranged in the shells of an atom. State the maximum number of electrons in the first three shells.",
+    "mark_scheme": "Electrons occupy shells / energy levels around the nucleus (1); first shell holds up to 2 electrons (1); second and third shells hold up to 8 electrons each (1)."
+  },
+  {
+    "id": "C1-SA-015",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "The Periodic Table",
+    "question": "Explain how Mendeleev's periodic table differed from earlier attempts and why his table was accepted by scientists.",
+    "mark_scheme": "Mendeleev arranged elements in order of atomic mass (1); left gaps for undiscovered elements (1); predicted the properties of missing elements (1); when these elements were discovered with the predicted properties, his table was accepted (1) — any three."
+  },
+  {
+    "id": "C1-LA-001",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "History of the Atom",
+    "question": "Explain how our model of the atom has changed over time, from the plum pudding model to the Bohr model. Include the evidence that led to each change.",
+    "mark_scheme": "Plum pudding model: electrons embedded in a positive sphere (1); alpha scattering experiment — most particles passed through / some deflected at large angles (1); led to nuclear model: small dense positive nucleus with electrons orbiting (1); Bohr proposed electrons orbit in fixed energy levels / shells based on further experimental evidence (1)."
+  },
+  {
+    "id": "C1-LA-002",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Groups",
+    "question": "Describe the trends in properties of the Group 1 alkali metals as you go down the group. Include reactivity, melting point, and reactions with water.",
+    "mark_scheme": "Reactivity increases down the group (1); melting point decreases down the group (1); all react with water to form metal hydroxide and hydrogen (1); reactions become more vigorous down the group e.g. lithium fizzes, sodium melts and moves, potassium ignites (1)."
+  },
+  {
+    "id": "C1-LA-003",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Atomic Structure",
+    "question": "Explain what is meant by relative atomic mass and why it is not always a whole number. Use the concept of isotopes in your answer.",
+    "mark_scheme": "Relative atomic mass is the weighted average mass of atoms of an element (1); compared to 1/12 the mass of carbon-12 (1); most elements have more than one isotope with different mass numbers (1); the Ar is calculated taking into account the relative abundance of each isotope (1)."
+  },
+  {
+    "id": "C1-LA-004",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Compare",
+    "topic": "Groups",
+    "question": "Compare the properties and reactivity of Group 7 halogens. Include physical appearance, state at room temperature, and trend in reactivity.",
+    "mark_scheme": "Halogens exist as diatomic molecules (1); going down the group: boiling point increases, colour darkens (1); fluorine — pale yellow gas, chlorine — green gas, bromine — orange-brown liquid, iodine — grey-black solid (1); reactivity decreases down the group as outer shell is further from nucleus (1)."
+  },
+  {
+    "id": "C1-LA-005",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "The Periodic Table",
+    "question": "Explain how the structure of an atom determines its position in the periodic table and its chemical properties. Refer to atomic number, electron configuration, and group number in your answer.",
+    "mark_scheme": "Atomic number = number of protons, determines the element and its position in the table (1); elements arranged in order of increasing atomic number (1); number of electron shells determines the period (1); number of outer electrons determines the group (1); outer electrons determine chemical properties — elements in the same group react similarly (1)."
+  },
+  {
+    "id": "C1-LA-006",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Groups",
+    "question": "Evaluate the similarities and differences between Group 1 metals and transition metals. In your answer, consider physical properties, reactivity, and uses.",
+    "mark_scheme": "Group 1: soft, low density, low melting point, very reactive (1); transition metals: hard, dense, high melting point, much less reactive (1); both are metals and good conductors of heat and electricity (1); transition metals can form coloured compounds / act as catalysts — Group 1 cannot (1); Group 1 reacts vigorously with water / air; transition metals do not react readily with water (1); uses: transition metals used in construction / catalysts / jewellery due to strength and low reactivity; Group 1 used in specialist applications e.g. lithium batteries (1)."
+  },
+  {
+    "id": "C1-LA-007",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "History of the Atom",
+    "question": "Evaluate how scientific models of the atom have developed over time. Explain why models change and what this tells us about the nature of science.",
+    "mark_scheme": "Early model: solid indivisible sphere (Dalton) (1); plum pudding model — electrons in positive sphere (Thomson) (1); nuclear model from alpha scattering — small dense nucleus (Rutherford) (1); Bohr model — electrons in fixed shells based on new evidence (1); models change when new experimental evidence cannot be explained by the existing model (1); science is a process of developing and refining ideas — no model is permanent / models are the best explanation based on current evidence (1)."
+  }
+]
