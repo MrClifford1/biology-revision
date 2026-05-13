@@ -1,1 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Progress — Streetly Science Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #1a2a4f;
+      --navy-dark: #0f1d3d;
+      --red: #c8202c;
+      --gold: #d4a534;
+      --bg: #f5f6fa;
+      --text: #1a2a4f;
+      --subtext: #5a6885;
+      --border: #e2e6f0;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Nunito Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
 
+    .topnav {
+      background: var(--navy-dark);
+      padding: 0.7rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .topnav a { color: #94a3b8; text-decoration: none; font-size: 0.875rem; font-weight: 600; transition: color 0.2s; }
+    .topnav a:hover { color: white; }
+    .topnav-title { color: white; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.95rem; margin-left: auto; }
+
+    .page-header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+      color: white;
+      padding: 1.5rem 2rem;
+    }
+    .page-header-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .user-avatar {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .user-avatar-placeholder {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: var(--red);
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: white;
+      flex-shrink: 0;
+    }
+    .user-info h1 { font-family: 'Nunito', sans-serif; font-size: 1.3rem; font-weight: 900; }
+    .user-info p { color: #c5cee8; font-size: 0.85rem; margin-top: 0.1rem; }
+
+    .btn-signout {
+      margin-left: auto;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.825rem;
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-signout:hover { background: rgba(255,255,255,0.2); }
+
+    main { max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+
+    .section-title {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    /* SUMMARY CARDS */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .summary-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.1rem 1.25rem;
+      text-align: center;
+    }
+    .summary-number {
+      font-family: 'Nunito', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .summary-label { font-size: 0.78rem; color: var(--subtext); margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+
+    /* MODULE PROGRESS */
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .module-progress-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem;
+      border-left: 4px solid #e2e8f0;
+    }
+    .module-progress-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+    .mod-badge {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 0.8rem;
+      color: white;
+      flex-shrink: 0;
+    }
+    .mod-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.9rem; }
+    .mod-sub { font-size: 0.75rem; color: var(--subtext); }
+
+    .progress-bar-wrap {
+      background: #f1f5f9;
+      border-radius: 100px;
+      height: 8px;
+      overflow: hidden;
+      margin-bottom: 0.5rem;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 100px;
+      transition: width 0.6s ease;
+    }
+    .progress-stats {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--subtext);
+    }
+
+    /* RAG SUMMARY */
+    .rag-row {
+      display: flex;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .rag-chip {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      border-radius: 100px;
+      font-family: 'Nunito', sans-serif;
+    }
+    .rag-chip.green { background: #dcfce7; color: #16a34a; }
+    .rag-chip.amber { background: #fef3c7; color: #d97706; }
+    .rag-chip.red { background: #fee2e2; color: #dc2626; }
+    .rag-chip.grey { background: #f1f5f9; color: #94a3b8; }
+
+    /* RECENT MOCKS */
+    .mocks-list { display: flex; flex-direction: column; gap: 0.6rem; }
+    .mock-row {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.85rem 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .mock-module {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.875rem;
+      min-width: 120px;
+    }
+    .mock-score {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+    .mock-pct {
+      font-size: 0.78rem;
+      color: var(--subtext);
+    }
+    .mock-date { margin-left: auto; font-size: 0.75rem; color: var(--subtext); }
+    .mock-grade {
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      font-family: 'Nunito', sans-serif;
+    }
+    .grade-excellent { background: #dcfce7; color: #16a34a; }
+    .grade-good { background: #dbeafe; color: #1d4ed8; }
+    .grade-developing { background: #fef3c7; color: #d97706; }
+    .grade-practise { background: #fee2e2; color: #dc2626; }
+
+    .empty-state {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem;
+      text-align: center;
+      color: var(--subtext);
+      font-size: 0.9rem;
+    }
+
+    .loading-state { text-align: center; padding: 3rem; color: var(--subtext); }
+
+    /* exam target selector */
+    .target-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .target-card label { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.875rem; flex-shrink: 0; }
+    .target-select {
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 0.45rem 0.85rem;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.875rem;
+      color: var(--text);
+      background: white;
+      cursor: pointer;
+    }
+    .target-select:focus { outline: none; border-color: var(--navy); }
+    .target-save {
+      background: var(--navy);
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.825rem;
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .target-save:hover { background: var(--navy-dark); }
+    .target-saved { color: #16a34a; font-size: 0.8rem; font-weight: 600; display: none; }
+
+    @media (max-width: 600px) {
+      .modules-grid { grid-template-columns: 1fr; }
+      .summary-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="index.html">← Home</a>
+  <span class="topnav-title">My Progress</span>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner" id="user-header">
+    <div class="loading-state">Loading...</div>
+  </div>
+</div>
+
+<main id="main-content">
+  <div class="loading-state">Loading your progress...</div>
+</main>
+
+<script type="module">
+  import { onAuthChange, signOutUser, getUserProfile, updateExamTarget, getAllProgress } from './firebase.js';
+
+  const MODULE_META = {
+    b1: { title: 'Cell Biology', colour: '#0d9488' },
+    b2: { title: 'Organisation', colour: '#e85d4a' },
+    b3: { title: 'Infection & Response', colour: '#f59e0b' },
+    b4: { title: 'Bioenergetics', colour: '#22c55e' },
+    b5: { title: 'Homeostasis & Response', colour: '#8b5cf6' },
+    b6: { title: 'Inheritance & Evolution', colour: '#3b82f6' },
+    b7: { title: 'Ecology', colour: '#16a34a' },
+  };
+
+  let currentUser = null;
+
+  onAuthChange(async user => {
+    if (!user) {
+      window.location.href = 'login.html?redirect=progress.html';
+      return;
+    }
+    currentUser = user;
+    const profile = await getUserProfile(user.uid);
+    renderHeader(user, profile);
+    const progress = await getAllProgress(user.uid);
+    renderProgress(progress, profile);
+  });
+
+  function renderHeader(user, profile) {
+    const header = document.getElementById('user-header');
+    const avatarHTML = user.photoURL
+      ? `<img src="${user.photoURL}" class="user-avatar" alt="Profile">`
+      : `<div class="user-avatar-placeholder">${user.displayName?.[0] || '?'}</div>`;
+
+    header.innerHTML = `
+      ${avatarHTML}
+      <div class="user-info">
+        <h1>${user.displayName || 'Student'}</h1>
+        <p>${user.email}</p>
+      </div>
+      <button class="btn-signout" onclick="handleSignOut()">Sign out</button>
+    `;
+  }
+
+  function renderProgress(progress, profile) {
+    const main = document.getElementById('main-content');
+
+    // Count totals
+    let totalMocks = 0;
+    let totalScore = 0;
+    let totalPossible = 0;
+    let allMocks = [];
+
+    Object.entries(progress).forEach(([moduleId, data]) => {
+      if (data.mocks) {
+        totalMocks += data.mocks.length;
+        data.mocks.forEach(m => {
+          totalScore += m.score;
+          totalPossible += m.total;
+          allMocks.push({ ...m, moduleId });
+        });
+      }
+    });
+
+    const avgPct = totalPossible > 0 ? Math.round((totalScore / totalPossible) * 100) : 0;
+    allMocks.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    main.innerHTML = `
+      <!-- Exam Target -->
+      <div class="target-card">
+        <label>🎯 I am revising for:</label>
+        <select class="target-select" id="exam-target">
+          <option value="">-- Select your exam --</option>
+          <option value="y9" ${profile?.examTarget === 'y9' ? 'selected' : ''}>Year 9 End of Year Test (B1–B2)</option>
+          <option value="y10" ${profile?.examTarget === 'y10' ? 'selected' : ''}>Year 10 End of Year — Paper 1 (B1–B4)</option>
+          <option value="y11" ${profile?.examTarget === 'y11' ? 'selected' : ''}>Year 11 GCSE — Full Biology (B1–B7)</option>
+        </select>
+        <button class="target-save" onclick="saveTarget()">Save</button>
+        <span class="target-saved" id="target-saved">✅ Saved!</span>
+      </div>
+
+      <!-- Summary -->
+      <div class="section-title">Overview</div>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <div class="summary-number">${totalMocks}</div>
+          <div class="summary-label">Mocks completed</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-number">${avgPct}%</div>
+          <div class="summary-label">Average score</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-number">${Object.keys(progress).length}</div>
+          <div class="summary-label">Modules started</div>
+        </div>
+      </div>
+
+      <!-- Module Progress -->
+      <div class="section-title">Progress by Module</div>
+      <div class="modules-grid">
+        ${Object.entries(MODULE_META).map(([id, meta]) => {
+          const data = progress[id];
+          const mocks = data?.mocks || [];
+          const lastScore = mocks.length > 0 ? mocks[mocks.length - 1] : null;
+          const avgScore = mocks.length > 0
+            ? Math.round(mocks.reduce((s, m) => s + m.pct, 0) / mocks.length)
+            : 0;
+          const rag = data?.rag || {};
+          const ragCounts = { green: 0, amber: 0, red: 0, grey: 0 };
+          Object.values(rag).forEach(v => { ragCounts[v || 'grey']++; });
+          const total = Object.values(ragCounts).reduce((a, b) => a + b, 0);
+
+          return `
+            <div class="module-progress-card" style="border-left-color: ${meta.colour}">
+              <div class="module-progress-header">
+                <div class="mod-badge" style="background: ${meta.colour}">${id.toUpperCase()}</div>
+                <div>
+                  <div class="mod-title">${meta.title}</div>
+                  <div class="mod-sub">${mocks.length} mock${mocks.length !== 1 ? 's' : ''} completed</div>
+                </div>
+              </div>
+              ${mocks.length > 0 ? `
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar-fill" style="width: ${avgScore}%; background: ${meta.colour}"></div>
+                </div>
+                <div class="progress-stats">
+                  <span>Average: ${avgScore}%</span>
+                  <span>Last: ${lastScore ? lastScore.pct + '%' : '—'}</span>
+                </div>
+              ` : `<div style="font-size:0.78rem;color:#94a3b8">No mocks attempted yet</div>`}
+              ${total > 0 ? `
+                <div class="rag-row">
+                  ${ragCounts.green > 0 ? `<span class="rag-chip green">✅ ${ragCounts.green} confident</span>` : ''}
+                  ${ragCounts.amber > 0 ? `<span class="rag-chip amber">⚠️ ${ragCounts.amber} getting there</span>` : ''}
+                  ${ragCounts.red > 0 ? `<span class="rag-chip red">❌ ${ragCounts.red} need work</span>` : ''}
+                </div>
+              ` : ''}
+              <a href="module.html?module=${id}" style="display:inline-block;margin-top:0.75rem;font-size:0.78rem;color:${meta.colour};font-weight:700;text-decoration:none">Revise ${id.toUpperCase()} →</a>
+            </div>
+          `;
+        }).join('')}
+      </div>
+
+      <!-- Recent Mocks -->
+      <div class="section-title">Recent Mini Mocks</div>
+      ${allMocks.length === 0 ? `
+        <div class="empty-state">
+          <p>No mini mocks completed yet.</p>
+          <p style="margin-top:0.5rem">Head to any module and try the Mini Mock tab!</p>
+        </div>
+      ` : `
+        <div class="mocks-list">
+          ${allMocks.slice(0, 10).map(m => {
+            const grade = m.pct >= 80 ? ['🌟 Excellent', 'grade-excellent']
+              : m.pct >= 60 ? ['👍 Good', 'grade-good']
+              : m.pct >= 40 ? ['📚 Developing', 'grade-developing']
+              : ['💪 Keep Practising', 'grade-practise'];
+            const date = new Date(m.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+            return `
+              <div class="mock-row">
+                <div class="mock-module">${MODULE_META[m.moduleId]?.title || m.moduleId}</div>
+                <div>
+                  <div class="mock-score">${m.score}/${m.total}</div>
+                  <div class="mock-pct">${m.pct}%</div>
+                </div>
+                <span class="mock-grade ${grade[1]}">${grade[0]}</span>
+                <div class="mock-date">${date}</div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `}
+    `;
+  }
+
+  window.handleSignOut = async () => {
+    await signOutUser();
+    window.location.href = 'index.html';
+  };
+
+  window.saveTarget = async () => {
+    if (!currentUser) return;
+    const val = document.getElementById('exam-target').value;
+    await updateExamTarget(currentUser.uid, val, null);
+    const saved = document.getElementById('target-saved');
+    saved.style.display = 'inline';
+    setTimeout(() => { saved.style.display = 'none'; }, 2000);
+  };
+</script>
+</body>
+</html>
