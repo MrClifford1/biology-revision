@@ -1583,9 +1583,11 @@ loadQuestions();
   let currentUser = null;
 
   onAuthChange(async user => {
-    currentUser = user;
-
-    // Update nav to show user
+    // Gate the whole site — redirect to login if not signed in
+    if (!user) {
+      window.location.href = `login.html?redirect=module.html?module=${moduleId}`;
+      return;
+    }
     const navTitle = document.getElementById('nav-title');
     if (user) {
       navTitle.innerHTML = `${meta.title} &nbsp;·&nbsp; <span style="color:#94a3b8;font-size:0.8rem">${user.displayName?.split(' ')[0]}</span>`;
