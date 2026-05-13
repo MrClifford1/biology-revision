@@ -719,7 +719,8 @@
 <body>
 
 <nav class="topnav">
-  <a href="index.html">← Back</a>
+  <a href="index.html">← Home</a>
+  <a href="progress.html" id="progress-link" style="display:none">📊 My Progress</a>
   <span class="topnav-title" id="nav-title">Biology Revision</span>
 </nav>
 
@@ -991,6 +992,8 @@ meta.topics.forEach((t, i) => {
     if (next) li.classList.add(`rag-${next}`);
     ragState[i] = next;
     try { localStorage.setItem(ragKey, JSON.stringify(ragState)); } catch(e) {}
+    // Also save to Firebase if signed in
+    document.dispatchEvent(new CustomEvent('rag-updated', { detail: ragState }));
   });
   topicList.appendChild(li);
 });
@@ -1458,6 +1461,11 @@ function displayResults(writtenResults, writtenAnswers) {
     <div class="overall-grade">${grade}</div>
   `;
 
+  // Save score to Firebase
+  if (window.saveScoreToFirebase) {
+    window.saveScoreToFirebase(totalAwarded, totalAvail, writtenResults, writtenAnswers);
+  }
+
   const container = document.getElementById('results-container');
   container.innerHTML = '';
 
@@ -1567,5 +1575,71 @@ document.getElementById('try-again-btn').addEventListener('click', () => {
 loadKeywords();
 loadQuestions();
 </script>
-</body>
-</html>
+
+<!-- Firebase auth + progress saving -->
+<script type="module">
+  import { onAuthChange, saveRAG, loadRAG, saveMockScore } from './firebase.js';
+
+  let currentUser = null;
+
+  onAuthChange(async user => {
+    currentUser = user;
+
+    // Update nav to show user
+    const navTitle = document.getElementById('nav-title');
+    if (user) {
+      navTitle.innerHTML = `${meta.title} &nbsp;·&nbsp; <span style="color:#94a3b8;font-size:0.8rem">${user.displayName?.split(' ')[0]}</span>`;
+    }
+
+    // Show progress link
+    if (user) {
+      const pl = document.getElementById('progress-link');
+      if (pl) pl.style.display = 'flex';
+    }
+    if (user) {
+      try {
+        const cloudRAG = await loadRAG(user.uid, moduleId);
+        if (Object.keys(cloudRAG).length > 0) {
+          // Update the displayed RAG items with cloud state
+          const items = document.querySelectorAll('.topic-item');
+          items.forEach((item, i) => {
+            item.classList.remove('rag-red', 'rag-amber', 'rag-green');
+            const state = cloudRAG[i];
+            if (state) item.classList.add(`rag-${state}`);
+          });
+          // Also update local ragState variable via custom event
+          window._cloudRAG = cloudRAG;
+        }
+      } catch(e) {
+        console.log('Could not load cloud RAG:', e);
+      }
+    }
+  });
+
+  // Override RAG click handler to also save to Firebase
+  document.addEventListener('rag-updated', async (e) => {
+    if (currentUser) {
+      try {
+        await saveRAG(currentUser.uid, moduleId, e.detail);
+      } catch(err) {
+        console.log('Could not save RAG to cloud:', err);
+      }
+    }
+  });
+
+  // Save mock score to Firebase after marking
+  window.saveScoreToFirebase = async (totalAwarded, totalAvail, results, answers) => {
+    if (!currentUser) return;
+    try {
+      const questions = answers.map((a, i) => ({
+        id: a.id,
+        topic: selectedQuestions.find(q => q.id === a.id)?.topic || '',
+        marks: a.marks,
+        awarded: results[i]?.marks_awarded || 0,
+      }));
+      await saveMockScore(currentUser.uid, moduleId, totalAwarded, totalAvail, questions);
+    } catch(err) {
+      console.log('Could not save score to cloud:', err);
+    }
+  };
+</script>
