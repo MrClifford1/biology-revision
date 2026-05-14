@@ -408,6 +408,9 @@
       <div class="class-grid" id="class-grid"></div>
     </div>
     <button class="btn-modal-confirm" id="confirm-class-btn" disabled onclick="confirmClass()">Save My Class</button>
+    <div style="text-align:center;margin-top:0.85rem">
+      <button onclick="handleSignOut()" style="background:none;border:none;color:var(--subtext);font-family:'Nunito',sans-serif;font-weight:700;font-size:0.78rem;cursor:pointer;text-decoration:underline">Sign out / switch account</button>
+    </div>
   </div>
 </div>
 
@@ -470,8 +473,8 @@
       : '';
     greeting.innerHTML = `${avatarHTML} <span>Welcome back, <strong>${user.displayName?.split(' ')[0] || 'Student'}</strong>!</span> ${classTag}`;
 
-    // Show class picker if no valid class set
-    if (!isClassValid(profile)) {
+    // Show class picker if no valid class set (skip for admin)
+    if (!isClassValid(profile) && user.email !== 'n.clifford@thestreetlyacademy.co.uk') {
       document.getElementById('class-modal').classList.remove('hidden');
     }
 
