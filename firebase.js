@@ -170,4 +170,70 @@ export async function getAllStudents() {
   return snap.docs.map(d => ({ uid: d.id, ...d.data() }));
 }
 
+// ── TEACHER PROFILE ───────────────────────────────────────────────────────────
+export async function saveTeacherClasses(uid, classes) {
+  await setDoc(doc(db, 'teachers', uid), { classes, updatedAt: serverTimestamp() }, { merge: true });
+}
+
+export async function getTeacherClasses(uid) {
+  const snap = await getDoc(doc(db, 'teachers', uid));
+  return snap.exists() ? (snap.data().classes || []) : [];
+}
+
+// ── ASSIGNMENTS ───────────────────────────────────────────────────────────────
+export async function createAssignment(assignment) {
+  // assignment: { title, subject, type, classes[], dueDate, note, link, createdBy }
+  const ref = doc(collection(db, 'assignments'));
+  await setDoc(ref, {
+    ...assignment,
+    createdAt: serverTimestamp(),
+    active: true,
+  });
+  return ref.id;
+}
+
+export async function getActiveAssignmentsForClass(className) {
+  const now = new Date().toISOString();
+  const snap = await getDocs(collection(db, 'assignments'));
+  return snap.docs
+    .map(d => ({ id: d.id, ...d.data() }))
+    .filter(a => a.active && a.classes?.includes(className) && a.dueDate >= now)
+    .sort((a, b) => a.dueDate.localeCompare(b.dueDate));
+}
+
+export async function getAllAssignments() {
+  const snap = await getDocs(collection(db, 'assignments'));
+  return snap.docs
+    .map(d => ({ id: d.id, ...d.data() }))
+    .sort((a, b) => b.createdAt?.toMillis?.() - a.createdAt?.toMillis?.());
+}
+
+export async function deleteAssignment(assignmentId) {
+  await deleteDoc(doc(db, 'assignments', assignmentId));
+}
+
+export async function getStudentsByClass(className) {
+  const snap = await getDocs(collection(db, 'users'));
+  return snap.docs
+    .map(d => ({ uid: d.id, ...d.data() }))
+    .filter(u => u.class === className);
+}
+
+export async function getProgressForStudents(uids) {
+  const modules = [
+    'b1','b2','b3','b4','b5','b6','b7',
+    'p1','p2','p3','p4','p5','p6','p7',
+    'c1','c2','c3','c4','c5','c6','c7','c8','c9','c10',
+  ];
+  const result = {};
+  for (const uid of uids) {
+    result[uid] = {};
+    for (const m of modules) {
+      const snap = await getDoc(doc(db, 'users', uid, 'progress', m));
+      if (snap.exists()) result[uid][m] = snap.data();
+    }
+  }
+  return result;
+}
+
 export { auth, db };
