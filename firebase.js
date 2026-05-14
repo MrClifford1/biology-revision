@@ -1,7 +1,7 @@
 // Firebase configuration for Streetly Science Hub
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, serverTimestamp, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBNVM9Dx8vAYOtt79BVwKK1u3St5BsIxsY",
@@ -49,6 +49,8 @@ async function ensureUserProfile(user) {
       createdAt: serverTimestamp(),
       examTarget: null,
       yearGroup: null,
+      class: null,
+      classSetYear: null,
     });
   }
 }
@@ -115,6 +117,46 @@ export async function getAllProgress(uid) {
     if (snap.exists()) progress[m] = snap.data();
   }
   return progress;
+}
+
+// ── CLASS SELECTION ───────────────────────────────────────────────────────────
+export async function saveClass(uid, className) {
+  const academicYear = getCurrentAcademicYear();
+  await updateDoc(doc(db, 'users', uid), {
+    class: className,
+    classSetYear: academicYear,
+  });
+}
+
+// Academic year starts in September — returns e.g. 2025 for Sep 2025 – Aug 2026
+function getCurrentAcademicYear() {
+  const now = new Date();
+  return now.getMonth() >= 8 ? now.getFullYear() : now.getFullYear() - 1;
+}
+
+export function isClassValid(profile) {
+  if (!profile?.class || profile.classSetYear == null) return false;
+  return profile.classSetYear >= getCurrentAcademicYear();
+}
+
+// ── ROLES ─────────────────────────────────────────────────────────────────────
+export async function getUserRole(email) {
+  const snap = await getDoc(doc(db, 'roles', email));
+  if (!snap.exists()) return 'student';
+  return snap.data().role || 'student';
+}
+
+export async function addTeacherRole(email, addedByUid) {
+  await setDoc(doc(db, 'roles', email), {
+    role: 'teacher',
+    addedBy: addedByUid,
+    addedAt: serverTimestamp(),
+  });
+}
+
+export async function removeTeacherRole(email) {
+  const { deleteDoc } = await import("https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js");
+  await deleteDoc(doc(db, 'roles', email));
 }
 
 export { auth, db };
