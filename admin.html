@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel — Streetly Science Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #1a2a4f;
+      --navy-dark: #0f1d3d;
+      --red: #c8202c;
+      --gold: #d4a534;
+      --bg: #f5f6fa;
+      --text: #1a2a4f;
+      --subtext: #5a6885;
+      --border: #e2e6f0;
+      --card: #ffffff;
+      --green: #16a34a;
+      --green-light: #dcfce7;
+      --amber: #d97706;
+      --amber-light: #fef3c7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Nunito Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+    /* AUTH GATE */
+    #auth-loading {
+      position: fixed; inset: 0; background: var(--navy-dark);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999;
+    }
+    #access-denied {
+      position: fixed; inset: 0; background: var(--navy-dark);
+      display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 9999; gap: 1rem;
+    }
+    #access-denied h2 { color: white; font-family: 'Nunito', sans-serif; font-size: 1.5rem; }
+    #access-denied p { color: #94a3b8; font-size: 0.9rem; }
+    #access-denied a { color: var(--gold); text-decoration: none; font-weight: 700; }
+
+    /* NAV */
+    .topnav {
+      background: var(--navy-dark); padding: 0.7rem 1.5rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .topnav a { color: #94a3b8; text-decoration: none; font-size: 0.875rem; font-weight: 600; transition: color 0.2s; }
+    .topnav a:hover { color: white; }
+    .topnav-title { color: white; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.95rem; margin-left: auto; }
+    .admin-badge {
+      background: var(--red); color: white; font-family: 'Nunito', sans-serif;
+      font-weight: 800; font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 100px;
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+      color: white; padding: 1.75rem 2rem;
+    }
+    .page-header-inner { max-width: 1000px; margin: 0 auto; }
+    .page-header h1 { font-family: 'Nunito', sans-serif; font-size: 1.6rem; font-weight: 900; }
+    .page-header p { color: #c5cee8; font-size: 0.875rem; margin-top: 0.25rem; }
+
+    /* MAIN */
+    main { max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+    /* STAT CARDS */
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+    .stat-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 1.25rem 1.5rem; display: flex; align-items: center; gap: 1rem;
+    }
+    .stat-icon {
+      width: 44px; height: 44px; border-radius: 12px; display: flex;
+      align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0;
+    }
+    .stat-num { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.75rem; color: var(--navy); line-height: 1; }
+    .stat-label { font-size: 0.78rem; color: var(--subtext); margin-top: 0.15rem; }
+
+    /* SECTION */
+    .section-title {
+      font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1rem;
+      color: var(--navy); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;
+    }
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem;
+    }
+
+    /* ADD TEACHER FORM */
+    .add-teacher-row { display: flex; gap: 0.75rem; margin-bottom: 0.5rem; }
+    .input-email {
+      flex: 1; border: 1.5px solid var(--border); border-radius: 10px;
+      padding: 0.65rem 1rem; font-family: 'Nunito Sans', sans-serif; font-size: 0.9rem;
+      color: var(--text); outline: none; transition: border-color 0.2s;
+    }
+    .input-email:focus { border-color: var(--navy); }
+    .input-email::placeholder { color: #94a3b8; }
+    .btn-add {
+      background: var(--navy); color: white; border: none; border-radius: 10px;
+      padding: 0.65rem 1.25rem; font-family: 'Nunito', sans-serif; font-weight: 800;
+      font-size: 0.875rem; cursor: pointer; transition: background 0.18s; white-space: nowrap;
+    }
+    .btn-add:hover { background: var(--navy-dark); }
+    .btn-add:disabled { background: #cbd5e1; cursor: not-allowed; }
+    .form-hint { font-size: 0.75rem; color: var(--subtext); margin-top: 0.35rem; }
+    .form-msg { font-size: 0.8rem; font-weight: 700; margin-top: 0.5rem; display: none; }
+    .form-msg.success { color: var(--green); display: block; }
+    .form-msg.error { color: var(--red); display: block; }
+
+    /* TEACHER LIST */
+    .teacher-list { display: flex; flex-direction: column; gap: 0.5rem; }
+    .teacher-row {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 0.75rem 1rem; background: var(--bg); border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .teacher-avatar {
+      width: 34px; height: 34px; border-radius: 50%; background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.85rem; color: white; flex-shrink: 0;
+    }
+    .teacher-email { font-size: 0.875rem; color: var(--text); flex: 1; font-weight: 600; }
+    .teacher-added { font-size: 0.72rem; color: var(--subtext); }
+    .btn-remove {
+      background: none; border: 1.5px solid var(--border); color: var(--subtext);
+      border-radius: 8px; padding: 0.3rem 0.7rem; font-family: 'Nunito', sans-serif;
+      font-weight: 700; font-size: 0.75rem; cursor: pointer; transition: all 0.18s;
+    }
+    .btn-remove:hover { border-color: var(--red); color: var(--red); background: #fff5f5; }
+    .empty-state {
+      text-align: center; padding: 2rem; color: var(--subtext); font-size: 0.875rem;
+    }
+
+    /* CLASS BREAKDOWN */
+    .class-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.6rem; }
+    .class-card {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 10px;
+      padding: 0.75rem 1rem; display: flex; flex-direction: column; gap: 0.2rem;
+    }
+    .class-name { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.9rem; color: var(--navy); }
+    .class-count { font-size: 0.75rem; color: var(--subtext); }
+    .class-bar-wrap { height: 4px; background: var(--border); border-radius: 2px; margin-top: 0.35rem; }
+    .class-bar { height: 4px; border-radius: 2px; background: var(--navy); }
+
+    /* STUDENT TABLE */
+    .student-table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+    .student-table th {
+      text-align: left; padding: 0.5rem 0.75rem; font-family: 'Nunito', sans-serif;
+      font-weight: 800; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em;
+      color: var(--subtext); border-bottom: 2px solid var(--border);
+    }
+    .student-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    .student-table tr:last-child td { border-bottom: none; }
+    .student-table tr:hover td { background: #f8fafc; }
+    .class-chip {
+      display: inline-block; font-family: 'Nunito', sans-serif; font-weight: 800;
+      font-size: 0.7rem; padding: 0.15rem 0.5rem; border-radius: 100px;
+      background: #e0e7ff; color: var(--navy);
+    }
+    .no-class-chip {
+      display: inline-block; font-family: 'Nunito', sans-serif; font-weight: 700;
+      font-size: 0.7rem; padding: 0.15rem 0.5rem; border-radius: 100px;
+      background: var(--border); color: var(--subtext);
+    }
+
+    /* FILTER */
+    .filter-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .filter-btn {
+      border: 1.5px solid var(--border); background: white; border-radius: 8px;
+      padding: 0.35rem 0.85rem; font-family: 'Nunito', sans-serif; font-weight: 700;
+      font-size: 0.78rem; color: var(--subtext); cursor: pointer; transition: all 0.18s;
+    }
+    .filter-btn:hover { border-color: var(--navy); color: var(--navy); }
+    .filter-btn.active { background: var(--navy); border-color: var(--navy); color: white; }
+    .search-input {
+      border: 1.5px solid var(--border); border-radius: 8px; padding: 0.35rem 0.85rem;
+      font-family: 'Nunito Sans', sans-serif; font-size: 0.8rem; color: var(--text);
+      outline: none; transition: border-color 0.2s; margin-left: auto; min-width: 180px;
+    }
+    .search-input:focus { border-color: var(--navy); }
+
+    /* LOADING SPINNER */
+    .spinner {
+      width: 32px; height: 32px; border: 3px solid rgba(255,255,255,0.2);
+      border-top-color: white; border-radius: 50%; animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @media (max-width: 600px) {
+      .stats-grid { grid-template-columns: 1fr; }
+      .add-teacher-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- AUTH LOADING -->
+<div id="auth-loading">
+  <div class="spinner"></div>
+  <div style="color:white;font-family:'Nunito',sans-serif;font-weight:800;margin-top:1rem">Checking access...</div>
+</div>
+
+<!-- ACCESS DENIED -->
+<div id="access-denied">
+  <svg width="48" height="54" viewBox="0 0 88 100" xmlns="http://www.w3.org/2000/svg">
+    <path d="M44 0 L88 14 L88 50 Q88 80 44 100 Q0 80 0 50 L0 14 Z" fill="#c8202c" stroke="#d4a534" stroke-width="2"/>
+  </svg>
+  <h2>Access Denied</h2>
+  <p>This page is only accessible to admin accounts.</p>
+  <a href="index.html">← Back to Hub</a>
+</div>
+
+<!-- PAGE (hidden until auth confirmed) -->
+<div id="page-content" style="display:none">
+
+  <nav class="topnav">
+    <a href="index.html">← Home</a>
+    <span class="topnav-title">Admin Panel</span>
+    <span class="admin-badge">Admin</span>
+    <button onclick="handleSignOut()" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#94a3b8;font-size:0.8rem;padding:0.4rem 0.85rem;border-radius:8px;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:700;margin-left:0.5rem">Sign out</button>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-header-inner">
+      <h1>🛡️ Admin Panel</h1>
+      <p>Manage teacher access and view student registrations across Streetly Science Hub.</p>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- STATS -->
+    <div class="stats-grid" id="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon" style="background:#e0e7ff">👨‍🏫</div>
+        <div>
+          <div class="stat-num" id="stat-teachers">—</div>
+          <div class="stat-label">Teachers with access</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background:#dcfce7">🧑‍🎓</div>
+        <div>
+          <div class="stat-num" id="stat-students">—</div>
+          <div class="stat-label">Registered students</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background:#fef3c7">🏫</div>
+        <div>
+          <div class="stat-num" id="stat-classes">—</div>
+          <div class="stat-label">Classes with students</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEACHER MANAGEMENT -->
+    <div class="section-title">👨‍🏫 Teacher Access</div>
+    <div class="card">
+      <div class="add-teacher-row">
+        <input type="email" class="input-email" id="teacher-email-input"
+          placeholder="teacher@thestreetlyacademy.co.uk" />
+        <button class="btn-add" id="add-teacher-btn" onclick="addTeacher()">+ Add Teacher</button>
+      </div>
+      <div class="form-hint">Enter the teacher's school Google account email address.</div>
+      <div class="form-msg" id="form-msg"></div>
+      <hr style="border:none;border-top:1px solid var(--border);margin:1.25rem 0">
+      <div class="teacher-list" id="teacher-list">
+        <div class="empty-state">Loading teachers...</div>
+      </div>
+    </div>
+
+    <!-- CLASS BREAKDOWN -->
+    <div class="section-title">🏫 Class Breakdown</div>
+    <div class="card">
+      <div class="class-grid" id="class-grid">
+        <div class="empty-state">Loading...</div>
+      </div>
+    </div>
+
+    <!-- STUDENT REGISTER -->
+    <div class="section-title">🧑‍🎓 Registered Students</div>
+    <div class="card">
+      <div class="filter-row" id="filter-row">
+        <button class="filter-btn active" onclick="filterStudents('all', this)">All</button>
+        <button class="filter-btn" onclick="filterStudents('9', this)">Year 9</button>
+        <button class="filter-btn" onclick="filterStudents('10', this)">Year 10</button>
+        <button class="filter-btn" onclick="filterStudents('11', this)">Year 11</button>
+        <button class="filter-btn" onclick="filterStudents('none', this)">No class set</button>
+        <input type="text" class="search-input" placeholder="Search name or email..." oninput="searchStudents(this.value)" />
+      </div>
+      <div style="overflow-x:auto">
+        <table class="student-table">
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Email</th>
+              <th>Class</th>
+              <th>Joined</th>
+            </tr>
+          </thead>
+          <tbody id="student-tbody">
+            <tr><td colspan="4" style="text-align:center;padding:2rem;color:var(--subtext)">Loading students...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script type="module">
+  import { onAuthChange, signOutUser, getAllTeachers, getAllStudents, addTeacherRole, removeTeacherRole } from './firebase.js';
+
+  const ADMIN_EMAIL = 'n.clifford@thestreetlyacademy.co.uk';
+
+  let allStudents = [];
+  let activeFilter = 'all';
+  let searchTerm = '';
+
+  // ── AUTH GATE ───────────────────────────────────────────────────────────────
+  onAuthChange(async user => {
+    document.getElementById('auth-loading').style.display = 'none';
+
+    if (!user || user.email !== ADMIN_EMAIL) {
+      document.getElementById('access-denied').style.display = 'flex';
+      return;
+    }
+
+    document.getElementById('page-content').style.display = 'block';
+    window._adminUser = user;
+    loadAll();
+  });
+
+  async function loadAll() {
+    await Promise.all([loadTeachers(), loadStudents()]);
+  }
+
+  // ── TEACHERS ────────────────────────────────────────────────────────────────
+  async function loadTeachers() {
+    const teachers = await getAllTeachers();
+    document.getElementById('stat-teachers').textContent = teachers.length;
+    renderTeachers(teachers);
+  }
+
+  function renderTeachers(teachers) {
+    const list = document.getElementById('teacher-list');
+    if (teachers.length === 0) {
+      list.innerHTML = '<div class="empty-state">No teachers added yet. Use the form above to grant access.</div>';
+      return;
+    }
+    list.innerHTML = teachers.map(t => {
+      const initials = t.email.split('@')[0].split('.').map(p => p[0]?.toUpperCase() || '').join('').slice(0,2);
+      const addedDate = t.addedAt?.toDate ? t.addedAt.toDate().toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' }) : '—';
+      return `
+        <div class="teacher-row" id="row-${CSS.escape(t.email)}">
+          <div class="teacher-avatar">${initials}</div>
+          <div class="teacher-email">${t.email}</div>
+          <div class="teacher-added">Added ${addedDate}</div>
+          <button class="btn-remove" onclick="removeTeacher('${t.email}')">Remove</button>
+        </div>
+      `;
+    }).join('');
+  }
+
+  window.addTeacher = async () => {
+    const input = document.getElementById('teacher-email-input');
+    const msg = document.getElementById('form-msg');
+    const btn = document.getElementById('add-teacher-btn');
+    const email = input.value.trim().toLowerCase();
+
+    msg.className = 'form-msg';
+    msg.textContent = '';
+
+    if (!email || !email.includes('@')) {
+      msg.className = 'form-msg error';
+      msg.textContent = 'Please enter a valid email address.';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Adding...';
+
+    try {
+      await addTeacherRole(email, window._adminUser.uid);
+      input.value = '';
+      msg.className = 'form-msg success';
+      msg.textContent = `✅ ${email} now has teacher access.`;
+      await loadTeachers();
+    } catch (e) {
+      msg.className = 'form-msg error';
+      msg.textContent = 'Something went wrong. Please try again.';
+    }
+
+    btn.disabled = false;
+    btn.textContent = '+ Add Teacher';
+  };
+
+  window.removeTeacher = async (email) => {
+    if (!confirm(`Remove teacher access for ${email}?`)) return;
+    try {
+      await removeTeacherRole(email);
+      await loadTeachers();
+    } catch (e) {
+      alert('Could not remove teacher. Please try again.');
+    }
+  };
+
+  // Allow Enter key on email input
+  document.getElementById('teacher-email-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') window.addTeacher();
+  });
+
+  // ── STUDENTS ────────────────────────────────────────────────────────────────
+  async function loadStudents() {
+    allStudents = await getAllStudents();
+
+    // Stats
+    document.getElementById('stat-students').textContent = allStudents.length;
+
+    // Class breakdown
+    const classCounts = {};
+    allStudents.forEach(s => {
+      if (s.class) classCounts[s.class] = (classCounts[s.class] || 0) + 1;
+    });
+    document.getElementById('stat-classes').textContent = Object.keys(classCounts).length;
+    renderClassGrid(classCounts);
+
+    renderStudentTable();
+  }
+
+  function renderClassGrid(classCounts) {
+    const grid = document.getElementById('class-grid');
+    const sorted = Object.entries(classCounts).sort((a, b) => a[0].localeCompare(b[0], undefined, { numeric: true }));
+    const max = Math.max(...Object.values(classCounts), 1);
+
+    if (sorted.length === 0) {
+      grid.innerHTML = '<div class="empty-state">No students have selected a class yet.</div>';
+      return;
+    }
+
+    grid.innerHTML = sorted.map(([cls, count]) => `
+      <div class="class-card">
+        <div class="class-name">${cls}</div>
+        <div class="class-count">${count} student${count !== 1 ? 's' : ''}</div>
+        <div class="class-bar-wrap">
+          <div class="class-bar" style="width:${Math.round((count/max)*100)}%"></div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function renderStudentTable() {
+    const tbody = document.getElementById('student-tbody');
+    let filtered = allStudents;
+
+    if (activeFilter === 'none') {
+      filtered = filtered.filter(s => !s.class);
+    } else if (activeFilter !== 'all') {
+      filtered = filtered.filter(s => s.class?.startsWith(activeFilter));
+    }
+
+    if (searchTerm) {
+      const term = searchTerm.toLowerCase();
+      filtered = filtered.filter(s =>
+        s.name?.toLowerCase().includes(term) || s.email?.toLowerCase().includes(term)
+      );
+    }
+
+    filtered.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+
+    if (filtered.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;padding:2rem;color:var(--subtext)">No students found.</td></tr>';
+      return;
+    }
+
+    tbody.innerHTML = filtered.map(s => {
+      const joinDate = s.createdAt?.toDate ? s.createdAt.toDate().toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' }) : '—';
+      const classHtml = s.class
+        ? `<span class="class-chip">${s.class}</span>`
+        : `<span class="no-class-chip">Not set</span>`;
+      const initials = (s.name || '?').split(' ').map(p => p[0]).join('').slice(0,2).toUpperCase();
+      const avatarHtml = s.photoURL
+        ? `<img src="${s.photoURL}" style="width:26px;height:26px;border-radius:50%;object-fit:cover;vertical-align:middle;margin-right:0.5rem" alt="">`
+        : `<span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--navy);color:white;font-family:'Nunito',sans-serif;font-weight:900;font-size:0.65rem;vertical-align:middle;margin-right:0.5rem">${initials}</span>`;
+      return `
+        <tr>
+          <td>${avatarHtml}<strong>${s.name || '—'}</strong></td>
+          <td style="color:var(--subtext)">${s.email || '—'}</td>
+          <td>${classHtml}</td>
+          <td style="color:var(--subtext)">${joinDate}</td>
+        </tr>
+      `;
+    }).join('');
+  }
+
+  window.filterStudents = (filter, btn) => {
+    activeFilter = filter;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderStudentTable();
+  };
+
+  window.searchStudents = (val) => {
+    searchTerm = val;
+    renderStudentTable();
+  };
+
+  window.handleSignOut = async () => {
+    await signOutUser();
+    window.location.href = 'index.html';
+  };
+</script>
+</body>
+</html>
