@@ -104,7 +104,11 @@ export async function getModuleProgress(uid, moduleId) {
 }
 
 export async function getAllProgress(uid) {
-  const modules = ['b1','b2','b3','b4','b5','b6','b7'];
+  const modules = [
+    'b1','b2','b3','b4','b5','b6','b7',
+    'p1','p2','p3','p4','p5','p6','p7',
+    'c1','c2','c3','c4','c5','c6','c7','c8','c9','c10',
+  ];
   const progress = {};
   for (const m of modules) {
     const snap = await getDoc(doc(db, 'users', uid, 'progress', m));
