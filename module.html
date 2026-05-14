@@ -192,6 +192,10 @@
     .paper-option-label { font-family: 'Nunito', sans-serif; font-size: 0.95rem; font-weight: 800; margin-top: 0.25rem; }
     .paper-option-modules { font-size: 0.775rem; color: var(--subtext); margin-top: 0.25rem; }
 
+    /* ── SHARED RAG BANNER ───────────────────────────────────────────────────── */
+    .shared-rag { margin-top: 1.25rem; transition: opacity 0.25s ease, transform 0.25s ease; }
+    .shared-rag.rag-hidden { display: none; }
+
     /* ── REVISE BANNER ───────────────────────────────────────────────────────── */
     .revise-banner { background: white; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin-bottom: 0; }
     .revise-banner-stripe { height: 5px; background: var(--accent); }
@@ -293,18 +297,6 @@
       </div>
     </div>
 
-    <div class="checklist-card">
-      <h3 id="checklist-title">Topics</h3>
-      <div class="checklist-legend">
-        <div class="legend-item"><div class="legend-dot grey"></div> Not yet attempted</div>
-        <div class="legend-item"><div class="legend-dot red"></div> Needs work</div>
-        <div class="legend-item"><div class="legend-dot amber"></div> Getting there</div>
-        <div class="legend-item"><div class="legend-dot green"></div> Confident</div>
-        <div class="legend-item" style="gap:0.5rem"><div style="width:12px;height:12px;border-radius:50%;background:repeating-linear-gradient(45deg,#22c55e,#22c55e 3px,#86efac 3px,#86efac 6px);flex-shrink:0"></div> Limited data</div>
-        <span style="font-size:0.72rem;color:var(--subtext);margin-left:auto">Updated automatically from your question scores</span>
-      </div>
-      <ul class="topic-list" id="topic-list"></ul>
-    </div>
   </div>
 
   <!-- ── KEYWORDS TAB ────────────────────────────────────────────────────────── -->
@@ -388,6 +380,20 @@
     </div>
   </div>
 
+  <!-- ── SHARED RAG CHECKLIST ─────────────────────────────────────────────────── -->
+  <div class="checklist-card shared-rag" id="shared-rag-card">
+    <h3 id="checklist-title">Topics</h3>
+    <div class="checklist-legend">
+      <div class="legend-item"><div class="legend-dot grey"></div> Not yet attempted</div>
+      <div class="legend-item"><div class="legend-dot red"></div> Needs work</div>
+      <div class="legend-item"><div class="legend-dot amber"></div> Getting there</div>
+      <div class="legend-item"><div class="legend-dot green"></div> Confident</div>
+      <div class="legend-item" style="gap:0.5rem"><div style="width:12px;height:12px;border-radius:50%;background:repeating-linear-gradient(45deg,#22c55e,#22c55e 3px,#86efac 3px,#86efac 6px);flex-shrink:0"></div> Limited data</div>
+      <span style="font-size:0.72rem;color:var(--subtext);margin-left:auto">Updated automatically from your question scores</span>
+    </div>
+    <ul class="topic-list" id="topic-list"></ul>
+  </div>
+
 </div>
 
 <script>
@@ -464,6 +470,16 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
   });
 });
+
+// ── RAG VISIBILITY HELPERS ───────────────────────────────────────────────────
+function showRAG() {
+  const el = document.getElementById('shared-rag-card');
+  if (el) el.classList.remove('rag-hidden');
+}
+function hideRAG() {
+  const el = document.getElementById('shared-rag-card');
+  if (el) el.classList.add('rag-hidden');
+}
 
 // ── RAG HELPERS ───────────────────────────────────────────────────────────────
 function fuzzyMatchTopic(questionTopic, checklistTopics) {
@@ -562,6 +578,7 @@ function fmt(s) { return `${Math.floor(s/60)}:${(s%60).toString().padStart(2,'0'
 
 function startGame() {
   if (!keywords.length) { document.getElementById('score-display').textContent = 'Keywords not loaded yet.'; return; }
+  hideRAG();
   secondsElapsed = 0; matchedCount = 0;
   const pairs = [...keywords].sort(() => Math.random() - 0.5).slice(0, 5);
   totalPairs = pairs.length;
@@ -644,6 +661,7 @@ function handleTouchEnd(e) {
 
 document.getElementById('start-game-btn').addEventListener('click', startGame);
 document.getElementById('play-again-btn').addEventListener('click', () => {
+  showRAG();
   document.getElementById('start-game-btn').style.display = '';
   document.getElementById('game-area').style.display = 'none';
   document.getElementById('game-result').style.display = 'none';
@@ -791,6 +809,7 @@ async function markAnswers(answers) {
 function displayResults(qs, writtenResults, writtenAnswers, overallId, containerId, sectionId, loadingId) {
   document.getElementById(loadingId).style.display = 'none';
   document.getElementById(sectionId).style.display = 'block';
+  showRAG();
   const wm = {};
   writtenResults.forEach((r, i) => { wm[writtenAnswers[i].id] = { ...r, student_answer: writtenAnswers[i].student_answer }; });
 
@@ -848,6 +867,7 @@ document.getElementById('start-practice-btn').addEventListener('click', async ()
   if (!questions.length) await loadQuestions();
   selectedQuestions = selectMiniMockQuestions();
   if (!selectedQuestions.length) { alert('Questions not loaded. Please refresh and try again.'); return; }
+  hideRAG();
   document.getElementById('practice-intro').style.display = 'none';
   document.getElementById('questions-section').style.display = 'block';
   renderQuestionsToContainer(selectedQuestions, 'questions-container', 'total-marks-display');
@@ -871,6 +891,7 @@ document.getElementById('submit-btn').addEventListener('click', async () => {
 document.getElementById('try-again-btn').addEventListener('click', () => {
   document.getElementById('marking-section').style.display = 'none';
   document.getElementById('practice-intro').style.display = 'flex';
+  showRAG();
   selectedQuestions = []; autoMarkedResults = {};
 });
 
@@ -902,6 +923,7 @@ document.getElementById('start-paper-btn').addEventListener('click', async () =>
   const allQs = await loadPaperQuestions(selectedPaper.modules);
   selectedPaperQuestions = selectPaperQuestions(allQs);
   if (!selectedPaperQuestions.length) { alert('Could not load questions. Please refresh and try again.'); btn.textContent = '▶ Start Paper'; return; }
+  hideRAG();
   document.getElementById('paper-selector-section').style.display = 'none';
   document.getElementById('paper-questions-section').style.display = 'block';
   renderQuestionsToContainer(selectedPaperQuestions, 'paper-questions-container', 'paper-total-marks-display');
@@ -926,6 +948,7 @@ document.getElementById('paper-try-again-btn').addEventListener('click', () => {
   document.getElementById('paper-marking-section').style.display = 'none';
   document.getElementById('paper-selector-section').style.display = 'block';
   document.getElementById('start-paper-btn').textContent = '▶ Start Paper';
+  showRAG();
   selectedPaperQuestions = []; autoMarkedResults = {};
 });
 
