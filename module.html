@@ -192,6 +192,25 @@
     .paper-option-label { font-family: 'Nunito', sans-serif; font-size: 0.95rem; font-weight: 800; margin-top: 0.25rem; }
     .paper-option-modules { font-size: 0.775rem; color: var(--subtext); margin-top: 0.25rem; }
 
+    /* ── REVISE BANNER ───────────────────────────────────────────────────────── */
+    .revise-banner { background: white; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin-bottom: 0; }
+    .revise-banner-stripe { height: 5px; background: var(--accent); }
+    .revise-banner-body { padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+    .revise-banner-left { display: flex; align-items: center; gap: 1.25rem; flex: 1; min-width: 0; }
+    .revise-banner-icon { font-size: 2.5rem; flex-shrink: 0; }
+    .revise-banner-title { font-family: 'Nunito', sans-serif; font-size: 1.15rem; font-weight: 900; color: var(--text); margin-bottom: 0.25rem; }
+    .revise-banner-desc { font-size: 0.875rem; color: var(--subtext); line-height: 1.5; }
+    .btn-revise-banner { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; background: var(--accent); color: white; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.95rem; padding: 0.8rem 1.75rem; border-radius: 12px; text-decoration: none; border: none; cursor: pointer; transition: opacity 0.18s; white-space: nowrap; flex-shrink: 0; }
+    .btn-revise-banner:hover { opacity: 0.88; }
+
+    /* ── HATCHED RAG (low confidence — <3 raw marks) ─────────────────────────── */
+    .topic-item.rag-red-hatched { border-left-color: #ef4444; background: repeating-linear-gradient(45deg, #fef2f2, #fef2f2 4px, #fee2e2 4px, #fee2e2 8px); }
+    .topic-item.rag-amber-hatched { border-left-color: #f59e0b; background: repeating-linear-gradient(45deg, #fffbeb, #fffbeb 4px, #fef3c7 4px, #fef3c7 8px); }
+    .topic-item.rag-green-hatched { border-left-color: #22c55e; background: repeating-linear-gradient(45deg, #f0fdf4, #f0fdf4 4px, #dcfce7 4px, #dcfce7 8px); }
+    .topic-item.rag-red-hatched .topic-rag-dot { background: repeating-linear-gradient(45deg, #ef4444, #ef4444 3px, #fca5a5 3px, #fca5a5 6px); border-radius: 50%; }
+    .topic-item.rag-amber-hatched .topic-rag-dot { background: repeating-linear-gradient(45deg, #f59e0b, #f59e0b 3px, #fcd34d 3px, #fcd34d 6px); border-radius: 50%; }
+    .topic-item.rag-green-hatched .topic-rag-dot { background: repeating-linear-gradient(45deg, #22c55e, #22c55e 3px, #86efac 3px, #86efac 6px); border-radius: 50%; }
+
     @media (max-width: 800px) {
       .module-header, .tabs-wrapper, .content-wrapper { padding-left: 1rem; padding-right: 1rem; }
       .game-area { grid-template-columns: 1fr; }
@@ -200,6 +219,8 @@
       .feedback-grid { grid-template-columns: 1fr; }
       .practice-intro { flex-direction: column; align-items: flex-start; }
       .paper-selector { grid-template-columns: 1fr; }
+      .revise-banner-body { flex-direction: column; align-items: flex-start; }
+      .btn-revise-banner { width: 100%; }
     }
   </style>
 </head>
@@ -258,42 +279,17 @@
 
   <!-- ── REVISE TAB ──────────────────────────────────────────────────────────── -->
   <div class="tab-panel active" id="tab-revision">
-    <div class="revise-grid">
-      <div class="revise-card">
-        <div class="revise-card-stripe"></div>
-        <div class="revise-card-body">
-          <div class="revise-card-icon">📖</div>
-          <div class="revise-card-title">Revision Slides</div>
-          <div class="revise-card-desc">Your teacher's revision slides covering all the key content for this module. Work through these before attempting the Mini Mock or Paper.</div>
-          <div class="revise-card-footer"><a id="revision-link" href="#" target="_blank" class="btn-revise">Open Slides →</a></div>
+    <div class="revise-banner">
+      <div class="revise-banner-stripe"></div>
+      <div class="revise-banner-body">
+        <div class="revise-banner-left">
+          <div class="revise-banner-icon">📖</div>
+          <div>
+            <div class="revise-banner-title">Revision Slides</div>
+            <div class="revise-banner-desc">Your teacher's revision slides covering all the key content for this module. Work through these before attempting the Mini Mock or Paper.</div>
+          </div>
         </div>
-      </div>
-      <div class="revise-card">
-        <div class="revise-card-stripe"></div>
-        <div class="revise-card-body">
-          <div class="revise-card-icon">🧪</div>
-          <div class="revise-card-title">Required Practicals</div>
-          <div class="revise-card-desc">The required practicals for this module — method, key variables, expected results, and common exam questions.</div>
-          <div class="revise-card-footer"><a href="#" class="btn-revise secondary">Coming Soon</a></div>
-        </div>
-      </div>
-      <div class="revise-card">
-        <div class="revise-card-stripe"></div>
-        <div class="revise-card-body">
-          <div class="revise-card-icon">🎯</div>
-          <div class="revise-card-title">Command Words</div>
-          <div class="revise-card-desc">"Describe", "explain", "evaluate", "calculate" — understand exactly what each command word is asking you to do in the exam.</div>
-          <div class="revise-card-footer"><a href="#" class="btn-revise secondary">Coming Soon</a></div>
-        </div>
-      </div>
-      <div class="revise-card">
-        <div class="revise-card-stripe"></div>
-        <div class="revise-card-body">
-          <div class="revise-card-icon">🔢</div>
-          <div class="revise-card-title">Maths Skills</div>
-          <div class="revise-card-desc" id="maths-desc">Key maths skills needed for this subject — formulas, unit conversions, graphs, and worked examples.</div>
-          <div class="revise-card-footer"><a href="#" class="btn-revise secondary">Coming Soon</a></div>
-        </div>
+        <a id="revision-link" href="#" target="_blank" class="btn-revise-banner">Open Slides →</a>
       </div>
     </div>
 
@@ -304,6 +300,7 @@
         <div class="legend-item"><div class="legend-dot red"></div> Needs work</div>
         <div class="legend-item"><div class="legend-dot amber"></div> Getting there</div>
         <div class="legend-item"><div class="legend-dot green"></div> Confident</div>
+        <div class="legend-item" style="gap:0.5rem"><div style="width:12px;height:12px;border-radius:50%;background:repeating-linear-gradient(45deg,#22c55e,#22c55e 3px,#86efac 3px,#86efac 6px);flex-shrink:0"></div> Limited data</div>
         <span style="font-size:0.72rem;color:var(--subtext);margin-left:auto">Updated automatically from your question scores</span>
       </div>
       <ul class="topic-list" id="topic-list"></ul>
@@ -446,11 +443,7 @@ document.getElementById('revision-link').href = meta.revisionLink;
 document.getElementById('checklist-title').textContent = `${moduleId.toUpperCase()} ${meta.title} — Topic Checklist`;
 document.getElementById('ul-spec').href   = meta.specLink;
 document.getElementById('ul-slides').href = meta.revisionLink;
-document.getElementById('maths-desc').textContent = subjectId === 'physics'
-  ? 'Equations, unit conversions, graphs, rearranging formulae — all the Physics maths skills.'
-  : subjectId === 'chemistry'
-  ? 'Mole calculations, percentage yield, atom economy, concentration — Chemistry maths skills.'
-  : 'Magnification calculations, percentages, standard form, mean — the maths that comes up in Biology.';
+// maths-desc removed
 
 document.documentElement.style.setProperty('--accent',       meta.colour);
 document.documentElement.style.setProperty('--accent-light', meta.colourLight);
@@ -943,25 +936,26 @@ loadQuestions();
 <!-- ── FIREBASE ───────────────────────────────────────────────────────────────── -->
 <script type="module">
   import { onAuthChange, saveRAG, loadRAG, saveMockScore, db } from './firebase.js';
-  import { collection, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+  import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 
   window._currentUser = null;
 
   window._loadScoreHistory = async (uid, subject, module) => {
+    // Reads from progress/{subject-module}.mocks — matches saveMockScore structure in firebase.js
     try {
-      const ref  = collection(db, 'users', uid, 'mockScores');
-      const q    = query(ref, where('moduleKey', '==', `${subject}-${module}`));
-      const snap = await getDocs(q);
+      const snap = await getDoc(doc(db, 'users', uid, 'progress', `${subject}-${module}`));
+      if (!snap.exists()) return [];
+      const mocks = snap.data().mocks || [];
       const history = [];
-      snap.forEach(doc => {
-        const data = doc.data();
-        const ts   = data.date?.toMillis ? data.date.toMillis() : (data.date || Date.now());
-        (data.questions || []).forEach(qe => {
+      mocks.forEach(entry => {
+        // saveMockScore stores date as ISO string
+        const ts = entry.date ? new Date(entry.date).getTime() : Date.now();
+        (entry.questions || []).forEach(qe => {
           history.push({ topic: qe.topic||'', marks: qe.marks||0, awarded: qe.awarded||0, timestamp: ts });
         });
       });
       return history;
-    } catch(e) { return []; }
+    } catch(e) { console.log('loadScoreHistory error:', e); return []; }
   };
 
   window._saveRAGColours = async (uid, moduleKey, ragObj) => {
