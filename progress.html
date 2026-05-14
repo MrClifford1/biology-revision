@@ -307,13 +307,33 @@
   import { onAuthChange, signOutUser, getUserProfile, updateExamTarget, getAllProgress } from './firebase.js';
 
   const MODULE_META = {
-    b1: { title: 'Cell Biology', colour: '#0d9488' },
-    b2: { title: 'Organisation', colour: '#e85d4a' },
-    b3: { title: 'Infection & Response', colour: '#f59e0b' },
-    b4: { title: 'Bioenergetics', colour: '#22c55e' },
-    b5: { title: 'Homeostasis & Response', colour: '#8b5cf6' },
-    b6: { title: 'Inheritance & Evolution', colour: '#3b82f6' },
-    b7: { title: 'Ecology', colour: '#16a34a' },
+    // Biology
+    b1: { title: 'Cell Biology',            colour: '#0d9488', subject: 'biology' },
+    b2: { title: 'Organisation',             colour: '#e85d4a', subject: 'biology' },
+    b3: { title: 'Infection & Response',     colour: '#f59e0b', subject: 'biology' },
+    b4: { title: 'Bioenergetics',            colour: '#22c55e', subject: 'biology' },
+    b5: { title: 'Homeostasis & Response',   colour: '#8b5cf6', subject: 'biology' },
+    b6: { title: 'Inheritance & Evolution',  colour: '#3b82f6', subject: 'biology' },
+    b7: { title: 'Ecology',                  colour: '#16a34a', subject: 'biology' },
+    // Physics
+    p1: { title: 'Energy',                   colour: '#f97316', subject: 'physics' },
+    p2: { title: 'Electricity',              colour: '#eab308', subject: 'physics' },
+    p3: { title: 'Particle Model of Matter', colour: '#06b6d4', subject: 'physics' },
+    p4: { title: 'Atomic Structure',         colour: '#8b5cf6', subject: 'physics' },
+    p5: { title: 'Forces',                   colour: '#ec4899', subject: 'physics' },
+    p6: { title: 'Waves',                    colour: '#14b8a6', subject: 'physics' },
+    p7: { title: 'Magnetism & Electromagnetism', colour: '#6366f1', subject: 'physics' },
+    // Chemistry
+    c1:  { title: 'Atomic Structure & Periodic Table', colour: '#0ea5e9', subject: 'chemistry' },
+    c2:  { title: 'Bonding & Structure',                colour: '#10b981', subject: 'chemistry' },
+    c3:  { title: 'Quantitative Chemistry',             colour: '#f59e0b', subject: 'chemistry' },
+    c4:  { title: 'Chemical Changes',                   colour: '#ef4444', subject: 'chemistry' },
+    c5:  { title: 'Energy Changes',                     colour: '#8b5cf6', subject: 'chemistry' },
+    c6:  { title: 'Rate & Extent of Reactions',         colour: '#f97316', subject: 'chemistry' },
+    c7:  { title: 'Organic Chemistry',                  colour: '#06b6d4', subject: 'chemistry' },
+    c8:  { title: 'Chemical Analysis',                  colour: '#ec4899', subject: 'chemistry' },
+    c9:  { title: 'Chemistry of the Atmosphere',        colour: '#16a34a', subject: 'chemistry' },
+    c10: { title: 'Using Resources',                    colour: '#6366f1', subject: 'chemistry' },
   };
 
   let currentUser = null;
@@ -402,8 +422,11 @@
 
       <!-- Module Progress -->
       <div class="section-title">Progress by Module</div>
-      <div class="modules-grid">
-        ${Object.entries(MODULE_META).map(([id, meta]) => {
+      ${['biology', 'physics', 'chemistry'].map(subject => {
+        const subjectModules = Object.entries(MODULE_META).filter(([, m]) => m.subject === subject);
+        const subjectLabel = subject.charAt(0).toUpperCase() + subject.slice(1);
+        const subjectEmoji = subject === 'biology' ? '🧬' : subject === 'physics' ? '⚡' : '🧪';
+        const moduleCards = subjectModules.map(([id, meta]) => {
           const data = progress[id];
           const mocks = data?.mocks || [];
           const lastScore = mocks.length > 0 ? mocks[mocks.length - 1] : null;
@@ -414,7 +437,6 @@
           const ragCounts = { green: 0, amber: 0, red: 0, grey: 0 };
           Object.values(rag).forEach(v => { ragCounts[v || 'grey']++; });
           const total = Object.values(ragCounts).reduce((a, b) => a + b, 0);
-
           return `
             <div class="module-progress-card" style="border-left-color: ${meta.colour}">
               <div class="module-progress-header">
@@ -440,11 +462,17 @@
                   ${ragCounts.red > 0 ? `<span class="rag-chip red">❌ ${ragCounts.red} need work</span>` : ''}
                 </div>
               ` : ''}
-              <a href="module.html?module=${id}" style="display:inline-block;margin-top:0.75rem;font-size:0.78rem;color:${meta.colour};font-weight:700;text-decoration:none">Revise ${id.toUpperCase()} →</a>
+              <a href="module.html?subject=${meta.subject}&module=${id}" style="display:inline-block;margin-top:0.75rem;font-size:0.78rem;color:${meta.colour};font-weight:700;text-decoration:none">Revise ${id.toUpperCase()} →</a>
             </div>
           `;
-        }).join('')}
-      </div>
+        }).join('');
+        return `
+          <div style="margin-bottom:0.5rem;margin-top:1.25rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.85rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.07em">${subjectEmoji} ${subjectLabel}</div>
+          <div class="modules-grid" style="margin-bottom:0.5rem">
+            ${moduleCards}
+          </div>
+        `;
+      }).join('')}
 
       <!-- Recent Mocks -->
       <div class="section-title">Recent Mini Mocks</div>
