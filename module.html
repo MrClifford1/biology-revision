@@ -226,6 +226,30 @@
       .revise-banner-body { flex-direction: column; align-items: flex-start; }
       .btn-revise-banner { width: 100%; }
     }
+    /* ── SETTINGS DRAWER ────────────────────────────────────────────────────── */
+    .settings-overlay { position:fixed;inset:0;background:rgba(15,29,61,0.5);z-index:900;backdrop-filter:blur(2px); }
+    .settings-overlay.hidden { display:none; }
+    .settings-drawer { position:fixed;top:0;right:0;height:100%;width:320px;max-width:90vw;background:white;z-index:1000;box-shadow:-8px 0 40px rgba(0,0,0,0.15);display:flex;flex-direction:column;transition:transform 0.25s ease; }
+    .settings-drawer.hidden { transform:translateX(100%); }
+    .drawer-header { background:#0f172a;color:white;padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between; }
+    .drawer-header h2 { font-family:'Nunito',sans-serif;font-weight:900;font-size:1.05rem; }
+    .drawer-close { background:none;border:none;color:#94a3b8;font-size:1.4rem;cursor:pointer;line-height:1;padding:0; }
+    .drawer-close:hover { color:white; }
+    .drawer-body { padding:1.5rem;flex:1;overflow-y:auto; }
+    .drawer-section-title { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;color:#64748b;margin-bottom:0.75rem; }
+    .current-class-badge { background:#f0f4ff;border:2px solid #1a2a4f;border-radius:10px;padding:0.65rem 1rem;font-family:'Nunito',sans-serif;font-weight:900;font-size:1.1rem;color:#1a2a4f;text-align:center;margin-bottom:1rem; }
+    .year-grid-s { display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-bottom:1rem; }
+    .year-btn-s { border:2px solid #e2e8f0;background:#f8fafc;border-radius:12px;padding:0.75rem 0.5rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.95rem;color:#1e293b;cursor:pointer;transition:all 0.18s;text-align:center; }
+    .year-btn-s:hover { border-color:#1a2a4f;background:#f0f4ff; }
+    .year-btn-s.selected { border-color:#1a2a4f;background:#1a2a4f;color:white; }
+    .class-grid-s { display:grid;grid-template-columns:repeat(5,1fr);gap:0.4rem;margin-bottom:1rem; }
+    .class-btn-s { border:2px solid #e2e8f0;background:#f8fafc;border-radius:8px;padding:0.45rem 0.2rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.75rem;color:#1e293b;cursor:pointer;transition:all 0.18s;text-align:center; }
+    .class-btn-s:hover { border-color:#1a2a4f;background:#f0f4ff; }
+    .class-btn-s.selected { border-color:#c8202c;background:#c8202c;color:white; }
+    .btn-drawer-confirm { width:100%;background:#1a2a4f;color:white;border:none;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.95rem;padding:0.8rem;border-radius:12px;cursor:pointer;transition:background 0.18s;margin-top:0.5rem; }
+    .btn-drawer-confirm:hover { background:#0f1d3d; }
+    .btn-drawer-confirm:disabled { background:#cbd5e1;cursor:not-allowed; }
+    .drawer-divider { border:none;border-top:1px solid #e2e8f0;margin:1.25rem 0; }
   </style>
 </head>
 <body>
@@ -258,6 +282,7 @@
       </a>
     </div>
   </div>
+  <button onclick="openSettings()" title="Settings" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#94a3b8;font-size:1rem;padding:0.4rem 0.6rem;border-radius:8px;cursor:pointer;line-height:1;transition:all 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">⚙️</button>
 </nav>
 
 <div class="module-header">
@@ -1022,6 +1047,99 @@ loadQuestions();
       await saveMockScore(window._currentUser.uid, `${subjectId}-${moduleId}`, totalAwarded, totalAvail, qs);
       await reloadRAGFromHistory(window._currentUser.uid);
     } catch(e) { console.log('Could not save score:', e); }
+  };
+<!-- SETTINGS OVERLAY + DRAWER -->
+<div class="settings-overlay hidden" id="settings-overlay" onclick="closeSettings()"></div>
+<div class="settings-drawer hidden" id="settings-drawer">
+  <div class="drawer-header">
+    <h2>⚙️ Settings</h2>
+    <button class="drawer-close" onclick="closeSettings()">✕</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-section-title">My Class</div>
+    <div class="current-class-badge" id="drawer-class-display">—</div>
+    <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.07em;color:#64748b;margin-bottom:0.6rem">Change year group</div>
+    <div class="year-grid-s" id="drawer-year-grid">
+      <button class="year-btn-s" onclick="selectYearDrawer(9)">Year 9</button>
+      <button class="year-btn-s" onclick="selectYearDrawer(10)">Year 10</button>
+      <button class="year-btn-s" onclick="selectYearDrawer(11)">Year 11</button>
+    </div>
+    <div id="drawer-class-step" style="display:none">
+      <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.07em;color:#64748b;margin-bottom:0.6rem">Select class</div>
+      <div class="class-grid-s" id="drawer-class-grid"></div>
+    </div>
+    <button class="btn-drawer-confirm" id="drawer-confirm-btn" disabled onclick="confirmClassDrawer()">Update Class</button>
+    <hr class="drawer-divider">
+    <div class="drawer-section-title">Account</div>
+    <button onclick="handleSignOut()" style="width:100%;background:none;border:1.5px solid #e2e8f0;color:#64748b;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.8rem;padding:0.5rem;border-radius:8px;cursor:pointer;margin-top:0.25rem;transition:all 0.18s" onmouseover="this.style.borderColor='#1a2a4f';this.style.color='#1a2a4f'" onmouseout="this.style.borderColor='#e2e8f0';this.style.color='#64748b'">Sign out</button>
+  </div>
+</div>
+
+<script type="module">
+  import { getUserProfile, saveClass, isClassValid, signOutUser } from './firebase.js';
+
+  const CLASSES = {
+    9:  ['9S1','9S2','9S3','9S4','9S5','9N1','9N2','9N3','9N4','9N5'],
+    10: ['10S1','10S2','10S3','10S4','10S5','10N1','10N2','10N3','10N4','10N5'],
+    11: ['11S1','11S2','11S3','11S4','11S5','11N1','11N2','11N3','11N4','11N5'],
+  };
+
+  let selectedYearDrawer = null;
+  let selectedClassDrawer = null;
+
+  // Load class info once user is available (window._currentUser set by main script)
+  const waitForUser = setInterval(async () => {
+    if (!window._currentUser) return;
+    clearInterval(waitForUser);
+    const profile = await getUserProfile(window._currentUser.uid);
+    document.getElementById('drawer-class-display').textContent = profile?.class || 'Not set';
+  }, 300);
+
+  window.openSettings = () => {
+    document.getElementById('settings-overlay').classList.remove('hidden');
+    document.getElementById('settings-drawer').classList.remove('hidden');
+    selectedYearDrawer = null;
+    selectedClassDrawer = null;
+    document.getElementById('drawer-class-step').style.display = 'none';
+    document.getElementById('drawer-confirm-btn').disabled = true;
+    document.querySelectorAll('.year-btn-s').forEach(b => b.classList.remove('selected'));
+  };
+
+  window.closeSettings = () => {
+    document.getElementById('settings-overlay').classList.add('hidden');
+    document.getElementById('settings-drawer').classList.add('hidden');
+  };
+
+  window.selectYearDrawer = (year) => {
+    selectedYearDrawer = year;
+    selectedClassDrawer = null;
+    document.querySelectorAll('.year-btn-s').forEach(b => b.classList.remove('selected'));
+    event.target.classList.add('selected');
+    const grid = document.getElementById('drawer-class-grid');
+    grid.innerHTML = CLASSES[year].map(cls =>
+      `<button class="class-btn-s" onclick="selectClassDrawer('${cls}')">${cls}</button>`
+    ).join('');
+    document.getElementById('drawer-class-step').style.display = 'block';
+    document.getElementById('drawer-confirm-btn').disabled = true;
+  };
+
+  window.selectClassDrawer = (cls) => {
+    selectedClassDrawer = cls;
+    document.querySelectorAll('.class-btn-s').forEach(b => b.classList.remove('selected'));
+    event.target.classList.add('selected');
+    document.getElementById('drawer-confirm-btn').disabled = false;
+  };
+
+  window.confirmClassDrawer = async () => {
+    if (!window._currentUser || !selectedClassDrawer) return;
+    await saveClass(window._currentUser.uid, selectedClassDrawer);
+    document.getElementById('drawer-class-display').textContent = selectedClassDrawer;
+    closeSettings();
+  };
+
+  window.handleSignOut = async () => {
+    await signOutUser();
+    window.location.href = 'login.html';
   };
 </script>
 </body>
