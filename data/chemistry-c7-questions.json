@@ -1,0 +1,488 @@
+[
+  {
+    "id": "C7-MC-001",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Hydrocarbons",
+    "question": "What is a hydrocarbon?",
+    "options": ["A compound containing only oxygen and hydrogen", "A compound containing only carbon and hydrogen", "A compound containing carbon, hydrogen, and oxygen", "A compound containing only carbon"],
+    "correct": "A compound containing only carbon and hydrogen"
+  },
+  {
+    "id": "C7-MC-002",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Alkanes",
+    "question": "What is the general formula for alkanes?",
+    "options": ["CₙH₂ₙ", "CₙH₂ₙ₊₂", "CₙH₂ₙ₋₂", "CₙHₙ"],
+    "correct": "CₙH₂ₙ₊₂"
+  },
+  {
+    "id": "C7-MC-003",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Alkenes",
+    "question": "What is the general formula for alkenes?",
+    "options": ["CₙH₂ₙ₊₂", "CₙH₂ₙ", "CₙH₂ₙ₋₂", "CₙHₙ"],
+    "correct": "CₙH₂ₙ"
+  },
+  {
+    "id": "C7-MC-004",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Alkenes",
+    "question": "What is the result of adding bromine water to an alkene?",
+    "options": ["No change — solution stays orange", "Solution turns blue", "Solution is decolourised — orange to colourless", "Solution turns yellow"],
+    "correct": "Solution is decolourised — orange to colourless"
+  },
+  {
+    "id": "C7-MC-005",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Hydrocarbons",
+    "question": "How is crude oil separated into useful fractions?",
+    "options": ["Filtration", "Crystallisation", "Fractional distillation", "Chromatography"],
+    "correct": "Fractional distillation"
+  },
+  {
+    "id": "C7-MC-006",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Cracking",
+    "question": "Why is cracking used in the oil industry?",
+    "options": ["To make crude oil from small molecules", "To break down long-chain hydrocarbons into shorter, more useful ones", "To separate fractions in crude oil", "To convert alkanes into alcohols"],
+    "correct": "To break down long-chain hydrocarbons into shorter, more useful ones"
+  },
+  {
+    "id": "C7-MC-007",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Alkanes",
+    "question": "What are the products of complete combustion of a hydrocarbon?",
+    "options": ["Carbon monoxide and water", "Carbon and water", "Carbon dioxide and water", "Carbon dioxide and hydrogen"],
+    "correct": "Carbon dioxide and water"
+  },
+  {
+    "id": "C7-MC-008",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Alkanes",
+    "question": "Which harmful gas is produced during incomplete combustion?",
+    "options": ["Carbon dioxide", "Nitrogen", "Oxygen", "Carbon monoxide"],
+    "correct": "Carbon monoxide"
+  },
+  {
+    "id": "C7-MC-009",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Polymers",
+    "question": "Which type of polymerisation forms polymers from alkene monomers with no other products?",
+    "options": ["Condensation polymerisation", "Addition polymerisation", "Esterification", "Fermentation"],
+    "correct": "Addition polymerisation"
+  },
+  {
+    "id": "C7-MC-010",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Alcohols and Carboxylic Acids",
+    "question": "What functional group do alcohols contain?",
+    "options": ["-COOH", "-CHO", "-OH", "-NH₂"],
+    "correct": "-OH"
+  },
+  {
+    "id": "C7-MC-011",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Alcohols and Carboxylic Acids",
+    "question": "What are the products of fermentation of glucose?",
+    "options": ["Ethanol and oxygen", "Ethanol and carbon dioxide", "Methanol and water", "Ethene and water"],
+    "correct": "Ethanol and carbon dioxide"
+  },
+  {
+    "id": "C7-MC-012",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Polymers",
+    "question": "What small molecule is released during condensation polymerisation?",
+    "options": ["Carbon dioxide", "Hydrogen", "Water", "Oxygen"],
+    "correct": "Water"
+  },
+  {
+    "id": "C7-MC-013",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Hydrocarbons",
+    "question": "In fractional distillation of crude oil, where are the shortest chain hydrocarbons collected?",
+    "options": ["At the bottom of the column", "In the middle of the column", "At the top of the column", "They are not separated"],
+    "correct": "At the top of the column"
+  },
+  {
+    "id": "C7-MC-014",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Alcohols and Carboxylic Acids",
+    "question": "What type of compound is formed when an alcohol reacts with a carboxylic acid?",
+    "options": ["Alkene", "Alkane", "Ester", "Polymer"],
+    "correct": "Ester"
+  },
+  {
+    "id": "C7-MC-015",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Alkenes",
+    "question": "Which of the following is the correct name for CH₂=CH₂?",
+    "options": ["Ethane", "Ethanol", "Ethene", "Ethyne"],
+    "correct": "Ethene"
+  },
+  {
+    "id": "C7-FIB-001",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Alkanes",
+    "question": "Alkanes are described as __________ hydrocarbons because all carbon-carbon bonds are single bonds.",
+    "correct": "saturated",
+    "acceptable": ["saturated"]
+  },
+  {
+    "id": "C7-FIB-002",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Alkenes",
+    "question": "Alkenes are described as __________ hydrocarbons because they contain a C=C double bond.",
+    "correct": "unsaturated",
+    "acceptable": ["unsaturated"]
+  },
+  {
+    "id": "C7-FIB-003",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Cracking",
+    "question": "The process of breaking long-chain hydrocarbons into shorter, more useful molecules is called __________.",
+    "correct": "cracking",
+    "acceptable": ["cracking"]
+  },
+  {
+    "id": "C7-FIB-004",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Alkenes",
+    "question": "Alkenes decolourise __________ water, turning it from orange to colourless.",
+    "correct": "bromine",
+    "acceptable": ["bromine"]
+  },
+  {
+    "id": "C7-FIB-005",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Polymers",
+    "question": "In addition polymerisation, many __________ monomers join through their double bonds to form a long chain.",
+    "correct": "alkene",
+    "acceptable": ["alkene", "unsaturated"]
+  },
+  {
+    "id": "C7-FIB-006",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Alcohols and Carboxylic Acids",
+    "question": "The fermentation of glucose by yeast produces ethanol and __________ gas.",
+    "correct": "carbon dioxide",
+    "acceptable": ["carbon dioxide", "CO₂", "CO2"]
+  },
+  {
+    "id": "C7-FIB-007",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Alcohols and Carboxylic Acids",
+    "question": "Esters are formed by the reaction of an alcohol with a __________.",
+    "correct": "carboxylic acid",
+    "acceptable": ["carboxylic acid"]
+  },
+  {
+    "id": "C7-FIB-008",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Alkanes",
+    "question": "Incomplete combustion of a hydrocarbon produces carbon monoxide and __________ (soot).",
+    "correct": "carbon",
+    "acceptable": ["carbon", "soot", "carbon particles"]
+  },
+  {
+    "id": "C7-FIB-009",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Polymers",
+    "question": "Nylon and polyester are examples of __________ polymers.",
+    "correct": "condensation",
+    "acceptable": ["condensation"]
+  },
+  {
+    "id": "C7-FIB-010",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Hydrocarbons",
+    "question": "Crude oil is a __________ resource formed from the remains of marine organisms over millions of years.",
+    "correct": "non-renewable",
+    "acceptable": ["non-renewable", "finite", "non-renewable/finite"]
+  },
+  {
+    "id": "C7-MATCH-001",
+    "type": "match",
+    "marks": 3,
+    "topic": "Hydrocarbons",
+    "question": "Match each crude oil fraction to its main use.",
+    "pairs": [
+      { "term": "Petrol", "definition": "Fuel for cars" },
+      { "term": "Kerosene", "definition": "Jet fuel for aircraft" },
+      { "term": "Diesel", "definition": "Fuel for lorries and trains" },
+      { "term": "Bitumen", "definition": "Road surfacing and roofing" }
+    ]
+  },
+  {
+    "id": "C7-MATCH-002",
+    "type": "match",
+    "marks": 3,
+    "topic": "Alkanes and Alkenes",
+    "question": "Match each compound to its correct description.",
+    "pairs": [
+      { "term": "Methane (CH₄)", "definition": "Simplest alkane — one carbon, four hydrogens" },
+      { "term": "Ethene (C₂H₄)", "definition": "Simplest alkene — contains a C=C double bond" },
+      { "term": "Propane (C₃H₈)", "definition": "Alkane with three carbons — used in camping gas" },
+      { "term": "Butene (C₄H₈)", "definition": "Alkene with four carbons — unsaturated" }
+    ]
+  },
+  {
+    "id": "C7-MATCH-003",
+    "type": "match",
+    "marks": 3,
+    "topic": "Polymers",
+    "question": "Match each polymer to its monomer and type of polymerisation.",
+    "pairs": [
+      { "term": "Poly(ethene)", "definition": "Made from ethene by addition polymerisation" },
+      { "term": "Poly(propene)", "definition": "Made from propene by addition polymerisation" },
+      { "term": "Nylon", "definition": "Made by condensation polymerisation — releases water" },
+      { "term": "Polyester", "definition": "Made from a diol and dicarboxylic acid by condensation polymerisation" }
+    ]
+  },
+  {
+    "id": "C7-MATCH-004",
+    "type": "match",
+    "marks": 3,
+    "topic": "Alcohols and Carboxylic Acids",
+    "question": "Match each organic functional group to its compound type.",
+    "pairs": [
+      { "term": "-OH", "definition": "Alcohol" },
+      { "term": "-COOH", "definition": "Carboxylic acid" },
+      { "term": "-COO-", "definition": "Ester" }
+    ]
+  },
+  {
+    "id": "C7-MATCH-005",
+    "type": "match",
+    "marks": 3,
+    "topic": "Alkanes",
+    "question": "Match each type of combustion to its products.",
+    "pairs": [
+      { "term": "Complete combustion", "definition": "Carbon dioxide and water only" },
+      { "term": "Incomplete combustion (limited oxygen)", "definition": "Carbon monoxide and water" },
+      { "term": "Very incomplete combustion", "definition": "Carbon (soot) and water" }
+    ]
+  },
+  {
+    "id": "C7-SA-001",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Alkanes",
+    "question": "State the general formula for alkanes.",
+    "mark_scheme": "CₙH₂ₙ₊₂ (1)."
+  },
+  {
+    "id": "C7-SA-002",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Alkenes",
+    "question": "State the difference between a saturated and an unsaturated hydrocarbon.",
+    "mark_scheme": "Saturated: contains only single C-C bonds; unsaturated: contains at least one C=C double bond (1)."
+  },
+  {
+    "id": "C7-SA-003",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Alkenes",
+    "question": "Describe the bromine water test for alkenes and state the result.",
+    "mark_scheme": "Add bromine water to the compound — alkenes decolourise it from orange to colourless; alkanes show no change (1)."
+  },
+  {
+    "id": "C7-SA-004",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Alcohols and Carboxylic Acids",
+    "question": "State the functional group present in all alcohols.",
+    "mark_scheme": "-OH (hydroxyl group) (1)."
+  },
+  {
+    "id": "C7-SA-005",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Hydrocarbons",
+    "question": "Explain how fractional distillation separates crude oil into fractions.",
+    "mark_scheme": "Crude oil is heated and vaporised; vapours rise up the fractionating column (1); different fractions condense at different temperatures/levels depending on their boiling points — shorter chains have lower boiling points and condense higher up (1)."
+  },
+  {
+    "id": "C7-SA-006",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Cracking",
+    "question": "Explain why cracking is an important industrial process.",
+    "mark_scheme": "There is more demand for shorter chain hydrocarbons (e.g. petrol, ethene) than long chain ones (1); cracking converts less useful long-chain fractions into more useful shorter molecules (1)."
+  },
+  {
+    "id": "C7-SA-007",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Alkanes",
+    "question": "Explain why carbon monoxide is a dangerous product of incomplete combustion.",
+    "mark_scheme": "Carbon monoxide is a toxic gas (1); it binds to haemoglobin in red blood cells, preventing oxygen from being carried around the body (1)."
+  },
+  {
+    "id": "C7-SA-008",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Alcohols and Carboxylic Acids",
+    "question": "Describe how ethanol can be produced by fermentation.",
+    "mark_scheme": "Glucose is broken down by yeast in the absence of oxygen (anaerobic conditions) (1); producing ethanol and carbon dioxide (1)."
+  },
+  {
+    "id": "C7-SA-009",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Polymers",
+    "question": "Explain the difference between addition polymerisation and condensation polymerisation.",
+    "mark_scheme": "Addition polymerisation: alkene monomers join through their double bonds — no other products formed (1); condensation polymerisation: monomers with two functional groups join, releasing a small molecule such as water (1)."
+  },
+  {
+    "id": "C7-SA-010",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Write",
+    "topic": "Alkanes",
+    "question": "Write a word equation for the complete combustion of propane.",
+    "mark_scheme": "Propane + oxygen → carbon dioxide + water (1); both products correct (1)."
+  },
+  {
+    "id": "C7-SA-011",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Hydrocarbons",
+    "question": "Explain how the boiling points of alkanes change as chain length increases.",
+    "mark_scheme": "As chain length increases, the molecules have stronger intermolecular forces (1); more energy is needed to separate them, so boiling point increases (1)."
+  },
+  {
+    "id": "C7-SA-012",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Alkenes",
+    "question": "State two reactions that alkenes can undergo that alkanes cannot.",
+    "mark_scheme": "Any two from: addition reactions (hydrogenation, halogenation, hydration) (1); addition polymerisation (1)."
+  },
+  {
+    "id": "C7-SA-013",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Polymers",
+    "question": "Describe how addition polymerisation occurs, using ethene as an example.",
+    "mark_scheme": "Ethene molecules (monomers) contain a C=C double bond (1); under high pressure with a catalyst, the double bonds break (1); the monomers join together in a long chain to form poly(ethene) (1)."
+  },
+  {
+    "id": "C7-SA-014",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Compare",
+    "topic": "Alcohols and Carboxylic Acids",
+    "question": "Compare the two methods of producing ethanol: fermentation and hydration of ethene.",
+    "mark_scheme": "Fermentation: uses glucose and yeast, renewable, low temperature, slow, produces impure ethanol (1); hydration: ethene + steam over phosphoric acid catalyst, non-renewable (crude oil), high temperature and pressure, continuous process, purer product (1); choice depends on available resources and scale of production (1)."
+  },
+  {
+    "id": "C7-SA-015",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Cracking",
+    "question": "Describe the conditions needed for catalytic cracking and explain what products are formed.",
+    "mark_scheme": "High temperature and a zeolite catalyst (1); long-chain hydrocarbon vapour passed over the catalyst (1); broken down into shorter alkanes and alkenes — alkenes can be used for polymerisation or as fuels (1)."
+  },
+  {
+    "id": "C7-LA-001",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Hydrocarbons",
+    "question": "Explain how crude oil is formed and why it is considered a finite resource. Describe the process of fractional distillation and explain why shorter-chain fractions are more useful.",
+    "mark_scheme": "Crude oil formed from remains of marine organisms over millions of years under heat and pressure (1); it is finite — being used faster than it forms (1); fractional distillation: mixture heated, fractions condense at different heights depending on boiling point (1); shorter chains have lower boiling points, are more flammable and in higher demand as fuels (1)."
+  },
+  {
+    "id": "C7-LA-002",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Alkenes",
+    "question": "Explain what happens during an addition reaction of an alkene. Use the reaction of ethene with bromine as an example and explain how this reaction is used as a test for alkenes.",
+    "mark_scheme": "Alkenes contain a C=C double bond (1); in an addition reaction, atoms are added across the double bond, which opens up (1); ethene + Br₂ → 1,2-dibromoethane; bromine water is decolourised (orange to colourless) (1); alkanes do not react with bromine water — no colour change (1)."
+  },
+  {
+    "id": "C7-LA-003",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Evaluate",
+    "topic": "Polymers",
+    "question": "Evaluate the environmental impact of addition polymers such as poly(ethene). Include problems with disposal and suggest solutions.",
+    "mark_scheme": "Addition polymers are non-biodegradable — do not break down in the environment (1); cause pollution in oceans and landfill (1); solutions: recycling reduces demand for new plastic (1); biodegradable alternatives / incineration for energy recovery / reducing plastic use (1)."
+  },
+  {
+    "id": "C7-LA-004",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Compare",
+    "topic": "Alkanes",
+    "question": "Compare the properties of short-chain and long-chain alkanes. Include boiling point, viscosity, and flammability, and explain how these properties relate to their uses.",
+    "mark_scheme": "Short chains: lower boiling point, less viscous, more flammable — used as fuels e.g. petrol, LPG (1); long chains: higher boiling point, more viscous, less flammable — used as lubricants, bitumen (1); properties due to stronger intermolecular forces in longer chains (1); demand for short chains exceeds supply — explains need for cracking (1)."
+  },
+  {
+    "id": "C7-LA-005",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Alcohols and Carboxylic Acids",
+    "question": "Explain the reactions of alcohols, including combustion, oxidation to carboxylic acids, and the formation of esters. Give the name of the products in each case.",
+    "mark_scheme": "Combustion: alcohol burns in oxygen to produce CO₂ and water (1); oxidation: alcohol oxidised (e.g. by acidified potassium dichromate) to form carboxylic acid e.g. ethanol → ethanoic acid (1); esterification: alcohol reacts with carboxylic acid to form an ester and water (1); catalyst: concentrated sulfuric acid used in esterification (1); esters have sweet/fruity smells — used in perfumes and flavourings (1)."
+  },
+  {
+    "id": "C7-LA-006",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Hydrocarbons",
+    "question": "Evaluate the use of crude oil as a source of fuels and chemicals. Consider the environmental impacts of burning fossil fuels, the finite nature of oil, and alternatives.",
+    "mark_scheme": "Crude oil provides fuels (petrol, diesel, kerosene) and feedstocks for plastics and chemicals (1); burning produces CO₂ — contributes to climate change (1); incomplete combustion produces CO and particulates — harmful to health (1); crude oil is finite — will eventually run out (1); alternatives: biofuels (renewable but compete with food crops), hydrogen fuel cells (clean but production issues), electric vehicles (depend on grid energy source) (1); overall evaluation: oil is currently essential but unsustainable long-term — transition to renewables is necessary (1)."
+  },
+  {
+    "id": "C7-LA-007",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Polymers",
+    "question": "Evaluate the social, economic, and environmental impacts of the widespread use of polymers. Include both addition and condensation polymers in your answer.",
+    "mark_scheme": "Benefits: polymers are cheap, durable, lightweight, and versatile — used in packaging, clothing, medical devices (1); addition polymers e.g. poly(ethene) used in packaging and bottles (1); condensation polymers e.g. nylon used in clothing and engineering (1); environmental problems: most polymers non-biodegradable — landfill and ocean pollution (1); production relies on crude oil — non-renewable (1); solutions: recycling, biodegradable polymers, reducing use — well-reasoned conclusion (1)."
+  }
+]
