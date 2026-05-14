@@ -1,0 +1,489 @@
+[
+  {
+    "id": "C8-MC-001",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Purity and Formulations",
+    "question": "How can you tell if a substance is pure by measuring its melting point?",
+    "options": ["A pure substance melts over a wide range of temperatures", "A pure substance has a sharp, specific melting point", "A pure substance does not melt", "A pure substance melts at 100°C"],
+    "correct": "A pure substance has a sharp, specific melting point"
+  },
+  {
+    "id": "C8-MC-002",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Purity and Formulations",
+    "question": "Which of the following is an example of a formulation?",
+    "options": ["Pure water", "Pure gold", "A medicine tablet", "Distilled ethanol"],
+    "correct": "A medicine tablet"
+  },
+  {
+    "id": "C8-MC-003",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Chromatography",
+    "question": "In paper chromatography, what is the mobile phase?",
+    "options": ["The paper", "The pencil line", "The solvent", "The substance being tested"],
+    "correct": "The solvent"
+  },
+  {
+    "id": "C8-MC-004",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Chromatography",
+    "question": "A substance moves 4.5 cm and the solvent front moves 9 cm. What is the Rf value?",
+    "options": ["0.25", "0.5", "2.0", "4.5"],
+    "correct": "0.5"
+  },
+  {
+    "id": "C8-MC-005",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Chromatography",
+    "question": "Why do different substances separate during paper chromatography?",
+    "options": ["They have different densities", "They have different solubilities in the solvent and different attractions to the paper", "They have different colours", "They evaporate at different rates"],
+    "correct": "They have different solubilities in the solvent and different attractions to the paper"
+  },
+  {
+    "id": "C8-MC-006",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Identifying Substances",
+    "question": "What colour flame does potassium produce in a flame test?",
+    "options": ["Red", "Yellow", "Green", "Lilac/violet"],
+    "correct": "Lilac/violet"
+  },
+  {
+    "id": "C8-MC-007",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Identifying Substances",
+    "question": "What colour precipitate forms when NaOH is added to a solution containing Cu²⁺ ions?",
+    "options": ["Green", "Brown", "Blue", "White"],
+    "correct": "Blue"
+  },
+  {
+    "id": "C8-MC-008",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Identifying Substances",
+    "question": "What colour precipitate is produced when silver nitrate is added to a solution containing chloride ions?",
+    "options": ["Yellow", "Cream", "White", "Brown"],
+    "correct": "White"
+  },
+  {
+    "id": "C8-MC-009",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Identifying Substances",
+    "question": "What does limewater turning milky indicate?",
+    "options": ["Presence of oxygen", "Presence of hydrogen", "Presence of carbon dioxide", "Presence of water vapour"],
+    "correct": "Presence of carbon dioxide"
+  },
+  {
+    "id": "C8-MC-010",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Identifying Substances",
+    "question": "Which test identifies the presence of ammonium ions (NH₄⁺)?",
+    "options": ["Add silver nitrate — white precipitate forms", "Add HCl — fizzing occurs", "Add NaOH and heat — ammonia gas produced, turns damp red litmus blue", "Add barium chloride — white precipitate forms"],
+    "correct": "Add NaOH and heat — ammonia gas produced, turns damp red litmus blue"
+  },
+  {
+    "id": "C8-MC-011",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Identifying Substances",
+    "question": "A white precipitate soluble in excess NaOH forms when NaOH is added to a salt solution. Which ion is present?",
+    "options": ["Fe²⁺", "Fe³⁺", "Cu²⁺", "Al³⁺"],
+    "correct": "Al³⁺"
+  },
+  {
+    "id": "C8-MC-012",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Identifying Substances",
+    "question": "Which reagent is used to test for sulfate ions?",
+    "options": ["Silver nitrate solution", "Sodium hydroxide solution", "Acidified barium chloride solution", "Litmus solution"],
+    "correct": "Acidified barium chloride solution"
+  },
+  {
+    "id": "C8-MC-013",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Chromatography",
+    "question": "In gas chromatography, what is used as the mobile phase?",
+    "options": ["Water", "Paper", "An inert carrier gas", "A solvent liquid"],
+    "correct": "An inert carrier gas"
+  },
+  {
+    "id": "C8-MC-014",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Identifying Substances",
+    "question": "What colour flame does sodium produce in a flame test?",
+    "options": ["Lilac", "Green", "Yellow", "Red"],
+    "correct": "Yellow"
+  },
+  {
+    "id": "C8-MC-015",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Identifying Substances",
+    "question": "What colour precipitate forms when NaOH is added to a solution containing Fe³⁺ ions?",
+    "options": ["Blue", "Green", "White", "Brown"],
+    "correct": "Brown"
+  },
+  {
+    "id": "C8-FIB-001",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Chromatography",
+    "question": "Rf value = distance moved by substance ÷ distance moved by __________.",
+    "correct": "solvent",
+    "acceptable": ["solvent", "solvent front"]
+  },
+  {
+    "id": "C8-FIB-002",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Purity and Formulations",
+    "question": "An impure substance melts over a __________ of temperatures rather than at a single sharp point.",
+    "correct": "range",
+    "acceptable": ["range", "wider range"]
+  },
+  {
+    "id": "C8-FIB-003",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Identifying Substances",
+    "question": "Carbon dioxide turns limewater from colourless to __________.",
+    "correct": "milky",
+    "acceptable": ["milky", "cloudy", "white/milky", "cloudy white"]
+  },
+  {
+    "id": "C8-FIB-004",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Identifying Substances",
+    "question": "In a flame test, potassium produces a __________ flame.",
+    "correct": "lilac",
+    "acceptable": ["lilac", "violet", "purple"]
+  },
+  {
+    "id": "C8-FIB-005",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Identifying Substances",
+    "question": "Adding NaOH to a solution containing Cu²⁺ ions produces a __________ precipitate.",
+    "correct": "blue",
+    "acceptable": ["blue"]
+  },
+  {
+    "id": "C8-FIB-006",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Identifying Substances",
+    "question": "The presence of chloride ions is confirmed by a __________ precipitate with acidified silver nitrate solution.",
+    "correct": "white",
+    "acceptable": ["white"]
+  },
+  {
+    "id": "C8-FIB-007",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Chromatography",
+    "question": "In paper chromatography, the paper acts as the __________ phase.",
+    "correct": "stationary",
+    "acceptable": ["stationary"]
+  },
+  {
+    "id": "C8-FIB-008",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Identifying Substances",
+    "question": "To test for ammonium ions, add NaOH and heat — this produces __________ gas.",
+    "correct": "ammonia",
+    "acceptable": ["ammonia", "NH₃"]
+  },
+  {
+    "id": "C8-FIB-009",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Purity and Formulations",
+    "question": "A formulation is a __________ that has been designed to have specific, useful properties.",
+    "correct": "mixture",
+    "acceptable": ["mixture"]
+  },
+  {
+    "id": "C8-FIB-010",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Identifying Substances",
+    "question": "Sulfate ions are identified by adding acidified barium chloride — a __________ precipitate of barium sulfate forms.",
+    "correct": "white",
+    "acceptable": ["white"]
+  },
+  {
+    "id": "C8-MATCH-001",
+    "type": "match",
+    "marks": 3,
+    "topic": "Identifying Substances",
+    "question": "Match each metal ion to the colour of flame it produces in a flame test.",
+    "pairs": [
+      { "term": "Sodium (Na⁺)", "definition": "Yellow flame" },
+      { "term": "Potassium (K⁺)", "definition": "Lilac flame" },
+      { "term": "Copper (Cu²⁺)", "definition": "Green/blue-green flame" },
+      { "term": "Calcium (Ca²⁺)", "definition": "Orange-red flame" }
+    ]
+  },
+  {
+    "id": "C8-MATCH-002",
+    "type": "match",
+    "marks": 3,
+    "topic": "Identifying Substances",
+    "question": "Match each metal ion to the colour of precipitate formed when sodium hydroxide is added.",
+    "pairs": [
+      { "term": "Cu²⁺", "definition": "Blue precipitate" },
+      { "term": "Fe²⁺", "definition": "Green precipitate" },
+      { "term": "Fe³⁺", "definition": "Brown precipitate" },
+      { "term": "Al³⁺", "definition": "White precipitate (dissolves in excess NaOH)" }
+    ]
+  },
+  {
+    "id": "C8-MATCH-003",
+    "type": "match",
+    "marks": 3,
+    "topic": "Identifying Substances",
+    "question": "Match each halide ion to the colour of precipitate formed with acidified silver nitrate.",
+    "pairs": [
+      { "term": "Chloride (Cl⁻)", "definition": "White precipitate" },
+      { "term": "Bromide (Br⁻)", "definition": "Cream precipitate" },
+      { "term": "Iodide (I⁻)", "definition": "Yellow precipitate" }
+    ]
+  },
+  {
+    "id": "C8-MATCH-004",
+    "type": "match",
+    "marks": 3,
+    "topic": "Chromatography",
+    "question": "Match each chromatography term to its correct definition.",
+    "pairs": [
+      { "term": "Rf value", "definition": "Distance moved by substance ÷ distance moved by solvent front" },
+      { "term": "Stationary phase", "definition": "The phase that does not move — e.g. paper" },
+      { "term": "Mobile phase", "definition": "The phase that moves and carries substances — e.g. solvent" },
+      { "term": "Gas chromatography", "definition": "Uses an inert carrier gas as the mobile phase to separate substances" }
+    ]
+  },
+  {
+    "id": "C8-MATCH-005",
+    "type": "match",
+    "marks": 3,
+    "topic": "Identifying Substances",
+    "question": "Match each test to the ion it identifies.",
+    "pairs": [
+      { "term": "Acidified barium chloride → white precipitate", "definition": "Sulfate ions (SO₄²⁻)" },
+      { "term": "Add NaOH + heat → gas turns litmus blue", "definition": "Ammonium ions (NH₄⁺)" },
+      { "term": "Add dilute acid → fizzing, CO₂ produced", "definition": "Carbonate ions (CO₃²⁻)" },
+      { "term": "Acidified silver nitrate → cream precipitate", "definition": "Bromide ions (Br⁻)" }
+    ]
+  },
+  {
+    "id": "C8-SA-001",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Chromatography",
+    "question": "State the formula for calculating the Rf value in chromatography.",
+    "mark_scheme": "Rf = distance moved by substance ÷ distance moved by solvent front (1)."
+  },
+  {
+    "id": "C8-SA-002",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Identifying Substances",
+    "question": "State the colour of flame produced by sodium in a flame test.",
+    "mark_scheme": "Yellow (1)."
+  },
+  {
+    "id": "C8-SA-003",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Identifying Substances",
+    "question": "State what is observed when carbon dioxide is bubbled through limewater.",
+    "mark_scheme": "Limewater turns milky/cloudy white (1)."
+  },
+  {
+    "id": "C8-SA-004",
+    "type": "written",
+    "marks": 1,
+    "command_word": "Define",
+    "topic": "Purity and Formulations",
+    "question": "Define the term formulation.",
+    "mark_scheme": "A mixture designed and made to have specific, useful properties (1)."
+  },
+  {
+    "id": "C8-SA-005",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Calculate",
+    "topic": "Chromatography",
+    "question": "In a chromatography experiment, a substance moves 6 cm and the solvent front moves 8 cm. Calculate the Rf value.",
+    "mark_scheme": "Rf = 6 ÷ 8 (1); = 0.75 (1)."
+  },
+  {
+    "id": "C8-SA-006",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Identifying Substances",
+    "question": "Describe how to test for the presence of sulfate ions in a solution.",
+    "mark_scheme": "Add acidified barium chloride solution (1); a white precipitate of barium sulfate confirms sulfate ions are present (1)."
+  },
+  {
+    "id": "C8-SA-007",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Purity and Formulations",
+    "question": "Explain how the melting point of a substance can be used to test its purity.",
+    "mark_scheme": "A pure substance has a sharp, specific melting point (1); an impure substance melts over a range of temperatures and at a lower melting point (1)."
+  },
+  {
+    "id": "C8-SA-008",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Identifying Substances",
+    "question": "Describe how to test for the presence of chloride, bromide, and iodide ions, and state the results.",
+    "mark_scheme": "Add acidified silver nitrate solution (1); Cl⁻ → white precipitate; Br⁻ → cream precipitate; I⁻ → yellow precipitate (1)."
+  },
+  {
+    "id": "C8-SA-009",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Chromatography",
+    "question": "Explain why different substances move different distances in paper chromatography.",
+    "mark_scheme": "Substances have different solubilities in the solvent (mobile phase) (1); and different attractions to the stationary phase (paper) — more soluble or less attracted substances move further (1)."
+  },
+  {
+    "id": "C8-SA-010",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Identifying Substances",
+    "question": "Describe how to test for the presence of ammonium ions in a sample.",
+    "mark_scheme": "Add sodium hydroxide solution and warm/heat (1); ammonia gas is produced, which turns damp red litmus paper blue (1)."
+  },
+  {
+    "id": "C8-SA-011",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Identifying Substances",
+    "question": "State the colour of precipitate formed when sodium hydroxide is added to solutions containing (a) Fe²⁺ and (b) Fe³⁺ ions.",
+    "mark_scheme": "Fe²⁺: green precipitate (1); Fe³⁺: brown precipitate (1)."
+  },
+  {
+    "id": "C8-SA-012",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Purity and Formulations",
+    "question": "Explain why medicines are examples of formulations rather than pure substances.",
+    "mark_scheme": "Medicines contain a mixture of substances (1); designed to have specific properties — e.g. active ingredient, binders, coatings for controlled release (1)."
+  },
+  {
+    "id": "C8-SA-013",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Chromatography",
+    "question": "Describe how paper chromatography is carried out. Include how to set it up and how to interpret the results.",
+    "mark_scheme": "Spot the sample on a pencil baseline on chromatography paper (1); place paper in a shallow layer of solvent — below the baseline; allow solvent to travel up the paper (1); measure Rf values for each spot and compare to known values to identify substances (1)."
+  },
+  {
+    "id": "C8-SA-014",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Identifying Substances",
+    "question": "A student performs a flame test on an unknown compound and observes a yellow flame. They then add NaOH solution and observe a brown precipitate. Identify the compound and explain your reasoning.",
+    "mark_scheme": "Yellow flame indicates sodium (Na⁺) (1); brown precipitate with NaOH indicates Fe³⁺ ions (1); the compound is likely sodium iron(III) sulfate or similar sodium + iron(III) compound (1)."
+  },
+  {
+    "id": "C8-SA-015",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Chromatography",
+    "question": "Describe how gas chromatography works and explain how it can be used to identify substances.",
+    "mark_scheme": "Sample is vaporised and carried through a column by an inert carrier gas (1); different substances interact differently with the column material and travel at different speeds — separated by retention time (1); output shown as a chromatogram; substances identified by comparing retention times to known standards or by linking to mass spectrometry (1)."
+  },
+  {
+    "id": "C8-LA-001",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Identifying Substances",
+    "question": "Describe how you would carry out a series of chemical tests to identify an unknown ionic compound that may contain Na⁺, Fe³⁺, Cl⁻, or SO₄²⁻ ions. State the tests and expected results for each ion.",
+    "mark_scheme": "Flame test: yellow flame indicates Na⁺ (1); add NaOH solution: brown precipitate indicates Fe³⁺ (1); add acidified silver nitrate: white precipitate indicates Cl⁻ (1); add acidified barium chloride: white precipitate indicates SO₄²⁻ (1)."
+  },
+  {
+    "id": "C8-LA-002",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Chromatography",
+    "question": "Explain how paper chromatography can be used to determine whether a food colouring sample is a pure substance or a mixture. Include how Rf values are used.",
+    "mark_scheme": "Spot the food colouring on baseline alongside known dye standards (1); allow solvent to run up the paper — components separate (1); pure substance produces one spot; mixture produces multiple spots (1); calculate Rf = distance spot moved ÷ distance solvent moved; compare to known Rf values to identify components (1)."
+  },
+  {
+    "id": "C8-LA-003",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Evaluate",
+    "topic": "Identifying Substances",
+    "question": "Evaluate the use of flame tests compared to flame emission spectroscopy for identifying metal ions. Include advantages and limitations of each method.",
+    "mark_scheme": "Flame test: simple, quick, cheap — no specialist equipment needed (1); limitation: some colours are similar / can't distinguish mixtures / not quantitative (1); flame emission spectroscopy: more accurate, can identify multiple ions simultaneously, can detect smaller quantities (1); limitation: requires specialist equipment and training — more expensive (1)."
+  },
+  {
+    "id": "C8-LA-004",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Purity and Formulations",
+    "question": "Explain the difference between a pure substance and a formulation. Give two examples of formulations and explain why each must be a mixture rather than a pure substance.",
+    "mark_scheme": "Pure substance: single element or compound with a fixed melting/boiling point (1); formulation: mixture designed to have specific properties (1); example 1: medicines — contain active ingredient plus binders/coatings for controlled delivery (1); example 2: fuel — blend of hydrocarbons with additives for optimal performance (1)."
+  },
+  {
+    "id": "C8-LA-005",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Chromatography",
+    "question": "Compare paper chromatography with gas chromatography. Include the mobile phase, stationary phase, what types of samples each is suitable for, and the advantages of each technique.",
+    "mark_scheme": "Paper chromatography: mobile phase = solvent liquid; stationary phase = paper; suitable for coloured substances or mixtures in solution (1); simple, cheap, no specialist equipment (1); gas chromatography: mobile phase = inert carrier gas; stationary phase = column material (1); suitable for volatile substances / gases (1); more sensitive and accurate; can be combined with mass spectrometry for identification; can handle complex mixtures (1)."
+  },
+  {
+    "id": "C8-LA-006",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Identifying Substances",
+    "question": "A scientist is given an unknown white powder. Describe a systematic series of tests they could carry out to identify the ions present. Include the tests for cations and anions, state the expected observations, and explain how the results lead to identification.",
+    "mark_scheme": "Dissolve in water to make a solution (1); flame test to check for Na⁺ (yellow), K⁺ (lilac), Ca²⁺ (orange-red), Cu²⁺ (green) (1); add NaOH solution — coloured precipitate identifies metal ions: Cu²⁺ blue, Fe²⁺ green, Fe³⁺ brown, Al³⁺ white (1); test for anions: add acidified silver nitrate for halides (white/cream/yellow), acidified barium chloride for SO₄²⁻ (white), add acid for CO₃²⁻ (fizzing, CO₂) (1); combine results to identify the compound — e.g. yellow flame + white precipitate with AgNO₃ suggests NaCl (1); repeat tests to confirm / use flame emission spectroscopy for greater accuracy (1)."
+  },
+  {
+    "id": "C8-LA-007",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Chromatography",
+    "question": "A food standards agency wants to check whether a batch of fruit juice contains any artificial colourings. Evaluate how chromatography could be used to do this, including the method, how results would be interpreted, and the limitations of the technique.",
+    "mark_scheme": "Paper chromatography or TLC could be used — spot juice sample alongside known artificial colourings on baseline (1); run chromatogram in appropriate solvent (1); compare Rf values of spots in sample to known dye Rf values — matching Rf = same substance (1); number of spots indicates whether mixture or pure substance (1); limitation: different substances can have same Rf value — may need second solvent or gas chromatography to confirm (1); gas chromatography linked to mass spectrometry gives more reliable identification of unknown compounds (1)."
+  }
+]
