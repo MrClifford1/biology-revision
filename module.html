@@ -18,701 +18,188 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Nunito Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
 
-    /* NAV */
-    .topnav {
-      background: #0f172a;
-      padding: 0.7rem 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .topnav a {
-      color: #94a3b8;
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: color 0.2s;
-    }
+    /* ── NAV ─────────────────────────────────────────────────────────────────── */
+    .topnav { background: #0f172a; padding: 0.7rem 1.5rem; display: flex; align-items: center; gap: 1rem; position: relative; }
+    .topnav a { color: #94a3b8; text-decoration: none; font-size: 0.875rem; font-weight: 600; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s; }
     .topnav a:hover { color: white; }
-    .topnav-title {
-      color: white;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 800;
-      font-size: 0.95rem;
-      margin-left: auto;
-    }
+    .topnav-title { color: white; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.95rem; margin-left: auto; }
 
-    /* MODULE HEADER */
-    .module-header {
-      background: white;
-      padding: 1.2rem 2rem 0;
-      max-width: 1300px;
-      margin: 0 auto;
-      border-bottom: 1px solid var(--border);
-    }
-    .module-header-inner {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .module-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 56px;
-      height: 56px;
-      border-radius: 14px;
-      font-family: 'Nunito', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 900;
-      color: white;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-    .module-header h1 {
-      font-family: 'Nunito', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 900;
-      line-height: 1.1;
-    }
-    .module-header p {
-      color: var(--subtext);
-      font-size: 0.875rem;
-      margin-top: 0.15rem;
-    }
+    /* Useful Links dropdown */
+    .useful-links-wrap { position: relative; }
+    .useful-links-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #94a3b8; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.8rem; padding: 0.4rem 0.85rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; transition: all 0.2s; white-space: nowrap; }
+    .useful-links-btn:hover { background: rgba(255,255,255,0.18); color: white; }
+    .useful-links-btn .chevron { font-size: 0.65rem; transition: transform 0.2s; }
+    .useful-links-btn.open .chevron { transform: rotate(180deg); }
+    .useful-links-dropdown { display: none; position: absolute; top: calc(100% + 8px); right: 0; background: white; border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); min-width: 240px; z-index: 200; overflow: hidden; }
+    .useful-links-dropdown.open { display: block; }
+    .useful-links-header { padding: 0.75rem 1rem 0.5rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--subtext); border-bottom: 1px solid var(--border); }
+    .useful-link-item { display: flex; align-items: center; gap: 0.65rem; padding: 0.7rem 1rem; text-decoration: none; color: var(--text); font-size: 0.875rem; font-weight: 600; transition: background 0.15s; border-bottom: 1px solid #f1f5f9; }
+    .useful-link-item:last-child { border-bottom: none; }
+    .useful-link-item:hover { background: #f8fafc; }
+    .useful-link-icon { width: 30px; height: 30px; border-radius: 8px; background: var(--accent-light); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
+    .useful-link-text { flex: 1; }
+    .useful-link-sub { font-size: 0.72rem; color: var(--subtext); font-weight: 400; margin-top: 0.05rem; }
 
-    /* TABS */
-    .tabs-wrapper {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    .tabs {
-      display: flex;
-      gap: 0.6rem;
-      overflow-x: auto;
-      scrollbar-width: none;
-      margin-top: 1.1rem;
-      margin-bottom: 0.5rem;
-      border-bottom: none;
-      padding-bottom: 0;
-    }
+    /* ── MODULE HEADER ───────────────────────────────────────────────────────── */
+    .module-header { background: white; padding: 1.2rem 2rem 0; max-width: 1300px; margin: 0 auto; border-bottom: 1px solid var(--border); }
+    .module-header-inner { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .module-badge { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 14px; font-family: 'Nunito', sans-serif; font-size: 1.1rem; font-weight: 900; color: white; background: var(--accent); flex-shrink: 0; }
+    .module-header h1 { font-family: 'Nunito', sans-serif; font-size: 1.5rem; font-weight: 900; line-height: 1.1; }
+    .module-header p { color: var(--subtext); font-size: 0.875rem; margin-top: 0.15rem; }
+
+    /* ── TABS ────────────────────────────────────────────────────────────────── */
+    .tabs-wrapper { max-width: 1300px; margin: 0 auto; padding: 0 2rem; }
+    .tabs { display: flex; gap: 0.6rem; overflow-x: auto; scrollbar-width: none; margin-top: 1.1rem; margin-bottom: 0.5rem; }
     .tabs::-webkit-scrollbar { display: none; }
-    .tab-btn {
-      background: #f1f5f9;
-      border: 1.5px solid var(--border);
-      padding: 0.55rem 1.2rem;
-      font-family: 'Nunito', sans-serif;
-      font-size: 0.875rem;
-      font-weight: 800;
-      color: var(--subtext);
-      cursor: pointer;
-      border-radius: 10px;
-      white-space: nowrap;
-      transition: all 0.18s;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .tab-btn:hover {
-      background: white;
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-1px);
-      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-    }
-    .tab-btn.active {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: white;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-    }
+    .tab-btn { background: #f1f5f9; border: 1.5px solid var(--border); padding: 0.55rem 1.2rem; font-family: 'Nunito', sans-serif; font-size: 0.875rem; font-weight: 800; color: var(--subtext); cursor: pointer; border-radius: 10px; white-space: nowrap; transition: all 0.18s; display: flex; align-items: center; gap: 0.4rem; }
+    .tab-btn:hover { background: white; border-color: var(--accent); color: var(--accent); transform: translateY(-1px); box-shadow: 0 3px 10px rgba(0,0,0,0.08); }
+    .tab-btn.active { background: var(--accent); border-color: var(--accent); color: white; box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
 
-    /* CONTENT */
-    .content-wrapper {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 1.25rem 2rem 3rem;
-    }
-
+    /* ── CONTENT ─────────────────────────────────────────────────────────────── */
+    .content-wrapper { max-width: 1300px; margin: 0 auto; padding: 1.25rem 2rem 3rem; }
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
 
-    /* TWO-COLUMN GRID */
-    .two-col-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .info-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.25rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .info-card-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .info-card-icon {
-      width: 38px; height: 38px;
-      border-radius: 10px;
-      background: var(--accent-light);
-      color: var(--accent);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-    .info-card h2 {
-      font-family: 'Nunito', sans-serif;
-      font-weight: 800;
-      font-size: 1.05rem;
-    }
-    .info-card p {
-      color: var(--subtext);
-      font-size: 0.875rem;
-      line-height: 1.5;
-    }
-    .info-card-actions {
-      display: flex;
-      gap: 0.5rem;
-      margin-top: 0.25rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: var(--accent);
-      color: white;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 0.825rem;
-      padding: 0.55rem 1rem;
-      border-radius: 8px;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-    .btn-primary:hover { opacity: 0.88; }
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: white;
-      color: var(--accent);
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 0.825rem;
-      padding: 0.55rem 1rem;
-      border-radius: 8px;
-      text-decoration: none;
-      border: 1.5px solid var(--accent);
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .btn-secondary:hover { background: var(--accent-light); }
-
-    #tab-spec .checklist-card,
-    #tab-revision .checklist-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.25rem 1.5rem;
-      margin-top: 1rem;
-    }
-    .checklist-card h3 {
-      font-family: 'Nunito', sans-serif;
-      font-weight: 800;
-      font-size: 0.95rem;
-      margin-bottom: 0.5rem;
-      color: var(--text);
-    }
-    .checklist-legend {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 0.85rem;
-      flex-wrap: wrap;
-    }
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.75rem;
-      color: var(--subtext);
-      font-weight: 600;
-    }
-    .legend-dot {
-      width: 12px; height: 12px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
+    /* ── RAG CHECKLIST ───────────────────────────────────────────────────────── */
+    .checklist-card { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem 1.5rem; margin-top: 1rem; }
+    .checklist-card h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--text); }
+    .checklist-legend { display: flex; gap: 1rem; margin-bottom: 0.85rem; flex-wrap: wrap; align-items: center; }
+    .legend-item { display: flex; align-items: center; gap: 0.35rem; font-size: 0.75rem; color: var(--subtext); font-weight: 600; }
+    .legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+    .legend-dot.grey { background: #cbd5e1; }
     .legend-dot.red { background: #ef4444; }
     .legend-dot.amber { background: #f59e0b; }
     .legend-dot.green { background: #22c55e; }
-    .topic-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 0.4rem;
-      list-style: none;
-    }
-    .topic-item {
-      padding: 0.45rem 0.75rem;
-      background: var(--bg);
-      border-radius: 8px;
-      font-size: 0.825rem;
-      color: var(--text);
-      border-left: 4px solid #e2e8f0;
-      cursor: pointer;
-      user-select: none;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-      transition: background 0.15s, border-color 0.15s;
-    }
-    .topic-item:hover { background: #f0f4ff; }
+    .topic-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.4rem; list-style: none; }
+    .topic-item { padding: 0.45rem 0.75rem; background: var(--bg); border-radius: 8px; font-size: 0.825rem; color: var(--text); border-left: 4px solid #cbd5e1; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
     .topic-item.rag-red { border-left-color: #ef4444; background: #fef2f2; }
     .topic-item.rag-amber { border-left-color: #f59e0b; background: #fffbeb; }
     .topic-item.rag-green { border-left-color: #22c55e; background: #f0fdf4; }
-    .topic-rag-dot {
-      width: 10px; height: 10px;
-      border-radius: 50%;
-      background: #e2e8f0;
-      flex-shrink: 0;
-      transition: background 0.15s;
-    }
+    .topic-rag-dot { width: 10px; height: 10px; border-radius: 50%; background: #cbd5e1; flex-shrink: 0; }
     .topic-item.rag-red .topic-rag-dot { background: #ef4444; }
     .topic-item.rag-amber .topic-rag-dot { background: #f59e0b; }
     .topic-item.rag-green .topic-rag-dot { background: #22c55e; }
 
-    /* KEYWORDS */
+    /* ── REVISE CARDS ────────────────────────────────────────────────────────── */
+    .revise-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.1rem; }
+    .revise-card { background: white; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .revise-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(26,42,79,0.1); }
+    .revise-card-stripe { height: 5px; width: 100%; background: var(--accent); }
+    .revise-card-body { padding: 1.25rem 1.4rem 1.4rem; flex: 1; display: flex; flex-direction: column; gap: 0.5rem; }
+    .revise-card-icon { font-size: 1.8rem; margin-bottom: 0.1rem; }
+    .revise-card-title { font-family: 'Nunito', sans-serif; font-size: 1.05rem; font-weight: 900; color: var(--text); }
+    .revise-card-desc { font-size: 0.825rem; color: var(--subtext); line-height: 1.5; flex: 1; }
+    .revise-card-footer { margin-top: 0.75rem; }
+    .btn-revise { display: flex; align-items: center; justify-content: center; gap: 0.4rem; width: 100%; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.875rem; padding: 0.65rem 1rem; border-radius: 10px; border: none; cursor: pointer; color: white; background: var(--accent); text-decoration: none; transition: opacity 0.18s; }
+    .btn-revise:hover { opacity: 0.88; }
+    .btn-revise.secondary { background: white; color: var(--accent); border: 1.5px solid var(--accent); }
+    .btn-revise.secondary:hover { background: var(--accent-light); opacity: 1; }
+
+    /* ── KEYWORDS GAME ───────────────────────────────────────────────────────── */
     #keywords-panel { max-width: 100%; }
-
-    .game-status {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 0.9rem 1.25rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-    .timer-display {
-      font-family: 'Nunito', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 900;
-      color: var(--accent);
-      font-variant-numeric: tabular-nums;
-      line-height: 1;
-    }
+    .game-status { display: flex; align-items: center; justify-content: space-between; background: white; border: 1px solid var(--border); border-radius: 12px; padding: 0.9rem 1.25rem; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.75rem; }
+    .timer-display { font-family: 'Nunito', sans-serif; font-size: 1.4rem; font-weight: 900; color: var(--accent); font-variant-numeric: tabular-nums; line-height: 1; }
     .timer-display.warning { color: #ef4444; }
-    .score-display {
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 0.875rem;
-      color: var(--subtext);
-    }
-
-    .game-area {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-
+    .score-display { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.875rem; color: var(--subtext); }
+    .game-area { display: grid; grid-template-columns: 320px 1fr; gap: 1rem; margin-bottom: 1rem; }
     .words-col, .defs-col { display: flex; flex-direction: column; gap: 0.5rem; }
-
-    .word-chip {
-      background: var(--accent);
-      color: white;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 0.875rem;
-      padding: 0.7rem 1rem;
-      border-radius: 10px;
-      cursor: grab;
-      user-select: none;
-      text-align: center;
-      transition: opacity 0.2s, transform 0.15s;
-      touch-action: none;
-    }
+    .word-chip { background: var(--accent); color: white; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.875rem; padding: 0.7rem 1rem; border-radius: 10px; cursor: grab; user-select: none; text-align: center; transition: opacity 0.2s, transform 0.15s; touch-action: none; }
     .word-chip:active { cursor: grabbing; opacity: 0.8; transform: scale(1.03); }
     .word-chip.matched { opacity: 0.35; cursor: default; background: #94a3b8; }
     .word-chip.dragging { opacity: 0.5; }
-
-    .def-drop {
-      background: white;
-      border: 2px dashed var(--border);
-      border-radius: 10px;
-      padding: 0.7rem 1rem;
-      font-size: 0.825rem;
-      color: var(--subtext);
-      line-height: 1.45;
-      min-height: 50px;
-      transition: border-color 0.2s, background 0.2s;
-      display: flex;
-      align-items: center;
-    }
-    .def-drop.drag-over {
-      border-color: var(--accent);
-      background: var(--accent-light);
-    }
-    .def-drop.correct {
-      border-color: #22c55e;
-      background: #f0fdf4;
-      color: var(--text);
-      font-weight: 600;
-      border-style: solid;
-    }
-    .def-drop.incorrect {
-      border-color: #ef4444;
-      background: #fef2f2;
-    }
-
-    .game-result {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.5rem 2rem;
-      text-align: center;
-      display: none;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    .result-time {
-      font-family: 'Nunito', sans-serif;
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: var(--accent);
-      line-height: 1;
-    }
+    .def-drop { background: white; border: 2px dashed var(--border); border-radius: 10px; padding: 0.7rem 1rem; font-size: 0.825rem; color: var(--subtext); line-height: 1.45; min-height: 50px; transition: border-color 0.2s, background 0.2s; display: flex; align-items: center; }
+    .def-drop.drag-over { border-color: var(--accent); background: var(--accent-light); }
+    .def-drop.correct { border-color: #22c55e; background: #f0fdf4; color: var(--text); font-weight: 600; border-style: solid; }
+    .def-drop.incorrect { border-color: #ef4444; background: #fef2f2; }
+    .game-result { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem 2rem; text-align: center; display: none; max-width: 500px; margin: 0 auto; }
+    .result-time { font-family: 'Nunito', sans-serif; font-size: 2.5rem; font-weight: 900; color: var(--accent); line-height: 1; }
     .result-label { color: var(--subtext); margin: 0.25rem 0 1rem; font-size: 0.875rem; }
     .result-score { font-family: 'Nunito', sans-serif; font-weight: 700; margin-bottom: 1rem; color: var(--text); font-size: 0.95rem; }
 
-    /* PRACTICE */
-    #practice-panel { max-width: 900px; margin: 0 auto; }
-
-    .practice-intro {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.5rem 2rem;
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 1rem;
-    }
+    /* ── PRACTICE / PAPER SHARED ─────────────────────────────────────────────── */
+    .practice-panel-inner { max-width: 900px; margin: 0 auto; }
+    .practice-intro { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem 2rem; display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1rem; }
     .practice-intro-text { flex: 1; }
-    .practice-intro h2 {
-      font-family: 'Nunito', sans-serif;
-      font-weight: 800;
-      font-size: 1.15rem;
-      margin-bottom: 0.25rem;
-    }
+    .practice-intro h2 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1.15rem; margin-bottom: 0.25rem; }
     .practice-intro p { color: var(--subtext); font-size: 0.875rem; line-height: 1.5; }
-
-    .question-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.1rem 1.4rem;
-      margin-bottom: 0.75rem;
-    }
-    .question-meta {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.6rem;
-      flex-wrap: wrap;
-    }
-    .marks-badge {
-      background: var(--accent);
-      color: white;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 800;
-      font-size: 0.7rem;
-      padding: 0.18rem 0.6rem;
-      border-radius: 100px;
-    }
-    .command-badge {
-      background: #f1f5f9;
-      color: var(--subtext);
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 0.7rem;
-      padding: 0.18rem 0.6rem;
-      border-radius: 100px;
-    }
-    .topic-meta {
-      font-size: 0.7rem;
-      color: var(--subtext);
-      margin-left: auto;
-    }
-    .question-text {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin-bottom: 0.75rem;
-      font-weight: 600;
-    }
-    .answer-box {
-      width: 100%;
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      padding: 0.6rem 0.85rem;
-      font-family: 'Nunito Sans', sans-serif;
-      font-size: 0.875rem;
-      line-height: 1.5;
-      resize: vertical;
-      min-height: 75px;
-      transition: border-color 0.2s;
-      color: var(--text);
-    }
+    .question-card { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 1.1rem 1.4rem; margin-bottom: 0.75rem; }
+    .question-meta { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem; flex-wrap: wrap; }
+    .marks-badge { background: var(--accent); color: white; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.7rem; padding: 0.18rem 0.6rem; border-radius: 100px; }
+    .command-badge { background: #f1f5f9; color: var(--subtext); font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.7rem; padding: 0.18rem 0.6rem; border-radius: 100px; }
+    .topic-meta { font-size: 0.7rem; color: var(--subtext); margin-left: auto; }
+    .question-text { font-size: 0.95rem; line-height: 1.5; margin-bottom: 0.75rem; font-weight: 600; }
+    .answer-box { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: 0.6rem 0.85rem; font-family: 'Nunito Sans', sans-serif; font-size: 0.875rem; line-height: 1.5; resize: vertical; min-height: 75px; transition: border-color 0.2s; color: var(--text); }
     .answer-box:focus { outline: none; border-color: var(--accent); }
-
-    .submit-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 1rem;
-      padding: 1rem 1.4rem;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      position: sticky;
-      bottom: 1rem;
-      box-shadow: 0 -4px 12px rgba(0,0,0,0.05);
-    }
-    .total-marks {
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      color: var(--text);
-      font-size: 0.95rem;
-    }
-
+    .submit-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; padding: 1rem 1.4rem; background: white; border: 1px solid var(--border); border-radius: 14px; position: sticky; bottom: 1rem; box-shadow: 0 -4px 12px rgba(0,0,0,0.05); }
+    .total-marks { font-family: 'Nunito', sans-serif; font-weight: 700; color: var(--text); font-size: 0.95rem; }
     .marking-section { display: none; }
-    .result-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.1rem 1.4rem;
-      margin-bottom: 0.75rem;
-    }
-    .result-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 0.75rem;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
+    .result-card { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 1.1rem 1.4rem; margin-bottom: 0.75rem; }
+    .result-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem; }
     .result-q-text { font-size: 0.875rem; font-weight: 600; flex: 1; }
-    .marks-awarded {
-      font-family: 'Nunito', sans-serif;
-      font-weight: 900;
-      font-size: 0.9rem;
-      padding: 0.2rem 0.7rem;
-      border-radius: 100px;
-    }
+    .marks-awarded { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.9rem; padding: 0.2rem 0.7rem; border-radius: 100px; }
     .marks-full { background: #dcfce7; color: #16a34a; }
     .marks-partial { background: #fef9c3; color: #ca8a04; }
     .marks-zero { background: #fee2e2; color: #dc2626; }
-
-    .feedback-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-    }
+    .feedback-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.5rem; }
     .feedback-section { display: flex; flex-direction: column; }
-    .feedback-label {
-      font-family: 'Nunito', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--subtext);
-      margin-bottom: 0.25rem;
-    }
-    .feedback-text {
-      font-size: 0.825rem;
-      line-height: 1.45;
-      color: var(--text);
-      background: #f8fafc;
-      border-radius: 8px;
-      padding: 0.55rem 0.75rem;
-      border: 1px solid var(--border);
-      flex: 1;
-    }
-    .feedback-text.model {
-      border-left: 3px solid var(--accent);
-    }
-    .student-answer-text {
-      font-size: 0.825rem;
-      color: var(--subtext);
-      font-style: italic;
-      margin-bottom: 0.5rem;
-      padding: 0.45rem 0.7rem;
-      background: #f8fafc;
-      border-radius: 8px;
-      border-left: 3px solid var(--border);
-    }
-
-    .overall-result {
-      background: linear-gradient(135deg, #0f172a, #1e3a5f);
-      color: white;
-      border-radius: 14px;
-      padding: 1.5rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-    }
+    .feedback-label { font-family: 'Nunito', sans-serif; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--subtext); margin-bottom: 0.25rem; }
+    .feedback-text { font-size: 0.825rem; line-height: 1.45; color: var(--text); background: #f8fafc; border-radius: 8px; padding: 0.55rem 0.75rem; border: 1px solid var(--border); flex: 1; }
+    .feedback-text.model { border-left: 3px solid var(--accent); }
+    .student-answer-text { font-size: 0.825rem; color: var(--subtext); font-style: italic; margin-bottom: 0.5rem; padding: 0.45rem 0.7rem; background: #f8fafc; border-radius: 8px; border-left: 3px solid var(--border); }
+    .overall-result { background: linear-gradient(135deg, #0f172a, #1e3a5f); color: white; border-radius: 14px; padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
     .overall-score-block { display: flex; align-items: baseline; gap: 0.5rem; }
-    .overall-score {
-      font-family: 'Nunito', sans-serif;
-      font-size: 2.5rem;
-      font-weight: 900;
-      line-height: 1;
-    }
+    .overall-score { font-family: 'Nunito', sans-serif; font-size: 2.5rem; font-weight: 900; line-height: 1; }
     .overall-out-of { color: #94a3b8; font-size: 1.1rem; }
     .overall-pct { color: #94a3b8; font-size: 0.9rem; margin-top: 0.25rem; }
-    .overall-grade {
-      display: inline-block;
-      background: var(--accent);
-      color: white;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 800;
-      font-size: 0.875rem;
-      padding: 0.45rem 1.1rem;
-      border-radius: 100px;
-    }
-
-    .loading-overlay {
-      display: none;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 2.5rem 2rem;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-    .spinner {
-      width: 38px; height: 38px;
-      border: 3px solid var(--border);
-      border-top-color: var(--accent);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-      margin: 0 auto 0.75rem;
-    }
+    .overall-grade { display: inline-block; background: var(--accent); color: white; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.875rem; padding: 0.45rem 1.1rem; border-radius: 100px; }
+    .loading-overlay { display: none; background: white; border: 1px solid var(--border); border-radius: 14px; padding: 2.5rem 2rem; text-align: center; margin-bottom: 1rem; }
+    .spinner { width: 38px; height: 38px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 0.75rem; }
     @keyframes spin { to { transform: rotate(360deg); } }
     .loading-overlay p { color: var(--subtext); font-size: 0.875rem; }
 
-    /* MULTIPLE CHOICE */
+    /* ── QUESTION INPUT TYPES ────────────────────────────────────────────────── */
     .mc-options { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem; }
-    .mc-option {
-      display: flex; align-items: center; gap: 0.75rem;
-      padding: 0.6rem 0.9rem;
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 0.875rem;
-      transition: border-color 0.2s, background 0.2s;
-      background: white;
-    }
+    .mc-option { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0.9rem; border: 1.5px solid var(--border); border-radius: 8px; cursor: pointer; font-size: 0.875rem; transition: border-color 0.2s, background 0.2s; background: white; }
     .mc-option:hover { border-color: var(--accent); background: var(--accent-light); }
     .mc-option input[type="radio"] { accent-color: var(--accent); width: 16px; height: 16px; flex-shrink: 0; }
-    .mc-option.mc-correct { border-color: #22c55e; background: #f0fdf4; font-weight: 700; }
-    .mc-option.mc-wrong { border-color: #ef4444; background: #fef2f2; }
-
-    /* FILL IN BLANK */
     .fib-wrap { margin-top: 0.5rem; }
-    .fib-input {
-      width: 100%; max-width: 400px;
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      padding: 0.6rem 0.85rem;
-      font-family: 'Nunito Sans', sans-serif;
-      font-size: 0.9rem;
-      transition: border-color 0.2s;
-    }
+    .fib-input { width: 100%; max-width: 400px; border: 1.5px solid var(--border); border-radius: 8px; padding: 0.6rem 0.85rem; font-family: 'Nunito Sans', sans-serif; font-size: 0.9rem; transition: border-color 0.2s; }
     .fib-input:focus { outline: none; border-color: var(--accent); }
-
-    /* MATCH */
     .match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.5rem; }
-    .match-terms { display: flex; flex-direction: column; gap: 0.4rem; }
-    .match-defs { display: flex; flex-direction: column; gap: 0.4rem; }
-    .match-term {
-      padding: 0.55rem 0.85rem;
-      background: var(--accent);
-      color: white;
-      border-radius: 8px;
-      font-size: 0.825rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: opacity 0.2s, transform 0.15s;
-      text-align: center;
-    }
+    .match-terms, .match-defs { display: flex; flex-direction: column; gap: 0.4rem; }
+    .match-term { padding: 0.55rem 0.85rem; background: var(--accent); color: white; border-radius: 8px; font-size: 0.825rem; font-weight: 700; cursor: pointer; transition: opacity 0.2s, transform 0.15s; text-align: center; }
     .match-term:hover { opacity: 0.85; }
-    .match-term.match-selected { transform: scale(1.04); outline: 3px solid var(--gold, #d4a534); }
-    .match-def-drop {
-      padding: 0.55rem 0.85rem;
-      background: white;
-      border: 1.5px dashed var(--border);
-      border-radius: 8px;
-      font-size: 0.8rem;
-      color: var(--subtext);
-      cursor: pointer;
-      transition: border-color 0.2s, background 0.2s;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.5rem;
-      min-height: 42px;
-    }
+    .match-term.match-selected { transform: scale(1.04); outline: 3px solid #d4a534; }
+    .match-def-drop { padding: 0.55rem 0.85rem; background: white; border: 1.5px dashed var(--border); border-radius: 8px; font-size: 0.8rem; color: var(--subtext); cursor: pointer; transition: border-color 0.2s, background 0.2s; display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; min-height: 42px; }
     .match-def-drop:hover { border-color: var(--accent); background: var(--accent-light); }
     .match-def-drop.match-correct { border-color: #22c55e; background: #f0fdf4; border-style: solid; }
     .match-def-drop.match-wrong { border-color: #ef4444; background: #fef2f2; border-style: solid; }
     .match-instructions { font-size: 0.75rem; color: var(--subtext); margin-top: 0.4rem; font-style: italic; }
-
-    /* AUTO-RESULT */
-    .auto-result {
-      margin-top: 0.65rem;
-      padding: 0.55rem 0.85rem;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
+    .auto-result { margin-top: 0.65rem; padding: 0.55rem 0.85rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; }
     .auto-correct { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
     .auto-wrong { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
-    .auto-partial { background: #fef9c3; color: #ca8a04; border: 1px solid #fde68a; }
+
+    /* ── PRIMARY BUTTON ──────────────────────────────────────────────────────── */
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--accent); color: white; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.825rem; padding: 0.55rem 1rem; border-radius: 8px; text-decoration: none; border: none; cursor: pointer; transition: opacity 0.2s; }
+    .btn-primary:hover { opacity: 0.88; }
+
+    /* ── PAPER SELECTOR ──────────────────────────────────────────────────────── */
+    .paper-selector { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    .paper-option { background: white; border: 2px solid var(--border); border-radius: 16px; padding: 1.5rem; cursor: pointer; transition: all 0.2s; text-align: center; }
+    .paper-option:hover { border-color: var(--accent); box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .paper-option.selected { border-color: var(--accent); background: var(--accent-light); }
+    .paper-option-num { font-family: 'Nunito', sans-serif; font-size: 2rem; font-weight: 900; color: var(--accent); line-height: 1; }
+    .paper-option-label { font-family: 'Nunito', sans-serif; font-size: 0.95rem; font-weight: 800; margin-top: 0.25rem; }
+    .paper-option-modules { font-size: 0.775rem; color: var(--subtext); margin-top: 0.25rem; }
 
     @media (max-width: 800px) {
       .module-header, .tabs-wrapper, .content-wrapper { padding-left: 1rem; padding-right: 1rem; }
-      .two-col-grid { grid-template-columns: 1fr; }
       .game-area { grid-template-columns: 1fr; }
       .words-col { flex-direction: row; flex-wrap: wrap; }
       .word-chip { flex: 1 1 calc(50% - 0.25rem); min-width: 0; }
       .feedback-grid { grid-template-columns: 1fr; }
-      .practice-intro { flex-direction: column; align-items: flex-start; text-align: left; }
+      .practice-intro { flex-direction: column; align-items: flex-start; }
+      .paper-selector { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -722,6 +209,30 @@
   <a href="javascript:history.back()">← Back</a>
   <a href="progress.html" id="progress-link" style="display:none">📊 My Progress</a>
   <span class="topnav-title" id="nav-title">Revision</span>
+  <div class="useful-links-wrap">
+    <button class="useful-links-btn" id="useful-links-btn">
+      🔗 Useful Links <span class="chevron">▼</span>
+    </button>
+    <div class="useful-links-dropdown" id="useful-links-dropdown">
+      <div class="useful-links-header">Resources</div>
+      <a href="#" target="_blank" class="useful-link-item" id="ul-spec">
+        <div class="useful-link-icon">📋</div>
+        <div class="useful-link-text"><div>AQA Specification</div><div class="useful-link-sub">Official exam specification document</div></div>
+      </a>
+      <a href="#" target="_blank" class="useful-link-item" id="ul-slides">
+        <div class="useful-link-icon">📖</div>
+        <div class="useful-link-text"><div>Revision Slides</div><div class="useful-link-sub">Teacher's slides for this module</div></div>
+      </a>
+      <a href="#" class="useful-link-item" id="ul-practicals">
+        <div class="useful-link-icon">🧪</div>
+        <div class="useful-link-text"><div>Required Practicals</div><div class="useful-link-sub">Methods, variables and results</div></div>
+      </a>
+      <a href="#" class="useful-link-item" id="ul-commands">
+        <div class="useful-link-icon">🎯</div>
+        <div class="useful-link-text"><div>Command Words Guide</div><div class="useful-link-sub">What describe, explain, evaluate mean</div></div>
+      </a>
+    </div>
+  </div>
 </nav>
 
 <div class="module-header">
@@ -736,36 +247,52 @@
 
 <div class="tabs-wrapper">
   <div class="tabs">
-    <button class="tab-btn active" data-tab="spec">📋 Spec</button>
-    <button class="tab-btn" data-tab="revision">📖 Revise</button>
+    <button class="tab-btn active" data-tab="revision">📖 Revise</button>
     <button class="tab-btn" data-tab="keywords">🔤 Words</button>
     <button class="tab-btn" data-tab="practice">✏️ Mini Mock</button>
+    <button class="tab-btn" data-tab="paper">📝 Paper</button>
   </div>
 </div>
 
 <div class="content-wrapper">
 
-  <div class="tab-panel active" id="tab-spec">
-    <div class="two-col-grid">
-      <div class="info-card">
-        <div class="info-card-header">
-          <div class="info-card-icon">📋</div>
-          <h2>AQA Specification</h2>
-        </div>
-        <p>The official AQA specification document — find every topic you could be examined on.</p>
-        <div class="info-card-actions">
-          <a id="spec-link" href="#" target="_blank" class="btn-primary">📄 Open Specification</a>
+  <!-- ── REVISE TAB ──────────────────────────────────────────────────────────── -->
+  <div class="tab-panel active" id="tab-revision">
+    <div class="revise-grid">
+      <div class="revise-card">
+        <div class="revise-card-stripe"></div>
+        <div class="revise-card-body">
+          <div class="revise-card-icon">📖</div>
+          <div class="revise-card-title">Revision Slides</div>
+          <div class="revise-card-desc">Your teacher's revision slides covering all the key content for this module. Work through these before attempting the Mini Mock or Paper.</div>
+          <div class="revise-card-footer"><a id="revision-link" href="#" target="_blank" class="btn-revise">Open Slides →</a></div>
         </div>
       </div>
-
-      <div class="info-card">
-        <div class="info-card-header">
-          <div class="info-card-icon">✅</div>
-          <h2>Revision Checklist</h2>
+      <div class="revise-card">
+        <div class="revise-card-stripe"></div>
+        <div class="revise-card-body">
+          <div class="revise-card-icon">🧪</div>
+          <div class="revise-card-title">Required Practicals</div>
+          <div class="revise-card-desc">The required practicals for this module — method, key variables, expected results, and common exam questions.</div>
+          <div class="revise-card-footer"><a href="#" class="btn-revise secondary">Coming Soon</a></div>
         </div>
-        <p>Tick off topics as you revise them. Make sure you can explain each one.</p>
-        <div class="info-card-actions">
-          <span style="font-size: 0.8rem; color: var(--subtext);">Topics shown below ↓</span>
+      </div>
+      <div class="revise-card">
+        <div class="revise-card-stripe"></div>
+        <div class="revise-card-body">
+          <div class="revise-card-icon">🎯</div>
+          <div class="revise-card-title">Command Words</div>
+          <div class="revise-card-desc">"Describe", "explain", "evaluate", "calculate" — understand exactly what each command word is asking you to do in the exam.</div>
+          <div class="revise-card-footer"><a href="#" class="btn-revise secondary">Coming Soon</a></div>
+        </div>
+      </div>
+      <div class="revise-card">
+        <div class="revise-card-stripe"></div>
+        <div class="revise-card-body">
+          <div class="revise-card-icon">🔢</div>
+          <div class="revise-card-title">Maths Skills</div>
+          <div class="revise-card-desc" id="maths-desc">Key maths skills needed for this subject — formulas, unit conversions, graphs, and worked examples.</div>
+          <div class="revise-card-footer"><a href="#" class="btn-revise secondary">Coming Soon</a></div>
         </div>
       </div>
     </div>
@@ -773,81 +300,33 @@
     <div class="checklist-card">
       <h3 id="checklist-title">Topics</h3>
       <div class="checklist-legend">
-        <div class="legend-item"><div class="legend-dot red"></div> Not confident</div>
+        <div class="legend-item"><div class="legend-dot grey"></div> Not yet attempted</div>
+        <div class="legend-item"><div class="legend-dot red"></div> Needs work</div>
         <div class="legend-item"><div class="legend-dot amber"></div> Getting there</div>
         <div class="legend-item"><div class="legend-dot green"></div> Confident</div>
-        <span style="font-size:0.72rem;color:var(--subtext);margin-left:auto">Click each topic to rate yourself</span>
+        <span style="font-size:0.72rem;color:var(--subtext);margin-left:auto">Updated automatically from your question scores</span>
       </div>
       <ul class="topic-list" id="topic-list"></ul>
     </div>
   </div>
 
-  <div class="tab-panel" id="tab-revision">
-    <div class="two-col-grid">
-      <div class="info-card">
-        <div class="info-card-header">
-          <div class="info-card-icon">📖</div>
-          <h2>Revision Slides</h2>
-        </div>
-        <p>The teacher's revision slides covering all the key content for this module.</p>
-        <div class="info-card-actions">
-          <a id="revision-link" href="#" target="_blank" class="btn-primary">📖 Open Slides</a>
-        </div>
-      </div>
-
-      <div class="info-card">
-        <div class="info-card-header">
-          <div class="info-card-icon">🧪</div>
-          <h2>Required Practicals</h2>
-        </div>
-        <p>The practicals you need to know for the exam — method, variables, results.</p>
-        <div class="info-card-actions">
-          <a href="#" class="btn-secondary">View practicals</a>
-        </div>
-      </div>
-
-      <div class="info-card">
-        <div class="info-card-header">
-          <div class="info-card-icon">🎯</div>
-          <h2>Command Words</h2>
-        </div>
-        <p>"Describe", "explain", "evaluate" — what the examiner wants for each.</p>
-        <div class="info-card-actions">
-          <a href="#" class="btn-secondary">Command word guide</a>
-        </div>
-      </div>
-
-      <div class="info-card">
-        <div class="info-card-header">
-          <div class="info-card-icon">🔢</div>
-          <h2>Maths Skills</h2>
-        </div>
-        <p>Magnification, percentages, standard form — the maths that comes up in Biology.</p>
-        <div class="info-card-actions">
-          <a href="#" class="btn-secondary">Maths help</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <!-- ── KEYWORDS TAB ────────────────────────────────────────────────────────── -->
   <div class="tab-panel" id="tab-keywords">
     <div id="keywords-panel">
       <div class="game-status">
-        <div style="display: flex; align-items: center; gap: 1.5rem;">
+        <div style="display:flex;align-items:center;gap:1.5rem;">
           <div>
             <div class="timer-display" id="timer-display">0:00</div>
-            <div style="font-size:0.7rem; color:var(--subtext); margin-top:0.15rem">Time elapsed</div>
+            <div style="font-size:0.7rem;color:var(--subtext);margin-top:0.15rem">Time elapsed</div>
           </div>
           <div class="score-display" id="score-display">Drag words to their definitions</div>
         </div>
         <button class="btn-primary" id="start-game-btn">▶ Start Game</button>
       </div>
-
       <div class="game-area" id="game-area" style="display:none">
         <div class="words-col" id="words-col"></div>
         <div class="defs-col" id="defs-col"></div>
       </div>
-
       <div class="game-result" id="game-result">
         <div class="result-time" id="result-time">0:00</div>
         <div class="result-label">Time to complete</div>
@@ -857,16 +336,16 @@
     </div>
   </div>
 
+  <!-- ── MINI MOCK TAB ───────────────────────────────────────────────────────── -->
   <div class="tab-panel" id="tab-practice">
-    <div id="practice-panel">
+    <div class="practice-panel-inner">
       <div class="practice-intro" id="practice-intro">
         <div class="practice-intro-text">
           <h2>Mini Mock</h2>
-          <p>10 marks worth of randomly selected questions — at least one longer question (4–6 marks) and a mix of shorter questions. Answer all questions then submit for smart marking with detailed feedback.</p>
+          <p>10 marks worth of questions from this module — prioritising topics where you need the most practice. Short questions come first, then a longer question. Submit for AI-powered marking and detailed feedback.</p>
         </div>
         <button class="btn-primary" id="start-practice-btn">▶ Start</button>
       </div>
-
       <div id="questions-section" style="display:none">
         <div id="questions-container"></div>
         <div class="submit-row">
@@ -874,18 +353,40 @@
           <button class="btn-primary" id="submit-btn">Submit for Marking →</button>
         </div>
       </div>
-
-      <div class="loading-overlay" id="loading-overlay">
-        <div class="spinner"></div>
-        <p>Smart marking in progress...</p>
-      </div>
-
+      <div class="loading-overlay" id="loading-overlay"><div class="spinner"></div><p>Smart marking in progress...</p></div>
       <div class="marking-section" id="marking-section">
         <div class="overall-result" id="overall-result"></div>
         <div id="results-container"></div>
-        <div style="text-align:center; margin-top:1rem">
-          <button class="btn-primary" id="try-again-btn">🔄 Try Another Set</button>
+        <div style="text-align:center;margin-top:1rem"><button class="btn-primary" id="try-again-btn">🔄 Try Another Set</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PAPER TAB ───────────────────────────────────────────────────────────── -->
+  <div class="tab-panel" id="tab-paper">
+    <div class="practice-panel-inner">
+      <div id="paper-selector-section">
+        <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:1.5rem 2rem;margin-bottom:1rem;">
+          <h2 style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.15rem;margin-bottom:0.35rem;">📝 Practice Paper</h2>
+          <p style="color:var(--subtext);font-size:0.875rem;line-height:1.5;">35 marks across multiple modules — just like a real AQA exam paper. Short questions build to longer extended answers. Select a paper to begin.</p>
         </div>
+        <div class="paper-selector" id="paper-selector"></div>
+        <div style="text-align:center;margin-top:0.5rem;">
+          <button class="btn-primary" id="start-paper-btn" style="padding:0.75rem 2rem;font-size:0.95rem;">▶ Start Paper</button>
+        </div>
+      </div>
+      <div id="paper-questions-section" style="display:none">
+        <div id="paper-questions-container"></div>
+        <div class="submit-row">
+          <span class="total-marks" id="paper-total-marks-display">Total: 35 marks</span>
+          <button class="btn-primary" id="paper-submit-btn">Submit for Marking →</button>
+        </div>
+      </div>
+      <div class="loading-overlay" id="paper-loading-overlay"><div class="spinner"></div><p>Smart marking in progress...</p></div>
+      <div class="marking-section" id="paper-marking-section">
+        <div class="overall-result" id="paper-overall-result"></div>
+        <div id="paper-results-container"></div>
+        <div style="text-align:center;margin-top:1rem"><button class="btn-primary" id="paper-try-again-btn">🔄 Try Another Paper</button></div>
       </div>
     </div>
   </div>
@@ -893,233 +394,47 @@
 </div>
 
 <script>
+// ── MODULE META ───────────────────────────────────────────────────────────────
 const MODULE_META = {
-  b1: {
-    title: "Cell Biology",
-    subtitle: "Cells · Microscopy · Cell division · Transport in cells",
-    colour: "#0d9488",
-    colourLight: "#ccfbf1",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "https://docs.google.com/presentation/d/1AWG1LipVuPBfsA5LYB2ZgF0jUjKQjRFpueV3rfh8lwI/preview",
-    topics: ["Animal & plant cells", "Eukaryotes & prokaryotes", "Bacterial cell structure", "Microscopy & magnification", "Cell specialisation", "Cell differentiation", "Chromosomes & mitosis", "The cell cycle", "Stem cells", "Therapeutic cloning", "Diffusion", "Osmosis (required practical)", "Active transport", "Exchange surfaces"]
-  },
-  b2: {
-    title: "Organisation",
-    subtitle: "Cells, tissues, organs · Digestion · Heart & blood vessels · Cancer",
-    colour: "#e85d4a",
-    colourLight: "#fee2e2",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "https://docs.google.com/presentation/d/1MahxBELZandBWlbZsCgfxtUUE2BUyMJ1D0G1mnjFlFA/preview",
-    topics: ["Tissues, organs, organ systems", "The human digestive system", "Enzymes", "Food tests (required practical)", "The effect of pH on amylase", "The heart", "Blood vessels", "Blood", "Coronary heart disease", "Health & disease", "Cancer", "Plant tissues & organs", "Transpiration & translocation"]
-  },
-  b3: {
-    title: "Infection & Response",
-    subtitle: "Pathogens · Immune system · Vaccines · Drugs",
-    colour: "#f59e0b",
-    colourLight: "#fef3c7",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "https://docs.google.com/presentation/d/1PZoK5h0pdvLWI4-Aw-hA1ryy6nsT6gJ_hwTP_7vTOrY/preview",
-    topics: ["Pathogens & disease", "Viral diseases", "Bacterial diseases", "Fungal & protist diseases", "Human defence systems", "Vaccination", "Antibiotics & painkillers", "Discovery & development of drugs"]
-  },
-  b4: {
-    title: "Bioenergetics",
-    subtitle: "Photosynthesis · Aerobic & anaerobic respiration",
-    colour: "#22c55e",
-    colourLight: "#dcfce7",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "https://docs.google.com/presentation/d/1wtgvLbPbQwOhy18WMyaI2PqC8_5_yrSLYZSAcbh_LS0/preview",
-    topics: ["Photosynthesis reaction", "Rate of photosynthesis (required practical)", "Limiting factors", "Uses of glucose from photosynthesis", "Aerobic respiration", "Anaerobic respiration", "Response to exercise", "Metabolism"]
-  },
-  b5: {
-    title: "Homeostasis & Response",
-    subtitle: "Nervous system · Hormones · Diabetes · Reproduction",
-    colour: "#8b5cf6",
-    colourLight: "#ede9fe",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "https://docs.google.com/presentation/d/1C2Vg2thgaEdlF1olKi22hgLCMretnQBk2BzXEAjdcj4/preview",
-    topics: ["Homeostasis", "The nervous system", "Reflex actions", "Reaction time (required practical)", "The endocrine system", "Control of blood glucose", "Diabetes", "Hormones in reproduction", "Contraception"]
-  },
-  b6: {
-    title: "Inheritance, Variation & Evolution",
-    subtitle: "DNA · Inheritance · Variation · Evolution · Classification",
-    colour: "#3b82f6",
-    colourLight: "#dbeafe",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "https://docs.google.com/presentation/d/1OWww3mZegMyWq8oR-oSAYqyZhKdxIfC3Q1XCxBsZprE/preview",
-    topics: ["Sexual & asexual reproduction", "Meiosis", "DNA & the genome", "Genetic inheritance", "Inherited disorders", "Sex determination", "Variation", "Evolution", "Selective breeding", "Genetic engineering", "Fossils & extinction", "Classification"]
-  },
-  b7: {
-    title: "Ecology",
-    subtitle: "Ecosystems · Food webs · Biodiversity · Climate change",
-    colour: "#16a34a",
-    colourLight: "#dcfce7",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "https://docs.google.com/presentation/d/1siuk5izCcQdwq_FhThSqON8f_0THS9DXpKOLZ4J5NmE/preview",
-    topics: ["Communities", "Abiotic & biotic factors", "Adaptations", "Levels of organisation", "Sampling (required practical)", "Cycling materials", "Decomposition", "Biodiversity", "Global warming", "Maintaining biodiversity"]
-  },
-  // ── PHYSICS ─────────────────────────────────────────────────────────────────
-  p1: {
-    title: "Energy",
-    subtitle: "Energy stores · Transfer · Efficiency · Resources",
-    colour: "#f59e0b",
-    colourLight: "#fef3c7",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
-    topics: ["Energy stores and systems", "Kinetic energy", "Gravitational potential energy", "Elastic potential energy", "Specific heat capacity", "Power", "Efficiency", "Energy resources", "Renewable energy sources", "Non-renewable energy sources", "Trends in energy use"]
-  },
-  p2: {
-    title: "Electricity",
-    subtitle: "Circuits · Resistance · Domestic electricity · Charge",
-    colour: "#6366f1",
-    colourLight: "#e0e7ff",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
-    topics: ["Standard circuit symbols", "Series and parallel circuits", "Current, voltage and resistance", "Ohm's Law", "I-V characteristics", "Resistance of components", "Domestic electricity", "AC and DC current", "Power and energy", "The National Grid", "Static electricity", "Electric fields"]
-  },
-  p3: {
-    title: "Particle Model of Matter",
-    subtitle: "States of matter · Density · Specific heat · Gas pressure",
-    colour: "#0ea5e9",
-    colourLight: "#e0f2fe",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
-    topics: ["States of matter", "Changes of state", "Particle model", "Density", "Specific heat capacity (required practical)", "Specific latent heat", "Particle motion in gases", "Temperature and pressure", "Atmospheric pressure"]
-  },
-  p4: {
-    title: "Atomic Structure",
-    subtitle: "Atoms · Radioactive decay · Nuclear radiation · Half-life",
-    colour: "#e85d4a",
-    colourLight: "#fee2e2",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
-    topics: ["The structure of the atom", "The development of the atomic model", "Isotopes", "Radioactive decay", "Nuclear radiation — alpha, beta, gamma", "Half-life", "Radioactive contamination", "Background radiation", "Nuclear fission", "Nuclear fusion"]
-  },
-  p5: {
-    title: "Forces",
-    subtitle: "Contact forces · Motion · Newton's Laws · Momentum",
-    colour: "#22c55e",
-    colourLight: "#dcfce7",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
-    topics: ["Scalar and vector quantities", "Contact and non-contact forces", "Gravity and weight", "Resultant forces", "Work done and energy transfer", "Forces and elasticity (required practical)", "Distance-time graphs", "Velocity-time graphs", "Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Stopping distances", "Momentum", "Changes in momentum"]
-  },
-  p6: {
-    title: "Waves",
-    subtitle: "Wave properties · EM spectrum · Sound · Light",
-    colour: "#8b5cf6",
-    colourLight: "#ede9fe",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
-    topics: ["Transverse and longitudinal waves", "Wave properties — amplitude, wavelength, frequency", "Wave speed equation", "Measuring wave speed (required practical)", "Reflection and refraction", "Sound waves", "The electromagnetic spectrum", "Uses of EM waves", "Dangers of EM waves", "Radio waves and microwaves", "Infrared, visible and UV", "X-rays and gamma rays", "Black body radiation"]
-  },
-  p7: {
-    title: "Magnetism & Electromagnetism",
-    subtitle: "Magnets · Motor effect · Generators · Transformers",
-    colour: "#ec4899",
-    colourLight: "#fce7f3",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
-    topics: ["Permanent and induced magnets", "Magnetic fields", "Electromagnetism — the solenoid", "Fleming's left-hand rule", "The motor effect", "Electric motors", "Induced potential", "Generators", "Microphones and speakers", "Transformers", "The National Grid"]
-  },
-  // ── CHEMISTRY ────────────────────────────────────────────────────────────────
-  c1: {
-    title: "Atomic Structure & Periodic Table",
-    subtitle: "Atoms · Subatomic particles · Groups · History of the atom",
-    colour: "#e85d4a",
-    colourLight: "#fee2e2",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
-    topics: ["Protons, neutrons and electrons", "Atomic number and mass number", "Isotopes", "Electronic configuration", "Development of the atomic model", "The plum pudding model", "Rutherford's alpha scattering", "Bohr model", "The modern periodic table", "Group 1 — alkali metals", "Group 7 — halogens", "Halogen displacement reactions", "Group 0 — noble gases", "Transition metals"]
-  },
-  c2: {
-    title: "Bonding, Structure & Properties",
-    subtitle: "Ionic · Covalent · Metallic · Giant structures · Nanoparticles",
-    colour: "#6366f1",
-    colourLight: "#e0e7ff",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
-    topics: ["Ionic bonding", "Ionic compounds and their properties", "Covalent bonding", "Simple molecular substances", "Giant covalent structures — diamond", "Giant covalent structures — graphite", "Graphene and fullerenes", "Nanoparticles", "Metallic bonding", "Properties of metals", "Alloys", "Polymers", "Thermosoftening and thermosetting polymers"]
-  },
-  c3: {
-    title: "Quantitative Chemistry",
-    subtitle: "Moles · Yield · Atom economy · Concentration · Gas volumes",
-    colour: "#0ea5e9",
-    colourLight: "#e0f2fe",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
-    topics: ["Relative formula mass (Mr)", "Conservation of mass", "Moles and the mole calculation", "Limiting reactants", "Excess reactants", "Percentage yield", "Theoretical yield", "Atom economy", "Concentration of solutions (mol/dm³)", "Concentration calculations", "Titration", "Gas volumes at RTP"]
-  },
-  c4: {
-    title: "Chemical Changes",
-    subtitle: "Acids · Bases · Reactivity series · Redox · Electrolysis",
-    colour: "#f59e0b",
-    colourLight: "#fef3c7",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
-    topics: ["Acids, alkalis and the pH scale", "Neutralisation reactions", "Salt production — acid + metal", "Salt production — acid + metal oxide", "Salt production — acid + carbonate", "Strong and weak acids", "The reactivity series", "Displacement reactions", "Oxidation and reduction (OIL RIG)", "Redox reactions", "Electrolysis", "Electrolysis of molten compounds", "Electrolysis of solutions", "Extraction of metals"]
-  },
-  c5: {
-    title: "Energy Changes",
-    subtitle: "Exothermic · Endothermic · Bond energies · Fuel cells",
-    colour: "#22c55e",
-    colourLight: "#dcfce7",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
-    topics: ["Exothermic reactions", "Endothermic reactions", "Reaction profiles and activation energy", "Bond breaking and bond forming", "Bond energy calculations", "Calculating overall energy change", "Calorimetry", "Hydrogen fuel cells", "Comparing fuel cells with batteries and engines"]
-  },
-  c6: {
-    title: "Rate & Extent of Chemical Change",
-    subtitle: "Collision theory · Factors affecting rate · Equilibrium · Le Chatelier",
-    colour: "#8b5cf6",
-    colourLight: "#ede9fe",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
-    topics: ["Rate of reaction", "Measuring rate of reaction", "Collision theory", "Effect of temperature on rate", "Effect of concentration on rate", "Effect of surface area on rate", "Catalysts", "Effect of pressure on rate (gases)", "Reversible reactions", "Dynamic equilibrium", "Le Chatelier's principle", "Effect of temperature on equilibrium", "Effect of pressure on equilibrium", "The Haber process"]
-  },
-  c7: {
-    title: "Organic Chemistry",
-    subtitle: "Alkanes · Alkenes · Polymers · Alcohols · Carboxylic acids",
-    colour: "#ec4899",
-    colourLight: "#fce7f3",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
-    topics: ["Crude oil and fractional distillation", "Alkanes", "Complete and incomplete combustion", "Cracking", "Alkenes and the bromine water test", "Addition reactions", "Addition polymerisation", "Alcohols", "Fermentation", "Carboxylic acids", "Esters", "Condensation polymerisation", "Nylon and polyester"]
-  },
-  c8: {
-    title: "Chemical Analysis",
-    subtitle: "Purity · Chromatography · Flame tests · Ion identification",
-    colour: "#14b8a6",
-    colourLight: "#ccfbf1",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
-    topics: ["Pure substances and mixtures", "Formulations", "Paper chromatography", "Rf values", "Gas chromatography", "Flame tests", "Testing for metal ions with NaOH", "Testing for halide ions", "Testing for sulfate ions", "Testing for carbonate ions", "Testing for ammonium ions", "Flame emission spectroscopy"]
-  },
-  c9: {
-    title: "Chemistry of the Atmosphere",
-    subtitle: "Evolution of atmosphere · Greenhouse effect · Climate change · Pollution",
-    colour: "#3b82f6",
-    colourLight: "#dbeafe",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
-    topics: ["Composition of the modern atmosphere", "Evolution of the early atmosphere", "The role of volcanoes", "Formation of the oceans", "Photosynthesis and the rise of oxygen", "Greenhouse gases", "The greenhouse effect", "Enhanced greenhouse effect and global warming", "Consequences of climate change", "Carbon footprint", "Atmospheric pollutants — sulfur dioxide", "Atmospheric pollutants — nitrogen oxides", "Carbon monoxide and particulates", "Reducing air pollution"]
-  },
-  c10: {
-    title: "Using Resources",
-    subtitle: "Water · LCA · Corrosion · Alternative extraction · Materials",
-    colour: "#16a34a",
-    colourLight: "#dcfce7",
-    specLink: "https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification",
-    revisionLink: "#",
-    topics: ["Finite and renewable resources", "Sustainable development", "Potable water", "Water treatment — sedimentation, filtration, chlorination", "Desalination and reverse osmosis", "Life cycle assessment (LCA)", "Recycling metals", "Corrosion and rusting", "Methods of preventing corrosion", "Sacrificial protection and galvanising", "Phytomining", "Bioleaching", "Ceramics, polymers and composites", "Thermosoftening vs thermosetting polymers"]
-  },
+  b1: { title:"Cell Biology", subtitle:"Cells · Microscopy · Cell division · Transport in cells", colour:"#0d9488", colourLight:"#ccfbf1", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"https://docs.google.com/presentation/d/1AWG1LipVuPBfsA5LYB2ZgF0jUjKQjRFpueV3rfh8lwI/preview", topics:["Animal & plant cells","Eukaryotes & prokaryotes","Bacterial cell structure","Microscopy & magnification","Cell specialisation","Cell differentiation","Chromosomes & mitosis","The cell cycle","Stem cells","Therapeutic cloning","Diffusion","Osmosis (required practical)","Active transport","Exchange surfaces"] },
+  b2: { title:"Organisation", subtitle:"Cells, tissues, organs · Digestion · Heart & blood vessels · Cancer", colour:"#e85d4a", colourLight:"#fee2e2", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"https://docs.google.com/presentation/d/1MahxBELZandBWlbZsCgfxtUUE2BUyMJ1D0G1mnjFlFA/preview", topics:["Tissues, organs, organ systems","The human digestive system","Enzymes","Food tests (required practical)","The effect of pH on amylase","The heart","Blood vessels","Blood","Coronary heart disease","Health & disease","Cancer","Plant tissues & organs","Transpiration & translocation"] },
+  b3: { title:"Infection & Response", subtitle:"Pathogens · Immune system · Vaccines · Drugs", colour:"#f59e0b", colourLight:"#fef3c7", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"https://docs.google.com/presentation/d/1PZoK5h0pdvLWI4-Aw-hA1ryy6nsT6gJ_hwTP_7vTOrY/preview", topics:["Pathogens & disease","Viral diseases","Bacterial diseases","Fungal & protist diseases","Human defence systems","Vaccination","Antibiotics & painkillers","Discovery & development of drugs"] },
+  b4: { title:"Bioenergetics", subtitle:"Photosynthesis · Aerobic & anaerobic respiration", colour:"#22c55e", colourLight:"#dcfce7", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"https://docs.google.com/presentation/d/1wtgvLbPbQwOhy18WMyaI2PqC8_5_yrSLYZSAcbh_LS0/preview", topics:["Photosynthesis reaction","Rate of photosynthesis (required practical)","Limiting factors","Uses of glucose from photosynthesis","Aerobic respiration","Anaerobic respiration","Response to exercise","Metabolism"] },
+  b5: { title:"Homeostasis & Response", subtitle:"Nervous system · Hormones · Diabetes · Reproduction", colour:"#8b5cf6", colourLight:"#ede9fe", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"https://docs.google.com/presentation/d/1C2Vg2thgaEdlF1olKi22hgLCMretnQBk2BzXEAjdcj4/preview", topics:["Homeostasis","The nervous system","Reflex actions","Reaction time (required practical)","The endocrine system","Control of blood glucose","Diabetes","Hormones in reproduction","Contraception"] },
+  b6: { title:"Inheritance, Variation & Evolution", subtitle:"DNA · Inheritance · Variation · Evolution · Classification", colour:"#3b82f6", colourLight:"#dbeafe", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"https://docs.google.com/presentation/d/1OWww3mZegMyWq8oR-oSAYqyZhKdxIfC3Q1XCxBsZprE/preview", topics:["Sexual & asexual reproduction","Meiosis","DNA & the genome","Genetic inheritance","Inherited disorders","Sex determination","Variation","Evolution","Selective breeding","Genetic engineering","Fossils & extinction","Classification"] },
+  b7: { title:"Ecology", subtitle:"Ecosystems · Food webs · Biodiversity · Climate change", colour:"#16a34a", colourLight:"#dcfce7", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"https://docs.google.com/presentation/d/1siuk5izCcQdwq_FhThSqON8f_0THS9DXpKOLZ4J5NmE/preview", topics:["Communities","Abiotic & biotic factors","Adaptations","Levels of organisation","Sampling (required practical)","Cycling materials","Decomposition","Biodiversity","Global warming","Maintaining biodiversity"] },
+  p1: { title:"Energy", subtitle:"Energy stores · Transfer · Efficiency · Resources", colour:"#f59e0b", colourLight:"#fef3c7", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"#", topics:["Energy stores and systems","Kinetic energy","Gravitational potential energy","Elastic potential energy","Specific heat capacity","Power","Efficiency","Energy resources","Renewable energy sources","Non-renewable energy sources","Trends in energy use"] },
+  p2: { title:"Electricity", subtitle:"Circuits · Resistance · Domestic electricity · Charge", colour:"#6366f1", colourLight:"#e0e7ff", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"#", topics:["Standard circuit symbols","Series and parallel circuits","Current, voltage and resistance","Ohm's Law","I-V characteristics","Resistance of components","Domestic electricity","AC and DC current","Power and energy","The National Grid","Static electricity","Electric fields"] },
+  p3: { title:"Particle Model of Matter", subtitle:"States of matter · Density · Specific heat · Gas pressure", colour:"#0ea5e9", colourLight:"#e0f2fe", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"#", topics:["States of matter","Changes of state","Particle model","Density","Specific heat capacity (required practical)","Specific latent heat","Particle motion in gases","Temperature and pressure","Atmospheric pressure"] },
+  p4: { title:"Atomic Structure", subtitle:"Atoms · Radioactive decay · Nuclear radiation · Half-life", colour:"#e85d4a", colourLight:"#fee2e2", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"#", topics:["The structure of the atom","The development of the atomic model","Isotopes","Radioactive decay","Nuclear radiation — alpha, beta, gamma","Half-life","Radioactive contamination","Background radiation","Nuclear fission","Nuclear fusion"] },
+  p5: { title:"Forces", subtitle:"Contact forces · Motion · Newton's Laws · Momentum", colour:"#22c55e", colourLight:"#dcfce7", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"#", topics:["Scalar and vector quantities","Contact and non-contact forces","Gravity and weight","Resultant forces","Work done and energy transfer","Forces and elasticity (required practical)","Distance-time graphs","Velocity-time graphs","Newton's First Law","Newton's Second Law","Newton's Third Law","Stopping distances","Momentum","Changes in momentum"] },
+  p6: { title:"Waves", subtitle:"Wave properties · EM Spectrum · Sound · Light", colour:"#8b5cf6", colourLight:"#ede9fe", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"#", topics:["Transverse and longitudinal waves","Wave properties — amplitude, wavelength, frequency","Wave speed equation","Measuring wave speed (required practical)","Reflection and refraction","Sound waves","The electromagnetic spectrum","Uses of EM waves","Dangers of EM waves","Radio waves and microwaves","Infrared, visible and UV","X-rays and gamma rays","Black body radiation"] },
+  p7: { title:"Magnetism & Electromagnetism", subtitle:"Magnets · Motor effect · Generators · Transformers", colour:"#ec4899", colourLight:"#fce7f3", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"#", topics:["Permanent and induced magnets","Magnetic fields","Electromagnetism — the solenoid","Fleming's left-hand rule","The motor effect","Electric motors","Induced potential","Generators","Microphones and speakers","Transformers","The National Grid"] },
+  c1: { title:"Atomic Structure & Periodic Table", subtitle:"Atoms · Subatomic particles · Groups · History of the atom", colour:"#e85d4a", colourLight:"#fee2e2", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"#", topics:["Protons, neutrons and electrons","Atomic number and mass number","Isotopes","Electronic configuration","Development of the atomic model","The plum pudding model","Rutherford's alpha scattering","Bohr model","The modern periodic table","Group 1 — alkali metals","Group 7 — halogens","Halogen displacement reactions","Group 0 — noble gases","Transition metals"] },
+  c2: { title:"Bonding, Structure & Properties", subtitle:"Ionic · Covalent · Metallic · Giant structures · Nanoparticles", colour:"#6366f1", colourLight:"#e0e7ff", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"#", topics:["Ionic bonding","Ionic compounds and their properties","Covalent bonding","Simple molecular substances","Giant covalent structures — diamond","Giant covalent structures — graphite","Graphene and fullerenes","Nanoparticles","Metallic bonding","Properties of metals","Alloys","Polymers","Thermosoftening and thermosetting polymers"] },
+  c3: { title:"Quantitative Chemistry", subtitle:"Moles · Yield · Atom economy · Concentration · Gas volumes", colour:"#0ea5e9", colourLight:"#e0f2fe", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"#", topics:["Relative formula mass (Mr)","Conservation of mass","Moles and the mole calculation","Limiting reactants","Excess reactants","Percentage yield","Theoretical yield","Atom economy","Concentration of solutions (mol/dm³)","Concentration calculations","Titration","Gas volumes at RTP"] },
+  c4: { title:"Chemical Changes", subtitle:"Acids · Bases · Reactivity series · Redox · Electrolysis", colour:"#f59e0b", colourLight:"#fef3c7", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"#", topics:["Acids, alkalis and the pH scale","Neutralisation reactions","Salt production — acid + metal","Salt production — acid + metal oxide","Salt production — acid + carbonate","Strong and weak acids","The reactivity series","Displacement reactions","Oxidation and reduction (OIL RIG)","Redox reactions","Electrolysis","Electrolysis of molten compounds","Electrolysis of solutions","Extraction of metals"] },
+  c5: { title:"Energy Changes", subtitle:"Exothermic · Endothermic · Bond energies · Fuel cells", colour:"#22c55e", colourLight:"#dcfce7", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"#", topics:["Exothermic reactions","Endothermic reactions","Reaction profiles and activation energy","Bond breaking and bond forming","Bond energy calculations","Calculating overall energy change","Calorimetry","Hydrogen fuel cells","Comparing fuel cells with batteries and engines"] },
+  c6: { title:"Rate & Extent of Chemical Change", subtitle:"Collision theory · Factors affecting rate · Equilibrium · Le Chatelier", colour:"#8b5cf6", colourLight:"#ede9fe", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"#", topics:["Rate of reaction","Measuring rate of reaction","Collision theory","Effect of temperature on rate","Effect of concentration on rate","Effect of surface area on rate","Catalysts","Effect of pressure on rate (gases)","Reversible reactions","Dynamic equilibrium","Le Chatelier's principle","Effect of temperature on equilibrium","Effect of pressure on equilibrium","The Haber process"] },
+  c7: { title:"Organic Chemistry", subtitle:"Alkanes · Alkenes · Polymers · Alcohols · Carboxylic acids", colour:"#ec4899", colourLight:"#fce7f3", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"#", topics:["Crude oil and fractional distillation","Alkanes","Complete and incomplete combustion","Cracking","Alkenes and the bromine water test","Addition reactions","Addition polymerisation","Alcohols","Fermentation","Carboxylic acids","Esters","Condensation polymerisation","Nylon and polyester"] },
+  c8: { title:"Chemical Analysis", subtitle:"Purity · Chromatography · Flame tests · Ion identification", colour:"#14b8a6", colourLight:"#ccfbf1", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"#", topics:["Pure substances and mixtures","Formulations","Paper chromatography","Rf values","Gas chromatography","Flame tests","Testing for metal ions with NaOH","Testing for halide ions","Testing for sulfate ions","Testing for carbonate ions","Testing for ammonium ions","Flame emission spectroscopy"] },
+  c9: { title:"Chemistry of the Atmosphere", subtitle:"Evolution of atmosphere · Greenhouse effect · Climate change · Pollution", colour:"#3b82f6", colourLight:"#dbeafe", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"#", topics:["Composition of the modern atmosphere","Evolution of the early atmosphere","The role of volcanoes","Formation of the oceans","Photosynthesis and the rise of oxygen","Greenhouse gases","The greenhouse effect","Enhanced greenhouse effect and global warming","Consequences of climate change","Carbon footprint","Atmospheric pollutants — sulfur dioxide","Atmospheric pollutants — nitrogen oxides","Carbon monoxide and particulates","Reducing air pollution"] },
+  c10: { title:"Using Resources", subtitle:"Water · LCA · Corrosion · Alternative extraction · Materials", colour:"#16a34a", colourLight:"#dcfce7", specLink:"https://www.aqa.org.uk/subjects/science/gcse/combined-science-trilogy-8464/specification", revisionLink:"#", topics:["Finite and renewable resources","Sustainable development","Potable water","Water treatment — sedimentation, filtration, chlorination","Desalination and reverse osmosis","Life cycle assessment (LCA)","Recycling metals","Corrosion and rusting","Methods of preventing corrosion","Sacrificial protection and galvanising","Phytomining","Bioleaching","Ceramics, polymers and composites","Thermosoftening vs thermosetting polymers"] },
 };
 
-const params = new URLSearchParams(window.location.search);
-const subjectId = params.get('subject') || 'biology';
-const moduleId = params.get('module') || 'b1';
-const meta = MODULE_META[moduleId] || MODULE_META.b1;
+// ── PAPER DEFINITIONS ─────────────────────────────────────────────────────────
+const PAPER_DEFS = {
+  biology:   [ { num:1, modules:['b1','b2','b3','b4'], label:'Paper 1', desc:'B1 – B4' }, { num:2, modules:['b5','b6','b7'], label:'Paper 2', desc:'B5 – B7' } ],
+  physics:   [ { num:1, modules:['p1','p2','p3','p4'], label:'Paper 1', desc:'P1 – P4' }, { num:2, modules:['p5','p6','p7'], label:'Paper 2', desc:'P5 – P7' } ],
+  chemistry: [ { num:1, modules:['c1','c2','c3','c4','c5'], label:'Paper 1', desc:'C1 – C5' }, { num:2, modules:['c6','c7','c8','c9','c10'], label:'Paper 2', desc:'C6 – C10' } ],
+};
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+const params     = new URLSearchParams(window.location.search);
+const subjectId  = params.get('subject') || 'biology';
+const moduleId   = params.get('module')  || 'b1';
+const meta       = MODULE_META[moduleId] || MODULE_META.b1;
 const subjectLabel = subjectId === 'physics' ? 'Physics' : subjectId === 'chemistry' ? 'Chemistry' : 'Biology';
-const subjectPage = subjectId === 'physics' ? 'physics.html' : subjectId === 'chemistry' ? 'chemistry.html' : 'biology.html';
 
 document.title = `${meta.title} — AQA GCSE ${subjectLabel}`;
 document.getElementById('nav-title').textContent = meta.title;
@@ -1127,38 +442,27 @@ document.getElementById('module-badge').textContent = moduleId.toUpperCase();
 document.getElementById('module-badge').style.background = meta.colour;
 document.getElementById('module-title').textContent = meta.title;
 document.getElementById('module-subtitle').textContent = meta.subtitle;
-document.getElementById('spec-link').href = meta.specLink;
 document.getElementById('revision-link').href = meta.revisionLink;
 document.getElementById('checklist-title').textContent = `${moduleId.toUpperCase()} ${meta.title} — Topic Checklist`;
+document.getElementById('ul-spec').href   = meta.specLink;
+document.getElementById('ul-slides').href = meta.revisionLink;
+document.getElementById('maths-desc').textContent = subjectId === 'physics'
+  ? 'Equations, unit conversions, graphs, rearranging formulae — all the Physics maths skills.'
+  : subjectId === 'chemistry'
+  ? 'Mole calculations, percentage yield, atom economy, concentration — Chemistry maths skills.'
+  : 'Magnification calculations, percentages, standard form, mean — the maths that comes up in Biology.';
 
-const topicList = document.getElementById('topic-list');
-topicList.innerHTML = '';
-const ragKey = `rag-${subjectId}-${moduleId}`;
-let ragState = {};
-try { ragState = JSON.parse(localStorage.getItem(ragKey) || '{}'); } catch(e) {}
-
-meta.topics.forEach((t, i) => {
-  const li = document.createElement('li');
-  li.className = 'topic-item';
-  const state = ragState[i] || '';
-  if (state) li.classList.add(`rag-${state}`);
-  li.innerHTML = `<span>${t}</span><div class="topic-rag-dot"></div>`;
-  li.addEventListener('click', () => {
-    const cur = ragState[i] || '';
-    const next = cur === '' ? 'red' : cur === 'red' ? 'amber' : cur === 'amber' ? 'green' : '';
-    li.classList.remove('rag-red', 'rag-amber', 'rag-green');
-    if (next) li.classList.add(`rag-${next}`);
-    ragState[i] = next;
-    try { localStorage.setItem(ragKey, JSON.stringify(ragState)); } catch(e) {}
-    // Also save to Firebase if signed in
-    document.dispatchEvent(new CustomEvent('rag-updated', { detail: ragState }));
-  });
-  topicList.appendChild(li);
-});
-
-document.documentElement.style.setProperty('--accent', meta.colour);
+document.documentElement.style.setProperty('--accent',       meta.colour);
 document.documentElement.style.setProperty('--accent-light', meta.colourLight);
 
+// ── USEFUL LINKS DROPDOWN ─────────────────────────────────────────────────────
+const ulBtn      = document.getElementById('useful-links-btn');
+const ulDropdown = document.getElementById('useful-links-dropdown');
+ulBtn.addEventListener('click', e => { e.stopPropagation(); ulBtn.classList.toggle('open'); ulDropdown.classList.toggle('open'); });
+document.addEventListener('click', () => { ulBtn.classList.remove('open'); ulDropdown.classList.remove('open'); });
+ulDropdown.addEventListener('click', e => e.stopPropagation());
+
+// ── TABS ──────────────────────────────────────────────────────────────────────
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -1168,107 +472,155 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   });
 });
 
-let timerInterval = null;
-let secondsElapsed = 0;
-let matchedCount = 0;
-let totalPairs = 0;
-let draggedWord = null;
-let keywords = [];
+// ── RAG HELPERS ───────────────────────────────────────────────────────────────
+function fuzzyMatchTopic(questionTopic, checklistTopics) {
+  if (!questionTopic) return -1;
+  const qt = questionTopic.toLowerCase();
+  let idx = checklistTopics.findIndex(t => t.toLowerCase() === qt);
+  if (idx >= 0) return idx;
+  idx = checklistTopics.findIndex(t => t.toLowerCase().includes(qt) || qt.includes(t.toLowerCase()));
+  if (idx >= 0) return idx;
+  const qtWords = new Set(qt.split(/\W+/).filter(w => w.length > 3));
+  let bestScore = 0, bestIdx = -1;
+  checklistTopics.forEach((t, i) => {
+    const overlap = t.toLowerCase().split(/\W+/).filter(w => w.length > 3 && qtWords.has(w)).length;
+    if (overlap > bestScore) { bestScore = overlap; bestIdx = i; }
+  });
+  return bestScore >= 1 ? bestIdx : -1;
+}
+
+function recencyWeight(timestampMs) {
+  const days = (Date.now() - timestampMs) / 86400000;
+  if (days <= 30)  return 1.0;
+  if (days <= 180) return 0.5;
+  return 0.25;
+}
+
+function calculateRAG(scoreHistory, checklistTopics) {
+  const td = checklistTopics.map(() => ({ wa: 0, wt: 0 }));
+  scoreHistory.forEach(e => {
+    const idx = fuzzyMatchTopic(e.topic, checklistTopics);
+    if (idx < 0) return;
+    const w = recencyWeight(e.timestamp || Date.now());
+    td[idx].wa += (e.awarded || 0) * w;
+    td[idx].wt += (e.marks   || 0) * w;
+  });
+  return td.map(d => {
+    if (d.wt < 5) return '';
+    const pct = d.wa / d.wt;
+    return pct >= 0.67 ? 'green' : pct >= 0.34 ? 'amber' : 'red';
+  });
+}
+
+let ragColours = meta.topics.map(() => '');
+
+function renderChecklist(colours) {
+  ragColours = colours;
+  const list = document.getElementById('topic-list');
+  list.innerHTML = '';
+  meta.topics.forEach((t, i) => {
+    const li = document.createElement('li');
+    li.className = 'topic-item' + (colours[i] ? ` rag-${colours[i]}` : '');
+    li.innerHTML = `<span>${t}</span><div class="topic-rag-dot"></div>`;
+    list.appendChild(li);
+  });
+}
+renderChecklist(ragColours);
+
+async function reloadRAGFromHistory(uid) {
+  if (!window._loadScoreHistory) return;
+  try {
+    const history  = await window._loadScoreHistory(uid, subjectId, moduleId);
+    const colours  = calculateRAG(history, meta.topics);
+    renderChecklist(colours);
+    if (window._saveRAGColours) {
+      const obj = {};
+      colours.forEach((c, i) => { obj[i] = c; });
+      await window._saveRAGColours(uid, `${subjectId}-${moduleId}`, obj);
+    }
+  } catch(e) { console.log('RAG reload failed:', e); }
+}
+
+// ── QUESTION WEIGHTING ────────────────────────────────────────────────────────
+function ragWeight(topic, topicsArr, coloursArr) {
+  const idx = fuzzyMatchTopic(topic, topicsArr || meta.topics);
+  if (idx < 0) return 4;
+  const r = (coloursArr || ragColours)[idx] || '';
+  return r === '' ? 4 : r === 'red' ? 3 : r === 'amber' ? 2 : 1;
+}
+
+function weightedShuffle(arr, topicsArr, coloursArr) {
+  return arr.map(q => ({ q, key: Math.random() * ragWeight(q.topic, topicsArr, coloursArr) })).sort((a,b) => b.key - a.key).map(x => x.q);
+}
+
+// ── KEYWORDS ──────────────────────────────────────────────────────────────────
+let timerInterval = null, secondsElapsed = 0, matchedCount = 0, totalPairs = 0;
+let draggedWord = null, keywords = [];
 
 async function loadKeywords() {
   try {
-    // Support both new naming (biology-b1-keywords.json) and legacy (b1-keywords.json)
     let res = await fetch(`data/${subjectId}-${moduleId}-keywords.json`);
     if (!res.ok) res = await fetch(`data/${moduleId}-keywords.json`);
     keywords = await res.json();
-  } catch(e) {
-    keywords = [];
-  }
+  } catch(e) { keywords = []; }
 }
 
-function formatTime(s) {
-  const m = Math.floor(s / 60);
-  const sec = s % 60;
-  return `${m}:${sec.toString().padStart(2, '0')}`;
-}
+function fmt(s) { return `${Math.floor(s/60)}:${(s%60).toString().padStart(2,'0')}`; }
 
 function startGame() {
-  if (keywords.length === 0) {
-    document.getElementById('score-display').textContent = 'Keywords not loaded yet.';
-    return;
-  }
-  secondsElapsed = 0;
-  matchedCount = 0;
-
-  const shuffled = [...keywords].sort(() => Math.random() - 0.5);
-  const pairs = shuffled.slice(0, 5);
+  if (!keywords.length) { document.getElementById('score-display').textContent = 'Keywords not loaded yet.'; return; }
+  secondsElapsed = 0; matchedCount = 0;
+  const pairs = [...keywords].sort(() => Math.random() - 0.5).slice(0, 5);
   totalPairs = pairs.length;
-
   const defs = [...pairs].sort(() => Math.random() - 0.5);
-
   document.getElementById('start-game-btn').style.display = 'none';
   document.getElementById('game-area').style.display = 'grid';
   document.getElementById('game-result').style.display = 'none';
   document.getElementById('timer-display').textContent = '0:00';
   document.getElementById('score-display').textContent = `0 / ${totalPairs} matched`;
-
-  const wordsCol = document.getElementById('words-col');
-  wordsCol.innerHTML = '';
+  const wc = document.getElementById('words-col'); wc.innerHTML = '';
   pairs.forEach(pair => {
     const chip = document.createElement('div');
-    chip.className = 'word-chip';
-    chip.textContent = pair.word;
-    chip.dataset.word = pair.word;
-    chip.draggable = true;
-
-    chip.addEventListener('dragstart', e => {
-      draggedWord = pair.word;
-      chip.classList.add('dragging');
-    });
-    chip.addEventListener('dragend', () => chip.classList.remove('dragging'));
-
+    chip.className = 'word-chip'; chip.textContent = pair.word; chip.dataset.word = pair.word; chip.draggable = true;
+    chip.addEventListener('dragstart', () => { draggedWord = pair.word; chip.classList.add('dragging'); });
+    chip.addEventListener('dragend',   () => chip.classList.remove('dragging'));
     chip.addEventListener('touchstart', handleTouchStart, { passive: false });
-    chip.addEventListener('touchmove', handleTouchMove, { passive: false });
-    chip.addEventListener('touchend', handleTouchEnd);
-
-    wordsCol.appendChild(chip);
+    chip.addEventListener('touchmove',  handleTouchMove,  { passive: false });
+    chip.addEventListener('touchend',   handleTouchEnd);
+    wc.appendChild(chip);
   });
-
-  const defsCol = document.getElementById('defs-col');
-  defsCol.innerHTML = '';
+  const dc = document.getElementById('defs-col'); dc.innerHTML = '';
   defs.forEach(pair => {
     const drop = document.createElement('div');
-    drop.className = 'def-drop';
-    drop.textContent = pair.definition;
-    drop.dataset.word = pair.word;
-
+    drop.className = 'def-drop'; drop.textContent = pair.definition; drop.dataset.word = pair.word;
     drop.addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('drag-over'); });
     drop.addEventListener('dragleave', () => drop.classList.remove('drag-over'));
     drop.addEventListener('drop', e => { e.preventDefault(); drop.classList.remove('drag-over'); checkMatch(drop); });
-    defsCol.appendChild(drop);
+    dc.appendChild(drop);
   });
-
   clearInterval(timerInterval);
   timerInterval = setInterval(() => {
     secondsElapsed++;
-    const display = document.getElementById('timer-display');
-    display.textContent = formatTime(secondsElapsed);
-    if (secondsElapsed > 120) display.classList.add('warning');
+    const d = document.getElementById('timer-display');
+    d.textContent = fmt(secondsElapsed);
+    if (secondsElapsed > 120) d.classList.add('warning');
   }, 1000);
 }
 
 function checkMatch(dropEl) {
-  if (!draggedWord) return;
-  if (dropEl.classList.contains('correct')) return;
-
+  if (!draggedWord || dropEl.classList.contains('correct')) return;
   if (draggedWord === dropEl.dataset.word) {
     dropEl.classList.add('correct');
-    document.querySelectorAll('.word-chip').forEach(chip => {
-      if (chip.dataset.word === draggedWord) chip.classList.add('matched');
-    });
+    document.querySelectorAll('.word-chip').forEach(c => { if (c.dataset.word === draggedWord) c.classList.add('matched'); });
     matchedCount++;
     document.getElementById('score-display').textContent = `${matchedCount} / ${totalPairs} matched`;
-    if (matchedCount === totalPairs) endGame();
+    if (matchedCount === totalPairs) {
+      clearInterval(timerInterval);
+      document.getElementById('game-area').style.display = 'none';
+      document.getElementById('game-result').style.display = 'block';
+      document.getElementById('result-time').textContent = fmt(secondsElapsed);
+      document.getElementById('result-score-text').textContent = `All ${totalPairs} keywords matched correctly!`;
+    }
   } else {
     dropEl.classList.add('incorrect');
     setTimeout(() => dropEl.classList.remove('incorrect'), 600);
@@ -1276,35 +628,19 @@ function checkMatch(dropEl) {
   draggedWord = null;
 }
 
-function endGame() {
-  clearInterval(timerInterval);
-  document.getElementById('game-area').style.display = 'none';
-  const result = document.getElementById('game-result');
-  result.style.display = 'block';
-  document.getElementById('result-time').textContent = formatTime(secondsElapsed);
-  document.getElementById('result-score-text').textContent = `All ${totalPairs} keywords matched correctly!`;
-}
-
 let touchClone = null;
-
 function handleTouchStart(e) {
-  const chip = e.currentTarget;
-  draggedWord = chip.dataset.word;
+  const chip = e.currentTarget; draggedWord = chip.dataset.word;
   const touch = e.touches[0];
   touchClone = chip.cloneNode(true);
-  touchClone.style.cssText = `position:fixed;top:${touch.clientY - 20}px;left:${touch.clientX - 60}px;width:120px;opacity:0.85;z-index:999;pointer-events:none;`;
-  document.body.appendChild(touchClone);
-  e.preventDefault();
+  touchClone.style.cssText = `position:fixed;top:${touch.clientY-20}px;left:${touch.clientX-60}px;width:120px;opacity:0.85;z-index:999;pointer-events:none;`;
+  document.body.appendChild(touchClone); e.preventDefault();
 }
-
 function handleTouchMove(e) {
   if (!touchClone) return;
   const touch = e.touches[0];
-  touchClone.style.top = `${touch.clientY - 20}px`;
-  touchClone.style.left = `${touch.clientX - 60}px`;
-  e.preventDefault();
+  touchClone.style.top = `${touch.clientY-20}px`; touchClone.style.left = `${touch.clientX-60}px`; e.preventDefault();
 }
-
 function handleTouchEnd(e) {
   if (touchClone) { touchClone.remove(); touchClone = null; }
   const touch = e.changedTouches[0];
@@ -1324,242 +660,214 @@ document.getElementById('play-again-btn').addEventListener('click', () => {
   startGame();
 });
 
+// ── QUESTIONS ─────────────────────────────────────────────────────────────────
 let questions = [];
 let selectedQuestions = [];
-// Track auto-marked answers for MC, FIB, MATCH
 let autoMarkedResults = {};
 
 async function loadQuestions() {
   try {
-    // Support both new naming (biology-b1-questions.json) and legacy (b1-questions.json)
     let res = await fetch(`data/${subjectId}-${moduleId}-questions.json`);
     if (!res.ok) res = await fetch(`data/${moduleId}-questions.json`);
     questions = await res.json();
-  } catch(e) {
-    questions = [];
-  }
+  } catch(e) { questions = []; }
 }
 
-function selectQuestions() {
-  // Sort: short (1-3) first, long (4-6) last
+function selectMiniMockQuestions() {
   const small = questions.filter(q => q.marks >= 1 && q.marks <= 3);
   const large = questions.filter(q => q.marks >= 4 && q.marks <= 6);
-  if (large.length === 0 || small.length === 0) return [];
-
-  const picked = [];
-  let remaining = 10;
-
-  // Fill short questions first
-  const smallShuffled = [...small].sort(() => Math.random() - 0.5);
-  for (const q of smallShuffled) {
-    if (remaining <= 4) break; // leave room for big question
-    if (q.marks <= remaining - 4) {
-      picked.push(q);
-      remaining -= q.marks;
-    }
+  if (!small.length || !large.length) return [];
+  const smallW = weightedShuffle(small);
+  const picked = []; let remaining = 10;
+  for (const q of smallW) {
+    if (remaining <= 4) break;
+    if (q.marks <= remaining - 4) { picked.push(q); remaining -= q.marks; }
   }
-
-  // Add one large question at the end
-  const bigQ = large[Math.floor(Math.random() * large.length)];
-  if (bigQ.marks <= remaining) {
-    picked.push(bigQ);
-    remaining -= bigQ.marks;
+  const largeW = weightedShuffle(large);
+  for (const q of largeW) {
+    if (q.marks <= remaining) { picked.push(q); remaining -= q.marks; break; }
   }
-
   return picked;
 }
 
-// ── RENDER QUESTIONS ─────────────────────────────────────────────────────────
-function renderQuestions(qs) {
-  const container = document.getElementById('questions-container');
+async function loadPaperQuestions(modules) {
+  const allQs = [];
+  for (const mod of modules) {
+    try {
+      let res = await fetch(`data/${subjectId}-${mod}-questions.json`);
+      if (!res.ok) res = await fetch(`data/${mod}-questions.json`);
+      const qs = await res.json();
+      qs.forEach(q => { q._module = mod; });
+      allQs.push(...qs);
+    } catch(e) {}
+  }
+  return allQs;
+}
+
+function selectPaperQuestions(allQs) {
+  if (!allQs.length) return [];
+  const small  = allQs.filter(q => q.marks >= 1 && q.marks <= 3);
+  const medium = allQs.filter(q => q.marks >= 4 && q.marks <= 5);
+  const large  = allQs.filter(q => q.marks === 6);
+
+  function pw(q) {
+    const modMeta = MODULE_META[q._module] || meta;
+    return ragWeight(q.topic, modMeta.topics, ragColours);
+  }
+  function pws(arr) {
+    return arr.map(q => ({ q, key: Math.random() * pw(q) })).sort((a,b) => b.key - a.key).map(x => x.q);
+  }
+
+  const picked = []; let remaining = 35;
+  for (const q of pws(small))  { if (remaining <= 11) break; if (q.marks <= remaining - 11) { picked.push(q); remaining -= q.marks; } }
+  for (const q of pws(medium)) { if (remaining <= 6)  break; if (q.marks <= remaining - 6)  { picked.push(q); remaining -= q.marks; } }
+  for (const q of pws(large.length ? large : medium)) { if (remaining <= 0) break; if (q.marks <= remaining) { picked.push(q); remaining -= q.marks; } }
+  return picked;
+}
+
+// ── RENDER QUESTIONS ──────────────────────────────────────────────────────────
+function renderQuestionsToContainer(qs, containerId, marksDisplayId) {
+  const container = document.getElementById(containerId);
   container.innerHTML = '';
   autoMarkedResults = {};
-  const total = qs.reduce((s, q) => s + q.marks, 0);
-  document.getElementById('total-marks-display').textContent = `Total: ${total} marks`;
+  document.getElementById(marksDisplayId).textContent = `Total: ${qs.reduce((s,q) => s+q.marks, 0)} marks`;
 
   qs.forEach((q, i) => {
     const card = document.createElement('div');
     card.className = 'question-card';
-
-    const typeLabel = {
-      multiple_choice: 'Multiple Choice',
-      fill_in_blank: 'Fill in the Blank',
-      match: 'Match',
-      written: q.command_word || 'Written'
-    }[q.type] || 'Written';
+    const typeLabel = { multiple_choice:'Multiple Choice', fill_in_blank:'Fill in the Blank', match:'Match', written: q.command_word||'Written' }[q.type] || 'Written';
 
     let inputHTML = '';
-
     if (q.type === 'multiple_choice') {
       const shuffled = [...q.options].sort(() => Math.random() - 0.5);
-      inputHTML = `<div class="mc-options" id="mc-${q.id}">
-        ${shuffled.map(opt => `
-          <label class="mc-option">
-            <input type="radio" name="mc-${q.id}" value="${opt}">
-            <span>${opt}</span>
-          </label>`).join('')}
-      </div>`;
-
+      inputHTML = `<div class="mc-options" id="mc-${q.id}">${shuffled.map(opt => `<label class="mc-option"><input type="radio" name="mc-${q.id}" value="${opt}"><span>${opt}</span></label>`).join('')}</div>`;
     } else if (q.type === 'fill_in_blank') {
-      inputHTML = `<div class="fib-wrap">
-        <input type="text" class="fib-input" id="fib-${q.id}" placeholder="Type your answer here..." autocomplete="off" />
-      </div>`;
-
+      inputHTML = `<div class="fib-wrap"><input type="text" class="fib-input" id="fib-${q.id}" placeholder="Type your answer here..." autocomplete="off" /></div>`;
     } else if (q.type === 'match') {
-      const shuffledDefs = [...q.pairs].sort(() => Math.random() - 0.5);
-      inputHTML = `<div class="match-grid" id="match-${q.id}">
-        <div class="match-terms">
-          ${q.pairs.map(p => `<div class="match-term" data-term="${p.term}">${p.term}</div>`).join('')}
-        </div>
-        <div class="match-defs">
-          ${shuffledDefs.map(p => `
-            <div class="match-def-drop" data-def="${p.term}">
-              <span class="match-def-text">${p.definition}</span>
-              <span class="match-assigned"></span>
-            </div>`).join('')}
-        </div>
-      </div>
-      <div class="match-instructions">Tap a term, then tap its matching definition.</div>`;
-
+      const sd = [...q.pairs].sort(() => Math.random() - 0.5);
+      inputHTML = `<div class="match-grid" id="match-${q.id}"><div class="match-terms">${q.pairs.map(p=>`<div class="match-term" data-term="${p.term}">${p.term}</div>`).join('')}</div><div class="match-defs">${sd.map(p=>`<div class="match-def-drop" data-def="${p.term}"><span class="match-def-text">${p.definition}</span><span class="match-assigned"></span></div>`).join('')}</div></div><div class="match-instructions">Tap a term, then tap its matching definition.</div>`;
     } else {
-      // written
       inputHTML = `<textarea class="answer-box" id="answer-${q.id}" placeholder="Write your answer here..."></textarea>`;
     }
 
-    card.innerHTML = `
-      <div class="question-meta">
-        <span class="marks-badge">${q.marks} mark${q.marks > 1 ? 's' : ''}</span>
-        <span class="command-badge">${typeLabel}</span>
-        <span class="topic-meta">${q.topic}</span>
-      </div>
-      <div class="question-text">Q${i + 1}. ${q.question}</div>
-      ${inputHTML}
-      <div class="auto-result" id="auto-result-${q.id}" style="display:none"></div>
-    `;
+    card.innerHTML = `<div class="question-meta"><span class="marks-badge">${q.marks} mark${q.marks>1?'s':''}</span><span class="command-badge">${typeLabel}</span><span class="topic-meta">${q.topic}</span></div><div class="question-text">Q${i+1}. ${q.question}</div>${inputHTML}<div class="auto-result" id="auto-result-${q.id}" style="display:none"></div>`;
     container.appendChild(card);
 
-    // Wire up MC instant feedback
     if (q.type === 'multiple_choice') {
       card.querySelectorAll(`input[name="mc-${q.id}"]`).forEach(radio => {
-        radio.addEventListener('change', () => checkMC(q, radio.value));
+        radio.addEventListener('change', () => { autoMarkedResults[q.id] = { marks_awarded: radio.value === q.correct ? q.marks : 0, marks_available: q.marks, type:'auto', selected_answer: radio.value }; });
       });
     }
-
-    // Wire up match tap interaction
-    if (q.type === 'match') {
-      wireMatchInteraction(q, card);
-    }
+    if (q.type === 'match') wireMatchInteraction(q, card);
   });
 }
 
-// ── MULTIPLE CHOICE INSTANT CHECK ────────────────────────────────────────────
-function checkMC(q, selected) {
-  // Just record the answer — feedback shown after submission only
-  autoMarkedResults[q.id] = {
-    marks_awarded: selected === q.correct ? q.marks : 0,
-    marks_available: q.marks,
-    type: 'auto',
-    selected_answer: selected
-  };
-}
-
-// ── MATCH INTERACTION ────────────────────────────────────────────────────────
 function wireMatchInteraction(q, card) {
-  let selectedTerm = null;
-  const matchMap = {};
-
+  let sel = null; const mm = {};
   const terms = card.querySelectorAll('.match-term');
   const drops = card.querySelectorAll('.match-def-drop');
+  terms.forEach(t => t.addEventListener('click', () => { terms.forEach(x => x.classList.remove('match-selected')); t.classList.add('match-selected'); sel = t.dataset.term; }));
+  drops.forEach(d => d.addEventListener('click', () => {
+    if (!sel) return;
+    Object.keys(mm).forEach(k => { if (mm[k] === d.dataset.def) delete mm[k]; });
+    mm[sel] = d.dataset.def;
+    drops.forEach(x => { const ae = x.querySelector('.match-assigned'); const a = Object.keys(mm).find(k => mm[k] === x.dataset.def); ae.textContent = a ? `← ${a}` : ''; ae.style.cssText = 'color:var(--accent);font-weight:700;font-size:0.75rem'; });
+    terms.forEach(x => x.classList.remove('match-selected')); sel = null;
+    let correct = 0; q.pairs.forEach(p => { if (mm[p.term] === p.term) correct++; });
+    autoMarkedResults[q.id] = { marks_awarded: Math.round((correct/q.pairs.length)*q.marks), marks_available: q.marks, type:'auto', correct, total: q.pairs.length, matchMap: { ...mm } };
+  }));
+}
 
-  terms.forEach(termEl => {
-    termEl.addEventListener('click', () => {
-      terms.forEach(t => t.classList.remove('match-selected'));
-      termEl.classList.add('match-selected');
-      selectedTerm = termEl.dataset.term;
-    });
+function collectWrittenAnswers(qs) {
+  return qs.filter(q => q.type === 'written').map(q => ({ question: q.question, marks: q.marks, command_word: q.command_word||'Write', mark_scheme: q.mark_scheme||'', student_answer: document.getElementById(`answer-${q.id}`)?.value?.trim()||'', id: q.id }));
+}
+function collectFIBAnswers(qs) {
+  qs.filter(q => q.type === 'fill_in_blank').forEach(q => {
+    const val = document.getElementById(`fib-${q.id}`)?.value?.trim().toLowerCase()||'';
+    const ok  = q.acceptable.some(a => val === a.toLowerCase());
+    autoMarkedResults[q.id] = { marks_awarded: ok ? q.marks : 0, marks_available: q.marks, type:'auto', fib_correct: ok, correct_answer: q.correct, student_answer: val };
+  });
+}
+async function markAnswers(answers) {
+  const res = await fetch('/.netlify/functions/mark-answer', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ answers }) });
+  if (!res.ok) throw new Error('Marking API failed');
+  const results = await res.json();
+  return results.map((r, i) => ({ ...r, id: answers[i].id, marks_available: answers[i].marks }));
+}
+
+function displayResults(qs, writtenResults, writtenAnswers, overallId, containerId, sectionId, loadingId) {
+  document.getElementById(loadingId).style.display = 'none';
+  document.getElementById(sectionId).style.display = 'block';
+  const wm = {};
+  writtenResults.forEach((r, i) => { wm[writtenAnswers[i].id] = { ...r, student_answer: writtenAnswers[i].student_answer }; });
+
+  let totalAwarded = 0, totalAvail = 0;
+  const qScores = [];
+  qs.forEach(q => {
+    totalAvail += q.marks;
+    let awarded = autoMarkedResults[q.id]?.marks_awarded ?? wm[q.id]?.marks_awarded ?? 0;
+    totalAwarded += awarded;
+    qScores.push({ topic: q.topic, marks: q.marks, awarded, timestamp: Date.now() });
   });
 
-  drops.forEach(dropEl => {
-    dropEl.addEventListener('click', () => {
-      if (!selectedTerm) return;
+  const pct   = totalAvail > 0 ? Math.round((totalAwarded / totalAvail) * 100) : 0;
+  const grade = pct >= 80 ? '🌟 Excellent' : pct >= 60 ? '👍 Good' : pct >= 40 ? '📚 Developing' : '💪 Keep Practising';
+  document.getElementById(overallId).innerHTML = `<div><div class="overall-score-block"><div class="overall-score">${totalAwarded}</div><div class="overall-out-of">/ ${totalAvail}</div></div><div class="overall-pct">${pct}% overall</div></div><div class="overall-grade">${grade}</div>`;
 
-      // Remove this term from any previous assignment
-      Object.keys(matchMap).forEach(t => {
-        if (matchMap[t] === dropEl.dataset.def) delete matchMap[t];
-      });
-      matchMap[selectedTerm] = dropEl.dataset.def;
+  if (window.saveScoreToFirebase) window.saveScoreToFirebase(totalAwarded, totalAvail, qs, writtenResults, writtenAnswers, qScores);
 
-      // Update assigned labels (no colour feedback yet)
-      drops.forEach(d => {
-        const assignedEl = d.querySelector('.match-assigned');
-        const assigned = Object.keys(matchMap).find(t => matchMap[t] === d.dataset.def);
-        assignedEl.textContent = assigned ? `← ${assigned}` : '';
-        assignedEl.style.color = 'var(--accent)';
-        assignedEl.style.fontWeight = '700';
-        assignedEl.style.fontSize = '0.75rem';
-      });
-
-      terms.forEach(t => t.classList.remove('match-selected'));
-      selectedTerm = null;
-
-      // Just record the current state — no feedback shown yet
-      let correct = 0;
-      q.pairs.forEach(p => { if (matchMap[p.term] === p.term) correct++; });
-      const marksAwarded = Math.round((correct / q.pairs.length) * q.marks);
-      autoMarkedResults[q.id] = {
-        marks_awarded: marksAwarded,
-        marks_available: q.marks,
-        type: 'auto',
-        correct,
-        total: q.pairs.length,
-        matchMap: { ...matchMap }
-      };
-    });
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  qs.forEach((q, i) => {
+    const card = document.createElement('div'); card.className = 'result-card';
+    if (autoMarkedResults[q.id]) {
+      const r = autoMarkedResults[q.id];
+      const cls = r.marks_awarded === r.marks_available ? 'marks-full' : r.marks_awarded > 0 ? 'marks-partial' : 'marks-zero';
+      let body = '';
+      if (q.type === 'multiple_choice') {
+        const ok = r.selected_answer === q.correct;
+        body = `<div class="student-answer-text">Your answer: <em>${r.selected_answer||'No answer'}</em></div><div class="feedback-grid"><div class="feedback-section"><div class="feedback-label">${ok?'✅ Correct!':'❌ Incorrect'}</div><div class="feedback-text">Correct answer: <strong>${q.correct}</strong></div></div></div>`;
+      } else if (q.type === 'fill_in_blank') {
+        body = `<div class="student-answer-text">Your answer: <em>${r.student_answer||'No answer'}</em></div>${r.marks_awarded===0?`<div class="feedback-grid"><div class="feedback-section"><div class="feedback-label">❌ Incorrect</div><div class="feedback-text">Correct answer: <strong>${q.correct}</strong></div></div></div>`:`<div class="auto-result auto-correct" style="margin-top:0.5rem">✅ Correct!</div>`}`;
+      } else if (q.type === 'match') {
+        const pairs = q.pairs.map(p => { const sa = r.matchMap?.[p.term]; const ok = sa===p.term; return `<div style="padding:0.3rem 0;font-size:0.82rem;color:${ok?'#16a34a':'#dc2626'}">${ok?'✅':'❌'} <strong>${p.term}</strong> → ${p.definition}${!ok&&sa?`<span style="color:#64748b;font-size:0.75rem"> (you matched: ${sa})</span>`:''}${!ok&&!sa?`<span style="color:#64748b;font-size:0.75rem"> (not matched)</span>`:''}</div>`; }).join('');
+        body = `<div class="student-answer-text">${r.correct||0}/${r.total||q.pairs.length} pairs matched correctly</div><div class="feedback-section" style="margin-top:0.5rem"><div class="feedback-label">Results</div><div class="feedback-text">${pairs}</div></div>`;
+      }
+      card.innerHTML = `<div class="result-header"><div class="result-q-text">Q${i+1}. ${q.question}</div><span class="marks-awarded ${cls}">${r.marks_awarded}/${r.marks_available}</span></div>${body}`;
+    } else if (wm[q.id]) {
+      const r = wm[q.id]; const pctQ = r.marks_available > 0 ? r.marks_awarded/r.marks_available : 0;
+      const cls = pctQ===1?'marks-full':pctQ>0?'marks-partial':'marks-zero';
+      card.innerHTML = `<div class="result-header"><div class="result-q-text">Q${i+1}. ${q.question}</div><span class="marks-awarded ${cls}">${r.marks_awarded}/${r.marks_available}</span></div>
+        <div class="student-answer-text">Your answer: ${r.student_answer||'<em>No answer given</em>'}</div>
+        <div class="feedback-grid">
+          <div class="feedback-section"><div class="feedback-label">Feedback</div><div class="feedback-text">${r.feedback||'No feedback available.'}</div></div>
+          <div class="feedback-section"><div class="feedback-label">Model answer</div><div class="feedback-text model">${r.model_answer||'See your specification.'}</div></div>
+          ${r.missed_points?`<div class="feedback-section"><div class="feedback-label">What you missed</div><div class="feedback-text">${r.missed_points}</div></div>`:''}
+          ${r.command_word_check?`<div class="feedback-section"><div class="feedback-label">Command word</div><div class="feedback-text">${r.command_word_check}</div></div>`:''}
+        </div>`;
+    }
+    container.appendChild(card);
   });
 }
 
-// ── SUBMIT ────────────────────────────────────────────────────────────────────
+// ── MINI MOCK FLOW ────────────────────────────────────────────────────────────
 document.getElementById('start-practice-btn').addEventListener('click', async () => {
-  if (questions.length === 0) await loadQuestions();
-  selectedQuestions = selectQuestions();
-  if (selectedQuestions.length === 0) {
-    alert('Questions not loaded. Please refresh and try again.');
-    return;
-  }
+  if (!questions.length) await loadQuestions();
+  selectedQuestions = selectMiniMockQuestions();
+  if (!selectedQuestions.length) { alert('Questions not loaded. Please refresh and try again.'); return; }
   document.getElementById('practice-intro').style.display = 'none';
   document.getElementById('questions-section').style.display = 'block';
-  renderQuestions(selectedQuestions);
+  renderQuestionsToContainer(selectedQuestions, 'questions-container', 'total-marks-display');
 });
 
 document.getElementById('submit-btn').addEventListener('click', async () => {
-  // Collect written answers only for AI marking
-  const writtenAnswers = selectedQuestions
-    .filter(q => q.type === 'written')
-    .map(q => ({
-      question: q.question,
-      marks: q.marks,
-      command_word: q.command_word || 'Write',
-      mark_scheme: q.mark_scheme || '',
-      student_answer: document.getElementById(`answer-${q.id}`)?.value?.trim() || '',
-      id: q.id,
-    }));
-
-  // Collect FIB answers for instant marking
-  selectedQuestions.filter(q => q.type === 'fill_in_blank').forEach(q => {
-    const val = document.getElementById(`fib-${q.id}`)?.value?.trim().toLowerCase() || '';
-    const correct = q.acceptable.some(a => val === a.toLowerCase());
-    autoMarkedResults[q.id] = { marks_awarded: correct ? q.marks : 0, marks_available: q.marks, type: 'auto', fib_correct: correct, correct_answer: q.correct, student_answer: val };
-  });
-
+  const wa = collectWrittenAnswers(selectedQuestions);
+  collectFIBAnswers(selectedQuestions);
   document.getElementById('questions-section').style.display = 'none';
   document.getElementById('loading-overlay').style.display = 'block';
-
   try {
-    let writtenResults = [];
-    if (writtenAnswers.length > 0) {
-      writtenResults = await markAnswers(writtenAnswers);
-    }
-    displayResults(writtenResults, writtenAnswers);
+    const wr = wa.length ? await markAnswers(wa) : [];
+    displayResults(selectedQuestions, wr, wa, 'overall-result', 'results-container', 'marking-section', 'loading-overlay');
   } catch(e) {
     document.getElementById('loading-overlay').style.display = 'none';
     document.getElementById('questions-section').style.display = 'block';
@@ -1567,247 +875,136 @@ document.getElementById('submit-btn').addEventListener('click', async () => {
   }
 });
 
-async function markAnswers(answers) {
-  // Send ALL answers in a single API call instead of one per question
-  const res = await fetch('/.netlify/functions/mark-answer', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ answers }),
-  });
-
-  if (!res.ok) throw new Error('Marking API failed');
-  const results = await res.json();
-
-  // Attach id and marks_available back onto each result
-  return results.map((r, i) => ({
-    ...r,
-    id: answers[i].id,
-    marks_available: answers[i].marks,
-  }));
-}
-
-// ── DISPLAY RESULTS ───────────────────────────────────────────────────────────
-function displayResults(writtenResults, writtenAnswers) {
-  document.getElementById('loading-overlay').style.display = 'none';
-  const section = document.getElementById('marking-section');
-  section.style.display = 'block';
-
-  // Build written results map
-  const writtenMap = {};
-  writtenResults.forEach((r, i) => { writtenMap[writtenAnswers[i].id] = { ...r, student_answer: writtenAnswers[i].student_answer }; });
-
-  // Total up all marks
-  let totalAwarded = 0;
-  let totalAvail = 0;
-
-  selectedQuestions.forEach(q => {
-    totalAvail += q.marks;
-    if (autoMarkedResults[q.id]) {
-      totalAwarded += autoMarkedResults[q.id].marks_awarded;
-    } else if (writtenMap[q.id]) {
-      totalAwarded += writtenMap[q.id].marks_awarded || 0;
-    }
-  });
-
-  const pct = totalAvail > 0 ? Math.round((totalAwarded / totalAvail) * 100) : 0;
-  let grade = pct >= 80 ? '🌟 Excellent' : pct >= 60 ? '👍 Good' : pct >= 40 ? '📚 Developing' : '💪 Keep Practising';
-
-  document.getElementById('overall-result').innerHTML = `
-    <div>
-      <div class="overall-score-block">
-        <div class="overall-score">${totalAwarded}</div>
-        <div class="overall-out-of">/ ${totalAvail}</div>
-      </div>
-      <div class="overall-pct">${pct}% overall</div>
-    </div>
-    <div class="overall-grade">${grade}</div>
-  `;
-
-  // Save score to Firebase
-  if (window.saveScoreToFirebase) {
-    window.saveScoreToFirebase(totalAwarded, totalAvail, selectedQuestions, writtenResults, writtenAnswers);
-  }
-
-  const container = document.getElementById('results-container');
-  container.innerHTML = '';
-
-  selectedQuestions.forEach((q, i) => {
-    const card = document.createElement('div');
-    card.className = 'result-card';
-
-    if (autoMarkedResults[q.id]) {
-      // Auto-marked question
-      const r = autoMarkedResults[q.id];
-      const cls = r.marks_awarded === r.marks_available ? 'marks-full' : r.marks_awarded > 0 ? 'marks-partial' : 'marks-zero';
-
-      let bodyHTML = '';
-
-      if (q.type === 'multiple_choice') {
-        const correct = r.selected_answer === q.correct;
-        bodyHTML = `
-          <div class="student-answer-text">Your answer: <em>${r.selected_answer || 'No answer selected'}</em></div>
-          <div class="feedback-grid">
-            <div class="feedback-section">
-              <div class="feedback-label">${correct ? '✅ Correct!' : '❌ Incorrect'}</div>
-              <div class="feedback-text">Correct answer: <strong>${q.correct}</strong></div>
-            </div>
-          </div>`;
-
-      } else if (q.type === 'fill_in_blank') {
-        bodyHTML = `
-          <div class="student-answer-text">Your answer: <em>${r.student_answer || 'No answer'}</em></div>
-          ${r.marks_awarded === 0 ? `
-          <div class="feedback-grid">
-            <div class="feedback-section">
-              <div class="feedback-label">❌ Incorrect</div>
-              <div class="feedback-text">Correct answer: <strong>${q.correct}</strong></div>
-            </div>
-          </div>` : `<div class="auto-result auto-correct" style="margin-top:0.5rem">✅ Correct!</div>`}`;
-
-      } else if (q.type === 'match') {
-        const pairs = q.pairs.map(p => {
-          const studentAnswer = r.matchMap ? r.matchMap[p.term] : null;
-          const isCorrect = studentAnswer === p.term;
-          return `<div style="padding:0.3rem 0; font-size:0.82rem; color: ${isCorrect ? '#16a34a' : '#dc2626'}">
-            ${isCorrect ? '✅' : '❌'} <strong>${p.term}</strong> → ${p.definition}
-            ${!isCorrect && studentAnswer ? `<span style="color:#64748b;font-size:0.75rem"> (you matched: ${studentAnswer})</span>` : ''}
-            ${!isCorrect && !studentAnswer ? `<span style="color:#64748b;font-size:0.75rem"> (not matched)</span>` : ''}
-          </div>`;
-        }).join('');
-        bodyHTML = `
-          <div class="student-answer-text">${r.correct || 0}/${r.total || q.pairs.length} pairs matched correctly</div>
-          <div class="feedback-section" style="margin-top:0.5rem">
-            <div class="feedback-label">Results</div>
-            <div class="feedback-text">${pairs}</div>
-          </div>`;
-      }
-
-      card.innerHTML = `
-        <div class="result-header">
-          <div class="result-q-text">Q${i+1}. ${q.question}</div>
-          <span class="marks-awarded ${cls}">${r.marks_awarded}/${r.marks_available}</span>
-        </div>
-        ${bodyHTML}
-      `;
-
-    } else if (writtenMap[q.id]) {
-      // AI-marked written question
-      const r = writtenMap[q.id];
-      const pctQ = r.marks_available > 0 ? r.marks_awarded / r.marks_available : 0;
-      const cls = pctQ === 1 ? 'marks-full' : pctQ > 0 ? 'marks-partial' : 'marks-zero';
-
-      card.innerHTML = `
-        <div class="result-header">
-          <div class="result-q-text">Q${i+1}. ${q.question}</div>
-          <span class="marks-awarded ${cls}">${r.marks_awarded}/${r.marks_available}</span>
-        </div>
-        <div class="student-answer-text">Your answer: ${r.student_answer || '<em>No answer given</em>'}</div>
-        <div class="feedback-grid">
-          <div class="feedback-section">
-            <div class="feedback-label">Feedback</div>
-            <div class="feedback-text">${r.feedback || 'No feedback available.'}</div>
-          </div>
-          <div class="feedback-section">
-            <div class="feedback-label">Model answer</div>
-            <div class="feedback-text model">${r.model_answer || 'See your specification.'}</div>
-          </div>
-          ${r.missed_points ? `<div class="feedback-section">
-            <div class="feedback-label">What you missed</div>
-            <div class="feedback-text">${r.missed_points}</div>
-          </div>` : ''}
-          ${r.command_word_check ? `<div class="feedback-section">
-            <div class="feedback-label">Command word</div>
-            <div class="feedback-text">${r.command_word_check}</div>
-          </div>` : ''}
-        </div>
-      `;
-    }
-
-    container.appendChild(card);
-  });
-}
-
 document.getElementById('try-again-btn').addEventListener('click', () => {
   document.getElementById('marking-section').style.display = 'none';
   document.getElementById('practice-intro').style.display = 'flex';
-  selectedQuestions = [];
-  autoMarkedResults = {};
+  selectedQuestions = []; autoMarkedResults = {};
+});
+
+// ── PAPER FLOW ────────────────────────────────────────────────────────────────
+let selectedPaper = null, selectedPaperQuestions = [];
+const paperDefs = PAPER_DEFS[subjectId] || PAPER_DEFS.biology;
+const paperSelector = document.getElementById('paper-selector');
+
+paperDefs.forEach(p => {
+  const div = document.createElement('div');
+  div.className = 'paper-option';
+  div.innerHTML = `<div class="paper-option-num">${p.num}</div><div class="paper-option-label">${p.label}</div><div class="paper-option-modules">${p.desc}</div>`;
+  div.addEventListener('click', () => { document.querySelectorAll('.paper-option').forEach(d => d.classList.remove('selected')); div.classList.add('selected'); selectedPaper = p; });
+  paperSelector.appendChild(div);
+});
+
+// Auto-select the paper containing current module
+const autoPaper = paperDefs.find(p => p.modules.includes(moduleId));
+if (autoPaper) {
+  selectedPaper = autoPaper;
+  const idx = paperDefs.indexOf(autoPaper);
+  if (paperSelector.children[idx]) paperSelector.children[idx].classList.add('selected');
+}
+
+document.getElementById('start-paper-btn').addEventListener('click', async () => {
+  if (!selectedPaper) { alert('Please select Paper 1 or Paper 2 first.'); return; }
+  const btn = document.getElementById('start-paper-btn');
+  btn.textContent = 'Loading questions...';
+  const allQs = await loadPaperQuestions(selectedPaper.modules);
+  selectedPaperQuestions = selectPaperQuestions(allQs);
+  if (!selectedPaperQuestions.length) { alert('Could not load questions. Please refresh and try again.'); btn.textContent = '▶ Start Paper'; return; }
+  document.getElementById('paper-selector-section').style.display = 'none';
+  document.getElementById('paper-questions-section').style.display = 'block';
+  renderQuestionsToContainer(selectedPaperQuestions, 'paper-questions-container', 'paper-total-marks-display');
+});
+
+document.getElementById('paper-submit-btn').addEventListener('click', async () => {
+  const wa = collectWrittenAnswers(selectedPaperQuestions);
+  collectFIBAnswers(selectedPaperQuestions);
+  document.getElementById('paper-questions-section').style.display = 'none';
+  document.getElementById('paper-loading-overlay').style.display = 'block';
+  try {
+    const wr = wa.length ? await markAnswers(wa) : [];
+    displayResults(selectedPaperQuestions, wr, wa, 'paper-overall-result', 'paper-results-container', 'paper-marking-section', 'paper-loading-overlay');
+  } catch(e) {
+    document.getElementById('paper-loading-overlay').style.display = 'none';
+    document.getElementById('paper-questions-section').style.display = 'block';
+    alert('Marking failed. Please check your internet connection and try again.');
+  }
+});
+
+document.getElementById('paper-try-again-btn').addEventListener('click', () => {
+  document.getElementById('paper-marking-section').style.display = 'none';
+  document.getElementById('paper-selector-section').style.display = 'block';
+  document.getElementById('start-paper-btn').textContent = '▶ Start Paper';
+  selectedPaperQuestions = []; autoMarkedResults = {};
 });
 
 loadKeywords();
 loadQuestions();
 </script>
 
-<!-- Firebase auth + progress saving -->
+<!-- ── FIREBASE ───────────────────────────────────────────────────────────────── -->
 <script type="module">
-  import { onAuthChange, saveRAG, loadRAG, saveMockScore } from './firebase.js';
+  import { onAuthChange, saveRAG, loadRAG, saveMockScore, db } from './firebase.js';
+  import { collection, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 
-  // Store user globally so all handlers can access it
   window._currentUser = null;
 
-  onAuthChange(async user => {
-    // Gate — redirect to login if not signed in
-    if (!user) {
-      window.location.href = `login.html?redirect=module.html?module=${moduleId}`;
-      return;
-    }
+  window._loadScoreHistory = async (uid, subject, module) => {
+    try {
+      const ref  = collection(db, 'users', uid, 'mockScores');
+      const q    = query(ref, where('moduleKey', '==', `${subject}-${module}`));
+      const snap = await getDocs(q);
+      const history = [];
+      snap.forEach(doc => {
+        const data = doc.data();
+        const ts   = data.date?.toMillis ? data.date.toMillis() : (data.date || Date.now());
+        (data.questions || []).forEach(qe => {
+          history.push({ topic: qe.topic||'', marks: qe.marks||0, awarded: qe.awarded||0, timestamp: ts });
+        });
+      });
+      return history;
+    } catch(e) { return []; }
+  };
 
+  window._saveRAGColours = async (uid, moduleKey, ragObj) => {
+    try { await saveRAG(uid, moduleKey, ragObj); } catch(e) {}
+  };
+
+  onAuthChange(async user => {
+    if (!user) { window.location.href = `login.html?redirect=module.html?subject=${subjectId}&module=${moduleId}`; return; }
     window._currentUser = user;
 
-    // Update nav with user's first name
     const navTitle = document.getElementById('nav-title');
-    if (navTitle) navTitle.innerHTML = `${meta.title} &nbsp;·&nbsp; <span style="color:#94a3b8;font-size:0.8rem">${user.displayName?.split(' ')[0] || ''}</span>`;
-
-    // Show progress link
+    if (navTitle) navTitle.innerHTML = `${meta.title} &nbsp;·&nbsp; <span style="color:#94a3b8;font-size:0.8rem">${user.displayName?.split(' ')[0]||''}</span>`;
     const pl = document.getElementById('progress-link');
     if (pl) pl.style.display = 'flex';
 
-    // Load RAG state from Firebase and update displayed items
-    try {
-      const cloudRAG = await loadRAG(user.uid, `${subjectId}-${moduleId}`);
-      if (Object.keys(cloudRAG).length > 0) {
-        const items = document.querySelectorAll('.topic-item');
-        items.forEach((item, i) => {
-          item.classList.remove('rag-red', 'rag-amber', 'rag-green');
-          if (cloudRAG[i]) item.classList.add(`rag-${cloudRAG[i]}`);
-        });
-        // Sync local ragState with cloud state
-        Object.assign(ragState, cloudRAG);
-      }
-    } catch(e) {
-      console.log('Could not load cloud RAG:', e);
+    // Load from score history first
+    const history = await window._loadScoreHistory(user.uid, subjectId, moduleId);
+    if (history.length > 0) {
+      const colours = calculateRAG(history, meta.topics);
+      renderChecklist(colours);
+    } else {
+      // Fall back to saved RAG colours
+      try {
+        const cloudRAG = await loadRAG(user.uid, `${subjectId}-${moduleId}`);
+        if (Object.keys(cloudRAG).length > 0) renderChecklist(meta.topics.map((_, i) => cloudRAG[i] || ''));
+      } catch(e) {}
     }
   });
 
-  // Save RAG to Firebase whenever a topic is clicked
-  document.addEventListener('rag-updated', async (e) => {
+  window.saveScoreToFirebase = async (totalAwarded, totalAvail, allQuestions, writtenResults, writtenAnswers, qScores) => {
     if (!window._currentUser) return;
     try {
-      await saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, e.detail);
-    } catch(err) {
-      console.log('Could not save RAG to cloud:', err);
-    }
-  });
-
-  // Save mock score to Firebase after marking
-  window.saveScoreToFirebase = async (totalAwarded, totalAvail, allQuestions, writtenResults, writtenAnswers) => {
-    if (!window._currentUser) return;
-    try {
-      const questions = allQuestions.map(q => {
-        let awarded = 0;
-        if (autoMarkedResults[q.id]) {
-          awarded = autoMarkedResults[q.id].marks_awarded || 0;
-        } else {
+      const qs = allQuestions.map(q => {
+        let awarded = autoMarkedResults[q.id]?.marks_awarded ?? 0;
+        if (!autoMarkedResults[q.id]) {
           const wi = writtenAnswers.findIndex(a => a.id === q.id);
           if (wi >= 0 && writtenResults[wi]) awarded = writtenResults[wi].marks_awarded || 0;
         }
-        return { id: q.id, topic: q.topic || '', marks: q.marks, awarded };
+        return { id: q.id, topic: q.topic||'', marks: q.marks, awarded };
       });
-      await saveMockScore(window._currentUser.uid, `${subjectId}-${moduleId}`, totalAwarded, totalAvail, questions);
-      console.log('Score saved to Firebase ✅');
-    } catch(err) {
-      console.log('Could not save score to cloud:', err);
-    }
+      await saveMockScore(window._currentUser.uid, `${subjectId}-${moduleId}`, totalAwarded, totalAvail, qs);
+      await reloadRAGFromHistory(window._currentUser.uid);
+    } catch(e) { console.log('Could not save score:', e); }
   };
 </script>
 </body>
