@@ -1,0 +1,489 @@
+[
+  {
+    "id": "C4-MC-001",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Acids and Bases",
+    "question": "What is the pH of a neutral solution?",
+    "options": ["0", "7", "14", "1"],
+    "correct": "7"
+  },
+  {
+    "id": "C4-MC-002",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Acids and Bases",
+    "question": "Which ion is produced by all acids when dissolved in water?",
+    "options": ["OH⁻", "Na⁺", "H⁺", "Cl⁻"],
+    "correct": "H⁺"
+  },
+  {
+    "id": "C4-MC-003",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Salts",
+    "question": "What products are formed when an acid reacts with a metal carbonate?",
+    "options": ["Salt and water", "Salt, water and oxygen", "Salt, water and carbon dioxide", "Salt and hydrogen"],
+    "correct": "Salt, water and carbon dioxide"
+  },
+  {
+    "id": "C4-MC-004",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Salts",
+    "question": "Which salt is formed when hydrochloric acid reacts with sodium hydroxide?",
+    "options": ["Sodium sulfate", "Sodium carbonate", "Sodium chloride", "Sodium nitrate"],
+    "correct": "Sodium chloride"
+  },
+  {
+    "id": "C4-MC-005",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Reactivity Series",
+    "question": "Which metal is the most reactive in the reactivity series?",
+    "options": ["Iron", "Copper", "Gold", "Potassium"],
+    "correct": "Potassium"
+  },
+  {
+    "id": "C4-MC-006",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Reactivity Series",
+    "question": "Iron is added to copper sulfate solution. What is observed?",
+    "options": ["No reaction", "Iron dissolves and copper is deposited", "Copper dissolves and iron is deposited", "Both metals dissolve"],
+    "correct": "Iron dissolves and copper is deposited"
+  },
+  {
+    "id": "C4-MC-007",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Redox",
+    "question": "Which statement correctly describes oxidation?",
+    "options": ["Gain of electrons", "Loss of electrons", "Gain of oxygen and gain of electrons", "Loss of hydrogen only"],
+    "correct": "Loss of electrons"
+  },
+  {
+    "id": "C4-MC-008",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Redox",
+    "question": "In the reaction: Zn + CuSO₄ → ZnSO₄ + Cu, which species is oxidised?",
+    "options": ["Cu²⁺", "Zn", "SO₄²⁻", "ZnSO₄"],
+    "correct": "Zn"
+  },
+  {
+    "id": "C4-MC-009",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Electrolysis",
+    "question": "During electrolysis, what happens at the cathode?",
+    "options": ["Positive ions are oxidised", "Negative ions are reduced", "Positive ions are reduced", "Negative ions are oxidised"],
+    "correct": "Positive ions are reduced"
+  },
+  {
+    "id": "C4-MC-010",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Electrolysis",
+    "question": "Why is electrolysis used to extract aluminium rather than reduction with carbon?",
+    "options": ["Aluminium is cheaper than carbon", "Aluminium is below carbon in the reactivity series", "Aluminium is above carbon in the reactivity series", "Carbon reacts with aluminium"],
+    "correct": "Aluminium is above carbon in the reactivity series"
+  },
+  {
+    "id": "C4-MC-011",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Electrolysis",
+    "question": "What is an electrolyte?",
+    "options": ["A solid metal conductor", "An ionic compound in solution or molten state that conducts electricity", "A type of electrode", "A non-conductor"],
+    "correct": "An ionic compound in solution or molten state that conducts electricity"
+  },
+  {
+    "id": "C4-MC-012",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Acids and Bases",
+    "question": "What is the difference between a strong acid and a weak acid?",
+    "options": ["Strong acids are more concentrated", "Strong acids completely ionise in water; weak acids only partially ionise", "Weak acids have a lower pH", "Strong acids contain more hydrogen atoms"],
+    "correct": "Strong acids completely ionise in water; weak acids only partially ionise"
+  },
+  {
+    "id": "C4-MC-013",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Salts",
+    "question": "What salt is formed when sulfuric acid reacts with copper oxide?",
+    "options": ["Copper chloride", "Copper nitrate", "Copper carbonate", "Copper sulfate"],
+    "correct": "Copper sulfate"
+  },
+  {
+    "id": "C4-MC-014",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Electrolysis",
+    "question": "During the electrolysis of dilute sulfuric acid, what is produced at the cathode?",
+    "options": ["Oxygen", "Sulfur", "Hydrogen", "Water"],
+    "correct": "Hydrogen"
+  },
+  {
+    "id": "C4-MC-015",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Acids and Bases",
+    "question": "Which of the following is a base but NOT an alkali?",
+    "options": ["Sodium hydroxide", "Potassium hydroxide", "Copper oxide", "Ammonia solution"],
+    "correct": "Copper oxide"
+  },
+  {
+    "id": "C4-FIB-001",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Acids and Bases",
+    "question": "A solution with a pH below 7 is __________.",
+    "correct": "acidic",
+    "acceptable": ["acidic", "an acid"]
+  },
+  {
+    "id": "C4-FIB-002",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Acids and Bases",
+    "question": "Acids produce __________ ions when dissolved in water.",
+    "correct": "hydrogen",
+    "acceptable": ["hydrogen", "H⁺", "H+"]
+  },
+  {
+    "id": "C4-FIB-003",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Salts",
+    "question": "Acid + metal carbonate → salt + water + __________.",
+    "correct": "carbon dioxide",
+    "acceptable": ["carbon dioxide", "CO₂", "CO2"]
+  },
+  {
+    "id": "C4-FIB-004",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Redox",
+    "question": "OIL RIG stands for: Oxidation Is __________, Reduction Is Gain.",
+    "correct": "Loss",
+    "acceptable": ["Loss", "loss of electrons"]
+  },
+  {
+    "id": "C4-FIB-005",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Electrolysis",
+    "question": "During electrolysis, positive ions move to the __________ electrode.",
+    "correct": "cathode",
+    "acceptable": ["cathode", "negative"]
+  },
+  {
+    "id": "C4-FIB-006",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Electrolysis",
+    "question": "The positive electrode in electrolysis is called the __________.",
+    "correct": "anode",
+    "acceptable": ["anode"]
+  },
+  {
+    "id": "C4-FIB-007",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Reactivity Series",
+    "question": "A more reactive metal will __________ a less reactive metal from a solution of its salt.",
+    "correct": "displace",
+    "acceptable": ["displace", "push out", "replace"]
+  },
+  {
+    "id": "C4-FIB-008",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Salts",
+    "question": "Hydrochloric acid reacts with metals to form __________ salts.",
+    "correct": "chloride",
+    "acceptable": ["chloride"]
+  },
+  {
+    "id": "C4-FIB-009",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Acids and Bases",
+    "question": "A strong acid __________ ionises in water.",
+    "correct": "completely",
+    "acceptable": ["completely", "fully"]
+  },
+  {
+    "id": "C4-FIB-010",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Salts",
+    "question": "When two solutions react to form an insoluble solid, the solid is called a __________.",
+    "correct": "precipitate",
+    "acceptable": ["precipitate"]
+  },
+  {
+    "id": "C4-MATCH-001",
+    "type": "match",
+    "marks": 3,
+    "topic": "Salts",
+    "question": "Match each acid to the type of salt it forms.",
+    "pairs": [
+      { "term": "Hydrochloric acid", "definition": "Forms chloride salts" },
+      { "term": "Sulfuric acid", "definition": "Forms sulfate salts" },
+      { "term": "Nitric acid", "definition": "Forms nitrate salts" }
+    ]
+  },
+  {
+    "id": "C4-MATCH-002",
+    "type": "match",
+    "marks": 3,
+    "topic": "Acids and Bases",
+    "question": "Match each reaction type to its products.",
+    "pairs": [
+      { "term": "Acid + metal oxide", "definition": "Salt + water" },
+      { "term": "Acid + metal carbonate", "definition": "Salt + water + carbon dioxide" },
+      { "term": "Acid + metal", "definition": "Salt + hydrogen" },
+      { "term": "Acid + alkali", "definition": "Salt + water" }
+    ]
+  },
+  {
+    "id": "C4-MATCH-003",
+    "type": "match",
+    "marks": 3,
+    "topic": "Electrolysis",
+    "question": "Match each electrolysis term to its correct description.",
+    "pairs": [
+      { "term": "Cathode", "definition": "Negative electrode — positive ions gain electrons (reduction)" },
+      { "term": "Anode", "definition": "Positive electrode — negative ions lose electrons (oxidation)" },
+      { "term": "Electrolyte", "definition": "Ionic compound in solution or molten that conducts electricity" },
+      { "term": "Electrolysis", "definition": "Breakdown of an ionic compound using electricity" }
+    ]
+  },
+  {
+    "id": "C4-MATCH-004",
+    "type": "match",
+    "marks": 3,
+    "topic": "Redox",
+    "question": "Match each term to its correct definition in terms of electron transfer.",
+    "pairs": [
+      { "term": "Oxidation", "definition": "Loss of electrons" },
+      { "term": "Reduction", "definition": "Gain of electrons" },
+      { "term": "Oxidising agent", "definition": "Substance that accepts electrons and is itself reduced" },
+      { "term": "Reducing agent", "definition": "Substance that donates electrons and is itself oxidised" }
+    ]
+  },
+  {
+    "id": "C4-MATCH-005",
+    "type": "match",
+    "marks": 3,
+    "topic": "Reactivity Series",
+    "question": "Match each metal to its correct position in the reactivity series (most to least reactive).",
+    "pairs": [
+      { "term": "Potassium", "definition": "Most reactive — reacts vigorously with water" },
+      { "term": "Zinc", "definition": "Moderately reactive — reacts slowly with dilute acids" },
+      { "term": "Iron", "definition": "Less reactive than zinc — used in construction" },
+      { "term": "Gold", "definition": "Least reactive — found naturally uncombined" }
+    ]
+  },
+  {
+    "id": "C4-SA-001",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Acids and Bases",
+    "question": "State the ion produced by all acids in aqueous solution.",
+    "mark_scheme": "Hydrogen ion / H⁺ (1)."
+  },
+  {
+    "id": "C4-SA-002",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Redox",
+    "question": "State what OIL RIG stands for.",
+    "mark_scheme": "Oxidation Is Loss (of electrons), Reduction Is Gain (of electrons) (1)."
+  },
+  {
+    "id": "C4-SA-003",
+    "type": "written",
+    "marks": 1,
+    "command_word": "Define",
+    "topic": "Redox",
+    "question": "Define the term oxidation in terms of electrons.",
+    "mark_scheme": "Oxidation is the loss of electrons (1)."
+  },
+  {
+    "id": "C4-SA-004",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Electrolysis",
+    "question": "State what happens to positive ions during electrolysis.",
+    "mark_scheme": "Positive ions move to the cathode (negative electrode) where they gain electrons and are reduced (1)."
+  },
+  {
+    "id": "C4-SA-005",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Salts",
+    "question": "Describe what is observed when excess copper oxide is added to warm dilute sulfuric acid.",
+    "mark_scheme": "Black copper oxide dissolves (1); blue solution forms (copper sulfate solution) (1); excess black powder remains undissolved (1) — any two."
+  },
+  {
+    "id": "C4-SA-006",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Reactivity Series",
+    "question": "Explain why copper does not react with dilute hydrochloric acid but zinc does.",
+    "mark_scheme": "Zinc is higher than hydrogen in the reactivity series so can displace hydrogen from the acid (1); copper is below hydrogen in the reactivity series so cannot displace it (1)."
+  },
+  {
+    "id": "C4-SA-007",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Electrolysis",
+    "question": "Explain why an ionic compound must be molten or in solution for electrolysis to occur.",
+    "mark_scheme": "In solid form ions are held in fixed positions and cannot move (1); when molten or dissolved, ions are free to move to the electrodes (1)."
+  },
+  {
+    "id": "C4-SA-008",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Write",
+    "topic": "Salts",
+    "question": "Write a word equation for the reaction between magnesium and sulfuric acid.",
+    "mark_scheme": "Magnesium + sulfuric acid → magnesium sulfate + hydrogen (1); correct reactants and products (1)."
+  },
+  {
+    "id": "C4-SA-009",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Acids and Bases",
+    "question": "Explain the difference between a strong acid and a weak acid of the same concentration.",
+    "mark_scheme": "Strong acid fully ionises in water, releasing all H⁺ ions (1); weak acid only partially ionises, fewer H⁺ ions in solution / higher pH (1)."
+  },
+  {
+    "id": "C4-SA-010",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Electrolysis",
+    "question": "Describe what is produced at each electrode during the electrolysis of dilute sulfuric acid.",
+    "mark_scheme": "Hydrogen gas produced at the cathode (1); oxygen gas produced at the anode (1)."
+  },
+  {
+    "id": "C4-SA-011",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Redox",
+    "question": "In the displacement reaction between zinc and copper sulfate solution, identify which species is oxidised and which is reduced. Explain your answer.",
+    "mark_scheme": "Zinc is oxidised — it loses electrons to form Zn²⁺ (1); Cu²⁺ ions are reduced — they gain electrons to form copper metal (1)."
+  },
+  {
+    "id": "C4-SA-012",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Reactivity Series",
+    "question": "State two metals that are extracted from their ores by electrolysis and explain why this method is used.",
+    "mark_scheme": "Any two from: aluminium, sodium, calcium, magnesium, potassium (1); these metals are above carbon in the reactivity series so cannot be reduced by carbon (1)."
+  },
+  {
+    "id": "C4-SA-013",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Electrolysis",
+    "question": "Explain how electrolysis is used to extract aluminium from aluminium oxide.",
+    "mark_scheme": "Aluminium oxide is melted to free the ions (1); electricity is passed through the molten electrolyte (1); Al³⁺ ions move to the cathode and gain electrons to form aluminium metal (1); oxide ions move to the anode and lose electrons, forming oxygen gas (1) — any three."
+  },
+  {
+    "id": "C4-SA-014",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Salts",
+    "question": "Describe how a pure, dry sample of copper sulfate could be made from copper oxide and sulfuric acid.",
+    "mark_scheme": "Add excess copper oxide to warm dilute sulfuric acid and stir (1); filter to remove excess copper oxide (1); evaporate the solution to crystallise the copper sulfate / leave to cool and filter crystals (1)."
+  },
+  {
+    "id": "C4-SA-015",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Reactivity Series",
+    "question": "Explain how the reactivity series can be used to predict whether a displacement reaction will occur. Give an example.",
+    "mark_scheme": "A more reactive metal will displace a less reactive metal from a solution of its salt (1); the more reactive metal takes the place of the less reactive one (1); e.g. zinc added to copper sulfate solution — zinc displaces copper as zinc is more reactive (1)."
+  },
+  {
+    "id": "C4-LA-001",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Electrolysis",
+    "question": "Explain the process of electrolysis of molten lead bromide. Include what happens at each electrode and the half equations for each reaction.",
+    "mark_scheme": "Lead bromide melted so ions free to move (1); Pb²⁺ ions move to cathode and are reduced: Pb²⁺ + 2e⁻ → Pb (1); Br⁻ ions move to anode and are oxidised: 2Br⁻ → Br₂ + 2e⁻ (1); lead metal produced at cathode, bromine gas at anode (1)."
+  },
+  {
+    "id": "C4-LA-002",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Salts",
+    "question": "Describe how to prepare a pure dry sample of zinc sulfate from zinc carbonate and sulfuric acid. Include all practical steps.",
+    "mark_scheme": "Add excess zinc carbonate to dilute sulfuric acid — effervescence indicates reaction (1); filter off excess zinc carbonate (1); heat the filtrate gently to evaporate water and concentrate the solution (1); leave to cool and crystallise, filter and dry the crystals (1)."
+  },
+  {
+    "id": "C4-LA-003",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Redox",
+    "question": "Explain what happens in a redox reaction. Use the reaction between magnesium and oxygen as an example, identifying what is oxidised and reduced.",
+    "mark_scheme": "Redox involves simultaneous oxidation and reduction (1); 2Mg + O₂ → 2MgO (1); magnesium is oxidised — loses electrons to form Mg²⁺ (1); oxygen is reduced — gains electrons to form O²⁻ (1)."
+  },
+  {
+    "id": "C4-LA-004",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Evaluate",
+    "topic": "Electrolysis",
+    "question": "Evaluate the use of electrolysis as a method for extracting metals. Include advantages, disadvantages, and state which metals require this method.",
+    "mark_scheme": "Metals above carbon in reactivity series (e.g. aluminium, sodium) must be extracted by electrolysis (1); advantage: only method available for highly reactive metals (1); disadvantage: requires large amounts of electrical energy — expensive and high carbon footprint (1); less reactive metals e.g. iron extracted more cheaply by reduction with carbon in a blast furnace (1)."
+  },
+  {
+    "id": "C4-LA-005",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Acids and Bases",
+    "question": "Explain the difference between strong and weak acids. Include reference to ionisation, pH, and give an example of each. Explain how the concentration and strength of an acid are different concepts.",
+    "mark_scheme": "Strong acid fully ionises in water — all H⁺ ions released e.g. HCl (1); weak acid partially ionises — few H⁺ ions released e.g. ethanoic acid (1); same concentration: strong acid has lower pH than weak acid (1); concentration refers to amount of acid per dm³ — can have concentrated weak acid or dilute strong acid (1); strength and concentration are independent — both affect pH (1)."
+  },
+  {
+    "id": "C4-LA-006",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Reactivity Series",
+    "question": "Evaluate how the reactivity series is used in the extraction of metals from their ores. Discuss the methods used for different metals and the economic and environmental considerations.",
+    "mark_scheme": "Most reactive metals (above carbon) extracted by electrolysis e.g. aluminium (1); less reactive metals (below carbon) extracted by reduction with carbon e.g. iron in blast furnace (1); least reactive metals (e.g. gold, silver) found uncombined / native (1); electrolysis is expensive due to high energy costs (1); reduction with carbon is cheaper but releases CO₂ contributing to climate change (1); economic and environmental trade-offs must be considered — e.g. aluminium is expensive but very useful / recyclable (1)."
+  },
+  {
+    "id": "C4-LA-007",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Electrolysis",
+    "question": "Explain how electrolysis of brine (concentrated sodium chloride solution) is used in industry. State what is produced at each electrode, give the half equations, and describe two industrial uses of the products.",
+    "mark_scheme": "Brine is concentrated NaCl solution (1); at cathode: 2H⁺ + 2e⁻ → H₂ — hydrogen gas produced (1); at anode: 2Cl⁻ → Cl₂ + 2e⁻ — chlorine gas produced (1); sodium hydroxide solution remains (1); use of chlorine: making bleach / PVC / disinfecting water (1); use of hydrogen: making margarine / ammonia (Haber process) / fuel cells (1)."
+  }
+]
