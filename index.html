@@ -62,7 +62,7 @@
     main { flex: 1; max-width: 1000px; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; width: 100%; }
     .section-label { font-family: 'Nunito', sans-serif; font-size: 1.3rem; font-weight: 900; color: var(--navy); margin-bottom: 1.5rem; }
 
-    /* SUBJECT GRID — 3 equal tiles */
+    /* SUBJECT GRID */
     .subjects-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -83,8 +83,6 @@
       position: relative;
     }
     .subject-tile:hover { transform: translateY(-5px); box-shadow: 0 20px 48px rgba(26,42,79,0.14); }
-    .subject-tile.locked { cursor: default; opacity: 0.72; }
-    .subject-tile.locked:hover { transform: none; box-shadow: none; }
 
     /* COLOURED TOP STRIPE */
     .tile-stripe { height: 6px; width: 100%; }
@@ -98,20 +96,6 @@
       position: relative;
     }
 
-    /* COMING SOON BADGE */
-    .cs-badge {
-      position: absolute;
-      top: 12px; right: 12px;
-      color: white;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 800;
-      font-size: 0.65rem;
-      padding: 0.22rem 0.65rem;
-      border-radius: 100px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
     /* TILE BODY */
     .tile-body { padding: 1.25rem 1.4rem 1.4rem; flex: 1; display: flex; flex-direction: column; gap: 0.5rem; }
     .tile-icon { font-size: 2rem; margin-bottom: 0.25rem; }
@@ -122,7 +106,6 @@
     .tile-footer { margin-top: auto; padding-top: 1rem; }
     .btn-enter { display: flex; align-items: center; justify-content: center; gap: 0.4rem; width: 100%; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.9rem; padding: 0.7rem 1rem; border-radius: 10px; border: none; cursor: pointer; color: white; transition: opacity 0.18s; text-decoration: none; }
     .btn-enter:hover { opacity: 0.88; }
-    .btn-locked { display: flex; align-items: center; justify-content: center; width: 100%; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.9rem; padding: 0.7rem 1rem; border-radius: 10px; border: none; background: #e2e6f0; color: #94a3b8; cursor: default; }
 
     /* AUTH LOADING */
     #auth-loading { position: fixed; inset: 0; background: var(--navy-dark); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999; }
@@ -277,10 +260,10 @@
       </div>
     </a>
 
-    <!-- CHEMISTRY — COMING SOON -->
-    <div class="subject-tile locked">
+    <!-- CHEMISTRY — NOW LIVE -->
+    <a href="chemistry.html" class="subject-tile">
       <div class="tile-stripe" style="background:#e85d4a"></div>
-      <div class="tile-image" style="background: linear-gradient(135deg, #fff1f2 0%, #fee2e2 100%); position:relative;">
+      <div class="tile-image" style="background: linear-gradient(135deg, #fff1f2 0%, #fee2e2 100%);">
         <svg viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg" width="200" height="130">
           <!-- Periodic table squares -->
           <rect x="20" y="25" width="32" height="32" rx="5" fill="#e85d4a" opacity="0.18" stroke="#e85d4a" stroke-width="1.5"/>
@@ -302,12 +285,11 @@
           <circle cx="175" cy="55" r="3" fill="#e85d4a" opacity="0.4"/>
           <circle cx="181" cy="47" r="2" fill="#e85d4a" opacity="0.3"/>
         </svg>
-        <div class="cs-badge" style="background:#e85d4a">Coming Soon</div>
       </div>
       <div class="tile-body">
         <div class="tile-icon">🧪</div>
         <div class="tile-title" style="color:#e85d4a">Chemistry</div>
-        <div class="tile-desc">Atoms, reactions, materials and more — coming soon for AQA Chemistry.</div>
+        <div class="tile-desc">Atoms, reactions, materials and more — all 10 AQA Chemistry modules.</div>
         <div class="tile-modules">
           <span class="tile-chip" style="background:#fee2e2;color:#e85d4a">C1</span>
           <span class="tile-chip" style="background:#fee2e2;color:#e85d4a">C2</span>
@@ -321,10 +303,10 @@
           <span class="tile-chip" style="background:#fee2e2;color:#e85d4a">C10</span>
         </div>
         <div class="tile-footer">
-          <div class="btn-locked">Coming Soon</div>
+          <div class="btn-enter" style="background:#e85d4a">Start Revising →</div>
         </div>
       </div>
-    </div>
+    </a>
 
   </div>
 </main>
