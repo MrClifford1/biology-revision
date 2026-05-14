@@ -1,7 +1,7 @@
 // Firebase configuration for Streetly Science Hub
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, serverTimestamp, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, serverTimestamp, collection, getDocs, deleteDoc, query, where } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBNVM9Dx8vAYOtt79BVwKK1u3St5BsIxsY",
@@ -155,8 +155,19 @@ export async function addTeacherRole(email, addedByUid) {
 }
 
 export async function removeTeacherRole(email) {
-  const { deleteDoc } = await import("https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js");
   await deleteDoc(doc(db, 'roles', email));
+}
+
+export async function getAllTeachers() {
+  const snap = await getDocs(collection(db, 'roles'));
+  return snap.docs
+    .filter(d => d.data().role === 'teacher')
+    .map(d => ({ email: d.id, ...d.data() }));
+}
+
+export async function getAllStudents() {
+  const snap = await getDocs(collection(db, 'users'));
+  return snap.docs.map(d => ({ uid: d.id, ...d.data() }));
 }
 
 export { auth, db };
