@@ -207,7 +207,11 @@
   </svg>
   <h2>Access Denied</h2>
   <p>This page is only accessible to admin accounts.</p>
-  <a href="index.html">← Back to Hub</a>
+  <p style="color:#64748b;font-size:0.8rem;margin-top:0.25rem">Signed in as <span id="denied-email" style="color:#94a3b8"></span></p>
+  <div style="display:flex;gap:0.75rem;margin-top:0.5rem;flex-wrap:wrap;justify-content:center">
+    <a href="index.html">← Back to Hub</a>
+    <button onclick="handleSignOut()" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#94a3b8;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.875rem;padding:0.4rem 1rem;border-radius:8px;cursor:pointer;transition:all 0.2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">Switch Account →</button>
+  </div>
 </div>
 
 <!-- PAGE (hidden until auth confirmed) -->
@@ -323,6 +327,8 @@
     document.getElementById('auth-loading').style.display = 'none';
 
     if (!user || user.email !== ADMIN_EMAIL) {
+      const deniedEmail = document.getElementById('denied-email');
+      if (deniedEmail && user) deniedEmail.textContent = user.email;
       document.getElementById('access-denied').style.display = 'flex';
       return;
     }
