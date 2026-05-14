@@ -120,6 +120,74 @@
     @media (max-width: 900px) and (min-width: 701px) {
       .subjects-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* ── CLASS PICKER MODAL ─────────────────────────────────────────────────── */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(15,29,61,0.7); z-index: 1000;
+      display: flex; align-items: center; justify-content: center; padding: 1rem;
+      backdrop-filter: blur(4px);
+    }
+    .modal-overlay.hidden { display: none; }
+    .modal-box {
+      background: white; border-radius: 20px; padding: 2rem;
+      max-width: 420px; width: 100%; box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+    }
+    .modal-logo { text-align: center; margin-bottom: 1.25rem; }
+    .modal-logo svg { width: 48px; }
+    .modal-title { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.3rem; color: var(--navy); text-align: center; margin-bottom: 0.35rem; }
+    .modal-sub { font-size: 0.85rem; color: var(--subtext); text-align: center; margin-bottom: 1.5rem; }
+    .year-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-bottom: 1.25rem; }
+    .year-btn {
+      border: 2px solid var(--border); background: #f8fafc; border-radius: 12px;
+      padding: 0.85rem 0.5rem; font-family: 'Nunito', sans-serif; font-weight: 800;
+      font-size: 1rem; color: var(--navy); cursor: pointer; transition: all 0.18s; text-align: center;
+    }
+    .year-btn:hover { border-color: var(--navy); background: #f0f4ff; }
+    .year-btn.selected { border-color: var(--navy); background: var(--navy); color: white; }
+    .class-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.45rem; margin-bottom: 1.25rem; }
+    .class-btn {
+      border: 2px solid var(--border); background: #f8fafc; border-radius: 10px;
+      padding: 0.5rem 0.25rem; font-family: 'Nunito', sans-serif; font-weight: 800;
+      font-size: 0.8rem; color: var(--navy); cursor: pointer; transition: all 0.18s; text-align: center;
+    }
+    .class-btn:hover { border-color: var(--navy); background: #f0f4ff; }
+    .class-btn.selected { border-color: var(--red); background: var(--red); color: white; }
+    .modal-step { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.8rem; color: var(--subtext); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.6rem; }
+    .btn-modal-confirm {
+      width: 100%; background: var(--navy); color: white; border: none;
+      font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1rem;
+      padding: 0.85rem; border-radius: 12px; cursor: pointer; transition: background 0.18s;
+    }
+    .btn-modal-confirm:hover { background: var(--navy-dark); }
+    .btn-modal-confirm:disabled { background: #cbd5e1; cursor: not-allowed; }
+
+    /* ── SETTINGS DRAWER ────────────────────────────────────────────────────── */
+    .settings-overlay {
+      position: fixed; inset: 0; background: rgba(15,29,61,0.5); z-index: 900;
+      backdrop-filter: blur(2px);
+    }
+    .settings-overlay.hidden { display: none; }
+    .settings-drawer {
+      position: fixed; top: 0; right: 0; height: 100%; width: 320px; max-width: 90vw;
+      background: white; z-index: 1000; box-shadow: -8px 0 40px rgba(0,0,0,0.15);
+      display: flex; flex-direction: column; transform: translateX(0); transition: transform 0.25s ease;
+    }
+    .settings-drawer.hidden { transform: translateX(100%); }
+    .drawer-header {
+      background: var(--navy-dark); color: white; padding: 1.25rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .drawer-header h2 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.05rem; }
+    .drawer-close { background: none; border: none; color: #94a3b8; font-size: 1.4rem; cursor: pointer; line-height: 1; padding: 0; }
+    .drawer-close:hover { color: white; }
+    .drawer-body { padding: 1.5rem; flex: 1; overflow-y: auto; }
+    .drawer-section-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--subtext); margin-bottom: 0.75rem; }
+    .current-class-badge {
+      background: #f0f4ff; border: 2px solid var(--navy); border-radius: 10px;
+      padding: 0.65rem 1rem; font-family: 'Nunito', sans-serif; font-weight: 900;
+      font-size: 1.1rem; color: var(--navy); text-align: center; margin-bottom: 1rem;
+    }
+    .drawer-divider { border: none; border-top: 1px solid var(--border); margin: 1.25rem 0; }
   </style>
 </head>
 <body>
@@ -170,6 +238,7 @@
     </div>
     <div class="user-actions">
       <a href="progress.html" class="btn-sm">📊 My Progress</a>
+      <button class="btn-sm" id="settings-cog-btn" onclick="openSettings()" title="Settings">⚙️</button>
       <button class="btn-sm" onclick="handleSignOut()">Sign out</button>
     </div>
   </div>
@@ -317,19 +386,175 @@
   <p class="small">A teaching resource for The Streetly Academy · Not affiliated with AQA</p>
 </footer>
 
-<script type="module">
-  import { onAuthChange, signOutUser } from './firebase.js';
+<!-- CLASS PICKER MODAL -->
+<div class="modal-overlay hidden" id="class-modal">
+  <div class="modal-box">
+    <div class="modal-logo">
+      <svg viewBox="0 0 88 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M44 0 L88 14 L88 50 Q88 80 44 100 Q0 80 0 50 L0 14 Z" fill="#c8202c" stroke="#d4a534" stroke-width="2"/>
+        <text x="44" y="58" font-family="Nunito" font-size="22" font-weight="900" fill="white" text-anchor="middle">SSH</text>
+      </svg>
+    </div>
+    <div class="modal-title">Welcome! What's your class?</div>
+    <div class="modal-sub">This helps your teacher track your progress. You can change it anytime in Settings.</div>
+    <div class="modal-step">Step 1 — Select your year group</div>
+    <div class="year-grid">
+      <button class="year-btn" onclick="selectYear(9)">Year 9</button>
+      <button class="year-btn" onclick="selectYear(10)">Year 10</button>
+      <button class="year-btn" onclick="selectYear(11)">Year 11</button>
+    </div>
+    <div id="class-step" style="display:none">
+      <div class="modal-step">Step 2 — Select your class</div>
+      <div class="class-grid" id="class-grid"></div>
+    </div>
+    <button class="btn-modal-confirm" id="confirm-class-btn" disabled onclick="confirmClass()">Save My Class</button>
+  </div>
+</div>
 
-  onAuthChange(user => {
+<!-- SETTINGS OVERLAY + DRAWER -->
+<div class="settings-overlay hidden" id="settings-overlay" onclick="closeSettings()"></div>
+<div class="settings-drawer hidden" id="settings-drawer">
+  <div class="drawer-header">
+    <h2>⚙️ Settings</h2>
+    <button class="drawer-close" onclick="closeSettings()">✕</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-section-title">My Class</div>
+    <div class="current-class-badge" id="drawer-class-display">—</div>
+    <div class="modal-step" style="margin-bottom:0.6rem">Change year group</div>
+    <div class="year-grid" style="margin-bottom:1rem" id="drawer-year-grid">
+      <button class="year-btn" onclick="selectYearDrawer(9)">Year 9</button>
+      <button class="year-btn" onclick="selectYearDrawer(10)">Year 10</button>
+      <button class="year-btn" onclick="selectYearDrawer(11)">Year 11</button>
+    </div>
+    <div id="drawer-class-step" style="display:none">
+      <div class="modal-step" style="margin-bottom:0.6rem">Select class</div>
+      <div class="class-grid" id="drawer-class-grid"></div>
+    </div>
+    <button class="btn-modal-confirm" id="drawer-confirm-btn" disabled onclick="confirmClassDrawer()" style="margin-top:1rem">Update Class</button>
+    <hr class="drawer-divider">
+    <div class="drawer-section-title">Account</div>
+    <button class="btn-sm" style="width:100%;justify-content:center;margin-top:0.25rem" onclick="handleSignOut()">Sign out</button>
+  </div>
+</div>
+
+<script type="module">
+  import { onAuthChange, signOutUser, getUserProfile, saveClass, isClassValid } from './firebase.js';
+
+  const CLASSES = {
+    9:  ['9S1','9S2','9S3','9S4','9S5','9N1','9N2','9N3','9N4','9N5'],
+    10: ['10S1','10S2','10S3','10S4','10S5','10N1','10N2','10N3','10N4','10N5'],
+    11: ['11S1','11S2','11S3','11S4','11S5','11N1','11N2','11N3','11N4','11N5'],
+  };
+
+  let currentUser = null;
+  let selectedYear = null;
+  let selectedClass = null;
+  let selectedYearDrawer = null;
+  let selectedClassDrawer = null;
+
+  onAuthChange(async user => {
     if (!user) { window.location.href = 'login.html'; return; }
+    currentUser = user;
     document.getElementById('auth-loading').style.display = 'none';
+
+    const profile = await getUserProfile(user.uid);
 
     const greeting = document.getElementById('user-greeting');
     const avatarHTML = user.photoURL
       ? `<img src="${user.photoURL}" class="user-avatar-sm" alt="">`
       : `<div class="user-avatar-placeholder">${user.displayName?.[0] || '?'}</div>`;
-    greeting.innerHTML = `${avatarHTML} <span>Welcome back, <strong>${user.displayName?.split(' ')[0] || 'Student'}</strong>!</span>`;
+
+    const classTag = profile?.class
+      ? `<span style="background:#f0f4ff;color:var(--navy);font-size:0.72rem;font-weight:800;padding:0.15rem 0.55rem;border-radius:100px;font-family:'Nunito',sans-serif">${profile.class}</span>`
+      : '';
+    greeting.innerHTML = `${avatarHTML} <span>Welcome back, <strong>${user.displayName?.split(' ')[0] || 'Student'}</strong>!</span> ${classTag}`;
+
+    // Show class picker if no valid class set
+    if (!isClassValid(profile)) {
+      document.getElementById('class-modal').classList.remove('hidden');
+    }
+
+    // Populate drawer class display
+    document.getElementById('drawer-class-display').textContent = profile?.class || 'Not set';
   });
+
+  // ── MODAL ──────────────────────────────────────────────────────────────────
+  window.selectYear = (year) => {
+    selectedYear = year;
+    selectedClass = null;
+    document.querySelectorAll('#class-modal .year-btn').forEach(b => b.classList.remove('selected'));
+    event.target.classList.add('selected');
+    renderClassGrid('class-grid', year, 'modal');
+    document.getElementById('class-step').style.display = 'block';
+    document.getElementById('confirm-class-btn').disabled = true;
+  };
+
+  function renderClassGrid(gridId, year, mode) {
+    const grid = document.getElementById(gridId);
+    grid.innerHTML = CLASSES[year].map(cls => `
+      <button class="class-btn" onclick="selectClass('${cls}','${mode}')">${cls}</button>
+    `).join('');
+  }
+
+  window.selectClass = (cls, mode) => {
+    if (mode === 'modal') {
+      selectedClass = cls;
+      document.querySelectorAll('#class-grid .class-btn').forEach(b => b.classList.remove('selected'));
+      document.getElementById('confirm-class-btn').disabled = false;
+    } else {
+      selectedClassDrawer = cls;
+      document.querySelectorAll('#drawer-class-grid .class-btn').forEach(b => b.classList.remove('selected'));
+      document.getElementById('drawer-confirm-btn').disabled = false;
+    }
+    event.target.classList.add('selected');
+  };
+
+  window.confirmClass = async () => {
+    if (!currentUser || !selectedClass) return;
+    await saveClass(currentUser.uid, selectedClass);
+    document.getElementById('class-modal').classList.add('hidden');
+    document.getElementById('drawer-class-display').textContent = selectedClass;
+    // Update greeting tag
+    const tag = document.querySelector('.user-greeting span span');
+    if (tag) tag.textContent = selectedClass;
+    const profile = await import('./firebase.js').then(m => m.getUserProfile(currentUser.uid));
+    location.reload();
+  };
+
+  // ── SETTINGS DRAWER ────────────────────────────────────────────────────────
+  window.openSettings = () => {
+    document.getElementById('settings-overlay').classList.remove('hidden');
+    document.getElementById('settings-drawer').classList.remove('hidden');
+    selectedYearDrawer = null;
+    selectedClassDrawer = null;
+    document.getElementById('drawer-class-step').style.display = 'none';
+    document.getElementById('drawer-confirm-btn').disabled = true;
+    document.querySelectorAll('#drawer-year-grid .year-btn').forEach(b => b.classList.remove('selected'));
+  };
+
+  window.closeSettings = () => {
+    document.getElementById('settings-overlay').classList.add('hidden');
+    document.getElementById('settings-drawer').classList.add('hidden');
+  };
+
+  window.selectYearDrawer = (year) => {
+    selectedYearDrawer = year;
+    selectedClassDrawer = null;
+    document.querySelectorAll('#drawer-year-grid .year-btn').forEach(b => b.classList.remove('selected'));
+    event.target.classList.add('selected');
+    renderClassGrid('drawer-class-grid', year, 'drawer');
+    document.getElementById('drawer-class-step').style.display = 'block';
+    document.getElementById('drawer-confirm-btn').disabled = true;
+  };
+
+  window.confirmClassDrawer = async () => {
+    if (!currentUser || !selectedClassDrawer) return;
+    await saveClass(currentUser.uid, selectedClassDrawer);
+    document.getElementById('drawer-class-display').textContent = selectedClassDrawer;
+    closeSettings();
+    location.reload();
+  };
 
   window.handleSignOut = async () => {
     const { signOutUser } = await import('./firebase.js');
