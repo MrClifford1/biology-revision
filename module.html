@@ -402,6 +402,7 @@
           <div class="score-display" id="score-display">Drag words to their definitions</div>
         </div>
         <button class="btn-primary" id="start-game-btn">▶ Start Game</button>
+        <button class="btn-primary" id="submit-game-btn" style="display:none">Submit →</button>
       </div>
       <div class="game-area" id="game-area" style="display:none">
         <div class="words-col" id="words-col"></div>
@@ -411,6 +412,7 @@
         <div class="result-time" id="result-time">0:00</div>
         <div class="result-label">Time to complete</div>
         <div class="result-score" id="result-score-text"></div>
+        <div id="result-pairs" style="margin:0.75rem 0;display:flex;flex-direction:column;gap:0.4rem;text-align:left;max-width:400px;margin-left:auto;margin-right:auto"></div>
         <button class="btn-primary" id="play-again-btn">🔄 Play Again</button>
       </div>
     </div>
@@ -1064,20 +1066,32 @@ async function loadKeywords() {
 
 function fmt(s) { return `${Math.floor(s/60)}:${(s%60).toString().padStart(2,'0')}`; }
 
+// currentPlacements tracks which word chip is in which drop zone: { dropWord -> placedWord }
+let currentPlacements = {};
+let gamePairs = [];
+
 function startGame() {
   if (!keywords.length) { document.getElementById('score-display').textContent = 'Keywords not loaded yet.'; return; }
   hideRAG();
   secondsElapsed = 0; matchedCount = 0;
-  const pairs = [...keywords].sort(() => Math.random() - 0.5).slice(0, 5);
-  totalPairs = pairs.length;
-  const defs = [...pairs].sort(() => Math.random() - 0.5);
+  currentPlacements = {};
+
+  // Weight selection by RAG — prioritise weaker topics
+  const weighted = [...keywords].map(k => ({ k, sort: Math.random() * fcRagWeight(k) }))
+    .sort((a, b) => b.sort - a.sort).map(x => x.k);
+  gamePairs = weighted.slice(0, 5);
+  totalPairs = gamePairs.length;
+
+  const defs = [...gamePairs].sort(() => Math.random() - 0.5);
   document.getElementById('start-game-btn').style.display = 'none';
+  document.getElementById('submit-game-btn').style.display = 'inline-flex';
   document.getElementById('game-area').style.display = 'grid';
   document.getElementById('game-result').style.display = 'none';
   document.getElementById('timer-display').textContent = '0:00';
-  document.getElementById('score-display').textContent = `0 / ${totalPairs} matched`;
+  document.getElementById('score-display').textContent = 'Drag all words then submit';
+
   const wc = document.getElementById('words-col'); wc.innerHTML = '';
-  pairs.forEach(pair => {
+  gamePairs.forEach(pair => {
     const chip = document.createElement('div');
     chip.className = 'word-chip'; chip.textContent = pair.word; chip.dataset.word = pair.word; chip.draggable = true;
     chip.addEventListener('dragstart', () => { draggedWord = pair.word; chip.classList.add('dragging'); });
@@ -1087,15 +1101,19 @@ function startGame() {
     chip.addEventListener('touchend',   handleTouchEnd);
     wc.appendChild(chip);
   });
+
   const dc = document.getElementById('defs-col'); dc.innerHTML = '';
   defs.forEach(pair => {
     const drop = document.createElement('div');
-    drop.className = 'def-drop'; drop.textContent = pair.definition; drop.dataset.word = pair.word;
+    drop.className = 'def-drop';
+    drop.dataset.word = pair.word;
+    drop.innerHTML = `<span class="def-text">${pair.definition}</span><span class="def-placed" style="font-weight:700;font-size:0.8rem;color:var(--accent);margin-left:0.5rem"></span>`;
     drop.addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('drag-over'); });
     drop.addEventListener('dragleave', () => drop.classList.remove('drag-over'));
-    drop.addEventListener('drop', e => { e.preventDefault(); drop.classList.remove('drag-over'); checkMatch(drop); });
+    drop.addEventListener('drop', e => { e.preventDefault(); drop.classList.remove('drag-over'); placeWord(drop); });
     dc.appendChild(drop);
   });
+
   clearInterval(timerInterval);
   timerInterval = setInterval(() => {
     secondsElapsed++;
@@ -1105,25 +1123,85 @@ function startGame() {
   }, 1000);
 }
 
-function checkMatch(dropEl) {
-  if (!draggedWord || dropEl.classList.contains('correct')) return;
-  if (draggedWord === dropEl.dataset.word) {
-    dropEl.classList.add('correct');
-    document.querySelectorAll('.word-chip').forEach(c => { if (c.dataset.word === draggedWord) c.classList.add('matched'); });
-    matchedCount++;
-    document.getElementById('score-display').textContent = `${matchedCount} / ${totalPairs} matched`;
-    if (matchedCount === totalPairs) {
-      clearInterval(timerInterval);
-      document.getElementById('game-area').style.display = 'none';
-      document.getElementById('game-result').style.display = 'block';
-      document.getElementById('result-time').textContent = fmt(secondsElapsed);
-      document.getElementById('result-score-text').textContent = `All ${totalPairs} keywords matched correctly!`;
+function placeWord(dropEl) {
+  if (!draggedWord) return;
+  // If this word was placed elsewhere, clear it
+  Object.entries(currentPlacements).forEach(([dropWord, placedWord]) => {
+    if (placedWord === draggedWord && dropWord !== dropEl.dataset.word) {
+      currentPlacements[dropWord] = null;
+      document.querySelectorAll('.def-drop').forEach(d => {
+        if (d.dataset.word === dropWord) d.querySelector('.def-placed').textContent = '';
+      });
     }
-  } else {
-    dropEl.classList.add('incorrect');
-    setTimeout(() => dropEl.classList.remove('incorrect'), 600);
+  });
+  // If drop zone already has a word, return it to pool
+  const existing = currentPlacements[dropEl.dataset.word];
+  if (existing) {
+    document.querySelectorAll('.word-chip').forEach(c => {
+      if (c.dataset.word === existing) { c.classList.remove('matched'); c.style.opacity = '1'; }
+    });
   }
+  // Place the word
+  currentPlacements[dropEl.dataset.word] = draggedWord;
+  dropEl.querySelector('.def-placed').textContent = draggedWord;
+  // Grey out the chip
+  document.querySelectorAll('.word-chip').forEach(c => {
+    if (c.dataset.word === draggedWord) { c.classList.add('matched'); c.style.opacity = '0.4'; }
+  });
+  // Check if all placed — update score display
+  const placed = Object.values(currentPlacements).filter(Boolean).length;
+  document.getElementById('score-display').textContent = `${placed} / ${totalPairs} placed`;
   draggedWord = null;
+}
+
+function submitGame() {
+  clearInterval(timerInterval);
+  let correct = 0;
+  const resultPairs = [];
+  document.querySelectorAll('.def-drop').forEach(drop => {
+    const correctWord = drop.dataset.word;
+    const placedWord = currentPlacements[correctWord];
+    const isCorrect = placedWord === correctWord;
+    if (isCorrect) {
+      correct++;
+      drop.classList.add('correct');
+    } else {
+      drop.classList.add('incorrect');
+    }
+    resultPairs.push({ definition: drop.querySelector('.def-text').textContent, correctWord, placedWord, isCorrect });
+  });
+
+  document.getElementById('game-area').style.display = 'none';
+  document.getElementById('submit-game-btn').style.display = 'none';
+  document.getElementById('game-result').style.display = 'block';
+  document.getElementById('result-time').textContent = fmt(secondsElapsed);
+  document.getElementById('result-score-text').textContent = `${correct} / ${totalPairs} correct`;
+
+  // Show pair breakdown
+  const pairsEl = document.getElementById('result-pairs');
+  pairsEl.innerHTML = resultPairs.map(p => `
+    <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;padding:0.4rem 0.6rem;border-radius:8px;background:${p.isCorrect ? '#f0fdf4' : '#fef2f2'}">
+      <span>${p.isCorrect ? '✅' : '❌'}</span>
+      <span style="font-weight:700">${p.correctWord}</span>
+      ${!p.isCorrect ? `<span style="color:#94a3b8">— you said: ${p.placedWord || 'not placed'}</span>` : ''}
+    </div>`).join('');
+
+  // Feed into RAG
+  const pct = (correct / totalPairs) * 100;
+  if (window._currentUser) {
+    gamePairs.forEach(pair => {
+      const placed = currentPlacements[pair.word];
+      const isCorrect = placed === pair.word;
+      const idx = fuzzyMatchTopic(pair.sub_topic || pair.word, meta.topics);
+      if (idx >= 0) {
+        const topicName = meta.topics[idx];
+        const updated = computeNewTopicScore(ragState[topicName] || null, isCorrect ? 100 : 0, 'words');
+        ragState[topicName] = updated;
+      }
+    });
+    renderChecklist(ragState);
+    if (window._saveRAG) window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState).catch(()=>{});
+  }
 }
 
 let touchClone = null;
@@ -1143,14 +1221,16 @@ function handleTouchEnd(e) {
   if (touchClone) { touchClone.remove(); touchClone = null; }
   const touch = e.changedTouches[0];
   const el = document.elementFromPoint(touch.clientX, touch.clientY);
-  if (el && el.classList.contains('def-drop')) checkMatch(el);
+  if (el && el.classList.contains('def-drop')) placeWord(el);
   draggedWord = null;
 }
 
 document.getElementById('start-game-btn').addEventListener('click', startGame);
+document.getElementById('submit-game-btn').addEventListener('click', submitGame);
 document.getElementById('play-again-btn').addEventListener('click', () => {
   showRAG();
   document.getElementById('start-game-btn').style.display = '';
+  document.getElementById('submit-game-btn').style.display = 'none';
   document.getElementById('game-area').style.display = 'none';
   document.getElementById('game-result').style.display = 'none';
   document.getElementById('timer-display').textContent = '0:00';
