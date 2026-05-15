@@ -136,16 +136,31 @@ export function applyDecay(entry) {
   return { ...entry, score: Math.round(newScore * 10) / 10, retained, retainedSince };
 }
 
+// Evidence cap: maximum score achievable based on number of attempts on this topic.
+// Prevents a single perfect answer instantly reaching Mastered.
+// attempts 1 → max 40%, 2 → max 60%, 3 → max 75%, 4 → max 87%, 5+ → max 100%
+function evidenceCap(attempts) {
+  if (attempts <= 1) return 40;
+  if (attempts === 2) return 60;
+  if (attempts === 3) return 75;
+  if (attempts === 4) return 87;
+  return 100;
+}
+
 // Update a topic score after an activity. inputType must be a key in RAG_INPUT_WEIGHTS.
 // activityPct: 0–100 percentage score for this activity on this topic.
 export function computeNewTopicScore(currentEntry, activityPct, inputType) {
   const weight = RAG_INPUT_WEIGHTS[inputType] ?? 0.3;
   const oldScore = currentEntry?.score ?? 0;
+  const attempts = (currentEntry?.attempts ?? 0) + 1;
   const now = new Date().toISOString();
 
   // Weighted nudge: moves score toward activityPct, scaled by weight
   const nudged = oldScore + (activityPct - oldScore) * weight;
-  const newScore = Math.min(100, Math.max(0, Math.round(nudged * 10) / 10));
+
+  // Cap score based on evidence — must demonstrate consistency to reach higher tiers
+  const cap = evidenceCap(attempts);
+  const newScore = Math.min(cap, Math.max(0, Math.round(nudged * 10) / 10));
 
   // Retained logic: track when Mastered tier is first reached
   let retainedSince = currentEntry?.retainedSince ?? null;
@@ -160,7 +175,7 @@ export function computeNewTopicScore(currentEntry, activityPct, inputType) {
     retained = false;
   }
 
-  return { score: newScore, lastActivity: now, retained, retainedSince };
+  return { score: newScore, lastActivity: now, retained, retainedSince, attempts };
 }
 
 // Save full RAG state for a module (topic name → entry object)
