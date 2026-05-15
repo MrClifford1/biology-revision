@@ -610,6 +610,7 @@ const meta       = MODULE_META[moduleId] || MODULE_META.b1;
 const subjectLabel = subjectId === 'physics' ? 'Physics' : subjectId === 'chemistry' ? 'Chemistry' : 'Biology';
 
 document.title = `${meta.title} — AQA GCSE ${subjectLabel}`;
+window._moduleMeta = meta;
 document.getElementById('nav-title').textContent = meta.title;
 document.getElementById('module-badge').textContent = moduleId.toUpperCase();
 document.getElementById('module-badge').style.background = meta.colour;
@@ -835,7 +836,7 @@ function setFCTopic(topic, btn) {
 function buildFCTopicFilter() {
   const topics = [...new Set(keywords.map(k => k.sub_topic).filter(Boolean))];
   const filter = document.getElementById('fc-topic-filter');
-  filter.innerHTML = '<button class="fc-topic-btn active" onclick="setFCTopic('all', this)">All topics</button>';
+  filter.innerHTML = '<button class="fc-topic-btn active" onclick="setFCTopic(\'all\', this)">All topics</button>';
   topics.forEach(t => {
     const btn = document.createElement('button');
     btn.className = 'fc-topic-btn';
@@ -1432,11 +1433,14 @@ loadQuestions();
   };
 
   onAuthChange(async user => {
-    if (!user) { window.location.href = `login.html?redirect=module.html?subject=${subjectId}&module=${moduleId}`; return; }
+    const _params = new URLSearchParams(window.location.search);
+    const _subjectId = _params.get('subject') || 'biology';
+    const _moduleId = _params.get('module') || 'b1';
+    if (!user) { window.location.href = `login.html?redirect=module.html?subject=${_subjectId}&module=${_moduleId}`; return; }
     window._currentUser = user;
 
     const navTitle = document.getElementById('nav-title');
-    if (navTitle) navTitle.innerHTML = `${meta.title} &nbsp;·&nbsp; <span style="color:#94a3b8;font-size:0.8rem">${user.displayName?.split(' ')[0]||''}</span>`;
+    if (navTitle) navTitle.innerHTML = `${window._moduleMeta?.title || document.title} &nbsp;·&nbsp; <span style="color:#94a3b8;font-size:0.8rem">${user.displayName?.split(' ')[0]||''}</span>`;
     const pl = document.getElementById('progress-link');
     if (pl) pl.style.display = 'flex';
 
@@ -1454,7 +1458,7 @@ loadQuestions();
     } catch(e) {}
 
     // Load saved RAG state (decay applied inside loadRAG)
-    const state = await window._loadRAG(user.uid, `${subjectId}-${moduleId}`);
+    const state = await window._loadRAG(user.uid, `${_subjectId}-${_moduleId}`);
     renderChecklist(state || {});
   });
 
@@ -1477,7 +1481,9 @@ loadQuestions();
         window._pendingRAGUpdates.push({ topic: q.topic, activityPct, inputType: 'mock' });
       });
 
-      await saveMockScore(window._currentUser.uid, `${subjectId}-${moduleId}`, totalAwarded, totalAvail, qs);
+      const _sp = new URLSearchParams(window.location.search);
+      const _sid = _sp.get('subject') || 'biology', _mid = _sp.get('module') || 'b1';
+      await saveMockScore(window._currentUser.uid, `${_sid}-${_mid}`, totalAwarded, totalAvail, qs);
       await reloadRAGFromHistory(window._currentUser.uid);
     } catch(e) { console.log('Could not save score:', e); }
   };
