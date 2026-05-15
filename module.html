@@ -547,18 +547,29 @@ function applyDecay(entry) {
   return { ...entry, score: Math.round(newScore * 10) / 10, retained, retainedSince };
 }
 
+function evidenceCap(attempts) {
+  if (attempts <= 1) return 40;
+  if (attempts === 2) return 60;
+  if (attempts === 3) return 75;
+  if (attempts === 4) return 87;
+  return 100;
+}
+
 function computeNewTopicScore(currentEntry, activityPct, inputType) {
   const weight = RAG_INPUT_WEIGHTS[inputType] ?? 0.3;
   const oldScore = currentEntry?.score ?? 0;
+  const attempts = (currentEntry?.attempts ?? 0) + 1;
   const now = new Date().toISOString();
-  const newScore = Math.min(100, Math.max(0, Math.round((oldScore + (activityPct - oldScore) * weight) * 10) / 10));
+  const nudged = oldScore + (activityPct - oldScore) * weight;
+  const cap = evidenceCap(attempts);
+  const newScore = Math.min(cap, Math.max(0, Math.round(nudged * 10) / 10));
   let retainedSince = currentEntry?.retainedSince ?? null;
   let retained = currentEntry?.retained ?? false;
   if (newScore >= 90) {
     if (!retainedSince) retainedSince = now;
     if ((Date.now() - new Date(retainedSince).getTime()) / 86400000 >= 28) retained = true;
   } else { retainedSince = null; retained = false; }
-  return { score: newScore, lastActivity: now, retained, retainedSince };
+  return { score: newScore, lastActivity: now, retained, retainedSince, attempts };
 }
 
 function fuzzyMatchTopic(questionTopic, checklistTopics) {
