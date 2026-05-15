@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Module — AQA GCSE Biology</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -183,6 +184,55 @@
     .auto-correct { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
     .auto-wrong { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
 
+    /* ── FLASHCARDS ─────────────────────────────────────────────────────────── */
+    .fc-intro-card { background:white;border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1.25rem;margin-bottom:1rem; }
+    .fc-intro-icon { font-size:2.5rem;flex-shrink:0; }
+    .fc-intro-title { font-family:'Nunito',sans-serif;font-weight:900;font-size:1.1rem;margin-bottom:0.2rem; }
+    .fc-intro-desc { font-size:0.85rem;color:var(--subtext);line-height:1.5; }
+    .fc-options { background:white;border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem; }
+    .fc-option-label { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--subtext);margin-bottom:0.5rem; }
+    .fc-direction-btns { display:flex;gap:0.5rem; }
+    .fc-dir-btn { flex:1;border:1.5px solid var(--border);background:#f8fafc;border-radius:8px;padding:0.55rem 0.5rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.82rem;color:var(--subtext);cursor:pointer;transition:all 0.18s;text-align:center; }
+    .fc-dir-btn:hover { border-color:var(--accent);color:var(--accent); }
+    .fc-dir-btn.active { border-color:var(--accent);background:var(--accent);color:white; }
+    .fc-topic-filter { display:flex;flex-wrap:wrap;gap:0.35rem; }
+    .fc-topic-btn { border:1.5px solid var(--border);background:#f8fafc;border-radius:100px;padding:0.3rem 0.75rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.75rem;color:var(--subtext);cursor:pointer;transition:all 0.18s; }
+    .fc-topic-btn:hover { border-color:var(--accent);color:var(--accent); }
+    .fc-topic-btn.active { border-color:var(--accent);background:var(--accent);color:white; }
+
+    .fc-progress-row { display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem; }
+    .fc-progress-text { font-size:0.78rem;color:var(--subtext);white-space:nowrap; }
+    .fc-progress-bar-wrap { flex:1;height:6px;background:#e2e8f0;border-radius:100px;overflow:hidden; }
+    .fc-progress-bar-fill { height:100%;background:var(--accent);border-radius:100px;transition:width 0.4s ease; }
+    .fc-score-text { font-size:0.78rem;color:var(--subtext);white-space:nowrap; }
+
+    .fc-card-wrap { perspective:1000px;margin-bottom:1rem; }
+    .fc-card { width:100%;min-height:220px;cursor:pointer;position:relative; }
+    .fc-card-inner { width:100%;min-height:220px;position:relative;transform-style:preserve-3d;transition:transform 0.45s ease; }
+    .fc-card-inner.flipped { transform:rotateY(180deg); }
+    .fc-card-front, .fc-card-back {
+      position:absolute;width:100%;min-height:220px;backface-visibility:hidden;
+      background:white;border:1px solid var(--border);border-radius:16px;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      padding:2rem;text-align:center;
+    }
+    .fc-card-back { transform:rotateY(180deg);background:var(--accent-light);border-color:var(--accent); }
+    .fc-card-label { font-family:'Nunito',sans-serif;font-weight:900;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--subtext);margin-bottom:0.75rem; }
+    .fc-card-back .fc-card-label { color:var(--accent); }
+    .fc-card-text { font-family:'Nunito',sans-serif;font-weight:800;font-size:1.3rem;line-height:1.3;color:var(--text); }
+    .fc-card-back .fc-card-text { font-size:1rem;font-weight:600;font-family:'Nunito Sans',sans-serif; }
+    .fc-card-hint { font-size:0.75rem;color:#94a3b8;margin-top:1rem;font-style:italic; }
+
+    .fc-actions { display:flex;gap:1rem;justify-content:center;margin-bottom:0.5rem; }
+    .fc-btn-still-learning { flex:1;max-width:200px;background:#fef3c7;color:#d97706;border:1.5px solid #fde68a;border-radius:12px;padding:0.75rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;cursor:pointer;transition:all 0.18s; }
+    .fc-btn-still-learning:hover { background:#fde68a; }
+    .fc-btn-got-it { flex:1;max-width:200px;background:#dcfce7;color:#16a34a;border:1.5px solid #bbf7d0;border-radius:12px;padding:0.75rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;cursor:pointer;transition:all 0.18s; }
+    .fc-btn-got-it:hover { background:#bbf7d0; }
+
+    .fc-results-card { background:white;border:1px solid var(--border);border-radius:16px;padding:2.5rem 2rem;text-align:center;max-width:480px;margin:0 auto; }
+    .fc-results-title { font-family:'Nunito',sans-serif;font-weight:900;font-size:1.3rem;margin-bottom:0.5rem; }
+    .fc-results-stats { font-size:0.9rem;color:var(--subtext);line-height:1.8; }
+
     /* ── PRIMARY BUTTON ──────────────────────────────────────────────────────── */
     .btn-primary { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--accent); color: white; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.825rem; padding: 0.55rem 1rem; border-radius: 8px; text-decoration: none; border: none; cursor: pointer; transition: opacity 0.2s; }
     .btn-primary:hover { opacity: 0.88; }
@@ -303,6 +353,7 @@
   <div class="tabs">
     <button class="tab-btn active" data-tab="revision">📖 Revise</button>
     <button class="tab-btn" data-tab="keywords">🔤 Words</button>
+    <button class="tab-btn" data-tab="flashcards">🃏 Flashcards</button>
     <button class="tab-btn" data-tab="practice">✏️ Mini Mock</button>
     <button class="tab-btn" data-tab="paper">📝 Paper</button>
   </div>
@@ -351,6 +402,84 @@
         <div class="result-score" id="result-score-text"></div>
         <button class="btn-primary" id="play-again-btn">🔄 Play Again</button>
       </div>
+    </div>
+  </div>
+
+  <!-- ── FLASHCARDS TAB ───────────────────────────────────────────────────────── -->
+  <div class="tab-panel" id="tab-flashcards">
+    <div class="practice-panel-inner">
+
+      <!-- Intro / controls -->
+      <div class="fc-controls" id="fc-controls">
+        <div class="fc-intro-card">
+          <div class="fc-intro-icon">🃏</div>
+          <div>
+            <div class="fc-intro-title">Flashcards</div>
+            <div class="fc-intro-desc">Work through all the key terms for this module. Tap a card to reveal the answer, then mark yourself.</div>
+          </div>
+        </div>
+        <div class="fc-options">
+          <div class="fc-option-label">Card direction</div>
+          <div class="fc-direction-btns">
+            <button class="fc-dir-btn active" id="fc-dir-word" onclick="setFCDirection('word')">Word → Definition</button>
+            <button class="fc-dir-btn" id="fc-dir-def" onclick="setFCDirection('def')">Definition → Word</button>
+          </div>
+          <div class="fc-option-label" style="margin-top:0.85rem">Filter by topic</div>
+          <div class="fc-topic-filter" id="fc-topic-filter">
+            <button class="fc-topic-btn active" onclick="setFCTopic('all', this)">All topics</button>
+          </div>
+        </div>
+        <button class="btn-primary" id="fc-start-btn" onclick="startFlashcards()" style="padding:0.7rem 2rem;font-size:0.95rem;margin-top:0.5rem">▶ Start</button>
+      </div>
+
+      <!-- Card display -->
+      <div id="fc-session" style="display:none">
+        <div class="fc-progress-row">
+          <span class="fc-progress-text" id="fc-progress-text">Card 1 of 20</span>
+          <div class="fc-progress-bar-wrap">
+            <div class="fc-progress-bar-fill" id="fc-progress-bar"></div>
+          </div>
+          <span class="fc-score-text" id="fc-score-text">✅ 0 &nbsp; 🔄 0</span>
+        </div>
+
+        <div class="fc-card-wrap">
+          <div class="fc-card" id="fc-card" onclick="flipCard()">
+            <div class="fc-card-inner" id="fc-card-inner">
+              <div class="fc-card-front">
+                <div class="fc-card-label" id="fc-front-label">TERM</div>
+                <div class="fc-card-text" id="fc-front-text"></div>
+                <div class="fc-card-hint">Tap to reveal</div>
+              </div>
+              <div class="fc-card-back">
+                <div class="fc-card-label" id="fc-back-label">DEFINITION</div>
+                <div class="fc-card-text" id="fc-back-text"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fc-actions" id="fc-actions" style="display:none">
+          <button class="fc-btn-still-learning" onclick="fcAnswer(false)">🔄 Still Learning</button>
+          <button class="fc-btn-got-it" onclick="fcAnswer(true)">✅ Got It!</button>
+        </div>
+        <div style="text-align:center;margin-top:0.75rem">
+          <button class="btn-primary" onclick="endFlashcards()" style="background:none;color:var(--subtext);border:1.5px solid var(--border);font-size:0.8rem;padding:0.4rem 1rem">✕ End session</button>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div id="fc-results" style="display:none">
+        <div class="fc-results-card">
+          <div style="font-size:3rem;margin-bottom:0.5rem">🃏</div>
+          <div class="fc-results-title">Session Complete!</div>
+          <div class="fc-results-stats" id="fc-results-stats"></div>
+          <div style="display:flex;gap:0.75rem;justify-content:center;margin-top:1.25rem;flex-wrap:wrap">
+            <button class="btn-primary" onclick="startFlashcards()" style="padding:0.65rem 1.5rem">🔄 Go Again</button>
+            <button class="btn-primary" onclick="showFCControls()" style="background:none;color:var(--accent);border:1.5px solid var(--accent);padding:0.65rem 1.5rem">← Change Settings</button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -525,8 +654,8 @@ const TIER_META = {
 };
 
 const RAG_INPUT_WEIGHTS = {
-  mock: 1.0, paper: 1.0, words: 0.3,
-  // Future: cloze: 0.6, diagram: 0.6, flashcard: 0.2,
+  mock: 1.0, paper: 1.0, words: 0.3, flashcard: 0.2,
+  // Future: cloze: 0.6, diagram: 0.6,
 };
 
 function computeTier(score) {
@@ -673,6 +802,155 @@ function weightedShuffle(arr) {
   return arr.map(q => ({ q, key: Math.random() * ragWeight(q.topic) })).sort((a,b) => b.key - a.key).map(x => x.q);
 }
 
+// ── FLASHCARDS ────────────────────────────────────────────────────────────────
+let fcDirection = 'word'; // 'word' or 'def'
+let fcTopicFilter = 'all';
+let fcDeck = [];
+let fcIndex = 0;
+let fcGotIt = 0;
+let fcStillLearning = 0;
+let fcFlipped = false;
+
+function setFCDirection(dir) {
+  fcDirection = dir;
+  document.getElementById('fc-dir-word').classList.toggle('active', dir === 'word');
+  document.getElementById('fc-dir-def').classList.toggle('active', dir === 'def');
+}
+
+function setFCTopic(topic, btn) {
+  fcTopicFilter = topic;
+  document.querySelectorAll('.fc-topic-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function buildFCTopicFilter() {
+  const topics = [...new Set(keywords.map(k => k.sub_topic).filter(Boolean))];
+  const filter = document.getElementById('fc-topic-filter');
+  filter.innerHTML = `<button class="fc-topic-btn active" onclick="setFCTopic('all', this)">All topics</button>`;
+  topics.forEach(t => {
+    const btn = document.createElement('button');
+    btn.className = 'fc-topic-btn';
+    btn.textContent = t;
+    btn.onclick = function() { setFCTopic(t, this); };
+    filter.appendChild(btn);
+  });
+}
+
+function startFlashcards() {
+  if (!keywords.length) return;
+  let deck = fcTopicFilter === 'all' ? [...keywords] : keywords.filter(k => k.sub_topic === fcTopicFilter);
+  // Shuffle
+  deck = deck.sort(() => Math.random() - 0.5);
+  fcDeck = deck;
+  fcIndex = 0;
+  fcGotIt = 0;
+  fcStillLearning = 0;
+
+  document.getElementById('fc-controls').style.display = 'none';
+  document.getElementById('fc-results').style.display = 'none';
+  document.getElementById('fc-session').style.display = 'block';
+
+  hideRAG();
+  showFCCard();
+}
+
+function showFCCard() {
+  if (fcIndex >= fcDeck.length) { showFCResults(); return; }
+  const card = fcDeck[fcIndex];
+  fcFlipped = false;
+
+  const inner = document.getElementById('fc-card-inner');
+  inner.classList.remove('flipped');
+
+  if (fcDirection === 'word') {
+    document.getElementById('fc-front-label').textContent = 'TERM';
+    document.getElementById('fc-front-text').textContent = card.word;
+    document.getElementById('fc-back-label').textContent = 'DEFINITION';
+    document.getElementById('fc-back-text').textContent = card.definition;
+  } else {
+    document.getElementById('fc-front-label').textContent = 'DEFINITION';
+    document.getElementById('fc-front-text').textContent = card.definition;
+    document.getElementById('fc-back-label').textContent = 'TERM';
+    document.getElementById('fc-back-text').textContent = card.word;
+  }
+
+  document.getElementById('fc-actions').style.display = 'none';
+  updateFCProgress();
+}
+
+function flipCard() {
+  if (fcFlipped) return;
+  fcFlipped = true;
+  document.getElementById('fc-card-inner').classList.add('flipped');
+  // Small delay so flip animation plays before buttons appear
+  setTimeout(() => {
+    document.getElementById('fc-actions').style.display = 'flex';
+  }, 300);
+}
+
+async function fcAnswer(gotIt) {
+  const card = fcDeck[fcIndex];
+  if (gotIt) {
+    fcGotIt++;
+    // Feed into RAG at flashcard weight
+    if (window._currentUser && card.sub_topic) {
+      const idx = fuzzyMatchTopic(card.sub_topic, meta.topics);
+      if (idx >= 0) {
+        const topicName = meta.topics[idx];
+        const current = ragState[topicName] || null;
+        const updated = computeNewTopicScore(current, 100, 'flashcard');
+        ragState[topicName] = updated;
+        renderChecklist(ragState);
+        if (window._saveRAG) {
+          window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState)
+            .catch(e => console.log('RAG save error:', e));
+        }
+      }
+    }
+  } else {
+    fcStillLearning++;
+  }
+  fcIndex++;
+  showFCCard();
+}
+
+function updateFCProgress() {
+  const total = fcDeck.length;
+  const done = fcIndex;
+  document.getElementById('fc-progress-text').textContent = `Card ${Math.min(done + 1, total)} of ${total}`;
+  document.getElementById('fc-progress-bar').style.width = `${(done / total) * 100}%`;
+  document.getElementById('fc-score-text').innerHTML = `✅ ${fcGotIt} &nbsp; 🔄 ${fcStillLearning}`;
+}
+
+function showFCResults() {
+  document.getElementById('fc-session').style.display = 'none';
+  document.getElementById('fc-results').style.display = 'block';
+  const total = fcDeck.length;
+  const pct = total > 0 ? Math.round((fcGotIt / total) * 100) : 0;
+  document.getElementById('fc-results-stats').innerHTML = `
+    <div style="font-size:2rem;font-weight:900;font-family:'Nunito',sans-serif;color:var(--accent)">${pct}%</div>
+    <div>✅ Got it: <strong>${fcGotIt}</strong> &nbsp;&nbsp; 🔄 Still learning: <strong>${fcStillLearning}</strong></div>
+    <div style="margin-top:0.5rem;font-size:0.8rem">Your RAG scores have been updated for cards you got right.</div>
+  `;
+  showRAG();
+}
+
+function endFlashcards() {
+  showFCResults();
+}
+
+function showFCControls() {
+  document.getElementById('fc-controls').style.display = 'block';
+  document.getElementById('fc-results').style.display = 'none';
+  document.getElementById('fc-session').style.display = 'none';
+  showRAG();
+}
+
+// Build topic filter once keywords are loaded (called after loadKeywords)
+function initFCTopicFilter() {
+  if (keywords.length) buildFCTopicFilter();
+}
+
 // ── KEYWORDS ──────────────────────────────────────────────────────────────────
 let timerInterval = null, secondsElapsed = 0, matchedCount = 0, totalPairs = 0;
 let draggedWord = null, keywords = [];
@@ -682,6 +960,7 @@ async function loadKeywords() {
     let res = await fetch(`data/${subjectId}-${moduleId}-keywords.json`);
     if (!res.ok) res = await fetch(`data/${moduleId}-keywords.json`);
     keywords = await res.json();
+    initFCTopicFilter();
   } catch(e) { keywords = []; }
 }
 
