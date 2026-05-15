@@ -64,7 +64,106 @@ export async function updateExamTarget(uid, examTarget, yearGroup) {
   await updateDoc(doc(db, 'users', uid), { examTarget, yearGroup });
 }
 
-// ── RAG STATE ─────────────────────────────────────────────────────────────────
+// ── RAG SYSTEM v2 ─────────────────────────────────────────────────────────────
+//
+// Each topic entry: { score: 0–100, lastActivity: ISO string, retained: bool, retainedSince: ISO|null }
+// Tier is computed from score at read time — never stored.
+// Input weights are registered here — add new activity types without touching other code.
+
+export const RAG_INPUT_WEIGHTS = {
+  mock:      1.0,   // Mini Mock question
+  paper:     1.0,   // Practice Paper question
+  words:     0.3,   // Keywords game correct match
+  // Future — just add a line:
+  // cloze:   0.6,
+  // diagram: 0.6,
+  // flashcard: 0.2,
+};
+
+// Decay rates: % score lost per day of inactivity (after 7-day grace period)
+const DECAY_RATES = {
+  mastered:    0.3,
+  confident:   0.5,
+  approaching: 0.8,
+  developing:  1.0,
+  beginning:   1.2,
+  not_started: 0.0,
+};
+
+// Days at Mastered tier before ⭐ Retained indicator is shown
+const RETAINED_DAYS = 28;
+
+export function computeTier(score) {
+  if (score === 0)    return 'not_started';
+  if (score <= 33)   return 'beginning';
+  if (score <= 55)   return 'developing';
+  if (score <= 75)   return 'approaching';
+  if (score <= 89)   return 'confident';
+  return 'mastered';
+}
+
+export const TIER_META = {
+  not_started: { label: 'Not Started', emoji: '⬜', colour: '#cbd5e1', bg: '#f8fafc' },
+  beginning:   { label: 'Beginning',   emoji: '🔴', colour: '#ef4444', bg: '#fef2f2' },
+  developing:  { label: 'Developing',  emoji: '🟠', colour: '#f97316', bg: '#fff7ed' },
+  approaching: { label: 'Approaching', emoji: '🟡', colour: '#eab308', bg: '#fefce8' },
+  confident:   { label: 'Confident',   emoji: '🟢', colour: '#22c55e', bg: '#f0fdf4' },
+  mastered:    { label: 'Mastered',    emoji: '💙', colour: '#3b82f6', bg: '#eff6ff' },
+};
+
+// Apply time-based decay to a topic entry. Returns updated entry (does not save).
+export function applyDecay(entry) {
+  if (!entry || !entry.lastActivity) return entry;
+  const score = entry.score || 0;
+  if (score === 0) return entry; // nothing to decay
+
+  const daysInactive = (Date.now() - new Date(entry.lastActivity).getTime()) / 86400000;
+  const graceDays = 7;
+  if (daysInactive <= graceDays) return entry;
+
+  const tier = computeTier(score);
+  const rate = DECAY_RATES[tier] || 0;
+  const decayableDays = daysInactive - graceDays;
+  const newScore = Math.max(0, score - decayableDays * rate);
+
+  // Update retained status
+  let { retained, retainedSince } = entry;
+  if (newScore < 90) {
+    retained = false;
+    retainedSince = null;
+  }
+
+  return { ...entry, score: Math.round(newScore * 10) / 10, retained, retainedSince };
+}
+
+// Update a topic score after an activity. inputType must be a key in RAG_INPUT_WEIGHTS.
+// activityPct: 0–100 percentage score for this activity on this topic.
+export function computeNewTopicScore(currentEntry, activityPct, inputType) {
+  const weight = RAG_INPUT_WEIGHTS[inputType] ?? 0.3;
+  const oldScore = currentEntry?.score ?? 0;
+  const now = new Date().toISOString();
+
+  // Weighted nudge: moves score toward activityPct, scaled by weight
+  const nudged = oldScore + (activityPct - oldScore) * weight;
+  const newScore = Math.min(100, Math.max(0, Math.round(nudged * 10) / 10));
+
+  // Retained logic: track when Mastered tier is first reached
+  let retainedSince = currentEntry?.retainedSince ?? null;
+  let retained = currentEntry?.retained ?? false;
+
+  if (newScore >= 90) {
+    if (!retainedSince) retainedSince = now;
+    const daysMastered = (Date.now() - new Date(retainedSince).getTime()) / 86400000;
+    if (daysMastered >= RETAINED_DAYS) retained = true;
+  } else {
+    retainedSince = null;
+    retained = false;
+  }
+
+  return { score: newScore, lastActivity: now, retained, retainedSince };
+}
+
+// Save full RAG state for a module (topic name → entry object)
 export async function saveRAG(uid, moduleId, ragState) {
   await setDoc(
     doc(db, 'users', uid, 'progress', moduleId),
@@ -73,9 +172,31 @@ export async function saveRAG(uid, moduleId, ragState) {
   );
 }
 
+// Load RAG state, applying decay to all entries before returning
 export async function loadRAG(uid, moduleId) {
   const snap = await getDoc(doc(db, 'users', uid, 'progress', moduleId));
-  return snap.exists() ? (snap.data().rag || {}) : {};
+  if (!snap.exists()) return {};
+  const raw = snap.data().rag || {};
+  // Apply decay to each entry
+  const decayed = {};
+  for (const [topic, entry] of Object.entries(raw)) {
+    // Support old string format gracefully — treat as score 0
+    if (typeof entry === 'string' || typeof entry === 'number') {
+      decayed[topic] = { score: 0, lastActivity: null, retained: false, retainedSince: null };
+    } else {
+      decayed[topic] = applyDecay(entry);
+    }
+  }
+  return decayed;
+}
+
+// Convenience: update one topic's score after an activity, then persist
+export async function updateTopicScore(uid, moduleId, topicName, activityPct, inputType) {
+  const current = await loadRAG(uid, moduleId);
+  const updated = { ...current };
+  updated[topicName] = computeNewTopicScore(current[topicName] || null, activityPct, inputType);
+  await saveRAG(uid, moduleId, updated);
+  return updated;
 }
 
 // ── MOCK SCORES ───────────────────────────────────────────────────────────────
