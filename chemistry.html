@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chemistry — Streetly Science Hub</title>
+  <title>Physics — Streetly Science Hub</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --c1: #e85d4a; --c2: #6366f1; --c3: #0ea5e9; --c4: #f59e0b;
-      --c5: #22c55e; --c6: #8b5cf6; --c7: #ec4899; --c8: #14b8a6;
-      --c9: #3b82f6; --c10: #16a34a;
+      --p1: #f59e0b; --p2: #6366f1; --p3: #0ea5e9; --p4: #e85d4a;
+      --p5: #22c55e; --p6: #8b5cf6; --p7: #ec4899;
       --navy: #1a2a4f; --navy-dark: #0f1d3d;
       --bg: #f5f6fa; --text: #1a2a4f; --subtext: #5a6885;
       --card-bg: #ffffff; --border: #e2e6f0;
@@ -21,7 +20,7 @@
     .topnav a:hover { color: white; }
     .topnav-right { margin-left: auto; display: flex; gap: 1rem; align-items: center; }
     .topnav-user { color: #94a3b8; font-size: 0.825rem; font-family: 'Nunito', sans-serif; font-weight: 700; }
-    .subject-header { background: linear-gradient(135deg, #c0392b 0%, #922b21 100%); color: white; padding: 1.5rem 2rem; }
+    .subject-header { background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%); color: white; padding: 1.5rem 2rem; }
     .subject-header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 1rem; }
     .subject-header h1 { font-family: 'Nunito', sans-serif; font-size: 1.8rem; font-weight: 900; }
     .subject-header p { color: rgba(255,255,255,0.8); font-size: 0.875rem; margin-top: 0.2rem; }
@@ -41,16 +40,13 @@
     .module-title { font-family: 'Nunito', sans-serif; font-size: 0.975rem; font-weight: 800; color: var(--text); line-height: 1.2; }
     .module-sub { font-size: 0.75rem; color: var(--subtext); margin-top: 0.15rem; }
     .arrow-btn { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.95rem; font-weight: 700; flex-shrink: 0; }
-    .c1 .module-icon, .c1 .arrow-btn { background: var(--c1); }
-    .c2 .module-icon, .c2 .arrow-btn { background: var(--c2); }
-    .c3 .module-icon, .c3 .arrow-btn { background: var(--c3); }
-    .c4 .module-icon, .c4 .arrow-btn { background: var(--c4); }
-    .c5 .module-icon, .c5 .arrow-btn { background: var(--c5); }
-    .c6 .module-icon, .c6 .arrow-btn { background: var(--c6); }
-    .c7 .module-icon, .c7 .arrow-btn { background: var(--c7); }
-    .c8 .module-icon, .c8 .arrow-btn { background: var(--c8); }
-    .c9 .module-icon, .c9 .arrow-btn { background: var(--c9); }
-    .c10 .module-icon, .c10 .arrow-btn { background: var(--c10); }
+    .p1 .module-icon, .p1 .arrow-btn { background: var(--p1); }
+    .p2 .module-icon, .p2 .arrow-btn { background: var(--p2); }
+    .p3 .module-icon, .p3 .arrow-btn { background: var(--p3); }
+    .p4 .module-icon, .p4 .arrow-btn { background: var(--p4); }
+    .p5 .module-icon, .p5 .arrow-btn { background: var(--p5); }
+    .p6 .module-icon, .p6 .arrow-btn { background: var(--p6); }
+    .p7 .module-icon, .p7 .arrow-btn { background: var(--p7); }
     .coming-soon-badge { position: absolute; top: 10px; right: 10px; color: white; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.68rem; padding: 0.25rem 0.7rem; border-radius: 100px; letter-spacing: 0.06em; text-transform: uppercase; }
     #auth-loading { position: fixed; inset: 0; background: var(--navy-dark); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999; }
     @media (max-width: 600px) { .modules-grid { grid-template-columns: 1fr; } }
@@ -81,9 +77,9 @@
 
 <div class="subject-header">
   <div class="subject-header-inner">
-    <div style="font-size:2.5rem">🧪</div>
+    <div style="font-size:2.5rem">⚡</div>
     <div>
-      <h1>Chemistry</h1>
+      <h1>Physics</h1>
       <p>AQA GCSE Combined Science — Select a module to begin</p>
     </div>
   </div>
@@ -91,334 +87,234 @@
 
 <main>
   <div class="section-header">
-    <div class="section-label">Chemistry Modules</div>
+    <div class="section-label">Physics Modules</div>
     <div class="section-sub">Select a module to begin</div>
   </div>
 
   <div class="modules-grid">
 
-    <!-- C1 Atomic Structure & Periodic Table -->
-    <a href="module.html?subject=chemistry&module=c1" class="module-card c1">
+    <!-- P1 Energy -->
+    <a href="module.html?subject=physics&module=p1" class="module-card p1">
+      <div class="card-image" style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);">
+        <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg" width="290" height="130">
+          <rect width="290" height="130" fill="#f59e0b" opacity="0.08"/>
+          <!-- Energy bar chart -->
+          <rect x="50" y="90" width="25" height="30" rx="4" fill="#f59e0b" opacity="0.6"/>
+          <rect x="85" y="65" width="25" height="55" rx="4" fill="#f59e0b" opacity="0.5"/>
+          <rect x="120" y="45" width="25" height="75" rx="4" fill="#f59e0b" opacity="0.65"/>
+          <rect x="155" y="70" width="25" height="50" rx="4" fill="#f59e0b" opacity="0.5"/>
+          <rect x="190" y="50" width="25" height="70" rx="4" fill="#f59e0b" opacity="0.55"/>
+          <!-- Sun / energy symbol -->
+          <circle cx="245" cy="38" r="16" fill="#f59e0b" opacity="0.25" stroke="#f59e0b" stroke-width="2"/>
+          <line x1="245" y1="16" x2="245" y2="10" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+          <line x1="261" y1="22" x2="265" y2="18" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+          <line x1="267" y1="38" x2="273" y2="38" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+          <line x1="229" y1="22" x2="225" y2="18" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+          <line x1="223" y1="38" x2="217" y2="38" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+          <text x="50" y="118" font-family="Nunito" font-size="10" font-weight="800" fill="#f59e0b" opacity="0.6">E = mcΔT</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="module-icon">P1</div>
+        <div class="module-info">
+          <div class="module-title">Energy</div>
+          <div class="module-sub">Energy stores · Transfer · Efficiency</div>
+        </div>
+        <div class="arrow-btn">→</div>
+      </div>
+    </a>
+
+    <!-- P2 Electricity -->
+    <a href="module.html?subject=physics&module=p2" class="module-card p2">
+      <div class="card-image" style="background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);">
+        <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg" width="290" height="130">
+          <rect width="290" height="130" fill="#6366f1" opacity="0.08"/>
+          <!-- Circuit -->
+          <rect x="60" y="35" width="170" height="75" rx="8" fill="none" stroke="#6366f1" stroke-width="2" opacity="0.5"/>
+          <!-- Battery -->
+          <line x1="60" y1="65" x2="60" y2="55" stroke="#6366f1" stroke-width="3" opacity="0.6"/>
+          <line x1="60" y1="75" x2="60" y2="85" stroke="#6366f1" stroke-width="3" opacity="0.6"/>
+          <line x1="54" y1="60" x2="66" y2="60" stroke="#6366f1" stroke-width="2.5" opacity="0.7"/>
+          <line x1="57" y1="70" x2="63" y2="70" stroke="#6366f1" stroke-width="2" opacity="0.6"/>
+          <!-- Bulb -->
+          <circle cx="145" cy="72" r="16" fill="none" stroke="#6366f1" stroke-width="2" opacity="0.5"/>
+          <line x1="138" y1="65" x2="152" y2="79" stroke="#6366f1" stroke-width="2" opacity="0.6"/>
+          <line x1="152" y1="65" x2="138" y2="79" stroke="#6366f1" stroke-width="2" opacity="0.6"/>
+          <!-- Resistor zigzag -->
+          <polyline points="200,72 207,60 214,84 221,60 228,72" fill="none" stroke="#6366f1" stroke-width="2" opacity="0.6"/>
+          <text x="85" y="122" font-family="Nunito" font-size="10" font-weight="800" fill="#6366f1" opacity="0.6">V = IR</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="module-icon">P2</div>
+        <div class="module-info">
+          <div class="module-title">Electricity</div>
+          <div class="module-sub">Circuits · Resistance · Mains</div>
+        </div>
+        <div class="arrow-btn">→</div>
+      </div>
+    </a>
+
+    <!-- P3 Particle Model -->
+    <a href="module.html?subject=physics&module=p3" class="module-card p3">
+      <div class="card-image" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);">
+        <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg" width="290" height="130">
+          <rect width="290" height="130" fill="#0ea5e9" opacity="0.08"/>
+          <!-- Solid particles (grid) -->
+          <circle cx="55" cy="55" r="7" fill="#0ea5e9" opacity="0.5"/>
+          <circle cx="75" cy="55" r="7" fill="#0ea5e9" opacity="0.5"/>
+          <circle cx="95" cy="55" r="7" fill="#0ea5e9" opacity="0.5"/>
+          <circle cx="55" cy="75" r="7" fill="#0ea5e9" opacity="0.5"/>
+          <circle cx="75" cy="75" r="7" fill="#0ea5e9" opacity="0.5"/>
+          <circle cx="95" cy="75" r="7" fill="#0ea5e9" opacity="0.5"/>
+          <text x="55" y="100" font-family="Nunito" font-size="9" font-weight="800" fill="#0ea5e9" opacity="0.55" text-anchor="middle">Solid</text>
+          <!-- Liquid particles -->
+          <circle cx="148" cy="58" r="7" fill="#0ea5e9" opacity="0.4"/>
+          <circle cx="168" cy="52" r="7" fill="#0ea5e9" opacity="0.4"/>
+          <circle cx="158" cy="72" r="7" fill="#0ea5e9" opacity="0.4"/>
+          <circle cx="178" cy="68" r="7" fill="#0ea5e9" opacity="0.4"/>
+          <circle cx="142" cy="78" r="7" fill="#0ea5e9" opacity="0.4"/>
+          <text x="160" y="100" font-family="Nunito" font-size="9" font-weight="800" fill="#0ea5e9" opacity="0.55" text-anchor="middle">Liquid</text>
+          <!-- Gas particles -->
+          <circle cx="218" cy="42" r="7" fill="#0ea5e9" opacity="0.3"/>
+          <circle cx="248" cy="55" r="7" fill="#0ea5e9" opacity="0.3"/>
+          <circle cx="228" cy="75" r="7" fill="#0ea5e9" opacity="0.3"/>
+          <circle cx="255" cy="82" r="7" fill="#0ea5e9" opacity="0.3"/>
+          <circle cx="210" cy="68" r="7" fill="#0ea5e9" opacity="0.3"/>
+          <text x="232" y="100" font-family="Nunito" font-size="9" font-weight="800" fill="#0ea5e9" opacity="0.55" text-anchor="middle">Gas</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="module-icon">P3</div>
+        <div class="module-info">
+          <div class="module-title">Particle Model of Matter</div>
+          <div class="module-sub">States · Density · Specific heat</div>
+        </div>
+        <div class="arrow-btn">→</div>
+      </div>
+    </a>
+
+    <!-- P4 Atomic Structure -->
+    <a href="module.html?subject=physics&module=p4" class="module-card p4">
       <div class="card-image" style="background: linear-gradient(135deg, #fff1f2 0%, #fee2e2 100%);">
         <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg" width="290" height="130">
           <rect width="290" height="130" fill="#e85d4a" opacity="0.08"/>
           <!-- Atom nucleus -->
-          <circle cx="110" cy="65" r="14" fill="#e85d4a" opacity="0.4"/>
+          <circle cx="145" cy="65" r="14" fill="#e85d4a" opacity="0.4"/>
           <!-- Electron orbits -->
-          <ellipse cx="110" cy="65" rx="50" ry="20" fill="none" stroke="#e85d4a" stroke-width="1.8" opacity="0.5"/>
-          <ellipse cx="110" cy="65" rx="50" ry="20" fill="none" stroke="#e85d4a" stroke-width="1.8" opacity="0.5" transform="rotate(60 110 65)"/>
-          <ellipse cx="110" cy="65" rx="50" ry="20" fill="none" stroke="#e85d4a" stroke-width="1.8" opacity="0.5" transform="rotate(120 110 65)"/>
+          <ellipse cx="145" cy="65" rx="55" ry="22" fill="none" stroke="#e85d4a" stroke-width="1.8" opacity="0.5"/>
+          <ellipse cx="145" cy="65" rx="55" ry="22" fill="none" stroke="#e85d4a" stroke-width="1.8" opacity="0.5" transform="rotate(60 145 65)"/>
+          <ellipse cx="145" cy="65" rx="55" ry="22" fill="none" stroke="#e85d4a" stroke-width="1.8" opacity="0.5" transform="rotate(120 145 65)"/>
           <!-- Electrons -->
-          <circle cx="160" cy="65" r="5" fill="#e85d4a" opacity="0.7"/>
-          <circle cx="85" cy="47" r="5" fill="#e85d4a" opacity="0.7"/>
-          <circle cx="85" cy="83" r="5" fill="#e85d4a" opacity="0.7"/>
-          <!-- Periodic table squares -->
-          <rect x="195" y="25" width="28" height="28" rx="4" fill="#e85d4a" opacity="0.18" stroke="#e85d4a" stroke-width="1.5"/>
-          <text x="209" y="44" font-family="Nunito" font-size="13" font-weight="900" text-anchor="middle" fill="#e85d4a" opacity="0.7">H</text>
-          <rect x="230" y="25" width="28" height="28" rx="4" fill="#e85d4a" opacity="0.14" stroke="#e85d4a" stroke-width="1.5"/>
-          <text x="244" y="44" font-family="Nunito" font-size="12" font-weight="900" text-anchor="middle" fill="#e85d4a" opacity="0.7">He</text>
-          <rect x="195" y="60" width="28" height="28" rx="4" fill="#e85d4a" opacity="0.18" stroke="#e85d4a" stroke-width="1.5"/>
-          <text x="209" y="79" font-family="Nunito" font-size="13" font-weight="900" text-anchor="middle" fill="#e85d4a" opacity="0.7">Na</text>
-          <rect x="230" y="60" width="28" height="28" rx="4" fill="#e85d4a" opacity="0.14" stroke="#e85d4a" stroke-width="1.5"/>
-          <text x="244" y="79" font-family="Nunito" font-size="12" font-weight="900" text-anchor="middle" fill="#e85d4a" opacity="0.7">Mg</text>
-          <text x="40" y="118" font-family="Nunito" font-size="9" font-weight="800" fill="#e85d4a" opacity="0.6">p⁺ n⁰ e⁻</text>
+          <circle cx="200" cy="65" r="5" fill="#e85d4a" opacity="0.7"/>
+          <circle cx="118" cy="46" r="5" fill="#e85d4a" opacity="0.7"/>
+          <circle cx="118" cy="84" r="5" fill="#e85d4a" opacity="0.7"/>
+          <!-- Radiation arrows -->
+          <line x1="50" y1="40" x2="85" y2="55" stroke="#e85d4a" stroke-width="2" opacity="0.5"/>
+          <polygon points="85,55 77,50 80,58" fill="#e85d4a" opacity="0.5"/>
+          <line x1="50" y1="65" x2="85" y2="65" stroke="#e85d4a" stroke-width="2" opacity="0.5"/>
+          <polygon points="85,65 77,61 77,69" fill="#e85d4a" opacity="0.5"/>
+          <text x="30" y="100" font-family="Nunito" font-size="9" font-weight="800" fill="#e85d4a" opacity="0.6">α β γ</text>
         </svg>
       </div>
       <div class="card-body">
-        <div class="module-icon">C1</div>
+        <div class="module-icon">P4</div>
         <div class="module-info">
-          <div class="module-title">Atomic Structure & Periodic Table</div>
-          <div class="module-sub">Atoms · Groups · History of the atom</div>
+          <div class="module-title">Atomic Structure</div>
+          <div class="module-sub">Atoms · Radiation · Nuclear</div>
         </div>
         <div class="arrow-btn">→</div>
       </div>
     </a>
 
-    <!-- C2 Bonding, Structure & Properties -->
-    <a href="module.html?subject=chemistry&module=c2" class="module-card c2">
-      <div class="card-image" style="background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);">
-        <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg" width="290" height="130">
-          <rect width="290" height="130" fill="#6366f1" opacity="0.08"/>
-          <!-- Diamond lattice -->
-          <circle cx="70" cy="40" r="7" fill="#6366f1" opacity="0.5"/>
-          <circle cx="110" cy="40" r="7" fill="#6366f1" opacity="0.5"/>
-          <circle cx="90" cy="70" r="7" fill="#6366f1" opacity="0.5"/>
-          <circle cx="130" cy="70" r="7" fill="#6366f1" opacity="0.5"/>
-          <circle cx="70" cy="100" r="7" fill="#6366f1" opacity="0.5"/>
-          <circle cx="110" cy="100" r="7" fill="#6366f1" opacity="0.5"/>
-          <line x1="70" y1="40" x2="110" y2="40" stroke="#6366f1" stroke-width="2" opacity="0.5"/>
-          <line x1="70" y1="40" x2="90" y2="70" stroke="#6366f1" stroke-width="2" opacity="0.5"/>
-          <line x1="110" y1="40" x2="90" y2="70" stroke="#6366f1" stroke-width="2" opacity="0.5"/>
-          <line x1="110" y1="40" x2="130" y2="70" stroke="#6366f1" stroke-width="2" opacity="0.5"/>
-          <line x1="90" y1="70" x2="70" y2="100" stroke="#6366f1" stroke-width="2" opacity="0.5"/>
-          <line x1="90" y1="70" x2="110" y2="100" stroke="#6366f1" stroke-width="2" opacity="0.5"/>
-          <line x1="130" y1="70" x2="110" y2="100" stroke="#6366f1" stroke-width="2" opacity="0.5"/>
-          <line x1="70" y1="100" x2="110" y2="100" stroke="#6366f1" stroke-width="2" opacity="0.5"/>
-          <!-- Ion pair -->
-          <circle cx="200" cy="55" r="20" fill="#6366f1" opacity="0.15" stroke="#6366f1" stroke-width="2"/>
-          <text x="200" y="61" font-family="Nunito" font-size="13" font-weight="900" text-anchor="middle" fill="#6366f1" opacity="0.7">Na⁺</text>
-          <circle cx="250" cy="55" r="20" fill="#6366f1" opacity="0.12" stroke="#6366f1" stroke-width="2"/>
-          <text x="250" y="61" font-family="Nunito" font-size="13" font-weight="900" text-anchor="middle" fill="#6366f1" opacity="0.7">Cl⁻</text>
-          <text x="185" y="100" font-family="Nunito" font-size="9" font-weight="800" fill="#6366f1" opacity="0.6">Ionic · Covalent · Metallic</text>
-        </svg>
-      </div>
-      <div class="card-body">
-        <div class="module-icon">C2</div>
-        <div class="module-info">
-          <div class="module-title">Bonding, Structure & Properties</div>
-          <div class="module-sub">Ionic · Covalent · Metallic · Nanoparticles</div>
-        </div>
-        <div class="arrow-btn">→</div>
-      </div>
-    </a>
-
-    <!-- C3 Quantitative Chemistry -->
-    <a href="module.html?subject=chemistry&module=c3" class="module-card c3">
-      <div class="card-image" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);">
-        <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg" width="290" height="130">
-          <rect width="290" height="130" fill="#0ea5e9" opacity="0.08"/>
-          <!-- Mole/balance scale -->
-          <line x1="145" y1="30" x2="145" y2="100" stroke="#0ea5e9" stroke-width="2.5" opacity="0.5"/>
-          <line x1="85" y1="55" x2="205" y2="55" stroke="#0ea5e9" stroke-width="2.5" opacity="0.5"/>
-          <circle cx="85" cy="75" r="18" fill="#0ea5e9" opacity="0.15" stroke="#0ea5e9" stroke-width="2"/>
-          <text x="85" y="80" font-family="Nunito" font-size="9" font-weight="900" text-anchor="middle" fill="#0ea5e9" opacity="0.7">n=m/Mr</text>
-          <circle cx="205" cy="75" r="18" fill="#0ea5e9" opacity="0.15" stroke="#0ea5e9" stroke-width="2"/>
-          <text x="205" y="80" font-family="Nunito" font-size="9" font-weight="900" text-anchor="middle" fill="#0ea5e9" opacity="0.7">mol/dm³</text>
-          <!-- Equation -->
-          <text x="100" y="118" font-family="Nunito" font-size="10" font-weight="800" fill="#0ea5e9" opacity="0.6">% yield · atom economy</text>
-        </svg>
-      </div>
-      <div class="card-body">
-        <div class="module-icon">C3</div>
-        <div class="module-info">
-          <div class="module-title">Quantitative Chemistry</div>
-          <div class="module-sub">Moles · Yield · Atom economy · Concentration</div>
-        </div>
-        <div class="arrow-btn">→</div>
-      </div>
-    </a>
-
-    <!-- C4 Chemical Changes -->
-    <a href="module.html?subject=chemistry&module=c4" class="module-card c4">
-      <div class="card-image" style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);">
-        <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg" width="290" height="130">
-          <rect width="290" height="130" fill="#f59e0b" opacity="0.08"/>
-          <!-- pH scale bar -->
-          <rect x="30" y="45" width="230" height="18" rx="9" fill="#f59e0b" opacity="0.12" stroke="#f59e0b" stroke-width="1.5"/>
-          <rect x="30" y="45" width="77" height="18" rx="9" fill="#e85d4a" opacity="0.35"/>
-          <rect x="184" y="45" width="76" height="18" rx="9" fill="#6366f1" opacity="0.3"/>
-          <text x="68" y="58" font-family="Nunito" font-size="10" font-weight="800" text-anchor="middle" fill="#c0392b" opacity="0.8">Acid</text>
-          <text x="145" y="58" font-family="Nunito" font-size="10" font-weight="800" text-anchor="middle" fill="#f59e0b" opacity="0.8">7</text>
-          <text x="222" y="58" font-family="Nunito" font-size="10" font-weight="800" text-anchor="middle" fill="#4f46e5" opacity="0.8">Alkali</text>
-          <!-- Electrolysis diagram -->
-          <line x1="90" y1="78" x2="90" y2="110" stroke="#f59e0b" stroke-width="2" opacity="0.5"/>
-          <line x1="200" y1="78" x2="200" y2="110" stroke="#f59e0b" stroke-width="2" opacity="0.5"/>
-          <rect x="70" y="78" width="160" height="32" rx="6" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.4"/>
-          <text x="145" y="98" font-family="Nunito" font-size="9" font-weight="800" text-anchor="middle" fill="#f59e0b" opacity="0.6">Electrolyte</text>
-          <text x="78" y="73" font-family="Nunito" font-size="8" font-weight="800" fill="#f59e0b" opacity="0.6">-</text>
-          <text x="196" y="73" font-family="Nunito" font-size="8" font-weight="800" fill="#f59e0b" opacity="0.6">+</text>
-        </svg>
-      </div>
-      <div class="card-body">
-        <div class="module-icon">C4</div>
-        <div class="module-info">
-          <div class="module-title">Chemical Changes</div>
-          <div class="module-sub">Acids · Reactivity series · Redox · Electrolysis</div>
-        </div>
-        <div class="arrow-btn">→</div>
-      </div>
-    </a>
-
-    <!-- C5 Energy Changes -->
-    <a href="module.html?subject=chemistry&module=c5" class="module-card c5">
+    <!-- P5 Forces -->
+    <a href="module.html?subject=physics&module=p5" class="module-card p5">
       <div class="card-image" style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);">
         <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg" width="290" height="130">
           <rect width="290" height="130" fill="#22c55e" opacity="0.08"/>
-          <!-- Energy profile diagram -->
-          <polyline points="30,95 80,95 110,35 160,80 230,80 260,80" fill="none" stroke="#22c55e" stroke-width="2.5" opacity="0.6"/>
-          <!-- Activation energy arrow -->
-          <line x1="80" y1="95" x2="80" y2="35" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
-          <line x1="110" y1="35" x2="80" y2="35" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
-          <text x="42" y="30" font-family="Nunito" font-size="8" font-weight="800" fill="#22c55e" opacity="0.65">Activation</text>
-          <text x="42" y="40" font-family="Nunito" font-size="8" font-weight="800" fill="#22c55e" opacity="0.65">energy</text>
-          <!-- Labels -->
-          <text x="35" y="110" font-family="Nunito" font-size="9" font-weight="800" fill="#22c55e" opacity="0.6">Reactants</text>
-          <text x="195" y="97" font-family="Nunito" font-size="9" font-weight="800" fill="#22c55e" opacity="0.6">Products</text>
-          <text x="155" y="118" font-family="Nunito" font-size="10" font-weight="800" fill="#22c55e" opacity="0.6">Exothermic ↓</text>
+          <!-- Object with forces -->
+          <rect x="115" y="50" width="60" height="40" rx="6" fill="#22c55e" opacity="0.2" stroke="#22c55e" stroke-width="2"/>
+          <!-- Force arrows -->
+          <line x1="85" y1="70" x2="112" y2="70" stroke="#22c55e" stroke-width="2.5" opacity="0.6"/>
+          <polygon points="112,70 104,66 104,74" fill="#22c55e" opacity="0.6"/>
+          <line x1="205" y1="70" x2="178" y2="70" stroke="#22c55e" stroke-width="2.5" opacity="0.6"/>
+          <polygon points="178,70 186,66 186,74" fill="#22c55e" opacity="0.6"/>
+          <line x1="145" y1="25" x2="145" y2="48" stroke="#22c55e" stroke-width="2.5" opacity="0.6"/>
+          <polygon points="145,48 141,40 149,40" fill="#22c55e" opacity="0.6"/>
+          <line x1="145" y1="105" x2="145" y2="93" stroke="#22c55e" stroke-width="2.5" opacity="0.5"/>
+          <polygon points="145,93 141,101 149,101" fill="#22c55e" opacity="0.5"/>
+          <text x="50" y="118" font-family="Nunito" font-size="10" font-weight="800" fill="#22c55e" opacity="0.6">F = ma</text>
+          <text x="180" y="118" font-family="Nunito" font-size="10" font-weight="800" fill="#22c55e" opacity="0.6">W = mg</text>
         </svg>
       </div>
       <div class="card-body">
-        <div class="module-icon">C5</div>
+        <div class="module-icon">P5</div>
         <div class="module-info">
-          <div class="module-title">Energy Changes</div>
-          <div class="module-sub">Exothermic · Endothermic · Bond energies · Fuel cells</div>
+          <div class="module-title">Forces</div>
+          <div class="module-sub">Motion · Newton's Laws · Momentum</div>
         </div>
         <div class="arrow-btn">→</div>
       </div>
     </a>
 
-    <!-- C6 Rate & Extent of Chemical Change -->
-    <a href="module.html?subject=chemistry&module=c6" class="module-card c6">
+    <!-- P6 Waves -->
+    <a href="module.html?subject=physics&module=p6" class="module-card p6">
       <div class="card-image" style="background: linear-gradient(135deg, #faf5ff 0%, #ede9fe 100%);">
         <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg" width="290" height="130">
           <rect width="290" height="130" fill="#8b5cf6" opacity="0.08"/>
-          <!-- Rate graph - steep then levelling -->
-          <line x1="35" y1="110" x2="35" y2="20" stroke="#8b5cf6" stroke-width="1.5" opacity="0.4"/>
-          <line x1="35" y1="110" x2="265" y2="110" stroke="#8b5cf6" stroke-width="1.5" opacity="0.4"/>
-          <path d="M35 105 Q60 40 110 28 Q160 20 265 20" fill="none" stroke="#8b5cf6" stroke-width="2.5" opacity="0.65"/>
-          <path d="M35 105 Q70 60 140 40 Q190 28 265 27" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,3" opacity="0.4"/>
-          <!-- Equilibrium arrows -->
-          <line x1="155" y1="65" x2="190" y2="65" stroke="#8b5cf6" stroke-width="2" opacity="0.6"/>
-          <polygon points="190,65 182,61 182,69" fill="#8b5cf6" opacity="0.6"/>
-          <line x1="190" y1="75" x2="155" y2="75" stroke="#8b5cf6" stroke-width="2" opacity="0.6"/>
-          <polygon points="155,75 163,71 163,79" fill="#8b5cf6" opacity="0.6"/>
-          <text x="145" y="95" font-family="Nunito" font-size="9" font-weight="800" fill="#8b5cf6" opacity="0.6" text-anchor="middle">⇌</text>
-          <text x="40" y="20" font-family="Nunito" font-size="9" font-weight="800" fill="#8b5cf6" opacity="0.6">Volume of gas</text>
+          <!-- Transverse wave -->
+          <path d="M30 65 Q50 30 70 65 Q90 100 110 65 Q130 30 150 65 Q170 100 190 65 Q210 30 230 65 Q250 100 270 65" fill="none" stroke="#8b5cf6" stroke-width="2.5" opacity="0.6"/>
+          <!-- Wavelength marker -->
+          <line x1="30" y1="105" x2="110" y2="105" stroke="#8b5cf6" stroke-width="1.5" opacity="0.45"/>
+          <line x1="30" y1="100" x2="30" y2="110" stroke="#8b5cf6" stroke-width="1.5" opacity="0.45"/>
+          <line x1="110" y1="100" x2="110" y2="110" stroke="#8b5cf6" stroke-width="1.5" opacity="0.45"/>
+          <text x="60" y="122" font-family="Nunito" font-size="9" font-weight="800" fill="#8b5cf6" opacity="0.6" text-anchor="middle">λ</text>
+          <!-- Amplitude marker -->
+          <line x1="15" y1="65" x2="15" y2="30" stroke="#8b5cf6" stroke-width="1.5" opacity="0.45"/>
+          <line x1="10" y1="65" x2="20" y2="65" stroke="#8b5cf6" stroke-width="1.5" opacity="0.45"/>
+          <line x1="10" y1="30" x2="20" y2="30" stroke="#8b5cf6" stroke-width="1.5" opacity="0.45"/>
+          <text x="7" y="50" font-family="Nunito" font-size="9" font-weight="800" fill="#8b5cf6" opacity="0.6">A</text>
+          <text x="165" y="22" font-family="Nunito" font-size="10" font-weight="800" fill="#8b5cf6" opacity="0.6">v = fλ</text>
         </svg>
       </div>
       <div class="card-body">
-        <div class="module-icon">C6</div>
+        <div class="module-icon">P6</div>
         <div class="module-info">
-          <div class="module-title">Rate & Extent of Chemical Change</div>
-          <div class="module-sub">Collision theory · Catalysts · Equilibrium</div>
+          <div class="module-title">Waves</div>
+          <div class="module-sub">Properties · EM Spectrum · Sound</div>
         </div>
         <div class="arrow-btn">→</div>
       </div>
     </a>
 
-    <!-- C7 Organic Chemistry -->
-    <a href="module.html?subject=chemistry&module=c7" class="module-card c7">
+    <!-- P7 Magnetism -->
+    <a href="module.html?subject=physics&module=p7" class="module-card p7">
       <div class="card-image" style="background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);">
         <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg" width="290" height="130">
           <rect width="290" height="130" fill="#ec4899" opacity="0.08"/>
-          <!-- Structural formula CH4 -->
-          <circle cx="75" cy="65" r="10" fill="#ec4899" opacity="0.3"/>
-          <text x="75" y="70" font-family="Nunito" font-size="11" font-weight="900" text-anchor="middle" fill="#ec4899" opacity="0.8">C</text>
-          <line x1="75" y1="45" x2="75" y2="30" stroke="#ec4899" stroke-width="2" opacity="0.5"/>
-          <text x="75" y="25" font-family="Nunito" font-size="9" font-weight="800" text-anchor="middle" fill="#ec4899" opacity="0.6">H</text>
-          <line x1="75" y1="85" x2="75" y2="100" stroke="#ec4899" stroke-width="2" opacity="0.5"/>
-          <text x="75" y="115" font-family="Nunito" font-size="9" font-weight="800" text-anchor="middle" fill="#ec4899" opacity="0.6">H</text>
-          <line x1="55" y1="65" x2="40" y2="65" stroke="#ec4899" stroke-width="2" opacity="0.5"/>
-          <text x="32" y="70" font-family="Nunito" font-size="9" font-weight="800" text-anchor="middle" fill="#ec4899" opacity="0.6">H</text>
-          <line x1="95" y1="65" x2="110" y2="65" stroke="#ec4899" stroke-width="2" opacity="0.5"/>
-          <text x="118" y="70" font-family="Nunito" font-size="9" font-weight="800" text-anchor="middle" fill="#ec4899" opacity="0.6">H</text>
-          <!-- C=C double bond -->
-          <text x="155" y="45" font-family="Nunito" font-size="10" font-weight="800" fill="#ec4899" opacity="0.6">H₂C=CH₂</text>
-          <text x="155" y="62" font-family="Nunito" font-size="9" font-weight="700" fill="#ec4899" opacity="0.5">Ethene (alkene)</text>
-          <!-- Polymer chain -->
-          <rect x="145" y="75" width="115" height="22" rx="5" fill="#ec4899" opacity="0.1" stroke="#ec4899" stroke-width="1.5"/>
-          <text x="202" y="91" font-family="Nunito" font-size="9" font-weight="800" text-anchor="middle" fill="#ec4899" opacity="0.65">—CH₂—CH₂—]ₙ</text>
+          <!-- Magnet shape -->
+          <path d="M80 40 L80 80 Q80 95 95 95 Q110 95 110 80 L110 40 Z" fill="#ec4899" opacity="0.2" stroke="#ec4899" stroke-width="2"/>
+          <rect x="80" y="40" width="30" height="18" rx="3" fill="#ec4899" opacity="0.5"/>
+          <text x="95" y="54" font-family="Nunito" font-size="11" font-weight="900" fill="white" text-anchor="middle" opacity="0.9">N</text>
+          <path d="M130 40 L130 80 Q130 95 145 95 Q160 95 160 80 L160 40 Z" fill="#ec4899" opacity="0.15" stroke="#ec4899" stroke-width="2"/>
+          <rect x="130" y="40" width="30" height="18" rx="3" fill="#94a3b8" opacity="0.4"/>
+          <text x="145" y="54" font-family="Nunito" font-size="11" font-weight="900" fill="white" text-anchor="middle" opacity="0.9">S</text>
+          <!-- Field lines -->
+          <path d="M95 95 Q95 115 145 115 Q195 115 195 95" fill="none" stroke="#ec4899" stroke-width="1.8" opacity="0.4"/>
+          <path d="M95 80 Q95 108 145 108 Q195 108 195 80" fill="none" stroke="#ec4899" stroke-width="1.5" opacity="0.3"/>
+          <!-- Motor effect hint -->
+          <line x1="210" y1="45" x2="260" y2="45" stroke="#ec4899" stroke-width="2" opacity="0.5"/>
+          <polygon points="260,45 252,41 252,49" fill="#ec4899" opacity="0.5"/>
+          <line x1="235" y1="45" x2="235" y2="90" stroke="#ec4899" stroke-width="2" opacity="0.4"/>
+          <polygon points="235,90 231,82 239,82" fill="#ec4899" opacity="0.4"/>
+          <text x="200" y="110" font-family="Nunito" font-size="9" font-weight="800" fill="#ec4899" opacity="0.55">Motor effect</text>
         </svg>
       </div>
       <div class="card-body">
-        <div class="module-icon">C7</div>
+        <div class="module-icon">P7</div>
         <div class="module-info">
-          <div class="module-title">Organic Chemistry</div>
-          <div class="module-sub">Alkanes · Alkenes · Polymers · Alcohols</div>
-        </div>
-        <div class="arrow-btn">→</div>
-      </div>
-    </a>
-
-    <!-- C8 Chemical Analysis -->
-    <a href="module.html?subject=chemistry&module=c8" class="module-card c8">
-      <div class="card-image" style="background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);">
-        <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg" width="290" height="130">
-          <rect width="290" height="130" fill="#14b8a6" opacity="0.08"/>
-          <!-- Chromatography paper -->
-          <rect x="55" y="20" width="80" height="100" rx="4" fill="#14b8a6" opacity="0.08" stroke="#14b8a6" stroke-width="1.5"/>
-          <!-- Spots on chromatogram -->
-          <circle cx="80" cy="45" r="7" fill="#e85d4a" opacity="0.5"/>
-          <circle cx="80" cy="65" r="6" fill="#f59e0b" opacity="0.5"/>
-          <circle cx="80" cy="82" r="7" fill="#6366f1" opacity="0.5"/>
-          <circle cx="110" cy="55" r="6" fill="#f59e0b" opacity="0.45"/>
-          <circle cx="110" cy="82" r="7" fill="#6366f1" opacity="0.45"/>
-          <!-- Solvent line -->
-          <line x1="55" y1="35" x2="135" y2="35" stroke="#14b8a6" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
-          <!-- Baseline -->
-          <line x1="55" y1="105" x2="135" y2="105" stroke="#14b8a6" stroke-width="2" opacity="0.5"/>
-          <!-- Flame test colours -->
-          <circle cx="185" cy="45" r="14" fill="#f59e0b" opacity="0.5"/>
-          <text x="185" y="50" font-family="Nunito" font-size="8" font-weight="800" text-anchor="middle" fill="white">Na</text>
-          <circle cx="220" cy="45" r="14" fill="#8b5cf6" opacity="0.5"/>
-          <text x="220" y="50" font-family="Nunito" font-size="8" font-weight="800" text-anchor="middle" fill="white">K</text>
-          <circle cx="185" cy="82" r="14" fill="#e85d4a" opacity="0.5"/>
-          <text x="185" y="87" font-family="Nunito" font-size="8" font-weight="800" text-anchor="middle" fill="white">Li</text>
-          <circle cx="220" cy="82" r="14" fill="#f97316" opacity="0.5"/>
-          <text x="220" y="87" font-family="Nunito" font-size="8" font-weight="800" text-anchor="middle" fill="white">Ca</text>
-          <text x="155" y="118" font-family="Nunito" font-size="9" font-weight="800" fill="#14b8a6" opacity="0.6">Rf = dist. spot ÷ dist. solvent</text>
-        </svg>
-      </div>
-      <div class="card-body">
-        <div class="module-icon">C8</div>
-        <div class="module-info">
-          <div class="module-title">Chemical Analysis</div>
-          <div class="module-sub">Chromatography · Flame tests · Ion tests</div>
-        </div>
-        <div class="arrow-btn">→</div>
-      </div>
-    </a>
-
-    <!-- C9 Chemistry of the Atmosphere -->
-    <a href="module.html?subject=chemistry&module=c9" class="module-card c9">
-      <div class="card-image" style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);">
-        <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg" width="290" height="130">
-          <rect width="290" height="130" fill="#3b82f6" opacity="0.08"/>
-          <!-- Earth arc -->
-          <path d="M30 120 Q145 20 260 120" fill="none" stroke="#3b82f6" stroke-width="2.5" opacity="0.4"/>
-          <!-- Atmosphere layers -->
-          <path d="M20 115 Q145 5 270 115" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.35"/>
-          <path d="M10 110 Q145 -5 280 110" fill="none" stroke="#3b82f6" stroke-width="1" stroke-dasharray="5,3" opacity="0.25"/>
-          <!-- Sun -->
-          <circle cx="245" cy="32" r="18" fill="#f59e0b" opacity="0.25" stroke="#f59e0b" stroke-width="2"/>
-          <!-- Radiation arrows -->
-          <line x1="228" y1="45" x2="195" y2="75" stroke="#f59e0b" stroke-width="2" opacity="0.5"/>
-          <polygon points="195,75 200,65 205,73" fill="#f59e0b" opacity="0.5"/>
-          <!-- CO2 molecule -->
-          <circle cx="80" cy="60" r="8" fill="#3b82f6" opacity="0.3"/>
-          <circle cx="60" cy="60" r="6" fill="#e85d4a" opacity="0.35"/>
-          <circle cx="100" cy="60" r="6" fill="#e85d4a" opacity="0.35"/>
-          <line x1="68" y1="60" x2="72" y2="60" stroke="#3b82f6" stroke-width="2" opacity="0.5"/>
-          <line x1="88" y1="60" x2="94" y2="60" stroke="#3b82f6" stroke-width="2" opacity="0.5"/>
-          <text x="70" y="90" font-family="Nunito" font-size="10" font-weight="800" fill="#3b82f6" opacity="0.6">CO₂ · CH₄ · H₂O</text>
-        </svg>
-      </div>
-      <div class="card-body">
-        <div class="module-icon">C9</div>
-        <div class="module-info">
-          <div class="module-title">Chemistry of the Atmosphere</div>
-          <div class="module-sub">Evolution of atmosphere · Greenhouse effect · Pollution</div>
-        </div>
-        <div class="arrow-btn">→</div>
-      </div>
-    </a>
-
-    <!-- C10 Using Resources -->
-    <a href="module.html?subject=chemistry&module=c10" class="module-card c10">
-      <div class="card-image" style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);">
-        <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg" width="290" height="130">
-          <rect width="290" height="130" fill="#16a34a" opacity="0.08"/>
-          <!-- Recycling arrows -->
-          <path d="M100 65 Q100 35 130 30 Q160 25 170 50" fill="none" stroke="#16a34a" stroke-width="2.5" opacity="0.55"/>
-          <polygon points="170,50 162,42 175,44" fill="#16a34a" opacity="0.55"/>
-          <path d="M170 65 Q185 90 165 105 Q145 120 120 110" fill="none" stroke="#16a34a" stroke-width="2.5" opacity="0.55"/>
-          <polygon points="120,110 128,118 118,120" fill="#16a34a" opacity="0.55"/>
-          <path d="M100 75 Q80 90 85 108 Q90 120 110 115" fill="none" stroke="#16a34a" stroke-width="2.5" opacity="0.55"/>
-          <polygon points="110,115 100,110 107,120" fill="#16a34a" opacity="0.55"/>
-          <!-- Water droplet -->
-          <path d="M220 30 Q220 20 230 30 Q240 45 230 52 Q220 45 220 30 Z" fill="#3b82f6" opacity="0.35"/>
-          <!-- Phytomining plant -->
-          <line x1="245" y1="100" x2="245" y2="65" stroke="#16a34a" stroke-width="2" opacity="0.5"/>
-          <path d="M245 75 Q255 65 265 70 Q255 80 245 75 Z" fill="#16a34a" opacity="0.4"/>
-          <path d="M245 85 Q235 75 225 80 Q235 90 245 85 Z" fill="#16a34a" opacity="0.35"/>
-          <text x="35" y="118" font-family="Nunito" font-size="9" font-weight="800" fill="#16a34a" opacity="0.6">LCA · Potable water · Phytomining</text>
-        </svg>
-      </div>
-      <div class="card-body">
-        <div class="module-icon">C10</div>
-        <div class="module-info">
-          <div class="module-title">Using Resources</div>
-          <div class="module-sub">Water · LCA · Corrosion · Materials</div>
+          <div class="module-title">Magnetism & Electromagnetism</div>
+          <div class="module-sub">Magnets · Motor effect · Induction</div>
         </div>
         <div class="arrow-btn">→</div>
       </div>
