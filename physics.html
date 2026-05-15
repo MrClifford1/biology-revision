@@ -66,6 +66,7 @@
   <div class="topnav-right">
     <a href="progress.html">📊 My Progress</a>
     <span class="topnav-user" id="nav-user"></span>
+    <button onclick="handleSignOut()" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#94a3b8;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.8rem;padding:0.35rem 0.75rem;border-radius:8px;cursor:pointer;transition:all 0.2s" onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">Sign out</button>
   </div>
 </nav>
 
@@ -329,20 +330,24 @@
         <svg viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg"><rect width="290" height="130" fill="#d946ef" opacity="0.07"/><path d="M80 95 L80 30 Q80 25 85 25 L145 35 L145 95 Z" fill="#d946ef" opacity="0.15" stroke="#d946ef" stroke-width="2"/><path d="M210 95 L210 30 Q210 25 205 25 L145 35 L145 95 Z" fill="#d946ef" opacity="0.12" stroke="#d946ef" stroke-width="2"/><line x1="145" y1="35" x2="145" y2="95" stroke="#d946ef" stroke-width="2.5" opacity="0.6"/><circle cx="240" cy="40" r="16" fill="#d946ef" opacity="0.18" stroke="#d946ef" stroke-width="2"/></svg>
         <div class="coming-soon-badge" style="background:#d946ef">Coming Soon</div>
       </div>
-      <div class="card-body" style="opacity:0.6;"><div class="module-icon" style="background:#d946ef">💡</div><div class="module-info"><div class="module-title">Practical & Study Skills</div><div class="module-sub">Command words · Exam technique</div></div><div class="arrow-btn" style="background:#cbd5e1">→</div></div>
+      <div class="card-body" style="opacity:0.6;"><div class="module-icon" style="background:#d946ef">💡</div><div class="module-info"><div class="module-title">Study Skills</div><div class="module-sub">Command words · Exam technique</div></div><div class="arrow-btn" style="background:#cbd5e1">→</div></div>
     </div>
 
   </div>
 </main>
 
 <script type="module">
-  import { onAuthChange } from './firebase.js';
+  import { onAuthChange, signOutUser } from './firebase.js';
   onAuthChange(user => {
     if (!user) { window.location.href = 'login.html'; return; }
     document.getElementById('auth-loading').style.display = 'none';
     const navUser = document.getElementById('nav-user');
     if (navUser) navUser.textContent = user.displayName?.split(' ')[0] || '';
   });
+  window.handleSignOut = async () => {
+    await signOutUser();
+    window.location.href = 'login.html';
+  };
 </script>
 </body>
 </html>
