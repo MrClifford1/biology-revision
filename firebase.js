@@ -73,11 +73,19 @@ export async function updateExamTarget(uid, examTarget, yearGroup) {
 export const RAG_INPUT_WEIGHTS = {
   mock:      1.0,   // Mini Mock question
   paper:     1.0,   // Practice Paper question
-  words:     0.3,   // Keywords game correct match
+  words:     0.4,   // Keywords game correct match
+  flashcard: 0.15,  // Flashcard recognition/recall
   // Future — just add a line:
   // cloze:   0.6,
   // diagram: 0.6,
-  // flashcard: 0.2,
+};
+
+// Activity score caps — limits how high each activity type can push a topic score
+export const RAG_SCORE_CAPS = {
+  mock:      100,
+  paper:     100,
+  words:     60,    // Words game caps at Approaching tier
+  flashcard: 20,    // Flashcards cap at Beginning tier
 };
 
 // Decay rates: % score lost per day of inactivity (after 7-day grace period)
@@ -158,8 +166,9 @@ export function computeNewTopicScore(currentEntry, activityPct, inputType) {
   // Weighted nudge: moves score toward activityPct, scaled by weight
   const nudged = oldScore + (activityPct - oldScore) * weight;
 
-  // Cap score based on evidence — must demonstrate consistency to reach higher tiers
-  const cap = evidenceCap(attempts);
+  // Apply both evidence cap (attempts-based) and activity type cap
+  const activityCap = RAG_SCORE_CAPS[inputType] ?? 100;
+  const cap = Math.min(evidenceCap(attempts), activityCap);
   const newScore = Math.min(cap, Math.max(0, Math.round(nudged * 10) / 10));
 
   // Retained logic: track when Mastered tier is first reached
