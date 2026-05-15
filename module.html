@@ -394,15 +394,20 @@
   <div class="tab-panel" id="tab-keywords">
     <div id="keywords-panel">
       <div class="game-status">
-        <div style="display:flex;align-items:center;gap:1.5rem;">
+        <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
           <div>
             <div class="timer-display" id="timer-display">0:00</div>
             <div style="font-size:0.7rem;color:var(--subtext);margin-top:0.15rem">Time elapsed</div>
           </div>
           <div class="score-display" id="score-display">Drag words to their definitions</div>
         </div>
-        <button class="btn-primary" id="start-game-btn">▶ Start Game</button>
-        <button class="btn-primary" id="submit-game-btn" style="display:none">Submit →</button>
+        <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">
+          <select id="words-topic-select" style="border:1.5px solid var(--border);border-radius:8px;padding:0.4rem 0.75rem;font-family:'Nunito Sans',sans-serif;font-size:0.8rem;color:var(--text);background:white;cursor:pointer;outline:none">
+            <option value="all">All topics (mixed)</option>
+          </select>
+          <button class="btn-primary" id="start-game-btn">▶ Start Game</button>
+          <button class="btn-primary" id="submit-game-btn" style="display:none">Submit →</button>
+        </div>
       </div>
       <div class="game-area" id="game-area" style="display:none">
         <div class="words-col" id="words-col"></div>
@@ -1061,6 +1066,7 @@ async function loadKeywords() {
     if (!res.ok) res = await fetch(`data/${moduleId}-keywords.json`);
     keywords = await res.json();
     initFCTopicFilter();
+    buildWordsTopicFilter();
   } catch(e) { keywords = []; }
 }
 
@@ -1070,26 +1076,63 @@ function fmt(s) { return `${Math.floor(s/60)}:${(s%60).toString().padStart(2,'0'
 let currentPlacements = {};
 let gamePairs = [];
 
+function buildWordsTopicFilter() {
+  const topics = [...new Set(keywords.map(k => k.sub_topic).filter(Boolean))];
+  const sel = document.getElementById('words-topic-select');
+  sel.innerHTML = '<option value="all">All topics (mixed)</option>';
+  topics.forEach(t => {
+    const opt = document.createElement('option');
+    opt.value = t; opt.textContent = t;
+    sel.appendChild(opt);
+  });
+}
+
 function startGame() {
   if (!keywords.length) { document.getElementById('score-display').textContent = 'Keywords not loaded yet.'; return; }
   hideRAG();
   secondsElapsed = 0; matchedCount = 0;
   currentPlacements = {};
 
-  // Weight selection by RAG — prioritise weaker topics
-  const weighted = [...keywords].map(k => ({ k, sort: Math.random() * fcRagWeight(k) }))
+  const selectedTopic = document.getElementById('words-topic-select').value;
+
+  // Pool to pick words from
+  let pool = selectedTopic === 'all'
+    ? [...keywords]
+    : keywords.filter(k => k.sub_topic === selectedTopic);
+
+  // Fallback if topic too small
+  if (pool.length < 3) pool = [...keywords];
+
+  // RAG-weighted shuffle of pool
+  const weighted = pool.map(k => ({ k, sort: Math.random() * fcRagWeight(k) }))
     .sort((a, b) => b.sort - a.sort).map(x => x.k);
-  gamePairs = weighted.slice(0, 5);
+
+  // Pick 5 words to match
+  const WORD_COUNT = Math.min(5, pool.length);
+  gamePairs = weighted.slice(0, WORD_COUNT);
   totalPairs = gamePairs.length;
 
-  const defs = [...gamePairs].sort(() => Math.random() - 0.5);
+  // Build distractor definitions
+  // Distractors = keywords NOT in gamePairs, preferably from same topic
+  const gamePairWords = new Set(gamePairs.map(p => p.word));
+  let distractorPool = pool.filter(k => !gamePairWords.has(k.word));
+  // If same-topic pool is exhausted, pull from all keywords
+  if (distractorPool.length < 2) {
+    distractorPool = keywords.filter(k => !gamePairWords.has(k.word));
+  }
+  const distractors = distractorPool.sort(() => Math.random() - 0.5).slice(0, 2);
+
+  // All definitions shown = gamePairs + distractors, shuffled
+  const allDefs = [...gamePairs, ...distractors].sort(() => Math.random() - 0.5);
+
   document.getElementById('start-game-btn').style.display = 'none';
   document.getElementById('submit-game-btn').style.display = 'inline-flex';
   document.getElementById('game-area').style.display = 'grid';
   document.getElementById('game-result').style.display = 'none';
   document.getElementById('timer-display').textContent = '0:00';
-  document.getElementById('score-display').textContent = 'Drag all words then submit';
+  document.getElementById('score-display').textContent = `${totalPairs} words · ${allDefs.length} definitions — drag all words then submit`;
 
+  // Render word chips
   const wc = document.getElementById('words-col'); wc.innerHTML = '';
   gamePairs.forEach(pair => {
     const chip = document.createElement('div');
@@ -1102,12 +1145,15 @@ function startGame() {
     wc.appendChild(chip);
   });
 
+  // Render definition drop zones (includes distractors)
   const dc = document.getElementById('defs-col'); dc.innerHTML = '';
-  defs.forEach(pair => {
+  allDefs.forEach(pair => {
     const drop = document.createElement('div');
     drop.className = 'def-drop';
     drop.dataset.word = pair.word;
-    drop.innerHTML = `<span class="def-text">${pair.definition}</span><span class="def-placed" style="font-weight:700;font-size:0.8rem;color:var(--accent);margin-left:0.5rem"></span>`;
+    // Mark distractors so submit knows they have no correct word
+    drop.dataset.isDistractor = gamePairWords.has(pair.word) ? 'false' : 'true';
+    drop.innerHTML = `<span class="def-text">${pair.definition}</span><span class="def-placed" style="font-weight:700;font-size:0.8rem;color:var(--accent);margin-left:0.5rem;flex-shrink:0"></span>`;
     drop.addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('drag-over'); });
     drop.addEventListener('dragleave', () => drop.classList.remove('drag-over'));
     drop.addEventListener('drop', e => { e.preventDefault(); drop.classList.remove('drag-over'); placeWord(drop); });
@@ -1158,17 +1204,40 @@ function submitGame() {
   clearInterval(timerInterval);
   let correct = 0;
   const resultPairs = [];
+
   document.querySelectorAll('.def-drop').forEach(drop => {
     const correctWord = drop.dataset.word;
+    const isDistractor = drop.dataset.isDistractor === 'true';
     const placedWord = currentPlacements[correctWord];
-    const isCorrect = placedWord === correctWord;
-    if (isCorrect) {
-      correct++;
-      drop.classList.add('correct');
+
+    if (isDistractor) {
+      // Distractor — correct if nothing placed on it
+      if (!placedWord) {
+        drop.classList.add('correct');
+      } else {
+        // Student wasted a word here — mark red
+        drop.classList.add('incorrect');
+        resultPairs.push({
+          definition: drop.querySelector('.def-text').textContent,
+          correctWord: '(distractor — no match)',
+          placedWord,
+          isCorrect: false,
+          isDistractor: true
+        });
+      }
     } else {
-      drop.classList.add('incorrect');
+      const isCorrect = placedWord === correctWord;
+      if (isCorrect) {
+        correct++;
+        drop.classList.add('correct');
+      } else {
+        drop.classList.add('incorrect');
+      }
+      resultPairs.push({
+        definition: drop.querySelector('.def-text').textContent,
+        correctWord, placedWord, isCorrect, isDistractor: false
+      });
     }
-    resultPairs.push({ definition: drop.querySelector('.def-text').textContent, correctWord, placedWord, isCorrect });
   });
 
   document.getElementById('game-area').style.display = 'none';
@@ -1177,17 +1246,19 @@ function submitGame() {
   document.getElementById('result-time').textContent = fmt(secondsElapsed);
   document.getElementById('result-score-text').textContent = `${correct} / ${totalPairs} correct`;
 
-  // Show pair breakdown
+  // Show breakdown — only show actual pairs (not distractors that were correctly ignored)
   const pairsEl = document.getElementById('result-pairs');
   pairsEl.innerHTML = resultPairs.map(p => `
-    <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;padding:0.4rem 0.6rem;border-radius:8px;background:${p.isCorrect ? '#f0fdf4' : '#fef2f2'}">
+    <div style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.8rem;padding:0.4rem 0.6rem;border-radius:8px;background:${p.isCorrect ? '#f0fdf4' : '#fef2f2'}">
       <span>${p.isCorrect ? '✅' : '❌'}</span>
-      <span style="font-weight:700">${p.correctWord}</span>
-      ${!p.isCorrect ? `<span style="color:#94a3b8">— you said: ${p.placedWord || 'not placed'}</span>` : ''}
+      <div>
+        <span style="font-weight:700">${p.isDistractor ? 'Distractor' : p.correctWord}</span>
+        ${!p.isCorrect && p.placedWord ? `<div style="color:#94a3b8;margin-top:0.1rem">You put: ${p.placedWord}</div>` : ''}
+        ${!p.isCorrect && !p.placedWord && !p.isDistractor ? `<div style="color:#94a3b8;margin-top:0.1rem">Not placed</div>` : ''}
+      </div>
     </div>`).join('');
 
-  // Feed into RAG
-  const pct = (correct / totalPairs) * 100;
+  // Feed into RAG — only real pairs
   if (window._currentUser) {
     gamePairs.forEach(pair => {
       const placed = currentPlacements[pair.word];
