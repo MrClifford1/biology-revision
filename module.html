@@ -363,8 +363,8 @@
 <div class="tabs-wrapper">
   <div class="tabs">
     <button class="tab-btn active" data-tab="revision">📖 Revise</button>
-    <button class="tab-btn" data-tab="keywords">🔤 Words</button>
     <button class="tab-btn" data-tab="flashcards">🃏 Flashcards</button>
+    <button class="tab-btn" data-tab="keywords">🔤 Words</button>
     <button class="tab-btn" data-tab="practice">✏️ Mini Mock</button>
     <button class="tab-btn" data-tab="paper">📝 Paper</button>
   </div>
@@ -665,8 +665,13 @@ const TIER_META = {
 };
 
 const RAG_INPUT_WEIGHTS = {
-  mock: 1.0, paper: 1.0, words: 0.3, flashcard: 0.2,
+  mock: 1.0, paper: 1.0, words: 0.4, flashcard: 0.15,
   // Future: cloze: 0.6, diagram: 0.6,
+};
+
+// Activity score caps — limits how high each activity type can push a topic
+const RAG_SCORE_CAPS = {
+  mock: 100, paper: 100, words: 60, flashcard: 20,
 };
 
 function computeTier(score) {
@@ -706,7 +711,9 @@ function computeNewTopicScore(currentEntry, activityPct, inputType) {
   const attempts = (currentEntry?.attempts ?? 0) + 1;
   const now = new Date().toISOString();
   const nudged = oldScore + (activityPct - oldScore) * weight;
-  const cap = evidenceCap(attempts);
+  // Apply both evidence cap (attempts-based) and activity type cap
+  const activityCap = (typeof RAG_SCORE_CAPS !== 'undefined' ? RAG_SCORE_CAPS[inputType] : null) ?? 100;
+  const cap = Math.min(evidenceCap(attempts), activityCap);
   const newScore = Math.min(cap, Math.max(0, Math.round(nudged * 10) / 10));
   let retainedSince = currentEntry?.retainedSince ?? null;
   let retained = currentEntry?.retained ?? false;
