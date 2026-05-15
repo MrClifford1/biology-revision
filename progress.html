@@ -170,24 +170,24 @@
       color: var(--subtext);
     }
 
-    /* RAG SUMMARY */
+    /* RAG SUMMARY v2 */
     .rag-row {
       display: flex;
-      gap: 0.4rem;
+      gap: 0.35rem;
       margin-top: 0.6rem;
       flex-wrap: wrap;
     }
     .rag-chip {
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 700;
-      padding: 0.2rem 0.55rem;
+      padding: 0.18rem 0.5rem;
       border-radius: 100px;
       font-family: 'Nunito', sans-serif;
     }
-    .rag-chip.green { background: #dcfce7; color: #16a34a; }
-    .rag-chip.amber { background: #fef3c7; color: #d97706; }
-    .rag-chip.red { background: #fee2e2; color: #dc2626; }
-    .rag-chip.grey { background: #f1f5f9; color: #94a3b8; }
+    /* tier progress bar on module cards */
+    .tier-bar-wrap { background: #e2e8f0; border-radius: 100px; height: 6px; overflow: hidden; margin-top: 0.5rem; margin-bottom: 0.25rem; }
+    .tier-bar-fill { height: 100%; border-radius: 100px; transition: width 0.6s ease; }
+    .tier-summary { font-size: 0.72rem; color: var(--subtext); display: flex; justify-content: space-between; margin-bottom: 0.4rem; }
 
     /* RECENT MOCKS */
     .mocks-list { display: flex; flex-direction: column; gap: 0.6rem; }
@@ -461,9 +461,40 @@
             ? Math.round(mocks.reduce((s, m) => s + m.pct, 0) / mocks.length)
             : 0;
           const rag = data?.rag || {};
-          const ragCounts = { green: 0, amber: 0, red: 0, grey: 0 };
-          Object.values(rag).forEach(v => { ragCounts[v || 'grey']++; });
-          const total = Object.values(ragCounts).reduce((a, b) => a + b, 0);
+
+          // New v2 tier system
+          const TIER_META_P = {
+            not_started: { label: 'Not Started', emoji: '⬜', colour: '#cbd5e1' },
+            beginning:   { label: 'Beginning',   emoji: '🔴', colour: '#ef4444' },
+            developing:  { label: 'Developing',  emoji: '🟠', colour: '#f97316' },
+            approaching: { label: 'Approaching', emoji: '🟡', colour: '#eab308' },
+            confident:   { label: 'Confident',   emoji: '🟢', colour: '#22c55e' },
+            mastered:    { label: 'Mastered',    emoji: '💙', colour: '#3b82f6' },
+          };
+          function computeTierP(score) {
+            if (!score || score === 0) return 'not_started';
+            if (score <= 33) return 'beginning';
+            if (score <= 55) return 'developing';
+            if (score <= 75) return 'approaching';
+            if (score <= 89) return 'confident';
+            return 'mastered';
+          }
+
+          const tierCounts = { not_started:0, beginning:0, developing:0, approaching:0, confident:0, mastered:0 };
+          let avgTopicScore = 0, topicCount = 0;
+          Object.values(rag).forEach(entry => {
+            const score = typeof entry === 'object' ? (entry?.score ?? 0) : 0;
+            tierCounts[computeTierP(score)]++;
+            avgTopicScore += score;
+            topicCount++;
+          });
+          if (topicCount > 0) avgTopicScore = Math.round(avgTopicScore / topicCount);
+
+          const topTiers = Object.entries(tierCounts)
+            .filter(([,n]) => n > 0)
+            .sort((a,b) => ['mastered','confident','approaching','developing','beginning','not_started'].indexOf(a[0]) - ['mastered','confident','approaching','developing','beginning','not_started'].indexOf(b[0]))
+            .slice(0, 3);
+
           return `
             <div class="module-progress-card" style="border-left-color: ${meta.colour}">
               <div class="module-progress-header">
@@ -482,11 +513,16 @@
                   <span>Last: ${lastScore ? lastScore.pct + '%' : '—'}</span>
                 </div>
               ` : `<div style="font-size:0.78rem;color:#94a3b8">No mocks attempted yet</div>`}
-              ${total > 0 ? `
+              ${topicCount > 0 ? `
+                <div class="tier-bar-wrap">
+                  <div class="tier-bar-fill" style="width:${avgTopicScore}%;background:${TIER_META_P[computeTierP(avgTopicScore)].colour}"></div>
+                </div>
+                <div class="tier-summary">
+                  <span>Topic avg: ${avgTopicScore}%</span>
+                  <span>${TIER_META_P[computeTierP(avgTopicScore)].emoji} ${TIER_META_P[computeTierP(avgTopicScore)].label}</span>
+                </div>
                 <div class="rag-row">
-                  ${ragCounts.green > 0 ? `<span class="rag-chip green">✅ ${ragCounts.green} confident</span>` : ''}
-                  ${ragCounts.amber > 0 ? `<span class="rag-chip amber">⚠️ ${ragCounts.amber} getting there</span>` : ''}
-                  ${ragCounts.red > 0 ? `<span class="rag-chip red">❌ ${ragCounts.red} need work</span>` : ''}
+                  ${topTiers.map(([tier, n]) => `<span class="rag-chip" style="background:${TIER_META_P[tier].colour}22;color:${TIER_META_P[tier].colour}">${TIER_META_P[tier].emoji} ${n} ${TIER_META_P[tier].label}</span>`).join('')}
                 </div>
               ` : ''}
               <a href="module.html?subject=${meta.subject}&module=${id}" style="display:inline-block;margin-top:0.75rem;font-size:0.78rem;color:${meta.colour};font-weight:700;text-decoration:none">Revise ${id.toUpperCase()} →</a>
