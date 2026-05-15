@@ -602,15 +602,15 @@ function renderChecklist(state) {
     li.className = 'topic-item';
     li.style.borderLeftColor = tm.colour;
     li.style.background = tm.bg;
-    li.innerHTML = \`
-      <span class="topic-item-name">\${topicName}</span>
+    li.innerHTML = `
+      <span class="topic-item-name">${topicName}</span>
       <div class="topic-bar-wrap">
-        <div class="topic-bar-fill" style="width:\${score}%;background:\${tm.colour}"></div>
+        <div class="topic-bar-fill" style="width:${score}%;background:${tm.colour}"></div>
       </div>
-      <span class="topic-pct">\${score > 0 ? Math.round(score) + '%' : ''}</span>
-      <span class="topic-tier-label" style="color:\${tm.colour}">\${tm.emoji} \${tm.label}</span>
-      <span class="topic-icons">\${isRetained ? '⭐' : ''}\${isDecaying ? ' 📉' : ''}</span>
-    \`;
+      <span class="topic-pct">${score > 0 ? Math.round(score) + '%' : ''}</span>
+      <span class="topic-tier-label" style="color:${tm.colour}">${tm.emoji} ${tm.label}</span>
+      <span class="topic-icons">${isRetained ? '⭐' : ''}${isDecaying ? ' 📉' : ''}</span>
+    `;
     list.appendChild(li);
   });
   // Show card now that it has content
@@ -622,7 +622,7 @@ function renderChecklist(state) {
 
 async function reloadRAGFromHistory(uid) {
   try {
-    const loaded = await window._loadRAG(uid, \`\${subjectId}-\${moduleId}\`);
+    const loaded = await window._loadRAG(uid, `${subjectId}-${moduleId}`);
     renderChecklist(loaded || {});
     // After mock/paper, update topic scores from question results
     if (window._pendingRAGUpdates && window._pendingRAGUpdates.length > 0) {
@@ -636,7 +636,7 @@ async function reloadRAGFromHistory(uid) {
         currentState[topicName] = computeNewTopicScore(currentState[topicName] || null, activityPct, inputType);
       }
       renderChecklist(currentState);
-      if (window._saveRAG) await window._saveRAG(uid, \`\${subjectId}-\${moduleId}\`, currentState);
+      if (window._saveRAG) await window._saveRAG(uid, `${subjectId}-${moduleId}`, currentState);
     }
   } catch(e) { console.log('RAG reload failed:', e); }
 }
@@ -1105,6 +1105,7 @@ loadQuestions();
       await reloadRAGFromHistory(window._currentUser.uid);
     } catch(e) { console.log('Could not save score:', e); }
   };
+</script>
 <!-- SETTINGS OVERLAY + DRAWER -->
 <div class="settings-overlay hidden" id="settings-overlay" onclick="closeSettings()"></div>
 <div class="settings-drawer hidden" id="settings-drawer">
