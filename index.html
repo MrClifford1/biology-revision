@@ -202,6 +202,11 @@
 
 <div class="top-bar">
   <div class="top-bar-school">The Streetly Academy · Science Department</div>
+  <div id="staff-top-links" style="display:none;display:flex;gap:0.4rem;align-items:center;margin-left:auto;margin-right:0.75rem">
+    <a href="teacher.html" id="teacher-link-top" style="display:none;background:#6366f1;color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:6px;text-decoration:none;white-space:nowrap">👨‍🏫 Teacher</a>
+    <a href="admin.html" id="admin-link-top" style="display:none;background:#e85d4a;color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:6px;text-decoration:none;white-space:nowrap">🏫 Admin</a>
+    <a href="superadmin.html" id="superadmin-link-top" style="display:none;background:#c8202c;color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:6px;text-decoration:none;white-space:nowrap">🛡️ Super Admin</a>
+  </div>
   <a href="https://www.streetly.academy/" target="_blank">School Website ↗</a>
 </div>
 
@@ -238,9 +243,6 @@
     </div>
     <div class="user-actions">
       <a href="progress.html" class="btn-sm">📊 My Progress</a>
-      <a href="teacher.html" class="btn-sm" id="teacher-link" style="display:none;background:#6366f1;color:white;border-color:#6366f1">👨‍🏫 Teacher Dashboard</a>
-      <a href="admin.html" class="btn-sm" id="admin-link" style="display:none;background:#e85d4a;color:white;border-color:#e85d4a">🏫 Admin Panel</a>
-      <a href="superadmin.html" class="btn-sm" id="superadmin-link" style="display:none;background:#c8202c;color:white;border-color:#c8202c">🛡️ Super Admin</a>
       <button class="btn-sm" id="settings-cog-btn" onclick="openSettings()" title="Settings">⚙️</button>
       <button class="btn-sm" onclick="handleSignOut()">Sign out</button>
     </div>
@@ -494,15 +496,18 @@
       : '';
     greeting.innerHTML = `${avatarHTML} <span>Welcome back, <strong>${user.displayName?.split(' ')[0] || 'Student'}</strong>!</span> ${classTag}`;
 
-    // Show role-appropriate nav buttons
+    // Show role-appropriate top-bar links
     if (staff) {
-      document.getElementById('teacher-link').style.display = 'inline-flex';
+      document.getElementById('teacher-link-top').style.display = 'inline-flex';
+      document.getElementById('staff-top-links').style.display = 'flex';
     }
     if (canAccessAdmin(role)) {
-      document.getElementById('admin-link').style.display = 'inline-flex';
+      document.getElementById('admin-link-top').style.display = 'inline-flex';
+      document.getElementById('staff-top-links').style.display = 'flex';
     }
     if (isSuperAdmin(user.email)) {
-      document.getElementById('superadmin-link').style.display = 'inline-flex';
+      document.getElementById('superadmin-link-top').style.display = 'inline-flex';
+      document.getElementById('staff-top-links').style.display = 'flex';
     }
 
     // Teachers auto-assigned to Teachers class — skip picker
@@ -513,6 +518,11 @@
       document.getElementById('drawer-class-display').textContent = 'Teachers';
       // Load assignments for teachers too (they may have set their own)
       return;
+    }
+
+    // Show name prompt if no name set (e.g. non-Google accounts)
+    if (!user.displayName && !profile?.name) {
+      document.getElementById('name-modal').classList.remove('hidden');
     }
 
     // Show class picker if no valid class set
@@ -632,11 +642,51 @@
     location.reload();
   };
 
+  window.confirmName = async () => {
+    const first = document.getElementById('name-first').value.trim();
+    const last = document.getElementById('name-last').value.trim();
+    if (!first || !last) {
+      alert('Please enter both your first and last name.');
+      return;
+    }
+    const fullName = `${first} ${last}`;
+    const { setDoc, doc } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js');
+    const { db } = await import('./firebase.js');
+    await setDoc(doc(db, 'users', currentUser.uid), { name: fullName }, { merge: true });
+    document.getElementById('name-modal').classList.add('hidden');
+    // Update greeting
+    const greeting = document.getElementById('user-greeting');
+    if (greeting) {
+      const strong = greeting.querySelector('strong');
+      if (strong) strong.textContent = first;
+    }
+  };
+
   window.handleSignOut = async () => {
     const { signOutUser } = await import('./firebase.js');
     await signOutUser();
     window.location.href = 'login.html';
   };
 </script>
+
+<!-- NAME PROMPT MODAL — shown to Other accounts with no display name -->
+<div class="modal-overlay hidden" id="name-modal">
+  <div class="modal-box">
+    <div class="modal-logo">
+      <svg viewBox="0 0 88 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M44 0 L88 14 L88 50 Q88 80 44 100 Q0 80 0 50 L0 14 Z" fill="#c8202c" stroke="#d4a534" stroke-width="2"/>
+        <text x="44" y="58" font-family="Nunito" font-size="22" font-weight="900" fill="white" text-anchor="middle">SSH</text>
+      </svg>
+    </div>
+    <div class="modal-title">What's your name?</div>
+    <div class="modal-sub" style="margin-bottom:1rem">So your teacher can identify you in the dashboard, please enter your first and last name.</div>
+    <div style="display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1rem">
+      <input type="text" id="name-first" placeholder="First name" style="border:1.5px solid var(--border);border-radius:8px;padding:0.6rem 0.85rem;font-family:'Nunito Sans',sans-serif;font-size:0.9rem;width:100%;outline:none" />
+      <input type="text" id="name-last" placeholder="Last name" style="border:1.5px solid var(--border);border-radius:8px;padding:0.6rem 0.85rem;font-family:'Nunito Sans',sans-serif;font-size:0.9rem;width:100%;outline:none" />
+    </div>
+    <div style="font-size:0.75rem;color:var(--subtext);margin-bottom:1rem">This is only visible to your teacher and is not shared publicly.</div>
+    <button class="btn-modal-confirm" id="confirm-name-btn" onclick="confirmName()">Save My Name</button>
+  </div>
+</div>
 </body>
 </html>
