@@ -141,21 +141,36 @@ export function isClassValid(profile) {
 
 // ── ROLES ─────────────────────────────────────────────────────────────────────
 export async function getUserRole(email) {
+  if (email === 'n.clifford@thestreetlyacademy.co.uk') return 'superadmin';
   const snap = await getDoc(doc(db, 'roles', email));
   if (!snap.exists()) return 'student';
   return snap.data().role || 'student';
 }
 
-export async function addTeacherRole(email, addedByUid) {
+export async function addRole(email, role, addedByUid) {
   await setDoc(doc(db, 'roles', email), {
-    role: 'teacher',
+    role,
     addedBy: addedByUid,
     addedAt: serverTimestamp(),
   });
 }
 
-export async function removeTeacherRole(email) {
+// Keep backwards compat
+export async function addTeacherRole(email, addedByUid) {
+  return addRole(email, 'teacher', addedByUid);
+}
+
+export async function addAdminRole(email, addedByUid) {
+  return addRole(email, 'admin', addedByUid);
+}
+
+export async function removeRole(email) {
   await deleteDoc(doc(db, 'roles', email));
+}
+
+// Keep backwards compat
+export async function removeTeacherRole(email) {
+  return removeRole(email);
 }
 
 export async function getAllTeachers() {
@@ -165,12 +180,26 @@ export async function getAllTeachers() {
     .map(d => ({ email: d.id, ...d.data() }));
 }
 
+export async function getAllStaff() {
+  const snap = await getDocs(collection(db, 'roles'));
+  return snap.docs.map(d => ({ email: d.id, ...d.data() }));
+}
+
 export async function getAllStudents() {
   const snap = await getDocs(collection(db, 'users'));
   return snap.docs.map(d => ({ uid: d.id, ...d.data() }));
 }
 
-// ── TEACHER PROFILE ───────────────────────────────────────────────────────────
+// ── ROLE HELPERS ──────────────────────────────────────────────────────────────
+export function isStaffRole(role) {
+  return ['teacher','admin','superadmin'].includes(role);
+}
+export function canAccessAdmin(role) {
+  return ['admin','superadmin'].includes(role);
+}
+export function isSuperAdmin(email) {
+  return email === 'n.clifford@thestreetlyacademy.co.uk';
+}
 export async function saveTeacherClasses(uid, classes) {
   await setDoc(doc(db, 'teachers', uid), { classes, updatedAt: serverTimestamp() }, { merge: true });
 }
