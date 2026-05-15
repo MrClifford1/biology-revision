@@ -257,6 +257,11 @@
   <a href="javascript:history.back()">← Back</a>
   <a href="progress.html" id="progress-link" style="display:none">📊 My Progress</a>
   <span class="topnav-title" id="nav-title">Revision</span>
+  <div id="staff-nav-links" style="display:none;gap:0.4rem;align-items:center;margin-left:0.5rem">
+    <a href="teacher.html" id="nav-teacher-link" style="display:none;background:#6366f1;color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:6px;text-decoration:none;white-space:nowrap">👨‍🏫 Teacher</a>
+    <a href="admin.html" id="nav-admin-link" style="display:none;background:#e85d4a;color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:6px;text-decoration:none;white-space:nowrap">🏫 Admin</a>
+    <a href="superadmin.html" id="nav-superadmin-link" style="display:none;background:#c8202c;color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:6px;text-decoration:none;white-space:nowrap">🛡️ Super Admin</a>
+  </div>
   <div class="useful-links-wrap">
     <button class="useful-links-btn" id="useful-links-btn">
       🔗 Useful Links <span class="chevron">▼</span>
@@ -1087,6 +1092,19 @@ loadQuestions();
     if (navTitle) navTitle.innerHTML = `${meta.title} &nbsp;·&nbsp; <span style="color:#94a3b8;font-size:0.8rem">${user.displayName?.split(' ')[0]||''}</span>`;
     const pl = document.getElementById('progress-link');
     if (pl) pl.style.display = 'flex';
+
+    // Show staff nav links based on role
+    try {
+      const { getUserRole } = await import('./firebase.js');
+      const role = await getUserRole(user.email);
+      const wrap = document.getElementById('staff-nav-links');
+      if (wrap && ['teacher','admin','superadmin'].includes(role)) {
+        wrap.style.display = 'flex';
+        document.getElementById('nav-teacher-link').style.display = 'inline-flex';
+      }
+      if (['admin','superadmin'].includes(role)) document.getElementById('nav-admin-link').style.display = 'inline-flex';
+      if (role === 'superadmin') document.getElementById('nav-superadmin-link').style.display = 'inline-flex';
+    } catch(e) {}
 
     // Load saved RAG state (decay applied inside loadRAG)
     const state = await window._loadRAG(user.uid, `${subjectId}-${moduleId}`);
