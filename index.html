@@ -576,14 +576,19 @@
 
   window.confirmClass = async () => {
     if (!currentUser || !selectedClass) return;
-    await saveClass(currentUser.uid, selectedClass);
-    document.getElementById('class-modal').classList.add('hidden');
-    document.getElementById('drawer-class-display').textContent = selectedClass;
-    // Update greeting tag
-    const tag = document.querySelector('.user-greeting span span');
-    if (tag) tag.textContent = selectedClass;
-    const profile = await import('./firebase.js').then(m => m.getUserProfile(currentUser.uid));
-    location.reload();
+    const btn = document.getElementById('confirm-class-btn');
+    btn.disabled = true;
+    btn.textContent = 'Saving...';
+    try {
+      await saveClass(currentUser.uid, selectedClass);
+      document.getElementById('class-modal').classList.add('hidden');
+      location.reload();
+    } catch(e) {
+      console.error('saveClass failed:', e);
+      btn.disabled = false;
+      btn.textContent = 'Save My Class';
+      alert('Something went wrong saving your class. Please try again.');
+    }
   };
 
   // ── SETTINGS DRAWER ────────────────────────────────────────────────────────
