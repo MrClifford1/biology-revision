@@ -8,13 +8,13 @@
   <style>
     :root {
       --navy: #1a2a4f; --navy-dark: #0f1d3d; --red: #c8202c; --gold: #d4a534;
-      --bg: #f5f6fa; --text: #1a2a4f; --subtext: #5a6885; --border: #e2e6f0; --card: #ffffff;
-      --green: #16a34a; --green-light: #dcfce7; --amber: #d97706; --amber-light: #fef3c7;
+      --purple: #7c3aed; --bg: #f5f6fa; --text: #1a2a4f; --subtext: #5a6885;
+      --border: #e2e6f0; --card: #ffffff;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Nunito Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
 
-    /* AUTH GATE */
+    /* ── AUTH SCREENS ──────────────────────────────────────────────────────────── */
     #auth-loading { position:fixed;inset:0;background:var(--navy-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999; }
     #access-denied { position:fixed;inset:0;background:var(--navy-dark);display:none;flex-direction:column;align-items:center;justify-content:center;z-index:9999;gap:1rem; }
     #access-denied h2 { color:white;font-family:'Nunito',sans-serif;font-size:1.5rem; }
@@ -23,134 +23,118 @@
     .spinner { width:32px;height:32px;border:3px solid rgba(255,255,255,0.2);border-top-color:white;border-radius:50%;animation:spin 0.8s linear infinite; }
     @keyframes spin { to { transform:rotate(360deg); } }
 
-    /* NAV */
+    /* ── NAV ───────────────────────────────────────────────────────────────────── */
     .topnav { background:var(--navy-dark);padding:0.7rem 1.5rem;display:flex;align-items:center;gap:1rem; }
     .topnav a { color:#94a3b8;text-decoration:none;font-size:0.875rem;font-weight:600;transition:color 0.2s; }
     .topnav a:hover { color:white; }
     .topnav-title { color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.95rem;margin-left:auto; }
-    .teacher-badge { background:#6366f1;color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:100px;text-transform:uppercase;letter-spacing:0.08em; }
+    .teacher-badge { background:var(--purple);color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:100px;text-transform:uppercase;letter-spacing:0.08em; }
 
-    /* PAGE HEADER */
+    /* ── HEADER ─────────────────────────────────────────────────────────────────── */
     .page-header { background:linear-gradient(135deg,var(--navy) 0%,var(--navy-dark) 100%);color:white;padding:1.5rem 2rem; }
-    .page-header-inner { max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem; }
+    .page-header-inner { max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap; }
     .page-header h1 { font-family:'Nunito',sans-serif;font-size:1.5rem;font-weight:900; }
     .page-header p { color:#c5cee8;font-size:0.875rem;margin-top:0.2rem; }
 
-    /* CLASS SELECTOR */
-    .class-selector-bar { background:white;border-bottom:1px solid var(--border);padding:0.75rem 1.5rem; }
-    .class-selector-inner { max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:1rem;flex-wrap:wrap; }
-    .class-selector-label { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.07em;white-space:nowrap; }
-    .class-chips { display:flex;gap:0.4rem;flex-wrap:wrap;flex:1; }
-    .class-chip-btn { border:2px solid var(--border);background:#f8fafc;border-radius:8px;padding:0.35rem 0.75rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;color:var(--subtext);cursor:pointer;transition:all 0.18s; }
-    .class-chip-btn:hover { border-color:var(--navy);color:var(--navy); }
-    .class-chip-btn.active { background:var(--navy);border-color:var(--navy);color:white; }
-    .btn-manage-classes { border:1.5px solid var(--border);background:white;border-radius:8px;padding:0.35rem 0.85rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.78rem;color:var(--subtext);cursor:pointer;transition:all 0.18s;white-space:nowrap; }
-    .btn-manage-classes:hover { border-color:var(--navy);color:var(--navy); }
+    /* ── CLASS SELECTOR BAR ─────────────────────────────────────────────────────── */
+    .class-bar { background:white;border-bottom:1px solid var(--border);padding:0.85rem 1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap; }
+    .class-bar label { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.07em;white-space:nowrap; }
+    .class-select { border:1.5px solid var(--border);border-radius:8px;padding:0.45rem 0.85rem;font-family:'Nunito Sans',sans-serif;font-size:0.875rem;color:var(--text);background:white;cursor:pointer;min-width:120px; }
+    .class-select:focus { outline:none;border-color:var(--navy); }
+    .btn-settings { background:none;border:1.5px solid var(--border);color:var(--subtext);font-family:'Nunito',sans-serif;font-weight:700;font-size:0.8rem;padding:0.4rem 0.85rem;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:0.4rem;transition:all 0.18s; }
+    .btn-settings:hover { border-color:var(--navy);color:var(--navy); }
+    .student-count { font-size:0.8rem;color:var(--subtext);margin-left:auto; }
 
-    /* MAIN */
-    main { max-width:1200px;margin:0 auto;padding:1.5rem 1.5rem 4rem; }
+    /* ── TABS ────────────────────────────────────────────────────────────────────── */
+    .tabs-wrap { max-width:1100px;margin:0 auto;padding:0 1.5rem; }
+    .tabs { display:flex;gap:0.5rem;padding-top:1.1rem;padding-bottom:0.5rem;overflow-x:auto;scrollbar-width:none; }
+    .tabs::-webkit-scrollbar { display:none; }
+    .tab-btn { background:#f1f5f9;border:1.5px solid var(--border);padding:0.55rem 1.2rem;font-family:'Nunito',sans-serif;font-size:0.875rem;font-weight:800;color:var(--subtext);cursor:pointer;border-radius:10px;white-space:nowrap;transition:all 0.18s; }
+    .tab-btn:hover { background:white;border-color:var(--purple);color:var(--purple); }
+    .tab-btn.active { background:var(--purple);border-color:var(--purple);color:white; }
 
-    /* TABS */
-    .dash-tabs { display:flex;gap:0.5rem;margin-bottom:1.5rem;border-bottom:2px solid var(--border);padding-bottom:0; }
-    .dash-tab { background:none;border:none;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.875rem;color:var(--subtext);padding:0.65rem 1.1rem;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all 0.18s; }
-    .dash-tab:hover { color:var(--navy); }
-    .dash-tab.active { color:var(--navy);border-bottom-color:var(--navy); }
-    .dash-panel { display:none; }
-    .dash-panel.active { display:block; }
+    main { max-width:1100px;margin:0 auto;padding:1.25rem 1.5rem 3rem; }
+    .tab-panel { display:none; }
+    .tab-panel.active { display:block; }
 
-    /* STAT CARDS */
-    .stats-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.5rem; }
-    .stat-card { background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.25rem;display:flex;align-items:center;gap:0.85rem; }
-    .stat-icon { width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0; }
-    .stat-num { font-family:'Nunito',sans-serif;font-weight:900;font-size:1.6rem;color:var(--navy);line-height:1; }
-    .stat-label { font-size:0.72rem;color:var(--subtext);margin-top:0.1rem; }
+    /* ── CARDS ───────────────────────────────────────────────────────────────────── */
+    .card { background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.5rem;margin-bottom:1.25rem; }
+    .section-label { font-family:'Nunito',sans-serif;font-weight:900;font-size:0.85rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.85rem; }
 
-    /* SECTION */
-    .section-title { font-family:'Nunito',sans-serif;font-weight:900;font-size:0.95rem;color:var(--navy);margin-bottom:0.85rem;display:flex;align-items:center;gap:0.5rem; }
-    .card { background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.25rem 1.5rem;margin-bottom:1.25rem; }
+    /* ── OVERVIEW TABLE ──────────────────────────────────────────────────────────── */
+    .student-table { width:100%;border-collapse:collapse; }
+    .student-table th { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--subtext);padding:0.5rem 0.75rem;text-align:left;border-bottom:2px solid var(--border);background:#f8fafc; }
+    .student-table td { padding:0.6rem 0.75rem;font-size:0.85rem;border-bottom:1px solid var(--border);vertical-align:middle; }
+    .student-table tr:last-child td { border-bottom:none; }
+    .student-table tr:hover td { background:#f8fafc; }
+    .student-name { font-weight:700;color:var(--text); }
+    .student-email { font-size:0.75rem;color:var(--subtext); }
+    .mock-count { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem; }
+    .avg-badge { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;padding:0.18rem 0.55rem;border-radius:100px; }
+    .avg-high { background:#dcfce7;color:#16a34a; }
+    .avg-mid { background:#fef3c7;color:#d97706; }
+    .avg-low { background:#fee2e2;color:#dc2626; }
+    .avg-none { background:#f1f5f9;color:#94a3b8; }
+    .last-active { font-size:0.75rem;color:var(--subtext); }
 
-    /* RAG HEATMAP */
+    /* ── HEATMAP ─────────────────────────────────────────────────────────────────── */
     .heatmap-wrap { overflow-x:auto; }
-    .heatmap-table { border-collapse:collapse;font-size:0.72rem;min-width:100%; }
-    .heatmap-table th { padding:0.4rem 0.5rem;font-family:'Nunito',sans-serif;font-weight:800;color:var(--subtext);text-align:left;border-bottom:2px solid var(--border);white-space:nowrap; }
-    .heatmap-table th.topic-th { font-size:0.65rem;text-align:center;max-width:60px;overflow:hidden;writing-mode:vertical-rl;transform:rotate(180deg);height:80px;padding:0.25rem; }
-    .heatmap-table td { padding:0.3rem 0.4rem;border-bottom:1px solid #f1f5f9;vertical-align:middle; }
-    .heatmap-table tr:hover td { background:#f8fafc; }
-    .student-name-cell { font-weight:700;font-size:0.8rem;white-space:nowrap;min-width:120px; }
-    .rag-cell { width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.6rem;font-weight:800;margin:0 auto; }
-    .rag-cell.green { background:#dcfce7;color:#16a34a; }
-    .rag-cell.amber { background:#fef3c7;color:#d97706; }
-    .rag-cell.red { background:#fee2e2;color:#dc2626; }
-    .rag-cell.grey { background:#f1f5f9;color:#94a3b8; }
-    .rag-cell.hatched { background:repeating-linear-gradient(45deg,#f1f5f9,#f1f5f9 3px,#e2e8f0 3px,#e2e8f0 6px);color:#94a3b8; }
-    .avg-cell { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.78rem;text-align:center; }
+    .heatmap-table { border-collapse:collapse;font-size:0.75rem;width:100%; }
+    .heatmap-table th { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--subtext);padding:0.4rem 0.5rem;text-align:center;border-bottom:2px solid var(--border);white-space:nowrap; }
+    .heatmap-table th.name-col { text-align:left;min-width:120px; }
+    .heatmap-table td { padding:0.3rem 0.35rem;border:1px solid var(--border);text-align:center;min-width:44px; }
+    .heatmap-table td.name-cell { text-align:left;font-weight:700;font-size:0.8rem;padding:0.3rem 0.75rem;white-space:nowrap;background:white; }
+    .heat-cell { border-radius:6px;padding:0.25rem 0.2rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;display:block;line-height:1.2; }
+    .subject-header { background:var(--bg);font-family:'Nunito',sans-serif;font-weight:900;font-size:0.7rem;padding:0.3rem 0.5rem;color:var(--navy);text-align:center;letter-spacing:0.04em; }
 
-    /* MODULE SELECTOR FOR HEATMAP */
-    .module-filter { display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:1rem; }
-    .module-filter-btn { border:1.5px solid var(--border);background:white;border-radius:8px;padding:0.3rem 0.7rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.75rem;color:var(--subtext);cursor:pointer;transition:all 0.18s; }
-    .module-filter-btn:hover { border-color:var(--navy);color:var(--navy); }
-    .module-filter-btn.active { background:var(--navy);border-color:var(--navy);color:white; }
+    /* ── ASSIGNMENTS ─────────────────────────────────────────────────────────────── */
+    .assignment-form { display:grid;grid-template-columns:1fr 1fr;gap:0.85rem; }
+    .form-field { display:flex;flex-direction:column;gap:0.3rem; }
+    .form-field.full { grid-column:1/-1; }
+    .form-label { font-family:'Nunito',sans-serif;font-weight:700;font-size:0.8rem;color:var(--subtext); }
+    .form-input { border:1.5px solid var(--border);border-radius:8px;padding:0.55rem 0.85rem;font-family:'Nunito Sans',sans-serif;font-size:0.875rem;color:var(--text);transition:border-color 0.2s; }
+    .form-input:focus { outline:none;border-color:var(--navy); }
+    .class-checkbox-grid { display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.2rem; }
+    .class-checkbox-label { display:flex;align-items:center;gap:0.3rem;font-size:0.8rem;cursor:pointer;padding:0.25rem 0.55rem;border:1.5px solid var(--border);border-radius:6px;transition:all 0.15s; }
+    .class-checkbox-label:hover { border-color:var(--purple); }
+    .class-checkbox-label input { accent-color:var(--purple); }
+    .class-checkbox-label.checked { border-color:var(--purple);background:#f3f0ff; }
+    .btn-create { background:var(--purple);color:white;border:none;border-radius:10px;padding:0.65rem 1.5rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;cursor:pointer;transition:background 0.18s;margin-top:0.5rem; }
+    .btn-create:hover { background:#6d28d9; }
+    .btn-create:disabled { background:#cbd5e1;cursor:not-allowed; }
+    .form-msg { font-size:0.8rem;font-weight:700;margin-top:0.4rem;display:none; }
+    .form-msg.success { color:#16a34a;display:block; }
+    .form-msg.error { color:var(--red);display:block; }
 
-    /* STUDENT TABLE */
-    .student-overview-table { width:100%;border-collapse:collapse;font-size:0.83rem; }
-    .student-overview-table th { text-align:left;padding:0.5rem 0.75rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--subtext);border-bottom:2px solid var(--border); }
-    .student-overview-table td { padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);vertical-align:middle; }
-    .student-overview-table tr:last-child td { border-bottom:none; }
-    .student-overview-table tr:hover td { background:#f8fafc; }
-    .pct-bar-wrap { height:6px;background:#f1f5f9;border-radius:3px;width:80px;display:inline-block;vertical-align:middle;margin-left:0.5rem; }
-    .pct-bar { height:6px;border-radius:3px; }
-    .at-risk-badge { display:inline-block;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.65rem;padding:0.15rem 0.45rem;border-radius:100px;background:#fee2e2;color:#dc2626; }
-    .active-badge { display:inline-block;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.65rem;padding:0.15rem 0.45rem;border-radius:100px;background:var(--green-light);color:var(--green); }
-
-    /* ASSIGNMENT PANEL */
-    .assignment-form { display:grid;grid-template-columns:1fr 1fr;gap:1rem; }
-    .form-group { display:flex;flex-direction:column;gap:0.35rem; }
-    .form-group.full { grid-column:1/-1; }
-    .form-label { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.78rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.06em; }
-    .form-input, .form-select, .form-textarea {
-      border:1.5px solid var(--border);border-radius:10px;padding:0.6rem 0.85rem;
-      font-family:'Nunito Sans',sans-serif;font-size:0.875rem;color:var(--text);
-      outline:none;transition:border-color 0.2s;background:white;
-    }
-    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--navy); }
-    .form-textarea { resize:vertical;min-height:70px; }
-    .class-multi-select { display:flex;flex-wrap:wrap;gap:0.4rem; }
-    .class-multi-btn { border:2px solid var(--border);background:#f8fafc;border-radius:8px;padding:0.3rem 0.65rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.75rem;color:var(--subtext);cursor:pointer;transition:all 0.18s; }
-    .class-multi-btn:hover { border-color:var(--navy);color:var(--navy); }
-    .class-multi-btn.selected { background:var(--navy);border-color:var(--navy);color:white; }
-    .btn-create-assignment { background:var(--navy);color:white;border:none;border-radius:10px;padding:0.7rem 1.5rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;cursor:pointer;transition:background 0.18s; }
-    .btn-create-assignment:hover { background:var(--navy-dark); }
-    .btn-create-assignment:disabled { background:#cbd5e1;cursor:not-allowed; }
-
-    /* EXISTING ASSIGNMENTS */
     .assignment-list { display:flex;flex-direction:column;gap:0.6rem; }
-    .assignment-row { display:flex;align-items:center;gap:1rem;padding:0.85rem 1rem;background:var(--bg);border:1px solid var(--border);border-radius:12px;border-left:4px solid var(--navy); }
-    .assignment-row.past { opacity:0.55;border-left-color:#94a3b8; }
-    .assignment-subject-badge { font-family:'Nunito',sans-serif;font-weight:900;font-size:0.7rem;padding:0.2rem 0.55rem;border-radius:100px;background:#e0e7ff;color:var(--navy);flex-shrink:0; }
-    .assignment-title { font-weight:700;font-size:0.875rem;flex:1; }
-    .assignment-meta { font-size:0.75rem;color:var(--subtext);white-space:nowrap; }
-    .assignment-classes { display:flex;gap:0.3rem;flex-wrap:wrap; }
-    .assignment-class-chip { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.65rem;padding:0.1rem 0.4rem;border-radius:100px;background:#f1f5f9;color:var(--subtext); }
-    .btn-delete-assignment { background:none;border:1.5px solid var(--border);color:var(--subtext);border-radius:6px;padding:0.25rem 0.6rem;font-size:0.72rem;font-family:'Nunito',sans-serif;font-weight:700;cursor:pointer;transition:all 0.18s; }
-    .btn-delete-assignment:hover { border-color:var(--red);color:var(--red);background:#fff5f5; }
+    .assignment-row { background:white;border:1px solid var(--border);border-radius:12px;padding:0.9rem 1.1rem;display:flex;align-items:flex-start;gap:1rem;flex-wrap:wrap; }
+    .assignment-info { flex:1; }
+    .assignment-title { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem; }
+    .assignment-meta { font-size:0.75rem;color:var(--subtext);margin-top:0.2rem;display:flex;gap:0.75rem;flex-wrap:wrap; }
+    .assignment-classes { display:flex;gap:0.3rem;flex-wrap:wrap;margin-top:0.35rem; }
+    .class-tag { background:#e0e7ff;color:#6366f1;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.65rem;padding:0.15rem 0.45rem;border-radius:100px; }
+    .btn-delete { background:none;border:1.5px solid var(--border);color:var(--subtext);border-radius:8px;padding:0.3rem 0.65rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.75rem;cursor:pointer;transition:all 0.18s;flex-shrink:0; }
+    .btn-delete:hover { border-color:var(--red);color:var(--red);background:#fff5f5; }
 
-    /* CLASS MANAGEMENT MODAL */
-    .modal-overlay { position:fixed;inset:0;background:rgba(15,29,61,0.65);z-index:1000;display:flex;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(4px); }
-    .modal-overlay.hidden { display:none; }
-    .modal-box { background:white;border-radius:20px;padding:2rem;max-width:480px;width:100%;box-shadow:0 24px 60px rgba(0,0,0,0.25); }
-    .modal-title { font-family:'Nunito',sans-serif;font-weight:900;font-size:1.2rem;color:var(--navy);margin-bottom:0.35rem; }
-    .modal-sub { font-size:0.83rem;color:var(--subtext);margin-bottom:1.25rem;line-height:1.5; }
-    .year-section-title { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--subtext);margin-bottom:0.5rem;margin-top:1rem; }
-    .year-section-title:first-child { margin-top:0; }
-    .class-multi-grid { display:grid;grid-template-columns:repeat(5,1fr);gap:0.4rem;margin-bottom:0.25rem; }
-    .btn-save-classes { width:100%;background:var(--navy);color:white;border:none;border-radius:12px;padding:0.8rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.95rem;cursor:pointer;margin-top:1.25rem;transition:background 0.18s; }
+    /* ── MY CLASSES MODAL ────────────────────────────────────────────────────────── */
+    .modal-overlay { position:fixed;inset:0;background:rgba(15,29,61,0.55);z-index:800;display:none;align-items:center;justify-content:center; }
+    .modal-overlay.open { display:flex; }
+    .modal { background:white;border-radius:20px;padding:2rem;max-width:520px;width:90%;max-height:80vh;overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,0.25); }
+    .modal h2 { font-family:'Nunito',sans-serif;font-weight:900;font-size:1.1rem;margin-bottom:1rem; }
+    .class-toggle-grid { display:grid;grid-template-columns:repeat(5,1fr);gap:0.5rem;margin-bottom:1.25rem; }
+    .class-toggle { border:2px solid var(--border);background:#f8fafc;border-radius:8px;padding:0.5rem 0.2rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;color:var(--text);cursor:pointer;transition:all 0.18s;text-align:center; }
+    .class-toggle:hover { border-color:var(--purple);background:#f3f0ff; }
+    .class-toggle.selected { border-color:var(--purple);background:var(--purple);color:white; }
+    .btn-save-classes { background:var(--navy);color:white;border:none;border-radius:10px;padding:0.65rem 1.5rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;cursor:pointer;transition:background 0.18s; }
     .btn-save-classes:hover { background:var(--navy-dark); }
+    .btn-modal-close { background:none;border:1.5px solid var(--border);color:var(--subtext);border-radius:8px;padding:0.5rem 1rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.85rem;cursor:pointer;margin-right:0.5rem; }
 
     .empty-state { text-align:center;padding:2.5rem;color:var(--subtext);font-size:0.875rem; }
+    .loading-state { text-align:center;padding:2rem;color:var(--subtext);font-size:0.875rem; }
 
     @media (max-width:700px) {
-      .stats-grid { grid-template-columns:repeat(2,1fr); }
       .assignment-form { grid-template-columns:1fr; }
+      .class-toggle-grid { grid-template-columns:repeat(4,1fr); }
     }
   </style>
 </head>
@@ -158,7 +142,7 @@
 
 <div id="auth-loading">
   <div class="spinner"></div>
-  <div style="color:white;font-family:'Nunito',sans-serif;font-weight:800;margin-top:1rem">Loading dashboard...</div>
+  <div style="color:white;font-family:'Nunito',sans-serif;font-weight:800;margin-top:1rem">Checking access...</div>
 </div>
 
 <div id="access-denied">
@@ -166,658 +150,492 @@
     <path d="M44 0 L88 14 L88 50 Q88 80 44 100 Q0 80 0 50 L0 14 Z" fill="#c8202c" stroke="#d4a534" stroke-width="2"/>
   </svg>
   <h2>Access Denied</h2>
-  <p>This page is only accessible to teachers and admins.</p>
-  <a href="index.html">← Back to Hub</a>
+  <p>This page is only accessible to teachers and above.</p>
+  <p style="color:#64748b;font-size:0.8rem;margin-top:0.25rem">Signed in as <span id="denied-email" style="color:#94a3b8"></span></p>
+  <div style="display:flex;gap:0.75rem;margin-top:0.5rem;flex-wrap:wrap;justify-content:center">
+    <a href="index.html">← Back to Hub</a>
+    <button onclick="handleSignOut()" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#94a3b8;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.875rem;padding:0.4rem 1rem;border-radius:8px;cursor:pointer">Switch Account →</button>
+  </div>
 </div>
 
 <div id="page-content" style="display:none">
 
   <nav class="topnav">
     <a href="index.html">← Home</a>
-    <span class="topnav-title">Teacher Dashboard</span>
-    <span class="teacher-badge">Teacher</span>
-    <button onclick="openClassManager()" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#94a3b8;font-size:0.8rem;padding:0.4rem 0.85rem;border-radius:8px;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:700;margin-left:0.5rem">⚙️ My Classes</button>
-    <button onclick="handleSignOut()" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#94a3b8;font-size:0.8rem;padding:0.4rem 0.85rem;border-radius:8px;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:700;margin-left:0.25rem">Sign out</button>
+    <span class="topnav-title" id="nav-name">Teacher Dashboard</span>
+    <span class="teacher-badge" id="role-badge">Teacher</span>
+    <button onclick="handleSignOut()" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#94a3b8;font-size:0.8rem;padding:0.4rem 0.85rem;border-radius:8px;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:700;margin-left:0.5rem">Sign out</button>
   </nav>
 
   <div class="page-header">
     <div class="page-header-inner">
       <div>
         <h1>👨‍🏫 Teacher Dashboard</h1>
-        <p id="teacher-welcome">Welcome back</p>
+        <p>Class overview, RAG heatmap and assignment management.</p>
       </div>
     </div>
   </div>
 
-  <!-- CLASS SELECTOR -->
-  <div class="class-selector-bar">
-    <div class="class-selector-inner">
-      <div class="class-selector-label">Viewing class:</div>
-      <div class="class-chips" id="class-chips">
-        <span style="color:var(--subtext);font-size:0.83rem">No classes set — click ⚙️ My Classes to get started</span>
-      </div>
+  <!-- Class selector bar -->
+  <div class="class-bar">
+    <label>Viewing class:</label>
+    <select class="class-select" id="class-select" onchange="loadClassData()">
+      <option value="">— Select a class —</option>
+    </select>
+    <button class="btn-settings" onclick="openMyClasses()">⚙️ My Classes</button>
+    <span class="student-count" id="student-count"></span>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs-wrap">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="overview">📋 Class Overview</button>
+      <button class="tab-btn" data-tab="heatmap">🗺️ RAG Heatmap</button>
+      <button class="tab-btn" data-tab="assignments">📌 Assignments</button>
     </div>
   </div>
 
   <main>
 
-    <!-- DASH TABS -->
-    <div class="dash-tabs">
-      <button class="dash-tab active" onclick="switchTab('overview', this)">📊 Class Overview</button>
-      <button class="dash-tab" onclick="switchTab('heatmap', this)">🟥 RAG Heatmap</button>
-      <button class="dash-tab" onclick="switchTab('assignments', this)">📋 Assignments</button>
-    </div>
-
-    <!-- ── OVERVIEW TAB ──────────────────────────────────────────────────────── -->
-    <div class="dash-panel active" id="panel-overview">
-      <div class="stats-grid" id="overview-stats">
-        <div class="stat-card"><div class="stat-icon" style="background:#e0e7ff">🧑‍🎓</div><div><div class="stat-num" id="stat-students">—</div><div class="stat-label">Students in class</div></div></div>
-        <div class="stat-card"><div class="stat-icon" style="background:#dcfce7">✅</div><div><div class="stat-num" id="stat-active">—</div><div class="stat-label">Active this week</div></div></div>
-        <div class="stat-card"><div class="stat-icon" style="background:#fef3c7">📝</div><div><div class="stat-num" id="stat-mocks">—</div><div class="stat-label">Mocks completed</div></div></div>
-        <div class="stat-card"><div class="stat-icon" style="background:#fee2e2">⚠️</div><div><div class="stat-num" id="stat-atrisk">—</div><div class="stat-label">No activity 2+ weeks</div></div></div>
-      </div>
-
-      <div class="section-title">🧑‍🎓 Student Overview</div>
-      <div class="card" style="padding:0;overflow:hidden">
-        <div id="student-overview-wrap">
-          <div class="empty-state">Select a class above to view students.</div>
+    <!-- ── TAB: CLASS OVERVIEW ──────────────────────────────────────────────────── -->
+    <div class="tab-panel active" id="tab-overview">
+      <div class="card">
+        <div class="section-label">Student Overview</div>
+        <div id="overview-content">
+          <div class="empty-state">Select a class above to view student data.</div>
         </div>
       </div>
     </div>
 
-    <!-- ── HEATMAP TAB ───────────────────────────────────────────────────────── -->
-    <div class="dash-panel" id="panel-heatmap">
+    <!-- ── TAB: RAG HEATMAP ─────────────────────────────────────────────────────── -->
+    <div class="tab-panel" id="tab-heatmap">
       <div class="card">
-        <div class="section-title">🟥 RAG Topic Heatmap</div>
-        <p style="font-size:0.8rem;color:var(--subtext);margin-bottom:1rem">Each cell shows a student's RAG status for that topic, calculated automatically from their mock scores. Select a module below.</p>
-        <div class="module-filter" id="module-filter"></div>
-        <div class="heatmap-wrap" id="heatmap-wrap">
-          <div class="empty-state">Select a class and module to view the heatmap.</div>
+        <div class="section-label">Topic Confidence Heatmap</div>
+        <p style="font-size:0.8rem;color:var(--subtext);margin-bottom:1rem">Each cell shows a student's average topic score for a module. Colour indicates tier. Select a class above.</p>
+        <div id="heatmap-content">
+          <div class="empty-state">Select a class above to view the heatmap.</div>
         </div>
       </div>
     </div>
 
-    <!-- ── ASSIGNMENTS TAB ──────────────────────────────────────────────────── -->
-    <div class="dash-panel" id="panel-assignments">
-
-      <div class="section-title">➕ Create Assignment</div>
+    <!-- ── TAB: ASSIGNMENTS ─────────────────────────────────────────────────────── -->
+    <div class="tab-panel" id="tab-assignments">
       <div class="card">
-        <div class="assignment-form">
-
-          <div class="form-group">
-            <div class="form-label">Subject</div>
-            <select class="form-select" id="assign-subject" onchange="updateAssignmentType()">
-              <option value="">Select subject…</option>
-              <option value="Biology">🧬 Biology</option>
-              <option value="Chemistry">🧪 Chemistry</option>
-              <option value="Physics">⚡ Physics</option>
+        <div class="section-label">Create Assignment</div>
+        <div class="assignment-form" id="assignment-form">
+          <div class="form-field full">
+            <label class="form-label">Title</label>
+            <input type="text" class="form-input" id="assign-title" placeholder="e.g. B1 Mini Mock by Friday" />
+          </div>
+          <div class="form-field">
+            <label class="form-label">Subject</label>
+            <select class="form-input" id="assign-subject">
+              <option value="biology">Biology</option>
+              <option value="chemistry">Chemistry</option>
+              <option value="physics">Physics</option>
             </select>
           </div>
-
-          <div class="form-group">
-            <div class="form-label">Assignment Type</div>
-            <select class="form-select" id="assign-type" onchange="updateAssignmentLink()">
-              <option value="">Select type…</option>
-              <optgroup label="Single module" id="optgroup-modules"></optgroup>
-              <optgroup label="Full paper">
-                <option value="paper1">Paper 1</option>
-                <option value="paper2">Paper 2</option>
-              </optgroup>
+          <div class="form-field">
+            <label class="form-label">Type</label>
+            <select class="form-input" id="assign-type">
+              <option value="mini_mock">Mini Mock</option>
+              <option value="paper">Practice Paper</option>
+              <option value="revision">Revision</option>
+              <option value="keywords">Keywords Game</option>
             </select>
           </div>
-
-          <div class="form-group">
-            <div class="form-label">Due Date</div>
+          <div class="form-field">
+            <label class="form-label">Due Date</label>
             <input type="date" class="form-input" id="assign-due" />
           </div>
-
-          <div class="form-group">
-            <div class="form-label">Title (auto-filled, editable)</div>
-            <input type="text" class="form-input" id="assign-title" placeholder="e.g. Complete B3 Mini Mock" />
+          <div class="form-field">
+            <label class="form-label">Link (optional)</label>
+            <input type="url" class="form-input" id="assign-link" placeholder="https://..." />
           </div>
-
-          <div class="form-group full">
-            <div class="form-label">Assign to classes</div>
-            <div class="class-multi-select" id="assign-classes"></div>
+          <div class="form-field full">
+            <label class="form-label">Note to students (optional)</label>
+            <input type="text" class="form-input" id="assign-note" placeholder="Focus on the last 3 topics..." />
           </div>
-
-          <div class="form-group full">
-            <div class="form-label">Note to students (optional)</div>
-            <textarea class="form-textarea" id="assign-note" placeholder="e.g. Focus on the written questions — use full sentences!"></textarea>
+          <div class="form-field full">
+            <label class="form-label">Assign to classes</label>
+            <div class="class-checkbox-grid" id="assign-classes"></div>
           </div>
-
         </div>
-        <div style="margin-top:1rem;display:flex;align-items:center;gap:1rem">
-          <button class="btn-create-assignment" onclick="createAssignmentHandler()">📋 Set Assignment</button>
-          <span id="assign-msg" style="font-size:0.8rem;font-weight:700;display:none"></span>
-        </div>
+        <button class="btn-create" id="create-btn" onclick="createAssignmentHandler()">📌 Create Assignment</button>
+        <div class="form-msg" id="assign-msg"></div>
       </div>
 
-      <div class="section-title">📋 All Assignments</div>
-      <div id="assignments-list-wrap">
-        <div class="empty-state">Loading assignments...</div>
+      <div class="card">
+        <div class="section-label">Active Assignments</div>
+        <div id="assignments-list"><div class="loading-state">Loading assignments...</div></div>
       </div>
-
     </div>
 
   </main>
 </div>
 
-<!-- CLASS MANAGER MODAL -->
-<div class="modal-overlay hidden" id="class-modal">
-  <div class="modal-box">
-    <div class="modal-title">⚙️ My Classes</div>
-    <div class="modal-sub">Select all the classes you teach. This determines which classes appear in your dashboard. You can update this at any time.</div>
-    <div id="class-manager-grid"></div>
-    <button class="btn-save-classes" onclick="saveMyClasses()">Save My Classes</button>
-    <button onclick="closeClassManager()" style="width:100%;background:none;border:none;margin-top:0.75rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.83rem;color:var(--subtext);cursor:pointer">Cancel</button>
+<!-- ── MY CLASSES MODAL ──────────────────────────────────────────────────────── -->
+<div class="modal-overlay" id="classes-modal">
+  <div class="modal">
+    <h2>⚙️ My Classes</h2>
+    <p style="font-size:0.82rem;color:var(--subtext);margin-bottom:1rem">Select the classes you teach. These will appear in your class selector and assignment form.</p>
+    <div class="class-toggle-grid" id="modal-class-grid"></div>
+    <div style="display:flex;gap:0.5rem;justify-content:flex-end;margin-top:0.5rem">
+      <button class="btn-modal-close" onclick="closeMyClasses()">Cancel</button>
+      <button class="btn-save-classes" onclick="saveMyClasses()">Save Classes</button>
+    </div>
   </div>
 </div>
 
 <script type="module">
   import {
-    onAuthChange, signOutUser, getUserRole, getUserProfile,
-    saveTeacherClasses, getTeacherClasses,
-    getAllStudents, getProgressForStudents,
+    onAuthChange, signOutUser, getUserRole, isStaffRole,
+    getTeacherClasses, saveTeacherClasses,
+    getStudentsByClass, getProgressForStudents,
     createAssignment, getAllAssignments, deleteAssignment,
-    isStaffRole,
+    isSuperAdmin
   } from './firebase.js';
 
-  const SUPER_ADMIN_EMAIL = 'n.clifford@thestreetlyacademy.co.uk';
+  // ── TIER HELPERS ────────────────────────────────────────────────────────────
+  const TIER_META = {
+    not_started: { label: 'Not Started', emoji: '⬜', colour: '#cbd5e1', bg: '#f8fafc' },
+    beginning:   { label: 'Beginning',   emoji: '🔴', colour: '#ef4444', bg: '#fef2f2' },
+    developing:  { label: 'Developing',  emoji: '🟠', colour: '#f97316', bg: '#fff7ed' },
+    approaching: { label: 'Approaching', emoji: '🟡', colour: '#eab308', bg: '#fefce8' },
+    confident:   { label: 'Confident',   emoji: '🟢', colour: '#22c55e', bg: '#f0fdf4' },
+    mastered:    { label: 'Mastered',    emoji: '💙', colour: '#3b82f6', bg: '#eff6ff' },
+  };
+  function computeTier(score) {
+    if (!score || score === 0) return 'not_started';
+    if (score <= 33) return 'beginning';
+    if (score <= 55) return 'developing';
+    if (score <= 75) return 'approaching';
+    if (score <= 89) return 'confident';
+    return 'mastered';
+  }
 
-  const ALL_CLASSES = {
-    9:  ['9S1','9S2','9S3','9S4','9S5','9N1','9N2','9N3','9N4','9N5'],
-    10: ['10S1','10S2','10S3','10S4','10S5','10N1','10N2','10N3','10N4','10N5'],
-    11: ['11S1','11S2','11S3','11S4','11S5','11N1','11N2','11N3','11N4','11N5'],
-  };
-  const ALL_CLASS_LIST = Object.values(ALL_CLASSES).flat();
-
-  const MODULES = {
-    biology:   ['b1','b2','b3','b4','b5','b6','b7'],
-    chemistry: ['c1','c2','c3','c4','c5','c6','c7','c8','c9','c10'],
-    physics:   ['p1','p2','p3','p4','p5','p6','p7'],
-  };
-  const MODULE_TITLES = {
-    b1:'Cell Biology',b2:'Organisation',b3:'Infection & Response',b4:'Bioenergetics',
-    b5:'Homeostasis & Response',b6:'Inheritance & Evolution',b7:'Ecology',
-    p1:'Energy',p2:'Electricity',p3:'Particle Model',p4:'Atomic Structure',
-    p5:'Forces',p6:'Waves',p7:'Magnetism',
-    c1:'Atomic Structure',c2:'Bonding & Structure',c3:'Quantitative Chemistry',
-    c4:'Chemical Changes',c5:'Energy Changes',c6:'Rate of Reactions',
-    c7:'Organic Chemistry',c8:'Chemical Analysis',c9:'Atmosphere',c10:'Using Resources',
-  };
-  const MODULE_TOPICS = {
-    b1:["Animal & plant cells","Eukaryotes & prokaryotes","Bacterial cell structure","Microscopy & magnification","Cell specialisation","Cell differentiation","Chromosomes & mitosis","The cell cycle","Stem cells","Therapeutic cloning","Diffusion","Osmosis","Active transport","Exchange surfaces"],
-    b2:["Tissues, organs, organ systems","The human digestive system","Enzymes","Food tests","Effect of pH on amylase","The heart","Blood vessels","Blood","Coronary heart disease","Health & disease","Cancer","Plant tissues & organs","Transpiration & translocation"],
-    b3:["Pathogens & disease","Viral diseases","Bacterial diseases","Fungal & protist diseases","Human defence systems","Vaccination","Antibiotics & painkillers","Discovery & development of drugs"],
-    b4:["Photosynthesis reaction","Rate of photosynthesis","Limiting factors","Uses of glucose","Aerobic respiration","Anaerobic respiration","Response to exercise","Metabolism"],
-    b5:["Homeostasis","The nervous system","Reflex actions","Reaction time","The endocrine system","Control of blood glucose","Diabetes","Hormones in reproduction","Contraception"],
-    b6:["Sexual & asexual reproduction","Meiosis","DNA & the genome","Genetic inheritance","Inherited disorders","Sex determination","Variation","Evolution","Selective breeding","Genetic engineering","Fossils & extinction","Classification"],
-    b7:["Communities","Abiotic & biotic factors","Adaptations","Levels of organisation","Sampling","Cycling materials","Decomposition","Biodiversity","Global warming","Maintaining biodiversity"],
-    p1:["Energy stores","Kinetic energy","Gravitational PE","Elastic PE","Specific heat capacity","Power","Efficiency","Energy resources","Renewable energy","Non-renewable energy","Energy trends"],
-    p2:["Circuit symbols","Series & parallel","Current, voltage, resistance","Ohm's Law","I-V characteristics","Component resistance","Domestic electricity","AC and DC","Power and energy","National Grid","Static electricity","Electric fields"],
-    p3:["States of matter","Changes of state","Particle model","Density","Specific heat capacity","Specific latent heat","Particle motion in gases","Temperature and pressure","Atmospheric pressure"],
-    p4:["Structure of the atom","Development of atomic model","Isotopes","Radioactive decay","Nuclear radiation","Half-life","Radioactive contamination","Background radiation","Nuclear fission","Nuclear fusion"],
-    p5:["Scalar and vector","Contact & non-contact forces","Gravity and weight","Resultant forces","Work done","Forces & elasticity","Distance-time graphs","Velocity-time graphs","Newton's First Law","Newton's Second Law","Newton's Third Law","Stopping distances","Momentum","Changes in momentum"],
-    p6:["Transverse & longitudinal waves","Wave properties","Wave speed equation","Measuring wave speed","Reflection & refraction","Sound waves","EM spectrum","Uses of EM waves","Dangers of EM waves","Radio & microwaves","IR, visible & UV","X-rays & gamma","Black body radiation"],
-    p7:["Permanent & induced magnets","Magnetic fields","Electromagnetism","Fleming's left-hand rule","Motor effect","Electric motors","Induced potential","Generators","Microphones & speakers","Transformers","National Grid"],
-    c1:["Protons, neutrons, electrons","Atomic number & mass","Isotopes","Electronic configuration","Development of atomic model","Plum pudding model","Rutherford scattering","Bohr model","Periodic table","Group 1","Group 7","Halogen displacement","Group 0","Transition metals"],
-    c2:["Ionic bonding","Ionic compounds","Covalent bonding","Simple molecular substances","Giant covalent — diamond","Giant covalent — graphite","Graphene & fullerenes","Nanoparticles","Metallic bonding","Properties of metals","Alloys","Polymers","Thermosoftening & thermosetting"],
-    c3:["Relative formula mass","Conservation of mass","Moles","Limiting reactants","Excess reactants","Percentage yield","Theoretical yield","Atom economy","Concentration","Concentration calculations","Titration","Gas volumes"],
-    c4:["Acids, alkalis, pH","Neutralisation","Acid + metal","Acid + metal oxide","Acid + carbonate","Strong & weak acids","Reactivity series","Displacement reactions","Oxidation & reduction","Redox reactions","Electrolysis","Electrolysis of molten","Electrolysis of solutions","Extraction of metals"],
-    c5:["Exothermic reactions","Endothermic reactions","Reaction profiles","Bond breaking & forming","Bond energy calculations","Overall energy change","Calorimetry","Hydrogen fuel cells","Fuel cells vs batteries"],
-    c6:["Rate of reaction","Measuring rate","Collision theory","Temperature & rate","Concentration & rate","Surface area & rate","Catalysts","Pressure & rate","Reversible reactions","Dynamic equilibrium","Le Chatelier's principle","Temperature & equilibrium","Pressure & equilibrium","Haber process"],
-    c7:["Crude oil & distillation","Alkanes","Combustion","Cracking","Alkenes & bromine water","Addition reactions","Addition polymerisation","Alcohols","Fermentation","Carboxylic acids","Esters","Condensation polymerisation","Nylon and polyester"],
-    c8:["Pure substances & mixtures","Formulations","Paper chromatography","Rf values","Gas chromatography","Flame tests","Testing for metal ions","Testing for halide ions","Testing for sulfate ions","Testing for carbonate ions","Testing for ammonium ions","Flame emission spectroscopy"],
-    c9:["Modern atmosphere","Early atmosphere","Role of volcanoes","Formation of oceans","Photosynthesis & oxygen","Greenhouse gases","Greenhouse effect","Enhanced greenhouse effect","Consequences of climate change","Carbon footprint","Sulfur dioxide","Nitrogen oxides","CO & particulates","Reducing air pollution"],
-    c10:["Finite & renewable resources","Sustainable development","Potable water","Water treatment","Desalination","Life cycle assessment","Recycling metals","Corrosion & rusting","Preventing corrosion","Sacrificial protection","Phytomining","Bioleaching","Ceramics, polymers, composites","Thermosoftening vs thermosetting"],
+  // ── CONSTANTS ───────────────────────────────────────────────────────────────
+  const ALL_CLASSES = [
+    '9S1','9S2','9S3','9S4','9S5','9N1','9N2','9N3','9N4','9N5',
+    '10S1','10S2','10S3','10S4','10S5','10N1','10N2','10N3','10N4','10N5',
+    '11S1','11S2','11S3','11S4','11S5','11N1','11N2','11N3','11N4','11N5',
+  ];
+  const ALL_MODULES = [
+    'b1','b2','b3','b4','b5','b6','b7',
+    'p1','p2','p3','p4','p5','p6','p7',
+    'c1','c2','c3','c4','c5','c6','c7','c8','c9','c10',
+  ];
+  const MODULE_LABELS = {
+    b1:'B1',b2:'B2',b3:'B3',b4:'B4',b5:'B5',b6:'B6',b7:'B7',
+    p1:'P1',p2:'P2',p3:'P3',p4:'P4',p5:'P5',p6:'P6',p7:'P7',
+    c1:'C1',c2:'C2',c3:'C3',c4:'C4',c5:'C5',c6:'C6',c7:'C7',c8:'C8',c9:'C9',c10:'C10',
   };
 
   let currentUser = null;
   let myClasses = [];
-  let activeClass = null;
-  let allStudents = [];
-  let classStudents = [];
-  let classProgress = {};
-  let activeModule = null;
-  let mySelectedClassesInModal = [];
+  let selectedClass = '';
 
-  // ── AUTH GATE ───────────────────────────────────────────────────────────────
+  // ── AUTH ────────────────────────────────────────────────────────────────────
   onAuthChange(async user => {
     document.getElementById('auth-loading').style.display = 'none';
-    if (!user) { window.location.href = 'login.html'; return; }
+
+    if (!user) { window.location.href = 'login.html?redirect=teacher.html'; return; }
 
     const role = await getUserRole(user.email);
-    const isStaff = isStaffRole(role);
-
-    if (!isStaff) {
+    if (!isStaffRole(role)) {
+      document.getElementById('denied-email').textContent = user.email;
       document.getElementById('access-denied').style.display = 'flex';
       return;
     }
 
     currentUser = user;
-    window._currentUser = user;
     document.getElementById('page-content').style.display = 'block';
-    document.getElementById('teacher-welcome').textContent = `Welcome back, ${user.displayName?.split(' ')[0] || 'Teacher'}`;
-
-    myClasses = await getTeacherClasses(user.uid);
-    allStudents = await getAllStudents();
-
-    renderClassChips();
-    if (myClasses.length === 0) {
-      openClassManager();
-    } else {
-      selectClass(myClasses[0]);
+    document.getElementById('nav-name').textContent = user.displayName?.split(' ')[0] || 'Teacher';
+    if (role === 'superadmin' || role === 'admin') {
+      document.getElementById('role-badge').textContent = role === 'superadmin' ? 'Super Admin' : 'Admin';
+      document.getElementById('role-badge').style.background = role === 'superadmin' ? 'var(--red)' : '#f97316';
     }
+
+    // Load classes
+    myClasses = await getTeacherClasses(user.uid);
+    populateClassSelector();
+    buildAssignClassGrid();
     loadAssignments();
-    populateAssignClassPicker();
-    // Set default due date to one week from now
-    const d = new Date(); d.setDate(d.getDate() + 7);
-    document.getElementById('assign-due').value = d.toISOString().split('T')[0];
   });
 
-  // ── CLASS CHIPS ─────────────────────────────────────────────────────────────
-  function renderClassChips() {
-    const wrap = document.getElementById('class-chips');
-    const visibleClasses = myClasses.filter(c => c !== 'Teachers');
-    if (visibleClasses.length === 0) {
-      wrap.innerHTML = `<span style="color:var(--subtext);font-size:0.83rem">No classes set — click ⚙️ My Classes to get started</span>`;
+  // ── TABS ────────────────────────────────────────────────────────────────────
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  // ── CLASS SELECTOR ──────────────────────────────────────────────────────────
+  function populateClassSelector() {
+    const sel = document.getElementById('class-select');
+    sel.innerHTML = '<option value="">— Select a class —</option>';
+    myClasses.forEach(cls => {
+      const opt = document.createElement('option');
+      opt.value = cls;
+      opt.textContent = cls;
+      sel.appendChild(opt);
+    });
+  }
+
+  window.loadClassData = async () => {
+    selectedClass = document.getElementById('class-select').value;
+    if (!selectedClass) {
+      document.getElementById('overview-content').innerHTML = '<div class="empty-state">Select a class above to view student data.</div>';
+      document.getElementById('heatmap-content').innerHTML = '<div class="empty-state">Select a class above to view the heatmap.</div>';
+      document.getElementById('student-count').textContent = '';
       return;
     }
-    wrap.innerHTML = visibleClasses.map(cls => `
-      <button class="class-chip-btn ${cls === activeClass ? 'active' : ''}" onclick="selectClass('${cls}')">${cls}</button>
-    `).join('');
-  }
+    document.getElementById('overview-content').innerHTML = '<div class="loading-state">Loading students...</div>';
+    document.getElementById('heatmap-content').innerHTML = '<div class="loading-state">Loading heatmap...</div>';
 
-  window.selectClass = async (cls) => {
-    activeClass = cls;
-    renderClassChips();
-    await loadClassData();
+    const students = await getStudentsByClass(selectedClass);
+    document.getElementById('student-count').textContent = `${students.length} student${students.length !== 1 ? 's' : ''}`;
+
+    if (students.length === 0) {
+      document.getElementById('overview-content').innerHTML = '<div class="empty-state">No students found in this class.</div>';
+      document.getElementById('heatmap-content').innerHTML = '<div class="empty-state">No students found in this class.</div>';
+      return;
+    }
+
+    const uids = students.map(s => s.uid);
+    const allProgress = await getProgressForStudents(uids);
+
+    renderOverview(students, allProgress);
+    renderHeatmap(students, allProgress);
   };
 
-  async function loadClassData() {
-    if (!activeClass) return;
-    classStudents = allStudents.filter(s => s.class === activeClass);
-    const uids = classStudents.map(s => s.uid);
-    classProgress = uids.length > 0 ? await getProgressForStudents(uids) : {};
-    renderOverview();
-    renderModuleFilter();
-    if (activeModule) renderHeatmap(activeModule);
-  }
-
-  // ── OVERVIEW ────────────────────────────────────────────────────────────────
-  function renderOverview() {
-    const now = Date.now();
-    const twoWeeks = 14 * 24 * 60 * 60 * 1000;
-    const oneWeek = 7 * 24 * 60 * 60 * 1000;
-
-    let totalMocks = 0;
-    let activeCount = 0;
-    let atRisk = 0;
-
-    const rows = classStudents.map(s => {
-      const prog = classProgress[s.uid] || {};
-      let studentMocks = 0; let lastActive = null; let totalPct = 0; let pctCount = 0;
-      Object.values(prog).forEach(m => {
-        if (m.mocks) {
-          studentMocks += m.mocks.length;
-          totalMocks += m.mocks.length;
-          m.mocks.forEach(mk => {
-            const d = new Date(mk.date).getTime();
-            if (!lastActive || d > lastActive) lastActive = d;
-            totalPct += mk.pct; pctCount++;
+  // ── OVERVIEW TABLE ──────────────────────────────────────────────────────────
+  function renderOverview(students, allProgress) {
+    const rows = students.map(s => {
+      const progress = allProgress[s.uid] || {};
+      let totalMocks = 0, totalScore = 0, totalPossible = 0, lastDate = null;
+      Object.values(progress).forEach(p => {
+        if (p.mocks) {
+          p.mocks.forEach(m => {
+            totalMocks++;
+            totalScore += m.score;
+            totalPossible += m.total;
+            const d = new Date(m.date);
+            if (!lastDate || d > lastDate) lastDate = d;
           });
         }
       });
-      const avg = pctCount > 0 ? Math.round(totalPct / pctCount) : null;
-      const isActive = lastActive && (now - lastActive) < oneWeek;
-      const isAtRisk = !lastActive || (now - lastActive) > twoWeeks;
-      if (isActive) activeCount++;
-      if (isAtRisk) atRisk++;
-
-      const lastStr = lastActive ? new Date(lastActive).toLocaleDateString('en-GB', {day:'numeric',month:'short'}) : 'Never';
-      const barColour = avg === null ? '#cbd5e1' : avg >= 67 ? '#22c55e' : avg >= 34 ? '#f59e0b' : '#ef4444';
-
+      const avg = totalPossible > 0 ? Math.round((totalScore / totalPossible) * 100) : null;
+      const avgClass = avg === null ? 'avg-none' : avg >= 70 ? 'avg-high' : avg >= 45 ? 'avg-mid' : 'avg-low';
+      const avgText = avg !== null ? avg + '%' : '—';
+      const lastStr = lastDate ? lastDate.toLocaleDateString('en-GB', { day:'numeric', month:'short' }) : 'Never';
       return `
         <tr>
-          <td class="student-name-cell">${s.name || '—'}</td>
-          <td style="color:var(--subtext);font-size:0.78rem">${s.email || '—'}</td>
-          <td style="text-align:center">${studentMocks}</td>
           <td>
-            ${avg !== null ? `
-              <span style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.83rem">${avg}%</span>
-              <span class="pct-bar-wrap"><span class="pct-bar" style="width:${avg}%;background:${barColour}"></span></span>
-            ` : '<span style="color:var(--subtext);font-size:0.78rem">No data</span>'}
+            <div class="student-name">${s.name || 'Unknown'}</div>
+            <div class="student-email">${s.email || ''}</div>
           </td>
-          <td style="font-size:0.78rem;color:var(--subtext)">${lastStr}</td>
-          <td>${isAtRisk ? '<span class="at-risk-badge">⚠️ At risk</span>' : isActive ? '<span class="active-badge">✅ Active</span>' : ''}</td>
-        </tr>
-      `;
+          <td><span class="mock-count">${totalMocks}</span></td>
+          <td><span class="avg-badge ${avgClass}">${avgText}</span></td>
+          <td><span class="last-active">${lastStr}</span></td>
+        </tr>`;
     }).join('');
 
-    document.getElementById('stat-students').textContent = classStudents.length;
-    document.getElementById('stat-active').textContent = activeCount;
-    document.getElementById('stat-mocks').textContent = totalMocks;
-    document.getElementById('stat-atrisk').textContent = atRisk;
-
-    document.getElementById('student-overview-wrap').innerHTML = classStudents.length === 0
-      ? '<div class="empty-state">No students found in this class yet.</div>'
-      : `<table class="student-overview-table">
+    document.getElementById('overview-content').innerHTML = `
+      <div style="overflow-x:auto">
+        <table class="student-table">
           <thead><tr>
-            <th>Student</th><th>Email</th><th>Mocks</th><th>Average</th><th>Last Active</th><th>Status</th>
+            <th>Student</th>
+            <th>Mocks Done</th>
+            <th>Avg Score</th>
+            <th>Last Active</th>
           </tr></thead>
           <tbody>${rows}</tbody>
-        </table>`;
+        </table>
+      </div>`;
   }
 
-  // ── HEATMAP ─────────────────────────────────────────────────────────────────
-  function renderModuleFilter() {
-    const wrap = document.getElementById('module-filter');
-    const allMods = [...MODULES.biology, ...MODULES.chemistry, ...MODULES.physics];
-    wrap.innerHTML = allMods.map(m => `
-      <button class="module-filter-btn ${m === activeModule ? 'active' : ''}" onclick="selectModule('${m}')">${m.toUpperCase()}</button>
-    `).join('');
-  }
+  // ── RAG HEATMAP ─────────────────────────────────────────────────────────────
+  function renderHeatmap(students, allProgress) {
+    const subjects = [
+      { label:'Biology', modules:['b1','b2','b3','b4','b5','b6','b7'] },
+      { label:'Physics', modules:['p1','p2','p3','p4','p5','p6','p7'] },
+      { label:'Chemistry', modules:['c1','c2','c3','c4','c5','c6','c7','c8','c9','c10'] },
+    ];
 
-  window.selectModule = (mod) => {
-    activeModule = mod;
-    renderModuleFilter();
-    renderHeatmap(mod);
-    switchTab('heatmap', document.querySelector('.dash-tab:nth-child(2)'));
-  };
-
-  function renderHeatmap(moduleId) {
-    const topics = MODULE_TOPICS[moduleId] || [];
-    const wrap = document.getElementById('heatmap-wrap');
-
-    if (classStudents.length === 0) {
-      wrap.innerHTML = '<div class="empty-state">No students in this class.</div>';
-      return;
-    }
-
-    // Calculate RAG per student per topic from mock history
-    const ragData = {};
-    classStudents.forEach(s => {
-      const prog = classProgress[s.uid]?.[moduleId] || {};
-      const mocks = prog.mocks || [];
-      ragData[s.uid] = calculateRAGFromMocks(mocks, topics);
+    // Build header rows
+    let headerRow1 = '<tr><th class="name-col">Student</th>';
+    subjects.forEach(sub => {
+      headerRow1 += `<th colspan="${sub.modules.length}" class="subject-header">${sub.label}</th>`;
     });
+    headerRow1 += '</tr>';
 
-    // Topic averages
-    const topicAvgs = topics.map((_, ti) => {
-      const vals = classStudents.map(s => ragData[s.uid][ti]).filter(v => v !== 'grey');
-      if (vals.length === 0) return null;
-      const score = vals.reduce((sum, v) => sum + (v === 'green' ? 2 : v === 'amber' ? 1 : 0), 0);
-      return Math.round((score / (vals.length * 2)) * 100);
-    });
-
-    const shortTopic = t => t.length > 18 ? t.slice(0, 16) + '…' : t;
-
-    wrap.innerHTML = `
-      <table class="heatmap-table">
-        <thead>
-          <tr>
-            <th>Student</th>
-            ${topics.map((t, i) => {
-              const avg = topicAvgs[i];
-              const col = avg === null ? '#cbd5e1' : avg >= 67 ? '#22c55e' : avg >= 34 ? '#f59e0b' : '#ef4444';
-              return `<th class="topic-th" title="${t}" style="color:${col}">${shortTopic(t)}</th>`;
-            }).join('')}
-          </tr>
-        </thead>
-        <tbody>
-          ${classStudents.map(s => `
-            <tr>
-              <td class="student-name-cell">${s.name?.split(' ')[0] || '—'}</td>
-              ${topics.map((_, ti) => {
-                const r = ragData[s.uid][ti];
-                const label = r === 'green' ? '✓' : r === 'amber' ? '~' : r === 'red' ? '✗' : '·';
-                return `<td><div class="rag-cell ${r}">${label}</div></td>`;
-              }).join('')}
-            </tr>
-          `).join('')}
-          <tr style="border-top:2px solid var(--border)">
-            <td class="student-name-cell" style="font-family:'Nunito',sans-serif;font-weight:900;color:var(--subtext)">Class avg</td>
-            ${topicAvgs.map(avg => {
-              if (avg === null) return `<td><div class="avg-cell" style="color:#cbd5e1">—</div></td>`;
-              const col = avg >= 67 ? '#16a34a' : avg >= 34 ? '#d97706' : '#dc2626';
-              return `<td><div class="avg-cell" style="color:${col}">${avg}%</div></td>`;
-            }).join('')}
-          </tr>
-        </tbody>
-      </table>
-    `;
-  }
-
-  function calculateRAGFromMocks(mocks, topics) {
-    // Returns array of RAG per topic index
-    const result = Array(topics.length).fill('grey');
-    if (!mocks || mocks.length === 0) return result;
-
-    const now = Date.now();
-    const topicScores = Array(topics.length).fill(null).map(() => ({ weighted: 0, weight: 0 }));
-
-    mocks.forEach(mock => {
-      const age = (now - new Date(mock.date).getTime()) / (1000 * 60 * 60 * 24);
-      const w = age <= 30 ? 1.0 : age <= 180 ? 0.5 : 0.25;
-      (mock.questions || []).forEach(q => {
-        const ti = topics.findIndex(t => fuzzyMatch(t, q.topic));
-        if (ti >= 0 && q.marks > 0) {
-          topicScores[ti].weighted += (q.awarded / q.marks) * w;
-          topicScores[ti].weight += w;
-        }
+    let headerRow2 = '<tr><th class="name-col"></th>';
+    subjects.forEach(sub => {
+      sub.modules.forEach(m => {
+        headerRow2 += `<th>${MODULE_LABELS[m]}</th>`;
       });
     });
+    headerRow2 += '</tr>';
 
-    topicScores.forEach((s, i) => {
-      if (s.weight === 0) { result[i] = 'grey'; return; }
-      const pct = s.weighted / s.weight;
-      result[i] = pct >= 0.67 ? 'green' : pct >= 0.34 ? 'amber' : 'red';
-    });
-
-    return result;
-  }
-
-  function fuzzyMatch(topic, questionTopic) {
-    if (!questionTopic) return false;
-    const t = topic.toLowerCase().replace(/[^a-z0-9 ]/g, '');
-    const q = questionTopic.toLowerCase().replace(/[^a-z0-9 ]/g, '');
-    const tWords = t.split(' ').filter(w => w.length > 3);
-    return tWords.some(w => q.includes(w)) || q.includes(t) || t.includes(q);
-  }
-
-  // ── ASSIGNMENTS ─────────────────────────────────────────────────────────────
-  const SUBJECT_MODULES = {
-    Biology: { modules: MODULES.biology, paper1: ['b1','b2','b3','b4'], paper2: ['b5','b6','b7'] },
-    Chemistry: { modules: MODULES.chemistry, paper1: ['c1','c2','c3','c4','c5'], paper2: ['c6','c7','c8','c9','c10'] },
-    Physics: { modules: MODULES.physics, paper1: ['p1','p2','p3','p4'], paper2: ['p5','p6','p7'] },
-  };
-
-  window.updateAssignmentType = () => {
-    const subject = document.getElementById('assign-subject').value;
-    const optgroup = document.getElementById('optgroup-modules');
-    optgroup.innerHTML = '';
-    if (!subject) return;
-    const mods = SUBJECT_MODULES[subject]?.modules || [];
-    mods.forEach(m => {
-      const opt = document.createElement('option');
-      opt.value = `module-${m}`;
-      opt.textContent = `${m.toUpperCase()} — ${MODULE_TITLES[m]}`;
-      optgroup.appendChild(opt);
-    });
-    updateAssignmentLink();
-  };
-
-  window.updateAssignmentLink = () => {
-    const subject = document.getElementById('assign-subject').value;
-    const type = document.getElementById('assign-type').value;
-    const titleEl = document.getElementById('assign-title');
-    if (!subject || !type) return;
-
-    let title = '';
-    let link = 'module.html';
-    const subjectLower = subject.toLowerCase();
-
-    if (type.startsWith('module-')) {
-      const mod = type.replace('module-', '');
-      title = `Complete ${mod.toUpperCase()} Mini Mock — ${MODULE_TITLES[mod]}`;
-      link = `module.html?subject=${subjectLower}&module=${mod}`;
-    } else if (type === 'paper1') {
-      title = `Complete ${subject} Paper 1 Practice`;
-      const firstMod = SUBJECT_MODULES[subject]?.paper1[0] || '';
-      link = `module.html?subject=${subjectLower}&module=${firstMod}`;
-    } else if (type === 'paper2') {
-      title = `Complete ${subject} Paper 2 Practice`;
-      const firstMod = SUBJECT_MODULES[subject]?.paper2[0] || '';
-      link = `module.html?subject=${subjectLower}&module=${firstMod}`;
-    }
-
-    if (!titleEl.dataset.edited) titleEl.value = title;
-    titleEl.dataset.link = link;
-  };
-
-  document.getElementById('assign-title').addEventListener('input', function() {
-    this.dataset.edited = 'true';
-  });
-
-  function populateAssignClassPicker() {
-    const wrap = document.getElementById('assign-classes');
-    wrap.innerHTML = ALL_CLASS_LIST.map(cls => `
-      <button class="class-multi-btn ${myClasses.includes(cls) ? 'selected' : ''}" onclick="toggleAssignClass('${cls}', this)">${cls}</button>
-    `).join('');
-  }
-
-  window.toggleAssignClass = (cls, btn) => {
-    btn.classList.toggle('selected');
-  };
-
-  window.createAssignmentHandler = async () => {
-    const subject = document.getElementById('assign-subject').value;
-    const type = document.getElementById('assign-type').value;
-    const title = document.getElementById('assign-title').value.trim();
-    const due = document.getElementById('assign-due').value;
-    const note = document.getElementById('assign-note').value.trim();
-    const link = document.getElementById('assign-title').dataset.link || '#';
-    const msgEl = document.getElementById('assign-msg');
-
-    const selectedClasses = [...document.querySelectorAll('#assign-classes .class-multi-btn.selected')].map(b => b.textContent);
-
-    if (!subject || !type || !title || !due || selectedClasses.length === 0) {
-      msgEl.style.display = 'block'; msgEl.style.color = '#dc2626';
-      msgEl.textContent = 'Please fill in all fields and select at least one class.';
-      return;
-    }
-
-    const btn = document.querySelector('.btn-create-assignment');
-    btn.disabled = true; btn.textContent = 'Setting...';
-
-    try {
-      await createAssignment({
-        subject, type, title, dueDate: due, note, link,
-        classes: selectedClasses,
-        createdBy: currentUser.email,
+    // Build data rows
+    const dataRows = students.map(s => {
+      let row = `<tr><td class="name-cell">${s.name?.split(' ')[0] || s.email?.split('@')[0] || '?'}</td>`;
+      subjects.forEach(sub => {
+        sub.modules.forEach(modId => {
+          const progress = allProgress[s.uid]?.[modId];
+          const rag = progress?.rag || {};
+          const entries = Object.values(rag).filter(e => typeof e === 'object' && e !== null);
+          if (entries.length === 0) {
+            row += `<td><span class="heat-cell" style="background:#f1f5f9;color:#94a3b8">—</span></td>`;
+          } else {
+            const avg = Math.round(entries.reduce((sum, e) => sum + (e.score || 0), 0) / entries.length);
+            const tier = computeTier(avg);
+            const tm = TIER_META[tier];
+            row += `<td><span class="heat-cell" style="background:${tm.bg};color:${tm.colour}">${tm.emoji}<br>${avg}%</span></td>`;
+          }
+        });
       });
-      msgEl.style.display = 'block'; msgEl.style.color = '#16a34a';
-      msgEl.textContent = '✅ Assignment set successfully!';
-      document.getElementById('assign-title').dataset.edited = '';
-      document.getElementById('assign-note').value = '';
-      setTimeout(() => { msgEl.style.display = 'none'; }, 3000);
-      loadAssignments();
-    } catch(e) {
-      msgEl.style.display = 'block'; msgEl.style.color = '#dc2626';
-      msgEl.textContent = 'Something went wrong. Please try again.';
-    }
-    btn.disabled = false; btn.textContent = '📋 Set Assignment';
-  };
-
-  async function loadAssignments() {
-    const wrap = document.getElementById('assignments-list-wrap');
-    const assignments = await getAllAssignments();
-    const now = new Date().toISOString();
-
-    if (assignments.length === 0) {
-      wrap.innerHTML = '<div class="empty-state">No assignments set yet.</div>';
-      return;
-    }
-
-    const html = assignments.map(a => {
-      const isPast = a.dueDate < now;
-      const due = new Date(a.dueDate).toLocaleDateString('en-GB', { weekday:'short', day:'numeric', month:'short', year:'numeric' });
-      return `
-        <div class="assignment-row ${isPast ? 'past' : ''}">
-          <span class="assignment-subject-badge">${a.subject}</span>
-          <div style="flex:1;min-width:0">
-            <div class="assignment-title">${a.title}</div>
-            ${a.note ? `<div style="font-size:0.75rem;color:var(--subtext);margin-top:0.15rem">${a.note}</div>` : ''}
-            <div class="assignment-classes" style="margin-top:0.3rem">
-              ${(a.classes||[]).map(c => `<span class="assignment-class-chip">${c}</span>`).join('')}
-            </div>
-          </div>
-          <div class="assignment-meta">Due ${due}${isPast ? ' · Past' : ''}</div>
-          <button class="btn-delete-assignment" onclick="deleteAssignmentHandler('${a.id}')">Delete</button>
-        </div>
-      `;
+      row += '</tr>';
+      return row;
     }).join('');
 
-    wrap.innerHTML = `<div class="assignment-list">${html}</div>`;
+    document.getElementById('heatmap-content').innerHTML = `
+      <div class="heatmap-wrap">
+        <table class="heatmap-table">
+          <thead>${headerRow1}${headerRow2}</thead>
+          <tbody>${dataRows}</tbody>
+        </table>
+      </div>`;
   }
 
-  window.deleteAssignmentHandler = async (id) => {
-    if (!confirm('Delete this assignment? Students will no longer see it.')) return;
-    await deleteAssignment(id);
-    loadAssignments();
+  // ── MY CLASSES MODAL ────────────────────────────────────────────────────────
+  window.openMyClasses = () => {
+    const grid = document.getElementById('modal-class-grid');
+    grid.innerHTML = ALL_CLASSES.map(cls => `
+      <button class="class-toggle ${myClasses.includes(cls) ? 'selected' : ''}"
+        onclick="toggleClassModal(this, '${cls}')">${cls}</button>
+    `).join('');
+    document.getElementById('classes-modal').classList.add('open');
   };
 
-  // ── CLASS MANAGER MODAL ──────────────────────────────────────────────────────
-  window.openClassManager = () => {
-    mySelectedClassesInModal = [...myClasses].filter(c => c !== 'Teachers');
-    const grid = document.getElementById('class-manager-grid');
-    grid.innerHTML = Object.entries(ALL_CLASSES).map(([year, classes]) => `
-      <div class="year-section-title">Year ${year}</div>
-      <div class="class-multi-grid">
-        ${classes.map(cls => `
-          <button class="class-multi-btn ${mySelectedClassesInModal.includes(cls) ? 'selected' : ''}"
-            onclick="toggleModalClass('${cls}', this)">${cls}</button>
-        `).join('')}
-      </div>
-    `).join('') + `
-      <div class="year-section-title">Other</div>
-      <div class="class-multi-grid">
-        <button class="class-multi-btn ${mySelectedClassesInModal.includes('Other') ? 'selected' : ''}"
-          onclick="toggleModalClass('Other', this)">Other</button>
-      </div>
-    `;
-    document.getElementById('class-modal').classList.remove('hidden');
+  window.closeMyClasses = () => {
+    document.getElementById('classes-modal').classList.remove('open');
   };
 
-  window.closeClassManager = () => {
-    document.getElementById('class-modal').classList.add('hidden');
-  };
-
-  window.toggleModalClass = (cls, btn) => {
+  window.toggleClassModal = (btn, cls) => {
     btn.classList.toggle('selected');
-    if (mySelectedClassesInModal.includes(cls)) {
-      mySelectedClassesInModal = mySelectedClassesInModal.filter(c => c !== cls);
-    } else {
-      mySelectedClassesInModal.push(cls);
-    }
   };
 
   window.saveMyClasses = async () => {
-    myClasses = [...mySelectedClassesInModal].sort();
-    await saveTeacherClasses(currentUser.uid, myClasses);
-    closeClassManager();
-    renderClassChips();
-    populateAssignClassPicker();
-    if (myClasses.length > 0 && !activeClass) selectClass(myClasses[0]);
+    const selected = [...document.querySelectorAll('#modal-class-grid .class-toggle.selected')]
+      .map(b => b.textContent.trim());
+    await saveTeacherClasses(currentUser.uid, selected);
+    myClasses = selected;
+    populateClassSelector();
+    buildAssignClassGrid();
+    closeMyClasses();
   };
 
-  // ── TABS ─────────────────────────────────────────────────────────────────────
-  window.switchTab = (tab, btn) => {
-    document.querySelectorAll('.dash-tab').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.dash-panel').forEach(p => p.classList.remove('active'));
-    if (btn) btn.classList.add('active');
-    document.getElementById(`panel-${tab}`).classList.add('active');
+  // ── ASSIGNMENTS ─────────────────────────────────────────────────────────────
+  function buildAssignClassGrid() {
+    const grid = document.getElementById('assign-classes');
+    grid.innerHTML = myClasses.map(cls => `
+      <label class="class-checkbox-label" id="cls-label-${cls}">
+        <input type="checkbox" value="${cls}" onchange="syncCheckLabel('${cls}', this.checked)" />
+        ${cls}
+      </label>
+    `).join('');
+  }
+
+  window.syncCheckLabel = (cls, checked) => {
+    const label = document.getElementById(`cls-label-${cls}`);
+    if (label) label.classList.toggle('checked', checked);
+  };
+
+  async function loadAssignments() {
+    const list = document.getElementById('assignments-list');
+    const all = await getAllAssignments();
+    if (all.length === 0) {
+      list.innerHTML = '<div class="empty-state">No assignments yet.</div>';
+      return;
+    }
+    list.innerHTML = `<div class="assignment-list">${all.map(a => {
+      const due = a.dueDate ? new Date(a.dueDate).toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' }) : '—';
+      const typeLabel = { mini_mock:'Mini Mock', paper:'Practice Paper', revision:'Revision', keywords:'Keywords Game' }[a.type] || a.type;
+      return `
+        <div class="assignment-row">
+          <div class="assignment-info">
+            <div class="assignment-title">${a.title}</div>
+            <div class="assignment-meta">
+              <span>${typeLabel}</span>
+              <span>📅 Due ${due}</span>
+              <span>📚 ${a.subject?.charAt(0).toUpperCase() + a.subject?.slice(1) || '—'}</span>
+              ${a.note ? `<span>💬 ${a.note}</span>` : ''}
+            </div>
+            <div class="assignment-classes">
+              ${(a.classes || []).map(c => `<span class="class-tag">${c}</span>`).join('')}
+            </div>
+          </div>
+          <button class="btn-delete" onclick="deleteAssignmentHandler('${a.id}')">Remove</button>
+        </div>`;
+    }).join('')}</div>`;
+  }
+
+  window.createAssignmentHandler = async () => {
+    const title = document.getElementById('assign-title').value.trim();
+    const subject = document.getElementById('assign-subject').value;
+    const type = document.getElementById('assign-type').value;
+    const due = document.getElementById('assign-due').value;
+    const link = document.getElementById('assign-link').value.trim();
+    const note = document.getElementById('assign-note').value.trim();
+    const classes = [...document.querySelectorAll('#assign-classes input:checked')].map(i => i.value);
+    const msg = document.getElementById('assign-msg');
+
+    msg.className = 'form-msg';
+    msg.textContent = '';
+
+    if (!title || !due || classes.length === 0) {
+      msg.className = 'form-msg error';
+      msg.textContent = 'Please fill in title, due date, and select at least one class.';
+      return;
+    }
+
+    const btn = document.getElementById('create-btn');
+    btn.disabled = true;
+    btn.textContent = 'Creating...';
+
+    try {
+      await createAssignment({ title, subject, type, classes, dueDate: due, note, link, createdBy: currentUser.uid });
+      msg.className = 'form-msg success';
+      msg.textContent = '✅ Assignment created!';
+      document.getElementById('assign-title').value = '';
+      document.getElementById('assign-due').value = '';
+      document.getElementById('assign-link').value = '';
+      document.getElementById('assign-note').value = '';
+      document.querySelectorAll('#assign-classes input').forEach(i => {
+        i.checked = false;
+        syncCheckLabel(i.value, false);
+      });
+      await loadAssignments();
+    } catch(e) {
+      msg.className = 'form-msg error';
+      msg.textContent = 'Something went wrong. Please try again.';
+    }
+
+    btn.disabled = false;
+    btn.textContent = '📌 Create Assignment';
+  };
+
+  window.deleteAssignmentHandler = async (id) => {
+    if (!confirm('Remove this assignment?')) return;
+    try {
+      await deleteAssignment(id);
+      await loadAssignments();
+    } catch(e) { alert('Could not remove. Please try again.'); }
   };
 
   window.handleSignOut = async () => {
