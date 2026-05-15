@@ -316,7 +316,12 @@
 <nav class="topnav">
   <a href="index.html">← Home</a>
   <span class="topnav-title">My Progress</span>
-  <button onclick="openSettings()" title="Settings" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#94a3b8;font-size:1rem;padding:0.4rem 0.6rem;border-radius:8px;cursor:pointer;line-height:1;transition:all 0.2s;margin-left:auto" onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">⚙️</button>
+  <div id="staff-nav-links" style="display:none;gap:0.4rem;align-items:center">
+    <a href="teacher.html" id="nav-teacher-link" style="display:none;background:#6366f1;color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:6px;text-decoration:none;white-space:nowrap">👨‍🏫 Teacher</a>
+    <a href="admin.html" id="nav-admin-link" style="display:none;background:#e85d4a;color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:6px;text-decoration:none;white-space:nowrap">🏫 Admin</a>
+    <a href="superadmin.html" id="nav-superadmin-link" style="display:none;background:#c8202c;color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:6px;text-decoration:none;white-space:nowrap">🛡️ Super Admin</a>
+  </div>
+  <button onclick="openSettings()" title="Settings" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#94a3b8;font-size:1rem;padding:0.4rem 0.6rem;border-radius:8px;cursor:pointer;line-height:1;transition:all 0.2s;margin-left:0.5rem" onmouseover="this.style.color='white'" onmouseout="this.style.color='#94a3b8'">⚙️</button>
 </nav>
 
 <div class="page-header">
@@ -330,7 +335,7 @@
 </main>
 
 <script type="module">
-  import { onAuthChange, signOutUser, getUserProfile, updateExamTarget, getAllProgress, saveClass } from './firebase.js';
+  import { onAuthChange, signOutUser, getUserProfile, updateExamTarget, getAllProgress, saveClass, getUserRole } from './firebase.js';
 
   const MODULE_META = {
     // Biology
@@ -375,6 +380,14 @@
     renderHeader(user, profile);
     const progress = await getAllProgress(user.uid);
     renderProgress(progress, profile);
+    const role = await getUserRole(user.email);
+    const wrap = document.getElementById('staff-nav-links');
+    if (wrap && ['teacher','admin','superadmin'].includes(role)) {
+      wrap.style.display = 'flex';
+      document.getElementById('nav-teacher-link').style.display = 'inline-flex';
+    }
+    if (['admin','superadmin'].includes(role)) document.getElementById('nav-admin-link').style.display = 'inline-flex';
+    if (role === 'superadmin') document.getElementById('nav-superadmin-link').style.display = 'inline-flex';
   });
 
   function renderHeader(user, profile) {
