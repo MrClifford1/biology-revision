@@ -200,33 +200,43 @@
     .fc-topic-btn:hover { border-color:var(--accent);color:var(--accent); }
     .fc-topic-btn.active { border-color:var(--accent);background:var(--accent);color:white; }
 
-    .fc-progress-row { display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem; }
+    .fc-progress-row { display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem; }
     .fc-progress-text { font-size:0.78rem;color:var(--subtext);white-space:nowrap; }
     .fc-progress-bar-wrap { flex:1;height:6px;background:#e2e8f0;border-radius:100px;overflow:hidden; }
     .fc-progress-bar-fill { height:100%;background:var(--accent);border-radius:100px;transition:width 0.4s ease; }
     .fc-score-text { font-size:0.78rem;color:var(--subtext);white-space:nowrap; }
 
-    .fc-def-card { background:white;border:1px solid var(--border);border-radius:16px;padding:2rem;text-align:center;margin-bottom:1rem;min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem; }
+    /* Flip card */
+    .fc-card-wrap { perspective:1200px;margin-bottom:1.25rem;cursor:pointer; }
+    .fc-card { width:100%;min-height:200px;position:relative;transform-style:preserve-3d;transition:transform 0.5s cubic-bezier(0.4,0.2,0.2,1); }
+    .fc-card.flipped { transform:rotateY(180deg); }
+    .fc-card-face { position:absolute;width:100%;min-height:200px;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center;gap:0.75rem; }
+    .fc-card-front { background:white;border:2px solid var(--border); }
+    .fc-card-back { background:var(--accent-light);border:2px solid var(--accent);transform:rotateY(180deg); }
     .fc-card-label { font-family:'Nunito',sans-serif;font-weight:900;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--subtext); }
-    .fc-card-text { font-size:1rem;line-height:1.55;color:var(--text);font-weight:600;max-width:600px; }
+    .fc-card-back .fc-card-label { color:var(--accent); }
+    .fc-card-text { font-size:1rem;line-height:1.55;color:var(--text);font-weight:600;max-width:560px; }
+    .fc-card-hint { font-size:0.75rem;color:#94a3b8;font-style:italic;margin-top:0.25rem; }
     .fc-subtopic-tag { font-size:0.7rem;font-family:'Nunito',sans-serif;font-weight:800;background:var(--accent-light);color:var(--accent);padding:0.2rem 0.6rem;border-radius:100px; }
+    .fc-card-front .fc-subtopic-tag { background:#f1f5f9;color:var(--subtext); }
 
-    .fc-feedback { border-radius:10px;padding:0.7rem 1rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;text-align:center;margin-bottom:0.75rem; }
-    .fc-feedback.correct { background:#dcfce7;color:#16a34a;border:1px solid #bbf7d0; }
-    .fc-feedback.wrong { background:#fee2e2;color:#dc2626;border:1px solid #fecaca; }
-
-    .fc-mc-grid { display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:0.5rem; }
+    /* Answer area — shown below card after flip */
+    .fc-answer-area { background:white;border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:0.75rem; }
+    .fc-mc-grid { display:grid;grid-template-columns:1fr 1fr;gap:0.6rem; }
     .fc-mc-btn { background:white;border:1.5px solid var(--border);border-radius:10px;padding:0.75rem 1rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.875rem;color:var(--text);cursor:pointer;transition:all 0.18s;text-align:left;line-height:1.35; }
     .fc-mc-btn:hover:not(:disabled) { border-color:var(--accent);background:var(--accent-light); }
     .fc-mc-btn.correct { background:#dcfce7;border-color:#16a34a;color:#16a34a; }
     .fc-mc-btn.wrong { background:#fee2e2;border-color:#dc2626;color:#dc2626; }
     .fc-mc-btn:disabled { cursor:default; }
-
     .fc-type-wrap { display:flex;gap:0.65rem;align-items:center; }
     .fc-type-input { flex:1;border:1.5px solid var(--border);border-radius:8px;padding:0.65rem 1rem;font-family:'Nunito Sans',sans-serif;font-size:0.95rem;outline:none;transition:border-color 0.2s; }
     .fc-type-input:focus { border-color:var(--accent); }
     .fc-type-input.correct { border-color:#16a34a;background:#f0fdf4; }
     .fc-type-input.wrong { border-color:#dc2626;background:#fef2f2; }
+
+    .fc-feedback { border-radius:10px;padding:0.65rem 1rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.875rem;text-align:center;margin-bottom:0.75rem; }
+    .fc-feedback.correct { background:#dcfce7;color:#16a34a;border:1px solid #bbf7d0; }
+    .fc-feedback.wrong { background:#fee2e2;color:#dc2626;border:1px solid #fecaca; }
 
     .fc-results-card { background:white;border:1px solid var(--border);border-radius:16px;padding:2.5rem 2rem;text-align:center;max-width:480px;margin:0 auto; }
     .fc-results-title { font-family:'Nunito',sans-serif;font-weight:900;font-size:1.3rem;margin-bottom:0.5rem; }
@@ -416,7 +426,7 @@
           <div class="fc-intro-icon">🃏</div>
           <div>
             <div class="fc-intro-title">Flashcards</div>
-            <div class="fc-intro-desc">You'll see a definition — your job is to identify the correct keyword. Choose your difficulty and topic below.</div>
+            <div class="fc-intro-desc">See the definition — click the card to flip it, then answer. 5 weighted cards per round.</div>
           </div>
         </div>
         <div class="fc-options">
@@ -436,43 +446,34 @@
       <!-- Session -->
       <div id="fc-session" style="display:none">
         <div class="fc-progress-row">
-          <span class="fc-progress-text" id="fc-progress-text">Card 1 of 20</span>
+          <span class="fc-progress-text" id="fc-progress-text">Card 1 of 5</span>
           <div class="fc-progress-bar-wrap"><div class="fc-progress-bar-fill" id="fc-progress-bar"></div></div>
           <span class="fc-score-text" id="fc-score-text">✅ 0 &nbsp; ❌ 0</span>
         </div>
 
-        <!-- Definition card -->
-        <div class="fc-def-card" id="fc-def-card">
-          <div class="fc-card-label">DEFINITION</div>
-          <div class="fc-card-text" id="fc-def-text"></div>
-          <div class="fc-subtopic-tag" id="fc-subtopic-tag"></div>
-        </div>
-
-        <!-- Feedback banner -->
-        <div class="fc-feedback" id="fc-feedback" style="display:none">
-          <span id="fc-feedback-text"></span>
-        </div>
-
-        <!-- Easy mode: multiple choice -->
-        <div id="fc-easy-area" style="display:none">
-          <div class="fc-mc-grid" id="fc-mc-grid"></div>
-        </div>
-
-        <!-- Hard mode: type answer -->
-        <div id="fc-hard-area" style="display:none">
-          <div class="fc-type-wrap">
-            <input type="text" class="fc-type-input" id="fc-type-input" placeholder="Type the keyword..." autocomplete="off" autocorrect="off" spellcheck="false" />
-            <button class="btn-primary" onclick="checkTypedAnswer()" id="fc-submit-btn">Check →</button>
+        <!-- Flip card -->
+        <div class="fc-card-wrap" id="fc-card-wrap" onclick="flipFCCard()">
+          <div class="fc-card" id="fc-card">
+            <div class="fc-card-face fc-card-front">
+              <div class="fc-card-label">DEFINITION</div>
+              <div class="fc-card-text" id="fc-def-text">—</div>
+              <div class="fc-subtopic-tag" id="fc-subtopic-tag"></div>
+              <div class="fc-card-hint">Tap to flip →</div>
+            </div>
+            <div class="fc-card-face fc-card-back" id="fc-card-back">
+              <div class="fc-card-label" id="fc-back-label">WHAT IS THE KEYWORD?</div>
+              <div id="fc-answer-content"></div>
+            </div>
           </div>
-          <div style="font-size:0.75rem;color:var(--subtext);margin-top:0.4rem">Minor spelling differences are accepted</div>
         </div>
 
-        <!-- Next button (shown after answer) -->
-        <div style="text-align:center;margin-top:1rem">
+        <!-- Feedback (shown after answering) -->
+        <div class="fc-feedback" id="fc-feedback" style="display:none"></div>
+
+        <!-- Next / End -->
+        <div style="text-align:center;margin-top:0.75rem;display:flex;gap:0.75rem;justify-content:center">
           <button class="btn-primary" id="fc-next-btn" onclick="fcNext()" style="display:none;padding:0.65rem 2rem">Next →</button>
-        </div>
-        <div style="text-align:center;margin-top:0.5rem">
-          <button onclick="endFlashcards()" style="background:none;border:none;color:var(--subtext);font-size:0.78rem;cursor:pointer;text-decoration:underline">End session</button>
+          <button onclick="endFlashcards()" style="background:none;border:none;color:var(--subtext);font-size:0.78rem;cursor:pointer;text-decoration:underline;align-self:center">End session</button>
         </div>
       </div>
 
@@ -480,10 +481,10 @@
       <div id="fc-results" style="display:none">
         <div class="fc-results-card">
           <div style="font-size:3rem;margin-bottom:0.5rem">🃏</div>
-          <div class="fc-results-title">Session Complete!</div>
+          <div class="fc-results-title">Round Complete!</div>
           <div class="fc-results-stats" id="fc-results-stats"></div>
           <div style="display:flex;gap:0.75rem;justify-content:center;margin-top:1.25rem;flex-wrap:wrap">
-            <button class="btn-primary" onclick="startFlashcards()" style="padding:0.65rem 1.5rem">🔄 Go Again</button>
+            <button class="btn-primary" onclick="startFlashcards()" style="padding:0.65rem 1.5rem">▶ Next 5 Cards</button>
             <button class="btn-primary" onclick="showFCControls()" style="background:none;color:var(--accent);border:1.5px solid var(--accent);padding:0.65rem 1.5rem">← Change Settings</button>
           </div>
         </div>
@@ -813,13 +814,15 @@ function weightedShuffle(arr) {
 }
 
 // ── FLASHCARDS ────────────────────────────────────────────────────────────────
-let fcMode = 'easy';       // 'easy' (multiple choice) or 'hard' (typed)
+let fcMode = 'easy';
 let fcTopicFilter = 'all';
 let fcDeck = [];
 let fcIndex = 0;
 let fcCorrect = 0;
 let fcWrong = 0;
+let fcFlipped = false;
 let fcAnswered = false;
+const FC_ROUND_SIZE = 5;
 
 function setFCMode(mode) {
   fcMode = mode;
@@ -846,10 +849,29 @@ function buildFCTopicFilter() {
   });
 }
 
+// Weight keywords by RAG tier — not started / beginning get highest priority
+function fcRagWeight(kw) {
+  const idx = fuzzyMatchTopic(kw.sub_topic || kw.word, meta.topics);
+  if (idx < 0) return 5; // unknown → treat as not started
+  const topicName = meta.topics[idx];
+  const entry = ragState[topicName];
+  const score = applyDecay(entry)?.score ?? 0;
+  const tier = computeTier(score);
+  return tier === 'not_started' ? 6 : tier === 'beginning' ? 5 : tier === 'developing' ? 4 : tier === 'approaching' ? 3 : tier === 'confident' ? 2 : 1;
+}
+
+function pickFCDeck() {
+  let pool = fcTopicFilter === 'all' ? [...keywords] : keywords.filter(k => k.sub_topic === fcTopicFilter);
+  // Weighted shuffle
+  const weighted = pool.map(k => ({ k, sort: Math.random() * fcRagWeight(k) }))
+    .sort((a, b) => b.sort - a.sort)
+    .map(x => x.k);
+  return weighted.slice(0, FC_ROUND_SIZE);
+}
+
 function startFlashcards() {
   if (!keywords.length) return;
-  let deck = fcTopicFilter === 'all' ? [...keywords] : keywords.filter(k => k.sub_topic === fcTopicFilter);
-  fcDeck = deck.sort(() => Math.random() - 0.5);
+  fcDeck = pickFCDeck();
   fcIndex = 0; fcCorrect = 0; fcWrong = 0;
   document.getElementById('fc-controls').style.display = 'none';
   document.getElementById('fc-results').style.display = 'none';
@@ -861,53 +883,65 @@ function startFlashcards() {
 function showFCCard() {
   if (fcIndex >= fcDeck.length) { showFCResults(); return; }
   const card = fcDeck[fcIndex];
+  fcFlipped = false;
   fcAnswered = false;
 
-  // Show definition
+  // Reset card to front
+  const fcCard = document.getElementById('fc-card');
+  fcCard.classList.remove('flipped');
+  document.getElementById('fc-card-wrap').style.cursor = 'pointer';
+
+  // Populate front
   document.getElementById('fc-def-text').textContent = card.definition;
   document.getElementById('fc-subtopic-tag').textContent = card.sub_topic || '';
+
+  // Clear back
+  document.getElementById('fc-answer-content').innerHTML = '';
   document.getElementById('fc-feedback').style.display = 'none';
   document.getElementById('fc-next-btn').style.display = 'none';
 
-  if (fcMode === 'easy') {
-    document.getElementById('fc-easy-area').style.display = 'block';
-    document.getElementById('fc-hard-area').style.display = 'none';
-    renderMCOptions(card);
-  } else {
-    document.getElementById('fc-easy-area').style.display = 'none';
-    document.getElementById('fc-hard-area').style.display = 'block';
-    const input = document.getElementById('fc-type-input');
-    input.value = '';
-    input.className = 'fc-type-input';
-    input.disabled = false;
-    input.focus();
-    document.getElementById('fc-submit-btn').disabled = false;
-  }
   updateFCProgress();
 }
 
-function renderMCOptions(card) {
-  // Pick 3 wrong answers from other keywords
-  const others = keywords.filter(k => k.word !== card.word);
-  const wrong = others.sort(() => Math.random() - 0.5).slice(0, 3);
-  const options = [...wrong, card].sort(() => Math.random() - 0.5);
-  const grid = document.getElementById('fc-mc-grid');
-  grid.innerHTML = options.map(opt => `
-    <button class="fc-mc-btn" onclick="checkMCAnswer('${opt.word.replace(/'/g,"\'")}', '${card.word.replace(/'/g,"\'")}', this)">
-      ${opt.word}
-    </button>
-  `).join('');
+function flipFCCard() {
+  if (fcFlipped) return; // already flipped — don't re-flip
+  fcFlipped = true;
+  document.getElementById('fc-card').classList.add('flipped');
+  document.getElementById('fc-card-wrap').style.cursor = 'default';
+
+  // Populate back with answer area
+  const card = fcDeck[fcIndex];
+  const backContent = document.getElementById('fc-answer-content');
+
+  if (fcMode === 'easy') {
+    // Multiple choice
+    const others = keywords.filter(k => k.word !== card.word);
+    const distractors = others.sort(() => Math.random() - 0.5).slice(0, 3);
+    const options = [...distractors, card].sort(() => Math.random() - 0.5);
+    backContent.innerHTML = '<div class="fc-mc-grid">' + options.map(opt =>
+      `<button class="fc-mc-btn" onclick="checkMCAnswer(this,'${opt.word.replace(/'/g, "&#39;")}','${card.word.replace(/'/g, "&#39;")}')">${opt.word}</button>`
+    ).join('') + '</div>';
+  } else {
+    // Type mode
+    backContent.innerHTML = `
+      <div class="fc-type-wrap">
+        <input type="text" class="fc-type-input" id="fc-type-input" placeholder="Type the keyword..." autocomplete="off" autocorrect="off" spellcheck="false" />
+        <button class="btn-primary" id="fc-submit-btn" onclick="checkTypedAnswer()">Check →</button>
+      </div>
+      <div style="font-size:0.75rem;color:var(--subtext);margin-top:0.5rem;text-align:center">Minor spelling differences are accepted</div>`;
+    // Focus after flip animation
+    setTimeout(() => document.getElementById('fc-type-input')?.focus(), 520);
+  }
 }
 
-function checkMCAnswer(chosen, correct, btn) {
+function checkMCAnswer(btn, chosen, correct) {
   if (fcAnswered) return;
   fcAnswered = true;
-  const isCorrect = chosen === correct;
-  // Highlight buttons
   document.querySelectorAll('.fc-mc-btn').forEach(b => {
     b.disabled = true;
     if (b.textContent.trim() === correct) b.classList.add('correct');
   });
+  const isCorrect = chosen === correct;
   if (!isCorrect) btn.classList.add('wrong');
   showFCFeedback(isCorrect, correct);
   recordFCAnswer(isCorrect);
@@ -915,38 +949,34 @@ function checkMCAnswer(chosen, correct, btn) {
 
 function checkTypedAnswer() {
   if (fcAnswered) return;
-  const card = fcDeck[fcIndex];
-  const typed = document.getElementById('fc-type-input').value.trim();
+  const input = document.getElementById('fc-type-input');
+  if (!input) return;
+  const typed = input.value.trim();
   if (!typed) return;
   fcAnswered = true;
-
-  // Fuzzy match: normalise and allow small edit distance
+  const card = fcDeck[fcIndex];
   const norm = s => s.toLowerCase().replace(/[^a-z0-9]/g, '');
-  const isCorrect = norm(typed) === norm(card.word) ||
-    levenshtein(norm(typed), norm(card.word)) <= 2;
-
-  const input = document.getElementById('fc-type-input');
+  const isCorrect = norm(typed) === norm(card.word) || levenshtein(norm(typed), norm(card.word)) <= 2;
   input.className = 'fc-type-input ' + (isCorrect ? 'correct' : 'wrong');
   input.disabled = true;
-  document.getElementById('fc-submit-btn').disabled = true;
+  const submitBtn = document.getElementById('fc-submit-btn');
+  if (submitBtn) submitBtn.disabled = true;
   showFCFeedback(isCorrect, card.word);
   recordFCAnswer(isCorrect);
 }
 
-// Levenshtein distance for typo tolerance
 function levenshtein(a, b) {
   const m = a.length, n = b.length;
-  const dp = Array.from({length: m+1}, (_, i) => Array.from({length: n+1}, (_, j) => i === 0 ? j : j === 0 ? i : 0));
-  for (let i = 1; i <= m; i++) for (let j = 1; j <= n; j++)
-    dp[i][j] = a[i-1] === b[j-1] ? dp[i-1][j-1] : 1 + Math.min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]);
+  const dp = Array.from({length: m+1}, (_, i) => Array.from({length: n+1}, (_, j) => i===0?j:j===0?i:0));
+  for (let i=1;i<=m;i++) for (let j=1;j<=n;j++)
+    dp[i][j] = a[i-1]===b[j-1] ? dp[i-1][j-1] : 1+Math.min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1]);
   return dp[m][n];
 }
 
 function showFCFeedback(isCorrect, correctWord) {
   const fb = document.getElementById('fc-feedback');
-  const txt = document.getElementById('fc-feedback-text');
   fb.className = 'fc-feedback ' + (isCorrect ? 'correct' : 'wrong');
-  txt.textContent = isCorrect ? '✅ Correct!' : `❌ The answer was: ${correctWord}`;
+  fb.textContent = isCorrect ? '✅ Correct!' : `❌ The answer was: ${correctWord}`;
   fb.style.display = 'block';
   document.getElementById('fc-next-btn').style.display = 'inline-flex';
 }
@@ -954,35 +984,25 @@ function showFCFeedback(isCorrect, correctWord) {
 async function recordFCAnswer(isCorrect) {
   const card = fcDeck[fcIndex];
   if (isCorrect) fcCorrect++; else fcWrong++;
-  // Update RAG score
   if (window._currentUser && card.sub_topic) {
     const idx = fuzzyMatchTopic(card.sub_topic, meta.topics);
     if (idx >= 0) {
       const topicName = meta.topics[idx];
-      const current = ragState[topicName] || null;
-      const activityPct = isCorrect ? 100 : 0;
-      const updated = computeNewTopicScore(current, activityPct, 'flashcard');
+      const updated = computeNewTopicScore(ragState[topicName] || null, isCorrect ? 100 : 0, 'flashcard');
       ragState[topicName] = updated;
       renderChecklist(ragState);
-      if (window._saveRAG) {
-        window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState)
-          .catch(e => console.log('RAG save error:', e));
-      }
+      if (window._saveRAG) window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState).catch(()=>{});
     }
   }
   updateFCProgress();
 }
 
-function fcNext() {
-  fcIndex++;
-  showFCCard();
-}
+function fcNext() { fcIndex++; showFCCard(); }
 
 function updateFCProgress() {
   const total = fcDeck.length;
-  const done = fcCorrect + fcWrong;
-  document.getElementById('fc-progress-text').textContent = `Card ${Math.min(fcIndex + 1, total)} of ${total}`;
-  document.getElementById('fc-progress-bar').style.width = `${(fcIndex / total) * 100}%`;
+  document.getElementById('fc-progress-text').textContent = `Card ${Math.min(fcIndex+1, total)} of ${total}`;
+  document.getElementById('fc-progress-bar').style.width = `${(fcIndex/total)*100}%`;
   document.getElementById('fc-score-text').innerHTML = `✅ ${fcCorrect} &nbsp; ❌ ${fcWrong}`;
 }
 
@@ -990,12 +1010,11 @@ function showFCResults() {
   document.getElementById('fc-session').style.display = 'none';
   document.getElementById('fc-results').style.display = 'block';
   const total = fcDeck.length;
-  const pct = total > 0 ? Math.round((fcCorrect / total) * 100) : 0;
+  const pct = total > 0 ? Math.round((fcCorrect/total)*100) : 0;
   document.getElementById('fc-results-stats').innerHTML = `
     <div style="font-size:2.5rem;font-weight:900;font-family:'Nunito',sans-serif;color:var(--accent)">${pct}%</div>
     <div>✅ Correct: <strong>${fcCorrect}</strong> &nbsp;&nbsp; ❌ Wrong: <strong>${fcWrong}</strong></div>
-    <div style="margin-top:0.5rem;font-size:0.8rem">Your topic scores have been updated.</div>
-  `;
+    <div style="margin-top:0.5rem;font-size:0.8rem">Topic scores updated. Next round will pick 5 new weighted cards.</div>`;
   showRAG();
 }
 
@@ -1010,9 +1029,12 @@ function showFCControls() {
 
 // Enter key support for typed mode
 document.addEventListener('keydown', e => {
-  if (e.key === 'Enter' && document.getElementById('fc-hard-area')?.style.display !== 'none') {
-    if (!fcAnswered) checkTypedAnswer();
-    else if (document.getElementById('fc-next-btn')?.style.display !== 'none') fcNext();
+  if (e.key === 'Enter') {
+    const hardArea = document.getElementById('fc-hard-area');
+    const typeInput = document.getElementById('fc-type-input');
+    if (typeInput && fcFlipped && !fcAnswered) { checkTypedAnswer(); return; }
+    const nextBtn = document.getElementById('fc-next-btn');
+    if (nextBtn && nextBtn.style.display !== 'none') fcNext();
   }
 });
 
