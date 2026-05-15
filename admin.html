@@ -259,19 +259,25 @@
     </div>
 
     <!-- TEACHER MANAGEMENT -->
-    <div class="section-title">👨‍🏫 Staff Access</div>
+    <div class="section-title">👨‍🏫 Teacher Accounts</div>
     <div class="card">
       <div class="add-teacher-row">
         <input type="email" class="input-email" id="teacher-email-input"
           placeholder="teacher@thestreetlyacademy.co.uk" />
         <button class="btn-add" id="add-teacher-btn" onclick="addTeacher()">+ Add Teacher</button>
       </div>
-      <div class="form-hint">Enter the teacher's school Google account email address.</div>
+      <div class="form-hint">Teachers can view their class data and set assignments.</div>
       <div class="form-msg" id="form-msg"></div>
+      <hr style="border:none;border-top:1px solid var(--border);margin:1.25rem 0">
+      <div class="teacher-list" id="teacher-list">
+        <div class="empty-state">Loading teachers...</div>
+      </div>
+    </div>
 
-      <!-- SUPERADMIN ONLY — add admin role -->
-      <div class="superadmin-only" style="display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)">
-        <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.78rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem">Add Admin (HOD / Head of Science)</div>
+    <!-- ADMIN MANAGEMENT — superadmin only -->
+    <div class="superadmin-only" style="display:none">
+      <div class="section-title">🏫 Admin Accounts (HODs / Heads of Science)</div>
+      <div class="card">
         <div class="add-teacher-row">
           <input type="email" class="input-email" id="admin-email-input"
             placeholder="hod@thestreetlyacademy.co.uk" />
@@ -279,11 +285,10 @@
         </div>
         <div class="form-hint">Admins can view whole-school data and manage the curriculum schedule.</div>
         <div class="form-msg" id="form-msg-admin"></div>
-      </div>
-
-      <hr style="border:none;border-top:1px solid var(--border);margin:1.25rem 0">
-      <div class="teacher-list" id="teacher-list">
-        <div class="empty-state">Loading staff...</div>
+        <hr style="border:none;border-top:1px solid var(--border);margin:1.25rem 0">
+        <div class="teacher-list" id="admin-list">
+          <div class="empty-state">Loading admins...</div>
+        </div>
       </div>
     </div>
 
@@ -381,28 +386,36 @@
     renderStaff(staff);
   }
 
+  function renderStaffRow(t) {
+    const initials = t.email.split('@')[0].split('.').map(p => p[0]?.toUpperCase() || '').join('').slice(0,2);
+    const addedDate = t.addedAt?.toDate ? t.addedAt.toDate().toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' }) : '—';
+    return `
+      <div class="teacher-row" id="row-${CSS.escape(t.email)}">
+        <div class="teacher-avatar">${initials}</div>
+        <div class="teacher-email">${t.email}</div>
+        <div class="teacher-added">Added ${addedDate}</div>
+        <button class="btn-remove" onclick="removeStaff('${t.email}')">Remove</button>
+      </div>
+    `;
+  }
+
   function renderStaff(staff) {
-    const list = document.getElementById('teacher-list');
-    if (staff.length === 0) {
-      list.innerHTML = '<div class="empty-state">No staff added yet. Use the form above to grant access.</div>';
-      return;
+    const teachers = staff.filter(s => s.role === 'teacher');
+    const admins = staff.filter(s => s.role === 'admin');
+
+    // Teachers list
+    const teacherList = document.getElementById('teacher-list');
+    teacherList.innerHTML = teachers.length
+      ? teachers.map(renderStaffRow).join('')
+      : '<div class="empty-state">No teachers added yet.</div>';
+
+    // Admins list (only rendered if superadmin-only section is visible)
+    const adminList = document.getElementById('admin-list');
+    if (adminList) {
+      adminList.innerHTML = admins.length
+        ? admins.map(renderStaffRow).join('')
+        : '<div class="empty-state">No admins added yet.</div>';
     }
-    list.innerHTML = staff.map(t => {
-      const initials = t.email.split('@')[0].split('.').map(p => p[0]?.toUpperCase() || '').join('').slice(0,2);
-      const addedDate = t.addedAt?.toDate ? t.addedAt.toDate().toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' }) : '—';
-      const roleBadge = t.role === 'admin'
-        ? `<span style="background:#fee2e2;color:#c8202c;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.65rem;padding:0.15rem 0.5rem;border-radius:100px">Admin</span>`
-        : `<span style="background:#e0e7ff;color:#6366f1;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.65rem;padding:0.15rem 0.5rem;border-radius:100px">Teacher</span>`;
-      return `
-        <div class="teacher-row" id="row-${CSS.escape(t.email)}">
-          <div class="teacher-avatar">${initials}</div>
-          <div class="teacher-email">${t.email}</div>
-          ${roleBadge}
-          <div class="teacher-added">Added ${addedDate}</div>
-          <button class="btn-remove" onclick="removeStaff('${t.email}')">Remove</button>
-        </div>
-      `;
-    }).join('');
   }
 
   window.addTeacher = async () => {
