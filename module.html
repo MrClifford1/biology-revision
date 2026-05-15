@@ -198,7 +198,8 @@
 
     /* ── SHARED RAG BANNER ───────────────────────────────────────────────────── */
     .shared-rag { margin-top: 1.25rem; transition: opacity 0.25s ease, transform 0.25s ease; }
-    .shared-rag.rag-hidden { display: none; }
+    .shared-rag.rag-hidden { display: none; pointer-events: none; }
+    .shared-rag { position: relative; z-index: 0; }
 
     /* ── REVISE BANNER ───────────────────────────────────────────────────────── */
     .revise-banner { background: white; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin-bottom: 0; }
@@ -404,7 +405,7 @@
   </div>
 
   <!-- ── SHARED RAG CHECKLIST v2 ───────────────────────────────────────────── -->
-  <div class="checklist-card shared-rag" id="shared-rag-card">
+  <div class="checklist-card shared-rag rag-hidden" id="shared-rag-card">
     <h3 id="checklist-title">Topics</h3>
     <div class="checklist-legend">
       <span class="legend-item">⬜ Not Started</span>
@@ -612,6 +613,9 @@ function renderChecklist(state) {
     \`;
     list.appendChild(li);
   });
+  // Show card now that it has content
+  const card = document.getElementById('shared-rag-card');
+  if (card) card.classList.remove('rag-hidden');
 }
 renderChecklist(ragState);
 
