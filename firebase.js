@@ -122,10 +122,10 @@ export async function getAllProgress(uid) {
 // ── CLASS SELECTION ───────────────────────────────────────────────────────────
 export async function saveClass(uid, className) {
   const academicYear = getCurrentAcademicYear();
-  await updateDoc(doc(db, 'users', uid), {
+  await setDoc(doc(db, 'users', uid), {
     class: className,
     classSetYear: academicYear,
-  });
+  }, { merge: true });
 }
 
 // Academic year starts in September — returns e.g. 2025 for Sep 2025 – Aug 2026
