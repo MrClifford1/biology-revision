@@ -60,25 +60,29 @@
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
 
-    /* ── RAG CHECKLIST ───────────────────────────────────────────────────────── */
+    /* ── RAG CHECKLIST v2 ────────────────────────────────────────────────────── */
     .checklist-card { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem 1.5rem; margin-top: 1rem; }
     .checklist-card h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--text); }
-    .checklist-legend { display: flex; gap: 1rem; margin-bottom: 0.85rem; flex-wrap: wrap; align-items: center; }
-    .legend-item { display: flex; align-items: center; gap: 0.35rem; font-size: 0.75rem; color: var(--subtext); font-weight: 600; }
-    .legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
-    .legend-dot.grey { background: #cbd5e1; }
-    .legend-dot.red { background: #ef4444; }
-    .legend-dot.amber { background: #f59e0b; }
-    .legend-dot.green { background: #22c55e; }
-    .topic-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.4rem; list-style: none; }
-    .topic-item { padding: 0.45rem 0.75rem; background: var(--bg); border-radius: 8px; font-size: 0.825rem; color: var(--text); border-left: 4px solid #cbd5e1; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
-    .topic-item.rag-red { border-left-color: #ef4444; background: #fef2f2; }
-    .topic-item.rag-amber { border-left-color: #f59e0b; background: #fffbeb; }
-    .topic-item.rag-green { border-left-color: #22c55e; background: #f0fdf4; }
-    .topic-rag-dot { width: 10px; height: 10px; border-radius: 50%; background: #cbd5e1; flex-shrink: 0; }
-    .topic-item.rag-red .topic-rag-dot { background: #ef4444; }
-    .topic-item.rag-amber .topic-rag-dot { background: #f59e0b; }
-    .topic-item.rag-green .topic-rag-dot { background: #22c55e; }
+    .checklist-legend { display: flex; gap: 0.6rem; margin-bottom: 0.85rem; flex-wrap: wrap; align-items: center; }
+    .legend-item { display: flex; align-items: center; gap: 0.3rem; font-size: 0.72rem; color: var(--subtext); font-weight: 600; }
+    .topic-list { display: flex; flex-direction: column; gap: 0.45rem; list-style: none; }
+    .topic-item {
+      padding: 0.55rem 0.85rem;
+      background: var(--bg);
+      border-radius: 10px;
+      font-size: 0.825rem;
+      color: var(--text);
+      border-left: 4px solid #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .topic-item-name { flex: 0 0 auto; min-width: 160px; max-width: 220px; font-weight: 600; }
+    .topic-bar-wrap { flex: 1; height: 8px; background: #e2e8f0; border-radius: 100px; overflow: hidden; }
+    .topic-bar-fill { height: 100%; border-radius: 100px; transition: width 0.6s ease; }
+    .topic-tier-label { font-family: 'Nunito', sans-serif; font-size: 0.7rem; font-weight: 800; white-space: nowrap; min-width: 80px; text-align: right; }
+    .topic-pct { font-family: 'Nunito', sans-serif; font-size: 0.72rem; font-weight: 700; color: var(--subtext); min-width: 34px; text-align: right; }
+    .topic-icons { font-size: 0.8rem; white-space: nowrap; }
 
     /* ── REVISE CARDS ────────────────────────────────────────────────────────── */
     .revise-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.1rem; }
@@ -207,13 +211,7 @@
     .btn-revise-banner { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; background: var(--accent); color: white; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.95rem; padding: 0.8rem 1.75rem; border-radius: 12px; text-decoration: none; border: none; cursor: pointer; transition: opacity 0.18s; white-space: nowrap; flex-shrink: 0; }
     .btn-revise-banner:hover { opacity: 0.88; }
 
-    /* ── HATCHED RAG (low confidence — <3 raw marks) ─────────────────────────── */
-    .topic-item.rag-red-hatched { border-left-color: #ef4444; background: repeating-linear-gradient(45deg, #fef2f2, #fef2f2 4px, #fee2e2 4px, #fee2e2 8px); }
-    .topic-item.rag-amber-hatched { border-left-color: #f59e0b; background: repeating-linear-gradient(45deg, #fffbeb, #fffbeb 4px, #fef3c7 4px, #fef3c7 8px); }
-    .topic-item.rag-green-hatched { border-left-color: #22c55e; background: repeating-linear-gradient(45deg, #f0fdf4, #f0fdf4 4px, #dcfce7 4px, #dcfce7 8px); }
-    .topic-item.rag-red-hatched .topic-rag-dot { background: repeating-linear-gradient(45deg, #ef4444, #ef4444 3px, #fca5a5 3px, #fca5a5 6px); border-radius: 50%; }
-    .topic-item.rag-amber-hatched .topic-rag-dot { background: repeating-linear-gradient(45deg, #f59e0b, #f59e0b 3px, #fcd34d 3px, #fcd34d 6px); border-radius: 50%; }
-    .topic-item.rag-green-hatched .topic-rag-dot { background: repeating-linear-gradient(45deg, #22c55e, #22c55e 3px, #86efac 3px, #86efac 6px); border-radius: 50%; }
+    /* hatched styles removed — replaced by v2 tier bars */
 
     @media (max-width: 800px) {
       .module-header, .tabs-wrapper, .content-wrapper { padding-left: 1rem; padding-right: 1rem; }
@@ -405,16 +403,19 @@
     </div>
   </div>
 
-  <!-- ── SHARED RAG CHECKLIST ─────────────────────────────────────────────────── -->
+  <!-- ── SHARED RAG CHECKLIST v2 ───────────────────────────────────────────── -->
   <div class="checklist-card shared-rag" id="shared-rag-card">
     <h3 id="checklist-title">Topics</h3>
     <div class="checklist-legend">
-      <div class="legend-item"><div class="legend-dot grey"></div> Not yet attempted</div>
-      <div class="legend-item"><div class="legend-dot red"></div> Needs work</div>
-      <div class="legend-item"><div class="legend-dot amber"></div> Getting there</div>
-      <div class="legend-item"><div class="legend-dot green"></div> Confident</div>
-      <div class="legend-item" style="gap:0.5rem"><div style="width:12px;height:12px;border-radius:50%;background:repeating-linear-gradient(45deg,#22c55e,#22c55e 3px,#86efac 3px,#86efac 6px);flex-shrink:0"></div> Limited data</div>
-      <span style="font-size:0.72rem;color:var(--subtext);margin-left:auto">Updated automatically from your question scores</span>
+      <span class="legend-item">⬜ Not Started</span>
+      <span class="legend-item">🔴 Beginning</span>
+      <span class="legend-item">🟠 Developing</span>
+      <span class="legend-item">🟡 Approaching</span>
+      <span class="legend-item">🟢 Confident</span>
+      <span class="legend-item">💙 Mastered</span>
+      <span class="legend-item">⭐ Mastered &amp; Retained</span>
+      <span class="legend-item">📉 Decaying</span>
+      <span style="font-size:0.72rem;color:var(--subtext);margin-left:auto">Updates from your question scores</span>
     </div>
     <ul class="topic-list" id="topic-list"></ul>
   </div>
@@ -506,7 +507,59 @@ function hideRAG() {
   if (el) el.classList.add('rag-hidden');
 }
 
-// ── RAG HELPERS ───────────────────────────────────────────────────────────────
+// ── RAG SYSTEM v2 ─────────────────────────────────────────────────────────────
+
+const TIER_META = {
+  not_started: { label: 'Not Started', emoji: '⬜', colour: '#cbd5e1', bg: '#f8fafc' },
+  beginning:   { label: 'Beginning',   emoji: '🔴', colour: '#ef4444', bg: '#fef2f2' },
+  developing:  { label: 'Developing',  emoji: '🟠', colour: '#f97316', bg: '#fff7ed' },
+  approaching: { label: 'Approaching', emoji: '🟡', colour: '#eab308', bg: '#fefce8' },
+  confident:   { label: 'Confident',   emoji: '🟢', colour: '#22c55e', bg: '#f0fdf4' },
+  mastered:    { label: 'Mastered',    emoji: '💙', colour: '#3b82f6', bg: '#eff6ff' },
+};
+
+const RAG_INPUT_WEIGHTS = {
+  mock: 1.0, paper: 1.0, words: 0.3,
+  // Future: cloze: 0.6, diagram: 0.6, flashcard: 0.2,
+};
+
+function computeTier(score) {
+  if (!score || score === 0) return 'not_started';
+  if (score <= 33)  return 'beginning';
+  if (score <= 55)  return 'developing';
+  if (score <= 75)  return 'approaching';
+  if (score <= 89)  return 'confident';
+  return 'mastered';
+}
+
+function applyDecay(entry) {
+  if (!entry || !entry.lastActivity) return entry;
+  const score = entry.score || 0;
+  if (score === 0) return entry;
+  const daysInactive = (Date.now() - new Date(entry.lastActivity).getTime()) / 86400000;
+  if (daysInactive <= 7) return entry;
+  const decayRates = { mastered:0.3, confident:0.5, approaching:0.8, developing:1.0, beginning:1.2, not_started:0 };
+  const rate = decayRates[computeTier(score)] || 0;
+  const newScore = Math.max(0, score - (daysInactive - 7) * rate);
+  let { retained, retainedSince } = entry;
+  if (newScore < 90) { retained = false; retainedSince = null; }
+  return { ...entry, score: Math.round(newScore * 10) / 10, retained, retainedSince };
+}
+
+function computeNewTopicScore(currentEntry, activityPct, inputType) {
+  const weight = RAG_INPUT_WEIGHTS[inputType] ?? 0.3;
+  const oldScore = currentEntry?.score ?? 0;
+  const now = new Date().toISOString();
+  const newScore = Math.min(100, Math.max(0, Math.round((oldScore + (activityPct - oldScore) * weight) * 10) / 10));
+  let retainedSince = currentEntry?.retainedSince ?? null;
+  let retained = currentEntry?.retained ?? false;
+  if (newScore >= 90) {
+    if (!retainedSince) retainedSince = now;
+    if ((Date.now() - new Date(retainedSince).getTime()) / 86400000 >= 28) retained = true;
+  } else { retainedSince = null; retained = false; }
+  return { score: newScore, lastActivity: now, retained, retainedSince };
+}
+
 function fuzzyMatchTopic(questionTopic, checklistTopics) {
   if (!questionTopic) return -1;
   const qt = questionTopic.toLowerCase();
@@ -523,68 +576,80 @@ function fuzzyMatchTopic(questionTopic, checklistTopics) {
   return bestScore >= 1 ? bestIdx : -1;
 }
 
-function recencyWeight(timestampMs) {
-  const days = (Date.now() - timestampMs) / 86400000;
-  if (days <= 30)  return 1.0;
-  if (days <= 180) return 0.5;
-  return 0.25;
-}
+// Current RAG state: topic name → entry object
+let ragState = {};
 
-function calculateRAG(scoreHistory, checklistTopics) {
-  const td = checklistTopics.map(() => ({ wa: 0, wt: 0 }));
-  scoreHistory.forEach(e => {
-    const idx = fuzzyMatchTopic(e.topic, checklistTopics);
-    if (idx < 0) return;
-    const w = recencyWeight(e.timestamp || Date.now());
-    td[idx].wa += (e.awarded || 0) * w;
-    td[idx].wt += (e.marks   || 0) * w;
-  });
-  return td.map(d => {
-    if (d.wt < 5) return '';
-    const pct = d.wa / d.wt;
-    return pct >= 0.67 ? 'green' : pct >= 0.34 ? 'amber' : 'red';
-  });
-}
-
-let ragColours = meta.topics.map(() => '');
-
-function renderChecklist(colours) {
-  ragColours = colours;
+function renderChecklist(state) {
+  ragState = state;
   const list = document.getElementById('topic-list');
   list.innerHTML = '';
-  meta.topics.forEach((t, i) => {
+  meta.topics.forEach(topicName => {
+    const raw = state[topicName] || null;
+    const entry = raw ? applyDecay(raw) : null;
+    const score = entry?.score ?? 0;
+    const tier = computeTier(score);
+    const tm = TIER_META[tier];
+
+    // Decay indicator: decaying if lastActivity > 7 days ago and score > 0
+    const daysInactive = entry?.lastActivity
+      ? (Date.now() - new Date(entry.lastActivity).getTime()) / 86400000
+      : 999;
+    const isDecaying = score > 0 && daysInactive > 7;
+    const isRetained = entry?.retained;
+
     const li = document.createElement('li');
-    li.className = 'topic-item' + (colours[i] ? ` rag-${colours[i]}` : '');
-    li.innerHTML = `<span>${t}</span><div class="topic-rag-dot"></div>`;
+    li.className = 'topic-item';
+    li.style.borderLeftColor = tm.colour;
+    li.style.background = tm.bg;
+    li.innerHTML = \`
+      <span class="topic-item-name">\${topicName}</span>
+      <div class="topic-bar-wrap">
+        <div class="topic-bar-fill" style="width:\${score}%;background:\${tm.colour}"></div>
+      </div>
+      <span class="topic-pct">\${score > 0 ? Math.round(score) + '%' : ''}</span>
+      <span class="topic-tier-label" style="color:\${tm.colour}">\${tm.emoji} \${tm.label}</span>
+      <span class="topic-icons">\${isRetained ? '⭐' : ''}\${isDecaying ? ' 📉' : ''}</span>
+    \`;
     list.appendChild(li);
   });
 }
-renderChecklist(ragColours);
+renderChecklist(ragState);
 
 async function reloadRAGFromHistory(uid) {
-  if (!window._loadScoreHistory) return;
   try {
-    const history  = await window._loadScoreHistory(uid, subjectId, moduleId);
-    const colours  = calculateRAG(history, meta.topics);
-    renderChecklist(colours);
-    if (window._saveRAGColours) {
-      const obj = {};
-      colours.forEach((c, i) => { obj[i] = c; });
-      await window._saveRAGColours(uid, `${subjectId}-${moduleId}`, obj);
+    const loaded = await window._loadRAG(uid, \`\${subjectId}-\${moduleId}\`);
+    renderChecklist(loaded || {});
+    // After mock/paper, update topic scores from question results
+    if (window._pendingRAGUpdates && window._pendingRAGUpdates.length > 0) {
+      const updates = window._pendingRAGUpdates;
+      window._pendingRAGUpdates = [];
+      let currentState = { ...loaded };
+      for (const { topic, activityPct, inputType } of updates) {
+        const idx = fuzzyMatchTopic(topic, meta.topics);
+        if (idx < 0) continue;
+        const topicName = meta.topics[idx];
+        currentState[topicName] = computeNewTopicScore(currentState[topicName] || null, activityPct, inputType);
+      }
+      renderChecklist(currentState);
+      if (window._saveRAG) await window._saveRAG(uid, \`\${subjectId}-\${moduleId}\`, currentState);
     }
   } catch(e) { console.log('RAG reload failed:', e); }
 }
 
 // ── QUESTION WEIGHTING ────────────────────────────────────────────────────────
-function ragWeight(topic, topicsArr, coloursArr) {
-  const idx = fuzzyMatchTopic(topic, topicsArr || meta.topics);
+function ragWeight(topic) {
+  const idx = fuzzyMatchTopic(topic, meta.topics);
   if (idx < 0) return 4;
-  const r = (coloursArr || ragColours)[idx] || '';
-  return r === '' ? 4 : r === 'red' ? 3 : r === 'amber' ? 2 : 1;
+  const topicName = meta.topics[idx];
+  const entry = ragState[topicName];
+  const score = applyDecay(entry)?.score ?? 0;
+  const tier = computeTier(score);
+  // Higher weight = more likely to appear (prioritise weaker topics)
+  return tier === 'not_started' ? 5 : tier === 'beginning' ? 4 : tier === 'developing' ? 3 : tier === 'approaching' ? 2 : 1;
 }
 
-function weightedShuffle(arr, topicsArr, coloursArr) {
-  return arr.map(q => ({ q, key: Math.random() * ragWeight(q.topic, topicsArr, coloursArr) })).sort((a,b) => b.key - a.key).map(x => x.q);
+function weightedShuffle(arr) {
+  return arr.map(q => ({ q, key: Math.random() * ragWeight(q.topic) })).sort((a,b) => b.key - a.key).map(x => x.q);
 }
 
 // ── KEYWORDS ──────────────────────────────────────────────────────────────────
@@ -899,6 +964,7 @@ document.getElementById('start-practice-btn').addEventListener('click', async ()
 });
 
 document.getElementById('submit-btn').addEventListener('click', async () => {
+  if (!confirm("Are you sure you're ready to submit?\n\nOnce submitted you won't be able to go back and change your answers.")) return;
   const wa = collectWrittenAnswers(selectedQuestions);
   collectFIBAnswers(selectedQuestions);
   document.getElementById('questions-section').style.display = 'none';
@@ -955,6 +1021,7 @@ document.getElementById('start-paper-btn').addEventListener('click', async () =>
 });
 
 document.getElementById('paper-submit-btn').addEventListener('click', async () => {
+  if (!confirm("Are you sure you're ready to submit?\n\nOnce submitted you won't be able to go back and change your answers.")) return;
   const wa = collectWrittenAnswers(selectedPaperQuestions);
   collectFIBAnswers(selectedPaperQuestions);
   document.getElementById('paper-questions-section').style.display = 'none';
@@ -983,31 +1050,17 @@ loadQuestions();
 
 <!-- ── FIREBASE ───────────────────────────────────────────────────────────────── -->
 <script type="module">
-  import { onAuthChange, saveRAG, loadRAG, saveMockScore, db } from './firebase.js';
-  import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+  import { onAuthChange, saveRAG, loadRAG, saveMockScore } from './firebase.js';
 
   window._currentUser = null;
+  window._pendingRAGUpdates = [];
 
-  window._loadScoreHistory = async (uid, subject, module) => {
-    // Reads from progress/{subject-module}.mocks — matches saveMockScore structure in firebase.js
-    try {
-      const snap = await getDoc(doc(db, 'users', uid, 'progress', `${subject}-${module}`));
-      if (!snap.exists()) return [];
-      const mocks = snap.data().mocks || [];
-      const history = [];
-      mocks.forEach(entry => {
-        // saveMockScore stores date as ISO string
-        const ts = entry.date ? new Date(entry.date).getTime() : Date.now();
-        (entry.questions || []).forEach(qe => {
-          history.push({ topic: qe.topic||'', marks: qe.marks||0, awarded: qe.awarded||0, timestamp: ts });
-        });
-      });
-      return history;
-    } catch(e) { console.log('loadScoreHistory error:', e); return []; }
+  // Expose loadRAG and saveRAG for the inline RAG system
+  window._loadRAG = async (uid, moduleKey) => {
+    try { return await loadRAG(uid, moduleKey); } catch(e) { return {}; }
   };
-
-  window._saveRAGColours = async (uid, moduleKey, ragObj) => {
-    try { await saveRAG(uid, moduleKey, ragObj); } catch(e) {}
+  window._saveRAG = async (uid, moduleKey, state) => {
+    try { await saveRAG(uid, moduleKey, state); } catch(e) {}
   };
 
   onAuthChange(async user => {
@@ -1019,18 +1072,9 @@ loadQuestions();
     const pl = document.getElementById('progress-link');
     if (pl) pl.style.display = 'flex';
 
-    // Load from score history first
-    const history = await window._loadScoreHistory(user.uid, subjectId, moduleId);
-    if (history.length > 0) {
-      const colours = calculateRAG(history, meta.topics);
-      renderChecklist(colours);
-    } else {
-      // Fall back to saved RAG colours
-      try {
-        const cloudRAG = await loadRAG(user.uid, `${subjectId}-${moduleId}`);
-        if (Object.keys(cloudRAG).length > 0) renderChecklist(meta.topics.map((_, i) => cloudRAG[i] || ''));
-      } catch(e) {}
-    }
+    // Load saved RAG state (decay applied inside loadRAG)
+    const state = await window._loadRAG(user.uid, `${subjectId}-${moduleId}`);
+    renderChecklist(state);
   });
 
   window.saveScoreToFirebase = async (totalAwarded, totalAvail, allQuestions, writtenResults, writtenAnswers, qScores) => {
@@ -1044,6 +1088,14 @@ loadQuestions();
         }
         return { id: q.id, topic: q.topic||'', marks: q.marks, awarded };
       });
+
+      // Queue RAG updates: one per question, weighted by marks percentage
+      qs.forEach(q => {
+        if (!q.topic) return;
+        const activityPct = q.marks > 0 ? (q.awarded / q.marks) * 100 : 0;
+        window._pendingRAGUpdates.push({ topic: q.topic, activityPct, inputType: 'mock' });
+      });
+
       await saveMockScore(window._currentUser.uid, `${subjectId}-${moduleId}`, totalAwarded, totalAvail, qs);
       await reloadRAGFromHistory(window._currentUser.uid);
     } catch(e) { console.log('Could not save score:', e); }
