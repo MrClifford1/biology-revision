@@ -58,8 +58,8 @@
 
     /* ── CONTENT ─────────────────────────────────────────────────────────────── */
     .content-wrapper { max-width: 1300px; margin: 0 auto; padding: 1.25rem 2rem 3rem; }
-    .tab-panel { display: none; }
-    .tab-panel.active { display: block; }
+    .tab-panel { display: none; visibility: hidden; height: 0; overflow: hidden; }
+    .tab-panel.active { display: block; visibility: visible; height: auto; overflow: visible; }
 
     /* ── RAG CHECKLIST v2 ────────────────────────────────────────────────────── */
     .checklist-card { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem 1.5rem; margin-top: 1rem; }
