@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Super Admin — Streetly Science Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #1a2a4f; --navy-dark: #0f1d3d; --red: #c8202c; --gold: #d4a534;
+      --bg: #f5f6fa; --text: #1a2a4f; --subtext: #5a6885; --border: #e2e6f0; --card: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Nunito Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+    #auth-loading { position:fixed;inset:0;background:var(--navy-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999; }
+    #access-denied { position:fixed;inset:0;background:var(--navy-dark);display:none;flex-direction:column;align-items:center;justify-content:center;z-index:9999;gap:1rem; }
+    #access-denied h2 { color:white;font-family:'Nunito',sans-serif;font-size:1.5rem; }
+    #access-denied p { color:#94a3b8;font-size:0.9rem; }
+    #access-denied a { color:var(--gold);text-decoration:none;font-weight:700; }
+    .spinner { width:32px;height:32px;border:3px solid rgba(255,255,255,0.2);border-top-color:white;border-radius:50%;animation:spin 0.8s linear infinite; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+
+    .topnav { background:var(--navy-dark);padding:0.7rem 1.5rem;display:flex;align-items:center;gap:1rem; }
+    .topnav a { color:#94a3b8;text-decoration:none;font-size:0.875rem;font-weight:600;transition:color 0.2s; }
+    .topnav a:hover { color:white; }
+    .topnav-title { color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.95rem;margin-left:auto; }
+    .super-badge { background:var(--red);color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:100px;text-transform:uppercase;letter-spacing:0.08em; }
+
+    .page-header { background:linear-gradient(135deg,var(--navy) 0%,var(--navy-dark) 100%);color:white;padding:1.75rem 2rem; }
+    .page-header-inner { max-width:900px;margin:0 auto; }
+    .page-header h1 { font-family:'Nunito',sans-serif;font-size:1.6rem;font-weight:900; }
+    .page-header p { color:#c5cee8;font-size:0.875rem;margin-top:0.25rem; }
+
+    main { max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem; }
+    .section-title { font-family:'Nunito',sans-serif;font-weight:900;font-size:1rem;color:var(--navy);margin-bottom:1rem; }
+    .card { background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.5rem;margin-bottom:1.5rem; }
+
+    .add-row { display:flex;gap:0.75rem;margin-bottom:0.5rem; }
+    .input-email { flex:1;border:1.5px solid var(--border);border-radius:10px;padding:0.65rem 1rem;font-family:'Nunito Sans',sans-serif;font-size:0.9rem;color:var(--text);outline:none;transition:border-color 0.2s; }
+    .input-email:focus { border-color:var(--navy); }
+    .btn-add { background:var(--navy);color:white;border:none;border-radius:10px;padding:0.65rem 1.25rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.875rem;cursor:pointer;transition:background 0.18s;white-space:nowrap; }
+    .btn-add:hover { background:var(--navy-dark); }
+    .btn-add:disabled { background:#cbd5e1;cursor:not-allowed; }
+    .form-hint { font-size:0.75rem;color:var(--subtext);margin-top:0.35rem; }
+    .form-msg { font-size:0.8rem;font-weight:700;margin-top:0.5rem;display:none; }
+    .form-msg.success { color:#16a34a;display:block; }
+    .form-msg.error { color:var(--red);display:block; }
+
+    .staff-list { display:flex;flex-direction:column;gap:0.5rem; }
+    .staff-row { display:flex;align-items:center;gap:1rem;padding:0.75rem 1rem;background:var(--bg);border-radius:10px;border:1px solid var(--border); }
+    .staff-avatar { width:34px;height:34px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Nunito',sans-serif;font-weight:900;font-size:0.85rem;color:white;flex-shrink:0; }
+    .staff-email { font-size:0.875rem;color:var(--text);flex:1;font-weight:600; }
+    .role-badge { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.65rem;padding:0.15rem 0.5rem;border-radius:100px; }
+    .role-badge.admin { background:#fee2e2;color:var(--red); }
+    .role-badge.teacher { background:#e0e7ff;color:#6366f1; }
+    .staff-added { font-size:0.72rem;color:var(--subtext); }
+    .btn-remove { background:none;border:1.5px solid var(--border);color:var(--subtext);border-radius:8px;padding:0.3rem 0.7rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.75rem;cursor:pointer;transition:all 0.18s; }
+    .btn-remove:hover { border-color:var(--red);color:var(--red);background:#fff5f5; }
+    .empty-state { text-align:center;padding:2rem;color:var(--subtext);font-size:0.875rem; }
+
+    .stats-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem; }
+    .stat-card { background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.25rem;display:flex;align-items:center;gap:0.85rem; }
+    .stat-icon { width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0; }
+    .stat-num { font-family:'Nunito',sans-serif;font-weight:900;font-size:1.6rem;color:var(--navy);line-height:1; }
+    .stat-label { font-size:0.72rem;color:var(--subtext);margin-top:0.1rem; }
+  </style>
+</head>
+<body>
+
+<div id="auth-loading">
+  <div class="spinner"></div>
+  <div style="color:white;font-family:'Nunito',sans-serif;font-weight:800;margin-top:1rem">Checking access...</div>
+</div>
+
+<div id="access-denied">
+  <svg width="48" height="54" viewBox="0 0 88 100" xmlns="http://www.w3.org/2000/svg">
+    <path d="M44 0 L88 14 L88 50 Q88 80 44 100 Q0 80 0 50 L0 14 Z" fill="#c8202c" stroke="#d4a534" stroke-width="2"/>
+  </svg>
+  <h2>Access Denied</h2>
+  <p>This page is only accessible to the Super Admin account.</p>
+  <p style="color:#64748b;font-size:0.8rem;margin-top:0.25rem">Signed in as <span id="denied-email" style="color:#94a3b8"></span></p>
+  <div style="display:flex;gap:0.75rem;margin-top:0.5rem;flex-wrap:wrap;justify-content:center">
+    <a href="index.html">← Back to Hub</a>
+    <button onclick="handleSignOut()" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#94a3b8;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.875rem;padding:0.4rem 1rem;border-radius:8px;cursor:pointer">Switch Account →</button>
+  </div>
+</div>
+
+<div id="page-content" style="display:none">
+
+  <nav class="topnav">
+    <a href="index.html">← Home</a>
+    <a href="admin.html">🏫 Admin Panel</a>
+    <a href="teacher.html">👨‍🏫 Teacher Dashboard</a>
+    <span class="topnav-title">Super Admin</span>
+    <span class="super-badge">Super Admin</span>
+    <button onclick="handleSignOut()" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#94a3b8;font-size:0.8rem;padding:0.4rem 0.85rem;border-radius:8px;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:700;margin-left:0.5rem">Sign out</button>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-header-inner">
+      <h1>🛡️ Super Admin</h1>
+      <p>Manage all staff roles across Streetly Science Hub.</p>
+    </div>
+  </div>
+
+  <main>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon" style="background:#fee2e2">🏫</div>
+        <div><div class="stat-num" id="stat-admins">—</div><div class="stat-label">Admins</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background:#e0e7ff">👨‍🏫</div>
+        <div><div class="stat-num" id="stat-teachers">—</div><div class="stat-label">Teachers</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background:#dcfce7">🧑‍🎓</div>
+        <div><div class="stat-num" id="stat-students">—</div><div class="stat-label">Students</div></div>
+      </div>
+    </div>
+
+    <!-- ADD ADMIN -->
+    <div class="section-title">🏫 Admin Accounts (HODs / Heads of Science)</div>
+    <div class="card">
+      <div class="add-row">
+        <input type="email" class="input-email" id="admin-email-input" placeholder="hod@thestreetlyacademy.co.uk" />
+        <button class="btn-add" id="add-admin-btn" onclick="addAdminHandler()">+ Add Admin</button>
+      </div>
+      <div class="form-hint">Admins can view whole-school data, manage the curriculum schedule and add teachers.</div>
+      <div class="form-msg" id="admin-msg"></div>
+      <hr style="border:none;border-top:1px solid var(--border);margin:1.25rem 0">
+      <div class="staff-list" id="admin-list">
+        <div class="empty-state">Loading admins...</div>
+      </div>
+    </div>
+
+    <!-- ADD TEACHER -->
+    <div class="section-title">👨‍🏫 Teacher Accounts</div>
+    <div class="card">
+      <div class="add-row">
+        <input type="email" class="input-email" id="teacher-email-input" placeholder="teacher@thestreetlyacademy.co.uk" />
+        <button class="btn-add" id="add-teacher-btn" onclick="addTeacherHandler()">+ Add Teacher</button>
+      </div>
+      <div class="form-hint">Teachers can view their class data and set assignments.</div>
+      <div class="form-msg" id="teacher-msg"></div>
+      <hr style="border:none;border-top:1px solid var(--border);margin:1.25rem 0">
+      <div class="staff-list" id="teacher-list">
+        <div class="empty-state">Loading teachers...</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script type="module">
+  import { onAuthChange, signOutUser, getAllStaff, getAllStudents, addRole, removeRole, isSuperAdmin } from './firebase.js';
+
+  let currentUser = null;
+
+  onAuthChange(async user => {
+    document.getElementById('auth-loading').style.display = 'none';
+
+    if (!user || !isSuperAdmin(user.email)) {
+      const deniedEmail = document.getElementById('denied-email');
+      if (deniedEmail && user) deniedEmail.textContent = user.email;
+      document.getElementById('access-denied').style.display = 'flex';
+      return;
+    }
+
+    currentUser = user;
+    document.getElementById('page-content').style.display = 'block';
+    loadAll();
+  });
+
+  async function loadAll() {
+    const [staff, students] = await Promise.all([getAllStaff(), getAllStudents()]);
+
+    const admins = staff.filter(s => s.role === 'admin');
+    const teachers = staff.filter(s => s.role === 'teacher');
+
+    document.getElementById('stat-admins').textContent = admins.length;
+    document.getElementById('stat-teachers').textContent = teachers.length;
+    document.getElementById('stat-students').textContent = students.length;
+
+    renderStaffList('admin-list', admins);
+    renderStaffList('teacher-list', teachers);
+  }
+
+  function renderStaffList(listId, staff) {
+    const list = document.getElementById(listId);
+    if (staff.length === 0) {
+      list.innerHTML = `<div class="empty-state">None added yet.</div>`;
+      return;
+    }
+    list.innerHTML = staff.map(s => {
+      const initials = s.email.split('@')[0].split('.').map(p => p[0]?.toUpperCase() || '').join('').slice(0,2);
+      const addedDate = s.addedAt?.toDate ? s.addedAt.toDate().toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'}) : '—';
+      return `
+        <div class="staff-row">
+          <div class="staff-avatar">${initials}</div>
+          <div class="staff-email">${s.email}</div>
+          <span class="role-badge ${s.role}">${s.role.charAt(0).toUpperCase() + s.role.slice(1)}</span>
+          <div class="staff-added">Added ${addedDate}</div>
+          <button class="btn-remove" onclick="removeStaffHandler('${s.email}')">Remove</button>
+        </div>
+      `;
+    }).join('');
+  }
+
+  async function addStaff(inputId, msgId, btnId, btnText, role) {
+    const input = document.getElementById(inputId);
+    const msg = document.getElementById(msgId);
+    const btn = document.getElementById(btnId);
+    const email = input.value.trim().toLowerCase();
+
+    msg.className = 'form-msg';
+    msg.textContent = '';
+
+    if (!email || !email.includes('@')) {
+      msg.className = 'form-msg error';
+      msg.textContent = 'Please enter a valid email address.';
+      return;
+    }
+
+    btn.disabled = true; btn.textContent = 'Adding...';
+
+    try {
+      await addRole(email, role, currentUser.uid);
+      input.value = '';
+      msg.className = 'form-msg success';
+      msg.textContent = `✅ ${email} added as ${role}.`;
+      await loadAll();
+    } catch(e) {
+      msg.className = 'form-msg error';
+      msg.textContent = 'Something went wrong. Please try again.';
+    }
+
+    btn.disabled = false; btn.textContent = btnText;
+  }
+
+  window.addAdminHandler = () => addStaff('admin-email-input', 'admin-msg', 'add-admin-btn', '+ Add Admin', 'admin');
+  window.addTeacherHandler = () => addStaff('teacher-email-input', 'teacher-msg', 'add-teacher-btn', '+ Add Teacher', 'teacher');
+
+  window.removeStaffHandler = async (email) => {
+    if (!confirm(`Remove access for ${email}?`)) return;
+    try {
+      await removeRole(email);
+      await loadAll();
+    } catch(e) {
+      alert('Could not remove. Please try again.');
+    }
+  };
+
+  // Enter key support
+  document.getElementById('admin-email-input').addEventListener('keydown', e => { if (e.key === 'Enter') window.addAdminHandler(); });
+  document.getElementById('teacher-email-input').addEventListener('keydown', e => { if (e.key === 'Enter') window.addTeacherHandler(); });
+
+  window.handleSignOut = async () => {
+    await signOutUser();
+    window.location.href = 'login.html';
+  };
+</script>
+</body>
+</html>
