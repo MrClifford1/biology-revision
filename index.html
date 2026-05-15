@@ -238,7 +238,9 @@
     </div>
     <div class="user-actions">
       <a href="progress.html" class="btn-sm">📊 My Progress</a>
-      <a href="teacher.html" class="btn-sm" id="teacher-link" style="display:none">👨‍🏫 Dashboard</a>
+      <a href="teacher.html" class="btn-sm" id="teacher-link" style="display:none;background:#6366f1;color:white;border-color:#6366f1">👨‍🏫 Teacher Dashboard</a>
+      <a href="admin.html" class="btn-sm" id="admin-link" style="display:none;background:#e85d4a;color:white;border-color:#e85d4a">🏫 Admin Panel</a>
+      <a href="superadmin.html" class="btn-sm" id="superadmin-link" style="display:none;background:#c8202c;color:white;border-color:#c8202c">🛡️ Super Admin</a>
       <button class="btn-sm" id="settings-cog-btn" onclick="openSettings()" title="Settings">⚙️</button>
       <button class="btn-sm" onclick="handleSignOut()">Sign out</button>
     </div>
@@ -416,6 +418,7 @@
       <button class="year-btn" onclick="selectYear(9)">Year 9</button>
       <button class="year-btn" onclick="selectYear(10)">Year 10</button>
       <button class="year-btn" onclick="selectYear(11)">Year 11</button>
+      <button class="year-btn" onclick="selectYear('other')" style="grid-column:1/-1">Other</button>
     </div>
     <div id="class-step" style="display:none">
       <div class="modal-step">Step 2 — Select your class</div>
@@ -443,6 +446,7 @@
       <button class="year-btn" onclick="selectYearDrawer(9)">Year 9</button>
       <button class="year-btn" onclick="selectYearDrawer(10)">Year 10</button>
       <button class="year-btn" onclick="selectYearDrawer(11)">Year 11</button>
+      <button class="year-btn" onclick="selectYearDrawer('other')" style="grid-column:1/-1">Other</button>
     </div>
     <div id="drawer-class-step" style="display:none">
       <div class="modal-step" style="margin-bottom:0.6rem">Select class</div>
@@ -456,13 +460,13 @@
 </div>
 
 <script type="module">
-  import { onAuthChange, signOutUser, getUserProfile, saveClass, isClassValid, getUserRole, getActiveAssignmentsForClass } from './firebase.js';
+  import { onAuthChange, signOutUser, getUserProfile, saveClass, isClassValid, getUserRole, getActiveAssignmentsForClass, isStaffRole, canAccessAdmin, isSuperAdmin } from './firebase.js';
 
-  const ADMIN_EMAIL = 'n.clifford@thestreetlyacademy.co.uk';
   const CLASSES = {
     9:  ['9S1','9S2','9S3','9S4','9S5','9N1','9N2','9N3','9N4','9N5'],
     10: ['10S1','10S2','10S3','10S4','10S5','10N1','10N2','10N3','10N4','10N5'],
     11: ['11S1','11S2','11S3','11S4','11S5','11N1','11N2','11N3','11N4','11N5'],
+    other: ['Other'],
   };
 
   let currentUser = null;
@@ -477,26 +481,42 @@
     document.getElementById('auth-loading').style.display = 'none';
 
     const profile = await getUserProfile(user.uid);
+    const role = await getUserRole(user.email);
+    const staff = isStaffRole(role);
 
     const greeting = document.getElementById('user-greeting');
     const avatarHTML = user.photoURL
       ? `<img src="${user.photoURL}" class="user-avatar-sm" alt="">`
       : `<div class="user-avatar-placeholder">${user.displayName?.[0] || '?'}</div>`;
 
-    const classTag = profile?.class
+    const classTag = profile?.class && !staff
       ? `<span style="background:#f0f4ff;color:var(--navy);font-size:0.72rem;font-weight:800;padding:0.15rem 0.55rem;border-radius:100px;font-family:'Nunito',sans-serif">${profile.class}</span>`
       : '';
     greeting.innerHTML = `${avatarHTML} <span>Welcome back, <strong>${user.displayName?.split(' ')[0] || 'Student'}</strong>!</span> ${classTag}`;
 
-    // Show class picker if no valid class set (skip for admin/teachers)
-    const role = await getUserRole(user.email);
-    const isStaff = role === 'teacher' || role === 'admin' || user.email === ADMIN_EMAIL;
-
-    if (isStaff) {
+    // Show role-appropriate nav buttons
+    if (staff) {
       document.getElementById('teacher-link').style.display = 'inline-flex';
     }
+    if (canAccessAdmin(role)) {
+      document.getElementById('admin-link').style.display = 'inline-flex';
+    }
+    if (isSuperAdmin(user.email)) {
+      document.getElementById('superadmin-link').style.display = 'inline-flex';
+    }
 
-    if (!isClassValid(profile) && !isStaff) {
+    // Teachers auto-assigned to Teachers class — skip picker
+    if (staff) {
+      if (!profile?.class || profile.class !== 'Teachers') {
+        await saveClass(user.uid, 'Teachers');
+      }
+      document.getElementById('drawer-class-display').textContent = 'Teachers';
+      // Load assignments for teachers too (they may have set their own)
+      return;
+    }
+
+    // Show class picker if no valid class set
+    if (!isClassValid(profile)) {
       document.getElementById('class-modal').classList.remove('hidden');
     }
 
@@ -504,11 +524,11 @@
     document.getElementById('drawer-class-display').textContent = profile?.class || 'Not set';
 
     // Load assignment banner for students with a class
-    if (!isStaff && profile?.class) {
+    if (profile?.class) {
       try {
         const assignments = await getActiveAssignmentsForClass(profile.class);
         if (assignments.length > 0) {
-          const a = assignments[0]; // show most recent
+          const a = assignments[0];
           const due = new Date(a.dueDate);
           const dueStr = due.toLocaleDateString('en-GB', { weekday:'short', day:'numeric', month:'short' });
           const daysLeft = Math.ceil((due - new Date()) / (1000*60*60*24));
@@ -535,7 +555,8 @@
 
   function renderClassGrid(gridId, year, mode) {
     const grid = document.getElementById(gridId);
-    grid.innerHTML = CLASSES[year].map(cls => `
+    const classes = year === 'other' ? ['Other'] : CLASSES[year] || [];
+    grid.innerHTML = classes.map(cls => `
       <button class="class-btn" onclick="selectClass('${cls}','${mode}')">${cls}</button>
     `).join('');
   }
