@@ -320,9 +320,10 @@
     saveTeacherClasses, getTeacherClasses,
     getAllStudents, getProgressForStudents,
     createAssignment, getAllAssignments, deleteAssignment,
+    isStaffRole,
   } from './firebase.js';
 
-  const ADMIN_EMAIL = 'n.clifford@thestreetlyacademy.co.uk';
+  const SUPER_ADMIN_EMAIL = 'n.clifford@thestreetlyacademy.co.uk';
 
   const ALL_CLASSES = {
     9:  ['9S1','9S2','9S3','9S4','9S5','9N1','9N2','9N3','9N4','9N5'],
@@ -387,7 +388,7 @@
     if (!user) { window.location.href = 'login.html'; return; }
 
     const role = await getUserRole(user.email);
-    const isStaff = role === 'teacher' || role === 'admin' || user.email === ADMIN_EMAIL;
+    const isStaff = isStaffRole(role);
 
     if (!isStaff) {
       document.getElementById('access-denied').style.display = 'flex';
@@ -418,11 +419,12 @@
   // ── CLASS CHIPS ─────────────────────────────────────────────────────────────
   function renderClassChips() {
     const wrap = document.getElementById('class-chips');
-    if (myClasses.length === 0) {
+    const visibleClasses = myClasses.filter(c => c !== 'Teachers');
+    if (visibleClasses.length === 0) {
       wrap.innerHTML = `<span style="color:var(--subtext);font-size:0.83rem">No classes set — click ⚙️ My Classes to get started</span>`;
       return;
     }
-    wrap.innerHTML = myClasses.map(cls => `
+    wrap.innerHTML = visibleClasses.map(cls => `
       <button class="class-chip-btn ${cls === activeClass ? 'active' : ''}" onclick="selectClass('${cls}')">${cls}</button>
     `).join('');
   }
@@ -768,7 +770,7 @@
 
   // ── CLASS MANAGER MODAL ──────────────────────────────────────────────────────
   window.openClassManager = () => {
-    mySelectedClassesInModal = [...myClasses];
+    mySelectedClassesInModal = [...myClasses].filter(c => c !== 'Teachers');
     const grid = document.getElementById('class-manager-grid');
     grid.innerHTML = Object.entries(ALL_CLASSES).map(([year, classes]) => `
       <div class="year-section-title">Year ${year}</div>
@@ -778,7 +780,13 @@
             onclick="toggleModalClass('${cls}', this)">${cls}</button>
         `).join('')}
       </div>
-    `).join('');
+    `).join('') + `
+      <div class="year-section-title">Other</div>
+      <div class="class-multi-grid">
+        <button class="class-multi-btn ${mySelectedClassesInModal.includes('Other') ? 'selected' : ''}"
+          onclick="toggleModalClass('Other', this)">Other</button>
+      </div>
+    `;
     document.getElementById('class-modal').classList.remove('hidden');
   };
 
