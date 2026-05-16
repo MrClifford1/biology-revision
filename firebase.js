@@ -410,4 +410,76 @@ export async function getProgressForStudents(uids) {
   return result;
 }
 
+// ── CURRICULUM SCHEDULE ───────────────────────────────────────────────────────
+// Stored at schedule/{yearGroup}/{subject}
+// Shape: { months: { "0": [block,...], "1": [block,...] ... } }
+// Block shape (learning):  { type:'learn', modules:[], partialTopics:{}, span:1 }
+// Block shape (assessment): { type:'assess', label:'', modules:[], partialTopics:{}, span:1 }
+
+export async function saveSchedule(yearGroup, subject, monthBlocks) {
+  // monthBlocks: plain object { "0": [blocks], "1": [blocks], ... }
+  await setDoc(
+    doc(db, 'schedule', String(yearGroup), 'subjects', subject),
+    { months: monthBlocks, updatedAt: serverTimestamp() },
+    { merge: false }
+  );
+}
+
+export async function loadSchedule(yearGroup, subject) {
+  const snap = await getDoc(doc(db, 'schedule', String(yearGroup), 'subjects', subject));
+  return snap.exists() ? (snap.data().months || {}) : {};
+}
+
+// Load schedule for all three subjects for a given year group in one call
+export async function loadScheduleForYear(yearGroup) {
+  const subjects = ['Biology', 'Chemistry', 'Physics'];
+  const result = {};
+  await Promise.all(subjects.map(async s => {
+    result[s] = await loadSchedule(yearGroup, s);
+  }));
+  return result;
+}
+
+// Returns the schedule status of a given module for a student's year group.
+// Returns one of: 'current' | 'future' | 'past' | 'unknown'
+// Used by module.html to badge/dim topics.
+export async function getModuleScheduleStatus(yearGroup, subject, moduleId) {
+  if (!yearGroup || !subject || !moduleId) return 'unknown';
+  const months = await loadSchedule(yearGroup, subject);
+  const nowMonthIdx = _academicMonthIndex();
+  if (nowMonthIdx === -1) return 'unknown'; // August — outside schedule
+
+  // Collect all month indices where this module appears in a block
+  const blockMonths = [];
+  Object.entries(months).forEach(([mi, blocks]) => {
+    const idx = parseInt(mi);
+    (blocks || []).forEach(b => {
+      if (b.type !== 'learn') return;
+      const mods = b.modules || [];
+      if (mods.some(m => m.toLowerCase() === moduleId.toLowerCase())) {
+        // block occupies idx through idx + (span-1)
+        const span = b.span || 1;
+        for (let s = 0; s < span; s++) blockMonths.push(idx + s);
+      }
+    });
+  });
+
+  if (!blockMonths.length) return 'unknown';
+
+  const minM = Math.min(...blockMonths);
+  const maxM = Math.max(...blockMonths);
+
+  if (nowMonthIdx >= minM && nowMonthIdx <= maxM) return 'current';
+  if (nowMonthIdx > maxM) return 'past';
+  return 'future';
+}
+
+// Academic month index: Sep=0, Oct=1, ..., Jul=10, Aug=-1 (outside year)
+function _academicMonthIndex() {
+  const m = new Date().getMonth(); // 0=Jan
+  if (m === 7) return -1; // August
+  if (m >= 8) return m - 8; // Sep=0, Oct=1, Nov=2, Dec=3
+  return m + 4;            // Jan=4, Feb=5, Mar=6, Apr=7, May=8, Jun=9, Jul=10
+}
+
 export { auth, db };
