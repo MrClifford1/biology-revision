@@ -820,36 +820,17 @@ async function fetchTopics(subj, mod) {
   const cacheKey = `${sid}-${mid}`;
   if (topicCache[cacheKey] !== undefined) return topicCache[cacheKey];
 
-  // Try both naming conventions used across the repo
-  const paths = [
-    `data/${sid}-${mid}-keywords.json`,
-    `data/${mid}-keywords.json`,
-  ];
+  try {
+    const res = await fetch(`data/${sid}-${mid}-topics.json`);
+    if (res.ok) {
+      const topics = await res.json();
+      topicCache[cacheKey] = Array.isArray(topics) ? topics : [];
+      return topicCache[cacheKey];
+    }
+  } catch(e) { /* fall through */ }
 
-  let kws = null;
-  for (const path of paths) {
-    try {
-      const res = await fetch(path);
-      if (res.ok) { kws = await res.json(); break; }
-    } catch(e) { /* try next */ }
-  }
-
-  if (!kws || !Array.isArray(kws) || !kws.length) {
-    topicCache[cacheKey] = [];
-    return [];
-  }
-
-  // Extract unique sub_topic values in order.
-  // Keywords JSON uses sub_topic field; fall back to topic, then word.
-  const seen = new Set();
-  const topics = [];
-  kws.forEach(k => {
-    const t = k.sub_topic || k.topic || k.word;
-    if (t && !seen.has(t)) { seen.add(t); topics.push(t); }
-  });
-
-  topicCache[cacheKey] = topics;
-  return topics;
+  topicCache[cacheKey] = [];
+  return [];
 }
 
 let schedYear = 9;
