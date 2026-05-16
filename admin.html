@@ -252,7 +252,7 @@
     .stsb { flex: 1; border: 1.5px solid var(--border); border-radius: 8px; padding: .45rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .76rem; cursor: pointer; background: white; color: var(--subtext); transition: all .15s; }
     .stsb.learn.on { background: #dbeafe; border-color: #3b82f6; color: #1e40af; }
     .stsb.assess.on { background: #fde8d8; border-color: #ea580c; color: #9a3412; }
-    .smod-acc { display: flex; flex-direction: column; gap: .3rem; max-height: 240px; overflow-y: auto; border: 1.5px solid var(--border); border-radius: 9px; padding: .4rem; }
+    .smod-acc { display: flex; flex-direction: column; gap: .3rem; max-height: 340px; overflow-y: auto; border: 1.5px solid var(--border); border-radius: 9px; padding: .4rem; }
     .smi { border: 1.5px solid var(--border); border-radius: 7px; overflow: hidden; }
     .smhd { display: flex; align-items: center; gap: .4rem; padding: .35rem .5rem; background: #f8fafc; cursor: pointer; user-select: none; }
     .smhd:hover { background: #f0f4ff; }
@@ -974,7 +974,6 @@ function smRenderModAcc(subj) {
         <button class="smexp" onclick="event.stopPropagation();smToggleMod('${mod}','${subj}')">${open?'▲ hide':'▼ topics'}</button>
       </div>
       <div class="smtp ${open?'open':''}" id="smtp-${mod}">
-        <div class="sph">Selecting topics = partial module block</div>
         ${topics.map((t,ti) => `<div class="strow"><input type="checkbox" class="stcb" id="stcb-${mod}-${ti}" data-mod="${mod}" data-topic="${t}" onchange="smTopicChg('${mod}')"><label class="stlbl" for="stcb-${mod}-${ti}">${t}</label></div>`).join('')}
       </div>
     </div>`;
@@ -986,14 +985,26 @@ window.smToggleMod = (mod) => {
   document.getElementById(`smtp-${mod}`)?.classList.toggle('open', smExpanded[mod]);
   document.querySelector(`#smi-${mod} .smexp`).textContent = smExpanded[mod] ? '▲ hide' : '▼ topics';
 };
+
+// Toggling the whole-module checkbox clears all individual topic selections for that module
 window.smWModTog = (mod) => {
   const cb = document.getElementById(`smcb-${mod}`);
-  document.querySelectorAll(`[data-mod="${mod}"]`).forEach(el => { el.checked = false; el.disabled = cb.checked; });
+  document.querySelectorAll(`[data-mod="${mod}"]`).forEach(el => { el.checked = false; el.disabled = false; });
+  // If unchecking whole module, leave topics available; if checking, clear any topic state
 };
+
+// Ticking any topic automatically checks the parent module checkbox (partial = module included)
+// FUTURE NOTE: when building assessment→RAG integration, remember assessments are synoptic —
+// a Year 10 B3/B4 assessment may also include questions from B1/B2. The partialTopics field
+// on assessment blocks should feed RAG updates for ALL included modules, not just the primary ones.
 window.smTopicChg = (mod) => {
   const any = [...document.querySelectorAll(`[data-mod="${mod}"]`)].some(el => el.checked);
   const w = document.getElementById(`smcb-${mod}`);
-  if (w) { w.checked = false; w.disabled = any; }
+  if (w) {
+    // Auto-check the parent module whenever any topic is selected
+    w.checked = any;
+    w.disabled = false;
+  }
 };
 
 window.smSave = () => {
@@ -1004,9 +1015,12 @@ window.smSave = () => {
   const selMods = [], partial = {};
   Object.keys(mods).forEach(mod => {
     const w = document.getElementById(`smcb-${mod}`);
+    if (!w?.checked) return;
+    // Check if any individual topics are ticked — if so, it's a partial block
     const tt = [...document.querySelectorAll(`[data-mod="${mod}"]`)].filter(el => el.checked).map(el => el.dataset.topic);
-    if (w?.checked) selMods.push(mod);
-    else if (tt.length) { selMods.push(mod); partial[mod] = tt; }
+    selMods.push(mod);
+    if (tt.length) partial[mod] = tt; // partial — only some topics
+    // else: whole module selected, no entry in partial
   });
   if (smType === 'learn' && !selMods.length) { alert('Select at least one module or topic.'); return; }
   const block = { type: smType, modules: selMods, partialTopics: Object.keys(partial).length ? partial : null, span };
