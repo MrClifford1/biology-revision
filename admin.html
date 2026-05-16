@@ -818,24 +818,38 @@ async function fetchTopics(subj, mod) {
   const sid = SUBJECT_ID[subj];
   const mid = mod.toLowerCase();
   const cacheKey = `${sid}-${mid}`;
-  if (topicCache[cacheKey]) return topicCache[cacheKey];
-  try {
-    const res = await fetch(`data/${sid}-${mid}-keywords.json`);
-    if (!res.ok) throw new Error('not found');
-    const kws = await res.json();
-    // Extract unique sub_topic values in order, falling back to word if no sub_topic
-    const seen = new Set();
-    const topics = [];
-    kws.forEach(k => {
-      const t = k.sub_topic || k.word;
-      if (t && !seen.has(t)) { seen.add(t); topics.push(t); }
-    });
-    topicCache[cacheKey] = topics;
-    return topics;
-  } catch(e) {
+  if (topicCache[cacheKey] !== undefined) return topicCache[cacheKey];
+
+  // Try both naming conventions used across the repo
+  const paths = [
+    `data/${sid}-${mid}-keywords.json`,
+    `data/${mid}-keywords.json`,
+  ];
+
+  let kws = null;
+  for (const path of paths) {
+    try {
+      const res = await fetch(path);
+      if (res.ok) { kws = await res.json(); break; }
+    } catch(e) { /* try next */ }
+  }
+
+  if (!kws || !Array.isArray(kws) || !kws.length) {
     topicCache[cacheKey] = [];
     return [];
   }
+
+  // Extract unique sub_topic values in order.
+  // Keywords JSON uses sub_topic field; fall back to topic, then word.
+  const seen = new Set();
+  const topics = [];
+  kws.forEach(k => {
+    const t = k.sub_topic || k.topic || k.word;
+    if (t && !seen.has(t)) { seen.add(t); topics.push(t); }
+  });
+
+  topicCache[cacheKey] = topics;
+  return topics;
 }
 
 let schedYear = 9;
@@ -1029,14 +1043,15 @@ window.smToggleMod = async (mod, subj) => {
   panel.classList.add('open');
   btn.textContent = '▲ hide';
 
-  // Only fetch if panel hasn't been populated yet
+  // Only fetch if panel hasn't been successfully populated yet
   if (!panel.dataset.loaded) {
-    panel.dataset.loaded = '1';
     const topics = await fetchTopics(subj || smCtx?.subj, mod);
     if (!topics.length) {
-      panel.innerHTML = `<div style="font-size:.65rem;color:var(--subtext);padding:.2rem 0">No topics found in keywords file.</div>`;
+      panel.innerHTML = `<div style="font-size:.65rem;color:#dc2626;padding:.2rem 0">⚠️ Could not load topics — check the keywords file exists for ${mod}.</div>`;
+      // Don't mark as loaded so it retries next time
       return;
     }
+    panel.dataset.loaded = '1';
     panel.innerHTML = topics.map((t, ti) =>
       `<div class="strow">
         <input type="checkbox" class="stcb" id="stcb-${mod}-${ti}" data-mod="${mod}" data-topic="${t}" onchange="smTopicChg('${mod}')">
