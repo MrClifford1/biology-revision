@@ -252,7 +252,8 @@
     .stsb { flex: 1; border: 1.5px solid var(--border); border-radius: 8px; padding: .45rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .76rem; cursor: pointer; background: white; color: var(--subtext); transition: all .15s; }
     .stsb.learn.on { background: #dbeafe; border-color: #3b82f6; color: #1e40af; }
     .stsb.assess.on { background: #fde8d8; border-color: #ea580c; color: #9a3412; }
-    .smod-acc { display: flex; flex-direction: column; gap: .3rem; max-height: 340px; overflow-y: auto; border: 1.5px solid var(--border); border-radius: 9px; padding: .4rem; }
+    .smod-acc { display: flex; flex-direction: column; gap: .3rem; border: 1.5px solid var(--border); border-radius: 9px; padding: .4rem; }
+    body.modal-open { overflow: hidden; }
     .smi { border: 1.5px solid var(--border); border-radius: 7px; overflow: hidden; }
     .smhd { display: flex; align-items: center; gap: .4rem; padding: .35rem .5rem; background: #f8fafc; cursor: pointer; user-select: none; }
     .smhd:hover { background: #f0f4ff; }
@@ -976,8 +977,13 @@ window.smOpen = (subj, mi) => {
   document.getElementById('sm-albl').value = '';
   document.getElementById('sm-span').value = 1;
   document.getElementById('sov').style.display = 'flex';
+  document.body.classList.add('modal-open');
 };
-window.smClose = () => { document.getElementById('sov').style.display = 'none'; smCtx = null; };
+window.smClose = () => {
+  document.getElementById('sov').style.display = 'none';
+  document.body.classList.remove('modal-open');
+  smCtx = null;
+};
 
 window.smSetType = (t) => {
   smType = t;
@@ -1092,8 +1098,13 @@ window.scopyOpen = (subj, mi, bi, e) => {
     `<div class="copy-cell${i===mi?' same':''}" id="scc-${i}" onclick="scopyTog(${i})">${m}</div>`
   ).join('');
   document.getElementById('scopy-ov').style.display = 'flex';
+  document.body.classList.add('modal-open');
 };
-window.scopyClose = () => { document.getElementById('scopy-ov').style.display = 'none'; scopyCtx = null; scopyDests = new Set(); };
+window.scopyClose = () => {
+  document.getElementById('scopy-ov').style.display = 'none';
+  document.body.classList.remove('modal-open');
+  scopyCtx = null; scopyDests = new Set();
+};
 window.scopyTog = (mi) => {
   if (scopyDests.has(mi)) scopyDests.delete(mi); else scopyDests.add(mi);
   document.getElementById(`scc-${mi}`)?.classList.toggle('on', scopyDests.has(mi));
