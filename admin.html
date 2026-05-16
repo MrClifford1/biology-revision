@@ -190,6 +190,94 @@
       .stats-grid { grid-template-columns: 1fr; }
       .add-teacher-row { flex-direction: column; }
     }
+
+    /* ── ADMIN TABS ──────────────────────────────────────────────────────────── */
+    .admin-tabs { display: flex; gap: .5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .admin-tab { border: 1.5px solid var(--border); border-radius: 10px; padding: .45rem 1.1rem; font-family: 'Nunito', sans-serif; font-size: .82rem; font-weight: 800; color: var(--subtext); cursor: pointer; background: white; transition: all .15s; }
+    .admin-tab:hover { border-color: var(--navy); color: var(--navy); }
+    .admin-tab.active { background: var(--navy); border-color: var(--navy); color: white; }
+    .admin-panel { display: none; }
+    .admin-panel.active { display: block; }
+
+    /* ── SCHEDULE ────────────────────────────────────────────────────────────── */
+    .sched-controls { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; }
+    .sched-seg { display: flex; border: 1.5px solid var(--border); border-radius: 9px; overflow: hidden; background: white; }
+    .sched-sb { border: none; background: none; padding: .38rem .85rem; font-family: 'Nunito', sans-serif; font-size: .8rem; font-weight: 700; color: var(--subtext); cursor: pointer; }
+    .sched-sb.on { background: var(--navy); color: white; }
+    .sched-sb + .sched-sb { border-left: 1.5px solid var(--border); }
+    .sched-lbl { font-size: .75rem; color: var(--subtext); font-weight: 700; }
+    .sched-toast { font-size: .75rem; color: var(--green); font-weight: 700; display: none; }
+    .sched-legend { display: flex; gap: .75rem; align-items: center; margin-bottom: .75rem; flex-wrap: wrap; }
+    .sched-li { display: flex; align-items: center; gap: .3rem; font-size: .72rem; font-weight: 700; color: var(--subtext); }
+    .sched-ld { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+    .grid-outer { overflow-x: auto; border: 1.5px solid var(--border); border-radius: 13px; background: white; }
+    .sched-grid { display: grid; grid-template-columns: 54px repeat(3, 1fr); min-width: 480px; }
+    .gh-corner { background: #0f1d3d; padding: .4rem; display: flex; align-items: center; justify-content: center; }
+    .gh-subj { background: var(--navy); color: white; padding: .4rem .3rem; text-align: center; border-left: 1px solid rgba(255,255,255,.12); display: flex; flex-direction: column; gap: .1rem; align-items: center; }
+    .gh-name { font-size: .68rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+    .gh-pill { font-size: .6rem; font-weight: 800; padding: .1rem .45rem; border-radius: 100px; text-transform: uppercase; letter-spacing: .05em; }
+    .gp-bio { background: #166534; color: #dcfce7; }
+    .gp-chem { background: #854d0e; color: #fef9c3; }
+    .gp-phys { background: #1e3a8a; color: #dbeafe; }
+    .gm-label { background: var(--bg); border-top: 1px solid var(--border); border-right: 1px solid var(--border); padding: .35rem .4rem; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; font-size: .7rem; font-weight: 800; color: var(--subtext); text-transform: uppercase; letter-spacing: .04em; min-height: 80px; }
+    .gm-label.ts { border-top: 2px solid var(--navy); }
+    .term-badge { display: block; font-size: .52rem; font-weight: 700; color: var(--navy); margin-top: .2rem; text-align: center; }
+    .gcell { border-top: 1px solid var(--border); border-left: 1px solid var(--border); padding: .28rem; min-height: 80px; background: white; }
+    .gcell.ts { border-top: 2px solid var(--navy); }
+    .sblk { border-radius: 7px; padding: .28rem .35rem; margin-bottom: .22rem; position: relative; border-left: 3px solid transparent; font-size: .67rem; user-select: none; }
+    .sblk.learn { background: #dbeafe; border-left-color: #3b82f6; }
+    .sblk.assess { background: #fde8d8; border-left-color: #ea580c; }
+    .sblk-type { font-weight: 800; font-size: .58rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .08rem; }
+    .sblk.learn .sblk-type { color: #1e40af; }
+    .sblk.assess .sblk-type { color: #9a3412; }
+    .sblk-body { color: #374151; font-weight: 600; line-height: 1.3; font-size: .65rem; }
+    .partial-tag { display: inline-block; font-size: .56rem; font-weight: 800; background: #ede9fe; color: #5b21b6; border-radius: 3px; padding: .03rem .28rem; margin-top: .1rem; }
+    .span-badge { display: inline-flex; align-items: center; background: rgba(0,0,0,.08); border-radius: 3px; padding: .03rem .28rem; font-size: .56rem; font-weight: 800; color: #374151; margin-top: .1rem; margin-left: .2rem; }
+    .sblk-actions { display: none; position: absolute; top: 3px; right: 3px; gap: 3px; align-items: center; }
+    .sblk:hover .sblk-actions { display: flex; }
+    .sbact { background: white; border: 1px solid var(--border); border-radius: 4px; padding: .1rem .25rem; cursor: pointer; font-size: .6rem; font-weight: 700; color: var(--subtext); line-height: 1.4; }
+    .sbact:hover { border-color: var(--navy); color: var(--navy); }
+    .sbact.del:hover { border-color: var(--red); color: var(--red); }
+    .resize-handle { position: absolute; bottom: 0; left: 0; right: 0; height: 7px; cursor: s-resize; background: transparent; display: none; border-radius: 0 0 7px 7px; }
+    .sblk:hover .resize-handle { display: block; background: rgba(0,0,0,.08); }
+    .resize-handle::after { content: ''; display: block; width: 20px; height: 2px; background: rgba(0,0,0,.2); border-radius: 2px; margin: 2px auto 0; }
+    .sadd-btn { width: 100%; border: 1.5px dashed var(--border); background: none; border-radius: 6px; padding: .28rem; color: var(--subtext); font-size: .65rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: .2rem; margin-top: .15rem; transition: all .15s; }
+    .sadd-btn:hover { border-color: var(--navy); color: var(--navy); background: #f8fafc; }
+    .sov { position: fixed; inset: 0; background: rgba(15,29,61,.5); display: flex; align-items: center; justify-content: center; z-index: 300; padding: 1rem; }
+    .smodal { background: white; border-radius: 15px; padding: 1.25rem; width: 100%; max-width: 460px; max-height: 90vh; overflow-y: auto; }
+    .smodal h3 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: .92rem; color: var(--navy); margin-bottom: .85rem; }
+    .smf { margin-bottom: .72rem; }
+    .smf > label { display: block; font-size: .68rem; font-weight: 700; color: var(--subtext); margin-bottom: .22rem; text-transform: uppercase; letter-spacing: .05em; }
+    .stseg { display: flex; gap: .35rem; }
+    .stsb { flex: 1; border: 1.5px solid var(--border); border-radius: 8px; padding: .45rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .76rem; cursor: pointer; background: white; color: var(--subtext); transition: all .15s; }
+    .stsb.learn.on { background: #dbeafe; border-color: #3b82f6; color: #1e40af; }
+    .stsb.assess.on { background: #fde8d8; border-color: #ea580c; color: #9a3412; }
+    .smod-acc { display: flex; flex-direction: column; gap: .3rem; max-height: 240px; overflow-y: auto; border: 1.5px solid var(--border); border-radius: 9px; padding: .4rem; }
+    .smi { border: 1.5px solid var(--border); border-radius: 7px; overflow: hidden; }
+    .smhd { display: flex; align-items: center; gap: .4rem; padding: .35rem .5rem; background: #f8fafc; cursor: pointer; user-select: none; }
+    .smhd:hover { background: #f0f4ff; }
+    .smwcb { width: 14px; height: 14px; accent-color: var(--navy); cursor: pointer; flex-shrink: 0; }
+    .smnm { font-weight: 800; font-size: .75rem; color: var(--navy); flex: 1; }
+    .smexp { font-size: .62rem; color: var(--subtext); font-weight: 700; background: none; border: none; cursor: pointer; padding: 0; white-space: nowrap; }
+    .smtp { padding: .35rem .5rem .4rem 1.75rem; display: none; background: white; border-top: 1px solid var(--border); }
+    .smtp.open { display: block; }
+    .sph { font-size: .63rem; color: #7c3aed; font-weight: 700; margin-bottom: .2rem; }
+    .strow { display: flex; align-items: center; gap: .35rem; padding: .15rem 0; }
+    .stcb { width: 12px; height: 12px; accent-color: var(--navy); cursor: pointer; }
+    .stlbl { font-size: .7rem; color: var(--text); cursor: pointer; }
+    .smodal input[type=text] { width: 100%; border: 1.5px solid var(--border); border-radius: 8px; padding: .45rem .7rem; font-family: 'Nunito Sans', sans-serif; font-size: .82rem; color: var(--text); outline: none; }
+    .smodal input[type=text]:focus, .smodal input[type=number]:focus { border-color: var(--navy); }
+    .smodal input[type=number] { width: 70px; border: 1.5px solid var(--border); border-radius: 8px; padding: .3rem .5rem; font-family: 'Nunito Sans', sans-serif; font-size: .82rem; outline: none; }
+    .smacts { display: flex; gap: .35rem; margin-top: .9rem; }
+    .sbtn-c { flex: 1; border: 1.5px solid var(--border); background: white; border-radius: 8px; padding: .5rem; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: .82rem; color: var(--subtext); cursor: pointer; }
+    .sbtn-c:hover { border-color: var(--navy); color: var(--navy); }
+    .sbtn-s { flex: 2; background: var(--navy); color: white; border: none; border-radius: 8px; padding: .5rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .82rem; cursor: pointer; }
+    .sbtn-s:hover { background: var(--navy-dark); }
+    .copy-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: .28rem; margin-top: .3rem; }
+    .copy-cell { border: 1.5px solid var(--border); border-radius: 7px; padding: .32rem .3rem; text-align: center; font-size: .7rem; font-weight: 700; color: var(--subtext); cursor: pointer; background: white; }
+    .copy-cell:hover { border-color: var(--navy); color: var(--navy); background: #f0f4ff; }
+    .copy-cell.on { border-color: var(--navy); background: var(--navy); color: white; }
+    .copy-cell.same { opacity: .35; pointer-events: none; }
   </style>
 </head>
 <body>
@@ -232,6 +320,16 @@
   </div>
 
   <main>
+
+    <!-- ADMIN TABS -->
+    <div class="admin-tabs">
+      <button class="admin-tab active" onclick="switchAdminTab('accounts',this)">👨‍🏫 Accounts</button>
+      <button class="admin-tab" onclick="switchAdminTab('students',this)">🧑‍🎓 Students</button>
+      <button class="admin-tab" onclick="switchAdminTab('schedule',this)">📅 Curriculum Schedule</button>
+    </div>
+
+    <!-- PANEL: ACCOUNTS -->
+    <div class="admin-panel active" id="panel-accounts">
 
     <!-- STATS -->
     <div class="stats-grid" id="stats-grid">
@@ -292,6 +390,11 @@
       </div>
     </div>
 
+    </div><!-- /panel-accounts -->
+
+    <!-- PANEL: STUDENTS -->
+    <div class="admin-panel" id="panel-students">
+
     <!-- CLASS BREAKDOWN -->
     <div class="section-title">🏫 Class Breakdown</div>
     <div class="card">
@@ -327,6 +430,31 @@
         </table>
       </div>
     </div>
+
+    </div><!-- /panel-students -->
+
+    <!-- PANEL: SCHEDULE -->
+    <div class="admin-panel" id="panel-schedule">
+      <div class="sched-controls">
+        <span class="sched-lbl">Year group</span>
+        <div class="sched-seg" id="sched-yr-seg">
+          <button class="sched-sb on" onclick="schedSetYear(9,this)">Year 9</button>
+          <button class="sched-sb" onclick="schedSetYear(10,this)">Year 10</button>
+          <button class="sched-sb" onclick="schedSetYear(11,this)">Year 11</button>
+        </div>
+        <span class="sched-toast" id="sched-toast">✅ Saved</span>
+        <span class="sched-saving" id="sched-saving">Saving…</span>
+      </div>
+      <div class="sched-legend">
+        <div class="sched-li"><div class="sched-ld" style="background:#dbeafe;border:2px solid #3b82f6"></div>Learning</div>
+        <div class="sched-li"><div class="sched-ld" style="background:#fde8d8;border:2px solid #ea580c"></div>Assessment window</div>
+        <div class="sched-li"><div class="sched-ld" style="background:#ede9fe;border:2px solid #7c3aed"></div>Partial module</div>
+        <span style="margin-left:auto;font-size:.68rem;color:var(--subtext)">Drag bottom edge to span months · hover for copy/delete</span>
+      </div>
+      <div class="grid-outer">
+        <div class="sched-grid" id="sched-cal"></div>
+      </div>
+    </div><!-- /panel-schedule -->
 
   </main>
 </div>
@@ -601,6 +729,318 @@
     await signOutUser();
     window.location.href = 'index.html';
   };
+
+  // ── ADMIN TAB SWITCHING ──────────────────────────────────────────────────────
+  window.switchAdminTab = (name, btn) => {
+    document.querySelectorAll('.admin-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.admin-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById(`panel-${name}`).classList.add('active');
+    btn.classList.add('active');
+    if (name === 'schedule' && !window._schedLoaded) {
+      window._schedLoaded = true;
+      schedInit();
+    }
+  };
+</script>
+
+<!-- ── SCHEDULE BLOCK MODAL ────────────────────────────────────────────────── -->
+<div id="sov" class="sov" style="display:none">
+<div class="smodal">
+  <h3 id="sm-title">Add block</h3>
+  <div class="smf">
+    <label>Type</label>
+    <div class="stseg">
+      <button class="stsb learn on" id="stb-l" onclick="smSetType('learn')">📘 Learning</button>
+      <button class="stsb assess" id="stb-a" onclick="smSetType('assess')">📝 Assessment window</button>
+    </div>
+  </div>
+  <div id="sm-content">
+    <div class="smf">
+      <label id="sm-content-lbl">Modules &amp; Topics covered</label>
+      <div style="font-size:.67rem;color:#5a6885;margin-bottom:.3rem" id="sm-content-hint">Tick a whole module, or expand to pick specific topics.</div>
+      <div class="smod-acc" id="sm-mods"></div>
+    </div>
+  </div>
+  <div class="smf" id="sm-label-field" style="display:none">
+    <label>Assessment label <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+    <input type="text" id="sm-albl" placeholder="e.g. Assessment 1 — B1 content">
+  </div>
+  <div class="smf">
+    <label>Spans (months)</label>
+    <div style="display:flex;align-items:center;gap:.5rem">
+      <input type="number" id="sm-span" min="1" max="11" value="1">
+      <span style="font-size:.72rem;color:#5a6885">month(s) — drag handle after adding to resize</span>
+    </div>
+  </div>
+  <div class="smacts">
+    <button class="sbtn-c" onclick="smClose()">Cancel</button>
+    <button class="sbtn-s" onclick="smSave()">Add block</button>
+  </div>
+</div>
+</div>
+
+<!-- COPY MODAL -->
+<div id="scopy-ov" class="sov" style="display:none">
+<div class="smodal">
+  <h3 id="scopy-title">Copy block to…</h3>
+  <div class="smf">
+    <label>Pick destination month(s)</label>
+    <div class="copy-grid" id="scopy-grid"></div>
+  </div>
+  <div class="smacts">
+    <button class="sbtn-c" onclick="scopyClose()">Cancel</button>
+    <button class="sbtn-s" onclick="scopyDo()">Copy to selected</button>
+  </div>
+</div>
+</div>
+
+<script type="module">
+import { saveSchedule, loadSchedule } from './firebase.js';
+
+const SUBJS = ['Biology','Chemistry','Physics'];
+const MONTHS = ['Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul'];
+const TERM_STARTS = [0, 4, 7];
+const TERM_NAMES = ['Autumn','Spring','Summer'];
+const TOPICS = {
+  Biology:{ B1:['Cell Structure','Cell Division','Transport in Cells','Cell Differentiation'], B2:['Organisation','Digestive System','Blood & Heart','Non-communicable Disease'], B3:['Infection & Response','Vaccines','Drugs','Monoclonal Antibodies'], B4:['Bioenergetics','Photosynthesis','Respiration','Exercise'], B5:['Homeostasis','Nervous System','Hormones','Diabetes'], B6:['Reproduction','DNA & Genetics','Variation','Evolution'], B7:['Ecology','Ecosystems','Biodiversity','Climate Change'] },
+  Chemistry:{ C1:['Atomic Structure','Periodic Table','Bonding','Properties of Materials'], C2:['Structure & Bonding','Giant Structures','Nanoparticles'], C3:['Quantitative Chemistry','Moles','Concentration'], C4:['Chemical Changes','Reactivity Series','Electrolysis'], C5:['Energy Changes','Exothermic & Endothermic','Bond Energies'], C6:['Rate of Reaction','Equilibrium'], C7:['Organic Chemistry','Crude Oil','Polymers'], C8:['Chemical Analysis','Chromatography','Tests for Ions'], C9:['Atmosphere','Carbon Cycle'], C10:['Using Resources','Water Treatment','Life Cycle Assessment'] },
+  Physics:{ P1:['Conservation of Energy','Energy Stores','Power','Efficiency'], P2:['National Grid','Static Electricity','Current','Resistance','Circuits'], P3:['Particle Model','Changes of State','Gas Pressure'], P4:['Atomic Structure','Radioactive Decay','Half-life','Nuclear Fission'], P5:['Forces',"Newton's Laws",'Momentum','Stopping Distances'], P6:['Waves','EM Spectrum','Reflection','Refraction'], P7:['Magnetism','EM Induction','Transformers'] }
+};
+
+let schedYear = 9;
+// sched[year][subj][monthIdx] = [block,...]
+let sched = { 9:{}, 10:{}, 11:{} };
+SUBJS.forEach(s => { [9,10,11].forEach(y => { sched[y][s] = {}; }); });
+
+let smCtx = null, smType = 'learn', smExpanded = {};
+let scopyCtx = null, scopyDests = new Set();
+let resizeState = null;
+let saveTimer = null;
+
+function getBlocks(subj, mi) {
+  if (!sched[schedYear][subj][mi]) sched[schedYear][subj][mi] = [];
+  return sched[schedYear][subj][mi];
+}
+
+// ── LOAD ──────────────────────────────────────────────────────────────────────
+async function schedInit() {
+  for (const y of [9, 10, 11]) {
+    for (const s of SUBJS) {
+      try {
+        const months = await loadSchedule(y, s);
+        sched[y][s] = months || {};
+      } catch(e) { sched[y][s] = {}; }
+    }
+  }
+  schedRenderCal();
+}
+window.schedInit = schedInit;
+
+// ── AUTO-SAVE (debounced 1.5s) ────────────────────────────────────────────────
+async function schedAutoSave() {
+  document.getElementById('sched-saving').style.display = 'inline';
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(async () => {
+    try {
+      for (const s of SUBJS) {
+        await saveSchedule(schedYear, s, sched[schedYear][s]);
+      }
+      document.getElementById('sched-saving').style.display = 'none';
+      const t = document.getElementById('sched-toast');
+      t.style.display = 'inline';
+      clearTimeout(window._schedToast);
+      window._schedToast = setTimeout(() => t.style.display = 'none', 2000);
+    } catch(e) {
+      document.getElementById('sched-saving').style.display = 'none';
+      console.error('Schedule save failed:', e);
+    }
+  }, 1500);
+}
+
+// ── YEAR SELECT ───────────────────────────────────────────────────────────────
+window.schedSetYear = (y, btn) => {
+  schedYear = y;
+  document.querySelectorAll('#sched-yr-seg .sched-sb').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  schedRenderCal();
+};
+
+// ── CALENDAR ──────────────────────────────────────────────────────────────────
+function blkLabel(b) {
+  const parts = [];
+  (b.modules || []).forEach(m => {
+    const t = b.partialTopics?.[m];
+    parts.push(t && t.length ? `${m}: ${t.join(', ')}` : m);
+  });
+  const hasPartial = b.partialTopics && Object.values(b.partialTopics).some(t => t && t.length);
+  let main = parts.join(' · ') || '';
+  if (b.type === 'assess' && b.label) main = b.label + (main ? ` — ${main}` : '');
+  else if (b.type === 'assess' && !main) main = 'Assessment window';
+  return { main: main || '(none)', partial: hasPartial };
+}
+
+function schedRenderCal() {
+  const cal = document.getElementById('sched-cal');
+  let h = `<div class="gh-corner"><svg width="18" height="20" viewBox="0 0 88 100"><path d="M44 0L88 14L88 50Q88 80 44 100Q0 80 0 50L0 14Z" fill="#c8202c" stroke="#d4a534" stroke-width="3"/></svg></div>`;
+  SUBJS.forEach(s => {
+    const pc = s==='Biology' ? 'gp-bio' : s==='Chemistry' ? 'gp-chem' : 'gp-phys';
+    h += `<div class="gh-subj"><div class="gh-name">${s}</div><span class="gh-pill ${pc}">${s.slice(0,3)}</span></div>`;
+  });
+  MONTHS.forEach((mon, mi) => {
+    const ts = TERM_STARTS.includes(mi);
+    const tc = ts ? 'ts' : '';
+    let tb = '';
+    if (ts) { const ti = TERM_STARTS.indexOf(mi); tb = `<span class="term-badge">${TERM_NAMES[ti]}</span>`; }
+    h += `<div class="gm-label ${tc}">${mon}${tb}</div>`;
+    SUBJS.forEach(subj => {
+      const blocks = getBlocks(subj, mi);
+      let ch = blocks.map((b, bi) => {
+        const { main, partial } = blkLabel(b);
+        const span = b.span || 1;
+        const sb = span > 1 ? `<span class="span-badge">↕ ${span}mo</span>` : '';
+        return `<div class="sblk ${b.type}">
+          <div class="sblk-type">${b.type==='learn'?'📘 Learning':'📝 Assessment'}</div>
+          <div class="sblk-body">${main}</div>
+          ${partial ? '<span class="partial-tag">partial</span>' : ''}${sb}
+          <div class="sblk-actions">
+            <button class="sbact" onclick="scopyOpen('${subj}',${mi},${bi},event)">⧉</button>
+            <button class="sbact del" onclick="schedDelBlk('${subj}',${mi},${bi},event)">✕</button>
+          </div>
+          <div class="resize-handle" onmousedown="schedResizeStart(event,'${subj}',${mi},${bi})"></div>
+        </div>`;
+      }).join('');
+      ch += `<button class="sadd-btn" onclick="smOpen('${subj}',${mi})">＋ Add</button>`;
+      h += `<div class="gcell ${tc}">${ch}</div>`;
+    });
+  });
+  cal.innerHTML = h;
+}
+
+window.schedDelBlk = (subj, mi, bi, e) => {
+  e.stopPropagation();
+  sched[schedYear][subj][mi].splice(bi, 1);
+  schedRenderCal(); schedAutoSave();
+};
+
+// ── RESIZE ────────────────────────────────────────────────────────────────────
+window.schedResizeStart = (e, subj, mi, bi) => {
+  e.preventDefault(); e.stopPropagation();
+  resizeState = { subj, mi, bi, startY: e.clientY, origSpan: sched[schedYear][subj][mi][bi].span || 1, block: sched[schedYear][subj][mi][bi] };
+  document.addEventListener('mousemove', onScheduleResizeMove);
+  document.addEventListener('mouseup', onScheduleResizeUp);
+};
+function onScheduleResizeMove(e) {
+  if (!resizeState) return;
+  const delta = Math.round((e.clientY - resizeState.startY) / 80);
+  resizeState.block.span = Math.max(1, Math.min(11 - resizeState.mi, resizeState.origSpan + delta));
+  schedRenderCal();
+}
+function onScheduleResizeUp() {
+  document.removeEventListener('mousemove', onScheduleResizeMove);
+  document.removeEventListener('mouseup', onScheduleResizeUp);
+  if (resizeState) { schedAutoSave(); resizeState = null; }
+}
+
+// ── BLOCK MODAL ───────────────────────────────────────────────────────────────
+window.smOpen = (subj, mi) => {
+  smCtx = { subj, mi }; smType = 'learn'; smExpanded = {};
+  document.getElementById('sm-title').textContent = `Add block — ${subj}, ${MONTHS[mi]}`;
+  smSetType('learn');
+  smRenderModAcc(subj);
+  document.getElementById('sm-albl').value = '';
+  document.getElementById('sm-span').value = 1;
+  document.getElementById('sov').style.display = 'flex';
+};
+window.smClose = () => { document.getElementById('sov').style.display = 'none'; smCtx = null; };
+
+window.smSetType = (t) => {
+  smType = t;
+  document.getElementById('stb-l').className = 'stsb learn' + (t==='learn' ? ' on' : '');
+  document.getElementById('stb-a').className = 'stsb assess' + (t==='assess' ? ' on' : '');
+  document.getElementById('sm-label-field').style.display = t==='assess' ? 'block' : 'none';
+  document.getElementById('sm-content-lbl').textContent = t==='assess' ? 'Content covered (optional)' : 'Modules & Topics covered';
+  document.getElementById('sm-content-hint').textContent = t==='assess'
+    ? 'Tick the modules this assessment covers — shown as guidance to students.'
+    : 'Tick a whole module, or expand to pick specific topics.';
+};
+
+function smRenderModAcc(subj) {
+  document.getElementById('sm-mods').innerHTML = Object.entries(TOPICS[subj]).map(([mod, topics]) => {
+    const open = smExpanded[mod];
+    return `<div class="smi" id="smi-${mod}">
+      <div class="smhd" onclick="smToggleMod('${mod}','${subj}')">
+        <input type="checkbox" class="smwcb" id="smcb-${mod}" onclick="event.stopPropagation();smWModTog('${mod}')">
+        <label class="smnm" for="smcb-${mod}" onclick="event.stopPropagation()">${mod}</label>
+        <button class="smexp" onclick="event.stopPropagation();smToggleMod('${mod}','${subj}')">${open?'▲ hide':'▼ topics'}</button>
+      </div>
+      <div class="smtp ${open?'open':''}" id="smtp-${mod}">
+        <div class="sph">Selecting topics = partial module block</div>
+        ${topics.map((t,ti) => `<div class="strow"><input type="checkbox" class="stcb" id="stcb-${mod}-${ti}" data-mod="${mod}" data-topic="${t}" onchange="smTopicChg('${mod}')"><label class="stlbl" for="stcb-${mod}-${ti}">${t}</label></div>`).join('')}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+window.smToggleMod = (mod) => {
+  smExpanded[mod] = !smExpanded[mod];
+  document.getElementById(`smtp-${mod}`)?.classList.toggle('open', smExpanded[mod]);
+  document.querySelector(`#smi-${mod} .smexp`).textContent = smExpanded[mod] ? '▲ hide' : '▼ topics';
+};
+window.smWModTog = (mod) => {
+  const cb = document.getElementById(`smcb-${mod}`);
+  document.querySelectorAll(`[data-mod="${mod}"]`).forEach(el => { el.checked = false; el.disabled = cb.checked; });
+};
+window.smTopicChg = (mod) => {
+  const any = [...document.querySelectorAll(`[data-mod="${mod}"]`)].some(el => el.checked);
+  const w = document.getElementById(`smcb-${mod}`);
+  if (w) { w.checked = false; w.disabled = any; }
+};
+
+window.smSave = () => {
+  if (!smCtx) return;
+  const { subj, mi } = smCtx;
+  const span = Math.max(1, parseInt(document.getElementById('sm-span').value) || 1);
+  const mods = TOPICS[subj];
+  const selMods = [], partial = {};
+  Object.keys(mods).forEach(mod => {
+    const w = document.getElementById(`smcb-${mod}`);
+    const tt = [...document.querySelectorAll(`[data-mod="${mod}"]`)].filter(el => el.checked).map(el => el.dataset.topic);
+    if (w?.checked) selMods.push(mod);
+    else if (tt.length) { selMods.push(mod); partial[mod] = tt; }
+  });
+  if (smType === 'learn' && !selMods.length) { alert('Select at least one module or topic.'); return; }
+  const block = { type: smType, modules: selMods, partialTopics: Object.keys(partial).length ? partial : null, span };
+  if (smType === 'assess') { const lbl = document.getElementById('sm-albl').value.trim(); if (lbl) block.label = lbl; }
+  getBlocks(subj, mi).push(block);
+  smClose(); schedRenderCal(); schedAutoSave();
+};
+
+// ── COPY MODAL ────────────────────────────────────────────────────────────────
+window.scopyOpen = (subj, mi, bi, e) => {
+  e.stopPropagation();
+  scopyCtx = { subj, mi, bi }; scopyDests = new Set();
+  document.getElementById('scopy-title').textContent = `Copy block — ${subj}, ${MONTHS[mi]}`;
+  document.getElementById('scopy-grid').innerHTML = MONTHS.map((m, i) =>
+    `<div class="copy-cell${i===mi?' same':''}" id="scc-${i}" onclick="scopyTog(${i})">${m}</div>`
+  ).join('');
+  document.getElementById('scopy-ov').style.display = 'flex';
+};
+window.scopyClose = () => { document.getElementById('scopy-ov').style.display = 'none'; scopyCtx = null; scopyDests = new Set(); };
+window.scopyTog = (mi) => {
+  if (scopyDests.has(mi)) scopyDests.delete(mi); else scopyDests.add(mi);
+  document.getElementById(`scc-${mi}`)?.classList.toggle('on', scopyDests.has(mi));
+};
+window.scopyDo = () => {
+  if (!scopyCtx || !scopyDests.size) { scopyClose(); return; }
+  const { subj, mi, bi } = scopyCtx;
+  const orig = sched[schedYear][subj][mi]?.[bi];
+  if (!orig) { scopyClose(); return; }
+  scopyDests.forEach(dest => getBlocks(subj, dest).push(JSON.parse(JSON.stringify(orig))));
+  scopyClose(); schedRenderCal(); schedAutoSave();
+};
+
+document.getElementById('sov').addEventListener('click', e => { if (e.target.id === 'sov') smClose(); });
+document.getElementById('scopy-ov').addEventListener('click', e => { if (e.target.id === 'scopy-ov') scopyClose(); });
 </script>
 </body>
 </html>
