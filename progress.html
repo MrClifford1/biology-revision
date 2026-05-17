@@ -1215,7 +1215,7 @@ Write a helpful, encouraging insight for this student. Mention specific modules 
 </div>
 
 <script type="module">
-  import { getUserProfile, saveClass } from './firebase.js';
+  import { saveClass } from './firebase.js';
 
   const CLASSES = {
     9:  ['9S1','9S2','9S3','9S4','9S5','9N1','9N2','9N3','9N4','9N5'],
@@ -1226,14 +1226,21 @@ Write a helpful, encouraging insight for this student. Mention specific modules 
   let selectedYearDrawer = null;
   let selectedClassDrawer = null;
 
-  const waitForUser = setInterval(async () => {
-    if (!window.currentUser) return;
-    clearInterval(waitForUser);
-    const profile = await getUserProfile(window.currentUser.uid);
+  // Use already-loaded profile from main script — no extra Firestore read needed
+  function updateDrawerClassDisplay() {
+    const profile = window.currentProfile;
     document.getElementById('drawer-class-display').textContent = profile?.class || 'Not set';
-  }, 300);
+  }
+
+  // Poll briefly in case main script hasn't set currentProfile yet
+  const waitForUser = setInterval(() => {
+    if (!window.currentProfile) return;
+    clearInterval(waitForUser);
+    updateDrawerClassDisplay();
+  }, 100);
 
   window.openSettings = () => {
+    updateDrawerClassDisplay();
     document.getElementById('settings-overlay').classList.remove('hidden');
     document.getElementById('settings-drawer').classList.remove('hidden');
     selectedYearDrawer = null;
@@ -1271,6 +1278,11 @@ Write a helpful, encouraging insight for this student. Mention specific modules 
   window.confirmClassDrawer = async () => {
     if (!window.currentUser || !selectedClassDrawer) return;
     await saveClass(window.currentUser.uid, selectedClassDrawer);
+    // Update cached profile so drawer shows correct value immediately
+    if (window.currentProfile) {
+      window.currentProfile.class = selectedClassDrawer;
+      window.currentProfile.yearGroup = parseInt(selectedClassDrawer.match(/^(\d+)/)?.[1]) || null;
+    }
     document.getElementById('drawer-class-display').textContent = selectedClassDrawer;
     closeSettings();
     location.reload();

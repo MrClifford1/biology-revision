@@ -1737,6 +1737,7 @@ loadQuestions();
     // Schedule-aware module flagging — runs after RAG so it doesn't block the checklist
     try {
       const profile = await getUserProfile(user.uid);
+      window.currentProfile = profile;
       const yearGroup = profile?.yearGroup;
       if (yearGroup) {
         const subjectName = _subjectId.charAt(0).toUpperCase() + _subjectId.slice(1);
@@ -1810,7 +1811,7 @@ loadQuestions();
 </div>
 
 <script type="module">
-  import { getUserProfile, saveClass, isClassValid, signOutUser } from './firebase.js';
+  import { saveClass, isClassValid, signOutUser } from './firebase.js';
 
   const CLASSES = {
     9:  ['9S1','9S2','9S3','9S4','9S5','9N1','9N2','9N3','9N4','9N5'],
@@ -1821,13 +1822,12 @@ loadQuestions();
   let selectedYearDrawer = null;
   let selectedClassDrawer = null;
 
-  // Load class info once user is available (window._currentUser set by main script)
-  const waitForUser = setInterval(async () => {
-    if (!window._currentUser) return;
+  // Use already-loaded profile — no extra Firestore read needed
+  const waitForUser = setInterval(() => {
+    if (!window.currentProfile) return;
     clearInterval(waitForUser);
-    const profile = await getUserProfile(window._currentUser.uid);
-    document.getElementById('drawer-class-display').textContent = profile?.class || 'Not set';
-  }, 300);
+    document.getElementById('drawer-class-display').textContent = window.currentProfile?.class || 'Not set';
+  }, 100);
 
   window.openSettings = () => {
     document.getElementById('settings-overlay').classList.remove('hidden');
