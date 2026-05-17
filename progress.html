@@ -937,7 +937,7 @@
     const asmtContext=upcomingAssessments.map(a=>`${a.subject} ${a.label} on ${a.date} covering ${(a.modules||[]).join(', ')}`).join('; ');
     const schedContext=Object.entries(scheduleStatuses).filter(([,s])=>s==='current').map(([id])=>`${id.toUpperCase()} (${MODULE_META[id]?.title})`).join(', ');
 
-    const prompt=`You are a friendly, encouraging GCSE science revision assistant for a student at Streetly Academy. Write a short personalised insight paragraph (3-5 sentences) based on their progress data. Be warm and positive — acknowledge effort, give specific actionable advice, and avoid any language that feels like a telling off. Focus on what they can do next, not what they haven't done.
+    const prompt=`You are a friendly, encouraging GCSE science revision assistant for a student at Streetly Academy. Write a short personalised insight paragraph (3-5 sentences) based on their progress data. Be warm and positive — acknowledge effort, give specific actionable advice, and avoid any language that feels like a telling off. Focus on what they can do next, not what they haven't done. Do not use markdown formatting, headings, or bullet points — just plain flowing text.
 
 Student progress:
 ${modulesSummary||'No activity recorded yet.'}
@@ -964,9 +964,16 @@ Write a helpful, encouraging insight for this student. Mention specific modules 
       // Save cooldown timestamp
       await saveInsightTimestamp(currentUser.uid);
 
+      // Strip markdown formatting the AI sometimes adds
+      const cleanText = text
+        .replace(/^#+\s+.*/gm, '')   // remove # headings
+        .replace(/\*\*(.*?)\*\*/g, '$1')  // remove **bold**
+        .replace(/\*(.*?)\*/g, '$1')       // remove *italic*
+        .trim();
+
       area.innerHTML=`<div class="ai-insight-wrap">
         <div class="ai-insight-header">✨ Your Personalised Insight</div>
-        <div class="ai-insight-body">${text}</div>
+        <div class="ai-insight-body">${cleanText}</div>
       </div>`;
     } catch(e) {
       area.innerHTML=`<div class="ai-insight-wrap"><div class="ai-insight-body">Sorry, couldn't generate an insight right now. Try again in a moment.</div></div>`;
