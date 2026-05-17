@@ -316,11 +316,7 @@
       <!-- Saved dates first -->
       <div class="card">
         <div class="section-label">Assessment Dates</div>
-        <div class="adate-controls">
-          <span style="font-size:0.78rem;font-weight:700;color:var(--subtext)">Class:</span>
-          <select class="form-input" id="ad-filter-class" onchange="adLoadList()" style="max-width:140px;padding:0.35rem 0.65rem;font-size:0.8rem"></select>
-        </div>
-        <div class="adate-list" id="ad-list"><div class="empty-state">Select a class above to view saved dates.</div></div>
+        <div class="adate-list" id="ad-list"><div class="loading-state">Loading assessment dates...</div></div>
         <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)">
           <button onclick="adToggleForm()" id="ad-toggle-btn" style="background:var(--purple);color:white;border:none;border-radius:9px;padding:0.45rem 1.1rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;cursor:pointer;display:flex;align-items:center;gap:0.4rem">＋ Add Assessment Date</button>
         </div>
@@ -464,6 +460,7 @@
     populateClassSelector();
     buildAssignClassGrid();
     loadAssignments();
+    adLoadList();
   });
 
   // ── TABS ────────────────────────────────────────────────────────────────────
@@ -798,12 +795,10 @@
   };
 
   function adPopulateClassSel() {
-    ['ad-class-sel','ad-filter-class'].forEach(id => {
-      const sel = document.getElementById(id);
-      if (!sel) return;
-      sel.innerHTML = '<option value="">— Select class —</option>' +
-        myClasses.map(c => `<option value="${c}">${c}</option>`).join('');
-    });
+    const sel = document.getElementById('ad-class-sel');
+    if (!sel) return;
+    sel.innerHTML = '<option value="">— Select class —</option>' +
+      myClasses.map(c => `<option value="${c}">${c}</option>`).join('');
   }
 
   window.adToggleForm = () => {
@@ -945,17 +940,17 @@
     document.getElementById('ad-form-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  window.adCopyTo = (subj, id) => {
-    const stored = window._adListCache?.find(a => a.id === id && a.subject === subj);
+  window.adCopyTo = (subj, id, fromCls) => {
+    const stored = window._adListCache?.find(a => a.id === id && a.subject === subj && a.cls === fromCls);
     if (!stored) return;
-    const others = myClasses.filter(c => c !== document.getElementById('ad-filter-class').value);
+    const others = myClasses.filter(c => c !== fromCls);
     if (!others.length) { alert('No other classes to copy to.'); return; }
     const modal = document.getElementById('ad-copy-modal');
     document.getElementById('ad-copy-grid').innerHTML = others.map(c =>
       `<button class="class-toggle" onclick="this.classList.toggle('selected')">${c}</button>`
     ).join('');
     document.getElementById('ad-copy-label').textContent = stored.label || 'Assessment';
-    document.getElementById('ad-copy-date').value = ''; // clear date override
+    document.getElementById('ad-copy-date').value = '';
     window._adCopyPayload = { subj, id, stored };
     modal.classList.add('open');
   };
@@ -982,45 +977,89 @@
   };
 
   window.adLoadList = async () => {
-    const cls = document.getElementById('ad-filter-class').value;
     const list = document.getElementById('ad-list');
-    if (!cls) { list.innerHTML = '<div class="empty-state">Select a class to view saved dates.</div>'; return; }
+    if (!myClasses.length) {
+      list.innerHTML = '<div class="empty-state">No classes assigned — set up your classes in My Classes first.</div>';
+      return;
+    }
     list.innerHTML = '<div class="loading-state">Loading...</div>';
 
     const subjects = ['Biology','Chemistry','Physics'];
-    const all = [];
-    await Promise.all(subjects.map(async subj => {
-      try {
-        const items = await getAssessmentDates(cls, subj);
-        items.forEach(item => all.push({ ...item, subject: subj }));
-      } catch(e) {}
+
+    // Load all assessments for all my classes in parallel
+    const allByClass = {};
+    await Promise.all(myClasses.map(async cls => {
+      const items = [];
+      await Promise.all(subjects.map(async subj => {
+        try {
+          const dates = await getAssessmentDates(cls, subj);
+          dates.forEach(d => items.push({ ...d, subject: subj, cls }));
+        } catch(e) {}
+      }));
+      if (items.length) allByClass[cls] = items.sort((a,b) => (a.date||'').localeCompare(b.date||''));
     }));
-    all.sort((a,b) => (a.date||'').localeCompare(b.date||''));
-    window._adListCache = all; // cache for edit/copy lookups
 
-    if (!all.length) { list.innerHTML = '<div class="empty-state">No assessment dates saved for this class yet.</div>'; return; }
+    window._adListCache = Object.values(allByClass).flat();
 
-    list.innerHTML = all.map(a => {
-      const daysLeft = a.date ? Math.ceil((new Date(a.date) - new Date()) / 86400000) : null;
-      const pillCls = a.subject === 'Biology' ? 'adate-pill-bio' : a.subject === 'Chemistry' ? 'adate-pill-chem' : 'adate-pill-phys';
-      const cdCls = daysLeft !== null ? (daysLeft <= 7 ? 'soon' : daysLeft <= 21 ? 'upcoming' : 'future') : 'future';
-      const cdText = daysLeft !== null ? (daysLeft <= 0 ? 'Today' : `${daysLeft}d`) : '';
-      const dateStr = a.date ? new Date(a.date + 'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}) : '';
-      const modTags = (a.modules||[]).map(m => {
-        const pt = a.partialTopics?.[m];
-        return `<span class="adate-mod-tag">${m}${pt?.length ? ` (${pt.length} topics)` : ''}</span>`;
+    if (!window._adListCache.length) {
+      list.innerHTML = '<div class="empty-state">No assessment dates saved yet. Use the button below to add one.</div>';
+      return;
+    }
+
+    // Sort classes by year group: 9x first, then 10x, then 11x
+    const sortedClasses = [...myClasses].sort((a, b) => {
+      const ya = parseInt(a.match(/^(\d+)/)?.[1] || 99);
+      const yb = parseInt(b.match(/^(\d+)/)?.[1] || 99);
+      if (ya !== yb) return ya - yb;
+      return a.localeCompare(b);
+    }).filter(cls => allByClass[cls]);
+
+    // Group by year
+    const yearGroups = {};
+    sortedClasses.forEach(cls => {
+      const y = parseInt(cls.match(/^(\d+)/)?.[1] || 0);
+      const label = y ? `Year ${y}` : 'Other';
+      if (!yearGroups[label]) yearGroups[label] = [];
+      yearGroups[label].push(cls);
+    });
+
+    list.innerHTML = Object.entries(yearGroups).map(([yearLabel, classes]) => {
+      const classesHtml = classes.map(cls => {
+        const items = allByClass[cls] || [];
+        const rowsHtml = items.map(a => {
+          const daysLeft = a.date ? Math.ceil((new Date(a.date) - new Date()) / 86400000) : null;
+          const pillCls = a.subject === 'Biology' ? 'adate-pill-bio' : a.subject === 'Chemistry' ? 'adate-pill-chem' : 'adate-pill-phys';
+          const cdCls = daysLeft !== null ? (daysLeft <= 7 ? 'soon' : daysLeft <= 21 ? 'upcoming' : 'future') : 'future';
+          const cdText = daysLeft !== null ? (daysLeft <= 0 ? 'Today' : daysLeft === 1 ? 'Tomorrow' : `${daysLeft}d`) : '';
+          const dateStr = a.date ? new Date(a.date + 'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}) : '';
+          const modTags = (a.modules||[]).map(m => {
+            const pt = a.partialTopics?.[m];
+            return `<span class="adate-mod-tag">${m}${pt?.length ? ` (${pt.length} topics)` : ''}</span>`;
+          }).join('');
+          return `<div class="adate-row">
+            <span class="adate-subj-pill ${pillCls}">${a.subject}</span>
+            <div class="adate-info">
+              <div class="adate-label">${a.label||'Assessment'}</div>
+              <div class="adate-meta">${dateStr}${a.scheduleLink ? ` · ${a.scheduleLink}` : ''}</div>
+              <div class="adate-mods">${modTags}</div>
+            </div>
+            ${cdText ? `<span class="adate-countdown ${cdCls}">${cdText}</span>` : ''}
+            <button class="btn-delete" style="border-color:#6366f1;color:#6366f1" onclick="adEdit('${cls}','${a.subject}','${a.id}')">✏️ Edit</button>
+            <button class="btn-delete" style="border-color:#0891b2;color:#0891b2" onclick="adCopyTo('${a.subject}','${a.id}','${cls}')">⧉ Copy to</button>
+            <button class="btn-delete" onclick="adDelete('${cls}','${a.subject}','${a.id}')">Remove</button>
+          </div>`;
+        }).join('');
+        return `<div style="margin-bottom:1rem">
+          <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:0.78rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;padding-bottom:0.3rem;border-bottom:1px solid var(--border)">${cls}</div>
+          ${rowsHtml}
+        </div>`;
       }).join('');
-      return `<div class="adate-row">
-        <span class="adate-subj-pill ${pillCls}">${a.subject}</span>
-        <div class="adate-info">
-          <div class="adate-label">${a.label||'Assessment'}</div>
-          <div class="adate-meta">${dateStr}${a.scheduleLink ? ` · ${a.scheduleLink}` : ''}</div>
-          <div class="adate-mods">${modTags}</div>
+
+      return `<div style="margin-bottom:1.25rem">
+        <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:0.88rem;color:var(--navy);margin-bottom:0.6rem;display:flex;align-items:center;gap:0.5rem">
+          <span style="background:var(--navy);color:white;border-radius:6px;padding:0.1rem 0.5rem;font-size:0.72rem">${yearLabel}</span>
         </div>
-        ${cdText ? `<span class="adate-countdown ${cdCls}">${cdText}</span>` : ''}
-        <button class="btn-delete" style="border-color:#6366f1;color:#6366f1" onclick="adEdit('${cls}','${a.subject}','${a.id}')">✏️ Edit</button>
-        <button class="btn-delete" style="border-color:#0891b2;color:#0891b2" onclick="adCopyTo('${a.subject}','${a.id}')">⧉ Copy to</button>
-        <button class="btn-delete" onclick="adDelete('${cls}','${a.subject}','${a.id}')">Remove</button>
+        ${classesHtml}
       </div>`;
     }).join('');
   };
