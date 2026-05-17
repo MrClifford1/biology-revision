@@ -1696,13 +1696,21 @@ loadQuestions();
     try {
       const profile = await getUserProfile(user.uid);
       const yearGroup = profile?.yearGroup;
+      console.log('[Schedule] profile:', profile);
+      console.log('[Schedule] yearGroup:', yearGroup);
       if (yearGroup) {
         const subjectName = _subjectId.charAt(0).toUpperCase() + _subjectId.slice(1);
         const moduleUpper = _moduleId.toUpperCase();
+        console.log('[Schedule] checking:', yearGroup, subjectName, moduleUpper);
         const status = await getModuleScheduleStatus(yearGroup, subjectName, moduleUpper);
+        console.log('[Schedule] status:', status);
         applyScheduleBadge(status);
+      } else {
+        console.log('[Schedule] no yearGroup on profile — badge skipped');
       }
-    } catch(e) { /* schedule not configured — no badge shown */ }
+    } catch(e) {
+      console.error('[Schedule] error:', e);
+    }
   });
 
   window.saveScoreToFirebase = async (totalAwarded, totalAvail, allQuestions, writtenResults, writtenAnswers, qScores) => {
