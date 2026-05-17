@@ -313,8 +313,23 @@
 
     <!-- ── TAB: ASSESSMENT DATES ──────────────────────────────────────────────── -->
     <div class="tab-panel" id="tab-assessments">
+      <!-- Saved dates first -->
       <div class="card">
-        <div class="section-label">Add Assessment Date</div>
+        <div class="section-label">Assessment Dates</div>
+        <div class="adate-controls">
+          <span style="font-size:0.78rem;font-weight:700;color:var(--subtext)">Class:</span>
+          <select class="form-input" id="ad-filter-class" onchange="adLoadList()" style="max-width:140px;padding:0.35rem 0.65rem;font-size:0.8rem"></select>
+          <button onclick="adToggleForm()" id="ad-toggle-btn" style="margin-left:auto;background:var(--purple);color:white;border:none;border-radius:9px;padding:0.4rem 1rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;cursor:pointer">＋ Add Assessment</button>
+        </div>
+        <div class="adate-list" id="ad-list"><div class="empty-state">Select a class above to view saved dates.</div></div>
+      </div>
+
+      <!-- Add form — collapsed by default -->
+      <div class="card" id="ad-form-card" style="display:none">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
+          <div class="section-label" style="margin-bottom:0" id="ad-form-title">Add Assessment Date</div>
+          <button onclick="adToggleForm()" style="background:none;border:none;cursor:pointer;color:var(--subtext);font-size:1.1rem;line-height:1" title="Close">✕</button>
+        </div>
         <p style="font-size:0.8rem;color:var(--subtext);margin-bottom:1rem">Assessment dates are per class and persistent — edit them if dates change. Students see a countdown with their RAG scores for the topics covered.</p>
 
         <div class="adate-controls">
@@ -353,15 +368,6 @@
         <button class="btn-adate-save" onclick="adSave()">📅 Save Assessment Date</button>
         <button id="ad-cancel-edit" onclick="adCancelEdit()" style="display:none;margin-left:0.5rem;background:none;border:1.5px solid var(--border);color:var(--subtext);border-radius:10px;padding:0.6rem 1rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.875rem;cursor:pointer">✕ Cancel Edit</button>
         <div class="form-msg" id="ad-msg"></div>
-      </div>
-
-      <div class="card">
-        <div class="section-label">Saved Assessment Dates</div>
-        <div class="adate-controls">
-          <span style="font-size:0.78rem;font-weight:700;color:var(--subtext)">Filter class:</span>
-          <select class="form-input" id="ad-filter-class" onchange="adLoadList()" style="max-width:140px;padding:0.35rem 0.65rem;font-size:0.8rem"></select>
-        </div>
-        <div class="adate-list" id="ad-list"><div class="empty-state">Select a class above to view saved dates.</div></div>
       </div>
     </div>
 
@@ -798,6 +804,14 @@
     });
   }
 
+  window.adToggleForm = () => {
+    const card = document.getElementById('ad-form-card');
+    const isOpen = card.style.display !== 'none';
+    card.style.display = isOpen ? 'none' : 'block';
+    document.getElementById('ad-toggle-btn').textContent = isOpen ? '＋ Add Assessment' : '✕ Close';
+    if (!isOpen) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   let adEditState = null; // { cls, subject, id } when editing an existing assessment
 
   window.adSave = async () => {
@@ -836,12 +850,16 @@
       });
       msg.className = 'form-msg success';
       msg.textContent = adEditState ? '✅ Assessment updated!' : '✅ Assessment date saved!';
-      // Reset form
+      // Reset form and close panel
       document.getElementById('ad-label').value = '';
       document.getElementById('ad-date').value = '';
       document.getElementById('ad-schedlink').value = '';
       adEditState = null;
       document.querySelector('.btn-adate-save').textContent = '📅 Save Assessment Date';
+      document.getElementById('ad-form-title').textContent = 'Add Assessment Date';
+      document.getElementById('ad-cancel-edit').style.display = 'none';
+      document.getElementById('ad-form-card').style.display = 'none';
+      document.getElementById('ad-toggle-btn').textContent = '＋ Add Assessment';
       adRenderModGrid();
       adLoadList();
     } catch(e) {
@@ -858,6 +876,9 @@
     document.getElementById('ad-schedlink').value = '';
     document.querySelector('.btn-adate-save').textContent = '📅 Save Assessment Date';
     document.getElementById('ad-cancel-edit').style.display = 'none';
+    document.getElementById('ad-form-title').textContent = 'Add Assessment Date';
+    document.getElementById('ad-toggle-btn').textContent = '＋ Add Assessment';
+    document.getElementById('ad-form-card').style.display = 'none';
     adRenderModGrid();
   };
 
@@ -912,9 +933,14 @@
     // Update save button + show cancel
     document.querySelector('.btn-adate-save').textContent = '✏️ Update Assessment';
     document.getElementById('ad-cancel-edit').style.display = 'inline-block';
+    document.getElementById('ad-form-title').textContent = 'Edit Assessment Date';
+
+    // Open form panel if not already open
+    document.getElementById('ad-form-card').style.display = 'block';
+    document.getElementById('ad-toggle-btn').textContent = '✕ Close';
 
     // Scroll to form
-    document.getElementById('ad-label').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    document.getElementById('ad-form-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   window.adCopyTo = (subj, id) => {
