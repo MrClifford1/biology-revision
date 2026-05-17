@@ -188,12 +188,18 @@
         if (!m) return;
         const status = await getModuleScheduleStatus(yearGroup, 'Biology', m[1].toUpperCase());
         if (!status || status === 'unknown') return;
-        if (status === 'future') card.classList.add('schedule-future');
-        const cfg = { current:{icon:'📗',text:'Studying now'}, future:{icon:'🔒',text:'Coming up'}, past:{icon:'🔄',text:'Consolidation'} }[status];
+        if (isFuture) card.classList.add('schedule-future');
+        const isFuture = status && status.startsWith('future');
+        const yearMatch = status && status.match(/future-y(\d+)/);
+        const futureYear = yearMatch ? yearMatch[1] : null;
+        const cfg = status === 'current' ? {icon:'📗',text:'Studying now'}
+          : status === 'past' ? {icon:'🔄',text:'Consolidation'}
+          : isFuture ? {icon:'🔒',text: futureYear ? `Year ${futureYear}` : 'Coming up'}
+          : null;
         const info = card.querySelector('.module-info');
         if (info && cfg) {
           const b = document.createElement('div');
-          b.className = `sched-tile-badge ${status}`;
+          b.className = `sched-tile-badge ${isFuture ? 'future' : status}`;
           b.innerHTML = `${cfg.icon} ${cfg.text}`;
           info.appendChild(b);
         }

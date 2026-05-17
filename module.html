@@ -627,13 +627,18 @@ const meta       = MODULE_META[moduleId] || MODULE_META.b1;
 const subjectLabel = subjectId === 'physics' ? 'Physics' : subjectId === 'chemistry' ? 'Chemistry' : 'Biology';
 
 // Topics are loaded from data/{subjectId}-{moduleId}-topics.json — the single source of truth.
-// meta.topics starts empty; everything that reads it (renderChecklist, RAG weighting, etc.)
-// runs after auth which gives the fetch time to complete.
+// Biology files may be named without subject prefix (b1-topics.json) — try both paths.
 meta.topics = [];
 (async () => {
   try {
-    const res = await fetch(`data/${subjectId}-${moduleId}-topics.json`);
-    if (res.ok) meta.topics = await res.json();
+    const paths = [
+      `data/${subjectId}-${moduleId}-topics.json`,
+      `data/${moduleId}-topics.json`,
+    ];
+    for (const path of paths) {
+      const res = await fetch(path);
+      if (res.ok) { meta.topics = await res.json(); break; }
+    }
   } catch(e) { /* topics file missing — checklist will be empty but nothing breaks */ }
 })();
 
@@ -815,30 +820,37 @@ function renderChecklist(state) {
 // status: 'current' | 'future' | 'past' | 'unknown'
 // unknown = module not in any schedule → no badge, no visual change
 function applyScheduleBadge(status) {
-  // Remove any existing badge
   document.querySelectorAll('.sched-badge').forEach(el => el.remove());
   document.body.classList.remove('schedule-future', 'schedule-current', 'schedule-past');
   if (!status || status === 'unknown') return;
 
+  // Resolve future-yN into a display config
+  const isFuture = status.startsWith('future');
+  const yearMatch = status.match(/future-y(\d+)/);
+  const futureYear = yearMatch ? yearMatch[1] : null;
+
   const configs = {
     current: { icon: '📗', text: 'You are currently studying this module' },
-    future:  { icon: '🔒', text: 'Coming up later — keep it in mind' },
     past:    { icon: '🔄', text: 'Consolidation — revisit to keep your score up' },
   };
-  const cfg = configs[status];
+
+  let cfg;
+  if (isFuture) {
+    cfg = { icon: '🔒', text: futureYear ? `You'll be learning this in Year ${futureYear}` : 'Coming up later' };
+  } else {
+    cfg = configs[status];
+  }
   if (!cfg) return;
 
-  // Insert badge below the module subtitle
   const subtitle = document.getElementById('module-subtitle');
   if (subtitle) {
     const badge = document.createElement('div');
-    badge.className = `sched-badge ${status}`;
+    badge.className = `sched-badge ${isFuture ? 'future' : status}`;
     badge.innerHTML = `${cfg.icon} ${cfg.text}`;
     subtitle.parentNode.insertBefore(badge, subtitle.nextSibling);
   }
 
-  // Apply body class so future modules are visually dimmed
-  document.body.classList.add(`schedule-${status}`);
+  document.body.classList.add(`schedule-${isFuture ? 'future' : status}`);
 }
 
 async function reloadRAGFromHistory(uid) {
@@ -1696,21 +1708,13 @@ loadQuestions();
     try {
       const profile = await getUserProfile(user.uid);
       const yearGroup = profile?.yearGroup;
-      console.log('[Schedule] profile:', profile);
-      console.log('[Schedule] yearGroup:', yearGroup);
       if (yearGroup) {
         const subjectName = _subjectId.charAt(0).toUpperCase() + _subjectId.slice(1);
         const moduleUpper = _moduleId.toUpperCase();
-        console.log('[Schedule] checking:', yearGroup, subjectName, moduleUpper);
         const status = await getModuleScheduleStatus(yearGroup, subjectName, moduleUpper);
-        console.log('[Schedule] status:', status);
         applyScheduleBadge(status);
-      } else {
-        console.log('[Schedule] no yearGroup on profile — badge skipped');
       }
-    } catch(e) {
-      console.error('[Schedule] error:', e);
-    }
+    } catch(e) { /* schedule not configured — no badge shown */ }
   });
 
   window.saveScoreToFirebase = async (totalAwarded, totalAvail, allQuestions, writtenResults, writtenAnswers, qScores) => {

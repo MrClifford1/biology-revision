@@ -478,13 +478,16 @@ export async function loadScheduleForYear(yearGroup) {
 // Returns the schedule status of a given module for a student's year group.
 // Returns one of: 'current' | 'future' | 'past' | 'unknown'
 // Used by module.html to badge/dim topics.
-// Returns the schedule status of a module for a student.
-// Logic:
-//   past    = module appears in a LOWER year group's schedule (e.g. B1 for a Year 10 student)
-//   current = module appears in THIS year group's schedule AND its block started on or before now
-//             (i.e. anywhere in the current academic year up to and including the current month)
-//   future  = module appears in THIS year group's schedule but its block hasn't started yet
-//   unknown = module not scheduled in any year group — show normally, no badge
+// Returns the schedule status of a module for a student across their full 3-year journey.
+//
+// Treats Year 9 → Year 10 → Year 11 as one continuous timeline.
+// The student's current position is: their year group + current academic month.
+//
+// Returns:
+//   'current'  — module is being taught now (this year, on or before current month)
+//   'past'     — module was taught in a previous year, or earlier this academic year
+//   'future'   — module is scheduled for later this year or in a future year group
+//   'unknown'  — module not in any year group's schedule — no badge shown
 export async function getModuleScheduleStatus(yearGroup, subject, moduleId) {
   if (!yearGroup || !subject || !moduleId) return 'unknown';
   const yg = parseInt(yearGroup);
@@ -492,11 +495,22 @@ export async function getModuleScheduleStatus(yearGroup, subject, moduleId) {
   if (nowIdx === -1) return 'unknown'; // August — between academic years
 
   const mid = moduleId.toLowerCase();
+  const YEARS = [9, 10, 11];
 
-  // Helper: find the earliest start month of a module in a schedule's month map
+  // Load all three year schedules in parallel
+  const allSchedules = {};
+  await Promise.all(YEARS.map(async y => {
+    try {
+      allSchedules[y] = await loadSchedule(y, subject);
+    } catch(e) {
+      allSchedules[y] = {};
+    }
+  }));
+
+  // Find the earliest start month of a module in a given year's schedule
   function earliestStart(months) {
     let earliest = null;
-    Object.entries(months).forEach(([mi, blocks]) => {
+    Object.entries(months || {}).forEach(([mi, blocks]) => {
       const idx = parseInt(mi);
       (blocks || []).forEach(b => {
         if (b.type !== 'learn') return;
@@ -505,29 +519,40 @@ export async function getModuleScheduleStatus(yearGroup, subject, moduleId) {
         }
       });
     });
-    return earliest; // null = not found
+    return earliest; // null = not found in this year
   }
 
-  // Check lower year groups first — if scheduled there it's past for this student
-  for (const prevYear of [9, 10, 11].filter(y => y < yg)) {
-    try {
-      const months = await loadSchedule(prevYear, subject);
-      if (earliestStart(months) !== null) return 'past';
-    } catch(e) { /* schedule not set for that year */ }
+  // Find which year group this module first appears in
+  let moduleYear = null;
+  let moduleStartMonth = null;
+  for (const y of YEARS) {
+    const start = earliestStart(allSchedules[y]);
+    if (start !== null) {
+      moduleYear = y;
+      moduleStartMonth = start;
+      break;
+    }
   }
 
-  // Check this year group's schedule
-  try {
-    const months = await loadSchedule(yg, subject);
-    const start = earliestStart(months);
-    if (start === null) return 'unknown'; // not in this year's schedule either
-    // Current = block started on or before now (anywhere this academic year so far)
-    if (start <= nowIdx) return 'current';
-    // Future = block hasn't started yet this academic year
-    return 'future';
-  } catch(e) {
-    return 'unknown';
+  // Not scheduled in any year — no badge
+  if (moduleYear === null) return 'unknown';
+
+  // Determine status based on where student is vs where module is in the timeline
+  if (moduleYear < yg) {
+    // Module was in a previous year group — always past
+    return 'past';
   }
+
+  if (moduleYear > yg) {
+    // Module is in a future year group — return which year so UI can say "Year 10" / "Year 11"
+    return `future-y${moduleYear}`;
+  }
+
+  // Module is in the student's current year group
+  // Current = block started on or before now this academic year
+  if (moduleStartMonth <= nowIdx) return 'current';
+  // Later this year
+  return `future-y${yg}`;
 }
 
 // Academic month index: Sep=0, Oct=1, ..., Jul=10, Aug=-1 (outside year)
