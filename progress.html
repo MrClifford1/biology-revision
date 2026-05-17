@@ -476,7 +476,8 @@
     onAuthChange, signOutUser, getUserProfile, updateExamTarget,
     getAllProgress, saveClass, getUserRole,
     getUpcomingAssessmentsForStudent, getModuleScheduleStatus,
-    saveInsightTimestamp, getInsightTimestamp, getActivityLog
+    saveInsightTimestamp, getInsightTimestamp, getActivityLog,
+    saveLastInsight, getLastInsight
   } from './firebase.js';
 
   const MODULE_META = {
@@ -625,16 +626,17 @@
     const pAvg=subjAvg(subjectScores.physics);
 
     panel.innerHTML=`
-      <!-- Exam target -->
+      <!-- Exam target — auto-derived from schedule/assessments, editable as fallback -->
       <div class="target-card">
-        <label>🎯 I am revising for:</label>
-        <select class="target-select" id="exam-target">
+        <label>🎯 Currently revising for:</label>
+        <span id="exam-target-auto" style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.88rem;color:var(--navy);flex:1">${autoExamTarget(currentProfile)}</span>
+        <select class="target-select" id="exam-target" style="display:none">
           <option value="">-- Select your exam --</option>
-          <option value="y9" ${currentProfile?.examTarget==='y9'?'selected':''}>Year 9 End of Year Test (B1–B2)</option>
-          <option value="y10" ${currentProfile?.examTarget==='y10'?'selected':''}>Year 10 End of Year — Paper 1 (B1–B4)</option>
-          <option value="y11" ${currentProfile?.examTarget==='y11'?'selected':''}>Year 11 GCSE — Full Biology (B1–B7)</option>
+          <option value="y9" ${currentProfile?.examTarget==='y9'?'selected':''}>Year 9 End of Year Test</option>
+          <option value="y10" ${currentProfile?.examTarget==='y10'?'selected':''}>Year 10 End of Year — Paper 1</option>
+          <option value="y11" ${currentProfile?.examTarget==='y11'?'selected':''}>Year 11 GCSE — Full Papers</option>
         </select>
-        <button class="target-save" onclick="saveTarget()">Save</button>
+        <button class="target-save" onclick="toggleExamTargetEdit()" style="background:none;border:1.5px solid var(--border);color:var(--subtext);font-size:0.75rem">Edit</button>
         <span class="target-saved" id="target-saved">✅ Saved!</span>
       </div>
 
@@ -782,32 +784,25 @@
   async function renderInsights() {
     const panel=document.getElementById('panel-insights');
 
-    // Check cooldown
-    const lastInsight=await getInsightTimestamp(currentUser.uid).catch(()=>null);
-    const cooldownMs=60*60*1000; // 1 hour
+    // Check cooldown and load last insight in parallel
+    const [lastInsight, lastInsightText] = await Promise.all([
+      getInsightTimestamp(currentUser.uid).catch(()=>null),
+      getLastInsight(currentUser.uid).catch(()=>null),
+    ]);
+    const cooldownMs=60*60*1000;
     const onCooldown=lastInsight&&(Date.now()-new Date(lastInsight).getTime())<cooldownMs;
 
-    // Check if enough data for AI
-    let totalAttempts=0;
-    Object.values(allProgress).forEach(data=>{
-      Object.values(data.rag||{}).forEach(e=>{ if(typeof e==='object') totalAttempts+=(e?.attempts||0); });
-    });
-    const hasEnoughData=totalAttempts>=5;
-
-    // Build rule-based bullets
-    const bullets=buildBullets();
-
-    // Suggest alternatives for cooldown message
     const weakMod=findWeakestModule();
     const cooldownSuggestion=weakMod
       ?`Why not try the <strong>Mini Mock</strong> for <strong>${weakMod.toUpperCase()}</strong> or run through some <strong>Flashcards</strong> first?`
       :'Why not try some Flashcards or a Mini Mock while you wait?';
 
+    const bullets=buildBullets();
+
     panel.innerHTML=`
       <div class="section-title">💡 Your Insights</div>
       ${onCooldown?`<div class="insight-cooldown-msg">✅ You've had a recent insight — ${cooldownSuggestion}</div>`:''}
 
-      <!-- Rule-based bullets always shown -->
       <ul class="insight-bullets">
         ${bullets.map(b=>`<li class="insight-bullet">
           <span class="insight-icon">${b.icon}</span>
@@ -816,13 +811,17 @@
         </li>`).join('')}
       </ul>
 
-      <!-- AI insight button -->
       <div class="insight-btn-wrap">
         ${onCooldown
-          ?`<button class="btn-insight" disabled>✨ Get AI Insight <span style="font-size:0.72rem;opacity:0.7">(recently generated)</span></button>`
+          ?`<button class="btn-insight" disabled>✨ Get Personalised Insight <span style="font-size:0.72rem;opacity:0.75;display:block;margin-top:0.2rem">Have a look at your previous insight below for now</span></button>`
           :`<button class="btn-insight" id="btn-get-insight" onclick="getAIInsight()">✨ Get Personalised Insight</button>`}
       </div>
-      <div id="ai-insight-area"></div>
+      <div id="ai-insight-area">${lastInsightText ? `
+        <div class="ai-insight-wrap">
+          <div class="ai-insight-header">✨ Your ${onCooldown ? 'Previous' : 'Latest'} Personalised Insight</div>
+          <div class="ai-insight-body">${lastInsightText}</div>
+        </div>` : ''}
+      </div>
     `;
   }
 
@@ -904,6 +903,45 @@
 
   function avg(arr){ return arr.length?Math.round(arr.reduce((a,b)=>a+b,0)/arr.length):0; }
 
+  // Auto-derive what the student is revising for based on schedule + assessments
+  function autoExamTarget(profile) {
+    // First: use upcoming assessment if one exists
+    if (upcomingAssessments.length) {
+      const next = upcomingAssessments[0];
+      const days = next.date ? Math.ceil((new Date(next.date) - new Date()) / 86400000) : null;
+      const daysStr = days !== null ? (days === 0 ? 'today' : days === 1 ? 'tomorrow' : `in ${days} days`) : '';
+      const mods = (next.modules||[]).join(', ');
+      return `${next.subject} — ${next.label}${mods?' ('+mods+')':''}${daysStr?' · '+daysStr:''}`;
+    }
+    // Second: use current schedule module
+    const current = Object.entries(scheduleStatuses).find(([,s])=>s==='current');
+    if (current) {
+      const meta = MODULE_META[current[0]];
+      return `${meta?.title || current[0].toUpperCase()} — currently on schedule`;
+    }
+    // Third: use manually saved exam target
+    const targetLabels = { y9:'Year 9 End of Year Test', y10:'Year 10 End of Year — Paper 1', y11:'Year 11 GCSE — Full Papers' };
+    if (profile?.examTarget) return targetLabels[profile.examTarget] || 'Not set';
+    return 'Not set — your teacher will update this';
+  }
+
+  window.toggleExamTargetEdit = () => {
+    const auto = document.getElementById('exam-target-auto');
+    const sel = document.getElementById('exam-target');
+    const btn = document.querySelector('.target-save');
+    if (sel.style.display === 'none') {
+      sel.style.display = 'inline-block';
+      auto.style.display = 'none';
+      btn.textContent = 'Save';
+      btn.onclick = () => saveTarget();
+    } else {
+      sel.style.display = 'none';
+      auto.style.display = 'inline';
+      btn.textContent = 'Edit';
+      btn.onclick = () => toggleExamTargetEdit();
+    }
+  };
+
   function findWeakestModule() {
     let worst=null, worstScore=101;
     Object.entries(allProgress).forEach(([id,data])=>{
@@ -961,8 +999,11 @@ Write a helpful, encouraging insight for this student. Mention specific modules 
       // Netlify function returns { feedback } for marking, or { insight } for insight mode
       const text = data.insight || data.content?.map(c=>c.text||'').join('') || 'Could not generate insight.';
 
-      // Save cooldown timestamp
-      await saveInsightTimestamp(currentUser.uid);
+      // Save cooldown timestamp and persist insight text
+      await Promise.all([
+        saveInsightTimestamp(currentUser.uid),
+        saveLastInsight(currentUser.uid, cleanText),
+      ]);
 
       // Strip markdown formatting the AI sometimes adds
       const cleanText = text

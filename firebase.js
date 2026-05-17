@@ -661,4 +661,14 @@ export async function getInsightTimestamp(uid) {
   return snap.exists() ? (snap.data().lastInsightAt || null) : null;
 }
 
+// Persist the last insight text so it survives page reloads
+export async function saveLastInsight(uid, text) {
+  await setDoc(doc(db, 'users', uid), { lastInsightText: text }, { merge: true });
+}
+
+export async function getLastInsight(uid) {
+  const snap = await getDoc(doc(db, 'users', uid));
+  return snap.exists() ? (snap.data().lastInsightText || null) : null;
+}
+
 export { auth, db };
