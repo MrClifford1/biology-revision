@@ -81,6 +81,11 @@ export function getMissingProfileFields(profile) {
   return missing;
 }
 
+// Save a user's display name — used when non-Google accounts provide their name manually
+export async function saveName(uid, name) {
+  await setDoc(doc(db, 'users', uid), { name }, { merge: true });
+}
+
 export async function updateExamTarget(uid, examTarget, yearGroup) {
   await updateDoc(doc(db, 'users', uid), { examTarget, yearGroup });
 }
