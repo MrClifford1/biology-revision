@@ -602,10 +602,6 @@
     await saveClass(currentUser.uid, selectedClass);
     document.getElementById('class-modal').classList.add('hidden');
     document.getElementById('drawer-class-display').textContent = selectedClass;
-    // Update greeting tag
-    const tag = document.querySelector('.user-greeting span span');
-    if (tag) tag.textContent = selectedClass;
-    const profile = await import('./firebase.js').then(m => m.getUserProfile(currentUser.uid));
     location.reload();
   };
 
