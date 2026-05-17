@@ -477,6 +477,9 @@
       opt.textContent = cls;
       sel.appendChild(opt);
     });
+    // Populate assessment date class selectors too
+    adPopulateClassSel();
+    adRenderModGrid();
   }
 
   window.loadClassData = async () => {
@@ -792,14 +795,6 @@
       sel.innerHTML = '<option value="">— Select class —</option>' +
         myClasses.map(c => `<option value="${c}">${c}</option>`).join('');
     });
-  }
-
-  // Call after myClasses loads
-  const _origPopulate = populateClassSelector;
-  function populateClassSelector() {
-    _origPopulate?.();
-    adPopulateClassSel();
-    adRenderModGrid();
   }
 
   window.adSave = async () => {
