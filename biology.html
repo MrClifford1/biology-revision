@@ -152,7 +152,43 @@
 </main>
 
 <script type="module">
-  import { onAuthChange, signOutUser, getUserRole } from './firebase.js';
+  import { onAuthChange, signOutUser, getUserRole, getUserProfile, getModuleScheduleStatus } from './firebase.js';
+
+  async function applyScheduleTileBadges(user) {
+    try {
+      const profile = await getUserProfile(user.uid);
+      const yearGroup = profile?.yearGroup;
+      if (!yearGroup) return;
+      const cards = document.querySelectorAll('.module-card:not(.coming-soon)');
+      await Promise.all([...cards].map(async card => {
+        const href = card.getAttribute('href') || '';
+        const m = href.match(/module=([a-z0-9]+)/);
+        if (!m) return;
+        const status = await getModuleScheduleStatus(yearGroup, 'Biology', m[1].toUpperCase());
+        if (!status || status === 'unknown') return;
+        const isFuture = status.startsWith('future');
+        const yearMatch = status.match(/future-y(\d+)/);
+        const futureYear = yearMatch ? yearMatch[1] : null;
+        const cfg = status === 'current'
+          ? {icon: '📗', text: 'Studying now'}
+          : status === 'past'
+          ? {icon: '🔄', text: 'Consolidation'}
+          : isFuture
+          ? {icon: '🔒', text: futureYear ? `Year ${futureYear}` : 'Coming up'}
+          : null;
+        if (!cfg) return;
+        if (isFuture) card.classList.add('schedule-future');
+        const info = card.querySelector('.module-info');
+        if (info) {
+          const b = document.createElement('div');
+          b.className = `sched-tile-badge ${isFuture ? 'future' : status}`;
+          b.innerHTML = `${cfg.icon} ${cfg.text}`;
+          info.appendChild(b);
+        }
+      }));
+    } catch(e) { console.log('[ScheduleTiles]', e); }
+  }
+
   onAuthChange(async user => {
     if (!user) { window.location.href = 'login.html'; return; }
     document.getElementById('auth-loading').style.display = 'none';
@@ -166,46 +202,14 @@
     }
     if (['admin','superadmin'].includes(role)) document.getElementById('nav-admin-link').style.display = 'inline-flex';
     if (role === 'superadmin') document.getElementById('nav-superadmin-link').style.display = 'inline-flex';
+    applyScheduleTileBadges(user);
   });
+
   window.handleSignOut = async () => {
     await signOutUser();
     window.location.href = 'login.html';
   };
-
-  // ── SCHEDULE TILE BADGES ────────────────────────────────────────────────────
-  import { getModuleScheduleStatus, getUserProfile } from './firebase.js';
-  (async () => {
-    try {
-      const user = await new Promise(res => { const u = onAuthChange(u2 => { res(u2); u(); }); });
-      if (!user) return;
-      const profile = await getUserProfile(user.uid);
-      const yearGroup = profile?.yearGroup;
-      if (!yearGroup) return;
-      const cards = document.querySelectorAll('.module-card:not(.coming-soon)');
-      await Promise.all([...cards].map(async card => {
-        const href = card.getAttribute('href') || '';
-        const m = href.match(/module=([a-z0-9]+)/);
-        if (!m) return;
-        const status = await getModuleScheduleStatus(yearGroup, 'Biology', m[1].toUpperCase());
-        if (!status || status === 'unknown') return;
-        if (isFuture) card.classList.add('schedule-future');
-        const isFuture = status && status.startsWith('future');
-        const yearMatch = status && status.match(/future-y(\d+)/);
-        const futureYear = yearMatch ? yearMatch[1] : null;
-        const cfg = status === 'current' ? {icon:'📗',text:'Studying now'}
-          : status === 'past' ? {icon:'🔄',text:'Consolidation'}
-          : isFuture ? {icon:'🔒',text: futureYear ? `Year ${futureYear}` : 'Coming up'}
-          : null;
-        const info = card.querySelector('.module-info');
-        if (info && cfg) {
-          const b = document.createElement('div');
-          b.className = `sched-tile-badge ${isFuture ? 'future' : status}`;
-          b.innerHTML = `${cfg.icon} ${cfg.text}`;
-          info.appendChild(b);
-        }
-      }));
-    } catch(e) { console.log('[ScheduleTiles]', e); }
-  })();
 </script>
+
 </body>
 </html>
