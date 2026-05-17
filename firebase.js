@@ -42,6 +42,7 @@ async function ensureUserProfile(user) {
   const ref = doc(db, 'users', user.uid);
   const snap = await getDoc(ref);
   if (!snap.exists()) {
+    // Brand new user — create full profile
     await setDoc(ref, {
       name: user.displayName,
       email: user.email,
@@ -52,12 +53,32 @@ async function ensureUserProfile(user) {
       class: null,
       classSetYear: null,
     });
+  } else {
+    // Existing user — patch any missing core fields without overwriting data
+    const data = snap.data();
+    const patch = {};
+    if (!data.name && user.displayName)  patch.name = user.displayName;
+    if (!data.email && user.email)        patch.email = user.email;
+    if (!data.photoURL && user.photoURL)  patch.photoURL = user.photoURL;
+    if (Object.keys(patch).length) {
+      await setDoc(ref, patch, { merge: true });
+    }
   }
 }
 
 export async function getUserProfile(uid) {
   const snap = await getDoc(doc(db, 'users', uid));
   return snap.exists() ? snap.data() : null;
+}
+
+// Returns array of missing field names — empty means profile is complete.
+// Used by index.html to prompt students to complete their profile on login.
+export function getMissingProfileFields(profile) {
+  const missing = [];
+  if (!profile?.name)       missing.push('name');
+  if (!profile?.class)      missing.push('class');
+  if (!profile?.yearGroup)  missing.push('yearGroup');
+  return missing;
 }
 
 export async function updateExamTarget(uid, examTarget, yearGroup) {
@@ -265,11 +286,20 @@ export async function getAllProgress(uid) {
 }
 
 // ── CLASS SELECTION ───────────────────────────────────────────────────────────
+// Derives yearGroup from className (e.g. '9S1' → 9, '10N3' → 10, '11S2' → 11)
+function deriveYearGroup(className) {
+  if (!className) return null;
+  const match = className.match(/^(9|10|11)/);
+  return match ? parseInt(match[1]) : null;
+}
+
 export async function saveClass(uid, className) {
   const academicYear = getCurrentAcademicYear();
+  const yearGroup = deriveYearGroup(className);
   await setDoc(doc(db, 'users', uid), {
     class: className,
     classSetYear: academicYear,
+    yearGroup,
   }, { merge: true });
 }
 
