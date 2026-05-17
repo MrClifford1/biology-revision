@@ -50,6 +50,13 @@
     .coming-soon-badge { position: absolute; top: 10px; right: 10px; color: white; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.68rem; padding: 0.25rem 0.7rem; border-radius: 100px; letter-spacing: 0.06em; text-transform: uppercase; }
     #auth-loading { position: fixed; inset: 0; background: var(--navy-dark); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999; }
     @media (max-width: 600px) { .modules-grid { grid-template-columns: 1fr; } }
+    /* ── SCHEDULE TILE BADGES ──────────────────────────────────────────────── */
+    .sched-tile-badge { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.68rem; font-weight: 800; font-family: 'Nunito', sans-serif; padding: 0.18rem 0.55rem; border-radius: 100px; margin-top: 0.3rem; white-space: nowrap; }
+    .sched-tile-badge.current { background: #dcfce7; color: #14532d; border: 1.5px solid #86efac; }
+    .sched-tile-badge.future  { background: #f1f5f9; color: #64748b; border: 1.5px solid #cbd5e1; }
+    .sched-tile-badge.past    { background: #fef9c3; color: #713f12; border: 1.5px solid #fde68a; }
+    .module-card.schedule-future { opacity: 0.65; }
+    .module-card.schedule-future:hover { opacity: 0.85; }
   </style>
 </head>
 <body>
@@ -361,6 +368,35 @@
     await signOutUser();
     window.location.href = 'login.html';
   };
+
+  // ── SCHEDULE TILE BADGES ────────────────────────────────────────────────────
+  import { getModuleScheduleStatus, getUserProfile } from './firebase.js';
+  (async () => {
+    try {
+      const user = await new Promise(res => { const u = onAuthChange(u2 => { res(u2); u(); }); });
+      if (!user) return;
+      const profile = await getUserProfile(user.uid);
+      const yearGroup = profile?.yearGroup;
+      if (!yearGroup) return;
+      const cards = document.querySelectorAll('.module-card:not(.coming-soon)');
+      await Promise.all([...cards].map(async card => {
+        const href = card.getAttribute('href') || '';
+        const m = href.match(/module=([a-z0-9]+)/);
+        if (!m) return;
+        const status = await getModuleScheduleStatus(yearGroup, 'Chemistry', m[1].toUpperCase());
+        if (!status || status === 'unknown') return;
+        if (status === 'future') card.classList.add('schedule-future');
+        const cfg = { current:{icon:'📗',text:'Studying now'}, future:{icon:'🔒',text:'Coming up'}, past:{icon:'🔄',text:'Consolidation'} }[status];
+        const info = card.querySelector('.module-info');
+        if (info && cfg) {
+          const b = document.createElement('div');
+          b.className = `sched-tile-badge ${status}`;
+          b.innerHTML = `${cfg.icon} ${cfg.text}`;
+          info.appendChild(b);
+        }
+      }));
+    } catch(e) { console.log('[ScheduleTiles]', e); }
+  })();
 </script>
 </body>
 </html>
