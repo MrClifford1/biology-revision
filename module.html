@@ -85,6 +85,15 @@
     .topic-pct { font-family: 'Nunito', sans-serif; font-size: 0.72rem; font-weight: 700; color: var(--subtext); min-width: 34px; text-align: right; }
     .topic-icons { font-size: 0.8rem; white-space: nowrap; }
 
+    /* ── SCHEDULE STATUS BADGE ───────────────────────────────────────────────── */
+    .sched-badge { display: inline-flex; align-items: center; gap: 0.4rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 100px; margin-top: 0.4rem; }
+    .sched-badge.current  { background: #dcfce7; color: #14532d; border: 1.5px solid #86efac; }
+    .sched-badge.future   { background: #f1f5f9; color: #64748b; border: 1.5px solid #cbd5e1; }
+    .sched-badge.past     { background: #fef9c3; color: #713f12; border: 1.5px solid #fde68a; }
+    /* Future modules — checklist dimmed, content slightly faded to signal not yet */
+    .schedule-future .rag-checklist { opacity: 0.45; pointer-events: none; }
+    .schedule-future .content-wrapper { opacity: 0.6; }
+
     /* ── REVISE CARDS ────────────────────────────────────────────────────────── */
     .revise-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.1rem; }
     .revise-card { background: white; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease; }
@@ -800,6 +809,37 @@ function renderChecklist(state) {
 }
 // Don't render on startup — wait for auth to load RAG state
 // renderChecklist called from onAuthChange once user is confirmed
+
+// ── SCHEDULE STATUS BADGE ─────────────────────────────────────────────────────
+// Called after auth loads with the student's schedule status for this module.
+// status: 'current' | 'future' | 'past' | 'unknown'
+// unknown = module not in any schedule → no badge, no visual change
+function applyScheduleBadge(status) {
+  // Remove any existing badge
+  document.querySelectorAll('.sched-badge').forEach(el => el.remove());
+  document.body.classList.remove('schedule-future', 'schedule-current', 'schedule-past');
+  if (!status || status === 'unknown') return;
+
+  const configs = {
+    current: { icon: '📗', text: 'You are currently studying this module' },
+    future:  { icon: '🔒', text: 'Coming up later — keep it in mind' },
+    past:    { icon: '🔄', text: 'Consolidation — revisit to keep your score up' },
+  };
+  const cfg = configs[status];
+  if (!cfg) return;
+
+  // Insert badge below the module subtitle
+  const subtitle = document.getElementById('module-subtitle');
+  if (subtitle) {
+    const badge = document.createElement('div');
+    badge.className = `sched-badge ${status}`;
+    badge.innerHTML = `${cfg.icon} ${cfg.text}`;
+    subtitle.parentNode.insertBefore(badge, subtitle.nextSibling);
+  }
+
+  // Apply body class so future modules are visually dimmed
+  document.body.classList.add(`schedule-${status}`);
+}
 
 async function reloadRAGFromHistory(uid) {
   try {
@@ -1610,7 +1650,7 @@ loadQuestions();
 
 <!-- ── FIREBASE ───────────────────────────────────────────────────────────────── -->
 <script type="module">
-  import { onAuthChange, saveRAG, loadRAG, saveMockScore } from './firebase.js';
+  import { onAuthChange, saveRAG, loadRAG, saveMockScore, getModuleScheduleStatus, getUserProfile } from './firebase.js';
 
   window._currentUser = null;
   window._pendingRAGUpdates = [];
@@ -1651,6 +1691,18 @@ loadQuestions();
     // Load saved RAG state (decay applied inside loadRAG)
     const state = await window._loadRAG(user.uid, `${_subjectId}-${_moduleId}`);
     renderChecklist(state || {});
+
+    // Schedule-aware module flagging — runs after RAG so it doesn't block the checklist
+    try {
+      const profile = await getUserProfile(user.uid);
+      const yearGroup = profile?.yearGroup;
+      if (yearGroup) {
+        const subjectName = _subjectId.charAt(0).toUpperCase() + _subjectId.slice(1);
+        const moduleUpper = _moduleId.toUpperCase();
+        const status = await getModuleScheduleStatus(yearGroup, subjectName, moduleUpper);
+        applyScheduleBadge(status);
+      }
+    } catch(e) { /* schedule not configured — no badge shown */ }
   });
 
   window.saveScoreToFirebase = async (totalAwarded, totalAvail, allQuestions, writtenResults, writtenAnswers, qScores) => {
