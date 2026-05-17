@@ -820,7 +820,7 @@
       <div class="insight-btn-wrap">
         ${onCooldown
           ?`<button class="btn-insight" disabled>✨ Get AI Insight <span style="font-size:0.72rem;opacity:0.7">(recently generated)</span></button>`
-          :`<button class="btn-insight" id="btn-get-insight" onclick="getAIInsight()">✨ Get Personalised AI Insight</button>`}
+          :`<button class="btn-insight" id="btn-get-insight" onclick="getAIInsight()">✨ Get Personalised Insight</button>`}
       </div>
       <div id="ai-insight-area"></div>
     `;
@@ -949,13 +949,17 @@ Year group: Year ${currentProfile?.yearGroup||'unknown'}
 Write a helpful, encouraging insight for this student. Mention specific modules or topics by name where relevant. Keep it under 100 words.`;
 
     try {
-      const res=await fetch('https://api.anthropic.com/v1/messages',{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content:prompt}]})
+      const res = await fetch('/.netlify/functions/mark-answer', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          _insightMode: true,
+          prompt,
+        })
       });
-      const data=await res.json();
-      const text=data.content?.map(c=>c.text||'').join('')||'Could not generate insight.';
+      const data = await res.json();
+      // Netlify function returns { feedback } for marking, or { insight } for insight mode
+      const text = data.insight || data.content?.map(c=>c.text||'').join('') || 'Could not generate insight.';
 
       // Save cooldown timestamp
       await saveInsightTimestamp(currentUser.uid);
