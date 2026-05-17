@@ -537,6 +537,9 @@ export async function getModuleScheduleStatus(yearGroup, subject, moduleId) {
   // Not scheduled in any year — no badge
   if (moduleYear === null) return 'unknown';
 
+  // Month names in academic order (Sep=0 ... Jul=10)
+  const MONTH_NAMES = ['September','October','November','December','January','February','March','April','May','June','July'];
+
   // Determine status based on where student is vs where module is in the timeline
   if (moduleYear < yg) {
     // Module was in a previous year group — always past
@@ -544,15 +547,15 @@ export async function getModuleScheduleStatus(yearGroup, subject, moduleId) {
   }
 
   if (moduleYear > yg) {
-    // Module is in a future year group — return which year so UI can say "Year 10" / "Year 11"
-    return `future-y${moduleYear}`;
+    // Module is in a future year group — return year and month
+    const monthName = MONTH_NAMES[moduleStartMonth] || '';
+    return `future-y${moduleYear}-m${moduleStartMonth}`;
   }
 
   // Module is in the student's current year group
-  // Current = block started on or before now this academic year
   if (moduleStartMonth <= nowIdx) return 'current';
-  // Later this year
-  return `future-y${yg}`;
+  // Later this year — include month
+  return `future-y${yg}-m${moduleStartMonth}`;
 }
 
 // Academic month index: Sep=0, Oct=1, ..., Jul=10, Aug=-1 (outside year)

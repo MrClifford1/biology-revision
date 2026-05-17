@@ -154,6 +154,26 @@
 <script type="module">
   import { onAuthChange, signOutUser, getUserRole, getUserProfile, getModuleScheduleStatus } from './firebase.js';
 
+  const MONTH_NAMES = ['September','October','November','December','January','February','March','April','May','June','July'];
+
+  function parseFutureStatus(status) {
+    // Parses 'future-y10-m4' → { year: 10, month: 'May' }
+    const m = status.match(/future-y(\d+)-m(\d+)/);
+    if (!m) return { year: null, month: null };
+    return { year: parseInt(m[1]), month: MONTH_NAMES[parseInt(m[2])] || '' };
+  }
+
+  function badgeConfig(status) {
+    if (status === 'current') return { icon: '📗', text: 'Studying now', cls: 'current' };
+    if (status === 'past')    return { icon: '🔄', text: 'Consolidation', cls: 'past' };
+    if (status && status.startsWith('future')) {
+      const { year, month } = parseFutureStatus(status);
+      const text = month && year ? `Learning in ${month}, Year ${year}` : 'Coming up';
+      return { icon: '🔒', text, cls: 'future' };
+    }
+    return null;
+  }
+
   async function applyScheduleTileBadges(user) {
     try {
       const profile = await getUserProfile(user.uid);
@@ -166,22 +186,13 @@
         if (!m) return;
         const status = await getModuleScheduleStatus(yearGroup, 'Biology', m[1].toUpperCase());
         if (!status || status === 'unknown') return;
-        const isFuture = status.startsWith('future');
-        const yearMatch = status.match(/future-y(\d+)/);
-        const futureYear = yearMatch ? yearMatch[1] : null;
-        const cfg = status === 'current'
-          ? {icon: '📗', text: 'Studying now'}
-          : status === 'past'
-          ? {icon: '🔄', text: 'Consolidation'}
-          : isFuture
-          ? {icon: '🔒', text: futureYear ? `Year ${futureYear}` : 'Coming up'}
-          : null;
+        const cfg = badgeConfig(status);
         if (!cfg) return;
-        if (isFuture) card.classList.add('schedule-future');
+        if (cfg.cls === 'future') card.classList.add('schedule-future');
         const info = card.querySelector('.module-info');
         if (info) {
           const b = document.createElement('div');
-          b.className = `sched-tile-badge ${isFuture ? 'future' : status}`;
+          b.className = `sched-tile-badge ${cfg.cls}`;
           b.innerHTML = `${cfg.icon} ${cfg.text}`;
           info.appendChild(b);
         }

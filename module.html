@@ -819,38 +819,41 @@ function renderChecklist(state) {
 // Called after auth loads with the student's schedule status for this module.
 // status: 'current' | 'future' | 'past' | 'unknown'
 // unknown = module not in any schedule → no badge, no visual change
+const _MONTH_NAMES = ['September','October','November','December','January','February','March','April','May','June','July'];
+
 function applyScheduleBadge(status) {
   document.querySelectorAll('.sched-badge').forEach(el => el.remove());
   document.body.classList.remove('schedule-future', 'schedule-current', 'schedule-past');
   if (!status || status === 'unknown') return;
 
-  // Resolve future-yN into a display config
   const isFuture = status.startsWith('future');
-  const yearMatch = status.match(/future-y(\d+)/);
-  const futureYear = yearMatch ? yearMatch[1] : null;
-
-  const configs = {
-    current: { icon: '📗', text: 'You are currently studying this module' },
-    past:    { icon: '🔄', text: 'Consolidation — revisit to keep your score up' },
-  };
-
   let cfg;
-  if (isFuture) {
-    cfg = { icon: '🔒', text: futureYear ? `You'll be learning this in Year ${futureYear}` : 'Coming up later' };
-  } else {
-    cfg = configs[status];
+
+  if (status === 'current') {
+    cfg = { icon: '📗', text: 'You are currently studying this module', cls: 'current' };
+  } else if (status === 'past') {
+    cfg = { icon: '🔄', text: 'Consolidation — revisit to keep your score up', cls: 'past' };
+  } else if (isFuture) {
+    const m = status.match(/future-y(\d+)-m(\d+)/);
+    const year = m ? m[1] : null;
+    const month = m ? (_MONTH_NAMES[parseInt(m[2])] || '') : null;
+    const text = month && year
+      ? `You'll be learning this in ${month}, Year ${year}`
+      : 'Coming up later';
+    cfg = { icon: '🔒', text, cls: 'future' };
   }
+
   if (!cfg) return;
 
   const subtitle = document.getElementById('module-subtitle');
   if (subtitle) {
     const badge = document.createElement('div');
-    badge.className = `sched-badge ${isFuture ? 'future' : status}`;
+    badge.className = `sched-badge ${cfg.cls}`;
     badge.innerHTML = `${cfg.icon} ${cfg.text}`;
     subtitle.parentNode.insertBefore(badge, subtitle.nextSibling);
   }
 
-  document.body.classList.add(`schedule-${isFuture ? 'future' : status}`);
+  document.body.classList.add(`schedule-${cfg.cls}`);
 }
 
 async function reloadRAGFromHistory(uid) {
