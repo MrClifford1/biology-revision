@@ -4,15 +4,45 @@ exports.handler = async function (event, context) {
   }
 
   try {
-    const { answers } = JSON.parse(event.body);
+    const body = JSON.parse(event.body);
+    const apiKey = process.env.ANTHROPIC_API_KEY;
+
+    if (!apiKey) {
+      return { statusCode: 500, body: JSON.stringify({ error: 'API key not configured' }) };
+    }
+
+    // ── INSIGHT MODE ──────────────────────────────────────────────────────────
+    if (body._insightMode) {
+      const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+          'anthropic-version': '2023-06-01',
+        },
+        body: JSON.stringify({
+          model: 'claude-haiku-4-5-20251001',
+          max_tokens: 300,
+          messages: [{ role: 'user', content: body.prompt }],
+        }),
+      });
+      if (!response.ok) {
+        return { statusCode: 502, body: JSON.stringify({ error: 'Insight service error' }) };
+      }
+      const data = await response.json();
+      const insight = data?.content?.[0]?.text || 'Could not generate insight.';
+      return {
+        statusCode: 200,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ insight }),
+      };
+    }
+
+    // ── MARKING MODE (existing logic) ─────────────────────────────────────────
+    const { answers } = body;
 
     if (!answers || !Array.isArray(answers) || answers.length === 0) {
       return { statusCode: 400, body: JSON.stringify({ error: 'No answers provided' }) };
-    }
-
-    const apiKey = process.env.ANTHROPIC_API_KEY;
-    if (!apiKey) {
-      return { statusCode: 500, body: JSON.stringify({ error: 'API key not configured' }) };
     }
 
     // Build one prompt with ALL questions bundled together
