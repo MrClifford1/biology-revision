@@ -443,35 +443,56 @@ export async function loadScheduleForYear(yearGroup) {
 // Returns the schedule status of a given module for a student's year group.
 // Returns one of: 'current' | 'future' | 'past' | 'unknown'
 // Used by module.html to badge/dim topics.
+// Returns the schedule status of a module for a student.
+// Logic:
+//   past    = module appears in a LOWER year group's schedule (e.g. B1 for a Year 10 student)
+//   current = module appears in THIS year group's schedule AND its block started on or before now
+//             (i.e. anywhere in the current academic year up to and including the current month)
+//   future  = module appears in THIS year group's schedule but its block hasn't started yet
+//   unknown = module not scheduled in any year group — show normally, no badge
 export async function getModuleScheduleStatus(yearGroup, subject, moduleId) {
   if (!yearGroup || !subject || !moduleId) return 'unknown';
-  const months = await loadSchedule(yearGroup, subject);
-  const nowMonthIdx = _academicMonthIndex();
-  if (nowMonthIdx === -1) return 'unknown'; // August — outside schedule
+  const yg = parseInt(yearGroup);
+  const nowIdx = _academicMonthIndex();
+  if (nowIdx === -1) return 'unknown'; // August — between academic years
 
-  // Collect all month indices where this module appears in a block
-  const blockMonths = [];
-  Object.entries(months).forEach(([mi, blocks]) => {
-    const idx = parseInt(mi);
-    (blocks || []).forEach(b => {
-      if (b.type !== 'learn') return;
-      const mods = b.modules || [];
-      if (mods.some(m => m.toLowerCase() === moduleId.toLowerCase())) {
-        // block occupies idx through idx + (span-1)
-        const span = b.span || 1;
-        for (let s = 0; s < span; s++) blockMonths.push(idx + s);
-      }
+  const mid = moduleId.toLowerCase();
+
+  // Helper: find the earliest start month of a module in a schedule's month map
+  function earliestStart(months) {
+    let earliest = null;
+    Object.entries(months).forEach(([mi, blocks]) => {
+      const idx = parseInt(mi);
+      (blocks || []).forEach(b => {
+        if (b.type !== 'learn') return;
+        if ((b.modules || []).some(m => m.toLowerCase() === mid)) {
+          if (earliest === null || idx < earliest) earliest = idx;
+        }
+      });
     });
-  });
+    return earliest; // null = not found
+  }
 
-  if (!blockMonths.length) return 'unknown';
+  // Check lower year groups first — if scheduled there it's past for this student
+  for (const prevYear of [9, 10, 11].filter(y => y < yg)) {
+    try {
+      const months = await loadSchedule(prevYear, subject);
+      if (earliestStart(months) !== null) return 'past';
+    } catch(e) { /* schedule not set for that year */ }
+  }
 
-  const minM = Math.min(...blockMonths);
-  const maxM = Math.max(...blockMonths);
-
-  if (nowMonthIdx >= minM && nowMonthIdx <= maxM) return 'current';
-  if (nowMonthIdx > maxM) return 'past';
-  return 'future';
+  // Check this year group's schedule
+  try {
+    const months = await loadSchedule(yg, subject);
+    const start = earliestStart(months);
+    if (start === null) return 'unknown'; // not in this year's schedule either
+    // Current = block started on or before now (anywhere this academic year so far)
+    if (start <= nowIdx) return 'current';
+    // Future = block hasn't started yet this academic year
+    return 'future';
+  } catch(e) {
+    return 'unknown';
+  }
 }
 
 // Academic month index: Sep=0, Oct=1, ..., Jul=10, Aug=-1 (outside year)
