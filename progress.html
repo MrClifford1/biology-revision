@@ -554,24 +554,26 @@
     if (['admin','superadmin'].includes(role)) document.getElementById('nav-admin-link').style.display='inline-flex';
     if (role==='superadmin') document.getElementById('nav-superadmin-link').style.display='inline-flex';
 
-    // Load upcoming assessments if class is set
+    // Load upcoming assessments in background — non-blocking
     if (profile?.class) {
-      upcomingAssessments = await getUpcomingAssessmentsForStudent(profile.class).catch(()=>[]);
+      getUpcomingAssessmentsForStudent(profile.class)
+        .then(a => { upcomingAssessments = a; })
+        .catch(() => {});
     }
 
-    // Load schedule statuses for all modules in parallel
-    if (profile?.yearGroup) {
-      const entries = Object.entries(MODULE_META);
-      const results = await Promise.all(entries.map(([id, meta]) => {
-        const subj = meta.subject.charAt(0).toUpperCase()+meta.subject.slice(1);
-        return getModuleScheduleStatus(profile.yearGroup, subj, id.toUpperCase())
-          .then(s=>({id,status:s})).catch(()=>({id,status:'unknown'}));
-      }));
-      results.forEach(({id,status})=>{ scheduleStatuses[id]=status; });
-    }
-
-    _dataReady=true;
+    _dataReady = true;
     renderTab('overview');
+
+    // Load schedule statuses in background — non-blocking
+    if (profile?.yearGroup) {
+      Promise.all(Object.entries(MODULE_META).map(([id, meta]) => {
+        const subj = meta.subject.charAt(0).toUpperCase() + meta.subject.slice(1);
+        return getModuleScheduleStatus(profile.yearGroup, subj, id.toUpperCase())
+          .then(s => ({ id, status: s })).catch(() => ({ id, status: 'unknown' }));
+      })).then(results => {
+        results.forEach(({ id, status }) => { scheduleStatuses[id] = status; });
+      }).catch(() => {});
+    }
   });
 
   // ── HEADER ───────────────────────────────────────────────────────────────────

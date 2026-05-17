@@ -1,7 +1,7 @@
 // Firebase configuration for Streetly Science Hub
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, serverTimestamp, collection, getDocs, deleteDoc, query, orderBy, limit, startAfter } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, serverTimestamp, collection, getDocs, deleteDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBNVM9Dx8vAYOtt79BVwKK1u3St5BsIxsY",
@@ -583,14 +583,28 @@ export async function logActivity(uid, entry) {
 // Load activity log — ordered by timestamp desc, paginated
 // Returns { entries: [...], hasMore: bool, lastDoc }
 export async function getActivityLog(uid, limitCount = 30, startAfterDoc = null) {
-  let constraints = [orderBy('timestamp', 'desc'), limit(limitCount + 1)];
-  if (startAfterDoc) constraints.push(startAfter(startAfterDoc));
-  const q = query(collection(db, 'users', uid, 'activityLog'), ...constraints);
-  const snap = await getDocs(q);
-  const docs = snap.docs;
-  const hasMore = docs.length > limitCount;
-  const entries = docs.slice(0, limitCount).map(d => ({ id: d.id, _doc: d, ...d.data() }));
-  return { entries, hasMore, lastDoc: entries[entries.length - 1]?._doc || null };
+  // Simple collection fetch — sort client-side to avoid needing a composite index
+  const snap = await getDocs(collection(db, 'users', uid, 'activityLog'));
+  const all = snap.docs
+    .map(d => ({ id: d.id, _doc: d, ...d.data() }))
+    .filter(e => e.timestamp)
+    .sort((a, b) => b.timestamp.localeCompare(a.timestamp));
+
+  // Manual pagination using the last doc's timestamp as a cursor
+  let startIdx = 0;
+  if (startAfterDoc) {
+    const cursorTs = startAfterDoc.timestamp;
+    startIdx = all.findIndex(e => e.timestamp < cursorTs);
+    if (startIdx === -1) startIdx = all.length;
+  }
+
+  const page = all.slice(startIdx, startIdx + limitCount);
+  const hasMore = startIdx + limitCount < all.length;
+  return {
+    entries: page,
+    hasMore,
+    lastDoc: page[page.length - 1] || null,
+  };
 }
 // Stored on the user profile so it persists across devices.
 // lastInsightAt: ISO timestamp string
