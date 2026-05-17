@@ -675,6 +675,22 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   });
 });
 
+// ── AUTO-OPEN TAB FROM URL PARAM (?tab=mock|flashcards|words|paper) ───────────
+(function() {
+  const tabParam = new URLSearchParams(window.location.search).get('tab');
+  if (!tabParam) return;
+  // Map assignment tabTarget values to module tab data-tab values
+  const tabMap = { mock:'practice', flashcards:'flashcards', words:'keywords', paper:'paper' };
+  const target = tabMap[tabParam] || tabParam;
+  const btn = document.querySelector(`.tab-btn[data-tab="${target}"]`);
+  if (btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + target)?.classList.add('active');
+  }
+})();
+
 // ── RAG VISIBILITY HELPERS ───────────────────────────────────────────────────
 function showRAG() {
   const el = document.getElementById('shared-rag-card');
@@ -1681,7 +1697,11 @@ loadQuestions();
 
 <!-- ── FIREBASE ───────────────────────────────────────────────────────────────── -->
 <script type="module">
-  import { onAuthChange, saveRAG, loadRAG, saveMockScore, getModuleScheduleStatus, getUserProfile, logActivity } from './firebase.js';
+  import { onAuthChange, saveRAG, loadRAG, saveMockScore, getModuleScheduleStatus, getUserProfile, logActivity, saveAssignmentCompletion } from './firebase.js';
+
+  // Detect if opened from an assignment link
+  const _assignmentId = new URLSearchParams(window.location.search).get('assignment') || null;
+  const _assignmentDue = new URLSearchParams(window.location.search).get('due') || null;
 
   window._currentUser = null;
   window._pendingRAGUpdates = [];
@@ -1696,13 +1716,26 @@ loadQuestions();
   window._logActivity = async (entry) => {
     try {
       if (!window._currentUser) return;
-      await logActivity(window._currentUser.uid, {
+      const fullEntry = {
         subjectId: window._moduleMeta?.subject || '',
         moduleId: window._moduleMeta?.id || '',
         moduleTitle: window._moduleMeta?.title || '',
         ...entry,
-      });
-    } catch(e) { /* log failure is non-critical */ }
+      };
+      await logActivity(window._currentUser.uid, fullEntry);
+      // If opened from assignment, also record completion
+      if (_assignmentId && entry.type && ['mock','paper','flashcard','words'].includes(entry.type)) {
+        const today = new Date().toISOString().split('T')[0];
+        const isLate = _assignmentDue && today > _assignmentDue;
+        await saveAssignmentCompletion(_assignmentId, window._currentUser.uid, {
+          score: entry.score || 0,
+          total: entry.total || 0,
+          pct: entry.pct || 0,
+          isLate,
+          name: window._currentUser.displayName || window.currentProfile?.name || null,
+        });
+      }
+    } catch(e) { /* non-critical */ }
   };
 
   onAuthChange(async user => {

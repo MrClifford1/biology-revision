@@ -391,23 +391,23 @@ export async function getTeacherClasses(uid) {
 
 // ── ASSIGNMENTS ───────────────────────────────────────────────────────────────
 export async function createAssignment(assignment) {
-  // assignment: { title, subject, type, classes[], dueDate, note, link, createdBy }
+  // assignment: { title, subject, type, moduleId, tabTarget, classes[], dueDate, note, link, createdBy }
   const ref = doc(collection(db, 'assignments'));
-  await setDoc(ref, {
-    ...assignment,
-    createdAt: serverTimestamp(),
-    active: true,
-  });
+  await setDoc(ref, { ...assignment, createdAt: serverTimestamp(), active: true });
   return ref.id;
 }
 
+export async function updateAssignment(id, data) {
+  await setDoc(doc(db, 'assignments', id), { ...data, updatedAt: serverTimestamp() }, { merge: true });
+}
+
+// Include past-due assignments so student sees "Expired" state
 export async function getActiveAssignmentsForClass(className) {
-  const now = new Date().toISOString();
   const snap = await getDocs(collection(db, 'assignments'));
   return snap.docs
     .map(d => ({ id: d.id, ...d.data() }))
-    .filter(a => a.active && a.classes?.includes(className) && a.dueDate >= now)
-    .sort((a, b) => a.dueDate.localeCompare(b.dueDate));
+    .filter(a => a.active && (a.classes || []).includes(className))
+    .sort((a, b) => (a.dueDate || '').localeCompare(b.dueDate || ''));
 }
 
 export async function getAllAssignments() {
@@ -419,6 +419,26 @@ export async function getAllAssignments() {
 
 export async function deleteAssignment(assignmentId) {
   await deleteDoc(doc(db, 'assignments', assignmentId));
+}
+
+// Student completion tracking — stored at assignments/{id}/completions/{uid}
+export async function saveAssignmentCompletion(assignmentId, uid, data) {
+  const ref = doc(db, 'assignments', assignmentId, 'completions', uid);
+  const snap = await getDoc(ref);
+  const existing = snap.exists() ? snap.data() : {};
+  const attempts = (existing.attempts || 0) + 1;
+  const bestScore = Math.max(existing.bestScore || 0, data.score || 0);
+  const bestPct = Math.max(existing.bestPct || 0, data.pct || 0);
+  await setDoc(ref, {
+    ...data, attempts, bestScore, bestPct,
+    lastAttempt: new Date().toISOString(),
+    updatedAt: serverTimestamp(),
+  }, { merge: true });
+}
+
+export async function getAssignmentCompletions(assignmentId) {
+  const snap = await getDocs(collection(db, 'assignments', assignmentId, 'completions'));
+  return snap.docs.map(d => ({ uid: d.id, ...d.data() }));
 }
 
 export async function getStudentsByClass(className) {
