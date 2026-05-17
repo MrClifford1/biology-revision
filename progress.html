@@ -93,6 +93,32 @@
       margin-bottom: 1rem;
     }
 
+    /* ── UPCOMING ASSESSMENTS ────────────────────────────────────────────────── */
+    .assessment-banner { background: white; border: 1.5px solid var(--border); border-radius: 16px; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+    .assessment-banner-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .assessment-banner h2 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1rem; color: var(--navy); }
+    .assessment-card { border: 1.5px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 0.75rem; }
+    .assessment-card:last-child { margin-bottom: 0; }
+    .assessment-card-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+    .asmt-subj-pill { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .asmt-pill-bio { background: #dcfce7; color: #14532d; }
+    .asmt-pill-chem { background: #fef9c3; color: #713f12; }
+    .asmt-pill-phys { background: #dbeafe; color: #1e3a8a; }
+    .asmt-label { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.9rem; color: var(--navy); flex: 1; }
+    .asmt-date { font-size: 0.75rem; color: var(--subtext); }
+    .asmt-countdown { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.82rem; padding: 0.22rem 0.65rem; border-radius: 100px; }
+    .asmt-cd-soon { background: #fef2f2; color: #dc2626; border: 1.5px solid #fca5a5; }
+    .asmt-cd-upcoming { background: #fef9c3; color: #713f12; border: 1.5px solid #fde68a; }
+    .asmt-cd-future { background: #f1f5f9; color: #475569; border: 1.5px solid #cbd5e1; }
+    .asmt-topics-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.72rem; color: var(--subtext); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem; }
+    .asmt-topic-row { display: flex; align-items: center; gap: 0.75rem; padding: 0.3rem 0; border-bottom: 1px solid var(--border); }
+    .asmt-topic-row:last-child { border-bottom: none; }
+    .asmt-topic-name { font-size: 0.8rem; font-weight: 600; flex: 1; color: var(--text); }
+    .asmt-topic-bar-wrap { width: 120px; height: 7px; background: var(--border); border-radius: 100px; overflow: hidden; flex-shrink: 0; }
+    .asmt-topic-bar-fill { height: 100%; border-radius: 100px; transition: width 0.4s; }
+    .asmt-topic-tier { font-size: 0.68rem; font-weight: 700; color: var(--subtext); width: 80px; text-align: right; flex-shrink: 0; }
+    .asmt-weak-flag { font-size: 0.65rem; font-weight: 800; background: #fef2f2; color: #dc2626; padding: 0.08rem 0.35rem; border-radius: 100px; }
+
     /* SUMMARY CARDS */
     .summary-grid {
       display: grid;
@@ -330,12 +356,13 @@
   </div>
 </div>
 
+<div id="assessment-banners"></div>
 <main id="main-content">
   <div class="loading-state">Loading your progress...</div>
 </main>
 
 <script type="module">
-  import { onAuthChange, signOutUser, getUserProfile, updateExamTarget, getAllProgress, saveClass, getUserRole } from './firebase.js';
+  import { onAuthChange, signOutUser, getUserProfile, updateExamTarget, getAllProgress, saveClass, getUserRole, getUpcomingAssessmentsForStudent } from './firebase.js';
 
   const MODULE_META = {
     // Biology
@@ -380,6 +407,10 @@
     renderHeader(user, profile);
     const progress = await getAllProgress(user.uid);
     renderProgress(progress, profile);
+    // Load upcoming assessments — runs in background after main content renders
+    if (profile?.class) {
+      renderAssessmentBanners(profile.class, progress);
+    }
     const role = await getUserRole(user.email);
     const wrap = document.getElementById('staff-nav-links');
     if (wrap && ['teacher','admin','superadmin'].includes(role)) {
@@ -580,6 +611,97 @@
         </div>
       `}
     `;
+  }
+
+  // ── UPCOMING ASSESSMENT BANNERS ──────────────────────────────────────────────
+  const TIER_COLOURS = {
+    not_started:'#cbd5e1', beginning:'#ef4444', developing:'#f97316',
+    approaching:'#eab308', confident:'#22c55e', mastered:'#3b82f6'
+  };
+  const TIER_LABELS = {
+    not_started:'Not Started', beginning:'Beginning', developing:'Developing',
+    approaching:'Approaching', confident:'Confident', mastered:'Mastered'
+  };
+  const TIER_EMOJIS = { not_started:'⬜', beginning:'🔴', developing:'🟠', approaching:'🟡', confident:'🟢', mastered:'💙' };
+
+  function getTier(score) {
+    if (!score || score === 0) return 'not_started';
+    if (score <= 33) return 'beginning';
+    if (score <= 55) return 'developing';
+    if (score <= 75) return 'approaching';
+    if (score <= 89) return 'confident';
+    return 'mastered';
+  }
+
+  async function renderAssessmentBanners(classId, progress) {
+    const container = document.getElementById('assessment-banners');
+    if (!container) return;
+
+    try {
+      const assessments = await getUpcomingAssessmentsForStudent(classId);
+      if (!assessments.length) return;
+
+      const html = assessments.map(a => {
+        const daysLeft = a.date ? Math.ceil((new Date(a.date) - new Date()) / 86400000) : null;
+        const dateStr = a.date ? new Date(a.date + 'T12:00:00').toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'long'}) : '';
+        const cdCls = daysLeft !== null ? (daysLeft <= 7 ? 'asmt-cd-soon' : daysLeft <= 21 ? 'asmt-cd-upcoming' : 'asmt-cd-future') : 'asmt-cd-future';
+        const cdText = daysLeft !== null ? (daysLeft === 0 ? '⚠️ Today!' : daysLeft === 1 ? '⚠️ Tomorrow!' : `📅 ${daysLeft} days`) : '';
+        const pillCls = a.subject === 'Biology' ? 'asmt-pill-bio' : a.subject === 'Chemistry' ? 'asmt-pill-chem' : 'asmt-pill-phys';
+
+        // Build topic RAG rows
+        // Map module IDs to progress keys e.g. Biology B1 → 'b1'
+        const topicRows = [];
+        (a.modules || []).forEach(mod => {
+          const modKey = mod.toLowerCase(); // 'B1' → 'b1'
+          const ragData = progress[modKey]?.rag || {};
+          const specificTopics = a.partialTopics?.[mod];
+          const topicsToShow = specificTopics?.length ? specificTopics : Object.keys(ragData);
+          topicsToShow.forEach(topic => {
+            const entry = ragData[topic];
+            const score = typeof entry === 'object' ? (entry?.score ?? 0) : 0;
+            const tier = getTier(score);
+            const isWeak = ['not_started','beginning','developing'].includes(tier);
+            topicRows.push(`
+              <div class="asmt-topic-row">
+                <span class="asmt-topic-name">${mod}: ${topic}</span>
+                <div class="asmt-topic-bar-wrap"><div class="asmt-topic-bar-fill" style="width:${score}%;background:${TIER_COLOURS[tier]}"></div></div>
+                <span class="asmt-topic-tier">${TIER_EMOJIS[tier]} ${TIER_LABELS[tier]}</span>
+                ${isWeak ? '<span class="asmt-weak-flag">Revise!</span>' : ''}
+              </div>`);
+          });
+        });
+
+        // Sort: weak topics first
+        const weakFirst = topicRows.sort((a,b) => b.includes('Revise!') ? -1 : 1);
+
+        return `<div class="assessment-card" style="border-left: 4px solid ${a.subject==='Biology'?'#16a34a':a.subject==='Chemistry'?'#ca8a04':'#2563eb'}">
+          <div class="assessment-card-header">
+            <span class="asmt-subj-pill ${pillCls}">${a.subject}</span>
+            <span class="asmt-label">${a.label || 'Assessment'}</span>
+            <span class="asmt-date">${dateStr}</span>
+            ${cdText ? `<span class="asmt-countdown ${cdCls}">${cdText}</span>` : ''}
+          </div>
+          ${topicRows.length ? `
+            <div class="asmt-topics-title">Topics covered — your RAG scores</div>
+            ${weakFirst.join('')}
+          ` : `<div style="font-size:0.78rem;color:var(--subtext)">No topic data yet — start revising to see your scores here.</div>`}
+        </div>`;
+      }).join('');
+
+      container.innerHTML = `
+        <div style="max-width:1000px;margin:0 auto;padding:1.5rem 1.5rem 0">
+          <div class="assessment-banner">
+            <div class="assessment-banner-header">
+              <span style="font-size:1.3rem">📋</span>
+              <h2>Upcoming Assessments</h2>
+              <span style="font-size:0.75rem;color:var(--subtext);font-weight:600">${assessments.length} assessment${assessments.length!==1?'s':''} coming up</span>
+            </div>
+            ${html}
+          </div>
+        </div>`;
+    } catch(e) {
+      console.log('[Assessments]', e);
+    }
   }
 
   window.handleSignOut = async () => {

@@ -537,9 +537,6 @@ export async function getModuleScheduleStatus(yearGroup, subject, moduleId) {
   // Not scheduled in any year — no badge
   if (moduleYear === null) return 'unknown';
 
-  // Month names in academic order (Sep=0 ... Jul=10)
-  const MONTH_NAMES = ['September','October','November','December','January','February','March','April','May','June','July'];
-
   // Determine status based on where student is vs where module is in the timeline
   if (moduleYear < yg) {
     // Module was in a previous year group — always past
@@ -547,15 +544,15 @@ export async function getModuleScheduleStatus(yearGroup, subject, moduleId) {
   }
 
   if (moduleYear > yg) {
-    // Module is in a future year group — return year and month
-    const monthName = MONTH_NAMES[moduleStartMonth] || '';
-    return `future-y${moduleYear}-m${moduleStartMonth}`;
+    // Module is in a future year group — return which year so UI can say "Year 10" / "Year 11"
+    return `future-y${moduleYear}`;
   }
 
   // Module is in the student's current year group
+  // Current = block started on or before now this academic year
   if (moduleStartMonth <= nowIdx) return 'current';
-  // Later this year — include month
-  return `future-y${yg}-m${moduleStartMonth}`;
+  // Later this year
+  return `future-y${yg}`;
 }
 
 // Academic month index: Sep=0, Oct=1, ..., Jul=10, Aug=-1 (outside year)
@@ -564,6 +561,49 @@ function _academicMonthIndex() {
   if (m === 7) return -1; // August
   if (m >= 8) return m - 8; // Sep=0, Oct=1, Nov=2, Dec=3
   return m + 4;            // Jan=4, Feb=5, Mar=6, Apr=7, May=8, Jun=9, Jul=10
+}
+
+// ── ASSESSMENT DATES ──────────────────────────────────────────────────────────
+// Stored at: assessmentDates/{classId}/{subject}/{assessmentId}
+// Shape: { label, date, scheduleLink, modules[], partialTopics{}, createdBy, updatedAt }
+// Persistent — never auto-deleted, just edited.
+
+export async function saveAssessmentDate(classId, subject, assessmentId, data) {
+  await setDoc(
+    doc(db, 'assessmentDates', classId, subject, assessmentId),
+    { ...data, updatedAt: serverTimestamp() },
+    { merge: false }
+  );
+}
+
+export async function getAssessmentDates(classId, subject) {
+  const snap = await getDocs(collection(db, 'assessmentDates', classId, subject));
+  return snap.docs.map(d => ({ id: d.id, ...d.data() }))
+    .sort((a, b) => (a.date || '').localeCompare(b.date || ''));
+}
+
+export async function deleteAssessmentDate(classId, subject, assessmentId) {
+  await deleteDoc(doc(db, 'assessmentDates', classId, subject, assessmentId));
+}
+
+// Get all upcoming assessments for a student (by their class, all subjects)
+export async function getUpcomingAssessmentsForStudent(classId) {
+  if (!classId) return [];
+  const subjects = ['Biology', 'Chemistry', 'Physics'];
+  const today = new Date().toISOString().split('T')[0];
+  const results = [];
+  await Promise.all(subjects.map(async subject => {
+    try {
+      const snap = await getDocs(collection(db, 'assessmentDates', classId, subject));
+      snap.docs.forEach(d => {
+        const data = d.data();
+        if (data.date && data.date >= today) {
+          results.push({ id: d.id, subject, ...data });
+        }
+      });
+    } catch(e) { /* no assessments for this subject */ }
+  }));
+  return results.sort((a, b) => (a.date || '').localeCompare(b.date || ''));
 }
 
 export { auth, db };

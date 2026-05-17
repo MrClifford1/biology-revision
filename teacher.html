@@ -132,9 +132,48 @@
     .empty-state { text-align:center;padding:2.5rem;color:var(--subtext);font-size:0.875rem; }
     .loading-state { text-align:center;padding:2rem;color:var(--subtext);font-size:0.875rem; }
 
+    /* ── ASSESSMENT DATES ────────────────────────────────────────────────────── */
+    .adate-controls { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; margin-bottom: 1.25rem; }
+    .adate-seg { display: flex; border: 1.5px solid var(--border); border-radius: 9px; overflow: hidden; background: white; }
+    .adate-sb { border: none; background: none; padding: 0.4rem 0.9rem; font-family: 'Nunito', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--subtext); cursor: pointer; }
+    .adate-sb.on { background: var(--purple); color: white; }
+    .adate-sb + .adate-sb { border-left: 1.5px solid var(--border); }
+    .adate-form { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem; }
+    .adate-form .full { grid-column: 1/-1; }
+    .adate-mod-grid { display: flex; flex-direction: column; gap: 0.3rem; max-height: 260px; overflow-y: auto; border: 1.5px solid var(--border); border-radius: 9px; padding: 0.4rem; }
+    .adate-mi { border: 1.5px solid var(--border); border-radius: 7px; overflow: hidden; }
+    .adate-mhd { display: flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.5rem; background: #f8fafc; cursor: pointer; user-select: none; }
+    .adate-mhd:hover { background: #f0f4ff; }
+    .adate-mwcb { width: 14px; height: 14px; accent-color: var(--purple); cursor: pointer; flex-shrink: 0; }
+    .adate-mnm { font-weight: 800; font-size: 0.75rem; color: var(--navy); flex: 1; }
+    .adate-mexp { font-size: 0.62rem; color: var(--subtext); font-weight: 700; background: none; border: none; cursor: pointer; padding: 0; }
+    .adate-mtp { padding: 0.35rem 0.5rem 0.4rem 1.75rem; display: none; background: white; border-top: 1px solid var(--border); }
+    .adate-mtp.open { display: block; }
+    .adate-trow { display: flex; align-items: center; gap: 0.35rem; padding: 0.15rem 0; }
+    .adate-tcb { width: 12px; height: 12px; accent-color: var(--purple); cursor: pointer; }
+    .adate-tlbl { font-size: 0.7rem; color: var(--text); cursor: pointer; }
+    .adate-list { display: flex; flex-direction: column; gap: 0.5rem; }
+    .adate-row { background: white; border: 1.5px solid var(--border); border-radius: 10px; padding: 0.65rem 0.85rem; display: flex; align-items: flex-start; gap: 0.75rem; flex-wrap: wrap; }
+    .adate-subj-pill { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0; }
+    .adate-pill-bio { background: #dcfce7; color: #14532d; }
+    .adate-pill-chem { background: #fef9c3; color: #713f12; }
+    .adate-pill-phys { background: #dbeafe; color: #1e3a8a; }
+    .adate-info { flex: 1; }
+    .adate-label { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.85rem; color: var(--navy); }
+    .adate-meta { font-size: 0.72rem; color: var(--subtext); margin-top: 0.15rem; }
+    .adate-mods { display: flex; gap: 0.3rem; flex-wrap: wrap; margin-top: 0.3rem; }
+    .adate-mod-tag { background: #e0e7ff; color: #4338ca; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.62rem; padding: 0.12rem 0.4rem; border-radius: 100px; }
+    .adate-countdown { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.78rem; padding: 0.2rem 0.6rem; border-radius: 100px; flex-shrink: 0; }
+    .adate-countdown.soon { background: #fef2f2; color: #dc2626; }
+    .adate-countdown.upcoming { background: #fef9c3; color: #713f12; }
+    .adate-countdown.future { background: #f1f5f9; color: #475569; }
+    .btn-adate-save { background: var(--purple); color: white; border: none; border-radius: 10px; padding: 0.6rem 1.4rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.875rem; cursor: pointer; }
+    .btn-adate-save:hover { background: #6d28d9; }
+
     @media (max-width:700px) {
       .assignment-form { grid-template-columns:1fr; }
       .class-toggle-grid { grid-template-columns:repeat(4,1fr); }
+      .adate-form { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -192,6 +231,7 @@
       <button class="tab-btn active" data-tab="overview">📋 Class Overview</button>
       <button class="tab-btn" data-tab="heatmap">🗺️ RAG Heatmap</button>
       <button class="tab-btn" data-tab="assignments">📌 Assignments</button>
+      <button class="tab-btn" data-tab="assessments">📅 Assessment Dates</button>
     </div>
   </div>
 
@@ -271,6 +311,59 @@
       </div>
     </div>
 
+    <!-- ── TAB: ASSESSMENT DATES ──────────────────────────────────────────────── -->
+    <div class="tab-panel" id="tab-assessments">
+      <div class="card">
+        <div class="section-label">Add Assessment Date</div>
+        <p style="font-size:0.8rem;color:var(--subtext);margin-bottom:1rem">Assessment dates are per class and persistent — edit them if dates change. Students see a countdown with their RAG scores for the topics covered.</p>
+
+        <div class="adate-controls">
+          <span style="font-size:0.78rem;font-weight:700;color:var(--subtext)">Subject:</span>
+          <div class="adate-seg" id="adate-subj-seg">
+            <button class="adate-sb on" onclick="adSetSubject('Biology',this)">Biology</button>
+            <button class="adate-sb" onclick="adSetSubject('Chemistry',this)">Chemistry</button>
+            <button class="adate-sb" onclick="adSetSubject('Physics',this)">Physics</button>
+          </div>
+        </div>
+
+        <div class="adate-form">
+          <div class="form-field">
+            <label class="form-label">Assessment label</label>
+            <input type="text" class="form-input" id="ad-label" placeholder="e.g. Assessment 1 — B1 content" />
+          </div>
+          <div class="form-field">
+            <label class="form-label">Date</label>
+            <input type="date" class="form-input" id="ad-date" />
+          </div>
+          <div class="form-field">
+            <label class="form-label">Link to schedule type <span style="font-weight:400;color:var(--subtext)">(optional)</span></label>
+            <input type="text" class="form-input" id="ad-schedlink" placeholder="e.g. Assessment 1" />
+          </div>
+          <div class="form-field">
+            <label class="form-label">Class</label>
+            <select class="form-input" id="ad-class-sel"></select>
+          </div>
+          <div class="form-field full">
+            <label class="form-label">Modules &amp; topics covered</label>
+            <div style="font-size:0.72rem;color:var(--subtext);margin-bottom:0.3rem">Tick whole modules or expand to select specific topics.</div>
+            <div class="adate-mod-grid" id="ad-mod-grid"></div>
+          </div>
+        </div>
+
+        <button class="btn-adate-save" onclick="adSave()">📅 Save Assessment Date</button>
+        <div class="form-msg" id="ad-msg"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-label">Saved Assessment Dates</div>
+        <div class="adate-controls">
+          <span style="font-size:0.78rem;font-weight:700;color:var(--subtext)">Filter class:</span>
+          <select class="form-input" id="ad-filter-class" onchange="adLoadList()" style="max-width:140px;padding:0.35rem 0.65rem;font-size:0.8rem"></select>
+        </div>
+        <div class="adate-list" id="ad-list"><div class="empty-state">Select a class above to view saved dates.</div></div>
+      </div>
+    </div>
+
   </main>
 </div>
 
@@ -293,7 +386,7 @@
     getTeacherClasses, saveTeacherClasses,
     getStudentsByClass, getProgressForStudents,
     createAssignment, getAllAssignments, deleteAssignment,
-    isSuperAdmin
+    isSuperAdmin, saveAssessmentDate, getAssessmentDates, deleteAssessmentDate
   } from './firebase.js';
 
   // ── TIER HELPERS ────────────────────────────────────────────────────────────
@@ -642,6 +735,163 @@
   window.handleSignOut = async () => {
     await signOutUser();
     window.location.href = 'login.html';
+  };
+
+  // ── ASSESSMENT DATES ─────────────────────────────────────────────────────────
+  const TOPICS = {
+    Biology:    { B1:['Cell Structure','Microscopy','Cell Division','Transport','Specialised Cells'], B2:['Organisation','Digestion','Heart and Circulation','Blood','Heart Disease','Cancer','Plant Organisation'], B3:['Pathogens','Viral Diseases','Bacterial Diseases','Fungal and Protist Diseases','Defence Systems','Immune System','Vaccination','Drugs','Drug Development'], B4:['Photosynthesis','Respiration'], B5:['Homeostasis','Nervous System','Hormones','Blood Glucose','Reproduction'], B6:['DNA and Genome','Inheritance','Inherited Disorders','Variation and Evolution','Selective Breeding and Genetic Engineering','Evidence for Evolution','Classification'], B7:['Ecosystems','Food Webs','Nutrient Cycling','Biodiversity','Climate Change','Sampling'] },
+    Chemistry:  { C1:['Atomic Structure','The Periodic Table','Groups','History of the Atom'], C2:['Bonding','Ionic Compounds','Covalent Substances','Metallic Structures','Nanoparticles','States of Matter'], C3:['Moles and Mass','Conservation of Mass','Yield and Atom Economy','Concentration','Gas Volumes'], C4:['Acids and Bases','Salts','Reactivity Series','Redox','Electrolysis'], C5:['Energy Changes','Bond Energies','Fuel Cells'], C6:['Rate of Reaction','Factors Affecting Rate','Equilibrium'], C7:['Hydrocarbons','Alkanes','Alkenes','Cracking','Polymers','Alcohols and Carboxylic Acids'], C8:['Purity and Formulations','Chromatography','Identifying Substances'], C9:["Earth's Atmosphere",'Greenhouse Effect','Air Pollution'], C10:['Using Resources','Life Cycle Assessment','Water','Alternative Metal Extraction','Corrosion','Materials'] },
+    Physics:    { P1:['Energy Stores','Energy Transfer','Efficiency','Specific Heat Capacity','Energy Resources'], P2:['Basic Electricity','Circuits','Domestic Electricity','Power and Energy','Static Electricity'], P3:['States of Matter','Changes of State','Density','Specific Heat Capacity','Gas Pressure'], P4:['Atomic Structure','History of the Atom','Radioactive Decay','Nuclear Radiation','Half-life','Hazards','Nuclear Fission and Fusion'], P5:['Scalars and Vectors','Forces','Work Done','Elasticity','Motion',"Newton's Laws",'Stopping Distances','Momentum'], P6:['Wave Properties','Reflection and Refraction','Sound','Electromagnetic Spectrum','Black Body Radiation'], P7:['Magnetism','Electromagnetism','Motor Effect','Generators','Transformers'] }
+  };
+
+  let adSubject = 'Biology';
+  let adExpandedMods = {};
+
+  window.adSetSubject = (subj, btn) => {
+    adSubject = subj;
+    document.querySelectorAll('#adate-subj-seg .adate-sb').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    adRenderModGrid();
+  };
+
+  function adRenderModGrid() {
+    const mods = TOPICS[adSubject];
+    adExpandedMods = {};
+    document.getElementById('ad-mod-grid').innerHTML = Object.entries(mods).map(([mod, topics]) => `
+      <div class="adate-mi" id="admi-${mod}">
+        <div class="adate-mhd" onclick="adToggleMod('${mod}')">
+          <input type="checkbox" class="adate-mwcb" id="adcb-${mod}" onclick="event.stopPropagation();adWModTog('${mod}')">
+          <label class="adate-mnm" for="adcb-${mod}" onclick="event.stopPropagation()">${mod}</label>
+          <button class="adate-mexp" onclick="event.stopPropagation();adToggleMod('${mod}')">▼ topics</button>
+        </div>
+        <div class="adate-mtp" id="admtp-${mod}">
+          ${topics.map((t,ti) => `<div class="adate-trow"><input type="checkbox" class="adate-tcb" id="adtcb-${mod}-${ti}" data-mod="${mod}" data-topic="${t}" onchange="adTopicChg('${mod}')"><label class="adate-tlbl" for="adtcb-${mod}-${ti}">${t}</label></div>`).join('')}
+        </div>
+      </div>`).join('');
+  }
+
+  window.adToggleMod = (mod) => {
+    adExpandedMods[mod] = !adExpandedMods[mod];
+    document.getElementById(`admtp-${mod}`)?.classList.toggle('open', adExpandedMods[mod]);
+    document.querySelector(`#admi-${mod} .adate-mexp`).textContent = adExpandedMods[mod] ? '▲ hide' : '▼ topics';
+  };
+  window.adWModTog = (mod) => {
+    const cb = document.getElementById(`adcb-${mod}`);
+    document.querySelectorAll(`[data-mod="${mod}"]`).forEach(el => { el.checked = false; el.disabled = false; });
+  };
+  window.adTopicChg = (mod) => {
+    const any = [...document.querySelectorAll(`[data-mod="${mod}"]`)].some(el => el.checked);
+    const w = document.getElementById(`adcb-${mod}`);
+    if (w) { w.checked = any; w.disabled = false; }
+  };
+
+  function adPopulateClassSel() {
+    ['ad-class-sel','ad-filter-class'].forEach(id => {
+      const sel = document.getElementById(id);
+      if (!sel) return;
+      sel.innerHTML = '<option value="">— Select class —</option>' +
+        myClasses.map(c => `<option value="${c}">${c}</option>`).join('');
+    });
+  }
+
+  // Call after myClasses loads
+  const _origPopulate = populateClassSelector;
+  function populateClassSelector() {
+    _origPopulate?.();
+    adPopulateClassSel();
+    adRenderModGrid();
+  }
+
+  window.adSave = async () => {
+    const label = document.getElementById('ad-label').value.trim();
+    const date = document.getElementById('ad-date').value;
+    const cls = document.getElementById('ad-class-sel').value;
+    const schedLink = document.getElementById('ad-schedlink').value.trim();
+    const msg = document.getElementById('ad-msg');
+
+    if (!label || !date || !cls) {
+      msg.className = 'form-msg error';
+      msg.textContent = 'Please fill in label, date and class.';
+      return;
+    }
+
+    const mods = TOPICS[adSubject];
+    const selMods = [], partialTopics = {};
+    Object.keys(mods).forEach(mod => {
+      const w = document.getElementById(`adcb-${mod}`);
+      if (!w?.checked) return;
+      const tt = [...document.querySelectorAll(`[data-mod="${mod}"]`)].filter(el => el.checked).map(el => el.dataset.topic);
+      selMods.push(mod);
+      if (tt.length) partialTopics[mod] = tt;
+    });
+
+    const id = `${Date.now()}`;
+    try {
+      await saveAssessmentDate(cls, adSubject, id, {
+        label, date, scheduleLink: schedLink || null,
+        modules: selMods, partialTopics,
+        createdBy: currentUser.uid,
+      });
+      msg.className = 'form-msg success';
+      msg.textContent = '✅ Assessment date saved!';
+      document.getElementById('ad-label').value = '';
+      document.getElementById('ad-date').value = '';
+      document.getElementById('ad-schedlink').value = '';
+      adRenderModGrid();
+      adLoadList();
+    } catch(e) {
+      msg.className = 'form-msg error';
+      msg.textContent = 'Could not save. Please try again.';
+    }
+    setTimeout(() => { msg.className = 'form-msg'; }, 3000);
+  };
+
+  window.adLoadList = async () => {
+    const cls = document.getElementById('ad-filter-class').value;
+    const list = document.getElementById('ad-list');
+    if (!cls) { list.innerHTML = '<div class="empty-state">Select a class to view saved dates.</div>'; return; }
+    list.innerHTML = '<div class="loading-state">Loading...</div>';
+
+    const subjects = ['Biology','Chemistry','Physics'];
+    const all = [];
+    await Promise.all(subjects.map(async subj => {
+      try {
+        const items = await getAssessmentDates(cls, subj);
+        items.forEach(item => all.push({ ...item, subject: subj }));
+      } catch(e) {}
+    }));
+    all.sort((a,b) => (a.date||'').localeCompare(b.date||''));
+
+    if (!all.length) { list.innerHTML = '<div class="empty-state">No assessment dates saved for this class yet.</div>'; return; }
+
+    const today = new Date().toISOString().split('T')[0];
+    list.innerHTML = all.map(a => {
+      const daysLeft = a.date ? Math.ceil((new Date(a.date) - new Date()) / 86400000) : null;
+      const pillCls = a.subject === 'Biology' ? 'adate-pill-bio' : a.subject === 'Chemistry' ? 'adate-pill-chem' : 'adate-pill-phys';
+      const cdCls = daysLeft !== null ? (daysLeft <= 7 ? 'soon' : daysLeft <= 21 ? 'upcoming' : 'future') : 'future';
+      const cdText = daysLeft !== null ? (daysLeft <= 0 ? 'Today' : `${daysLeft}d`) : '';
+      const dateStr = a.date ? new Date(a.date + 'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}) : '';
+      const modTags = (a.modules||[]).map(m => {
+        const pt = a.partialTopics?.[m];
+        return `<span class="adate-mod-tag">${m}${pt?.length ? ` (${pt.length} topics)` : ''}</span>`;
+      }).join('');
+      return `<div class="adate-row">
+        <span class="adate-subj-pill ${pillCls}">${a.subject}</span>
+        <div class="adate-info">
+          <div class="adate-label">${a.label||'Assessment'}</div>
+          <div class="adate-meta">${dateStr}${a.scheduleLink ? ` · ${a.scheduleLink}` : ''}</div>
+          <div class="adate-mods">${modTags}</div>
+        </div>
+        ${cdText ? `<span class="adate-countdown ${cdCls}">${cdText}</span>` : ''}
+        <button class="btn-delete" onclick="adDelete('${cls}','${a.subject}','${a.id}')">Remove</button>
+      </div>`;
+    }).join('');
+  };
+
+  window.adDelete = async (cls, subj, id) => {
+    if (!confirm('Remove this assessment date?')) return;
+    await deleteAssessmentDate(cls, subj, id);
+    adLoadList();
   };
 </script>
 </body>
