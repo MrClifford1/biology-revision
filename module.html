@@ -1795,9 +1795,9 @@ loadQuestions();
     <div class="current-class-badge" id="drawer-class-display">—</div>
     <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.07em;color:#64748b;margin-bottom:0.6rem">Change year group</div>
     <div class="year-grid-s" id="drawer-year-grid">
-      <button class="year-btn-s" onclick="selectYearDrawer(9)">Year 9</button>
-      <button class="year-btn-s" onclick="selectYearDrawer(10)">Year 10</button>
-      <button class="year-btn-s" onclick="selectYearDrawer(11)">Year 11</button>
+      <button class="year-btn-s" onclick="selectYearDrawer(9, this)">Year 9</button>
+      <button class="year-btn-s" onclick="selectYearDrawer(10, this)">Year 10</button>
+      <button class="year-btn-s" onclick="selectYearDrawer(11, this)">Year 11</button>
     </div>
     <div id="drawer-class-step" style="display:none">
       <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.07em;color:#64748b;margin-bottom:0.6rem">Select class</div>
@@ -1844,23 +1844,23 @@ loadQuestions();
     document.getElementById('settings-drawer').classList.add('hidden');
   };
 
-  window.selectYearDrawer = (year) => {
+  window.selectYearDrawer = (year, btn) => {
     selectedYearDrawer = year;
     selectedClassDrawer = null;
     document.querySelectorAll('.year-btn-s').forEach(b => b.classList.remove('selected'));
-    event.target.classList.add('selected');
+    if (btn) btn.classList.add('selected');
     const grid = document.getElementById('drawer-class-grid');
     grid.innerHTML = CLASSES[year].map(cls =>
-      `<button class="class-btn-s" onclick="selectClassDrawer('${cls}')">${cls}</button>`
+      `<button class="class-btn-s" onclick="selectClassDrawer('${cls}', this)">${cls}</button>`
     ).join('');
     document.getElementById('drawer-class-step').style.display = 'block';
     document.getElementById('drawer-confirm-btn').disabled = true;
   };
 
-  window.selectClassDrawer = (cls) => {
+  window.selectClassDrawer = (cls, btn) => {
     selectedClassDrawer = cls;
     document.querySelectorAll('.class-btn-s').forEach(b => b.classList.remove('selected'));
-    event.target.classList.add('selected');
+    if (btn) btn.classList.add('selected');
     document.getElementById('drawer-confirm-btn').disabled = false;
   };
 
