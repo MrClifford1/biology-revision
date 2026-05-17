@@ -563,6 +563,47 @@ function _academicMonthIndex() {
   return m + 4;            // Jan=4, Feb=5, Mar=6, Apr=7, May=8, Jun=9, Jul=10
 }
 
+// ── ASSESSMENT DATES ──────────────────────────────────────────────────────────
+// Stored at: assessmentDates/{classId}/{subject}/{assessmentId}
+// Shape: { label, date, scheduleLink, modules[], partialTopics{}, createdBy, updatedAt }
+
+export async function saveAssessmentDate(classId, subject, assessmentId, data) {
+  await setDoc(
+    doc(db, 'assessmentDates', classId, subject, assessmentId),
+    { ...data, updatedAt: serverTimestamp() },
+    { merge: false }
+  );
+}
+
+export async function getAssessmentDates(classId, subject) {
+  const snap = await getDocs(collection(db, 'assessmentDates', classId, subject));
+  return snap.docs.map(d => ({ id: d.id, ...d.data() }))
+    .sort((a, b) => (a.date || '').localeCompare(b.date || ''));
+}
+
+export async function deleteAssessmentDate(classId, subject, assessmentId) {
+  await deleteDoc(doc(db, 'assessmentDates', classId, subject, assessmentId));
+}
+
+export async function getUpcomingAssessmentsForStudent(classId) {
+  if (!classId) return [];
+  const subjects = ['Biology', 'Chemistry', 'Physics'];
+  const today = new Date().toISOString().split('T')[0];
+  const results = [];
+  await Promise.all(subjects.map(async subject => {
+    try {
+      const snap = await getDocs(collection(db, 'assessmentDates', classId, subject));
+      snap.docs.forEach(d => {
+        const data = d.data();
+        if (data.date && data.date >= today) {
+          results.push({ id: d.id, subject, ...data });
+        }
+      });
+    } catch(e) { /* no assessments for this subject */ }
+  }));
+  return results.sort((a, b) => (a.date || '').localeCompare(b.date || ''));
+}
+
 // ── ACTIVITY LOG ──────────────────────────────────────────────────────────────
 // Stored at: users/{uid}/activityLog/{autoId}
 // Shape: { type, subjectId, moduleId, moduleTitle, score, total, pct,
