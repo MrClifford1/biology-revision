@@ -319,9 +319,11 @@
         <div class="adate-controls">
           <span style="font-size:0.78rem;font-weight:700;color:var(--subtext)">Class:</span>
           <select class="form-input" id="ad-filter-class" onchange="adLoadList()" style="max-width:140px;padding:0.35rem 0.65rem;font-size:0.8rem"></select>
-          <button onclick="adToggleForm()" id="ad-toggle-btn" style="margin-left:auto;background:var(--purple);color:white;border:none;border-radius:9px;padding:0.4rem 1rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;cursor:pointer">＋ Add Assessment</button>
         </div>
         <div class="adate-list" id="ad-list"><div class="empty-state">Select a class above to view saved dates.</div></div>
+        <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)">
+          <button onclick="adToggleForm()" id="ad-toggle-btn" style="background:var(--purple);color:white;border:none;border-radius:9px;padding:0.45rem 1.1rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;cursor:pointer;display:flex;align-items:center;gap:0.4rem">＋ Add Assessment Date</button>
+        </div>
       </div>
 
       <!-- Add form — collapsed by default -->
@@ -946,16 +948,14 @@
   window.adCopyTo = (subj, id) => {
     const stored = window._adListCache?.find(a => a.id === id && a.subject === subj);
     if (!stored) return;
-
-    // Build class picker modal
     const others = myClasses.filter(c => c !== document.getElementById('ad-filter-class').value);
     if (!others.length) { alert('No other classes to copy to.'); return; }
-
     const modal = document.getElementById('ad-copy-modal');
     document.getElementById('ad-copy-grid').innerHTML = others.map(c =>
       `<button class="class-toggle" onclick="this.classList.toggle('selected')">${c}</button>`
     ).join('');
     document.getElementById('ad-copy-label').textContent = stored.label || 'Assessment';
+    document.getElementById('ad-copy-date').value = ''; // clear date override
     window._adCopyPayload = { subj, id, stored };
     modal.classList.add('open');
   };
@@ -965,11 +965,14 @@
     if (!stored) return;
     const targets = [...document.querySelectorAll('#ad-copy-grid .class-toggle.selected')].map(b => b.textContent.trim());
     if (!targets.length) { alert('Select at least one class.'); return; }
+    const overrideDate = document.getElementById('ad-copy-date').value;
     await Promise.all(targets.map(cls =>
       saveAssessmentDate(cls, subj, `${Date.now()}-${cls}`, {
-        label: stored.label, date: stored.date,
+        label: stored.label,
+        date: overrideDate || stored.date,
         scheduleLink: stored.scheduleLink || null,
-        modules: stored.modules || [], partialTopics: stored.partialTopics || {},
+        modules: stored.modules || [],
+        partialTopics: stored.partialTopics || {},
         createdBy: currentUser.uid,
       })
     ));
@@ -1032,8 +1035,13 @@
 <div class="modal-overlay" id="ad-copy-modal">
   <div class="modal">
     <h2>⧉ Copy to other classes</h2>
-    <p style="font-size:0.82rem;color:var(--subtext);margin-bottom:0.5rem">Copying: <strong id="ad-copy-label"></strong></p>
-    <p style="font-size:0.8rem;color:var(--subtext);margin-bottom:1rem">Select the classes to copy this assessment to. The date and content will be identical — you can edit each copy afterwards.</p>
+    <p style="font-size:0.82rem;color:var(--subtext);margin-bottom:0.75rem">Copying: <strong id="ad-copy-label"></strong></p>
+    <p style="font-size:0.8rem;color:var(--subtext);margin-bottom:1rem">Select classes and optionally set a different date for each copy — useful when different classes sit the same assessment on different days.</p>
+    <div style="margin-bottom:1rem">
+      <label class="form-label">Date for copied assessments <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--subtext)">(leave blank to keep original date)</span></label>
+      <input type="date" class="form-input" id="ad-copy-date" style="max-width:200px;margin-top:0.3rem" />
+    </div>
+    <label class="form-label" style="margin-bottom:0.5rem;display:block">Copy to classes:</label>
     <div class="class-toggle-grid" id="ad-copy-grid"></div>
     <div style="display:flex;gap:0.5rem;justify-content:flex-end;margin-top:1rem">
       <button class="btn-modal-close" onclick="document.getElementById('ad-copy-modal').classList.remove('open')">Cancel</button>
