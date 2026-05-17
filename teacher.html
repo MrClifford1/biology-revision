@@ -351,6 +351,7 @@
         </div>
 
         <button class="btn-adate-save" onclick="adSave()">📅 Save Assessment Date</button>
+        <button id="ad-cancel-edit" onclick="adCancelEdit()" style="display:none;margin-left:0.5rem;background:none;border:1.5px solid var(--border);color:var(--subtext);border-radius:10px;padding:0.6rem 1rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.875rem;cursor:pointer">✕ Cancel Edit</button>
         <div class="form-msg" id="ad-msg"></div>
       </div>
 
@@ -797,6 +798,8 @@
     });
   }
 
+  let adEditState = null; // { cls, subject, id } when editing an existing assessment
+
   window.adSave = async () => {
     const label = document.getElementById('ad-label').value.trim();
     const date = document.getElementById('ad-date').value;
@@ -820,18 +823,25 @@
       if (tt.length) partialTopics[mod] = tt;
     });
 
-    const id = `${Date.now()}`;
+    // Use existing ID if editing, otherwise generate new one
+    const id = adEditState?.id || `${Date.now()}`;
+    const saveCls = adEditState?.cls || cls;
+    const saveSubj = adEditState?.subject || adSubject;
+
     try {
-      await saveAssessmentDate(cls, adSubject, id, {
+      await saveAssessmentDate(saveCls, saveSubj, id, {
         label, date, scheduleLink: schedLink || null,
         modules: selMods, partialTopics,
         createdBy: currentUser.uid,
       });
       msg.className = 'form-msg success';
-      msg.textContent = '✅ Assessment date saved!';
+      msg.textContent = adEditState ? '✅ Assessment updated!' : '✅ Assessment date saved!';
+      // Reset form
       document.getElementById('ad-label').value = '';
       document.getElementById('ad-date').value = '';
       document.getElementById('ad-schedlink').value = '';
+      adEditState = null;
+      document.querySelector('.btn-adate-save').textContent = '📅 Save Assessment Date';
       adRenderModGrid();
       adLoadList();
     } catch(e) {
@@ -839,6 +849,107 @@
       msg.textContent = 'Could not save. Please try again.';
     }
     setTimeout(() => { msg.className = 'form-msg'; }, 3000);
+  };
+
+  window.adCancelEdit = () => {
+    adEditState = null;
+    document.getElementById('ad-label').value = '';
+    document.getElementById('ad-date').value = '';
+    document.getElementById('ad-schedlink').value = '';
+    document.querySelector('.btn-adate-save').textContent = '📅 Save Assessment Date';
+    document.getElementById('ad-cancel-edit').style.display = 'none';
+    adRenderModGrid();
+  };
+
+  window.adEdit = (cls, subj, id) => {
+    // Find the assessment from the rendered list data
+    const stored = window._adListCache?.find(a => a.id === id && a.subject === subj);
+    if (!stored) return;
+
+    adEditState = { cls, subject: subj, id };
+
+    // Switch subject
+    adSubject = subj;
+    document.querySelectorAll('#adate-subj-seg .adate-sb').forEach(b => {
+      b.classList.toggle('on', b.textContent === subj);
+    });
+
+    // Fill form fields
+    document.getElementById('ad-label').value = stored.label || '';
+    document.getElementById('ad-date').value = stored.date || '';
+    document.getElementById('ad-schedlink').value = stored.scheduleLink || '';
+
+    // Set class selector
+    const clsSel = document.getElementById('ad-class-sel');
+    if (clsSel) clsSel.value = cls;
+
+    // Render module grid then tick the right boxes
+    adRenderModGrid();
+    requestAnimationFrame(() => {
+      (stored.modules || []).forEach(mod => {
+        const pt = stored.partialTopics?.[mod];
+        if (pt?.length) {
+          // Tick individual topics
+          pt.forEach(topic => {
+            const tcbs = [...document.querySelectorAll(`[data-mod="${mod}"]`)];
+            const cb = tcbs.find(el => el.dataset.topic === topic);
+            if (cb) {
+              cb.checked = true;
+              // Expand panel
+              adExpandedMods[mod] = true;
+              document.getElementById(`admtp-${mod}`)?.classList.add('open');
+              document.querySelector(`#admi-${mod} .adate-mexp`).textContent = '▲ hide';
+            }
+          });
+          adTopicChg(mod);
+        } else {
+          const wcb = document.getElementById(`adcb-${mod}`);
+          if (wcb) wcb.checked = true;
+        }
+      });
+    });
+
+    // Update save button + show cancel
+    document.querySelector('.btn-adate-save').textContent = '✏️ Update Assessment';
+    document.getElementById('ad-cancel-edit').style.display = 'inline-block';
+
+    // Scroll to form
+    document.getElementById('ad-label').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+
+  window.adCopyTo = (subj, id) => {
+    const stored = window._adListCache?.find(a => a.id === id && a.subject === subj);
+    if (!stored) return;
+
+    // Build class picker modal
+    const others = myClasses.filter(c => c !== document.getElementById('ad-filter-class').value);
+    if (!others.length) { alert('No other classes to copy to.'); return; }
+
+    const modal = document.getElementById('ad-copy-modal');
+    document.getElementById('ad-copy-grid').innerHTML = others.map(c =>
+      `<button class="class-toggle" onclick="this.classList.toggle('selected')">${c}</button>`
+    ).join('');
+    document.getElementById('ad-copy-label').textContent = stored.label || 'Assessment';
+    window._adCopyPayload = { subj, id, stored };
+    modal.classList.add('open');
+  };
+
+  window.adCopyConfirm = async () => {
+    const { subj, stored } = window._adCopyPayload || {};
+    if (!stored) return;
+    const targets = [...document.querySelectorAll('#ad-copy-grid .class-toggle.selected')].map(b => b.textContent.trim());
+    if (!targets.length) { alert('Select at least one class.'); return; }
+    await Promise.all(targets.map(cls =>
+      saveAssessmentDate(cls, subj, `${Date.now()}-${cls}`, {
+        label: stored.label, date: stored.date,
+        scheduleLink: stored.scheduleLink || null,
+        modules: stored.modules || [], partialTopics: stored.partialTopics || {},
+        createdBy: currentUser.uid,
+      })
+    ));
+    document.getElementById('ad-copy-modal').classList.remove('open');
+    window._adCopyPayload = null;
+    adLoadList();
   };
 
   window.adLoadList = async () => {
@@ -856,10 +967,10 @@
       } catch(e) {}
     }));
     all.sort((a,b) => (a.date||'').localeCompare(b.date||''));
+    window._adListCache = all; // cache for edit/copy lookups
 
     if (!all.length) { list.innerHTML = '<div class="empty-state">No assessment dates saved for this class yet.</div>'; return; }
 
-    const today = new Date().toISOString().split('T')[0];
     list.innerHTML = all.map(a => {
       const daysLeft = a.date ? Math.ceil((new Date(a.date) - new Date()) / 86400000) : null;
       const pillCls = a.subject === 'Biology' ? 'adate-pill-bio' : a.subject === 'Chemistry' ? 'adate-pill-chem' : 'adate-pill-phys';
@@ -878,6 +989,8 @@
           <div class="adate-mods">${modTags}</div>
         </div>
         ${cdText ? `<span class="adate-countdown ${cdCls}">${cdText}</span>` : ''}
+        <button class="btn-delete" style="border-color:#6366f1;color:#6366f1" onclick="adEdit('${cls}','${a.subject}','${a.id}')">✏️ Edit</button>
+        <button class="btn-delete" style="border-color:#0891b2;color:#0891b2" onclick="adCopyTo('${a.subject}','${a.id}')">⧉ Copy to</button>
         <button class="btn-delete" onclick="adDelete('${cls}','${a.subject}','${a.id}')">Remove</button>
       </div>`;
     }).join('');
@@ -889,5 +1002,19 @@
     adLoadList();
   };
 </script>
+<!-- ── COPY ASSESSMENT MODAL ──────────────────────────────────────────────────── -->
+<div class="modal-overlay" id="ad-copy-modal">
+  <div class="modal">
+    <h2>⧉ Copy to other classes</h2>
+    <p style="font-size:0.82rem;color:var(--subtext);margin-bottom:0.5rem">Copying: <strong id="ad-copy-label"></strong></p>
+    <p style="font-size:0.8rem;color:var(--subtext);margin-bottom:1rem">Select the classes to copy this assessment to. The date and content will be identical — you can edit each copy afterwards.</p>
+    <div class="class-toggle-grid" id="ad-copy-grid"></div>
+    <div style="display:flex;gap:0.5rem;justify-content:flex-end;margin-top:1rem">
+      <button class="btn-modal-close" onclick="document.getElementById('ad-copy-modal').classList.remove('open')">Cancel</button>
+      <button class="btn-save-classes" onclick="adCopyConfirm()">Copy to selected</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
