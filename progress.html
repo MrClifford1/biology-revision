@@ -93,32 +93,6 @@
       margin-bottom: 1rem;
     }
 
-    /* ── UPCOMING ASSESSMENTS ────────────────────────────────────────────────── */
-    .assessment-banner { background: white; border: 1.5px solid var(--border); border-radius: 16px; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
-    .assessment-banner-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap; }
-    .assessment-banner h2 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1rem; color: var(--navy); }
-    .assessment-card { border: 1.5px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 0.75rem; }
-    .assessment-card:last-child { margin-bottom: 0; }
-    .assessment-card-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
-    .asmt-subj-pill { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
-    .asmt-pill-bio { background: #dcfce7; color: #14532d; }
-    .asmt-pill-chem { background: #fef9c3; color: #713f12; }
-    .asmt-pill-phys { background: #dbeafe; color: #1e3a8a; }
-    .asmt-label { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.9rem; color: var(--navy); flex: 1; }
-    .asmt-date { font-size: 0.75rem; color: var(--subtext); }
-    .asmt-countdown { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.82rem; padding: 0.22rem 0.65rem; border-radius: 100px; }
-    .asmt-cd-soon { background: #fef2f2; color: #dc2626; border: 1.5px solid #fca5a5; }
-    .asmt-cd-upcoming { background: #fef9c3; color: #713f12; border: 1.5px solid #fde68a; }
-    .asmt-cd-future { background: #f1f5f9; color: #475569; border: 1.5px solid #cbd5e1; }
-    .asmt-topics-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.72rem; color: var(--subtext); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem; }
-    .asmt-topic-row { display: flex; align-items: center; gap: 0.75rem; padding: 0.3rem 0; border-bottom: 1px solid var(--border); }
-    .asmt-topic-row:last-child { border-bottom: none; }
-    .asmt-topic-name { font-size: 0.8rem; font-weight: 600; flex: 1; color: var(--text); }
-    .asmt-topic-bar-wrap { width: 120px; height: 7px; background: var(--border); border-radius: 100px; overflow: hidden; flex-shrink: 0; }
-    .asmt-topic-bar-fill { height: 100%; border-radius: 100px; transition: width 0.4s; }
-    .asmt-topic-tier { font-size: 0.68rem; font-weight: 700; color: var(--subtext); width: 80px; text-align: right; flex-shrink: 0; }
-    .asmt-weak-flag { font-size: 0.65rem; font-weight: 800; background: #fef2f2; color: #dc2626; padding: 0.08rem 0.35rem; border-radius: 100px; }
-
     /* SUMMARY CARDS */
     .summary-grid {
       display: grid;
@@ -311,6 +285,81 @@
       .summary-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
+    /* ── TABS ────────────────────────────────────────────────────────────────── */
+    .progress-tabs { display: flex; gap: 0.4rem; padding: 1rem 1.5rem 0; max-width: 1000px; margin: 0 auto; flex-wrap: wrap; }
+    .progress-tab { border: none; background: none; padding: 0.55rem 1.1rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.82rem; color: var(--subtext); cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.15s; white-space: nowrap; }
+    .progress-tab:hover { color: var(--navy); }
+    .progress-tab.active { color: var(--navy); border-bottom-color: var(--navy); }
+    .progress-panel { display: none; max-width: 1000px; margin: 0 auto; padding: 1.5rem; }
+    .progress-panel.active { display: block; }
+
+    /* ── OVERVIEW ────────────────────────────────────────────────────────────── */
+    .subject-balance { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.75rem; margin-bottom: 1.5rem; }
+    .balance-card { background: white; border: 1.5px solid var(--border); border-radius: 12px; padding: 1rem 1.1rem; }
+    .balance-label { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.8rem; margin-bottom: 0.5rem; }
+    .balance-bar-wrap { background: #f1f5f9; border-radius: 100px; height: 8px; overflow: hidden; margin-bottom: 0.3rem; }
+    .balance-bar-fill { height: 100%; border-radius: 100px; }
+    .balance-stat { font-size: 0.72rem; color: var(--subtext); }
+    .decay-list { display: flex; flex-direction: column; gap: 0.4rem; }
+    .decay-row { background: #fff7ed; border: 1.5px solid #fed7aa; border-radius: 10px; padding: 0.6rem 0.85rem; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+    .decay-mod { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.8rem; color: var(--navy); }
+    .decay-topic { font-size: 0.78rem; color: var(--subtext); flex: 1; }
+    .decay-days { font-size: 0.72rem; font-weight: 700; color: #c2410c; }
+    .streak-card { background: linear-gradient(135deg, #fef9c3, #fef3c7); border: 1.5px solid #fde68a; border-radius: 14px; padding: 1rem 1.25rem; display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .streak-num { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 2.2rem; color: #92400e; line-height: 1; }
+    .streak-text { font-size: 0.82rem; color: #78350f; }
+
+    /* ── BY MODULE ───────────────────────────────────────────────────────────── */
+    .module-expand-card { background: white; border: 1.5px solid var(--border); border-radius: 14px; margin-bottom: 0.75rem; overflow: hidden; }
+    .module-expand-header { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1.1rem; cursor: pointer; user-select: none; }
+    .module-expand-header:hover { background: #f8fafc; }
+    .mec-badge { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.78rem; color: white; flex-shrink: 0; }
+    .mec-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.88rem; flex: 1; }
+    .mec-summary { font-size: 0.72rem; color: var(--subtext); }
+    .mec-tier { font-size: 0.78rem; font-weight: 700; }
+    .mec-chevron { font-size: 0.75rem; color: var(--subtext); transition: transform 0.2s; }
+    .module-expand-card.open .mec-chevron { transform: rotate(180deg); }
+    .module-expand-body { display: none; border-top: 1px solid var(--border); padding: 0.75rem 1.1rem 1rem; }
+    .module-expand-card.open .module-expand-body { display: block; }
+    .topic-expand-row { display: flex; align-items: center; gap: 0.75rem; padding: 0.35rem 0; border-bottom: 1px solid #f1f5f9; }
+    .topic-expand-row:last-child { border-bottom: none; }
+    .topic-name { font-size: 0.8rem; font-weight: 600; flex: 1; }
+    .topic-bar-wrap { width: 100px; height: 6px; background: #f1f5f9; border-radius: 100px; overflow: hidden; flex-shrink: 0; }
+    .topic-bar-fill { height: 100%; border-radius: 100px; }
+    .topic-tier-label { font-size: 0.68rem; font-weight: 700; color: var(--subtext); width: 75px; text-align: right; flex-shrink: 0; }
+    .schedule-flag { font-size: 0.62rem; font-weight: 800; padding: 0.08rem 0.35rem; border-radius: 100px; white-space: nowrap; }
+    .flag-current { background: #dcfce7; color: #14532d; }
+    .flag-past    { background: #fef9c3; color: #713f12; }
+    .flag-asmt    { background: #fce7f3; color: #831843; }
+
+    /* ── INSIGHTS ────────────────────────────────────────────────────────────── */
+    .insight-btn-wrap { text-align: center; margin-bottom: 1.5rem; }
+    .btn-insight { background: linear-gradient(135deg, #1a2a4f, #3b82f6); color: white; border: none; border-radius: 14px; padding: 0.85rem 2rem; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 15px rgba(59,130,246,0.3); transition: all 0.2s; }
+    .btn-insight:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(59,130,246,0.4); }
+    .btn-insight:disabled { background: #cbd5e1; box-shadow: none; cursor: not-allowed; transform: none; }
+    .insight-cooldown-msg { background: #f0f4ff; border: 1.5px solid #c7d2fe; border-radius: 12px; padding: 0.85rem 1.1rem; font-size: 0.85rem; color: var(--navy); margin-bottom: 1rem; }
+    .insight-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem; }
+    .insight-bullet { background: white; border: 1.5px solid var(--border); border-radius: 10px; padding: 0.75rem 1rem; display: flex; align-items: flex-start; gap: 0.75rem; }
+    .insight-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .insight-text { font-size: 0.85rem; flex: 1; line-height: 1.5; }
+    .btn-take-me { font-size: 0.75rem; font-weight: 800; font-family: 'Nunito', sans-serif; background: var(--navy); color: white; border: none; border-radius: 7px; padding: 0.25rem 0.65rem; cursor: pointer; flex-shrink: 0; text-decoration: none; display: inline-flex; align-items: center; }
+    .btn-take-me:hover { background: var(--navy-dark); }
+    .ai-insight-wrap { background: linear-gradient(135deg, #eff6ff, #f0fdf4); border: 1.5px solid #bfdbfe; border-radius: 14px; padding: 1.25rem 1.5rem; }
+    .ai-insight-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.88rem; color: var(--navy); }
+    .ai-insight-body { font-size: 0.88rem; line-height: 1.7; color: var(--text); white-space: pre-line; }
+    .ai-loading { display: flex; align-items: center; gap: 0.5rem; color: var(--subtext); font-size: 0.85rem; }
+    .ai-spinner { width: 18px; height: 18px; border: 2px solid #e2e6f0; border-top-color: var(--navy); border-radius: 50%; animation: spin 0.8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .asmt-subj-pill { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .asmt-pill-bio { background: #dcfce7; color: #14532d; }
+    .asmt-pill-chem { background: #fef9c3; color: #713f12; }
+    .asmt-pill-phys { background: #dbeafe; color: #1e3a8a; }
+    .asmt-countdown { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.82rem; padding: 0.22rem 0.65rem; border-radius: 100px; }
+    .asmt-cd-soon { background: #fef2f2; color: #dc2626; border: 1.5px solid #fca5a5; }
+    .asmt-cd-upcoming { background: #fef9c3; color: #713f12; border: 1.5px solid #fde68a; }
+    .asmt-cd-future { background: #f1f5f9; color: #475569; border: 1.5px solid #cbd5e1; }
+
     /* ── SETTINGS DRAWER ────────────────────────────────────────────────────── */
     .settings-overlay { position:fixed;inset:0;background:rgba(15,29,61,0.5);z-index:900;backdrop-filter:blur(2px); }
     .settings-overlay.hidden { display:none; }
@@ -357,456 +406,596 @@
 </div>
 
 <div id="assessment-banners"></div>
-<main id="main-content">
-  <div class="loading-state">Loading your progress...</div>
-</main>
+
+<!-- TAB NAV -->
+<div style="background:white;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50">
+  <div class="progress-tabs">
+    <button class="progress-tab active" onclick="switchTab('overview',this)">📊 Overview</button>
+    <button class="progress-tab" onclick="switchTab('modules',this)">📚 By Module</button>
+    <button class="progress-tab" onclick="switchTab('insights',this)">💡 Insights</button>
+    <button class="progress-tab" onclick="switchTab('upcoming',this)">📅 Upcoming</button>
+  </div>
+</div>
+
+<!-- OVERVIEW TAB -->
+<div class="progress-panel active" id="panel-overview">
+  <div class="loading-state" id="overview-loading">Loading your progress...</div>
+</div>
+
+<!-- BY MODULE TAB -->
+<div class="progress-panel" id="panel-modules">
+  <div class="loading-state" id="modules-loading">Loading modules...</div>
+</div>
+
+<!-- INSIGHTS TAB -->
+<div class="progress-panel" id="panel-insights">
+  <div class="loading-state" id="insights-loading">Loading insights...</div>
+</div>
+
+<!-- UPCOMING TAB -->
+<div class="progress-panel" id="panel-upcoming">
+  <div class="loading-state" id="upcoming-loading">Loading upcoming assessments...</div>
+</div>
 
 <script type="module">
-  import { onAuthChange, signOutUser, getUserProfile, updateExamTarget, getAllProgress, saveClass, getUserRole, getUpcomingAssessmentsForStudent } from './firebase.js';
+  import {
+    onAuthChange, signOutUser, getUserProfile, updateExamTarget,
+    getAllProgress, saveClass, getUserRole,
+    getUpcomingAssessmentsForStudent, getModuleScheduleStatus,
+    saveInsightTimestamp, getInsightTimestamp
+  } from './firebase.js';
 
   const MODULE_META = {
-    // Biology
-    b1: { title: 'Cell Biology',            colour: '#0d9488', subject: 'biology' },
-    b2: { title: 'Organisation',             colour: '#e85d4a', subject: 'biology' },
-    b3: { title: 'Infection & Response',     colour: '#f59e0b', subject: 'biology' },
-    b4: { title: 'Bioenergetics',            colour: '#22c55e', subject: 'biology' },
-    b5: { title: 'Homeostasis & Response',   colour: '#8b5cf6', subject: 'biology' },
-    b6: { title: 'Inheritance & Evolution',  colour: '#3b82f6', subject: 'biology' },
-    b7: { title: 'Ecology',                  colour: '#16a34a', subject: 'biology' },
-    // Physics
-    p1: { title: 'Energy',                   colour: '#f97316', subject: 'physics' },
-    p2: { title: 'Electricity',              colour: '#eab308', subject: 'physics' },
-    p3: { title: 'Particle Model of Matter', colour: '#06b6d4', subject: 'physics' },
-    p4: { title: 'Atomic Structure',         colour: '#8b5cf6', subject: 'physics' },
-    p5: { title: 'Forces',                   colour: '#ec4899', subject: 'physics' },
-    p6: { title: 'Waves',                    colour: '#14b8a6', subject: 'physics' },
-    p7: { title: 'Magnetism & Electromagnetism', colour: '#6366f1', subject: 'physics' },
-    // Chemistry
-    c1:  { title: 'Atomic Structure & Periodic Table', colour: '#0ea5e9', subject: 'chemistry' },
-    c2:  { title: 'Bonding & Structure',                colour: '#10b981', subject: 'chemistry' },
-    c3:  { title: 'Quantitative Chemistry',             colour: '#f59e0b', subject: 'chemistry' },
-    c4:  { title: 'Chemical Changes',                   colour: '#ef4444', subject: 'chemistry' },
-    c5:  { title: 'Energy Changes',                     colour: '#8b5cf6', subject: 'chemistry' },
-    c6:  { title: 'Rate & Extent of Reactions',         colour: '#f97316', subject: 'chemistry' },
-    c7:  { title: 'Organic Chemistry',                  colour: '#06b6d4', subject: 'chemistry' },
-    c8:  { title: 'Chemical Analysis',                  colour: '#ec4899', subject: 'chemistry' },
-    c9:  { title: 'Chemistry of the Atmosphere',        colour: '#16a34a', subject: 'chemistry' },
-    c10: { title: 'Using Resources',                    colour: '#6366f1', subject: 'chemistry' },
+    b1:{title:'Cell Biology',colour:'#0d9488',subject:'biology'}, b2:{title:'Organisation',colour:'#e85d4a',subject:'biology'}, b3:{title:'Infection & Response',colour:'#f59e0b',subject:'biology'}, b4:{title:'Bioenergetics',colour:'#22c55e',subject:'biology'}, b5:{title:'Homeostasis & Response',colour:'#8b5cf6',subject:'biology'}, b6:{title:'Inheritance & Evolution',colour:'#3b82f6',subject:'biology'}, b7:{title:'Ecology',colour:'#16a34a',subject:'biology'},
+    p1:{title:'Energy',colour:'#f97316',subject:'physics'}, p2:{title:'Electricity',colour:'#eab308',subject:'physics'}, p3:{title:'Particle Model',colour:'#06b6d4',subject:'physics'}, p4:{title:'Atomic Structure',colour:'#8b5cf6',subject:'physics'}, p5:{title:'Forces',colour:'#ec4899',subject:'physics'}, p6:{title:'Waves',colour:'#14b8a6',subject:'physics'}, p7:{title:'Magnetism',colour:'#6366f1',subject:'physics'},
+    c1:{title:'Atomic Structure & Periodic Table',colour:'#0ea5e9',subject:'chemistry'}, c2:{title:'Bonding & Structure',colour:'#10b981',subject:'chemistry'}, c3:{title:'Quantitative Chemistry',colour:'#f59e0b',subject:'chemistry'}, c4:{title:'Chemical Changes',colour:'#ef4444',subject:'chemistry'}, c5:{title:'Energy Changes',colour:'#8b5cf6',subject:'chemistry'}, c6:{title:'Rate & Extent of Reactions',colour:'#f97316',subject:'chemistry'}, c7:{title:'Organic Chemistry',colour:'#06b6d4',subject:'chemistry'}, c8:{title:'Chemical Analysis',colour:'#ec4899',subject:'chemistry'}, c9:{title:'Chemistry of the Atmosphere',colour:'#16a34a',subject:'chemistry'}, c10:{title:'Using Resources',colour:'#6366f1',subject:'chemistry'},
   };
 
-  let currentUser = null;
+  const TIER_META = {
+    not_started:{label:'Not Started',emoji:'⬜',colour:'#cbd5e1'},
+    beginning:  {label:'Beginning',  emoji:'🔴',colour:'#ef4444'},
+    developing: {label:'Developing', emoji:'🟠',colour:'#f97316'},
+    approaching:{label:'Approaching',emoji:'🟡',colour:'#eab308'},
+    confident:  {label:'Confident',  emoji:'🟢',colour:'#22c55e'},
+    mastered:   {label:'Mastered',   emoji:'💙',colour:'#3b82f6'},
+  };
 
-  onAuthChange(async user => {
-    if (!user) {
-      window.location.href = 'login.html?redirect=progress.html';
-      return;
-    }
-    currentUser = user;
-    window.currentUser = user;
-    const profile = await getUserProfile(user.uid);
-    renderHeader(user, profile);
-    const progress = await getAllProgress(user.uid);
-    renderProgress(progress, profile);
-    // Load upcoming assessments — runs in background after main content renders
-    if (profile?.class) {
-      renderAssessmentBanners(profile.class, progress);
-    }
-    const role = await getUserRole(user.email);
-    const wrap = document.getElementById('staff-nav-links');
-    if (wrap && ['teacher','admin','superadmin'].includes(role)) {
-      wrap.style.display = 'flex';
-      document.getElementById('nav-teacher-link').style.display = 'inline-flex';
-    }
-    if (['admin','superadmin'].includes(role)) document.getElementById('nav-admin-link').style.display = 'inline-flex';
-    if (role === 'superadmin') document.getElementById('nav-superadmin-link').style.display = 'inline-flex';
-  });
-
-  function renderHeader(user, profile) {
-    const header = document.getElementById('user-header');
-    const avatarHTML = user.photoURL
-      ? `<img src="${user.photoURL}" class="user-avatar" alt="Profile">`
-      : `<div class="user-avatar-placeholder">${user.displayName?.[0] || '?'}</div>`;
-
-    header.innerHTML = `
-      ${avatarHTML}
-      <div class="user-info">
-        <h1>${user.displayName || 'Student'}</h1>
-        <p>${user.email}</p>
-      </div>
-      <button class="btn-signout" onclick="handleSignOut()">Sign out</button>
-    `;
+  function getTier(score) {
+    if (!score||score===0) return 'not_started';
+    if (score<=33) return 'beginning';
+    if (score<=55) return 'developing';
+    if (score<=75) return 'approaching';
+    if (score<=89) return 'confident';
+    return 'mastered';
   }
 
-  function renderProgress(progress, profile) {
-    const main = document.getElementById('main-content');
+  let currentUser=null, currentProfile=null, allProgress={}, upcomingAssessments=[], scheduleStatuses={};
+  let _dataReady=false;
 
-    // Count totals
-    let totalMocks = 0;
-    let totalScore = 0;
-    let totalPossible = 0;
-    let allMocks = [];
+  // ── TAB SWITCHING ─────────────────────────────────────────────────────────────
+  window.switchTab = (name, btn) => {
+    document.querySelectorAll('.progress-panel').forEach(p=>p.classList.remove('active'));
+    document.querySelectorAll('.progress-tab').forEach(b=>b.classList.remove('active'));
+    document.getElementById(`panel-${name}`).classList.add('active');
+    btn.classList.add('active');
+    if (_dataReady) renderTab(name);
+  };
 
-    Object.entries(progress).forEach(([moduleId, data]) => {
+  function renderTab(name) {
+    if (name==='overview') renderOverview();
+    if (name==='modules')  renderModules();
+    if (name==='insights') renderInsights();
+    if (name==='upcoming') renderUpcoming();
+  }
+
+  // ── AUTH & DATA LOAD ─────────────────────────────────────────────────────────
+  onAuthChange(async user => {
+    if (!user) { window.location.href='login.html?redirect=progress.html'; return; }
+    currentUser=user;
+    window.currentUser=user;
+    renderHeader(user);
+
+    // Load all data in parallel
+    const [profile, progress, role] = await Promise.all([
+      getUserProfile(user.uid),
+      getAllProgress(user.uid),
+      getUserRole(user.email),
+    ]);
+    currentProfile=profile;
+    allProgress=progress;
+    window.currentProfile=profile;
+
+    // Staff nav
+    const wrap=document.getElementById('staff-nav-links');
+    if (wrap && ['teacher','admin','superadmin'].includes(role)) {
+      wrap.style.display='flex';
+      document.getElementById('nav-teacher-link').style.display='inline-flex';
+    }
+    if (['admin','superadmin'].includes(role)) document.getElementById('nav-admin-link').style.display='inline-flex';
+    if (role==='superadmin') document.getElementById('nav-superadmin-link').style.display='inline-flex';
+
+    // Load upcoming assessments if class is set
+    if (profile?.class) {
+      upcomingAssessments = await getUpcomingAssessmentsForStudent(profile.class).catch(()=>[]);
+    }
+
+    // Load schedule statuses for all modules in parallel
+    if (profile?.yearGroup) {
+      const entries = Object.entries(MODULE_META);
+      const results = await Promise.all(entries.map(([id, meta]) => {
+        const subj = meta.subject.charAt(0).toUpperCase()+meta.subject.slice(1);
+        return getModuleScheduleStatus(profile.yearGroup, subj, id.toUpperCase())
+          .then(s=>({id,status:s})).catch(()=>({id,status:'unknown'}));
+      }));
+      results.forEach(({id,status})=>{ scheduleStatuses[id]=status; });
+    }
+
+    _dataReady=true;
+    renderTab('overview');
+  });
+
+  // ── HEADER ───────────────────────────────────────────────────────────────────
+  function renderHeader(user) {
+    const header=document.getElementById('user-header');
+    const avatar=user.photoURL
+      ?`<img src="${user.photoURL}" class="user-avatar" alt="Profile">`
+      :`<div class="user-avatar-placeholder">${user.displayName?.[0]||'?'}</div>`;
+    header.innerHTML=`${avatar}<div class="user-info"><h1>${user.displayName||'Student'}</h1><p>${user.email}</p></div><button class="btn-signout" onclick="handleSignOut()">Sign out</button>`;
+  }
+
+  // ── OVERVIEW TAB ─────────────────────────────────────────────────────────────
+  function renderOverview() {
+    const panel=document.getElementById('panel-overview');
+    let totalMocks=0, totalScore=0, totalPossible=0, allMocks=[], totalAttempts=0;
+    const subjectScores={biology:[],chemistry:[],physics:[]};
+
+    Object.entries(allProgress).forEach(([id,data])=>{
+      const meta=MODULE_META[id];
+      if (!meta) return;
       if (data.mocks) {
-        totalMocks += data.mocks.length;
-        data.mocks.forEach(m => {
-          totalScore += m.score;
-          totalPossible += m.total;
-          allMocks.push({ ...m, moduleId });
-        });
+        totalMocks+=data.mocks.length;
+        data.mocks.forEach(m=>{ totalScore+=m.score; totalPossible+=m.total; allMocks.push({...m,moduleId:id}); });
       }
+      Object.values(data.rag||{}).forEach(e=>{
+        const s=typeof e==='object'?(e?.score??0):0;
+        if (s>0) { subjectScores[meta.subject].push(s); totalAttempts+=(e?.attempts||0); }
+      });
     });
 
-    const avgPct = totalPossible > 0 ? Math.round((totalScore / totalPossible) * 100) : 0;
-    allMocks.sort((a, b) => new Date(b.date) - new Date(a.date));
+    const avgPct=totalPossible>0?Math.round((totalScore/totalPossible)*100):0;
+    allMocks.sort((a,b)=>new Date(b.date)-new Date(a.date));
 
-    main.innerHTML = `
-      <!-- Exam Target -->
+    // Decay warnings
+    const decayItems=[];
+    Object.entries(allProgress).forEach(([id,data])=>{
+      Object.entries(data.rag||{}).forEach(([topic,e])=>{
+        if (typeof e!=='object'||!e.lastActivity) return;
+        const days=Math.floor((Date.now()-new Date(e.lastActivity).getTime())/86400000);
+        if (days>7&&(e.score||0)>0) decayItems.push({id,topic,days,score:e.score||0});
+      });
+    });
+    decayItems.sort((a,b)=>b.days-a.days);
+
+    // Subject avg
+    function subjAvg(arr){ return arr.length?Math.round(arr.reduce((a,b)=>a+b,0)/arr.length):0; }
+    const bAvg=subjAvg(subjectScores.biology);
+    const cAvg=subjAvg(subjectScores.chemistry);
+    const pAvg=subjAvg(subjectScores.physics);
+
+    panel.innerHTML=`
+      <!-- Exam target -->
       <div class="target-card">
         <label>🎯 I am revising for:</label>
         <select class="target-select" id="exam-target">
           <option value="">-- Select your exam --</option>
-          <option value="y9" ${profile?.examTarget === 'y9' ? 'selected' : ''}>Year 9 End of Year Test (B1–B2)</option>
-          <option value="y10" ${profile?.examTarget === 'y10' ? 'selected' : ''}>Year 10 End of Year — Paper 1 (B1–B4)</option>
-          <option value="y11" ${profile?.examTarget === 'y11' ? 'selected' : ''}>Year 11 GCSE — Full Biology (B1–B7)</option>
+          <option value="y9" ${currentProfile?.examTarget==='y9'?'selected':''}>Year 9 End of Year Test (B1–B2)</option>
+          <option value="y10" ${currentProfile?.examTarget==='y10'?'selected':''}>Year 10 End of Year — Paper 1 (B1–B4)</option>
+          <option value="y11" ${currentProfile?.examTarget==='y11'?'selected':''}>Year 11 GCSE — Full Biology (B1–B7)</option>
         </select>
         <button class="target-save" onclick="saveTarget()">Save</button>
         <span class="target-saved" id="target-saved">✅ Saved!</span>
       </div>
 
-      <!-- Summary -->
-      <div class="section-title">Overview</div>
-      <div class="summary-grid">
-        <div class="summary-card">
-          <div class="summary-number">${totalMocks}</div>
-          <div class="summary-label">Mocks completed</div>
-        </div>
-        <div class="summary-card">
-          <div class="summary-number">${avgPct}%</div>
-          <div class="summary-label">Average score</div>
-        </div>
-        <div class="summary-card">
-          <div class="summary-number">${Object.keys(progress).length}</div>
-          <div class="summary-label">Modules started</div>
-        </div>
+      <!-- Summary stats -->
+      <div class="summary-grid" style="margin-bottom:1.5rem">
+        <div class="summary-card"><div class="summary-number">${totalMocks}</div><div class="summary-label">Mocks completed</div></div>
+        <div class="summary-card"><div class="summary-number">${avgPct}%</div><div class="summary-label">Average score</div></div>
+        <div class="summary-card"><div class="summary-number">${Object.keys(allProgress).length}</div><div class="summary-label">Modules started</div></div>
+        <div class="summary-card"><div class="summary-number">${totalAttempts}</div><div class="summary-label">Total activities</div></div>
       </div>
 
-      <!-- Module Progress -->
-      <div class="section-title">Progress by Module</div>
-      ${['biology', 'physics', 'chemistry'].map(subject => {
-        const subjectModules = Object.entries(MODULE_META).filter(([, m]) => m.subject === subject);
-        const subjectLabel = subject.charAt(0).toUpperCase() + subject.slice(1);
-        const subjectEmoji = subject === 'biology' ? '🧬' : subject === 'physics' ? '⚡' : '🧪';
-        const moduleCards = subjectModules.map(([id, meta]) => {
-          const data = progress[id];
-          const mocks = data?.mocks || [];
-          const lastScore = mocks.length > 0 ? mocks[mocks.length - 1] : null;
-          const avgScore = mocks.length > 0
-            ? Math.round(mocks.reduce((s, m) => s + m.pct, 0) / mocks.length)
-            : 0;
-          const rag = data?.rag || {};
+      <!-- Subject balance -->
+      <div class="section-title">Subject Balance</div>
+      <div class="subject-balance" style="margin-bottom:1.5rem">
+        ${[['🧬 Biology','#0d9488',bAvg],['🧪 Chemistry','#0ea5e9',cAvg],['⚡ Physics','#f97316',pAvg]].map(([label,colour,avg])=>`
+          <div class="balance-card">
+            <div class="balance-label" style="color:${colour}">${label}</div>
+            <div class="balance-bar-wrap"><div class="balance-bar-fill" style="width:${avg}%;background:${colour}"></div></div>
+            <div class="balance-stat">${avg>0?`Avg topic score: ${avg}%`:'No activity yet'}</div>
+          </div>`).join('')}
+      </div>
 
-          // New v2 tier system
-          const TIER_META_P = {
-            not_started: { label: 'Not Started', emoji: '⬜', colour: '#cbd5e1' },
-            beginning:   { label: 'Beginning',   emoji: '🔴', colour: '#ef4444' },
-            developing:  { label: 'Developing',  emoji: '🟠', colour: '#f97316' },
-            approaching: { label: 'Approaching', emoji: '🟡', colour: '#eab308' },
-            confident:   { label: 'Confident',   emoji: '🟢', colour: '#22c55e' },
-            mastered:    { label: 'Mastered',    emoji: '💙', colour: '#3b82f6' },
-          };
-          function computeTierP(score) {
-            if (!score || score === 0) return 'not_started';
-            if (score <= 33) return 'beginning';
-            if (score <= 55) return 'developing';
-            if (score <= 75) return 'approaching';
-            if (score <= 89) return 'confident';
-            return 'mastered';
-          }
+      <!-- Decay warnings -->
+      ${decayItems.length?`
+        <div class="section-title">📉 Topics That Need Attention</div>
+        <div class="decay-list" style="margin-bottom:1.5rem">
+          ${decayItems.slice(0,6).map(d=>`
+            <div class="decay-row">
+              <span class="decay-mod">${d.id.toUpperCase()}</span>
+              <span class="decay-topic">${d.topic}</span>
+              <span class="decay-days">Inactive ${d.days}d</span>
+              <a href="module.html?subject=${MODULE_META[d.id]?.subject}&module=${d.id}" class="btn-take-me">Revise now →</a>
+            </div>`).join('')}
+        </div>`:''}
 
-          const tierCounts = { not_started:0, beginning:0, developing:0, approaching:0, confident:0, mastered:0 };
-          let avgTopicScore = 0, topicCount = 0;
-          Object.values(rag).forEach(entry => {
-            const score = typeof entry === 'object' ? (entry?.score ?? 0) : 0;
-            tierCounts[computeTierP(score)]++;
-            avgTopicScore += score;
-            topicCount++;
-          });
-          if (topicCount > 0) avgTopicScore = Math.round(avgTopicScore / topicCount);
-
-          const topTiers = Object.entries(tierCounts)
-            .filter(([,n]) => n > 0)
-            .sort((a,b) => ['mastered','confident','approaching','developing','beginning','not_started'].indexOf(a[0]) - ['mastered','confident','approaching','developing','beginning','not_started'].indexOf(b[0]))
-            .slice(0, 3);
-
-          return `
-            <div class="module-progress-card" style="border-left-color: ${meta.colour}">
-              <div class="module-progress-header">
-                <div class="mod-badge" style="background: ${meta.colour}">${id.toUpperCase()}</div>
-                <div>
-                  <div class="mod-title">${meta.title}</div>
-                  <div class="mod-sub">${mocks.length} mock${mocks.length !== 1 ? 's' : ''} completed</div>
-                </div>
-              </div>
-              ${mocks.length > 0 ? `
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar-fill" style="width: ${avgScore}%; background: ${meta.colour}"></div>
-                </div>
-                <div class="progress-stats">
-                  <span>Average: ${avgScore}%</span>
-                  <span>Last: ${lastScore ? lastScore.pct + '%' : '—'}</span>
-                </div>
-              ` : `<div style="font-size:0.78rem;color:#94a3b8">No mocks attempted yet</div>`}
-              ${topicCount > 0 ? `
-                <div class="tier-bar-wrap">
-                  <div class="tier-bar-fill" style="width:${avgTopicScore}%;background:${TIER_META_P[computeTierP(avgTopicScore)].colour}"></div>
-                </div>
-                <div class="tier-summary">
-                  <span>Topic avg: ${avgTopicScore}%</span>
-                  <span>${TIER_META_P[computeTierP(avgTopicScore)].emoji} ${TIER_META_P[computeTierP(avgTopicScore)].label}</span>
-                </div>
-                <div class="rag-row">
-                  ${topTiers.map(([tier, n]) => `<span class="rag-chip" style="background:${TIER_META_P[tier].colour}22;color:${TIER_META_P[tier].colour}">${TIER_META_P[tier].emoji} ${n} ${TIER_META_P[tier].label}</span>`).join('')}
-                </div>
-              ` : ''}
-              <a href="module.html?subject=${meta.subject}&module=${id}" style="display:inline-block;margin-top:0.75rem;font-size:0.78rem;color:${meta.colour};font-weight:700;text-decoration:none">Revise ${id.toUpperCase()} →</a>
-            </div>
-          `;
-        }).join('');
-        return `
-          <div style="margin-bottom:0.5rem;margin-top:1.25rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.85rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.07em">${subjectEmoji} ${subjectLabel}</div>
-          <div class="modules-grid" style="margin-bottom:0.5rem">
-            ${moduleCards}
-          </div>
-        `;
-      }).join('')}
-
-      <!-- Recent Mocks -->
+      <!-- Recent mocks -->
       <div class="section-title">Recent Mini Mocks</div>
-      ${allMocks.length === 0 ? `
-        <div class="empty-state">
-          <p>No mini mocks completed yet.</p>
-          <p style="margin-top:0.5rem">Head to any module and try the Mini Mock tab!</p>
-        </div>
-      ` : `
+      ${allMocks.length===0?`<div class="empty-state"><p>No mini mocks completed yet.</p><p style="margin-top:0.5rem">Head to any module and try the Mini Mock tab!</p></div>`:`
         <div class="mocks-list">
-          ${allMocks.slice(0, 10).map(m => {
-            const grade = m.pct >= 80 ? ['🌟 Excellent', 'grade-excellent']
-              : m.pct >= 60 ? ['👍 Good', 'grade-good']
-              : m.pct >= 40 ? ['📚 Developing', 'grade-developing']
-              : ['💪 Keep Practising', 'grade-practise'];
-            const date = new Date(m.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
-            return `
-              <div class="mock-row">
-                <div class="mock-module">${MODULE_META[m.moduleId]?.title || m.moduleId}</div>
-                <div>
-                  <div class="mock-score">${m.score}/${m.total}</div>
-                  <div class="mock-pct">${m.pct}%</div>
-                </div>
-                <span class="mock-grade ${grade[1]}">${grade[0]}</span>
-                <div class="mock-date">${date}</div>
-              </div>
-            `;
+          ${allMocks.slice(0,8).map(m=>{
+            const grade=m.pct>=80?['🌟 Excellent','grade-excellent']:m.pct>=60?['👍 Good','grade-good']:m.pct>=40?['📚 Developing','grade-developing']:['💪 Keep Practising','grade-practise'];
+            const date=new Date(m.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+            return `<div class="mock-row">
+              <div class="mock-module">${MODULE_META[m.moduleId]?.title||m.moduleId}</div>
+              <div><div class="mock-score">${m.score}/${m.total}</div><div class="mock-pct">${m.pct}%</div></div>
+              <span class="mock-grade ${grade[1]}">${grade[0]}</span>
+              <div class="mock-date">${date}</div>
+            </div>`;
           }).join('')}
-        </div>
-      `}
+        </div>`}
     `;
   }
 
-  // ── UPCOMING ASSESSMENT BANNERS ──────────────────────────────────────────────
-  const TIER_COLOURS = {
-    not_started:'#cbd5e1', beginning:'#ef4444', developing:'#f97316',
-    approaching:'#eab308', confident:'#22c55e', mastered:'#3b82f6'
-  };
-  const TIER_LABELS = {
-    not_started:'Not Started', beginning:'Beginning', developing:'Developing',
-    approaching:'Approaching', confident:'Confident', mastered:'Mastered'
-  };
-  const TIER_EMOJIS = { not_started:'⬜', beginning:'🔴', developing:'🟠', approaching:'🟡', confident:'🟢', mastered:'💙' };
+  // ── BY MODULE TAB ─────────────────────────────────────────────────────────────
+  async function renderModules() {
+    const panel=document.getElementById('panel-modules');
 
-  function getTier(score) {
-    if (!score || score === 0) return 'not_started';
-    if (score <= 33) return 'beginning';
-    if (score <= 55) return 'developing';
-    if (score <= 75) return 'approaching';
-    if (score <= 89) return 'confident';
-    return 'mastered';
+    // Determine which modules are relevant: scheduled (current/past) + assessment modules
+    const asmtModules=new Set();
+    upcomingAssessments.forEach(a=>(a.modules||[]).forEach(m=>asmtModules.add(m.toLowerCase())));
+
+    // A module is shown if: has any progress, or is current/past in schedule, or is in an upcoming assessment
+    function isRelevant(id) {
+      const status=scheduleStatuses[id];
+      if (allProgress[id]) return true;
+      if (status==='current'||status==='past') return true;
+      if (asmtModules.has(id)) return true;
+      return false;
+    }
+
+    const subjects=['biology','chemistry','physics'];
+    let html='';
+
+    subjects.forEach(subj=>{
+      const mods=Object.entries(MODULE_META).filter(([id,m])=>m.subject===subj&&isRelevant(id));
+      if (!mods.length) return;
+      const subjectLabel=subj.charAt(0).toUpperCase()+subj.slice(1);
+      const emoji=subj==='biology'?'🧬':subj==='physics'?'⚡':'🧪';
+      html+=`<div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:0.85rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.06em;margin:1.25rem 0 0.5rem">${emoji} ${subjectLabel}</div>`;
+      mods.forEach(([id,meta])=>{
+        const data=allProgress[id]||{};
+        const rag=data.rag||{};
+        const status=scheduleStatuses[id];
+        const isAsmt=asmtModules.has(id);
+        let flag='';
+        if (status==='current') flag=`<span class="schedule-flag flag-current">📗 Studying now</span>`;
+        else if (status==='past') flag=`<span class="schedule-flag flag-past">🔄 Consolidation</span>`;
+        if (isAsmt) flag+=`<span class="schedule-flag flag-asmt" style="margin-left:0.25rem">📋 In upcoming test</span>`;
+
+        // Topic stats
+        const topicEntries=Object.entries(rag);
+        let sumScore=0, topicCount=0, weakCount=0;
+        topicEntries.forEach(([,e])=>{
+          const s=typeof e==='object'?(e?.score??0):0;
+          sumScore+=s; topicCount++;
+          if (['not_started','beginning','developing'].includes(getTier(s))) weakCount++;
+        });
+        const avgScore=topicCount>0?Math.round(sumScore/topicCount):0;
+        const tier=getTier(avgScore);
+        const mocks=data.mocks||[];
+
+        // Topic detail rows
+        const topicRows=topicEntries.map(([topic,e])=>{
+          const s=typeof e==='object'?(e?.score??0):0;
+          const t=getTier(s);
+          const days=e?.lastActivity?Math.floor((Date.now()-new Date(e.lastActivity).getTime())/86400000):null;
+          const decayFlag=days>7&&s>0?`<span style="font-size:0.6rem;color:#c2410c;font-weight:700">📉 ${days}d</span>`:'';
+          return `<div class="topic-expand-row">
+            <span class="topic-name">${topic}</span>
+            <div class="topic-bar-wrap"><div class="topic-bar-fill" style="width:${s}%;background:${TIER_META[t].colour}"></div></div>
+            <span class="topic-tier-label">${TIER_META[t].emoji} ${TIER_META[t].label}</span>
+            ${decayFlag}
+          </div>`;
+        }).join('');
+
+        html+=`<div class="module-expand-card" id="mec-${id}">
+          <div class="module-expand-header" onclick="toggleModuleCard('${id}')">
+            <div class="mec-badge" style="background:${meta.colour}">${id.toUpperCase()}</div>
+            <div style="flex:1">
+              <div class="mec-title">${meta.title} ${flag}</div>
+              <div class="mec-summary">${mocks.length} mock${mocks.length!==1?'s':''} · ${topicCount} topics tracked</div>
+            </div>
+            ${topicCount>0?`<span class="mec-tier" style="color:${TIER_META[tier].colour}">${TIER_META[tier].emoji} ${avgScore}%</span>`:''}
+            ${weakCount>0?`<span style="font-size:0.7rem;font-weight:800;background:#fef2f2;color:#dc2626;padding:0.1rem 0.4rem;border-radius:100px;margin-left:0.25rem">${weakCount} weak</span>`:''}
+            <span class="mec-chevron">▼</span>
+          </div>
+          <div class="module-expand-body">
+            ${topicRows||'<div style="font-size:0.8rem;color:var(--subtext)">No topic data yet — complete some activities to see your scores here.</div>'}
+            <div style="margin-top:0.75rem">
+              <a href="module.html?subject=${subj}&module=${id}" class="btn-take-me">Go to ${id.toUpperCase()} →</a>
+            </div>
+          </div>
+        </div>`;
+      });
+    });
+
+    panel.innerHTML=html||'<div class="empty-state">No relevant modules yet — start revising and your progress will appear here.</div>';
   }
 
-  async function renderAssessmentBanners(classId, progress) {
-    const container = document.getElementById('assessment-banners');
-    if (!container) return;
+  window.toggleModuleCard = (id) => {
+    document.getElementById(`mec-${id}`)?.classList.toggle('open');
+  };
+
+  // ── INSIGHTS TAB ─────────────────────────────────────────────────────────────
+  async function renderInsights() {
+    const panel=document.getElementById('panel-insights');
+
+    // Check cooldown
+    const lastInsight=await getInsightTimestamp(currentUser.uid).catch(()=>null);
+    const cooldownMs=60*60*1000; // 1 hour
+    const onCooldown=lastInsight&&(Date.now()-new Date(lastInsight).getTime())<cooldownMs;
+
+    // Check if enough data for AI
+    let totalAttempts=0;
+    Object.values(allProgress).forEach(data=>{
+      Object.values(data.rag||{}).forEach(e=>{ if(typeof e==='object') totalAttempts+=(e?.attempts||0); });
+    });
+    const hasEnoughData=totalAttempts>=5;
+
+    // Build rule-based bullets
+    const bullets=buildBullets();
+
+    // Suggest alternatives for cooldown message
+    const weakMod=findWeakestModule();
+    const cooldownSuggestion=weakMod
+      ?`Why not try the <strong>Mini Mock</strong> for <strong>${weakMod.toUpperCase()}</strong> or run through some <strong>Flashcards</strong> first?`
+      :'Why not try some Flashcards or a Mini Mock while you wait?';
+
+    panel.innerHTML=`
+      <div class="section-title">💡 Your Insights</div>
+      ${onCooldown?`<div class="insight-cooldown-msg">✅ You've had a recent insight — ${cooldownSuggestion}</div>`:''}
+
+      <!-- Rule-based bullets always shown -->
+      <ul class="insight-bullets">
+        ${bullets.map(b=>`<li class="insight-bullet">
+          <span class="insight-icon">${b.icon}</span>
+          <span class="insight-text">${b.text}</span>
+          ${b.link?`<a href="${b.link}" class="btn-take-me">Take me there →</a>`:''}
+        </li>`).join('')}
+      </ul>
+
+      <!-- AI insight button -->
+      <div class="insight-btn-wrap">
+        ${onCooldown
+          ?`<button class="btn-insight" disabled>✨ Get AI Insight <span style="font-size:0.72rem;opacity:0.7">(recently generated)</span></button>`
+          :`<button class="btn-insight" id="btn-get-insight" onclick="getAIInsight()">✨ Get Personalised AI Insight</button>`}
+      </div>
+      <div id="ai-insight-area"></div>
+    `;
+  }
+
+  function buildBullets() {
+    const bullets=[];
+
+    // Upcoming assessment warning
+    if (upcomingAssessments.length) {
+      const next=upcomingAssessments[0];
+      const days=next.date?Math.ceil((new Date(next.date)-new Date())/86400000):null;
+      const daysText=days===0?'today':days===1?'tomorrow':`in ${days} days`;
+      const weakTopics=[];
+      (next.modules||[]).forEach(m=>{
+        const rag=allProgress[m.toLowerCase()]?.rag||{};
+        const pts=next.partialTopics?.[m];
+        const topics=pts?.length?pts:Object.keys(rag);
+        topics.forEach(t=>{
+          const e=rag[t];
+          const s=typeof e==='object'?(e?.score??0):0;
+          if (['not_started','beginning','developing'].includes(getTier(s))) weakTopics.push(`${m}: ${t}`);
+        });
+      });
+      bullets.push({
+        icon:'📋',
+        text:`Your next assessment is <strong>${next.label}</strong> ${daysText}.${weakTopics.length?` You have <strong>${weakTopics.length} weak topic${weakTopics.length!==1?'s':''}</strong> to focus on.`:''}`,
+        link:`progress.html#upcoming`
+      });
+    }
+
+    // Decaying topics
+    const decaying=[];
+    Object.entries(allProgress).forEach(([id,data])=>{
+      Object.entries(data.rag||{}).forEach(([topic,e])=>{
+        if (typeof e!=='object'||!e.lastActivity) return;
+        const days=Math.floor((Date.now()-new Date(e.lastActivity).getTime())/86400000);
+        if (days>7&&(e.score||0)>30) decaying.push({id,topic,days});
+      });
+    });
+    if (decaying.length) {
+      const worst=decaying.sort((a,b)=>b.days-a.days)[0];
+      bullets.push({icon:'📉',text:`<strong>${worst.topic}</strong> in ${worst.id.toUpperCase()} hasn't been practised in <strong>${worst.days} days</strong> — it may be fading. A quick flashcard run will help keep it fresh!`,link:`module.html?subject=${MODULE_META[worst.id]?.subject}&module=${worst.id}`});
+    }
+
+    // Current module encouragement
+    const current=Object.entries(scheduleStatuses).find(([,s])=>s==='current');
+    if (current) {
+      const [id]=current;
+      const rag=allProgress[id]?.rag||{};
+      const topics=Object.keys(rag).length;
+      bullets.push({icon:'📗',text:`You're currently studying <strong>${MODULE_META[id]?.title}</strong>. ${topics>0?`You've tracked ${topics} topics — keep it up!`:'Head over and start tracking your progress!'}`,link:`module.html?subject=${MODULE_META[id]?.subject}&module=${id}`});
+    }
+
+    // Weakest subject
+    const subjectAvgs={biology:[],chemistry:[],physics:[]};
+    Object.entries(allProgress).forEach(([id,data])=>{
+      const subj=MODULE_META[id]?.subject;
+      if (!subj) return;
+      Object.values(data.rag||{}).forEach(e=>{ const s=typeof e==='object'?(e?.score??0):0; if(s>0) subjectAvgs[subj].push(s); });
+    });
+    const withData=Object.entries(subjectAvgs).filter(([,v])=>v.length>0);
+    if (withData.length>1) {
+      const weakest=withData.sort((a,b)=>avg(a[1])-avg(b[1]))[0];
+      const strongest=withData.sort((a,b)=>avg(b[1])-avg(a[1]))[0];
+      if (weakest[0]!==strongest[0]) {
+        const wLabel=weakest[0].charAt(0).toUpperCase()+weakest[0].slice(1);
+        bullets.push({icon:'⚠️',text:`Your <strong>${wLabel}</strong> scores are your lowest on average. It's worth dedicating a bit more time there — even 10 minutes on the keywords game makes a difference!`,link:`${weakest[0]}.html`});
+      }
+    }
+
+    // Mastered topics celebration
+    let masteredCount=0;
+    Object.values(allProgress).forEach(d=>Object.values(d.rag||{}).forEach(e=>{ if(typeof e==='object'&&(e?.score??0)>=90) masteredCount++; }));
+    if (masteredCount>0) bullets.push({icon:'💙',text:`You've mastered <strong>${masteredCount} topic${masteredCount!==1?'s':''}</strong> — fantastic work! Keep revisiting them so they stay at the top.`});
+
+    if (!bullets.length) bullets.push({icon:'👋',text:'Welcome! Start by trying a Mini Mock or some Flashcards in any module. Your personalised insights will appear here as you build up your scores.',link:'index.html'});
+
+    return bullets;
+  }
+
+  function avg(arr){ return arr.length?Math.round(arr.reduce((a,b)=>a+b,0)/arr.length):0; }
+
+  function findWeakestModule() {
+    let worst=null, worstScore=101;
+    Object.entries(allProgress).forEach(([id,data])=>{
+      const scores=Object.values(data.rag||{}).map(e=>typeof e==='object'?(e?.score??0):0).filter(s=>s>0);
+      if (!scores.length) return;
+      const a=avg(scores);
+      if (a<worstScore){ worstScore=a; worst=id; }
+    });
+    return worst;
+  }
+
+  window.getAIInsight = async () => {
+    const btn=document.getElementById('btn-get-insight');
+    const area=document.getElementById('ai-insight-area');
+    if (!btn||!area) return;
+    btn.disabled=true;
+    area.innerHTML=`<div class="ai-insight-wrap"><div class="ai-loading"><div class="ai-spinner"></div> Generating your personalised insight…</div></div>`;
+
+    // Build context for the AI
+    const modulesSummary=Object.entries(allProgress).map(([id,data])=>{
+      const rag=data.rag||{};
+      const topicSummary=Object.entries(rag).map(([t,e])=>{
+        const s=typeof e==='object'?(e?.score??0):0;
+        return `${t}: ${getTier(s)} (${s}%)`;
+      }).join(', ');
+      const mocks=data.mocks||[];
+      const avgM=mocks.length?Math.round(mocks.reduce((a,m)=>a+m.pct,0)/mocks.length):0;
+      return `${id.toUpperCase()} (${MODULE_META[id]?.title}): mock avg ${avgM}%, topics: ${topicSummary||'none tracked'}`;
+    }).join('\n');
+
+    const asmtContext=upcomingAssessments.map(a=>`${a.subject} ${a.label} on ${a.date} covering ${(a.modules||[]).join(', ')}`).join('; ');
+    const schedContext=Object.entries(scheduleStatuses).filter(([,s])=>s==='current').map(([id])=>`${id.toUpperCase()} (${MODULE_META[id]?.title})`).join(', ');
+
+    const prompt=`You are a friendly, encouraging GCSE science revision assistant for a student at Streetly Academy. Write a short personalised insight paragraph (3-5 sentences) based on their progress data. Be warm and positive — acknowledge effort, give specific actionable advice, and avoid any language that feels like a telling off. Focus on what they can do next, not what they haven't done.
+
+Student progress:
+${modulesSummary||'No activity recorded yet.'}
+
+Currently studying: ${schedContext||'Not set'}
+Upcoming assessments: ${asmtContext||'None set'}
+Year group: Year ${currentProfile?.yearGroup||'unknown'}
+
+Write a helpful, encouraging insight for this student. Mention specific modules or topics by name where relevant. Keep it under 100 words.`;
 
     try {
-      const assessments = await getUpcomingAssessmentsForStudent(classId);
-      if (!assessments.length) return;
+      const res=await fetch('https://api.anthropic.com/v1/messages',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content:prompt}]})
+      });
+      const data=await res.json();
+      const text=data.content?.map(c=>c.text||'').join('')||'Could not generate insight.';
 
-      const html = assessments.map(a => {
-        const daysLeft = a.date ? Math.ceil((new Date(a.date) - new Date()) / 86400000) : null;
-        const dateStr = a.date ? new Date(a.date + 'T12:00:00').toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'long'}) : '';
-        const cdCls = daysLeft !== null ? (daysLeft <= 7 ? 'asmt-cd-soon' : daysLeft <= 21 ? 'asmt-cd-upcoming' : 'asmt-cd-future') : 'asmt-cd-future';
-        const cdText = daysLeft !== null ? (daysLeft === 0 ? '⚠️ Today!' : daysLeft === 1 ? '⚠️ Tomorrow!' : `📅 ${daysLeft} days`) : '';
-        const pillCls = a.subject === 'Biology' ? 'asmt-pill-bio' : a.subject === 'Chemistry' ? 'asmt-pill-chem' : 'asmt-pill-phys';
+      // Save cooldown timestamp
+      await saveInsightTimestamp(currentUser.uid);
 
-        // Build topic RAG rows
-        // Map module IDs to progress keys e.g. Biology B1 → 'b1'
-        const topicRows = [];
-        (a.modules || []).forEach(mod => {
-          const modKey = mod.toLowerCase(); // 'B1' → 'b1'
-          const ragData = progress[modKey]?.rag || {};
-          const specificTopics = a.partialTopics?.[mod];
-          const topicsToShow = specificTopics?.length ? specificTopics : Object.keys(ragData);
-          topicsToShow.forEach(topic => {
-            const entry = ragData[topic];
-            const score = typeof entry === 'object' ? (entry?.score ?? 0) : 0;
-            const tier = getTier(score);
-            const isWeak = ['not_started','beginning','developing'].includes(tier);
-            topicRows.push(`
-              <div class="asmt-topic-row">
-                <span class="asmt-topic-name">${mod}: ${topic}</span>
-                <div class="asmt-topic-bar-wrap"><div class="asmt-topic-bar-fill" style="width:${score}%;background:${TIER_COLOURS[tier]}"></div></div>
-                <span class="asmt-topic-tier">${TIER_EMOJIS[tier]} ${TIER_LABELS[tier]}</span>
-                ${isWeak ? '<span class="asmt-weak-flag">Revise!</span>' : ''}
-              </div>`);
-          });
-        });
-
-        // Sort: weak topics first
-        const weakFirst = topicRows.sort((a,b) => b.includes('Revise!') ? -1 : 1);
-
-        return `<div class="assessment-card" style="border-left: 4px solid ${a.subject==='Biology'?'#16a34a':a.subject==='Chemistry'?'#ca8a04':'#2563eb'}">
-          <div class="assessment-card-header">
-            <span class="asmt-subj-pill ${pillCls}">${a.subject}</span>
-            <span class="asmt-label">${a.label || 'Assessment'}</span>
-            <span class="asmt-date">${dateStr}</span>
-            ${cdText ? `<span class="asmt-countdown ${cdCls}">${cdText}</span>` : ''}
-          </div>
-          ${topicRows.length ? `
-            <div class="asmt-topics-title">Topics covered — your RAG scores</div>
-            ${weakFirst.join('')}
-          ` : `<div style="font-size:0.78rem;color:var(--subtext)">No topic data yet — start revising to see your scores here.</div>`}
-        </div>`;
-      }).join('');
-
-      container.innerHTML = `
-        <div style="max-width:1000px;margin:0 auto;padding:1.5rem 1.5rem 0">
-          <div class="assessment-banner">
-            <div class="assessment-banner-header">
-              <span style="font-size:1.3rem">📋</span>
-              <h2>Upcoming Assessments</h2>
-              <span style="font-size:0.75rem;color:var(--subtext);font-weight:600">${assessments.length} assessment${assessments.length!==1?'s':''} coming up</span>
-            </div>
-            ${html}
-          </div>
-        </div>`;
+      area.innerHTML=`<div class="ai-insight-wrap">
+        <div class="ai-insight-header">✨ Your Personalised Insight</div>
+        <div class="ai-insight-body">${text}</div>
+      </div>`;
     } catch(e) {
-      console.log('[Assessments]', e);
+      area.innerHTML=`<div class="ai-insight-wrap"><div class="ai-insight-body">Sorry, couldn't generate an insight right now. Try again in a moment.</div></div>`;
+      btn.disabled=false;
     }
+  };
+
+  // ── UPCOMING TAB ─────────────────────────────────────────────────────────────
+  function renderUpcoming() {
+    const panel=document.getElementById('panel-upcoming');
+    if (!upcomingAssessments.length) {
+      panel.innerHTML=`<div class="empty-state"><p>No upcoming assessments found for your class.</p><p style="margin-top:0.5rem;font-size:0.82rem">Your teacher sets assessment dates in the teacher dashboard — check back soon.</p></div>`;
+      return;
+    }
+
+    const TIER_COLOURS={not_started:'#cbd5e1',beginning:'#ef4444',developing:'#f97316',approaching:'#eab308',confident:'#22c55e',mastered:'#3b82f6'};
+    const TIER_LABELS={not_started:'Not Started',beginning:'Beginning',developing:'Developing',approaching:'Approaching',confident:'Confident',mastered:'Mastered'};
+    const TIER_EMOJIS={not_started:'⬜',beginning:'🔴',developing:'🟠',approaching:'🟡',confident:'🟢',mastered:'💙'};
+
+    const html=upcomingAssessments.map(a=>{
+      const daysLeft=a.date?Math.ceil((new Date(a.date)-new Date())/86400000):null;
+      const dateStr=a.date?new Date(a.date+'T12:00:00').toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'long'}):'' ;
+      const cdCls=daysLeft!==null?(daysLeft<=7?'asmt-cd-soon':daysLeft<=21?'asmt-cd-upcoming':'asmt-cd-future'):'asmt-cd-future';
+      const cdText=daysLeft!==null?(daysLeft===0?'⚠️ Today!':daysLeft===1?'⚠️ Tomorrow!':`📅 ${daysLeft} days`):'';
+      const pillCls=a.subject==='Biology'?'asmt-pill-bio':a.subject==='Chemistry'?'asmt-pill-chem':'asmt-pill-phys';
+      const borderCol=a.subject==='Biology'?'#16a34a':a.subject==='Chemistry'?'#ca8a04':'#2563eb';
+
+      const topicRows=[];
+      (a.modules||[]).forEach(m=>{
+        const ragData=allProgress[m.toLowerCase()]?.rag||{};
+        const specificTopics=a.partialTopics?.[m];
+        const topicsToShow=specificTopics?.length?specificTopics:Object.keys(ragData);
+        topicsToShow.forEach(topic=>{
+          const entry=ragData[topic];
+          const score=typeof entry==='object'?(entry?.score??0):0;
+          const tier=getTier(score);
+          const isWeak=['not_started','beginning','developing'].includes(tier);
+          topicRows.push(`<div class="asmt-topic-row" style="display:flex;align-items:center;gap:0.75rem;padding:0.3rem 0;border-bottom:1px solid #f1f5f9">
+            <span style="flex:1;font-size:0.8rem;font-weight:600">${m}: ${topic}</span>
+            <div style="width:120px;height:7px;background:var(--border);border-radius:100px;overflow:hidden;flex-shrink:0"><div style="height:100%;width:${score}%;background:${TIER_COLOURS[tier]};border-radius:100px"></div></div>
+            <span style="font-size:0.68rem;font-weight:700;color:var(--subtext);width:80px;text-align:right">${TIER_EMOJIS[tier]} ${TIER_LABELS[tier]}</span>
+            ${isWeak?'<span style="font-size:0.65rem;font-weight:800;background:#fef2f2;color:#dc2626;padding:0.08rem 0.35rem;border-radius:100px">Revise!</span>':''}
+          </div>`);
+        });
+      });
+
+      return `<div style="background:white;border:1.5px solid var(--border);border-left:4px solid ${borderCol};border-radius:14px;padding:1.1rem 1.25rem;margin-bottom:0.85rem">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;flex-wrap:wrap">
+          <span class="asmt-subj-pill ${pillCls}">${a.subject}</span>
+          <span style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;color:var(--navy);flex:1">${a.label||'Assessment'}</span>
+          <span style="font-size:0.75rem;color:var(--subtext)">${dateStr}</span>
+          ${cdText?`<span class="asmt-countdown ${cdCls}">${cdText}</span>`:''}
+        </div>
+        ${topicRows.length?`
+          <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.72rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem">Topics covered — your RAG scores</div>
+          ${topicRows.join('')}
+        `:`<div style="font-size:0.78rem;color:var(--subtext)">Start revising these modules to see your topic scores here.</div>`}
+        <div style="margin-top:0.75rem">
+          ${(a.modules||[]).map(m=>`<a href="module.html?subject=${a.subject.toLowerCase()}&module=${m.toLowerCase()}" class="btn-take-me" style="margin-right:0.4rem;margin-top:0.3rem">Revise ${m} →</a>`).join('')}
+        </div>
+      </div>`;
+    }).join('');
+
+    panel.innerHTML=`<div class="section-title">📋 Upcoming Assessments</div>${html}`;
   }
 
-  window.handleSignOut = async () => {
-    await signOutUser();
-    window.location.href = 'index.html';
-  };
+  window.handleSignOut = async () => { await signOutUser(); window.location.href='index.html'; };
 
   window.saveTarget = async () => {
     if (!currentUser) return;
-    const val = document.getElementById('exam-target').value;
+    const val=document.getElementById('exam-target').value;
     await updateExamTarget(currentUser.uid, val, null);
-    const saved = document.getElementById('target-saved');
-    saved.style.display = 'inline';
-    setTimeout(() => { saved.style.display = 'none'; }, 2000);
-  };
-</script>
-
-<!-- SETTINGS OVERLAY + DRAWER -->
-<div class="settings-overlay hidden" id="settings-overlay" onclick="closeSettings()"></div>
-<div class="settings-drawer hidden" id="settings-drawer">
-  <div class="drawer-header">
-    <h2>⚙️ Settings</h2>
-    <button class="drawer-close" onclick="closeSettings()">✕</button>
-  </div>
-  <div class="drawer-body">
-    <div class="drawer-section-title">My Class</div>
-    <div class="current-class-badge" id="drawer-class-display">—</div>
-    <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--subtext);margin-bottom:0.6rem">Change year group</div>
-    <div class="year-grid-s" id="drawer-year-grid">
-      <button class="year-btn-s" onclick="selectYearDrawer(9)">Year 9</button>
-      <button class="year-btn-s" onclick="selectYearDrawer(10)">Year 10</button>
-      <button class="year-btn-s" onclick="selectYearDrawer(11)">Year 11</button>
-    </div>
-    <div id="drawer-class-step" style="display:none">
-      <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--subtext);margin-bottom:0.6rem">Select class</div>
-      <div class="class-grid-s" id="drawer-class-grid"></div>
-    </div>
-    <button class="btn-drawer-confirm" id="drawer-confirm-btn" disabled onclick="confirmClassDrawer()">Update Class</button>
-    <hr class="drawer-divider">
-    <div class="drawer-section-title">Account</div>
-    <button onclick="handleSignOut()" style="width:100%;background:none;border:1.5px solid var(--border);color:var(--subtext);font-family:'Nunito',sans-serif;font-weight:700;font-size:0.8rem;padding:0.5rem;border-radius:8px;cursor:pointer;margin-top:0.25rem">Sign out</button>
-  </div>
-</div>
-
-<script type="module">
-  import { getUserProfile, saveClass } from './firebase.js';
-
-  const CLASSES = {
-    9:  ['9S1','9S2','9S3','9S4','9S5','9N1','9N2','9N3','9N4','9N5'],
-    10: ['10S1','10S2','10S3','10S4','10S5','10N1','10N2','10N3','10N4','10N5'],
-    11: ['11S1','11S2','11S3','11S4','11S5','11N1','11N2','11N3','11N4','11N5'],
-  };
-
-  let selectedYearDrawer = null;
-  let selectedClassDrawer = null;
-
-  // Wait for currentUser set by main script, then populate class
-  const waitForUser = setInterval(async () => {
-    if (!window.currentUser) return;
-    clearInterval(waitForUser);
-    const profile = await getUserProfile(window.currentUser.uid);
-    document.getElementById('drawer-class-display').textContent = profile?.class || 'Not set';
-  }, 300);
-
-  window.openSettings = () => {
-    document.getElementById('settings-overlay').classList.remove('hidden');
-    document.getElementById('settings-drawer').classList.remove('hidden');
-    selectedYearDrawer = null;
-    selectedClassDrawer = null;
-    document.getElementById('drawer-class-step').style.display = 'none';
-    document.getElementById('drawer-confirm-btn').disabled = true;
-    document.querySelectorAll('.year-btn-s').forEach(b => b.classList.remove('selected'));
-  };
-
-  window.closeSettings = () => {
-    document.getElementById('settings-overlay').classList.add('hidden');
-    document.getElementById('settings-drawer').classList.add('hidden');
-  };
-
-  window.selectYearDrawer = (year) => {
-    selectedYearDrawer = year;
-    selectedClassDrawer = null;
-    document.querySelectorAll('.year-btn-s').forEach(b => b.classList.remove('selected'));
-    event.target.classList.add('selected');
-    const grid = document.getElementById('drawer-class-grid');
-    grid.innerHTML = CLASSES[year].map(cls =>
-      `<button class="class-btn-s" onclick="selectClassDrawer('${cls}')">${cls}</button>`
-    ).join('');
-    document.getElementById('drawer-class-step').style.display = 'block';
-    document.getElementById('drawer-confirm-btn').disabled = true;
-  };
-
-  window.selectClassDrawer = (cls) => {
-    selectedClassDrawer = cls;
-    document.querySelectorAll('.class-btn-s').forEach(b => b.classList.remove('selected'));
-    event.target.classList.add('selected');
-    document.getElementById('drawer-confirm-btn').disabled = false;
-  };
-
-  window.confirmClassDrawer = async () => {
-    if (!window.currentUser || !selectedClassDrawer) return;
-    await saveClass(window.currentUser.uid, selectedClassDrawer);
-    document.getElementById('drawer-class-display').textContent = selectedClassDrawer;
-    closeSettings();
-    location.reload();
+    const saved=document.getElementById('target-saved');
+    saved.style.display='inline';
+    setTimeout(()=>{saved.style.display='none';},2000);
   };
 </script>
 </body>

@@ -563,47 +563,19 @@ function _academicMonthIndex() {
   return m + 4;            // Jan=4, Feb=5, Mar=6, Apr=7, May=8, Jun=9, Jul=10
 }
 
-// ── ASSESSMENT DATES ──────────────────────────────────────────────────────────
-// Stored at: assessmentDates/{classId}/{subject}/{assessmentId}
-// Shape: { label, date, scheduleLink, modules[], partialTopics{}, createdBy, updatedAt }
-// Persistent — never auto-deleted, just edited.
+// ── INSIGHT COOLDOWN ──────────────────────────────────────────────────────────
+// Stored on the user profile so it persists across devices.
+// lastInsightAt: ISO timestamp string
 
-export async function saveAssessmentDate(classId, subject, assessmentId, data) {
-  await setDoc(
-    doc(db, 'assessmentDates', classId, subject, assessmentId),
-    { ...data, updatedAt: serverTimestamp() },
-    { merge: false }
-  );
+export async function saveInsightTimestamp(uid) {
+  await setDoc(doc(db, 'users', uid), {
+    lastInsightAt: new Date().toISOString()
+  }, { merge: true });
 }
 
-export async function getAssessmentDates(classId, subject) {
-  const snap = await getDocs(collection(db, 'assessmentDates', classId, subject));
-  return snap.docs.map(d => ({ id: d.id, ...d.data() }))
-    .sort((a, b) => (a.date || '').localeCompare(b.date || ''));
-}
-
-export async function deleteAssessmentDate(classId, subject, assessmentId) {
-  await deleteDoc(doc(db, 'assessmentDates', classId, subject, assessmentId));
-}
-
-// Get all upcoming assessments for a student (by their class, all subjects)
-export async function getUpcomingAssessmentsForStudent(classId) {
-  if (!classId) return [];
-  const subjects = ['Biology', 'Chemistry', 'Physics'];
-  const today = new Date().toISOString().split('T')[0];
-  const results = [];
-  await Promise.all(subjects.map(async subject => {
-    try {
-      const snap = await getDocs(collection(db, 'assessmentDates', classId, subject));
-      snap.docs.forEach(d => {
-        const data = d.data();
-        if (data.date && data.date >= today) {
-          results.push({ id: d.id, subject, ...data });
-        }
-      });
-    } catch(e) { /* no assessments for this subject */ }
-  }));
-  return results.sort((a, b) => (a.date || '').localeCompare(b.date || ''));
+export async function getInsightTimestamp(uid) {
+  const snap = await getDoc(doc(db, 'users', uid));
+  return snap.exists() ? (snap.data().lastInsightAt || null) : null;
 }
 
 export { auth, db };
