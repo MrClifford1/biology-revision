@@ -1095,6 +1095,12 @@ function showFCResults() {
     <div style="font-size:2.5rem;font-weight:900;font-family:'Nunito',sans-serif;color:var(--accent)">${pct}%</div>
     <div>✅ Correct: <strong>${fcCorrect}</strong> &nbsp;&nbsp; ❌ Wrong: <strong>${fcWrong}</strong></div>
     <div style="margin-top:0.5rem;font-size:0.8rem">Topic scores updated. Next round will pick 5 new weighted cards.</div>`;
+  // Log flashcard round to activity history
+  window._logActivity({
+    type: 'flashcard',
+    score: fcCorrect, total,  pct,
+    topics: [],
+  });
   showRAG();
 }
 
@@ -1326,6 +1332,7 @@ function submitGame() {
 
   // Feed into RAG — only real pairs
   if (window._currentUser) {
+    const topicResults = [];
     gamePairs.forEach(pair => {
       const placed = currentPlacements[pair.word];
       const isCorrect = placed === pair.word;
@@ -1334,10 +1341,19 @@ function submitGame() {
         const topicName = meta.topics[idx];
         const updated = computeNewTopicScore(ragState[topicName] || null, isCorrect ? 100 : 0, 'words');
         ragState[topicName] = updated;
+        topicResults.push({ topic: topicName, correct: isCorrect });
       }
     });
     renderChecklist(ragState);
     if (window._saveRAG) window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState).catch(()=>{});
+    // Log to activity history
+    const correct = topicResults.filter(t=>t.correct).length;
+    window._logActivity({
+      type: 'words',
+      score: correct, total: topicResults.length,
+      pct: topicResults.length > 0 ? Math.round((correct/topicResults.length)*100) : 0,
+      topics: topicResults.map(t=>({ topic: t.topic, awarded: t.correct ? 1 : 0, marks: 1 })),
+    });
   }
 }
 
@@ -1665,7 +1681,7 @@ loadQuestions();
 
 <!-- ── FIREBASE ───────────────────────────────────────────────────────────────── -->
 <script type="module">
-  import { onAuthChange, saveRAG, loadRAG, saveMockScore, getModuleScheduleStatus, getUserProfile } from './firebase.js';
+  import { onAuthChange, saveRAG, loadRAG, saveMockScore, getModuleScheduleStatus, getUserProfile, logActivity } from './firebase.js';
 
   window._currentUser = null;
   window._pendingRAGUpdates = [];
@@ -1676,6 +1692,17 @@ loadQuestions();
   };
   window._saveRAG = async (uid, moduleKey, state) => {
     try { await saveRAG(uid, moduleKey, state); } catch(e) {}
+  };
+  window._logActivity = async (entry) => {
+    try {
+      if (!window._currentUser) return;
+      await logActivity(window._currentUser.uid, {
+        subjectId: window._moduleMeta?.subject || '',
+        moduleId: window._moduleMeta?.id || '',
+        moduleTitle: window._moduleMeta?.title || '',
+        ...entry,
+      });
+    } catch(e) { /* log failure is non-critical */ }
   };
 
   onAuthChange(async user => {
@@ -1742,6 +1769,15 @@ loadQuestions();
       const _sp = new URLSearchParams(window.location.search);
       const _sid = _sp.get('subject') || 'biology', _mid = _sp.get('module') || 'b1';
       await saveMockScore(window._currentUser.uid, `${_sid}-${_mid}`, totalAwarded, totalAvail, qs);
+
+      // Log to activity history
+      const pct = totalAvail > 0 ? Math.round((totalAwarded / totalAvail) * 100) : 0;
+      window._logActivity({
+        type: 'mock',
+        score: totalAwarded, total: totalAvail, pct,
+        topics: qs.map(q => ({ topic: q.topic, marks: q.marks, awarded: q.awarded })),
+      });
+
       await reloadRAGFromHistory(window._currentUser.uid);
     } catch(e) { console.log('Could not save score:', e); }
   };

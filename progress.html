@@ -360,6 +360,34 @@
     .asmt-cd-upcoming { background: #fef9c3; color: #713f12; border: 1.5px solid #fde68a; }
     .asmt-cd-future { background: #f1f5f9; color: #475569; border: 1.5px solid #cbd5e1; }
 
+    /* ── HISTORY ─────────────────────────────────────────────────────────────── */
+    .session-group { margin-bottom: 1.5rem; }
+    .session-date-label { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.78rem; color: var(--subtext); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
+    .history-row { background: white; border: 1.5px solid var(--border); border-radius: 10px; padding: 0.75rem 1rem; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; cursor: pointer; transition: border-color 0.15s; }
+    .history-row:hover { border-color: var(--navy); }
+    .history-type-badge { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.65rem; padding: 0.18rem 0.55rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0; }
+    .htype-mock     { background: #dbeafe; color: #1e40af; }
+    .htype-paper    { background: #ede9fe; color: #5b21b6; }
+    .htype-words    { background: #dcfce7; color: #14532d; }
+    .htype-flashcard{ background: #fef9c3; color: #713f12; }
+    .history-mod { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.82rem; }
+    .history-score { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1rem; }
+    .history-pct { font-size: 0.72rem; color: var(--subtext); }
+    .history-time { margin-left: auto; font-size: 0.72rem; color: var(--subtext); }
+    .btn-load-more { display: block; width: 100%; background: white; border: 1.5px solid var(--border); border-radius: 10px; padding: 0.65rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.82rem; color: var(--subtext); cursor: pointer; text-align: center; margin-top: 0.5rem; }
+    .btn-load-more:hover { border-color: var(--navy); color: var(--navy); }
+    /* Review modal */
+    .review-overlay { position: fixed; inset: 0; background: rgba(15,29,61,0.5); display: flex; align-items: center; justify-content: center; z-index: 200; padding: 1rem; }
+    .review-modal { background: white; border-radius: 16px; padding: 1.5rem; width: 100%; max-width: 520px; max-height: 85vh; overflow-y: auto; }
+    .review-modal h3 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1rem; color: var(--navy); margin-bottom: 1rem; }
+    .review-topic-row { display: flex; align-items: center; gap: 0.75rem; padding: 0.4rem 0; border-bottom: 1px solid #f1f5f9; }
+    .review-topic-row:last-child { border-bottom: none; }
+    .review-topic-name { font-size: 0.82rem; flex: 1; }
+    .review-marks { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.85rem; }
+    .review-correct { color: #16a34a; }
+    .review-wrong   { color: #dc2626; }
+    .review-partial { color: #d97706; }
+
     /* ── SETTINGS DRAWER ────────────────────────────────────────────────────── */
     .settings-overlay { position:fixed;inset:0;background:rgba(15,29,61,0.5);z-index:900;backdrop-filter:blur(2px); }
     .settings-overlay.hidden { display:none; }
@@ -414,6 +442,7 @@
     <button class="progress-tab" onclick="switchTab('modules',this)">📚 By Module</button>
     <button class="progress-tab" onclick="switchTab('insights',this)">💡 Insights</button>
     <button class="progress-tab" onclick="switchTab('upcoming',this)">📅 Upcoming</button>
+    <button class="progress-tab" onclick="switchTab('history',this)">🕐 History</button>
   </div>
 </div>
 
@@ -437,12 +466,17 @@
   <div class="loading-state" id="upcoming-loading">Loading upcoming assessments...</div>
 </div>
 
+<!-- HISTORY TAB -->
+<div class="progress-panel" id="panel-history">
+  <div class="loading-state" id="history-loading">Loading activity history...</div>
+</div>
+
 <script type="module">
   import {
     onAuthChange, signOutUser, getUserProfile, updateExamTarget,
     getAllProgress, saveClass, getUserRole,
     getUpcomingAssessmentsForStudent, getModuleScheduleStatus,
-    saveInsightTimestamp, getInsightTimestamp
+    saveInsightTimestamp, getInsightTimestamp, getActivityLog
   } from './firebase.js';
 
   const MODULE_META = {
@@ -486,7 +520,13 @@
     if (name==='modules')  renderModules();
     if (name==='insights') renderInsights();
     if (name==='upcoming') renderUpcoming();
+    if (name==='history')  renderHistory();
   }
+
+  // History state
+  let _historyLastDoc = null;
+  let _historyHasMore = false;
+  let _historyLoaded = false;
 
   // ── AUTH & DATA LOAD ─────────────────────────────────────────────────────────
   onAuthChange(async user => {
@@ -987,6 +1027,147 @@ Write a helpful, encouraging insight for this student. Mention specific modules 
     panel.innerHTML=`<div class="section-title">📋 Upcoming Assessments</div>${html}`;
   }
 
+  // ── HISTORY TAB ───────────────────────────────────────────────────────────────
+  const TYPE_LABELS = { mock:'Mini Mock', paper:'Practice Paper', words:'Keywords Game', flashcard:'Flashcards' };
+  const TYPE_CLASSES = { mock:'htype-mock', paper:'htype-paper', words:'htype-words', flashcard:'htype-flashcard' };
+
+  function groupIntoSessions(entries) {
+    // Group entries within 30 minutes of each other as one session
+    const sessions = [];
+    let current = null;
+    entries.forEach(e => {
+      const ts = new Date(e.timestamp).getTime();
+      if (!current || ts < current.end - 30*60*1000) {
+        current = { date: new Date(e.timestamp), entries: [e], end: ts };
+        sessions.push(current);
+      } else {
+        current.entries.push(e);
+        current.end = Math.max(current.end, ts);
+      }
+    });
+    return sessions;
+  }
+
+  function formatTime(ts) {
+    const d = new Date(ts);
+    const now = new Date();
+    const diffDays = Math.floor((now - d) / 86400000);
+    const time = d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+    if (diffDays === 0) return `Today ${time}`;
+    if (diffDays === 1) return `Yesterday ${time}`;
+    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }) + ` ${time}`;
+  }
+
+  function historyEntryHTML(e) {
+    const typeCls = TYPE_CLASSES[e.type] || 'htype-mock';
+    const typeLabel = TYPE_LABELS[e.type] || e.type;
+    const modLabel = e.moduleTitle || (e.moduleId||'').toUpperCase();
+    const hasTopics = e.topics?.length > 0;
+    return `<div class="history-row" onclick="openReview('${e.id}')">
+      <span class="history-type-badge ${typeCls}">${typeLabel}</span>
+      <div>
+        <div class="history-mod">${modLabel}</div>
+        ${e.subjectId ? `<div style="font-size:0.7rem;color:var(--subtext)">${e.subjectId.charAt(0).toUpperCase()+e.subjectId.slice(1)}</div>` : ''}
+      </div>
+      <div style="margin-left:auto;text-align:right">
+        <div class="history-score" style="color:${e.pct>=70?'#16a34a':e.pct>=40?'#d97706':'#dc2626'}">${e.score ?? ''}${e.total ? `/${e.total}` : ''}</div>
+        <div class="history-pct">${e.pct != null ? e.pct+'%' : ''}</div>
+      </div>
+      <div class="history-time">${formatTime(e.timestamp)}</div>
+      ${hasTopics ? `<span style="font-size:0.68rem;background:#f0f4ff;color:var(--navy);border-radius:6px;padding:0.1rem 0.4rem;font-weight:700">Review →</span>` : ''}
+    </div>`;
+  }
+
+  async function renderHistory(loadMore = false) {
+    const panel = document.getElementById('panel-history');
+    if (!loadMore) {
+      panel.innerHTML = '<div class="loading-state">Loading activity history...</div>';
+      _historyLastDoc = null;
+      _historyLoaded = false;
+    }
+
+    try {
+      const { entries, hasMore, lastDoc } = await getActivityLog(currentUser.uid, 30, loadMore ? _historyLastDoc : null);
+      _historyLastDoc = lastDoc;
+      _historyHasMore = hasMore;
+
+      if (!loadMore && !entries.length) {
+        panel.innerHTML = `<div class="empty-state"><p>No activity recorded yet.</p><p style="margin-top:0.5rem;font-size:0.82rem">Complete a Mini Mock, Keywords Game or Flashcards round and it will appear here.</p></div>`;
+        return;
+      }
+
+      // Store entries for review lookup
+      if (!loadMore) window._historyCache = {};
+      entries.forEach(e => { window._historyCache[e.id] = e; });
+
+      // Group into sessions
+      const sessions = groupIntoSessions(entries);
+
+      const html = sessions.map(session => {
+        const dateLabel = session.date.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+        const rowsHtml = session.entries.map(historyEntryHTML).join('');
+        return `<div class="session-group">
+          <div class="session-date-label">${dateLabel}</div>
+          ${rowsHtml}
+        </div>`;
+      }).join('');
+
+      if (loadMore) {
+        // Append before load-more button
+        const btn = document.getElementById('history-load-more');
+        if (btn) btn.insertAdjacentHTML('beforebegin', html);
+      } else {
+        panel.innerHTML = `
+          <div class="section-title">🕐 Activity History</div>
+          ${html}
+          ${hasMore ? `<button class="btn-load-more" id="history-load-more" onclick="renderHistory(true)">Load more →</button>` : ''}
+        `;
+      }
+
+      // Update load-more button
+      if (loadMore) {
+        const btn = document.getElementById('history-load-more');
+        if (!hasMore && btn) btn.remove();
+      }
+    } catch(e) {
+      panel.innerHTML = '<div class="empty-state">Could not load history. Try again.</div>';
+      console.log('[History]', e);
+    }
+  }
+
+  window.openReview = (id) => {
+    const e = window._historyCache?.[id];
+    if (!e || !e.topics?.length) return;
+    const typeLabel = TYPE_LABELS[e.type] || e.type;
+    const modLabel = e.moduleTitle || (e.moduleId||'').toUpperCase();
+    const dateStr = new Date(e.timestamp).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+
+    const topicRows = e.topics.map(t => {
+      const pct = t.marks > 0 ? t.awarded / t.marks : (t.correct ? 1 : 0);
+      const cls = pct >= 1 ? 'review-correct' : pct > 0 ? 'review-partial' : 'review-wrong';
+      const icon = pct >= 1 ? '✅' : pct > 0 ? '🟡' : '❌';
+      return `<div class="review-topic-row">
+        <span class="review-topic-name">${t.topic}</span>
+        <span class="review-marks ${cls}">${icon} ${t.awarded ?? (t.correct?1:0)}/${t.marks ?? 1}</span>
+      </div>`;
+    }).join('');
+
+    document.getElementById('review-modal-content').innerHTML = `
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
+        <h3>${typeLabel} — ${modLabel}</h3>
+        <button onclick="closeReview()" style="background:none;border:none;cursor:pointer;font-size:1.3rem;color:var(--subtext)">✕</button>
+      </div>
+      <div style="font-size:0.78rem;color:var(--subtext);margin-bottom:1rem">${dateStr} · Score: <strong>${e.score ?? ''}${e.total ? '/'+e.total : ''} (${e.pct ?? ''}%)</strong></div>
+      ${topicRows}
+      <div style="margin-top:1rem;text-align:center">
+        <a href="module.html?subject=${e.subjectId}&module=${e.moduleId}" class="btn-take-me">Go to ${(e.moduleId||'').toUpperCase()} to revise →</a>
+      </div>
+    `;
+    document.getElementById('review-overlay').style.display = 'flex';
+  };
+
+  window.closeReview = () => { document.getElementById('review-overlay').style.display = 'none'; };
+
   window.handleSignOut = async () => { await signOutUser(); window.location.href='index.html'; };
 
   window.saveTarget = async () => {
@@ -996,6 +1177,101 @@ Write a helpful, encouraging insight for this student. Mention specific modules 
     const saved=document.getElementById('target-saved');
     saved.style.display='inline';
     setTimeout(()=>{saved.style.display='none';},2000);
+  };
+</script>
+
+<!-- REVIEW MODAL -->
+<div id="review-overlay" class="review-overlay" style="display:none" onclick="if(event.target===this)closeReview()">
+  <div class="review-modal" id="review-modal-content"></div>
+</div>
+
+<!-- SETTINGS OVERLAY + DRAWER -->
+<div class="settings-overlay hidden" id="settings-overlay" onclick="closeSettings()"></div>
+<div class="settings-drawer hidden" id="settings-drawer">
+  <div class="drawer-header">
+    <h2>⚙️ Settings</h2>
+    <button class="drawer-close" onclick="closeSettings()">✕</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-section-title">My Class</div>
+    <div class="current-class-badge" id="drawer-class-display">—</div>
+    <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--subtext);margin-bottom:0.6rem">Change year group</div>
+    <div class="year-grid-s" id="drawer-year-grid">
+      <button class="year-btn-s" onclick="selectYearDrawer(9)">Year 9</button>
+      <button class="year-btn-s" onclick="selectYearDrawer(10)">Year 10</button>
+      <button class="year-btn-s" onclick="selectYearDrawer(11)">Year 11</button>
+    </div>
+    <div id="drawer-class-step" style="display:none">
+      <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--subtext);margin-bottom:0.6rem">Select class</div>
+      <div class="class-grid-s" id="drawer-class-grid"></div>
+    </div>
+    <button class="btn-drawer-confirm" id="drawer-confirm-btn" disabled onclick="confirmClassDrawer()">Update Class</button>
+    <hr class="drawer-divider">
+    <div class="drawer-section-title">Account</div>
+    <button onclick="handleSignOut()" style="width:100%;background:none;border:1.5px solid var(--border);color:var(--subtext);font-family:'Nunito',sans-serif;font-weight:700;font-size:0.8rem;padding:0.5rem;border-radius:8px;cursor:pointer;margin-top:0.25rem">Sign out</button>
+  </div>
+</div>
+
+<script type="module">
+  import { getUserProfile, saveClass } from './firebase.js';
+
+  const CLASSES = {
+    9:  ['9S1','9S2','9S3','9S4','9S5','9N1','9N2','9N3','9N4','9N5'],
+    10: ['10S1','10S2','10S3','10S4','10S5','10N1','10N2','10N3','10N4','10N5'],
+    11: ['11S1','11S2','11S3','11S4','11S5','11N1','11N2','11N3','11N4','11N5'],
+  };
+
+  let selectedYearDrawer = null;
+  let selectedClassDrawer = null;
+
+  const waitForUser = setInterval(async () => {
+    if (!window.currentUser) return;
+    clearInterval(waitForUser);
+    const profile = await getUserProfile(window.currentUser.uid);
+    document.getElementById('drawer-class-display').textContent = profile?.class || 'Not set';
+  }, 300);
+
+  window.openSettings = () => {
+    document.getElementById('settings-overlay').classList.remove('hidden');
+    document.getElementById('settings-drawer').classList.remove('hidden');
+    selectedYearDrawer = null;
+    selectedClassDrawer = null;
+    document.getElementById('drawer-class-step').style.display = 'none';
+    document.getElementById('drawer-confirm-btn').disabled = true;
+    document.querySelectorAll('.year-btn-s').forEach(b => b.classList.remove('selected'));
+  };
+
+  window.closeSettings = () => {
+    document.getElementById('settings-overlay').classList.add('hidden');
+    document.getElementById('settings-drawer').classList.add('hidden');
+  };
+
+  window.selectYearDrawer = (year) => {
+    selectedYearDrawer = year;
+    selectedClassDrawer = null;
+    document.querySelectorAll('.year-btn-s').forEach(b => b.classList.remove('selected'));
+    event.target.classList.add('selected');
+    const grid = document.getElementById('drawer-class-grid');
+    grid.innerHTML = CLASSES[year].map(cls =>
+      `<button class="class-btn-s" onclick="selectClassDrawer('${cls}')">${cls}</button>`
+    ).join('');
+    document.getElementById('drawer-class-step').style.display = 'block';
+    document.getElementById('drawer-confirm-btn').disabled = true;
+  };
+
+  window.selectClassDrawer = (cls) => {
+    selectedClassDrawer = cls;
+    document.querySelectorAll('.class-btn-s').forEach(b => b.classList.remove('selected'));
+    event.target.classList.add('selected');
+    document.getElementById('drawer-confirm-btn').disabled = false;
+  };
+
+  window.confirmClassDrawer = async () => {
+    if (!window.currentUser || !selectedClassDrawer) return;
+    await saveClass(window.currentUser.uid, selectedClassDrawer);
+    document.getElementById('drawer-class-display').textContent = selectedClassDrawer;
+    closeSettings();
+    location.reload();
   };
 </script>
 </body>

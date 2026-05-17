@@ -1,7 +1,7 @@
 // Firebase configuration for Streetly Science Hub
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, serverTimestamp, collection, getDocs, deleteDoc, query, where } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, serverTimestamp, collection, getDocs, deleteDoc, query, orderBy, limit, startAfter } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBNVM9Dx8vAYOtt79BVwKK1u3St5BsIxsY",
@@ -563,7 +563,35 @@ function _academicMonthIndex() {
   return m + 4;            // Jan=4, Feb=5, Mar=6, Apr=7, May=8, Jun=9, Jul=10
 }
 
-// ── INSIGHT COOLDOWN ──────────────────────────────────────────────────────────
+// ── ACTIVITY LOG ──────────────────────────────────────────────────────────────
+// Stored at: users/{uid}/activityLog/{autoId}
+// Shape: { type, subjectId, moduleId, moduleTitle, score, total, pct,
+//          topics:[{topic, score, awarded, marks}], timestamp }
+// Unlimited storage — display layer groups into sessions and paginates.
+
+export async function logActivity(uid, entry) {
+  // entry: { type:'mock'|'paper'|'words'|'flashcard', subjectId, moduleId,
+  //          moduleTitle, score, total, pct, topics:[...] }
+  const ref = doc(collection(db, 'users', uid, 'activityLog'));
+  await setDoc(ref, {
+    ...entry,
+    timestamp: new Date().toISOString(),
+    savedAt: serverTimestamp(),
+  });
+}
+
+// Load activity log — ordered by timestamp desc, paginated
+// Returns { entries: [...], hasMore: bool, lastDoc }
+export async function getActivityLog(uid, limitCount = 30, startAfterDoc = null) {
+  let constraints = [orderBy('timestamp', 'desc'), limit(limitCount + 1)];
+  if (startAfterDoc) constraints.push(startAfter(startAfterDoc));
+  const q = query(collection(db, 'users', uid, 'activityLog'), ...constraints);
+  const snap = await getDocs(q);
+  const docs = snap.docs;
+  const hasMore = docs.length > limitCount;
+  const entries = docs.slice(0, limitCount).map(d => ({ id: d.id, _doc: d, ...d.data() }));
+  return { entries, hasMore, lastDoc: entries[entries.length - 1]?._doc || null };
+}
 // Stored on the user profile so it persists across devices.
 // lastInsightAt: ISO timestamp string
 
