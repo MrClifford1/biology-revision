@@ -424,8 +424,13 @@ export async function deleteAssignment(assignmentId) {
 // Student completion tracking — stored at assignments/{id}/completions/{uid}
 export async function saveAssignmentCompletion(assignmentId, uid, data) {
   const ref = doc(db, 'assignments', assignmentId, 'completions', uid);
-  const snap = await getDoc(ref);
-  const existing = snap.exists() ? snap.data() : {};
+  // Try to read existing record to increment attempts — if read fails (permissions),
+  // fall back to merge which will still increment on subsequent saves
+  let existing = {};
+  try {
+    const snap = await getDoc(ref);
+    if (snap.exists()) existing = snap.data();
+  } catch(e) { /* read not permitted — write anyway, attempts will be set to 1 */ }
   const attempts = (existing.attempts || 0) + 1;
   const bestScore = Math.max(existing.bestScore || 0, data.score || 0);
   const bestPct = Math.max(existing.bestPct || 0, data.pct || 0);
@@ -433,7 +438,7 @@ export async function saveAssignmentCompletion(assignmentId, uid, data) {
     ...data, attempts, bestScore, bestPct,
     lastAttempt: new Date().toISOString(),
     updatedAt: serverTimestamp(),
-  }, { merge: true });
+  });
 }
 
 export async function getAssignmentCompletions(assignmentId) {
