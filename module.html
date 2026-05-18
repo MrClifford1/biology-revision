@@ -95,7 +95,28 @@
     .schedule-future .content-wrapper { opacity: 0.6; }
 
     /* ── REVISE CARDS ────────────────────────────────────────────────────────── */
-    .revise-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.1rem; }
+    .revise-topic-row { display: flex; align-items: center; gap: 0.75rem; padding: 0.85rem 1rem; background: white; border: 1.5px solid var(--border); border-radius: 12px; margin-bottom: 0.5rem; transition: border-color 0.15s; position: relative; }
+    .revise-topic-row:hover { border-color: var(--accent); }
+    .revise-topic-name { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.9rem; flex: 1; }
+    .revise-topic-rag { font-size: 0.72rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 100px; flex-shrink: 0; }
+    .revise-topic-actions { display: flex; gap: 0.4rem; opacity: 0; transition: opacity 0.15s; flex-shrink: 0; }
+    .revise-topic-row:hover .revise-topic-actions { opacity: 1; }
+    .btn-revise-read { background: var(--accent); color: white; border: none; border-radius: 8px; padding: 0.35rem 0.75rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.75rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem; transition: opacity 0.15s; }
+    .btn-revise-read:hover { opacity: 0.85; }
+    .btn-revise-watch { background: #ef4444; color: white; border: none; border-radius: 8px; padding: 0.35rem 0.75rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.75rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem; transition: opacity 0.15s; }
+    .btn-revise-watch:hover { opacity: 0.85; }
+    .revise-section-label { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--subtext); margin-bottom: 0.6rem; margin-top: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+    /* Video modal */
+    .video-modal-overlay { position: fixed; inset: 0; background: rgba(15,29,61,0.6); z-index: 300; display: flex; align-items: center; justify-content: center; padding: 1rem; backdrop-filter: blur(2px); }
+    .video-modal { background: white; border-radius: 16px; padding: 1.25rem; width: 100%; max-width: 580px; max-height: 85vh; overflow-y: auto; }
+    .video-modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+    .video-modal-title { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1rem; color: var(--navy); }
+    .video-modal-close { background: none; border: none; font-size: 1.3rem; cursor: pointer; color: var(--subtext); }
+    .video-list-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8fafc; border: 1.5px solid var(--border); border-radius: 10px; margin-bottom: 0.5rem; text-decoration: none; color: var(--text); transition: border-color 0.15s; }
+    .video-list-item:hover { border-color: #ef4444; }
+    .video-play-icon { width: 38px; height: 38px; background: #fef2f2; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .video-item-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.82rem; }
+    .video-item-channel { font-size: 0.72rem; color: var(--subtext); margin-top: 0.1rem; }
     .revise-card { background: white; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease; }
     .revise-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(26,42,79,0.1); }
     .revise-card-stripe { height: 5px; width: 100%; background: var(--accent); }
@@ -383,20 +404,7 @@
 
   <!-- ── REVISE TAB ──────────────────────────────────────────────────────────── -->
   <div class="tab-panel active" id="tab-revision">
-    <div class="revise-banner">
-      <div class="revise-banner-stripe"></div>
-      <div class="revise-banner-body">
-        <div class="revise-banner-left">
-          <div class="revise-banner-icon">📖</div>
-          <div>
-            <div class="revise-banner-title">Revision Slides</div>
-            <div class="revise-banner-desc">Your teacher's revision slides covering all the key content for this module. Work through these before attempting the Mini Mock or Paper.</div>
-          </div>
-        </div>
-        <a id="revision-link" href="#" target="_blank" class="btn-revise-banner">Open Slides →</a>
-      </div>
-    </div>
-
+    <div id="revise-topic-list"><div class="loading-state" style="padding:2rem;text-align:center;color:var(--subtext)">Loading topics...</div></div>
   </div>
 
   <!-- ── KEYWORDS TAB ────────────────────────────────────────────────────────── -->
@@ -649,8 +657,7 @@ document.getElementById('module-badge').textContent = moduleId.toUpperCase();
 document.getElementById('module-badge').style.background = meta.colour;
 document.getElementById('module-title').textContent = meta.title;
 document.getElementById('module-subtitle').textContent = meta.subtitle;
-document.getElementById('revision-link').href = meta.revisionLink;
-document.getElementById('checklist-title').textContent = `${moduleId.toUpperCase()} ${meta.title} — Topic Checklist`;
+document.getElementById('ul-slides').href = meta.revisionLink;document.getElementById('checklist-title').textContent = `${moduleId.toUpperCase()} ${meta.title} — Topic Checklist`;
 document.getElementById('ul-spec').href   = meta.specLink;
 document.getElementById('ul-slides').href = meta.revisionLink;
 // maths-desc removed
@@ -658,7 +665,95 @@ document.getElementById('ul-slides').href = meta.revisionLink;
 document.documentElement.style.setProperty('--accent',       meta.colour);
 document.documentElement.style.setProperty('--accent-light', meta.colourLight);
 
-// ── USEFUL LINKS DROPDOWN ─────────────────────────────────────────────────────
+// ── REVISE TAB ────────────────────────────────────────────────────────────────
+(async function loadReviseTab() {
+  const container = document.getElementById('revise-topic-list');
+  if (!container) return;
+
+  const TIER_COLOURS = { not_started:'#cbd5e1', beginning:'#ef4444', developing:'#f97316', approaching:'#eab308', confident:'#22c55e', mastered:'#3b82f6' };
+  const TIER_EMOJIS  = { not_started:'⬜', beginning:'🔴', developing:'🟠', approaching:'🟡', confident:'🟢', mastered:'💙' };
+
+  function getTier(score) {
+    if (!score || score === 0) return 'not_started';
+    if (score <= 33) return 'beginning';
+    if (score <= 55) return 'developing';
+    if (score <= 75) return 'approaching';
+    if (score <= 89) return 'confident';
+    return 'mastered';
+  }
+
+  let reviseData = null;
+  try {
+    const r = await fetch(`data/revise/${_subject}-${_module}-revise.json`);
+    if (r.ok) reviseData = await r.json();
+  } catch(e) {}
+
+  if (!reviseData) {
+    container.innerHTML = `<div style="padding:2rem;text-align:center;color:var(--subtext)">
+      <p style="font-size:0.9rem">Revision content coming soon for this module.</p>
+      ${meta.revisionLink && meta.revisionLink !== '#' ? `<a href="${meta.revisionLink}" target="_blank" class="btn-revise-read" style="margin-top:1rem;display:inline-flex">📖 View Revision Slides</a>` : ''}
+    </div>`;
+    return;
+  }
+
+  const topics = Object.keys(reviseData.topics || {});
+  window._reviseData = reviseData;
+
+  function buildTopicList(ragData) {
+    let html = `<div style="padding:0.25rem 0 0.5rem">
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:0.8rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.75rem">📖 Revision Topics — hover to read or watch</div>`;
+    topics.forEach(topic => {
+      const entry = ragData?.[topic];
+      const score = typeof entry === 'object' ? (entry?.score ?? 0) : (entry || 0);
+      const tier = getTier(score);
+      const colour = TIER_COLOURS[tier];
+      const emoji = TIER_EMOJIS[tier];
+      const hasVideos = (reviseData.topics[topic]?.videos || []).length > 0;
+      const encodedTopic = encodeURIComponent(topic);
+      html += `<div class="revise-topic-row">
+        <span class="revise-topic-name">${topic}</span>
+        <span class="revise-topic-rag" style="background:${colour}22;color:${colour};border:1px solid ${colour}44">${emoji} ${score > 0 ? score + '%' : 'Not Started'}</span>
+        <div class="revise-topic-actions">
+          <a href="revise.html?subject=${_subject}&module=${_module}&topic=${encodedTopic}" target="_blank" class="btn-revise-read">📖 Read</a>
+          ${hasVideos ? `<button class="btn-revise-watch" onclick="openVideoModal('${topic.replace(/'/g,"\\'")}')">▶ Watch</button>` : ''}
+        </div>
+      </div>`;
+    });
+    if (meta.revisionLink && meta.revisionLink !== '#') {
+      html += `<div style="margin-top:1rem;padding-top:0.75rem;border-top:1px solid var(--border)">
+        <a href="${meta.revisionLink}" target="_blank" class="btn-revise-read">📊 Teacher's Revision Slides →</a>
+      </div>`;
+    }
+    return html + '</div>';
+  }
+
+  container.innerHTML = buildTopicList(window._currentRag || {});
+  const ragPoll = setInterval(() => {
+    if (window._currentRag) { clearInterval(ragPoll); container.innerHTML = buildTopicList(window._currentRag); }
+  }, 300);
+  setTimeout(() => clearInterval(ragPoll), 5000);
+
+  window.openVideoModal = (topicName) => {
+    const videos = window._reviseData?.topics?.[topicName]?.videos || [];
+    if (!videos.length) return;
+    const overlay = document.createElement('div');
+    overlay.className = 'video-modal-overlay';
+    overlay.innerHTML = `<div class="video-modal">
+      <div class="video-modal-header">
+        <div class="video-modal-title">▶ Videos — ${topicName}</div>
+        <button class="video-modal-close" onclick="this.closest('.video-modal-overlay').remove()">✕</button>
+      </div>
+      <p style="font-size:0.78rem;color:var(--subtext);margin-bottom:0.75rem">Click a video to open it on YouTube in a new tab.</p>
+      ${videos.map(v => `<a href="${v.url}" target="_blank" rel="noopener" class="video-list-item">
+        <div class="video-play-icon">▶️</div>
+        <div><div class="video-item-title">${v.title}</div><div class="video-item-channel">${v.channel}</div></div>
+        <span style="margin-left:auto;color:var(--subtext)">↗</span>
+      </a>`).join('')}
+    </div>`;
+    overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+    document.body.appendChild(overlay);
+  };
+})();
 const ulBtn      = document.getElementById('useful-links-btn');
 const ulDropdown = document.getElementById('useful-links-dropdown');
 ulBtn.addEventListener('click', e => { e.stopPropagation(); ulBtn.classList.toggle('open'); ulDropdown.classList.toggle('open'); });
@@ -826,6 +921,7 @@ let ragState = {};
 
 function renderChecklist(state) {
   ragState = state;
+  window._currentRag = state; // expose for revise tab
   const list = document.getElementById('topic-list');
   list.innerHTML = '';
   meta.topics.forEach(topicName => {
