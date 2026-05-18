@@ -676,12 +676,13 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 });
 
 // ── AUTO-OPEN TAB AND START ACTIVITY FROM URL PARAM ──────────────────────────
-// ?tab=mock|flashcards|words|paper auto-opens the tab and starts the activity
 (function() {
   const tabParam = new URLSearchParams(window.location.search).get('tab');
   if (!tabParam) return;
   const tabMap = { mock:'practice', flashcards:'flashcards', words:'keywords', paper:'paper' };
   const target = tabMap[tabParam] || tabParam;
+
+  // Switch tab immediately
   const btn = document.querySelector(`.tab-btn[data-tab="${target}"]`);
   if (btn) {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -689,19 +690,38 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.classList.add('active');
     document.getElementById('tab-' + target)?.classList.add('active');
   }
-  // Auto-start the activity once the page has fully loaded
-  // Use setTimeout to allow module meta and questions to load first
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      const startMap = {
-        practice:   () => document.getElementById('start-practice-btn')?.click(),
-        flashcards: () => document.querySelector('#tab-flashcards .btn-primary[onclick*="startFlashcards"]')?.click() || (typeof startFlashcards === 'function' && startFlashcards()),
-        keywords:   () => document.getElementById('start-game-btn')?.click(),
-        paper:      () => document.getElementById('start-paper-btn')?.click(),
-      };
-      startMap[target]?.();
-    }, 800); // small delay to let questions/keywords load
-  });
+
+  // Auto-start after questions have loaded — poll until start button is ready
+  const startBtnIds = {
+    practice:   'start-practice-btn',
+    flashcards: null, // uses startFlashcards() function
+    keywords:   'start-game-btn',
+    paper:      'start-paper-btn',
+  };
+  const btnId = startBtnIds[target];
+
+  if (target === 'flashcards') {
+    // Flashcards uses a function call not a button ID
+    window.addEventListener('load', () => {
+      setTimeout(() => { if (typeof startFlashcards === 'function') startFlashcards(); }, 1200);
+    });
+  } else if (btnId) {
+    // Poll until the button exists and is not disabled, then click it
+    const maxWait = 5000;
+    const interval = 200;
+    let waited = 0;
+    const poller = setInterval(() => {
+      waited += interval;
+      const startBtn = document.getElementById(btnId);
+      if (startBtn && !startBtn.disabled) {
+        clearInterval(poller);
+        startBtn.click();
+      } else if (waited >= maxWait) {
+        clearInterval(poller);
+        console.log('[AutoStart] timed out waiting for', btnId);
+      }
+    }, interval);
+  }
 })();
 
 // ── RAG VISIBILITY HELPERS ───────────────────────────────────────────────────
@@ -1689,6 +1709,11 @@ document.getElementById('paper-submit-btn').addEventListener('click', async () =
   try {
     const wr = wa.length ? await markAnswers(wa) : [];
     displayResults(selectedPaperQuestions, wr, wa, 'paper-overall-result', 'paper-results-container', 'paper-marking-section', 'paper-loading-overlay');
+    // Log paper completion to activity history
+    let paperTotal = 0, paperAwarded = 0;
+    selectedPaperQuestions.forEach(q => { paperTotal += q.marks || 0; });
+    const paperPct = paperTotal > 0 ? Math.round((paperAwarded / paperTotal) * 100) : 0;
+    window._logActivity({ type: 'paper', score: paperAwarded, total: paperTotal, pct: paperPct, topics: [] });
   } catch(e) {
     document.getElementById('paper-loading-overlay').style.display = 'none';
     document.getElementById('paper-questions-section').style.display = 'block';
