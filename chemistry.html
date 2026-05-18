@@ -349,54 +349,7 @@
 </main>
 
 <script type="module">
-  import { onAuthChange, signOutUser, getUserRole, getUserProfile, getModuleScheduleStatus } from './firebase.js';
-
-  const MONTH_NAMES = ['September','October','November','December','January','February','March','April','May','June','July'];
-
-  function parseFutureStatus(status) {
-    // Parses 'future-y10-m4' → { year: 10, month: 'May' }
-    const m = status.match(/future-y(\d+)-m(\d+)/);
-    if (!m) return { year: null, month: null };
-    return { year: parseInt(m[1]), month: MONTH_NAMES[parseInt(m[2])] || '' };
-  }
-
-  function badgeConfig(status) {
-    if (status === 'current') return { icon: '📗', text: 'Studying now', cls: 'current' };
-    if (status === 'past')    return { icon: '🔄', text: 'Consolidation', cls: 'past' };
-    if (status && status.startsWith('future')) {
-      const { year, month } = parseFutureStatus(status);
-      const text = month && year ? `Learning in ${month}, Year ${year}` : 'Coming up';
-      return { icon: '🔒', text, cls: 'future' };
-    }
-    return null;
-  }
-
-  async function applyScheduleTileBadges(user) {
-    try {
-      const profile = await getUserProfile(user.uid);
-      const yearGroup = profile?.yearGroup;
-      if (!yearGroup) return;
-      const cards = document.querySelectorAll('.module-card:not(.coming-soon)');
-      await Promise.all([...cards].map(async card => {
-        const href = card.getAttribute('href') || '';
-        const m = href.match(/module=([a-z0-9]+)/);
-        if (!m) return;
-        const status = await getModuleScheduleStatus(yearGroup, 'Chemistry', m[1].toUpperCase());
-        if (!status || status === 'unknown') return;
-        const cfg = badgeConfig(status);
-        if (!cfg) return;
-        if (cfg.cls === 'future') card.classList.add('schedule-future');
-        const info = card.querySelector('.module-info');
-        if (info) {
-          const b = document.createElement('div');
-          b.className = `sched-tile-badge ${cfg.cls}`;
-          b.innerHTML = `${cfg.icon} ${cfg.text}`;
-          info.appendChild(b);
-        }
-      }));
-    } catch(e) { console.log('[ScheduleTiles]', e); }
-  }
-
+  import { onAuthChange, signOutUser, getUserRole } from './firebase.js';
   onAuthChange(async user => {
     if (!user) { window.location.href = 'login.html'; return; }
     document.getElementById('auth-loading').style.display = 'none';
@@ -410,14 +363,46 @@
     }
     if (['admin','superadmin'].includes(role)) document.getElementById('nav-admin-link').style.display = 'inline-flex';
     if (role === 'superadmin') document.getElementById('nav-superadmin-link').style.display = 'inline-flex';
-    applyScheduleTileBadges(user);
   });
-
   window.handleSignOut = async () => {
     await signOutUser();
     window.location.href = 'login.html';
   };
-</script>
 
+  // ── SCHEDULE TILE BADGES ────────────────────────────────────────────────────
+  import { getModuleScheduleStatus, getUserProfile } from './firebase.js';
+  (async () => {
+    try {
+      const user = await new Promise(res => { const u = onAuthChange(u2 => { res(u2); u(); }); });
+      if (!user) return;
+      const profile = await getUserProfile(user.uid);
+      const yearGroup = profile?.yearGroup;
+      if (!yearGroup) return;
+      const cards = document.querySelectorAll('.module-card:not(.coming-soon)');
+      await Promise.all([...cards].map(async card => {
+        const href = card.getAttribute('href') || '';
+        const m = href.match(/module=([a-z0-9]+)/);
+        if (!m) return;
+        const status = await getModuleScheduleStatus(yearGroup, 'Chemistry', m[1].toUpperCase());
+        if (!status || status === 'unknown') return;
+        if (isFuture) card.classList.add('schedule-future');
+        const isFuture = status && status.startsWith('future');
+        const yearMatch = status && status.match(/future-y(\d+)/);
+        const futureYear = yearMatch ? yearMatch[1] : null;
+        const cfg = status === 'current' ? {icon:'📗',text:'Studying now'}
+          : status === 'past' ? {icon:'🔄',text:'Consolidation'}
+          : isFuture ? {icon:'🔒',text: futureYear ? `Year ${futureYear}` : 'Coming up'}
+          : null;
+        const info = card.querySelector('.module-info');
+        if (info && cfg) {
+          const b = document.createElement('div');
+          b.className = `sched-tile-badge ${isFuture ? 'future' : status}`;
+          b.innerHTML = `${cfg.icon} ${cfg.text}`;
+          info.appendChild(b);
+        }
+      }));
+    } catch(e) { console.log('[ScheduleTiles]', e); }
+  })();
+</script>
 </body>
 </html>
