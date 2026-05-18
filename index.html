@@ -534,12 +534,11 @@
         const assignments = await getActiveAssignmentsForClass(_assignProfile.class);
         const today = new Date().toISOString().split('T')[0];
         if (!assignments.length) return;
-        const { getAssignmentCompletions } = await import('./firebase.js');
+        const { getMyAssignmentCompletion } = await import('./firebase.js');
         const completions = {};
         await Promise.all(assignments.map(async a => {
           try {
-            const comps = await getAssignmentCompletions(a.id);
-            completions[a.id] = comps.find(c => c.uid === _assignUser.uid) || null;
+            completions[a.id] = await getMyAssignmentCompletion(a.id, _assignUser.uid);
           } catch(e) { completions[a.id] = null; }
         }));
 

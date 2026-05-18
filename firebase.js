@@ -446,6 +446,12 @@ export async function getAssignmentCompletions(assignmentId) {
   return snap.docs.map(d => ({ uid: d.id, ...d.data() }));
 }
 
+// Read only the current student's own completion — works with student permissions
+export async function getMyAssignmentCompletion(assignmentId, uid) {
+  const snap = await getDoc(doc(db, 'assignments', assignmentId, 'completions', uid));
+  return snap.exists() ? { uid, ...snap.data() } : null;
+}
+
 export async function getStudentsByClass(className) {
   const snap = await getDocs(collection(db, 'users'));
   return snap.docs
