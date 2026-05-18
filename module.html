@@ -684,14 +684,16 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
 
   let reviseData = null;
   try {
-    const r = await fetch(`data/revise/${_subject}-${_module}-revise.json`);
+    const fetchUrl = `data/revise/${_subject}-${_module}-revise.json`;
+    console.log('[Revise] fetching:', fetchUrl);
+    const r = await fetch(fetchUrl);
+    console.log('[Revise] response status:', r.status);
     if (r.ok) reviseData = await r.json();
-  } catch(e) {}
+  } catch(e) { console.log('[Revise] fetch error:', e); }
 
   if (!reviseData) {
     container.innerHTML = `<div style="padding:2rem;text-align:center;color:var(--subtext)">
       <p style="font-size:0.9rem">Revision content coming soon for this module.</p>
-      ${meta.revisionLink && meta.revisionLink !== '#' ? `<a href="${meta.revisionLink}" target="_blank" class="btn-revise-read" style="margin-top:1rem;display:inline-flex">📖 View Revision Slides</a>` : ''}
     </div>`;
     return;
   }
