@@ -675,11 +675,11 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   });
 });
 
-// ── AUTO-OPEN TAB FROM URL PARAM (?tab=mock|flashcards|words|paper) ───────────
+// ── AUTO-OPEN TAB AND START ACTIVITY FROM URL PARAM ──────────────────────────
+// ?tab=mock|flashcards|words|paper auto-opens the tab and starts the activity
 (function() {
   const tabParam = new URLSearchParams(window.location.search).get('tab');
   if (!tabParam) return;
-  // Map assignment tabTarget values to module tab data-tab values
   const tabMap = { mock:'practice', flashcards:'flashcards', words:'keywords', paper:'paper' };
   const target = tabMap[tabParam] || tabParam;
   const btn = document.querySelector(`.tab-btn[data-tab="${target}"]`);
@@ -689,6 +689,19 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.classList.add('active');
     document.getElementById('tab-' + target)?.classList.add('active');
   }
+  // Auto-start the activity once the page has fully loaded
+  // Use setTimeout to allow module meta and questions to load first
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const startMap = {
+        practice:   () => document.getElementById('start-practice-btn')?.click(),
+        flashcards: () => document.querySelector('#tab-flashcards .btn-primary[onclick*="startFlashcards"]')?.click() || (typeof startFlashcards === 'function' && startFlashcards()),
+        keywords:   () => document.getElementById('start-game-btn')?.click(),
+        paper:      () => document.getElementById('start-paper-btn')?.click(),
+      };
+      startMap[target]?.();
+    }, 800); // small delay to let questions/keywords load
+  });
 })();
 
 // ── RAG VISIBILITY HELPERS ───────────────────────────────────────────────────
