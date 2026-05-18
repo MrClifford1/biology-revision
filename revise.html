@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revision — Streetly Science Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #1a2a4f;
+      --navy-dark: #0f1d3d;
+      --red: #c8202c;
+      --gold: #d4a534;
+      --bg: #f5f6fa;
+      --text: #1a2a4f;
+      --subtext: #5a6885;
+      --border: #e2e6f0;
+      --card: #ffffff;
+      --accent: #0d9488;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Nunito Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+    /* ── TOPNAV ── */
+    .topnav { background: var(--navy-dark); padding: 0.7rem 1.5rem; display: flex; align-items: center; gap: 1rem; }
+    .topnav a { color: #94a3b8; text-decoration: none; font-size: 0.875rem; font-weight: 600; transition: color 0.2s; }
+    .topnav a:hover { color: white; }
+    .topnav-title { color: white; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.95rem; margin-left: auto; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+      color: white;
+      padding: 2rem 1.5rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.03);
+    }
+    .hero-inner { max-width: 820px; margin: 0 auto; position: relative; }
+    .hero-breadcrumb { font-size: 0.78rem; color: #94a3b8; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+    .hero-breadcrumb a { color: #94a3b8; text-decoration: none; }
+    .hero-breadcrumb a:hover { color: white; }
+    .hero-module-badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; border-radius: 10px;
+      font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.9rem;
+      color: white; margin-bottom: 0.75rem; flex-shrink: 0;
+    }
+    .hero-top { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.5rem; }
+    .hero h1 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.75rem; line-height: 1.2; }
+    .hero-sub { color: #c5cee8; font-size: 0.9rem; margin-top: 0.3rem; }
+
+    /* ── TOPIC NAV ── */
+    .topic-nav { background: white; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
+    .topic-nav-inner { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; }
+    .topic-nav-inner::-webkit-scrollbar { display: none; }
+    .topic-nav-btn {
+      padding: 0.85rem 1.1rem; border: none; background: none;
+      font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.8rem;
+      color: var(--subtext); cursor: pointer; white-space: nowrap;
+      border-bottom: 3px solid transparent; transition: all 0.15s;
+    }
+    .topic-nav-btn:hover { color: var(--navy); }
+    .topic-nav-btn.active { color: var(--navy); border-bottom-color: var(--navy); }
+
+    /* ── MAIN CONTENT ── */
+    .content-wrap { max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+    /* ── SECTION BLOCKS ── */
+    .topic-section { margin-bottom: 2rem; }
+    .topic-section h2 {
+      font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem;
+      color: var(--navy); margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem; border-bottom: 2px solid var(--border);
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .topic-section p { font-size: 0.9rem; line-height: 1.75; color: var(--text); margin-bottom: 0.75rem; }
+    .topic-section ul, .topic-section ol { padding-left: 1.5rem; margin-bottom: 0.75rem; }
+    .topic-section li { font-size: 0.9rem; line-height: 1.7; margin-bottom: 0.25rem; }
+
+    /* ── KEY TERMS ── */
+    .key-terms { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.6rem; margin-bottom: 1rem; }
+    .key-term {
+      background: #f0f4ff; border: 1.5px solid #c7d2fe;
+      border-radius: 10px; padding: 0.65rem 0.85rem;
+    }
+    .key-term-word { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.82rem; color: var(--navy); }
+    .key-term-def { font-size: 0.78rem; color: var(--subtext); margin-top: 0.2rem; line-height: 1.5; }
+
+    /* ── CALLOUT BOXES ── */
+    .callout { border-radius: 12px; padding: 1rem 1.1rem; margin-bottom: 1rem; }
+    .callout-tip { background: #f0fdf4; border-left: 4px solid #22c55e; }
+    .callout-warn { background: #fefce8; border-left: 4px solid #eab308; }
+    .callout-exam { background: #eff6ff; border-left: 4px solid #3b82f6; }
+    .callout-label { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.35rem; }
+    .callout-tip .callout-label { color: #16a34a; }
+    .callout-warn .callout-label { color: #ca8a04; }
+    .callout-exam .callout-label { color: #2563eb; }
+    .callout p { font-size: 0.85rem; line-height: 1.6; margin: 0; }
+
+    /* ── DIAGRAM AREA ── */
+    .diagram-wrap { background: white; border: 1.5px solid var(--border); border-radius: 14px; padding: 1.25rem; margin-bottom: 1.5rem; text-align: center; }
+    .diagram-wrap svg { max-width: 100%; height: auto; }
+    .diagram-caption { font-size: 0.75rem; color: var(--subtext); margin-top: 0.5rem; font-style: italic; }
+
+    /* ── VIDEO SECTION ── */
+    .videos-section { margin-top: 2rem; }
+    .videos-section h2 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem; color: var(--navy); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border); }
+    .video-grid { display: flex; flex-direction: column; gap: 0.6rem; }
+    .video-card {
+      background: white; border: 1.5px solid var(--border); border-radius: 12px;
+      padding: 0.85rem 1rem; display: flex; align-items: center; gap: 0.85rem;
+      text-decoration: none; color: var(--text); transition: all 0.15s;
+    }
+    .video-card:hover { border-color: #ef4444; transform: translateX(3px); }
+    .video-thumb { width: 42px; height: 42px; background: #fef2f2; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .video-info { flex: 1; }
+    .video-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.82rem; color: var(--navy); }
+    .video-channel { font-size: 0.72rem; color: var(--subtext); margin-top: 0.1rem; }
+    .video-arrow { color: var(--subtext); font-size: 0.9rem; }
+
+    /* ── LOADING / ERROR ── */
+    .loading-state { text-align: center; padding: 3rem; color: var(--subtext); }
+    .error-state { text-align: center; padding: 3rem; color: var(--red); }
+
+    /* ── PROGRESS INDICATOR ── */
+    .rag-indicator { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 100px; margin-left: auto; flex-shrink: 0; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.35rem; }
+      .key-terms { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a id="back-link" href="#">← Back</a>
+  <span class="topnav-title" id="nav-title">Revision</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">
+      <a href="index.html">Hub</a> ›
+      <a id="subject-link" href="#">Subject</a> ›
+      <a id="module-link" href="#">Module</a> ›
+      <span id="breadcrumb-topic">Topic</span>
+    </div>
+    <div class="hero-top">
+      <div class="hero-module-badge" id="hero-badge">B1</div>
+      <div>
+        <h1 id="hero-title">Loading...</h1>
+        <div class="hero-sub" id="hero-sub"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="topic-nav">
+  <div class="topic-nav-inner" id="topic-nav"></div>
+</div>
+
+<div class="content-wrap" id="content-wrap">
+  <div class="loading-state">Loading revision content...</div>
+</div>
+
+<script type="module">
+  import { onAuthChange, loadRAG, saveRAG } from './firebase.js';
+
+  const params = new URLSearchParams(window.location.search);
+  const subject = params.get('subject') || 'biology';
+  const moduleId = params.get('module') || 'b1';
+  const topicParam = params.get('topic') || '';
+
+  const MODULE_META = {
+    b1:{title:'Cell Biology',colour:'#0d9488'}, b2:{title:'Organisation',colour:'#e85d4a'},
+    b3:{title:'Infection & Response',colour:'#f59e0b'}, b4:{title:'Bioenergetics',colour:'#22c55e'},
+    b5:{title:'Homeostasis & Response',colour:'#8b5cf6'}, b6:{title:'Inheritance & Evolution',colour:'#3b82f6'},
+    b7:{title:'Ecology',colour:'#16a34a'},
+    c1:{title:'Atomic Structure',colour:'#0ea5e9'}, c2:{title:'Bonding',colour:'#10b981'},
+    c3:{title:'Quantitative Chemistry',colour:'#f59e0b'}, c4:{title:'Chemical Changes',colour:'#ef4444'},
+    c5:{title:'Energy Changes',colour:'#8b5cf6'}, c6:{title:'Rate of Reaction',colour:'#f97316'},
+    c7:{title:'Organic Chemistry',colour:'#06b6d4'}, c8:{title:'Chemical Analysis',colour:'#ec4899'},
+    c9:{title:'Atmosphere',colour:'#16a34a'}, c10:{title:'Using Resources',colour:'#6366f1'},
+    p1:{title:'Energy',colour:'#f97316'}, p2:{title:'Electricity',colour:'#eab308'},
+    p3:{title:'Particle Model',colour:'#06b6d4'}, p4:{title:'Atomic Structure',colour:'#8b5cf6'},
+    p5:{title:'Forces',colour:'#ec4899'}, p6:{title:'Waves',colour:'#14b8a6'},
+    p7:{title:'Magnetism',colour:'#6366f1'},
+  };
+
+  const TIER_COLOURS = { not_started:'#cbd5e1', beginning:'#ef4444', developing:'#f97316', approaching:'#eab308', confident:'#22c55e', mastered:'#3b82f6' };
+  const TIER_EMOJIS = { not_started:'⬜', beginning:'🔴', developing:'🟠', approaching:'🟡', confident:'🟢', mastered:'💙' };
+
+  function getTier(score) {
+    if (!score||score===0) return 'not_started';
+    if (score<=33) return 'beginning';
+    if (score<=55) return 'developing';
+    if (score<=75) return 'approaching';
+    if (score<=89) return 'confident';
+    return 'mastered';
+  }
+
+  const meta = MODULE_META[moduleId] || { title: moduleId.toUpperCase(), colour: '#1a2a4f' };
+  const subjectLabel = subject.charAt(0).toUpperCase() + subject.slice(1);
+  const moduleKey = `${subject}-${moduleId}`;
+
+  // Set up navigation
+  document.getElementById('back-link').href = `module.html?subject=${subject}&module=${moduleId}`;
+  document.getElementById('module-link').href = `module.html?subject=${subject}&module=${moduleId}`;
+  document.getElementById('module-link').textContent = `${moduleId.toUpperCase()} ${meta.title}`;
+  document.getElementById('subject-link').href = `${subject}.html`;
+  document.getElementById('subject-link').textContent = subjectLabel;
+  document.getElementById('nav-title').textContent = `${moduleId.toUpperCase()} Revision`;
+  document.getElementById('hero-badge').textContent = moduleId.toUpperCase();
+  document.getElementById('hero-badge').style.background = meta.colour;
+
+  let allTopics = [];
+  let currentTopic = '';
+  let ragState = {};
+  let currentUser = null;
+
+  // Load data
+  const [contentData] = await Promise.all([
+    fetch(`data/revise/${subject}-${moduleId}-revise.json`).then(r => r.json()).catch(() => null),
+  ]);
+
+  if (!contentData) {
+    document.getElementById('content-wrap').innerHTML = '<div class="error-state">Revision content not found for this module.</div>';
+  } else {
+    allTopics = Object.keys(contentData.topics || {});
+
+    // Build topic nav
+    const nav = document.getElementById('topic-nav');
+    nav.innerHTML = allTopics.map(t =>
+      `<button class="topic-nav-btn" onclick="showTopic('${t.replace(/'/g,"\\'")}', this)">${t}</button>`
+    ).join('');
+
+    // Auth — load RAG state
+    onAuthChange(async user => {
+      currentUser = user;
+      if (user) {
+        ragState = await loadRAG(user.uid, moduleKey).catch(() => ({})) || {};
+      }
+      // Show first topic or URL param topic
+      const startTopic = topicParam && allTopics.includes(topicParam) ? topicParam : allTopics[0];
+      if (startTopic) {
+        const btn = nav.querySelector(`.topic-nav-btn`);
+        showTopicByName(startTopic);
+      }
+    });
+  }
+
+  function showTopicByName(topicName) {
+    const btns = document.querySelectorAll('.topic-nav-btn');
+    btns.forEach(b => {
+      b.classList.toggle('active', b.textContent === topicName);
+    });
+    renderTopic(topicName);
+  }
+
+  window.showTopic = (topicName, btn) => {
+    document.querySelectorAll('.topic-nav-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderTopic(topicName);
+    // Update URL without reload
+    const url = new URL(window.location);
+    url.searchParams.set('topic', topicName);
+    history.replaceState({}, '', url);
+  };
+
+  function renderTopic(topicName) {
+    currentTopic = topicName;
+    const topicData = contentData?.topics?.[topicName];
+    if (!topicData) {
+      document.getElementById('content-wrap').innerHTML = '<div class="error-state">Topic content not found.</div>';
+      return;
+    }
+
+    // Update hero
+    document.getElementById('hero-title').textContent = topicName;
+    document.getElementById('hero-sub').textContent = `${moduleId.toUpperCase()} ${meta.title} · ${subjectLabel}`;
+    document.getElementById('breadcrumb-topic').textContent = topicName;
+
+    // RAG badge
+    const entry = ragState[topicName];
+    const score = typeof entry === 'object' ? (entry?.score ?? 0) : 0;
+    const tier = getTier(score);
+    const ragHtml = `<span class="rag-indicator" style="background:${TIER_COLOURS[tier]}22;color:${TIER_COLOURS[tier]};border:1.5px solid ${TIER_COLOURS[tier]}44">${TIER_EMOJIS[tier]} ${score > 0 ? score + '%' : 'Not Started'}</span>`;
+
+    // Build content
+    let html = `<div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem;flex-wrap:wrap">
+      <h1 style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);flex:1">${topicName}</h1>
+      ${ragHtml}
+    </div>`;
+
+    // Intro
+    if (topicData.intro) {
+      html += `<div class="topic-section"><p style="font-size:0.95rem;line-height:1.8">${topicData.intro}</p></div>`;
+    }
+
+    // Sections
+    (topicData.sections || []).forEach(section => {
+      html += `<div class="topic-section">`;
+      if (section.title) html += `<h2>${section.icon||'📌'} ${section.title}</h2>`;
+      if (section.text) html += `<p>${section.text}</p>`;
+      if (section.points) {
+        html += `<ul>${section.points.map(p => `<li>${p}</li>`).join('')}</ul>`;
+      }
+      if (section.numbered) {
+        html += `<ol>${section.numbered.map(p => `<li>${p}</li>`).join('')}</ol>`;
+      }
+      if (section.callout) {
+        html += `<div class="callout callout-${section.callout.type||'tip'}"><div class="callout-label">${section.callout.label||'Note'}</div><p>${section.callout.text}</p></div>`;
+      }
+      if (section.diagram) {
+        html += `<div class="diagram-wrap">${section.diagram}<p class="diagram-caption">${section.diagramCaption||''}</p></div>`;
+      }
+      html += `</div>`;
+    });
+
+    // Key terms
+    if (topicData.keyTerms?.length) {
+      html += `<div class="topic-section"><h2>🔑 Key Terms</h2><div class="key-terms">`;
+      topicData.keyTerms.forEach(kt => {
+        html += `<div class="key-term"><div class="key-term-word">${kt.term}</div><div class="key-term-def">${kt.def}</div></div>`;
+      });
+      html += `</div></div>`;
+    }
+
+    // Exam tips
+    if (topicData.examTips?.length) {
+      html += `<div class="topic-section"><h2>✏️ Exam Tips</h2>`;
+      topicData.examTips.forEach(tip => {
+        html += `<div class="callout callout-exam"><div class="callout-label">Exam Tip</div><p>${tip}</p></div>`;
+      });
+      html += `</div>`;
+    }
+
+    // Common mistakes
+    if (topicData.commonMistakes?.length) {
+      html += `<div class="topic-section"><h2>⚠️ Common Mistakes</h2>`;
+      topicData.commonMistakes.forEach(m => {
+        html += `<div class="callout callout-warn"><div class="callout-label">Watch Out</div><p>${m}</p></div>`;
+      });
+      html += `</div>`;
+    }
+
+    // Videos
+    const videos = topicData.videos || [];
+    if (videos.length) {
+      html += `<div class="videos-section"><h2>▶ Recommended Videos</h2><div class="video-grid">`;
+      videos.forEach(v => {
+        html += `<a href="${v.url}" target="_blank" rel="noopener" class="video-card" onclick="logVideoClick()">
+          <div class="video-thumb">▶️</div>
+          <div class="video-info">
+            <div class="video-title">${v.title}</div>
+            <div class="video-channel">${v.channel}</div>
+          </div>
+          <span class="video-arrow">↗</span>
+        </a>`;
+      });
+      html += `</div></div>`;
+    }
+
+    document.getElementById('content-wrap').innerHTML = html;
+
+    // Nudge RAG — if not started, clicking a topic bumps to 1% (beginning)
+    nudgeRAG(topicName);
+  }
+
+  async function nudgeRAG(topicName) {
+    if (!currentUser) return;
+    const entry = ragState[topicName];
+    const score = typeof entry === 'object' ? (entry?.score ?? 0) : (entry || 0);
+    if (score === 0) {
+      // First visit — nudge to 1%
+      const updated = { ...(ragState[topicName] || {}), score: 1, lastActivity: new Date().toISOString() };
+      ragState[topicName] = updated;
+      try { await saveRAG(currentUser.uid, moduleKey, ragState); } catch(e) {}
+    }
+  }
+
+  window.logVideoClick = () => {
+    // Videos count as slightly more engagement — nudge to 3% if not started
+    if (!currentUser || !currentTopic) return;
+    const entry = ragState[currentTopic];
+    const score = typeof entry === 'object' ? (entry?.score ?? 0) : (entry || 0);
+    if (score < 3) {
+      const updated = { ...(ragState[currentTopic] || {}), score: 3, lastActivity: new Date().toISOString() };
+      ragState[currentTopic] = updated;
+      saveRAG(currentUser.uid, moduleKey, ragState).catch(() => {});
+    }
+  };
+</script>
+
+</body>
+</html>
