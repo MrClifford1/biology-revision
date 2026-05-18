@@ -1,0 +1,194 @@
+{
+  "module": "P2 Electricity",
+  "topics": {
+    "Basic Electricity": {
+      "intro": "Electric current is the flow of charge. Understanding the basic concepts of voltage, current and resistance is essential for all of P2.",
+      "sections": [
+        {"title": "Current, Voltage and Resistance", "icon": "⚡", "points": [
+          "<strong>Current (I)</strong> — rate of flow of charge; measured in amperes (A)",
+          "<strong>Voltage/potential difference (V)</strong> — energy transferred per unit charge; measured in volts (V)",
+          "<strong>Resistance (R)</strong> — opposition to current flow; measured in ohms (Ω)"
+        ]},
+        {"title": "Ohm's Law", "icon": "📐", "callout": {"type": "exam", "label": "Formula", "text": "V = I × R (Voltage = Current × Resistance). Rearranged: I = V/R and R = V/I. An ohmic conductor has constant resistance."}, "points": [
+          "Ohmic conductor: resistance stays constant at constant temperature (e.g. resistor)",
+          "Non-ohmic: resistance changes (e.g. filament bulb — gets hotter, resistance increases; diode — only conducts in one direction)"
+        ]},
+        {"title": "Charge Flow", "icon": "🔋", "callout": {"type": "exam", "label": "Formula", "text": "Q = I × t (Charge = Current × Time). Charge is measured in coulombs (C)."}}
+      ],
+      "keyTerms": [
+        {"term": "Current", "def": "The rate of flow of electric charge — measured in amperes (A)"},
+        {"term": "Potential difference", "def": "The energy transferred per unit charge — measured in volts (V)"},
+        {"term": "Resistance", "def": "Opposition to current flow — measured in ohms (Ω)"},
+        {"term": "Ohm's law", "def": "V = IR — voltage, current and resistance are proportionally related in ohmic conductors"}
+      ],
+      "examTips": [
+        "V = IR is the most used formula in electricity. Learn the triangle.",
+        "Ohmic conductors have constant resistance. Filament bulbs and diodes do not.",
+        "Charge = current × time. Charge is in coulombs (C)."
+      ],
+      "commonMistakes": [
+        "Confusing current (flow of charge) with voltage (energy per charge).",
+        "Saying current is 'used up' in a circuit — current is the same everywhere in a series circuit."
+      ],
+      "videos": [
+        {"title": "Basic Electricity GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=G3H5lKoWPpY"},
+        {"title": "Current, Voltage and Resistance", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=G3H5lKoWPpY"},
+        {"title": "Ohm's Law", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=B7Q7bNBSmLE"}
+      ]
+    },
+    "Circuits": {
+      "intro": "Electrical circuits can be arranged in series or parallel. Each arrangement has different rules for current, voltage and resistance.",
+      "sections": [
+        {"title": "Series Circuits", "icon": "🔗", "points": [
+          "Components connected in a single loop",
+          "Same current flows through all components",
+          "Voltages add up to total voltage: Vtotal = V₁ + V₂",
+          "Resistances add up: Rtotal = R₁ + R₂",
+          "If one component breaks — circuit breaks; all go off"
+        ]},
+        {"title": "Parallel Circuits", "icon": "⑆", "points": [
+          "Components connected in separate branches",
+          "Same voltage across all branches",
+          "Currents split between branches; add up to total: Itotal = I₁ + I₂",
+          "Total resistance LESS than smallest individual resistance",
+          "If one branch breaks — others still work"
+        ]},
+        {"title": "Circuit Symbols", "icon": "📋", "points": [
+          "Cell, battery, switch, resistor, variable resistor, lamp",
+          "Ammeter — in series; voltmeter — in parallel",
+          "Diode, LED, thermistor, LDR"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Series circuit", "def": "Circuit where components are connected in a single loop — same current throughout"},
+        {"term": "Parallel circuit", "def": "Circuit where components are on separate branches — same voltage across each branch"},
+        {"term": "Ammeter", "def": "Instrument measuring current — connected in series"},
+        {"term": "Voltmeter", "def": "Instrument measuring potential difference — connected in parallel"}
+      ],
+      "examTips": [
+        "Series: same current, voltages add. Parallel: same voltage, currents add.",
+        "Ammeter = series (low resistance). Voltmeter = parallel (high resistance).",
+        "Adding more parallel branches reduces total resistance."
+      ],
+      "commonMistakes": [
+        "Saying voltages are the same in series — they're the same in PARALLEL.",
+        "Connecting ammeter in parallel or voltmeter in series — this is wrong."
+      ],
+      "videos": [
+        {"title": "Series and Parallel Circuits", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=J4Vq-xHqUo8"},
+        {"title": "Circuits GCSE Physics", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=oiTeyQvEKtE"},
+        {"title": "Series vs Parallel", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=RXFdhgUBMaQ"},
+        {"title": "Circuit Rules", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=J4Vq-xHqUo8"}
+      ]
+    },
+    "Domestic Electricity": {
+      "intro": "Mains electricity in the UK is alternating current (AC) at 230V and 50Hz. Understanding how it is safely used in the home is required for P2.",
+      "sections": [
+        {"title": "AC vs DC", "icon": "〜", "points": [
+          "AC (alternating current) — direction of current reverses periodically; mains supply (230V, 50Hz UK)",
+          "DC (direct current) — current flows in one direction only; batteries and phone chargers"
+        ]},
+        {"title": "The Three-Pin Plug", "icon": "🔌", "points": [
+          "<strong>Live (brown)</strong> — carries current at 230V",
+          "<strong>Neutral (blue)</strong> — completes circuit at 0V",
+          "<strong>Earth (green/yellow)</strong> — safety wire; prevents shock if appliance develops fault",
+          "Fuse in live wire — melts if current too high, breaking circuit"
+        ]},
+        {"title": "Fuses and Circuit Breakers", "icon": "🔧", "points": [
+          "Fuse: thin wire that melts if current exceeds rating — breaks circuit",
+          "Circuit breaker: electronic switch that trips if current too high — can be reset",
+          "Choose fuse rating just above normal operating current",
+          "RCD (residual current device): detects difference in current in live and neutral — trips if earth fault"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Alternating current (AC)", "def": "Current that reverses direction periodically — mains supply"},
+        {"term": "Direct current (DC)", "def": "Current that flows in one direction only — batteries"},
+        {"term": "Fuse", "def": "A safety device that melts and breaks the circuit if current is too high"},
+        {"term": "Earth wire", "def": "Safety wire that provides a low-resistance path to earth if appliance develops a fault"}
+      ],
+      "examTips": [
+        "Live = brown, Neutral = blue, Earth = green/yellow. Learn the colours.",
+        "Earth wire prevents shock — if live wire touches metal casing, current flows to earth through earth wire, blowing the fuse.",
+        "AC frequency in UK = 50 Hz (50 complete cycles per second)."
+      ],
+      "commonMistakes": [
+        "Saying neutral wire carries current at high voltage — neutral is at 0V.",
+        "Forgetting the earth wire's function — it is a safety device, not needed for the circuit to work."
+      ],
+      "videos": [
+        {"title": "Domestic Electricity GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=yfJn7p8JAgA"},
+        {"title": "Mains Electricity", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=yfJn7p8JAgA"},
+        {"title": "AC and DC", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=e0YYiMZFj-w"}
+      ]
+    },
+    "Power and Energy": {
+      "intro": "Power is the rate of energy transfer. Electrical power depends on both current and voltage.",
+      "sections": [
+        {"title": "Power Formulae", "icon": "📐", "callout": {"type": "exam", "label": "Formulae", "text": "P = I × V (Power = Current × Voltage). Also: P = I² × R and P = V²/R. Power in watts (W)."}},
+        {"title": "Energy Transfer", "icon": "⚡", "callout": {"type": "exam", "label": "Energy Formula", "text": "E = P × t (Energy = Power × Time). Energy in joules (J) when time in seconds. E = Q × V (Energy = Charge × Voltage)."}, "points": [
+          "Kilowatt-hour (kWh) = energy unit used in electricity bills",
+          "1 kWh = 3,600,000 J",
+          "Cost = power (kW) × time (hours) × price per kWh"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Power", "def": "Rate of energy transfer — measured in watts (W)"},
+        {"term": "Watt", "def": "Unit of power = 1 joule per second"},
+        {"term": "Kilowatt-hour", "def": "Unit of energy used in electricity billing = 3.6 MJ"}
+      ],
+      "examTips": [
+        "P = IV is the most important power formula. Also know P = I²R for when V is not given.",
+        "For electricity bills: use kW and hours; multiply by cost per kWh."
+      ],
+      "commonMistakes": [
+        "Confusing power (rate) with energy (total amount).",
+        "Using watts instead of kilowatts in electricity cost calculations."
+      ],
+      "videos": [
+        {"title": "Electrical Power GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=7an8xGn0HLY"},
+        {"title": "Power and Energy Calculations", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=7an8xGn0HLY"},
+        {"title": "Electrical Energy", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=7an8xGn0HLY"}
+      ]
+    },
+    "Static Electricity": {
+      "intro": "Static electricity is the build-up of electrical charge on insulating materials. It occurs when electrons are transferred by friction.",
+      "sections": [
+        {"title": "Charging by Friction", "icon": "⚡", "points": [
+          "When two insulators are rubbed together, electrons are transferred",
+          "Object gaining electrons becomes negatively charged",
+          "Object losing electrons becomes positively charged",
+          "Like charges repel; unlike charges attract"
+        ]},
+        {"title": "Electric Fields", "icon": "🌐", "points": [
+          "A charged object creates an electric field around it",
+          "Electric field lines point from positive to negative",
+          "A charged object in an electric field experiences a force"
+        ]},
+        {"title": "Uses and Hazards", "icon": "⚠️", "points": [
+          "Uses: photocopiers, inkjet printers, paint sprayers, defibrillators",
+          "Hazards: sparks from fuel tankers (earth the tanker); risk of electric shock from large static charges",
+          "Lightning conductors: provide safe path for charge to earth"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Static electricity", "def": "Electrical charge that builds up on insulating materials — does not flow"},
+        {"term": "Electric field", "def": "The region around a charged object where forces act on other charges"},
+        {"term": "Earthing", "def": "Connecting a charged object to earth to safely discharge it"}
+      ],
+      "examTips": [
+        "Only electrons move when charging by friction — protons stay in the nucleus.",
+        "Like charges repel; unlike charges attract — apply this in all static questions."
+      ],
+      "commonMistakes": [
+        "Saying protons move during friction charging — only electrons are transferred.",
+        "Confusing static electricity (no flow) with current electricity (continuous flow)."
+      ],
+      "videos": [
+        {"title": "Static Electricity GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=8P2_XY7YnNw"},
+        {"title": "Static Electricity", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=8P2_XY7YnNw"},
+        {"title": "Static Electricity", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=KqcIRp08Ibs"}
+      ]
+    }
+  }
+}

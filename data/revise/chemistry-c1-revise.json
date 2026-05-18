@@ -1,0 +1,296 @@
+{
+  "module": "C1 Atomic Structure and Periodic Table",
+  "topics": {
+    "Atomic Structure": {
+      "intro": "The atom is the basic unit of all matter. Understanding atomic structure is essential for all of chemistry.",
+      "sections": [
+        {
+          "title": "Structure of the Atom",
+          "icon": "\u269b\ufe0f",
+          "points": [
+            "Nucleus contains protons (+) and neutrons (0)",
+            "Electrons (-) orbit the nucleus in shells",
+            "Atom is mostly empty space",
+            "Proton number (atomic number) = number of protons",
+            "Mass number = protons + neutrons",
+            "Atoms are neutral: number of protons = number of electrons"
+          ]
+        },
+        {
+          "title": "Isotopes",
+          "icon": "\ud83d\udd2c",
+          "text": "Isotopes are atoms of the same element with the same number of protons but different numbers of neutrons.",
+          "points": [
+            "Same chemical properties (same electron configuration)",
+            "Different physical properties (different mass)",
+            "Examples: Carbon-12 and Carbon-14; Hydrogen and Deuterium"
+          ]
+        },
+        {
+          "title": "Relative Atomic Mass",
+          "icon": "\ud83d\udcd0",
+          "callout": {
+            "type": "exam",
+            "label": "Formula",
+            "text": "Relative atomic mass (Ar) = weighted average mass of all isotopes, taking into account their relative abundance."
+          }
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Proton number",
+          "def": "Number of protons in the nucleus \u2014 defines the element"
+        },
+        {
+          "term": "Mass number",
+          "def": "Total number of protons and neutrons in the nucleus"
+        },
+        {
+          "term": "Isotope",
+          "def": "Atoms of the same element with different numbers of neutrons"
+        },
+        {
+          "term": "Relative atomic mass",
+          "def": "Weighted average mass of an element's isotopes"
+        }
+      ],
+      "examTips": [
+        "Atomic number = protons = electrons (in neutral atom)",
+        "Mass number - atomic number = neutrons",
+        "Isotopes have SAME atomic number, DIFFERENT mass number."
+      ],
+      "commonMistakes": [
+        "Saying isotopes have different numbers of protons \u2014 they don't, only neutrons differ.",
+        "Confusing mass number (p+n) with atomic number (p only)."
+      ],
+      "videos": [
+        {
+          "title": "Atomic Structure GCSE Chemistry",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=dTdIxnQd6e8"
+        },
+        {
+          "title": "Atoms and Atomic Structure",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=0X3gJJYcVCQ"
+        },
+        {
+          "title": "Structure of the Atom",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=u-SBTRLoPuo"
+        }
+      ]
+    },
+    "The Periodic Table": {
+      "intro": "The periodic table organises all known elements by their atomic structure. Understanding its layout is fundamental to chemistry.",
+      "sections": [
+        {
+          "title": "Organisation of the Periodic Table",
+          "icon": "\ud83d\udcca",
+          "points": [
+            "Elements arranged in order of increasing atomic number",
+            "Rows = periods (same number of electron shells)",
+            "Columns = groups (same number of outer electrons \u2192 similar properties)",
+            "Metals on left, non-metals on right, metalloids on staircase line",
+            "Group number = number of outer electrons (for groups 1-7)"
+          ]
+        },
+        {
+          "title": "History",
+          "icon": "\ud83d\udcda",
+          "points": [
+            "Mendeleev arranged elements by atomic mass and properties (1869)",
+            "Left gaps for undiscovered elements \u2014 predictions proved correct",
+            "Modern table arranged by atomic NUMBER, not mass",
+            "Transition metals form a block in the middle"
+          ]
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Period",
+          "def": "A horizontal row in the periodic table \u2014 same number of electron shells"
+        },
+        {
+          "term": "Group",
+          "def": "A vertical column \u2014 elements with same number of outer electrons, similar properties"
+        },
+        {
+          "term": "Transition metals",
+          "def": "Elements in the central block of the periodic table"
+        }
+      ],
+      "examTips": [
+        "Group 1 = 1 outer electron. Group 7 = 7 outer electrons. Group 0 = full outer shell.",
+        "Going down a group: same outer electrons, more shells, more reactive (Group 1) or less reactive (Group 7)."
+      ],
+      "commonMistakes": [
+        "Confusing periods (rows) and groups (columns).",
+        "Forgetting Mendeleev used atomic mass, not number."
+      ],
+      "videos": [
+        {
+          "title": "The Periodic Table",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=q-UFYdMSaS4"
+        },
+        {
+          "title": "The Periodic Table GCSE",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=0ViLQ-NQVRI"
+        },
+        {
+          "title": "The Periodic Table",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=3ZNqXAaOr80"
+        }
+      ]
+    },
+    "Groups": {
+      "intro": "Groups of elements share similar chemical properties because they have the same number of outer electrons. Group 1, 7 and 0 are the most important for GCSE.",
+      "sections": [
+        {
+          "title": "Group 1 \u2014 Alkali Metals",
+          "icon": "\ud83d\udd25",
+          "points": [
+            "1 outer electron \u2014 highly reactive; react vigorously with water",
+            "Reactivity INCREASES down the group \u2014 outer electron further from nucleus, easier to lose",
+            "Reactions with water: metal + water \u2192 metal hydroxide + hydrogen",
+            "Lithium < Sodium < Potassium < Rubidium (reactivity order)",
+            "Stored under oil \u2014 react with air and water"
+          ]
+        },
+        {
+          "title": "Group 7 \u2014 Halogens",
+          "icon": "\ud83d\udfe1",
+          "points": [
+            "7 outer electrons \u2014 need 1 more to complete outer shell",
+            "Reactivity DECREASES down the group \u2014 outer shell further away, harder to gain electron",
+            "More reactive halogen displaces less reactive from solution (displacement reaction)",
+            "Fluorine > Chlorine > Bromine > Iodine (reactivity order)"
+          ]
+        },
+        {
+          "title": "Group 0 \u2014 Noble Gases",
+          "icon": "\ud83d\udca8",
+          "points": [
+            "Full outer shell \u2014 very unreactive (inert)",
+            "Exist as single atoms (monatomic)",
+            "Used in: light bulbs (argon), balloons (helium), fluorescent lighting (neon, argon)",
+            "Boiling point increases down the group"
+          ]
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Alkali metals",
+          "def": "Group 1 elements \u2014 highly reactive metals with 1 outer electron"
+        },
+        {
+          "term": "Halogens",
+          "def": "Group 7 elements \u2014 reactive non-metals with 7 outer electrons"
+        },
+        {
+          "term": "Noble gases",
+          "def": "Group 0 elements \u2014 unreactive gases with full outer shells"
+        },
+        {
+          "term": "Displacement reaction",
+          "def": "More reactive halogen pushes out less reactive halogen from a compound"
+        }
+      ],
+      "examTips": [
+        "Group 1 reactivity INCREASES down group (outer electron further away \u2192 easier to lose).",
+        "Group 7 reactivity DECREASES down group (outer shell further \u2192 harder to gain electron).",
+        "Noble gases are inert because they have full outer electron shells."
+      ],
+      "commonMistakes": [
+        "Saying Group 7 reactivity increases down the group \u2014 it DECREASES.",
+        "Forgetting that Group 1 metals float on water and fizz \u2014 they react vigorously."
+      ],
+      "videos": [
+        {
+          "title": "Group 1 Alkali Metals",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=sB9x4MDMHyE"
+        },
+        {
+          "title": "Group 7 Halogens",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=8V_K1EZYIZQ"
+        },
+        {
+          "title": "Noble Gases",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=E6bsASJ6fco"
+        }
+      ]
+    },
+    "History of the Atom": {
+      "intro": "Our understanding of atomic structure has developed over time as new experimental evidence emerged. This is a great example of how scientific models change.",
+      "sections": [
+        {
+          "title": "Timeline of Atomic Models",
+          "icon": "\ud83d\udcc5",
+          "numbered": [
+            "<strong>Dalton (1803)</strong> \u2014 solid spheres; atoms are indivisible",
+            "<strong>Thomson (1904)</strong> \u2014 'plum pudding' model; electrons embedded in positive sphere",
+            "<strong>Rutherford (1909)</strong> \u2014 nuclear model; most mass in tiny positive nucleus; electrons around it (alpha scattering experiment)",
+            "<strong>Bohr (1913)</strong> \u2014 electrons in fixed circular orbits (shells) at specific energies",
+            "<strong>Modern model</strong> \u2014 electrons in orbitals (probability clouds); subatomic structure of nucleus"
+          ]
+        },
+        {
+          "title": "Rutherford's Alpha Scattering Experiment",
+          "icon": "\ud83d\udd2c",
+          "points": [
+            "Alpha particles fired at thin gold foil",
+            "Most passed straight through (atom mostly empty space)",
+            "Small number deflected at large angles (hit dense positive nucleus)",
+            "Very few bounced back (nucleus is very small and very dense)",
+            "This disproved the plum pudding model"
+          ]
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Plum pudding model",
+          "def": "Thomson's model with electrons embedded in a positive sphere"
+        },
+        {
+          "term": "Nuclear model",
+          "def": "Rutherford's model with a small dense positive nucleus and orbiting electrons"
+        },
+        {
+          "term": "Alpha scattering",
+          "def": "Rutherford's experiment firing alpha particles at gold foil to probe atomic structure"
+        }
+      ],
+      "examTips": [
+        "Describe Rutherford's results AND what they mean: most pass through (mostly empty space); some deflect (small positive nucleus).",
+        "Models change when new evidence cannot be explained by the existing model."
+      ],
+      "commonMistakes": [
+        "Saying Rutherford's experiment proved the plum pudding model \u2014 it DISproved it.",
+        "Forgetting that the plum pudding model had a POSITIVE sphere with electrons in it."
+      ],
+      "videos": [
+        {
+          "title": "History of the Atom",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=dTdIxnQd6e8"
+        },
+        {
+          "title": "Rutherford's Experiment",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=XBqHkraf8iE"
+        },
+        {
+          "title": "Atomic Models History",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=1RIxfeSXp1I"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "module": "P5 Forces",
+  "topics": {
+    "Scalars and Vectors": {
+      "intro": "Physical quantities can be either scalar (magnitude only) or vector (magnitude and direction). This distinction is fundamental to understanding forces.",
+      "sections": [
+        {"title": "Scalars vs Vectors", "icon": "➡️", "points": [
+          "<strong>Scalar</strong> — magnitude only: speed, distance, mass, energy, temperature, time",
+          "<strong>Vector</strong> — magnitude AND direction: velocity, displacement, force, acceleration, momentum",
+          "Vectors can be represented by arrows — length = magnitude, direction = direction"
+        ]},
+        {"title": "Adding Vectors", "icon": "📐", "points": [
+          "Vectors in same direction: add magnitudes",
+          "Vectors in opposite directions: subtract magnitudes",
+          "Vectors at angles: use scale drawing or Pythagoras"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Scalar", "def": "A quantity with magnitude only — no direction (e.g. speed, mass)"},
+        {"term": "Vector", "def": "A quantity with both magnitude and direction (e.g. velocity, force)"},
+        {"term": "Resultant", "def": "The single vector that has the same effect as two or more vectors combined"}
+      ],
+      "examTips": [
+        "Speed is scalar; velocity is vector. Distance is scalar; displacement is vector.",
+        "When forces are balanced (resultant = 0), the object is in equilibrium."
+      ],
+      "commonMistakes": [
+        "Saying speed and velocity are the same — velocity has direction, speed does not.",
+        "Forgetting direction when describing a vector quantity."
+      ],
+      "videos": [
+        {"title": "Scalars and Vectors GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=ihNZlp7iUHE"},
+        {"title": "Vectors and Scalars", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=ihNZlp7iUHE"},
+        {"title": "Scalars vs Vectors", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=ml4NSzCQobk"}
+      ]
+    },
+    "Forces": {
+      "intro": "Forces are pushes or pulls that can change the speed, direction or shape of an object. Understanding forces and their effects is central to P5.",
+      "sections": [
+        {"title": "Contact and Non-Contact Forces", "icon": "🤜", "points": [
+          "<strong>Contact forces</strong>: friction, normal force, tension, air resistance",
+          "<strong>Non-contact forces</strong>: gravity (weight), magnetic force, electrostatic force"
+        ]},
+        {"title": "Resultant Force", "icon": "⚖️", "points": [
+          "Multiple forces can be replaced by a single resultant force",
+          "Balanced forces (resultant = 0): object stays at rest or moves at constant velocity",
+          "Unbalanced forces (resultant ≠ 0): object accelerates in direction of resultant"
+        ]},
+        {"title": "Weight and Mass", "icon": "🌍", "callout": {"type": "exam", "label": "Formula", "text": "W = m × g (Weight = mass × gravitational field strength). On Earth, g = 9.8 N/kg. Weight is a FORCE (newtons); mass is an amount of matter (kilograms)."}}
+      ],
+      "keyTerms": [
+        {"term": "Force", "def": "A push or pull that can change an object's speed, direction or shape — measured in newtons"},
+        {"term": "Weight", "def": "The gravitational force on an object: W = mg"},
+        {"term": "Resultant force", "def": "The single force that represents the combined effect of all forces on an object"},
+        {"term": "Equilibrium", "def": "State where all forces are balanced — no acceleration"}
+      ],
+      "examTips": [
+        "Weight = mg. On Earth, g = 9.8 N/kg ≈ 10 N/kg.",
+        "Balanced forces ≠ no forces. Balanced forces mean NO ACCELERATION.",
+        "Friction always acts opposite to direction of motion."
+      ],
+      "commonMistakes": [
+        "Confusing mass (kg) and weight (N) — they are different quantities.",
+        "Saying balanced forces mean the object is stationary — it could be moving at constant velocity."
+      ],
+      "videos": [
+        {"title": "Forces GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=ihNZlp7iUHE"},
+        {"title": "Forces and Motion", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=7pUAydjne5M"},
+        {"title": "Forces", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=ml4NSzCQobk"}
+      ]
+    },
+    "Work Done": {
+      "intro": "Work is done when a force causes an object to move. It is a measure of energy transferred.",
+      "sections": [
+        {"title": "Work Done Formula", "icon": "📐", "callout": {"type": "exam", "label": "Formula", "text": "W = F × d (Work done = Force × distance moved in direction of force). Units: joules (J). 1 J = 1 N × 1 m."}, "points": [
+          "Work done = energy transferred",
+          "If force and displacement are in same direction: W = Fd",
+          "No work done if force is perpendicular to displacement (e.g. gravity on horizontal motion)"
+        ]},
+        {"title": "Power", "icon": "⚡", "callout": {"type": "exam", "label": "Power Formula", "text": "P = W/t (Power = Work done ÷ time). Units: watts (W). Also P = Fv (Power = Force × velocity)."}}
+      ],
+      "keyTerms": [
+        {"term": "Work done", "def": "Energy transferred when a force moves an object: W = Fd (joules)"},
+        {"term": "Power", "def": "Rate of doing work: P = W/t (watts)"},
+        {"term": "Joule", "def": "Unit of energy and work — 1 J = 1 N × 1 m"}
+      ],
+      "examTips": [
+        "Work done = energy transferred — they are equivalent.",
+        "P = W/t and P = Fv are both useful — choose depending on what's given."
+      ],
+      "commonMistakes": [
+        "Forgetting that work requires movement — a force without movement does no work.",
+        "Using distance instead of displacement in direction of force."
+      ],
+      "videos": [
+        {"title": "Work Done GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=2oHBmLABcZw"},
+        {"title": "Work and Power", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=2oHBmLABcZw"},
+        {"title": "Work Done", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=P-B5T3ZEw8E"}
+      ]
+    },
+    "Elasticity": {
+      "intro": "Elastic materials return to their original shape after a force is removed. Hooke's Law describes the relationship between force and extension.",
+      "sections": [
+        {"title": "Hooke's Law", "icon": "🔧", "callout": {"type": "exam", "label": "Formula", "text": "F = k × e (Force = spring constant × extension). Spring constant k is in N/m. Hooke's Law applies up to the LIMIT OF PROPORTIONALITY."}, "points": [
+          "Extension proportional to force — graph is a straight line through origin",
+          "Beyond limit of proportionality: permanent deformation; spring doesn't return to original length"
+        ]},
+        {"title": "Elastic and Inelastic", "icon": "⚡", "points": [
+          "<strong>Elastic deformation</strong> — returns to original shape when force removed",
+          "<strong>Inelastic (plastic) deformation</strong> — does not return to original shape — permanently changed",
+          "Elastic potential energy stored: Ee = ½ke²"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Hooke's Law", "def": "Extension is proportional to force: F = ke — valid up to limit of proportionality"},
+        {"term": "Spring constant", "def": "Measure of stiffness of a spring: k = F/e (N/m)"},
+        {"term": "Elastic deformation", "def": "Deformation that is reversed when force is removed"},
+        {"term": "Limit of proportionality", "def": "Point beyond which Hooke's Law no longer applies"}
+      ],
+      "examTips": [
+        "F = ke — steeper gradient on F-e graph = larger spring constant = stiffer spring.",
+        "Elastic potential energy: Ee = ½ke²."
+      ],
+      "commonMistakes": [
+        "Saying elastic means stretchy — elastic means it returns to original shape.",
+        "Forgetting that Hooke's Law only applies up to the limit of proportionality."
+      ],
+      "videos": [
+        {"title": "Hooke's Law GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=GF4zzLSk38I"},
+        {"title": "Elasticity and Springs", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=GF4zzLSk38I"},
+        {"title": "Hooke's Law", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=ZCcCT7VZANU"}
+      ]
+    },
+    "Motion": {
+      "intro": "Motion can be described using distance, displacement, speed, velocity and acceleration. Distance-time and velocity-time graphs are essential tools.",
+      "sections": [
+        {"title": "Key Definitions", "icon": "🏃", "points": [
+          "<strong>Speed</strong> — distance ÷ time (m/s) — scalar",
+          "<strong>Velocity</strong> — displacement ÷ time (m/s) — vector",
+          "<strong>Acceleration</strong> — change in velocity ÷ time (m/s²) — vector"
+        ]},
+        {"title": "Distance-Time Graphs", "icon": "📈", "points": [
+          "Gradient = speed",
+          "Flat line = stationary",
+          "Straight line = constant speed",
+          "Curved line = changing speed (acceleration/deceleration)"
+        ]},
+        {"title": "Velocity-Time Graphs", "icon": "📊", "points": [
+          "Gradient = acceleration",
+          "Area under graph = distance travelled",
+          "Flat line = constant velocity",
+          "Positive gradient = acceleration; Negative gradient = deceleration"
+        ]},
+        {"title": "SUVAT Equations", "icon": "📐", "callout": {"type": "exam", "label": "Key Equations", "text": "v = u + at | s = ut + ½at² | v² = u² + 2as | s = (u+v)/2 × t. (s=displacement, u=initial velocity, v=final velocity, a=acceleration, t=time)"}}
+      ],
+      "keyTerms": [
+        {"term": "Acceleration", "def": "Rate of change of velocity — change in velocity ÷ time (m/s²)"},
+        {"term": "Velocity", "def": "Speed in a given direction — a vector quantity"},
+        {"term": "Displacement", "def": "Distance in a specified direction from a reference point"}
+      ],
+      "examTips": [
+        "v-t graph: gradient = acceleration. Area = distance.",
+        "d-t graph: gradient = speed. Flat = stationary.",
+        "Deceleration is negative acceleration — state the direction."
+      ],
+      "commonMistakes": [
+        "Reading gradient of d-t graph as acceleration — it gives SPEED.",
+        "Forgetting area under v-t graph = distance (not just for triangles — also trapeziums)."
+      ],
+      "videos": [
+        {"title": "Motion and Velocity GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=hq2hJkGq_P8"},
+        {"title": "Distance-Time Graphs", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=j-kMGFDFKaM"},
+        {"title": "Velocity-Time Graphs", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=j-kMGFDFKaM"}
+      ]
+    },
+    "Newton's Laws": {
+      "intro": "Newton's three laws of motion describe the relationship between force, mass and acceleration. They are fundamental to understanding how objects move.",
+      "sections": [
+        {"title": "Newton's First Law", "icon": "1️⃣", "callout": {"type": "exam", "label": "First Law", "text": "An object remains at rest or moves at constant velocity unless acted upon by a resultant force."}, "points": [
+          "Balanced forces → no acceleration (stays at rest or constant velocity)",
+          "Inertia = tendency of objects to resist changes in motion"
+        ]},
+        {"title": "Newton's Second Law", "icon": "2️⃣", "callout": {"type": "exam", "label": "Second Law", "text": "F = ma (Resultant force = mass × acceleration). Units: F in N, m in kg, a in m/s²."}, "points": [
+          "Larger force → greater acceleration",
+          "Larger mass → smaller acceleration (for same force)",
+          "Direction of acceleration = direction of resultant force"
+        ]},
+        {"title": "Newton's Third Law", "icon": "3️⃣", "callout": {"type": "exam", "label": "Third Law", "text": "For every action there is an equal and opposite reaction. Forces act on DIFFERENT objects — they cannot cancel each other out."}}
+      ],
+      "keyTerms": [
+        {"term": "Newton's First Law", "def": "Objects stay at rest or constant velocity unless a resultant force acts"},
+        {"term": "Newton's Second Law", "def": "Resultant force = mass × acceleration: F = ma"},
+        {"term": "Newton's Third Law", "def": "Equal and opposite reaction forces — act on different objects"},
+        {"term": "Inertia", "def": "Tendency of an object to resist changes in its state of motion"}
+      ],
+      "examTips": [
+        "F = ma — rearrange for a = F/m or m = F/a.",
+        "Third law pairs: act on DIFFERENT objects; same type of force; equal magnitude; opposite direction.",
+        "Balanced forces ≠ no forces — balanced means ZERO resultant."
+      ],
+      "commonMistakes": [
+        "Saying third law forces cancel — they can't, they act on different objects.",
+        "Confusing balanced forces (no acceleration) with zero forces (nothing touching)."
+      ],
+      "videos": [
+        {"title": "Newton's Laws GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=hq2hJkGq_P8"},
+        {"title": "Newton's Second Law", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=_sr7A0tkHgI"},
+        {"title": "Newton's Three Laws", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=zWR-sG-WTJQ"}
+      ]
+    },
+    "Stopping Distances": {
+      "intro": "The total stopping distance of a vehicle is the sum of thinking distance and braking distance. Both are affected by different factors.",
+      "sections": [
+        {"title": "Stopping Distance", "icon": "🚗", "callout": {"type": "exam", "label": "Formula", "text": "Total stopping distance = thinking distance + braking distance."}, "points": [
+          "Thinking distance: distance travelled while driver reacts",
+          "Braking distance: distance travelled while brakes are applied"
+        ]},
+        {"title": "Factors Affecting Each", "icon": "📊", "points": [
+          "<strong>Thinking distance increases with:</strong> higher speed, driver tiredness, alcohol/drugs, distraction",
+          "<strong>Braking distance increases with:</strong> higher speed, worn tyres, wet/icy road, worn brakes, heavier vehicle"
+        ]},
+        {"title": "Reaction Time", "icon": "⏱️", "points": [
+          "Typical reaction time: 0.2–0.9 seconds",
+          "Measured by: ruler drop test or computer-based tests",
+          "Increased by: alcohol, drugs, tiredness, distractions"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Thinking distance", "def": "Distance travelled during the driver's reaction time"},
+        {"term": "Braking distance", "def": "Distance travelled after brakes are applied until vehicle stops"},
+        {"term": "Reaction time", "def": "Time between a stimulus and a response — typically 0.2-0.9 s"}
+      ],
+      "examTips": [
+        "Speed affects BOTH thinking distance AND braking distance — very important.",
+        "Braking distance ∝ v² — doubling speed quadruples braking distance."
+      ],
+      "commonMistakes": [
+        "Saying only road conditions affect stopping distance — reaction time affects thinking distance.",
+        "Forgetting that speed affects both components of stopping distance."
+      ],
+      "videos": [
+        {"title": "Stopping Distances GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=hq2hJkGq_P8"},
+        {"title": "Stopping Distances", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=K0TxvxU4QhY"},
+        {"title": "Thinking and Braking Distance", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=K0TxvxU4QhY"}
+      ]
+    },
+    "Momentum": {
+      "intro": "Momentum is the product of mass and velocity. It is conserved in all collisions and explosions (in the absence of external forces).",
+      "sections": [
+        {"title": "Momentum Formula", "icon": "📐", "callout": {"type": "exam", "label": "Formula", "text": "p = m × v (Momentum = mass × velocity). Units: kg m/s. Momentum is a vector quantity."}},
+        {"title": "Conservation of Momentum", "icon": "♾️", "points": [
+          "Total momentum before = total momentum after (in a closed system)",
+          "Applies to collisions and explosions",
+          "In explosion from rest: total momentum = 0 (equal and opposite momenta)"
+        ]},
+        {"title": "Impulse", "icon": "⚡", "callout": {"type": "exam", "label": "Force and Momentum", "text": "F = Δp/Δt (Force = change in momentum ÷ time). Rearranged: F × t = Δp (impulse = change in momentum). Larger time → smaller force for same momentum change — explains crumple zones."}}
+      ],
+      "keyTerms": [
+        {"term": "Momentum", "def": "Mass × velocity — a vector quantity measured in kg m/s"},
+        {"term": "Conservation of momentum", "def": "Total momentum before = total momentum after in a closed system"},
+        {"term": "Impulse", "def": "Change in momentum = force × time (N s or kg m/s)"}
+      ],
+      "examTips": [
+        "Momentum is conserved in ALL collisions — elastic and inelastic.",
+        "Crumple zones increase collision time → smaller force for same momentum change → less injury.",
+        "In explosion from rest: momenta are equal and opposite → total = 0."
+      ],
+      "commonMistakes": [
+        "Forgetting momentum is a vector — direction matters in calculations.",
+        "Saying kinetic energy is conserved in all collisions — only in elastic collisions."
+      ],
+      "videos": [
+        {"title": "Momentum GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=sTdPjxNOCOY"},
+        {"title": "Conservation of Momentum", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=sTdPjxNOCOY"},
+        {"title": "Momentum and Impulse", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=Uqf4vJHF8mU"},
+        {"title": "Momentum Calculations", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=sTdPjxNOCOY"}
+      ]
+    }
+  }
+}

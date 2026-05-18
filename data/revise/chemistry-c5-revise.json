@@ -1,0 +1,95 @@
+{
+  "module": "C5 Energy Changes",
+  "topics": {
+    "Energy Changes": {
+      "intro": "Chemical reactions involve energy changes. Exothermic reactions release energy to the surroundings; endothermic reactions absorb energy from the surroundings.",
+      "sections": [
+        {"title": "Exothermic Reactions", "icon": "🔥", "points": ["Release energy to surroundings — temperature INCREASES", "Products have less energy than reactants", "Examples: combustion, neutralisation, respiration, hand warmers", "Energy profile: products lower than reactants"]},
+        {"title": "Endothermic Reactions", "icon": "❄️", "points": ["Absorb energy from surroundings — temperature DECREASES", "Products have more energy than reactants", "Examples: thermal decomposition, photosynthesis, dissolving ammonium nitrate, sports cold packs", "Energy profile: products higher than reactants"]},
+        {"title": "Energy Profile Diagrams", "icon": "📈", "callout": {"type": "exam", "label": "Key Features", "text": "All energy profiles show: reactants, products, activation energy (peak), overall energy change (ΔH). Exothermic: products lower. Endothermic: products higher."}}
+      ],
+      "keyTerms": [
+        {"term": "Exothermic", "def": "Reaction that releases energy — surroundings get warmer"},
+        {"term": "Endothermic", "def": "Reaction that absorbs energy — surroundings get cooler"},
+        {"term": "Activation energy", "def": "Minimum energy needed for a reaction to occur — the peak on an energy profile"},
+        {"term": "ΔH", "def": "Enthalpy change — negative for exothermic, positive for endothermic"}
+      ],
+      "examTips": [
+        "Exothermic = temperature UP (energy OUT to surroundings). Endothermic = temperature DOWN (energy IN from surroundings).",
+        "On energy profiles: activation energy is measured from reactants to the peak. ΔH is from reactants to products."
+      ],
+      "commonMistakes": [
+        "Saying exothermic reactions have a temperature decrease — it's the opposite.",
+        "Confusing activation energy (reactants to peak) with ΔH (reactants to products)."
+      ],
+      "videos": [
+        {"title": "Exothermic and Endothermic Reactions", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=RHPV4Usqmuc"},
+        {"title": "Energy Changes GCSE Chemistry", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=Bpwh7SzD_kA"},
+        {"title": "Exothermic vs Endothermic", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=hePT1dxYH-s"}
+      ]
+    },
+    "Bond Energies": {
+      "intro": "During reactions, bonds in reactants break (requiring energy) and new bonds form in products (releasing energy). The overall energy change depends on the difference.",
+      "sections": [
+        {"title": "Bond Breaking and Making", "icon": "🔗", "points": [
+          "Breaking bonds = ENDOTHERMIC (energy IN required)",
+          "Making bonds = EXOTHERMIC (energy OUT released)",
+          "Exothermic overall: energy released making bonds > energy needed breaking bonds",
+          "Endothermic overall: energy needed breaking bonds > energy released making bonds"
+        ]},
+        {"title": "Calculating Energy Changes", "icon": "📐", "callout": {"type": "exam", "label": "Method", "text": "1. List all bonds broken (reactants) and their energies. 2. List all bonds formed (products) and their energies. 3. ΔH = Σ(energy in) − Σ(energy out). Negative answer = exothermic."}}
+      ],
+      "keyTerms": [
+        {"term": "Bond energy", "def": "Energy needed to break one mole of a specific bond"},
+        {"term": "Bond breaking", "def": "Endothermic process — requires energy input"},
+        {"term": "Bond making", "def": "Exothermic process — releases energy"}
+      ],
+      "examTips": [
+        "Bond breaking = endothermic. Bond making = exothermic. This is a common exam question.",
+        "Show all working in bond energy calculations — list every bond broken and formed separately."
+      ],
+      "commonMistakes": [
+        "Reversing bond breaking/making — breaking bonds requires energy, making bonds releases it.",
+        "Forgetting to count all bonds — check subscripts carefully in formulas."
+      ],
+      "videos": [
+        {"title": "Bond Energy Calculations", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=7UkF6wWrNqk"},
+        {"title": "Bond Energies GCSE Chemistry", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=7UkF6wWrNqk"},
+        {"title": "Bond Energies", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=7UkF6wWrNqk"}
+      ]
+    },
+    "Fuel Cells": {
+      "intro": "Fuel cells generate electricity directly from a chemical reaction between a fuel and oxygen, without combustion. The hydrogen fuel cell is the key example for GCSE.",
+      "sections": [
+        {"title": "How Hydrogen Fuel Cells Work", "icon": "⚡", "points": [
+          "Hydrogen fed to anode: H₂ → 2H⁺ + 2e⁻ (oxidation)",
+          "Electrons flow through external circuit — this is the electrical current",
+          "Oxygen fed to cathode: O₂ + 4H⁺ + 4e⁻ → 2H₂O (reduction)",
+          "Overall reaction: hydrogen + oxygen → water",
+          "No combustion — direct electrochemical conversion"
+        ]},
+        {"title": "Advantages and Disadvantages", "icon": "⚖️", "points": [
+          "Advantages: only product is water (no CO₂); efficient; no moving parts; continuous supply of fuel",
+          "Disadvantages: hydrogen is explosive and hard to store safely; currently produced from fossil fuels (not truly green); expensive technology; infrastructure lacking"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Fuel cell", "def": "A device that converts chemical energy from a fuel directly into electrical energy"},
+        {"term": "Hydrogen fuel cell", "def": "Fuel cell where H₂ and O₂ react to produce water and electricity"}
+      ],
+      "examTips": [
+        "Fuel cells produce water as the only product — no CO₂ emissions at point of use.",
+        "For evaluation questions: benefits (clean, efficient) vs issues (hydrogen storage, production method)."
+      ],
+      "commonMistakes": [
+        "Saying fuel cells have no disadvantages — hydrogen storage and production are significant issues.",
+        "Forgetting that hydrogen is currently made from fossil fuels in most cases."
+      ],
+      "videos": [
+        {"title": "Fuel Cells GCSE Chemistry", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=ipyFN4YJmrU"},
+        {"title": "Hydrogen Fuel Cells", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=ipyFN4YJmrU"},
+        {"title": "Fuel Cells", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=N-VzMYw6VBs"}
+      ]
+    }
+  }
+}

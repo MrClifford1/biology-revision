@@ -1,0 +1,320 @@
+{
+  "module": "C4 Chemical Changes",
+  "topics": {
+    "Acids and Bases": {
+      "intro": "Acids and bases are fundamental in chemistry. The pH scale measures how acidic or alkaline a solution is.",
+      "sections": [
+        {
+          "title": "The pH Scale",
+          "icon": "\ud83c\udfa8",
+          "points": [
+            "pH 0-6 = acidic (H\u207a ions)",
+            "pH 7 = neutral",
+            "pH 8-14 = alkaline (OH\u207b ions)",
+            "Strong acids/alkalis fully ionise; weak acids/alkalis partially ionise",
+            "Universal indicator or pH meter to measure pH"
+          ]
+        },
+        {
+          "title": "Reactions of Acids",
+          "icon": "\u2697\ufe0f",
+          "points": [
+            "Acid + metal \u2192 salt + hydrogen",
+            "Acid + metal oxide \u2192 salt + water",
+            "Acid + metal hydroxide \u2192 salt + water (neutralisation)",
+            "Acid + metal carbonate \u2192 salt + water + carbon dioxide"
+          ]
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Acid",
+          "def": "A substance that produces H\u207a ions in solution; pH below 7"
+        },
+        {
+          "term": "Alkali",
+          "def": "A soluble base that produces OH\u207b ions; pH above 7"
+        },
+        {
+          "term": "Neutralisation",
+          "def": "Reaction between an acid and a base to form salt and water"
+        },
+        {
+          "term": "Salt",
+          "def": "An ionic compound formed when an acid reacts with a base"
+        }
+      ],
+      "examTips": [
+        "Neutralisation: acid + base \u2192 salt + water. Remember this general equation.",
+        "The name of the salt depends on the acid: HCl \u2192 chloride, H\u2082SO\u2084 \u2192 sulphate, HNO\u2083 \u2192 nitrate."
+      ],
+      "commonMistakes": [
+        "Confusing acid + carbonate (also makes CO\u2082) with acid + metal oxide (no CO\u2082)."
+      ],
+      "videos": [
+        {
+          "title": "Acids and Bases",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=YIXRfhE6piM"
+        },
+        {
+          "title": "pH Scale GCSE",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=IEjQ61dwHFg"
+        },
+        {
+          "title": "Acids and Alkalis",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=yBqFEYlMHlo"
+        }
+      ]
+    },
+    "Salts": {
+      "intro": "Salts are ionic compounds formed from neutralisation reactions. Making pure dry salt requires specific practical techniques.",
+      "sections": [
+        {
+          "title": "Making Salts",
+          "icon": "\ud83e\uddea",
+          "points": [
+            "Soluble salts made by reacting acid with excess solid base/carbonate/metal",
+            "Filter off excess solid",
+            "Evaporate solution to crystallise salt",
+            "Insoluble salts made by precipitation \u2014 mixing two solutions"
+          ]
+        },
+        {
+          "title": "Naming Salts",
+          "icon": "\ud83d\udcdd",
+          "points": [
+            "Named from the acid and the base",
+            "HCl \u2192 chloride; H\u2082SO\u2084 \u2192 sulphate; HNO\u2083 \u2192 nitrate",
+            "NaOH + HCl \u2192 NaCl + H\u2082O (sodium chloride)"
+          ]
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Crystallisation",
+          "def": "The process of forming crystals from a saturated solution"
+        },
+        {
+          "term": "Precipitation",
+          "def": "Formation of an insoluble solid from two solutions"
+        },
+        {
+          "term": "Neutralisation",
+          "def": "Acid + base \u2192 salt + water"
+        }
+      ],
+      "examTips": [
+        "For making soluble salts: use EXCESS base to ensure all acid reacts, then filter off excess base.",
+        "Precipitation: mix solutions containing the required ions."
+      ],
+      "commonMistakes": [
+        "Forgetting to add excess base to neutralise all the acid."
+      ],
+      "videos": [
+        {
+          "title": "Making Salts",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=YIXRfhE6piM"
+        },
+        {
+          "title": "Salts GCSE Chemistry",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=8G1oT2FnpvI"
+        }
+      ]
+    },
+    "Reactivity Series": {
+      "intro": "The reactivity series ranks metals from most to least reactive. It can be used to predict displacement reactions and the stability of metal compounds.",
+      "sections": [
+        {
+          "title": "The Reactivity Series",
+          "icon": "\ud83d\udcca",
+          "points": [
+            "Potassium > Sodium > Calcium > Magnesium > Aluminium > Zinc > Iron > Copper > Silver > Gold",
+            "More reactive metals: react vigorously with water/acid; form stable oxides",
+            "Less reactive metals: react slowly or not at all; found native (uncombined) in Earth"
+          ]
+        },
+        {
+          "title": "Displacement Reactions",
+          "icon": "\u2694\ufe0f",
+          "points": [
+            "More reactive metal displaces less reactive from compound",
+            "Example: Zn + CuSO\u2084 \u2192 ZnSO\u2084 + Cu (zinc displaces copper)",
+            "Used to extract metals: aluminium displaces iron in thermite reaction"
+          ]
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Reactivity series",
+          "def": "A list of metals in order of decreasing reactivity"
+        },
+        {
+          "term": "Displacement reaction",
+          "def": "A more reactive metal displaces a less reactive one from a compound"
+        }
+      ],
+      "examTips": [
+        "Use MASH CuSG as a mnemonic: Mg Al Zn Fe Cu (most to least reactive of common metals).",
+        "Only a MORE reactive metal can displace a LESS reactive one."
+      ],
+      "commonMistakes": [
+        "Saying a less reactive metal displaces a more reactive one \u2014 this cannot happen."
+      ],
+      "videos": [
+        {
+          "title": "Reactivity Series",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=Ry6LcFtpF04"
+        },
+        {
+          "title": "Reactivity Series GCSE",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=Ry6LcFtpF04"
+        },
+        {
+          "title": "Metal Reactivity",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=n2N8VXmPM1Y"
+        }
+      ]
+    },
+    "Redox": {
+      "intro": "Redox reactions involve the simultaneous transfer of electrons. Oxidation and reduction always occur together.",
+      "sections": [
+        {
+          "title": "OIL RIG",
+          "icon": "\ud83d\udee2\ufe0f",
+          "callout": {
+            "type": "exam",
+            "label": "Memory Aid",
+            "text": "OIL RIG: Oxidation Is Loss (of electrons), Reduction Is Gain (of electrons)"
+          }
+        },
+        {
+          "title": "Oxidation States",
+          "icon": "\ud83d\udcca",
+          "points": [
+            "Oxidation: loss of electrons; increase in oxidation number",
+            "Reduction: gain of electrons; decrease in oxidation number",
+            "Reducing agent: gives electrons (gets oxidised)",
+            "Oxidising agent: takes electrons (gets reduced)"
+          ]
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Oxidation",
+          "def": "Loss of electrons (or gain of oxygen)"
+        },
+        {
+          "term": "Reduction",
+          "def": "Gain of electrons (or loss of oxygen)"
+        },
+        {
+          "term": "Redox",
+          "def": "Reaction involving simultaneous oxidation and reduction"
+        },
+        {
+          "term": "OIL RIG",
+          "def": "Oxidation Is Loss; Reduction Is Gain \u2014 memory aid for electron transfer"
+        }
+      ],
+      "examTips": [
+        "OIL RIG \u2014 learn this! Oxidation and reduction always happen together.",
+        "Reducing agent gets OXIDISED; oxidising agent gets REDUCED."
+      ],
+      "commonMistakes": [
+        "Confusing which species is oxidised and which is reduced."
+      ],
+      "videos": [
+        {
+          "title": "Redox Reactions",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=LLpBmJHdoEo"
+        },
+        {
+          "title": "Oxidation and Reduction",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=kZZSBCiGUGM"
+        },
+        {
+          "title": "Redox",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=s3lOJ0QCFAs"
+        }
+      ]
+    },
+    "Electrolysis": {
+      "intro": "Electrolysis uses electrical energy to break down ionic compounds. It is used to extract reactive metals and purify copper.",
+      "sections": [
+        {
+          "title": "How Electrolysis Works",
+          "icon": "\u26a1",
+          "points": [
+            "Ionic compound must be MOLTEN or DISSOLVED in water",
+            "Positive ions (cations) move to negative electrode (cathode) \u2014 reduced",
+            "Negative ions (anions) move to positive electrode (anode) \u2014 oxidised",
+            "At cathode: metal deposited OR hydrogen gas produced",
+            "At anode: oxygen produced (from solution) OR halogen gas"
+          ]
+        },
+        {
+          "title": "Products from Electrolysis",
+          "icon": "\ud83d\udd2c",
+          "points": [
+            "Molten ionic compound: metal at cathode, non-metal at anode",
+            "Sodium chloride solution (brine): hydrogen at cathode, chlorine at anode, sodium hydroxide remains",
+            "Copper sulphate solution: copper at cathode, oxygen at anode"
+          ]
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Electrolysis",
+          "def": "Decomposition of an ionic compound using electricity"
+        },
+        {
+          "term": "Cathode",
+          "def": "Negative electrode \u2014 where reduction occurs (positive ions discharged)"
+        },
+        {
+          "term": "Anode",
+          "def": "Positive electrode \u2014 where oxidation occurs (negative ions discharged)"
+        },
+        {
+          "term": "Electrolyte",
+          "def": "The molten or dissolved ionic compound that is electrolysed"
+        }
+      ],
+      "examTips": [
+        "Cathode = negative = metals/hydrogen produced. Anode = positive = non-metals/oxygen produced.",
+        "If electrolysing a solution: hydrogen may form at cathode instead of metal if metal is more reactive than hydrogen."
+      ],
+      "commonMistakes": [
+        "Confusing anode (positive, oxidation) and cathode (negative, reduction)."
+      ],
+      "videos": [
+        {
+          "title": "Electrolysis GCSE Chemistry",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=o4pDm-9qI4Y"
+        },
+        {
+          "title": "Electrolysis",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=B7FCoOFGrZg"
+        },
+        {
+          "title": "Electrolysis",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=3YE_KMZfYRY"
+        }
+      ]
+    }
+  }
+}

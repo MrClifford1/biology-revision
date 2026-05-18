@@ -1,0 +1,182 @@
+{
+  "module": "P1 Energy",
+  "topics": {
+    "Energy Stores": {
+      "intro": "Energy cannot be created or destroyed — only transferred between stores. Understanding the different types of energy store is the starting point for all of P1.",
+      "sections": [
+        {"title": "Types of Energy Store", "icon": "⚡", "points": [
+          "<strong>Kinetic</strong> — energy of moving objects",
+          "<strong>Gravitational potential</strong> — energy due to height above ground",
+          "<strong>Elastic potential</strong> — energy stored in stretched/compressed objects",
+          "<strong>Chemical</strong> — energy stored in chemical bonds (food, fuel, batteries)",
+          "<strong>Thermal</strong> — energy stored due to temperature (internal energy)",
+          "<strong>Nuclear</strong> — energy stored in atomic nuclei",
+          "<strong>Electrostatic</strong> — energy due to charges",
+          "<strong>Magnetic</strong> — energy in magnetic fields"
+        ]},
+        {"title": "Conservation of Energy", "icon": "♾️", "callout": {"type": "exam", "label": "Law of Conservation", "text": "Energy cannot be created or destroyed — it can only be transferred from one store to another. The total energy always stays the same."}}
+      ],
+      "keyTerms": [
+        {"term": "Energy store", "def": "A way in which energy is held — kinetic, gravitational, thermal, chemical, etc."},
+        {"term": "Conservation of energy", "def": "Energy cannot be created or destroyed — only transferred between stores"},
+        {"term": "Kinetic energy store", "def": "Energy stored in moving objects"}
+      ],
+      "examTips": [
+        "Use precise language: 'energy is transferred FROM the chemical store TO the kinetic store' — not just 'energy changes'.",
+        "Name both the starting store and the ending store in energy transfer descriptions."
+      ],
+      "commonMistakes": [
+        "Saying energy is 'used up' — energy is always conserved, just transferred to less useful stores (e.g. thermal).",
+        "Confusing energy stores with energy transfer pathways."
+      ],
+      "videos": [
+        {"title": "Energy Stores GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=cEBKq1SyFls"},
+        {"title": "Energy Stores and Transfers", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=cEBKq1SyFls"},
+        {"title": "Energy Stores", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=sJCeQ-nAoQA"}
+      ]
+    },
+    "Energy Transfer": {
+      "intro": "Energy is transferred between stores by four pathways: mechanically, electrically, by heating, and by radiation. Understanding these pathways is essential for P1.",
+      "sections": [
+        {"title": "Transfer Pathways", "icon": "➡️", "points": [
+          "<strong>Mechanically</strong> — by a force acting over a distance (work done)",
+          "<strong>Electrically</strong> — by an electric current through a circuit",
+          "<strong>By heating</strong> — by conduction, convection or radiation",
+          "<strong>By radiation</strong> — electromagnetic waves (light, infrared, etc.)"
+        ]},
+        {"title": "Energy Diagrams", "icon": "📊", "points": [
+          "Sankey diagrams show energy transfers — width of arrow proportional to amount",
+          "Useful energy goes right; wasted energy (usually thermal) goes down",
+          "Energy dissipated = energy spread out into surroundings as thermal energy"
+        ]},
+        {"title": "Reducing Wasted Energy", "icon": "♻️", "points": [
+          "Lubrication — reduces friction → less thermal energy wasted",
+          "Insulation — reduces heat loss to surroundings",
+          "Streamlining — reduces air resistance"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Work done", "def": "Energy transferred when a force moves an object: W = F × d (joules)"},
+        {"term": "Sankey diagram", "def": "Diagram showing energy input, useful output and wasted energy"},
+        {"term": "Dissipation", "def": "Energy spreading out into surroundings as thermal energy — becomes less useful"}
+      ],
+      "examTips": [
+        "All energy eventually dissipates as thermal energy — it isn't 'lost', just less useful.",
+        "In Sankey diagrams: total width in = total width out (conservation of energy)."
+      ],
+      "commonMistakes": [
+        "Saying wasted energy disappears — it is transferred to the thermal store of surroundings.",
+        "Confusing work done (mechanical transfer) with power (rate of energy transfer)."
+      ],
+      "videos": [
+        {"title": "Energy Transfer GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=cEBKq1SyFls"},
+        {"title": "Sankey Diagrams", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=lAMCSsRBcvI"},
+        {"title": "Energy Transfers", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=cEBKq1SyFls"}
+      ]
+    },
+    "Efficiency": {
+      "intro": "Efficiency measures how well a device transfers energy usefully. No device is 100% efficient — some energy is always wasted.",
+      "sections": [
+        {"title": "Efficiency Formula", "icon": "📐", "callout": {"type": "exam", "label": "Formula", "text": "Efficiency = useful output energy ÷ total input energy (× 100 for percentage). Or: efficiency = useful power output ÷ total power input."}, "points": [
+          "Efficiency is always between 0 and 1 (or 0% and 100%)",
+          "No device is 100% efficient — some energy always wasted as heat",
+          "More efficient = less energy wasted"
+        ]},
+        {"title": "Improving Efficiency", "icon": "⬆️", "points": [
+          "Lubrication — reduces friction in moving parts",
+          "Better thermal insulation — reduces heat loss",
+          "Regenerative braking in electric cars — captures kinetic energy"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Efficiency", "def": "The fraction of input energy that is transferred to useful output energy"},
+        {"term": "Useful energy", "def": "Energy transferred in the desired way by a device"},
+        {"term": "Wasted energy", "def": "Energy transferred in an unwanted way — usually as thermal energy"}
+      ],
+      "examTips": [
+        "Efficiency can be expressed as a decimal (0.75) or percentage (75%).",
+        "Wasted energy = total input − useful output.",
+        "An efficiency of 0.75 means 75% of energy is usefully transferred."
+      ],
+      "commonMistakes": [
+        "Giving efficiency greater than 1 (or 100%) — this is impossible.",
+        "Forgetting to subtract wasted energy: useful = total − wasted."
+      ],
+      "videos": [
+        {"title": "Efficiency GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=9Eb58OY-hNw"},
+        {"title": "Efficiency Calculations", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=9Eb58OY-hNw"},
+        {"title": "Energy Efficiency", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=sJCeQ-nAoQA"}
+      ]
+    },
+    "Specific Heat Capacity": {
+      "intro": "Specific heat capacity (SHC) measures how much energy is needed to raise the temperature of 1 kg of a substance by 1°C.",
+      "sections": [
+        {"title": "The Formula", "icon": "📐", "callout": {"type": "exam", "label": "Formula", "text": "Q = mcΔT — where Q = energy (J), m = mass (kg), c = specific heat capacity (J/kg°C), ΔT = temperature change (°C)."}},
+        {"title": "What SHC Means", "icon": "🌡️", "points": [
+          "High SHC = needs lots of energy to heat up (e.g. water = 4200 J/kg°C)",
+          "Low SHC = heats up quickly with less energy (e.g. copper = 390 J/kg°C)",
+          "Water has a very high SHC — why it is used in cooling systems and is used as a thermal store"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Specific heat capacity", "def": "Energy needed to raise 1 kg of a substance by 1°C (J/kg°C)"},
+        {"term": "Thermal capacity", "def": "The energy needed to raise an object's temperature by 1°C"}
+      ],
+      "examTips": [
+        "Q = mcΔT — learn this formula and the units for each quantity.",
+        "Water has the highest SHC of common substances — explain why it is used in central heating."
+      ],
+      "commonMistakes": [
+        "Using temperature in Kelvin instead of °C for ΔT — the change is the same in either scale.",
+        "Forgetting that ΔT = final temperature − initial temperature."
+      ],
+      "videos": [
+        {"title": "Specific Heat Capacity GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=WiKjxEFyDFs"},
+        {"title": "SHC Calculations", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=WiKjxEFyDFs"},
+        {"title": "Specific Heat Capacity", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=WiKjxEFyDFs"}
+      ]
+    },
+    "Energy Resources": {
+      "intro": "Energy resources are used to generate electricity and heat. Understanding the advantages and disadvantages of renewable and non-renewable sources is essential for P1.",
+      "sections": [
+        {"title": "Non-Renewable Resources", "icon": "⛽", "points": [
+          "Fossil fuels: coal, oil, natural gas — burn to produce steam → turbine → generator",
+          "Nuclear: uranium fission heats water → steam → turbine",
+          "Advantages: reliable, high output, available on demand",
+          "Disadvantages: finite (will run out), produce CO₂ (fossil fuels) or radioactive waste (nuclear)"
+        ]},
+        {"title": "Renewable Resources", "icon": "☀️", "points": [
+          "<strong>Solar</strong> — panels absorb light; PV cells or solar thermal",
+          "<strong>Wind</strong> — turbines turned by wind; no fuel costs",
+          "<strong>Hydroelectric</strong> — falling water drives turbines; reliable",
+          "<strong>Tidal</strong> — tides drive turbines; predictable",
+          "<strong>Wave</strong> — waves move generators; variable",
+          "<strong>Geothermal</strong> — heat from Earth used to make steam",
+          "<strong>Biomass</strong> — burning biological material; considered carbon neutral"
+        ]},
+        {"title": "Reliability and Environmental Impact", "icon": "⚖️", "callout": {"type": "exam", "label": "Key Comparison", "text": "Non-renewable: reliable but polluting and finite. Renewable: clean and sustainable but often intermittent (not always available on demand)."}}
+      ],
+      "keyTerms": [
+        {"term": "Non-renewable", "def": "An energy resource that will run out and cannot be replenished"},
+        {"term": "Renewable", "def": "An energy resource that will not run out and is naturally replenished"},
+        {"term": "Turbine", "def": "Device that converts kinetic energy of steam or water into rotational energy"},
+        {"term": "Generator", "def": "Device that converts rotational kinetic energy into electrical energy"}
+      ],
+      "examTips": [
+        "Most power stations work the same way: fuel heats water → steam → turbine → generator (except solar PV, wind turbines).",
+        "Renewable ≠ always available. Wind and solar are intermittent.",
+        "Be able to evaluate energy sources for 6-mark questions — consider reliability, cost, environment, land use."
+      ],
+      "commonMistakes": [
+        "Saying nuclear is renewable — it uses uranium which is a finite resource.",
+        "Saying biomass produces no CO₂ — it does, but the carbon was recently absorbed from the atmosphere."
+      ],
+      "videos": [
+        {"title": "Energy Resources GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=OjHGFz3Yz3g"},
+        {"title": "Renewable Energy Sources", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=EYQ4th9qQl0"},
+        {"title": "Non-Renewable Resources", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=zaXBVYr9Ij0"},
+        {"title": "Energy Resources", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=OjHGFz3Yz3g"}
+      ]
+    }
+  }
+}

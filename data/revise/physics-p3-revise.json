@@ -1,0 +1,173 @@
+{
+  "module": "P3 Particle Model of Matter",
+  "topics": {
+    "States of Matter": {
+      "intro": "The particle model explains the properties of solids, liquids and gases in terms of how particles are arranged and how they move.",
+      "sections": [
+        {"title": "The Three States", "icon": "🔵", "points": [
+          "<strong>Solid</strong> — particles close together in regular pattern; vibrate about fixed positions; cannot flow; not compressible",
+          "<strong>Liquid</strong> — particles close together but random arrangement; move freely past each other; can flow; not compressible",
+          "<strong>Gas</strong> — particles far apart; random arrangement; move quickly in all directions; can flow; easily compressed"
+        ]},
+        {"title": "Internal Energy", "icon": "🌡️", "points": [
+          "Internal energy = total kinetic + potential energy of all particles",
+          "Heating increases internal energy — particles move faster (kinetic energy increases)",
+          "Temperature is a measure of average kinetic energy of particles"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Particle model", "def": "A model that explains properties of matter using the movement and arrangement of particles"},
+        {"term": "Internal energy", "def": "Total kinetic and potential energy of all particles in a substance"},
+        {"term": "Temperature", "def": "A measure of the average kinetic energy of particles in a substance"}
+      ],
+      "examTips": [
+        "Temperature measures average kinetic energy — higher temperature = particles move faster.",
+        "Gases are compressible; solids and liquids are not — particles in gases are far apart."
+      ],
+      "commonMistakes": [
+        "Saying all particles in a solid are stationary — they vibrate around fixed positions.",
+        "Confusing temperature (average KE) with heat (total energy transferred)."
+      ],
+      "videos": [
+        {"title": "States of Matter GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=KHAGEjhS0Yk"},
+        {"title": "Particle Model", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=KHAGEjhS0Yk"},
+        {"title": "States of Matter", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=9T8YBjmJBhU"}
+      ]
+    },
+    "Changes of State": {
+      "intro": "When substances are heated or cooled they can change state. These changes involve energy transfers and are physical, not chemical, changes.",
+      "sections": [
+        {"title": "Changes of State", "icon": "🌡️", "points": [
+          "Melting: solid → liquid (absorb energy)",
+          "Boiling/evaporating: liquid → gas (absorb energy)",
+          "Condensing: gas → liquid (release energy)",
+          "Freezing: liquid → solid (release energy)",
+          "Sublimation: solid → gas directly"
+        ]},
+        {"title": "Latent Heat", "icon": "🔥", "callout": {"type": "exam", "label": "Why Temperature Stays Constant", "text": "During a change of state, temperature stays constant even though energy is being supplied. The energy is used to break intermolecular bonds (latent heat), not to increase KE of particles."}, "points": [
+          "Specific latent heat of fusion (l_f) — energy to melt/freeze 1 kg",
+          "Specific latent heat of vaporisation (l_v) — energy to boil/condense 1 kg",
+          "Formula: Q = m × L"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Latent heat", "def": "Energy absorbed or released during a change of state — no temperature change"},
+        {"term": "Specific latent heat", "def": "Energy needed to change the state of 1 kg of a substance"},
+        {"term": "Evaporation", "def": "Liquid → gas at any temperature (from the surface)"},
+        {"term": "Boiling", "def": "Liquid → gas throughout the liquid at a fixed boiling point"}
+      ],
+      "examTips": [
+        "During a change of state, temperature is CONSTANT — energy goes into breaking bonds, not heating.",
+        "Q = mL for latent heat calculations. Q = mcΔT for temperature changes.",
+        "Latent heat of vaporisation > latent heat of fusion for the same substance."
+      ],
+      "commonMistakes": [
+        "Saying temperature rises during melting — it stays constant until fully melted.",
+        "Confusing evaporation (any temperature, from surface) with boiling (specific temperature, throughout)."
+      ],
+      "videos": [
+        {"title": "Changes of State GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=KHAGEjhS0Yk"},
+        {"title": "Latent Heat", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=rFPN15Gx2xs"},
+        {"title": "Specific Latent Heat", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=rFPN15Gx2xs"}
+      ]
+    },
+    "Density": {
+      "intro": "Density is the mass per unit volume of a substance. It explains why some materials float and others sink.",
+      "sections": [
+        {"title": "Density Formula", "icon": "📐", "callout": {"type": "exam", "label": "Formula", "text": "ρ = m/V (density = mass ÷ volume). Units: kg/m³ or g/cm³."}},
+        {"title": "Measuring Density", "icon": "🔬", "points": [
+          "Regular solid: measure mass (balance), measure dimensions, calculate volume",
+          "Irregular solid: measure mass, use displacement can to find volume",
+          "Liquid: measure mass and volume using measuring cylinder"
+        ]},
+        {"title": "Floating and Sinking", "icon": "🚢", "points": [
+          "Object floats if its density < density of liquid",
+          "Object sinks if its density > density of liquid",
+          "Ice is less dense than water — floats"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Density", "def": "Mass per unit volume of a substance: ρ = m/V"},
+        {"term": "Displacement", "def": "Volume of water displaced by a submerged object equals the object's volume"}
+      ],
+      "examTips": [
+        "ρ = m/V — learn this formula. Units: kg/m³ or g/cm³.",
+        "For irregular shapes, use water displacement to find volume."
+      ],
+      "commonMistakes": [
+        "Confusing density with mass — a large object isn't necessarily denser.",
+        "Forgetting to convert units — 1 g/cm³ = 1000 kg/m³."
+      ],
+      "videos": [
+        {"title": "Density GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=4LkMweOVOOI"},
+        {"title": "Density Calculations", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=4LkMweOVOOI"},
+        {"title": "Density", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=GtRLQT1JTTA"}
+      ]
+    },
+    "Specific Heat Capacity": {
+      "intro": "Specific heat capacity (SHC) is the energy needed to raise 1 kg of a substance by 1°C. It explains why different materials heat up at different rates.",
+      "sections": [
+        {"title": "Formula", "icon": "📐", "callout": {"type": "exam", "label": "Formula", "text": "Q = mcΔT — Energy (J) = mass (kg) × SHC (J/kg°C) × temperature change (°C)."}},
+        {"title": "Practical: Finding SHC", "icon": "🧪", "points": [
+          "Heat a known mass of material using an immersion heater",
+          "Record temperature change and energy supplied (E = P × t)",
+          "Calculate SHC: c = Q ÷ (m × ΔT)",
+          "Real value higher than calculated — energy lost to surroundings"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Specific heat capacity", "def": "Energy needed to raise 1 kg of substance by 1°C (J/kg°C)"},
+        {"term": "Thermal capacity", "def": "Total energy needed to raise an object by 1°C"}
+      ],
+      "examTips": [
+        "Water has very high SHC (4200 J/kg°C) — explain why it is good for storing or transferring heat.",
+        "In practicals, actual SHC will be higher than calculated — energy lost to surroundings."
+      ],
+      "commonMistakes": [
+        "Using temperature (absolute value) instead of ΔT (change) in calculations.",
+        "Forgetting to convert mass to kg if given in grams."
+      ],
+      "videos": [
+        {"title": "Specific Heat Capacity GCSE", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=WiKjxEFyDFs"},
+        {"title": "SHC Practical", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=WiKjxEFyDFs"},
+        {"title": "Specific Heat Capacity", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=WiKjxEFyDFs"}
+      ]
+    },
+    "Gas Pressure": {
+      "intro": "Gas pressure is caused by particles colliding with the walls of their container. Temperature, volume and pressure are all related.",
+      "sections": [
+        {"title": "What Causes Gas Pressure?", "icon": "💨", "points": [
+          "Gas particles move randomly and collide with container walls",
+          "Each collision exerts a tiny force — billions of collisions per second create pressure",
+          "Increase temperature → particles move faster → more frequent, higher-energy collisions → higher pressure",
+          "Decrease volume → particles hit walls more often → higher pressure"
+        ]},
+        {"title": "Pressure-Volume Relationship", "icon": "📊", "callout": {"type": "exam", "label": "Boyle's Law", "text": "At constant temperature: pressure × volume = constant. P₁V₁ = P₂V₂. Compress gas (↓V) → pressure increases (↑P)."}},
+        {"title": "Temperature and Pressure", "icon": "🌡️", "points": [
+          "Increase temperature (constant volume) → particles move faster → more collisions → pressure increases",
+          "Absolute zero (0 K = -273°C) — theoretical temperature where particles have no kinetic energy",
+          "Convert °C to K: K = °C + 273"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Gas pressure", "def": "Force per unit area exerted by gas particles colliding with container walls"},
+        {"term": "Absolute zero", "def": "Theoretical minimum temperature (0 K = -273°C) where particles have no kinetic energy"},
+        {"term": "Boyle's Law", "def": "At constant temperature, pressure × volume = constant"}
+      ],
+      "examTips": [
+        "Always explain gas pressure using particle collisions — mention frequency and force of collisions.",
+        "P₁V₁ = P₂V₂ — use this for pressure-volume calculations at constant temperature.",
+        "Kelvin = Celsius + 273."
+      ],
+      "commonMistakes": [
+        "Forgetting to convert to Kelvin for gas law calculations.",
+        "Saying gas pressure is caused by gravity — it is caused by particle collisions."
+      ],
+      "videos": [
+        {"title": "Gas Pressure GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=K7PxEz-3G2s"},
+        {"title": "Gas Laws", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=K7PxEz-3G2s"},
+        {"title": "Gas Pressure and Volume", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=K7PxEz-3G2s"}
+      ]
+    }
+  }
+}

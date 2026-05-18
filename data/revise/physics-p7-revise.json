@@ -1,0 +1,195 @@
+{
+  "module": "P7 Magnetism and Electromagnetism",
+  "topics": {
+    "Magnetism": {
+      "intro": "Magnets exert forces on other magnets and on magnetic materials. Understanding magnetic fields and how they are represented is essential for P7.",
+      "sections": [
+        {"title": "Magnetic Materials and Poles", "icon": "🧲", "points": [
+          "Magnetic materials: iron, steel, nickel, cobalt",
+          "Every magnet has a north and south pole",
+          "Like poles repel; unlike poles attract",
+          "The Earth has a magnetic field — its geographic north pole is near a magnetic south pole"
+        ]},
+        {"title": "Magnetic Field Lines", "icon": "🌐", "points": [
+          "Show direction and strength of magnetic field",
+          "Direction: from north pole to south pole (outside magnet)",
+          "Closer lines = stronger field",
+          "Never cross each other"
+        ]},
+        {"title": "Induced Magnetism", "icon": "🔩", "points": [
+          "When a magnetic material is placed in a magnetic field it becomes magnetised",
+          "Induced magnet always attracted to the magnet causing induction",
+          "Iron: loses magnetism easily (soft magnetic material — used in transformers, electromagnets)",
+          "Steel: retains magnetism (hard magnetic material — used in permanent magnets)"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Magnetic field", "def": "The region around a magnet where magnetic forces act"},
+        {"term": "Induced magnetism", "def": "Magnetism produced in a material when placed in a magnetic field"},
+        {"term": "Permanent magnet", "def": "Magnet that retains its magnetism without an external field"}
+      ],
+      "examTips": [
+        "Magnetic field lines go from N to S outside the magnet.",
+        "Iron = soft (temporary magnet). Steel = hard (permanent magnet).",
+        "The force between magnets is non-contact — acts at a distance."
+      ],
+      "commonMistakes": [
+        "Saying all metals are magnetic — only iron, steel, nickel and cobalt are magnetic.",
+        "Drawing field lines that cross each other — they never cross."
+      ],
+      "videos": [
+        {"title": "Magnetism GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=rqKVMvGVrDo"},
+        {"title": "Magnets and Magnetic Fields", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=rqKVMvGVrDo"},
+        {"title": "Magnetism", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=jj4UT0gkHCA"}
+      ]
+    },
+    "Electromagnetism": {
+      "intro": "An electric current produces a magnetic field. This is the principle behind electromagnets and many electrical devices.",
+      "sections": [
+        {"title": "Magnetic Field from Current", "icon": "⚡", "points": [
+          "A current-carrying wire produces a circular magnetic field around it",
+          "Direction: use right-hand rule (curl fingers around wire — thumb points in current direction, fingers show field direction)",
+          "Solenoid (coil of wire): magnetic field like a bar magnet inside",
+          "Field strength increases with: more current, more turns in coil, iron core"
+        ]},
+        {"title": "Electromagnets", "icon": "🔧", "points": [
+          "Current through a coil of wire produces a strong magnetic field",
+          "Field can be switched on and off (unlike permanent magnets)",
+          "Iron core concentrates field — makes it much stronger",
+          "Uses: electric bells, scrapyard cranes, MRI scanners, loudspeakers, relays"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Solenoid", "def": "A coil of wire that acts as a magnet when current flows through it"},
+        {"term": "Electromagnet", "def": "A magnet created by passing an electric current through a coil of wire"},
+        {"term": "Right-hand rule", "def": "Method to find magnetic field direction around a current-carrying wire"}
+      ],
+      "examTips": [
+        "Electromagnet strength increases with: more current, more turns, iron core.",
+        "Advantage over permanent magnets: can be switched on/off and varied in strength."
+      ],
+      "commonMistakes": [
+        "Saying electromagnets are always stronger than permanent magnets — not necessarily.",
+        "Forgetting the iron core magnifies the field — without it, field is much weaker."
+      ],
+      "videos": [
+        {"title": "Electromagnetism GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=Ri557hvwhcM"},
+        {"title": "Electromagnets", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=Ri557hvwhcM"},
+        {"title": "Electromagnetism", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=jj4UT0gkHCA"}
+      ]
+    },
+    "Motor Effect": {
+      "intro": "A current-carrying conductor in a magnetic field experiences a force. This is the motor effect — the principle behind electric motors.",
+      "sections": [
+        {"title": "The Motor Effect", "icon": "🔄", "callout": {"type": "exam", "label": "Fleming's Left-Hand Rule", "text": "Point left hand: First finger = Field direction, seCond finger = Current direction, thuMb = Motion (force) direction. FBI — Field, Current, Motion."}, "points": [
+          "Force is perpendicular to both current and magnetic field",
+          "Force increases with: stronger magnetic field, larger current",
+          "Reversing current OR field reverses direction of force"
+        ]},
+        {"title": "The Electric Motor", "icon": "⚙️", "points": [
+          "A coil of wire carrying current in a magnetic field experiences forces on opposite sides",
+          "Forces in opposite directions → turning effect (torque)",
+          "Commutator (split ring) reverses current direction each half turn → keeps motor spinning same way",
+          "Brushes maintain electrical contact with commutator"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Motor effect", "def": "Force experienced by a current-carrying conductor in a magnetic field"},
+        {"term": "Fleming's left-hand rule", "def": "Rule for finding force direction: Field (first finger), Current (second), Motion/Force (thumb)"},
+        {"term": "Commutator", "def": "Split ring in a DC motor that reverses current direction each half turn"}
+      ],
+      "examTips": [
+        "Fleming's LEFT-hand rule for MOTOR effect (force/motion). Right-hand rule for generators.",
+        "Force is largest when current is perpendicular to the magnetic field.",
+        "To reverse motor direction: reverse current OR reverse field (not both)."
+      ],
+      "commonMistakes": [
+        "Using right-hand rule for motor effect — it's LEFT hand for motors.",
+        "Forgetting the commutator's function — without it the motor would oscillate, not rotate continuously."
+      ],
+      "videos": [
+        {"title": "Motor Effect GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=lJa-T0UdCQ4"},
+        {"title": "Fleming's Left Hand Rule", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=lJa-T0UdCQ4"},
+        {"title": "Electric Motors", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=LAtPHAoEyr4"}
+      ]
+    },
+    "Generators": {
+      "intro": "Generators use electromagnetic induction to convert kinetic energy into electrical energy. They are the reverse of motors.",
+      "sections": [
+        {"title": "Electromagnetic Induction", "icon": "⚡", "points": [
+          "Moving a conductor through a magnetic field (or changing field around a conductor) induces a voltage",
+          "If circuit is complete: induces a current",
+          "This is the generator effect — opposite of the motor effect",
+          "Induced voltage increases with: faster movement, stronger field, more turns"
+        ]},
+        {"title": "AC Generator (Alternator)", "icon": "〜", "points": [
+          "Coil rotates in a magnetic field — continuously changing flux",
+          "Produces alternating current (AC) — current reverses direction each half turn",
+          "Slip rings and brushes maintain continuous contact",
+          "UK mains supply: 230V, 50Hz"
+        ]},
+        {"title": "Microphones and Speakers", "icon": "🎤", "points": [
+          "Microphone: sound waves → diaphragm vibrates → coil moves in field → induces current",
+          "Speaker: varying current in coil → force in field → coil/cone vibrates → sound waves"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Electromagnetic induction", "def": "Inducing a voltage (and current) by relative motion between a conductor and a magnetic field"},
+        {"term": "Generator effect", "def": "Producing an electric current from motion in a magnetic field"},
+        {"term": "Alternating current", "def": "Current that reverses direction periodically — produced by generators"}
+      ],
+      "examTips": [
+        "Generator is opposite of motor: kinetic → electrical vs electrical → kinetic.",
+        "Increase induced voltage: move faster, stronger magnet, more turns, add iron core.",
+        "AC generators use slip rings; DC generators use commutator."
+      ],
+      "commonMistakes": [
+        "Confusing generators (motion → electricity) with motors (electricity → motion).",
+        "Forgetting that stationary conductor in changing field also induces voltage."
+      ],
+      "videos": [
+        {"title": "Generators GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=Ri557hvwhcM"},
+        {"title": "Electromagnetic Induction", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=HeYshUKT0ok"},
+        {"title": "AC Generators", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=LAtPHAoEyr4"}
+      ]
+    },
+    "Transformers": {
+      "intro": "Transformers change the voltage of an AC supply using electromagnetic induction. They are essential for efficient electricity transmission.",
+      "sections": [
+        {"title": "How Transformers Work", "icon": "⚡", "points": [
+          "AC in primary coil → changing magnetic field in iron core → induced EMF in secondary coil",
+          "Iron core concentrates and transfers magnetic field",
+          "Only work with AC — DC produces no changing field, so no induction"
+        ]},
+        {"title": "Turns Ratio Formula", "icon": "📐", "callout": {"type": "exam", "label": "Turns Ratio Formula", "text": "Vp/Vs = Np/Ns (Primary voltage ÷ Secondary voltage = Primary turns ÷ Secondary turns). Step up: more turns on secondary. Step down: fewer turns on secondary."}},
+        {"title": "Power Transmission", "icon": "🏭", "points": [
+          "Power stations generate at ~25 kV — stepped up to ~400 kV for transmission",
+          "High voltage transmission reduces current → reduces power loss (P = I²R)",
+          "Step-down transformers reduce voltage to safe levels for homes (230V)",
+          "Ideal transformer: power in = power out (Vp × Ip = Vs × Is)"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Transformer", "def": "Device that changes AC voltage using electromagnetic induction"},
+        {"term": "Step-up transformer", "def": "Increases voltage — more turns on secondary than primary"},
+        {"term": "Step-down transformer", "def": "Decreases voltage — fewer turns on secondary than primary"},
+        {"term": "Turns ratio", "def": "Ratio of primary to secondary turns — determines voltage change"}
+      ],
+      "examTips": [
+        "Vp/Vs = Np/Ns — cross-multiply to solve for any unknown.",
+        "Transformers only work with AC — DC won't induce a current in the secondary.",
+        "High voltage transmission reduces power loss: P lost = I²R; less I → less P lost."
+      ],
+      "commonMistakes": [
+        "Saying transformers work with DC — they do not; the field must be changing.",
+        "Confusing step-up (more secondary turns, higher voltage) with step-down."
+      ],
+      "videos": [
+        {"title": "Transformers GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=vh_4cMXwMX8"},
+        {"title": "Transformers", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=vh_4cMXwMX8"},
+        {"title": "How Transformers Work", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=LAtPHAoEyr4"},
+        {"title": "Transformer Calculations", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=vh_4cMXwMX8"}
+      ]
+    }
+  }
+}

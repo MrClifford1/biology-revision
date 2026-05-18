@@ -1,0 +1,457 @@
+{
+  "module": "C2 Bonding and Structure",
+  "topics": {
+    "Bonding": {
+      "intro": "Atoms bond together to form compounds. There are three main types of chemical bond: ionic, covalent and metallic.",
+      "sections": [
+        {
+          "title": "Types of Bond",
+          "icon": "\ud83d\udd17",
+          "points": [
+            "<strong>Ionic bonding</strong> \u2014 transfer of electrons between metal and non-metal; forms ions",
+            "<strong>Covalent bonding</strong> \u2014 sharing of electrons between non-metals",
+            "<strong>Metallic bonding</strong> \u2014 sea of delocalised electrons between positive metal ions"
+          ]
+        },
+        {
+          "title": "Electron Shells and Bonding",
+          "icon": "\u269b\ufe0f",
+          "callout": {
+            "type": "exam",
+            "label": "Why Bond?",
+            "text": "Atoms bond to achieve a full outer electron shell (usually 8 \u2014 octet rule). Bonding makes atoms more stable."
+          }
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Ionic bond",
+          "def": "Electrostatic attraction between oppositely charged ions"
+        },
+        {
+          "term": "Covalent bond",
+          "def": "A shared pair of electrons between two atoms"
+        },
+        {
+          "term": "Metallic bond",
+          "def": "Electrostatic attraction between positive metal ions and delocalised electrons"
+        }
+      ],
+      "examTips": [
+        "Ionic = metal + non-metal. Covalent = non-metal + non-metal. Metallic = metal + metal.",
+        "Always draw dot-and-cross diagrams showing full outer shells for ionic and covalent bonding."
+      ],
+      "commonMistakes": [
+        "Forgetting that in ionic bonding, electrons are TRANSFERRED (not shared)."
+      ],
+      "videos": [
+        {
+          "title": "Types of Chemical Bonds",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=8Io-PrUKGCs"
+        },
+        {
+          "title": "Ionic and Covalent Bonding",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=8Io-PrUKGCs"
+        },
+        {
+          "title": "Chemical Bonding",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=E6bsASJ6fco"
+        }
+      ]
+    },
+    "Ionic Compounds": {
+      "intro": "Ionic compounds form when electrons are transferred from metals to non-metals, creating oppositely charged ions held together by electrostatic forces.",
+      "sections": [
+        {
+          "title": "Forming Ions",
+          "icon": "\u26a1",
+          "points": [
+            "Metal loses electrons \u2192 forms positive ion (cation)",
+            "Non-metal gains electrons \u2192 forms negative ion (anion)",
+            "Ions have full outer electron shells \u2014 stable configuration",
+            "Examples: Na\u207a, Mg\u00b2\u207a, Cl\u207b, O\u00b2\u207b"
+          ]
+        },
+        {
+          "title": "Properties of Ionic Compounds",
+          "icon": "\ud83d\udd2c",
+          "points": [
+            "<strong>High melting/boiling points</strong> \u2014 strong electrostatic forces need a lot of energy to overcome",
+            "<strong>Conduct electricity when dissolved in water or molten</strong> \u2014 ions free to move",
+            "<strong>Do NOT conduct when solid</strong> \u2014 ions held in fixed positions",
+            "<strong>Often soluble in water</strong> \u2014 water molecules can surround and separate the ions"
+          ]
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Ion",
+          "def": "An atom or group of atoms that has gained or lost electrons and has a charge"
+        },
+        {
+          "term": "Cation",
+          "def": "A positively charged ion formed when a metal loses electrons"
+        },
+        {
+          "term": "Anion",
+          "def": "A negatively charged ion formed when a non-metal gains electrons"
+        },
+        {
+          "term": "Lattice",
+          "def": "Regular arrangement of ions in an ionic compound"
+        }
+      ],
+      "examTips": [
+        "Ionic compounds conduct electricity when MOLTEN or in SOLUTION \u2014 not when solid.",
+        "Higher charge on ions = stronger force = higher melting point (e.g. MgO higher than NaCl)."
+      ],
+      "commonMistakes": [
+        "Saying ionic compounds conduct electricity as solids \u2014 they don't, ions can't move.",
+        "Forgetting that ALL ionic compounds have high melting points."
+      ],
+      "videos": [
+        {
+          "title": "Ionic Bonding",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=8Io-PrUKGCs"
+        },
+        {
+          "title": "Ionic Compounds GCSE",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=8Io-PrUKGCs"
+        },
+        {
+          "title": "Ionic Bonding",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=E6bsASJ6fco"
+        }
+      ]
+    },
+    "Covalent Substances": {
+      "intro": "Covalent bonds form when non-metal atoms share electrons. Covalent substances can have simple molecular or giant covalent structures.",
+      "sections": [
+        {
+          "title": "Simple Molecular Substances",
+          "icon": "\ud83d\udca7",
+          "points": [
+            "Small molecules held together by STRONG covalent bonds",
+            "Molecules held to each other by WEAK intermolecular forces",
+            "Low melting/boiling points \u2014 weak forces easy to overcome",
+            "Do NOT conduct electricity \u2014 no charged particles",
+            "Examples: H\u2082O, CO\u2082, O\u2082, NH\u2083, CH\u2084"
+          ]
+        },
+        {
+          "title": "Giant Covalent Structures",
+          "icon": "\ud83d\udc8e",
+          "points": [
+            "Millions of atoms covalently bonded in a 3D lattice",
+            "Very high melting/boiling points \u2014 many strong covalent bonds to break",
+            "Do NOT conduct electricity (except graphite)",
+            "Examples: diamond (hardest natural substance), silicon dioxide (sand), graphite, graphene"
+          ]
+        },
+        {
+          "title": "Diamond vs Graphite",
+          "icon": "\u2696\ufe0f",
+          "points": [
+            "<strong>Diamond</strong> \u2014 each C bonded to 4 others; tetrahedral; very hard; no free electrons; doesn't conduct",
+            "<strong>Graphite</strong> \u2014 each C bonded to 3 others in layers; 1 delocalised electron per atom; conducts electricity; layers slide (lubricant)"
+          ]
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Simple molecular",
+          "def": "Substance made of small covalently bonded molecules with weak forces between them"
+        },
+        {
+          "term": "Giant covalent",
+          "def": "Substance with millions of atoms bonded covalently in a lattice"
+        },
+        {
+          "term": "Delocalised electron",
+          "def": "An electron not associated with a specific atom \u2014 can move freely"
+        },
+        {
+          "term": "Intermolecular force",
+          "def": "A force between molecules \u2014 weaker than the bonds within molecules"
+        }
+      ],
+      "examTips": [
+        "Simple molecular = low MP. Giant covalent = very high MP.",
+        "Graphite conducts because it has delocalised electrons \u2014 diamond does not conduct.",
+        "When explaining properties, distinguish between bonds WITHIN molecules and forces BETWEEN molecules."
+      ],
+      "commonMistakes": [
+        "Saying covalent substances have high melting points \u2014 simple molecular ones do NOT (giant covalent ones do).",
+        "Forgetting graphite is the exception \u2014 it DOES conduct electricity."
+      ],
+      "videos": [
+        {
+          "title": "Covalent Bonding",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=6-OmEKaFzik"
+        },
+        {
+          "title": "Giant Covalent Structures",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=FKioMKJjxNk"
+        },
+        {
+          "title": "Diamond and Graphite",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=vOB6XdqPT98"
+        }
+      ]
+    },
+    "Metallic Structures": {
+      "intro": "Metals have a unique bonding structure that explains their characteristic properties.",
+      "sections": [
+        {
+          "title": "Metallic Bonding",
+          "icon": "\ud83d\udd29",
+          "points": [
+            "Positive metal ions in a regular lattice",
+            "Surrounded by a 'sea' of delocalised electrons",
+            "Strong electrostatic attraction between ions and electrons",
+            "Explains properties: conduction, malleability, high melting point"
+          ]
+        },
+        {
+          "title": "Properties of Metals",
+          "icon": "\u2699\ufe0f",
+          "points": [
+            "<strong>High melting/boiling points</strong> \u2014 strong metallic bonds",
+            "<strong>Good conductors of electricity</strong> \u2014 delocalised electrons carry charge",
+            "<strong>Good conductors of heat</strong> \u2014 delocalised electrons transfer kinetic energy",
+            "<strong>Malleable and ductile</strong> \u2014 layers of ions can slide without breaking bonds (electrons move too)",
+            "<strong>Alloys</strong> \u2014 different-sized atoms disrupt regular arrangement, making it harder to slide \u2192 stronger"
+          ]
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Metallic bonding",
+          "def": "Attraction between positive metal ions and a sea of delocalised electrons"
+        },
+        {
+          "term": "Alloy",
+          "def": "A mixture of a metal with another element to improve properties"
+        },
+        {
+          "term": "Malleability",
+          "def": "Ability to be hammered into shape without breaking"
+        }
+      ],
+      "examTips": [
+        "Always link metallic properties back to delocalised electrons for conduction, and ion layers sliding for malleability.",
+        "Alloys are harder than pure metals because different-sized atoms disrupt the regular structure."
+      ],
+      "commonMistakes": [
+        "Saying metals conduct because they have free electrons \u2014 say 'delocalised electrons'.",
+        "Forgetting that alloys are harder because of disrupted layers."
+      ],
+      "videos": [
+        {
+          "title": "Metallic Bonding",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=BywT6TGkI2U"
+        },
+        {
+          "title": "Metallic Bonding GCSE",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=BywT6TGkI2U"
+        },
+        {
+          "title": "Metals and Alloys",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=BywT6TGkI2U"
+        }
+      ]
+    },
+    "Polymers": {
+      "intro": "Polymers are large molecules made of many repeating units (monomers) joined together. They have distinctive properties.",
+      "sections": [
+        {
+          "title": "Polymer Structure",
+          "icon": "\ud83d\udd17",
+          "points": [
+            "Monomer = small repeating unit",
+            "Polymer = long chain of monomers joined by covalent bonds",
+            "Examples: poly(ethene) from ethene; nylon; PVC; DNA; proteins",
+            "Thermosoftening polymers \u2014 chains with weak intermolecular forces; melt when heated; remoulded",
+            "Thermosetting polymers \u2014 cross-links between chains; don't melt; rigid"
+          ]
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Polymer",
+          "def": "A large molecule made of many repeating monomer units"
+        },
+        {
+          "term": "Monomer",
+          "def": "A small molecule that joins with others to form a polymer"
+        },
+        {
+          "term": "Thermosoftening polymer",
+          "def": "Polymer that softens/melts when heated; can be reshaped"
+        },
+        {
+          "term": "Thermosetting polymer",
+          "def": "Polymer with cross-links; does not melt; stays rigid when heated"
+        }
+      ],
+      "examTips": [
+        "Thermosoftening = no cross-links = melts. Thermosetting = cross-links = doesn't melt.",
+        "Useful property of thermosetting plastics: can withstand high temperatures (e.g. electrical fittings, pan handles)."
+      ],
+      "commonMistakes": [
+        "Confusing the two types of polymer \u2014 remember cross-links = thermosetting = rigid."
+      ],
+      "videos": [
+        {
+          "title": "Polymers GCSE Chemistry",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=oUaLMOYvsNA"
+        },
+        {
+          "title": "Polymers",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=oUaLMOYvsNA"
+        },
+        {
+          "title": "Types of Polymers",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=L8dTdCmSgAs"
+        }
+      ]
+    },
+    "States of Matter": {
+      "intro": "The three states of matter \u2014 solid, liquid and gas \u2014 have different particle arrangements and properties. Changes of state involve energy changes.",
+      "sections": [
+        {
+          "title": "Particle Model",
+          "icon": "\ud83d\udd35",
+          "points": [
+            "<strong>Solid</strong> \u2014 particles close together, regular arrangement, vibrate in fixed positions",
+            "<strong>Liquid</strong> \u2014 particles close together, random arrangement, move freely but stay together",
+            "<strong>Gas</strong> \u2014 particles far apart, random arrangement, move fast in all directions"
+          ]
+        },
+        {
+          "title": "Changes of State",
+          "icon": "\ud83c\udf21\ufe0f",
+          "points": [
+            "Melting: solid \u2192 liquid (energy absorbed)",
+            "Boiling/evaporation: liquid \u2192 gas (energy absorbed)",
+            "Condensing: gas \u2192 liquid (energy released)",
+            "Freezing: liquid \u2192 solid (energy released)",
+            "Changes of state = PHYSICAL changes \u2014 no new substance formed"
+          ]
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Melting point",
+          "def": "Temperature at which a substance changes from solid to liquid"
+        },
+        {
+          "term": "Boiling point",
+          "def": "Temperature at which a substance changes from liquid to gas throughout"
+        },
+        {
+          "term": "Physical change",
+          "def": "A change of state \u2014 reversible, no new substance formed"
+        }
+      ],
+      "examTips": [
+        "Changes of state are PHYSICAL not chemical \u2014 no new substance formed, easily reversible.",
+        "At melting/boiling point, temperature stays constant \u2014 energy goes into breaking forces between particles."
+      ],
+      "commonMistakes": [
+        "Saying changes of state are chemical changes \u2014 they are physical.",
+        "Forgetting that at melting/boiling point temperature stays CONSTANT."
+      ],
+      "videos": [
+        {
+          "title": "States of Matter",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=KHAGEjhS0Yk"
+        },
+        {
+          "title": "Changes of State",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=KHAGEjhS0Yk"
+        },
+        {
+          "title": "Particle Model",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=9T8YBjmJBhU"
+        }
+      ]
+    },
+    "Nanoparticles": {
+      "intro": "Nanoparticles are extremely small particles, 1-100 nanometres in size. Their tiny size gives them unique properties compared to the same material in bulk.",
+      "sections": [
+        {
+          "title": "Properties of Nanoparticles",
+          "icon": "\ud83d\udd2c",
+          "points": [
+            "Size: 1-100 nm (nanometres) \u2014 similar size to large molecules",
+            "<strong>Very high surface area to volume ratio</strong> \u2014 more atoms on the surface \u2192 more reactive",
+            "Different properties to bulk material: different colour, lower melting point, stronger, better conductor",
+            "Examples: gold nanoparticles (red/purple, not gold colour), carbon nanotubes"
+          ]
+        },
+        {
+          "title": "Uses and Risks",
+          "icon": "\u26a0\ufe0f",
+          "points": [
+            "Uses: sunscreen (TiO\u2082 nanoparticles), medicines (drug delivery), catalysts, electronics, antibacterial surfaces",
+            "Risks: very small \u2014 might pass through cell membranes; long-term health effects unknown; environmental impact unclear",
+            "Ethical issue: benefits vs unknown risks \u2014 need more research"
+          ]
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Nanoparticle",
+          "def": "A particle 1-100 nm in size with a very high surface area to volume ratio"
+        },
+        {
+          "term": "Surface area to volume ratio",
+          "def": "The ratio of surface area to volume \u2014 higher in smaller particles"
+        }
+      ],
+      "examTips": [
+        "Nanoparticles have high SA:V ratio \u2014 more reactive than bulk material.",
+        "Be able to evaluate nanoparticle use \u2014 benefits (sunscreen, medicines) vs risks (unknown long-term effects)."
+      ],
+      "commonMistakes": [
+        "Saying nanoparticles are the same as the bulk material \u2014 their properties are DIFFERENT."
+      ],
+      "videos": [
+        {
+          "title": "Nanoparticles GCSE Chemistry",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=jLTOmRnMSog"
+        },
+        {
+          "title": "Nanoparticles",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=jLTOmRnMSog"
+        },
+        {
+          "title": "Nanotechnology",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=D9C_W7jUwCY"
+        }
+      ]
+    }
+  }
+}

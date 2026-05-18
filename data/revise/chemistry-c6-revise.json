@@ -1,0 +1,111 @@
+{
+  "module": "C6 Rate and Extent of Reactions",
+  "topics": {
+    "Rate of Reaction": {
+      "intro": "The rate of a reaction measures how quickly reactants are converted to products. It can be measured by how quickly a reactant is used up or a product is formed.",
+      "sections": [
+        {"title": "Measuring Rate", "icon": "📊", "points": [
+          "Rate = amount of product formed (or reactant used) ÷ time",
+          "Methods: measure gas volume produced, mass lost, colour change intensity, precipitate formation",
+          "Rate is highest at the start — most reactant present",
+          "Rate decreases over time as reactants are used up",
+          "Reaction is complete when graph becomes flat"
+        ]},
+        {"title": "Rate from a Graph", "icon": "📈", "callout": {"type": "exam", "label": "Calculating Rate", "text": "Draw a tangent to the curve at the point of interest. Rate = gradient = rise ÷ run. For mean rate: total change ÷ total time."}}
+      ],
+      "keyTerms": [
+        {"term": "Rate of reaction", "def": "The speed at which reactants are converted to products"},
+        {"term": "Mean rate", "def": "Total amount of change divided by total time taken"},
+        {"term": "Tangent", "def": "A straight line that touches a curve at one point — used to find the rate at that instant"}
+      ],
+      "examTips": [
+        "Steeper gradient on a graph = faster rate.",
+        "Flat line on a graph = reaction complete (not necessarily slow).",
+        "Initial rate (start of graph) is always the fastest."
+      ],
+      "commonMistakes": [
+        "Confusing a flat line (reaction complete) with a slow rate.",
+        "Calculating mean rate instead of instantaneous rate when asked for rate at a specific point."
+      ],
+      "videos": [
+        {"title": "Rate of Reaction GCSE Chemistry", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=8XeSV5MHieI"},
+        {"title": "Measuring Rate of Reaction", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=8XeSV5MHieI"},
+        {"title": "Reaction Rates", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=L-qlpXGpZ4Y"}
+      ]
+    },
+    "Factors Affecting Rate": {
+      "intro": "Several factors affect how quickly a reaction occurs. All explanations should be linked to collision theory.",
+      "sections": [
+        {"title": "Collision Theory", "icon": "💥", "text": "For a reaction to occur, particles must collide with energy greater than or equal to the activation energy. More frequent, higher-energy collisions = faster rate."},
+        {"title": "The Five Factors", "icon": "⚡", "points": [
+          "<strong>Temperature</strong> — higher temp gives particles more kinetic energy; collide more frequently AND with more energy; rate increases significantly",
+          "<strong>Concentration</strong> (solutions) — more particles in same volume; more frequent collisions",
+          "<strong>Pressure</strong> (gases) — same as concentration — particles closer together, more frequent collisions",
+          "<strong>Surface area</strong> — smaller pieces expose more surface; more particles available to collide",
+          "<strong>Catalyst</strong> — provides alternative reaction pathway with lower activation energy; not used up"
+        ]},
+        {"title": "Catalysts in Detail", "icon": "🔬", "callout": {"type": "tip", "label": "Catalysts", "text": "A catalyst lowers the activation energy — shown on an energy profile as a lower peak. It does NOT change the overall energy change (ΔH) or the equilibrium position."}}
+      ],
+      "keyTerms": [
+        {"term": "Collision theory", "def": "Reactions occur when particles collide with sufficient energy (≥ activation energy)"},
+        {"term": "Activation energy", "def": "Minimum energy needed for a successful collision"},
+        {"term": "Catalyst", "def": "Substance that speeds up a reaction by providing a lower activation energy pathway; not used up"}
+      ],
+      "examTips": [
+        "Always explain using collision theory — don't just say 'more collisions', explain WHY.",
+        "Catalyst lowers activation energy — it does NOT affect the overall energy change.",
+        "Temperature affects both frequency AND energy of collisions — mention both."
+      ],
+      "commonMistakes": [
+        "Saying 'more collisions' without explaining why the factor causes this.",
+        "Thinking catalysts change the overall ΔH — they only lower activation energy.",
+        "Forgetting catalysts are not used up in the reaction."
+      ],
+      "videos": [
+        {"title": "Factors Affecting Rate of Reaction", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=8XeSV5MHieI"},
+        {"title": "Collision Theory GCSE", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=JxjI2QVqjOI"},
+        {"title": "Catalysts", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=heTEocXTUSU"},
+        {"title": "Rate of Reaction Factors", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=8XeSV5MHieI"}
+      ]
+    },
+    "Equilibrium": {
+      "intro": "Some reactions are reversible — they can proceed in both directions. At equilibrium the forward and reverse rates are equal and concentrations remain constant.",
+      "sections": [
+        {"title": "Reversible Reactions", "icon": "⇌", "points": [
+          "Shown by ⇌ symbol",
+          "Both forward and reverse reactions occur simultaneously",
+          "At equilibrium: rate of forward = rate of reverse",
+          "Concentrations of reactants and products remain constant (but not necessarily equal)",
+          "Equilibrium is dynamic — reactions still happening in both directions"
+        ]},
+        {"title": "Le Chatelier's Principle", "icon": "⚖️", "text": "If conditions change, equilibrium shifts to oppose the change:", "points": [
+          "Increase temperature → shifts towards endothermic direction",
+          "Decrease temperature → shifts towards exothermic direction",
+          "Increase pressure → shifts towards side with fewer moles of gas",
+          "Increase concentration of a substance → shifts away from that substance",
+          "Catalyst → equilibrium reached faster but position UNCHANGED"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Reversible reaction", "def": "A reaction that can proceed in both forward and reverse directions"},
+        {"term": "Dynamic equilibrium", "def": "State where forward and reverse rates are equal and concentrations are constant"},
+        {"term": "Le Chatelier's Principle", "def": "If conditions change, equilibrium shifts to counteract the change"}
+      ],
+      "examTips": [
+        "Catalyst speeds up reaching equilibrium but does NOT shift the position.",
+        "Changing pressure only affects equilibrium if there are different numbers of gas moles on each side.",
+        "'Dynamic' means reactions are still occurring — just at equal rates."
+      ],
+      "commonMistakes": [
+        "Saying catalyst shifts equilibrium position — it does not.",
+        "Confusing dynamic equilibrium (still reacting) with no reaction occurring.",
+        "Saying concentrations are equal at equilibrium — they are constant, not necessarily equal."
+      ],
+      "videos": [
+        {"title": "Reversible Reactions and Equilibrium", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=QKDIe6GrMUY"},
+        {"title": "Le Chatelier's Principle GCSE", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=GdBhPm-z0HU"},
+        {"title": "Chemical Equilibrium", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=J5jtIMv2QLU"}
+      ]
+    }
+  }
+}

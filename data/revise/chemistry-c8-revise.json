@@ -1,0 +1,121 @@
+{
+  "module": "C8 Chemical Analysis",
+  "topics": {
+    "Purity and Formulations": {
+      "intro": "In chemistry, a pure substance contains only one element or compound. Formulations are mixtures carefully designed for specific purposes.",
+      "sections": [
+        {"title": "Pure Substances", "icon": "🔬", "points": [
+          "Contains only one type of element or compound — no other substances",
+          "Has a sharp, specific melting and boiling point",
+          "Impurities lower the melting point and broaden the melting range",
+          "Melting point test: pure substance melts at exact temperature; impure melts over a range"
+        ]},
+        {"title": "Formulations", "icon": "🧴", "points": [
+          "A formulation is a useful mixture with precise proportions of each component",
+          "Each component has a specific purpose",
+          "Examples: medicines (precise drug dose + inactive ingredients), fuels (additives for performance), cleaning products, alloys, paints, fertilisers, foods"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Pure substance", "def": "A substance containing only one type of element or compound; has a sharp melting point"},
+        {"term": "Formulation", "def": "A mixture designed with precise proportions for a specific purpose"},
+        {"term": "Melting point", "def": "The temperature at which a substance changes from solid to liquid"}
+      ],
+      "examTips": [
+        "Pure = sharp melting point. Impure = lower and broader melting range.",
+        "Formulations are NOT pure — they are deliberately designed mixtures."
+      ],
+      "commonMistakes": [
+        "Saying pure water is a formulation — it is a pure compound.",
+        "Forgetting that impurities lower (not raise) the melting point."
+      ],
+      "videos": [
+        {"title": "Purity and Formulations GCSE", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=ZYLEMhYKNHY"},
+        {"title": "Pure Substances and Formulations", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=ZYLEMhYKNHY"},
+        {"title": "Purity in Chemistry", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=D9C_W7jUwCY"}
+      ]
+    },
+    "Chromatography": {
+      "intro": "Chromatography separates mixtures based on how strongly each component interacts with the stationary and mobile phases. It is used to identify substances.",
+      "sections": [
+        {"title": "How Chromatography Works", "icon": "🌈", "points": [
+          "Mobile phase: solvent that travels through the stationary phase",
+          "Stationary phase: paper (or other medium) that doesn't move",
+          "Each substance moves different distances depending on: solubility in solvent AND attraction to paper",
+          "More soluble / less attracted to paper → moves further up"
+        ]},
+        {"title": "Rf Values", "icon": "📐", "callout": {"type": "exam", "label": "Rf Formula", "text": "Rf = distance moved by substance ÷ distance moved by solvent front. Rf is always between 0 and 1. Same Rf in same solvent = possibly same substance."}},
+        {"title": "Interpreting Results", "icon": "📊", "points": [
+          "One spot = pure substance (or only one component present)",
+          "Multiple spots = mixture",
+          "Compare Rf values with known substances to identify unknowns",
+          "Use multiple solvents to confirm identity — same Rf in different solvents = likely same substance"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Rf value", "def": "Ratio of distance moved by substance to distance moved by solvent — always 0 to 1"},
+        {"term": "Mobile phase", "def": "The solvent that carries substances through the stationary phase"},
+        {"term": "Stationary phase", "def": "The paper or other medium that does not move"},
+        {"term": "Chromatography", "def": "Technique that separates mixtures based on different affinities for mobile and stationary phases"}
+      ],
+      "examTips": [
+        "Rf = substance distance ÷ solvent distance. Always measure from the BASELINE.",
+        "Rf is the same for a substance in the same solvent — useful for identification.",
+        "One spot doesn't always mean pure — two substances might have the same Rf."
+      ],
+      "commonMistakes": [
+        "Measuring Rf from the top instead of from the baseline.",
+        "Saying one Rf value proves identity — need to test in multiple solvents."
+      ],
+      "videos": [
+        {"title": "Chromatography GCSE Chemistry", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=jAE8zcHpLJE"},
+        {"title": "Paper Chromatography", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=jAE8zcHpLJE"},
+        {"title": "Chromatography", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=r4rREnCX3I4"},
+        {"title": "Rf Values", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=jAE8zcHpLJE"}
+      ]
+    },
+    "Identifying Substances": {
+      "intro": "Chemists use a range of tests to identify unknown elements, ions and compounds. Flame tests and gas tests are the most common examples at GCSE.",
+      "sections": [
+        {"title": "Flame Tests", "icon": "🔥", "points": [
+          "Lithium (Li⁺) — crimson/red",
+          "Sodium (Na⁺) — yellow/orange",
+          "Potassium (K⁺) — lilac/purple",
+          "Calcium (Ca²⁺) — orange-red",
+          "Copper (Cu²⁺) — green/blue-green"
+        ]},
+        {"title": "Gas Tests", "icon": "💨", "points": [
+          "<strong>Hydrogen</strong> — lit splint → squeaky pop",
+          "<strong>Oxygen</strong> — glowing splint → relights",
+          "<strong>Carbon dioxide</strong> — limewater → turns cloudy (milky)",
+          "<strong>Chlorine</strong> — damp litmus paper → turns white (bleaches)"
+        ]},
+        {"title": "Ion Tests", "icon": "🧪", "points": [
+          "Carbonate (CO₃²⁻): add dilute acid → fizzes (CO₂ produced)",
+          "Sulfate (SO₄²⁻): add dilute HCl then BaCl₂ → white precipitate",
+          "Halides: add dilute HNO₃ then AgNO₃ → white (Cl⁻), cream (Br⁻), yellow (I⁻) precipitate"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Flame test", "def": "Test identifying metal ions by the colour produced in a flame"},
+        {"term": "Precipitate", "def": "An insoluble solid formed when two solutions are mixed"},
+        {"term": "Limewater", "def": "Calcium hydroxide solution — turns cloudy in presence of CO₂"}
+      ],
+      "examTips": [
+        "Sodium gives a very intense yellow flame — can mask other ions in a mixture.",
+        "Oxygen = glowing splint relights. Hydrogen = lit splint squeaky pop. Don't mix these up.",
+        "For sulfate test: add HCl FIRST to remove any carbonate ions, THEN add BaCl₂."
+      ],
+      "commonMistakes": [
+        "Confusing hydrogen (squeaky pop) with oxygen (relights glowing splint).",
+        "Saying calcium is yellow — sodium is yellow; calcium is orange-red."
+      ],
+      "videos": [
+        {"title": "Flame Tests GCSE Chemistry", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=bDCHCJuS5mA"},
+        {"title": "Gas Tests", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=3OFg95jN3pY"},
+        {"title": "Identifying Ions", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=sHmPJJ1Seyc"},
+        {"title": "Chemical Tests", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=bDCHCJuS5mA"}
+      ]
+    }
+  }
+}

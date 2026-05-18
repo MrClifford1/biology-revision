@@ -1,0 +1,88 @@
+{
+  "module": "B6 Inheritance and Evolution",
+  "topics": {
+    "DNA and Genome": {
+      "intro": "DNA carries the genetic information that controls the characteristics of all living organisms. Understanding its structure and how it codes for proteins is fundamental to B6.",
+      "sections": [
+        {"title": "DNA Structure", "icon": "🧬", "points": ["DNA is a double helix — two strands twisted around each other", "Made of nucleotides — each contains a sugar, phosphate group and a base", "Four bases: Adenine (A), Thymine (T), Guanine (G), Cytosine (C)", "Complementary base pairs: A-T and G-C", "DNA is found in the nucleus, coiled into chromosomes"]},
+        {"title": "Genes and Proteins", "icon": "🔬", "points": ["A gene is a section of DNA that codes for a protein", "The sequence of bases determines the sequence of amino acids in a protein", "Proteins control characteristics and cell processes", "The human genome contains approximately 20,000-25,000 genes"]},
+        {"title": "The Human Genome Project", "icon": "💻", "text": "The Human Genome Project mapped all the genes in the human genome.", "points": ["Allows identification of genes linked to diseases", "Can develop new medicines targeted at genetic diseases", "Ethical issues: genetic privacy, discrimination by employers/insurers"]}
+      ],
+      "keyTerms": [{"term": "DNA", "def": "Deoxyribonucleic acid — molecule that carries genetic information"}, {"term": "Gene", "def": "A section of DNA that codes for a specific protein"}, {"term": "Chromosome", "def": "A long coiled strand of DNA found in the nucleus"}, {"term": "Genome", "def": "The complete set of genetic material in an organism"}, {"term": "Base pair", "def": "Complementary bases joined by hydrogen bonds: A-T and G-C"}],
+      "examTips": ["Humans have 23 pairs of chromosomes (46 total).", "A gene codes for ONE protein. Many genes make many different proteins.", "Base pairing rules: A with T, G with C — always."],
+      "commonMistakes": ["Saying a gene is a whole chromosome — a gene is just a section of DNA on a chromosome.", "Mixing up A-T and G-C base pairs."],
+      "videos": [{"title": "DNA and the Genome", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=6MIxY-ER0O8"}, {"title": "DNA Structure", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=vKrRhfSMhGs"}, {"title": "DNA", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=TNKWgcFPHqw"}]
+    },
+    "Inheritance": {
+      "intro": "Inheritance is the passing of characteristics from parents to offspring through genes. Understanding dominant and recessive alleles and Punnett squares is essential for B6.",
+      "sections": [
+        {"title": "Key Terms", "icon": "🔑", "points": ["<strong>Allele</strong> — a version of a gene (e.g. B = brown eyes, b = blue eyes)", "<strong>Dominant</strong> — allele expressed even with one copy (capital letter)", "<strong>Recessive</strong> — allele only expressed when two copies present (lower case)", "<strong>Genotype</strong> — the alleles an organism has (e.g. Bb)", "<strong>Phenotype</strong> — the visible characteristic (e.g. brown eyes)", "<strong>Homozygous</strong> — two identical alleles (BB or bb)", "<strong>Heterozygous</strong> — two different alleles (Bb)"]},
+        {"title": "Punnett Squares", "icon": "⬛", "text": "Punnett squares predict the probability of offspring genotypes. For a Bb × Bb cross:", "callout": {"type": "exam", "label": "Punnett Square", "text": "Bb × Bb gives BB:Bb:bb in ratio 1:2:1. Probability of dominant phenotype = 3/4 (75%). Probability of recessive phenotype = 1/4 (25%)."}},
+        {"title": "Sex Determination", "icon": "⚧", "points": ["Humans have 23 pairs of chromosomes — 22 autosomes + 1 sex chromosome pair", "Female = XX, Male = XY", "The Y chromosome carries the gene that triggers male development", "50% chance of male or female offspring in each pregnancy"]}
+      ],
+      "keyTerms": [{"term": "Allele", "def": "A version of a gene"}, {"term": "Dominant", "def": "Allele expressed in heterozygous individuals (capital letter)"}, {"term": "Recessive", "def": "Allele only expressed when homozygous (lower case)"}, {"term": "Genotype", "def": "The combination of alleles an organism has"}, {"term": "Phenotype", "def": "The observable characteristics of an organism"}, {"term": "Heterozygous", "def": "Having two different alleles for a gene"}],
+      "examTips": ["Dominant does not mean more common — it just means expressed when one copy present.", "Punnett squares give probabilities not certainties.", "Always use correct notation: capital for dominant, lower case for recessive."],
+      "commonMistakes": ["Saying 'dominant = more common' — this is incorrect.", "Forgetting that recessive characteristics need TWO copies of the allele."],
+      "videos": [{"title": "Genetics and Inheritance", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=NWqgZUnJdAY"}, {"title": "Punnett Squares", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=MYywSHoB8Ek"}, {"title": "Inheritance", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=4iyRQFpZKGY"}]
+    },
+    "Inherited Disorders": {
+      "intro": "Some disorders are caused by faulty alleles that are inherited. You need to know polydactyly (dominant) and cystic fibrosis (recessive).",
+      "sections": [
+        {"title": "Polydactyly", "icon": "✋", "points": ["Extra fingers or toes", "Caused by a DOMINANT allele — only ONE copy needed", "Even one affected parent with genotype Pp has 50% chance of passing it on", "Not life-threatening"]},
+        {"title": "Cystic Fibrosis", "icon": "🫁", "points": ["Causes thick sticky mucus in lungs and digestive system", "Caused by a RECESSIVE allele — two copies needed (ff)", "Carrier = Ff (one copy but unaffected)", "Both parents must carry the allele for a child to be affected", "25% chance of affected child if both parents are carriers (Ff × Ff)"]},
+        {"title": "Embryo Screening", "icon": "🔬", "text": "Embryos can be screened for genetic disorders before implantation (in IVF) or during pregnancy.", "callout": {"type": "exam", "label": "Ethical Issues", "text": "Arguments for: prevents suffering, reduces care costs. Arguments against: embryos are destroyed, could lead to 'designer babies', discrimination against disabled people."}}
+      ],
+      "keyTerms": [{"term": "Polydactyly", "def": "Having extra fingers or toes — caused by a dominant allele"}, {"term": "Cystic fibrosis", "def": "Inherited recessive disorder causing thick mucus in lungs and gut"}, {"term": "Carrier", "def": "A person with one recessive allele who does not show the condition but can pass it on"}, {"term": "Embryo screening", "def": "Testing embryos for genetic disorders before implantation"}],
+      "examTips": ["Polydactyly = dominant (one copy enough). Cystic fibrosis = recessive (two copies needed).", "A carrier of cystic fibrosis has genotype Ff — unaffected but can pass the allele on.", "Be ready to evaluate embryo screening ethically."],
+      "commonMistakes": ["Saying carriers of cystic fibrosis are affected — they are NOT, they carry one allele.", "Forgetting that both parents must be at least carriers for a recessive disorder to appear in children."],
+      "videos": [{"title": "Inherited Disorders", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=GgGunhWMbeU"}, {"title": "Cystic Fibrosis Genetics", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=mfB06WBqEZ0"}]
+    },
+    "Variation and Evolution": {
+      "intro": "Variation between organisms can be genetic or environmental. Natural selection acts on genetic variation to drive evolution over many generations.",
+      "sections": [
+        {"title": "Types of Variation", "icon": "🎲", "points": ["<strong>Genetic variation</strong> — caused by different alleles; inherited; cannot be changed by environment", "<strong>Environmental variation</strong> — caused by conditions (diet, exercise, accidents)", "<strong>Both</strong> — e.g. height is influenced by genes AND diet"]},
+        {"title": "Natural Selection", "icon": "🦕", "numbered": ["Variation exists in a population (due to mutation)", "Some individuals have advantageous characteristics", "These individuals are better adapted — more likely to survive and reproduce", "They pass on their advantageous alleles to offspring", "Over many generations, advantageous characteristics become more common"], "callout": {"type": "tip", "label": "Darwin's Key Idea", "text": "Survival of the fittest — 'fittest' means best adapted to the environment, not strongest."}},
+        {"title": "Mutation", "icon": "⚡", "points": ["Random changes in DNA sequence", "Mostly neutral — no effect on phenotype", "Can be beneficial (new advantageous characteristic) or harmful", "Rate increased by: radiation, some chemicals"]}
+      ],
+      "keyTerms": [{"term": "Variation", "def": "Differences between individuals of the same species"}, {"term": "Natural selection", "def": "Process where individuals with advantageous traits survive and reproduce more"}, {"term": "Mutation", "def": "A random change in DNA sequence"}, {"term": "Adaptation", "def": "A feature that increases an organism's chance of survival in its environment"}],
+      "examTips": ["Natural selection requires: variation, selection pressure, survival and reproduction, inheritance.", "Mutations are the SOURCE of new variation — they are random, not directed."],
+      "commonMistakes": ["Saying organisms 'try to adapt' — natural selection is random; there is no intent.", "Confusing natural selection (process) with evolution (result over long time)."],
+      "videos": [{"title": "Natural Selection and Evolution", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=0SCjhI86grU"}, {"title": "Natural Selection GCSE", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=gO0g8QqBU0A"}, {"title": "Evolution", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=hOfRN0KihOU"}]
+    },
+    "Selective Breeding and Genetic Engineering": {
+      "intro": "Humans can influence the characteristics of plants and animals through selective breeding and genetic engineering, both of which have important ethical implications.",
+      "sections": [
+        {"title": "Selective Breeding", "icon": "🌾", "text": "Selective breeding (artificial selection) involves choosing individuals with desirable characteristics to breed together over many generations.", "points": ["Examples: disease-resistant crops, cows that produce more milk, dogs bred for specific traits", "Process: select parents with desired traits → breed → select offspring with best traits → repeat over generations", "Reduces genetic diversity — populations become more susceptible to new diseases"]},
+        {"title": "Genetic Engineering", "icon": "🧬", "text": "Genetic engineering involves cutting a gene from one organism and inserting it into another.", "points": ["Uses restriction enzymes to cut out the desired gene", "Gene is inserted into target organism using a vector (often a plasmid)", "Example: human insulin gene inserted into bacteria → bacteria produce human insulin (for diabetics)", "GM crops — herbicide resistant, pest resistant, golden rice (contains vitamin A gene)", "Ethical concerns: unknown long-term effects, biodiversity, 'playing God'"]}
+      ],
+      "keyTerms": [{"term": "Selective breeding", "def": "Choosing organisms with desired traits to breed — artificial selection"}, {"term": "Genetic engineering", "def": "Transferring a gene from one organism to another"}, {"term": "GM crop", "def": "Genetically modified crop with useful characteristics added"}, {"term": "Plasmid", "def": "Small circular DNA used as a vector in genetic engineering"}],
+      "examTips": ["Selective breeding reduces genetic diversity — a key disadvantage.", "Genetic engineering inserts a specific gene; selective breeding selects for multiple traits simultaneously.", "Be able to evaluate both methods — benefits and risks."],
+      "commonMistakes": ["Confusing selective breeding (natural alleles selected) with genetic engineering (gene transferred from different species).", "Forgetting that selective breeding reduces genetic diversity."],
+      "videos": [{"title": "Selective Breeding and GM", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=FAxAzpHBd5k"}, {"title": "Genetic Engineering GCSE", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=ZbUXCVJxk4g"}, {"title": "Selective Breeding", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=yVNastrrtWg"}]
+    },
+    "Evidence for Evolution": {
+      "intro": "There is extensive evidence that all life on Earth evolved from a common ancestor. Understanding this evidence is important for B6.",
+      "sections": [
+        {"title": "Fossil Evidence", "icon": "🦕", "points": ["Fossils show how organisms have changed over time", "Found in sedimentary rock — older fossils deeper down", "Gaps in fossil record exist because: soft tissue rarely fossilises, conditions not always right for preservation", "Despite gaps, fossils show a clear progression of life forms"]},
+        {"title": "Antibiotic Resistance", "icon": "🦠", "text": "Antibiotic resistance in bacteria is evolution by natural selection happening in real time:", "numbered": ["Random mutation gives some bacteria resistance", "Antibiotics kill non-resistant bacteria", "Resistant bacteria survive and reproduce", "Resistance gene becomes common in population"]},
+        {"title": "Why Darwin's Theory Was Controversial", "icon": "📚", "points": ["Challenged religious beliefs about creation", "Darwin had no knowledge of genes or DNA at the time", "Limited fossil evidence in Darwin's era", "Theory gradually accepted as more evidence emerged"]}
+      ],
+      "keyTerms": [{"term": "Fossil", "def": "Preserved remains or traces of ancient organisms in rock"}, {"term": "Evolution", "def": "Change in inherited characteristics of a population over many generations"}, {"term": "Common ancestor", "def": "An ancestral species from which different species have evolved"}],
+      "examTips": ["Antibiotic resistance is EVIDENCE for evolution by natural selection — happening now.", "The fossil record is incomplete but still strongly supports evolution."],
+      "commonMistakes": ["Saying fossils disprove evolution because there are gaps — gaps exist due to preservation conditions, not because evolution didn't happen."],
+      "videos": [{"title": "Evidence for Evolution", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=0SCjhI86grU"}, {"title": "Fossil Evidence GCSE", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=D0dJgNkGCl8"}]
+    },
+    "Classification": {
+      "intro": "Classification is the grouping of organisms based on their characteristics. Modern classification uses evolutionary relationships based on DNA evidence.",
+      "sections": [
+        {"title": "The Classification System", "icon": "📊", "text": "The Linnaean system classifies organisms into groups:", "points": ["Kingdom → Phylum → Class → Order → Family → Genus → Species", "Memory aid: 'King Philip Came Over For Good Soup'", "Binomial nomenclature: genus + species name (e.g. Homo sapiens — always italicised or underlined)"]},
+        {"title": "The Three-Domain System", "icon": "🌳", "text": "Carl Woese proposed a three-domain system based on molecular evidence:", "points": ["<strong>Archaea</strong> — primitive bacteria (extremophiles)", "<strong>Bacteria</strong> — true bacteria", "<strong>Eukaryota</strong> — all organisms with a nucleus (including plants, animals, fungi)", "Based on ribosomal RNA sequences — more accurate than morphology alone"]},
+        {"title": "Evolutionary Trees", "icon": "🌿", "points": ["Show evolutionary relationships between organisms", "Based on DNA similarity — more similar DNA = more recently shared common ancestor", "Can override physical appearance — some organisms look similar but are not closely related"]}
+      ],
+      "keyTerms": [{"term": "Classification", "def": "Grouping organisms based on shared characteristics"}, {"term": "Species", "def": "A group of organisms that can interbreed to produce fertile offspring"}, {"term": "Binomial nomenclature", "def": "Two-part naming system using genus and species (e.g. Homo sapiens)"}, {"term": "Three-domain system", "def": "Classification into Archaea, Bacteria and Eukaryota based on molecular evidence"}],
+      "examTips": ["The three-domain system is based on DNA/RNA evidence — more reliable than physical appearance.", "Binomial names: first word is genus (capital), second is species (lower case) — both italicised.", "Know the order: Kingdom Phylum Class Order Family Genus Species."],
+      "commonMistakes": ["Capitalising the species name — only the genus is capitalised in binomial nomenclature.", "Forgetting that the three-domain system replaced the five-kingdom system."],
+      "videos": [{"title": "Classification GCSE Biology", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=3m4eo3A2opE"}, {"title": "Classification and Evolution", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=vGPHCRuE8jE"}, {"title": "Classification", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=SA02un37GaI"}]
+    }
+  }
+}

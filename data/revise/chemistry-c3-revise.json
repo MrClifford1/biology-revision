@@ -1,0 +1,296 @@
+{
+  "module": "C3 Quantitative Chemistry",
+  "topics": {
+    "Moles and Mass": {
+      "intro": "The mole is the unit used to count atoms and molecules. Understanding moles allows chemists to calculate the amounts of substances in reactions.",
+      "sections": [
+        {
+          "title": "The Mole",
+          "icon": "\ud83e\uddee",
+          "points": [
+            "1 mole = 6.02 \u00d7 10\u00b2\u00b3 particles (Avogadro's number)",
+            "Molar mass = mass of 1 mole = relative formula mass in grams",
+            "<strong>Formula: moles = mass \u00f7 molar mass</strong>"
+          ],
+          "callout": {
+            "type": "exam",
+            "label": "Triangle Formula",
+            "text": "Moles = Mass \u00f7 Mr | Mass = Moles \u00d7 Mr | Mr = Mass \u00f7 Moles"
+          }
+        },
+        {
+          "title": "Relative Formula Mass (Mr)",
+          "icon": "\ud83d\udcd0",
+          "points": [
+            "Add up all the relative atomic masses in a formula",
+            "Example: H\u2082O = (2\u00d71) + 16 = 18",
+            "Example: CaCO\u2083 = 40 + 12 + (3\u00d716) = 100"
+          ]
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Mole",
+          "def": "The amount of substance containing 6.02 \u00d7 10\u00b2\u00b3 particles"
+        },
+        {
+          "term": "Relative formula mass (Mr)",
+          "def": "The sum of all relative atomic masses in a formula"
+        },
+        {
+          "term": "Molar mass",
+          "def": "The mass of one mole of a substance in grams"
+        }
+      ],
+      "examTips": [
+        "Show working clearly in mole calculations.",
+        "Moles = mass \u00f7 Mr is the most important formula in quantitative chemistry."
+      ],
+      "commonMistakes": [
+        "Using mass number instead of relative atomic mass.",
+        "Forgetting to multiply by subscripts in formulas (e.g. O\u2083 = 3 \u00d7 16)."
+      ],
+      "videos": [
+        {
+          "title": "Moles GCSE Chemistry",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=A14tDuFxNlg"
+        },
+        {
+          "title": "The Mole",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=A14tDuFxNlg"
+        },
+        {
+          "title": "Moles and Molar Mass",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=TYHI4YW3MnI"
+        }
+      ]
+    },
+    "Conservation of Mass": {
+      "intro": "In chemical reactions, mass is always conserved \u2014 atoms are rearranged but not created or destroyed.",
+      "sections": [
+        {
+          "title": "Conservation of Mass",
+          "icon": "\u2696\ufe0f",
+          "points": [
+            "Total mass of reactants = total mass of products",
+            "Atoms are rearranged \u2014 none are created or destroyed",
+            "If mass appears to change: gas may have escaped (lost) or been absorbed (gained)"
+          ]
+        },
+        {
+          "title": "Balancing Equations",
+          "icon": "\u2697\ufe0f",
+          "callout": {
+            "type": "exam",
+            "label": "Example",
+            "text": "H\u2082 + Cl\u2082 \u2192 2HCl (balanced: 2 H atoms and 2 Cl atoms on each side)"
+          }
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Conservation of mass",
+          "def": "The total mass of reactants equals the total mass of products in a reaction"
+        },
+        {
+          "term": "Balanced equation",
+          "def": "Chemical equation with equal numbers of each atom on both sides"
+        }
+      ],
+      "examTips": [
+        "If mass changes in a reaction, explain why (gas escaping or being taken in).",
+        "Always check equations are balanced before using them in calculations."
+      ],
+      "commonMistakes": [
+        "Forgetting that if a reaction is in an open container, gas can escape \u2014 apparent mass decrease."
+      ],
+      "videos": [
+        {
+          "title": "Conservation of Mass",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=C_-bQ8LFwIQ"
+        },
+        {
+          "title": "Balancing Equations",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=UWRYLRxZq5U"
+        }
+      ]
+    },
+    "Yield and Atom Economy": {
+      "intro": "In real reactions, the actual yield is often less than the theoretical maximum. Atom economy measures how efficiently reactant atoms end up in useful products.",
+      "sections": [
+        {
+          "title": "Percentage Yield",
+          "icon": "\ud83d\udcca",
+          "callout": {
+            "type": "exam",
+            "label": "Formula",
+            "text": "% yield = (actual yield \u00f7 theoretical yield) \u00d7 100"
+          },
+          "points": [
+            "Theoretical yield = maximum possible from calculation",
+            "Actual yield < theoretical due to: reversible reactions, losses in filtering/evaporation, side reactions"
+          ]
+        },
+        {
+          "title": "Atom Economy",
+          "icon": "\u267b\ufe0f",
+          "callout": {
+            "type": "exam",
+            "label": "Formula",
+            "text": "% atom economy = (Mr of desired product \u00f7 sum of Mr of all products) \u00d7 100"
+          },
+          "points": [
+            "High atom economy = less waste = more sustainable",
+            "Addition reactions have 100% atom economy \u2014 only one product",
+            "Substitution reactions have lower atom economy"
+          ]
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Percentage yield",
+          "def": "The actual yield expressed as a percentage of the theoretical maximum"
+        },
+        {
+          "term": "Atom economy",
+          "def": "The proportion of reactant atoms that end up in the desired product"
+        }
+      ],
+      "examTips": [
+        "% yield: did we get as much as expected? Atom economy: how efficiently are atoms used?",
+        "Greener chemistry = high atom economy AND high percentage yield."
+      ],
+      "commonMistakes": [
+        "Confusing % yield (how much we got vs expected) and atom economy (how efficiently atoms are used)."
+      ],
+      "videos": [
+        {
+          "title": "Yield and Atom Economy",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=FuU6DW9x0bc"
+        },
+        {
+          "title": "Percentage Yield",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=pj9mD8WXWZ8"
+        }
+      ]
+    },
+    "Concentration": {
+      "intro": "Concentration measures how much solute is dissolved in a given volume of solution. It is essential for quantitative chemistry calculations.",
+      "sections": [
+        {
+          "title": "Concentration Formula",
+          "icon": "\ud83d\udcd0",
+          "callout": {
+            "type": "exam",
+            "label": "Formula",
+            "text": "Concentration (mol/dm\u00b3) = moles \u00f7 volume (dm\u00b3). Also: concentration (g/dm\u00b3) = mass \u00f7 volume"
+          }
+        },
+        {
+          "title": "Converting Units",
+          "icon": "\ud83d\udccf",
+          "points": [
+            "1 dm\u00b3 = 1000 cm\u00b3 = 1 litre",
+            "To convert cm\u00b3 to dm\u00b3: divide by 1000",
+            "More concentrated = more solute in same volume"
+          ]
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Concentration",
+          "def": "The amount of solute dissolved per unit volume of solution"
+        },
+        {
+          "term": "Solute",
+          "def": "The substance dissolved in a solvent"
+        },
+        {
+          "term": "Solvent",
+          "def": "The liquid in which a solute dissolves"
+        }
+      ],
+      "examTips": [
+        "Always convert cm\u00b3 to dm\u00b3 before using in concentration formula.",
+        "Concentration in mol/dm\u00b3 is most common \u2014 learn the formula triangle."
+      ],
+      "commonMistakes": [
+        "Forgetting to convert cm\u00b3 to dm\u00b3 (\u00f71000) before calculating concentration."
+      ],
+      "videos": [
+        {
+          "title": "Concentration Calculations",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=7QExnFTEaCA"
+        },
+        {
+          "title": "Concentration GCSE Chemistry",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=7QExnFTEaCA"
+        }
+      ]
+    },
+    "Gas Volumes": {
+      "intro": "Gases are measured by volume rather than mass. At the same temperature and pressure, equal volumes of gases contain equal numbers of molecules.",
+      "sections": [
+        {
+          "title": "Molar Volume of Gas",
+          "icon": "\ud83d\udca8",
+          "callout": {
+            "type": "exam",
+            "label": "Key Fact",
+            "text": "At room temperature and pressure (RTP): 1 mole of any gas occupies 24 dm\u00b3 (24,000 cm\u00b3)."
+          },
+          "points": [
+            "Volume of gas = moles \u00d7 24 (in dm\u00b3) at RTP",
+            "Moles of gas = volume \u00f7 24 (if volume in dm\u00b3)"
+          ]
+        },
+        {
+          "title": "Using Gas Volumes",
+          "icon": "\u2697\ufe0f",
+          "points": [
+            "Can compare gas volumes using the ratio of moles in the equation",
+            "Example: H\u2082 + Cl\u2082 \u2192 2HCl \u2014 1 volume H\u2082 + 1 volume Cl\u2082 \u2192 2 volumes HCl"
+          ]
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Molar volume",
+          "def": "The volume occupied by one mole of gas at a given temperature and pressure"
+        },
+        {
+          "term": "RTP",
+          "def": "Room temperature and pressure \u2014 25\u00b0C and 1 atmosphere"
+        }
+      ],
+      "examTips": [
+        "At RTP: 1 mole = 24 dm\u00b3 for any gas.",
+        "Gas volume ratio = mole ratio from balanced equation."
+      ],
+      "commonMistakes": [
+        "Confusing dm\u00b3 and cm\u00b3 \u2014 1 dm\u00b3 = 1000 cm\u00b3. At RTP, 1 mole = 24 dm\u00b3 = 24,000 cm\u00b3."
+      ],
+      "videos": [
+        {
+          "title": "Gas Volume Calculations",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=A14tDuFxNlg"
+        },
+        {
+          "title": "Molar Volume of Gases",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=A14tDuFxNlg"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "module": "B5 Homeostasis and Response",
+  "topics": {
+    "Homeostasis": {
+      "intro": "Homeostasis is the maintenance of a stable internal environment. It ensures cells can function correctly despite changes in conditions.",
+      "sections": [
+        {"title": "What is Homeostasis?", "icon": "⚖️", "points": ["Control of internal conditions: body temperature (37°C), blood glucose, water content", "Uses negative feedback — when conditions change, the response corrects them back to the set point"]},
+        {"title": "Negative Feedback", "icon": "🔄", "numbered": ["Stimulus detected (e.g. temperature too high)", "Receptors detect the change", "Control centre coordinates response", "Effectors carry out the correction", "Conditions return to normal"], "callout": {"type": "exam", "label": "Key Concept", "text": "Negative feedback always returns conditions BACK to the normal level. Response always OPPOSES the original change."}}
+      ],
+      "keyTerms": [{"term": "Homeostasis", "def": "Maintenance of a stable internal environment"}, {"term": "Negative feedback", "def": "A control mechanism where the response reverses the original change"}, {"term": "Effector", "def": "A muscle or gland that brings about a response"}],
+      "examTips": ["Negative feedback always returns to the set point — the response opposes the change.", "Examples: temperature, blood glucose, water balance."],
+      "commonMistakes": ["Confusing negative feedback (corrects) with positive feedback (amplifies)."],
+      "videos": [{"title": "Homeostasis GCSE Biology", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=BGiluHo6VWM"}, {"title": "Homeostasis", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=iM4SZ_HkYKc"}]
+    },
+    "Nervous System": {
+      "intro": "The nervous system allows rapid detection and response to changes. It consists of the CNS (brain and spinal cord) and peripheral nerves.",
+      "sections": [
+        {"title": "Structure", "icon": "🧠", "points": ["Sensory neurones — from receptors TO CNS", "Motor neurones — from CNS TO effectors", "Relay neurones — connect in CNS"]},
+        {"title": "Reflex Arc", "icon": "⚡", "numbered": ["Stimulus → receptor detects change", "Sensory neurone → spinal cord", "Relay neurone in spinal cord", "Motor neurone → effector", "Effector responds"], "callout": {"type": "tip", "label": "Why Reflexes Are Fast", "text": "Reflexes bypass the brain — coordinated in spinal cord. Pupil reflex, withdrawal reflex."}}
+      ],
+      "keyTerms": [{"term": "Neurone", "def": "Nerve cell carrying electrical impulses"}, {"term": "Synapse", "def": "Gap between neurones — neurotransmitters carry signal across"}, {"term": "Reflex arc", "def": "Pathway of neurones in a reflex action"}],
+      "examTips": ["Reflexes bypass the brain — faster response.", "Sensory = TO CNS. Motor = FROM CNS."],
+      "commonMistakes": ["Saying reflexes involve conscious thought — they do not.", "Confusing sensory and motor neurones."],
+      "videos": [{"title": "The Nervous System", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=2VqQPOhSJXQ"}, {"title": "Nervous System GCSE", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=eCRFPLbjkXc"}, {"title": "Reflex Arc", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=R50vVICRbyM"}]
+    },
+    "Hormones": {
+      "intro": "Hormones are chemical messengers produced by glands, carried in blood to target organs. Slower and longer-lasting than nervous responses.",
+      "sections": [
+        {"title": "Nervous vs Hormonal", "icon": "⚡", "points": ["Nervous: fast, short-lived, electrical, specific pathway", "Hormonal: slower, longer-lasting, chemical, bloodstream"]},
+        {"title": "Key Hormones", "icon": "💉", "points": ["Adrenaline — adrenal glands; fight or flight; increases heart rate", "Insulin — pancreas; lowers blood glucose", "Glucagon — pancreas; raises blood glucose", "Oestrogen — ovaries; female puberty, menstrual cycle", "Testosterone — testes; male puberty"]}
+      ],
+      "keyTerms": [{"term": "Hormone", "def": "Chemical messenger carried in blood to target organs"}, {"term": "Adrenaline", "def": "Fight or flight hormone from adrenal glands"}, {"term": "Target organ", "def": "Organ that responds to a specific hormone"}],
+      "examTips": ["Hormones travel in blood — reach all organs but only affect targets.", "Hormonal = slow and long-lasting; Nervous = fast and short."],
+      "commonMistakes": ["Saying hormones travel through nerves.", "Confusing slow hormonal with fast nervous responses."],
+      "videos": [{"title": "Hormones GCSE Biology", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=p3GkpO3nkYw"}, {"title": "The Endocrine System", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=p3GkpO3nkYw"}, {"title": "Hormones", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=Gs4UZ1GQQSY"}]
+    },
+    "Blood Glucose": {
+      "intro": "Blood glucose must be kept within a narrow range. Insulin and glucagon work together as a negative feedback pair to achieve this.",
+      "sections": [
+        {"title": "Regulation", "icon": "🩸", "points": ["High glucose → pancreas releases INSULIN → glucose → glycogen in liver → glucose falls", "Low glucose → pancreas releases GLUCAGON → glycogen → glucose in liver → glucose rises"], "callout": {"type": "exam", "label": "Negative Feedback Pair", "text": "Insulin lowers glucose. Glucagon raises glucose. They are antagonistic hormones."}},
+        {"title": "Diabetes", "icon": "💉", "points": ["Type 1 — pancreas makes no insulin; autoimmune; treated with insulin injections", "Type 2 — cells don't respond to insulin; linked to obesity; managed by diet/exercise/medication"]}
+      ],
+      "keyTerms": [{"term": "Insulin", "def": "Lowers blood glucose — stimulates glycogen storage"}, {"term": "Glucagon", "def": "Raises blood glucose — stimulates glycogen breakdown"}, {"term": "Glycogen", "def": "Storage form of glucose in liver and muscles"}, {"term": "Type 1 diabetes", "def": "Pancreas produces no insulin — requires injections"}, {"term": "Type 2 diabetes", "def": "Cells resistant to insulin — linked to lifestyle"}],
+      "examTips": ["Insulin = stores glucose as glycogen. Glucagon = releases glucose from glycogen.", "Glycogen ≠ glucagon — easy to confuse!", "Type 1 treated with insulin; Type 2 often managed with lifestyle changes."],
+      "commonMistakes": ["Mixing up insulin and glucagon.", "Forgetting glycogen is stored in LIVER and muscles."],
+      "videos": [{"title": "Blood Glucose Regulation", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=BGiluHo6VWM"}, {"title": "Diabetes GCSE Biology", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=DRHBCJkk4mM"}, {"title": "Insulin and Glucagon", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=kJ1xBBQ4c5w"}]
+    },
+    "Reproduction": {
+      "intro": "Reproduction is controlled by hormones. The menstrual cycle involves four key hormones, and fertility can be controlled using synthetic hormones.",
+      "sections": [
+        {"title": "The Menstrual Cycle", "icon": "📅", "points": ["FSH (pituitary) — stimulates egg maturation; stimulates oestrogen", "Oestrogen (ovary) — repairs uterus lining; inhibits FSH; stimulates LH surge", "LH (pituitary) — triggers ovulation at day 14", "Progesterone (corpus luteum) — maintains uterus lining; inhibits FSH and LH"]},
+        {"title": "Contraception", "icon": "🚫", "points": ["Pill — contains oestrogen/progesterone; inhibits FSH; prevents ovulation", "Implant/injection — long-acting progesterone", "Barrier methods (condoms, diaphragm) — not hormonal"]},
+        {"title": "IVF", "icon": "🧪", "points": ["FSH and LH given to stimulate multiple egg production", "Eggs collected and fertilised with sperm outside body", "Embryo(s) implanted into uterus", "Low success rate; emotional strain; ethical issues with unused embryos"]}
+      ],
+      "keyTerms": [{"term": "FSH", "def": "Follicle-stimulating hormone — stimulates egg maturation"}, {"term": "LH", "def": "Luteinising hormone — triggers ovulation"}, {"term": "Oestrogen", "def": "Rebuilds uterus lining; triggers LH surge"}, {"term": "Progesterone", "def": "Maintains uterus lining after ovulation"}, {"term": "IVF", "def": "In vitro fertilisation — fertilisation outside the body"}],
+      "examTips": ["FSH stimulates oestrogen; oestrogen inhibits FSH (negative feedback).", "IVF uses FSH to stimulate multiple egg production.", "Know pros and cons of IVF for evaluate questions."],
+      "commonMistakes": ["Confusing FSH (egg maturation) with LH (ovulation trigger).", "Forgetting oestrogen inhibits FSH — this is the negative feedback."],
+      "videos": [{"title": "The Menstrual Cycle", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=PFR9YMohBWM"}, {"title": "Hormones and Reproduction", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=HpYPzXJ2oHo"}, {"title": "IVF", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=2i1mk4u1fq4"}]
+    }
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "module": "C9 Chemistry of the Atmosphere",
+  "topics": {
+    "Earth's Atmosphere": {
+      "intro": "The composition of Earth's atmosphere has changed dramatically over billions of years. Understanding this history is essential for C9.",
+      "sections": [
+        {"title": "The Early Atmosphere", "icon": "🌋", "points": [
+          "Formed by volcanic outgassing — volcanoes released gases from inside Earth",
+          "Mainly: carbon dioxide (CO₂), water vapour, nitrogen (N₂)",
+          "Very little or no oxygen (O₂)",
+          "Similar to current atmospheres of Mars and Venus"
+        ]},
+        {"title": "How the Atmosphere Changed", "icon": "🌍", "numbered": [
+          "Water vapour condensed as Earth cooled → formed oceans",
+          "CO₂ dissolved in oceans → reduced CO₂ levels; carbonates formed in rocks",
+          "Photosynthetic organisms (algae, plants) evolved → removed CO₂, released O₂",
+          "Oxygen levels gradually increased over billions of years",
+          "Nitrogen accumulated — unreactive, not removed by reactions",
+          "Ozone (O₃) layer formed from O₂ → absorbed UV radiation, allowed life on land"
+        ]},
+        {"title": "Current Atmosphere", "icon": "📊", "callout": {"type": "exam", "label": "Current Composition", "text": "78% nitrogen (N₂), 21% oxygen (O₂), ~0.9% argon (Ar), ~0.04% carbon dioxide (CO₂), variable water vapour."}}
+      ],
+      "keyTerms": [
+        {"term": "Volcanic outgassing", "def": "Release of gases from volcanoes that formed Earth's early atmosphere"},
+        {"term": "Photosynthesis", "def": "Process by which plants/algae used CO₂ and produced O₂ — changed the atmosphere"},
+        {"term": "Ozone layer", "def": "Layer of O₃ in the stratosphere that absorbs UV radiation"}
+      ],
+      "examTips": [
+        "The key process that increased O₂: photosynthesis by early algae and plants.",
+        "CO₂ decreased because: dissolved in oceans AND used in photosynthesis.",
+        "Nitrogen built up because it is unreactive — not removed by any process."
+      ],
+      "commonMistakes": [
+        "Saying nitrogen was produced by a specific process — it accumulated because it is unreactive.",
+        "Forgetting that CO₂ also dissolved in the oceans, not just used in photosynthesis."
+      ],
+      "videos": [
+        {"title": "Earth's Atmosphere GCSE Chemistry", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=KKaHBVMqGfk"},
+        {"title": "Evolution of the Atmosphere", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=nQXM5c7g4Og"},
+        {"title": "Earth's Early Atmosphere", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=4Rd2UIQYIAM"}
+      ]
+    },
+    "Greenhouse Effect": {
+      "intro": "Greenhouse gases trap heat in the atmosphere, keeping Earth warm enough for life. Human activities are enhancing this effect, causing climate change.",
+      "sections": [
+        {"title": "How the Greenhouse Effect Works", "icon": "☀️", "points": [
+          "Short-wave solar radiation passes through the atmosphere to Earth's surface",
+          "Earth absorbs it and re-emits as long-wave infrared radiation",
+          "Greenhouse gases absorb this infrared — re-emit in all directions",
+          "Net effect: heat is trapped, warming the atmosphere"
+        ]},
+        {"title": "Greenhouse Gases", "icon": "🌡️", "points": [
+          "Carbon dioxide (CO₂) — burning fossil fuels, deforestation",
+          "Methane (CH₄) — livestock (digestion), landfill, rice paddies, natural gas leaks",
+          "Water vapour (H₂O) — natural; increases as temperature rises",
+          "Nitrous oxide (N₂O) — fertilisers, agriculture"
+        ]},
+        {"title": "Climate Change Consequences", "icon": "🌊", "points": [
+          "Rising average global temperatures",
+          "Melting ice caps and glaciers → rising sea levels",
+          "More extreme weather events (floods, droughts, storms)",
+          "Changing distribution of species",
+          "Disruption to agriculture and food security"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Greenhouse effect", "def": "Natural process where greenhouse gases trap infrared radiation, warming Earth"},
+        {"term": "Enhanced greenhouse effect", "def": "Increased warming due to human-caused rise in greenhouse gas concentrations"},
+        {"term": "Climate change", "def": "Long-term changes in global climate patterns due to enhanced greenhouse effect"}
+      ],
+      "examTips": [
+        "The natural greenhouse effect is essential for life — the enhanced effect is the problem.",
+        "Methane is more potent than CO₂ as a greenhouse gas per molecule.",
+        "Be able to evaluate evidence for climate change — scientific consensus is overwhelming."
+      ],
+      "commonMistakes": [
+        "Confusing the ozone hole (separate issue) with the greenhouse effect.",
+        "Saying the greenhouse effect is entirely man-made — it is a natural process that is being enhanced."
+      ],
+      "videos": [
+        {"title": "Greenhouse Effect GCSE Chemistry", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=VYMjSule0Bw"},
+        {"title": "Climate Change GCSE", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=IQHV4pD9hUI"},
+        {"title": "Greenhouse Gases", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=VYMjSule0Bw"}
+      ]
+    },
+    "Air Pollution": {
+      "intro": "Burning fossil fuels releases pollutant gases that damage health and the environment. Understanding sources, effects and solutions is required for C9.",
+      "sections": [
+        {"title": "Pollutants from Combustion", "icon": "🏭", "points": [
+          "<strong>Carbon dioxide (CO₂)</strong> — greenhouse gas; from complete combustion of fossil fuels",
+          "<strong>Carbon monoxide (CO)</strong> — toxic; from incomplete combustion; binds to haemoglobin preventing O₂ transport",
+          "<strong>Soot/particulates</strong> — from incomplete combustion; cause respiratory problems; global dimming",
+          "<strong>Sulfur dioxide (SO₂)</strong> — from sulfur impurities in fuels; dissolves in rainwater → sulfuric acid → acid rain",
+          "<strong>Nitrogen oxides (NOₓ)</strong> — N₂ + O₂ at high engine temperatures; → acid rain and photochemical smog"
+        ]},
+        {"title": "Effects of Pollutants", "icon": "⚠️", "points": [
+          "Acid rain: lowers pH of lakes (kills fish), erodes limestone buildings and statues, damages trees",
+          "Carbon monoxide: binds to haemoglobin → reduces O₂ in blood → suffocation at high concentrations",
+          "Particulates: respiratory problems, asthma, reduced sunlight (global dimming)"
+        ]},
+        {"title": "Solutions", "icon": "✅", "points": [
+          "Catalytic converters in cars: convert CO and NOₓ to CO₂ and N₂",
+          "Flue gas desulfurisation: removes SO₂ from power station emissions using calcium oxide",
+          "Switching to low-sulfur fuels",
+          "Renewable energy to replace fossil fuels"
+        ]}
+      ],
+      "keyTerms": [
+        {"term": "Carbon monoxide", "def": "Toxic gas from incomplete combustion — binds to haemoglobin"},
+        {"term": "Sulfur dioxide", "def": "Acidic gas from burning sulfur-containing fuels — causes acid rain"},
+        {"term": "Acid rain", "def": "Rain with lower than normal pH caused by SO₂ and NOₓ dissolving in water"},
+        {"term": "Catalytic converter", "def": "Device in car exhaust that converts CO and NOₓ to CO₂ and N₂"}
+      ],
+      "examTips": [
+        "CO is toxic because it binds to haemoglobin — prevents oxygen transport.",
+        "SO₂ + H₂O → sulfurous/sulfuric acid → acid rain.",
+        "Catalytic converters reduce CO and NOₓ — they do NOT reduce CO₂."
+      ],
+      "commonMistakes": [
+        "Saying catalytic converters reduce CO₂ — they convert CO and NOₓ but produce CO₂.",
+        "Confusing CO (toxic, colourless) with CO₂ (not directly toxic at normal concentrations)."
+      ],
+      "videos": [
+        {"title": "Air Pollution GCSE Chemistry", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=KO58LXUGY-Q"},
+        {"title": "Pollutants from Combustion", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=nQXM5c7g4Og"},
+        {"title": "Acid Rain", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=4Rd2UIQYIAM"}
+      ]
+    }
+  }
+}

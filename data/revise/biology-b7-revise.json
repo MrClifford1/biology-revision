@@ -1,0 +1,102 @@
+{
+  "module": "B7 Ecology",
+  "topics": {
+    "Ecosystems": {
+      "intro": "An ecosystem includes all the living organisms and non-living factors in an area. Understanding how ecosystems work and how organisms interact is fundamental to B7.",
+      "sections": [
+        {"title": "Key Terms", "icon": "🌍", "points": ["<strong>Ecosystem</strong> — all living organisms (biotic) and non-living factors (abiotic) in an area", "<strong>Population</strong> — all individuals of one species in an area", "<strong>Community</strong> — all populations of different species in an area", "<strong>Habitat</strong> — the place where an organism lives"]},
+        {"title": "Abiotic and Biotic Factors", "icon": "🌤️", "points": ["<strong>Abiotic</strong> (non-living): light intensity, temperature, moisture, pH, wind speed, CO₂ concentration", "<strong>Biotic</strong> (living): predation, competition, disease, food availability"]},
+        {"title": "Competition", "icon": "⚔️", "points": ["Intraspecific — between individuals of the SAME species (most intense)", "Interspecific — between individuals of DIFFERENT species", "Resources competed for: food, water, space, light, mates"]}
+      ],
+      "keyTerms": [{"term": "Ecosystem", "def": "All living organisms and non-living factors in an area"}, {"term": "Abiotic factor", "def": "Non-living factor affecting organisms (temperature, light, pH, etc.)"}, {"term": "Biotic factor", "def": "Living factor affecting organisms (predation, competition, disease)"}, {"term": "Population", "def": "All individuals of one species in an area"}],
+      "examTips": ["Know the difference between population (one species), community (all species) and ecosystem (+ abiotic factors).", "Intraspecific competition is more intense than interspecific — competing for identical resources."],
+      "commonMistakes": ["Confusing community (living organisms only) with ecosystem (includes abiotic factors).", "Forgetting abiotic factors — temperature, light, pH, moisture are all important."],
+      "videos": [{"title": "Ecosystems GCSE Biology", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=fJlr-eaVzGg"}, {"title": "Ecosystems", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=GlNkZFsGKAc"}, {"title": "Ecosystems", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=k5BrIWKb9Sg"}]
+    },
+    "Food Webs": {
+      "intro": "Food chains and food webs show feeding relationships between organisms. Energy flows through ecosystems from producers to consumers.",
+      "sections": [
+        {"title": "Food Chains and Webs", "icon": "🍃", "points": ["Food chain shows ONE feeding pathway: producer → primary consumer → secondary consumer → tertiary consumer", "Food web shows MULTIPLE interconnected food chains", "Arrow direction = direction of energy transfer (NOT 'eaten by')", "All food chains start with a PRODUCER (plant)"]},
+        {"title": "Energy Transfer", "icon": "⚡", "points": ["Only about 10% of energy transfers between trophic levels", "Energy lost as: heat (respiration), undigested material (faeces), movement", "This explains why food chains are short (usually 4-5 levels max)", "Biomass decreases at each level — shown by pyramid of biomass"]},
+        {"title": "Pyramids", "icon": "📊", "callout": {"type": "exam", "label": "Pyramids", "text": "Pyramid of biomass — always a true pyramid (wider at base). Pyramid of numbers can be unusual shape (e.g. many insects on one tree)."}}
+      ],
+      "keyTerms": [{"term": "Producer", "def": "An organism that makes its own food by photosynthesis (plants, algae)"}, {"term": "Consumer", "def": "An organism that eats other organisms for energy"}, {"term": "Trophic level", "def": "The position of an organism in a food chain"}, {"term": "Biomass", "def": "The total mass of living material at a trophic level"}],
+      "examTips": ["Arrows in food chains show direction of ENERGY FLOW not 'is eaten by'.", "Only ~10% of energy passes between trophic levels — explain what happens to the other 90%."],
+      "commonMistakes": ["Drawing food chain arrows from consumer to producer ('X eats Y' direction).", "Saying all pyramids of numbers are pyramid-shaped — they are NOT always pyramidal."],
+      "videos": [{"title": "Food Chains and Food Webs", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=fJlr-eaVzGg"}, {"title": "Energy Transfer in Ecosystems", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=1DAlHqMsWuI"}, {"title": "Food Chains", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=AYsKTBxNxFg"}]
+    },
+    "Nutrient Cycling": {
+      "intro": "Nutrients are constantly recycled through ecosystems. The carbon and water cycles are the main examples you need for GCSE Combined Science.",
+      "sections": [
+        {"title": "The Carbon Cycle", "icon": "♻️", "points": ["<strong>Photosynthesis</strong> — removes CO₂ from atmosphere (carbon fixation)", "<strong>Respiration</strong> — releases CO₂ back to atmosphere (all living things)", "<strong>Decomposition</strong> — decomposers break down dead matter → CO₂ released", "<strong>Combustion</strong> — burning fossil fuels and wood releases CO₂", "<strong>Feeding</strong> — carbon passes along food chains"]},
+        {"title": "The Water Cycle", "icon": "💧", "points": ["Evaporation — water from surfaces enters atmosphere", "Transpiration — water vapour released from plants", "Condensation — water vapour cools and forms clouds", "Precipitation — rain/snow returns water to land", "Runoff/infiltration — water returns to rivers and groundwater"]},
+        {"title": "Decomposers", "icon": "🍄", "points": ["Bacteria and fungi break down dead organic matter", "Release mineral ions back into soil for plants", "Release CO₂ and water through respiration", "Essential for nutrient recycling — without them nutrients would be locked up in dead matter"]}
+      ],
+      "keyTerms": [{"term": "Carbon cycle", "def": "The cycling of carbon through living organisms, the atmosphere and the Earth"}, {"term": "Decomposer", "def": "Organism (bacteria/fungi) that breaks down dead material, recycling nutrients"}, {"term": "Combustion", "def": "Burning — releases stored carbon as CO₂"}],
+      "examTips": ["Decomposers release CO₂ through RESPIRATION — not photosynthesis.", "Photosynthesis removes CO₂; respiration and combustion add it back.", "The water cycle is driven by solar energy (evaporation) and gravity (precipitation)."],
+      "commonMistakes": ["Saying decomposers photosynthesize — they respire.", "Forgetting combustion as a way CO₂ enters the atmosphere."],
+      "videos": [{"title": "The Carbon Cycle", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=4B8i7MtXoXc"}, {"title": "Carbon Cycle GCSE Biology", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=JzRbEnr11aU"}, {"title": "Water Cycle", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=oMPlgusRCWA"}]
+    },
+    "Decomposition": {
+      "intro": "Decomposition is the breakdown of dead organic matter by decomposers. It is essential for recycling nutrients back into ecosystems.",
+      "sections": [
+        {"title": "Decomposers", "icon": "🍄", "points": ["Bacteria and fungi are the main decomposers", "Break down dead plants and animals and animal waste", "Release mineral ions into soil — available for plant uptake", "Release CO₂ and water through respiration"]},
+        {"title": "Factors Affecting Decomposition Rate", "icon": "🌡️", "points": ["<strong>Temperature</strong> — higher temperature = faster decomposition (up to optimum — enzymes denature above ~40°C)", "<strong>Moisture/water availability</strong> — more moisture = faster decomposition", "<strong>Oxygen availability</strong> — aerobic decomposition faster than anaerobic", "<strong>pH</strong> — neutral pH generally optimal"]},
+        {"title": "Practical Applications", "icon": "♻️", "points": ["<strong>Composting</strong> — controlled decomposition of plant material; turning increases oxygen; warm conditions speed up", "<strong>Sewage treatment</strong> — decomposers break down organic waste", "<strong>Biogas</strong> — anaerobic decomposition produces methane (used as fuel)"]}
+      ],
+      "keyTerms": [{"term": "Decomposition", "def": "The breakdown of dead organic matter by bacteria and fungi"}, {"term": "Decomposer", "def": "Organism that breaks down dead organic material (bacteria and fungi)"}, {"term": "Composting", "def": "Controlled aerobic decomposition of organic waste to produce compost"}],
+      "examTips": ["Decomposition is faster in warm, moist, aerobic conditions.", "Decomposers respire — they use oxygen and produce CO₂ (in aerobic conditions).", "Composting works better when turned regularly — increases oxygen supply."],
+      "commonMistakes": ["Forgetting that decomposers are bacteria AND fungi — not just bacteria.", "Saying decomposition always needs oxygen — anaerobic decomposition also occurs (but is slower)."],
+      "videos": [{"title": "Decomposition and Nutrient Cycling", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=4B8i7MtXoXc"}, {"title": "Decomposition GCSE Biology", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=JzRbEnr11aU"}]
+    },
+    "Biodiversity": {
+      "intro": "Biodiversity is the variety of living organisms in an ecosystem. High biodiversity is important for ecosystem stability and resilience.",
+      "sections": [
+        {"title": "What is Biodiversity?", "icon": "🌿", "points": ["The variety of different species in an area", "Also includes genetic diversity within species", "High biodiversity = more stable ecosystem — if one species is lost, others can fill the role", "Human activities have significantly reduced global biodiversity"]},
+        {"title": "Why Biodiversity Matters", "icon": "🌍", "points": ["Food security — wild plants are source of new crop varieties", "Medicines — many drugs derived from plants/animals", "Ecosystem services — clean water, clean air, pollination, soil fertility", "Intrinsic value — all species have a right to exist"]},
+        {"title": "Measuring Biodiversity", "icon": "📊", "callout": {"type": "exam", "label": "Species Richness vs Evenness", "text": "Biodiversity considers both the NUMBER of different species AND how evenly distributed they are. High numbers of only one species does not mean high biodiversity."}}
+      ],
+      "keyTerms": [{"term": "Biodiversity", "def": "The variety of different species in an ecosystem"}, {"term": "Species richness", "def": "The number of different species in an area"}, {"term": "Ecosystem services", "def": "Benefits that humans receive from functioning ecosystems"}],
+      "examTips": ["High biodiversity = more stable ecosystem.", "Biodiversity has been declining due to human activities — deforestation, pollution, overhunting.", "Be able to suggest methods of preserving biodiversity."],
+      "commonMistakes": ["Thinking biodiversity just means lots of one species — it requires VARIETY of species.", "Forgetting genetic diversity within species as part of biodiversity."],
+      "videos": [{"title": "Biodiversity GCSE Biology", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=fJlr-eaVzGg"}, {"title": "Biodiversity", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=GZLhXDaP0ro"}]
+    },
+    "Climate Change": {
+      "intro": "Human activities are increasing greenhouse gas concentrations in the atmosphere, causing global warming and climate change with major ecological consequences.",
+      "sections": [
+        {"title": "The Greenhouse Effect", "icon": "🌡️", "points": ["Short-wave radiation from the Sun passes through the atmosphere", "Earth's surface absorbs it and re-emits long-wave (infrared) radiation", "Greenhouse gases (CO₂, methane, water vapour) absorb this — trapping heat", "Natural greenhouse effect is essential for life; enhanced greenhouse effect = climate change"]},
+        {"title": "Human Causes", "icon": "🏭", "points": ["Burning fossil fuels — releases CO₂ (electricity, transport, heating)", "Deforestation — less photosynthesis; burning wood releases CO₂", "Agriculture — cattle produce methane; rice paddies produce methane", "Landfill — anaerobic decomposition produces methane"]},
+        {"title": "Ecological Consequences", "icon": "🌊", "points": ["Rising sea levels — flooding of coastal habitats and human settlements", "Changes in distribution of species — habitats shift towards poles", "Disruption of ecosystems — timing of seasons, migration patterns, food availability altered", "Extinction risk — species unable to adapt fast enough", "Increased frequency of extreme weather events"]}
+      ],
+      "keyTerms": [{"term": "Greenhouse effect", "def": "Trapping of heat in the atmosphere by greenhouse gases"}, {"term": "Global warming", "def": "Rise in average global temperature due to enhanced greenhouse effect"}, {"term": "Carbon footprint", "def": "Total amount of greenhouse gases produced by human activities"}],
+      "examTips": ["Be able to evaluate evidence for and against climate change — scientists use data from many sources.", "Methane is a potent greenhouse gas — from livestock, landfill and rice paddies.", "Climate change affects biodiversity — species unable to adapt quickly enough may go extinct."],
+      "commonMistakes": ["Confusing the greenhouse effect (natural process) with global warming (enhanced version causing climate change).", "Saying the ozone hole causes climate change — they are separate issues."],
+      "videos": [{"title": "Climate Change GCSE Biology", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=KO58LXUGY-Q"}, {"title": "Global Warming", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=IQHV4pD9hUI"}, {"title": "Climate Change", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=VYMjSule0Bw"}]
+    },
+    "Human Impact on Ecosystems": {
+      "intro": "Human activities have dramatically altered ecosystems worldwide. Understanding these impacts and ways to reduce them is important for B7.",
+      "sections": [
+        {"title": "Deforestation", "icon": "🌲", "points": ["Removal of large areas of forest for agriculture, timber, development", "Consequences: loss of habitat and biodiversity, release of stored carbon, less photosynthesis, soil erosion, disruption of water cycle", "Particularly severe in tropical rainforests — enormous biodiversity"]},
+        {"title": "Land Use Changes", "icon": "🏗️", "points": ["Urbanisation — building on natural land removes habitats", "Agriculture — monocultures reduce biodiversity; pesticides kill non-target species", "Peat bogs drained — releases stored CO₂; destroys wetland habitat"]},
+        {"title": "Pollution", "icon": "🏭", "points": ["<strong>Water pollution</strong> — eutrophication: fertiliser runoff → algal blooms → death of aquatic life", "<strong>Air pollution</strong> — acid rain damages trees and soil chemistry", "<strong>Plastic pollution</strong> — marine animals ingest or become entangled in plastic", "<strong>Pesticides</strong> — accumulate in food chains (bioaccumulation)"]},
+        {"title": "Conservation Methods", "icon": "🌿", "points": ["Breeding programmes for endangered species (e.g. zoos)", "Habitat protection — national parks, nature reserves, marine conservation zones", "Reforestation — replanting trees", "Recycling and reducing waste", "Sustainable fishing — quotas prevent overfishing", "Reducing carbon emissions — renewable energy"]}
+      ],
+      "keyTerms": [{"term": "Deforestation", "def": "Clearing large areas of forest, often for agriculture or development"}, {"term": "Eutrophication", "def": "Excess nutrients in water causing algal blooms and death of aquatic organisms"}, {"term": "Bioaccumulation", "def": "Build-up of toxins in organisms at higher trophic levels"}, {"term": "Conservation", "def": "Protection and management of natural environments and biodiversity"}],
+      "examTips": ["Eutrophication: fertiliser → algal bloom → algae die → bacteria decompose → use up O₂ → fish die.", "Bioaccumulation: toxins concentrate at higher trophic levels — top predators most affected.", "Be able to evaluate conservation methods — costs, benefits, and practicality."],
+      "commonMistakes": ["Confusing eutrophication stages — it's a chain of events, not just 'fertiliser kills fish'.", "Forgetting that peat bogs are a carbon store — draining them releases CO₂."],
+      "videos": [{"title": "Human Impact on Ecosystems", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=KO58LXUGY-Q"}, {"title": "Deforestation GCSE Biology", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=kT_JVQn1Ip0"}, {"title": "Eutrophication", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=6dalPCLjARM"}]
+    },
+    "Sampling": {
+      "intro": "Scientists use sampling techniques to estimate the size of populations and measure biodiversity without counting every individual.",
+      "sections": [
+        {"title": "Quadrats", "icon": "⬛", "points": ["A square frame placed randomly in a habitat to count organisms within", "Used for stationary organisms — plants, slow animals", "Must be placed RANDOMLY to avoid bias — use random coordinates from a grid", "Calculate population estimate: (count ÷ quadrat area) × total habitat area"]},
+        {"title": "Transects", "icon": "📏", "points": ["A line through a habitat along which samples are taken", "Used to study how organisms change across a habitat gradient (e.g. from sea to inland)", "Belt transect — quadrats placed at regular intervals along the line", "Systematic sampling — not random, but positioned to capture gradients"]},
+        {"title": "Mark-Release-Recapture", "icon": "🦋", "text": "Used to estimate the size of mobile animal populations.", "numbered": ["Capture a sample, mark them (e.g. paint spot)", "Release and allow to mix with population", "Recapture a second sample, count marked individuals"], "callout": {"type": "exam", "label": "Lincoln Index Formula", "text": "Population estimate = (first catch × second catch) ÷ number of marked individuals in second catch. Assumes: marks not lost/harmful, population closed (no births/deaths/migration)."}}
+      ],
+      "keyTerms": [{"term": "Quadrat", "def": "A square frame used to sample stationary organisms in an area"}, {"term": "Transect", "def": "A line through a habitat used to study distribution of organisms"}, {"term": "Mark-release-recapture", "def": "Technique used to estimate the size of animal populations"}, {"term": "Random sampling", "def": "Sampling with no pattern or bias — using random coordinates"}],
+      "examTips": ["Quadrats must be placed RANDOMLY — use random number coordinates to avoid bias.", "Mark-release-recapture assumes marks don't affect survival, population doesn't change between catches.", "Know the formula: population = (n1 × n2) ÷ m2"],
+      "commonMistakes": ["Placing quadrats non-randomly (e.g. in nice-looking patches) — introduces bias.", "Using mark-release-recapture for plants — they don't move! Use quadrats instead."],
+      "videos": [{"title": "Sampling Methods GCSE Biology", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=AX3MaRpyYv0"}, {"title": "Quadrats and Transects", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=f8PJmfizSuA"}, {"title": "Mark Release Recapture", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=G5pAFoKqBMA"}]
+    }
+  }
+}
