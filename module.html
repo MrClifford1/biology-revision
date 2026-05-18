@@ -1731,7 +1731,7 @@ loadQuestions();
   };
   window._logActivity = async (entry) => {
     try {
-      if (!window._currentUser) return;
+      if (!window._currentUser) { console.log('[Activity] no current user'); return; }
       const fullEntry = {
         subjectId: window._moduleMeta?.subject || '',
         moduleId: window._moduleMeta?.id || '',
@@ -1739,12 +1739,15 @@ loadQuestions();
         ...entry,
       };
       await logActivity(window._currentUser.uid, fullEntry);
+      console.log('[Activity] logged:', entry.type, entry.pct + '%');
       // If opened from assignment, record completion
       const assignId = window._assignmentId;
       const assignDue = window._assignmentDue;
+      console.log('[Activity] assignmentId:', assignId, 'due:', assignDue);
       if (assignId && entry.type && ['mock','paper','flashcard','words'].includes(entry.type)) {
         const today = new Date().toISOString().split('T')[0];
         const isLate = assignDue && today > assignDue;
+        console.log('[Activity] saving completion for assignment:', assignId);
         await saveAssignmentCompletion(assignId, window._currentUser.uid, {
           score: entry.score || 0,
           total: entry.total || 0,
@@ -1752,8 +1755,11 @@ loadQuestions();
           isLate,
           name: window._currentUser.displayName || window.currentProfile?.name || null,
         });
+        console.log('[Activity] completion saved ✅');
+      } else {
+        console.log('[Activity] no assignment to complete — assignId:', assignId, 'type:', entry.type);
       }
-    } catch(e) { console.log('[Activity]', e); }
+    } catch(e) { console.error('[Activity] error:', e); }
   };
 
   onAuthChange(async user => {
