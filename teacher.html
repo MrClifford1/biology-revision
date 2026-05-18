@@ -132,9 +132,48 @@
     .empty-state { text-align:center;padding:2.5rem;color:var(--subtext);font-size:0.875rem; }
     .loading-state { text-align:center;padding:2rem;color:var(--subtext);font-size:0.875rem; }
 
+    /* ── ASSESSMENT DATES ────────────────────────────────────────────────────── */
+    .adate-controls { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; margin-bottom: 1.25rem; }
+    .adate-seg { display: flex; border: 1.5px solid var(--border); border-radius: 9px; overflow: hidden; background: white; }
+    .adate-sb { border: none; background: none; padding: 0.4rem 0.9rem; font-family: 'Nunito', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--subtext); cursor: pointer; }
+    .adate-sb.on { background: var(--purple); color: white; }
+    .adate-sb + .adate-sb { border-left: 1.5px solid var(--border); }
+    .adate-form { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem; }
+    .adate-form .full { grid-column: 1/-1; }
+    .adate-mod-grid { display: flex; flex-direction: column; gap: 0.3rem; max-height: 260px; overflow-y: auto; border: 1.5px solid var(--border); border-radius: 9px; padding: 0.4rem; }
+    .adate-mi { border: 1.5px solid var(--border); border-radius: 7px; overflow: hidden; }
+    .adate-mhd { display: flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.5rem; background: #f8fafc; cursor: pointer; user-select: none; }
+    .adate-mhd:hover { background: #f0f4ff; }
+    .adate-mwcb { width: 14px; height: 14px; accent-color: var(--purple); cursor: pointer; flex-shrink: 0; }
+    .adate-mnm { font-weight: 800; font-size: 0.75rem; color: var(--navy); flex: 1; }
+    .adate-mexp { font-size: 0.62rem; color: var(--subtext); font-weight: 700; background: none; border: none; cursor: pointer; padding: 0; }
+    .adate-mtp { padding: 0.35rem 0.5rem 0.4rem 1.75rem; display: none; background: white; border-top: 1px solid var(--border); }
+    .adate-mtp.open { display: block; }
+    .adate-trow { display: flex; align-items: center; gap: 0.35rem; padding: 0.15rem 0; }
+    .adate-tcb { width: 12px; height: 12px; accent-color: var(--purple); cursor: pointer; }
+    .adate-tlbl { font-size: 0.7rem; color: var(--text); cursor: pointer; }
+    .adate-list { display: flex; flex-direction: column; gap: 0.5rem; }
+    .adate-row { background: white; border: 1.5px solid var(--border); border-radius: 10px; padding: 0.65rem 0.85rem; display: flex; align-items: flex-start; gap: 0.75rem; flex-wrap: wrap; }
+    .adate-subj-pill { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0; }
+    .adate-pill-bio { background: #dcfce7; color: #14532d; }
+    .adate-pill-chem { background: #fef9c3; color: #713f12; }
+    .adate-pill-phys { background: #dbeafe; color: #1e3a8a; }
+    .adate-info { flex: 1; }
+    .adate-label { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.85rem; color: var(--navy); }
+    .adate-meta { font-size: 0.72rem; color: var(--subtext); margin-top: 0.15rem; }
+    .adate-mods { display: flex; gap: 0.3rem; flex-wrap: wrap; margin-top: 0.3rem; }
+    .adate-mod-tag { background: #e0e7ff; color: #4338ca; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.62rem; padding: 0.12rem 0.4rem; border-radius: 100px; }
+    .adate-countdown { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.78rem; padding: 0.2rem 0.6rem; border-radius: 100px; flex-shrink: 0; }
+    .adate-countdown.soon { background: #fef2f2; color: #dc2626; }
+    .adate-countdown.upcoming { background: #fef9c3; color: #713f12; }
+    .adate-countdown.future { background: #f1f5f9; color: #475569; }
+    .btn-adate-save { background: var(--purple); color: white; border: none; border-radius: 10px; padding: 0.6rem 1.4rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.875rem; cursor: pointer; }
+    .btn-adate-save:hover { background: #6d28d9; }
+
     @media (max-width:700px) {
       .assignment-form { grid-template-columns:1fr; }
       .class-toggle-grid { grid-template-columns:repeat(4,1fr); }
+      .adate-form { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -192,6 +231,7 @@
       <button class="tab-btn active" data-tab="overview">📋 Class Overview</button>
       <button class="tab-btn" data-tab="heatmap">🗺️ RAG Heatmap</button>
       <button class="tab-btn" data-tab="assignments">📌 Assignments</button>
+      <button class="tab-btn" data-tab="assessments">📅 Assessment Dates</button>
     </div>
   </div>
 
@@ -221,7 +261,7 @@
     <!-- ── TAB: ASSIGNMENTS ─────────────────────────────────────────────────────── -->
     <div class="tab-panel" id="tab-assignments">
 
-      <!-- Active assignments list — shown first -->
+      <!-- Active assignments — shown first -->
       <div class="card">
         <div class="section-label">Assignments</div>
         <div id="assignments-list"><div class="loading-state">Loading assignments...</div></div>
@@ -286,7 +326,64 @@
         <button id="assign-cancel-edit" onclick="cancelAssignEdit()" style="display:none;margin-left:0.5rem;background:none;border:1.5px solid var(--border);color:var(--subtext);border-radius:10px;padding:0.55rem 1rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.875rem;cursor:pointer">✕ Cancel Edit</button>
         <div class="form-msg" id="assign-msg"></div>
       </div>
+    </div>
 
+    <!-- ── TAB: ASSESSMENT DATES ──────────────────────────────────────────────── -->
+    <div class="tab-panel" id="tab-assessments">
+      <!-- Saved dates first -->
+      <div class="card">
+        <div class="section-label">Assessment Dates</div>
+        <div class="adate-list" id="ad-list"><div class="loading-state">Loading assessment dates...</div></div>
+        <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)">
+          <button onclick="adToggleForm()" id="ad-toggle-btn" style="background:var(--purple);color:white;border:none;border-radius:9px;padding:0.45rem 1.1rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;cursor:pointer;display:flex;align-items:center;gap:0.4rem">＋ Add Assessment Date</button>
+        </div>
+      </div>
+
+      <!-- Add form — collapsed by default -->
+      <div class="card" id="ad-form-card" style="display:none">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
+          <div class="section-label" style="margin-bottom:0" id="ad-form-title">Add Assessment Date</div>
+          <button onclick="adToggleForm()" style="background:none;border:none;cursor:pointer;color:var(--subtext);font-size:1.1rem;line-height:1" title="Close">✕</button>
+        </div>
+        <p style="font-size:0.8rem;color:var(--subtext);margin-bottom:1rem">Assessment dates are per class and persistent — edit them if dates change. Students see a countdown with their RAG scores for the topics covered.</p>
+
+        <div class="adate-controls">
+          <span style="font-size:0.78rem;font-weight:700;color:var(--subtext)">Subject:</span>
+          <div class="adate-seg" id="adate-subj-seg">
+            <button class="adate-sb on" onclick="adSetSubject('Biology',this)">Biology</button>
+            <button class="adate-sb" onclick="adSetSubject('Chemistry',this)">Chemistry</button>
+            <button class="adate-sb" onclick="adSetSubject('Physics',this)">Physics</button>
+          </div>
+        </div>
+
+        <div class="adate-form">
+          <div class="form-field">
+            <label class="form-label">Assessment label</label>
+            <input type="text" class="form-input" id="ad-label" placeholder="e.g. Assessment 1 — B1 content" />
+          </div>
+          <div class="form-field">
+            <label class="form-label">Date</label>
+            <input type="date" class="form-input" id="ad-date" />
+          </div>
+          <div class="form-field">
+            <label class="form-label">Link to schedule type <span style="font-weight:400;color:var(--subtext)">(optional)</span></label>
+            <input type="text" class="form-input" id="ad-schedlink" placeholder="e.g. Assessment 1" />
+          </div>
+          <div class="form-field">
+            <label class="form-label">Class</label>
+            <select class="form-input" id="ad-class-sel"></select>
+          </div>
+          <div class="form-field full">
+            <label class="form-label">Modules &amp; topics covered</label>
+            <div style="font-size:0.72rem;color:var(--subtext);margin-bottom:0.3rem">Tick whole modules or expand to select specific topics.</div>
+            <div class="adate-mod-grid" id="ad-mod-grid"></div>
+          </div>
+        </div>
+
+        <button class="btn-adate-save" onclick="adSave()">📅 Save Assessment Date</button>
+        <button id="ad-cancel-edit" onclick="adCancelEdit()" style="display:none;margin-left:0.5rem;background:none;border:1.5px solid var(--border);color:var(--subtext);border-radius:10px;padding:0.6rem 1rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.875rem;cursor:pointer">✕ Cancel Edit</button>
+        <div class="form-msg" id="ad-msg"></div>
+      </div>
     </div>
 
   </main>
@@ -381,6 +478,8 @@
     populateClassSelector();
     buildAssignClassGrid();
     loadAssignments();
+    adLoadList();
+    adLoadList();
   });
 
   // ── TABS ────────────────────────────────────────────────────────────────────
@@ -399,12 +498,13 @@
     sel.innerHTML = '<option value="">— Select a class —</option>';
     myClasses.forEach(cls => {
       const opt = document.createElement('option');
-      opt.value = cls; opt.textContent = cls;
+      opt.value = cls;
+      opt.textContent = cls;
       sel.appendChild(opt);
     });
     adPopulateClassSel();
     adRenderModGrid();
-    assignSubjectChanged();
+    if (typeof assignSubjectChanged === 'function') assignSubjectChanged();
   }
 
   window.loadClassData = async () => {
@@ -563,14 +663,22 @@
   };
 
   // ── ASSIGNMENTS ─────────────────────────────────────────────────────────────
+  const ASSIGN_MODULES = {
+    biology:   [{id:'b1',label:'B1 Cell Biology'},{id:'b2',label:'B2 Organisation'},{id:'b3',label:'B3 Infection & Response'},{id:'b4',label:'B4 Bioenergetics'},{id:'b5',label:'B5 Homeostasis & Response'},{id:'b6',label:'B6 Inheritance & Evolution'},{id:'b7',label:'B7 Ecology'}],
+    chemistry: [{id:'c1',label:'C1 Atomic Structure'},{id:'c2',label:'C2 Bonding'},{id:'c3',label:'C3 Quantitative Chemistry'},{id:'c4',label:'C4 Chemical Changes'},{id:'c5',label:'C5 Energy Changes'},{id:'c6',label:'C6 Rate of Reaction'},{id:'c7',label:'C7 Organic Chemistry'},{id:'c8',label:'C8 Chemical Analysis'},{id:'c9',label:'C9 Atmosphere'},{id:'c10',label:'C10 Using Resources'}],
+    physics:   [{id:'p1',label:'P1 Energy'},{id:'p2',label:'P2 Electricity'},{id:'p3',label:'P3 Particle Model'},{id:'p4',label:'P4 Atomic Structure'},{id:'p5',label:'P5 Forces'},{id:'p6',label:'P6 Waves'},{id:'p7',label:'P7 Magnetism'}],
+  };
+  const TYPE_TABS   = { mini_mock:'mock', flashcards:'flashcards', keywords:'words', paper:'paper' };
+  const TYPE_LABELS = { mini_mock:'Mini Mock', flashcards:'Flashcards', keywords:'Keywords Game', paper:'Practice Paper', custom:'Custom Task' };
+  let _assignEditId = null;
+
   function buildAssignClassGrid() {
     const grid = document.getElementById('assign-classes');
+    if (!grid) return;
     grid.innerHTML = myClasses.map(cls => `
       <label class="class-checkbox-label" id="cls-label-${cls}">
-        <input type="checkbox" value="${cls}" onchange="syncCheckLabel('${cls}', this.checked)" />
-        ${cls}
-      </label>
-    `).join('');
+        <input type="checkbox" value="${cls}" onchange="syncCheckLabel('${cls}', this.checked)" /> ${cls}
+      </label>`).join('');
   }
 
   window.syncCheckLabel = (cls, checked) => {
@@ -578,28 +686,18 @@
     if (label) label.classList.toggle('checked', checked);
   };
 
-  // ── ASSIGNMENT MODULE DATA ────────────────────────────────────────────────────
-  const ASSIGN_MODULES = {
-    biology:   [{id:'b1',label:'B1 Cell Biology'},{id:'b2',label:'B2 Organisation'},{id:'b3',label:'B3 Infection & Response'},{id:'b4',label:'B4 Bioenergetics'},{id:'b5',label:'B5 Homeostasis & Response'},{id:'b6',label:'B6 Inheritance & Evolution'},{id:'b7',label:'B7 Ecology'}],
-    chemistry: [{id:'c1',label:'C1 Atomic Structure'},{id:'c2',label:'C2 Bonding'},{id:'c3',label:'C3 Quantitative Chemistry'},{id:'c4',label:'C4 Chemical Changes'},{id:'c5',label:'C5 Energy Changes'},{id:'c6',label:'C6 Rate of Reaction'},{id:'c7',label:'C7 Organic Chemistry'},{id:'c8',label:'C8 Chemical Analysis'},{id:'c9',label:'C9 Atmosphere'},{id:'c10',label:'C10 Using Resources'}],
-    physics:   [{id:'p1',label:'P1 Energy'},{id:'p2',label:'P2 Electricity'},{id:'p3',label:'P3 Particle Model'},{id:'p4',label:'P4 Atomic Structure'},{id:'p5',label:'P5 Forces'},{id:'p6',label:'P6 Waves'},{id:'p7',label:'P7 Magnetism'}],
-  };
-
-  const TYPE_TABS = { mini_mock:'mock', flashcards:'flashcards', keywords:'words', paper:'paper' };
-  const TYPE_LABELS = { mini_mock:'Mini Mock', flashcards:'Flashcards', keywords:'Keywords Game', paper:'Practice Paper', custom:'Custom Task' };
-
-  let _assignEditId = null;
-
   window.assignSubjectChanged = () => {
-    const subj = document.getElementById('assign-subject').value;
+    const subj = document.getElementById('assign-subject')?.value;
     const sel = document.getElementById('assign-module');
+    if (!sel) return;
     const mods = ASSIGN_MODULES[subj] || [];
     sel.innerHTML = '<option value="">— Select module —</option>' + mods.map(m => `<option value="${m.id}">${m.label}</option>`).join('');
   };
 
   window.assignTypeChanged = () => {
-    const type = document.getElementById('assign-type').value;
-    document.getElementById('assign-custom-row').style.display = type === 'custom' ? 'block' : 'none';
+    const type = document.getElementById('assign-type')?.value;
+    const row = document.getElementById('assign-custom-row');
+    if (row) row.style.display = type === 'custom' ? 'block' : 'none';
   };
 
   window.toggleAssignForm = () => {
@@ -608,19 +706,12 @@
     const isOpen = card.style.display !== 'none';
     card.style.display = isOpen ? 'none' : 'block';
     btn.textContent = isOpen ? '＋ Create Assignment' : '✕ Close';
-    if (!isOpen) {
-      assignSubjectChanged();
-      populateAssignClasses();
-      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    if (!isOpen) { buildAssignClassGrid(); assignSubjectChanged(); card.scrollIntoView({behavior:'smooth',block:'start'}); }
   };
 
   window.cancelAssignEdit = () => {
     _assignEditId = null;
-    document.getElementById('assign-title').value = '';
-    document.getElementById('assign-due').value = '';
-    document.getElementById('assign-note').value = '';
-    document.getElementById('assign-custom-text').value = '';
+    ['assign-title','assign-due','assign-note','assign-custom-text'].forEach(id => { const el=document.getElementById(id); if(el) el.value=''; });
     document.getElementById('assign-form-title').textContent = 'Create Assignment';
     document.getElementById('create-btn').textContent = '📌 Create Assignment';
     document.getElementById('assign-cancel-edit').style.display = 'none';
@@ -628,88 +719,65 @@
     document.getElementById('assign-toggle-btn').textContent = '＋ Create Assignment';
   };
 
-  function populateAssignClasses() {
-    const grid = document.getElementById('assign-classes');
-    grid.innerHTML = myClasses.map(cls => `
-      <label class="class-checkbox-label" id="cls-label-${cls}">
-        <input type="checkbox" value="${cls}" onchange="syncCheckLabel('${cls}', this.checked)"> ${cls}
-      </label>`).join('');
-  }
-
   async function loadAssignments() {
     const list = document.getElementById('assignments-list');
     list.innerHTML = '<div class="loading-state">Loading...</div>';
     const all = await getAllAssignments();
     if (!all.length) { list.innerHTML = '<div class="empty-state">No assignments yet.</div>'; return; }
-
     const today = new Date().toISOString().split('T')[0];
-
-    // Load completion counts in parallel
     const completionCounts = {};
     await Promise.all(all.map(async a => {
-      try {
-        const comps = await getAssignmentCompletions(a.id);
-        completionCounts[a.id] = comps;
-      } catch(e) { completionCounts[a.id] = []; }
+      try { completionCounts[a.id] = await getAssignmentCompletions(a.id); } catch(e) { completionCounts[a.id] = []; }
     }));
-
     list.innerHTML = `<div class="assignment-list">${all.map(a => {
       const isExpired = a.dueDate && a.dueDate < today;
-      const due = a.dueDate ? new Date(a.dueDate + 'T12:00:00').toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' }) : '—';
+      const due = a.dueDate ? new Date(a.dueDate+'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}) : '—';
       const typeLabel = TYPE_LABELS[a.type] || a.type;
       const modLabel = a.moduleId ? a.moduleId.toUpperCase() : '';
       const comps = completionCounts[a.id] || [];
       const compCount = comps.length;
       const avgScore = compCount ? Math.round(comps.reduce((s,c)=>s+(c.bestPct||0),0)/compCount) : null;
       const lateCount = comps.filter(c=>c.isLate).length;
-
-      return `
-        <div class="assignment-row" style="${isExpired ? 'opacity:0.75;border-left:3px solid #ef4444' : 'border-left:3px solid #22c55e'}">
-          <div class="assignment-info">
-            <div class="assignment-title" style="display:flex;align-items:center;gap:0.5rem">
-              ${a.title}
-              ${isExpired ? '<span style="font-size:0.62rem;font-weight:800;background:#fef2f2;color:#dc2626;padding:0.1rem 0.4rem;border-radius:100px">Expired</span>' : '<span style="font-size:0.62rem;font-weight:800;background:#dcfce7;color:#14532d;padding:0.1rem 0.4rem;border-radius:100px">Active</span>'}
-            </div>
-            <div class="assignment-meta">
-              <span>${typeLabel}${modLabel ? ' · '+modLabel : ''}</span>
-              <span>📅 Due ${due}</span>
-              <span>📚 ${(a.subject||'').charAt(0).toUpperCase()+(a.subject||'').slice(1)}</span>
-              ${a.note ? `<span>💬 ${a.note}</span>` : ''}
-            </div>
-            <div class="assignment-classes">
-              ${(a.classes||[]).map(c=>`<span class="class-tag">${c}</span>`).join('')}
-            </div>
-            <!-- Completion summary -->
-            <div style="margin-top:0.5rem;display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap">
-              <span style="font-size:0.72rem;font-weight:700;color:var(--subtext)">✅ ${compCount} completion${compCount!==1?'s':''}</span>
-              ${avgScore!==null?`<span style="font-size:0.72rem;font-weight:700;color:var(--subtext)">Avg best: ${avgScore}%</span>`:''}
-              ${lateCount?`<span style="font-size:0.72rem;font-weight:700;color:#dc2626">⏰ ${lateCount} late</span>`:''}
-              ${compCount?`<button onclick="toggleCompletions('${a.id}')" style="font-size:0.7rem;font-weight:800;font-family:'Nunito',sans-serif;background:none;border:1.5px solid var(--border);border-radius:7px;padding:0.15rem 0.5rem;cursor:pointer;color:var(--subtext)">View students ▼</button>`:''}
-            </div>
-            <!-- Individual student completions (hidden by default) -->
-            <div id="comp-list-${a.id}" style="display:none;margin-top:0.5rem">
-              ${comps.length ? comps.map(c => `
-                <div style="display:flex;align-items:center;gap:0.75rem;padding:0.3rem 0;border-bottom:1px solid #f1f5f9;font-size:0.78rem">
-                  <span style="flex:1;font-weight:600">${c.name||c.uid.slice(0,8)}</span>
-                  <span>${c.attempts} attempt${c.attempts!==1?'s':''}</span>
-                  <span style="font-weight:800;color:${c.bestPct>=70?'#16a34a':c.bestPct>=40?'#d97706':'#dc2626'}">${c.bestPct}% best</span>
-                  ${c.isLate?'<span style="font-size:0.65rem;font-weight:800;background:#fef2f2;color:#dc2626;padding:0.08rem 0.35rem;border-radius:100px">Late</span>':''}
-                </div>`).join('') : '<div style="font-size:0.78rem;color:var(--subtext)">No completions yet.</div>'}
-            </div>
+      return `<div class="assignment-row" style="${isExpired?'opacity:0.75;border-left:3px solid #ef4444':'border-left:3px solid #22c55e'}">
+        <div class="assignment-info">
+          <div class="assignment-title" style="display:flex;align-items:center;gap:0.5rem">
+            ${a.title}
+            ${isExpired?'<span style="font-size:0.62rem;font-weight:800;background:#fef2f2;color:#dc2626;padding:0.1rem 0.4rem;border-radius:100px">Expired</span>':'<span style="font-size:0.62rem;font-weight:800;background:#dcfce7;color:#14532d;padding:0.1rem 0.4rem;border-radius:100px">Active</span>'}
           </div>
-          <div style="display:flex;flex-direction:column;gap:0.35rem;flex-shrink:0">
-            <button class="btn-delete" style="border-color:#6366f1;color:#6366f1" onclick="editAssignmentHandler('${a.id}')">✏️ Edit</button>
-            <button class="btn-delete" style="border-color:#0891b2;color:#0891b2" onclick="copyAssignmentHandler('${a.id}')">⧉ Copy</button>
-            <button class="btn-delete" onclick="deleteAssignmentHandler('${a.id}')">Remove</button>
+          <div class="assignment-meta">
+            <span>${typeLabel}${modLabel?' · '+modLabel:''}</span>
+            <span>📅 Due ${due}</span>
+            <span>📚 ${(a.subject||'').charAt(0).toUpperCase()+(a.subject||'').slice(1)}</span>
+            ${a.note?`<span>💬 ${a.note}</span>`:''}
           </div>
-        </div>`;
+          <div class="assignment-classes">${(a.classes||[]).map(c=>`<span class="class-tag">${c}</span>`).join('')}</div>
+          <div style="margin-top:0.5rem;display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap">
+            <span style="font-size:0.72rem;font-weight:700;color:var(--subtext)">✅ ${compCount} completion${compCount!==1?'s':''}</span>
+            ${avgScore!==null?`<span style="font-size:0.72rem;font-weight:700;color:var(--subtext)">Avg best: ${avgScore}%</span>`:''}
+            ${lateCount?`<span style="font-size:0.72rem;font-weight:700;color:#dc2626">⏰ ${lateCount} late</span>`:''}
+            ${compCount?`<button onclick="toggleCompletions('${a.id}')" style="font-size:0.7rem;font-weight:800;font-family:'Nunito',sans-serif;background:none;border:1.5px solid var(--border);border-radius:7px;padding:0.15rem 0.5rem;cursor:pointer;color:var(--subtext)">View students ▼</button>`:''}
+          </div>
+          <div id="comp-list-${a.id}" style="display:none;margin-top:0.5rem">
+            ${comps.length?comps.map(c=>`<div style="display:flex;align-items:center;gap:0.75rem;padding:0.3rem 0;border-bottom:1px solid #f1f5f9;font-size:0.78rem">
+              <span style="flex:1;font-weight:600">${c.name||c.uid.slice(0,8)}</span>
+              <span>${c.attempts} attempt${c.attempts!==1?'s':''}</span>
+              <span style="font-weight:800;color:${(c.bestPct||0)>=70?'#16a34a':(c.bestPct||0)>=40?'#d97706':'#dc2626'}">${c.bestPct||0}% best</span>
+              ${c.isLate?'<span style="font-size:0.65rem;font-weight:800;background:#fef2f2;color:#dc2626;padding:0.08rem 0.35rem;border-radius:100px">Late</span>':''}
+            </div>`).join(''):'<div style="font-size:0.78rem;color:var(--subtext)">No completions yet.</div>'}
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0.35rem;flex-shrink:0">
+          <button class="btn-delete" style="border-color:#6366f1;color:#6366f1" onclick="editAssignmentHandler('${a.id}')">✏️ Edit</button>
+          <button class="btn-delete" style="border-color:#0891b2;color:#0891b2" onclick="copyAssignmentHandler('${a.id}')">⧉ Copy</button>
+          <button class="btn-delete" onclick="deleteAssignmentHandler('${a.id}')">Remove</button>
+        </div>
+      </div>`;
     }).join('')}</div>`;
   }
 
   window.toggleCompletions = (id) => {
     const el = document.getElementById(`comp-list-${id}`);
-    if (!el) return;
-    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    if (el) el.style.display = el.style.display === 'none' ? 'block' : 'none';
   };
 
   window.createAssignmentHandler = async () => {
@@ -722,102 +790,68 @@
     const customText = document.getElementById('assign-custom-text').value.trim();
     const classes = [...document.querySelectorAll('#assign-classes input:checked')].map(i => i.value);
     const msg = document.getElementById('assign-msg');
-
     if (!title || !due || !classes.length) {
-      msg.className = 'form-msg error';
-      msg.textContent = 'Please fill in title, due date, and select at least one class.';
-      return;
+      msg.className = 'form-msg error'; msg.textContent = 'Please fill in title, due date, and select at least one class.'; return;
     }
-
     const btn = document.getElementById('create-btn');
     btn.disabled = true;
-
-    // Build smart Go URL — includes assignment ID so completions can be tracked
     let goUrl = '#';
     if (moduleId && type !== 'custom') {
       const tab = TYPE_TABS[type] || '';
-      goUrl = `module.html?subject=${subject}&module=${moduleId}${tab ? '&tab='+tab : ''}&assignment=ASSIGN_ID&due=${due}`;
+      goUrl = `module.html?subject=${subject}&module=${moduleId}${tab?'&tab='+tab:''}&assignment=ASSIGN_ID&due=${due}`;
     }
-
-    const data = {
-      title, subject, type, moduleId: moduleId || null,
-      tabTarget: TYPE_TABS[type] || null,
-      classes, dueDate: due, note: note || null,
-      link: goUrl, customText: customText || null,
-      createdBy: currentUser.uid, active: true,
-    };
-
+    const data = { title, subject, type, moduleId:moduleId||null, tabTarget:TYPE_TABS[type]||null, classes, dueDate:due, note:note||null, link:goUrl, customText:customText||null, createdBy:currentUser.uid, active:true };
     try {
       if (_assignEditId) {
         await updateAssignment(_assignEditId, data);
-        msg.className = 'form-msg success'; msg.textContent = '✅ Assignment updated!';
+        msg.className='form-msg success'; msg.textContent='✅ Assignment updated!';
       } else {
         const newId = await createAssignment(data);
-        // Patch the link to include the real assignment ID
-        if (data.link && data.link.includes('ASSIGN_ID')) {
-          await updateAssignment(newId, { link: data.link.replace('ASSIGN_ID', newId) });
-        }
-        msg.className = 'form-msg success'; msg.textContent = '✅ Assignment created!';
+        if (data.link && data.link.includes('ASSIGN_ID')) await updateAssignment(newId, {link:data.link.replace('ASSIGN_ID',newId)});
+        msg.className='form-msg success'; msg.textContent='✅ Assignment created!';
       }
       cancelAssignEdit();
       await loadAssignments();
     } catch(e) {
-      msg.className = 'form-msg error'; msg.textContent = 'Something went wrong. Please try again.';
-      btn.disabled = false;
-      btn.textContent = _assignEditId ? '✏️ Update Assignment' : '📌 Create Assignment';
+      msg.className='form-msg error'; msg.textContent='Something went wrong. Please try again.';
+      btn.disabled=false;
     }
-    setTimeout(() => { msg.className = 'form-msg'; }, 3000);
+    setTimeout(()=>{ msg.className='form-msg'; },3000);
   };
 
   window.editAssignmentHandler = async (id) => {
     const all = await getAllAssignments();
-    const a = all.find(x => x.id === id);
+    const a = all.find(x=>x.id===id);
     if (!a) return;
     _assignEditId = id;
-
-    // Open form
-    document.getElementById('assign-form-card').style.display = 'block';
-    document.getElementById('assign-toggle-btn').textContent = '✕ Close';
-    document.getElementById('assign-form-title').textContent = 'Edit Assignment';
-    document.getElementById('create-btn').textContent = '✏️ Update Assignment';
-    document.getElementById('assign-cancel-edit').style.display = 'inline-block';
-
-    // Fill fields
-    document.getElementById('assign-title').value = a.title || '';
-    document.getElementById('assign-subject').value = a.subject || 'biology';
+    document.getElementById('assign-form-card').style.display='block';
+    document.getElementById('assign-toggle-btn').textContent='✕ Close';
+    document.getElementById('assign-form-title').textContent='Edit Assignment';
+    document.getElementById('create-btn').textContent='✏️ Update Assignment';
+    document.getElementById('assign-cancel-edit').style.display='inline-block';
+    document.getElementById('assign-title').value=a.title||'';
+    document.getElementById('assign-subject').value=a.subject||'biology';
     assignSubjectChanged();
-    requestAnimationFrame(() => {
-      if (a.moduleId) document.getElementById('assign-module').value = a.moduleId;
-    });
-    document.getElementById('assign-type').value = a.type || 'mini_mock';
+    requestAnimationFrame(()=>{ if(a.moduleId) document.getElementById('assign-module').value=a.moduleId; });
+    document.getElementById('assign-type').value=a.type||'mini_mock';
     assignTypeChanged();
-    if (a.type === 'custom') document.getElementById('assign-custom-text').value = a.customText || '';
-    document.getElementById('assign-due').value = a.dueDate || '';
-    document.getElementById('assign-note').value = a.note || '';
-
-    // Tick classes
-    populateAssignClasses();
-    requestAnimationFrame(() => {
-      (a.classes || []).forEach(cls => {
-        const cb = document.querySelector(`#assign-classes input[value="${cls}"]`);
-        if (cb) { cb.checked = true; syncCheckLabel(cls, true); }
-      });
+    if (a.type==='custom') document.getElementById('assign-custom-text').value=a.customText||'';
+    document.getElementById('assign-due').value=a.dueDate||'';
+    document.getElementById('assign-note').value=a.note||'';
+    buildAssignClassGrid();
+    requestAnimationFrame(()=>{
+      (a.classes||[]).forEach(cls=>{ const cb=document.querySelector(`#assign-classes input[value="${cls}"]`); if(cb){cb.checked=true;syncCheckLabel(cls,true);} });
     });
-    document.getElementById('assign-form-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById('assign-form-card').scrollIntoView({behavior:'smooth',block:'start'});
   };
 
   window.copyAssignmentHandler = async (id) => {
-    const all = await getAllAssignments();
-    const a = all.find(x => x.id === id);
-    if (!a) return;
-    // Pre-fill form as new (no edit ID)
-    _assignEditId = null;
-    editAssignmentHandler(id);
-    requestAnimationFrame(() => {
-      document.getElementById('assign-form-title').textContent = 'Copy Assignment';
-      document.getElementById('create-btn').textContent = '📌 Create Copy';
-      document.getElementById('assign-cancel-edit').style.display = 'none';
-      _assignEditId = null;
+    await editAssignmentHandler(id);
+    requestAnimationFrame(()=>{
+      _assignEditId=null;
+      document.getElementById('assign-form-title').textContent='Copy Assignment';
+      document.getElementById('create-btn').textContent='📌 Create Copy';
+      document.getElementById('assign-cancel-edit').style.display='none';
     });
   };
 
@@ -831,6 +865,349 @@
     await signOutUser();
     window.location.href = 'login.html';
   };
+
+  // ── ASSESSMENT DATES ─────────────────────────────────────────────────────────
+  const TOPICS = {
+    Biology:    { B1:['Cell Structure','Microscopy','Cell Division','Transport','Specialised Cells'], B2:['Organisation','Digestion','Heart and Circulation','Blood','Heart Disease','Cancer','Plant Organisation'], B3:['Pathogens','Viral Diseases','Bacterial Diseases','Fungal and Protist Diseases','Defence Systems','Immune System','Vaccination','Drugs','Drug Development'], B4:['Photosynthesis','Respiration'], B5:['Homeostasis','Nervous System','Hormones','Blood Glucose','Reproduction'], B6:['DNA and Genome','Inheritance','Inherited Disorders','Variation and Evolution','Selective Breeding and Genetic Engineering','Evidence for Evolution','Classification'], B7:['Ecosystems','Food Webs','Nutrient Cycling','Biodiversity','Climate Change','Sampling'] },
+    Chemistry:  { C1:['Atomic Structure','The Periodic Table','Groups','History of the Atom'], C2:['Bonding','Ionic Compounds','Covalent Substances','Metallic Structures','Nanoparticles','States of Matter'], C3:['Moles and Mass','Conservation of Mass','Yield and Atom Economy','Concentration','Gas Volumes'], C4:['Acids and Bases','Salts','Reactivity Series','Redox','Electrolysis'], C5:['Energy Changes','Bond Energies','Fuel Cells'], C6:['Rate of Reaction','Factors Affecting Rate','Equilibrium'], C7:['Hydrocarbons','Alkanes','Alkenes','Cracking','Polymers','Alcohols and Carboxylic Acids'], C8:['Purity and Formulations','Chromatography','Identifying Substances'], C9:["Earth's Atmosphere",'Greenhouse Effect','Air Pollution'], C10:['Using Resources','Life Cycle Assessment','Water','Alternative Metal Extraction','Corrosion','Materials'] },
+    Physics:    { P1:['Energy Stores','Energy Transfer','Efficiency','Specific Heat Capacity','Energy Resources'], P2:['Basic Electricity','Circuits','Domestic Electricity','Power and Energy','Static Electricity'], P3:['States of Matter','Changes of State','Density','Specific Heat Capacity','Gas Pressure'], P4:['Atomic Structure','History of the Atom','Radioactive Decay','Nuclear Radiation','Half-life','Hazards','Nuclear Fission and Fusion'], P5:['Scalars and Vectors','Forces','Work Done','Elasticity','Motion',"Newton's Laws",'Stopping Distances','Momentum'], P6:['Wave Properties','Reflection and Refraction','Sound','Electromagnetic Spectrum','Black Body Radiation'], P7:['Magnetism','Electromagnetism','Motor Effect','Generators','Transformers'] }
+  };
+
+  let adSubject = 'Biology';
+  let adExpandedMods = {};
+
+  window.adSetSubject = (subj, btn) => {
+    adSubject = subj;
+    document.querySelectorAll('#adate-subj-seg .adate-sb').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    adRenderModGrid();
+  };
+
+  function adRenderModGrid() {
+    const mods = TOPICS[adSubject];
+    adExpandedMods = {};
+    document.getElementById('ad-mod-grid').innerHTML = Object.entries(mods).map(([mod, topics]) => `
+      <div class="adate-mi" id="admi-${mod}">
+        <div class="adate-mhd" onclick="adToggleMod('${mod}')">
+          <input type="checkbox" class="adate-mwcb" id="adcb-${mod}" onclick="event.stopPropagation();adWModTog('${mod}')">
+          <label class="adate-mnm" for="adcb-${mod}" onclick="event.stopPropagation()">${mod}</label>
+          <button class="adate-mexp" onclick="event.stopPropagation();adToggleMod('${mod}')">▼ topics</button>
+        </div>
+        <div class="adate-mtp" id="admtp-${mod}">
+          ${topics.map((t,ti) => `<div class="adate-trow"><input type="checkbox" class="adate-tcb" id="adtcb-${mod}-${ti}" data-mod="${mod}" data-topic="${t}" onchange="adTopicChg('${mod}')"><label class="adate-tlbl" for="adtcb-${mod}-${ti}">${t}</label></div>`).join('')}
+        </div>
+      </div>`).join('');
+  }
+
+  window.adToggleMod = (mod) => {
+    adExpandedMods[mod] = !adExpandedMods[mod];
+    document.getElementById(`admtp-${mod}`)?.classList.toggle('open', adExpandedMods[mod]);
+    document.querySelector(`#admi-${mod} .adate-mexp`).textContent = adExpandedMods[mod] ? '▲ hide' : '▼ topics';
+  };
+  window.adWModTog = (mod) => {
+    const cb = document.getElementById(`adcb-${mod}`);
+    document.querySelectorAll(`[data-mod="${mod}"]`).forEach(el => { el.checked = false; el.disabled = false; });
+  };
+  window.adTopicChg = (mod) => {
+    const any = [...document.querySelectorAll(`[data-mod="${mod}"]`)].some(el => el.checked);
+    const w = document.getElementById(`adcb-${mod}`);
+    if (w) { w.checked = any; w.disabled = false; }
+  };
+
+  function adPopulateClassSel() {
+    const sel = document.getElementById('ad-class-sel');
+    if (!sel) return;
+    sel.innerHTML = '<option value="">— Select class —</option>' +
+      myClasses.map(c => `<option value="${c}">${c}</option>`).join('');
+  }
+
+  window.adToggleForm = () => {
+    const card = document.getElementById('ad-form-card');
+    const isOpen = card.style.display !== 'none';
+    card.style.display = isOpen ? 'none' : 'block';
+    document.getElementById('ad-toggle-btn').textContent = isOpen ? '＋ Add Assessment' : '✕ Close';
+    if (!isOpen) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  let adEditState = null; // { cls, subject, id } when editing an existing assessment
+
+  window.adSave = async () => {
+    const label = document.getElementById('ad-label').value.trim();
+    const date = document.getElementById('ad-date').value;
+    const cls = document.getElementById('ad-class-sel').value;
+    const schedLink = document.getElementById('ad-schedlink').value.trim();
+    const msg = document.getElementById('ad-msg');
+
+    if (!label || !date || !cls) {
+      msg.className = 'form-msg error';
+      msg.textContent = 'Please fill in label, date and class.';
+      return;
+    }
+
+    const mods = TOPICS[adSubject];
+    const selMods = [], partialTopics = {};
+    Object.keys(mods).forEach(mod => {
+      const w = document.getElementById(`adcb-${mod}`);
+      if (!w?.checked) return;
+      const tt = [...document.querySelectorAll(`[data-mod="${mod}"]`)].filter(el => el.checked).map(el => el.dataset.topic);
+      selMods.push(mod);
+      if (tt.length) partialTopics[mod] = tt;
+    });
+
+    // Use existing ID if editing, otherwise generate new one
+    const id = adEditState?.id || `${Date.now()}`;
+    const saveCls = adEditState?.cls || cls;
+    const saveSubj = adEditState?.subject || adSubject;
+
+    try {
+      await saveAssessmentDate(saveCls, saveSubj, id, {
+        label, date, scheduleLink: schedLink || null,
+        modules: selMods, partialTopics,
+        createdBy: currentUser.uid,
+      });
+      msg.className = 'form-msg success';
+      msg.textContent = adEditState ? '✅ Assessment updated!' : '✅ Assessment date saved!';
+      // Reset form and close panel
+      document.getElementById('ad-label').value = '';
+      document.getElementById('ad-date').value = '';
+      document.getElementById('ad-schedlink').value = '';
+      adEditState = null;
+      document.querySelector('.btn-adate-save').textContent = '📅 Save Assessment Date';
+      document.getElementById('ad-form-title').textContent = 'Add Assessment Date';
+      document.getElementById('ad-cancel-edit').style.display = 'none';
+      document.getElementById('ad-form-card').style.display = 'none';
+      document.getElementById('ad-toggle-btn').textContent = '＋ Add Assessment';
+      adRenderModGrid();
+      adLoadList();
+    } catch(e) {
+      msg.className = 'form-msg error';
+      msg.textContent = 'Could not save. Please try again.';
+    }
+    setTimeout(() => { msg.className = 'form-msg'; }, 3000);
+  };
+
+  window.adCancelEdit = () => {
+    adEditState = null;
+    document.getElementById('ad-label').value = '';
+    document.getElementById('ad-date').value = '';
+    document.getElementById('ad-schedlink').value = '';
+    document.querySelector('.btn-adate-save').textContent = '📅 Save Assessment Date';
+    document.getElementById('ad-cancel-edit').style.display = 'none';
+    document.getElementById('ad-form-title').textContent = 'Add Assessment Date';
+    document.getElementById('ad-toggle-btn').textContent = '＋ Add Assessment';
+    document.getElementById('ad-form-card').style.display = 'none';
+    adRenderModGrid();
+  };
+
+  window.adEdit = (cls, subj, id) => {
+    // Find the assessment from the rendered list data
+    const stored = window._adListCache?.find(a => a.id === id && a.subject === subj);
+    if (!stored) return;
+
+    adEditState = { cls, subject: subj, id };
+
+    // Switch subject
+    adSubject = subj;
+    document.querySelectorAll('#adate-subj-seg .adate-sb').forEach(b => {
+      b.classList.toggle('on', b.textContent === subj);
+    });
+
+    // Fill form fields
+    document.getElementById('ad-label').value = stored.label || '';
+    document.getElementById('ad-date').value = stored.date || '';
+    document.getElementById('ad-schedlink').value = stored.scheduleLink || '';
+
+    // Set class selector
+    const clsSel = document.getElementById('ad-class-sel');
+    if (clsSel) clsSel.value = cls;
+
+    // Render module grid then tick the right boxes
+    adRenderModGrid();
+    requestAnimationFrame(() => {
+      (stored.modules || []).forEach(mod => {
+        const pt = stored.partialTopics?.[mod];
+        if (pt?.length) {
+          // Tick individual topics
+          pt.forEach(topic => {
+            const tcbs = [...document.querySelectorAll(`[data-mod="${mod}"]`)];
+            const cb = tcbs.find(el => el.dataset.topic === topic);
+            if (cb) {
+              cb.checked = true;
+              // Expand panel
+              adExpandedMods[mod] = true;
+              document.getElementById(`admtp-${mod}`)?.classList.add('open');
+              document.querySelector(`#admi-${mod} .adate-mexp`).textContent = '▲ hide';
+            }
+          });
+          adTopicChg(mod);
+        } else {
+          const wcb = document.getElementById(`adcb-${mod}`);
+          if (wcb) wcb.checked = true;
+        }
+      });
+    });
+
+    // Update save button + show cancel
+    document.querySelector('.btn-adate-save').textContent = '✏️ Update Assessment';
+    document.getElementById('ad-cancel-edit').style.display = 'inline-block';
+    document.getElementById('ad-form-title').textContent = 'Edit Assessment Date';
+
+    // Open form panel if not already open
+    document.getElementById('ad-form-card').style.display = 'block';
+    document.getElementById('ad-toggle-btn').textContent = '✕ Close';
+
+    // Scroll to form
+    document.getElementById('ad-form-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  window.adCopyTo = (subj, id, fromCls) => {
+    const stored = window._adListCache?.find(a => a.id === id && a.subject === subj && a.cls === fromCls);
+    if (!stored) return;
+    const others = myClasses.filter(c => c !== fromCls);
+    if (!others.length) { alert('No other classes to copy to.'); return; }
+    const modal = document.getElementById('ad-copy-modal');
+    document.getElementById('ad-copy-grid').innerHTML = others.map(c =>
+      `<button class="class-toggle" onclick="this.classList.toggle('selected')">${c}</button>`
+    ).join('');
+    document.getElementById('ad-copy-label').textContent = stored.label || 'Assessment';
+    document.getElementById('ad-copy-date').value = '';
+    window._adCopyPayload = { subj, id, stored };
+    modal.classList.add('open');
+  };
+
+  window.adCopyConfirm = async () => {
+    const { subj, stored } = window._adCopyPayload || {};
+    if (!stored) return;
+    const targets = [...document.querySelectorAll('#ad-copy-grid .class-toggle.selected')].map(b => b.textContent.trim());
+    if (!targets.length) { alert('Select at least one class.'); return; }
+    const overrideDate = document.getElementById('ad-copy-date').value;
+    await Promise.all(targets.map(cls =>
+      saveAssessmentDate(cls, subj, `${Date.now()}-${cls}`, {
+        label: stored.label,
+        date: overrideDate || stored.date,
+        scheduleLink: stored.scheduleLink || null,
+        modules: stored.modules || [],
+        partialTopics: stored.partialTopics || {},
+        createdBy: currentUser.uid,
+      })
+    ));
+    document.getElementById('ad-copy-modal').classList.remove('open');
+    window._adCopyPayload = null;
+    adLoadList();
+  };
+
+  window.adLoadList = async () => {
+    const list = document.getElementById('ad-list');
+    if (!myClasses.length) {
+      list.innerHTML = '<div class="empty-state">No classes assigned — set up your classes in My Classes first.</div>';
+      return;
+    }
+    list.innerHTML = '<div class="loading-state">Loading...</div>';
+
+    const subjects = ['Biology','Chemistry','Physics'];
+
+    // Load all assessments for all my classes in parallel
+    const allByClass = {};
+    await Promise.all(myClasses.map(async cls => {
+      const items = [];
+      await Promise.all(subjects.map(async subj => {
+        try {
+          const dates = await getAssessmentDates(cls, subj);
+          dates.forEach(d => items.push({ ...d, subject: subj, cls }));
+        } catch(e) {}
+      }));
+      if (items.length) allByClass[cls] = items.sort((a,b) => (a.date||'').localeCompare(b.date||''));
+    }));
+
+    window._adListCache = Object.values(allByClass).flat();
+
+    if (!window._adListCache.length) {
+      list.innerHTML = '<div class="empty-state">No assessment dates saved yet. Use the button below to add one.</div>';
+      return;
+    }
+
+    // Sort classes by year group: 9x first, then 10x, then 11x
+    const sortedClasses = [...myClasses].sort((a, b) => {
+      const ya = parseInt(a.match(/^(\d+)/)?.[1] || 99);
+      const yb = parseInt(b.match(/^(\d+)/)?.[1] || 99);
+      if (ya !== yb) return ya - yb;
+      return a.localeCompare(b);
+    }).filter(cls => allByClass[cls]);
+
+    // Group by year
+    const yearGroups = {};
+    sortedClasses.forEach(cls => {
+      const y = parseInt(cls.match(/^(\d+)/)?.[1] || 0);
+      const label = y ? `Year ${y}` : 'Other';
+      if (!yearGroups[label]) yearGroups[label] = [];
+      yearGroups[label].push(cls);
+    });
+
+    list.innerHTML = Object.entries(yearGroups).map(([yearLabel, classes]) => {
+      const classesHtml = classes.map(cls => {
+        const items = allByClass[cls] || [];
+        const rowsHtml = items.map(a => {
+          const daysLeft = a.date ? Math.ceil((new Date(a.date) - new Date()) / 86400000) : null;
+          const pillCls = a.subject === 'Biology' ? 'adate-pill-bio' : a.subject === 'Chemistry' ? 'adate-pill-chem' : 'adate-pill-phys';
+          const cdCls = daysLeft !== null ? (daysLeft <= 7 ? 'soon' : daysLeft <= 21 ? 'upcoming' : 'future') : 'future';
+          const cdText = daysLeft !== null ? (daysLeft <= 0 ? 'Today' : daysLeft === 1 ? 'Tomorrow' : `${daysLeft}d`) : '';
+          const dateStr = a.date ? new Date(a.date + 'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}) : '';
+          const modTags = (a.modules||[]).map(m => {
+            const pt = a.partialTopics?.[m];
+            return `<span class="adate-mod-tag">${m}${pt?.length ? ` (${pt.length} topics)` : ''}</span>`;
+          }).join('');
+          return `<div class="adate-row">
+            <span class="adate-subj-pill ${pillCls}">${a.subject}</span>
+            <div class="adate-info">
+              <div class="adate-label">${a.label||'Assessment'}</div>
+              <div class="adate-meta">${dateStr}${a.scheduleLink ? ` · ${a.scheduleLink}` : ''}</div>
+              <div class="adate-mods">${modTags}</div>
+            </div>
+            ${cdText ? `<span class="adate-countdown ${cdCls}">${cdText}</span>` : ''}
+            <button class="btn-delete" style="border-color:#6366f1;color:#6366f1" onclick="adEdit('${cls}','${a.subject}','${a.id}')">✏️ Edit</button>
+            <button class="btn-delete" style="border-color:#0891b2;color:#0891b2" onclick="adCopyTo('${a.subject}','${a.id}','${cls}')">⧉ Copy to</button>
+            <button class="btn-delete" onclick="adDelete('${cls}','${a.subject}','${a.id}')">Remove</button>
+          </div>`;
+        }).join('');
+        return `<div style="margin-bottom:1rem">
+          <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:0.78rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;padding-bottom:0.3rem;border-bottom:1px solid var(--border)">${cls}</div>
+          ${rowsHtml}
+        </div>`;
+      }).join('');
+
+      return `<div style="margin-bottom:1.25rem">
+        <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:0.88rem;color:var(--navy);margin-bottom:0.6rem;display:flex;align-items:center;gap:0.5rem">
+          <span style="background:var(--navy);color:white;border-radius:6px;padding:0.1rem 0.5rem;font-size:0.72rem">${yearLabel}</span>
+        </div>
+        ${classesHtml}
+      </div>`;
+    }).join('');
+  };
+
+  window.adDelete = async (cls, subj, id) => {
+    if (!confirm('Remove this assessment date?')) return;
+    await deleteAssessmentDate(cls, subj, id);
+    adLoadList();
+  };
 </script>
+<!-- ── COPY ASSESSMENT MODAL ──────────────────────────────────────────────────── -->
+<div class="modal-overlay" id="ad-copy-modal">
+  <div class="modal">
+    <h2>⧉ Copy to other classes</h2>
+    <p style="font-size:0.82rem;color:var(--subtext);margin-bottom:0.75rem">Copying: <strong id="ad-copy-label"></strong></p>
+    <p style="font-size:0.8rem;color:var(--subtext);margin-bottom:1rem">Select classes and optionally set a different date for each copy — useful when different classes sit the same assessment on different days.</p>
+    <div style="margin-bottom:1rem">
+      <label class="form-label">Date for copied assessments <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--subtext)">(leave blank to keep original date)</span></label>
+      <input type="date" class="form-input" id="ad-copy-date" style="max-width:200px;margin-top:0.3rem" />
+    </div>
+    <label class="form-label" style="margin-bottom:0.5rem;display:block">Copy to classes:</label>
+    <div class="class-toggle-grid" id="ad-copy-grid"></div>
+    <div style="display:flex;gap:0.5rem;justify-content:flex-end;margin-top:1rem">
+      <button class="btn-modal-close" onclick="document.getElementById('ad-copy-modal').classList.remove('open')">Cancel</button>
+      <button class="btn-save-classes" onclick="adCopyConfirm()">Copy to selected</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
