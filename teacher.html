@@ -713,7 +713,9 @@
     _assignEditId = null;
     ['assign-title','assign-due','assign-note','assign-custom-text'].forEach(id => { const el=document.getElementById(id); if(el) el.value=''; });
     document.getElementById('assign-form-title').textContent = 'Create Assignment';
-    document.getElementById('create-btn').textContent = '📌 Create Assignment';
+    const btn = document.getElementById('create-btn');
+    btn.textContent = '📌 Create Assignment';
+    btn.disabled = false;
     document.getElementById('assign-cancel-edit').style.display = 'none';
     document.getElementById('assign-form-card').style.display = 'none';
     document.getElementById('assign-toggle-btn').textContent = '＋ Create Assignment';
