@@ -670,6 +670,11 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
   const container = document.getElementById('revise-topic-list');
   if (!container) return;
 
+  // Read subject and module directly from URL params — don't rely on module-scope vars
+  const _sp = new URLSearchParams(window.location.search);
+  const revSubject = _sp.get('subject') || '';
+  const revModule  = _sp.get('module')  || '';
+
   const TIER_COLOURS = { not_started:'#cbd5e1', beginning:'#ef4444', developing:'#f97316', approaching:'#eab308', confident:'#22c55e', mastered:'#3b82f6' };
   const TIER_EMOJIS  = { not_started:'⬜', beginning:'🔴', developing:'🟠', approaching:'🟡', confident:'🟢', mastered:'💙' };
 
@@ -684,7 +689,7 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
 
   let reviseData = null;
   try {
-    const fetchUrl = `data/revise/${_subject}-${_module}-revise.json`;
+    const fetchUrl = `data/revise/${revSubject}-${revModule}-revise.json`;
     console.log('[Revise] fetching:', fetchUrl);
     const r = await fetch(fetchUrl);
     console.log('[Revise] response status:', r.status);
@@ -716,7 +721,7 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
         <span class="revise-topic-name">${topic}</span>
         <span class="revise-topic-rag" style="background:${colour}22;color:${colour};border:1px solid ${colour}44">${emoji} ${score > 0 ? score + '%' : 'Not Started'}</span>
         <div class="revise-topic-actions">
-          <a href="revise.html?subject=${_subject}&module=${_module}&topic=${encodedTopic}" target="_blank" class="btn-revise-read">📖 Read</a>
+          <a href="revise.html?subject=${revSubject}&module=${revModule}&topic=${encodedTopic}" target="_blank" class="btn-revise-read">📖 Read</a>
           ${hasVideos ? `<button class="btn-revise-watch" onclick="openVideoModal('${topic.replace(/'/g,"\\'")}')">▶ Watch</button>` : ''}
         </div>
       </div>`;
