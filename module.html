@@ -721,7 +721,7 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
         <span class="revise-topic-name">${topic}</span>
         <span class="revise-topic-rag" style="background:${colour}22;color:${colour};border:1px solid ${colour}44">${emoji} ${score > 0 ? score + '%' : 'Not Started'}</span>
         <div class="revise-topic-actions">
-          <a href="revise.html?subject=${revSubject}&module=${revModule}&topic=${encodedTopic}" target="_blank" class="btn-revise-read">📖 Read</a>
+          <a href="revise.html?subject=${revSubject}&module=${revModule}&topic=${encodedTopic}" class="btn-revise-read">📖 Read</a>
           ${hasVideos ? `<button class="btn-revise-watch" onclick="openVideoModal('${topic.replace(/'/g,"\\'")}')">▶ Watch</button>` : ''}
         </div>
       </div>`;
