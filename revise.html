@@ -133,6 +133,14 @@
     /* ── PROGRESS INDICATOR ── */
     .rag-indicator { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 100px; margin-left: auto; flex-shrink: 0; }
 
+    /* ── UNDERSTOOD CHECKBOX ── */
+    .understood-wrap { margin-top: 2rem; padding: 1.25rem 1.5rem; background: #f0fdf4; border: 2px solid #bbf7d0; border-radius: 14px; }
+    .understood-label { display: flex; align-items: center; gap: 0.85rem; cursor: pointer; user-select: none; }
+    .understood-box { width: 26px; height: 26px; border: 2.5px solid #16a34a; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 900; color: #16a34a; flex-shrink: 0; transition: all 0.2s; background: white; }
+    .understood-done .understood-box { background: #16a34a; color: white; border-color: #16a34a; }
+    .understood-text { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.9rem; color: #166534; }
+    .understood-done .understood-text { color: #14532d; }
+
     @media (max-width: 600px) {
       .hero h1 { font-size: 1.35rem; }
       .key-terms { grid-template-columns: 1fr; }
@@ -289,39 +297,38 @@
     document.getElementById('hero-sub').textContent = `${moduleId.toUpperCase()} ${meta.title} · ${subjectLabel}`;
     document.getElementById('breadcrumb-topic').textContent = topicName;
 
-    // RAG badge
+    // RAG state for this topic
     const entry = ragState[topicName];
     const score = typeof entry === 'object' ? (entry?.score ?? 0) : 0;
     const tier = getTier(score);
+    const isUnderstood = score >= 10;
     const ragHtml = `<span class="rag-indicator" style="background:${TIER_COLOURS[tier]}22;color:${TIER_COLOURS[tier]};border:1.5px solid ${TIER_COLOURS[tier]}44">${TIER_EMOJIS[tier]} ${score > 0 ? score + '%' : 'Not Started'}</span>`;
 
-    // Build content
-    let html = `<div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem;flex-wrap:wrap">
+    let html = `<div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1.75rem;flex-wrap:wrap">
       <h1 style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);flex:1">${topicName}</h1>
       ${ragHtml}
     </div>`;
 
     // Intro
     if (topicData.intro) {
-      html += `<div class="topic-section"><p style="font-size:0.95rem;line-height:1.8">${topicData.intro}</p></div>`;
+      html += `<div class="topic-section"><p style="font-size:0.95rem;line-height:1.8;color:var(--text)">${topicData.intro}</p></div>`;
     }
 
     // Sections
     (topicData.sections || []).forEach(section => {
       html += `<div class="topic-section">`;
-      if (section.title) html += `<h2>${section.icon||'📌'} ${section.title}</h2>`;
+      if (section.title) html += `<h2>${section.icon || '📌'} ${section.title}</h2>`;
       if (section.text) html += `<p>${section.text}</p>`;
-      if (section.points) {
-        html += `<ul>${section.points.map(p => `<li>${p}</li>`).join('')}</ul>`;
-      }
-      if (section.numbered) {
-        html += `<ol>${section.numbered.map(p => `<li>${p}</li>`).join('')}</ol>`;
-      }
+      if (section.points) html += `<ul>${section.points.map(p => `<li>${p}</li>`).join('')}</ul>`;
+      if (section.numbered) html += `<ol>${section.numbered.map(p => `<li>${p}</li>`).join('')}</ol>`;
       if (section.callout) {
-        html += `<div class="callout callout-${section.callout.type||'tip'}"><div class="callout-label">${section.callout.label||'Note'}</div><p>${section.callout.text}</p></div>`;
+        html += `<div class="callout callout-${section.callout.type || 'tip'}">
+          <div class="callout-label">${section.callout.label || 'Note'}</div>
+          <p>${section.callout.text}</p>
+        </div>`;
       }
       if (section.diagram) {
-        html += `<div class="diagram-wrap">${section.diagram}<p class="diagram-caption">${section.diagramCaption||''}</p></div>`;
+        html += `<div class="diagram-wrap">${section.diagram}<p class="diagram-caption">${section.diagramCaption || ''}</p></div>`;
       }
       html += `</div>`;
     });
@@ -358,7 +365,7 @@
     if (videos.length) {
       html += `<div class="videos-section"><h2>▶ Recommended Videos</h2><div class="video-grid">`;
       videos.forEach(v => {
-        html += `<a href="${v.url}" target="_blank" rel="noopener" class="video-card" onclick="logVideoClick()">
+        html += `<a href="${v.url}" target="_blank" rel="noopener" class="video-card">
           <div class="video-thumb">▶️</div>
           <div class="video-info">
             <div class="video-title">${v.title}</div>
@@ -370,35 +377,74 @@
       html += `</div></div>`;
     }
 
-    document.getElementById('content-wrap').innerHTML = html;
+    // ── "I've understood this" checkbox ──────────────────────────────────────
+    html += `<div class="understood-wrap" id="understood-wrap">
+      <label class="understood-label ${isUnderstood ? 'understood-done' : ''}" id="understood-label">
+        <input type="checkbox" id="understood-check" ${isUnderstood ? 'checked' : ''} onchange="handleUnderstoodChange(this.checked)" style="display:none">
+        <span class="understood-box" id="understood-box">${isUnderstood ? '✓' : ''}</span>
+        <span class="understood-text" id="understood-text">
+          ${isUnderstood ? 'Marked as understood ✅' : 'I have read and understood this topic'}
+        </span>
+      </label>
+    </div>`;
 
-    // Nudge RAG — if not started, clicking a topic bumps to 1% (beginning)
+    // Nav between topics
+    const topicIndex = allTopics.indexOf(topicName);
+    const prevTopic = topicIndex > 0 ? allTopics[topicIndex - 1] : null;
+    const nextTopic = topicIndex < allTopics.length - 1 ? allTopics[topicIndex + 1] : null;
+    html += `<div style="display:flex;justify-content:space-between;align-items:center;margin-top:2rem;padding-top:1.25rem;border-top:1px solid var(--border);gap:0.75rem">
+      <div>
+        ${prevTopic ? `<button onclick="showTopicByName('${prevTopic.replace(/'/g,"\\'")}'); scrollToTop()" style="background:none;border:1.5px solid var(--border);border-radius:10px;padding:0.55rem 1rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;cursor:pointer;color:var(--subtext)">← ${prevTopic}</button>` : ''}
+      </div>
+      <div>
+        ${nextTopic ? `<button onclick="showTopicByName('${nextTopic.replace(/'/g,"\\'")}'); scrollToTop()" style="background:var(--navy);color:white;border:none;border-radius:10px;padding:0.55rem 1rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;cursor:pointer">Next: ${nextTopic} →</button>` : `<span style="font-size:0.8rem;color:var(--subtext);font-family:'Nunito',sans-serif;font-weight:700">✅ All topics in this module covered!</span>`}
+      </div>
+    </div>`;
+
+    document.getElementById('content-wrap').innerHTML = html;
     nudgeRAG(topicName);
   }
+
+  window.scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  window.handleUnderstoodChange = async (checked) => {
+    if (!currentUser || !currentTopic) return;
+    const label = document.getElementById('understood-label');
+    const box = document.getElementById('understood-box');
+    const text = document.getElementById('understood-text');
+
+    if (checked) {
+      // Set to 10% if currently below 10
+      const entry = ragState[currentTopic];
+      const currentScore = typeof entry === 'object' ? (entry?.score ?? 0) : (entry || 0);
+      const newScore = Math.max(currentScore, 10);
+      const updated = { ...(ragState[currentTopic] || {}), score: newScore, lastActivity: new Date().toISOString() };
+      ragState[currentTopic] = updated;
+      try { await saveRAG(currentUser.uid, moduleKey, ragState); } catch(e) {}
+
+      // Update UI
+      label?.classList.add('understood-done');
+      if (box) box.textContent = '✓';
+      if (text) text.textContent = 'Marked as understood ✅';
+    } else {
+      // Uncheck — don't reduce score, just update UI
+      label?.classList.remove('understood-done');
+      if (box) box.textContent = '';
+      if (text) text.textContent = 'I have read and understood this topic';
+    }
+  };
 
   async function nudgeRAG(topicName) {
     if (!currentUser) return;
     const entry = ragState[topicName];
     const score = typeof entry === 'object' ? (entry?.score ?? 0) : (entry || 0);
     if (score === 0) {
-      // First visit — nudge to 1%
+      // First visit — silent nudge to 1%
       const updated = { ...(ragState[topicName] || {}), score: 1, lastActivity: new Date().toISOString() };
       ragState[topicName] = updated;
       try { await saveRAG(currentUser.uid, moduleKey, ragState); } catch(e) {}
     }
   }
-
-  window.logVideoClick = () => {
-    // Videos count as slightly more engagement — nudge to 3% if not started
-    if (!currentUser || !currentTopic) return;
-    const entry = ragState[currentTopic];
-    const score = typeof entry === 'object' ? (entry?.score ?? 0) : (entry || 0);
-    if (score < 3) {
-      const updated = { ...(ragState[currentTopic] || {}), score: 3, lastActivity: new Date().toISOString() };
-      ragState[currentTopic] = updated;
-      saveRAG(currentUser.uid, moduleKey, ragState).catch(() => {});
-    }
-  };
 </script>
 
 </body>

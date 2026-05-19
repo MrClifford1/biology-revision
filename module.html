@@ -95,24 +95,25 @@
     .schedule-future .content-wrapper { opacity: 0.6; }
 
     /* ── REVISE CARDS ────────────────────────────────────────────────────────── */
-    .revise-topic-row { display: flex; align-items: center; gap: 0.75rem; padding: 0.85rem 1rem; background: white; border: 1.5px solid var(--border); border-radius: 12px; margin-bottom: 0.5rem; transition: border-color 0.15s; position: relative; }
-    .revise-topic-row:hover { border-color: var(--accent); }
-    .revise-topic-name { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.9rem; flex: 1; }
-    .revise-topic-rag { font-size: 0.72rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 100px; flex-shrink: 0; }
-    .revise-topic-actions { display: flex; gap: 0.4rem; opacity: 0; transition: opacity 0.15s; flex-shrink: 0; }
+    /* ── REVISE TAB ── */
+    .revise-topic-row { display: flex; align-items: center; gap: 0.85rem; padding: 1rem 1.1rem; background: white; border: 1.5px solid var(--border); border-left: 4px solid transparent; border-radius: 10px; margin-bottom: 0.4rem; transition: all 0.15s; position: relative; }
+    .revise-topic-row:hover { border-color: var(--accent); border-left-color: var(--accent); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .revise-topic-num { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.75rem; color: var(--subtext); width: 22px; flex-shrink: 0; }
+    .revise-topic-name { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem; color: var(--text); flex: 1; }
+    .revise-topic-rag { font-size: 0.7rem; font-weight: 700; padding: 0.18rem 0.55rem; border-radius: 100px; flex-shrink: 0; }
+    .revise-topic-actions { display: flex; gap: 0.35rem; opacity: 0; transition: opacity 0.15s; flex-shrink: 0; }
     .revise-topic-row:hover .revise-topic-actions { opacity: 1; }
-    .btn-revise-read { background: var(--accent); color: white; border: none; border-radius: 8px; padding: 0.35rem 0.75rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.75rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem; transition: opacity 0.15s; }
+    .btn-revise-read { background: var(--accent); color: white; border: none; border-radius: 7px; padding: 0.3rem 0.7rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.72rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.2rem; transition: opacity 0.15s; white-space: nowrap; }
     .btn-revise-read:hover { opacity: 0.85; }
-    .btn-revise-watch { background: #ef4444; color: white; border: none; border-radius: 8px; padding: 0.35rem 0.75rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.75rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem; transition: opacity 0.15s; }
-    .btn-revise-watch:hover { opacity: 0.85; }
-    .revise-section-label { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--subtext); margin-bottom: 0.6rem; margin-top: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+    .btn-revise-watch { background: white; color: #ef4444; border: 1.5px solid #ef4444; border-radius: 7px; padding: 0.3rem 0.7rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.72rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.2rem; transition: all 0.15s; white-space: nowrap; }
+    .btn-revise-watch:hover { background: #fef2f2; }
     /* Video modal */
-    .video-modal-overlay { position: fixed; inset: 0; background: rgba(15,29,61,0.6); z-index: 300; display: flex; align-items: center; justify-content: center; padding: 1rem; backdrop-filter: blur(2px); }
-    .video-modal { background: white; border-radius: 16px; padding: 1.25rem; width: 100%; max-width: 580px; max-height: 85vh; overflow-y: auto; }
-    .video-modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
-    .video-modal-title { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1rem; color: var(--navy); }
+    .video-modal-overlay { position: fixed; inset: 0; background: rgba(15,29,61,0.55); z-index: 300; display: flex; align-items: center; justify-content: center; padding: 1rem; backdrop-filter: blur(2px); }
+    .video-modal { background: white; border-radius: 16px; padding: 1.25rem; width: 100%; max-width: 520px; max-height: 85vh; overflow-y: auto; }
+    .video-modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+    .video-modal-title { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; color: var(--navy); }
     .video-modal-close { background: none; border: none; font-size: 1.3rem; cursor: pointer; color: var(--subtext); }
-    .video-list-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8fafc; border: 1.5px solid var(--border); border-radius: 10px; margin-bottom: 0.5rem; text-decoration: none; color: var(--text); transition: border-color 0.15s; }
+    .video-list-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.7rem 0.85rem; background: #f8fafc; border: 1.5px solid var(--border); border-radius: 10px; margin-bottom: 0.4rem; text-decoration: none; color: var(--text); transition: border-color 0.15s; }
     .video-list-item:hover { border-color: #ef4444; }
     .video-play-icon { width: 38px; height: 38px; background: #fef2f2; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
     .video-item-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.82rem; }
@@ -708,8 +709,9 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
 
   function buildTopicList(ragData) {
     let html = `<div style="padding:0.25rem 0 0.5rem">
-      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:0.8rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.75rem">📖 Revision Topics — hover to read or watch</div>`;
-    topics.forEach(topic => {
+      <div style="font-family:'Nunito',sans-serif;font-weight:700;font-size:0.75rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.75rem;padding-left:0.25rem">Revision Topics — hover a topic to read or watch</div>`;
+
+    topics.forEach((topic, i) => {
       const entry = ragData?.[topic];
       const score = typeof entry === 'object' ? (entry?.score ?? 0) : (entry || 0);
       const tier = getTier(score);
@@ -717,11 +719,14 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
       const emoji = TIER_EMOJIS[tier];
       const hasVideos = (reviseData.topics[topic]?.videos || []).length > 0;
       const encodedTopic = encodeURIComponent(topic);
-      html += `<div class="revise-topic-row">
+      const isRead = score >= 10;
+
+      html += `<div class="revise-topic-row" style="border-left-color:${colour}">
+        <span class="revise-topic-num">${i + 1}</span>
         <span class="revise-topic-name">${topic}</span>
-        <span class="revise-topic-rag" style="background:${colour}22;color:${colour};border:1px solid ${colour}44">${emoji} ${score > 0 ? score + '%' : 'Not Started'}</span>
+        <span class="revise-topic-rag" style="background:${colour}18;color:${colour};border:1.5px solid ${colour}33">${emoji} ${score > 0 ? score + '%' : 'Not Started'}</span>
         <div class="revise-topic-actions">
-          <a href="revise.html?subject=${revSubject}&module=${revModule}&topic=${encodedTopic}" class="btn-revise-read">📖 Read</a>
+          <a href="revise.html?subject=${revSubject}&module=${revModule}&topic=${encodedTopic}" class="btn-revise-read">📖 Read${isRead ? ' ✓' : ''}</a>
           ${hasVideos ? `<button class="btn-revise-watch" onclick="openVideoModal('${topic.replace(/'/g,"\\'")}')">▶ Watch</button>` : ''}
         </div>
       </div>`;
