@@ -133,13 +133,29 @@
     /* ── PROGRESS INDICATOR ── */
     .rag-indicator { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 100px; margin-left: auto; flex-shrink: 0; }
 
-    /* ── UNDERSTOOD CHECKBOX ── */
-    .understood-wrap { margin-top: 2rem; padding: 1.25rem 1.5rem; background: #f0fdf4; border: 2px solid #bbf7d0; border-radius: 14px; }
-    .understood-label { display: flex; align-items: center; gap: 0.85rem; cursor: pointer; user-select: none; }
-    .understood-box { width: 26px; height: 26px; border: 2.5px solid #16a34a; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 900; color: #16a34a; flex-shrink: 0; transition: all 0.2s; background: white; }
-    .understood-done .understood-box { background: #16a34a; color: white; border-color: #16a34a; }
-    .understood-text { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.9rem; color: #166534; }
-    .understood-done .understood-text { color: #14532d; }
+    /* ── QUICK QUIZ ── */
+    .quiz-wrap { margin-top: 2rem; background: #f8fafc; border: 2px solid var(--border); border-radius: 16px; padding: 1.5rem; }
+    .quiz-title { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1rem; color: var(--navy); margin-bottom: 0.25rem; }
+    .quiz-subtitle { font-size: 0.8rem; color: var(--subtext); margin-bottom: 1.25rem; }
+    .quiz-question { background: white; border: 1.5px solid var(--border); border-radius: 12px; padding: 1rem 1.1rem; margin-bottom: 0.85rem; }
+    .quiz-q-text { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.88rem; color: var(--navy); margin-bottom: 0.75rem; }
+    .quiz-options { display: flex; flex-direction: column; gap: 0.4rem; }
+    .quiz-option { display: flex; align-items: center; gap: 0.65rem; padding: 0.55rem 0.75rem; border: 1.5px solid var(--border); border-radius: 9px; cursor: pointer; transition: all 0.15s; font-size: 0.82rem; background: white; }
+    .quiz-option:hover { border-color: var(--navy); background: #f0f4ff; }
+    .quiz-option input[type=radio] { flex-shrink: 0; accent-color: var(--navy); }
+    .quiz-option.correct { border-color: #16a34a; background: #f0fdf4; color: #14532d; font-weight: 700; }
+    .quiz-option.incorrect { border-color: #dc2626; background: #fef2f2; color: #991b1b; }
+    .quiz-result-icon { font-size: 1rem; flex-shrink: 0; }
+    .btn-quiz-submit { background: var(--navy); color: white; border: none; border-radius: 10px; padding: 0.65rem 1.5rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.88rem; cursor: pointer; margin-top: 0.75rem; transition: background 0.15s; }
+    .btn-quiz-submit:hover { background: var(--navy-dark); }
+    .btn-quiz-submit:disabled { background: #cbd5e1; cursor: not-allowed; }
+    .quiz-score-banner { margin-top: 1rem; padding: 0.85rem 1.1rem; border-radius: 12px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.9rem; text-align: center; }
+    .quiz-score-0 { background: #fef2f2; color: #dc2626; border: 1.5px solid #fca5a5; }
+    .quiz-score-1 { background: #fefce8; color: #ca8a04; border: 1.5px solid #fde047; }
+    .quiz-score-2 { background: #eff6ff; color: #1d4ed8; border: 1.5px solid #93c5fd; }
+    .quiz-score-3 { background: #f0fdf4; color: #16a34a; border: 1.5px solid #86efac; }
+    .btn-quiz-retry { background: none; border: 1.5px solid var(--border); color: var(--subtext); border-radius: 10px; padding: 0.5rem 1rem; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.8rem; cursor: pointer; margin-top: 0.5rem; transition: all 0.15s; }
+    .btn-quiz-retry:hover { border-color: var(--navy); color: var(--navy); }
 
     @media (max-width: 600px) {
       .hero h1 { font-size: 1.35rem; }
@@ -377,15 +393,11 @@
       html += `</div></div>`;
     }
 
-    // ── "I've understood this" checkbox ──────────────────────────────────────
-    html += `<div class="understood-wrap" id="understood-wrap">
-      <label class="understood-label ${isUnderstood ? 'understood-done' : ''}" id="understood-label">
-        <input type="checkbox" id="understood-check" ${isUnderstood ? 'checked' : ''} onchange="handleUnderstoodChange(this.checked)" style="display:none">
-        <span class="understood-box" id="understood-box">${isUnderstood ? '✓' : ''}</span>
-        <span class="understood-text" id="understood-text">
-          ${isUnderstood ? 'Marked as understood ✅' : 'I have read and understood this topic'}
-        </span>
-      </label>
+    // ── Quick Quiz ────────────────────────────────────────────────────────────
+    html += `<div class="quiz-wrap" id="quiz-wrap">
+      <div class="quiz-title">🧠 Quick Check — Have you understood this topic?</div>
+      <div class="quiz-subtitle" id="quiz-subtitle">Answer 3 questions to test your understanding. You'll be told if each answer is correct but not given the answer — re-read if you're not sure!</div>
+      <div id="quiz-body"><button class="btn-quiz-submit" onclick="loadQuiz()">Start Quiz →</button></div>
     </div>`;
 
     // Nav between topics
@@ -407,31 +419,144 @@
 
   window.scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  window.handleUnderstoodChange = async (checked) => {
-    if (!currentUser || !currentTopic) return;
-    const label = document.getElementById('understood-label');
-    const box = document.getElementById('understood-box');
-    const text = document.getElementById('understood-text');
+  // ── QUICK QUIZ ──────────────────────────────────────────────────────────────
+  let _mcqData = null;
 
-    if (checked) {
-      // Set to 10% if currently below 10
+  // Load MCQ file once
+  async function getMcqData() {
+    if (_mcqData) return _mcqData;
+    try {
+      const r = await fetch(`data/mcq/${subject}-${moduleId}-mcq.json`);
+      if (r.ok) _mcqData = await r.json();
+    } catch(e) {}
+    return _mcqData;
+  }
+
+  function shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  window.loadQuiz = async () => {
+    const body = document.getElementById('quiz-body');
+    if (!body) return;
+    body.innerHTML = '<div style="color:var(--subtext);font-size:0.85rem;padding:0.5rem 0">Loading questions...</div>';
+
+    const mcq = await getMcqData();
+    const topicQuestions = mcq?.topics?.[currentTopic];
+
+    if (!topicQuestions || topicQuestions.length === 0) {
+      body.innerHTML = '<div style="color:var(--subtext);font-size:0.85rem">No questions available for this topic yet.</div>';
+      return;
+    }
+
+    // Pick 3 random questions, shuffle options
+    const chosen = shuffle(topicQuestions).slice(0, 3);
+    const quizState = chosen.map((q, i) => {
+      const options = shuffle([q.a, ...q.d]);
+      return { ...q, options, id: `q${i}` };
+    });
+
+    window._quizState = quizState;
+
+    let html = '';
+    quizState.forEach((q, i) => {
+      html += `<div class="quiz-question" id="qq-${i}">
+        <div class="quiz-q-text">Q${i+1}. ${q.q}</div>
+        <div class="quiz-options">
+          ${q.options.map((opt, j) => `
+            <label class="quiz-option" id="qo-${i}-${j}">
+              <input type="radio" name="${q.id}" value="${opt}" />
+              ${opt}
+            </label>`).join('')}
+        </div>
+      </div>`;
+    });
+
+    html += `<button class="btn-quiz-submit" id="quiz-submit-btn" onclick="submitQuiz()">Submit Answers →</button>`;
+    body.innerHTML = html;
+  };
+
+  window.submitQuiz = async () => {
+    const state = window._quizState;
+    if (!state) return;
+    const btn = document.getElementById('quiz-submit-btn');
+
+    let correct = 0;
+    let allAnswered = true;
+
+    state.forEach((q, i) => {
+      const selected = document.querySelector(`input[name="${q.id}"]:checked`);
+      if (!selected) { allAnswered = false; return; }
+
+      const isCorrect = selected.value === q.a;
+      if (isCorrect) correct++;
+
+      // Mark all options
+      q.options.forEach((opt, j) => {
+        const label = document.getElementById(`qo-${i}-${j}`);
+        if (!label) return;
+        if (opt === selected.value) {
+          label.classList.add(isCorrect ? 'correct' : 'incorrect');
+          const icon = document.createElement('span');
+          icon.className = 'quiz-result-icon';
+          icon.textContent = isCorrect ? '✅' : '❌';
+          label.appendChild(icon);
+        }
+        // Disable all options
+        const input = label.querySelector('input');
+        if (input) input.disabled = true;
+      });
+    });
+
+    if (!allAnswered) {
+      // Highlight unanswered
+      btn.textContent = 'Please answer all questions first!';
+      setTimeout(() => { btn.textContent = 'Submit Answers →'; }, 2000);
+      return;
+    }
+
+    // Disable submit button
+    if (btn) btn.disabled = true;
+
+    // Score messages
+    const msgs = [
+      { text: `0/3 — Don't worry, have another read through and try again! 📖`, cls: 'quiz-score-0' },
+      { text: `1/3 — Good start! Re-read the sections you weren't sure about and try again.`, cls: 'quiz-score-1' },
+      { text: `2/3 — Nearly there! One more read and you'll have it. 👍`, cls: 'quiz-score-2' },
+      { text: `3/3 — Excellent! You've understood this topic. 🌟`, cls: 'quiz-score-3' },
+    ];
+    const msg = msgs[correct];
+
+    // Score → RAG points (1=3%, 2=6%, 3=10%)
+    const scoreMap = [0, 3, 6, 10];
+    const points = scoreMap[correct];
+
+    // Update RAG if score improves
+    if (currentUser && points > 0) {
       const entry = ragState[currentTopic];
       const currentScore = typeof entry === 'object' ? (entry?.score ?? 0) : (entry || 0);
-      const newScore = Math.max(currentScore, 10);
-      const updated = { ...(ragState[currentTopic] || {}), score: newScore, lastActivity: new Date().toISOString() };
-      ragState[currentTopic] = updated;
-      try { await saveRAG(currentUser.uid, moduleKey, ragState); } catch(e) {}
-
-      // Update UI
-      label?.classList.add('understood-done');
-      if (box) box.textContent = '✓';
-      if (text) text.textContent = 'Marked as understood ✅';
-    } else {
-      // Uncheck — don't reduce score, just update UI
-      label?.classList.remove('understood-done');
-      if (box) box.textContent = '';
-      if (text) text.textContent = 'I have read and understood this topic';
+      const newScore = Math.max(currentScore, points);
+      if (newScore > currentScore) {
+        const updated = { ...(ragState[currentTopic] || {}), score: newScore, lastActivity: new Date().toISOString() };
+        ragState[currentTopic] = updated;
+        try { await saveRAG(currentUser.uid, moduleKey, ragState); } catch(e) {}
+      }
     }
+
+    // Show result
+    const resultDiv = document.createElement('div');
+    resultDiv.innerHTML = `
+      <div class="quiz-score-banner ${msg.cls}">${msg.text}</div>
+      ${points > 0 ? `<div style="font-size:0.75rem;color:var(--subtext);text-align:center;margin-top:0.4rem">+${points}% added to your topic score</div>` : ''}
+      <div style="text-align:center;margin-top:0.75rem">
+        <button class="btn-quiz-retry" onclick="loadQuiz()">🔄 Try again with new questions</button>
+      </div>`;
+    document.getElementById('quiz-body').appendChild(resultDiv);
   };
 
   async function nudgeRAG(topicName) {
