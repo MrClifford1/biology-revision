@@ -1,0 +1,114 @@
+{
+  "module": "P7 Magnetism",
+  "topics": {
+    "Magnetism": [
+      {
+        "q": "Which materials are magnetic?",
+        "a": "Iron nickel cobalt and steel",
+        "d": [
+          "All metals",
+          "Aluminium and copper",
+          "Copper and zinc"
+        ]
+      },
+      {
+        "q": "What do magnetic field lines show?",
+        "a": "The direction and strength of the magnetic field",
+        "d": [
+          "The speed of electrons",
+          "The temperature of a magnet",
+          "The electrical resistance"
+        ]
+      }
+    ],
+    "Electromagnetism": [
+      {
+        "q": "What is produced around a current-carrying wire?",
+        "a": "A circular magnetic field",
+        "d": [
+          "A gravitational field",
+          "An electric field only",
+          "Heat only"
+        ]
+      },
+      {
+        "q": "How can you increase the strength of an electromagnet?",
+        "a": "Increase current increase turns of wire or add an iron core",
+        "d": [
+          "Use a longer wire",
+          "Decrease current",
+          "Use a copper core"
+        ]
+      }
+    ],
+    "Motor Effect": [
+      {
+        "q": "Which rule is used to find the direction of force on a current-carrying conductor in a magnetic field?",
+        "a": "Fleming's left-hand rule",
+        "d": [
+          "Fleming's right-hand rule",
+          "Newton's third law",
+          "The right-hand grip rule"
+        ]
+      },
+      {
+        "q": "What is the function of the commutator in a DC motor?",
+        "a": "It reverses the current direction each half turn to keep the motor rotating continuously",
+        "d": [
+          "It increases the voltage",
+          "It acts as a switch to turn the motor on and off",
+          "It converts AC to DC"
+        ]
+      }
+    ],
+    "Generators": [
+      {
+        "q": "What is electromagnetic induction?",
+        "a": "Inducing a voltage by moving a conductor relative to a magnetic field",
+        "d": [
+          "Converting magnetic fields to heat",
+          "The motor effect",
+          "Converting voltage to current"
+        ]
+      },
+      {
+        "q": "What type of current does an AC generator produce?",
+        "a": "Alternating current - direction reverses each half turn",
+        "d": [
+          "Direct current - always flows one way",
+          "Pulsed DC",
+          "No current - only voltage"
+        ]
+      }
+    ],
+    "Transformers": [
+      {
+        "q": "What is the turns ratio formula for a transformer?",
+        "a": "Primary voltage divided by secondary voltage equals primary turns divided by secondary turns",
+        "d": [
+          "Primary voltage times secondary turns equals secondary voltage times primary turns",
+          "Primary turns plus secondary turns equals total voltage",
+          "Voltage is proportional to current"
+        ]
+      },
+      {
+        "q": "Why do transformers only work with AC?",
+        "a": "AC produces a constantly changing magnetic field needed to induce a voltage",
+        "d": [
+          "DC is too dangerous for transformers",
+          "AC has higher voltage than DC",
+          "Transformers only work with copper wire"
+        ]
+      },
+      {
+        "q": "Why is electricity transmitted at high voltage?",
+        "a": "High voltage means lower current which reduces power loss in cables (P = I squared R)",
+        "d": [
+          "High voltage is safer for consumers",
+          "High voltage travels faster",
+          "High voltage uses less wire"
+        ]
+      }
+    ]
+  }
+}

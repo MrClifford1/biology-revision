@@ -1,0 +1,177 @@
+{
+  "module": "P2 Electricity",
+  "topics": {
+    "Basic Electricity": [
+      {
+        "q": "What is electric current?",
+        "a": "The rate of flow of electric charge",
+        "d": [
+          "The energy transferred per unit charge",
+          "The opposition to current flow",
+          "The power of the circuit"
+        ]
+      },
+      {
+        "q": "What is the formula connecting voltage current and resistance?",
+        "a": "V = I x R",
+        "d": [
+          "V = I + R",
+          "I = V x R",
+          "R = V x I"
+        ]
+      },
+      {
+        "q": "What is the unit of resistance?",
+        "a": "Ohms (Greek omega symbol)",
+        "d": [
+          "Volts",
+          "Amperes",
+          "Watts"
+        ]
+      },
+      {
+        "q": "What is the formula for charge flow?",
+        "a": "Q = I x t (charge = current x time)",
+        "d": [
+          "Q = I + t",
+          "Q = I divided by t",
+          "Q = V x t"
+        ]
+      }
+    ],
+    "Circuits": [
+      {
+        "q": "In a series circuit what is the same throughout?",
+        "a": "Current",
+        "d": [
+          "Voltage",
+          "Resistance",
+          "Power"
+        ]
+      },
+      {
+        "q": "In a parallel circuit what is the same across all branches?",
+        "a": "Voltage (potential difference)",
+        "d": [
+          "Current",
+          "Resistance",
+          "Power"
+        ]
+      },
+      {
+        "q": "Where should an ammeter be connected in a circuit?",
+        "a": "In series with the component being measured",
+        "d": [
+          "In parallel with the component",
+          "Across the battery",
+          "At any point in the circuit"
+        ]
+      },
+      {
+        "q": "What happens to total resistance when more resistors are added in parallel?",
+        "a": "Total resistance decreases",
+        "d": [
+          "Total resistance increases",
+          "Total resistance stays the same",
+          "Total resistance becomes zero"
+        ]
+      }
+    ],
+    "Domestic Electricity": [
+      {
+        "q": "What colour is the live wire in a UK plug?",
+        "a": "Brown",
+        "d": [
+          "Blue",
+          "Green and yellow",
+          "Red"
+        ]
+      },
+      {
+        "q": "What is the voltage and frequency of UK mains electricity?",
+        "a": "230V and 50Hz",
+        "d": [
+          "110V and 60Hz",
+          "240V and 100Hz",
+          "120V and 50Hz"
+        ]
+      },
+      {
+        "q": "What is the purpose of the earth wire?",
+        "a": "Safety - provides low resistance path to earth if appliance develops a fault",
+        "d": [
+          "To carry the main current",
+          "To complete the circuit",
+          "To regulate voltage"
+        ]
+      },
+      {
+        "q": "What is the difference between AC and DC?",
+        "a": "AC reverses direction periodically; DC flows in one direction only",
+        "d": [
+          "AC is safer than DC",
+          "DC is used in power stations",
+          "AC only works in motors"
+        ]
+      }
+    ],
+    "Power and Energy": [
+      {
+        "q": "What is the formula for electrical power?",
+        "a": "P = I x V (power = current x voltage)",
+        "d": [
+          "P = I + V",
+          "P = V divided by I",
+          "P = I squared plus V"
+        ]
+      },
+      {
+        "q": "What is a kilowatt-hour?",
+        "a": "A unit of energy equal to 3.6 million joules",
+        "d": [
+          "A unit of power",
+          "A unit of current",
+          "A measure of voltage"
+        ]
+      },
+      {
+        "q": "How do you calculate the cost of electricity?",
+        "a": "Power (kW) x time (hours) x cost per kWh",
+        "d": [
+          "Voltage x current x time",
+          "Resistance x time",
+          "Power divided by time"
+        ]
+      }
+    ],
+    "Static Electricity": [
+      {
+        "q": "How is static electricity produced by friction?",
+        "a": "Electrons are transferred from one material to the other",
+        "d": [
+          "Protons are transferred between materials",
+          "Neutrons are removed from atoms",
+          "New electrons are created"
+        ]
+      },
+      {
+        "q": "What happens when two objects with the same charge are brought close?",
+        "a": "They repel each other",
+        "d": [
+          "They attract each other",
+          "Nothing happens",
+          "They neutralise each other"
+        ]
+      },
+      {
+        "q": "Why does a charged balloon stick to a wall?",
+        "a": "The charged balloon induces an opposite charge in the wall surface",
+        "d": [
+          "The wall is always negatively charged",
+          "Gravity holds it there",
+          "The balloon loses its charge"
+        ]
+      }
+    ]
+  }
+}

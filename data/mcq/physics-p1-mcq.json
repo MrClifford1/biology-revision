@@ -1,0 +1,168 @@
+{
+  "module": "P1 Energy",
+  "topics": {
+    "Energy Stores": [
+      {
+        "q": "Which energy store is associated with a moving object?",
+        "a": "Kinetic energy store",
+        "d": [
+          "Gravitational potential energy store",
+          "Chemical energy store",
+          "Thermal energy store"
+        ]
+      },
+      {
+        "q": "What is the law of conservation of energy?",
+        "a": "Energy cannot be created or destroyed only transferred between stores",
+        "d": [
+          "Energy is always lost as heat",
+          "Energy can be created in chemical reactions",
+          "Energy decreases over time"
+        ]
+      },
+      {
+        "q": "A stretched spring stores energy in which store?",
+        "a": "Elastic potential energy store",
+        "d": [
+          "Kinetic energy store",
+          "Chemical energy store",
+          "Gravitational potential energy store"
+        ]
+      },
+      {
+        "q": "Which energy store does a battery use?",
+        "a": "Chemical energy store",
+        "d": [
+          "Electrical energy store",
+          "Kinetic energy store",
+          "Nuclear energy store"
+        ]
+      }
+    ],
+    "Energy Transfer": [
+      {
+        "q": "Which pathway transfers energy when a force moves an object?",
+        "a": "Mechanically",
+        "d": [
+          "Electrically",
+          "By radiation",
+          "By heating"
+        ]
+      },
+      {
+        "q": "What does a Sankey diagram show?",
+        "a": "Energy input useful output and wasted energy with arrow width proportional to amount",
+        "d": [
+          "The speed of energy transfer",
+          "The temperature of a reaction",
+          "The cost of energy use"
+        ]
+      },
+      {
+        "q": "Where does wasted energy usually end up?",
+        "a": "Thermal energy store of the surroundings",
+        "d": [
+          "It is destroyed",
+          "Back in the original store",
+          "In the electrical store"
+        ]
+      }
+    ],
+    "Efficiency": [
+      {
+        "q": "What is the formula for efficiency?",
+        "a": "Useful output energy divided by total input energy",
+        "d": [
+          "Total input energy divided by useful output energy",
+          "Wasted energy divided by total input energy",
+          "Useful energy times total energy"
+        ]
+      },
+      {
+        "q": "Can efficiency ever be greater than 1 (or 100%)?",
+        "a": "No - this would violate conservation of energy",
+        "d": [
+          "Yes - with a good catalyst",
+          "Yes - in renewable energy systems",
+          "Yes - at very low temperatures"
+        ]
+      },
+      {
+        "q": "How can efficiency be improved in a machine?",
+        "a": "By reducing friction and heat loss",
+        "d": [
+          "By using more fuel",
+          "By increasing speed",
+          "By making it larger"
+        ]
+      }
+    ],
+    "Specific Heat Capacity": [
+      {
+        "q": "What is specific heat capacity?",
+        "a": "Energy needed to raise 1kg of a substance by 1 degree C",
+        "d": [
+          "Energy needed to melt 1kg of a substance",
+          "Energy stored in 1kg of fuel",
+          "Heat released when 1kg cools by 1 degree C"
+        ]
+      },
+      {
+        "q": "What is the formula for calculating energy change?",
+        "a": "Q = mcAT (energy = mass x SHC x temperature change)",
+        "d": [
+          "Q = m/cT",
+          "Q = mcT squared",
+          "Q = m + c + T"
+        ]
+      },
+      {
+        "q": "Why is water used in central heating systems?",
+        "a": "Water has a high specific heat capacity so stores a lot of energy",
+        "d": [
+          "Water is cheap and freely available only",
+          "Water conducts electricity",
+          "Water has a low boiling point"
+        ]
+      }
+    ],
+    "Energy Resources": [
+      {
+        "q": "Which energy resource is non-renewable?",
+        "a": "Coal",
+        "d": [
+          "Wind",
+          "Solar",
+          "Tidal"
+        ]
+      },
+      {
+        "q": "What is the main disadvantage of renewable energy sources like wind and solar?",
+        "a": "They are intermittent - not always available on demand",
+        "d": [
+          "They produce greenhouse gases",
+          "They are more expensive than all fossil fuels",
+          "They require nuclear waste disposal"
+        ]
+      },
+      {
+        "q": "How does a generator produce electricity?",
+        "a": "By rotating a coil in a magnetic field (electromagnetic induction)",
+        "d": [
+          "By burning fuel directly",
+          "By using chemical reactions",
+          "By absorbing sunlight"
+        ]
+      },
+      {
+        "q": "Which energy resource uses the heat from inside the Earth?",
+        "a": "Geothermal",
+        "d": [
+          "Nuclear",
+          "Biomass",
+          "Tidal"
+        ]
+      }
+    ]
+  }
+}

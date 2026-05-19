@@ -1,0 +1,316 @@
+{
+  "module": "B2 Organisation",
+  "topics": {
+    "Organisation": [
+      {
+        "q": "What is the correct order from smallest to largest?",
+        "a": "Cell \u2192 Tissue \u2192 Organ \u2192 Organ system \u2192 Organism",
+        "d": [
+          "Tissue \u2192 Cell \u2192 Organ \u2192 Organism \u2192 Organ system",
+          "Organ \u2192 Cell \u2192 Tissue \u2192 Organ system \u2192 Organism",
+          "Cell \u2192 Organ \u2192 Tissue \u2192 Organ system \u2192 Organism"
+        ]
+      },
+      {
+        "q": "What is a tissue?",
+        "a": "A group of similar cells working together",
+        "d": [
+          "A single specialised cell",
+          "A group of different organs",
+          "A complete living thing"
+        ]
+      },
+      {
+        "q": "Which of these is an example of an organ?",
+        "a": "Heart",
+        "d": [
+          "Muscle tissue",
+          "Blood cell",
+          "Circulatory system"
+        ]
+      },
+      {
+        "q": "What does an organ system consist of?",
+        "a": "A group of organs working together",
+        "d": [
+          "A single organ with multiple functions",
+          "Groups of identical cells",
+          "A tissue with several layers"
+        ]
+      },
+      {
+        "q": "Which level comes directly above tissue?",
+        "a": "Organ",
+        "d": [
+          "Cell",
+          "Organism",
+          "Organ system"
+        ]
+      }
+    ],
+    "Digestion": [
+      {
+        "q": "Which enzyme breaks down starch?",
+        "a": "Amylase",
+        "d": [
+          "Lipase",
+          "Protease",
+          "Pepsin"
+        ]
+      },
+      {
+        "q": "What does lipase break down?",
+        "a": "Fats into fatty acids and glycerol",
+        "d": [
+          "Proteins into amino acids",
+          "Starch into sugars",
+          "Sugars into glucose"
+        ]
+      },
+      {
+        "q": "Where is bile produced?",
+        "a": "Liver",
+        "d": [
+          "Pancreas",
+          "Stomach",
+          "Small intestine"
+        ]
+      },
+      {
+        "q": "What is the role of bile?",
+        "a": "Emulsifies fats to increase surface area for lipase",
+        "d": [
+          "Digests proteins chemically",
+          "Produces hydrochloric acid",
+          "Absorbs water from food"
+        ]
+      },
+      {
+        "q": "Where does most digestion and absorption take place?",
+        "a": "Small intestine",
+        "d": [
+          "Stomach",
+          "Large intestine",
+          "Oesophagus"
+        ]
+      },
+      {
+        "q": "What does protease break down?",
+        "a": "Proteins into amino acids",
+        "d": [
+          "Fats into fatty acids",
+          "Starch into maltose",
+          "Sugars into glucose"
+        ]
+      }
+    ],
+    "Heart and Circulation": [
+      {
+        "q": "Which side of the heart pumps blood to the lungs?",
+        "a": "Right side",
+        "d": [
+          "Left side",
+          "Both sides equally",
+          "The atria only"
+        ]
+      },
+      {
+        "q": "Why does the left ventricle have thicker walls than the right?",
+        "a": "It pumps blood to the whole body and needs more force",
+        "d": [
+          "It receives more blood",
+          "It is closer to the lungs",
+          "It contains more valves"
+        ]
+      },
+      {
+        "q": "What is the function of valves in the heart?",
+        "a": "Prevent backflow of blood",
+        "d": [
+          "Speed up blood flow",
+          "Produce electrical impulses",
+          "Carry oxygenated blood"
+        ]
+      },
+      {
+        "q": "Which blood vessel carries blood away from the heart?",
+        "a": "Artery",
+        "d": [
+          "Vein",
+          "Capillary",
+          "Venule"
+        ]
+      },
+      {
+        "q": "Where does gas exchange between blood and tissues occur?",
+        "a": "Capillaries",
+        "d": [
+          "Arteries",
+          "Veins",
+          "The heart"
+        ]
+      }
+    ],
+    "Blood": [
+      {
+        "q": "Which component of blood carries oxygen?",
+        "a": "Red blood cells",
+        "d": [
+          "White blood cells",
+          "Platelets",
+          "Plasma"
+        ]
+      },
+      {
+        "q": "What is the role of platelets?",
+        "a": "Trigger blood clotting at wounds",
+        "d": [
+          "Carry oxygen",
+          "Fight infection",
+          "Transport hormones"
+        ]
+      },
+      {
+        "q": "Which type of white blood cell produces antibodies?",
+        "a": "Lymphocyte",
+        "d": [
+          "Phagocyte",
+          "Platelet",
+          "Red blood cell"
+        ]
+      },
+      {
+        "q": "What does plasma transport?",
+        "a": "Dissolved food, CO2, urea and hormones",
+        "d": [
+          "Only oxygen",
+          "Only carbon dioxide",
+          "Only glucose"
+        ]
+      },
+      {
+        "q": "Why are red blood cells biconcave?",
+        "a": "To increase surface area for oxygen absorption",
+        "d": [
+          "To fit through large blood vessels",
+          "To make them more rigid",
+          "To carry more nuclei"
+        ]
+      }
+    ],
+    "Heart Disease": [
+      {
+        "q": "What causes coronary heart disease?",
+        "a": "Fatty deposits building up in coronary arteries",
+        "d": [
+          "Too much exercise damaging the heart",
+          "Viral infection of heart muscle",
+          "High blood pressure only"
+        ]
+      },
+      {
+        "q": "What do statins do?",
+        "a": "Reduce blood cholesterol levels",
+        "d": [
+          "Dissolve existing plaques",
+          "Open narrowed arteries mechanically",
+          "Replace damaged heart valves"
+        ]
+      },
+      {
+        "q": "What is a stent?",
+        "a": "A mesh tube inserted into an artery to keep it open",
+        "d": [
+          "A drug that reduces cholesterol",
+          "A type of artificial heart valve",
+          "A bypass tube around the heart"
+        ]
+      },
+      {
+        "q": "What is angina?",
+        "a": "Chest pain caused by restricted blood flow to the heart",
+        "d": [
+          "Inflammation of the lung lining",
+          "A type of stroke",
+          "Irregular heart rhythm"
+        ]
+      }
+    ],
+    "Cancer": [
+      {
+        "q": "What is a malignant tumour?",
+        "a": "A cancerous tumour that spreads to other tissues",
+        "d": [
+          "A tumour that stays in one place",
+          "A benign lump under the skin",
+          "A tumour caused by bacteria"
+        ]
+      },
+      {
+        "q": "What causes uncontrolled cell division?",
+        "a": "Mutations in genes controlling cell division",
+        "d": [
+          "Too many mitochondria",
+          "Lack of vitamins",
+          "Excess protein production"
+        ]
+      },
+      {
+        "q": "What is the difference between a benign and malignant tumour?",
+        "a": "Benign stays in one place; malignant spreads",
+        "d": [
+          "Benign is cancerous; malignant is not",
+          "Benign spreads; malignant stays put",
+          "There is no difference"
+        ]
+      }
+    ],
+    "Plant Organisation": [
+      {
+        "q": "Which tissue transports water up from the roots?",
+        "a": "Xylem",
+        "d": [
+          "Phloem",
+          "Epidermis",
+          "Mesophyll"
+        ]
+      },
+      {
+        "q": "What does phloem transport?",
+        "a": "Dissolved sugars from leaves to the rest of the plant",
+        "d": [
+          "Water and mineral ions from roots",
+          "Oxygen from leaves",
+          "Carbon dioxide to leaves"
+        ]
+      },
+      {
+        "q": "What is transpiration?",
+        "a": "Loss of water vapour from leaves through stomata",
+        "d": [
+          "Absorption of water by roots",
+          "Transport of sugar in phloem",
+          "Photosynthesis in leaves"
+        ]
+      },
+      {
+        "q": "Which cells control the opening and closing of stomata?",
+        "a": "Guard cells",
+        "d": [
+          "Palisade cells",
+          "Xylem cells",
+          "Root hair cells"
+        ]
+      },
+      {
+        "q": "Which factor increases the rate of transpiration?",
+        "a": "Higher temperature",
+        "d": [
+          "Higher humidity",
+          "Less wind",
+          "Darkness"
+        ]
+      }
+    ]
+  }
+}

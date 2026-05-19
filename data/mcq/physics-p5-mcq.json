@@ -1,0 +1,183 @@
+{
+  "module": "P5 Forces",
+  "topics": {
+    "Scalars and Vectors": [
+      {
+        "q": "Which of these is a vector quantity?",
+        "a": "Velocity",
+        "d": [
+          "Speed",
+          "Mass",
+          "Temperature"
+        ]
+      },
+      {
+        "q": "What is the difference between speed and velocity?",
+        "a": "Velocity includes direction; speed does not",
+        "d": [
+          "Speed is faster than velocity",
+          "Velocity is measured in km/h only",
+          "They are identical"
+        ]
+      }
+    ],
+    "Forces": [
+      {
+        "q": "What is weight?",
+        "a": "The gravitational force on an object W = mg",
+        "d": [
+          "The mass of an object",
+          "The density of an object",
+          "The momentum of an object"
+        ]
+      },
+      {
+        "q": "What happens when forces on an object are balanced?",
+        "a": "The object stays at rest or moves at constant velocity",
+        "d": [
+          "The object accelerates",
+          "The object decelerates",
+          "The object stops immediately"
+        ]
+      }
+    ],
+    "Work Done": [
+      {
+        "q": "What is the formula for work done?",
+        "a": "W = F x d (force times distance)",
+        "d": [
+          "W = m x a",
+          "W = F divided by d",
+          "W = F + d"
+        ]
+      },
+      {
+        "q": "What is the unit of work done?",
+        "a": "Joules",
+        "d": [
+          "Newtons",
+          "Metres",
+          "Watts"
+        ]
+      }
+    ],
+    "Elasticity": [
+      {
+        "q": "What does Hooke's law state?",
+        "a": "Extension is proportional to force up to the limit of proportionality",
+        "d": [
+          "Force is proportional to mass",
+          "Extension is proportional to velocity",
+          "All materials stretch equally"
+        ]
+      }
+    ],
+    "Motion": [
+      {
+        "q": "What does the gradient of a distance-time graph represent?",
+        "a": "Speed",
+        "d": [
+          "Acceleration",
+          "Force",
+          "Distance"
+        ]
+      },
+      {
+        "q": "What does the gradient of a velocity-time graph represent?",
+        "a": "Acceleration",
+        "d": [
+          "Speed",
+          "Distance",
+          "Force"
+        ]
+      },
+      {
+        "q": "What does the area under a velocity-time graph represent?",
+        "a": "Distance travelled",
+        "d": [
+          "Speed",
+          "Acceleration",
+          "Force"
+        ]
+      }
+    ],
+    "Newton's Laws": [
+      {
+        "q": "What does Newton's first law state?",
+        "a": "An object stays at rest or constant velocity unless a resultant force acts on it",
+        "d": [
+          "Force equals mass times acceleration",
+          "Every action has an equal and opposite reaction",
+          "Objects always accelerate due to gravity"
+        ]
+      },
+      {
+        "q": "What is the formula for Newton's second law?",
+        "a": "F = ma (force = mass x acceleration)",
+        "d": [
+          "F = m + a",
+          "F = m divided by a",
+          "F = m squared x a"
+        ]
+      },
+      {
+        "q": "Newton's third law pairs of forces act on...",
+        "a": "Different objects",
+        "d": [
+          "The same object",
+          "The same material",
+          "Air only"
+        ]
+      }
+    ],
+    "Stopping Distances": [
+      {
+        "q": "What is thinking distance?",
+        "a": "Distance travelled during the driver's reaction time",
+        "d": [
+          "Distance travelled after brakes are applied",
+          "Total stopping distance",
+          "Distance from the hazard when braking starts"
+        ]
+      },
+      {
+        "q": "Which factor affects BOTH thinking distance and braking distance?",
+        "a": "Speed",
+        "d": [
+          "Road conditions",
+          "Tyre quality",
+          "Brake condition"
+        ]
+      },
+      {
+        "q": "What effect does doubling speed have on braking distance?",
+        "a": "It quadruples (x4) - braking distance is proportional to v squared",
+        "d": [
+          "It doubles",
+          "It triples",
+          "It has no effect"
+        ]
+      }
+    ],
+    "Momentum": [
+      {
+        "q": "What is the formula for momentum?",
+        "a": "p = m x v (momentum = mass x velocity)",
+        "d": [
+          "p = m + v",
+          "p = m divided by v",
+          "p = F x t"
+        ]
+      },
+      {
+        "q": "What does the law of conservation of momentum state?",
+        "a": "Total momentum before = total momentum after in a closed system",
+        "d": [
+          "Momentum is always zero",
+          "Momentum increases in collisions",
+          "Momentum equals kinetic energy"
+        ]
+      }
+    ]
+  }
+}

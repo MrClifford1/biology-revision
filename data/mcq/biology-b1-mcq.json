@@ -1,0 +1,50 @@
+{
+  "module": "B1 Cell Biology",
+  "topics": {
+    "Cell Structure": [
+      {"q": "Which organelle is the site of aerobic respiration in a cell?", "a": "Mitochondria", "d": ["Nucleus", "Ribosome", "Chloroplast"]},
+      {"q": "What is the main difference between a prokaryotic and eukaryotic cell?", "a": "Prokaryotic cells have no true nucleus", "d": ["Prokaryotic cells are larger", "Prokaryotic cells have mitochondria", "Prokaryotic cells have a cell wall made of cellulose"]},
+      {"q": "Which structure is found in plant cells but NOT animal cells?", "a": "Cell wall", "d": ["Cell membrane", "Mitochondria", "Nucleus"]},
+      {"q": "Where does protein synthesis take place in a cell?", "a": "Ribosomes", "d": ["Mitochondria", "Nucleus", "Vacuole"]},
+      {"q": "What is the function of the cell membrane?", "a": "Controls what enters and leaves the cell", "d": ["Provides structural support", "Site of photosynthesis", "Controls cell division"]},
+      {"q": "Which of these is found in a bacterial cell?", "a": "Plasmids", "d": ["Mitochondria", "Chloroplasts", "Nuclear membrane"]},
+      {"q": "What is the cytoplasm?", "a": "Jelly-like fluid where chemical reactions occur", "d": ["The membrane surrounding the nucleus", "The outer boundary of the cell", "Fluid inside the vacuole"]}
+    ],
+    "Microscopy": [
+      {"q": "What is the correct formula for magnification?", "a": "Image size ÷ actual size", "d": ["Actual size ÷ image size", "Image size × actual size", "Actual size + image size"]},
+      {"q": "How many micrometres are in 1 millimetre?", "a": "1000", "d": ["100", "10000", "10"]},
+      {"q": "Which type of microscope has the highest resolution?", "a": "Electron microscope", "d": ["Light microscope", "Compound microscope", "Magnifying glass"]},
+      {"q": "Why can't electron microscopes be used to view living specimens?", "a": "Specimens must be dead and prepared in a vacuum", "d": ["The magnification is too high", "They only work with plant cells", "The light damages living cells"]},
+      {"q": "A cell appears 30mm in an image taken at ×1000 magnification. What is the actual size?", "a": "0.03 mm", "d": ["30,000 mm", "0.3 mm", "3 mm"]},
+      {"q": "What does resolution mean in microscopy?", "a": "The ability to distinguish between two separate points", "d": ["How much larger the image appears", "The brightness of the image", "The size of the lens"]},
+      {"q": "Which unit is most appropriate for measuring a typical animal cell?", "a": "Micrometres (μm)", "d": ["Millimetres (mm)", "Nanometres (nm)", "Centimetres (cm)"]}
+    ],
+    "Cell Division": [
+      {"q": "What type of cell division produces two genetically identical daughter cells?", "a": "Mitosis", "d": ["Meiosis", "Binary fission", "Budding"]},
+      {"q": "What happens during interphase?", "a": "DNA is replicated and the cell grows", "d": ["The nucleus divides", "Chromosomes separate", "The cell membrane splits"]},
+      {"q": "How many daughter cells are produced by mitosis?", "a": "2", "d": ["4", "1", "8"]},
+      {"q": "What causes cancer?", "a": "Uncontrolled cell division due to mutations", "d": ["Too little cell division", "Cells losing their nucleus", "Organelles multiplying too fast"]},
+      {"q": "What is a tumour?", "a": "A mass of cells formed by uncontrolled division", "d": ["A type of organelle", "A mutated chromosome", "A benign gene"]},
+      {"q": "Which type of tumour spreads to other parts of the body?", "a": "Malignant", "d": ["Benign", "Dormant", "Passive"]},
+      {"q": "Mitosis is used for which of the following?", "a": "Growth and repair of tissues", "d": ["Producing gametes", "Genetic variation", "Reducing chromosome number"]}
+    ],
+    "Transport": [
+      {"q": "Which process moves substances from high to low concentration without using energy?", "a": "Diffusion", "d": ["Active transport", "Osmosis", "Endocytosis"]},
+      {"q": "What is osmosis?", "a": "Movement of water through a partially permeable membrane from high to low water potential", "d": ["Movement of all molecules from high to low concentration", "Active movement of water using energy", "Movement of ions against a concentration gradient"]},
+      {"q": "Which process requires energy from respiration?", "a": "Active transport", "d": ["Diffusion", "Osmosis", "Facilitated diffusion"]},
+      {"q": "What happens to a plant cell placed in a very concentrated solution?", "a": "It loses water and the cell becomes plasmolysed", "d": ["It gains water and becomes turgid", "It explodes due to osmotic pressure", "Nothing — plant cells are unaffected by osmosis"]},
+      {"q": "What is a partially permeable membrane?", "a": "A membrane that allows some molecules through but not others", "d": ["A membrane that allows all molecules through", "A membrane that allows no molecules through", "A membrane found only in animal cells"]},
+      {"q": "Which factor does NOT increase the rate of diffusion?", "a": "Decreasing the surface area", "d": ["Increasing temperature", "Steeper concentration gradient", "Shorter diffusion distance"]},
+      {"q": "Active transport moves substances in which direction?", "a": "Against the concentration gradient", "d": ["Down the concentration gradient", "Across a partially permeable membrane only", "Only in plant cells"]}
+    ],
+    "Specialised Cells": [
+      {"q": "Why do red blood cells have no nucleus?", "a": "To make more room for haemoglobin", "d": ["To allow them to divide rapidly", "To reduce their size", "To prevent them from ageing"]},
+      {"q": "What is the function of cilia in ciliated epithelial cells?", "a": "To move mucus and trapped particles away from the lungs", "d": ["To absorb oxygen into the blood", "To produce mucus", "To carry electrical impulses"]},
+      {"q": "Why do root hair cells have no chloroplasts?", "a": "They are underground and receive no light", "d": ["They are too small to contain them", "They don't need energy", "Chloroplasts are only in animal cells"]},
+      {"q": "Which feature of a sperm cell helps it swim to the egg?", "a": "Flagellum (tail)", "d": ["Acrosome", "Large nucleus", "Mitochondria-free cytoplasm"]},
+      {"q": "What structural adaptation helps root hair cells absorb water and mineral ions?", "a": "Long hair-like extension that increases surface area", "d": ["A thick cell wall", "Many chloroplasts", "Large central vacuole"]},
+      {"q": "Which cell has many mitochondria to power its movement?", "a": "Sperm cell", "d": ["Red blood cell", "Leaf epidermal cell", "Fat cell"]},
+      {"q": "What shape are red blood cells and why?", "a": "Biconcave disc — increases surface area for oxygen absorption", "d": ["Spherical — to fit through capillaries", "Elongated — to carry more haemoglobin", "Flat square — for easy stacking"]}
+    ]
+  }
+}

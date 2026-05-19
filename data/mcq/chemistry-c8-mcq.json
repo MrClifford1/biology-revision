@@ -1,0 +1,101 @@
+{
+  "module": "C8 Chemical Analysis",
+  "topics": {
+    "Purity and Formulations": [
+      {
+        "q": "How can you tell if a substance is pure?",
+        "a": "It has a sharp specific melting point",
+        "d": [
+          "It is colourless",
+          "It dissolves in water",
+          "It has a high boiling point"
+        ]
+      },
+      {
+        "q": "What does an impurity do to the melting point?",
+        "a": "It lowers and broadens the melting range",
+        "d": [
+          "It raises the melting point",
+          "It has no effect",
+          "It makes the substance explode"
+        ]
+      },
+      {
+        "q": "What is a formulation?",
+        "a": "A mixture designed with precise proportions for a specific purpose",
+        "d": [
+          "A pure compound",
+          "A chemical reaction",
+          "A type of element"
+        ]
+      }
+    ],
+    "Chromatography": [
+      {
+        "q": "What is the Rf value formula?",
+        "a": "Distance moved by substance divided by distance moved by solvent front",
+        "d": [
+          "Distance moved by solvent divided by distance moved by substance",
+          "Distance moved by substance multiplied by solvent distance",
+          "Total distance divided by number of spots"
+        ]
+      },
+      {
+        "q": "What does a single spot on a chromatogram indicate?",
+        "a": "The sample contains only one component (or all components have the same Rf)",
+        "d": [
+          "The sample is definitely impure",
+          "The solvent did not move",
+          "The sample is too concentrated"
+        ]
+      },
+      {
+        "q": "What is the mobile phase in paper chromatography?",
+        "a": "The solvent that moves through the paper",
+        "d": [
+          "The paper itself",
+          "The sample being tested",
+          "The baseline"
+        ]
+      }
+    ],
+    "Identifying Substances": [
+      {
+        "q": "What colour flame does sodium produce?",
+        "a": "Yellow/orange",
+        "d": [
+          "Crimson/red",
+          "Lilac",
+          "Blue/green"
+        ]
+      },
+      {
+        "q": "What does a glowing splint relighting indicate?",
+        "a": "Oxygen is present",
+        "d": [
+          "Hydrogen is present",
+          "Carbon dioxide is present",
+          "Chlorine is present"
+        ]
+      },
+      {
+        "q": "What happens when carbon dioxide is bubbled through limewater?",
+        "a": "It turns cloudy/milky",
+        "d": [
+          "It turns blue",
+          "It turns red",
+          "It stays clear"
+        ]
+      },
+      {
+        "q": "What does a squeaky pop with a lit splint indicate?",
+        "a": "Hydrogen is present",
+        "d": [
+          "Oxygen is present",
+          "Carbon dioxide is present",
+          "Chlorine is present"
+        ]
+      }
+    ]
+  }
+}
