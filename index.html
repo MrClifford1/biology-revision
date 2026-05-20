@@ -543,7 +543,15 @@
         }));
 
         const container = document.getElementById('assignment-banners');
-        container.innerHTML = assignments.map(a => {
+        // Hide assignments more than 14 days past their due date from the landing page
+        // (they remain visible indefinitely in progress.html Assignments tab)
+        const twoWeeksAgo = new Date();
+        twoWeeksAgo.setDate(twoWeeksAgo.getDate() - 14);
+        const cutoff = twoWeeksAgo.toISOString().split('T')[0];
+
+        container.innerHTML = assignments
+          .filter(a => !a.dueDate || a.dueDate >= cutoff)
+          .map(a => {
           const isExpired = a.dueDate && a.dueDate < today;
           const comp = completions[a.id];
           const due = a.dueDate ? new Date(a.dueDate + 'T12:00:00').toLocaleDateString('en-GB', { weekday:'short', day:'numeric', month:'short' }) : '';
