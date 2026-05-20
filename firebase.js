@@ -34,19 +34,41 @@ export async function signOutUser() {
 }
 
 export function onAuthChange(callback) {
-  return onAuthStateChanged(auth, callback);
+  return onAuthStateChanged(auth, async user => {
+    // Every time a user is present, patch their Firestore profile.
+    // Fixes cases where displayName/email were null at popup time (managed Chromebooks).
+    if (user) {
+      try { await ensureUserProfile(user); } catch(e) { /* non-blocking */ }
+    }
+    callback(user);
+  });
 }
 
 // ── USER PROFILE ──────────────────────────────────────────────────────────────
 async function ensureUserProfile(user) {
+  // On managed Chromebooks, displayName/email can be null immediately after popup.
+  // Wait briefly and re-read from auth if needed.
+  let displayName = user.displayName;
+  let email = user.email;
+  if (!displayName || !email) {
+    await new Promise(r => setTimeout(r, 800));
+    // Re-read from the live auth object
+    const fresh = auth.currentUser;
+    if (fresh) {
+      displayName = fresh.displayName || displayName;
+      email = fresh.email || email;
+    }
+  }
+
   const ref = doc(db, 'users', user.uid);
   const snap = await getDoc(ref);
+
   if (!snap.exists()) {
     // Brand new user — create full profile
     await setDoc(ref, {
-      name: user.displayName,
-      email: user.email,
-      photoURL: user.photoURL,
+      name: displayName || null,
+      email: email || null,
+      photoURL: user.photoURL || null,
       createdAt: serverTimestamp(),
       examTarget: null,
       yearGroup: null,
@@ -54,12 +76,14 @@ async function ensureUserProfile(user) {
       classSetYear: null,
     });
   } else {
-    // Existing user — patch any missing core fields without overwriting data
+    // Existing user — patch any missing core fields without overwriting real data
     const data = snap.data();
     const patch = {};
-    if (!data.name && user.displayName)  patch.name = user.displayName;
-    if (!data.email && user.email)        patch.email = user.email;
-    if (!data.photoURL && user.photoURL)  patch.photoURL = user.photoURL;
+    if (!data.name && displayName)   patch.name = displayName;
+    if (!data.email && email)         patch.email = email;
+    if (!data.photoURL && user.photoURL) patch.photoURL = user.photoURL;
+    // Clear the backfill flag if we now have good data
+    if (data._needsProfileUpdate && (displayName || email)) patch._needsProfileUpdate = false;
     if (Object.keys(patch).length) {
       await setDoc(ref, patch, { merge: true });
     }
@@ -700,6 +724,29 @@ export async function saveLastInsight(uid, text) {
 export async function getLastInsight(uid) {
   const snap = await getDoc(doc(db, 'users', uid));
   return snap.exists() ? (snap.data().lastInsightText || null) : null;
+}
+
+// ── PROFILE BACKFILL ──────────────────────────────────────────────────────────
+// One-time utility to patch existing student documents that have null name/email.
+// Call from admin.html or browser console: backfillStudentProfiles()
+// Safe to run multiple times — only patches documents with missing fields.
+export async function backfillStudentProfiles() {
+  const snap = await getDocs(collection(db, 'users'));
+  let patched = 0;
+  for (const docSnap of snap.docs) {
+    const data = docSnap.data();
+    // Only patch if name AND email are both missing — don't overwrite real data
+    if (!data.name && !data.email) {
+      // We can't recover the name here (no auth object), but we can flag for review
+      await setDoc(doc(db, 'users', docSnap.id), {
+        name: data.name || null,
+        email: data.email || null,
+        _needsProfileUpdate: true,
+      }, { merge: true });
+      patched++;
+    }
+  }
+  return patched;
 }
 
 export { auth, db };
