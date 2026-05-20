@@ -739,7 +739,7 @@ const params     = new URLSearchParams(window.location.search);
 (function() {
   const subj = params.get('subject') || 'biology';
   const subjectPages = { biology:'biology.html', chemistry:'chemistry.html', physics:'physics.html' };
-  const backBtn = document.getElementById('back-btn');
+  const backBtn = document.getElementById('ssh-back-btn');
   if (backBtn) backBtn.href = subjectPages[subj] || 'index.html';
   // Update unified nav back link too
   const sshBack = document.getElementById('ssh-back-btn');
@@ -880,11 +880,7 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
     document.body.appendChild(overlay);
   };
 })();
-const ulBtn      = document.getElementById('useful-links-btn');
-const ulDropdown = document.getElementById('useful-links-dropdown');
-ulBtn.addEventListener('click', e => { e.stopPropagation(); ulBtn.classList.toggle('open'); ulDropdown.classList.toggle('open'); });
-document.addEventListener('click', () => { ulBtn.classList.remove('open'); ulDropdown.classList.remove('open'); });
-ulDropdown.addEventListener('click', e => e.stopPropagation());
+// useful-links-btn/dropdown now handled by ssh-nav (sshToggleLinks)
 
 // ── TABS ──────────────────────────────────────────────────────────────────────
 document.querySelectorAll('.tab-btn').forEach(btn => {
