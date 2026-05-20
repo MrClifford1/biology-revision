@@ -282,52 +282,54 @@
     });
   }
 
-  function showTopicByName(topicName, pushHistory = true) {
+  // push=true (default): add to history (prev/next buttons)
+  // push=false: called from popstate restore — don't add another entry
+  function showTopicByName(topicName, push = true) {
     const btns = document.querySelectorAll('.topic-nav-btn');
     btns.forEach(b => {
       b.classList.toggle('active', b.textContent === topicName);
     });
     renderTopic(topicName);
-    if (pushHistory) _pushTopicState(topicName);
+    _updateTopicUrl(topicName, push);
   }
 
-  // Track whether the very first topic has been shown yet.
-  // On first load we use replaceState (to set the initial URL cleanly).
-  // On every subsequent topic click we use pushState so back works correctly.
+  // Whether the initial topic has been set via replaceState yet
   let _initialTopicSet = false;
 
   window.showTopic = (topicName, btn) => {
     document.querySelectorAll('.topic-nav-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     renderTopic(topicName);
-    _pushTopicState(topicName);
+    _updateTopicUrl(topicName, true);
   };
 
-  function _pushTopicState(topicName) {
+  function _updateTopicUrl(topicName, push) {
     const url = new URL(window.location);
     url.searchParams.set('topic', topicName);
     if (!_initialTopicSet) {
-      // First topic — replace so we don't add a spurious extra entry
+      // First topic on page load — replace so we don't add a duplicate entry
       history.replaceState({ topic: topicName }, '', url);
       _initialTopicSet = true;
-    } else {
-      // Subsequent topics — push so the browser back button steps through them
+    } else if (push) {
+      // User clicked a different topic — push so back steps through topics
       history.pushState({ topic: topicName }, '', url);
+    } else {
+      // Called from popstate restore — just update URL silently
+      history.replaceState({ topic: topicName }, '', url);
     }
   }
 
-  // Handle browser back/forward — restore the correct topic without a page reload
+  // Back/forward button — restore topic from state without navigating away
   window.addEventListener('popstate', (e) => {
-    const topicName = e.state?.topic || new URLSearchParams(window.location.search).get('topic') || allTopics[0];
+    const topicName = e.state?.topic
+      || new URLSearchParams(window.location.search).get('topic')
+      || allTopics[0];
     if (topicName && allTopics.includes(topicName)) {
-      // false = don't push another history entry when restoring via back/forward
       showTopicByName(topicName, false);
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      // No topic in state — user has gone back past the first topic entry,
-      // which means they want to go back to the module page.
-      window.location.href = `module.html?subject=${subject}&module=${moduleId}`;
     }
+    // If no valid topic in state the browser will naturally navigate back to module.html
+    // — do NOT call window.location.href here as that creates the loop
   });
 
   function renderTopic(topicName) {
