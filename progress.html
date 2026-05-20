@@ -502,7 +502,6 @@
 
 <!-- ASSIGNMENTS TAB -->
 <div class="progress-panel" id="panel-assignments">
-  <div class="loading-state">Loading assignments...</div>
 </div>
 
 <!-- HISTORY TAB -->
@@ -546,6 +545,7 @@
 
   let currentUser=null, currentProfile=null, allProgress={}, upcomingAssessments=[], scheduleStatuses={};
   let _assignFilter = 'all'; // 'all' | 'active' | 'completed' | 'expired'
+  let _currentRole = 'student'; // cached after auth
   let _dataReady=false;
 
   // ── TAB SWITCHING ─────────────────────────────────────────────────────────────
@@ -604,6 +604,7 @@
         .catch(() => {});
     }
 
+    _currentRole = role;
     _dataReady = true;
     renderTab('overview');
 
@@ -1280,10 +1281,11 @@ Write a helpful, encouraging insight for this student. Mention specific modules 
   async function renderAssignments(fromCache = false) {
     const panel = document.getElementById('panel-assignments');
     if (!currentProfile?.class) {
+      const isStaff = ['teacher','admin','superadmin'].includes(_currentRole);
       panel.innerHTML = `<div class="assign-empty">
         <div style="font-size:2rem;margin-bottom:0.75rem">📋</div>
-        <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.95rem;color:var(--navy);margin-bottom:0.4rem">No class set</div>
-        <div>You need to set your class before assignments can be loaded. Use the ⚙️ settings button to set your class.</div>
+        <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.95rem;color:var(--navy);margin-bottom:0.4rem">${isStaff ? 'No assignments to display' : 'No class set'}</div>
+        <div>${isStaff ? 'Assignments are set for student classes. Visit the <a href="teacher.html" style="color:var(--navy);font-weight:700">Teacher Dashboard</a> to manage assignments.' : 'You need to set your class before assignments can be loaded. Use the ⚙️ settings button to set your class.'}</div>
       </div>`;
       return;
     }
