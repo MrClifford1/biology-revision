@@ -39,11 +39,29 @@
     /* ── CLASS SELECTOR BAR ─────────────────────────────────────────────────────── */
     .class-bar { background:white;border-bottom:1px solid var(--border);padding:0.85rem 1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap; }
     .class-bar label { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.07em;white-space:nowrap; }
-    .class-select { border:1.5px solid var(--border);border-radius:8px;padding:0.45rem 0.85rem;font-family:'Nunito Sans',sans-serif;font-size:0.875rem;color:var(--text);background:white;cursor:pointer;min-width:120px; }
-    .class-select:focus { outline:none;border-color:var(--navy); }
+    .class-btn-group { display:flex;flex-wrap:wrap;gap:0.4rem;flex:1; }
+    .class-btn { background:white;border:2px solid var(--border);border-radius:8px;padding:0.35rem 0.75rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;color:var(--subtext);cursor:pointer;transition:all 0.18s; }
+    .class-btn:hover { border-color:var(--navy);color:var(--navy); }
+    .class-btn.active { background:var(--navy);border-color:var(--navy);color:white; }
     .btn-settings { background:none;border:1.5px solid var(--border);color:var(--subtext);font-family:'Nunito',sans-serif;font-weight:700;font-size:0.8rem;padding:0.4rem 0.85rem;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:0.4rem;transition:all 0.18s; }
     .btn-settings:hover { border-color:var(--navy);color:var(--navy); }
-    .student-count { font-size:0.8rem;color:var(--subtext);margin-left:auto; }
+    .student-count { font-size:0.8rem;color:var(--subtext);margin-left:auto;white-space:nowrap; }
+
+    /* ── HISTORY MODAL ───────────────────────────────────────────────────────────── */
+    .history-modal-overlay { position:fixed;inset:0;background:rgba(15,29,61,0.6);z-index:900;display:none;align-items:center;justify-content:center; }
+    .history-modal-overlay.open { display:flex; }
+    .history-modal { background:white;border-radius:20px;padding:1.75rem;max-width:600px;width:95%;max-height:85vh;overflow-y:auto;box-shadow:0 24px 60px rgba(0,0,0,0.25); }
+    .history-modal h2 { font-family:'Nunito',sans-serif;font-weight:900;font-size:1.1rem;margin-bottom:0.3rem; }
+    .history-entry { display:flex;align-items:flex-start;gap:0.75rem;padding:0.65rem 0;border-bottom:1px solid var(--border); }
+    .history-entry:last-child { border-bottom:none; }
+    .history-icon { font-size:1.2rem;flex-shrink:0;margin-top:0.1rem; }
+    .history-info { flex:1; }
+    .history-title { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.85rem;color:var(--text); }
+    .history-meta { font-size:0.72rem;color:var(--subtext);margin-top:0.1rem; }
+    .history-score { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;padding:0.15rem 0.5rem;border-radius:100px;flex-shrink:0; }
+    .btn-history { background:none;border:1.5px solid #6366f1;color:#6366f1;border-radius:8px;padding:0.28rem 0.6rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.72rem;cursor:pointer;transition:all 0.18s;white-space:nowrap; }
+    .btn-history:hover { background:#6366f1;color:white; }
+    .time-badge { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.75rem;color:var(--subtext); }
 
     /* ── TABS ────────────────────────────────────────────────────────────────────── */
     .tabs-wrap { max-width:1100px;margin:0 auto;padding:0 1.5rem; }
@@ -218,9 +236,9 @@
   <!-- Class selector bar -->
   <div class="class-bar">
     <label>Viewing class:</label>
-    <select class="class-select" id="class-select" onchange="loadClassData()">
-      <option value="">— Select a class —</option>
-    </select>
+    <div class="class-btn-group" id="class-btn-group">
+      <span style="font-size:0.8rem;color:var(--subtext);font-style:italic">No classes set up yet</span>
+    </div>
     <button class="btn-settings" onclick="openMyClasses()">⚙️ My Classes</button>
     <span class="student-count" id="student-count"></span>
   </div>
@@ -409,7 +427,8 @@
     getStudentsByClass, getProgressForStudents,
     createAssignment, updateAssignment, getAllAssignments, deleteAssignment,
     getAssignmentCompletions,
-    isSuperAdmin, saveAssessmentDate, getAssessmentDates, deleteAssessmentDate
+    isSuperAdmin, saveAssessmentDate, getAssessmentDates, deleteAssessmentDate,
+    getActivityLog
   } from './firebase.js';
 
   // ── TIER HELPERS ────────────────────────────────────────────────────────────
@@ -494,21 +513,37 @@
 
   // ── CLASS SELECTOR ──────────────────────────────────────────────────────────
   function populateClassSelector() {
-    const sel = document.getElementById('class-select');
-    sel.innerHTML = '<option value="">— Select a class —</option>';
-    myClasses.forEach(cls => {
-      const opt = document.createElement('option');
-      opt.value = cls;
-      opt.textContent = cls;
-      sel.appendChild(opt);
-    });
+    const group = document.getElementById('class-btn-group');
+    if (!myClasses.length) {
+      group.innerHTML = '<span style="font-size:0.8rem;color:var(--subtext);font-style:italic">No classes set up yet — click ⚙️ My Classes</span>';
+    } else {
+      group.innerHTML = myClasses.map(cls =>
+        `<button class="class-btn ${selectedClass === cls ? 'active' : ''}" onclick="selectClass('${cls}')">${cls}</button>`
+      ).join('');
+    }
     adPopulateClassSel();
     adRenderModGrid();
     if (typeof assignSubjectChanged === 'function') assignSubjectChanged();
   }
 
+  window.selectClass = (cls) => {
+    // Toggle off if already selected
+    if (selectedClass === cls) {
+      selectedClass = '';
+      document.querySelectorAll('.class-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('student-count').textContent = '';
+      document.getElementById('overview-content').innerHTML = '<div class="empty-state">Select a class above to view student data.</div>';
+      document.getElementById('heatmap-content').innerHTML = '<div class="empty-state">Select a class above to view the heatmap.</div>';
+      return;
+    }
+    selectedClass = cls;
+    document.querySelectorAll('.class-btn').forEach(b => {
+      b.classList.toggle('active', b.textContent.trim() === cls);
+    });
+    loadClassData();
+  };
+
   window.loadClassData = async () => {
-    selectedClass = document.getElementById('class-select').value;
     if (!selectedClass) {
       document.getElementById('overview-content').innerHTML = '<div class="empty-state">Select a class above to view student data.</div>';
       document.getElementById('heatmap-content').innerHTML = '<div class="empty-state">Select a class above to view the heatmap.</div>';
@@ -530,12 +565,47 @@
     const uids = students.map(s => s.uid);
     const allProgress = await getProgressForStudents(uids);
 
-    renderOverview(students, allProgress);
+    // Load activity logs for time estimation
+    const allLogs = {};
+    await Promise.all(students.map(async s => {
+      try {
+        const { entries } = await getActivityLog(s.uid, 200);
+        allLogs[s.uid] = entries;
+      } catch(e) { allLogs[s.uid] = []; }
+    }));
+
+    renderOverview(students, allProgress, allLogs);
     renderHeatmap(students, allProgress);
   };
 
+  // ── ACTIVITY TIME ESTIMATES (minutes per activity type) ─────────────────────
+  const ACTIVITY_TIMES = {
+    mock: 10, paper: 15, flashcards: 5, words: 3,
+    flashcard: 5, mini_mock: 10, keywords: 3,
+  };
+
+  function estimateTimeFromLogs(logs) {
+    if (!logs || !logs.length) return 0;
+    const oneHourAgo = new Date(Date.now() - 3600000).toISOString();
+    const recent = logs.filter(e => e.timestamp && e.timestamp >= oneHourAgo);
+    return recent.reduce((sum, e) => sum + (ACTIVITY_TIMES[e.type] || 5), 0);
+  }
+
+  function formatTime(mins) {
+    if (!mins) return '<span style="color:#94a3b8">—</span>';
+    if (mins < 60) return `<span style="font-weight:800;color:var(--navy)">${mins}m</span>`;
+    return `<span style="font-weight:800;color:var(--navy)">${Math.floor(mins/60)}h ${mins%60}m</span>`;
+  }
+
+  function getStudentDisplayName(s) {
+    // Try name field first, then email prefix, then uid prefix
+    if (s.name && s.name.trim()) return s.name.trim();
+    if (s.email) return s.email.split('@')[0];
+    return `Student (${s.uid.slice(0,6)})`;
+  }
+
   // ── OVERVIEW TABLE ──────────────────────────────────────────────────────────
-  function renderOverview(students, allProgress) {
+  function renderOverview(students, allProgress, allLogs = {}) {
     const rows = students.map(s => {
       const progress = allProgress[s.uid] || {};
       let totalMocks = 0, totalScore = 0, totalPossible = 0, lastDate = null;
@@ -554,15 +624,19 @@
       const avgClass = avg === null ? 'avg-none' : avg >= 70 ? 'avg-high' : avg >= 45 ? 'avg-mid' : 'avg-low';
       const avgText = avg !== null ? avg + '%' : '—';
       const lastStr = lastDate ? lastDate.toLocaleDateString('en-GB', { day:'numeric', month:'short' }) : 'Never';
+      const displayName = getStudentDisplayName(s);
+      const timeMins = estimateTimeFromLogs(allLogs[s.uid] || []);
       return `
         <tr>
           <td>
-            <div class="student-name">${s.name || 'Unknown'}</div>
+            <div class="student-name">${displayName}</div>
             <div class="student-email">${s.email || ''}</div>
           </td>
           <td><span class="mock-count">${totalMocks}</span></td>
           <td><span class="avg-badge ${avgClass}">${avgText}</span></td>
           <td><span class="last-active">${lastStr}</span></td>
+          <td class="time-badge">${formatTime(timeMins)}</td>
+          <td><button class="btn-history" onclick="openHistoryModal('${s.uid}','${displayName.replace(/'/g,"\\'")}')">📋 History</button></td>
         </tr>`;
     }).join('');
 
@@ -574,11 +648,54 @@
             <th>Mocks Done</th>
             <th>Avg Score</th>
             <th>Last Active</th>
+            <th>Time (last hr)</th>
+            <th>Log</th>
           </tr></thead>
           <tbody>${rows}</tbody>
         </table>
       </div>`;
   }
+
+  // ── HISTORY MODAL ───────────────────────────────────────────────────────────
+  const TYPE_ICONS = { mock:'📝', mini_mock:'📝', paper:'📄', flashcards:'🃏', flashcard:'🃏', words:'🔤', keywords:'🔤' };
+  const TYPE_NAMES = { mock:'Mini Mock', mini_mock:'Mini Mock', paper:'Practice Paper', flashcards:'Flashcards', flashcard:'Flashcards', words:'Keywords Game', keywords:'Keywords Game' };
+
+  window.openHistoryModal = async (uid, name) => {
+    const modal = document.getElementById('history-modal');
+    const content = document.getElementById('history-modal-content');
+    document.getElementById('history-student-name').textContent = name;
+    content.innerHTML = '<div class="loading-state">Loading activity log...</div>';
+    modal.classList.add('open');
+
+    try {
+      const { entries } = await getActivityLog(uid, 50);
+      if (!entries.length) {
+        content.innerHTML = '<div class="empty-state">No activity recorded yet.</div>';
+        return;
+      }
+      content.innerHTML = entries.map(e => {
+        const icon = TYPE_ICONS[e.type] || '📌';
+        const typeName = TYPE_NAMES[e.type] || e.type;
+        const mod = e.moduleId ? e.moduleId.toUpperCase() : '';
+        const title = `${typeName}${mod ? ' · ' + mod : ''}${e.moduleTitle ? ' — ' + e.moduleTitle : ''}`;
+        const date = e.timestamp ? new Date(e.timestamp).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'}) : '';
+        const pct = e.pct ?? (e.total ? Math.round((e.score/e.total)*100) : null);
+        const scoreColour = pct === null ? '#94a3b8' : pct >= 70 ? '#16a34a' : pct >= 45 ? '#d97706' : '#dc2626';
+        const scoreBg = pct === null ? '#f1f5f9' : pct >= 70 ? '#dcfce7' : pct >= 45 ? '#fef3c7' : '#fee2e2';
+        const scoreText = pct !== null ? `${pct}%` : '—';
+        return `<div class="history-entry">
+          <div class="history-icon">${icon}</div>
+          <div class="history-info">
+            <div class="history-title">${title}</div>
+            <div class="history-meta">${date}</div>
+          </div>
+          <span class="history-score" style="background:${scoreBg};color:${scoreColour}">${scoreText}</span>
+        </div>`;
+      }).join('');
+    } catch(e) {
+      content.innerHTML = '<div class="empty-state">Could not load activity log.</div>';
+    }
+  };
 
   // ── RAG HEATMAP ─────────────────────────────────────────────────────────────
   function renderHeatmap(students, allProgress) {
@@ -605,7 +722,8 @@
 
     // Build data rows
     const dataRows = students.map(s => {
-      let row = `<tr><td class="name-cell">${s.name?.split(' ')[0] || s.email?.split('@')[0] || '?'}</td>`;
+      const dn = getStudentDisplayName(s);
+      let row = `<tr><td class="name-cell">${dn.split(' ')[0]}</td>`;
       subjects.forEach(sub => {
         sub.modules.forEach(modId => {
           const progress = allProgress[s.uid]?.[modId];
@@ -1207,6 +1325,22 @@
     <div style="display:flex;gap:0.5rem;justify-content:flex-end;margin-top:1rem">
       <button class="btn-modal-close" onclick="document.getElementById('ad-copy-modal').classList.remove('open')">Cancel</button>
       <button class="btn-save-classes" onclick="adCopyConfirm()">Copy to selected</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── HISTORY MODAL ──────────────────────────────────────────────────────────── -->
+<div class="history-modal-overlay" id="history-modal">
+  <div class="history-modal">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
+      <div>
+        <h2>📋 Activity History</h2>
+        <div id="history-student-name" style="font-size:0.8rem;color:var(--subtext);margin-top:0.1rem"></div>
+      </div>
+      <button class="btn-modal-close" onclick="document.getElementById('history-modal').classList.remove('open')">✕ Close</button>
+    </div>
+    <div id="history-modal-content">
+      <div class="loading-state">Loading...</div>
     </div>
   </div>
 </div>
