@@ -2156,40 +2156,40 @@ function pickClozeParagraph(topicName) {
 }
 
 // Find key terms that appear in the paragraph
+// Only uses proper keyTerms from the JSON — no fallback word extraction
+// Prefers longer/more specific terms, caps at 5
 function findBlankableTerms(paragraph, topicData) {
-  const terms = (topicData.keyTerms || []).map(kt => kt.term).filter(t => t && t.length > 2);
+  const terms = (topicData.keyTerms || [])
+    .map(kt => kt.term)
+    .filter(t => t && t.length > 3) // min 4 chars — skip tiny words
+    .sort((a, b) => b.length - a.length); // longest first to avoid partial overlap
+
   const found = [];
+  const usedRanges = []; // track character positions already blanked
 
   terms.forEach(term => {
-    // Try exact word boundary match first
+    if (found.length >= 5) return;
     try {
-      const re = new RegExp('\\b' + term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i');
-      if (re.test(paragraph)) { found.push(term); return; }
+      const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const re = new RegExp('\\b' + escaped + '\\b', 'i');
+      const match = re.exec(paragraph);
+      if (match) {
+        // Check this range doesn't overlap with an already-blanked term
+        const start = match.index;
+        const end = start + match[0].length;
+        const overlaps = usedRanges.some(([s,e]) => start < e && end > s);
+        if (!overlaps) {
+          found.push(term);
+          usedRanges.push([start, end]);
+        }
+      } else if (term.includes(' ') && paragraph.toLowerCase().includes(term.toLowerCase())) {
+        // Multi-word term fallback
+        found.push(term);
+      }
     } catch(e) {}
-    // Fallback: simple case-insensitive includes for multi-word terms
-    if (term.includes(' ') && paragraph.toLowerCase().includes(term.toLowerCase())) {
-      found.push(term);
-    }
   });
 
-  // If still fewer than 3, extract meaningful words from paragraph as fallback
-  // Look for words 6+ chars that aren't common English words
-  if (found.length < 3) {
-    const commonWords = new Set(['because','through','between','during','within','without','another','however','therefore','although','which','where','their','there','these','those','about','after','before','should','would','could','might','other','first','second','called','found','using','make','made','each','such','both','when','then','from','into','that','with','this','have','been','they','more','also','than','over','under','only','very','most','some','many','will','can','are','not','all','any','but','for','and','the','was','its','has','may','new','part','used','type','cell','gene','body','mass','rate','form','work','time','area','size','role','term','base','point','group','level','number','system','process','contain','include','produce','require','involve','result','allow','cause','effect','increase','decrease','contain']);
-    const words = paragraph.match(/\b[A-Za-z]{5,}\b/g) || [];
-    const seen = new Set(found.map(t => t.toLowerCase()));
-    words.forEach(w => {
-      if (!commonWords.has(w.toLowerCase()) && !seen.has(w.toLowerCase()) && found.length + (found.length < 3 ? 1 : 0) <= 8) {
-        // Check it appears at least once and isn't already found
-        if (!seen.has(w.toLowerCase())) {
-          found.push(w);
-          seen.add(w.toLowerCase());
-        }
-      }
-    });
-  }
-
-  return found.slice(0, 8); // max 8 blanks
+  return found; // already capped at 5
 }
 
 // Build cloze HTML with blanks
