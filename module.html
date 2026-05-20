@@ -2125,12 +2125,23 @@ function pickClozeParagraph(topicName) {
   const topicData = rd.topics[topicName];
   if (!topicData) return null;
 
-  // Gather candidate paragraphs: intro + section texts
+  // Gather candidate paragraphs: intro + section texts + joined bullet points
   const candidates = [];
-  if (topicData.intro && topicData.intro.length > 60) candidates.push(topicData.intro);
+  if (topicData.intro && topicData.intro.length > 40) candidates.push(topicData.intro);
   (topicData.sections || []).forEach(s => {
-    if (s.text && s.text.length > 60) candidates.push(s.text);
+    if (s.text && s.text.length > 40) candidates.push(s.text);
+    // Join bullet points into a paragraph
+    if (s.points && s.points.length >= 2) {
+      const joined = s.points.join('. ') + '.';
+      if (joined.length > 40) candidates.push(joined);
+    }
+    // Join numbered points too
+    if (s.numbered && s.numbered.length >= 2) {
+      const joined = s.numbered.join('. ') + '.';
+      if (joined.length > 40) candidates.push(joined);
+    }
   });
+
   if (!candidates.length) return null;
 
   // Pick longest paragraph for richest content
@@ -2142,11 +2153,36 @@ function pickClozeParagraph(topicName) {
 function findBlankableTerms(paragraph, topicData) {
   const terms = (topicData.keyTerms || []).map(kt => kt.term).filter(t => t && t.length > 2);
   const found = [];
+
   terms.forEach(term => {
-    const re = new RegExp('\\b' + term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i');
-    if (re.test(paragraph)) found.push(term);
+    // Try exact word boundary match first
+    try {
+      const re = new RegExp('\\b' + term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i');
+      if (re.test(paragraph)) { found.push(term); return; }
+    } catch(e) {}
+    // Fallback: simple case-insensitive includes for multi-word terms
+    if (term.includes(' ') && paragraph.toLowerCase().includes(term.toLowerCase())) {
+      found.push(term);
+    }
   });
-  // Also check section points for capitalized key words
+
+  // If still fewer than 3, extract meaningful words from paragraph as fallback
+  // Look for words 6+ chars that aren't common English words
+  if (found.length < 3) {
+    const commonWords = new Set(['because','through','between','during','within','without','another','however','therefore','although','which','where','their','there','these','those','about','after','before','should','would','could','might','other','first','second','called','found','using','make','made','each','such','both','when','then','from','into','that','with','this','have','been','they','more','also','than','over','under','only','very','most','some','many','will','can','are','not','all','any','but','for','and','the','was','its','has','may','new','part','used','type','cell','gene','body','mass','rate','form','work','time','area','size','role','term','base','point','group','level','number','system','process','contain','include','produce','require','involve','result','allow','cause','effect','increase','decrease','contain']);
+    const words = paragraph.match(/\b[A-Za-z]{5,}\b/g) || [];
+    const seen = new Set(found.map(t => t.toLowerCase()));
+    words.forEach(w => {
+      if (!commonWords.has(w.toLowerCase()) && !seen.has(w.toLowerCase()) && found.length + (found.length < 3 ? 1 : 0) <= 8) {
+        // Check it appears at least once and isn't already found
+        if (!seen.has(w.toLowerCase())) {
+          found.push(w);
+          seen.add(w.toLowerCase());
+        }
+      }
+    });
+  }
+
   return found.slice(0, 8); // max 8 blanks
 }
 
@@ -2198,7 +2234,18 @@ window.startCloze = () => {
 
   let topicName;
   if (_clozeSelectedTopic === '__random__') {
-    topicName = topics[Math.floor(Math.random() * topics.length)];
+    // Pick topic with most blanks available rather than purely random
+    // This avoids sparse topics that would fail the minimum check
+    let bestTopic = topics[0];
+    let bestCount = 0;
+    topics.forEach(t => {
+      const para = pickClozeParagraph(t);
+      if (!para) return;
+      const tData = rd.topics[t];
+      const count = findBlankableTerms(para, tData).length;
+      if (count > bestCount) { bestCount = count; bestTopic = t; }
+    });
+    topicName = bestTopic;
   } else {
     topicName = _clozeSelectedTopic;
   }
@@ -2209,7 +2256,7 @@ window.startCloze = () => {
   if (!paragraph) { alert('Not enough revision content for this topic yet.'); return; }
 
   const terms = findBlankableTerms(paragraph, topicData);
-  if (terms.length < 2) { alert('Not enough key terms found in this topic\'s content. Try a different topic.'); return; }
+  if (terms.length < 3) { alert('Not enough key terms found in this topic\'s content. Try a different topic or use Random mode which picks the richest topic automatically.'); return; }
 
   const diff = _clozeSelectedDiff;
   _clozeSelectedChip = null;
