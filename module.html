@@ -1959,10 +1959,10 @@ loadQuestions();
 <!-- ── FIREBASE ───────────────────────────────────────────────────────────────── -->
 <script type="module">
   import {
+ onAuthChange, saveRAG, loadRAG, saveMockScore, getModuleScheduleStatus, getUserProfile, logActivity, saveAssignmentCompletion } from './firebase.js';
 
   // ── SHARED NAV INIT ─────────────────────────────────────────────────────────
   function sshInitNav(user, role) {
-    // Show staff badges based on role
     const isTeacher    = ['teacher','admin','superadmin'].includes(role);
     const isAdmin      = ['admin','superadmin'].includes(role);
     const isSuperAdmin = role === 'superadmin';
@@ -1972,13 +1972,11 @@ loadQuestions();
     if (t) t.style.display = isTeacher    ? 'inline-flex' : 'none';
     if (a) a.style.display = isAdmin      ? 'inline-flex' : 'none';
     if (s) s.style.display = isSuperAdmin ? 'inline-flex' : 'none';
-    // Hide teacher/admin/super badge on their own page to avoid self-links
     const page = window.location.pathname.split('/').pop();
     if (page === 'teacher.html'    && t) t.style.display = 'none';
     if (page === 'admin.html'      && a) a.style.display = 'none';
     if (page === 'superadmin.html' && s) s.style.display = 'none';
   }
-
   window.sshToggleLinks = (e) => {
     e.stopPropagation();
     const btn = document.getElementById('ssh-ul-btn');
@@ -1994,13 +1992,12 @@ loadQuestions();
     if (dd) dd.classList.remove('open');
     if (btn) btn.style.color = '';
   });
-
   window.sshSignOut = async () => {
     try { await signOutUser(); } catch(e) {}
     window.location.href = 'login.html';
   };
   // ── END SHARED NAV ──────────────────────────────────────────────────────────
- onAuthChange, saveRAG, loadRAG, saveMockScore, getModuleScheduleStatus, getUserProfile, logActivity, saveAssignmentCompletion } from './firebase.js';
+
 
   // Detect if opened from an assignment link
   const _assignmentId = new URLSearchParams(window.location.search).get('assignment') || null;

@@ -333,10 +333,10 @@
 
 <script type="module">
   import {
+ onAuthChange, loadRAG, saveRAG } from './firebase.js';
 
   // ── SHARED NAV INIT ─────────────────────────────────────────────────────────
   function sshInitNav(user, role) {
-    // Show staff badges based on role
     const isTeacher    = ['teacher','admin','superadmin'].includes(role);
     const isAdmin      = ['admin','superadmin'].includes(role);
     const isSuperAdmin = role === 'superadmin';
@@ -346,13 +346,11 @@
     if (t) t.style.display = isTeacher    ? 'inline-flex' : 'none';
     if (a) a.style.display = isAdmin      ? 'inline-flex' : 'none';
     if (s) s.style.display = isSuperAdmin ? 'inline-flex' : 'none';
-    // Hide teacher/admin/super badge on their own page to avoid self-links
     const page = window.location.pathname.split('/').pop();
     if (page === 'teacher.html'    && t) t.style.display = 'none';
     if (page === 'admin.html'      && a) a.style.display = 'none';
     if (page === 'superadmin.html' && s) s.style.display = 'none';
   }
-
   window.sshToggleLinks = (e) => {
     e.stopPropagation();
     const btn = document.getElementById('ssh-ul-btn');
@@ -368,13 +366,12 @@
     if (dd) dd.classList.remove('open');
     if (btn) btn.style.color = '';
   });
-
   window.sshSignOut = async () => {
     try { await signOutUser(); } catch(e) {}
     window.location.href = 'login.html';
   };
   // ── END SHARED NAV ──────────────────────────────────────────────────────────
- onAuthChange, loadRAG, saveRAG } from './firebase.js';
+
 
   const params = new URLSearchParams(window.location.search);
   const subject = params.get('subject') || 'biology';
