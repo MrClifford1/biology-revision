@@ -1280,6 +1280,7 @@ Write a helpful, encouraging insight for this student. Mention specific modules 
 
   async function renderAssignments(fromCache = false) {
     const panel = document.getElementById('panel-assignments');
+    try {
     if (!currentProfile?.class) {
       const isStaff = ['teacher','admin','superadmin'].includes(_currentRole);
       panel.innerHTML = `<div class="assign-empty">
@@ -1292,20 +1293,54 @@ Write a helpful, encouraging insight for this student. Mention specific modules 
 
     if (!fromCache) {
       panel.innerHTML = '<div class="loading-state">Loading assignments...</div>';
-      try {
-        const today = new Date().toISOString().split('T')[0];
-        const assignments = await getActiveAssignmentsForClass(currentProfile.class);
-        const completions = {};
-        await Promise.all(assignments.map(async a => {
-          try { completions[a.id] = await getMyAssignmentCompletion(a.id, currentUser.uid); }
-          catch(e) { completions[a.id] = null; }
+
+      // Load live assignments + any completed-but-deleted ones from user's snapshot
+      const [assignments, userSnap] = await Promise.all([
+        getActiveAssignmentsForClass(currentProfile.class),
+        getUserProfile(currentUser.uid),
+      ]);
+
+      // Restore deleted assignments the student has completed
+      const savedCompletions = userSnap?.completedAssignments || {};
+      const liveIds = new Set(assignments.map(a => a.id));
+      const deletedButCompleted = Object.entries(savedCompletions)
+        .filter(([id]) => !liveIds.has(id))
+        .map(([id, snap]) => ({
+          ...snap.assignmentData,
+          id,
+          _deletedByTeacher: true,
         }));
-        _assignmentsCache = assignments;
-        _completionsCache = completions;
-      } catch(e) {
-        panel.innerHTML = '<div class="assign-empty">Could not load assignments. Try again.</div>';
-        return;
-      }
+
+      // Fetch live completions
+      const completions = { ...savedCompletions }; // start with saved
+      await Promise.all(assignments.map(async a => {
+        try {
+          const comp = await getMyAssignmentCompletion(a.id, currentUser.uid);
+          completions[a.id] = comp;
+          // Save snapshot of this completion + assignment data to user doc for persistence
+          if (comp) {
+            try {
+              const { db } = await import('./firebase.js');
+              const { doc, setDoc } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js');
+              await setDoc(doc(db, 'users', currentUser.uid), {
+                completedAssignments: {
+                  [a.id]: {
+                    ...comp,
+                    assignmentData: {
+                      id: a.id, title: a.title, subject: a.subject,
+                      moduleId: a.moduleId, type: a.type, dueDate: a.dueDate,
+                      note: a.note, link: a.link, customText: a.customText,
+                    }
+                  }
+                }
+              }, { merge: true });
+            } catch(e) { /* non-blocking */ }
+          }
+        } catch(e) { completions[a.id] = null; }
+      }));
+
+      _assignmentsCache = [...assignments, ...deletedButCompleted];
+      _completionsCache = completions;
     }
 
     const today = new Date().toISOString().split('T')[0];
@@ -1364,9 +1399,10 @@ Write a helpful, encouraging insight for this student. Mention specific modules 
       const subjLabel = a.subject ? a.subject.charAt(0).toUpperCase() + a.subject.slice(1) : '';
 
       // Status label
-      const labelText = a.isExpired ? 'Expired' : a.comp ? 'Completed ✅' : 'Active Assignment';
-      const labelClass = a.isExpired ? 'lbl-expired' : a.comp ? 'lbl-completed' : 'lbl-active';
-      const cardClass = a.isExpired ? 'status-expired' : a.comp ? 'status-completed' : 'status-active';
+      const wasDeleted = a._deletedByTeacher;
+      const labelText = wasDeleted ? 'Completed ✅ (removed by teacher)' : a.isExpired ? 'Expired' : a.comp ? 'Completed ✅' : 'Active Assignment';
+      const labelClass = a.isExpired || wasDeleted ? (a.comp || wasDeleted ? 'lbl-completed' : 'lbl-expired') : a.comp ? 'lbl-completed' : 'lbl-active';
+      const cardClass = wasDeleted ? 'status-completed' : a.isExpired ? 'status-expired' : a.comp ? 'status-completed' : 'status-active';
 
       // Urgency
       let urgencyText = '', urgencyClass = '';
@@ -1409,6 +1445,15 @@ Write a helpful, encouraging insight for this student. Mention specific modules 
     }).join('');
 
     panel.innerHTML = filterHtml + `<div class="section-title" style="margin-bottom:0.75rem">📋 My Assignments</div>` + cardsHtml;
+
+    } catch(err) {
+      console.error('[Assignments]', err);
+      panel.innerHTML = `<div class="assign-empty">
+        <div style="font-size:2rem;margin-bottom:0.75rem">⚠️</div>
+        <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.95rem;color:var(--navy);margin-bottom:0.4rem">Could not load assignments</div>
+        <div>There was a problem fetching your assignments. Please try refreshing the page.</div>
+      </div>`;
+    }
   }
 
   window.handleSignOut = async () => { await signOutUser(); window.location.href='index.html'; };
