@@ -388,6 +388,39 @@
     .review-wrong   { color: #dc2626; }
     .review-partial { color: #d97706; }
 
+    /* ── ASSIGNMENTS TAB ────────────────────────────────────────────────────── */
+    .assign-card { background: white; border: 1.5px solid var(--border); border-radius: 14px; padding: 1.1rem 1.25rem; margin-bottom: 0.75rem; display: flex; align-items: flex-start; gap: 1rem; flex-wrap: wrap; transition: border-color 0.15s; }
+    .assign-card:hover { border-color: #94a3b8; }
+    .assign-card.status-active { border-left: 4px solid var(--gold); }
+    .assign-card.status-completed { border-left: 4px solid #22c55e; }
+    .assign-card.status-expired { border-left: 4px solid #ef4444; opacity: 0.8; }
+    .assign-info { flex: 1; min-width: 0; }
+    .assign-label { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.2rem; }
+    .assign-label.lbl-active { color: var(--gold); }
+    .assign-label.lbl-completed { color: #16a34a; }
+    .assign-label.lbl-expired { color: #ef4444; }
+    .assign-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.95rem; color: var(--navy); }
+    .assign-meta { font-size: 0.75rem; color: var(--subtext); margin-top: 0.25rem; display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center; }
+    .assign-type-pill { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.65rem; padding: 0.12rem 0.45rem; border-radius: 100px; background: #e0e7ff; color: #4338ca; }
+    .assign-urgency { font-weight: 700; }
+    .assign-urgency.urgent { color: #dc2626; }
+    .assign-urgency.soon { color: #d97706; }
+    .assign-urgency.fine { color: #16a34a; }
+    .assign-urgency.expired { color: #ef4444; }
+    .assign-score { text-align: right; flex-shrink: 0; }
+    .assign-score-num { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem; color: #16a34a; }
+    .assign-score-sub { font-size: 0.7rem; color: var(--subtext); margin-top: 0.1rem; }
+    .btn-assign-go { display: inline-flex; align-items: center; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.85rem; padding: 0.55rem 1.25rem; border-radius: 10px; text-decoration: none; border: none; cursor: pointer; transition: opacity 0.15s; white-space: nowrap; flex-shrink: 0; align-self: center; }
+    .btn-assign-go:hover { opacity: 0.85; }
+    .btn-go-active { background: var(--navy); color: white; }
+    .btn-go-retry { background: #22c55e; color: white; }
+    .btn-go-late { background: #ef4444; color: white; }
+    .assign-filter-row { display: flex; gap: 0.4rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .assign-filter-btn { border: 1.5px solid var(--border); background: white; border-radius: 8px; padding: 0.3rem 0.75rem; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.78rem; color: var(--subtext); cursor: pointer; transition: all 0.15s; }
+    .assign-filter-btn:hover { border-color: var(--navy); color: var(--navy); }
+    .assign-filter-btn.active { background: var(--navy); border-color: var(--navy); color: white; }
+    .assign-empty { background: white; border: 1.5px solid var(--border); border-radius: 14px; padding: 2.5rem 2rem; text-align: center; color: var(--subtext); font-size: 0.9rem; }
+
     /* ── SETTINGS DRAWER ────────────────────────────────────────────────────── */
     .settings-overlay { position:fixed;inset:0;background:rgba(15,29,61,0.5);z-index:900;backdrop-filter:blur(2px); }
     .settings-overlay.hidden { display:none; }
@@ -443,6 +476,7 @@
     <button class="progress-tab" onclick="switchTab('insights',this)">💡 Insights</button>
     <button class="progress-tab" onclick="switchTab('upcoming',this)">📅 Upcoming</button>
     <button class="progress-tab" onclick="switchTab('history',this)">🕐 History</button>
+    <button class="progress-tab" onclick="switchTab('assignments',this)">📋 Assignments</button>
   </div>
 </div>
 
@@ -466,6 +500,11 @@
   <div class="loading-state" id="upcoming-loading">Loading upcoming assessments...</div>
 </div>
 
+<!-- ASSIGNMENTS TAB -->
+<div class="progress-panel" id="panel-assignments">
+  <div class="loading-state">Loading assignments...</div>
+</div>
+
 <!-- HISTORY TAB -->
 <div class="progress-panel" id="panel-history">
   <div class="loading-state" id="history-loading">Loading activity history...</div>
@@ -477,7 +516,8 @@
     getAllProgress, saveClass, getUserRole,
     getUpcomingAssessmentsForStudent, getModuleScheduleStatus,
     saveInsightTimestamp, getInsightTimestamp, getActivityLog,
-    saveLastInsight, getLastInsight
+    saveLastInsight, getLastInsight,
+    getActiveAssignmentsForClass, getMyAssignmentCompletion
   } from './firebase.js';
 
   const MODULE_META = {
@@ -505,6 +545,7 @@
   }
 
   let currentUser=null, currentProfile=null, allProgress={}, upcomingAssessments=[], scheduleStatuses={};
+  let _assignFilter = 'all'; // 'all' | 'active' | 'completed' | 'expired'
   let _dataReady=false;
 
   // ── TAB SWITCHING ─────────────────────────────────────────────────────────────
@@ -517,11 +558,12 @@
   };
 
   function renderTab(name) {
-    if (name==='overview') renderOverview();
-    if (name==='modules')  renderModules();
-    if (name==='insights') renderInsights();
-    if (name==='upcoming') renderUpcoming();
-    if (name==='history')  renderHistory();
+    if (name==='overview')     renderOverview();
+    if (name==='modules')      renderModules();
+    if (name==='insights')     renderInsights();
+    if (name==='upcoming')     renderUpcoming();
+    if (name==='history')      renderHistory();
+    if (name==='assignments')  renderAssignments();
   }
 
   // History state
@@ -1221,6 +1263,151 @@ Write a helpful, encouraging insight for this student. Mention specific modules 
   };
 
   window.closeReview = () => { document.getElementById('review-overlay').style.display = 'none'; };
+
+  // ── ASSIGNMENTS TAB ─────────────────────────────────────────────────────────
+  const TYPE_LABELS_A = { mini_mock:'Mini Mock', flashcards:'Flashcards', keywords:'Keywords Game', paper:'Practice Paper', custom:'Custom Task' };
+
+  window.setAssignFilter = (filter, btn) => {
+    _assignFilter = filter;
+    document.querySelectorAll('.assign-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderAssignments(true); // re-render without reloading
+  };
+
+  let _assignmentsCache = null;
+  let _completionsCache = {};
+
+  async function renderAssignments(fromCache = false) {
+    const panel = document.getElementById('panel-assignments');
+    if (!currentProfile?.class) {
+      panel.innerHTML = `<div class="assign-empty">
+        <div style="font-size:2rem;margin-bottom:0.75rem">📋</div>
+        <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.95rem;color:var(--navy);margin-bottom:0.4rem">No class set</div>
+        <div>You need to set your class before assignments can be loaded. Use the ⚙️ settings button to set your class.</div>
+      </div>`;
+      return;
+    }
+
+    if (!fromCache) {
+      panel.innerHTML = '<div class="loading-state">Loading assignments...</div>';
+      try {
+        const today = new Date().toISOString().split('T')[0];
+        const assignments = await getActiveAssignmentsForClass(currentProfile.class);
+        const completions = {};
+        await Promise.all(assignments.map(async a => {
+          try { completions[a.id] = await getMyAssignmentCompletion(a.id, currentUser.uid); }
+          catch(e) { completions[a.id] = null; }
+        }));
+        _assignmentsCache = assignments;
+        _completionsCache = completions;
+      } catch(e) {
+        panel.innerHTML = '<div class="assign-empty">Could not load assignments. Try again.</div>';
+        return;
+      }
+    }
+
+    const today = new Date().toISOString().split('T')[0];
+    const all = _assignmentsCache || [];
+
+    if (!all.length) {
+      panel.innerHTML = `<div class="assign-empty">
+        <div style="font-size:2rem;margin-bottom:0.75rem">🎉</div>
+        <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.95rem;color:var(--navy);margin-bottom:0.4rem">No assignments yet</div>
+        <div>Your teacher hasn't set any assignments yet. Check back soon!</div>
+      </div>`;
+      return;
+    }
+
+    // Categorise
+    const categorised = all.map(a => {
+      const isExpired = a.dueDate && a.dueDate < today;
+      const comp = _completionsCache[a.id];
+      const status = isExpired ? 'expired' : comp ? 'completed' : 'active';
+      return { ...a, isExpired, comp, status };
+    });
+
+    // Filter
+    const filtered = _assignFilter === 'all'
+      ? categorised
+      : categorised.filter(a => a.status === _assignFilter);
+
+    // Counts for filter buttons
+    const counts = { all: categorised.length, active: 0, completed: 0, expired: 0 };
+    categorised.forEach(a => counts[a.status]++);
+
+    // Sort: active first, then completed, then expired — within each group by due date
+    const order = { active: 0, completed: 1, expired: 2 };
+    filtered.sort((a, b) => {
+      if (order[a.status] !== order[b.status]) return order[a.status] - order[b.status];
+      return (a.dueDate || '').localeCompare(b.dueDate || '');
+    });
+
+    const filterHtml = `<div class="assign-filter-row">
+      <button class="assign-filter-btn ${_assignFilter==='all'?'active':''}" onclick="setAssignFilter('all',this)">All (${counts.all})</button>
+      <button class="assign-filter-btn ${_assignFilter==='active'?'active':''}" onclick="setAssignFilter('active',this)">Active (${counts.active})</button>
+      <button class="assign-filter-btn ${_assignFilter==='completed'?'active':''}" onclick="setAssignFilter('completed',this)">Completed ✅ (${counts.completed})</button>
+      <button class="assign-filter-btn ${_assignFilter==='expired'?'active':''}" onclick="setAssignFilter('expired',this)">Expired (${counts.expired})</button>
+    </div>`;
+
+    if (!filtered.length) {
+      panel.innerHTML = filterHtml + `<div class="assign-empty">No assignments in this category.</div>`;
+      return;
+    }
+
+    const cardsHtml = filtered.map(a => {
+      const daysLeft = a.dueDate ? Math.ceil((new Date(a.dueDate) - new Date()) / 86400000) : null;
+      const due = a.dueDate ? new Date(a.dueDate + 'T12:00:00').toLocaleDateString('en-GB', { weekday:'short', day:'numeric', month:'short' }) : '';
+      const typeLabel = TYPE_LABELS_A[a.type] || a.type;
+      const modLabel = a.moduleId ? a.moduleId.toUpperCase() + ' — ' : '';
+      const subjLabel = a.subject ? a.subject.charAt(0).toUpperCase() + a.subject.slice(1) : '';
+
+      // Status label
+      const labelText = a.isExpired ? 'Expired' : a.comp ? 'Completed ✅' : 'Active Assignment';
+      const labelClass = a.isExpired ? 'lbl-expired' : a.comp ? 'lbl-completed' : 'lbl-active';
+      const cardClass = a.isExpired ? 'status-expired' : a.comp ? 'status-completed' : 'status-active';
+
+      // Urgency
+      let urgencyText = '', urgencyClass = '';
+      if (a.isExpired) { urgencyText = '🔴 Expired'; urgencyClass = 'expired'; }
+      else if (daysLeft === 0) { urgencyText = '🔴 Due today'; urgencyClass = 'urgent'; }
+      else if (daysLeft === 1) { urgencyText = '🟡 Due tomorrow'; urgencyClass = 'soon'; }
+      else if (daysLeft <= 3) { urgencyText = `🟡 Due ${due}`; urgencyClass = 'soon'; }
+      else if (due) { urgencyText = `🟢 Due ${due}`; urgencyClass = 'fine'; }
+
+      // Completion badge
+      const scoreBadge = a.comp ? `<div class="assign-score">
+        <div class="assign-score-num">${a.comp.bestPct || 0}%</div>
+        <div class="assign-score-sub">Best score</div>
+        <div class="assign-score-sub">${a.comp.attempts} attempt${a.comp.attempts !== 1 ? 's' : ''}</div>
+      </div>` : '';
+
+      // Go button
+      let goBtn = '';
+      if (a.type === 'custom') {
+        goBtn = a.customText ? `<span style="font-size:0.78rem;color:var(--subtext);font-weight:600;flex-shrink:0;max-width:200px;align-self:center">${a.customText}</span>` : '';
+      } else if (a.link && a.link !== '#') {
+        const btnClass = a.isExpired ? 'btn-go-late' : a.comp ? 'btn-go-retry' : 'btn-go-active';
+        const btnText = a.comp ? 'Try again →' : a.isExpired ? 'Late submission →' : 'Go →';
+        goBtn = `<a href="${a.link}" class="btn-assign-go ${btnClass}">${btnText}</a>`;
+      }
+
+      return `<div class="assign-card ${cardClass}">
+        <div class="assign-info">
+          <div class="assign-label ${labelClass}">${labelText}</div>
+          <div class="assign-title">${subjLabel ? subjLabel + ' — ' : ''}${modLabel}${a.title}</div>
+          ${a.note ? `<div style="font-size:0.78rem;color:var(--subtext);margin-top:0.2rem;font-style:italic">${a.note}</div>` : ''}
+          <div class="assign-meta">
+            <span class="assign-type-pill">${typeLabel}</span>
+            ${urgencyText ? `<span class="assign-urgency ${urgencyClass}">${urgencyText}</span>` : ''}
+          </div>
+        </div>
+        ${scoreBadge}
+        ${goBtn}
+      </div>`;
+    }).join('');
+
+    panel.innerHTML = filterHtml + `<div class="section-title" style="margin-bottom:0.75rem">📋 My Assignments</div>` + cardsHtml;
+  }
 
   window.handleSignOut = async () => { await signOutUser(); window.location.href='index.html'; };
 
