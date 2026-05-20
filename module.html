@@ -390,6 +390,8 @@
       border-bottom: 1px solid #f1f5f9; font-size: 0.85rem;
     }
     .cloze-result-row:last-child { border-bottom: none; }
+    .cloze-blank.drag-over { background: #fef9c3; border-color: var(--gold); transform: scale(1.05); }
+    .cloze-word-chip.dragging { opacity: 0.4; transform: scale(0.95); }
     /* ── END CLOZE ──────────────────────────────────────────────────────────────── */
 
     /* ── SHARED UNIFIED NAV ──────────────────────────────────────────────────── */
@@ -2217,9 +2219,13 @@ function buildClozeHtml(paragraph, terms, mode) {
   let html = text;
   blanks.forEach((b, i) => {
     if (mode === 'easy') {
-      // Clickable blank for drag/drop style
+      // Drop target blank
       html = html.replace(`__BLANK_${i}__`,
-        `<span class="cloze-blank" id="${b.id}" data-index="${i}" onclick="clickBlank(this)">_____</span>`);
+        `<span class="cloze-blank" id="${b.id}" data-index="${i}"
+          ondragover="event.preventDefault();this.classList.add('drag-over')"
+          ondragleave="this.classList.remove('drag-over')"
+          ondrop="dropOnBlank(event,this)"
+          onclick="clickBlank(this)">_____</span>`);
     } else {
       // Type-in input
       html = html.replace(`__BLANK_${i}__`,
@@ -2329,13 +2335,46 @@ window.hideClozeParaAndStart = () => {
     // Build word bank — shuffled
     const shuffled = [..._clozeBlanks].sort(() => Math.random() - 0.5);
     wordsList.innerHTML = shuffled.map(b =>
-      `<button class="cloze-word-chip" id="chip-${b.index}" data-index="${b.index}" onclick="clickChip(this)">${b.term}</button>`
+      `<button class="cloze-word-chip" id="chip-${b.index}" data-index="${b.index}"
+        draggable="true"
+        ondragstart="dragChipStart(event,this)"
+        ondragend="dragChipEnd(this)"
+        onclick="clickChip(this)">${b.term}</button>`
     ).join('');
     wordBank.style.display = 'block';
   }
 };
 
-// Easy mode — tap chip then tap blank
+// ── DRAG AND DROP (Easy mode) ─────────────────────────────────────────────────
+let _dragChipIndex = null;
+
+window.dragChipStart = (e, chipEl) => {
+  _dragChipIndex = chipEl.dataset.index;
+  _clozeSelectedChip = chipEl.dataset.index;
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/plain', chipEl.dataset.index);
+  setTimeout(() => chipEl.classList.add('dragging'), 0);
+};
+
+window.dragChipEnd = (chipEl) => {
+  chipEl.classList.remove('dragging');
+};
+
+window.dropOnBlank = (e, blankEl) => {
+  e.preventDefault();
+  blankEl.classList.remove('drag-over');
+  const chipIdx = e.dataTransfer.getData('text/plain') || _dragChipIndex;
+  if (chipIdx !== null && chipIdx !== undefined) {
+    fillBlankWithChip(blankEl.dataset.index, chipIdx);
+  }
+  _dragChipIndex = null;
+};
+
+// Also allow dropping a filled blank back to word bank area
+// by clicking a filled blank to un-fill it
+// (handled in clickBlank below)
+
+// Easy mode — tap chip then tap blank (fallback for mobile)
 window.clickChip = (chipEl) => {
   // Deselect previous chip
   document.querySelectorAll('.cloze-word-chip').forEach(c => c.classList.remove('selected-chip'));
@@ -2353,10 +2392,22 @@ window.clickChip = (chipEl) => {
 
 window.clickBlank = (blankEl) => {
   const idx = blankEl.dataset.index;
+  // If blank is already filled, click un-fills it and returns word to bank
+  if (blankEl.dataset.filledWith !== undefined && blankEl.classList.contains('filled')) {
+    const chipIdx = blankEl.dataset.filledWith;
+    const chip = document.getElementById(`chip-${chipIdx}`);
+    if (chip) { chip.classList.remove('used'); chip.classList.remove('selected-chip'); }
+    blankEl.textContent = '_____';
+    blankEl.classList.remove('filled', 'selected');
+    delete blankEl.dataset.filledWith;
+    _clozeSelectedChip = null;
+    _clozeSelectedBlank = null;
+    return;
+  }
   if (_clozeSelectedChip !== null) {
     fillBlankWithChip(idx, _clozeSelectedChip);
   } else {
-    // Select blank
+    // Select blank (mobile tap-first flow)
     document.querySelectorAll('.cloze-blank').forEach(b => b.classList.remove('selected'));
     blankEl.classList.add('selected');
     _clozeSelectedBlank = idx;
