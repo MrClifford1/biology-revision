@@ -62,6 +62,9 @@
     .btn-history { background:none;border:1.5px solid #6366f1;color:#6366f1;border-radius:8px;padding:0.28rem 0.6rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.72rem;cursor:pointer;transition:all 0.18s;white-space:nowrap; }
     .btn-history:hover { background:#6366f1;color:white; }
     .time-badge { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.75rem;color:var(--subtext); }
+    @keyframes ssh-refresh-pulse { 0%{opacity:1} 50%{opacity:0.4} 100%{opacity:1} }
+    .refreshing { animation: ssh-refresh-pulse 1s ease-in-out; }
+    .refresh-spinner { display:inline-block;width:10px;height:10px;border:2px solid rgba(100,116,139,0.3);border-top-color:#64748b;border-radius:50%;animation:spin 0.7s linear infinite;margin-right:0.3rem;vertical-align:middle; }
 
     /* ── TABS ────────────────────────────────────────────────────────────────────── */
     .tabs-wrap { max-width:1100px;margin:0 auto;padding:0 1.5rem; }
@@ -375,6 +378,7 @@
     </div>
     <button class="btn-settings" onclick="openMyClasses()">⚙️ My Classes</button>
     <span class="student-count" id="student-count"></span>
+    <span id="refresh-label" style="font-size:0.72rem;color:var(--subtext);font-style:italic;margin-left:0.5rem"></span>
   </div>
 
   <!-- Tabs -->
@@ -723,8 +727,14 @@
       document.getElementById('student-count').textContent = '';
       return;
     }
-    document.getElementById('overview-content').innerHTML = '<div class="loading-state">Loading students...</div>';
-    document.getElementById('heatmap-content').innerHTML = '<div class="loading-state">Loading heatmap...</div>';
+    const isRefresh = !!_lastRefreshed; // true if this is a refresh not initial load
+    if (!isRefresh) {
+      document.getElementById('overview-content').innerHTML = '<div class="loading-state">Loading students...</div>';
+      document.getElementById('heatmap-content').innerHTML = '<div class="loading-state">Loading heatmap...</div>';
+    }
+    // Show spinner in refresh label during fetch
+    const rl = document.getElementById('refresh-label');
+    if (rl) rl.innerHTML = '<span class="refresh-spinner"></span>Refreshing...';
 
     const students = await getStudentsByClass(selectedClass);
     document.getElementById('student-count').textContent = `${students.length} student${students.length !== 1 ? 's' : ''}`;
@@ -751,7 +761,63 @@
 
     renderOverview(students, allProgress, allLogs);
     renderHeatmap(students, allProgress);
+
+    // Update last-refreshed timestamp
+    _lastRefreshed = Date.now();
+    _updateRefreshLabel();
+
+    // Brief pulse on the overview card to signal refresh completed
+    const oc = document.getElementById('overview-content');
+    if (oc) { oc.classList.remove('refreshing'); void oc.offsetWidth; oc.classList.add('refreshing'); }
   };
+
+  // ── AUTO REFRESH ─────────────────────────────────────────────────────────────
+  let _refreshTimer = null;
+  let _lastRefreshed = null;
+  let _refreshLabelTimer = null;
+
+  function _updateRefreshLabel() {
+    const el = document.getElementById('refresh-label');
+    if (!el || !_lastRefreshed) return;
+    const secs = Math.round((Date.now() - _lastRefreshed) / 1000);
+    el.textContent = secs < 5 ? 'Just updated' : `Updated ${secs}s ago`;
+  }
+
+  function _startAutoRefresh() {
+    _stopAutoRefresh();
+    if (!selectedClass) return;
+    _refreshTimer = setInterval(() => {
+      if (document.visibilityState === 'visible' && selectedClass) {
+        loadClassData();
+      }
+    }, 60000);
+    // Update the "X seconds ago" label every 5 seconds
+    _refreshLabelTimer = setInterval(_updateRefreshLabel, 5000);
+  }
+
+  function _stopAutoRefresh() {
+    if (_refreshTimer) { clearInterval(_refreshTimer); _refreshTimer = null; }
+    if (_refreshLabelTimer) { clearInterval(_refreshLabelTimer); _refreshLabelTimer = null; }
+  }
+
+  // Start/stop refresh when class is selected/deselected
+  const _origSelectClass = window.selectClass;
+  window.selectClass = (cls) => {
+    _origSelectClass(cls);
+    if (selectedClass) { _startAutoRefresh(); }
+    else { _stopAutoRefresh(); }
+  };
+
+  // Pause when tab hidden, resume when visible
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && selectedClass) {
+      loadClassData(); // immediate refresh on return
+      _startAutoRefresh();
+    } else {
+      _stopAutoRefresh();
+    }
+  });
+  // ── END AUTO REFRESH ─────────────────────────────────────────────────────────
 
   // ── ACTIVITY TIME ESTIMATES (minutes per activity type) ─────────────────────
   const ACTIVITY_TIMES = {
