@@ -346,7 +346,7 @@
 <body>
 
 <nav class="topnav">
-  <a href="javascript:history.back()">← Back</a>
+  <a href="biology.html" id="back-btn">← Back</a>
   <a href="progress.html" id="progress-link" style="display:none">📊 My Progress</a>
   <span class="topnav-title" id="nav-title">Revision</span>
   <div id="staff-nav-links" style="display:none;gap:0.4rem;align-items:center;margin-left:0.5rem">
@@ -630,6 +630,14 @@ const PAPER_DEFS = {
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
 const params     = new URLSearchParams(window.location.search);
+
+// Set back button to correct subject page — never use history.back() as it causes loops
+(function() {
+  const subj = params.get('subject') || 'biology';
+  const subjectPages = { biology:'biology.html', chemistry:'chemistry.html', physics:'physics.html' };
+  const backBtn = document.getElementById('back-btn');
+  if (backBtn) backBtn.href = subjectPages[subj] || 'index.html';
+})();
 const subjectId  = params.get('subject') || 'biology';
 const moduleId   = params.get('module')  || 'b1';
 const meta       = MODULE_META[moduleId] || MODULE_META.b1;
