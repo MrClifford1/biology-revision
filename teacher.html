@@ -913,6 +913,16 @@
     if (!title || !due || !classes.length) {
       msg.className = 'form-msg error'; msg.textContent = 'Please fill in title, due date, and select at least one class.'; return;
     }
+
+    // Warn if due date is in the past — teacher may have made a mistake
+    const today = new Date().toISOString().split('T')[0];
+    if (due < today) {
+      const proceed = confirm(
+        `⚠️ The due date you've set (${new Date(due + 'T12:00:00').toLocaleDateString('en-GB', { weekday:'long', day:'numeric', month:'long', year:'numeric' })}) is in the past.\n\nStudents will see this as an expired assignment with a "Late submission" button.\n\nDo you want to continue anyway?`
+      );
+      if (!proceed) return;
+    }
+
     const btn = document.getElementById('create-btn');
     btn.disabled = true;
     let goUrl = '#';
