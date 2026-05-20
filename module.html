@@ -2204,6 +2204,10 @@ function pickClozeParagraph(topicName) {
   return result ? result.paragraph : null;
 }
 function findBlankableTerms(paragraph, topicData) {
+  // Deprecated - use pickClozeContent instead
+  return [];
+}
+
 // Build cloze HTML with blanks
 function buildClozeHtml(paragraph, terms, mode) {
   let text = paragraph;
