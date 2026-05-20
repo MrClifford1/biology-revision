@@ -537,52 +537,29 @@
 </head>
 <body>
 <nav class="ssh-nav" id="ssh-nav">
-  <!-- Left: back link -->
   <a href="index.html" class="ssh-nav-back" id="ssh-back-btn">← Hub</a>
   <div class="ssh-nav-divider"></div>
-  <!-- Title -->
   <span class="ssh-nav-title" id="ssh-nav-title">My Progress</span>
-  <!-- Right side -->
   <div class="ssh-nav-right" id="ssh-nav-right">
-    <!-- Staff badges (shown/hidden by JS) -->
+    <span class="ssh-nav-welcome" id="ssh-nav-welcome" style="display:none"></span>
+    <a href="progress.html" class="ssh-nav-icon-btn" id="ssh-progress-link" style="display:none;text-decoration:none">📊 My Progress</a>
     <a href="teacher.html" class="ssh-nav-badge ssh-badge-teacher" id="ssh-badge-teacher" style="display:none">👨‍🏫 Teacher</a>
     <a href="admin.html"   class="ssh-nav-badge ssh-badge-admin"   id="ssh-badge-admin"   style="display:none">🏫 Admin</a>
     <a href="superadmin.html" class="ssh-nav-badge ssh-badge-super" id="ssh-badge-super"  style="display:none">🛡️ Super</a>
-    <!-- Useful Links -->
-    <div class="ssh-ul-wrap" id="ssh-ul-wrap">
+    <div class="ssh-ul-wrap">
       <button class="ssh-nav-icon-btn" id="ssh-ul-btn" onclick="sshToggleLinks(event)">🔗 Links ▾</button>
       <div class="ssh-ul-dropdown" id="ssh-ul-dropdown">
         <div class="ssh-ul-header">Resources</div>
-        <a href="https://www.streetly.academy/" target="_blank" class="ssh-ul-item">
-          <div class="ssh-ul-icon">🏫</div>
-          <div><div>School Website</div><div class="ssh-ul-sub">The Streetly Academy</div></div>
-        </a>
-        <a href="https://www.aqa.org.uk/subjects/science/gcse" target="_blank" class="ssh-ul-item">
-          <div class="ssh-ul-icon">📋</div>
-          <div><div>AQA Science</div><div class="ssh-ul-sub">Specifications &amp; past papers</div></div>
-        </a>
-        <a href="https://www.bbc.co.uk/bitesize/examspecs/zpgk8mn" target="_blank" class="ssh-ul-item">
-          <div class="ssh-ul-icon">📺</div>
-          <div><div>BBC Bitesize</div><div class="ssh-ul-sub">AQA GCSE Science revision</div></div>
-        </a>
-        <a href="https://www.freesciencelessons.co.uk/" target="_blank" class="ssh-ul-item">
-          <div class="ssh-ul-icon">🎬</div>
-          <div><div>Free Science Lessons</div><div class="ssh-ul-sub">Video lessons by topic</div></div>
-        </a>
-        <a href="https://cognitoedu.org/home" target="_blank" class="ssh-ul-item">
-          <div class="ssh-ul-icon">🧠</div>
-          <div><div>Cognito</div><div class="ssh-ul-sub">Animated science revision</div></div>
-        </a>
-        <a href="https://www.youtube.com/@MalmesburyScienceTeacher" target="_blank" class="ssh-ul-item">
-          <div class="ssh-ul-icon">▶️</div>
-          <div><div>Science with Hazel</div><div class="ssh-ul-sub">YouTube revision channel</div></div>
-        </a>
+        <a href="https://www.streetly.academy/" target="_blank" class="ssh-ul-item"><div class="ssh-ul-icon">🏫</div><div><div>School Website</div><div class="ssh-ul-sub">The Streetly Academy</div></div></a>
+        <a href="https://www.aqa.org.uk/subjects/science/gcse" target="_blank" class="ssh-ul-item"><div class="ssh-ul-icon">📋</div><div><div>AQA Science</div><div class="ssh-ul-sub">Specifications &amp; past papers</div></div></a>
+        <a href="https://www.bbc.co.uk/bitesize/examspecs/zpgk8mn" target="_blank" class="ssh-ul-item"><div class="ssh-ul-icon">📺</div><div><div>BBC Bitesize</div><div class="ssh-ul-sub">AQA GCSE Science revision</div></div></a>
+        <a href="https://www.freesciencelessons.co.uk/" target="_blank" class="ssh-ul-item"><div class="ssh-ul-icon">🎬</div><div><div>Free Science Lessons</div><div class="ssh-ul-sub">Video lessons by topic</div></div></a>
+        <a href="https://cognitoedu.org/home" target="_blank" class="ssh-ul-item"><div class="ssh-ul-icon">🧠</div><div><div>Cognito</div><div class="ssh-ul-sub">Animated science revision</div></div></a>
+        <a href="https://www.youtube.com/@MalmesburyScienceTeacher" target="_blank" class="ssh-ul-item"><div class="ssh-ul-icon">▶️</div><div><div>Science with Hazel</div><div class="ssh-ul-sub">YouTube revision channel</div></div></a>
       </div>
     </div>
-    <!-- Settings -->
     <button class="ssh-nav-icon-btn" onclick="openSettings ? openSettings() : null" title="Settings">⚙️</button>
-    <!-- Sign out -->
-    <button class="ssh-nav-icon-btn" onclick="sshSignOut()" title="Sign out">↩ Out</button>
+    <button class="ssh-nav-icon-btn" onclick="sshSignOut()">↩ Out</button>
   </div>
 </nav>
 
@@ -649,42 +626,6 @@
     getActiveAssignmentsForClass, getMyAssignmentCompletion
   } from './firebase.js';
 
-  // ── SHARED NAV INIT ─────────────────────────────────────────────────────────
-  function sshInitNav(user, role) {
-    const isTeacher    = ['teacher','admin','superadmin'].includes(role);
-    const isAdmin      = ['admin','superadmin'].includes(role);
-    const isSuperAdmin = role === 'superadmin';
-    const t = document.getElementById('ssh-badge-teacher');
-    const a = document.getElementById('ssh-badge-admin');
-    const s = document.getElementById('ssh-badge-super');
-    if (t) t.style.display = isTeacher    ? 'inline-flex' : 'none';
-    if (a) a.style.display = isAdmin      ? 'inline-flex' : 'none';
-    if (s) s.style.display = isSuperAdmin ? 'inline-flex' : 'none';
-    const page = window.location.pathname.split('/').pop();
-    if (page === 'teacher.html'    && t) t.style.display = 'none';
-    if (page === 'admin.html'      && a) a.style.display = 'none';
-    if (page === 'superadmin.html' && s) s.style.display = 'none';
-  }
-  window.sshToggleLinks = (e) => {
-    e.stopPropagation();
-    const btn = document.getElementById('ssh-ul-btn');
-    const dd  = document.getElementById('ssh-ul-dropdown');
-    if (!btn || !dd) return;
-    const isOpen = dd.classList.contains('open');
-    dd.classList.toggle('open', !isOpen);
-    btn.style.color = !isOpen ? 'white' : '';
-  };
-  document.addEventListener('click', () => {
-    const dd = document.getElementById('ssh-ul-dropdown');
-    const btn = document.getElementById('ssh-ul-btn');
-    if (dd) dd.classList.remove('open');
-    if (btn) btn.style.color = '';
-  });
-  window.sshSignOut = async () => {
-    try { await signOutUser(); } catch(e) {}
-    window.location.href = 'login.html';
-  };
-  // ── END SHARED NAV ──────────────────────────────────────────────────────────
 
 
   const MODULE_META = {
@@ -744,6 +685,7 @@
     if (!user) { window.location.href='login.html?redirect=progress.html'; return; }
     currentUser=user;
     window.currentUser=user;
+    sshSetWelcome(user);
     renderHeader(user);
 
     // Load all data in parallel
@@ -1741,6 +1683,56 @@ Write a helpful, encouraging insight for this student. Mention specific modules 
     document.getElementById('drawer-class-display').textContent = selectedClassDrawer;
     closeSettings();
     location.reload();
+  };
+</script>
+
+<!-- SHARED NAV JS — plain script so onclick handlers work before module loads -->
+<script>
+  window.sshToggleLinks = function(e) {
+    e.stopPropagation();
+    var dd = document.getElementById('ssh-ul-dropdown');
+    var btn = document.getElementById('ssh-ul-btn');
+    if (!dd) return;
+    var isOpen = dd.classList.contains('open');
+    dd.classList.toggle('open', !isOpen);
+    if (btn) btn.style.color = !isOpen ? 'white' : '';
+  };
+  document.addEventListener('click', function() {
+    var dd = document.getElementById('ssh-ul-dropdown');
+    var btn = document.getElementById('ssh-ul-btn');
+    if (dd) dd.classList.remove('open');
+    if (btn) btn.style.color = '';
+  });
+  window.sshSignOut = function() {
+    if (window._sshSignOutFn) { window._sshSignOutFn(); return; }
+    // Fallback for module pages that expose signout via firebase module
+    import('./firebase.js').then(function(m) { m.signOutUser().finally(function() { window.location.href = 'login.html'; }); }).catch(function() { window.location.href = 'login.html'; });
+  };
+  window.sshSetWelcome = function(user) {
+    var el = document.getElementById('ssh-nav-welcome');
+    if (!el || !user) return;
+    var name = (user.displayName || '').split(' ')[0] || 'Student';
+    el.innerHTML = 'Hi, <strong>' + name + '!</strong>';
+    el.style.display = 'inline';
+  };
+  window.sshInitNav = function(user, role) {
+    var isTeacher = ['teacher','admin','superadmin'].indexOf(role) >= 0;
+    var isAdmin   = ['admin','superadmin'].indexOf(role) >= 0;
+    var isSuper   = role === 'superadmin';
+    var t = document.getElementById('ssh-badge-teacher');
+    var a = document.getElementById('ssh-badge-admin');
+    var s = document.getElementById('ssh-badge-super');
+    if (t) t.style.display = isTeacher ? 'inline-flex' : 'none';
+    if (a) a.style.display = isAdmin   ? 'inline-flex' : 'none';
+    if (s) s.style.display = isSuper   ? 'inline-flex' : 'none';
+    var page = window.location.pathname.split('/').pop();
+    if (page === 'teacher.html'    && t) t.style.display = 'none';
+    if (page === 'admin.html'      && a) a.style.display = 'none';
+    if (page === 'superadmin.html' && s) s.style.display = 'none';
+    // Show My Progress link on all pages except progress.html itself
+    var pl = document.getElementById('ssh-progress-link');
+    if (pl) pl.style.display = page === 'progress.html' ? 'none' : 'inline-flex';
+    sshSetWelcome(user);
   };
 </script>
 </body>
