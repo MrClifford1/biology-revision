@@ -2144,9 +2144,15 @@ function pickClozeParagraph(topicName) {
 
   if (!candidates.length) return null;
 
+  // Strip HTML tags from all candidates
+  function stripHtml(str) {
+    return str.replace(/<[^>]+>/g, '').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&nbsp;/g,' ').trim();
+  }
+
   // Pick longest paragraph for richest content
-  candidates.sort((a,b) => b.length - a.length);
-  return candidates[0];
+  const clean = candidates.map(stripHtml).filter(c => c.length > 40);
+  clean.sort((a,b) => b.length - a.length);
+  return clean[0] || null;
 }
 
 // Find key terms that appear in the paragraph
@@ -2262,9 +2268,10 @@ window.startCloze = () => {
   _clozeSelectedChip = null;
   _clozeSelectedBlank = null;
 
-  // Show activity screen
+  // Show activity screen and scroll to top
   document.getElementById('cloze-setup').style.display = 'none';
   document.getElementById('cloze-activity').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   document.getElementById('cloze-results').style.display = 'none';
   document.getElementById('cloze-submit-btn').style.display = 'inline-block';
   document.getElementById('cloze-submit-btn').disabled = false;
@@ -2302,6 +2309,7 @@ window.startCloze = () => {
 };
 
 window.hideClozeParaAndStart = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   const paraCard = document.getElementById('cloze-para-card');
   const blanksArea = document.getElementById('cloze-blanks-area');
   const wordBank = document.getElementById('cloze-word-bank');
