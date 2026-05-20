@@ -342,6 +342,56 @@
     .btn-drawer-confirm:disabled { background:#cbd5e1;cursor:not-allowed; }
     .drawer-divider { border:none;border-top:1px solid #e2e8f0;margin:1.25rem 0; }
   
+
+    /* ── CLOZE ACTIVITY ─────────────────────────────────────────────────────────── */
+    .cloze-topic-btn {
+      background: white; border: 1.5px solid var(--border); border-radius: 8px;
+      padding: 0.3rem 0.75rem; font-family: 'Nunito', sans-serif; font-weight: 700;
+      font-size: 0.78rem; color: var(--subtext); cursor: pointer; transition: all 0.15s;
+    }
+    .cloze-topic-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .cloze-topic-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
+    .cloze-diff-btn {
+      background: white; border: 1.5px solid var(--border); border-radius: 10px;
+      padding: 0.65rem 1rem; font-family: 'Nunito Sans', sans-serif; font-size: 0.85rem;
+      color: var(--text); cursor: pointer; text-align: left; transition: all 0.15s;
+    }
+    .cloze-diff-btn:hover { border-color: var(--accent); }
+    .cloze-diff-btn.active { border-color: var(--accent); background: var(--accent-light, #ccfbf1); }
+    .cloze-blank {
+      display: inline-block; min-width: 90px; border-bottom: 2.5px solid var(--accent);
+      margin: 0 0.25rem; padding: 0.1rem 0.4rem; border-radius: 4px 4px 0 0;
+      font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.88rem;
+      text-align: center; cursor: pointer; transition: all 0.15s; background: transparent;
+      vertical-align: bottom; color: var(--accent);
+    }
+    .cloze-blank.selected { background: #f0fdf4; border-color: #16a34a; color: #16a34a; }
+    .cloze-blank.filled  { background: #eff6ff; border-color: #3b82f6; color: #1d4ed8; cursor: pointer; }
+    .cloze-blank.correct { background: #dcfce7; border-color: #16a34a; color: #14532d; cursor: default; }
+    .cloze-blank.incorrect { background: #fee2e2; border-color: #dc2626; color: #991b1b; cursor: default; }
+    .cloze-blank-input {
+      display: inline-block; min-width: 100px; border: none; border-bottom: 2.5px solid var(--accent);
+      background: transparent; font-family: 'Nunito', sans-serif; font-weight: 700;
+      font-size: 0.88rem; color: var(--accent); text-align: center; outline: none;
+      padding: 0.1rem 0.3rem; margin: 0 0.25rem; vertical-align: bottom;
+    }
+    .cloze-blank-input.correct { border-color: #16a34a; color: #14532d; background: #dcfce7; border-radius: 4px 4px 0 0; }
+    .cloze-blank-input.incorrect { border-color: #dc2626; color: #991b1b; background: #fee2e2; border-radius: 4px 4px 0 0; }
+    .cloze-word-chip {
+      background: var(--accent); color: white; border: none; border-radius: 8px;
+      padding: 0.35rem 0.75rem; font-family: 'Nunito', sans-serif; font-weight: 700;
+      font-size: 0.8rem; cursor: pointer; transition: all 0.15s;
+    }
+    .cloze-word-chip:hover { opacity: 0.85; transform: translateY(-1px); }
+    .cloze-word-chip.used { opacity: 0.35; cursor: default; background: #94a3b8; transform: none; }
+    .cloze-word-chip.selected-chip { outline: 3px solid var(--gold); transform: scale(1.05); }
+    .cloze-result-row {
+      display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0;
+      border-bottom: 1px solid #f1f5f9; font-size: 0.85rem;
+    }
+    .cloze-result-row:last-child { border-bottom: none; }
+    /* ── END CLOZE ──────────────────────────────────────────────────────────────── */
+
     /* ── SHARED UNIFIED NAV ──────────────────────────────────────────────────── */
     .ssh-nav {
       background: var(--navy-dark, #0f1d3d);
@@ -433,29 +483,52 @@
 </head>
 <body>
 <nav class="ssh-nav" id="ssh-nav">
+  <!-- Left: back link -->
   <a href="#" class="ssh-nav-back" id="ssh-back-btn">← Back</a>
   <div class="ssh-nav-divider"></div>
+  <!-- Title -->
   <span class="ssh-nav-title" id="ssh-nav-title">Module</span>
+  <!-- Right side -->
   <div class="ssh-nav-right" id="ssh-nav-right">
-    <span class="ssh-nav-welcome" id="ssh-nav-welcome" style="display:none"></span>
-    <a href="progress.html" class="ssh-nav-icon-btn" id="ssh-progress-link" style="display:none;text-decoration:none">📊 My Progress</a>
+    <!-- Staff badges (shown/hidden by JS) -->
     <a href="teacher.html" class="ssh-nav-badge ssh-badge-teacher" id="ssh-badge-teacher" style="display:none">👨‍🏫 Teacher</a>
     <a href="admin.html"   class="ssh-nav-badge ssh-badge-admin"   id="ssh-badge-admin"   style="display:none">🏫 Admin</a>
     <a href="superadmin.html" class="ssh-nav-badge ssh-badge-super" id="ssh-badge-super"  style="display:none">🛡️ Super</a>
-    <div class="ssh-ul-wrap">
+    <!-- Useful Links -->
+    <div class="ssh-ul-wrap" id="ssh-ul-wrap">
       <button class="ssh-nav-icon-btn" id="ssh-ul-btn" onclick="sshToggleLinks(event)">🔗 Links ▾</button>
       <div class="ssh-ul-dropdown" id="ssh-ul-dropdown">
         <div class="ssh-ul-header">Resources</div>
-        <a href="https://www.streetly.academy/" target="_blank" class="ssh-ul-item"><div class="ssh-ul-icon">🏫</div><div><div>School Website</div><div class="ssh-ul-sub">The Streetly Academy</div></div></a>
-        <a href="https://www.aqa.org.uk/subjects/science/gcse" target="_blank" class="ssh-ul-item"><div class="ssh-ul-icon">📋</div><div><div>AQA Science</div><div class="ssh-ul-sub">Specifications &amp; past papers</div></div></a>
-        <a href="https://www.bbc.co.uk/bitesize/examspecs/zpgk8mn" target="_blank" class="ssh-ul-item"><div class="ssh-ul-icon">📺</div><div><div>BBC Bitesize</div><div class="ssh-ul-sub">AQA GCSE Science revision</div></div></a>
-        <a href="https://www.freesciencelessons.co.uk/" target="_blank" class="ssh-ul-item"><div class="ssh-ul-icon">🎬</div><div><div>Free Science Lessons</div><div class="ssh-ul-sub">Video lessons by topic</div></div></a>
-        <a href="https://cognitoedu.org/home" target="_blank" class="ssh-ul-item"><div class="ssh-ul-icon">🧠</div><div><div>Cognito</div><div class="ssh-ul-sub">Animated science revision</div></div></a>
-        <a href="https://www.youtube.com/@MalmesburyScienceTeacher" target="_blank" class="ssh-ul-item"><div class="ssh-ul-icon">▶️</div><div><div>Science with Hazel</div><div class="ssh-ul-sub">YouTube revision channel</div></div></a>
+        <a href="https://www.streetly.academy/" target="_blank" class="ssh-ul-item">
+          <div class="ssh-ul-icon">🏫</div>
+          <div><div>School Website</div><div class="ssh-ul-sub">The Streetly Academy</div></div>
+        </a>
+        <a href="https://www.aqa.org.uk/subjects/science/gcse" target="_blank" class="ssh-ul-item">
+          <div class="ssh-ul-icon">📋</div>
+          <div><div>AQA Science</div><div class="ssh-ul-sub">Specifications &amp; past papers</div></div>
+        </a>
+        <a href="https://www.bbc.co.uk/bitesize/examspecs/zpgk8mn" target="_blank" class="ssh-ul-item">
+          <div class="ssh-ul-icon">📺</div>
+          <div><div>BBC Bitesize</div><div class="ssh-ul-sub">AQA GCSE Science revision</div></div>
+        </a>
+        <a href="https://www.freesciencelessons.co.uk/" target="_blank" class="ssh-ul-item">
+          <div class="ssh-ul-icon">🎬</div>
+          <div><div>Free Science Lessons</div><div class="ssh-ul-sub">Video lessons by topic</div></div>
+        </a>
+        <a href="https://cognitoedu.org/home" target="_blank" class="ssh-ul-item">
+          <div class="ssh-ul-icon">🧠</div>
+          <div><div>Cognito</div><div class="ssh-ul-sub">Animated science revision</div></div>
+        </a>
+        <a href="https://www.youtube.com/@MalmesburyScienceTeacher" target="_blank" class="ssh-ul-item">
+          <div class="ssh-ul-icon">▶️</div>
+          <div><div>Science with Hazel</div><div class="ssh-ul-sub">YouTube revision channel</div></div>
+        </a>
       </div>
     </div>
+    <!-- Settings -->
     <button class="ssh-nav-icon-btn" onclick="openSettings ? openSettings() : null" title="Settings">⚙️</button>
-    <button class="ssh-nav-icon-btn" onclick="sshSignOut()">↩ Out</button>
+    <!-- Sign out -->
+    <button class="ssh-nav-icon-btn" onclick="sshSignOut()" title="Sign out">↩ Out</button>
   </div>
 </nav>
 
@@ -477,6 +550,7 @@
     <button class="tab-btn active" data-tab="revision">📖 Revise</button>
     <button class="tab-btn" data-tab="flashcards">🃏 Flashcards</button>
     <button class="tab-btn" data-tab="keywords">🔤 Words</button>
+    <button class="tab-btn" data-tab="cloze">🧩 Cloze</button>
     <button class="tab-btn" data-tab="practice">✏️ Mini Mock</button>
     <button class="tab-btn" data-tab="paper">📝 Paper</button>
   </div>
@@ -519,6 +593,86 @@
         <div id="result-pairs" style="margin:0.75rem 0;display:flex;flex-direction:column;gap:0.4rem;text-align:left;max-width:400px;margin-left:auto;margin-right:auto"></div>
         <button class="btn-primary" id="play-again-btn">🔄 Play Again</button>
       </div>
+    </div>
+  </div>
+
+  <!-- ── CLOZE TAB ─────────────────────────────────────────────────────────────── -->
+  <div class="tab-panel" id="tab-cloze">
+    <div class="practice-panel-inner" id="cloze-panel">
+
+      <!-- Setup screen -->
+      <div id="cloze-setup">
+        <div class="practice-intro">
+          <div style="font-size:2.5rem">🧩</div>
+          <div class="practice-intro-text">
+            <h2>Cloze Activity</h2>
+            <p>A paragraph from your revision notes will appear with key terms blanked out. Choose a topic and difficulty, then fill in the gaps from memory.</p>
+          </div>
+        </div>
+
+        <!-- Topic selector -->
+        <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:1.25rem;margin-bottom:1rem">
+          <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.82rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.75rem">Select Topic</div>
+          <div id="cloze-topic-btns" style="display:flex;flex-wrap:wrap;gap:0.4rem">
+            <button class="cloze-topic-btn active" data-topic="__random__" onclick="selectClozeTopic(this)">🎲 Random</button>
+          </div>
+        </div>
+
+        <!-- Difficulty selector -->
+        <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:1.25rem;margin-bottom:1rem">
+          <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.82rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.75rem">Difficulty</div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem">
+            <button class="cloze-diff-btn active" data-diff="easy" onclick="selectClozeDiff(this)">
+              <strong>🟢 Easy</strong> — Read the paragraph first, then drag/drop the missing words
+            </button>
+            <button class="cloze-diff-btn" data-diff="medium" onclick="selectClozeDiff(this)">
+              <strong>🟡 Medium</strong> — Read the paragraph first, then type the missing words
+            </button>
+            <button class="cloze-diff-btn" data-diff="hard" onclick="selectClozeDiff(this)">
+              <strong>🔴 Hard</strong> — Never see the full paragraph — just type from memory
+            </button>
+          </div>
+        </div>
+
+        <button class="btn-primary" id="cloze-start-btn" onclick="startCloze()" style="padding:0.75rem 2.5rem;font-size:0.95rem">▶ Start Cloze</button>
+      </div>
+
+      <!-- Activity screen -->
+      <div id="cloze-activity" style="display:none">
+        <!-- Paragraph display (hidden on Hard) -->
+        <div id="cloze-para-card" style="background:#f0f9ff;border:1.5px solid #bae6fd;border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;display:none">
+          <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.72rem;color:#0369a1;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.5rem">📖 Read this paragraph</div>
+          <div id="cloze-para-text" style="font-size:0.9rem;line-height:1.8;color:var(--text)"></div>
+          <button id="cloze-hide-btn" onclick="hideClozeParaAndStart()" style="margin-top:0.85rem;background:var(--accent);color:white;border:none;border-radius:9px;padding:0.5rem 1.25rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.82rem;cursor:pointer">I've read it — hide and start →</button>
+        </div>
+
+        <!-- Topic + difficulty label -->
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;flex-wrap:wrap">
+          <span id="cloze-topic-label" style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.82rem;background:#f1f5f9;color:var(--subtext);padding:0.2rem 0.6rem;border-radius:100px"></span>
+          <span id="cloze-diff-label" style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.72rem;padding:0.2rem 0.55rem;border-radius:100px"></span>
+        </div>
+
+        <!-- Cloze sentence with blanks -->
+        <div style="background:white;border:1.5px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1rem">
+          <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.78rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.85rem">Fill in the missing words</div>
+          <div id="cloze-blanks-area" style="font-size:0.92rem;line-height:2.2;color:var(--text)"></div>
+        </div>
+
+        <!-- Word bank (Easy only) -->
+        <div id="cloze-word-bank" style="display:none;background:#f8fafc;border:1.5px solid var(--border);border-radius:14px;padding:1rem;margin-bottom:1rem">
+          <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.75rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.6rem">Word Bank — tap a word then tap a blank</div>
+          <div id="cloze-words-list" style="display:flex;flex-wrap:wrap;gap:0.4rem"></div>
+        </div>
+
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center">
+          <button class="btn-primary" id="cloze-submit-btn" onclick="submitCloze()">Submit →</button>
+          <button onclick="resetCloze()" style="background:none;border:1.5px solid var(--border);color:var(--subtext);border-radius:10px;padding:0.55rem 1rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.82rem;cursor:pointer">✕ Cancel</button>
+        </div>
+
+        <!-- Results -->
+        <div id="cloze-results" style="display:none;margin-top:1rem"></div>
+      </div>
+
     </div>
   </div>
 
@@ -797,6 +951,7 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
 
   const topics = Object.keys(reviseData.topics || {});
   window._reviseData = reviseData;
+  buildClozeTopicBtns();
 
   function buildTopicList(ragData) {
     let html = `<div style="padding:0.25rem 0 0.5rem">
@@ -873,7 +1028,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 (function() {
   const tabParam = new URLSearchParams(window.location.search).get('tab');
   if (!tabParam) return;
-  const tabMap = { mock:'practice', flashcards:'flashcards', words:'keywords', paper:'paper' };
+  const tabMap = { mock:'practice', flashcards:'flashcards', words:'keywords', cloze:'cloze', paper:'paper' };
   const target = tabMap[tabParam] || tabParam;
 
   // Switch tab immediately
@@ -888,8 +1043,9 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   // Auto-start after questions have loaded — poll until start button is ready
   const startBtnIds = {
     practice:   'start-practice-btn',
-    flashcards: null, // uses startFlashcards() function
+    flashcards: null,
     keywords:   'start-game-btn',
+    cloze:      'cloze-start-btn',
     paper:      'start-paper-btn',
   };
   const btnId = startBtnIds[target];
@@ -1926,6 +2082,346 @@ document.getElementById('paper-try-again-btn').addEventListener('click', () => {
 
 loadKeywords();
 loadQuestions();
+
+// ── CLOZE ACTIVITY ────────────────────────────────────────────────────────────
+
+let _clozeSelectedTopic = '__random__';
+let _clozeSelectedDiff  = 'easy';
+let _clozeCurrentTopic  = '';
+let _clozeBlanks        = []; // [{index, term, filled:''}]
+let _clozeSelectedChip  = null; // for easy mode
+let _clozeSelectedBlank = null; // for easy mode
+
+window.selectClozeTopic = (btn) => {
+  document.querySelectorAll('.cloze-topic-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  _clozeSelectedTopic = btn.dataset.topic;
+};
+
+window.selectClozeDiff = (btn) => {
+  document.querySelectorAll('.cloze-diff-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  _clozeSelectedDiff = btn.dataset.diff;
+};
+
+// Build topic buttons from revise data
+function buildClozeTopicBtns() {
+  const rd = window._reviseData;
+  if (!rd) return;
+  const container = document.getElementById('cloze-topic-btns');
+  if (!container) return;
+  const topics = Object.keys(rd.topics || {});
+  const extraBtns = topics.map(t =>
+    `<button class="cloze-topic-btn" data-topic="${t.replace(/"/g,'&quot;')}" onclick="selectClozeTopic(this)">${t}</button>`
+  ).join('');
+  // Keep Random button first
+  container.innerHTML = `<button class="cloze-topic-btn active" data-topic="__random__" onclick="selectClozeTopic(this)">🎲 Random</button>` + extraBtns;
+}
+
+// Pick a paragraph from revise data for the selected topic
+function pickClozeParagraph(topicName) {
+  const rd = window._reviseData;
+  if (!rd) return null;
+  const topicData = rd.topics[topicName];
+  if (!topicData) return null;
+
+  // Gather candidate paragraphs: intro + section texts
+  const candidates = [];
+  if (topicData.intro && topicData.intro.length > 60) candidates.push(topicData.intro);
+  (topicData.sections || []).forEach(s => {
+    if (s.text && s.text.length > 60) candidates.push(s.text);
+  });
+  if (!candidates.length) return null;
+
+  // Pick longest paragraph for richest content
+  candidates.sort((a,b) => b.length - a.length);
+  return candidates[0];
+}
+
+// Find key terms that appear in the paragraph
+function findBlankableTerms(paragraph, topicData) {
+  const terms = (topicData.keyTerms || []).map(kt => kt.term).filter(t => t && t.length > 2);
+  const found = [];
+  terms.forEach(term => {
+    const re = new RegExp('\\b' + term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i');
+    if (re.test(paragraph)) found.push(term);
+  });
+  // Also check section points for capitalized key words
+  return found.slice(0, 8); // max 8 blanks
+}
+
+// Build cloze HTML with blanks
+function buildClozeHtml(paragraph, terms, mode) {
+  let text = paragraph;
+  const blanks = [];
+  let idx = 0;
+
+  // Replace each term with a placeholder, longest first to avoid partial matches
+  const sorted = [...terms].sort((a,b) => b.length - a.length);
+  sorted.forEach(term => {
+    const re = new RegExp('\\b(' + term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')\\b', 'ig');
+    text = text.replace(re, (match) => {
+      const blankId = `blank-${idx}`;
+      blanks.push({ id: blankId, term: match, answer: match.toLowerCase(), index: idx });
+      idx++;
+      return `__BLANK_${idx-1}__`;
+    });
+  });
+
+  // Store blanks globally
+  _clozeBlanks = blanks;
+
+  // Build final HTML
+  let html = text;
+  blanks.forEach((b, i) => {
+    if (mode === 'easy') {
+      // Clickable blank for drag/drop style
+      html = html.replace(`__BLANK_${i}__`,
+        `<span class="cloze-blank" id="${b.id}" data-index="${i}" onclick="clickBlank(this)">_____</span>`);
+    } else {
+      // Type-in input
+      html = html.replace(`__BLANK_${i}__`,
+        `<input class="cloze-blank-input" id="${b.id}" data-index="${i}" type="text" placeholder="..." autocomplete="off" autocorrect="off" spellcheck="false" />`);
+    }
+  });
+
+  return html;
+}
+
+window.startCloze = () => {
+  const rd = window._reviseData;
+  if (!rd) { alert('Revision data not loaded yet — try again in a moment.'); return; }
+
+  // Pick topic
+  const topics = Object.keys(rd.topics || {});
+  if (!topics.length) { alert('No topics found for this module.'); return; }
+
+  let topicName;
+  if (_clozeSelectedTopic === '__random__') {
+    topicName = topics[Math.floor(Math.random() * topics.length)];
+  } else {
+    topicName = _clozeSelectedTopic;
+  }
+  _clozeCurrentTopic = topicName;
+
+  const topicData = rd.topics[topicName];
+  const paragraph = pickClozeParagraph(topicName);
+  if (!paragraph) { alert('Not enough revision content for this topic yet.'); return; }
+
+  const terms = findBlankableTerms(paragraph, topicData);
+  if (terms.length < 2) { alert('Not enough key terms found in this topic\'s content. Try a different topic.'); return; }
+
+  const diff = _clozeSelectedDiff;
+  _clozeSelectedChip = null;
+  _clozeSelectedBlank = null;
+
+  // Show activity screen
+  document.getElementById('cloze-setup').style.display = 'none';
+  document.getElementById('cloze-activity').style.display = 'block';
+  document.getElementById('cloze-results').style.display = 'none';
+  document.getElementById('cloze-submit-btn').style.display = 'inline-block';
+  document.getElementById('cloze-submit-btn').disabled = false;
+
+  // Topic + diff labels
+  document.getElementById('cloze-topic-label').textContent = topicName;
+  const diffMeta = { easy: { text:'🟢 Easy', bg:'#dcfce7', color:'#14532d' }, medium: { text:'🟡 Medium', bg:'#fef9c3', color:'#713f12' }, hard: { text:'🔴 Hard', bg:'#fee2e2', color:'#991b1b' } };
+  const dm = diffMeta[diff];
+  const dl = document.getElementById('cloze-diff-label');
+  dl.textContent = dm.text; dl.style.background = dm.bg; dl.style.color = dm.color;
+
+  // On Easy/Medium: show paragraph first; on Hard: go straight to blanks
+  const paraCard = document.getElementById('cloze-para-card');
+  const paraText = document.getElementById('cloze-para-text');
+  const blanksArea = document.getElementById('cloze-blanks-area');
+  const wordBank = document.getElementById('cloze-word-bank');
+
+  paraText.textContent = paragraph;
+
+  if (diff === 'hard') {
+    // Hard: skip paragraph, show blanks immediately
+    paraCard.style.display = 'none';
+    blanksArea.innerHTML = buildClozeHtml(paragraph, terms, 'type');
+    wordBank.style.display = 'none';
+  } else {
+    // Easy/Medium: show paragraph with hide button
+    paraCard.style.display = 'block';
+    document.getElementById('cloze-hide-btn').style.display = 'inline-block';
+    blanksArea.innerHTML = '';
+    blanksArea.dataset.paragraph = paragraph;
+    blanksArea.dataset.terms = JSON.stringify(terms);
+    blanksArea.dataset.mode = diff === 'easy' ? 'easy' : 'type';
+    wordBank.style.display = 'none';
+  }
+};
+
+window.hideClozeParaAndStart = () => {
+  const paraCard = document.getElementById('cloze-para-card');
+  const blanksArea = document.getElementById('cloze-blanks-area');
+  const wordBank = document.getElementById('cloze-word-bank');
+  const wordsList = document.getElementById('cloze-words-list');
+
+  const paragraph = blanksArea.dataset.paragraph;
+  const terms = JSON.parse(blanksArea.dataset.terms || '[]');
+  const mode = blanksArea.dataset.mode;
+
+  // Hide paragraph
+  paraCard.style.display = 'none';
+
+  // Show blanks
+  blanksArea.innerHTML = buildClozeHtml(paragraph, terms, mode);
+
+  if (mode === 'easy') {
+    // Build word bank — shuffled
+    const shuffled = [..._clozeBlanks].sort(() => Math.random() - 0.5);
+    wordsList.innerHTML = shuffled.map(b =>
+      `<button class="cloze-word-chip" id="chip-${b.index}" data-index="${b.index}" onclick="clickChip(this)">${b.term}</button>`
+    ).join('');
+    wordBank.style.display = 'block';
+  }
+};
+
+// Easy mode — tap chip then tap blank
+window.clickChip = (chipEl) => {
+  // Deselect previous chip
+  document.querySelectorAll('.cloze-word-chip').forEach(c => c.classList.remove('selected-chip'));
+  if (_clozeSelectedChip === chipEl.dataset.index) {
+    _clozeSelectedChip = null; return;
+  }
+  chipEl.classList.add('selected-chip');
+  _clozeSelectedChip = chipEl.dataset.index;
+
+  // If a blank is already selected, fill it
+  if (_clozeSelectedBlank !== null) {
+    fillBlankWithChip(_clozeSelectedBlank, _clozeSelectedChip);
+  }
+};
+
+window.clickBlank = (blankEl) => {
+  const idx = blankEl.dataset.index;
+  if (_clozeSelectedChip !== null) {
+    fillBlankWithChip(idx, _clozeSelectedChip);
+  } else {
+    // Select blank
+    document.querySelectorAll('.cloze-blank').forEach(b => b.classList.remove('selected'));
+    blankEl.classList.add('selected');
+    _clozeSelectedBlank = idx;
+  }
+};
+
+function fillBlankWithChip(blankIdx, chipIdx) {
+  const blank = document.getElementById(`blank-${blankIdx}`);
+  const chip  = document.getElementById(`chip-${chipIdx}`);
+  if (!blank || !chip) return;
+
+  // Un-fill previous content of this blank if any
+  const prev = blank.dataset.filledWith;
+  if (prev !== undefined) {
+    const prevChip = document.getElementById(`chip-${prev}`);
+    if (prevChip) { prevChip.classList.remove('used'); prevChip.classList.remove('selected-chip'); }
+  }
+
+  blank.textContent = chip.textContent;
+  blank.classList.add('filled');
+  blank.classList.remove('selected');
+  blank.dataset.filledWith = chipIdx;
+
+  chip.classList.add('used');
+  chip.classList.remove('selected-chip');
+  _clozeSelectedChip = null;
+  _clozeSelectedBlank = null;
+}
+
+window.submitCloze = async () => {
+  const diff = _clozeSelectedDiff;
+  let correct = 0;
+  const total = _clozeBlanks.length;
+  const resultRows = [];
+
+  _clozeBlanks.forEach(b => {
+    let given = '';
+    if (diff === 'easy') {
+      const el = document.getElementById(b.id);
+      given = (el?.textContent || '').trim();
+    } else {
+      const el = document.getElementById(b.id);
+      given = (el?.value || '').trim();
+    }
+    const isCorrect = given.toLowerCase() === b.answer.toLowerCase();
+    if (isCorrect) correct++;
+
+    // Mark the blank
+    const el = document.getElementById(b.id);
+    if (el) {
+      el.classList.add(isCorrect ? 'correct' : 'incorrect');
+      if (diff !== 'easy') el.disabled = true;
+    }
+
+    resultRows.push({ term: b.term, given, isCorrect });
+  });
+
+  document.getElementById('cloze-submit-btn').disabled = true;
+
+  // Score → pct → RAG boost
+  const pct = Math.round((correct / total) * 100);
+  const ragBoost = pct >= 80 ? 10 : pct >= 50 ? 6 : pct > 0 ? 3 : 0;
+
+  // Update RAG if logged in
+  if (window._currentUser && ragBoost > 0) {
+    try {
+      const entry = ragState[_clozeCurrentTopic];
+      const currentScore = typeof entry === 'object' ? (entry?.score ?? 0) : 0;
+      const newScore = Math.max(currentScore, ragBoost);
+      if (newScore > currentScore) {
+        ragState[_clozeCurrentTopic] = { ...(entry || {}), score: newScore, lastActivity: new Date().toISOString() };
+        if (window._saveRAG) await window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState).catch(()=>{});
+        renderChecklist(ragState);
+      }
+    } catch(e) {}
+  }
+
+  // Log activity
+  if (window._logActivity) {
+    window._logActivity({
+      type: 'cloze',
+      score: correct, total, pct,
+      topics: [{ topic: _clozeCurrentTopic, awarded: correct, marks: total }]
+    });
+  }
+
+  // Show results
+  const scoreClass = pct >= 80 ? 'quiz-score-3' : pct >= 50 ? 'quiz-score-2' : pct > 0 ? 'quiz-score-1' : 'quiz-score-0';
+  const scoreMsg = pct === 100 ? '🌟 Perfect! All words correct!' : pct >= 80 ? `👍 Great — ${correct}/${total} correct!` : pct >= 50 ? `🤔 Nearly — ${correct}/${total} correct. Check the ones you missed.` : `📖 ${correct}/${total} correct — have another read through and try again!`;
+
+  const resultsEl = document.getElementById('cloze-results');
+  resultsEl.innerHTML = `
+    <div class="quiz-score-banner ${scoreClass}" style="margin-bottom:0.75rem">${scoreMsg}</div>
+    ${ragBoost > 0 ? `<div style="font-size:0.75rem;color:var(--subtext);text-align:center;margin-bottom:0.75rem">+${ragBoost}% added to ${_clozeCurrentTopic} topic score</div>` : ''}
+    <div style="background:white;border:1px solid var(--border);border-radius:12px;padding:1rem;margin-bottom:0.75rem">
+      <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.75rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem">Results</div>
+      ${resultRows.map(r => `
+        <div class="cloze-result-row">
+          <span style="font-size:1rem">${r.isCorrect ? '✅' : '❌'}</span>
+          <span style="flex:1;font-weight:600">${r.term}</span>
+          ${!r.isCorrect ? `<span style="font-size:0.78rem;color:#dc2626">You wrote: "${r.given || '(blank)'}"</span>` : ''}
+        </div>`).join('')}
+    </div>
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
+      <button class="btn-primary" onclick="startCloze()">🔄 Try again — same topic</button>
+      <button onclick="resetCloze()" style="background:none;border:1.5px solid var(--border);color:var(--subtext);border-radius:10px;padding:0.55rem 1rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.82rem;cursor:pointer">← Change topic/difficulty</button>
+    </div>`;
+  resultsEl.style.display = 'block';
+};
+
+window.resetCloze = () => {
+  document.getElementById('cloze-setup').style.display = 'block';
+  document.getElementById('cloze-activity').style.display = 'none';
+  _clozeBlanks = [];
+  _clozeSelectedChip = null;
+  _clozeSelectedBlank = null;
+};
+
+// ── END CLOZE ─────────────────────────────────────────────────────────────────
+
 </script>
 
 <!-- ── FIREBASE ───────────────────────────────────────────────────────────────── -->
@@ -1987,7 +2483,6 @@ loadQuestions();
     const _moduleId = _params.get('module') || 'b1';
     if (!user) { window.location.href = `login.html?redirect=module.html?subject=${_subjectId}&module=${_moduleId}`; return; }
     window._currentUser = user;
-    sshSetWelcome(user);
 
     // Update nav title and back link
     const _sshTitle = document.getElementById('ssh-nav-title');
@@ -2155,17 +2650,15 @@ loadQuestions();
   };
 </script>
 
-
-<!-- SHARED NAV JS — plain script so onclick handlers work before module loads -->
+<!-- SHARED NAV JS -->
 <script>
   window.sshToggleLinks = function(e) {
     e.stopPropagation();
     var dd = document.getElementById('ssh-ul-dropdown');
     var btn = document.getElementById('ssh-ul-btn');
     if (!dd) return;
-    var isOpen = dd.classList.contains('open');
-    dd.classList.toggle('open', !isOpen);
-    if (btn) btn.style.color = !isOpen ? 'white' : '';
+    dd.classList.toggle('open');
+    if (btn) btn.style.color = dd.classList.contains('open') ? 'white' : '';
   };
   document.addEventListener('click', function() {
     var dd = document.getElementById('ssh-ul-dropdown');
@@ -2174,35 +2667,8 @@ loadQuestions();
     if (btn) btn.style.color = '';
   });
   window.sshSignOut = function() {
-    if (window._sshSignOutFn) { window._sshSignOutFn(); return; }
-    // Fallback for module pages that expose signout via firebase module
-    import('./firebase.js').then(function(m) { m.signOutUser().finally(function() { window.location.href = 'login.html'; }); }).catch(function() { window.location.href = 'login.html'; });
-  };
-  window.sshSetWelcome = function(user) {
-    var el = document.getElementById('ssh-nav-welcome');
-    if (!el || !user) return;
-    var name = (user.displayName || '').split(' ')[0] || 'Student';
-    el.innerHTML = 'Hi, <strong>' + name + '!</strong>';
-    el.style.display = 'inline';
-  };
-  window.sshInitNav = function(user, role) {
-    var isTeacher = ['teacher','admin','superadmin'].indexOf(role) >= 0;
-    var isAdmin   = ['admin','superadmin'].indexOf(role) >= 0;
-    var isSuper   = role === 'superadmin';
-    var t = document.getElementById('ssh-badge-teacher');
-    var a = document.getElementById('ssh-badge-admin');
-    var s = document.getElementById('ssh-badge-super');
-    if (t) t.style.display = isTeacher ? 'inline-flex' : 'none';
-    if (a) a.style.display = isAdmin   ? 'inline-flex' : 'none';
-    if (s) s.style.display = isSuper   ? 'inline-flex' : 'none';
-    var page = window.location.pathname.split('/').pop();
-    if (page === 'teacher.html'    && t) t.style.display = 'none';
-    if (page === 'admin.html'      && a) a.style.display = 'none';
-    if (page === 'superadmin.html' && s) s.style.display = 'none';
-    // Show My Progress link on all pages except progress.html itself
-    var pl = document.getElementById('ssh-progress-link');
-    if (pl) pl.style.display = page === 'progress.html' ? 'none' : 'inline-flex';
-    sshSetWelcome(user);
+    if (window._sshSignOutFn) { window._sshSignOutFn(); }
+    else { window.location.href = 'login.html'; }
   };
 </script>
 </body>
