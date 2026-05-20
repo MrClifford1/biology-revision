@@ -282,23 +282,53 @@
     });
   }
 
-  function showTopicByName(topicName) {
+  function showTopicByName(topicName, pushHistory = true) {
     const btns = document.querySelectorAll('.topic-nav-btn');
     btns.forEach(b => {
       b.classList.toggle('active', b.textContent === topicName);
     });
     renderTopic(topicName);
+    if (pushHistory) _pushTopicState(topicName);
   }
+
+  // Track whether the very first topic has been shown yet.
+  // On first load we use replaceState (to set the initial URL cleanly).
+  // On every subsequent topic click we use pushState so back works correctly.
+  let _initialTopicSet = false;
 
   window.showTopic = (topicName, btn) => {
     document.querySelectorAll('.topic-nav-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     renderTopic(topicName);
-    // Update URL without reload
+    _pushTopicState(topicName);
+  };
+
+  function _pushTopicState(topicName) {
     const url = new URL(window.location);
     url.searchParams.set('topic', topicName);
-    history.replaceState({}, '', url);
-  };
+    if (!_initialTopicSet) {
+      // First topic — replace so we don't add a spurious extra entry
+      history.replaceState({ topic: topicName }, '', url);
+      _initialTopicSet = true;
+    } else {
+      // Subsequent topics — push so the browser back button steps through them
+      history.pushState({ topic: topicName }, '', url);
+    }
+  }
+
+  // Handle browser back/forward — restore the correct topic without a page reload
+  window.addEventListener('popstate', (e) => {
+    const topicName = e.state?.topic || new URLSearchParams(window.location.search).get('topic') || allTopics[0];
+    if (topicName && allTopics.includes(topicName)) {
+      // false = don't push another history entry when restoring via back/forward
+      showTopicByName(topicName, false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // No topic in state — user has gone back past the first topic entry,
+      // which means they want to go back to the module page.
+      window.location.href = `module.html?subject=${subject}&module=${moduleId}`;
+    }
+  });
 
   function renderTopic(topicName) {
     currentTopic = topicName;
