@@ -1,7 +1,7 @@
 // Firebase configuration for Streetly Science Hub
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, serverTimestamp, collection, getDocs, deleteDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, serverTimestamp, collection, getDocs, deleteDoc, query, where } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBNVM9Dx8vAYOtt79BVwKK1u3St5BsIxsY",
@@ -477,10 +477,9 @@ export async function getMyAssignmentCompletion(assignmentId, uid) {
 }
 
 export async function getStudentsByClass(className) {
-  const snap = await getDocs(collection(db, 'users'));
-  return snap.docs
-    .map(d => ({ uid: d.id, ...d.data() }))
-    .filter(u => u.class === className);
+  // Use Firestore query to filter server-side instead of fetching all users
+  const snap = await getDocs(query(collection(db, 'users'), where('class', '==', className)));
+  return snap.docs.map(d => ({ uid: d.id, ...d.data() }));
 }
 
 export async function getProgressForStudents(uids) {
@@ -489,14 +488,20 @@ export async function getProgressForStudents(uids) {
     'p1','p2','p3','p4','p5','p6','p7',
     'c1','c2','c3','c4','c5','c6','c7','c8','c9','c10',
   ];
+  // Fire all reads in parallel — one Promise per (uid, module) combination
+  // For 17 students × 24 modules this reduces ~408 sequential reads to one parallel batch
   const result = {};
-  for (const uid of uids) {
-    result[uid] = {};
-    for (const m of modules) {
-      const snap = await getDoc(doc(db, 'users', uid, 'progress', m));
-      if (snap.exists()) result[uid][m] = snap.data();
-    }
-  }
+  uids.forEach(uid => { result[uid] = {}; });
+  await Promise.all(
+    uids.flatMap(uid =>
+      modules.map(async m => {
+        try {
+          const snap = await getDoc(doc(db, 'users', uid, 'progress', m));
+          if (snap.exists()) result[uid][m] = snap.data();
+        } catch(e) { /* non-blocking — skip failed reads */ }
+      })
+    )
+  );
   return result;
 }
 

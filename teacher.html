@@ -736,16 +736,18 @@
     }
 
     const uids = students.map(s => s.uid);
-    const allProgress = await getProgressForStudents(uids);
 
-    // Load activity logs for time estimation
+    // Fetch progress and activity logs in parallel — no reason to wait for one before the other
     const allLogs = {};
-    await Promise.all(students.map(async s => {
-      try {
-        const { entries } = await getActivityLog(s.uid, 200);
-        allLogs[s.uid] = entries;
-      } catch(e) { allLogs[s.uid] = []; }
-    }));
+    const [allProgress] = await Promise.all([
+      getProgressForStudents(uids),
+      Promise.all(students.map(async s => {
+        try {
+          const { entries } = await getActivityLog(s.uid, 200);
+          allLogs[s.uid] = entries;
+        } catch(e) { allLogs[s.uid] = []; }
+      }))
+    ]);
 
     renderOverview(students, allProgress, allLogs);
     renderHeatmap(students, allProgress);
