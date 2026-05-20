@@ -259,6 +259,7 @@
   <!-- Title -->
   <span class="ssh-nav-title" id="ssh-nav-title">Revision</span>
   <!-- Right side -->
+  <span class="ssh-nav-welcome" id="ssh-nav-welcome" style="display:none"></span>
   <div class="ssh-nav-right" id="ssh-nav-right">
     <!-- Staff badges (shown/hidden by JS) -->
     <a href="teacher.html" class="ssh-nav-badge ssh-badge-teacher" id="ssh-badge-teacher" style="display:none">👨‍🏫 Teacher</a>
@@ -411,7 +412,7 @@
   const moduleKey = `${subject}-${moduleId}`;
 
   // Set up navigation
-  document.getElementById('back-link').href = `module.html?subject=${subject}&module=${moduleId}`;
+  // back-link replaced by ssh-back-btn (set below)
   const _sshBack = document.getElementById('ssh-back-btn');
   if (_sshBack) { _sshBack.href = `module.html?subject=${subject}&module=${moduleId}`; _sshBack.textContent = '← Module'; }
   const _sshT = document.getElementById('ssh-nav-title');
@@ -420,7 +421,7 @@
   document.getElementById('module-link').textContent = `${moduleId.toUpperCase()} ${meta.title}`;
   document.getElementById('subject-link').href = `${subject}.html`;
   document.getElementById('subject-link').textContent = subjectLabel;
-  document.getElementById('nav-title').textContent = `${moduleId.toUpperCase()} Revision`;
+  // nav-title replaced by ssh-nav-title (set above)
   document.getElementById('hero-badge').textContent = moduleId.toUpperCase();
   document.getElementById('hero-badge').style.background = meta.colour;
 
@@ -448,6 +449,7 @@
     // Auth — load RAG state
     onAuthChange(async user => {
       currentUser = user;
+    sshSetWelcome(user);
       if (user) {
         try {
           const { getUserRole } = await import('./firebase.js');
@@ -787,6 +789,14 @@
       try { await saveRAG(currentUser.uid, moduleKey, ragState); } catch(e) {}
     }
   }
+
+  window.sshSetWelcome = function(user) {
+    var el = document.getElementById('ssh-nav-welcome');
+    if (!el || !user) return;
+    var name = (user.displayName || '').split(' ')[0] || 'Student';
+    el.innerHTML = 'Hi, <strong>' + name + '!</strong>';
+    el.style.display = 'inline';
+  };
 </script>
 
 </body>
