@@ -291,6 +291,7 @@
   <!-- Title -->
   <span class="ssh-nav-title" id="ssh-nav-title">Teacher Dashboard</span>
   <!-- Right side -->
+  <span class="ssh-nav-welcome" id="ssh-nav-welcome" style="display:none"></span>
   <div class="ssh-nav-right" id="ssh-nav-right">
     <!-- Staff badges (shown/hidden by JS) -->
     <a href="teacher.html" class="ssh-nav-badge ssh-badge-teacher" id="ssh-badge-teacher" style="display:none">👨‍🏫 Teacher</a>
@@ -658,12 +659,9 @@
 
     currentUser = user;
     document.getElementById('page-content').style.display = 'block';
+    sshSetWelcome(user);
     sshInitNav(user, role);
-    document.getElementById('nav-name').textContent = user.displayName?.split(' ')[0] || 'Teacher';
-    if (role === 'superadmin' || role === 'admin') {
-      document.getElementById('role-badge').textContent = role === 'superadmin' ? 'Super Admin' : 'Admin';
-      document.getElementById('role-badge').style.background = role === 'superadmin' ? 'var(--red)' : '#f97316';
-    }
+    // nav-name and role-badge now handled by ssh-nav badges
 
     // Load classes
     myClasses = await getTeacherClasses(user.uid);
@@ -1502,6 +1500,14 @@
     if (!confirm('Remove this assessment date?')) return;
     await deleteAssessmentDate(cls, subj, id);
     adLoadList();
+  };
+
+  window.sshSetWelcome = function(user) {
+    var el = document.getElementById('ssh-nav-welcome');
+    if (!el || !user) return;
+    var name = (user.displayName || '').split(' ')[0] || 'Student';
+    el.innerHTML = 'Hi, <strong>' + name + '!</strong>';
+    el.style.display = 'inline';
   };
 </script>
 <!-- ── COPY ASSESSMENT MODAL ──────────────────────────────────────────────────── -->
