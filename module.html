@@ -1959,44 +1959,8 @@ loadQuestions();
 <!-- ── FIREBASE ───────────────────────────────────────────────────────────────── -->
 <script type="module">
   import {
- onAuthChange, saveRAG, loadRAG, saveMockScore, getModuleScheduleStatus, getUserProfile, logActivity, saveAssignmentCompletion } from './firebase.js';
+  onAuthChange, saveRAG, loadRAG, saveMockScore, getModuleScheduleStatus, getUserProfile, logActivity, saveAssignmentCompletion } from './firebase.js';
 
-  // ── SHARED NAV INIT ─────────────────────────────────────────────────────────
-  function sshInitNav(user, role) {
-    const isTeacher    = ['teacher','admin','superadmin'].includes(role);
-    const isAdmin      = ['admin','superadmin'].includes(role);
-    const isSuperAdmin = role === 'superadmin';
-    const t = document.getElementById('ssh-badge-teacher');
-    const a = document.getElementById('ssh-badge-admin');
-    const s = document.getElementById('ssh-badge-super');
-    if (t) t.style.display = isTeacher    ? 'inline-flex' : 'none';
-    if (a) a.style.display = isAdmin      ? 'inline-flex' : 'none';
-    if (s) s.style.display = isSuperAdmin ? 'inline-flex' : 'none';
-    const page = window.location.pathname.split('/').pop();
-    if (page === 'teacher.html'    && t) t.style.display = 'none';
-    if (page === 'admin.html'      && a) a.style.display = 'none';
-    if (page === 'superadmin.html' && s) s.style.display = 'none';
-  }
-  window.sshToggleLinks = (e) => {
-    e.stopPropagation();
-    const btn = document.getElementById('ssh-ul-btn');
-    const dd  = document.getElementById('ssh-ul-dropdown');
-    if (!btn || !dd) return;
-    const isOpen = dd.classList.contains('open');
-    dd.classList.toggle('open', !isOpen);
-    btn.style.color = !isOpen ? 'white' : '';
-  };
-  document.addEventListener('click', () => {
-    const dd = document.getElementById('ssh-ul-dropdown');
-    const btn = document.getElementById('ssh-ul-btn');
-    if (dd) dd.classList.remove('open');
-    if (btn) btn.style.color = '';
-  });
-  window.sshSignOut = async () => {
-    try { await signOutUser(); } catch(e) {}
-    window.location.href = 'login.html';
-  };
-  // ── END SHARED NAV ──────────────────────────────────────────────────────────
 
 
   // Detect if opened from an assignment link
@@ -2041,6 +2005,9 @@ loadQuestions();
       }
     } catch(e) { /* non-critical */ }
   };
+
+  // Expose signOut for nav button
+  window._sshSignOutFn = () => signOutUser().then(() => { window.location.href = 'login.html'; }).catch(() => { window.location.href = 'login.html'; });
 
   onAuthChange(async user => {
     const _params = new URLSearchParams(window.location.search);
@@ -2212,6 +2179,28 @@ loadQuestions();
   window.handleSignOut = async () => {
     await signOutUser();
     window.location.href = 'login.html';
+  };
+</script>
+
+<!-- SHARED NAV JS -->
+<script>
+  window.sshToggleLinks = function(e) {
+    e.stopPropagation();
+    var dd = document.getElementById('ssh-ul-dropdown');
+    var btn = document.getElementById('ssh-ul-btn');
+    if (!dd) return;
+    dd.classList.toggle('open');
+    if (btn) btn.style.color = dd.classList.contains('open') ? 'white' : '';
+  };
+  document.addEventListener('click', function() {
+    var dd = document.getElementById('ssh-ul-dropdown');
+    var btn = document.getElementById('ssh-ul-btn');
+    if (dd) dd.classList.remove('open');
+    if (btn) btn.style.color = '';
+  });
+  window.sshSignOut = function() {
+    if (window._sshSignOutFn) { window._sshSignOutFn(); }
+    else { window.location.href = 'login.html'; }
   };
 </script>
 </body>
