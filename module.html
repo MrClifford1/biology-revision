@@ -773,9 +773,8 @@ document.getElementById('module-badge').textContent = moduleId.toUpperCase();
 document.getElementById('module-badge').style.background = meta.colour;
 document.getElementById('module-title').textContent = meta.title;
 document.getElementById('module-subtitle').textContent = meta.subtitle;
-document.getElementById('ul-slides').href = meta.revisionLink;document.getElementById('checklist-title').textContent = `${moduleId.toUpperCase()} ${meta.title} — Topic Checklist`;
-document.getElementById('ul-spec').href   = meta.specLink;
-document.getElementById('ul-slides').href = meta.revisionLink;
+document.getElementById('checklist-title').textContent = `${moduleId.toUpperCase()} ${meta.title} — Topic Checklist`;
+// ul-spec and ul-slides are now in the unified nav dropdown - no longer set here
 // maths-desc removed
 
 document.documentElement.style.setProperty('--accent',       meta.colour);
