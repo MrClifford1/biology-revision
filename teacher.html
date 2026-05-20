@@ -534,6 +534,7 @@
       document.getElementById('student-count').textContent = '';
       document.getElementById('overview-content').innerHTML = '<div class="empty-state">Select a class above to view student data.</div>';
       document.getElementById('heatmap-content').innerHTML = '<div class="empty-state">Select a class above to view the heatmap.</div>';
+      loadAssignments(); // refresh assignments with no filter
       return;
     }
     selectedClass = cls;
@@ -541,6 +542,7 @@
       b.classList.toggle('active', b.textContent.trim() === cls);
     });
     loadClassData();
+    loadAssignments(); // refresh assignments filtered to this class
   };
 
   window.loadClassData = async () => {
@@ -843,13 +845,22 @@
     const list = document.getElementById('assignments-list');
     list.innerHTML = '<div class="loading-state">Loading...</div>';
     const all = await getAllAssignments();
-    if (!all.length) { list.innerHTML = '<div class="empty-state">No assignments yet.</div>'; return; }
+
+    // Filter by selected class if one is chosen
+    const filtered = selectedClass
+      ? all.filter(a => (a.classes || []).includes(selectedClass))
+      : all;
+
+    if (!filtered.length) {
+      list.innerHTML = `<div class="empty-state">${selectedClass ? `No assignments set for ${selectedClass} yet.` : 'No assignments yet.'}</div>`;
+      return;
+    }
     const today = new Date().toISOString().split('T')[0];
     const completionCounts = {};
-    await Promise.all(all.map(async a => {
+    await Promise.all(filtered.map(async a => {
       try { completionCounts[a.id] = await getAssignmentCompletions(a.id); } catch(e) { completionCounts[a.id] = []; }
     }));
-    list.innerHTML = `<div class="assignment-list">${all.map(a => {
+    list.innerHTML = `<div class="assignment-list">${filtered.map(a => {
       const isExpired = a.dueDate && a.dueDate < today;
       const due = a.dueDate ? new Date(a.dueDate+'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}) : '—';
       const typeLabel = TYPE_LABELS[a.type] || a.type;
