@@ -768,7 +768,7 @@ meta.topics = [];
 
 document.title = `${meta.title} — AQA GCSE ${subjectLabel}`;
 window._moduleMeta = meta;
-document.getElementById('nav-title').textContent = meta.title;
+// nav title updated in auth block
 document.getElementById('module-badge').textContent = moduleId.toUpperCase();
 document.getElementById('module-badge').style.background = meta.colour;
 document.getElementById('module-title').textContent = meta.title;
@@ -2049,22 +2049,23 @@ loadQuestions();
     if (!user) { window.location.href = `login.html?redirect=module.html?subject=${_subjectId}&module=${_moduleId}`; return; }
     window._currentUser = user;
 
-    const navTitle = document.getElementById('nav-title');
-    if (navTitle) navTitle.innerHTML = `${window._moduleMeta?.title || document.title} &nbsp;·&nbsp; <span style="color:#94a3b8;font-size:0.8rem">${user.displayName?.split(' ')[0]||''}</span>`;
-    const pl = document.getElementById('progress-link');
-    if (pl) pl.style.display = 'flex';
+    // Update nav title and back link
+    const _sshTitle = document.getElementById('ssh-nav-title');
+    if (_sshTitle && window._moduleMeta) _sshTitle.textContent = `${_moduleId.toUpperCase()} — ${window._moduleMeta.title}`;
+    const _sshBack = document.getElementById('ssh-back-btn');
+    const _subjPages = { biology:'biology.html', chemistry:'chemistry.html', physics:'physics.html' };
+    if (_sshBack) _sshBack.href = _subjPages[_subjectId] || 'index.html';
 
-    // Show staff nav links based on role
+    // Show staff badges based on role
     try {
       const { getUserRole } = await import('./firebase.js');
       const role = await getUserRole(user.email);
-      const wrap = document.getElementById('staff-nav-links');
-      if (wrap && ['teacher','admin','superadmin'].includes(role)) {
-        wrap.style.display = 'flex';
-        document.getElementById('nav-teacher-link').style.display = 'inline-flex';
-      }
-      if (['admin','superadmin'].includes(role)) document.getElementById('nav-admin-link').style.display = 'inline-flex';
-      if (role === 'superadmin') document.getElementById('nav-superadmin-link').style.display = 'inline-flex';
+      const t = document.getElementById('ssh-badge-teacher');
+      const a = document.getElementById('ssh-badge-admin');
+      const s = document.getElementById('ssh-badge-super');
+      if (t) t.style.display = ['teacher','admin','superadmin'].includes(role) ? 'inline-flex' : 'none';
+      if (a) a.style.display = ['admin','superadmin'].includes(role) ? 'inline-flex' : 'none';
+      if (s) s.style.display = role === 'superadmin' ? 'inline-flex' : 'none';
     } catch(e) {}
 
     // Load saved RAG state (decay applied inside loadRAG)
