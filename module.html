@@ -1873,19 +1873,29 @@ function selectMiniMockQuestions() {
 }
 
 async function loadPaperQuestions(modules) {
-  const allQs = [];
-  for (const mod of modules) {
+  // Fetch with a 5s timeout to prevent silent hangs
+  async function fetchJSON(url) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 5000);
     try {
-      // Try prefixed name first (e.g. chemistry-c1, physics-p1), then short name (b1)
-      let res = await fetch(`data/${subjectId}-${mod}-questions.json`);
-      if (!res.ok) res = await fetch(`data/${mod}-questions.json`);
-      if (!res.ok) continue;
-      const qs = await res.json();
-      qs.forEach(q => { q._module = mod; });
-      allQs.push(...qs);
-    } catch(e) {}
+      const res = await fetch(url, { signal: controller.signal });
+      if (!res.ok) return null;
+      const data = await res.json();
+      return data;
+    } catch(e) { return null; }
+    finally { clearTimeout(timer); }
   }
-  return allQs;
+
+  // Load all modules in parallel for speed
+  const results = await Promise.all(modules.map(async mod => {
+    // Try subject-prefixed path first, then bare module name
+    let qs = await fetchJSON(`data/${subjectId}-${mod}-questions.json`);
+    if (!qs) qs = await fetchJSON(`data/${mod}-questions.json`);
+    if (!qs || !Array.isArray(qs)) return [];
+    qs.forEach(q => { q._module = mod; });
+    return qs;
+  }));
+  return results.flat();
 }
 
 function selectPaperQuestions(allQs, targetMarks) {
@@ -1896,8 +1906,9 @@ function selectPaperQuestions(allQs, targetMarks) {
   const large  = allQs.filter(q => q.marks === 6);
 
   function pw(q) {
-    const modMeta = MODULE_META[q._module] || meta;
-    return ragWeight(q.topic, modMeta.topics, ragColours);
+    // ragWeight uses the current module's RAG state; for cross-module papers
+    // topics not in current module will return the default weight (4) which is fine
+    return ragWeight(q.topic);
   }
   function pws(arr) {
     return arr.map(q => ({ q, key: Math.random() * pw(q) })).sort((a,b) => b.key - a.key).map(x => x.q);
