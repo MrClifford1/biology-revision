@@ -46,12 +46,30 @@
         }
       ],
       "keyTerms": [
-        {"term": "Eukaryotic", "def": "Cells with a true nucleus enclosed by a nuclear membrane"},
-        {"term": "Prokaryotic", "def": "Cells without a true nucleus — DNA is free in the cytoplasm"},
-        {"term": "Organelle", "def": "A specialised structure within a cell that carries out a specific function"},
-        {"term": "Cytoplasm", "def": "The jelly-like substance filling the cell where reactions take place"},
-        {"term": "Mitochondria", "def": "Organelles where aerobic respiration occurs to release energy"},
-        {"term": "Ribosome", "def": "Tiny organelles where proteins are made (protein synthesis)"}
+        {
+          "term": "Eukaryotic",
+          "def": "Cells with a true nucleus enclosed by a nuclear membrane"
+        },
+        {
+          "term": "Prokaryotic",
+          "def": "Cells without a true nucleus — DNA is free in the cytoplasm"
+        },
+        {
+          "term": "Organelle",
+          "def": "A specialised structure within a cell that carries out a specific function"
+        },
+        {
+          "term": "Cytoplasm",
+          "def": "The jelly-like substance filling the cell where reactions take place"
+        },
+        {
+          "term": "Mitochondria",
+          "def": "Organelles where aerobic respiration occurs to release energy"
+        },
+        {
+          "term": "Ribosome",
+          "def": "Tiny organelles where proteins are made (protein synthesis)"
+        }
       ],
       "examTips": [
         "Always list plant cell structures as animal structures PLUS the three extras (cell wall, chloroplasts, vacuole).",
@@ -64,10 +82,32 @@
         "Confusing the cell membrane (all cells) with the cell wall (plants and bacteria only)."
       ],
       "videos": [
-        {"title": "Animal and Plant Cells", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=Hmwvj9X4GNY"},
-        {"title": "Prokaryotic vs Eukaryotic Cells", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=Hmwvj9X4GNY"},
-        {"title": "Cell Structure GCSE Biology", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=g8ND7GFiNpE"},
-        {"title": "Plant and Animal Cells", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=tBfSHNXBnfk"}
+        {
+          "title": "Animal and Plant Cells",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=Hmwvj9X4GNY"
+        },
+        {
+          "title": "Prokaryotic vs Eukaryotic Cells",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=Hmwvj9X4GNY"
+        },
+        {
+          "title": "Cell Structure GCSE Biology",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=g8ND7GFiNpE"
+        },
+        {
+          "title": "Plant and Animal Cells",
+          "channel": "Science with Hazel",
+          "url": "https://www.youtube.com/watch?v=tBfSHNXBnfk"
+        }
+      ],
+      "clozePassages": [
+        "The <strong>nucleus</strong> is found in both animal and plant cells and contains DNA, which controls cell activity. The <strong>cell membrane</strong> surrounds every cell and controls the movement of substances in and out. The <strong>cytoplasm</strong> is a jelly-like fluid where chemical reactions take place. <strong>Mitochondria</strong> are the site of aerobic respiration, releasing energy for the cell. <strong>Ribosomes</strong> are tiny structures where protein synthesis occurs.",
+        "Plant cells have several structures not found in animal cells. The <strong>cell wall</strong> is made of cellulose and provides strength and support. <strong>Chloroplasts</strong> contain the green pigment chlorophyll and are the site of photosynthesis. The <strong>vacuole</strong> is a large, fluid-filled space that helps maintain the shape of the cell. Animal cells do not have a cell wall, chloroplasts, or a permanent vacuole.",
+        "<strong>Prokaryotic</strong> cells are much smaller and simpler than <strong>eukaryotic</strong> cells. Prokaryotic cells, such as bacteria, have no true nucleus — their DNA floats freely in the <strong>cytoplasm</strong>. They also lack membrane-bound organelles. Eukaryotic cells, including animal and plant cells, have a nucleus enclosed by a nuclear membrane. The size of a prokaryotic cell is typically 1-10 micrometres.",
+        "Cells can be observed using a <strong>light microscope</strong> or an <strong>electron microscope</strong>. The light microscope uses visible light and can magnify up to around 2000 times. The electron microscope uses a beam of electrons and has much greater <strong>magnification</strong> and <strong>resolution</strong>, allowing sub-cellular structures such as ribosomes to be seen clearly."
       ]
     },
     "Microscopy": {
@@ -109,11 +149,26 @@
         }
       ],
       "keyTerms": [
-        {"term": "Magnification", "def": "How many times larger an image appears compared to the actual object"},
-        {"term": "Resolution", "def": "The ability to distinguish between two points — how much detail you can see"},
-        {"term": "Micrometre (μm)", "def": "Unit of measurement equal to one thousandth of a millimetre"},
-        {"term": "Nanometre (nm)", "def": "Unit of measurement equal to one millionth of a millimetre"},
-        {"term": "Electron microscope", "def": "Microscope using a beam of electrons — much higher magnification and resolution than light microscopes"}
+        {
+          "term": "Magnification",
+          "def": "How many times larger an image appears compared to the actual object"
+        },
+        {
+          "term": "Resolution",
+          "def": "The ability to distinguish between two points — how much detail you can see"
+        },
+        {
+          "term": "Micrometre (μm)",
+          "def": "Unit of measurement equal to one thousandth of a millimetre"
+        },
+        {
+          "term": "Nanometre (nm)",
+          "def": "Unit of measurement equal to one millionth of a millimetre"
+        },
+        {
+          "term": "Electron microscope",
+          "def": "Microscope using a beam of electrons — much higher magnification and resolution than light microscopes"
+        }
       ],
       "examTips": [
         "Show your working clearly in magnification calculations — you can get method marks even with a wrong final answer.",
@@ -126,9 +181,26 @@
         "Saying electron microscopes can view living cells — they cannot, specimens must be dead."
       ],
       "videos": [
-        {"title": "Microscopy and Magnification", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=MsgNBDSdCnY"},
-        {"title": "Microscopy GCSE Biology", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=S5ticKMNwH8"},
-        {"title": "Magnification Calculations", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=qOjYWaFpq8Q"}
+        {
+          "title": "Microscopy and Magnification",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=MsgNBDSdCnY"
+        },
+        {
+          "title": "Microscopy GCSE Biology",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=S5ticKMNwH8"
+        },
+        {
+          "title": "Magnification Calculations",
+          "channel": "Science with Hazel",
+          "url": "https://www.youtube.com/watch?v=qOjYWaFpq8Q"
+        }
+      ],
+      "clozePassages": [
+        "A <strong>light microscope</strong> passes light through a sample to produce a magnified image. The total <strong>magnification</strong> is calculated by multiplying the eyepiece lens by the objective lens. <strong>Resolution</strong> is the ability to distinguish between two points — a higher resolution gives a clearer image. Light microscopes have a resolution of about 200 nanometres, which limits what can be seen.",
+        "The <strong>electron microscope</strong> uses a beam of electrons instead of light, giving a much higher <strong>resolution</strong> than a light microscope. This allows scientists to see sub-cellular structures such as <strong>mitochondria</strong> and <strong>ribosomes</strong> in detail. Electron microscopes can magnify up to 2 million times. However, they are expensive and samples must be prepared in a vacuum.",
+        "When preparing a slide for microscopy, a thin sample is placed on a <strong>microscope slide</strong> and covered with a <strong>coverslip</strong>. A <strong>stain</strong> such as iodine or methylene blue is often used to make structures more visible. The image produced is called a <strong>magnified</strong> image. The actual size of a specimen can be calculated using the formula: size = image size ÷ magnification."
       ]
     },
     "Cell Division": {
@@ -171,11 +243,26 @@
         }
       ],
       "keyTerms": [
-        {"term": "Mitosis", "def": "Cell division that produces two genetically identical diploid daughter cells"},
-        {"term": "Chromosome", "def": "Thread-like structure made of DNA carrying genetic information"},
-        {"term": "Interphase", "def": "The period between cell divisions when DNA is replicated and the cell grows"},
-        {"term": "Diploid", "def": "A cell containing two complete sets of chromosomes (in humans, 46)"},
-        {"term": "Tumour", "def": "A mass of abnormal cells formed by uncontrolled cell division"}
+        {
+          "term": "Mitosis",
+          "def": "Cell division that produces two genetically identical diploid daughter cells"
+        },
+        {
+          "term": "Chromosome",
+          "def": "Thread-like structure made of DNA carrying genetic information"
+        },
+        {
+          "term": "Interphase",
+          "def": "The period between cell divisions when DNA is replicated and the cell grows"
+        },
+        {
+          "term": "Diploid",
+          "def": "A cell containing two complete sets of chromosomes (in humans, 46)"
+        },
+        {
+          "term": "Tumour",
+          "def": "A mass of abnormal cells formed by uncontrolled cell division"
+        }
       ],
       "examTips": [
         "Mitosis produces 2 identical cells. Always state 'genetically identical' in exam answers.",
@@ -188,9 +275,27 @@
         "Confusing chromosomes with genes — chromosomes contain many genes."
       ],
       "videos": [
-        {"title": "Mitosis GCSE Biology", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=6nKbjDGUOUo"},
-        {"title": "The Cell Cycle and Mitosis", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=VlN7K1-9QB0"},
-        {"title": "Cell Division", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=mhtbgCcXEFc"}
+        {
+          "title": "Mitosis GCSE Biology",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=6nKbjDGUOUo"
+        },
+        {
+          "title": "The Cell Cycle and Mitosis",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=VlN7K1-9QB0"
+        },
+        {
+          "title": "Cell Division",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=mhtbgCcXEFc"
+        }
+      ],
+      "clozePassages": [
+        "<strong>Mitosis</strong> is a type of cell division that produces two daughter cells genetically identical to the parent cell. Before mitosis begins, the DNA is copied so that each daughter cell receives a full set of <strong>chromosomes</strong>. Mitosis is used for growth, repair, and <strong>asexual reproduction</strong>. Human body cells contain 46 chromosomes arranged in 23 pairs.",
+        "The <strong>cell cycle</strong> consists of a period of growth and DNA replication followed by cell division. During the growth phase, the cell increases in size and copies its <strong>DNA</strong>. The <strong>chromosomes</strong> then condense and the cell divides by <strong>mitosis</strong> to produce two identical daughter cells. The cell cycle is tightly controlled — loss of control can lead to cancer.",
+        "<strong>Meiosis</strong> is a type of cell division that produces four genetically different daughter cells, each with half the number of <strong>chromosomes</strong> of the parent cell. It occurs in the reproductive organs and produces <strong>gametes</strong> — sperm and egg cells. Each gamete contains 23 chromosomes. When two gametes fuse at <strong>fertilisation</strong>, the full 46 chromosomes are restored.",
+        "Stem cells are undifferentiated cells that can divide and develop into many different cell types. <strong>Embryonic stem cells</strong> can become any type of cell in the body. <strong>Adult stem cells</strong> are more limited and can only form certain cell types. Stem cells have potential uses in medicine, such as treating <strong>diabetes</strong> and paralysis, though their use raises ethical issues."
       ]
     },
     "Transport": {
@@ -235,12 +340,30 @@
         }
       ],
       "keyTerms": [
-        {"term": "Diffusion", "def": "Net movement of particles from high to low concentration — passive, no energy needed"},
-        {"term": "Osmosis", "def": "Movement of water through a partially permeable membrane from high to low water potential"},
-        {"term": "Active transport", "def": "Movement of substances against the concentration gradient using energy from respiration"},
-        {"term": "Concentration gradient", "def": "The difference in concentration between two areas"},
-        {"term": "Partially permeable membrane", "def": "A membrane that allows some molecules through but not others"},
-        {"term": "Turgid", "def": "A plant cell that has absorbed water by osmosis and is firm/swollen"}
+        {
+          "term": "Diffusion",
+          "def": "Net movement of particles from high to low concentration — passive, no energy needed"
+        },
+        {
+          "term": "Osmosis",
+          "def": "Movement of water through a partially permeable membrane from high to low water potential"
+        },
+        {
+          "term": "Active transport",
+          "def": "Movement of substances against the concentration gradient using energy from respiration"
+        },
+        {
+          "term": "Concentration gradient",
+          "def": "The difference in concentration between two areas"
+        },
+        {
+          "term": "Partially permeable membrane",
+          "def": "A membrane that allows some molecules through but not others"
+        },
+        {
+          "term": "Turgid",
+          "def": "A plant cell that has absorbed water by osmosis and is firm/swollen"
+        }
       ],
       "examTips": [
         "The full definition of osmosis must mention: water molecules, partially permeable membrane, water potential (or concentration gradient).",
@@ -253,10 +376,31 @@
         "Applying osmosis to gases — osmosis is water only."
       ],
       "videos": [
-        {"title": "Diffusion, Osmosis and Active Transport", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=aubZU0iWtgI"},
-        {"title": "Osmosis GCSE Biology", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=fPzFxP6ABOE"},
-        {"title": "Active Transport", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=0FHriPdVFMU"},
-        {"title": "Transport in Cells", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=wV80J8V8Zy8"}
+        {
+          "title": "Diffusion, Osmosis and Active Transport",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=aubZU0iWtgI"
+        },
+        {
+          "title": "Osmosis GCSE Biology",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=fPzFxP6ABOE"
+        },
+        {
+          "title": "Active Transport",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=0FHriPdVFMU"
+        },
+        {
+          "title": "Transport in Cells",
+          "channel": "Science with Hazel",
+          "url": "https://www.youtube.com/watch?v=wV80J8V8Zy8"
+        }
+      ],
+      "clozePassages": [
+        "<strong>Diffusion</strong> is the movement of particles from an area of high concentration to an area of low concentration. It is a passive process requiring no energy. The rate of diffusion is affected by the concentration gradient, temperature, and surface area. <strong>Oxygen</strong> and <strong>carbon dioxide</strong> move in and out of cells by diffusion across the <strong>cell membrane</strong>.",
+        "<strong>Osmosis</strong> is the movement of water molecules from a dilute solution to a more concentrated solution through a <strong>partially permeable membrane</strong>. It is a special type of diffusion involving only water. If a cell is placed in a solution more dilute than its contents, water enters by osmosis and the cell swells. If placed in a more concentrated solution, water leaves and the cell shrinks.",
+        "<strong>Active transport</strong> moves substances from a low concentration to a high concentration — against the concentration gradient. It requires <strong>energy</strong> from respiration and involves <strong>carrier proteins</strong> in the cell membrane. Active transport is used in the gut to absorb <strong>glucose</strong> and mineral ions into the blood even when their concentration in the blood is already high."
       ]
     },
     "Specialised Cells": {
@@ -316,11 +460,26 @@
         }
       ],
       "keyTerms": [
-        {"term": "Specialised cell", "def": "A cell adapted in structure to carry out a specific function"},
-        {"term": "Differentiation", "def": "The process by which a cell becomes specialised for a particular function"},
-        {"term": "Flagellum", "def": "A whip-like tail used for cell movement (e.g. in sperm cells)"},
-        {"term": "Cilia", "def": "Tiny hair-like projections on cell surfaces used to move substances"},
-        {"term": "Haploid", "def": "A cell with only one set of chromosomes (half the normal number)"}
+        {
+          "term": "Specialised cell",
+          "def": "A cell adapted in structure to carry out a specific function"
+        },
+        {
+          "term": "Differentiation",
+          "def": "The process by which a cell becomes specialised for a particular function"
+        },
+        {
+          "term": "Flagellum",
+          "def": "A whip-like tail used for cell movement (e.g. in sperm cells)"
+        },
+        {
+          "term": "Cilia",
+          "def": "Tiny hair-like projections on cell surfaces used to move substances"
+        },
+        {
+          "term": "Haploid",
+          "def": "A cell with only one set of chromosomes (half the normal number)"
+        }
       ],
       "examTips": [
         "Always link the structural feature to the function — e.g. 'many mitochondria to provide energy for active transport/movement'.",
@@ -333,9 +492,27 @@
         "Confusing cilia (move mucus) with flagellum (used for swimming by sperm)."
       ],
       "videos": [
-        {"title": "Specialised Cells", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=F2sI9nQ8V_o"},
-        {"title": "Specialised Cells GCSE Biology", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=bFtOWHZSBMM"},
-        {"title": "Cell Adaptations", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=xIxWyoZ0tAc"}
+        {
+          "title": "Specialised Cells",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=F2sI9nQ8V_o"
+        },
+        {
+          "title": "Specialised Cells GCSE Biology",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=bFtOWHZSBMM"
+        },
+        {
+          "title": "Cell Adaptations",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=xIxWyoZ0tAc"
+        }
+      ],
+      "clozePassages": [
+        "Cells become specialised through a process called <strong>differentiation</strong>, where they develop specific structures to carry out particular functions. A <strong>sperm cell</strong> has a streamlined shape, a tail for movement, and many mitochondria to provide energy. An <strong>egg cell</strong> contains nutrients to support the developing embryo and has a membrane that changes after fertilisation to prevent more sperm entering.",
+        "<strong>Red blood cells</strong> are adapted to carry oxygen efficiently. They have a <strong>biconcave</strong> shape which increases surface area for gas exchange. They contain large amounts of <strong>haemoglobin</strong>, which binds to oxygen. Red blood cells have no nucleus, giving more space for haemoglobin. <strong>White blood cells</strong> are part of the immune system and can change shape to engulf pathogens.",
+        "<strong>Nerve cells</strong> (neurones) are long and thin to carry electrical impulses over long distances. They have many <strong>dendrites</strong> to receive signals from other neurones. The <strong>axon</strong> is covered by a myelin sheath which speeds up the transmission of impulses. <strong>Muscle cells</strong> contain protein fibres that can contract and relax, and they have many mitochondria to provide energy for movement.",
+        "<strong>Root hair cells</strong> have a large surface area due to their long, hair-like extension, which increases the rate of <strong>water absorption</strong> by osmosis. They also absorb <strong>mineral ions</strong> by active transport. <strong>Xylem cells</strong> are hollow and have thickened walls strengthened with <strong>lignin</strong>, allowing them to transport water up the plant and provide support."
       ]
     }
   }

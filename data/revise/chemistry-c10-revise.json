@@ -4,23 +4,45 @@
     "Using Resources": {
       "intro": "Humans use the Earth's resources to make materials and products. Understanding sustainable use of resources is crucial for C10.",
       "sections": [
-        {"title": "Natural and Synthetic Materials", "icon": "🌍", "points": [
-          "Natural resources: extracted from Earth — metals, wood, cotton, limestone",
-          "Synthetic materials: made from natural resources through chemical processes — plastics, medicines, alloys",
-          "Finite resources: will run out — fossil fuels, metals",
-          "Renewable resources: can be replenished — wood, crops, solar energy"
-        ]},
-        {"title": "Sustainable Development", "icon": "♻️", "callout": {"type": "exam", "label": "Definition", "text": "Sustainable development meets the needs of the current generation without compromising the ability of future generations to meet their own needs."}, "points": [
-          "Reduce, reuse, recycle — conserves finite resources",
-          "Use renewable energy sources",
-          "Develop more efficient processes",
-          "Life cycle assessment (LCA) helps evaluate environmental impact"
-        ]}
+        {
+          "title": "Natural and Synthetic Materials",
+          "icon": "🌍",
+          "points": [
+            "Natural resources: extracted from Earth — metals, wood, cotton, limestone",
+            "Synthetic materials: made from natural resources through chemical processes — plastics, medicines, alloys",
+            "Finite resources: will run out — fossil fuels, metals",
+            "Renewable resources: can be replenished — wood, crops, solar energy"
+          ]
+        },
+        {
+          "title": "Sustainable Development",
+          "icon": "♻️",
+          "callout": {
+            "type": "exam",
+            "label": "Definition",
+            "text": "Sustainable development meets the needs of the current generation without compromising the ability of future generations to meet their own needs."
+          },
+          "points": [
+            "Reduce, reuse, recycle — conserves finite resources",
+            "Use renewable energy sources",
+            "Develop more efficient processes",
+            "Life cycle assessment (LCA) helps evaluate environmental impact"
+          ]
+        }
       ],
       "keyTerms": [
-        {"term": "Finite resource", "def": "A resource that will eventually run out — cannot be replenished"},
-        {"term": "Renewable resource", "def": "A resource that can be replenished naturally"},
-        {"term": "Sustainable development", "def": "Development that meets current needs without compromising future generations"}
+        {
+          "term": "Finite resource",
+          "def": "A resource that will eventually run out — cannot be replenished"
+        },
+        {
+          "term": "Renewable resource",
+          "def": "A resource that can be replenished naturally"
+        },
+        {
+          "term": "Sustainable development",
+          "def": "Development that meets current needs without compromising future generations"
+        }
       ],
       "examTips": [
         "Metals are finite — they must be mined; recycling conserves them.",
@@ -31,32 +53,71 @@
         "Confusing reusing (same purpose) with recycling (reprocessed into new material)."
       ],
       "videos": [
-        {"title": "Using Resources GCSE Chemistry", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=m6c0gSV8rGM"},
-        {"title": "Sustainable Resources", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=m6c0gSV8rGM"},
-        {"title": "Resources", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=GZLhXDaP0ro"}
+        {
+          "title": "Using Resources GCSE Chemistry",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=m6c0gSV8rGM"
+        },
+        {
+          "title": "Sustainable Resources",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=m6c0gSV8rGM"
+        },
+        {
+          "title": "Resources",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=GZLhXDaP0ro"
+        }
+      ],
+      "clozePassages": [
+        "The Earth provides us with many <strong>natural resources</strong> including fossil fuels, metals, and fresh water. Some of these are <strong>finite</strong> (non-renewable) — they will eventually run out if we continue to use them at current rates. Others are <strong>renewable</strong>. Sustainable development means using resources to meet current needs without compromising the ability of future generations to meet theirs. Reducing, reusing, and recycling materials are key strategies for more sustainable use of resources.",
+        "<strong>Recycling</strong> conserves finite resources and reduces energy use. Recycling aluminium uses only 5% of the energy needed to produce it from bauxite ore. Recycling <strong>copper</strong>, steel, and glass all save energy and raw materials compared to extracting and processing virgin materials. However, collection, sorting, and processing recyclables also requires energy and resources. Life cycle assessments help evaluate whether recycling is more sustainable than other options.",
+        "Humans obtain resources in various ways. <strong>Mining</strong> extracts metal ores and other minerals from the ground. Agriculture produces food and plant-based materials. Drilling extracts <strong>fossil fuels</strong>. These processes can cause environmental damage including habitat destruction, pollution, and land degradation. <strong>Phytomining</strong> (using plants to absorb metal ions from soil) and bioleaching (using bacteria to extract metals) are more sustainable alternatives for low-grade ores."
       ]
     },
     "Life Cycle Assessment": {
       "intro": "A life cycle assessment (LCA) evaluates the environmental impact of a product from raw material extraction to disposal.",
       "sections": [
-        {"title": "Stages of an LCA", "icon": "🔄", "numbered": [
-          "Extracting and processing raw materials",
-          "Manufacturing and packaging",
-          "Use and transport",
-          "Disposal (landfill, recycling, incineration)"
-        ]},
-        {"title": "What LCA Considers", "icon": "📊", "points": [
-          "Energy use at each stage",
-          "Water use",
-          "Carbon footprint (CO₂ emissions)",
-          "Waste and pollution generated",
-          "Resource depletion"
-        ]},
-        {"title": "Limitations of LCA", "icon": "⚠️", "callout": {"type": "warn", "label": "Limitations", "text": "LCAs can be subjective — different companies may weigh factors differently. Can be used selectively to support a commercial argument. Numerical data may be incomplete."}}
+        {
+          "title": "Stages of an LCA",
+          "icon": "🔄",
+          "numbered": [
+            "Extracting and processing raw materials",
+            "Manufacturing and packaging",
+            "Use and transport",
+            "Disposal (landfill, recycling, incineration)"
+          ]
+        },
+        {
+          "title": "What LCA Considers",
+          "icon": "📊",
+          "points": [
+            "Energy use at each stage",
+            "Water use",
+            "Carbon footprint (CO₂ emissions)",
+            "Waste and pollution generated",
+            "Resource depletion"
+          ]
+        },
+        {
+          "title": "Limitations of LCA",
+          "icon": "⚠️",
+          "callout": {
+            "type": "warn",
+            "label": "Limitations",
+            "text": "LCAs can be subjective — different companies may weigh factors differently. Can be used selectively to support a commercial argument. Numerical data may be incomplete."
+          }
+        }
       ],
       "keyTerms": [
-        {"term": "Life cycle assessment", "def": "An evaluation of the environmental impact of a product throughout its entire life"},
-        {"term": "Carbon footprint", "def": "Total CO₂ (and equivalent) emissions from a product or process"}
+        {
+          "term": "Life cycle assessment",
+          "def": "An evaluation of the environmental impact of a product throughout its entire life"
+        },
+        {
+          "term": "Carbon footprint",
+          "def": "Total CO₂ (and equivalent) emissions from a product or process"
+        }
       ],
       "examTips": [
         "LCA covers the WHOLE life of a product — from raw materials to disposal.",
@@ -67,33 +128,67 @@
         "Forgetting disposal stage — many students only consider manufacturing."
       ],
       "videos": [
-        {"title": "Life Cycle Assessment GCSE", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=m6c0gSV8rGM"},
-        {"title": "LCA Chemistry", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=m6c0gSV8rGM"}
+        {
+          "title": "Life Cycle Assessment GCSE",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=m6c0gSV8rGM"
+        },
+        {
+          "title": "LCA Chemistry",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=m6c0gSV8rGM"
+        }
+      ],
+      "clozePassages": [
+        "A <strong>life cycle assessment</strong> (LCA) evaluates the environmental impact of a product from extraction of raw materials to disposal — often called <strong>cradle to grave</strong>. It considers extraction and processing of raw materials, manufacturing and packaging, use, and <strong>disposal</strong>. LCAs help compare the environmental impact of different products and identify stages where improvements can be made. Some stages are easier to quantify than others.",
+        "The stages of an LCA include: extraction of <strong>raw materials</strong>, manufacture and processing, distribution, use, and end-of-life disposal or recycling. At each stage, inputs of materials and energy are considered alongside outputs of waste and <strong>emissions</strong>. A product with a low manufacturing impact may have a high use-phase impact (e.g. energy consumption). LCAs help businesses make more informed decisions about product design and encourage <strong>sustainable</strong> choices.",
+        "<strong>LCAs</strong> have limitations. Some stages are difficult to quantify — for example, the environmental cost of land use or biodiversity loss. LCAs can be manipulated to favour a particular product by selecting which stages and factors to include. They are also time-consuming and expensive to carry out fully. Despite these limitations, LCAs are valuable tools for comparing the overall <strong>environmental impact</strong> of different materials and helping make more sustainable choices."
       ]
     },
     "Water": {
       "intro": "Water is essential for life and industry. Understanding how water is made safe to drink and the difference between potable and pure water is required for C10.",
       "sections": [
-        {"title": "Potable Water", "icon": "💧", "points": [
-          "Potable = safe to drink (not the same as chemically pure)",
-          "Contains dissolved salts and minerals — not 100% pure H₂O",
-          "UK sources: surface water (rivers, lakes), ground water (aquifers)"
-        ]},
-        {"title": "Making Water Potable", "icon": "🏭", "numbered": [
-          "Sedimentation — large particles settle out",
-          "Filtration — sand and gravel filters remove smaller particles",
-          "Chlorination — chlorine added to kill microorganisms"
-        ]},
-        {"title": "Desalination", "icon": "🌊", "points": [
-          "Removes salt from seawater — used in water-scarce countries",
-          "Methods: distillation (energy intensive) or reverse osmosis (uses high pressure)",
-          "Expensive and high energy use — not widely used in UK"
-        ]}
+        {
+          "title": "Potable Water",
+          "icon": "💧",
+          "points": [
+            "Potable = safe to drink (not the same as chemically pure)",
+            "Contains dissolved salts and minerals — not 100% pure H₂O",
+            "UK sources: surface water (rivers, lakes), ground water (aquifers)"
+          ]
+        },
+        {
+          "title": "Making Water Potable",
+          "icon": "🏭",
+          "numbered": [
+            "Sedimentation — large particles settle out",
+            "Filtration — sand and gravel filters remove smaller particles",
+            "Chlorination — chlorine added to kill microorganisms"
+          ]
+        },
+        {
+          "title": "Desalination",
+          "icon": "🌊",
+          "points": [
+            "Removes salt from seawater — used in water-scarce countries",
+            "Methods: distillation (energy intensive) or reverse osmosis (uses high pressure)",
+            "Expensive and high energy use — not widely used in UK"
+          ]
+        }
       ],
       "keyTerms": [
-        {"term": "Potable water", "def": "Water that is safe to drink — not necessarily pure"},
-        {"term": "Desalination", "def": "The removal of dissolved salts from seawater to make it drinkable"},
-        {"term": "Chlorination", "def": "Adding chlorine to water to kill microorganisms"}
+        {
+          "term": "Potable water",
+          "def": "Water that is safe to drink — not necessarily pure"
+        },
+        {
+          "term": "Desalination",
+          "def": "The removal of dissolved salts from seawater to make it drinkable"
+        },
+        {
+          "term": "Chlorination",
+          "def": "Adding chlorine to water to kill microorganisms"
+        }
       ],
       "examTips": [
         "Potable ≠ pure. Potable water contains dissolved substances but is safe to drink.",
@@ -104,36 +199,74 @@
         "Confusing filtration (removes particles) with chlorination (kills microbes)."
       ],
       "videos": [
-        {"title": "Water Treatment GCSE Chemistry", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=m6c0gSV8rGM"},
-        {"title": "Potable Water", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=m6c0gSV8rGM"},
-        {"title": "Water Purification", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=GZLhXDaP0ro"}
+        {
+          "title": "Water Treatment GCSE Chemistry",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=m6c0gSV8rGM"
+        },
+        {
+          "title": "Potable Water",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=m6c0gSV8rGM"
+        },
+        {
+          "title": "Water Purification",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=GZLhXDaP0ro"
+        }
+      ],
+      "clozePassages": [
+        "Fresh water is a vital but increasingly scarce resource. It can be obtained from rivers, lakes, and aquifers. Before use, water must be treated to make it safe to drink. <strong>Sedimentation</strong> allows solids to settle. <strong>Filtration</strong> removes fine particles. <strong>Chlorination</strong> kills microorganisms. The treated water is potable — safe to drink. In some regions, <strong>desalination</strong> (removing salt from seawater) is used, but this requires large amounts of energy.",
+        "Water quality is assessed by measuring the concentration of dissolved substances and <strong>microorganisms</strong>. <strong>Hard water</strong> contains dissolved calcium and magnesium ions from rocks. It is not harmful to health but causes scale in pipes and reduces the effectiveness of soap. Hard water can be softened by adding sodium carbonate to precipitate calcium ions, or by passing it through an <strong>ion exchange</strong> column. Distillation produces very pure water but is expensive.",
+        "Waste water from homes and industry must be treated before being returned to rivers. <strong>Sewage treatment</strong> involves screening, sedimentation, and biological treatment by bacteria that decompose organic matter. <strong>Sludge</strong> can be dried and used as fertiliser or digested anaerobically to produce biogas. Industrial effluent is treated to remove toxic chemicals before discharge. Good water management is essential for environmental protection and <strong>public health</strong>."
       ]
     },
     "Alternative Metal Extraction": {
       "intro": "Traditional metal extraction uses carbon reduction or electrolysis, but newer methods are being developed for low-grade ores and environmental reasons.",
       "sections": [
-        {"title": "Traditional Extraction", "icon": "⛏️", "points": [
-          "Metals below carbon in reactivity series: reduced by carbon (e.g. iron in blast furnace)",
-          "Metals above carbon (e.g. aluminium): extracted by electrolysis (more expensive)",
-          "Mining has environmental impact: habitat destruction, pollution"
-        ]},
-        {"title": "Phytomining", "icon": "🌱", "points": [
-          "Plants absorb metal compounds through roots",
-          "Plants are harvested and burned",
-          "Ash contains metal compounds — processed to extract metal",
-          "Useful for low-grade ores not worth traditional mining"
-        ]},
-        {"title": "Bioleaching", "icon": "🦠", "points": [
-          "Bacteria break down low-grade metal ores",
-          "Produce an acidic solution (leachate) containing metal ions",
-          "Metal extracted from solution by electrolysis or displacement",
-          "Slower than traditional methods but lower environmental impact"
-        ]}
+        {
+          "title": "Traditional Extraction",
+          "icon": "⛏️",
+          "points": [
+            "Metals below carbon in reactivity series: reduced by carbon (e.g. iron in blast furnace)",
+            "Metals above carbon (e.g. aluminium): extracted by electrolysis (more expensive)",
+            "Mining has environmental impact: habitat destruction, pollution"
+          ]
+        },
+        {
+          "title": "Phytomining",
+          "icon": "🌱",
+          "points": [
+            "Plants absorb metal compounds through roots",
+            "Plants are harvested and burned",
+            "Ash contains metal compounds — processed to extract metal",
+            "Useful for low-grade ores not worth traditional mining"
+          ]
+        },
+        {
+          "title": "Bioleaching",
+          "icon": "🦠",
+          "points": [
+            "Bacteria break down low-grade metal ores",
+            "Produce an acidic solution (leachate) containing metal ions",
+            "Metal extracted from solution by electrolysis or displacement",
+            "Slower than traditional methods but lower environmental impact"
+          ]
+        }
       ],
       "keyTerms": [
-        {"term": "Phytomining", "def": "Using plants to absorb metal compounds from soil, then burning to extract the metal"},
-        {"term": "Bioleaching", "def": "Using bacteria to extract metals from low-grade ores"},
-        {"term": "Low-grade ore", "def": "Rock containing only a small percentage of the desired metal"}
+        {
+          "term": "Phytomining",
+          "def": "Using plants to absorb metal compounds from soil, then burning to extract the metal"
+        },
+        {
+          "term": "Bioleaching",
+          "def": "Using bacteria to extract metals from low-grade ores"
+        },
+        {
+          "term": "Low-grade ore",
+          "def": "Rock containing only a small percentage of the desired metal"
+        }
       ],
       "examTips": [
         "Phytomining = plants absorb metal → burn → extract from ash.",
@@ -145,31 +278,68 @@
         "Forgetting the final step — metal still needs extracting from the solution/ash."
       ],
       "videos": [
-        {"title": "Alternative Metal Extraction", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=Ry6LcFtpF04"},
-        {"title": "Phytomining and Bioleaching GCSE", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=Ry6LcFtpF04"},
-        {"title": "Metal Extraction", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=n2N8VXmPM1Y"}
+        {
+          "title": "Alternative Metal Extraction",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=Ry6LcFtpF04"
+        },
+        {
+          "title": "Phytomining and Bioleaching GCSE",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=Ry6LcFtpF04"
+        },
+        {
+          "title": "Metal Extraction",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=n2N8VXmPM1Y"
+        }
+      ],
+      "clozePassages": [
+        "<strong>Phytomining</strong> uses plants to absorb metal ions from low-grade ores in the soil. The plants are harvested and burned. The <strong>ash</strong> contains a higher concentration of the metal than the original soil. This method is less destructive than traditional mining and can be used on previously mined land. <strong>Bioleaching</strong> uses bacteria to extract metals from ores. The bacteria produce acidic solutions that leach out metal ions, which can then be processed to obtain the metal.",
+        "<strong>Bioleaching</strong> uses microorganisms to convert metal compounds in low-grade ores into soluble metal ions. The resulting solution, called a <strong>leachate</strong>, contains the metal ions. The metal can be extracted from the leachate by displacement with scrap iron or by electrolysis. Bioleaching is slower than traditional extraction but can be used on ores that would be uneconomical to process using conventional methods, reducing the need to mine high-grade ores.",
+        "Traditional metal extraction by <strong>smelting</strong> uses large amounts of energy and causes pollution. <strong>Phytomining</strong> and <strong>bioleaching</strong> are greener alternatives, particularly for low-grade ores. They cause less landscape destruction and use less energy. However, they are slower processes. As high-grade ores become depleted, these alternative extraction methods will become increasingly important. Recycling metals is also an important strategy to reduce the need for <strong>primary extraction</strong>."
       ]
     },
     "Corrosion": {
       "intro": "Corrosion is the degradation of metals by reaction with their environment. Rusting is the most common example.",
       "sections": [
-        {"title": "Rusting", "icon": "🔩", "points": [
-          "Iron reacts with oxygen AND water to form hydrated iron(III) oxide (rust)",
-          "Both oxygen and water are needed — neither alone causes rust",
-          "Rust is a redox reaction — iron is oxidised"
-        ]},
-        {"title": "Prevention", "icon": "🛡️", "points": [
-          "<strong>Painting or oiling</strong> — creates barrier preventing water and oxygen contact",
-          "<strong>Galvanising</strong> — coating with zinc; zinc is sacrificial (more reactive, oxidises first)",
-          "<strong>Electroplating</strong> — coating with another metal (e.g. chromium for stainless steel appearance)",
-          "<strong>Sacrificial protection</strong> — attach more reactive metal (zinc/magnesium); it corrodes instead"
-        ]}
+        {
+          "title": "Rusting",
+          "icon": "🔩",
+          "points": [
+            "Iron reacts with oxygen AND water to form hydrated iron(III) oxide (rust)",
+            "Both oxygen and water are needed — neither alone causes rust",
+            "Rust is a redox reaction — iron is oxidised"
+          ]
+        },
+        {
+          "title": "Prevention",
+          "icon": "🛡️",
+          "points": [
+            "<strong>Painting or oiling</strong> — creates barrier preventing water and oxygen contact",
+            "<strong>Galvanising</strong> — coating with zinc; zinc is sacrificial (more reactive, oxidises first)",
+            "<strong>Electroplating</strong> — coating with another metal (e.g. chromium for stainless steel appearance)",
+            "<strong>Sacrificial protection</strong> — attach more reactive metal (zinc/magnesium); it corrodes instead"
+          ]
+        }
       ],
       "keyTerms": [
-        {"term": "Corrosion", "def": "Degradation of a metal by reaction with its environment"},
-        {"term": "Rusting", "def": "Oxidation of iron in the presence of water and oxygen"},
-        {"term": "Galvanising", "def": "Coating iron with zinc to prevent rusting"},
-        {"term": "Sacrificial protection", "def": "Attaching a more reactive metal that corrodes instead of the protected metal"}
+        {
+          "term": "Corrosion",
+          "def": "Degradation of a metal by reaction with its environment"
+        },
+        {
+          "term": "Rusting",
+          "def": "Oxidation of iron in the presence of water and oxygen"
+        },
+        {
+          "term": "Galvanising",
+          "def": "Coating iron with zinc to prevent rusting"
+        },
+        {
+          "term": "Sacrificial protection",
+          "def": "Attaching a more reactive metal that corrodes instead of the protected metal"
+        }
       ],
       "examTips": [
         "Rusting needs BOTH oxygen AND water — remove either to prevent it.",
@@ -180,35 +350,73 @@
         "Forgetting that galvanising works by sacrificial protection even if the zinc coating is scratched."
       ],
       "videos": [
-        {"title": "Corrosion and Rusting GCSE", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=Ry6LcFtpF04"},
-        {"title": "Preventing Rust", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=Ry6LcFtpF04"},
-        {"title": "Corrosion", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=n2N8VXmPM1Y"}
+        {
+          "title": "Corrosion and Rusting GCSE",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=Ry6LcFtpF04"
+        },
+        {
+          "title": "Preventing Rust",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=Ry6LcFtpF04"
+        },
+        {
+          "title": "Corrosion",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=n2N8VXmPM1Y"
+        }
+      ],
+      "clozePassages": [
+        "<strong>Corrosion</strong> is the destruction of materials by chemical reactions with substances in the environment. <strong>Rusting</strong> is the corrosion of iron — it requires both oxygen and water. The iron is oxidised to form hydrated iron(III) oxide (<strong>rust</strong>). Rusting causes significant economic damage to structures and vehicles each year. It can be prevented by keeping iron dry, painting, oiling, or coating with another metal such as zinc (galvanising) or tin.",
+        "<strong>Galvanising</strong> protects iron by coating it with a layer of <strong>zinc</strong>. Zinc is more reactive than iron, so it is preferentially oxidised — it provides sacrificial protection. Even if the zinc coating is scratched and iron is exposed, the zinc continues to corrode in preference to the iron. Sacrificial protection can also be provided by attaching blocks of a reactive metal such as magnesium or zinc directly to the iron or steel structure.",
+        "Methods of preventing <strong>corrosion</strong> include physical barriers that keep oxygen and water away from the metal surface. <strong>Painting</strong>, applying grease or oil, electroplating with a less reactive metal (such as tin-plating steel for food cans), and plastic coating all create barriers. Alloying iron with chromium and nickel produces <strong>stainless steel</strong>, which is resistant to corrosion. The chromium reacts with oxygen to form a thin, protective oxide layer on the surface."
       ]
     },
     "Materials": {
       "intro": "Different materials have different properties making them suitable for different uses. Understanding how structure determines properties is key to materials science.",
       "sections": [
-        {"title": "Ceramics", "icon": "🏺", "points": [
-          "Made from clay, heated to high temperatures",
-          "Hard, brittle, high melting point, good thermal and electrical insulators",
-          "Examples: glass, pottery, brick, cement"
-        ]},
-        {"title": "Composites", "icon": "🏗️", "points": [
-          "Made from two or more materials combined — matrix and reinforcement",
-          "Properties combine benefits of both components",
-          "Examples: carbon fibre reinforced polymer (CFRP) — light and strong",
-          "Concrete = aggregate + cement (composite); fibreglass = glass fibres + polymer"
-        ]},
-        {"title": "Glass and Clay", "icon": "🪟", "points": [
-          "Soda-lime glass: made from sand (SiO₂), limestone, sodium carbonate — common glass",
-          "Borosilicate glass: more heat-resistant — lab glassware",
-          "Glass-ceramic: can withstand thermal shock — hob cooktops"
-        ]}
+        {
+          "title": "Ceramics",
+          "icon": "🏺",
+          "points": [
+            "Made from clay, heated to high temperatures",
+            "Hard, brittle, high melting point, good thermal and electrical insulators",
+            "Examples: glass, pottery, brick, cement"
+          ]
+        },
+        {
+          "title": "Composites",
+          "icon": "🏗️",
+          "points": [
+            "Made from two or more materials combined — matrix and reinforcement",
+            "Properties combine benefits of both components",
+            "Examples: carbon fibre reinforced polymer (CFRP) — light and strong",
+            "Concrete = aggregate + cement (composite); fibreglass = glass fibres + polymer"
+          ]
+        },
+        {
+          "title": "Glass and Clay",
+          "icon": "🪟",
+          "points": [
+            "Soda-lime glass: made from sand (SiO₂), limestone, sodium carbonate — common glass",
+            "Borosilicate glass: more heat-resistant — lab glassware",
+            "Glass-ceramic: can withstand thermal shock — hob cooktops"
+          ]
+        }
       ],
       "keyTerms": [
-        {"term": "Ceramic", "def": "Hard, brittle material made from clay fired at high temperature"},
-        {"term": "Composite", "def": "Material made from two or more materials combined to have improved properties"},
-        {"term": "Polymer", "def": "Long-chain molecule; many synthetic polymers used as materials (plastics)"}
+        {
+          "term": "Ceramic",
+          "def": "Hard, brittle material made from clay fired at high temperature"
+        },
+        {
+          "term": "Composite",
+          "def": "Material made from two or more materials combined to have improved properties"
+        },
+        {
+          "term": "Polymer",
+          "def": "Long-chain molecule; many synthetic polymers used as materials (plastics)"
+        }
       ],
       "examTips": [
         "Composites combine properties of their components — explain what each component contributes.",
@@ -219,9 +427,26 @@
         "Forgetting that glass is a ceramic — it's made from silicon dioxide."
       ],
       "videos": [
-        {"title": "Materials Science GCSE Chemistry", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=m6c0gSV8rGM"},
-        {"title": "Ceramics and Composites", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=m6c0gSV8rGM"},
-        {"title": "Materials", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=GZLhXDaP0ro"}
+        {
+          "title": "Materials Science GCSE Chemistry",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=m6c0gSV8rGM"
+        },
+        {
+          "title": "Ceramics and Composites",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=m6c0gSV8rGM"
+        },
+        {
+          "title": "Materials",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=GZLhXDaP0ro"
+        }
+      ],
+      "clozePassages": [
+        "Different materials have different properties that make them suitable for different uses. <strong>Metals</strong> are strong, malleable, and good conductors. <strong>Ceramics</strong> are hard, brittle, and heat-resistant. <strong>Polymers</strong> are lightweight and can be moulded into shapes. <strong>Composites</strong> are made from two or more materials combined to give properties better than either alone. Carbon fibre reinforced polymer combines the strength of carbon fibre with the light weight and flexibility of the polymer matrix.",
+        "<strong>Glass</strong> is a ceramic material made by melting sand (silicon dioxide) with limestone and sodium carbonate. It is transparent, hard, and chemically resistant. <strong>Soda-lime glass</strong> is used for windows. <strong>Borosilicate glass</strong> has a low coefficient of thermal expansion and is used for laboratory glassware and cookware. <strong>Composite materials</strong> such as reinforced concrete combine the compressive strength of concrete with the tensile strength of steel rods to make a versatile building material.",
+        "<strong>Smart materials</strong> have properties that change in response to external stimuli. <strong>Shape memory alloys</strong> return to their original shape when heated, used in medical devices and spectacle frames. <strong>Thermochromic</strong> materials change colour with temperature, used in mood rings and baby spoons. <strong>Hydrogels</strong> absorb large quantities of water and are used in soft contact lenses and wound dressings. New materials are constantly being developed through research and nanotechnology."
       ]
     }
   }

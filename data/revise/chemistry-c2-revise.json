@@ -6,20 +6,20 @@
       "sections": [
         {
           "title": "Types of Bond",
-          "icon": "\ud83d\udd17",
+          "icon": "🔗",
           "points": [
-            "<strong>Ionic bonding</strong> \u2014 transfer of electrons between metal and non-metal; forms ions",
-            "<strong>Covalent bonding</strong> \u2014 sharing of electrons between non-metals",
-            "<strong>Metallic bonding</strong> \u2014 sea of delocalised electrons between positive metal ions"
+            "<strong>Ionic bonding</strong> — transfer of electrons between metal and non-metal; forms ions",
+            "<strong>Covalent bonding</strong> — sharing of electrons between non-metals",
+            "<strong>Metallic bonding</strong> — sea of delocalised electrons between positive metal ions"
           ]
         },
         {
           "title": "Electron Shells and Bonding",
-          "icon": "\u269b\ufe0f",
+          "icon": "⚛️",
           "callout": {
             "type": "exam",
             "label": "Why Bond?",
-            "text": "Atoms bond to achieve a full outer electron shell (usually 8 \u2014 octet rule). Bonding makes atoms more stable."
+            "text": "Atoms bond to achieve a full outer electron shell (usually 8 — octet rule). Bonding makes atoms more stable."
           }
         }
       ],
@@ -60,6 +60,11 @@
           "channel": "Fuse School",
           "url": "https://www.youtube.com/watch?v=E6bsASJ6fco"
         }
+      ],
+      "clozePassages": [
+        "There are three main types of chemical bonding. <strong>Ionic bonding</strong> involves the transfer of electrons from metals to non-metals, forming oppositely charged ions that attract each other. <strong>Covalent bonding</strong> involves the sharing of electrons between non-metal atoms. <strong>Metallic bonding</strong> involves a lattice of positive ions surrounded by a sea of delocalised electrons. The type of bonding determines the properties of the substance.",
+        "The type of <strong>bonding</strong> in a substance determines its properties. <strong>Ionic compounds</strong> have high melting points, are brittle, and conduct electricity when molten or dissolved. Covalent substances generally have lower melting points. <strong>Metals</strong> are good conductors of electricity and heat due to delocalised electrons. Understanding bonding helps predict whether a substance will be solid, liquid, or gas at room temperature and how it will react.",
+        "Atoms form bonds to achieve a stable electronic configuration — usually a full outer shell. In <strong>ionic bonding</strong>, metals lose electrons to form positive <strong>cations</strong> and non-metals gain electrons to form negative anions. The opposite charges attract, forming an ionic lattice. In <strong>covalent bonding</strong>, atoms share pairs of electrons. Each shared pair forms one covalent bond. Some atoms can form double or triple bonds by sharing more than one pair of electrons."
       ]
     },
     "Ionic Compounds": {
@@ -67,22 +72,22 @@
       "sections": [
         {
           "title": "Forming Ions",
-          "icon": "\u26a1",
+          "icon": "⚡",
           "points": [
-            "Metal loses electrons \u2192 forms positive ion (cation)",
-            "Non-metal gains electrons \u2192 forms negative ion (anion)",
-            "Ions have full outer electron shells \u2014 stable configuration",
-            "Examples: Na\u207a, Mg\u00b2\u207a, Cl\u207b, O\u00b2\u207b"
+            "Metal loses electrons → forms positive ion (cation)",
+            "Non-metal gains electrons → forms negative ion (anion)",
+            "Ions have full outer electron shells — stable configuration",
+            "Examples: Na⁺, Mg²⁺, Cl⁻, O²⁻"
           ]
         },
         {
           "title": "Properties of Ionic Compounds",
-          "icon": "\ud83d\udd2c",
+          "icon": "🔬",
           "points": [
-            "<strong>High melting/boiling points</strong> \u2014 strong electrostatic forces need a lot of energy to overcome",
-            "<strong>Conduct electricity when dissolved in water or molten</strong> \u2014 ions free to move",
-            "<strong>Do NOT conduct when solid</strong> \u2014 ions held in fixed positions",
-            "<strong>Often soluble in water</strong> \u2014 water molecules can surround and separate the ions"
+            "<strong>High melting/boiling points</strong> — strong electrostatic forces need a lot of energy to overcome",
+            "<strong>Conduct electricity when dissolved in water or molten</strong> — ions free to move",
+            "<strong>Do NOT conduct when solid</strong> — ions held in fixed positions",
+            "<strong>Often soluble in water</strong> — water molecules can surround and separate the ions"
           ]
         }
       ],
@@ -105,11 +110,11 @@
         }
       ],
       "examTips": [
-        "Ionic compounds conduct electricity when MOLTEN or in SOLUTION \u2014 not when solid.",
+        "Ionic compounds conduct electricity when MOLTEN or in SOLUTION — not when solid.",
         "Higher charge on ions = stronger force = higher melting point (e.g. MgO higher than NaCl)."
       ],
       "commonMistakes": [
-        "Saying ionic compounds conduct electricity as solids \u2014 they don't, ions can't move.",
+        "Saying ionic compounds conduct electricity as solids — they don't, ions can't move.",
         "Forgetting that ALL ionic compounds have high melting points."
       ],
       "videos": [
@@ -128,6 +133,11 @@
           "channel": "Fuse School",
           "url": "https://www.youtube.com/watch?v=E6bsASJ6fco"
         }
+      ],
+      "clozePassages": [
+        "<strong>Ionic compounds</strong> consist of a regular lattice of positive and negative ions held together by strong electrostatic forces of attraction. They have high <strong>melting points</strong> because a large amount of energy is needed to break the lattice. They conduct electricity when <strong>molten</strong> or dissolved in water because the ions are free to move, but not when solid. Ionic compounds are typically brittle and crystalline.",
+        "Common ionic compounds include <strong>sodium chloride</strong> (NaCl), formed when sodium gives an electron to chlorine. Sodium forms a Na⁺ ion and chlorine forms a Cl⁻ ion. These oppositely charged ions are attracted and form a giant <strong>ionic lattice</strong>. The properties of ionic compounds — including their high melting points and solubility — result from the strength of the electrostatic forces holding the lattice together.",
+        "<strong>Electrolysis</strong> can decompose ionic compounds. When an ionic compound is <strong>molten</strong> or dissolved, the ions are free to move to the electrodes. Positive ions (cations) move to the negative electrode (<strong>cathode</strong>) where they gain electrons and are reduced. Negative ions (anions) move to the positive electrode (<strong>anode</strong>) where they lose electrons and are oxidised. This principle is used to extract reactive metals like aluminium."
       ]
     },
     "Covalent Substances": {
@@ -135,31 +145,31 @@
       "sections": [
         {
           "title": "Simple Molecular Substances",
-          "icon": "\ud83d\udca7",
+          "icon": "💧",
           "points": [
             "Small molecules held together by STRONG covalent bonds",
             "Molecules held to each other by WEAK intermolecular forces",
-            "Low melting/boiling points \u2014 weak forces easy to overcome",
-            "Do NOT conduct electricity \u2014 no charged particles",
-            "Examples: H\u2082O, CO\u2082, O\u2082, NH\u2083, CH\u2084"
+            "Low melting/boiling points — weak forces easy to overcome",
+            "Do NOT conduct electricity — no charged particles",
+            "Examples: H₂O, CO₂, O₂, NH₃, CH₄"
           ]
         },
         {
           "title": "Giant Covalent Structures",
-          "icon": "\ud83d\udc8e",
+          "icon": "💎",
           "points": [
             "Millions of atoms covalently bonded in a 3D lattice",
-            "Very high melting/boiling points \u2014 many strong covalent bonds to break",
+            "Very high melting/boiling points — many strong covalent bonds to break",
             "Do NOT conduct electricity (except graphite)",
             "Examples: diamond (hardest natural substance), silicon dioxide (sand), graphite, graphene"
           ]
         },
         {
           "title": "Diamond vs Graphite",
-          "icon": "\u2696\ufe0f",
+          "icon": "⚖️",
           "points": [
-            "<strong>Diamond</strong> \u2014 each C bonded to 4 others; tetrahedral; very hard; no free electrons; doesn't conduct",
-            "<strong>Graphite</strong> \u2014 each C bonded to 3 others in layers; 1 delocalised electron per atom; conducts electricity; layers slide (lubricant)"
+            "<strong>Diamond</strong> — each C bonded to 4 others; tetrahedral; very hard; no free electrons; doesn't conduct",
+            "<strong>Graphite</strong> — each C bonded to 3 others in layers; 1 delocalised electron per atom; conducts electricity; layers slide (lubricant)"
           ]
         }
       ],
@@ -174,21 +184,21 @@
         },
         {
           "term": "Delocalised electron",
-          "def": "An electron not associated with a specific atom \u2014 can move freely"
+          "def": "An electron not associated with a specific atom — can move freely"
         },
         {
           "term": "Intermolecular force",
-          "def": "A force between molecules \u2014 weaker than the bonds within molecules"
+          "def": "A force between molecules — weaker than the bonds within molecules"
         }
       ],
       "examTips": [
         "Simple molecular = low MP. Giant covalent = very high MP.",
-        "Graphite conducts because it has delocalised electrons \u2014 diamond does not conduct.",
+        "Graphite conducts because it has delocalised electrons — diamond does not conduct.",
         "When explaining properties, distinguish between bonds WITHIN molecules and forces BETWEEN molecules."
       ],
       "commonMistakes": [
-        "Saying covalent substances have high melting points \u2014 simple molecular ones do NOT (giant covalent ones do).",
-        "Forgetting graphite is the exception \u2014 it DOES conduct electricity."
+        "Saying covalent substances have high melting points — simple molecular ones do NOT (giant covalent ones do).",
+        "Forgetting graphite is the exception — it DOES conduct electricity."
       ],
       "videos": [
         {
@@ -206,6 +216,11 @@
           "channel": "Fuse School",
           "url": "https://www.youtube.com/watch?v=vOB6XdqPT98"
         }
+      ],
+      "clozePassages": [
+        "<strong>Covalent bonds</strong> form when non-metal atoms share pairs of electrons. Simple <strong>molecular</strong> substances such as water (H₂O) and carbon dioxide (CO₂) have strong covalent bonds within molecules but weak <strong>intermolecular forces</strong> between them. This gives them low melting and boiling points. They do not conduct electricity because they have no free electrons or ions.",
+        "<strong>Giant covalent structures</strong> have atoms held together by strong covalent bonds throughout the structure. <strong>Diamond</strong> has each carbon atom bonded to four others in a tetrahedral lattice, making it extremely hard with a very high melting point. <strong>Graphite</strong> has layers of carbon atoms where each carbon is bonded to three others. The layers can slide over each other, making it soft and slippery. Delocalised electrons between layers make graphite a good conductor of electricity.",
+        "<strong>Fullerenes</strong> are molecular forms of carbon. <strong>Buckminsterfullerene</strong> (C₆₀) consists of 60 carbon atoms arranged in a spherical cage of hexagons and pentagons. <strong>Carbon nanotubes</strong> are cylindrical fullerenes with remarkable strength and electrical conductivity. These properties make them useful in nanotechnology, drug delivery, and as reinforcing materials. <strong>Graphene</strong> is a single layer of graphite and is the thinnest, strongest material known."
       ]
     },
     "Metallic Structures": {
@@ -213,7 +228,7 @@
       "sections": [
         {
           "title": "Metallic Bonding",
-          "icon": "\ud83d\udd29",
+          "icon": "🔩",
           "points": [
             "Positive metal ions in a regular lattice",
             "Surrounded by a 'sea' of delocalised electrons",
@@ -223,13 +238,13 @@
         },
         {
           "title": "Properties of Metals",
-          "icon": "\u2699\ufe0f",
+          "icon": "⚙️",
           "points": [
-            "<strong>High melting/boiling points</strong> \u2014 strong metallic bonds",
-            "<strong>Good conductors of electricity</strong> \u2014 delocalised electrons carry charge",
-            "<strong>Good conductors of heat</strong> \u2014 delocalised electrons transfer kinetic energy",
-            "<strong>Malleable and ductile</strong> \u2014 layers of ions can slide without breaking bonds (electrons move too)",
-            "<strong>Alloys</strong> \u2014 different-sized atoms disrupt regular arrangement, making it harder to slide \u2192 stronger"
+            "<strong>High melting/boiling points</strong> — strong metallic bonds",
+            "<strong>Good conductors of electricity</strong> — delocalised electrons carry charge",
+            "<strong>Good conductors of heat</strong> — delocalised electrons transfer kinetic energy",
+            "<strong>Malleable and ductile</strong> — layers of ions can slide without breaking bonds (electrons move too)",
+            "<strong>Alloys</strong> — different-sized atoms disrupt regular arrangement, making it harder to slide → stronger"
           ]
         }
       ],
@@ -252,7 +267,7 @@
         "Alloys are harder than pure metals because different-sized atoms disrupt the regular structure."
       ],
       "commonMistakes": [
-        "Saying metals conduct because they have free electrons \u2014 say 'delocalised electrons'.",
+        "Saying metals conduct because they have free electrons — say 'delocalised electrons'.",
         "Forgetting that alloys are harder because of disrupted layers."
       ],
       "videos": [
@@ -271,6 +286,11 @@
           "channel": "Fuse School",
           "url": "https://www.youtube.com/watch?v=BywT6TGkI2U"
         }
+      ],
+      "clozePassages": [
+        "In <strong>metallic bonding</strong>, metal atoms release their outer electrons to form a lattice of positive ions surrounded by a <strong>sea of delocalised electrons</strong>. The strong attraction between the positive ions and the electron sea holds the structure together. This explains many properties of metals — they are good <strong>conductors</strong> of electricity and heat because the delocalised electrons can move freely throughout the structure.",
+        "Metals are <strong>malleable</strong> (can be hammered into shape) and <strong>ductile</strong> (can be drawn into wires) because the layers of ions can slide over each other without breaking the metallic bonds. <strong>Alloys</strong> are mixtures of metals or metals with other elements. The atoms of different sizes disrupt the regular lattice, preventing layers from sliding, making alloys harder and stronger than pure metals. Steel is an alloy of iron and carbon.",
+        "<strong>Alloys</strong> are made by mixing metals with other elements to improve their properties. <strong>Steel</strong> is iron with carbon added — it is stronger and harder than pure iron. <strong>Bronze</strong> is copper and tin — harder than either pure metal. <strong>Brass</strong> is copper and zinc. Alloys have different sized atoms that distort the regular <strong>lattice</strong>, preventing layers from sliding easily. This makes alloys less malleable than pure metals but much stronger."
       ]
     },
     "Polymers": {
@@ -278,13 +298,13 @@
       "sections": [
         {
           "title": "Polymer Structure",
-          "icon": "\ud83d\udd17",
+          "icon": "🔗",
           "points": [
             "Monomer = small repeating unit",
             "Polymer = long chain of monomers joined by covalent bonds",
             "Examples: poly(ethene) from ethene; nylon; PVC; DNA; proteins",
-            "Thermosoftening polymers \u2014 chains with weak intermolecular forces; melt when heated; remoulded",
-            "Thermosetting polymers \u2014 cross-links between chains; don't melt; rigid"
+            "Thermosoftening polymers — chains with weak intermolecular forces; melt when heated; remoulded",
+            "Thermosetting polymers — cross-links between chains; don't melt; rigid"
           ]
         }
       ],
@@ -311,7 +331,7 @@
         "Useful property of thermosetting plastics: can withstand high temperatures (e.g. electrical fittings, pan handles)."
       ],
       "commonMistakes": [
-        "Confusing the two types of polymer \u2014 remember cross-links = thermosetting = rigid."
+        "Confusing the two types of polymer — remember cross-links = thermosetting = rigid."
       ],
       "videos": [
         {
@@ -329,29 +349,34 @@
           "channel": "Fuse School",
           "url": "https://www.youtube.com/watch?v=L8dTdCmSgAs"
         }
+      ],
+      "clozePassages": [
+        "<strong>Polymers</strong> are large molecules made of many small repeating units called <strong>monomers</strong>. They are formed by a process called <strong>polymerisation</strong>. <strong>Addition polymers</strong> are formed from alkene monomers — the double bond opens up and monomers join together in a long chain. Poly(ethene), poly(propene), and PVC are common addition polymers. Their properties depend on the monomer used and the conditions of polymerisation.",
+        "<strong>Condensation polymers</strong> are formed when monomers join together with the elimination of a small molecule — usually water. <strong>Nylon</strong> is made from diamines and dicarboxylic acids. <strong>Polyester</strong> is made from diols and dicarboxylic acids. <strong>DNA</strong> and proteins are natural condensation polymers. Unlike addition polymers, condensation polymers contain functional groups in their chain and can be broken down by hydrolysis.",
+        "Plastics are <strong>polymer</strong> materials that have many uses due to their versatile properties. <strong>Thermosoftening polymers</strong> melt when heated because the polymer chains are held together by weak intermolecular forces that break easily. <strong>Thermosetting polymers</strong> have cross-links between chains and do not melt when heated. Plastic pollution is a major environmental problem — many plastics are not <strong>biodegradable</strong> and persist in the environment for hundreds of years."
       ]
     },
     "States of Matter": {
-      "intro": "The three states of matter \u2014 solid, liquid and gas \u2014 have different particle arrangements and properties. Changes of state involve energy changes.",
+      "intro": "The three states of matter — solid, liquid and gas — have different particle arrangements and properties. Changes of state involve energy changes.",
       "sections": [
         {
           "title": "Particle Model",
-          "icon": "\ud83d\udd35",
+          "icon": "🔵",
           "points": [
-            "<strong>Solid</strong> \u2014 particles close together, regular arrangement, vibrate in fixed positions",
-            "<strong>Liquid</strong> \u2014 particles close together, random arrangement, move freely but stay together",
-            "<strong>Gas</strong> \u2014 particles far apart, random arrangement, move fast in all directions"
+            "<strong>Solid</strong> — particles close together, regular arrangement, vibrate in fixed positions",
+            "<strong>Liquid</strong> — particles close together, random arrangement, move freely but stay together",
+            "<strong>Gas</strong> — particles far apart, random arrangement, move fast in all directions"
           ]
         },
         {
           "title": "Changes of State",
-          "icon": "\ud83c\udf21\ufe0f",
+          "icon": "🌡️",
           "points": [
-            "Melting: solid \u2192 liquid (energy absorbed)",
-            "Boiling/evaporation: liquid \u2192 gas (energy absorbed)",
-            "Condensing: gas \u2192 liquid (energy released)",
-            "Freezing: liquid \u2192 solid (energy released)",
-            "Changes of state = PHYSICAL changes \u2014 no new substance formed"
+            "Melting: solid → liquid (energy absorbed)",
+            "Boiling/evaporation: liquid → gas (energy absorbed)",
+            "Condensing: gas → liquid (energy released)",
+            "Freezing: liquid → solid (energy released)",
+            "Changes of state = PHYSICAL changes — no new substance formed"
           ]
         }
       ],
@@ -366,15 +391,15 @@
         },
         {
           "term": "Physical change",
-          "def": "A change of state \u2014 reversible, no new substance formed"
+          "def": "A change of state — reversible, no new substance formed"
         }
       ],
       "examTips": [
-        "Changes of state are PHYSICAL not chemical \u2014 no new substance formed, easily reversible.",
-        "At melting/boiling point, temperature stays constant \u2014 energy goes into breaking forces between particles."
+        "Changes of state are PHYSICAL not chemical — no new substance formed, easily reversible.",
+        "At melting/boiling point, temperature stays constant — energy goes into breaking forces between particles."
       ],
       "commonMistakes": [
-        "Saying changes of state are chemical changes \u2014 they are physical.",
+        "Saying changes of state are chemical changes — they are physical.",
         "Forgetting that at melting/boiling point temperature stays CONSTANT."
       ],
       "videos": [
@@ -393,6 +418,11 @@
           "channel": "Fuse School",
           "url": "https://www.youtube.com/watch?v=9T8YBjmJBhU"
         }
+      ],
+      "clozePassages": [
+        "Matter exists in three <strong>states</strong>: solid, liquid, and gas. In a <strong>solid</strong>, particles are closely packed in fixed positions and vibrate about those positions. In a <strong>liquid</strong>, particles are close together but can flow past each other. In a <strong>gas</strong>, particles are far apart and move rapidly in random directions. The state of a substance at a given temperature depends on the strength of the forces between particles.",
+        "Changes of state occur when substances are heated or cooled. <strong>Melting</strong> is the change from solid to liquid. <strong>Boiling</strong> is the change from liquid to gas. <strong>Condensation</strong> is gas to liquid. <strong>Freezing</strong> is liquid to solid. <strong>Sublimation</strong> is the direct change from solid to gas. These are physical changes — no new substances are formed. The temperature at which a substance melts or boils depends on the strength of its intermolecular forces.",
+        "The <strong>melting point</strong> and <strong>boiling point</strong> of a substance reflect the strength of forces between its particles. Ionic compounds and giant covalent structures have very high melting points due to strong forces throughout the structure. Simple molecular substances have low melting and boiling points because only weak <strong>intermolecular forces</strong> need to be overcome. The stronger the forces between particles, the more <strong>energy</strong> is needed to change state."
       ]
     },
     "Nanoparticles": {
@@ -400,21 +430,21 @@
       "sections": [
         {
           "title": "Properties of Nanoparticles",
-          "icon": "\ud83d\udd2c",
+          "icon": "🔬",
           "points": [
-            "Size: 1-100 nm (nanometres) \u2014 similar size to large molecules",
-            "<strong>Very high surface area to volume ratio</strong> \u2014 more atoms on the surface \u2192 more reactive",
+            "Size: 1-100 nm (nanometres) — similar size to large molecules",
+            "<strong>Very high surface area to volume ratio</strong> — more atoms on the surface → more reactive",
             "Different properties to bulk material: different colour, lower melting point, stronger, better conductor",
             "Examples: gold nanoparticles (red/purple, not gold colour), carbon nanotubes"
           ]
         },
         {
           "title": "Uses and Risks",
-          "icon": "\u26a0\ufe0f",
+          "icon": "⚠️",
           "points": [
-            "Uses: sunscreen (TiO\u2082 nanoparticles), medicines (drug delivery), catalysts, electronics, antibacterial surfaces",
-            "Risks: very small \u2014 might pass through cell membranes; long-term health effects unknown; environmental impact unclear",
-            "Ethical issue: benefits vs unknown risks \u2014 need more research"
+            "Uses: sunscreen (TiO₂ nanoparticles), medicines (drug delivery), catalysts, electronics, antibacterial surfaces",
+            "Risks: very small — might pass through cell membranes; long-term health effects unknown; environmental impact unclear",
+            "Ethical issue: benefits vs unknown risks — need more research"
           ]
         }
       ],
@@ -425,15 +455,15 @@
         },
         {
           "term": "Surface area to volume ratio",
-          "def": "The ratio of surface area to volume \u2014 higher in smaller particles"
+          "def": "The ratio of surface area to volume — higher in smaller particles"
         }
       ],
       "examTips": [
-        "Nanoparticles have high SA:V ratio \u2014 more reactive than bulk material.",
-        "Be able to evaluate nanoparticle use \u2014 benefits (sunscreen, medicines) vs risks (unknown long-term effects)."
+        "Nanoparticles have high SA:V ratio — more reactive than bulk material.",
+        "Be able to evaluate nanoparticle use — benefits (sunscreen, medicines) vs risks (unknown long-term effects)."
       ],
       "commonMistakes": [
-        "Saying nanoparticles are the same as the bulk material \u2014 their properties are DIFFERENT."
+        "Saying nanoparticles are the same as the bulk material — their properties are DIFFERENT."
       ],
       "videos": [
         {
@@ -451,6 +481,11 @@
           "channel": "Fuse School",
           "url": "https://www.youtube.com/watch?v=D9C_W7jUwCY"
         }
+      ],
+      "clozePassages": [
+        "<strong>Nanoparticles</strong> are particles between 1 and 100 nanometres in size. They have a very large <strong>surface area</strong> to volume ratio compared to bulk materials, which gives them different and often enhanced properties. For example, gold normally appears yellow but gold nanoparticles appear red or purple. This change in properties at the nanoscale opens up many potential applications in medicine, electronics, and materials science.",
+        "Nanoparticles have many current and potential applications. <strong>Silver nanoparticles</strong> have antibacterial properties and are used in wound dressings and clothing. <strong>Titanium dioxide</strong> nanoparticles are used in sunscreens. Carbon nanotubes have exceptional strength and electrical conductivity. <strong>Drug delivery</strong> using nanoparticles allows medicines to be targeted directly at cancer cells, reducing side effects. Nanoparticles in <strong>catalysts</strong> increase reaction rates due to their high surface area.",
+        "Despite their potential benefits, <strong>nanoparticles</strong> raise concerns about safety. Because they are so small, they can enter the body through the skin, lungs, and digestive system. The effects of nanoparticles on human health and the <strong>environment</strong> are not fully understood. Research is ongoing to determine the risks. This highlights the need for careful regulation of new technologies and the importance of assessing both benefits and <strong>risks</strong> before widespread use."
       ]
     }
   }

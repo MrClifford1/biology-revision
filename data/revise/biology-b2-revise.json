@@ -23,9 +23,18 @@
         }
       ],
       "keyTerms": [
-        {"term": "Tissue", "def": "A group of similar cells working together to carry out a specific function"},
-        {"term": "Organ", "def": "A structure made of different tissues working together to perform a function"},
-        {"term": "Organ system", "def": "A group of organs working together to perform a major function"}
+        {
+          "term": "Tissue",
+          "def": "A group of similar cells working together to carry out a specific function"
+        },
+        {
+          "term": "Organ",
+          "def": "A structure made of different tissues working together to perform a function"
+        },
+        {
+          "term": "Organ system",
+          "def": "A group of organs working together to perform a major function"
+        }
       ],
       "examTips": [
         "Know the correct order of the hierarchy — cells are the smallest, organisms the largest.",
@@ -36,8 +45,21 @@
         "Confusing a tissue (same cells) with an organ (different tissues)."
       ],
       "videos": [
-        {"title": "Organisation in Living Things", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=BzVuQoP92ho"},
-        {"title": "Levels of Organisation", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=4nEmQ6_sPkw"}
+        {
+          "title": "Organisation in Living Things",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=BzVuQoP92ho"
+        },
+        {
+          "title": "Levels of Organisation",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=4nEmQ6_sPkw"
+        }
+      ],
+      "clozePassages": [
+        "Living organisms are organised in a hierarchy from smallest to largest. <strong>Cells</strong> are the basic unit of life. Groups of similar cells form a <strong>tissue</strong>. Different tissues working together form an <strong>organ</strong>. A group of organs working together form an <strong>organ system</strong>. The digestive system, nervous system, and circulatory system are all examples of organ systems in the human body.",
+        "The <strong>digestive system</strong> is an organ system that breaks down food into small molecules that can be absorbed into the blood. Key organs include the <strong>stomach</strong>, <strong>small intestine</strong>, and <strong>large intestine</strong>. The stomach produces acid and <strong>enzymes</strong> to begin digestion. The small intestine is the main site of digestion and absorption of nutrients into the bloodstream.",
+        "<strong>Enzymes</strong> are biological catalysts that speed up chemical reactions in the body. Each enzyme has an <strong>active site</strong> with a specific shape that only one substrate can fit into — this is called the <strong>lock and key</strong> model. Enzymes work best at an optimum temperature and pH. If temperature or pH changes too much, the enzyme becomes <strong>denatured</strong> and stops working."
       ]
     },
     "Digestion": {
@@ -77,12 +99,30 @@
         }
       ],
       "keyTerms": [
-        {"term": "Enzyme", "def": "A biological catalyst that speeds up chemical reactions without being used up"},
-        {"term": "Amylase", "def": "Enzyme that breaks down starch into simple sugars"},
-        {"term": "Protease", "def": "Enzyme that breaks down proteins into amino acids"},
-        {"term": "Lipase", "def": "Enzyme that breaks down fats into fatty acids and glycerol"},
-        {"term": "Bile", "def": "Alkaline liquid produced by the liver that emulsifies fats"},
-        {"term": "Emulsification", "def": "Breaking large fat droplets into smaller droplets to increase surface area"}
+        {
+          "term": "Enzyme",
+          "def": "A biological catalyst that speeds up chemical reactions without being used up"
+        },
+        {
+          "term": "Amylase",
+          "def": "Enzyme that breaks down starch into simple sugars"
+        },
+        {
+          "term": "Protease",
+          "def": "Enzyme that breaks down proteins into amino acids"
+        },
+        {
+          "term": "Lipase",
+          "def": "Enzyme that breaks down fats into fatty acids and glycerol"
+        },
+        {
+          "term": "Bile",
+          "def": "Alkaline liquid produced by the liver that emulsifies fats"
+        },
+        {
+          "term": "Emulsification",
+          "def": "Breaking large fat droplets into smaller droplets to increase surface area"
+        }
       ],
       "examTips": [
         "Bile is NOT an enzyme — it physically breaks up fat droplets (emulsification) rather than chemically digesting them.",
@@ -95,9 +135,26 @@
         "Confusing where enzymes are MADE with where they WORK."
       ],
       "videos": [
-        {"title": "Digestion and Enzymes", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=lE_pSJPfLbU"},
-        {"title": "The Digestive System", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=e9CTirFMGUM"},
-        {"title": "Enzymes in Digestion", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=yLhRMkxAUAQ"}
+        {
+          "title": "Digestion and Enzymes",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=lE_pSJPfLbU"
+        },
+        {
+          "title": "The Digestive System",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=e9CTirFMGUM"
+        },
+        {
+          "title": "Enzymes in Digestion",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=yLhRMkxAUAQ"
+        }
+      ],
+      "clozePassages": [
+        "<strong>Carbohydrases</strong> break down carbohydrates into simple sugars such as <strong>glucose</strong>. <strong>Proteases</strong> break down proteins into <strong>amino acids</strong>. <strong>Lipases</strong> break down fats into <strong>fatty acids</strong> and glycerol. These enzymes are produced by glands including the salivary glands, stomach, and pancreas, and work in different parts of the digestive system.",
+        "<strong>Bile</strong> is produced by the liver and stored in the <strong>gall bladder</strong>. It is released into the small intestine where it <strong>emulsifies</strong> fats — breaking large fat droplets into smaller ones. This increases the surface area for <strong>lipase</strong> enzymes to work on. Bile is alkaline, which also neutralises the acidic contents from the stomach, providing the optimum pH for intestinal enzymes.",
+        "The <strong>small intestine</strong> is the main site of absorption of digested food. Its inner wall is lined with finger-like projections called <strong>villi</strong>, which increase the surface area for absorption. Each villus has a rich blood supply and contains a <strong>lacteal</strong> for absorbing fatty acids. The villi also have <strong>microvilli</strong> on their surface, further increasing surface area."
       ]
     },
     "Heart and Circulation": {
@@ -134,12 +191,30 @@
         }
       ],
       "keyTerms": [
-        {"term": "Atrium", "def": "Upper chamber of the heart that receives blood"},
-        {"term": "Ventricle", "def": "Lower chamber of the heart that pumps blood out"},
-        {"term": "Valve", "def": "Flap in the heart or vein that prevents backflow of blood"},
-        {"term": "Artery", "def": "Blood vessel that carries blood away from the heart at high pressure"},
-        {"term": "Vein", "def": "Blood vessel that carries blood towards the heart at low pressure"},
-        {"term": "Capillary", "def": "Tiny blood vessel with walls one cell thick where exchange occurs"}
+        {
+          "term": "Atrium",
+          "def": "Upper chamber of the heart that receives blood"
+        },
+        {
+          "term": "Ventricle",
+          "def": "Lower chamber of the heart that pumps blood out"
+        },
+        {
+          "term": "Valve",
+          "def": "Flap in the heart or vein that prevents backflow of blood"
+        },
+        {
+          "term": "Artery",
+          "def": "Blood vessel that carries blood away from the heart at high pressure"
+        },
+        {
+          "term": "Vein",
+          "def": "Blood vessel that carries blood towards the heart at low pressure"
+        },
+        {
+          "term": "Capillary",
+          "def": "Tiny blood vessel with walls one cell thick where exchange occurs"
+        }
       ],
       "examTips": [
         "Left ventricle has thicker walls than right — it pumps blood the full length of the body.",
@@ -152,9 +227,26 @@
         "Forgetting why the left ventricle has thicker walls."
       ],
       "videos": [
-        {"title": "The Heart and Circulatory System", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=6fyPiLCOxJI"},
-        {"title": "Structure of the Heart", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=wZD7mulzbhc"},
-        {"title": "Blood Vessels", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=dNKQ5O5TFHM"}
+        {
+          "title": "The Heart and Circulatory System",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=6fyPiLCOxJI"
+        },
+        {
+          "title": "Structure of the Heart",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=wZD7mulzbhc"
+        },
+        {
+          "title": "Blood Vessels",
+          "channel": "Science with Hazel",
+          "url": "https://www.youtube.com/watch?v=dNKQ5O5TFHM"
+        }
+      ],
+      "clozePassages": [
+        "The <strong>heart</strong> is a muscular organ that pumps blood around the body. The right side pumps <strong>deoxygenated blood</strong> to the lungs, while the left side pumps <strong>oxygenated blood</strong> to the rest of the body. This is called the <strong>double circulatory system</strong>. The heart has four chambers: two <strong>atria</strong> at the top and two <strong>ventricles</strong> at the bottom.",
+        "<strong>Arteries</strong> carry blood away from the heart under high pressure and have thick, muscular walls. <strong>Veins</strong> carry blood back to the heart under low pressure and have <strong>valves</strong> to prevent backflow. <strong>Capillaries</strong> are tiny vessels with walls one cell thick, allowing exchange of substances between the blood and body tissues. The network of blood vessels is called the circulatory system.",
+        "The heart rate is controlled by a group of cells called the <strong>sinoatrial node</strong> (SAN), which acts as a natural pacemaker. It sends electrical impulses that cause the <strong>atria</strong> to contract, then the <strong>ventricles</strong>. If the natural pacemaker is faulty, an <strong>artificial pacemaker</strong> can be fitted. Heart valves prevent the backflow of blood and ensure it flows in the correct direction."
       ]
     },
     "Blood": {
@@ -184,11 +276,26 @@
         }
       ],
       "keyTerms": [
-        {"term": "Haemoglobin", "def": "Red protein in red blood cells that carries oxygen"},
-        {"term": "Phagocyte", "def": "White blood cell that engulfs and destroys pathogens"},
-        {"term": "Lymphocyte", "def": "White blood cell that produces antibodies"},
-        {"term": "Plasma", "def": "Liquid component of blood that transports dissolved substances"},
-        {"term": "Platelets", "def": "Cell fragments that help blood clot at wounds"}
+        {
+          "term": "Haemoglobin",
+          "def": "Red protein in red blood cells that carries oxygen"
+        },
+        {
+          "term": "Phagocyte",
+          "def": "White blood cell that engulfs and destroys pathogens"
+        },
+        {
+          "term": "Lymphocyte",
+          "def": "White blood cell that produces antibodies"
+        },
+        {
+          "term": "Plasma",
+          "def": "Liquid component of blood that transports dissolved substances"
+        },
+        {
+          "term": "Platelets",
+          "def": "Cell fragments that help blood clot at wounds"
+        }
       ],
       "examTips": [
         "Red blood cells have no nucleus — this is an adaptation allowing more haemoglobin and therefore more oxygen carried.",
@@ -201,8 +308,21 @@
         "Confusing phagocytes and lymphocytes."
       ],
       "videos": [
-        {"title": "Components of Blood", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=X9Z5C6VW2E0"},
-        {"title": "Blood GCSE Biology", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=3QKNMjC24YI"}
+        {
+          "title": "Components of Blood",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=X9Z5C6VW2E0"
+        },
+        {
+          "title": "Blood GCSE Biology",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=3QKNMjC24YI"
+        }
+      ],
+      "clozePassages": [
+        "<strong>Red blood cells</strong> carry oxygen from the lungs to body tissues. They contain <strong>haemoglobin</strong> which binds to oxygen to form oxyhaemoglobin. <strong>White blood cells</strong> defend the body against infection by engulfing pathogens or producing <strong>antibodies</strong>. <strong>Platelets</strong> are small cell fragments that help blood to clot at wound sites, preventing excessive blood loss.",
+        "<strong>Plasma</strong> is the liquid component of blood, making up about 55% of its volume. It carries <strong>red blood cells</strong>, white blood cells, and platelets around the body. Plasma also transports dissolved substances including <strong>glucose</strong>, hormones, urea, and carbon dioxide. It plays a key role in distributing heat generated by respiration throughout the body.",
+        "Blood clotting is an important defence mechanism. When a blood vessel is damaged, <strong>platelets</strong> clump together at the site. A series of chemical reactions produces <strong>fibrin</strong>, a protein that forms a mesh across the wound. This mesh traps red blood cells to form a <strong>clot</strong>, which dries to form a scab. This prevents pathogens from entering and blood from being lost."
       ]
     },
     "Heart Disease": {
@@ -241,11 +361,26 @@
         }
       ],
       "keyTerms": [
-        {"term": "Coronary artery", "def": "Blood vessels that supply the heart muscle with oxygenated blood"},
-        {"term": "Atherosclerosis", "def": "Build-up of fatty deposits (plaques) in artery walls, narrowing the lumen"},
-        {"term": "Statin", "def": "Drug used to lower blood cholesterol levels"},
-        {"term": "Stent", "def": "A mesh tube inserted into a narrowed artery to keep it open"},
-        {"term": "Angina", "def": "Chest pain caused by restricted blood flow to the heart muscle"}
+        {
+          "term": "Coronary artery",
+          "def": "Blood vessels that supply the heart muscle with oxygenated blood"
+        },
+        {
+          "term": "Atherosclerosis",
+          "def": "Build-up of fatty deposits (plaques) in artery walls, narrowing the lumen"
+        },
+        {
+          "term": "Statin",
+          "def": "Drug used to lower blood cholesterol levels"
+        },
+        {
+          "term": "Stent",
+          "def": "A mesh tube inserted into a narrowed artery to keep it open"
+        },
+        {
+          "term": "Angina",
+          "def": "Chest pain caused by restricted blood flow to the heart muscle"
+        }
       ],
       "examTips": [
         "Statins reduce cholesterol — they slow plaque build-up but don't remove existing plaques.",
@@ -257,8 +392,21 @@
         "Confusing coronary arteries (supply the heart) with pulmonary arteries (go to lungs)."
       ],
       "videos": [
-        {"title": "Coronary Heart Disease", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=BPKzKqEPNR8"},
-        {"title": "Heart Disease GCSE Biology", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=mhJCsxo6gKI"}
+        {
+          "title": "Coronary Heart Disease",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=BPKzKqEPNR8"
+        },
+        {
+          "title": "Heart Disease GCSE Biology",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=mhJCsxo6gKI"
+        }
+      ],
+      "clozePassages": [
+        "<strong>Coronary heart disease</strong> occurs when the <strong>coronary arteries</strong> that supply the heart muscle become narrowed by a build-up of <strong>fatty deposits</strong> called plaques. This restricts blood flow and can cause chest pain called <strong>angina</strong>. If a coronary artery becomes completely blocked, a <strong>heart attack</strong> occurs. Risk factors include high blood pressure, smoking, and a high-fat diet.",
+        "Coronary heart disease can be treated with <strong>stents</strong>, which are small metal tubes inserted into narrowed arteries to keep them open. <strong>Statins</strong> are drugs that reduce blood cholesterol levels and slow the build-up of fatty deposits. In severe cases, a <strong>heart bypass</strong> operation uses blood vessels from elsewhere in the body to route blood around the blocked coronary artery.",
+        "<strong>Heart failure</strong> occurs when the heart cannot pump blood effectively around the body. It can be treated with a <strong>heart transplant</strong> using a donor heart, or with a <strong>mechanical heart</strong> as a temporary measure while waiting for a transplant. <strong>Valves</strong> can also become damaged and may need to be replaced with biological valves from pigs or cows, or with mechanical valves."
       ]
     },
     "Cancer": {
@@ -288,11 +436,26 @@
         }
       ],
       "keyTerms": [
-        {"term": "Tumour", "def": "A mass of abnormal cells formed by uncontrolled cell division"},
-        {"term": "Benign", "def": "A tumour that remains in one location and does not spread"},
-        {"term": "Malignant", "def": "A cancerous tumour whose cells spread to other parts of the body"},
-        {"term": "Metastasis", "def": "The spread of cancer cells from the primary tumour to other parts of the body"},
-        {"term": "Carcinogen", "def": "A substance that causes cancer by mutating DNA"}
+        {
+          "term": "Tumour",
+          "def": "A mass of abnormal cells formed by uncontrolled cell division"
+        },
+        {
+          "term": "Benign",
+          "def": "A tumour that remains in one location and does not spread"
+        },
+        {
+          "term": "Malignant",
+          "def": "A cancerous tumour whose cells spread to other parts of the body"
+        },
+        {
+          "term": "Metastasis",
+          "def": "The spread of cancer cells from the primary tumour to other parts of the body"
+        },
+        {
+          "term": "Carcinogen",
+          "def": "A substance that causes cancer by mutating DNA"
+        }
       ],
       "examTips": [
         "Always distinguish between benign (non-spreading) and malignant (spreading/cancer) tumours.",
@@ -303,8 +466,21 @@
         "Forgetting that cancer is caused by mutations in cell division genes, not just any mutation."
       ],
       "videos": [
-        {"title": "Cancer GCSE Biology", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=LEpTTolebqo"},
-        {"title": "Benign and Malignant Tumours", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=BtRys3KL5R0"}
+        {
+          "title": "Cancer GCSE Biology",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=LEpTTolebqo"
+        },
+        {
+          "title": "Benign and Malignant Tumours",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=BtRys3KL5R0"
+        }
+      ],
+      "clozePassages": [
+        "<strong>Cancer</strong> is caused by uncontrolled cell division resulting in the formation of a <strong>tumour</strong>. <strong>Benign tumours</strong> grow in one place and do not spread to other tissues. <strong>Malignant tumours</strong> can invade and destroy surrounding tissue and spread through the blood to form secondary tumours elsewhere — a process called <strong>metastasis</strong>. Both lifestyle and genetic factors can increase the risk of cancer.",
+        "Risk factors for cancer include <strong>smoking</strong>, which is strongly linked to lung cancer, exposure to <strong>UV radiation</strong> from the sun which can cause skin cancer, and certain <strong>viral infections</strong> such as HPV which is linked to cervical cancer. Inherited faulty <strong>genes</strong> can also increase risk. Regular screening such as mammograms and smear tests can help detect cancer early when it is most treatable.",
+        "Cancer can be treated by <strong>radiotherapy</strong>, which uses ionising radiation to kill cancer cells. <strong>Chemotherapy</strong> uses drugs that target rapidly dividing cells. <strong>Surgery</strong> can physically remove a tumour. These treatments can have side effects because they also affect healthy cells. Early detection through screening programmes significantly improves the chances of successful <strong>treatment</strong>."
       ]
     },
     "Plant Organisation": {
@@ -343,11 +519,26 @@
         }
       ],
       "keyTerms": [
-        {"term": "Xylem", "def": "Plant tissue that transports water and mineral ions upwards from roots"},
-        {"term": "Phloem", "def": "Plant tissue that transports sugars from leaves to the rest of the plant"},
-        {"term": "Transpiration", "def": "The loss of water vapour from leaves through the stomata"},
-        {"term": "Stomata", "def": "Tiny pores in leaves that allow gas exchange and water vapour to escape"},
-        {"term": "Guard cells", "def": "Cells that surround stomata and control their opening and closing"}
+        {
+          "term": "Xylem",
+          "def": "Plant tissue that transports water and mineral ions upwards from roots"
+        },
+        {
+          "term": "Phloem",
+          "def": "Plant tissue that transports sugars from leaves to the rest of the plant"
+        },
+        {
+          "term": "Transpiration",
+          "def": "The loss of water vapour from leaves through the stomata"
+        },
+        {
+          "term": "Stomata",
+          "def": "Tiny pores in leaves that allow gas exchange and water vapour to escape"
+        },
+        {
+          "term": "Guard cells",
+          "def": "Cells that surround stomata and control their opening and closing"
+        }
       ],
       "examTips": [
         "Xylem transports water UP; phloem transports sugars (translocation) both up and down.",
@@ -360,9 +551,26 @@
         "Confusing transpiration (water loss) with translocation (sugar transport in phloem)."
       ],
       "videos": [
-        {"title": "Plant Organisation", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=4YpwFOfMDTI"},
-        {"title": "Transpiration GCSE Biology", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=jJSEWibbFes"},
-        {"title": "Xylem and Phloem", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=tPNh3wpSNWs"}
+        {
+          "title": "Plant Organisation",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=4YpwFOfMDTI"
+        },
+        {
+          "title": "Transpiration GCSE Biology",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=jJSEWibbFes"
+        },
+        {
+          "title": "Xylem and Phloem",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=tPNh3wpSNWs"
+        }
+      ],
+      "clozePassages": [
+        "Plants have specialised tissues including <strong>xylem</strong> and <strong>phloem</strong>. Xylem transports water and dissolved minerals from the roots to the leaves in a one-way flow. Phloem transports dissolved sugars made by <strong>photosynthesis</strong> up and down the plant to where they are needed — a process called <strong>translocation</strong>. Both tissues form continuous tubes called <strong>vascular bundles</strong> running throughout the plant.",
+        "<strong>Transpiration</strong> is the loss of water vapour from leaves through tiny pores called <strong>stomata</strong>. This loss of water draws more water up through the <strong>xylem</strong> from the roots. Transpiration is faster in warm, dry, and windy conditions. Each stoma is controlled by two <strong>guard cells</strong> which open and close the pore depending on light levels and water availability.",
+        "Leaves are adapted for <strong>photosynthesis</strong>. They have a large, flat surface area to absorb sunlight. The upper surface has a waxy <strong>cuticle</strong> to reduce water loss. The <strong>palisade mesophyll</strong> layer contains many chloroplasts and is positioned near the top of the leaf where light is brightest. The <strong>spongy mesophyll</strong> has air spaces that allow gases to diffuse to and from the cells."
       ]
     }
   }

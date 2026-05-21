@@ -6,7 +6,7 @@
       "sections": [
         {
           "title": "Structure of the Atom",
-          "icon": "\u269b\ufe0f",
+          "icon": "⚛️",
           "points": [
             "Nucleus contains protons (+) and neutrons (0)",
             "Electrons (-) orbit the nucleus in shells",
@@ -18,7 +18,7 @@
         },
         {
           "title": "Isotopes",
-          "icon": "\ud83d\udd2c",
+          "icon": "🔬",
           "text": "Isotopes are atoms of the same element with the same number of protons but different numbers of neutrons.",
           "points": [
             "Same chemical properties (same electron configuration)",
@@ -28,7 +28,7 @@
         },
         {
           "title": "Relative Atomic Mass",
-          "icon": "\ud83d\udcd0",
+          "icon": "📐",
           "callout": {
             "type": "exam",
             "label": "Formula",
@@ -39,7 +39,7 @@
       "keyTerms": [
         {
           "term": "Proton number",
-          "def": "Number of protons in the nucleus \u2014 defines the element"
+          "def": "Number of protons in the nucleus — defines the element"
         },
         {
           "term": "Mass number",
@@ -60,7 +60,7 @@
         "Isotopes have SAME atomic number, DIFFERENT mass number."
       ],
       "commonMistakes": [
-        "Saying isotopes have different numbers of protons \u2014 they don't, only neutrons differ.",
+        "Saying isotopes have different numbers of protons — they don't, only neutrons differ.",
         "Confusing mass number (p+n) with atomic number (p only)."
       ],
       "videos": [
@@ -79,6 +79,12 @@
           "channel": "Fuse School",
           "url": "https://www.youtube.com/watch?v=u-SBTRLoPuo"
         }
+      ],
+      "clozePassages": [
+        "An atom consists of a central <strong>nucleus</strong> containing <strong>protons</strong> and <strong>neutrons</strong>, surrounded by electrons in shells. Protons have a positive charge, neutrons have no charge, and <strong>electrons</strong> have a negative charge. The number of protons equals the number of electrons in a neutral atom, so the overall charge is zero. The <strong>atomic number</strong> is the number of protons and identifies the element.",
+        "The <strong>mass number</strong> of an atom is the total number of protons and neutrons in the nucleus. <strong>Isotopes</strong> are atoms of the same element with the same number of protons but different numbers of <strong>neutrons</strong>. For example, carbon-12 and carbon-14 are both carbon atoms but carbon-14 has two extra neutrons. The <strong>relative atomic mass</strong> takes into account the abundance of each isotope.",
+        "Electrons are arranged in <strong>shells</strong> around the nucleus. The first shell holds a maximum of 2 electrons, the second and third shells hold up to 8 electrons each. The arrangement of electrons is called the <strong>electronic configuration</strong>. The number of electrons in the outer shell determines the chemical properties of the element. Elements in the same <strong>group</strong> of the periodic table have the same number of outer shell electrons.",
+        "<strong>Ions</strong> are atoms or groups of atoms that have gained or lost electrons and have an overall electric charge. A <strong>cation</strong> is a positively charged ion formed when an atom loses electrons. An <strong>anion</strong> is a negatively charged ion formed when an atom gains electrons. The charge of an ion depends on how many electrons are gained or lost. Metal atoms tend to form cations; non-metal atoms tend to form anions."
       ]
     },
     "The Periodic Table": {
@@ -86,21 +92,21 @@
       "sections": [
         {
           "title": "Organisation of the Periodic Table",
-          "icon": "\ud83d\udcca",
+          "icon": "📊",
           "points": [
             "Elements arranged in order of increasing atomic number",
             "Rows = periods (same number of electron shells)",
-            "Columns = groups (same number of outer electrons \u2192 similar properties)",
+            "Columns = groups (same number of outer electrons → similar properties)",
             "Metals on left, non-metals on right, metalloids on staircase line",
             "Group number = number of outer electrons (for groups 1-7)"
           ]
         },
         {
           "title": "History",
-          "icon": "\ud83d\udcda",
+          "icon": "📚",
           "points": [
             "Mendeleev arranged elements by atomic mass and properties (1869)",
-            "Left gaps for undiscovered elements \u2014 predictions proved correct",
+            "Left gaps for undiscovered elements — predictions proved correct",
             "Modern table arranged by atomic NUMBER, not mass",
             "Transition metals form a block in the middle"
           ]
@@ -109,11 +115,11 @@
       "keyTerms": [
         {
           "term": "Period",
-          "def": "A horizontal row in the periodic table \u2014 same number of electron shells"
+          "def": "A horizontal row in the periodic table — same number of electron shells"
         },
         {
           "term": "Group",
-          "def": "A vertical column \u2014 elements with same number of outer electrons, similar properties"
+          "def": "A vertical column — elements with same number of outer electrons, similar properties"
         },
         {
           "term": "Transition metals",
@@ -144,37 +150,42 @@
           "channel": "Fuse School",
           "url": "https://www.youtube.com/watch?v=3ZNqXAaOr80"
         }
+      ],
+      "clozePassages": [
+        "The <strong>periodic table</strong> arranges elements in order of increasing <strong>atomic number</strong>. Elements in the same vertical column are in the same <strong>group</strong> and have similar chemical properties because they have the same number of outer shell electrons. Elements in the same horizontal row are in the same <strong>period</strong>. The number of electron shells equals the period number. <strong>Metals</strong> are on the left and non-metals on the right.",
+        "<strong>Transition metals</strong> are found in the central block of the periodic table between groups 2 and 3. They have high melting points, are hard and dense, and are good conductors of heat and electricity. Many transition metals form <strong>coloured compounds</strong> and can act as <strong>catalysts</strong>. Iron, copper, and titanium are important transition metals used extensively in construction and engineering.",
+        "The properties of elements follow repeating patterns called <strong>periodicity</strong>. As you go across a period, elements change from metals to non-metals. Going down a <strong>group</strong>, elements become more reactive (for metals) or less reactive (for non-metals). The <strong>atomic radius</strong> increases down a group as more electron shells are added. These trends allow scientists to predict the properties of elements based on their position in the periodic table."
       ]
     },
     "Groups": {
       "intro": "Groups of elements share similar chemical properties because they have the same number of outer electrons. Group 1, 7 and 0 are the most important for GCSE.",
       "sections": [
         {
-          "title": "Group 1 \u2014 Alkali Metals",
-          "icon": "\ud83d\udd25",
+          "title": "Group 1 — Alkali Metals",
+          "icon": "🔥",
           "points": [
-            "1 outer electron \u2014 highly reactive; react vigorously with water",
-            "Reactivity INCREASES down the group \u2014 outer electron further from nucleus, easier to lose",
-            "Reactions with water: metal + water \u2192 metal hydroxide + hydrogen",
+            "1 outer electron — highly reactive; react vigorously with water",
+            "Reactivity INCREASES down the group — outer electron further from nucleus, easier to lose",
+            "Reactions with water: metal + water → metal hydroxide + hydrogen",
             "Lithium < Sodium < Potassium < Rubidium (reactivity order)",
-            "Stored under oil \u2014 react with air and water"
+            "Stored under oil — react with air and water"
           ]
         },
         {
-          "title": "Group 7 \u2014 Halogens",
-          "icon": "\ud83d\udfe1",
+          "title": "Group 7 — Halogens",
+          "icon": "🟡",
           "points": [
-            "7 outer electrons \u2014 need 1 more to complete outer shell",
-            "Reactivity DECREASES down the group \u2014 outer shell further away, harder to gain electron",
+            "7 outer electrons — need 1 more to complete outer shell",
+            "Reactivity DECREASES down the group — outer shell further away, harder to gain electron",
             "More reactive halogen displaces less reactive from solution (displacement reaction)",
             "Fluorine > Chlorine > Bromine > Iodine (reactivity order)"
           ]
         },
         {
-          "title": "Group 0 \u2014 Noble Gases",
-          "icon": "\ud83d\udca8",
+          "title": "Group 0 — Noble Gases",
+          "icon": "💨",
           "points": [
-            "Full outer shell \u2014 very unreactive (inert)",
+            "Full outer shell — very unreactive (inert)",
             "Exist as single atoms (monatomic)",
             "Used in: light bulbs (argon), balloons (helium), fluorescent lighting (neon, argon)",
             "Boiling point increases down the group"
@@ -184,15 +195,15 @@
       "keyTerms": [
         {
           "term": "Alkali metals",
-          "def": "Group 1 elements \u2014 highly reactive metals with 1 outer electron"
+          "def": "Group 1 elements — highly reactive metals with 1 outer electron"
         },
         {
           "term": "Halogens",
-          "def": "Group 7 elements \u2014 reactive non-metals with 7 outer electrons"
+          "def": "Group 7 elements — reactive non-metals with 7 outer electrons"
         },
         {
           "term": "Noble gases",
-          "def": "Group 0 elements \u2014 unreactive gases with full outer shells"
+          "def": "Group 0 elements — unreactive gases with full outer shells"
         },
         {
           "term": "Displacement reaction",
@@ -200,13 +211,13 @@
         }
       ],
       "examTips": [
-        "Group 1 reactivity INCREASES down group (outer electron further away \u2192 easier to lose).",
-        "Group 7 reactivity DECREASES down group (outer shell further \u2192 harder to gain electron).",
+        "Group 1 reactivity INCREASES down group (outer electron further away → easier to lose).",
+        "Group 7 reactivity DECREASES down group (outer shell further → harder to gain electron).",
         "Noble gases are inert because they have full outer electron shells."
       ],
       "commonMistakes": [
-        "Saying Group 7 reactivity increases down the group \u2014 it DECREASES.",
-        "Forgetting that Group 1 metals float on water and fizz \u2014 they react vigorously."
+        "Saying Group 7 reactivity increases down the group — it DECREASES.",
+        "Forgetting that Group 1 metals float on water and fizz — they react vigorously."
       ],
       "videos": [
         {
@@ -224,6 +235,11 @@
           "channel": "Fuse School",
           "url": "https://www.youtube.com/watch?v=E6bsASJ6fco"
         }
+      ],
+      "clozePassages": [
+        "<strong>Group 1</strong> elements are called alkali metals. They are very reactive metals that react vigorously with water to produce a <strong>metal hydroxide</strong> and hydrogen gas. Reactivity <strong>increases</strong> down the group because the outer electron is further from the nucleus and more easily lost. Lithium, sodium, and potassium are all stored in oil to prevent reaction with air or water.",
+        "<strong>Group 7</strong> elements are called <strong>halogens</strong>. They are non-metals that exist as diatomic molecules. Their reactivity <strong>decreases</strong> down the group. Fluorine is the most reactive, chlorine is a yellow-green gas, bromine is a red-brown liquid, and iodine is a grey solid. A more reactive halogen will <strong>displace</strong> a less reactive halogen from a solution of its salt — this is called a displacement reaction.",
+        "<strong>Group 0</strong> elements are called <strong>noble gases</strong>. They are extremely unreactive because their outer electron shells are full. They exist as individual atoms and do not form compounds under normal conditions. <strong>Helium</strong> is used in balloons and airships. <strong>Neon</strong> is used in advertising signs. <strong>Argon</strong> is used to provide an inert atmosphere in light bulbs and welding. Their low reactivity makes them very safe to use."
       ]
     },
     "History of the Atom": {
@@ -231,18 +247,18 @@
       "sections": [
         {
           "title": "Timeline of Atomic Models",
-          "icon": "\ud83d\udcc5",
+          "icon": "📅",
           "numbered": [
-            "<strong>Dalton (1803)</strong> \u2014 solid spheres; atoms are indivisible",
-            "<strong>Thomson (1904)</strong> \u2014 'plum pudding' model; electrons embedded in positive sphere",
-            "<strong>Rutherford (1909)</strong> \u2014 nuclear model; most mass in tiny positive nucleus; electrons around it (alpha scattering experiment)",
-            "<strong>Bohr (1913)</strong> \u2014 electrons in fixed circular orbits (shells) at specific energies",
-            "<strong>Modern model</strong> \u2014 electrons in orbitals (probability clouds); subatomic structure of nucleus"
+            "<strong>Dalton (1803)</strong> — solid spheres; atoms are indivisible",
+            "<strong>Thomson (1904)</strong> — 'plum pudding' model; electrons embedded in positive sphere",
+            "<strong>Rutherford (1909)</strong> — nuclear model; most mass in tiny positive nucleus; electrons around it (alpha scattering experiment)",
+            "<strong>Bohr (1913)</strong> — electrons in fixed circular orbits (shells) at specific energies",
+            "<strong>Modern model</strong> — electrons in orbitals (probability clouds); subatomic structure of nucleus"
           ]
         },
         {
           "title": "Rutherford's Alpha Scattering Experiment",
-          "icon": "\ud83d\udd2c",
+          "icon": "🔬",
           "points": [
             "Alpha particles fired at thin gold foil",
             "Most passed straight through (atom mostly empty space)",
@@ -271,7 +287,7 @@
         "Models change when new evidence cannot be explained by the existing model."
       ],
       "commonMistakes": [
-        "Saying Rutherford's experiment proved the plum pudding model \u2014 it DISproved it.",
+        "Saying Rutherford's experiment proved the plum pudding model — it DISproved it.",
         "Forgetting that the plum pudding model had a POSITIVE sphere with electrons in it."
       ],
       "videos": [
@@ -290,6 +306,11 @@
           "channel": "Fuse School",
           "url": "https://www.youtube.com/watch?v=1RIxfeSXp1I"
         }
+      ],
+      "clozePassages": [
+        "Our understanding of atomic structure has developed over time. John <strong>Dalton</strong> proposed that atoms were solid, indivisible spheres. <strong>J.J. Thomson</strong> discovered the electron and proposed the plum pudding model, where electrons were embedded in a positively charged sphere. <strong>Ernest Rutherford</strong> carried out the gold foil experiment and discovered the nucleus, replacing the plum pudding model.",
+        "Rutherford's <strong>gold foil experiment</strong> fired alpha particles at thin gold foil. Most particles passed straight through, but some were deflected at large angles and a few bounced back. This showed the atom was mostly empty space with a tiny, dense, positively charged <strong>nucleus</strong> at the centre. <strong>Niels Bohr</strong> later refined the model by proposing that electrons orbit the nucleus in fixed energy levels called shells.",
+        "The modern model of the atom includes a central <strong>nucleus</strong> containing protons and neutrons, with electrons in <strong>orbitals</strong> at different energy levels. <strong>James Chadwick</strong> discovered the neutron in 1932, explaining why the mass of atoms was greater than the number of protons suggested. Scientific models are revised as new evidence emerges — the development of the atomic model is a good example of how science progresses through <strong>evidence</strong> and peer review."
       ]
     }
   }

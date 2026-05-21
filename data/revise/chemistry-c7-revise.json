@@ -4,25 +4,45 @@
     "Hydrocarbons": {
       "intro": "Hydrocarbons contain only carbon and hydrogen. Crude oil is a mixture of hydrocarbons that is separated by fractional distillation.",
       "sections": [
-        {"title": "Crude Oil", "icon": "🛢️", "points": [
-          "Formed from ancient marine organisms over millions of years — non-renewable fossil fuel",
-          "Mixture of many different hydrocarbons",
-          "Separated by fractional distillation based on boiling point"
-        ]},
-        {"title": "Fractional Distillation", "icon": "🏭", "points": [
-          "Crude oil heated and vaporised; vapours rise up a fractionating column",
-          "Column is cooler at the top — temperature gradient",
-          "Fractions condense at different levels depending on boiling point",
-          "Smaller molecules: lower boiling point, more flammable, less viscous, more volatile",
-          "Larger molecules: higher boiling point, more viscous, less flammable",
-          "Fractions (top to bottom): gases, petrol, naphtha, kerosene, diesel, fuel oil, bitumen"
-        ]}
+        {
+          "title": "Crude Oil",
+          "icon": "🛢️",
+          "points": [
+            "Formed from ancient marine organisms over millions of years — non-renewable fossil fuel",
+            "Mixture of many different hydrocarbons",
+            "Separated by fractional distillation based on boiling point"
+          ]
+        },
+        {
+          "title": "Fractional Distillation",
+          "icon": "🏭",
+          "points": [
+            "Crude oil heated and vaporised; vapours rise up a fractionating column",
+            "Column is cooler at the top — temperature gradient",
+            "Fractions condense at different levels depending on boiling point",
+            "Smaller molecules: lower boiling point, more flammable, less viscous, more volatile",
+            "Larger molecules: higher boiling point, more viscous, less flammable",
+            "Fractions (top to bottom): gases, petrol, naphtha, kerosene, diesel, fuel oil, bitumen"
+          ]
+        }
       ],
       "keyTerms": [
-        {"term": "Hydrocarbon", "def": "A compound containing only carbon and hydrogen"},
-        {"term": "Crude oil", "def": "A mixture of hydrocarbons formed from ancient organisms — a fossil fuel"},
-        {"term": "Fractional distillation", "def": "Separation of a mixture based on different boiling points"},
-        {"term": "Fraction", "def": "A group of hydrocarbons with similar boiling points collected at one level"}
+        {
+          "term": "Hydrocarbon",
+          "def": "A compound containing only carbon and hydrogen"
+        },
+        {
+          "term": "Crude oil",
+          "def": "A mixture of hydrocarbons formed from ancient organisms — a fossil fuel"
+        },
+        {
+          "term": "Fractional distillation",
+          "def": "Separation of a mixture based on different boiling points"
+        },
+        {
+          "term": "Fraction",
+          "def": "A group of hydrocarbons with similar boiling points collected at one level"
+        }
       ],
       "examTips": [
         "Shorter carbon chains = lower boiling point = more flammable = less viscous.",
@@ -33,30 +53,67 @@
         "Saying lighter fractions have higher boiling points — it's the opposite."
       ],
       "videos": [
-        {"title": "Crude Oil and Fractional Distillation", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=QFpwLmLJmHs"},
-        {"title": "Fractional Distillation GCSE", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=QFpwLmLJmHs"},
-        {"title": "Crude Oil", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=qOPa4Y0bVCc"}
+        {
+          "title": "Crude Oil and Fractional Distillation",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=QFpwLmLJmHs"
+        },
+        {
+          "title": "Fractional Distillation GCSE",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=QFpwLmLJmHs"
+        },
+        {
+          "title": "Crude Oil",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=qOPa4Y0bVCc"
+        }
+      ],
+      "clozePassages": [
+        "<strong>Hydrocarbons</strong> are compounds containing only hydrogen and carbon atoms. They are the main components of <strong>crude oil</strong>, which is a mixture of hydrocarbons with different chain lengths. Crude oil is separated by <strong>fractional distillation</strong> — the mixture is heated and vapours rise up a fractionating column and condense at different levels depending on their boiling points. Shorter chains have lower boiling points and are more flammable.",
+        "<strong>Crude oil</strong> is a finite, non-renewable resource formed over millions of years from the remains of marine organisms. It is extracted by drilling and refined by <strong>fractional distillation</strong>. The fractions obtained include petrol, kerosene, diesel, fuel oil, and bitumen. Each fraction is a mixture of hydrocarbons with similar chain lengths and <strong>boiling points</strong>. Crude oil is the raw material for many important products including fuels and plastics.",
+        "The physical properties of <strong>hydrocarbons</strong> depend on the length of their carbon chains. Shorter chains are more <strong>volatile</strong> (evaporate easily), have lower boiling points, and are less viscous. Longer chains have higher boiling points and are more viscous. These properties affect their uses — short-chain hydrocarbons are used as fuels (petrol, LPG) while long-chain hydrocarbons are used as lubricants and road surfacing (<strong>bitumen</strong>)."
       ]
     },
     "Alkanes": {
       "intro": "Alkanes are saturated hydrocarbons — they contain only single C-C bonds. They are the main components of crude oil fractions.",
       "sections": [
-        {"title": "Alkane Structure", "icon": "🔗", "points": [
-          "General formula: CₙH₂ₙ₊₂",
-          "Only single C-C bonds — SATURATED",
-          "Methane CH₄, Ethane C₂H₆, Propane C₃H₈, Butane C₄H₁₀"
-        ]},
-        {"title": "Combustion of Alkanes", "icon": "🔥", "points": [
-          "Complete combustion (excess O₂): hydrocarbon + O₂ → CO₂ + H₂O (blue flame)",
-          "Incomplete combustion (limited O₂): produces CO (toxic) and carbon (soot)",
-          "Carbon monoxide is toxic — binds to haemoglobin, preventing O₂ transport"
-        ]}
+        {
+          "title": "Alkane Structure",
+          "icon": "🔗",
+          "points": [
+            "General formula: CₙH₂ₙ₊₂",
+            "Only single C-C bonds — SATURATED",
+            "Methane CH₄, Ethane C₂H₆, Propane C₃H₈, Butane C₄H₁₀"
+          ]
+        },
+        {
+          "title": "Combustion of Alkanes",
+          "icon": "🔥",
+          "points": [
+            "Complete combustion (excess O₂): hydrocarbon + O₂ → CO₂ + H₂O (blue flame)",
+            "Incomplete combustion (limited O₂): produces CO (toxic) and carbon (soot)",
+            "Carbon monoxide is toxic — binds to haemoglobin, preventing O₂ transport"
+          ]
+        }
       ],
       "keyTerms": [
-        {"term": "Alkane", "def": "Saturated hydrocarbon with general formula CₙH₂ₙ₊₂"},
-        {"term": "Saturated", "def": "Contains only single C-C bonds — no double bonds"},
-        {"term": "Complete combustion", "def": "Burning in excess oxygen → CO₂ and H₂O"},
-        {"term": "Incomplete combustion", "def": "Burning in limited oxygen → CO and carbon (soot)"}
+        {
+          "term": "Alkane",
+          "def": "Saturated hydrocarbon with general formula CₙH₂ₙ₊₂"
+        },
+        {
+          "term": "Saturated",
+          "def": "Contains only single C-C bonds — no double bonds"
+        },
+        {
+          "term": "Complete combustion",
+          "def": "Burning in excess oxygen → CO₂ and H₂O"
+        },
+        {
+          "term": "Incomplete combustion",
+          "def": "Burning in limited oxygen → CO and carbon (soot)"
+        }
       ],
       "examTips": [
         "Complete combustion = CO₂ + H₂O (clean). Incomplete = CO + C (dirty, toxic).",
@@ -67,31 +124,73 @@
         "Confusing saturated (alkanes) with unsaturated (alkenes)."
       ],
       "videos": [
-        {"title": "Alkanes GCSE Chemistry", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=mXcFGCfvl3A"},
-        {"title": "Alkanes and Combustion", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=mXcFGCfvl3A"},
-        {"title": "Alkanes", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=lbqCFVCFKFU"}
+        {
+          "title": "Alkanes GCSE Chemistry",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=mXcFGCfvl3A"
+        },
+        {
+          "title": "Alkanes and Combustion",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=mXcFGCfvl3A"
+        },
+        {
+          "title": "Alkanes",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=lbqCFVCFKFU"
+        }
+      ],
+      "clozePassages": [
+        "<strong>Alkanes</strong> are saturated hydrocarbons with the general formula CₙH₂ₙ₊₂. They have only single carbon-carbon bonds. The first four alkanes are <strong>methane</strong> (CH₄), ethane (C₂H₆), propane (C₃H₈), and butane (C₄H₁₀). Alkanes are relatively unreactive because the C-C and C-H bonds are strong and non-polar. However, they undergo <strong>combustion</strong> reactions with oxygen and substitution reactions with halogens in UV light.",
+        "<strong>Complete combustion</strong> of alkanes occurs with excess oxygen, producing carbon dioxide and water. Incomplete combustion occurs when oxygen is limited, producing <strong>carbon monoxide</strong> (a toxic gas) and soot (carbon particles). Complete combustion releases more energy than incomplete combustion. In car engines and gas boilers, ensuring complete combustion is important for both <strong>efficiency</strong> and safety.",
+        "Alkanes form a <strong>homologous series</strong> — a family of compounds with the same general formula and similar chemical properties, where each member differs by a CH₂ unit. As chain length increases, boiling point increases due to stronger <strong>intermolecular forces</strong>. All alkanes burn in oxygen. Their <strong>structural formulae</strong> show the arrangement of atoms — isomers have the same molecular formula but different structures, giving them different physical properties."
       ]
     },
     "Alkenes": {
       "intro": "Alkenes are unsaturated hydrocarbons containing a C=C double bond. They are more reactive than alkanes and used to make polymers.",
       "sections": [
-        {"title": "Alkene Structure", "icon": "⚗️", "points": [
-          "General formula: CₙH₂ₙ",
-          "Contain one C=C double bond — UNSATURATED",
-          "Ethene C₂H₄, Propene C₃H₆, Butene C₄H₈"
-        ]},
-        {"title": "Test for Alkenes", "icon": "🧪", "callout": {"type": "exam", "label": "Bromine Water Test", "text": "Add bromine water (orange). Alkene present → decolourises to colourless. Alkane → no change (stays orange)."}},
-        {"title": "Addition Reactions", "icon": "➕", "points": [
-          "The C=C double bond opens up — atoms add across it",
-          "Hydrogenation: alkene + H₂ → alkane (nickel catalyst, 150°C)",
-          "Hydration: alkene + H₂O → alcohol (steam, phosphoric acid catalyst)",
-          "Halogenation: alkene + Br₂ → dibromoalkane (this decolourises bromine water)"
-        ]}
+        {
+          "title": "Alkene Structure",
+          "icon": "⚗️",
+          "points": [
+            "General formula: CₙH₂ₙ",
+            "Contain one C=C double bond — UNSATURATED",
+            "Ethene C₂H₄, Propene C₃H₆, Butene C₄H₈"
+          ]
+        },
+        {
+          "title": "Test for Alkenes",
+          "icon": "🧪",
+          "callout": {
+            "type": "exam",
+            "label": "Bromine Water Test",
+            "text": "Add bromine water (orange). Alkene present → decolourises to colourless. Alkane → no change (stays orange)."
+          }
+        },
+        {
+          "title": "Addition Reactions",
+          "icon": "➕",
+          "points": [
+            "The C=C double bond opens up — atoms add across it",
+            "Hydrogenation: alkene + H₂ → alkane (nickel catalyst, 150°C)",
+            "Hydration: alkene + H₂O → alcohol (steam, phosphoric acid catalyst)",
+            "Halogenation: alkene + Br₂ → dibromoalkane (this decolourises bromine water)"
+          ]
+        }
       ],
       "keyTerms": [
-        {"term": "Alkene", "def": "Unsaturated hydrocarbon with C=C double bond; formula CₙH₂ₙ"},
-        {"term": "Unsaturated", "def": "Contains at least one C=C double bond"},
-        {"term": "Addition reaction", "def": "Atoms add across a C=C double bond — only one product formed"}
+        {
+          "term": "Alkene",
+          "def": "Unsaturated hydrocarbon with C=C double bond; formula CₙH₂ₙ"
+        },
+        {
+          "term": "Unsaturated",
+          "def": "Contains at least one C=C double bond"
+        },
+        {
+          "term": "Addition reaction",
+          "def": "Atoms add across a C=C double bond — only one product formed"
+        }
       ],
       "examTips": [
         "Bromine water test: alkenes decolourise it (orange → colourless); alkanes do not.",
@@ -102,29 +201,71 @@
         "Forgetting that addition reactions produce only ONE product."
       ],
       "videos": [
-        {"title": "Alkenes GCSE Chemistry", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=mXcFGCfvl3A"},
-        {"title": "Alkenes and Addition Reactions", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=mXcFGCfvl3A"},
-        {"title": "Alkenes", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=lbqCFVCFKFU"}
+        {
+          "title": "Alkenes GCSE Chemistry",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=mXcFGCfvl3A"
+        },
+        {
+          "title": "Alkenes and Addition Reactions",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=mXcFGCfvl3A"
+        },
+        {
+          "title": "Alkenes",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=lbqCFVCFKFU"
+        }
+      ],
+      "clozePassages": [
+        "<strong>Alkenes</strong> are unsaturated hydrocarbons with at least one carbon-carbon <strong>double bond</strong>. The general formula is CₙH₂ₙ. The simplest alkene is <strong>ethene</strong> (C₂H₄). The double bond makes alkenes more reactive than alkanes. They readily undergo <strong>addition reactions</strong>, where the double bond opens up and atoms are added across it. Alkenes decolourise bromine water — this is a test for unsaturation.",
+        "Alkenes undergo <strong>addition reactions</strong>. With hydrogen (hydrogenation), the double bond is broken and a single bond forms — ethene becomes <strong>ethane</strong>. With water (hydration), ethanol is produced — this is how ethanol is manufactured industrially. With halogens such as bromine, <strong>dihalogenoalkanes</strong> are produced. The bromine water test distinguishes alkenes from alkanes — alkenes decolourise bromine water while alkanes do not.",
+        "<strong>Addition polymerisation</strong> uses alkene monomers to form polymers. Ethene monomers join together under high pressure and temperature with a catalyst to form <strong>poly(ethene)</strong>. Propene forms poly(propene). The double bonds in the monomers open up and form single bonds between monomers in the polymer chain. These polymers have many uses — packaging, fibres, and plastics. The repeat unit of the polymer has the same atoms as the <strong>monomer</strong> but with a single bond."
       ]
     },
     "Cracking": {
       "intro": "Cracking breaks large hydrocarbon molecules into smaller, more useful ones. It is essential because demand for shorter-chain fractions exceeds supply.",
       "sections": [
-        {"title": "Why Crack?", "icon": "❓", "points": [
-          "Crude oil contains too many long-chain fractions (not enough petrol, diesel)",
-          "Cracking converts surplus long chains into shorter, more useful ones",
-          "Also produces alkenes — essential for making polymers"
-        ]},
-        {"title": "Types of Cracking", "icon": "⚗️", "points": [
-          "Thermal cracking: 700°C+, high pressure — mainly alkenes produced",
-          "Catalytic cracking: lower temperature (~500°C), aluminium oxide catalyst — mainly petrol and alkenes"
-        ]},
-        {"title": "Products", "icon": "🧪", "callout": {"type": "exam", "label": "Example", "text": "Decane (C₁₀H₂₂) → octane (C₈H₁₈) + ethene (C₂H₄). Always produces at least one alkene."}}
+        {
+          "title": "Why Crack?",
+          "icon": "❓",
+          "points": [
+            "Crude oil contains too many long-chain fractions (not enough petrol, diesel)",
+            "Cracking converts surplus long chains into shorter, more useful ones",
+            "Also produces alkenes — essential for making polymers"
+          ]
+        },
+        {
+          "title": "Types of Cracking",
+          "icon": "⚗️",
+          "points": [
+            "Thermal cracking: 700°C+, high pressure — mainly alkenes produced",
+            "Catalytic cracking: lower temperature (~500°C), aluminium oxide catalyst — mainly petrol and alkenes"
+          ]
+        },
+        {
+          "title": "Products",
+          "icon": "🧪",
+          "callout": {
+            "type": "exam",
+            "label": "Example",
+            "text": "Decane (C₁₀H₂₂) → octane (C₈H₁₈) + ethene (C₂H₄). Always produces at least one alkene."
+          }
+        }
       ],
       "keyTerms": [
-        {"term": "Cracking", "def": "Breaking large hydrocarbons into smaller ones using heat (and sometimes a catalyst)"},
-        {"term": "Catalytic cracking", "def": "Cracking using aluminium oxide catalyst at ~500°C"},
-        {"term": "Thermal cracking", "def": "Cracking using high temperature (700°C+) and pressure"}
+        {
+          "term": "Cracking",
+          "def": "Breaking large hydrocarbons into smaller ones using heat (and sometimes a catalyst)"
+        },
+        {
+          "term": "Catalytic cracking",
+          "def": "Cracking using aluminium oxide catalyst at ~500°C"
+        },
+        {
+          "term": "Thermal cracking",
+          "def": "Cracking using high temperature (700°C+) and pressure"
+        }
       ],
       "examTips": [
         "Cracking always produces at least one alkene — important for polymer production.",
@@ -135,31 +276,73 @@
         "Confusing cracking (chemical change) with fractional distillation (physical separation)."
       ],
       "videos": [
-        {"title": "Cracking GCSE Chemistry", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=QFpwLmLJmHs"},
-        {"title": "Cracking Hydrocarbons", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=QFpwLmLJmHs"},
-        {"title": "Cracking", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=qOPa4Y0bVCc"}
+        {
+          "title": "Cracking GCSE Chemistry",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=QFpwLmLJmHs"
+        },
+        {
+          "title": "Cracking Hydrocarbons",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=QFpwLmLJmHs"
+        },
+        {
+          "title": "Cracking",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=qOPa4Y0bVCc"
+        }
+      ],
+      "clozePassages": [
+        "<strong>Cracking</strong> is the process of breaking long-chain hydrocarbons into shorter, more useful ones. It is carried out by heating the hydrocarbon to a high temperature and passing the vapour over a hot <strong>catalyst</strong> (catalytic cracking) or by heating to a very high temperature with steam (steam cracking). Cracking produces alkanes and <strong>alkenes</strong>, which are used as fuels and as raw materials for making polymers.",
+        "Crude oil contains more long-chain hydrocarbons than are needed and less short-chain hydrocarbons. <strong>Cracking</strong> converts the unwanted long-chain fractions into more useful shorter molecules. This includes <strong>petrol</strong> and other fuels, and alkenes such as ethene for making polymers. The cracking reaction produces a mixture of products. Alkenes are identified by their ability to decolourise <strong>bromine water</strong>.",
+        "There are two main types of <strong>cracking</strong>. <strong>Catalytic cracking</strong> uses a zeolite catalyst at moderate temperatures and produces branched alkanes and aromatic hydrocarbons, useful as petrol. <strong>Steam cracking</strong> uses high temperatures and steam and produces more <strong>alkenes</strong>, which are feedstocks for polymer production. Both types reduce the supply of long-chain fractions and increase the supply of more economically valuable shorter-chain products."
       ]
     },
     "Polymers": {
       "intro": "Polymers are very long chain molecules formed by joining many small monomer units together. Plastics are synthetic polymers.",
       "sections": [
-        {"title": "Addition Polymerisation", "icon": "🔗", "points": [
-          "Unsaturated monomers (with C=C) join together",
-          "C=C double bond opens up, monomers join in a long chain",
-          "Only ONE product — 100% atom economy",
-          "Examples: ethene → poly(ethene); propene → poly(propene)"
-        ]},
-        {"title": "Naming Polymers", "icon": "📝", "callout": {"type": "exam", "label": "Naming Rule", "text": "Put 'poly' in front of the monomer name in brackets. E.g. ethene → poly(ethene). Propene → poly(propene)."}},
-        {"title": "Issues with Plastics", "icon": "♻️", "points": [
-          "Non-biodegradable — persist in environment for centuries",
-          "Microplastics enter food chains",
-          "Solutions: recycling, biodegradable plastics, reducing plastic use"
-        ]}
+        {
+          "title": "Addition Polymerisation",
+          "icon": "🔗",
+          "points": [
+            "Unsaturated monomers (with C=C) join together",
+            "C=C double bond opens up, monomers join in a long chain",
+            "Only ONE product — 100% atom economy",
+            "Examples: ethene → poly(ethene); propene → poly(propene)"
+          ]
+        },
+        {
+          "title": "Naming Polymers",
+          "icon": "📝",
+          "callout": {
+            "type": "exam",
+            "label": "Naming Rule",
+            "text": "Put 'poly' in front of the monomer name in brackets. E.g. ethene → poly(ethene). Propene → poly(propene)."
+          }
+        },
+        {
+          "title": "Issues with Plastics",
+          "icon": "♻️",
+          "points": [
+            "Non-biodegradable — persist in environment for centuries",
+            "Microplastics enter food chains",
+            "Solutions: recycling, biodegradable plastics, reducing plastic use"
+          ]
+        }
       ],
       "keyTerms": [
-        {"term": "Polymer", "def": "A large molecule made of many repeating monomer units joined together"},
-        {"term": "Monomer", "def": "A small molecule that joins with others to form a polymer"},
-        {"term": "Addition polymerisation", "def": "Monomers with C=C bonds join together — no other products"}
+        {
+          "term": "Polymer",
+          "def": "A large molecule made of many repeating monomer units joined together"
+        },
+        {
+          "term": "Monomer",
+          "def": "A small molecule that joins with others to form a polymer"
+        },
+        {
+          "term": "Addition polymerisation",
+          "def": "Monomers with C=C bonds join together — no other products"
+        }
       ],
       "examTips": [
         "Monomers need C=C bonds for addition polymerisation.",
@@ -171,34 +354,71 @@
         "Forgetting the brackets in polymer names — poly(ethene) not polyethene."
       ],
       "videos": [
-        {"title": "Polymers GCSE Chemistry", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=oUaLMOYvsNA"},
-        {"title": "Addition Polymerisation", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=oUaLMOYvsNA"},
-        {"title": "Plastics and Polymers", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=L8dTdCmSgAs"}
+        {
+          "title": "Polymers GCSE Chemistry",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=oUaLMOYvsNA"
+        },
+        {
+          "title": "Addition Polymerisation",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=oUaLMOYvsNA"
+        },
+        {
+          "title": "Plastics and Polymers",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=L8dTdCmSgAs"
+        }
+      ],
+      "clozePassages": [
+        "<strong>Addition polymers</strong> are formed from alkene monomers. The C=C double bond opens and monomers join in long chains. <strong>Poly(ethene)</strong> is used in plastic bags and bottles. <strong>Poly(propene)</strong> is used in ropes and containers. <strong>PVC</strong> (poly(chloroethene)) is used in pipes and window frames. The properties of the polymer depend on the monomer — chain length, branching, and cross-linking all affect strength and flexibility.",
+        "<strong>Condensation polymers</strong> form when monomers with two functional groups react, releasing a small molecule such as water. <strong>Polyester</strong> is made from a diol and a dicarboxylic acid. <strong>Nylon</strong> is a polyamide made from a diamine and a dicarboxylic acid. Unlike addition polymers, condensation polymers have functional groups within the main chain. They can often be broken down by <strong>hydrolysis</strong>, which reverses the condensation reaction.",
+        "Disposing of <strong>polymers</strong> is a major environmental challenge. Most synthetic plastics are not <strong>biodegradable</strong> and persist in the environment for hundreds of years. Options include recycling, which requires sorting different polymer types. Some plastics can be broken down by <strong>combustion</strong> to recover energy. <strong>Biodegradable</strong> polymers made from plant starch are being developed as a more sustainable alternative. Reducing plastic use and improving recycling infrastructure are key priorities."
       ]
     },
     "Alcohols and Carboxylic Acids": {
       "intro": "Alcohols and carboxylic acids are important functional group families. Ethanol and ethanoic acid are the key examples.",
       "sections": [
-        {"title": "Alcohols", "icon": "🍷", "points": [
-          "Functional group: -OH",
-          "General formula: CₙH₂ₙ₊₁OH",
-          "Methanol CH₃OH, Ethanol C₂H₅OH, Propanol C₃H₇OH",
-          "Soluble in water; used as fuels and solvents",
-          "Ethanol made by: fermentation (glucose + yeast → ethanol + CO₂) or hydration of ethene"
-        ]},
-        {"title": "Carboxylic Acids", "icon": "🍋", "points": [
-          "Functional group: -COOH",
-          "Ethanoic acid CH₃COOH — found in vinegar",
-          "Weakly acidic — partially ionise in water",
-          "React with alcohols to form esters + water (esterification)",
-          "Esters have characteristic fruity smells — used in perfumes and flavourings"
-        ]}
+        {
+          "title": "Alcohols",
+          "icon": "🍷",
+          "points": [
+            "Functional group: -OH",
+            "General formula: CₙH₂ₙ₊₁OH",
+            "Methanol CH₃OH, Ethanol C₂H₅OH, Propanol C₃H₇OH",
+            "Soluble in water; used as fuels and solvents",
+            "Ethanol made by: fermentation (glucose + yeast → ethanol + CO₂) or hydration of ethene"
+          ]
+        },
+        {
+          "title": "Carboxylic Acids",
+          "icon": "🍋",
+          "points": [
+            "Functional group: -COOH",
+            "Ethanoic acid CH₃COOH — found in vinegar",
+            "Weakly acidic — partially ionise in water",
+            "React with alcohols to form esters + water (esterification)",
+            "Esters have characteristic fruity smells — used in perfumes and flavourings"
+          ]
+        }
       ],
       "keyTerms": [
-        {"term": "Alcohol", "def": "Organic compound containing an -OH functional group"},
-        {"term": "Carboxylic acid", "def": "Organic compound containing a -COOH functional group"},
-        {"term": "Ester", "def": "Compound formed from alcohol + carboxylic acid — fruity smell"},
-        {"term": "Fermentation", "def": "Anaerobic breakdown of glucose by yeast producing ethanol and CO₂"}
+        {
+          "term": "Alcohol",
+          "def": "Organic compound containing an -OH functional group"
+        },
+        {
+          "term": "Carboxylic acid",
+          "def": "Organic compound containing a -COOH functional group"
+        },
+        {
+          "term": "Ester",
+          "def": "Compound formed from alcohol + carboxylic acid — fruity smell"
+        },
+        {
+          "term": "Fermentation",
+          "def": "Anaerobic breakdown of glucose by yeast producing ethanol and CO₂"
+        }
       ],
       "examTips": [
         "Fermentation equation: C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂",
@@ -210,9 +430,26 @@
         "Saying fermentation uses oxygen — it is an ANAEROBIC process."
       ],
       "videos": [
-        {"title": "Alcohols GCSE Chemistry", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=mXcFGCfvl3A"},
-        {"title": "Carboxylic Acids and Esters", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=dBXE0vn3YfI"},
-        {"title": "Fermentation", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=HmLjRv1bhe4"}
+        {
+          "title": "Alcohols GCSE Chemistry",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=mXcFGCfvl3A"
+        },
+        {
+          "title": "Carboxylic Acids and Esters",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=dBXE0vn3YfI"
+        },
+        {
+          "title": "Fermentation",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=HmLjRv1bhe4"
+        }
+      ],
+      "clozePassages": [
+        "<strong>Alcohols</strong> contain the hydroxyl functional group (-OH). The simplest alcohol is <strong>methanol</strong> (CH₃OH), followed by ethanol (C₂H₅OH) and propanol (C₃H₇OH). Ethanol is the alcohol found in alcoholic drinks, produced by <strong>fermentation</strong> of sugars. Alcohols are used as fuels, solvents, and in perfumes. They react with sodium to produce hydrogen gas and are oxidised to form <strong>carboxylic acids</strong>.",
+        "<strong>Carboxylic acids</strong> contain the carboxyl functional group (-COOH). The simplest is <strong>methanoic acid</strong>, followed by ethanoic acid (found in vinegar). They are weak acids, partially ionising in water. Carboxylic acids react with alcohols in the presence of an acid catalyst to form <strong>esters</strong> and water — this is esterification. Esters have fruity smells and are used in perfumes and food flavourings.",
+        "<strong>Ethanol</strong> can be produced in two ways. <strong>Fermentation</strong> uses yeast to convert glucose to ethanol and carbon dioxide — this is a slow process carried out at 30°C, suitable for making alcoholic drinks. <strong>Hydration</strong> of ethene with steam and an acid catalyst is a fast, continuous industrial process. Fermentation uses renewable plant material; hydration uses ethene from crude oil. Both methods have advantages depending on the context."
       ]
     }
   }

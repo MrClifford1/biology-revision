@@ -4,23 +4,43 @@
     "Atomic Structure": {
       "intro": "Atoms are made of protons, neutrons and electrons. Understanding the structure of atoms and how it relates to radioactivity is the foundation of P4.",
       "sections": [
-        {"title": "Structure of the Atom", "icon": "⚛️", "points": [
-          "Nucleus: protons (positive charge, mass 1) + neutrons (no charge, mass 1)",
-          "Electrons: negative charge, mass ~1/2000 — orbit in shells",
-          "Atom is neutral: number of protons = number of electrons",
-          "Atomic number = number of protons; Mass number = protons + neutrons",
-          "Atom is mostly empty space — nucleus is tiny compared to atom size"
-        ]},
-        {"title": "Isotopes and Ions", "icon": "🔬", "points": [
-          "<strong>Isotopes</strong> — same element, same protons, different neutrons; same chemical properties",
-          "<strong>Ions</strong> — atoms that have gained or lost electrons; have a charge"
-        ]}
+        {
+          "title": "Structure of the Atom",
+          "icon": "⚛️",
+          "points": [
+            "Nucleus: protons (positive charge, mass 1) + neutrons (no charge, mass 1)",
+            "Electrons: negative charge, mass ~1/2000 — orbit in shells",
+            "Atom is neutral: number of protons = number of electrons",
+            "Atomic number = number of protons; Mass number = protons + neutrons",
+            "Atom is mostly empty space — nucleus is tiny compared to atom size"
+          ]
+        },
+        {
+          "title": "Isotopes and Ions",
+          "icon": "🔬",
+          "points": [
+            "<strong>Isotopes</strong> — same element, same protons, different neutrons; same chemical properties",
+            "<strong>Ions</strong> — atoms that have gained or lost electrons; have a charge"
+          ]
+        }
       ],
       "keyTerms": [
-        {"term": "Atomic number", "def": "Number of protons in the nucleus — defines the element"},
-        {"term": "Mass number", "def": "Total protons + neutrons in the nucleus"},
-        {"term": "Isotope", "def": "Atoms of the same element with different numbers of neutrons"},
-        {"term": "Ion", "def": "An atom that has gained or lost electrons — has an electric charge"}
+        {
+          "term": "Atomic number",
+          "def": "Number of protons in the nucleus — defines the element"
+        },
+        {
+          "term": "Mass number",
+          "def": "Total protons + neutrons in the nucleus"
+        },
+        {
+          "term": "Isotope",
+          "def": "Atoms of the same element with different numbers of neutrons"
+        },
+        {
+          "term": "Ion",
+          "def": "An atom that has gained or lost electrons — has an electric charge"
+        }
       ],
       "examTips": [
         "Neutrons = mass number − atomic number.",
@@ -32,33 +52,72 @@
         "Confusing isotopes (different neutrons) with ions (different electrons)."
       ],
       "videos": [
-        {"title": "Atomic Structure GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=dTdIxnQd6e8"},
-        {"title": "Atoms and Isotopes", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=0X3gJJYcVCQ"},
-        {"title": "Structure of the Atom", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=u-SBTRLoPuo"}
+        {
+          "title": "Atomic Structure GCSE Physics",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=dTdIxnQd6e8"
+        },
+        {
+          "title": "Atoms and Isotopes",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=0X3gJJYcVCQ"
+        },
+        {
+          "title": "Structure of the Atom",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=u-SBTRLoPuo"
+        }
+      ],
+      "clozePassages": [
+        "An atom has a small, dense <strong>nucleus</strong> containing protons and neutrons, surrounded by electrons in shells. The nucleus is positively charged. <strong>Protons</strong> have a positive charge of +1. <strong>Neutrons</strong> have no charge. <strong>Electrons</strong> have a negative charge of -1 and a negligible mass. The number of protons equals the number of electrons in a neutral atom. The atomic number equals the number of protons.",
+        "The <strong>mass number</strong> of an atom is the total number of protons and neutrons. <strong>Isotopes</strong> are atoms of the same element with different numbers of neutrons. They have the same chemical properties but different physical properties and different stabilities. Some isotopes are <strong>radioactive</strong> — they have unstable nuclei that decay spontaneously, emitting radiation. The decay of radioactive isotopes is random and cannot be predicted for individual atoms.",
+        "Most of an atom is <strong>empty space</strong>. The nucleus is approximately 10,000 times smaller than the atom itself. The diameter of an atom is about 10⁻¹⁰ m; the nucleus is about 10⁻¹⁴ m. Despite being so small, the nucleus contains almost all of the atom's <strong>mass</strong>. This understanding came from Rutherford's gold foil experiment, which showed that most alpha particles passed straight through the foil rather than being deflected."
       ]
     },
     "History of the Atom": {
       "intro": "Our model of the atom has changed over time as new experimental evidence has emerged. This is a key example of how science works.",
       "sections": [
-        {"title": "Development of Atomic Models", "icon": "📅", "numbered": [
-          "<strong>Dalton (1803)</strong> — indivisible solid spheres",
-          "<strong>Thomson (1904)</strong> — plum pudding: electrons in a positive 'sphere' of charge",
-          "<strong>Rutherford (1911)</strong> — nuclear model: small dense positive nucleus, electrons orbit around it",
-          "<strong>Bohr (1913)</strong> — electrons in fixed circular orbits at specific energy levels",
-          "<strong>Modern quantum model</strong> — electrons in probability clouds (orbitals)"
-        ]},
-        {"title": "Rutherford's Alpha Scattering Experiment", "icon": "🔬", "points": [
-          "Alpha particles fired at a thin gold foil",
-          "Most passed straight through (atom is mostly empty space)",
-          "Small fraction deflected at large angles (small dense positive nucleus)",
-          "Very few bounced back (nucleus is very small)",
-          "This DISPROVED the plum pudding model"
-        ], "callout": {"type": "exam", "label": "Why it Disproved Plum Pudding", "text": "The plum pudding model predicted all alpha particles should pass through with small deflections. The large-angle deflections could only be explained by a concentrated positive charge (nucleus)."}}
+        {
+          "title": "Development of Atomic Models",
+          "icon": "📅",
+          "numbered": [
+            "<strong>Dalton (1803)</strong> — indivisible solid spheres",
+            "<strong>Thomson (1904)</strong> — plum pudding: electrons in a positive 'sphere' of charge",
+            "<strong>Rutherford (1911)</strong> — nuclear model: small dense positive nucleus, electrons orbit around it",
+            "<strong>Bohr (1913)</strong> — electrons in fixed circular orbits at specific energy levels",
+            "<strong>Modern quantum model</strong> — electrons in probability clouds (orbitals)"
+          ]
+        },
+        {
+          "title": "Rutherford's Alpha Scattering Experiment",
+          "icon": "🔬",
+          "points": [
+            "Alpha particles fired at a thin gold foil",
+            "Most passed straight through (atom is mostly empty space)",
+            "Small fraction deflected at large angles (small dense positive nucleus)",
+            "Very few bounced back (nucleus is very small)",
+            "This DISPROVED the plum pudding model"
+          ],
+          "callout": {
+            "type": "exam",
+            "label": "Why it Disproved Plum Pudding",
+            "text": "The plum pudding model predicted all alpha particles should pass through with small deflections. The large-angle deflections could only be explained by a concentrated positive charge (nucleus)."
+          }
+        }
       ],
       "keyTerms": [
-        {"term": "Plum pudding model", "def": "Thomson's model with electrons embedded in a diffuse positive sphere"},
-        {"term": "Nuclear model", "def": "Rutherford's model with a small dense positive nucleus and orbiting electrons"},
-        {"term": "Alpha particle", "def": "Positively charged particle (2 protons + 2 neutrons) emitted in radioactive decay"}
+        {
+          "term": "Plum pudding model",
+          "def": "Thomson's model with electrons embedded in a diffuse positive sphere"
+        },
+        {
+          "term": "Nuclear model",
+          "def": "Rutherford's model with a small dense positive nucleus and orbiting electrons"
+        },
+        {
+          "term": "Alpha particle",
+          "def": "Positively charged particle (2 protons + 2 neutrons) emitted in radioactive decay"
+        }
       ],
       "examTips": [
         "Rutherford's results: most pass through = mostly empty; large deflection = small dense nucleus.",
@@ -69,31 +128,76 @@
         "Forgetting to explain what each observation tells us about atomic structure."
       ],
       "videos": [
-        {"title": "History of the Atom GCSE", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=dTdIxnQd6e8"},
-        {"title": "Rutherford's Experiment", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=XBqHkraf8iE"},
-        {"title": "Atomic Models", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=1RIxfeSXp1I"}
+        {
+          "title": "History of the Atom GCSE",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=dTdIxnQd6e8"
+        },
+        {
+          "title": "Rutherford's Experiment",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=XBqHkraf8iE"
+        },
+        {
+          "title": "Atomic Models",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=1RIxfeSXp1I"
+        }
+      ],
+      "clozePassages": [
+        "The model of the atom has evolved over time as new evidence emerged. <strong>Dalton</strong> proposed atoms were solid indivisible spheres. <strong>Thomson</strong> discovered the electron and proposed the plum pudding model with electrons embedded in a positive sphere. <strong>Rutherford</strong>'s gold foil experiment showed the atom has a tiny positive nucleus. <strong>Bohr</strong> proposed electrons orbit in fixed shells. Modern models treat electrons as probability clouds.",
+        "Rutherford's <strong>gold foil experiment</strong> was crucial in developing the nuclear model of the atom. Most alpha particles passed straight through the gold foil, but some were deflected and a few bounced straight back. This proved the atom is mostly <strong>empty space</strong> with a tiny, dense, positively charged <strong>nucleus</strong>. The plum pudding model predicted that all particles would pass through with minimal deflection, so the results were surprising and led to a revolution in atomic theory.",
+        "Niels <strong>Bohr</strong> refined Rutherford's model by proposing that electrons occupy fixed <strong>energy levels</strong> or shells. Electrons can only exist at specific energies and can move between shells by absorbing or emitting photons of light. When electrons drop to a lower energy level, they emit light of a specific <strong>frequency</strong>, producing atomic emission spectra. These spectra are unique to each element and can be used to identify elements in distant stars."
       ]
     },
     "Radioactive Decay": {
       "intro": "Some atomic nuclei are unstable and spontaneously emit radiation. This is radioactive decay — it is random and cannot be controlled.",
       "sections": [
-        {"title": "Types of Nuclear Radiation", "icon": "☢️", "points": [
-          "<strong>Alpha (α)</strong> — 2 protons + 2 neutrons; highly ionising; short range in air; stopped by paper",
-          "<strong>Beta (β)</strong> — fast electron from nucleus; moderately ionising; stopped by a few mm aluminium",
-          "<strong>Gamma (γ)</strong> — electromagnetic wave; weakly ionising; needs thick lead or concrete to absorb"
-        ]},
-        {"title": "Nuclear Equations", "icon": "⚗️", "points": [
-          "Alpha decay: mass number decreases by 4, atomic number decreases by 2",
-          "Beta decay: mass number unchanged, atomic number increases by 1 (neutron → proton + electron)",
-          "Gamma: no change to mass or atomic number — just releases energy"
-        ]},
-        {"title": "Properties Comparison", "icon": "📊", "callout": {"type": "exam", "label": "Summary Table", "text": "α: most ionising, least penetrating. γ: least ionising, most penetrating. β: in between. Ionising power and penetrating ability are INVERSELY related."}}
+        {
+          "title": "Types of Nuclear Radiation",
+          "icon": "☢️",
+          "points": [
+            "<strong>Alpha (α)</strong> — 2 protons + 2 neutrons; highly ionising; short range in air; stopped by paper",
+            "<strong>Beta (β)</strong> — fast electron from nucleus; moderately ionising; stopped by a few mm aluminium",
+            "<strong>Gamma (γ)</strong> — electromagnetic wave; weakly ionising; needs thick lead or concrete to absorb"
+          ]
+        },
+        {
+          "title": "Nuclear Equations",
+          "icon": "⚗️",
+          "points": [
+            "Alpha decay: mass number decreases by 4, atomic number decreases by 2",
+            "Beta decay: mass number unchanged, atomic number increases by 1 (neutron → proton + electron)",
+            "Gamma: no change to mass or atomic number — just releases energy"
+          ]
+        },
+        {
+          "title": "Properties Comparison",
+          "icon": "📊",
+          "callout": {
+            "type": "exam",
+            "label": "Summary Table",
+            "text": "α: most ionising, least penetrating. γ: least ionising, most penetrating. β: in between. Ionising power and penetrating ability are INVERSELY related."
+          }
+        }
       ],
       "keyTerms": [
-        {"term": "Radioactive decay", "def": "Spontaneous emission of radiation from unstable nuclei — random process"},
-        {"term": "Alpha particle", "def": "2 protons + 2 neutrons; highly ionising; stopped by paper"},
-        {"term": "Beta particle", "def": "High-speed electron from nucleus; stopped by aluminium"},
-        {"term": "Gamma radiation", "def": "Electromagnetic wave from nucleus; needs lead to absorb"}
+        {
+          "term": "Radioactive decay",
+          "def": "Spontaneous emission of radiation from unstable nuclei — random process"
+        },
+        {
+          "term": "Alpha particle",
+          "def": "2 protons + 2 neutrons; highly ionising; stopped by paper"
+        },
+        {
+          "term": "Beta particle",
+          "def": "High-speed electron from nucleus; stopped by aluminium"
+        },
+        {
+          "term": "Gamma radiation",
+          "def": "Electromagnetic wave from nucleus; needs lead to absorb"
+        }
       ],
       "examTips": [
         "α: most ionising, stopped by paper. β: stopped by aluminium. γ: stopped by lead.",
@@ -104,35 +208,73 @@
         "Confusing ionising power and penetrating ability — they are inverse."
       ],
       "videos": [
-        {"title": "Radioactive Decay GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=oFdR_yMKOCw"},
-        {"title": "Types of Radiation", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=GnNLCMbRlDk"},
-        {"title": "Alpha Beta Gamma", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=1T4_eqXdSKY"}
+        {
+          "title": "Radioactive Decay GCSE Physics",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=oFdR_yMKOCw"
+        },
+        {
+          "title": "Types of Radiation",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=GnNLCMbRlDk"
+        },
+        {
+          "title": "Alpha Beta Gamma",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=1T4_eqXdSKY"
+        }
+      ],
+      "clozePassages": [
+        "<strong>Radioactive decay</strong> occurs when an unstable nucleus emits radiation to become more stable. <strong>Alpha decay</strong> emits a helium nucleus (2 protons, 2 neutrons) — the mass number decreases by 4 and atomic number by 2. <strong>Beta decay</strong> emits an electron from the nucleus when a neutron converts to a proton — atomic number increases by 1. <strong>Gamma decay</strong> emits electromagnetic radiation and causes no change in mass or atomic number.",
+        "Alpha (<strong>α</strong>) particles are helium nuclei with high ionising power but low penetration — stopped by a few centimetres of air or thin paper. Beta (<strong>β</strong>) particles are fast electrons with medium ionising power — stopped by a few mm of aluminium. <strong>Gamma</strong> (γ) rays are electromagnetic waves with low ionising power but high penetration — reduced but not stopped by thick lead or concrete. The ionising power is related to how strongly each type interacts with matter.",
+        "Nuclear equations show <strong>radioactive decay</strong> with conservation of mass number and atomic number. In alpha decay: ²³⁸U → ²³⁴Th + ⁴He. In beta decay: ¹⁴C → ¹⁴N + ⁰e (electron). <strong>Gamma radiation</strong> accompanies alpha and beta decay and carries no charge or mass. Nuclear equations must balance — the total mass number and total <strong>atomic number</strong> must be the same on both sides of the equation."
       ]
     },
     "Nuclear Radiation": {
       "intro": "Nuclear radiation can be both harmful and beneficial. Understanding the risks and uses is important for P4.",
       "sections": [
-        {"title": "Detecting Radiation", "icon": "🔬", "points": [
-          "Geiger-Muller tube — detects ionising radiation; produces electrical pulse",
-          "Photographic film — used in film badges for radiation workers"
-        ]},
-        {"title": "Uses of Radiation", "icon": "⚕️", "points": [
-          "Medical imaging: gamma cameras (technetium-99m tracer)",
-          "Cancer treatment: gamma radiation targeted at tumours",
-          "Sterilisation: gamma kills bacteria in medical equipment",
-          "Smoke detectors: alpha source (americium-241) ionises air; fire disrupts ionisation",
-          "Thickness gauges: beta used to monitor paper/metal thickness in manufacturing"
-        ]},
-        {"title": "Background Radiation", "icon": "🌍", "points": [
-          "Always present from: rocks (radon gas), cosmic rays, food, medical sources",
-          "Must be subtracted from measurements in experiments",
-          "UK average: ~2.7 mSv per year"
-        ]}
+        {
+          "title": "Detecting Radiation",
+          "icon": "🔬",
+          "points": [
+            "Geiger-Muller tube — detects ionising radiation; produces electrical pulse",
+            "Photographic film — used in film badges for radiation workers"
+          ]
+        },
+        {
+          "title": "Uses of Radiation",
+          "icon": "⚕️",
+          "points": [
+            "Medical imaging: gamma cameras (technetium-99m tracer)",
+            "Cancer treatment: gamma radiation targeted at tumours",
+            "Sterilisation: gamma kills bacteria in medical equipment",
+            "Smoke detectors: alpha source (americium-241) ionises air; fire disrupts ionisation",
+            "Thickness gauges: beta used to monitor paper/metal thickness in manufacturing"
+          ]
+        },
+        {
+          "title": "Background Radiation",
+          "icon": "🌍",
+          "points": [
+            "Always present from: rocks (radon gas), cosmic rays, food, medical sources",
+            "Must be subtracted from measurements in experiments",
+            "UK average: ~2.7 mSv per year"
+          ]
+        }
       ],
       "keyTerms": [
-        {"term": "Background radiation", "def": "Low-level radiation always present from natural and artificial sources"},
-        {"term": "Tracer", "def": "A radioactive substance introduced into the body to track a process"},
-        {"term": "Geiger-Muller tube", "def": "Detector for ionising radiation — produces electrical pulses"}
+        {
+          "term": "Background radiation",
+          "def": "Low-level radiation always present from natural and artificial sources"
+        },
+        {
+          "term": "Tracer",
+          "def": "A radioactive substance introduced into the body to track a process"
+        },
+        {
+          "term": "Geiger-Muller tube",
+          "def": "Detector for ionising radiation — produces electrical pulses"
+        }
       ],
       "examTips": [
         "Always subtract background radiation in practical experiments.",
@@ -143,30 +285,69 @@
         "Saying alpha is best for medical tracers — it is too ionising and cannot penetrate tissue."
       ],
       "videos": [
-        {"title": "Uses of Radiation GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=oFdR_yMKOCw"},
-        {"title": "Background Radiation", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=GnNLCMbRlDk"},
-        {"title": "Medical Uses of Radiation", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=1T4_eqXdSKY"}
+        {
+          "title": "Uses of Radiation GCSE Physics",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=oFdR_yMKOCw"
+        },
+        {
+          "title": "Background Radiation",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=GnNLCMbRlDk"
+        },
+        {
+          "title": "Medical Uses of Radiation",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=1T4_eqXdSKY"
+        }
+      ],
+      "clozePassages": [
+        "The three main types of nuclear radiation are <strong>alpha</strong>, beta, and gamma. Alpha particles are the most ionising but least penetrating. They cause serious damage if the source is inside the body (<strong>contamination</strong>). Beta particles have intermediate ionising and penetrating properties. Gamma rays are the least ionising but most penetrating. All types of radiation can damage living cells by ionising molecules, potentially causing <strong>cancer</strong> or cell death.",
+        "Radiation can be detected using a <strong>Geiger-Müller tube</strong> connected to a counter. Each ionising particle entering the tube triggers a brief electrical pulse which is counted. <strong>Background radiation</strong> is always present and comes from natural sources (cosmic rays, radon gas, rocks, food) and artificial sources (nuclear industry, medical uses). Background radiation must be subtracted when measuring the activity of a radioactive source.",
+        "<strong>Irradiation</strong> is exposure to a radioactive source from outside the body. <strong>Contamination</strong> is when radioactive material enters the body or gets onto clothing and skin. Contamination is generally more dangerous because the source remains in close contact with tissues for extended periods. Protective measures include wearing <strong>lead aprons</strong>, keeping distance from sources, minimising exposure time, and wearing protective clothing to prevent contamination."
       ]
     },
     "Half-life": {
       "intro": "Half-life is the time taken for half of the radioactive nuclei in a sample to decay. It is constant for each radioactive isotope.",
       "sections": [
-        {"title": "What is Half-life?", "icon": "⏱️", "points": [
-          "Half-life = time for activity (or count rate) to halve",
-          "Also = time for half the unstable nuclei to decay",
-          "Each half-life: remaining nuclei = previous × 0.5",
-          "Can range from fractions of a second to billions of years"
-        ]},
-        {"title": "Half-life Calculations", "icon": "📐", "callout": {"type": "exam", "label": "Method", "text": "After n half-lives: remaining fraction = (1/2)ⁿ. E.g. after 3 half-lives: 1/2 × 1/2 × 1/2 = 1/8 remains. If initial count = 800 and half-life = 2 years: after 6 years (3 half-lives) → 100 counts."}},
-        {"title": "Choosing Isotopes", "icon": "⚕️", "points": [
-          "Short half-life: medical uses (decays quickly, less long-term exposure)",
-          "Long half-life: long-term power sources (e.g. space probes)",
-          "Waste disposal: need to store for many half-lives until activity is safe"
-        ]}
+        {
+          "title": "What is Half-life?",
+          "icon": "⏱️",
+          "points": [
+            "Half-life = time for activity (or count rate) to halve",
+            "Also = time for half the unstable nuclei to decay",
+            "Each half-life: remaining nuclei = previous × 0.5",
+            "Can range from fractions of a second to billions of years"
+          ]
+        },
+        {
+          "title": "Half-life Calculations",
+          "icon": "📐",
+          "callout": {
+            "type": "exam",
+            "label": "Method",
+            "text": "After n half-lives: remaining fraction = (1/2)ⁿ. E.g. after 3 half-lives: 1/2 × 1/2 × 1/2 = 1/8 remains. If initial count = 800 and half-life = 2 years: after 6 years (3 half-lives) → 100 counts."
+          }
+        },
+        {
+          "title": "Choosing Isotopes",
+          "icon": "⚕️",
+          "points": [
+            "Short half-life: medical uses (decays quickly, less long-term exposure)",
+            "Long half-life: long-term power sources (e.g. space probes)",
+            "Waste disposal: need to store for many half-lives until activity is safe"
+          ]
+        }
       ],
       "keyTerms": [
-        {"term": "Half-life", "def": "Time for activity of a radioactive sample to halve (or for half the nuclei to decay)"},
-        {"term": "Activity", "def": "The number of radioactive decays per second — measured in becquerels (Bq)"}
+        {
+          "term": "Half-life",
+          "def": "Time for activity of a radioactive sample to halve (or for half the nuclei to decay)"
+        },
+        {
+          "term": "Activity",
+          "def": "The number of radioactive decays per second — measured in becquerels (Bq)"
+        }
       ],
       "examTips": [
         "From a graph: read off time when activity halves — that is the half-life.",
@@ -177,33 +358,75 @@
         "Confusing half-life (time for activity to halve) with time for all nuclei to decay (never fully zero)."
       ],
       "videos": [
-        {"title": "Half-life GCSE Physics", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=oFdR_yMKOCw"},
-        {"title": "Half-life Calculations", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=SQUpV4GN4_4"},
-        {"title": "Radioactive Decay and Half-life", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=SQUpV4GN4_4"}
+        {
+          "title": "Half-life GCSE Physics",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=oFdR_yMKOCw"
+        },
+        {
+          "title": "Half-life Calculations",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=SQUpV4GN4_4"
+        },
+        {
+          "title": "Radioactive Decay and Half-life",
+          "channel": "Science with Hazel",
+          "url": "https://www.youtube.com/watch?v=SQUpV4GN4_4"
+        }
+      ],
+      "clozePassages": [
+        "The <strong>half-life</strong> of a radioactive isotope is the time taken for half of the radioactive nuclei in a sample to decay. It is also the time taken for the activity (count rate) of a source to halve. Half-life is constant for a given isotope and ranges from fractions of a second to billions of years. Radioactive decay is a <strong>random</strong> process — it is impossible to predict which individual nucleus will decay next, but the average behaviour of large numbers of nuclei is predictable.",
+        "The activity of a radioactive source decreases over time following an <strong>exponential decay</strong> pattern. After one half-life, activity halves. After two half-lives, activity is one quarter of the original. After three half-lives, it is one eighth, and so on. The half-life determines how long a radioactive material remains hazardous. Short-lived isotopes decay quickly to safe levels; long-lived isotopes such as <strong>plutonium</strong> remain radioactive for thousands of years.",
+        "<strong>Carbon dating</strong> uses the known half-life of carbon-14 (5700 years) to determine the age of organic materials. Living organisms maintain a constant ratio of carbon-14 to carbon-12. After death, the carbon-14 decays without replacement. By measuring the remaining <strong>carbon-14</strong>, scientists can calculate when the organism died. <strong>Uranium-lead dating</strong> uses the decay of uranium-238 (half-life 4.5 billion years) to date ancient rocks."
       ]
     },
     "Hazards": {
       "intro": "Ionising radiation damages living cells and can cause cancer. Safe use of radiation requires understanding and minimising the risks.",
       "sections": [
-        {"title": "How Radiation Harms", "icon": "⚠️", "points": [
-          "Ionising radiation removes electrons from atoms → forms ions → damage to cells",
-          "Can damage DNA → mutations → cancer",
-          "High doses: radiation sickness, immediate cell death",
-          "Low doses: increased long-term cancer risk"
-        ]},
-        {"title": "Reducing Risk", "icon": "🛡️", "points": [
-          "Increasing distance from source — intensity decreases with distance²",
-          "Lead shielding — absorbs gamma radiation",
-          "Limiting time of exposure",
-          "Wearing protective clothing and dosimeters",
-          "Handling sources with tongs — avoid direct contact"
-        ]},
-        {"title": "Contamination vs Irradiation", "icon": "🔬", "callout": {"type": "exam", "label": "Key Distinction", "text": "Irradiation = being exposed to radiation from a source outside the body. Contamination = radioactive material on or inside the body (more dangerous — continuous exposure)."}}
+        {
+          "title": "How Radiation Harms",
+          "icon": "⚠️",
+          "points": [
+            "Ionising radiation removes electrons from atoms → forms ions → damage to cells",
+            "Can damage DNA → mutations → cancer",
+            "High doses: radiation sickness, immediate cell death",
+            "Low doses: increased long-term cancer risk"
+          ]
+        },
+        {
+          "title": "Reducing Risk",
+          "icon": "🛡️",
+          "points": [
+            "Increasing distance from source — intensity decreases with distance²",
+            "Lead shielding — absorbs gamma radiation",
+            "Limiting time of exposure",
+            "Wearing protective clothing and dosimeters",
+            "Handling sources with tongs — avoid direct contact"
+          ]
+        },
+        {
+          "title": "Contamination vs Irradiation",
+          "icon": "🔬",
+          "callout": {
+            "type": "exam",
+            "label": "Key Distinction",
+            "text": "Irradiation = being exposed to radiation from a source outside the body. Contamination = radioactive material on or inside the body (more dangerous — continuous exposure)."
+          }
+        }
       ],
       "keyTerms": [
-        {"term": "Irradiation", "def": "Exposure to radiation from an external source"},
-        {"term": "Contamination", "def": "Radioactive material on or inside the body — ongoing internal exposure"},
-        {"term": "Ionisation", "def": "Removal of electrons from atoms — mechanism of radiation damage"}
+        {
+          "term": "Irradiation",
+          "def": "Exposure to radiation from an external source"
+        },
+        {
+          "term": "Contamination",
+          "def": "Radioactive material on or inside the body — ongoing internal exposure"
+        },
+        {
+          "term": "Ionisation",
+          "def": "Removal of electrons from atoms — mechanism of radiation damage"
+        }
       ],
       "examTips": [
         "Contamination is more dangerous than irradiation — source stays with the person.",
@@ -214,38 +437,84 @@
         "Confusing irradiation (external source, can step away) with contamination (source on/in body)."
       ],
       "videos": [
-        {"title": "Radiation Hazards GCSE", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=oFdR_yMKOCw"},
-        {"title": "Hazards of Radiation", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=GnNLCMbRlDk"},
-        {"title": "Radiation Safety", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=1T4_eqXdSKY"}
+        {
+          "title": "Radiation Hazards GCSE",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=oFdR_yMKOCw"
+        },
+        {
+          "title": "Hazards of Radiation",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=GnNLCMbRlDk"
+        },
+        {
+          "title": "Radiation Safety",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=1T4_eqXdSKY"
+        }
+      ],
+      "clozePassages": [
+        "Ionising radiation is hazardous because it can damage <strong>DNA</strong> in cells, potentially causing mutations that lead to cancer. High doses can cause <strong>radiation sickness</strong> and death. The risk depends on the type of radiation, the dose received, and whether the source is inside or outside the body. <strong>Contamination</strong> (radioactive material on or in the body) is especially dangerous as exposure is prolonged. Protective measures include shielding, distance, and limiting exposure time.",
+        "Workers who handle <strong>radioactive materials</strong> are monitored using dosimeters that measure their radiation exposure. Precautions include wearing <strong>lead aprons</strong>, using remote handling equipment, and spending minimal time near sources. In medical and industrial applications, the benefits of using radiation must be weighed against the risks. <strong>Background radiation</strong> contributes to our total radiation dose throughout our lives.",
+        "The effects of radiation on the body depend on the dose and type of radiation. Low doses increase the long-term risk of <strong>cancer</strong>. High doses cause immediate cell death, leading to radiation sickness. <strong>Alpha particles</strong> are most dangerous when inhaled or ingested because they are highly ionising inside body tissues. Beta particles can cause skin burns. Gamma rays can penetrate the body and damage internal organs. Risk is reduced by using the <strong>ALARP principle</strong> — as low as reasonably practicable."
       ]
     },
     "Nuclear Fission and Fusion": {
       "intro": "Nuclear fission and fusion are reactions involving the nuclei of atoms that release enormous amounts of energy. Understanding both is essential for P4.",
       "sections": [
-        {"title": "Nuclear Fission", "icon": "💥", "points": [
-          "A large nucleus (e.g. U-235) absorbs a neutron and splits into two smaller nuclei",
-          "Releases energy + 2-3 neutrons + gamma radiation",
-          "The released neutrons can trigger further fissions — chain reaction",
-          "Controlled chain reaction: nuclear power stations",
-          "Uncontrolled chain reaction: nuclear weapons"
-        ]},
-        {"title": "Nuclear Power Stations", "icon": "🏭", "points": [
-          "Moderator (water/graphite) slows neutrons down — necessary for fission",
-          "Control rods (boron) absorb neutrons — control reaction rate",
-          "Coolant carries heat away to generate steam → turbine → generator"
-        ]},
-        {"title": "Nuclear Fusion", "icon": "☀️", "points": [
-          "Two small nuclei (hydrogen isotopes) join together to form a larger nucleus",
-          "Releases enormous amounts of energy — powers the Sun",
-          "Requires extremely high temperatures (~10⁷ K) to overcome electrostatic repulsion",
-          "Not yet achieved commercially — potential future energy source"
-        ], "callout": {"type": "exam", "label": "Fusion vs Fission", "text": "Fission: large nucleus SPLITS (current nuclear power). Fusion: small nuclei JOIN (future, powers stars). Fusion releases more energy per kg and produces no long-lived radioactive waste."}}
+        {
+          "title": "Nuclear Fission",
+          "icon": "💥",
+          "points": [
+            "A large nucleus (e.g. U-235) absorbs a neutron and splits into two smaller nuclei",
+            "Releases energy + 2-3 neutrons + gamma radiation",
+            "The released neutrons can trigger further fissions — chain reaction",
+            "Controlled chain reaction: nuclear power stations",
+            "Uncontrolled chain reaction: nuclear weapons"
+          ]
+        },
+        {
+          "title": "Nuclear Power Stations",
+          "icon": "🏭",
+          "points": [
+            "Moderator (water/graphite) slows neutrons down — necessary for fission",
+            "Control rods (boron) absorb neutrons — control reaction rate",
+            "Coolant carries heat away to generate steam → turbine → generator"
+          ]
+        },
+        {
+          "title": "Nuclear Fusion",
+          "icon": "☀️",
+          "points": [
+            "Two small nuclei (hydrogen isotopes) join together to form a larger nucleus",
+            "Releases enormous amounts of energy — powers the Sun",
+            "Requires extremely high temperatures (~10⁷ K) to overcome electrostatic repulsion",
+            "Not yet achieved commercially — potential future energy source"
+          ],
+          "callout": {
+            "type": "exam",
+            "label": "Fusion vs Fission",
+            "text": "Fission: large nucleus SPLITS (current nuclear power). Fusion: small nuclei JOIN (future, powers stars). Fusion releases more energy per kg and produces no long-lived radioactive waste."
+          }
+        }
       ],
       "keyTerms": [
-        {"term": "Nuclear fission", "def": "A large nucleus splits into smaller nuclei, releasing energy and neutrons"},
-        {"term": "Chain reaction", "def": "Fission reactions where neutrons from one fission trigger further fissions"},
-        {"term": "Nuclear fusion", "def": "Small nuclei join to form a larger one — releases enormous energy"},
-        {"term": "Control rods", "def": "Rods in a reactor that absorb neutrons to control the fission rate"}
+        {
+          "term": "Nuclear fission",
+          "def": "A large nucleus splits into smaller nuclei, releasing energy and neutrons"
+        },
+        {
+          "term": "Chain reaction",
+          "def": "Fission reactions where neutrons from one fission trigger further fissions"
+        },
+        {
+          "term": "Nuclear fusion",
+          "def": "Small nuclei join to form a larger one — releases enormous energy"
+        },
+        {
+          "term": "Control rods",
+          "def": "Rods in a reactor that absorb neutrons to control the fission rate"
+        }
       ],
       "examTips": [
         "Fission = SPLITS (uranium). Fusion = JOINS (hydrogen). Both release energy.",
@@ -257,10 +526,31 @@
         "Saying fusion is already used in power stations — it is not yet commercially viable."
       ],
       "videos": [
-        {"title": "Nuclear Fission and Fusion GCSE", "channel": "Cognito", "url": "https://www.youtube.com/watch?v=rcOFV4y5z8c"},
-        {"title": "Nuclear Fission", "channel": "Freesciencelessons", "url": "https://www.youtube.com/watch?v=HEg4PZjEBSY"},
-        {"title": "Nuclear Fusion", "channel": "Fuse School", "url": "https://www.youtube.com/watch?v=mZsaaturR6E"},
-        {"title": "Fission vs Fusion", "channel": "Science with Hazel", "url": "https://www.youtube.com/watch?v=rcOFV4y5z8c"}
+        {
+          "title": "Nuclear Fission and Fusion GCSE",
+          "channel": "Cognito",
+          "url": "https://www.youtube.com/watch?v=rcOFV4y5z8c"
+        },
+        {
+          "title": "Nuclear Fission",
+          "channel": "Freesciencelessons",
+          "url": "https://www.youtube.com/watch?v=HEg4PZjEBSY"
+        },
+        {
+          "title": "Nuclear Fusion",
+          "channel": "Fuse School",
+          "url": "https://www.youtube.com/watch?v=mZsaaturR6E"
+        },
+        {
+          "title": "Fission vs Fusion",
+          "channel": "Science with Hazel",
+          "url": "https://www.youtube.com/watch?v=rcOFV4y5z8c"
+        }
+      ],
+      "clozePassages": [
+        "Nuclear <strong>fission</strong> is the splitting of a large, unstable nucleus into two smaller nuclei, releasing large amounts of energy and two or three <strong>neutrons</strong>. These neutrons can cause further fission reactions in a <strong>chain reaction</strong>. In a nuclear power station, the chain reaction is controlled using control rods that absorb neutrons. The energy released heats water to produce steam, which drives turbines connected to generators.",
+        "<strong>Nuclear fusion</strong> is the joining of two small nuclei to form a larger one, releasing enormous amounts of energy. It is the process that powers the Sun. Fusion requires extremely high temperatures (millions of degrees) to overcome the <strong>electrostatic repulsion</strong> between nuclei. On Earth, scientists are working on fusion reactors that could provide a clean, virtually unlimited energy source. <strong>ITER</strong> is an international fusion experiment aiming to demonstrate the feasibility of fusion power.",
+        "Nuclear fission and fusion both convert a small amount of <strong>mass</strong> into a large amount of energy, as described by Einstein's equation E = mc². Fission produces radioactive waste that remains hazardous for thousands of years. <strong>Fusion</strong> produces much less radioactive waste and uses hydrogen isotopes as fuel, which are abundant. The main challenge for fusion power is maintaining the extremely high temperatures and pressures needed to sustain the reaction in a <strong>plasma</strong>."
       ]
     }
   }
