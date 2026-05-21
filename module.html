@@ -316,6 +316,36 @@
     .qcount-btn.selected { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
     .paper-custom-note { font-size: 0.78rem; color: var(--subtext); margin-top: 0.6rem; font-style: italic; }
 
+    /* ── SCRIBBLE ACTIVITY ──────────────────────────────────────────────────── */
+    .scribble-mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    .scribble-mode-card { background: white; border: 2px solid var(--border); border-radius: 16px; padding: 1.5rem; cursor: pointer; transition: all 0.2s; text-align: center; }
+    .scribble-mode-card:hover { border-color: var(--accent); box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .scribble-mode-card.selected { border-color: var(--accent); background: var(--accent-light); }
+    .scribble-mode-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .scribble-mode-title { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1rem; color: var(--text); margin-bottom: 0.25rem; }
+    .scribble-mode-desc { font-size: 0.78rem; color: var(--subtext); line-height: 1.4; }
+    .scribble-topic-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+    .scribble-topic-chip { padding: 0.4rem 0.9rem; border-radius: 999px; border: 2px solid var(--border); background: white; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.82rem; cursor: pointer; transition: all 0.18s; }
+    .scribble-topic-chip:hover { border-color: var(--accent); }
+    .scribble-topic-chip.active { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
+    .scribble-topic-chip.random { background: var(--accent); color: white; border-color: var(--accent); }
+    .scribble-reading-box { background: #f8fafc; border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 1rem 0; font-size: 0.875rem; line-height: 1.7; color: var(--text); max-height: 320px; overflow-y: auto; }
+    .scribble-reading-box h4 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.9rem; margin: 0.75rem 0 0.3rem; color: var(--accent); }
+    .scribble-reading-box ul { margin: 0.3rem 0 0.5rem 1.25rem; padding: 0; }
+    .scribble-reading-box li { margin-bottom: 0.2rem; }
+    .scribble-textarea { width: 100%; min-height: 160px; border: 1.5px solid var(--border); border-radius: 10px; padding: 0.85rem 1rem; font-family: 'Nunito Sans', sans-serif; font-size: 0.9rem; line-height: 1.6; resize: vertical; transition: border-color 0.2s; color: var(--text); }
+    .scribble-textarea:focus { outline: none; border-color: var(--accent); }
+    .scribble-cooldown-bar { background: #fef9c3; border: 1px solid #fde68a; border-radius: 10px; padding: 0.6rem 1rem; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.85rem; color: #92400e; text-align: center; margin-top: 0.5rem; }
+    .scribble-results-box { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem 1.5rem; margin-top: 1rem; }
+    .scribble-score-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }
+    .scribble-score-badge { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.5rem; padding: 0.3rem 1rem; border-radius: 100px; }
+    .scribble-covered { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 0.6rem 0.85rem; font-size: 0.825rem; color: #15803d; margin-bottom: 0.5rem; }
+    .scribble-missed { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 0.6rem 0.85rem; font-size: 0.825rem; color: #92400e; margin-bottom: 0.5rem; }
+    .scribble-feedback { font-size: 0.875rem; line-height: 1.55; color: var(--text); margin-bottom: 0.5rem; }
+    .scribble-tip { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; padding: 0.6rem 0.85rem; font-size: 0.825rem; color: var(--text); }
+    .scribble-result-label { font-family: 'Nunito', sans-serif; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--subtext); margin-bottom: 0.3rem; }
+    @media (max-width: 800px) { .scribble-mode-grid { grid-template-columns: 1fr; } }
+
     /* ── SHARED RAG BANNER ───────────────────────────────────────────────────── */
     .shared-rag { margin-top: 1.25rem; transition: opacity 0.25s ease, transform 0.25s ease; }
     .shared-rag.rag-hidden { display: none; pointer-events: none; }
@@ -582,6 +612,7 @@
     <button class="tab-btn" data-tab="flashcards">🃏 Flashcards</button>
     <button class="tab-btn" data-tab="keywords">🔤 Words</button>
     <button class="tab-btn" data-tab="cloze">🧩 Cloze</button>
+    <button class="tab-btn" data-tab="scribble">✍️ Scribble</button>
     <button class="tab-btn" data-tab="practice">✏️ Mini Mock</button>
     <button class="tab-btn" data-tab="paper">📝 Paper</button>
   </div>
@@ -778,6 +809,107 @@
             <button class="btn-primary" onclick="startFlashcards()" style="padding:0.65rem 1.5rem">▶ Next 5 Cards</button>
             <button class="btn-primary" onclick="showFCControls()" style="background:none;color:var(--accent);border:1.5px solid var(--accent);padding:0.65rem 1.5rem">← Change Settings</button>
           </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── SCRIBBLE TAB ────────────────────────────────────────────────────────── -->
+  <div class="tab-panel" id="tab-scribble">
+    <div class="practice-panel-inner">
+
+      <!-- SETUP SCREEN -->
+      <div id="scribble-setup-section">
+        <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;">
+          <h2 style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.15rem;margin-bottom:0.35rem;">✍️ Scribble</h2>
+          <p style="color:var(--subtext);font-size:0.875rem;line-height:1.5;">Write down everything you can remember about a topic. Free recall is one of the most powerful revision techniques — the act of retrieving knowledge strengthens it.</p>
+        </div>
+
+        <!-- Mode selection -->
+        <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;">
+          <div class="paper-setup-label">Choose your mode</div>
+          <div class="scribble-mode-grid">
+            <div class="scribble-mode-card selected" id="scribble-mode-guided" data-mode="guided">
+              <div class="scribble-mode-icon">📖</div>
+              <div class="scribble-mode-title">Guided Recall</div>
+              <div class="scribble-mode-desc">Read the topic content first, then close it and write what you remember.</div>
+            </div>
+            <div class="scribble-mode-card" id="scribble-mode-free" data-mode="free">
+              <div class="scribble-mode-icon">🧠</div>
+              <div class="scribble-mode-title">Free Recall</div>
+              <div class="scribble-mode-desc">No reading — write everything you know from memory straight away.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic selection -->
+        <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;">
+          <div class="paper-setup-label">Choose a topic</div>
+          <div class="scribble-topic-grid" id="scribble-topic-grid"></div>
+        </div>
+
+        <div style="text-align:center;margin-top:0.5rem;">
+          <button class="btn-primary" id="scribble-start-btn" style="padding:0.75rem 2rem;font-size:0.95rem;">▶ Start</button>
+        </div>
+      </div>
+
+      <!-- GUIDED: READING PHASE -->
+      <div id="scribble-reading-section" style="display:none;">
+        <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1rem;margin:0;">📖 Read carefully — then you'll write from memory</h3>
+            <span style="font-size:0.78rem;color:var(--subtext);" id="scribble-reading-topic-label"></span>
+          </div>
+          <div class="scribble-reading-box" id="scribble-reading-content"></div>
+          <div style="text-align:center;margin-top:1rem;">
+            <button class="btn-primary" id="scribble-ready-btn" style="padding:0.75rem 2rem;">✅ I'm ready — hide it and let me write</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- WRITE PHASE -->
+      <div id="scribble-write-section" style="display:none;">
+        <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
+            <h3 style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1rem;margin:0;" id="scribble-write-title"></h3>
+            <span style="background:var(--accent-light);color:var(--accent);font-family:'Nunito',sans-serif;font-weight:800;font-size:0.78rem;padding:0.2rem 0.7rem;border-radius:100px;" id="scribble-mode-badge"></span>
+          </div>
+          <p style="color:var(--subtext);font-size:0.825rem;margin-bottom:0.75rem;">Write down everything you can remember — key terms, definitions, processes, examples. Don't worry about perfect sentences.</p>
+          <textarea class="scribble-textarea" id="scribble-textarea" placeholder="Start writing here..."></textarea>
+          <div id="scribble-cooldown-display" style="display:none;" class="scribble-cooldown-bar">⏳ You can submit again in <span id="scribble-cooldown-timer"></span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:0.75rem;flex-wrap:wrap;gap:0.5rem;">
+            <button class="btn-secondary" id="scribble-cancel-btn" style="background:white;border:1.5px solid var(--border);color:var(--subtext);font-family:'Nunito',sans-serif;font-weight:700;padding:0.55rem 1.25rem;border-radius:10px;cursor:pointer;font-size:0.875rem;">✕ Cancel</button>
+            <button class="btn-primary" id="scribble-submit-btn" style="padding:0.65rem 1.75rem;">Submit for Marking →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOADING -->
+      <div class="loading-overlay" id="scribble-loading-overlay" style="display:none;"><div class="spinner"></div><p>Marking your recall...</p></div>
+
+      <!-- RESULTS -->
+      <div id="scribble-results-section" style="display:none;">
+        <div class="scribble-results-box">
+          <div class="scribble-score-row">
+            <div>
+              <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1rem;" id="scribble-result-topic"></div>
+              <div style="font-size:0.78rem;color:var(--subtext);" id="scribble-result-mode"></div>
+            </div>
+            <span class="scribble-score-badge" id="scribble-score-badge"></span>
+          </div>
+          <div class="scribble-result-label">What you covered ✅</div>
+          <div class="scribble-covered" id="scribble-covered"></div>
+          <div class="scribble-result-label" style="margin-top:0.5rem;">What you missed ⚠️</div>
+          <div class="scribble-missed" id="scribble-missed"></div>
+          <div class="scribble-result-label" style="margin-top:0.5rem;">Feedback</div>
+          <div class="scribble-feedback" id="scribble-feedback"></div>
+          <div class="scribble-result-label" style="margin-top:0.5rem;">Revision tip 💡</div>
+          <div class="scribble-tip" id="scribble-tip"></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;margin-top:1.25rem;">
+          <button class="btn-primary" id="scribble-try-again-btn">🔄 Try Another Topic</button>
+          <button class="btn-secondary" id="scribble-go-revise-btn" style="background:white;border:2px solid var(--accent);color:var(--accent);font-family:'Nunito',sans-serif;font-weight:800;padding:0.65rem 1.5rem;border-radius:12px;cursor:pointer;font-size:0.95rem;transition:opacity 0.18s;">📖 Go to Revise</button>
         </div>
       </div>
 
@@ -1089,7 +1221,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 (function() {
   const tabParam = new URLSearchParams(window.location.search).get('tab');
   if (!tabParam) return;
-  const tabMap = { mock:'practice', flashcards:'flashcards', words:'keywords', cloze:'cloze', paper:'paper' };
+  const tabMap = { mock:'practice', flashcards:'flashcards', words:'keywords', cloze:'cloze', scribble:'scribble', paper:'paper' };
   const target = tabMap[tabParam] || tabParam;
 
   // Switch tab immediately
@@ -1158,12 +1290,17 @@ const TIER_META = {
 
 const RAG_INPUT_WEIGHTS = {
   mock: 1.0, paper: 1.0, words: 0.4, flashcard: 0.15,
-  // Future: cloze: 0.6, diagram: 0.6,
+  cloze: 0.6,
+  scribble_guided: 0.5,  // read first — supported recall
+  scribble_free:   0.8,  // cold recall — strong evidence
 };
 
 // Activity score caps — limits how high each activity type can push a topic
 const RAG_SCORE_CAPS = {
   mock: 100, paper: 100, words: 60, flashcard: 20,
+  cloze: 75,
+  scribble_guided: 70,  // caps just below Confident
+  scribble_free:   90,  // can reach Mastered but not Retained
 };
 
 function computeTier(score) {
@@ -2286,6 +2423,276 @@ document.getElementById('paper-go-revise-btn').addEventListener('click', () => {
 
 loadKeywords();
 loadQuestions();
+
+// ── SCRIBBLE ACTIVITY ─────────────────────────────────────────────────────────
+
+let _scribbleTopicData   = {};   // topicName -> { keyTerms, bulletPoints, readingHTML }
+let _scribbleSelectedTopic = null;
+let _scribbleMode        = 'guided'; // 'guided' | 'free'
+let _scribbleCooldownEnd = null;     // global timestamp when cooldown expires
+let _scribbleCooldownInterval = null;
+let _scribbleCurrentTopic = null;
+
+// ── Load topic data from revise JSON ─────────────────────────────────────────
+(async function initScribble() {
+  try {
+    let res = await fetch(`data/revise/${subjectId}-${moduleId}-revise.json`);
+    if (!res.ok) res = await fetch(`data/revise/${moduleId}-revise.json`);
+    if (!res.ok) return;
+    const json = await res.json();
+    const topics = json.topics || {};
+
+    // Build chip grid
+    const grid = document.getElementById('scribble-topic-grid');
+    if (!grid) return;
+
+    // Random chip
+    const randomChip = document.createElement('button');
+    randomChip.className = 'scribble-topic-chip random active';
+    randomChip.dataset.topic = '__random__';
+    randomChip.textContent = '🎲 Random';
+    randomChip.addEventListener('click', () => selectScribbleTopic('__random__'));
+    grid.appendChild(randomChip);
+
+    Object.entries(topics).forEach(([name, data]) => {
+      // Build bullet points from sections
+      const bullets = [];
+      (data.sections || []).forEach(sec => {
+        if (sec.text) bullets.push(sec.text);
+        (sec.points || []).forEach(p => bullets.push(p.replace(/<[^>]+>/g, '')));
+      });
+
+      // Build reading HTML
+      let readingHTML = `<p>${data.intro || ''}</p>`;
+      (data.sections || []).forEach(sec => {
+        readingHTML += `<h4>${sec.icon || ''} ${sec.title || ''}</h4>`;
+        if (sec.text) readingHTML += `<p>${sec.text}</p>`;
+        if (sec.points?.length) {
+          readingHTML += '<ul>' + sec.points.map(p => `<li>${p}</li>`).join('') + '</ul>';
+        }
+      });
+
+      _scribbleTopicData[name] = {
+        keyTerms: data.keyTerms || [],
+        bulletPoints: bullets,
+        readingHTML,
+      };
+
+      const chip = document.createElement('button');
+      chip.className = 'scribble-topic-chip';
+      chip.dataset.topic = name;
+      chip.textContent = name;
+      chip.addEventListener('click', () => selectScribbleTopic(name));
+      grid.appendChild(chip);
+    });
+
+    _scribbleSelectedTopic = '__random__';
+  } catch(e) { console.log('Scribble init error:', e); }
+})();
+
+function selectScribbleTopic(name) {
+  _scribbleSelectedTopic = name;
+  document.querySelectorAll('.scribble-topic-chip').forEach(c => {
+    c.classList.toggle('active', c.dataset.topic === name);
+    c.classList.toggle('random', c.dataset.topic === '__random__' && name === '__random__');
+  });
+}
+
+// Mode card selection
+document.querySelectorAll('.scribble-mode-card').forEach(card => {
+  card.addEventListener('click', () => {
+    document.querySelectorAll('.scribble-mode-card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    _scribbleMode = card.dataset.mode;
+  });
+});
+
+// ── Cooldown helpers ──────────────────────────────────────────────────────────
+function scribbleCooldownActive() {
+  return _scribbleCooldownEnd && Date.now() < _scribbleCooldownEnd;
+}
+
+function startScribbleCooldown() {
+  _scribbleCooldownEnd = Date.now() + (4 * 60 * 1000); // 4 minutes
+  updateCooldownDisplay();
+  _scribbleCooldownInterval = setInterval(updateCooldownDisplay, 1000);
+}
+
+function updateCooldownDisplay() {
+  const display = document.getElementById('scribble-cooldown-display');
+  const timer   = document.getElementById('scribble-cooldown-timer');
+  const submitBtn = document.getElementById('scribble-submit-btn');
+  if (!display || !timer) return;
+
+  if (!scribbleCooldownActive()) {
+    clearInterval(_scribbleCooldownInterval);
+    display.style.display = 'none';
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit for Marking →'; }
+    return;
+  }
+
+  const remaining = Math.ceil((_scribbleCooldownEnd - Date.now()) / 1000);
+  const m = Math.floor(remaining / 60);
+  const s = remaining % 60;
+  timer.textContent = `${m}:${s.toString().padStart(2,'0')}`;
+  display.style.display = 'block';
+  if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Submit for Marking →'; }
+}
+
+// ── Build reading content for guided mode ────────────────────────────────────
+function buildScribbleReadingContent(topicName) {
+  const data = _scribbleTopicData[topicName];
+  if (!data) return '<p>Content not available.</p>';
+  return data.readingHTML;
+}
+
+// ── Start button ─────────────────────────────────────────────────────────────
+document.getElementById('scribble-start-btn').addEventListener('click', () => {
+  const topicNames = Object.keys(_scribbleTopicData);
+  if (!topicNames.length) { alert('Topic data not loaded yet. Please wait a moment and try again.'); return; }
+
+  // Resolve random
+  if (_scribbleSelectedTopic === '__random__') {
+    _scribbleCurrentTopic = topicNames[Math.floor(Math.random() * topicNames.length)];
+  } else {
+    _scribbleCurrentTopic = _scribbleSelectedTopic;
+  }
+
+  document.getElementById('scribble-setup-section').style.display = 'none';
+
+  if (_scribbleMode === 'guided') {
+    // Show reading phase
+    document.getElementById('scribble-reading-topic-label').textContent = _scribbleCurrentTopic;
+    document.getElementById('scribble-reading-content').innerHTML = buildScribbleReadingContent(_scribbleCurrentTopic);
+    document.getElementById('scribble-reading-section').style.display = 'block';
+  } else {
+    // Free recall — go straight to write
+    showScribbleWritePhase();
+  }
+});
+
+// ── Ready button (guided only) ───────────────────────────────────────────────
+document.getElementById('scribble-ready-btn').addEventListener('click', () => {
+  document.getElementById('scribble-reading-section').style.display = 'none';
+  showScribbleWritePhase();
+});
+
+function showScribbleWritePhase() {
+  const modeLabel = _scribbleMode === 'guided' ? 'Guided Recall' : 'Free Recall';
+  document.getElementById('scribble-write-title').textContent = `✍️ ${_scribbleCurrentTopic}`;
+  document.getElementById('scribble-mode-badge').textContent  = modeLabel;
+  document.getElementById('scribble-textarea').value = '';
+  document.getElementById('scribble-write-section').style.display = 'block';
+
+  // Show cooldown if still active
+  updateCooldownDisplay();
+}
+
+// ── Cancel button ────────────────────────────────────────────────────────────
+document.getElementById('scribble-cancel-btn').addEventListener('click', () => {
+  document.getElementById('scribble-write-section').style.display = 'none';
+  document.getElementById('scribble-reading-section').style.display = 'none';
+  document.getElementById('scribble-setup-section').style.display = 'block';
+});
+
+// ── Submit for marking ───────────────────────────────────────────────────────
+document.getElementById('scribble-submit-btn').addEventListener('click', async () => {
+  if (scribbleCooldownActive()) return; // belt and braces
+  const text = document.getElementById('scribble-textarea').value.trim();
+  if (!text) { alert('Please write something before submitting.'); return; }
+
+  const topicData = _scribbleTopicData[_scribbleCurrentTopic];
+  if (!topicData) { alert('Topic data not found. Please try again.'); return; }
+
+  document.getElementById('scribble-write-section').style.display = 'none';
+  document.getElementById('scribble-loading-overlay').style.display = 'block';
+
+  // Start cooldown immediately on submit
+  startScribbleCooldown();
+
+  try {
+    const resp = await fetch('/.netlify/functions/mark-answer', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        _scribbleMode: true,
+        topic: _scribbleCurrentTopic,
+        mode: _scribbleMode,
+        keyTerms: topicData.keyTerms,
+        bulletPoints: topicData.bulletPoints,
+        studentText: text,
+      }),
+    });
+
+    const result = await resp.json();
+    document.getElementById('scribble-loading-overlay').style.display = 'none';
+    showScribbleResults(result);
+
+    // ── Update RAG ───────────────────────────────────────────────────────────
+    const inputType = _scribbleMode === 'guided' ? 'scribble_guided' : 'scribble_free';
+    const activityPct = Math.max(0, Math.min(100, result.pct || 0));
+    const idx = fuzzyMatchTopic(_scribbleCurrentTopic, meta.topics);
+    if (idx >= 0 && window._currentUser) {
+      const topicName = meta.topics[idx];
+      const newEntry  = computeNewTopicScore(ragState[topicName] || null, activityPct, inputType);
+      ragState[topicName] = newEntry;
+      renderChecklist(ragState);
+      if (window._saveRAG) window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState).catch(() => {});
+    }
+
+    // ── Log activity ─────────────────────────────────────────────────────────
+    if (window._logActivity) {
+      window._logActivity({
+        type: 'scribble',
+        mode: _scribbleMode,
+        topic: _scribbleCurrentTopic,
+        score: activityPct,
+        total: 100,
+        pct: activityPct,
+        topics: [{ topic: _scribbleCurrentTopic, awarded: activityPct, marks: 100 }],
+      });
+    }
+
+  } catch(e) {
+    document.getElementById('scribble-loading-overlay').style.display = 'none';
+    document.getElementById('scribble-write-section').style.display = 'block';
+    alert('Marking failed. Please check your connection and try again.');
+  }
+});
+
+function showScribbleResults(result) {
+  const pct   = result.pct || 0;
+  const cls   = pct >= 80 ? 'marks-full' : pct >= 40 ? 'marks-partial' : 'marks-zero';
+  const label = pct >= 80 ? '🌟 Excellent' : pct >= 60 ? '👍 Good' : pct >= 40 ? '📚 Developing' : '💪 Keep going';
+
+  document.getElementById('scribble-result-topic').textContent = _scribbleCurrentTopic;
+  document.getElementById('scribble-result-mode').textContent  = _scribbleMode === 'guided' ? '📖 Guided Recall' : '🧠 Free Recall';
+  document.getElementById('scribble-score-badge').textContent  = `${pct}% — ${label}`;
+  document.getElementById('scribble-score-badge').className    = `scribble-score-badge ${cls}`;
+  document.getElementById('scribble-covered').textContent  = result.covered  || 'Nothing specifically identified.';
+  document.getElementById('scribble-missed').textContent   = result.missed   || 'Nothing — great recall!';
+  document.getElementById('scribble-feedback').textContent = result.feedback || '';
+  document.getElementById('scribble-tip').textContent      = result.tip      || '';
+
+  document.getElementById('scribble-results-section').style.display = 'block';
+}
+
+// ── Results action buttons ────────────────────────────────────────────────────
+document.getElementById('scribble-try-again-btn').addEventListener('click', () => {
+  document.getElementById('scribble-results-section').style.display = 'none';
+  document.getElementById('scribble-setup-section').style.display = 'block';
+});
+
+document.getElementById('scribble-go-revise-btn').addEventListener('click', () => {
+  document.getElementById('scribble-results-section').style.display = 'none';
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  const reviseBtn = document.querySelector('.tab-btn[data-tab="revision"]');
+  if (reviseBtn) reviseBtn.classList.add('active');
+  const revisePanel = document.getElementById('tab-revision');
+  if (revisePanel) revisePanel.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
 // ── CLOZE ACTIVITY ────────────────────────────────────────────────────────────
 
