@@ -182,6 +182,13 @@
     .feedback-text { font-size: 0.825rem; line-height: 1.45; color: var(--text); background: #f8fafc; border-radius: 8px; padding: 0.55rem 0.75rem; border: 1px solid var(--border); flex: 1; }
     .feedback-text.model { border-left: 3px solid var(--accent); }
     .student-answer-text { font-size: 0.825rem; color: var(--subtext); font-style: italic; margin-bottom: 0.5rem; padding: 0.45rem 0.7rem; background: #f8fafc; border-radius: 8px; border-left: 3px solid var(--border); }
+    .feedback-missed { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 0.6rem 0.85rem; margin-top: 0.5rem; font-size: 0.825rem; line-height: 1.45; color: #92400e; }
+    .feedback-missed-label { font-family: 'Nunito', sans-serif; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #b45309; margin-bottom: 0.25rem; }
+    .feedback-full-mark { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 0.6rem 0.85rem; margin-top: 0.5rem; font-size: 0.825rem; color: #15803d; font-weight: 700; }
+    .feedback-expand-btn { display: inline-flex; align-items: center; gap: 0.3rem; margin-top: 0.6rem; background: none; border: 1px solid var(--border); border-radius: 8px; padding: 0.3rem 0.75rem; font-family: 'Nunito', sans-serif; font-size: 0.78rem; font-weight: 700; color: var(--subtext); cursor: pointer; transition: all 0.18s; }
+    .feedback-expand-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .feedback-expand-panel { display: none; margin-top: 0.6rem; }
+    .feedback-expand-panel.open { display: block; }
     .overall-result { background: linear-gradient(135deg, #0f172a, #1e3a5f); color: white; border-radius: 14px; padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
     .overall-score-block { display: flex; align-items: baseline; gap: 0.5rem; }
     .overall-score { font-family: 'Nunito', sans-serif; font-size: 2.5rem; font-weight: 900; line-height: 1; }
@@ -2068,14 +2075,39 @@ function displayResults(qs, writtenResults, writtenAnswers, overallId, container
     } else if (wm[q.id]) {
       const r = wm[q.id]; const pctQ = r.marks_available > 0 ? r.marks_awarded/r.marks_available : 0;
       const cls = pctQ===1?'marks-full':pctQ>0?'marks-partial':'marks-zero';
-      card.innerHTML = `<div class="result-header"><div class="result-q-text">Q${i+1}. ${q.question}</div><span class="marks-awarded ${cls}">${r.marks_awarded}/${r.marks_available}</span></div>
-        <div class="student-answer-text">Your answer: ${r.student_answer||'<em>No answer given</em>'}</div>
-        <div class="feedback-grid">
-          <div class="feedback-section"><div class="feedback-label">Feedback</div><div class="feedback-text">${r.feedback||'No feedback available.'}</div></div>
-          <div class="feedback-section"><div class="feedback-label">Model answer</div><div class="feedback-text model">${r.model_answer||'See your specification.'}</div></div>
-          ${r.missed_points?`<div class="feedback-section"><div class="feedback-label">What you missed</div><div class="feedback-text">${r.missed_points}</div></div>`:''}
-          ${r.command_word_check?`<div class="feedback-section"><div class="feedback-label">Command word</div><div class="feedback-text">${r.command_word_check}</div></div>`:''}
-        </div>`;
+      const fullMark = pctQ === 1;
+      const expandId = `expand-${q.id}`;
+      const panelId  = `panel-${q.id}`;
+
+      if (fullMark) {
+        // Full marks — just confirm, no need to show anything else
+        card.innerHTML = `<div class="result-header"><div class="result-q-text">Q${i+1}. ${q.question}</div><span class="marks-awarded marks-full">${r.marks_awarded}/${r.marks_available}</span></div>
+          <div class="student-answer-text">Your answer: ${r.student_answer||'<em>No answer given</em>'}</div>
+          <div class="feedback-full-mark">✅ Full marks — great work!</div>`;
+      } else {
+        // Partial/zero — show "what you missed" first, full detail behind toggle
+        const missedHTML = r.missed_points
+          ? `<div class="feedback-missed-label">What you missed</div><div class="feedback-missed">${r.missed_points}</div>`
+          : `<div class="feedback-missed-label">What you missed</div><div class="feedback-missed">Review the model answer to identify your gaps.</div>`;
+
+        const fullDetailHTML = `<div class="feedback-grid">
+            <div class="feedback-section"><div class="feedback-label">Feedback</div><div class="feedback-text">${r.feedback||'No feedback available.'}</div></div>
+            <div class="feedback-section"><div class="feedback-label">Model answer</div><div class="feedback-text model">${r.model_answer||'See your specification.'}</div></div>
+            ${r.command_word_check?`<div class="feedback-section"><div class="feedback-label">Command word</div><div class="feedback-text">${r.command_word_check}</div></div>`:''}
+          </div>`;
+
+        card.innerHTML = `<div class="result-header"><div class="result-q-text">Q${i+1}. ${q.question}</div><span class="marks-awarded ${cls}">${r.marks_awarded}/${r.marks_available}</span></div>
+          <div class="student-answer-text">Your answer: ${r.student_answer||'<em>No answer given</em>'}</div>
+          ${missedHTML}
+          <button class="feedback-expand-btn" id="${expandId}">▼ Show full feedback</button>
+          <div class="feedback-expand-panel" id="${panelId}">${fullDetailHTML}</div>`;
+
+        card.querySelector(`#${expandId}`).addEventListener('click', function() {
+          const panel = card.querySelector(`#${panelId}`);
+          const open = panel.classList.toggle('open');
+          this.textContent = open ? '▲ Hide full feedback' : '▼ Show full feedback';
+        });
+      }
     }
     container.appendChild(card);
   });
