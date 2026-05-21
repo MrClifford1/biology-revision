@@ -287,6 +287,27 @@
     .paper-option-num { font-family: 'Nunito', sans-serif; font-size: 2rem; font-weight: 900; color: var(--accent); line-height: 1; }
     .paper-option-label { font-family: 'Nunito', sans-serif; font-size: 0.95rem; font-weight: 800; margin-top: 0.25rem; }
     .paper-option-modules { font-size: 0.775rem; color: var(--subtext); margin-top: 0.25rem; }
+    /* ── PAPER SETUP SCREEN ──────────────────────────────────────────────────── */
+    .paper-setup-card { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+    .paper-setup-label { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.9rem; color: var(--subtext); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.75rem; }
+    .paper-preset-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .paper-preset-btn { background: white; border: 2px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; cursor: pointer; transition: all 0.2s; text-align: center; }
+    .paper-preset-btn:hover { border-color: var(--accent); box-shadow: 0 4px 14px rgba(0,0,0,0.07); transform: translateY(-1px); }
+    .paper-preset-btn.selected { border-color: var(--accent); background: var(--accent-light); }
+    .paper-preset-num { font-family: 'Nunito', sans-serif; font-size: 1.6rem; font-weight: 900; color: var(--accent); line-height: 1; }
+    .paper-preset-name { font-family: 'Nunito', sans-serif; font-size: 0.9rem; font-weight: 800; margin-top: 0.2rem; }
+    .paper-preset-desc { font-size: 0.75rem; color: var(--subtext); margin-top: 0.15rem; }
+    .module-chip-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .module-chip { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.4rem 0.85rem; border-radius: 999px; border: 2px solid var(--border); background: white; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.82rem; cursor: pointer; transition: all 0.18s; user-select: none; }
+    .module-chip:hover { border-color: var(--accent); }
+    .module-chip.active { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
+    .module-chip .chip-check { font-size: 0.75rem; display: none; }
+    .module-chip.active .chip-check { display: inline; }
+    .qcount-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .qcount-btn { padding: 0.5rem 1.1rem; border-radius: 10px; border: 2px solid var(--border); background: white; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem; cursor: pointer; transition: all 0.18s; }
+    .qcount-btn:hover { border-color: var(--accent); }
+    .qcount-btn.selected { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
+    .paper-custom-note { font-size: 0.78rem; color: var(--subtext); margin-top: 0.6rem; font-style: italic; }
 
     /* ── SHARED RAG BANNER ───────────────────────────────────────────────────── */
     .shared-rag { margin-top: 1.25rem; transition: opacity 0.25s ease, transform 0.25s ease; }
@@ -314,6 +335,7 @@
       .feedback-grid { grid-template-columns: 1fr; }
       .practice-intro { flex-direction: column; align-items: flex-start; }
       .paper-selector { grid-template-columns: 1fr; }
+      .paper-preset-row { grid-template-columns: 1fr; }
       .revise-banner-body { flex-direction: column; align-items: flex-start; }
       .btn-revise-banner { width: 100%; }
     }
@@ -785,11 +807,37 @@
   <div class="tab-panel" id="tab-paper">
     <div class="practice-panel-inner">
       <div id="paper-selector-section">
-        <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:1.5rem 2rem;margin-bottom:1rem;">
+        <!-- Header -->
+        <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;">
           <h2 style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.15rem;margin-bottom:0.35rem;">📝 Practice Paper</h2>
-          <p style="color:var(--subtext);font-size:0.875rem;line-height:1.5;">35 marks across multiple modules — just like a real AQA exam paper. Short questions build to longer extended answers. Select a paper to begin.</p>
+          <p style="color:var(--subtext);font-size:0.875rem;line-height:1.5;">AQA-style questions across multiple modules. Use a preset or build your own custom paper.</p>
         </div>
-        <div class="paper-selector" id="paper-selector"></div>
+
+        <!-- Preset paper buttons -->
+        <div class="paper-setup-card">
+          <div class="paper-setup-label">Quick Start — AQA Format</div>
+          <div class="paper-preset-row" id="paper-preset-row"></div>
+        </div>
+
+        <!-- Module selection -->
+        <div class="paper-setup-card">
+          <div class="paper-setup-label">Modules</div>
+          <div class="module-chip-grid" id="module-chip-grid"></div>
+          <div class="paper-custom-note" id="paper-custom-note"></div>
+        </div>
+
+        <!-- Question count -->
+        <div class="paper-setup-card">
+          <div class="paper-setup-label">Number of Marks</div>
+          <div class="qcount-row" id="qcount-row">
+            <button class="qcount-btn" data-marks="10">10</button>
+            <button class="qcount-btn" data-marks="20">20</button>
+            <button class="qcount-btn" data-marks="30">30</button>
+            <button class="qcount-btn selected" data-marks="35">35</button>
+          </div>
+          <div class="paper-custom-note">35 marks = half a real AQA paper</div>
+        </div>
+
         <div style="text-align:center;margin-top:0.5rem;">
           <button class="btn-primary" id="start-paper-btn" style="padding:0.75rem 2rem;font-size:0.95rem;">▶ Start Paper</button>
         </div>
@@ -1828,8 +1876,10 @@ async function loadPaperQuestions(modules) {
   const allQs = [];
   for (const mod of modules) {
     try {
+      // Try prefixed name first (e.g. chemistry-c1, physics-p1), then short name (b1)
       let res = await fetch(`data/${subjectId}-${mod}-questions.json`);
       if (!res.ok) res = await fetch(`data/${mod}-questions.json`);
+      if (!res.ok) continue;
       const qs = await res.json();
       qs.forEach(q => { q._module = mod; });
       allQs.push(...qs);
@@ -1838,7 +1888,8 @@ async function loadPaperQuestions(modules) {
   return allQs;
 }
 
-function selectPaperQuestions(allQs) {
+function selectPaperQuestions(allQs, targetMarks) {
+  targetMarks = targetMarks || 35;
   if (!allQs.length) return [];
   const small  = allQs.filter(q => q.marks >= 1 && q.marks <= 3);
   const medium = allQs.filter(q => q.marks >= 4 && q.marks <= 5);
@@ -1852,9 +1903,12 @@ function selectPaperQuestions(allQs) {
     return arr.map(q => ({ q, key: Math.random() * pw(q) })).sort((a,b) => b.key - a.key).map(x => x.q);
   }
 
-  const picked = []; let remaining = 35;
-  for (const q of pws(small))  { if (remaining <= 11) break; if (q.marks <= remaining - 11) { picked.push(q); remaining -= q.marks; } }
-  for (const q of pws(medium)) { if (remaining <= 6)  break; if (q.marks <= remaining - 6)  { picked.push(q); remaining -= q.marks; } }
+  // Scale thresholds proportionally to target
+  const largeMin  = Math.max(6,  Math.round(targetMarks * 0.17)); // ~6 marks reserved for large
+  const mediumMin = Math.max(4,  Math.round(targetMarks * 0.15)); // ~5 marks reserved for medium
+  const picked = []; let remaining = targetMarks;
+  for (const q of pws(small))  { if (remaining <= largeMin + mediumMin) break; if (q.marks <= remaining - largeMin - mediumMin) { picked.push(q); remaining -= q.marks; } }
+  for (const q of pws(medium)) { if (remaining <= largeMin) break; if (q.marks <= remaining - largeMin) { picked.push(q); remaining -= q.marks; } }
   for (const q of pws(large.length ? large : medium)) { if (remaining <= 0) break; if (q.marks <= remaining) { picked.push(q); remaining -= q.marks; } }
   return picked;
 }
@@ -2020,33 +2074,86 @@ document.getElementById('try-again-btn').addEventListener('click', () => {
 });
 
 // ── PAPER FLOW ────────────────────────────────────────────────────────────────
-let selectedPaper = null, selectedPaperQuestions = [];
+let selectedPaperModules = [], selectedPaperMarks = 35, selectedPaperQuestions = [];
 const paperDefs = PAPER_DEFS[subjectId] || PAPER_DEFS.biology;
-const paperSelector = document.getElementById('paper-selector');
 
-paperDefs.forEach(p => {
-  const div = document.createElement('div');
-  div.className = 'paper-option';
-  div.innerHTML = `<div class="paper-option-num">${p.num}</div><div class="paper-option-label">${p.label}</div><div class="paper-option-modules">${p.desc}</div>`;
-  div.addEventListener('click', () => { document.querySelectorAll('.paper-option').forEach(d => d.classList.remove('selected')); div.classList.add('selected'); selectedPaper = p; });
-  paperSelector.appendChild(div);
+// ── Build preset buttons ──────────────────────────────────────────────────────
+const presetRow = document.getElementById('paper-preset-row');
+paperDefs.forEach((p, idx) => {
+  const btn = document.createElement('button');
+  btn.className = 'paper-preset-btn';
+  btn.dataset.idx = idx;
+  btn.innerHTML = `<div class="paper-preset-num">${p.num}</div><div class="paper-preset-name">${p.label}</div><div class="paper-preset-desc">${p.desc}</div>`;
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.paper-preset-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    selectedPaperModules = [...p.modules];
+    document.querySelectorAll('.module-chip').forEach(chip => {
+      if (selectedPaperModules.includes(chip.dataset.mod)) chip.classList.add('active');
+      else chip.classList.remove('active');
+    });
+    updateCustomNote();
+  });
+  presetRow.appendChild(btn);
 });
 
-// Auto-select the paper containing current module
-const autoPaper = paperDefs.find(p => p.modules.includes(moduleId));
-if (autoPaper) {
-  selectedPaper = autoPaper;
-  const idx = paperDefs.indexOf(autoPaper);
-  if (paperSelector.children[idx]) paperSelector.children[idx].classList.add('selected');
+// ── Build module chips ────────────────────────────────────────────────────────
+const allModsForSubject = paperDefs.flatMap(p => p.modules);
+const chipGrid = document.getElementById('module-chip-grid');
+allModsForSubject.forEach(mod => {
+  const chip = document.createElement('button');
+  chip.className = 'module-chip';
+  chip.dataset.mod = mod;
+  chip.innerHTML = `<span class="chip-check">✓</span>${mod.toUpperCase()}`;
+  chip.addEventListener('click', () => {
+    chip.classList.toggle('active');
+    selectedPaperModules = Array.from(document.querySelectorAll('.module-chip.active')).map(c => c.dataset.mod);
+    const matchedPreset = paperDefs.find(p => p.modules.length === selectedPaperModules.length && p.modules.every(m => selectedPaperModules.includes(m)));
+    document.querySelectorAll('.paper-preset-btn').forEach((b, i) => {
+      b.classList.toggle('selected', paperDefs[i] === matchedPreset);
+    });
+    updateCustomNote();
+  });
+  chipGrid.appendChild(chip);
+});
+
+function updateCustomNote() {
+  const note = document.getElementById('paper-custom-note');
+  if (!selectedPaperModules.length) { note.textContent = '⚠️ Select at least one module.'; return; }
+  const matched = paperDefs.find(p => p.modules.length === selectedPaperModules.length && p.modules.every(m => selectedPaperModules.includes(m)));
+  note.textContent = matched ? '' : `Custom: ${selectedPaperModules.map(m => m.toUpperCase()).join(', ')}`;
 }
 
+// ── Build qcount buttons ──────────────────────────────────────────────────────
+document.querySelectorAll('.qcount-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.qcount-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    selectedPaperMarks = parseInt(btn.dataset.marks);
+  });
+});
+
+// ── Auto-select paper containing current module ───────────────────────────────
+const autoPreset = paperDefs.find(p => p.modules.includes(moduleId));
+const defaultPreset = autoPreset || paperDefs[0];
+selectedPaperModules = [...defaultPreset.modules];
+allModsForSubject.forEach(mod => {
+  const chip = chipGrid.querySelector(`[data-mod="${mod}"]`);
+  if (chip && defaultPreset.modules.includes(mod)) chip.classList.add('active');
+});
+const autoIdx = paperDefs.indexOf(defaultPreset);
+if (presetRow.children[autoIdx]) presetRow.children[autoIdx].classList.add('selected');
+updateCustomNote();
+
+// ── Start paper ───────────────────────────────────────────────────────────────
 document.getElementById('start-paper-btn').addEventListener('click', async () => {
-  if (!selectedPaper) { alert('Please select Paper 1 or Paper 2 first.'); return; }
+  if (!selectedPaperModules.length) { alert('Please select at least one module.'); return; }
   const btn = document.getElementById('start-paper-btn');
-  btn.textContent = 'Loading questions...';
-  const allQs = await loadPaperQuestions(selectedPaper.modules);
-  selectedPaperQuestions = selectPaperQuestions(allQs);
-  if (!selectedPaperQuestions.length) { alert('Could not load questions. Please refresh and try again.'); btn.textContent = '▶ Start Paper'; return; }
+  btn.textContent = 'Loading questions...'; btn.disabled = true;
+  const allQs = await loadPaperQuestions(selectedPaperModules);
+  selectedPaperQuestions = selectPaperQuestions(allQs, selectedPaperMarks);
+  btn.textContent = '▶ Start Paper'; btn.disabled = false;
+  if (!selectedPaperQuestions.length) { alert('Could not load questions. Please refresh and try again.'); return; }
   hideRAG();
   document.getElementById('paper-selector-section').style.display = 'none';
   document.getElementById('paper-questions-section').style.display = 'block';
@@ -2062,7 +2169,6 @@ document.getElementById('paper-submit-btn').addEventListener('click', async () =
   try {
     const wr = wa.length ? await markAnswers(wa) : [];
     displayResults(selectedPaperQuestions, wr, wa, 'paper-overall-result', 'paper-results-container', 'paper-marking-section', 'paper-loading-overlay');
-    // Log paper completion to activity history
     let paperTotal = 0, paperAwarded = 0;
     selectedPaperQuestions.forEach(q => { paperTotal += q.marks || 0; });
     const paperPct = paperTotal > 0 ? Math.round((paperAwarded / paperTotal) * 100) : 0;
@@ -2077,7 +2183,6 @@ document.getElementById('paper-submit-btn').addEventListener('click', async () =
 document.getElementById('paper-try-again-btn').addEventListener('click', () => {
   document.getElementById('paper-marking-section').style.display = 'none';
   document.getElementById('paper-selector-section').style.display = 'block';
-  document.getElementById('start-paper-btn').textContent = '▶ Start Paper';
   showRAG();
   selectedPaperQuestions = []; autoMarkedResults = {};
 });
