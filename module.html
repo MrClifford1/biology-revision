@@ -2120,8 +2120,9 @@ function buildClozeTopicBtns() {
   container.innerHTML = `<button class="cloze-topic-btn active" data-topic="__random__" onclick="selectClozeTopic(this)">🎲 Random</button>` + extraBtns;
 }
 
-// Pick best paragraph + terms for cloze using <strong> tags as primary source
-// Falls back to keyTerms if no strong tags found
+// Pick a cloze passage for a topic
+// PRIMARY: uses dedicated clozePassages array (pre-written, high quality)
+// FALLBACK: extracts <strong> tagged terms from bullet points
 function pickClozeContent(topicName) {
   const rd = window._reviseData;
   if (!rd) return null;
@@ -2129,53 +2130,63 @@ function pickClozeContent(topicName) {
   if (!topicData) return null;
 
   function stripHtml(s) {
-    return s.replace(/<[^>]+>/g, '').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&nbsp;/g,' ').trim();
+    return s.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&nbsp;/g,' ').trim();
   }
   function extractStrong(html) {
     const matches = [];
     const re = /<strong>(.*?)<\/strong>/gi;
     let m;
-    while ((m = re.exec(html)) !== null) matches.push(stripHtml(m[1]));
+    while ((m = re.exec(html)) !== null) { const t = stripHtml(m[1]); if (t.length > 2) matches.push(t); }
     return matches;
   }
-
-  let bestPara = null, bestTerms = [];
-
-  // PRIMARY: use <strong> tagged terms from bullet points
-  for (const section of (topicData.sections || [])) {
-    const points = section.points || [];
-    if (!points.length) continue;
-    const strongTerms = [];
-    points.forEach(p => extractStrong(p).forEach(t => { if (t.length > 2) strongTerms.push(t); }));
-    if (strongTerms.length < 3) continue;
-    const cleanPara = stripHtml(points.join('. ') + '.');
-    // Verify terms appear in clean paragraph and don't overlap
+  function termsFromParagraph(para) {
+    const terms = extractStrong(para);
+    const cleanPara = stripHtml(para);
     const valid = [], used = [];
-    for (const term of strongTerms) {
+    for (const term of terms.sort((a,b) => b.length - a.length)) {
       if (valid.length >= 5) break;
       try {
         const m = new RegExp('\\b' + term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + '\\b','i').exec(cleanPara);
         if (m) {
           const s = m.index, e = s + m[0].length;
-          if (!used.some(([us,ue]) => s < ue && e > us)) {
-            valid.push(term); used.push([s,e]);
-          }
+          if (!used.some(([us,ue]) => s < ue && e > us)) { valid.push(term); used.push([s,e]); }
         }
       } catch(e2) {}
     }
-    if (valid.length > bestTerms.length) { bestTerms = valid; bestPara = cleanPara; }
+    return valid.length >= 3 ? { paragraph: cleanPara, terms: valid } : null;
   }
 
-  // FALLBACK: use intro/section text with keyTerms if no strong tags gave enough
+  // PRIMARY: dedicated clozePassages — pick one at random
+  const passages = topicData.clozePassages || [];
+  if (passages.length > 0) {
+    // Shuffle so students get variety
+    const shuffled = [...passages].sort(() => Math.random() - 0.5);
+    for (const passage of shuffled) {
+      const result = termsFromParagraph(passage);
+      if (result) return result;
+    }
+  }
+
+  // FALLBACK: use <strong> tagged terms from bullet points
+  let bestPara = null, bestTerms = [];
+  for (const section of (topicData.sections || [])) {
+    const points = section.points || [];
+    if (!points.length) continue;
+    const joined = stripHtml(points.join('. ') + '.');
+    const fakeHtml = points.join('. ');
+    const result = termsFromParagraph(fakeHtml);
+    if (result && result.terms.length > bestTerms.length) {
+      bestTerms = result.terms; bestPara = result.paragraph;
+    }
+  }
+
+  // LAST RESORT: keyTerms in intro/section text
   if (bestTerms.length < 3) {
     const ktTerms = (topicData.keyTerms || []).map(kt => kt.term).filter(t => t && t.length > 3).sort((a,b) => b.length - a.length);
     const candidates = [];
     const intro = stripHtml(topicData.intro || '');
     if (intro.length > 40) candidates.push(intro);
-    (topicData.sections || []).forEach(s => {
-      const text = stripHtml(s.text || '');
-      if (text.length > 40) candidates.push(text);
-    });
+    (topicData.sections || []).forEach(s => { const text = stripHtml(s.text || ''); if (text.length > 40) candidates.push(text); });
     for (const para of candidates) {
       const valid = [], used = [];
       for (const term of ktTerms) {
@@ -2184,9 +2195,7 @@ function pickClozeContent(topicName) {
           const m = new RegExp('\\b' + term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + '\\b','i').exec(para);
           if (m) {
             const s = m.index, e = s + m[0].length;
-            if (!used.some(([us,ue]) => s < ue && e > us)) {
-              valid.push(term); used.push([s,e]);
-            }
+            if (!used.some(([us,ue]) => s < ue && e > us)) { valid.push(term); used.push([s,e]); }
           }
         } catch(e2) {}
       }
