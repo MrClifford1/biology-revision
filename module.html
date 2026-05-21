@@ -853,7 +853,11 @@
       <div class="marking-section" id="paper-marking-section">
         <div class="overall-result" id="paper-overall-result"></div>
         <div id="paper-results-container"></div>
-        <div style="text-align:center;margin-top:1rem"><button class="btn-primary" id="paper-try-again-btn">🔄 Try Another Paper</button></div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;margin-top:1.25rem;">
+          <button class="btn-primary" id="paper-try-again-btn">🔄 Try Another Paper</button>
+          <button class="btn-secondary" id="paper-go-revise-btn" style="background:white;border:2px solid var(--accent);color:var(--accent);font-family:'Nunito',sans-serif;font-weight:800;padding:0.65rem 1.5rem;border-radius:12px;cursor:pointer;font-size:0.95rem;transition:opacity 0.18s;">📖 Go to Revise</button>
+          <a id="paper-back-subject-btn" style="display:inline-flex;align-items:center;background:white;border:2px solid var(--border);color:var(--text);font-family:'Nunito',sans-serif;font-weight:800;padding:0.65rem 1.5rem;border-radius:12px;cursor:pointer;font-size:0.95rem;text-decoration:none;transition:opacity 0.18s;">🏠 Back to <span id="paper-subject-label" style="margin-left:0.25rem"></span></a>
+        </div>
       </div>
     </div>
   </div>
@@ -1905,22 +1909,49 @@ function selectPaperQuestions(allQs, targetMarks) {
   const medium = allQs.filter(q => q.marks >= 4 && q.marks <= 5);
   const large  = allQs.filter(q => q.marks === 6);
 
-  function pw(q) {
-    // ragWeight uses the current module's RAG state; for cross-module papers
-    // topics not in current module will return the default weight (4) which is fine
-    return ragWeight(q.topic);
-  }
+  // RAG-weighted shuffle — weaker topics appear more often
   function pws(arr) {
-    return arr.map(q => ({ q, key: Math.random() * pw(q) })).sort((a,b) => b.key - a.key).map(x => x.q);
+    return arr.map(q => ({ q, key: Math.random() * ragWeight(q.topic) }))
+              .sort((a,b) => b.key - a.key).map(x => x.q);
   }
 
-  // Scale thresholds proportionally to target
-  const largeMin  = Math.max(6,  Math.round(targetMarks * 0.17)); // ~6 marks reserved for large
-  const mediumMin = Math.max(4,  Math.round(targetMarks * 0.15)); // ~5 marks reserved for medium
-  const picked = []; let remaining = targetMarks;
-  for (const q of pws(small))  { if (remaining <= largeMin + mediumMin) break; if (q.marks <= remaining - largeMin - mediumMin) { picked.push(q); remaining -= q.marks; } }
-  for (const q of pws(medium)) { if (remaining <= largeMin) break; if (q.marks <= remaining - largeMin) { picked.push(q); remaining -= q.marks; } }
-  for (const q of pws(large.length ? large : medium)) { if (remaining <= 0) break; if (q.marks <= remaining) { picked.push(q); remaining -= q.marks; } }
+  // AQA-style mix targets (by marks):
+  //   10mk  →  6 short,  4 medium,  0 long
+  //   20mk  →  12 short, 4 medium,  1 long (4mk + 6mk fallback if no 6mk)
+  //   30mk  →  18 short, 6 medium,  1×6mk long
+  //   35mk  →  20 short, 9 medium,  1×6mk long
+  // Formula: long budget = 6 if targetMarks > 10 else 0
+  //          medium budget = ~25% of remainder after long reserved
+  //          short budget = rest
+  const longBudget   = targetMarks > 10 ? 6 : 0;
+  const afterLong    = targetMarks - longBudget;
+  const mediumBudget = Math.round(afterLong * 0.27); // ~27% for medium
+  const shortBudget  = afterLong - mediumBudget;
+
+  const picked = [];
+
+  // 1. Fill short questions first (builds difficulty gradually)
+  let shortRemaining = shortBudget;
+  for (const q of pws(small)) {
+    if (shortRemaining <= 0) break;
+    if (q.marks <= shortRemaining) { picked.push(q); shortRemaining -= q.marks; }
+  }
+
+  // 2. Fill medium questions
+  let medRemaining = mediumBudget + shortRemaining; // absorb any unused short marks
+  for (const q of pws(medium)) {
+    if (medRemaining <= 0) break;
+    if (q.marks <= medRemaining) { picked.push(q); medRemaining -= q.marks; }
+  }
+
+  // 3. One long question at the end (6mk preferred, fall back to medium if none)
+  if (longBudget > 0) {
+    const longPool = pws(large.length ? large : medium);
+    for (const q of longPool) {
+      if (q.marks <= longBudget + medRemaining) { picked.push(q); break; }
+    }
+  }
+
   return picked;
 }
 
@@ -2196,6 +2227,29 @@ document.getElementById('paper-try-again-btn').addEventListener('click', () => {
   document.getElementById('paper-selector-section').style.display = 'block';
   showRAG();
   selectedPaperQuestions = []; autoMarkedResults = {};
+});
+
+// Populate subject label on back button
+const _subjectLabel = document.getElementById('paper-subject-label');
+if (_subjectLabel) _subjectLabel.textContent = subjectLabel;
+const _backSubjectBtn = document.getElementById('paper-back-subject-btn');
+if (_backSubjectBtn) {
+  const subjectPages = { biology:'biology.html', chemistry:'chemistry.html', physics:'physics.html' };
+  _backSubjectBtn.href = subjectPages[subjectId] || 'index.html';
+}
+
+document.getElementById('paper-go-revise-btn').addEventListener('click', () => {
+  document.getElementById('paper-marking-section').style.display = 'none';
+  selectedPaperQuestions = []; autoMarkedResults = {};
+  // Switch to Revise tab
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  const reviseBtn = document.querySelector('.tab-btn[data-tab="revision"]');
+  if (reviseBtn) reviseBtn.classList.add('active');
+  const revisePanel = document.getElementById('tab-revision');
+  if (revisePanel) revisePanel.classList.add('active');
+  showRAG();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 loadKeywords();
