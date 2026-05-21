@@ -1282,6 +1282,8 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    // Hide RAG checklist on Learn tab — it doesn't feed into the rating
+    if (btn.dataset.tab === 'learn') hideRAG(); else showRAG();
   });
 });
 
@@ -2753,22 +2755,31 @@ function showLearnCheckResult(container, passed, topicName, correct, total, atte
 
 function markLearnTopicDone(topicName) {
   _learnState[topicName] = 'done';
-  saveLearnProgress();
+
+  // Unlock the next locked topic immediately
+  const currentIdx = _learnTopics.findIndex(t => t.name === topicName);
+  const nextTopic  = _learnTopics[currentIdx + 1];
+  if (nextTopic && _learnState[nextTopic.name] === 'locked') {
+    _learnState[nextTopic.name] = 'active';
+  }
+
+  // Check if all done
+  const allDone = _learnTopics.every(t => _learnState[t.name] === 'done');
+  if (allDone) {
+    saveLearnComplete();
+  } else {
+    saveLearnProgress();
+  }
+
   buildLearnAccordion();
 
-  // Open next active topic
-  const nextIdx = _learnTopics.findIndex(t => _learnState[t.name] === 'active');
-  if (nextIdx >= 0) {
-    const nextName = _learnTopics[nextIdx].name;
-    const nextItem = document.querySelector(`[data-learn-topic="${nextName}"]`);
-    if (nextItem) nextItem.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  } else {
-    // All done
-    const allDone = _learnTopics.every(t => _learnState[t.name] === 'done');
-    if (allDone) {
-      saveLearnComplete();
-      buildLearnAccordion();
-    }
+  // Scroll to next active topic
+  const nextName = nextTopic?.name;
+  if (nextName) {
+    setTimeout(() => {
+      const nextItem = document.querySelector(`[data-learn-topic="${nextName}"]`);
+      if (nextItem) nextItem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 150);
   }
 }
 
