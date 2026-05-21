@@ -665,11 +665,6 @@
           <p>Work through each topic in this module step by step. Read the content, then answer a quick check — get 3 right and you move on to the next topic.</p>
           <button class="learn-hero-btn" id="learn-start-btn">▶ Start Learning</button>
         </div>
-        <div class="learn-complete-banner" id="learn-complete-banner" style="display:none;">
-          <h3>🎉 Module Complete!</h3>
-          <p>You've worked through all topics in this module. Head to Flashcards, Cloze or Paper to keep your knowledge sharp.</p>
-          <button class="btn-secondary" id="learn-refresh-btn" style="background:white;border:1.5px solid #86efac;color:#15803d;font-family:'Nunito',sans-serif;font-weight:800;padding:0.5rem 1.25rem;border-radius:10px;cursor:pointer;font-size:0.875rem;">🔄 Start Over</button>
-        </div>
       </div>
 
       <!-- ACCORDION JOURNEY -->
@@ -681,6 +676,11 @@
           </div>
           <div class="learn-progress-bar-wrap"><div class="learn-progress-bar" id="learn-progress-bar" style="width:0%"></div></div>
           <div class="learn-progress-label" id="learn-progress-label">0 of 0 topics complete</div>
+        </div>
+        <div class="learn-complete-banner" id="learn-complete-banner" style="display:none;">
+          <h3>🎉 Module Complete!</h3>
+          <p>You've worked through all topics in this module. Head to Flashcards, Cloze or Paper to keep your knowledge sharp.</p>
+          <button class="btn-secondary" id="learn-refresh-btn" style="background:white;border:1.5px solid #86efac;color:#15803d;font-family:'Nunito',sans-serif;font-weight:800;padding:0.5rem 1.25rem;border-radius:10px;cursor:pointer;font-size:0.875rem;">🔄 Start Over</button>
         </div>
         <div class="learn-accordion" id="learn-accordion"></div>
       </div>
@@ -1301,6 +1301,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById('tab-' + target)?.classList.add('active');
+    if (target === 'learn') hideRAG();
   }
 
   // Auto-start after questions have loaded — poll until start button is ready
@@ -1443,6 +1444,9 @@ function fuzzyMatchTopic(questionTopic, checklistTopics) {
 let ragState = {};
 
 function renderChecklist(state) {
+  // Don't show RAG checklist if Learn tab is currently active
+  const activeTab = document.querySelector('.tab-btn.active')?.dataset?.tab;
+  if (activeTab === 'learn') { hideRAG(); return; }
   ragState = state;
   window._currentRag = state; // expose for revise tab
   const list = document.getElementById('topic-list');
@@ -2812,19 +2816,38 @@ function buildLearnAccordion() {
     item.innerHTML = `
       <div class="learn-accordion-header">
         <span class="learn-accordion-title">${statusIcon} ${topic.name}</span>
-        <span class="learn-accordion-status">${isDone ? 'Done' : isActive ? 'In progress' : ''}</span>
+        <div style="display:flex;align-items:center;gap:0.6rem;">
+          ${isDone ? `<button class="learn-redo-btn" data-topic="${topic.name}" style="background:white;border:1.5px solid var(--border);color:var(--subtext);font-family:'Nunito',sans-serif;font-weight:700;font-size:0.75rem;padding:0.25rem 0.7rem;border-radius:8px;cursor:pointer;transition:all 0.18s;" onclick="event.stopPropagation()">🔄 Redo</button>` : ''}
+          <span class="learn-accordion-status">${isDone ? 'Done' : isActive ? 'In progress' : ''}</span>
+        </div>
       </div>
       <div class="learn-accordion-body">
         <div class="learn-reading-content">${topic.readingHTML}</div>
         <div class="learn-check-section" id="learn-check-${idx}"></div>
       </div>`;
 
-    // Clicking header toggles active state open (but only if not locked)
+    // Clicking header toggles open/closed (but not if locked)
     item.querySelector('.learn-accordion-header').addEventListener('click', () => {
       if (isLocked) return;
-      // Toggle open/closed for done items; active stays open
       if (isDone) item.classList.toggle('active');
     });
+
+    // Redo button — resets just this topic back to active
+    const redoBtn = item.querySelector('.learn-redo-btn');
+    if (redoBtn) {
+      redoBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const tName = redoBtn.dataset.topic;
+        _learnState[tName] = 'active';
+        saveLearnProgress();
+        buildLearnAccordion();
+        // Scroll to the redone topic
+        setTimeout(() => {
+          const redoItem = document.querySelector(`[data-learn-topic="${tName}"]`);
+          if (redoItem) redoItem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      });
+    }
 
     accordion.appendChild(item);
 
