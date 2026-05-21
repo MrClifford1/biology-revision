@@ -11,6 +11,51 @@ exports.handler = async function (event, context) {
       return { statusCode: 500, body: JSON.stringify({ error: 'API key not configured' }) };
     }
 
+    // ── SCRIBBLE MODE ─────────────────────────────────────────────────────────
+    if (body._scribbleMode) {
+      const { topic, keyTerms, bulletPoints, studentText, mode } = body;
+      const modeLabel = mode === 'guided' ? 'Guided Recall (student read the content first)' : 'Free Recall (no prior reading)';
+      const termsStr  = (keyTerms  || []).map(t => `• ${t.term}: ${t.def}`).join('\n');
+      const pointsStr = (bulletPoints || []).map(p => `• ${p}`).join('\n');
+
+      const scribblePrompt = `You are an AQA GCSE Science teacher marking a recall activity.
+
+Topic: ${topic}
+Mode: ${modeLabel}
+
+Key terms the student should know:
+${termsStr}
+
+Key points the student should cover:
+${pointsStr}
+
+Student's recall:
+"${studentText || '[Nothing written]'}"
+
+Assess what the student recalled. Be encouraging but honest. Respond ONLY with a JSON object (no markdown):
+{
+  "pct": <integer 0-100, percentage of key content covered>,
+  "covered": "<comma-separated list of key terms/points the student mentioned correctly>",
+  "missed": "<comma-separated list of important points not mentioned>",
+  "feedback": "<2-3 sentences of constructive, encouraging feedback for a GCSE student>",
+  "tip": "<one specific revision tip based on what they missed>"
+}`;
+
+      const scribbleResp = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01' },
+        body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: 600, messages: [{ role: 'user', content: scribblePrompt }] }),
+      });
+      if (!scribbleResp.ok) return { statusCode: 502, body: JSON.stringify({ error: 'Scribble marking error' }) };
+      const scribbleData = await scribbleResp.json();
+      const rawScribble  = scribbleData?.content?.[0]?.text || '';
+      const cleanScribble = rawScribble.replace(/```json|```/g, '').trim();
+      let parsedScribble;
+      try { parsedScribble = JSON.parse(cleanScribble); }
+      catch(e) { parsedScribble = { pct: 0, covered: '', missed: '', feedback: 'Marking could not be completed. Please try again.', tip: '' }; }
+      return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(parsedScribble) };
+    }
+
     // ── INSIGHT MODE ──────────────────────────────────────────────────────────
     if (body._insightMode) {
       const response = await fetch('https://api.anthropic.com/v1/messages', {
