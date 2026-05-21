@@ -316,6 +316,39 @@
     .qcount-btn.selected { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
     .paper-custom-note { font-size: 0.78rem; color: var(--subtext); margin-top: 0.6rem; font-style: italic; }
 
+    /* ── LEARN ACTIVITY ─────────────────────────────────────────────────────── */
+    .learn-hero { background: linear-gradient(135deg, var(--accent) 0%, #2563eb 100%); border-radius: 16px; padding: 2rem 1.75rem; color: white; text-align: center; margin-bottom: 1rem; }
+    .learn-hero h2 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.5rem; margin: 0 0 0.5rem; }
+    .learn-hero p  { font-size: 0.875rem; opacity: 0.9; margin: 0 0 1.25rem; line-height: 1.5; }
+    .learn-hero-btn { background: white; color: var(--accent); font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; border: none; border-radius: 12px; padding: 0.75rem 2rem; cursor: pointer; transition: all 0.2s; }
+    .learn-hero-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+    .learn-complete-banner { background: #f0fdf4; border: 2px solid #86efac; border-radius: 14px; padding: 1.25rem 1.5rem; text-align: center; margin-bottom: 1rem; }
+    .learn-complete-banner h3 { font-family: 'Nunito', sans-serif; font-weight: 900; color: #15803d; margin: 0 0 0.4rem; }
+    .learn-complete-banner p  { font-size: 0.875rem; color: #166534; margin: 0 0 0.75rem; }
+    .learn-progress-bar-wrap { background: #e2e8f0; border-radius: 100px; height: 8px; margin: 0.75rem 0; overflow: hidden; }
+    .learn-progress-bar { height: 100%; border-radius: 100px; background: var(--accent); transition: width 0.4s ease; }
+    .learn-progress-label { font-family: 'Nunito', sans-serif; font-size: 0.78rem; font-weight: 700; color: var(--subtext); text-align: right; margin-top: 0.2rem; }
+    .learn-accordion { display: flex; flex-direction: column; gap: 0.75rem; }
+    .learn-accordion-item { background: white; border: 2px solid var(--border); border-radius: 14px; overflow: hidden; transition: border-color 0.2s; }
+    .learn-accordion-item.active  { border-color: var(--accent); }
+    .learn-accordion-item.done    { border-color: #86efac; }
+    .learn-accordion-item.locked  { opacity: 0.5; pointer-events: none; }
+    .learn-accordion-header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; cursor: pointer; user-select: none; }
+    .learn-accordion-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.95rem; }
+    .learn-accordion-status { font-size: 1.1rem; }
+    .learn-accordion-body { display: none; padding: 0 1.25rem 1.25rem; border-top: 1px solid var(--border); }
+    .learn-accordion-item.active .learn-accordion-body { display: block; }
+    .learn-reading-content { background: #f8fafc; border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; font-size: 0.875rem; line-height: 1.75; color: var(--text); margin: 0.75rem 0; }
+    .learn-reading-content h4 { font-family: 'Nunito', sans-serif; font-weight: 800; color: var(--accent); margin: 0.75rem 0 0.25rem; font-size: 0.875rem; }
+    .learn-reading-content ul  { margin: 0.25rem 0 0.5rem 1.25rem; padding: 0; }
+    .learn-reading-content li  { margin-bottom: 0.2rem; }
+    .learn-check-section { margin-top: 1rem; }
+    .learn-check-label { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--subtext); margin-bottom: 0.6rem; }
+    .learn-check-result { border-radius: 10px; padding: 0.75rem 1rem; margin-top: 0.75rem; font-size: 0.875rem; }
+    .learn-check-result.pass { background: #f0fdf4; border: 1px solid #86efac; color: #15803d; }
+    .learn-check-result.fail { background: #fff7ed; border: 1px solid #fed7aa; color: #9a3412; }
+    .learn-check-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.75rem; justify-content: flex-end; }
+
     /* ── SCRIBBLE ACTIVITY ──────────────────────────────────────────────────── */
     .scribble-mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
     .scribble-mode-card { background: white; border: 2px solid var(--border); border-radius: 16px; padding: 1.5rem; cursor: pointer; transition: all 0.2s; text-align: center; }
@@ -608,6 +641,7 @@
 
 <div class="tabs-wrapper">
   <div class="tabs">
+    <button class="tab-btn" data-tab="learn">🎓 Learn</button>
     <button class="tab-btn active" data-tab="revision">📖 Revise</button>
     <button class="tab-btn" data-tab="flashcards">🃏 Flashcards</button>
     <button class="tab-btn" data-tab="keywords">🔤 Words</button>
@@ -619,6 +653,40 @@
 </div>
 
 <div class="content-wrapper">
+
+  <!-- ── LEARN TAB ───────────────────────────────────────────────────────────── -->
+  <div class="tab-panel" id="tab-learn">
+    <div class="practice-panel-inner">
+
+      <!-- WELCOME SCREEN -->
+      <div id="learn-welcome-section">
+        <div class="learn-hero">
+          <h2>🎓 Let's Learn</h2>
+          <p>Work through each topic in this module step by step. Read the content, then answer a quick check — get 3 right and you move on to the next topic.</p>
+          <button class="learn-hero-btn" id="learn-start-btn">▶ Start Learning</button>
+        </div>
+        <div class="learn-complete-banner" id="learn-complete-banner" style="display:none;">
+          <h3>🎉 Module Complete!</h3>
+          <p>You've worked through all topics in this module. Head to Flashcards, Cloze or Paper to keep your knowledge sharp.</p>
+          <button class="btn-secondary" id="learn-refresh-btn" style="background:white;border:1.5px solid #86efac;color:#15803d;font-family:'Nunito',sans-serif;font-weight:800;padding:0.5rem 1.25rem;border-radius:10px;cursor:pointer;font-size:0.875rem;">🔄 Start Over</button>
+        </div>
+      </div>
+
+      <!-- ACCORDION JOURNEY -->
+      <div id="learn-journey-section" style="display:none;">
+        <div style="background:white;border:1px solid var(--border);border-radius:12px;padding:0.9rem 1.25rem;margin-bottom:1rem;">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
+            <span style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;" id="learn-module-label"></span>
+            <button class="btn-secondary" id="learn-back-welcome-btn" style="background:white;border:1.5px solid var(--border);color:var(--subtext);font-family:'Nunito',sans-serif;font-weight:700;padding:0.4rem 1rem;border-radius:8px;cursor:pointer;font-size:0.8rem;">← Back</button>
+          </div>
+          <div class="learn-progress-bar-wrap"><div class="learn-progress-bar" id="learn-progress-bar" style="width:0%"></div></div>
+          <div class="learn-progress-label" id="learn-progress-label">0 of 0 topics complete</div>
+        </div>
+        <div class="learn-accordion" id="learn-accordion"></div>
+      </div>
+
+    </div>
+  </div>
 
   <!-- ── REVISE TAB ──────────────────────────────────────────────────────────── -->
   <div class="tab-panel active" id="tab-revision">
@@ -1221,7 +1289,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 (function() {
   const tabParam = new URLSearchParams(window.location.search).get('tab');
   if (!tabParam) return;
-  const tabMap = { mock:'practice', flashcards:'flashcards', words:'keywords', cloze:'cloze', scribble:'scribble', paper:'paper' };
+  const tabMap = { mock:'practice', flashcards:'flashcards', words:'keywords', cloze:'cloze', scribble:'scribble', paper:'paper', learn:'learn' };
   const target = tabMap[tabParam] || tabParam;
 
   // Switch tab immediately
@@ -2423,6 +2491,420 @@ document.getElementById('paper-go-revise-btn').addEventListener('click', () => {
 
 loadKeywords();
 loadQuestions();
+
+// ── LEARN ACTIVITY ────────────────────────────────────────────────────────────
+
+const LEARN_PASS_Q = 3; // questions correct needed to pass (scales down if fewer available)
+const ELIGIBLE_TYPES = new Set(['multiple_choice', 'fill_in_blank', 'match']);
+
+let _learnTopics      = [];   // [{name, readingHTML, keyTerms, clozePassages}]
+let _learnQuestionBank = {};  // topicName -> [eligible questions]
+let _learnState       = {};   // topicName -> 'locked'|'active'|'done'
+let _learnAutoResults = {};   // reuse per-check marking
+
+// ── Load learn data ───────────────────────────────────────────────────────────
+async function loadLearnData() {
+  try {
+    // Load revise JSON for reading content
+    let rRes = await fetch(`data/revise/${subjectId}-${moduleId}-revise.json`);
+    if (!rRes.ok) rRes = await fetch(`data/revise/${moduleId}-revise.json`);
+    if (!rRes.ok) return;
+    const reviseJson = await rRes.json();
+    const topicMap   = reviseJson.topics || {};
+
+    // Load question bank
+    let qRes = await fetch(`data/${subjectId}-${moduleId}-questions.json`);
+    if (!qRes.ok) qRes = await fetch(`data/${moduleId}-questions.json`);
+    const allQuestions = qRes.ok ? await qRes.json() : [];
+
+    // Group eligible questions by topic
+    const byTopic = {};
+    allQuestions.forEach(q => {
+      if (!ELIGIBLE_TYPES.has(q.type)) return;
+      if (!byTopic[q.topic]) byTopic[q.topic] = [];
+      byTopic[q.topic].push(q);
+    });
+
+    // Build topic list in revise JSON order
+    _learnTopics = Object.entries(topicMap).map(([name, data]) => {
+      const bullets = [];
+      (data.sections || []).forEach(sec => {
+        if (sec.text) bullets.push(sec.text);
+        (sec.points || []).forEach(p => bullets.push(p.replace(/<[^>]+>/g, '')));
+      });
+      let readingHTML = `<p>${data.intro || ''}</p>`;
+      (data.sections || []).forEach(sec => {
+        readingHTML += `<h4>${sec.icon || ''} ${sec.title || ''}</h4>`;
+        if (sec.text) readingHTML += `<p>${sec.text}</p>`;
+        if (sec.points?.length) readingHTML += '<ul>' + sec.points.map(p => `<li>${p}</li>`).join('') + '</ul>';
+      });
+      return { name, readingHTML, keyTerms: data.keyTerms || [], clozePassages: data.clozePassages || [] };
+    });
+
+    _learnQuestionBank = byTopic;
+    return true;
+  } catch(e) { console.log('Learn load error:', e); return false; }
+}
+
+// ── Compute pass threshold for a topic ───────────────────────────────────────
+function learnPassThreshold(available) {
+  if (available >= 5) return 3;
+  if (available === 4) return 3;
+  if (available === 3) return 2;
+  if (available === 2) return 2;
+  return 1;
+}
+
+// ── Pick questions for a check ───────────────────────────────────────────────
+function pickLearnQuestions(topicName, count) {
+  const pool = (_learnQuestionBank[topicName] || []).slice();
+  // Shuffle
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  return pool.slice(0, count);
+}
+
+// ── Build reading HTML for a topic ────────────────────────────────────────────
+function buildLearnReading(topic) {
+  return `<div class="learn-reading-content">${topic.readingHTML}</div>`;
+}
+
+// ── Build cloze fallback check ────────────────────────────────────────────────
+function buildLearnClozeCheck(topic) {
+  const passages = topic.clozePassages;
+  if (!passages || !passages.length) return null;
+  const passage = passages[Math.floor(Math.random() * passages.length)];
+  // Extract strong tags as blanks
+  const terms = [];
+  const stripped = passage.replace(/<strong>(.*?)<\/strong>/g, (_, t) => { terms.push(t); return `___`; });
+  if (!terms.length) return null;
+  return { passage: stripped, terms, original: passage };
+}
+
+// ── Render a check section (questions or cloze fallback) ─────────────────────
+function renderLearnCheck(topicName, attemptNum, container) {
+  _learnAutoResults = {};
+  const pool = _learnQuestionBank[topicName] || [];
+  const count = Math.min(5, pool.length);
+  const qs = count > 0 ? pickLearnQuestions(topicName, count) : [];
+  const threshold = learnPassThreshold(count);
+
+  let html = `<div class="learn-check-label">📝 Quick Check — get ${threshold} right to continue (attempt ${attemptNum})</div>`;
+
+  if (qs.length === 0) {
+    // Cloze fallback
+    const clozeData = buildLearnClozeCheck(_learnTopics.find(t => t.name === topicName));
+    if (!clozeData) {
+      // No questions and no cloze — auto pass
+      html += `<div class="learn-check-result pass">✅ No check available — moving on automatically.</div>
+        <div class="learn-check-actions"><button class="btn-primary learn-next-btn" data-topic="${topicName}">Next Topic →</button></div>`;
+      container.innerHTML = html;
+      return;
+    }
+    // Render simple cloze fill-in
+    html += `<div style="font-size:0.875rem;line-height:1.8;margin-bottom:0.75rem;">${
+      clozeData.passage.replace(/___/g, (_, i) => {
+        const idx = clozeData.terms.findIndex((t,ti) => !document.getElementById(`lc-blank-${ti}`));
+        return `<input type="text" class="fib-input learn-cloze-blank" style="width:120px;display:inline-block;margin:0 4px;" placeholder="..." />`;
+      })
+    }</div>`;
+    html += `<div style="text-align:right;margin-top:0.5rem;"><button class="btn-primary" id="learn-check-submit-cloze" data-topic="${topicName}" data-threshold="1">Check Answers</button></div>`;
+    html += `<div id="learn-check-result-box"></div>`;
+    container.innerHTML = html;
+
+    // Wire cloze submit
+    container.querySelector('#learn-check-submit-cloze').addEventListener('click', function() {
+      const blanks = container.querySelectorAll('.learn-cloze-blank');
+      let correct = 0;
+      blanks.forEach((inp, i) => {
+        const val = inp.value.trim().toLowerCase();
+        const ans = (clozeData.terms[i] || '').toLowerCase();
+        if (val === ans) correct++;
+      });
+      const passed = correct >= 1;
+      showLearnCheckResult(container, passed, topicName, correct, blanks.length, attemptNum);
+    });
+    return;
+  }
+
+  // Render questions
+  qs.forEach((q, i) => {
+    const qId = `lq-${topicName.replace(/\s+/g,'-')}-${i}`;
+    q._learnId = qId;
+    html += `<div class="question-card" style="margin-bottom:0.6rem;">`;
+    html += `<div class="question-meta"><span class="marks-badge">${q.marks} mark${q.marks>1?'s':''}</span><span class="command-badge">${q.type === 'multiple_choice' ? 'Multiple Choice' : q.type === 'fill_in_blank' ? 'Fill in the Blank' : 'Match'}</span></div>`;
+    html += `<div class="question-text">Q${i+1}. ${q.question}</div>`;
+
+    if (q.type === 'multiple_choice') {
+      const shuffled = [...q.options].sort(() => Math.random() - 0.5);
+      html += `<div class="mc-options" id="mc-${qId}">${shuffled.map(opt => `<label class="mc-option"><input type="radio" name="mc-${qId}" value="${opt}"><span>${opt}</span></label>`).join('')}</div>`;
+    } else if (q.type === 'fill_in_blank') {
+      html += `<div class="fib-wrap"><input type="text" class="fib-input" id="fib-${qId}" placeholder="Type your answer..." autocomplete="off" /></div>`;
+    } else if (q.type === 'match') {
+      const sd = [...q.pairs].sort(() => Math.random() - 0.5);
+      html += `<div class="match-grid" id="match-${qId}"><div class="match-terms">${q.pairs.map(p=>`<div class="match-term" data-term="${p.term}">${p.term}</div>`).join('')}</div><div class="match-defs">${sd.map(p=>`<div class="match-def-drop" data-def="${p.term}"><span class="match-def-text">${p.definition}</span><span class="match-assigned"></span></div>`).join('')}</div></div><div class="match-instructions">Tap a term, then tap its matching definition.</div>`;
+    }
+    html += `<div class="auto-result" id="auto-result-${qId}" style="display:none"></div></div>`;
+  });
+
+  html += `<div style="text-align:right;margin-top:0.5rem;"><button class="btn-primary" id="learn-check-submit" data-topic="${topicName}" data-threshold="${threshold}">Check Answers</button></div>`;
+  html += `<div id="learn-check-result-box"></div>`;
+  container.innerHTML = html;
+
+  // Wire MCQ
+  qs.forEach(q => {
+    if (q.type === 'multiple_choice') {
+      container.querySelectorAll(`input[name="mc-${q._learnId}"]`).forEach(radio => {
+        radio.addEventListener('change', () => {
+          _learnAutoResults[q._learnId] = { correct: radio.value === q.correct, marks_awarded: radio.value === q.correct ? q.marks : 0, marks_available: q.marks };
+        });
+      });
+    } else if (q.type === 'match') {
+      // Wire match using a local version
+      let sel = null; const mm = {};
+      const terms = container.querySelectorAll(`#match-${q._learnId} .match-term`);
+      const drops = container.querySelectorAll(`#match-${q._learnId} .match-def-drop`);
+      terms.forEach(t => t.addEventListener('click', () => { terms.forEach(x => x.classList.remove('match-selected')); t.classList.add('match-selected'); sel = t.dataset.term; }));
+      drops.forEach(d => d.addEventListener('click', () => {
+        if (!sel) return;
+        Object.keys(mm).forEach(k => { if (mm[k] === d.dataset.def) delete mm[k]; });
+        mm[sel] = d.dataset.def;
+        drops.forEach(x => { const ae = x.querySelector('.match-assigned'); const a = Object.keys(mm).find(k => mm[k] === x.dataset.def); ae.textContent = a ? `← ${a}` : ''; ae.style.cssText = 'color:var(--accent);font-weight:700;font-size:0.75rem'; });
+        terms.forEach(x => x.classList.remove('match-selected')); sel = null;
+        let correct = 0; q.pairs.forEach(p => { if (mm[p.term] === p.term) correct++; });
+        const fullCorrect = correct === q.pairs.length;
+        _learnAutoResults[q._learnId] = { correct: fullCorrect, marks_awarded: Math.round((correct/q.pairs.length)*q.marks), marks_available: q.marks };
+      }));
+    }
+  });
+
+  // Wire submit
+  container.querySelector('#learn-check-submit').addEventListener('click', function() {
+    const threshold = parseInt(this.dataset.threshold);
+    // Collect FIB
+    qs.forEach(q => {
+      if (q.type === 'fill_in_blank') {
+        const val = container.querySelector(`#fib-${q._learnId}`)?.value?.trim().toLowerCase() || '';
+        const ok = (q.acceptable || [q.correct]).some(a => val === a.toLowerCase());
+        _learnAutoResults[q._learnId] = { correct: ok, marks_awarded: ok ? q.marks : 0, marks_available: q.marks };
+      }
+    });
+    let correctCount = 0;
+    qs.forEach(q => { if (_learnAutoResults[q._learnId]?.correct) correctCount++; });
+
+    // Show per-question feedback
+    qs.forEach(q => {
+      const r = _learnAutoResults[q._learnId];
+      const el = container.querySelector(`#auto-result-${q._learnId}`);
+      if (!el) return;
+      el.style.display = 'block';
+      if (q.type === 'multiple_choice') {
+        const selected = r?.marks_awarded > 0;
+        el.innerHTML = selected ? `<span style="color:#15803d;font-weight:700">✅ Correct — ${q.correct}</span>` : `<span style="color:#dc2626;font-weight:700">❌ Correct answer: ${q.correct}</span>`;
+      } else if (q.type === 'fill_in_blank') {
+        el.innerHTML = r?.correct ? `<span style="color:#15803d;font-weight:700">✅ Correct</span>` : `<span style="color:#dc2626;font-weight:700">❌ Correct answer: ${q.correct}</span>`;
+      } else if (q.type === 'match') {
+        el.innerHTML = r?.correct ? `<span style="color:#15803d;font-weight:700">✅ All pairs matched correctly</span>` : `<span style="color:#dc2626;font-weight:700">❌ Not all pairs matched — review the content above</span>`;
+      }
+      // Disable inputs
+      container.querySelectorAll(`input[name="mc-${q._learnId}"], #fib-${q._learnId}`).forEach(i => i.disabled = true);
+    });
+
+    this.disabled = true;
+    const passed = correctCount >= threshold;
+    showLearnCheckResult(container, passed, topicName, correctCount, qs.length, attemptNum);
+  });
+}
+
+function showLearnCheckResult(container, passed, topicName, correct, total, attemptNum) {
+  const resultBox = container.querySelector('#learn-check-result-box');
+  if (!resultBox) return;
+  if (passed) {
+    resultBox.innerHTML = `<div class="learn-check-result pass">
+      ✅ <strong>${correct}/${total} correct — well done!</strong> You can move on to the next topic.
+      <div class="learn-check-actions"><button class="btn-primary learn-next-btn" data-topic="${topicName}">Next Topic →</button></div>
+    </div>`;
+    resultBox.querySelector('.learn-next-btn').addEventListener('click', () => markLearnTopicDone(topicName));
+  } else {
+    resultBox.innerHTML = `<div class="learn-check-result fail">
+      <strong>${correct}/${total} correct.</strong> Not quite — have another look at the content above, then try again.
+      <div class="learn-check-actions">
+        <button class="btn-secondary learn-reread-btn" style="background:white;border:1.5px solid var(--border);color:var(--text);font-family:'Nunito',sans-serif;font-weight:700;padding:0.5rem 1rem;border-radius:8px;cursor:pointer;font-size:0.825rem;" data-topic="${topicName}">📖 Re-read</button>
+        <button class="btn-primary learn-retry-btn" data-topic="${topicName}" data-attempt="${attemptNum + 1}">🔄 Try Again</button>
+      </div>
+    </div>`;
+    // Re-read scrolls to top of accordion body
+    resultBox.querySelector('.learn-reread-btn').addEventListener('click', () => {
+      const body = document.querySelector(`[data-learn-topic="${topicName}"] .learn-accordion-body`);
+      if (body) body.scrollTop = 0;
+      body?.querySelector('.learn-reading-content')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    // Try again renders a new check
+    resultBox.querySelector('.learn-retry-btn').addEventListener('click', function() {
+      const attempt = parseInt(this.dataset.attempt);
+      const body = document.querySelector(`[data-learn-topic="${topicName}"] .learn-accordion-body`);
+      const checkSection = body?.querySelector('.learn-check-section');
+      if (checkSection) renderLearnCheck(topicName, attempt, checkSection);
+    });
+  }
+}
+
+function markLearnTopicDone(topicName) {
+  _learnState[topicName] = 'done';
+  saveLearnProgress();
+  buildLearnAccordion();
+
+  // Open next active topic
+  const nextIdx = _learnTopics.findIndex(t => _learnState[t.name] === 'active');
+  if (nextIdx >= 0) {
+    const nextName = _learnTopics[nextIdx].name;
+    const nextItem = document.querySelector(`[data-learn-topic="${nextName}"]`);
+    if (nextItem) nextItem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    // All done
+    const allDone = _learnTopics.every(t => _learnState[t.name] === 'done');
+    if (allDone) {
+      saveLearnComplete();
+      buildLearnAccordion();
+    }
+  }
+}
+
+// ── Build accordion ───────────────────────────────────────────────────────────
+function buildLearnAccordion() {
+  const accordion = document.getElementById('learn-accordion');
+  const bar       = document.getElementById('learn-progress-bar');
+  const label     = document.getElementById('learn-progress-label');
+  if (!accordion) return;
+
+  const doneCount = _learnTopics.filter(t => _learnState[t.name] === 'done').length;
+  const total     = _learnTopics.length;
+  const pct       = total > 0 ? Math.round((doneCount / total) * 100) : 0;
+  if (bar)   bar.style.width = `${pct}%`;
+  if (label) label.textContent = `${doneCount} of ${total} topics complete`;
+
+  accordion.innerHTML = '';
+  _learnTopics.forEach((topic, idx) => {
+    const state  = _learnState[topic.name] || 'locked';
+    const isActive = state === 'active';
+    const isDone   = state === 'done';
+    const isLocked = state === 'locked';
+
+    const item = document.createElement('div');
+    item.className = `learn-accordion-item ${state}`;
+    item.dataset.learnTopic = topic.name;
+
+    const statusIcon = isDone ? '✅' : isActive ? '📖' : '🔒';
+
+    item.innerHTML = `
+      <div class="learn-accordion-header">
+        <span class="learn-accordion-title">${statusIcon} ${topic.name}</span>
+        <span class="learn-accordion-status">${isDone ? 'Done' : isActive ? 'In progress' : ''}</span>
+      </div>
+      <div class="learn-accordion-body">
+        <div class="learn-reading-content">${topic.readingHTML}</div>
+        <div class="learn-check-section" id="learn-check-${idx}"></div>
+      </div>`;
+
+    // Clicking header toggles active state open (but only if not locked)
+    item.querySelector('.learn-accordion-header').addEventListener('click', () => {
+      if (isLocked) return;
+      // Toggle open/closed for done items; active stays open
+      if (isDone) item.classList.toggle('active');
+    });
+
+    accordion.appendChild(item);
+
+    // Render check section for active topic
+    if (isActive) {
+      const checkSection = item.querySelector(`.learn-check-section`);
+      renderLearnCheck(topic.name, 1, checkSection);
+    }
+  });
+
+  // Show complete banner if all done
+  const allDone = _learnTopics.length > 0 && _learnTopics.every(t => _learnState[t.name] === 'done');
+  const banner  = document.getElementById('learn-complete-banner');
+  if (banner) banner.style.display = allDone ? 'block' : 'none';
+}
+
+// ── Persist progress in sessionStorage (resets on page close — lightweight) ──
+function saveLearnProgress() {
+  try {
+    sessionStorage.setItem(`learn-${subjectId}-${moduleId}`, JSON.stringify(_learnState));
+  } catch(e) {}
+}
+
+function loadLearnProgress() {
+  try {
+    const saved = sessionStorage.getItem(`learn-${subjectId}-${moduleId}`);
+    return saved ? JSON.parse(saved) : null;
+  } catch(e) { return null; }
+}
+
+function saveLearnComplete() {
+  // Mark all topics done
+  _learnTopics.forEach(t => { _learnState[t.name] = 'done'; });
+  saveLearnProgress();
+  // Optionally persist to Firestore via RAG doc flag
+  if (window._currentUser && window._saveRAG) {
+    // Piggyback on RAG save — add learnComplete flag
+    const state = { ...ragState, _learnComplete: true };
+    window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, state).catch(() => {});
+  }
+  // Update tab badge
+  const learnBtn = document.querySelector('.tab-btn[data-tab="learn"]');
+  if (learnBtn) learnBtn.innerHTML = '🎓 Learn ✅';
+}
+
+// ── Wire welcome screen buttons ───────────────────────────────────────────────
+document.getElementById('learn-start-btn').addEventListener('click', async () => {
+  const btn = document.getElementById('learn-start-btn');
+  btn.textContent = 'Loading...'; btn.disabled = true;
+  const ok = await loadLearnData();
+  btn.textContent = '▶ Start Learning'; btn.disabled = false;
+  if (!ok || !_learnTopics.length) { alert('Could not load content. Please refresh and try again.'); return; }
+
+  // Restore or initialise state
+  const saved = loadLearnProgress();
+  if (saved && Object.keys(saved).length > 0) {
+    _learnState = saved;
+    // Make sure there's at least one active if none done yet
+    const hasActive = Object.values(_learnState).includes('active');
+    const hasDone   = Object.values(_learnState).includes('done');
+    if (!hasActive && !_learnTopics.every(t => _learnState[t.name] === 'done')) {
+      // Find first non-done topic and make it active
+      const first = _learnTopics.find(t => _learnState[t.name] !== 'done');
+      if (first) _learnState[first.name] = 'active';
+    }
+  } else {
+    _learnState = {};
+    _learnTopics.forEach((t, i) => { _learnState[t.name] = i === 0 ? 'active' : 'locked'; });
+  }
+
+  document.getElementById('learn-module-label').textContent = `${moduleId.toUpperCase()} — ${meta.title || ''}`;
+  document.getElementById('learn-welcome-section').style.display = 'none';
+  document.getElementById('learn-journey-section').style.display = 'block';
+  buildLearnAccordion();
+});
+
+document.getElementById('learn-back-welcome-btn').addEventListener('click', () => {
+  document.getElementById('learn-journey-section').style.display = 'none';
+  document.getElementById('learn-welcome-section').style.display = 'block';
+});
+
+document.getElementById('learn-refresh-btn')?.addEventListener('click', () => {
+  _learnState = {};
+  sessionStorage.removeItem(`learn-${subjectId}-${moduleId}`);
+  _learnTopics.forEach((t, i) => { _learnState[t.name] = i === 0 ? 'active' : 'locked'; });
+  const learnBtn = document.querySelector('.tab-btn[data-tab="learn"]');
+  if (learnBtn) learnBtn.innerHTML = '🎓 Learn';
+  buildLearnAccordion();
+  const banner = document.getElementById('learn-complete-banner');
+  if (banner) banner.style.display = 'none';
+});
 
 // ── SCRIBBLE ACTIVITY ─────────────────────────────────────────────────────────
 
