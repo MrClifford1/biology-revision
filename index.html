@@ -577,7 +577,7 @@
     const classTag = profile?.class && !staff
       ? `<span style="background:#f0f4ff;color:var(--navy);font-size:0.72rem;font-weight:800;padding:0.15rem 0.55rem;border-radius:100px;font-family:'Nunito',sans-serif">${profile.class}</span>`
       : '';
-    greeting.innerHTML = `${avatarHTML} <span>Welcome back, <strong>${user.displayName?.split(' ')[0] || 'Student'}</strong>!</span> ${classTag}`;
+    if (greeting) greeting.innerHTML = `${avatarHTML} <span>Welcome back, <strong>${user.displayName?.split(' ')[0] || 'Student'}</strong>!</span> ${classTag}`;
 
     // Show role-appropriate top-bar links
     if (staff) {
