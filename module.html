@@ -3774,8 +3774,8 @@ window.resetCloze = () => {
 
     // Enforce class selection — redirect to index if no class set
     const _modProfile = await getUserProfile(user.uid);
-    const _modRole = await getUserRole(user.email);
-    if (!isStaffRole(_modRole) && !_modProfile?.class) {
+    // Staff always have class='Teachers' so this only redirects genuine students without a class
+    if (!_modProfile?.class) {
       const returnUrl = encodeURIComponent(window.location.href);
       window.location.href = `index.html?pickclass=1&return=${returnUrl}`;
       return;
