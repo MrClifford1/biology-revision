@@ -593,6 +593,7 @@
         await saveClass(user.uid, 'Teachers');
       }
       document.getElementById('drawer-class-display').textContent = 'Teachers';
+      window._currentProfile = { ...profile, class: 'Teachers' };
       // Load assignments for teachers too (they may have set their own)
       return;
     }
