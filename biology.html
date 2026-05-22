@@ -375,7 +375,11 @@
     try {
       const profile = await getUserProfile(user.uid);
       if (!profile?.class) return;
-      const assessments = await getUpcomingAssessmentsForStudent(profile.class);
+      // Staff have class 'Teachers' which has no year prefix — use a representative
+      // Year 10 class so they can see what students see
+      const lookupClass = (profile.class === 'Teachers' || !profile.class.match(/^\d/))
+        ? '10S1' : profile.class;
+      const assessments = await getUpcomingAssessmentsForStudent(lookupClass);
       const today = new Date().toISOString().split('T')[0];
       const upcoming = assessments.filter(a =>
         a.subject?.toLowerCase() === 'biology' && a.date >= today
