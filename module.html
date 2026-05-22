@@ -3799,9 +3799,11 @@ window.resetCloze = () => {
         const status = await getModuleScheduleStatus(yearGroup, subjectName, moduleUpper);
         applyScheduleBadge(status);
       }
-      // Load assessment flag for this module
-      if (profile?.class) loadAssessmentFlag(user.uid, profile.class, _subjectId, _moduleId);
     } catch(e) { /* schedule not configured — no badge shown */ }
+
+    // Load assessment flag — outside try/catch so schedule errors don't block it
+    if (profile?.class) loadAssessmentFlag(user.uid, profile.class, _subjectId, _moduleId);
+    else if (_modProfile?.class) loadAssessmentFlag(user.uid, _modProfile.class, _subjectId, _moduleId);
   });
 
   // ── ASSESSMENT FLAG ───────────────────────────────────────────────────────

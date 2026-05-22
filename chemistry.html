@@ -324,14 +324,12 @@
       return;
     }
     applyModuleProgress(user);
-    applyAssessmentFlags(user);
-  async function applyAssessmentFlags(user) {
+    applyAssessmentFlags(user, profile);
+  async function applyAssessmentFlags(user, profile) {
     try {
-      const profile = await getUserProfile(user.uid);
       if (!profile?.class) return;
-      // Staff have class 'Teachers' which has no year prefix — use a representative
-      // Year 10 class so they can see what students see
-      const lookupClass = (profile.class === 'Teachers' || !profile.class.match(/^\d/))
+      // Staff have class 'Teachers' which has no year prefix — use representative Year 10 class
+      const lookupClass = (profile.class === 'Teachers' || !/^\d/.test(profile.class))
         ? '10S1' : profile.class;
       const assessments = await getUpcomingAssessmentsForStudent(lookupClass);
       const today = new Date().toISOString().split('T')[0];
