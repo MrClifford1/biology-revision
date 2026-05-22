@@ -3914,6 +3914,7 @@ window.resetCloze = () => {
     document.getElementById('drawer-class-step').style.display = 'none';
     document.getElementById('drawer-confirm-btn').disabled = true;
     document.querySelectorAll('.year-btn-s').forEach(b => b.classList.remove('selected'));
+    if (window.currentProfile?.class) { const d = document.getElementById('drawer-class-display'); if(d) d.textContent = window.currentProfile.class; }
   };
 
   window.closeSettings = () => {

@@ -609,6 +609,7 @@
 
     // Populate drawer class display
     document.getElementById('drawer-class-display').textContent = profile?.class || 'Not set';
+    window._currentProfile = profile;
 
     // Load assignment banners — extracted so it can be re-run on page focus
     let _assignUser = user;
@@ -743,6 +744,9 @@
     document.getElementById('drawer-class-step').style.display = 'none';
     document.getElementById('drawer-confirm-btn').disabled = true;
     document.querySelectorAll('#drawer-year-grid .year-btn').forEach(b => b.classList.remove('selected'));
+    // Always refresh class display from current profile when drawer opens
+    const display = document.getElementById('drawer-class-display');
+    if (display && window._currentProfile?.class) display.textContent = window._currentProfile.class;
   };
 
   window.closeSettings = () => {

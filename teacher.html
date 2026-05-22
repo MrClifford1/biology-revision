@@ -195,6 +195,19 @@
       .adate-form { grid-template-columns: 1fr; }
     }
   
+    
+    .settings-overlay { position:fixed;inset:0;background:rgba(15,29,61,0.5);z-index:900;backdrop-filter:blur(2px); }
+    .settings-overlay.hidden { display:none; }
+    .settings-drawer { position:fixed;top:0;right:0;height:100%;width:320px;max-width:90vw;background:white;z-index:1000;box-shadow:-8px 0 40px rgba(0,0,0,0.15);display:flex;flex-direction:column;transform:translateX(0);transition:transform 0.25s ease; }
+    .settings-drawer.hidden { transform:translateX(100%); }
+    .drawer-header { background:var(--navy-dark);color:white;padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between; }
+    .drawer-header h2 { font-family:'Nunito',sans-serif;font-weight:900;font-size:1.05rem; }
+    .drawer-close { background:none;border:none;color:#94a3b8;font-size:1.4rem;cursor:pointer;line-height:1;padding:0; }
+    .drawer-close:hover { color:white; }
+    .drawer-body { padding:1.5rem;flex:1;overflow-y:auto; }
+    .drawer-section-title { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--subtext);margin-bottom:0.75rem; }
+    .current-class-badge { background:#f0f4ff;border:2px solid var(--navy);border-radius:10px;padding:0.65rem 1rem;font-family:'Nunito',sans-serif;font-weight:900;font-size:1.1rem;color:var(--navy);text-align:center;margin-bottom:1rem; }
+    .drawer-divider { border:none;border-top:1px solid var(--border);margin:1.25rem 0; }
     /* ── SHARED UNIFIED NAV ──────────────────────────────────────────────────── */
     .ssh-nav {
       background: var(--navy-dark, #0f1d3d);
@@ -603,6 +616,10 @@
     document.getElementById('page-content').style.display = 'block';
     sshSetWelcome(user);
     sshInitNav(user, role);
+    window._drawerUser = user;
+    window._drawerProfile = { class: 'Teachers' };
+    const _td = document.getElementById('drawer-class-display');
+    if (_td) _td.textContent = 'Teachers';
     // nav-name and role-badge now handled by ssh-nav badges
 
     // Load classes
@@ -1557,6 +1574,56 @@
     if (dd) dd.classList.remove('open');
     if (btn) btn.style.color = '';
   });
+
+  // ── SETTINGS DRAWER ────────────────────────────────────────────────────────
+  const _CLASSES = {
+    9:  ['9S1','9S2','9S3','9S4','9S5','9N1','9N2','9N3','9N4','9N5'],
+    10: ['10S1','10S2','10S3','10S4','10S5','10N1','10N2','10N3','10N4','10N5'],
+    11: ['11S1','11S2','11S3','11S4','11S5','11N1','11N2','11N3','11N4','11N5'],
+    other: ['Other'],
+  };
+  let _selectedYearDrawer = null, _selectedClassDrawer = null, _drawerUser = null;
+
+  window.openSettings = () => {
+    document.getElementById('settings-overlay').classList.remove('hidden');
+    document.getElementById('settings-drawer').classList.remove('hidden');
+    _selectedYearDrawer = null; _selectedClassDrawer = null;
+    document.getElementById('drawer-class-step').style.display = 'none';
+    document.getElementById('drawer-confirm-btn').disabled = true;
+    document.querySelectorAll('#drawer-year-grid .year-btn').forEach(b => b.classList.remove('selected'));
+    // Refresh class display from stored profile
+    if (window._drawerProfile?.class) document.getElementById('drawer-class-display').textContent = window._drawerProfile.class;
+  };
+  window.closeSettings = () => {
+    document.getElementById('settings-overlay').classList.add('hidden');
+    document.getElementById('settings-drawer').classList.add('hidden');
+  };
+  window.selectYearDrawer = (year, btn) => {
+    _selectedYearDrawer = year; _selectedClassDrawer = null;
+    document.querySelectorAll('#drawer-year-grid .year-btn').forEach(b => b.classList.remove('selected'));
+    if (btn) btn.classList.add('selected');
+    const grid = document.getElementById('drawer-class-grid');
+    const classes = year === 'other' ? ['Other'] : _CLASSES[year] || [];
+    grid.innerHTML = classes.map(cls => `<button class="class-btn" onclick="selectClassDrawer('${cls}',this)">${cls}</button>`).join('');
+    if (year === 'other') { _selectedClassDrawer = 'Other'; document.getElementById('drawer-confirm-btn').disabled = false; }
+    else { document.getElementById('drawer-confirm-btn').disabled = true; }
+    document.getElementById('drawer-class-step').style.display = 'block';
+  };
+  window.selectClassDrawer = (cls, btn) => {
+    _selectedClassDrawer = cls;
+    document.querySelectorAll('#drawer-class-grid .class-btn').forEach(b => b.classList.remove('selected'));
+    if (btn) btn.classList.add('selected');
+    document.getElementById('drawer-confirm-btn').disabled = false;
+  };
+  window.confirmClassDrawer = async () => {
+    if (!_drawerUser || !_selectedClassDrawer) return;
+    const { saveClass } = await import('./firebase.js');
+    await saveClass(_drawerUser.uid, _selectedClassDrawer);
+    document.getElementById('drawer-class-display').textContent = _selectedClassDrawer;
+    if (window._drawerProfile) window._drawerProfile.class = _selectedClassDrawer;
+    closeSettings();
+    location.reload();
+  };
   window.sshSignOut = function() {
     if (window._sshSignOutFn) { window._sshSignOutFn(); return; }
     // Fallback for module pages that expose signout via firebase module
@@ -1589,5 +1656,32 @@
     sshSetWelcome(user);
   };
 </script>
+
+<div class="settings-overlay hidden" id="settings-overlay" onclick="closeSettings()"></div>
+<div class="settings-drawer hidden" id="settings-drawer">
+  <div class="drawer-header">
+    <h2>⚙️ Settings</h2>
+    <button class="drawer-close" onclick="closeSettings()">✕</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-section-title">My Class</div>
+    <div class="current-class-badge" id="drawer-class-display">—</div>
+    <div class="modal-step" style="margin-bottom:0.6rem">Change year group</div>
+    <div class="year-grid" style="margin-bottom:1rem" id="drawer-year-grid">
+      <button class="year-btn" onclick="selectYearDrawer(9,this)">Year 9</button>
+      <button class="year-btn" onclick="selectYearDrawer(10,this)">Year 10</button>
+      <button class="year-btn" onclick="selectYearDrawer(11,this)">Year 11</button>
+      <button class="year-btn" onclick="selectYearDrawer('other',this)" style="grid-column:1/-1;background:#f8fafc;color:var(--subtext);border-color:var(--border);font-size:0.85rem;font-weight:700;padding:0.6rem">Not in a listed class? Select Other</button>
+    </div>
+    <div id="drawer-class-step" style="display:none">
+      <div class="modal-step" style="margin-bottom:0.6rem">Select class</div>
+      <div class="class-grid" id="drawer-class-grid"></div>
+    </div>
+    <button class="btn-modal-confirm" id="drawer-confirm-btn" disabled onclick="confirmClassDrawer()" style="margin-top:1rem">Update Class</button>
+    <hr class="drawer-divider">
+    <div class="drawer-section-title">Account</div>
+    <button onclick="sshSignOut()" style="width:100%;background:none;border:1.5px solid #e2e8f0;color:#64748b;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.8rem;padding:0.5rem;border-radius:8px;cursor:pointer;margin-top:0.25rem">Sign out</button>
+  </div>
+</div>
 </body>
 </html>
