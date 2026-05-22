@@ -44,6 +44,10 @@
     /* ── MODULE HEADER ───────────────────────────────────────────────────────── */
     .module-header { background: white; padding: 1.2rem 2rem 0; max-width: 1300px; margin: 0 auto; border-bottom: 1px solid var(--border); }
     .module-header-inner { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .assessment-flag { display:inline-flex; align-items:center; gap:0.4rem; font-family:'Nunito',sans-serif; font-weight:800; font-size:0.78rem; padding:0.3rem 0.85rem; border-radius:100px; margin-top:0.5rem; margin-bottom:0.4rem; }
+    .assessment-flag.imminent { background:#fef2f2; color:#dc2626; border:1.5px solid #fca5a5; }
+    .assessment-flag.soon     { background:#fff7ed; color:#ea580c; border:1.5px solid #fdba74; }
+    .assessment-flag.upcoming { background:#eff6ff; color:#2563eb; border:1.5px solid #93c5fd; }
     .module-badge { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 14px; font-family: 'Nunito', sans-serif; font-size: 1.1rem; font-weight: 900; color: white; background: var(--accent); flex-shrink: 0; }
     .module-header h1 { font-family: 'Nunito', sans-serif; font-size: 1.5rem; font-weight: 900; line-height: 1.1; }
     .module-header p { color: var(--subtext); font-size: 0.875rem; margin-top: 0.15rem; }
@@ -637,6 +641,7 @@
       <p id="module-subtitle">Cells, microscopy, cell division, transport in cells</p>
     </div>
   </div>
+  <div id="assessment-flag-row" style="padding-bottom:0.25rem;"></div>
 </div>
 
 <div class="tabs-wrapper">
@@ -3681,7 +3686,7 @@ window.resetCloze = () => {
 <!-- ── FIREBASE ───────────────────────────────────────────────────────────────── -->
 <script type="module">
   import {
-  onAuthChange, saveRAG, loadRAG, saveMockScore, getModuleScheduleStatus, getUserProfile, logActivity, saveAssignmentCompletion } from './firebase.js';
+  onAuthChange, saveRAG, loadRAG, saveMockScore, getModuleScheduleStatus, getUserProfile, logActivity, saveAssignmentCompletion, getUpcomingAssessmentsForStudent } from './firebase.js';
 
 
 
@@ -3772,8 +3777,53 @@ window.resetCloze = () => {
         const status = await getModuleScheduleStatus(yearGroup, subjectName, moduleUpper);
         applyScheduleBadge(status);
       }
+      // Load assessment flag for this module
+      if (profile?.class) loadAssessmentFlag(user.uid, profile.class, _subjectId, _moduleId);
     } catch(e) { /* schedule not configured — no badge shown */ }
   });
+
+  // ── ASSESSMENT FLAG ───────────────────────────────────────────────────────
+  async function loadAssessmentFlag(uid, classId, subjectId, moduleId) {
+    try {
+      const row = document.getElementById('assessment-flag-row');
+      if (!row) return;
+      const subjectName = subjectId.charAt(0).toUpperCase() + subjectId.slice(1);
+      const assessments = await getUpcomingAssessmentsForStudent(classId);
+      const today = new Date().toISOString().split('T')[0];
+
+      // Filter to assessments for this subject that cover this module
+      const relevant = assessments.filter(a => {
+        if ((a.subject || '').toLowerCase() !== subjectId.toLowerCase()) return false;
+        if (!a.date || a.date < today) return false;
+        const mods = a.modules || [];
+        return mods.some(m => m.toLowerCase() === moduleId.toLowerCase());
+      });
+
+      if (!relevant.length) { row.innerHTML = ''; return; }
+
+      // Sort by date, pick the soonest
+      relevant.sort((a, b) => (a.date || '').localeCompare(b.date || ''));
+      const next = relevant[0];
+
+      const daysAway = Math.ceil((new Date(next.date + 'T12:00:00') - new Date()) / 86400000);
+      const formatted = new Date(next.date + 'T12:00:00').toLocaleDateString('en-GB', { weekday:'short', day:'numeric', month:'short' });
+
+      const cls  = daysAway <= 7  ? 'imminent'
+                 : daysAway <= 14 ? 'soon'
+                 : 'upcoming';
+      const icon = daysAway <= 7  ? '🔴'
+                 : daysAway <= 14 ? '🟠'
+                 : '📅';
+      const dayLabel = daysAway === 0 ? 'Today!'
+                     : daysAway === 1 ? 'Tomorrow'
+                     : `in ${daysAway} days`;
+
+      // Show all modules covered by this assessment
+      const modList = (next.modules || []).map(m => m.toUpperCase()).join(' · ');
+
+      row.innerHTML = `<span class="assessment-flag ${cls}">${icon} Assessment ${dayLabel} — ${formatted}${modList ? ' &nbsp;·&nbsp; ' + modList : ''}${next.label ? ' &nbsp;·&nbsp; ' + next.label : ''}</span>`;
+    } catch(e) { /* non-critical */ }
+  }
 
   window.saveScoreToFirebase = async (totalAwarded, totalAvail, allQuestions, writtenResults, writtenAnswers, qScores) => {
     if (!window._currentUser) return;

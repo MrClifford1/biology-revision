@@ -335,6 +335,8 @@
 
 
 
+<!-- ASSESSMENT BANNER -->
+<div id="assessment-banners"></div>
 <!-- ASSIGNMENT BANNER -->
 <div id="assignment-banners"></div>
 
@@ -539,7 +541,7 @@
 
 <script type="module">
   import {
- onAuthChange, signOutUser, getUserProfile, saveClass, isClassValid, getUserRole, getActiveAssignmentsForClass, isStaffRole, canAccessAdmin, isSuperAdmin } from './firebase.js';
+ onAuthChange, signOutUser, getUserProfile, saveClass, isClassValid, getUserRole, getActiveAssignmentsForClass, getUpcomingAssessmentsForStudent, isStaffRole, canAccessAdmin, isSuperAdmin } from './firebase.js';
 
 
 
@@ -665,6 +667,7 @@
 
     // Load immediately
     if (profile?.class) reloadAssignmentBanners();
+    if (profile?.class) loadAssessmentBanners(profile.class);
 
   });
 
@@ -784,6 +787,52 @@
       if (strong) strong.textContent = first;
     }
   };
+
+  // ── ASSESSMENT BANNERS ────────────────────────────────────────────────────
+  async function loadAssessmentBanners(classId) {
+    try {
+      const today = new Date().toISOString().split('T')[0];
+      const assessments = await getUpcomingAssessmentsForStudent(classId);
+      if (!assessments.length) return;
+
+      // Sort chronologically — soonest first
+      assessments.sort((a, b) => (a.date || '').localeCompare(b.date || ''));
+
+      const container = document.getElementById('assessment-banners');
+      if (!container) return;
+
+      container.innerHTML = assessments.map(a => {
+        const daysAway  = Math.ceil((new Date(a.date + 'T12:00:00') - new Date()) / 86400000);
+        const formatted = new Date(a.date + 'T12:00:00').toLocaleDateString('en-GB', { weekday:'short', day:'numeric', month:'short' });
+        const dayLabel  = daysAway === 0 ? 'Today!' : daysAway === 1 ? 'Tomorrow' : `in ${daysAway} days`;
+
+        // Urgency colours — purple/indigo palette to distinguish from gold assignments
+        const borderColor = daysAway <= 7  ? '#a855f7'   // imminent — purple
+                          : daysAway <= 14 ? '#6366f1'   // soon — indigo
+                          : '#3b82f6';                   // upcoming — blue
+        const bgColor     = daysAway <= 7  ? '#2d1b4e'
+                          : daysAway <= 14 ? '#1e1b4b'
+                          : '#1e3a5f';
+        const labelColor  = daysAway <= 7  ? '#d8b4fe'
+                          : daysAway <= 14 ? '#a5b4fc'
+                          : '#93c5fd';
+        const icon        = daysAway <= 7 ? '🔴' : daysAway <= 14 ? '🟠' : '📅';
+        const modList     = (a.modules || []).map(m => m.toUpperCase()).join(' · ');
+        const subjectLabel = a.subject ? a.subject.charAt(0).toUpperCase() + a.subject.slice(1) + ' — ' : '';
+
+        return `<div style="background:${bgColor};border-bottom:3px solid ${borderColor}">
+          <div style="max-width:1000px;margin:0 auto;padding:0.65rem 1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+            <span style="font-size:1rem">📅</span>
+            <div style="flex:1;min-width:0">
+              <span style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.75rem;color:${labelColor};text-transform:uppercase;letter-spacing:0.07em">Upcoming Assessment</span>
+              <div style="color:white;font-size:0.875rem;font-weight:600">${subjectLabel}${a.label || 'Assessment'}${modList ? ' — ' + modList : ''}</div>
+              <div style="font-size:0.72rem;color:#94a3b8;margin-top:0.1rem">${icon} ${dayLabel} · ${formatted}</div>
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+    } catch(e) { console.log('Could not load assessments', e); }
+  }
 
   window.handleSignOut = async () => {
     const { signOutUser } = await import('./firebase.js');
