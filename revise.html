@@ -310,7 +310,7 @@
 
 <script type="module">
   import {
- onAuthChange, loadRAG, saveRAG } from './firebase.js';
+ onAuthChange, loadRAG, saveRAG, signOutUser } from './firebase.js';
 
 
 
@@ -459,6 +459,7 @@
     // — do NOT call window.location.href here as that creates the loop
   });
 
+  window._sshSignOutFn = () => signOutUser().then(() => { window.location.href = 'login.html'; }).catch(() => { window.location.href = 'login.html'; });
   function renderTopic(topicName) {
     currentTopic = topicName;
     const topicData = contentData?.topics?.[topicName];
