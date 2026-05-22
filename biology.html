@@ -291,7 +291,7 @@
 
 <script type="module">
   import {
- onAuthChange, signOutUser, getUserRole, getUserProfile, isStaffRole, getModuleScheduleStatus, loadRAG } from './firebase.js';
+ onAuthChange, signOutUser, getUserRole, getUserProfile, isStaffRole, getModuleScheduleStatus, loadRAG, getUpcomingAssessmentsForStudent } from './firebase.js';
 
 
 
@@ -373,15 +373,18 @@
     applyAssessmentFlags(user, profile);
   async function applyAssessmentFlags(user, profile) {
     try {
+      console.log('[AssessFlags] profile.class:', profile?.class);
       if (!profile?.class) return;
-      // Staff have class 'Teachers' which has no year prefix — use representative Year 10 class
       const lookupClass = (profile.class === 'Teachers' || !/^\d/.test(profile.class))
         ? '10S1' : profile.class;
+      console.log('[AssessFlags] lookupClass:', lookupClass);
       const assessments = await getUpcomingAssessmentsForStudent(lookupClass);
+      console.log('[AssessFlags] assessments returned:', assessments.length, assessments);
       const today = new Date().toISOString().split('T')[0];
       const upcoming = assessments.filter(a =>
         a.subject?.toLowerCase() === 'biology' && a.date >= today
       );
+      console.log('[AssessFlags] upcoming biology:', upcoming.length, upcoming);
       if (!upcoming.length) return;
 
       const cards = document.querySelectorAll('.module-card:not(.coming-soon)');
