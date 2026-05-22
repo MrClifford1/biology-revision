@@ -57,6 +57,11 @@
     .sched-tile-badge.past    { background: #fef9c3; color: #713f12; border: 1.5px solid #fde68a; }
     .module-card.schedule-future { opacity: 0.65; }
     .module-card.schedule-future:hover { opacity: 0.85; }
+    /* ── MODULE PROGRESS BAR ─────────────────────────────────────────────── */
+    .mod-prog-wrap { padding: 0.5rem 1.1rem 0.75rem; border-top: 1px solid var(--border); }
+    .mod-prog-bar-bg { background: #e2e8f0; border-radius: 100px; height: 6px; overflow: hidden; margin-bottom: 0.3rem; }
+    .mod-prog-bar-fill { height: 100%; border-radius: 100px; transition: width 0.6s ease; }
+    .mod-prog-label { font-family: 'Nunito', sans-serif; font-size: 0.7rem; font-weight: 700; color: var(--subtext); display: flex; justify-content: space-between; }
   
     /* ── SHARED UNIFIED NAV ──────────────────────────────────────────────────── */
     .ssh-nav {
@@ -453,7 +458,7 @@
 
 <script type="module">
   import {
- onAuthChange, signOutUser, getUserRole, getUserProfile, getModuleScheduleStatus } from './firebase.js';
+ onAuthChange, signOutUser, getUserRole, getUserProfile, getModuleScheduleStatus, loadRAG } from './firebase.js';
 
 
 
@@ -518,7 +523,46 @@
     if (['admin','superadmin'].includes(role)) document.getElementById('nav-admin-link').style.display = 'inline-flex';
     if (role === 'superadmin') document.getElementById('nav-superadmin-link').style.display = 'inline-flex';
     applyScheduleTileBadges(user);
+    applyModuleProgress(user);
   });
+
+  async function applyModuleProgress(user) {
+    const moduleIds = ['physics-p1', 'physics-p2', 'physics-p3', 'physics-p4', 'physics-p5', 'physics-p6', 'physics-p7'];
+    // Load all modules in parallel
+    const results = await Promise.all(moduleIds.map(mid => loadRAG(user.uid, mid).catch(() => ({}))));
+    moduleIds.forEach((mid, i) => {
+      const ragState  = results[i] || {};
+      const modCode   = mid.replace('physics-', ''); // e.g. 'b1'
+      const card      = document.querySelector(`.module-card.${modCode}`);
+      if (!card) return;
+
+      // Compute average score across all topics (ignore internal _ keys)
+      const entries = Object.entries(ragState).filter(([k]) => !k.startsWith('_'));
+      if (!entries.length) return; // no data yet — don't show bar
+
+      const avgScore = entries.reduce((sum, [, e]) => sum + (e?.score || 0), 0) / entries.length;
+      const pct      = Math.min(100, Math.round(avgScore));
+      if (pct === 0) return; // nothing recorded yet
+
+      // Pick colour based on score
+      const colour = pct >= 76 ? '#22c55e'
+                   : pct >= 56 ? '#84cc16'
+                   : pct >= 31 ? '#eab308'
+                   : '#ef4444';
+      const tierLabel = pct >= 76 ? 'Confident'
+                      : pct >= 56 ? 'Approaching'
+                      : pct >= 31 ? 'Developing'
+                      : 'Beginning';
+
+      // Inject progress bar below schedule badge (at bottom of card)
+      const wrap = document.createElement('div');
+      wrap.className = 'mod-prog-wrap';
+      wrap.innerHTML = `
+        <div class="mod-prog-bar-bg"><div class="mod-prog-bar-fill" style="width:${pct}%;background:${colour}"></div></div>
+        <div class="mod-prog-label"><span>${tierLabel}</span><span>${pct}%</span></div>`;
+      card.appendChild(wrap);
+    });
+  }
 
   window.handleSignOut = async () => {
     await signOutUser();

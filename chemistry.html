@@ -52,6 +52,10 @@
     .coming-soon-badge{position:absolute;top:10px;right:10px;color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.68rem;padding:0.25rem 0.7rem;border-radius:100px;letter-spacing:0.06em;text-transform:uppercase;}
     #auth-loading{position:fixed;inset:0;background:var(--navy-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;}
     @media(max-width:600px){.modules-grid{grid-template-columns:1fr;}}
+    .mod-prog-wrap{padding:0.5rem 1.1rem 0.75rem;border-top:1px solid var(--border);}
+    .mod-prog-bar-bg{background:#e2e8f0;border-radius:100px;height:6px;overflow:hidden;margin-bottom:0.3rem;}
+    .mod-prog-bar-fill{height:100%;border-radius:100px;transition:width 0.6s ease;}
+    .mod-prog-label{font-family:'Nunito',sans-serif;font-size:0.7rem;font-weight:700;color:var(--subtext);display:flex;justify-content:space-between;}
   
     /* ── SHARED UNIFIED NAV ──────────────────────────────────────────────────── */
     .ssh-nav {
@@ -268,7 +272,7 @@
 
 <script type="module">
   import {
- onAuthChange, signOutUser, getUserRole } from './firebase.js';
+ onAuthChange, signOutUser, getUserRole, loadRAG } from './firebase.js';
 
 
   onAuthChange(async user => {
@@ -285,7 +289,30 @@
     }
     if (['admin','superadmin'].includes(role)) document.getElementById('nav-admin-link').style.display = 'inline-flex';
     if (role === 'superadmin') document.getElementById('nav-superadmin-link').style.display = 'inline-flex';
+    applyModuleProgress(user);
   });
+
+  async function applyModuleProgress(user) {
+    const moduleIds = ['chemistry-c1','chemistry-c2','chemistry-c3','chemistry-c4','chemistry-c5','chemistry-c6','chemistry-c7'];
+    const results = await Promise.all(moduleIds.map(mid => loadRAG(user.uid, mid).catch(() => ({}))));
+    moduleIds.forEach((mid, i) => {
+      const ragState = results[i] || {};
+      const modCode  = mid.replace('chemistry-', '');
+      const card     = document.querySelector(`.module-card.${modCode}`);
+      if (!card) return;
+      const entries  = Object.entries(ragState).filter(([k]) => !k.startsWith('_'));
+      if (!entries.length) return;
+      const avgScore = entries.reduce((sum, [, e]) => sum + (e?.score || 0), 0) / entries.length;
+      const pct      = Math.min(100, Math.round(avgScore));
+      if (pct === 0) return;
+      const colour    = pct >= 76 ? '#22c55e' : pct >= 56 ? '#84cc16' : pct >= 31 ? '#eab308' : '#ef4444';
+      const tierLabel = pct >= 76 ? 'Confident' : pct >= 56 ? 'Approaching' : pct >= 31 ? 'Developing' : 'Beginning';
+      const wrap = document.createElement('div');
+      wrap.className = 'mod-prog-wrap';
+      wrap.innerHTML = `<div class="mod-prog-bar-bg"><div class="mod-prog-bar-fill" style="width:${pct}%;background:${colour}"></div></div><div class="mod-prog-label"><span>${tierLabel}</span><span>${pct}%</span></div>`;
+      card.appendChild(wrap);
+    });
+  }
   window.handleSignOut = async () => { await signOutUser(); window.location.href = 'login.html'; };
 </script>
 
