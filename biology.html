@@ -361,6 +361,8 @@
     
     // Enforce class selection — redirect to index to pick class if not set
     // Staff skip this check
+    // Load profile and enforce class selection
+    const profile = await getUserProfile(user.uid);
     if (!isStaffRole(role) && !profile?.class) {
       const returnUrl = encodeURIComponent(window.location.href);
       window.location.href = `index.html?pickclass=1&return=${returnUrl}`;

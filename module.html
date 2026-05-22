@@ -2619,6 +2619,9 @@ function renderLearnCheck(topicName, attemptNum, container) {
       html += `<div class="learn-check-result pass">✅ No check available — moving on automatically.</div>
         <div class="learn-check-actions"><button class="btn-primary learn-next-btn" data-topic="${topicName}">Next Topic →</button></div>`;
       container.innerHTML = html;
+      // Wire the next button after setting innerHTML
+      const _autoNextBtn = container.querySelector('.learn-next-btn');
+      if (_autoNextBtn) _autoNextBtn.addEventListener('click', () => markLearnTopicDone(topicName));
       return;
     }
     // Render simple cloze fill-in
