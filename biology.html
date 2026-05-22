@@ -64,6 +64,18 @@
     .mod-prog-label { font-family: 'Nunito', sans-serif; font-size: 0.7rem; font-weight: 700; color: var(--subtext); display: flex; justify-content: space-between; }
   
     
+        .year-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0.6rem; margin-bottom:1.25rem; }
+    .year-btn { border:2px solid var(--border); background:#f8fafc; border-radius:12px; padding:0.85rem 0.5rem; font-family:'Nunito',sans-serif; font-weight:800; font-size:1rem; color:var(--navy); cursor:pointer; transition:all 0.18s; text-align:center; }
+    .year-btn:hover { border-color:var(--navy); background:#f0f4ff; }
+    .year-btn.selected { border-color:var(--navy); background:var(--navy); color:white; }
+    .class-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0.45rem; margin-bottom:1.25rem; }
+    .class-btn { border:2px solid var(--border); background:#f8fafc; border-radius:10px; padding:0.5rem 0.25rem; font-family:'Nunito',sans-serif; font-weight:800; font-size:0.8rem; color:var(--navy); cursor:pointer; transition:all 0.18s; text-align:center; }
+    .class-btn:hover { border-color:var(--navy); background:#f0f4ff; }
+    .class-btn.selected { border-color:var(--red,#e33); background:var(--red,#e33); color:white; }
+    .modal-step { font-family:'Nunito',sans-serif; font-weight:800; font-size:0.8rem; color:var(--subtext); text-transform:uppercase; letter-spacing:0.07em; margin-bottom:0.6rem; }
+    .btn-modal-confirm { width:100%; background:var(--navy); color:white; border:none; font-family:'Nunito',sans-serif; font-weight:800; font-size:1rem; padding:0.85rem; border-radius:12px; cursor:pointer; transition:background 0.18s; }
+    .btn-modal-confirm:hover { background:var(--navy-dark); }
+    .btn-modal-confirm:disabled { background:#cbd5e1; cursor:not-allowed; }
     .settings-overlay { position:fixed;inset:0;background:rgba(15,29,61,0.5);z-index:900;backdrop-filter:blur(2px); }
     .settings-overlay.hidden { display:none; }
     .settings-drawer { position:fixed;top:0;right:0;height:100%;width:320px;max-width:90vw;background:white;z-index:1000;box-shadow:-8px 0 40px rgba(0,0,0,0.15);display:flex;flex-direction:column;transform:translateX(0);transition:transform 0.25s ease; }
@@ -455,9 +467,10 @@
     document.getElementById('drawer-confirm-btn').disabled = false;
   };
   window.confirmClassDrawer = async () => {
-    if (!_drawerUser || !_selectedClassDrawer) return;
+    const _du = window._drawerUser;
+    if (!_du || !_selectedClassDrawer) return;
     const { saveClass } = await import('./firebase.js');
-    await saveClass(_drawerUser.uid, _selectedClassDrawer);
+    await saveClass(_du.uid, _selectedClassDrawer);
     document.getElementById('drawer-class-display').textContent = _selectedClassDrawer;
     if (window._drawerProfile) window._drawerProfile.class = _selectedClassDrawer;
     closeSettings();
