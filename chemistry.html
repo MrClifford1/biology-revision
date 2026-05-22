@@ -315,6 +315,47 @@
     if (['admin','superadmin'].includes(role)) document.getElementById('nav-admin-link').style.display = 'inline-flex';
     if (role === 'superadmin') document.getElementById('nav-superadmin-link').style.display = 'inline-flex';
     applyModuleProgress(user);
+    applyAssessmentFlags(user);
+  async function applyAssessmentFlags(user) {
+    try {
+      const profile = await getUserProfile(user.uid);
+      if (!profile?.class) return;
+      const assessments = await getUpcomingAssessmentsForStudent(profile.class);
+      const today = new Date().toISOString().split('T')[0];
+      const upcoming = assessments.filter(a =>
+        a.subject?.toLowerCase() === 'chemistry' && a.date >= today
+      );
+      if (!upcoming.length) return;
+
+      const cards = document.querySelectorAll('.module-card:not(.coming-soon)');
+      cards.forEach(card => {
+        const href = card.getAttribute('href') || '';
+        const m = href.match(/module=([a-z0-9]+)/);
+        if (!m) return;
+        const modId = m[1].toLowerCase();
+
+        // Find soonest assessment covering this module
+        const relevant = upcoming.filter(a =>
+          (a.modules || []).some(mod => mod.toLowerCase() === modId)
+        ).sort((a,b) => (a.date||'').localeCompare(b.date||''));
+        if (!relevant.length) return;
+
+        const next = relevant[0];
+        const daysAway = Math.ceil((new Date(next.date+'T12:00:00') - new Date()) / 86400000);
+        const cls   = daysAway <= 7 ? 'imminent' : daysAway <= 14 ? 'soon' : 'upcoming';
+        const icon  = daysAway <= 7 ? '🔴' : daysAway <= 14 ? '🟠' : '📅';
+        const label = daysAway === 0 ? 'Today!' : daysAway === 1 ? 'Tomorrow' : `in ${daysAway} days`;
+
+        const info = card.querySelector('.module-info');
+        if (info) {
+          const flag = document.createElement('div');
+          flag.className = `assess-card-flag ${cls}`;
+          flag.innerHTML = `${icon} Assessment ${label}`;
+          info.appendChild(flag);
+        }
+      });
+    } catch(e) { console.log('[AssessmentFlags]', e); }
+  }
     // Wire settings drawer
     window._drawerUser = user;
     const _dp = await getUserProfile(user.uid);
