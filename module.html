@@ -1201,10 +1201,17 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
 
   let reviseData = null;
   try {
-    const fetchUrl = `data/revise/${revSubject}-${revModule}-revise.json`;
+    // Try subject-prefixed path first (e.g. biology-b1-revise.json)
+    let fetchUrl = `data/revise/${revSubject}-${revModule}-revise.json`;
     console.log('[Revise] fetching:', fetchUrl);
-    const r = await fetch(fetchUrl);
+    let r = await fetch(fetchUrl);
     console.log('[Revise] response status:', r.status);
+    // Fallback: try without subject prefix (e.g. b1-revise.json)
+    if (!r.ok && revModule) {
+      fetchUrl = `data/revise/${revModule}-revise.json`;
+      console.log('[Revise] fallback fetch:', fetchUrl);
+      r = await fetch(fetchUrl);
+    }
     if (r.ok) reviseData = await r.json();
   } catch(e) { console.log('[Revise] fetch error:', e); }
 
