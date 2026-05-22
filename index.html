@@ -603,8 +603,12 @@
       document.getElementById('name-modal').classList.remove('hidden');
     }
 
-    // Show class picker if no valid class set
-    if (!isClassValid(profile)) {
+    // Show class picker if no valid class set OR if redirected from another page
+    const _pickclass = new URLSearchParams(window.location.search).get('pickclass');
+    const _returnTo  = new URLSearchParams(window.location.search).get('return');
+    if (_returnTo) window._classReturnUrl = decodeURIComponent(_returnTo);
+
+    if (!isClassValid(profile) || _pickclass) {
       document.getElementById('class-modal').classList.remove('hidden');
     }
 
@@ -729,10 +733,14 @@
     await saveClass(currentUser.uid, selectedClass);
     document.getElementById('class-modal').classList.add('hidden');
     document.getElementById('drawer-class-display').textContent = selectedClass;
+    // Redirect back to original page if came from another page
+    if (window._classReturnUrl) {
+      window.location.href = window._classReturnUrl;
+      return;
+    }
     // Update greeting tag
     const tag = document.querySelector('.user-greeting span span');
     if (tag) tag.textContent = selectedClass;
-    const profile = await import('./firebase.js').then(m => m.getUserProfile(currentUser.uid));
     location.reload();
   };
 

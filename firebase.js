@@ -339,8 +339,9 @@ function getCurrentAcademicYear() {
 }
 
 export function isClassValid(profile) {
-  if (!profile?.class || profile.classSetYear == null) return false;
-  return profile.classSetYear >= getCurrentAcademicYear();
+  // Only check that a class is set — no annual expiry
+  // (annual reset was causing students to lose dashboard visibility)
+  return !!(profile?.class && profile.class.trim().length > 0);
 }
 
 // ── ROLES ─────────────────────────────────────────────────────────────────────

@@ -488,7 +488,7 @@
 
 <script type="module">
   import {
- onAuthChange, signOutUser, getUserRole, getUserProfile, getModuleScheduleStatus, loadRAG } from './firebase.js';
+ onAuthChange, signOutUser, getUserRole, getUserProfile, isStaffRole, getModuleScheduleStatus, loadRAG } from './firebase.js';
 
 
 
@@ -552,6 +552,14 @@
     }
     if (['admin','superadmin'].includes(role)) document.getElementById('nav-admin-link').style.display = 'inline-flex';
     if (role === 'superadmin') document.getElementById('nav-superadmin-link').style.display = 'inline-flex';
+    
+    // Enforce class selection — redirect to index to pick class if not set
+    // Staff skip this check
+    if (!isStaffRole(role) && !profile?.class) {
+      const returnUrl = encodeURIComponent(window.location.href);
+      window.location.href = `index.html?pickclass=1&return=${returnUrl}`;
+      return;
+    }
     applyScheduleTileBadges(user);
     applyModuleProgress(user);
     applyAssessmentFlags(user);
