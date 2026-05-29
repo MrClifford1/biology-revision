@@ -107,7 +107,10 @@
     .revise-card-graphic-num { position: absolute; bottom: 4px; right: 8px; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.62rem; color: white; opacity: 0.55; text-transform: uppercase; letter-spacing: 0.06em; }
     .revise-card-body { padding: 0.7rem 1rem 0.6rem; flex: 1; display: flex; flex-direction: column; gap: 0.35rem; }
     .revise-card-name { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.92rem; color: var(--text); line-height: 1.25; flex: 1; }
-    .revise-card-xp { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.7rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 100px; align-self: flex-start; }
+    .revise-card-xp-row { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.2rem; }
+    .revise-card-xp-label { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.68rem; white-space: nowrap; flex-shrink: 0; }
+    .revise-card-xp-track { flex: 1; height: 7px; background: #e2e8f0; border-radius: 100px; overflow: hidden; }
+    .revise-card-xp-fill { height: 100%; border-radius: 100px; transition: width 0.4s ease; }
     .revise-card-actions { display: flex; gap: 0.5rem; padding: 0 1rem 0.85rem; }
     .btn-revise-read { background: var(--accent); color: white; border: none; border-radius: 8px; padding: 0.4rem 0.9rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.78rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem; transition: opacity 0.15s; white-space: nowrap; flex: 1; justify-content: center; }
     .btn-revise-read:hover { opacity: 0.85; }
@@ -1295,6 +1298,7 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
       const xpLabel = score > 0 ? `${emoji} ${score} XP` : `⚪ No XP`;
 
       const icon = topicEmoji(topic);
+      const tierLabel = TIER_META[tier]?.label || 'No XP';
       cards += `<div class="revise-card">
         <div class="revise-card-graphic" style="background:linear-gradient(135deg,${colour}28 0%,${colour}10 100%)">
           <span style="filter:drop-shadow(0 2px 6px ${colour}44)">${icon}</span>
@@ -1302,7 +1306,13 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
         </div>
         <div class="revise-card-body">
           <div class="revise-card-name">${topic}</div>
-          <div class="revise-card-xp" style="background:${colour}18;color:${colour};border:1.5px solid ${colour}33">${xpLabel}</div>
+          <div class="revise-card-xp-row">
+            <span class="revise-card-xp-label" style="color:${colour}">${emoji} ${tierLabel}</span>
+            <div class="revise-card-xp-track">
+              <div class="revise-card-xp-fill" style="width:${score}%;background:${colour}"></div>
+            </div>
+            <span class="revise-card-xp-label" style="color:var(--subtext)">${score}</span>
+          </div>
         </div>
         <div class="revise-card-actions">
           <a href="revise.html?subject=${revSubject}&module=${revModule}&topic=${encodedTopic}" class="btn-revise-read">📖 Read</a>
