@@ -249,6 +249,22 @@
     }
     /* ── END SHARED NAV ──────────────────────────────────────────────────────── */
 
+    /* ── XP TOAST ────────────────────────────────────────────────────────────── */
+    @keyframes xp-float {
+      0%   { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+      15%  { opacity: 1; transform: translateX(-50%) translateY(-10px) scale(1.15); }
+      100% { opacity: 0; transform: translateX(-50%) translateY(-60px) scale(0.9); }
+    }
+    .xp-toast {
+      position: fixed; left: 50%; top: 42%;
+      font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.3rem;
+      color: white; background: #3b82f6;
+      padding: 0.45rem 1.25rem; border-radius: 100px;
+      pointer-events: none; z-index: 9999;
+      box-shadow: 0 4px 20px rgba(59,130,246,0.5);
+      animation: xp-float 1.8s ease-out forwards;
+    }
+
   </style>
 </head>
 <body>
@@ -692,15 +708,22 @@
     ];
     const msg = msgs[correct];
 
-    // Score → activity percentage (1=33%, 2=67%, 3=100%)
-    const scoreMap = [0, 33, 67, 100];
-    const activityPct = scoreMap[correct];
+    // Fixed XP: 1/3=+3, 2/3=+6, 3/3=+10, capped at Rookie ceiling (33)
+    const xpMap = [0, 3, 6, 10];
+    const xpRaw = xpMap[correct];
 
-    // Update RAG via proper weighted nudge system
-    if (currentUser && activityPct > 0) {
+    let xpGained = 0;
+    if (currentUser && xpRaw > 0) {
       try {
-        const updated = await updateTopicScore(currentUser.uid, moduleKey, currentTopic, activityPct, 'revise');
-        ragState = updated;
+        const entry = ragState[currentTopic];
+        const currentScore = typeof entry === 'object' ? (entry?.score ?? 0) : (entry || 0);
+        xpGained = Math.max(0, Math.min(xpRaw, 33 - currentScore));
+        if (xpGained > 0) {
+          const updated = { ...(entry || {}), score: currentScore + xpGained, lastActivity: new Date().toISOString() };
+          ragState[currentTopic] = updated;
+          await saveRAG(currentUser.uid, moduleKey, ragState);
+          showXPToast(xpGained);
+        }
       } catch(e) {}
     }
 
@@ -708,7 +731,7 @@
     const resultDiv = document.createElement('div');
     resultDiv.innerHTML = `
       <div class="quiz-score-banner ${msg.cls}">${msg.text}</div>
-      ${activityPct > 0 ? `<div style="font-size:0.75rem;color:var(--subtext);text-align:center;margin-top:0.4rem">✅ Topic score updated</div>` : ''}
+      ${xpGained > 0 ? `<div style="font-size:0.75rem;color:var(--subtext);text-align:center;margin-top:0.4rem">+${xpGained} XP added to this topic</div>` : xpRaw > 0 ? `<div style="font-size:0.75rem;color:var(--subtext);text-align:center;margin-top:0.4rem">Already at Rookie level — complete graded activities to level up</div>` : ''}
       <div style="text-align:center;margin-top:0.75rem">
         <button class="btn-quiz-retry" onclick="loadQuiz()">🔄 Try again with new questions</button>
       </div>`;
@@ -726,6 +749,14 @@
         ragState = updated;
       } catch(e) {}
     }
+  }
+
+  function showXPToast(xp) {
+    const toast = document.createElement('div');
+    toast.className = 'xp-toast';
+    toast.textContent = `+${xp} XP`;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 1800);
   }
 
 </script>
