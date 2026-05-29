@@ -135,9 +135,9 @@ export const RAG_INPUT_WEIGHTS = {
 export const RAG_SCORE_CAPS = {
   mock:      100,
   paper:     100,
-  revise:    55,    // Revise quiz caps at top of Developing tier
+  revise:    33,    // Revise quiz caps at top of Rookie tier
   words:     60,    // Words game caps at Approaching tier
-  flashcard: 20,    // Flashcards cap at Beginning tier
+  flashcard: 3,     // Flashcards only register as started (bottom of Rookie)
 };
 
 // Decay rates: % score lost per day of inactivity (after 7-day grace period)
