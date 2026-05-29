@@ -708,17 +708,16 @@
     ];
     const msg = msgs[correct];
 
-    // Fixed XP: 1/3=+3, 2/3=+6, 3/3=+10, capped at Rookie ceiling (33)
-    const xpMap = [0, 3, 6, 10];
-    const xpRaw = xpMap[correct];
+    // Fixed XP: 3 per correct answer (max 9), stops if score already ≥ 10
+    const xpRaw = correct * 3;
 
     let xpGained = 0;
     if (currentUser && xpRaw > 0) {
       try {
         const entry = ragState[currentTopic];
         const currentScore = typeof entry === 'object' ? (entry?.score ?? 0) : (entry || 0);
-        xpGained = Math.max(0, Math.min(xpRaw, 33 - currentScore));
-        if (xpGained > 0) {
+        if (currentScore < 10) {
+          xpGained = Math.min(xpRaw, 10 - currentScore);
           const updated = { ...(entry || {}), score: currentScore + xpGained, lastActivity: new Date().toISOString() };
           ragState[currentTopic] = updated;
           await saveRAG(currentUser.uid, moduleKey, ragState);
@@ -731,7 +730,7 @@
     const resultDiv = document.createElement('div');
     resultDiv.innerHTML = `
       <div class="quiz-score-banner ${msg.cls}">${msg.text}</div>
-      ${xpGained > 0 ? `<div style="font-size:0.75rem;color:var(--subtext);text-align:center;margin-top:0.4rem">+${xpGained} XP added to this topic</div>` : xpRaw > 0 ? `<div style="font-size:0.75rem;color:var(--subtext);text-align:center;margin-top:0.4rem">Already at Rookie level — complete graded activities to level up</div>` : ''}
+      ${xpGained > 0 ? `<div style="font-size:0.75rem;color:var(--subtext);text-align:center;margin-top:0.4rem">+${xpGained} XP added to this topic</div>` : xpRaw > 0 ? `<div style="font-size:0.75rem;color:var(--subtext);text-align:center;margin-top:0.4rem">Already at max Revise XP — complete other activities to level up</div>` : ''}
       <div style="text-align:center;margin-top:0.75rem">
         <button class="btn-quiz-retry" onclick="loadQuiz()">🔄 Try again with new questions</button>
       </div>`;

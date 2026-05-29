@@ -661,14 +661,14 @@
 
 <div class="tabs-wrapper">
   <div class="tabs">
-    <button class="tab-btn" data-tab="learn">🎓 Learn</button>
-    <button class="tab-btn active" data-tab="revision">📖 Revise</button>
-    <button class="tab-btn" data-tab="flashcards">🃏 Flashcards</button>
-    <button class="tab-btn" data-tab="keywords">🔤 Words</button>
-    <button class="tab-btn" data-tab="cloze">🧩 Cloze</button>
-    <button class="tab-btn" data-tab="scribble">✍️ Scribble</button>
-    <button class="tab-btn" data-tab="practice">✏️ Mini Mock</button>
-    <button class="tab-btn" data-tab="paper">📝 Paper</button>
+    <button class="tab-btn" data-tab="learn" title="Read through the topic content · No XP">🎓 Learn</button>
+    <button class="tab-btn active" data-tab="revision" title="3-question quiz · Up to 9 XP · Max 10 XP total">📖 Revise</button>
+    <button class="tab-btn" data-tab="flashcards" title="5-card recall game · 1 XP per correct card · Max 35 XP total">🃏 Flashcards</button>
+    <button class="tab-btn" data-tab="keywords" title="Drag words to definitions · 1 XP per correct word · Max 35 XP total">🔤 Words</button>
+    <button class="tab-btn" data-tab="cloze" title="Fill in the blanks · 1 XP per correct blank · Max 35 XP total">🧩 Cloze</button>
+    <button class="tab-btn" data-tab="scribble" title="Write from memory · Up to 10 XP · Max 50 XP total">✍️ Scribble</button>
+    <button class="tab-btn" data-tab="practice" title="Exam-style questions · Up to 15 XP · No XP cap">✏️ Mini Mock</button>
+    <button class="tab-btn" data-tab="paper" title="Full past paper · Up to 15 XP · No XP cap">📝 Paper</button>
   </div>
 </div>
 
@@ -1573,15 +1573,30 @@ async function reloadRAGFromHistory(uid) {
       const updates = window._pendingRAGUpdates;
       window._pendingRAGUpdates = [];
       let currentState = { ...loaded };
-      let mockXPGained = 0;
-      for (const { topic, activityPct, inputType } of updates) {
+      // Aggregate per-question results by topic
+      const topicTotals = {};
+      for (const { topic, activityPct } of updates) {
         const idx = fuzzyMatchTopic(topic, meta.topics);
         if (idx < 0) continue;
         const topicName = meta.topics[idx];
-        const oldScore = currentState[topicName]?.score ?? 0;
-        const newEntry = computeNewTopicScore(currentState[topicName] || null, activityPct, inputType);
-        currentState[topicName] = newEntry;
-        mockXPGained += Math.max(0, (newEntry.score ?? 0) - oldScore);
+        if (!topicTotals[topicName]) topicTotals[topicName] = { sum: 0, count: 0 };
+        topicTotals[topicName].sum += activityPct;
+        topicTotals[topicName].count++;
+      }
+      // Apply XP: round(topicPct/100 * 15), no upper cap (mock/paper go to 100)
+      let mockXPGained = 0;
+      const now = new Date().toISOString();
+      for (const [topicName, { sum, count }] of Object.entries(topicTotals)) {
+        const topicPct = sum / count;
+        const xpRaw = Math.round(topicPct / 100 * 15);
+        if (xpRaw <= 0) continue;
+        const entry = currentState[topicName] || {};
+        const currentScore = entry.score ?? 0;
+        const xpGained = Math.min(xpRaw, 100 - currentScore);
+        if (xpGained > 0) {
+          currentState[topicName] = { ...entry, score: currentScore + xpGained, lastActivity: now };
+          mockXPGained += xpGained;
+        }
       }
       renderChecklist(currentState);
       if (window._saveRAG) await window._saveRAG(uid, `${subjectId}-${moduleId}`, currentState);
@@ -1777,16 +1792,19 @@ function showFCFeedback(isCorrect, correctWord) {
 async function recordFCAnswer(isCorrect) {
   const card = fcDeck[fcIndex];
   if (isCorrect) fcCorrect++; else fcWrong++;
-  if (window._currentUser && card.sub_topic) {
+  if (isCorrect && window._currentUser && card.sub_topic) {
     const idx = fuzzyMatchTopic(card.sub_topic, meta.topics);
     if (idx >= 0) {
       const topicName = meta.topics[idx];
-      const oldScore = ragState[topicName]?.score ?? 0;
-      const updated = computeNewTopicScore(ragState[topicName] || null, isCorrect ? 100 : 0, 'flashcard');
-      ragState[topicName] = updated;
-      renderChecklist(ragState);
-      if (window._saveRAG) window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState).catch(()=>{});
-      if (isCorrect) showXPToast((updated.score ?? 0) - oldScore);
+      const entry = ragState[topicName] || {};
+      const currentScore = entry.score ?? 0;
+      if (currentScore < 35) {
+        const xp = Math.min(1, 35 - currentScore);
+        ragState[topicName] = { ...entry, score: currentScore + xp, lastActivity: new Date().toISOString() };
+        renderChecklist(ragState);
+        if (window._saveRAG) window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState).catch(()=>{});
+        showXPToast(xp);
+      }
     }
   }
   updateFCProgress();
@@ -2055,10 +2073,13 @@ function submitGame() {
       const idx = fuzzyMatchTopic(pair.sub_topic || pair.word, meta.topics);
       if (idx >= 0) {
         const topicName = meta.topics[idx];
-        const oldScore = ragState[topicName]?.score ?? 0;
-        const updated = computeNewTopicScore(ragState[topicName] || null, isCorrect ? 100 : 0, 'words');
-        ragState[topicName] = updated;
-        wordsXPGained += Math.max(0, (updated.score ?? 0) - oldScore);
+        const entry = ragState[topicName] || {};
+        const currentScore = entry.score ?? 0;
+        if (isCorrect && currentScore < 35) {
+          const xp = Math.min(1, 35 - currentScore);
+          ragState[topicName] = { ...entry, score: currentScore + xp, lastActivity: new Date().toISOString() };
+          wordsXPGained += xp;
+        }
         topicResults.push({ topic: topicName, correct: isCorrect });
       }
     });
@@ -3200,17 +3221,22 @@ document.getElementById('scribble-submit-btn').addEventListener('click', async (
     showScribbleResults(result);
 
     // ── Update RAG ───────────────────────────────────────────────────────────
-    const inputType = _scribbleMode === 'guided' ? 'scribble_guided' : 'scribble_free';
     const activityPct = Math.max(0, Math.min(100, result.pct || 0));
     const idx = fuzzyMatchTopic(_scribbleCurrentTopic, meta.topics);
     if (idx >= 0 && window._currentUser) {
       const topicName = meta.topics[idx];
-      const oldScore = ragState[topicName]?.score ?? 0;
-      const newEntry  = computeNewTopicScore(ragState[topicName] || null, activityPct, inputType);
-      ragState[topicName] = newEntry;
-      renderChecklist(ragState);
-      if (window._saveRAG) window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState).catch(() => {});
-      showXPToast((newEntry.score ?? 0) - oldScore);
+      const entry = ragState[topicName] || {};
+      const currentScore = entry.score ?? 0;
+      if (currentScore < 50) {
+        const xpRaw = Math.round(activityPct / 100 * 10);
+        const xpGained = Math.min(xpRaw, 50 - currentScore);
+        if (xpGained > 0) {
+          ragState[topicName] = { ...entry, score: currentScore + xpGained, lastActivity: new Date().toISOString() };
+          renderChecklist(ragState);
+          if (window._saveRAG) window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState).catch(() => {});
+          showXPToast(xpGained);
+        }
+      }
     }
 
     // ── Log activity ─────────────────────────────────────────────────────────
@@ -3672,21 +3698,22 @@ window.submitCloze = async () => {
 
   document.getElementById('cloze-submit-btn').disabled = true;
 
-  // Score → pct → RAG boost
+  // Score → pct → XP (1 per correct blank, max 5, stops if topic ≥ 35)
   const pct = Math.round((correct / total) * 100);
-  const ragBoost = pct >= 80 ? 10 : pct >= 50 ? 6 : pct > 0 ? 3 : 0;
+  const clozeXP = Math.min(correct, 5);
 
   // Update RAG if logged in
-  if (window._currentUser && ragBoost > 0) {
+  let clozeXPGained = 0;
+  if (window._currentUser && clozeXP > 0) {
     try {
-      const entry = ragState[_clozeCurrentTopic];
-      const currentScore = typeof entry === 'object' ? (entry?.score ?? 0) : 0;
-      const newScore = Math.max(currentScore, ragBoost);
-      if (newScore > currentScore) {
-        ragState[_clozeCurrentTopic] = { ...(entry || {}), score: newScore, lastActivity: new Date().toISOString() };
+      const entry = ragState[_clozeCurrentTopic] || {};
+      const currentScore = entry.score ?? 0;
+      if (currentScore < 35) {
+        clozeXPGained = Math.min(clozeXP, 35 - currentScore);
+        ragState[_clozeCurrentTopic] = { ...entry, score: currentScore + clozeXPGained, lastActivity: new Date().toISOString() };
         if (window._saveRAG) await window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState).catch(()=>{});
         renderChecklist(ragState);
-        showXPToast(newScore - currentScore);
+        showXPToast(clozeXPGained);
       }
     } catch(e) {}
   }
@@ -3707,7 +3734,7 @@ window.submitCloze = async () => {
   const resultsEl = document.getElementById('cloze-results');
   resultsEl.innerHTML = `
     <div class="quiz-score-banner ${scoreClass}" style="margin-bottom:0.75rem">${scoreMsg}</div>
-    ${ragBoost > 0 ? `<div style="font-size:0.75rem;color:var(--subtext);text-align:center;margin-bottom:0.75rem">+${ragBoost}% added to ${_clozeCurrentTopic} topic score</div>` : ''}
+    ${clozeXPGained > 0 ? `<div style="font-size:0.75rem;color:var(--subtext);text-align:center;margin-bottom:0.75rem">+${clozeXPGained} XP added to ${_clozeCurrentTopic}</div>` : clozeXP > 0 ? `<div style="font-size:0.75rem;color:var(--subtext);text-align:center;margin-bottom:0.75rem">Already at max Cloze XP — try Scribble or Mock to level up</div>` : ''}
     <div style="background:white;border:1px solid var(--border);border-radius:12px;padding:1rem;margin-bottom:0.75rem">
       <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.75rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem">Results</div>
       ${resultRows.map(r => `
