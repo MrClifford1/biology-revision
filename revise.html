@@ -310,7 +310,7 @@
 
 <script type="module">
   import {
- onAuthChange, loadRAG, saveRAG, signOutUser } from './firebase.js';
+ onAuthChange, loadRAG, saveRAG, updateTopicScore, signOutUser } from './firebase.js';
 
 
 
@@ -692,27 +692,23 @@
     ];
     const msg = msgs[correct];
 
-    // Score → RAG points (1=3%, 2=6%, 3=10%)
-    const scoreMap = [0, 3, 6, 10];
-    const points = scoreMap[correct];
+    // Score → activity percentage (1=33%, 2=67%, 3=100%)
+    const scoreMap = [0, 33, 67, 100];
+    const activityPct = scoreMap[correct];
 
-    // Update RAG if score improves
-    if (currentUser && points > 0) {
-      const entry = ragState[currentTopic];
-      const currentScore = typeof entry === 'object' ? (entry?.score ?? 0) : (entry || 0);
-      const newScore = Math.max(currentScore, points);
-      if (newScore > currentScore) {
-        const updated = { ...(ragState[currentTopic] || {}), score: newScore, lastActivity: new Date().toISOString() };
-        ragState[currentTopic] = updated;
-        try { await saveRAG(currentUser.uid, moduleKey, ragState); } catch(e) {}
-      }
+    // Update RAG via proper weighted nudge system
+    if (currentUser && activityPct > 0) {
+      try {
+        const updated = await updateTopicScore(currentUser.uid, moduleKey, currentTopic, activityPct, 'revise');
+        ragState = updated;
+      } catch(e) {}
     }
 
     // Show result
     const resultDiv = document.createElement('div');
     resultDiv.innerHTML = `
       <div class="quiz-score-banner ${msg.cls}">${msg.text}</div>
-      ${points > 0 ? `<div style="font-size:0.75rem;color:var(--subtext);text-align:center;margin-top:0.4rem">+${points}% added to your topic score</div>` : ''}
+      ${activityPct > 0 ? `<div style="font-size:0.75rem;color:var(--subtext);text-align:center;margin-top:0.4rem">✅ Topic score updated</div>` : ''}
       <div style="text-align:center;margin-top:0.75rem">
         <button class="btn-quiz-retry" onclick="loadQuiz()">🔄 Try again with new questions</button>
       </div>`;
@@ -724,10 +720,11 @@
     const entry = ragState[topicName];
     const score = typeof entry === 'object' ? (entry?.score ?? 0) : (entry || 0);
     if (score === 0) {
-      // First visit — silent nudge to 1%
-      const updated = { ...(ragState[topicName] || {}), score: 1, lastActivity: new Date().toISOString() };
-      ragState[topicName] = updated;
-      try { await saveRAG(currentUser.uid, moduleKey, ragState); } catch(e) {}
+      // First visit — silent 1% nudge to mark as started
+      try {
+        const updated = await updateTopicScore(currentUser.uid, moduleKey, topicName, 1, 'revise');
+        ragState = updated;
+      } catch(e) {}
     }
   }
 

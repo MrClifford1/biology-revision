@@ -123,6 +123,7 @@ export async function updateExamTarget(uid, examTarget, yearGroup) {
 export const RAG_INPUT_WEIGHTS = {
   mock:      1.0,   // Mini Mock question
   paper:     1.0,   // Practice Paper question
+  revise:    0.5,   // Revise tab quiz
   words:     0.4,   // Keywords game correct match
   flashcard: 0.15,  // Flashcard recognition/recall
   // Future — just add a line:
@@ -134,6 +135,7 @@ export const RAG_INPUT_WEIGHTS = {
 export const RAG_SCORE_CAPS = {
   mock:      100,
   paper:     100,
+  revise:    55,    // Revise quiz caps at top of Developing tier
   words:     60,    // Words game caps at Approaching tier
   flashcard: 20,    // Flashcards cap at Beginning tier
 };
