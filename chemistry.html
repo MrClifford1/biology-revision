@@ -388,7 +388,7 @@
       const pct      = Math.min(100, Math.round(avgScore));
       if (pct === 0) return;
       const colour    = pct >= 76 ? '#22c55e' : pct >= 56 ? '#84cc16' : pct >= 31 ? '#eab308' : '#ef4444';
-      const tierLabel = pct >= 76 ? 'Confident' : pct >= 56 ? 'Approaching' : pct >= 31 ? 'Developing' : 'Beginning';
+      const tierLabel = pct >= 76 ? 'Expert' : pct >= 56 ? 'Scholar' : pct >= 31 ? 'Apprentice' : 'Rookie';
       const wrap = document.createElement('div');
       wrap.className = 'mod-prog-wrap';
       wrap.innerHTML = `<div class="mod-prog-bar-bg"><div class="mod-prog-bar-fill" style="width:${pct}%;background:${colour}"></div></div><div class="mod-prog-label"><span>${tierLabel}</span><span>${pct}%</span></div>`;

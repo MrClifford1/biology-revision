@@ -163,12 +163,12 @@ export function computeTier(score) {
 }
 
 export const TIER_META = {
-  not_started: { label: 'Not Started', emoji: '⬜', colour: '#cbd5e1', bg: '#f8fafc' },
-  beginning:   { label: 'Beginning',   emoji: '🔴', colour: '#ef4444', bg: '#fef2f2' },
-  developing:  { label: 'Developing',  emoji: '🟠', colour: '#f97316', bg: '#fff7ed' },
-  approaching: { label: 'Approaching', emoji: '🟡', colour: '#eab308', bg: '#fefce8' },
-  confident:   { label: 'Confident',   emoji: '🟢', colour: '#22c55e', bg: '#f0fdf4' },
-  mastered:    { label: 'Mastered',    emoji: '💙', colour: '#3b82f6', bg: '#eff6ff' },
+  not_started: { label: 'No XP',      emoji: '⚪', colour: '#cbd5e1', bg: '#f8fafc' },
+  beginning:   { label: 'Rookie',     emoji: '🔴', colour: '#ef4444', bg: '#fef2f2' },
+  developing:  { label: 'Apprentice', emoji: '🟠', colour: '#f97316', bg: '#fff7ed' },
+  approaching: { label: 'Scholar',    emoji: '🟡', colour: '#eab308', bg: '#fefce8' },
+  confident:   { label: 'Expert',     emoji: '🟢', colour: '#22c55e', bg: '#f0fdf4' },
+  mastered:    { label: 'Legend',     emoji: '⭐', colour: '#3b82f6', bg: '#eff6ff' },
 };
 
 // Apply time-based decay to a topic entry. Returns updated entry (does not save).

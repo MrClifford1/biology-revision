@@ -1078,13 +1078,13 @@
   <div class="checklist-card shared-rag rag-hidden" id="shared-rag-card">
     <h3 id="checklist-title">Topics</h3>
     <div class="checklist-legend">
-      <span class="legend-item">⬜ Not Started</span>
-      <span class="legend-item">🔴 Beginning</span>
-      <span class="legend-item">🟠 Developing</span>
-      <span class="legend-item">🟡 Approaching</span>
-      <span class="legend-item">🟢 Confident</span>
-      <span class="legend-item">💙 Mastered</span>
-      <span class="legend-item">⭐ Mastered &amp; Retained</span>
+      <span class="legend-item">⚪ No XP</span>
+      <span class="legend-item">🔴 Rookie</span>
+      <span class="legend-item">🟠 Apprentice</span>
+      <span class="legend-item">🟡 Scholar</span>
+      <span class="legend-item">🟢 Expert</span>
+      <span class="legend-item">⭐ Legend</span>
+      <span class="legend-item">🏆 Legend &amp; Retained</span>
       <span class="legend-item">📉 Decaying</span>
       <span style="font-size:0.72rem;color:var(--subtext);margin-left:auto">Updates from your question scores</span>
     </div>
@@ -1188,7 +1188,7 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
   const revModule  = _sp.get('module')  || '';
 
   const TIER_COLOURS = { not_started:'#cbd5e1', beginning:'#ef4444', developing:'#f97316', approaching:'#eab308', confident:'#22c55e', mastered:'#3b82f6' };
-  const TIER_EMOJIS  = { not_started:'⬜', beginning:'🔴', developing:'🟠', approaching:'🟡', confident:'🟢', mastered:'💙' };
+  const TIER_EMOJIS  = { not_started:'⚪', beginning:'🔴', developing:'🟠', approaching:'🟡', confident:'🟢', mastered:'⭐' };
 
   function getTier(score) {
     if (!score || score === 0) return 'not_started';
@@ -1363,12 +1363,12 @@ function hideRAG() {
 // ── RAG SYSTEM v2 ─────────────────────────────────────────────────────────────
 
 const TIER_META = {
-  not_started: { label: 'Not Started', emoji: '⬜', colour: '#cbd5e1', bg: '#f8fafc' },
-  beginning:   { label: 'Beginning',   emoji: '🔴', colour: '#ef4444', bg: '#fef2f2' },
-  developing:  { label: 'Developing',  emoji: '🟠', colour: '#f97316', bg: '#fff7ed' },
-  approaching: { label: 'Approaching', emoji: '🟡', colour: '#eab308', bg: '#fefce8' },
-  confident:   { label: 'Confident',   emoji: '🟢', colour: '#22c55e', bg: '#f0fdf4' },
-  mastered:    { label: 'Mastered',    emoji: '💙', colour: '#3b82f6', bg: '#eff6ff' },
+  not_started: { label: 'No XP',      emoji: '⚪', colour: '#cbd5e1', bg: '#f8fafc' },
+  beginning:   { label: 'Rookie',     emoji: '🔴', colour: '#ef4444', bg: '#fef2f2' },
+  developing:  { label: 'Apprentice', emoji: '🟠', colour: '#f97316', bg: '#fff7ed' },
+  approaching: { label: 'Scholar',    emoji: '🟡', colour: '#eab308', bg: '#fefce8' },
+  confident:   { label: 'Expert',     emoji: '🟢', colour: '#22c55e', bg: '#f0fdf4' },
+  mastered:    { label: 'Legend',     emoji: '⭐', colour: '#3b82f6', bg: '#eff6ff' },
 };
 
 const RAG_INPUT_WEIGHTS = {

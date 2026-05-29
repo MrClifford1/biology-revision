@@ -442,10 +442,10 @@
                    : pct >= 56 ? '#84cc16'
                    : pct >= 31 ? '#eab308'
                    : '#ef4444';
-      const tierLabel = pct >= 76 ? 'Confident'
-                      : pct >= 56 ? 'Approaching'
-                      : pct >= 31 ? 'Developing'
-                      : 'Beginning';
+      const tierLabel = pct >= 76 ? 'Expert'
+                      : pct >= 56 ? 'Scholar'
+                      : pct >= 31 ? 'Apprentice'
+                      : 'Rookie';
 
       // Inject progress bar below schedule badge (at bottom of card)
       const wrap = document.createElement('div');

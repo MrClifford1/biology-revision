@@ -635,12 +635,12 @@
   };
 
   const TIER_META = {
-    not_started:{label:'Not Started',emoji:'⬜',colour:'#cbd5e1'},
-    beginning:  {label:'Beginning',  emoji:'🔴',colour:'#ef4444'},
-    developing: {label:'Developing', emoji:'🟠',colour:'#f97316'},
-    approaching:{label:'Approaching',emoji:'🟡',colour:'#eab308'},
-    confident:  {label:'Confident',  emoji:'🟢',colour:'#22c55e'},
-    mastered:   {label:'Mastered',   emoji:'💙',colour:'#3b82f6'},
+    not_started:{label:'No XP',      emoji:'⚪',colour:'#cbd5e1'},
+    beginning:  {label:'Rookie',     emoji:'🔴',colour:'#ef4444'},
+    developing: {label:'Apprentice', emoji:'🟠',colour:'#f97316'},
+    approaching:{label:'Scholar',    emoji:'🟡',colour:'#eab308'},
+    confident:  {label:'Expert',     emoji:'🟢',colour:'#22c55e'},
+    mastered:   {label:'Legend',     emoji:'⭐',colour:'#3b82f6'},
   };
 
   function getTier(score) {
@@ -1185,8 +1185,8 @@ Write a helpful, encouraging insight for this student. Mention specific modules 
     }
 
     const TIER_COLOURS={not_started:'#cbd5e1',beginning:'#ef4444',developing:'#f97316',approaching:'#eab308',confident:'#22c55e',mastered:'#3b82f6'};
-    const TIER_LABELS={not_started:'Not Started',beginning:'Beginning',developing:'Developing',approaching:'Approaching',confident:'Confident',mastered:'Mastered'};
-    const TIER_EMOJIS={not_started:'⬜',beginning:'🔴',developing:'🟠',approaching:'🟡',confident:'🟢',mastered:'💙'};
+    const TIER_LABELS={not_started:'No XP',beginning:'Rookie',developing:'Apprentice',approaching:'Scholar',confident:'Expert',mastered:'Legend'};
+    const TIER_EMOJIS={not_started:'⚪',beginning:'🔴',developing:'🟠',approaching:'🟡',confident:'🟢',mastered:'⭐'};
 
     const html=upcomingAssessments.map(a=>{
       const daysLeft=a.date?Math.ceil((new Date(a.date)-new Date())/86400000):null;
