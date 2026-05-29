@@ -98,18 +98,20 @@
     .schedule-future .rag-checklist { opacity: 0.45; pointer-events: none; }
     .schedule-future .content-wrapper { opacity: 0.6; }
 
-    /* ── REVISE CARDS ────────────────────────────────────────────────────────── */
-    /* ── REVISE TAB ── */
-    .revise-topic-row { display: flex; align-items: center; gap: 0.85rem; padding: 1rem 1.1rem; background: white; border: 1.5px solid var(--border); border-left: 4px solid transparent; border-radius: 10px; margin-bottom: 0.4rem; transition: all 0.15s; position: relative; }
-    .revise-topic-row:hover { border-color: var(--accent); border-left-color: var(--accent); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-    .revise-topic-num { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.75rem; color: var(--subtext); width: 22px; flex-shrink: 0; }
-    .revise-topic-name { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem; color: var(--text); flex: 1; }
-    .revise-topic-rag { font-size: 0.7rem; font-weight: 700; padding: 0.18rem 0.55rem; border-radius: 100px; flex-shrink: 0; }
-    .revise-topic-actions { display: flex; gap: 0.35rem; opacity: 0; transition: opacity 0.15s; flex-shrink: 0; }
-    .revise-topic-row:hover .revise-topic-actions { opacity: 1; }
-    .btn-revise-read { background: var(--accent); color: white; border: none; border-radius: 7px; padding: 0.3rem 0.7rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.72rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.2rem; transition: opacity 0.15s; white-space: nowrap; }
+    /* ── REVISE TAB ─────────────────────────────────────────────────────────── */
+    .revise-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; padding: 0.25rem 0 0.5rem; }
+    @media (max-width: 540px) { .revise-grid { grid-template-columns: 1fr; } }
+    .revise-card { background: white; border: 1.5px solid var(--border); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.15s, transform 0.15s; }
+    .revise-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.09); transform: translateY(-2px); }
+    .revise-card-top { height: 5px; width: 100%; }
+    .revise-card-body { padding: 0.85rem 1rem 0.75rem; flex: 1; display: flex; flex-direction: column; gap: 0.4rem; }
+    .revise-card-num { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.68rem; color: var(--subtext); text-transform: uppercase; letter-spacing: 0.06em; }
+    .revise-card-name { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; color: var(--text); line-height: 1.25; flex: 1; }
+    .revise-card-xp { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.7rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 100px; align-self: flex-start; margin-top: 0.2rem; }
+    .revise-card-actions { display: flex; gap: 0.5rem; padding: 0 1rem 0.85rem; }
+    .btn-revise-read { background: var(--accent); color: white; border: none; border-radius: 8px; padding: 0.4rem 0.9rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.78rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem; transition: opacity 0.15s; white-space: nowrap; flex: 1; justify-content: center; }
     .btn-revise-read:hover { opacity: 0.85; }
-    .btn-revise-watch { background: white; color: #ef4444; border: 1.5px solid #ef4444; border-radius: 7px; padding: 0.3rem 0.7rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.72rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.2rem; transition: all 0.15s; white-space: nowrap; }
+    .btn-revise-watch { background: white; color: #ef4444; border: 1.5px solid #ef4444; border-radius: 8px; padding: 0.4rem 0.9rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.78rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem; transition: all 0.15s; white-space: nowrap; flex: 1; justify-content: center; }
     .btn-revise-watch:hover { background: #fef2f2; }
     /* Video modal */
     .video-modal-overlay { position: fixed; inset: 0; background: rgba(15,29,61,0.55); z-index: 300; display: flex; align-items: center; justify-content: center; padding: 1rem; backdrop-filter: blur(2px); }
@@ -1242,9 +1244,7 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
   buildClozeTopicBtns();
 
   function buildTopicList(ragData) {
-    let html = `<div style="padding:0.25rem 0 0.5rem">
-      <div style="font-family:'Nunito',sans-serif;font-weight:700;font-size:0.75rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.75rem;padding-left:0.25rem">Revision Topics — hover a topic to read or watch</div>`;
-
+    let cards = '';
     topics.forEach((topic, i) => {
       const entry = ragData?.[topic];
       const score = typeof entry === 'object' ? (entry?.score ?? 0) : (entry || 0);
@@ -1253,21 +1253,29 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
       const emoji = TIER_EMOJIS[tier];
       const hasVideos = (reviseData.topics[topic]?.videos || []).length > 0;
       const encodedTopic = encodeURIComponent(topic);
-      const isRead = score >= 10;
+      const xpLabel = score > 0 ? `${emoji} ${score} XP` : `⚪ No XP`;
 
-      html += `<div class="revise-topic-row" style="border-left-color:${colour}">
-        <span class="revise-topic-num">${i + 1}</span>
-        <span class="revise-topic-name">${topic}</span>
-        <span class="revise-topic-rag" style="background:${colour}18;color:${colour};border:1.5px solid ${colour}33">${emoji} ${score > 0 ? score + '%' : 'Not Started'}</span>
-        <div class="revise-topic-actions">
-          <a href="revise.html?subject=${revSubject}&module=${revModule}&topic=${encodedTopic}" class="btn-revise-read">📖 Read${isRead ? ' ✓' : ''}</a>
+      cards += `<div class="revise-card">
+        <div class="revise-card-top" style="background:${colour}"></div>
+        <div class="revise-card-body">
+          <div class="revise-card-num">Topic ${i + 1}</div>
+          <div class="revise-card-name">${topic}</div>
+          <div class="revise-card-xp" style="background:${colour}18;color:${colour};border:1.5px solid ${colour}33">${xpLabel}</div>
+        </div>
+        <div class="revise-card-actions">
+          <a href="revise.html?subject=${revSubject}&module=${revModule}&topic=${encodedTopic}" class="btn-revise-read">📖 Read</a>
           ${hasVideos ? `<button class="btn-revise-watch" onclick="openVideoModal('${topic.replace(/'/g,"\\'")}')">▶ Watch</button>` : ''}
         </div>
       </div>`;
     });
+
+    let html = `<div style="padding:0.25rem 0 0.5rem">
+      <div style="font-family:'Nunito',sans-serif;font-weight:700;font-size:0.75rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.75rem;padding-left:0.25rem">Revision Topics</div>
+      <div class="revise-grid">${cards}</div>`;
+
     if (meta.revisionLink && meta.revisionLink !== '#') {
       html += `<div style="margin-top:1rem;padding-top:0.75rem;border-top:1px solid var(--border)">
-        <a href="${meta.revisionLink}" target="_blank" class="btn-revise-read">📊 Teacher's Revision Slides →</a>
+        <a href="${meta.revisionLink}" target="_blank" class="btn-revise-read" style="display:inline-flex;max-width:fit-content">📊 Teacher's Revision Slides →</a>
       </div>`;
     }
     return html + '</div>';
