@@ -103,11 +103,11 @@
     @media (max-width: 540px) { .revise-grid { grid-template-columns: 1fr; } }
     .revise-card { background: white; border: 1.5px solid var(--border); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.15s, transform 0.15s; }
     .revise-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.09); transform: translateY(-2px); }
-    .revise-card-top { height: 5px; width: 100%; }
-    .revise-card-body { padding: 0.85rem 1rem 0.75rem; flex: 1; display: flex; flex-direction: column; gap: 0.4rem; }
-    .revise-card-num { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.68rem; color: var(--subtext); text-transform: uppercase; letter-spacing: 0.06em; }
-    .revise-card-name { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; color: var(--text); line-height: 1.25; flex: 1; }
-    .revise-card-xp { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.7rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 100px; align-self: flex-start; margin-top: 0.2rem; }
+    .revise-card-graphic { height: 80px; display: flex; align-items: center; justify-content: center; font-size: 2.6rem; position: relative; overflow: hidden; }
+    .revise-card-graphic-num { position: absolute; bottom: 4px; right: 8px; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.62rem; color: white; opacity: 0.55; text-transform: uppercase; letter-spacing: 0.06em; }
+    .revise-card-body { padding: 0.7rem 1rem 0.6rem; flex: 1; display: flex; flex-direction: column; gap: 0.35rem; }
+    .revise-card-name { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.92rem; color: var(--text); line-height: 1.25; flex: 1; }
+    .revise-card-xp { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.7rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 100px; align-self: flex-start; }
     .revise-card-actions { display: flex; gap: 0.5rem; padding: 0 1rem 0.85rem; }
     .btn-revise-read { background: var(--accent); color: white; border: none; border-radius: 8px; padding: 0.4rem 0.9rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.78rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem; transition: opacity 0.15s; white-space: nowrap; flex: 1; justify-content: center; }
     .btn-revise-read:hover { opacity: 0.85; }
@@ -1243,6 +1243,45 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
   window._reviseData = reviseData;
   buildClozeTopicBtns();
 
+  function topicEmoji(name) {
+    const n = name.toLowerCase();
+    if (/cell structure|prokaryot|eukaryot/.test(n))        return '🔬';
+    if (/microscop/.test(n))                                return '🔭';
+    if (/cell division|mitosis|meiosis/.test(n))            return '🧬';
+    if (/transport|diffusion|osmosis|active/.test(n))       return '💧';
+    if (/specialised|stem cell/.test(n))                    return '🧫';
+    if (/digestive|digestion|enzyme/.test(n))               return '🍎';
+    if (/heart|cardiovascular|circulat|blood vessel/.test(n)) return '❤️';
+    if (/blood|plasma|platelet/.test(n))                    return '🩸';
+    if (/cancer|tumour/.test(n))                            return '⚠️';
+    if (/lung|breath|gas exchange|respir/.test(n))          return '💨';
+    if (/pathogen|bacteria|virus|disease|infect/.test(n))   return '🦠';
+    if (/immun|antibod|vaccin/.test(n))                     return '🛡️';
+    if (/drug|antibiotic|medicine/.test(n))                 return '💊';
+    if (/photosynthes/.test(n))                             return '🌿';
+    if (/nervous|neuron|reflex|brain/.test(n))              return '🧠';
+    if (/hormone|endocrine|insulin|glucagon|adrenalin/.test(n)) return '⚗️';
+    if (/reproduct|fertilisa|pregnan/.test(n))              return '🥚';
+    if (/dna|gene|genetic|chromosom|allele|inherit/.test(n)) return '🧬';
+    if (/evolution|natural select|adapt/.test(n))           return '🦕';
+    if (/ecosystem|food chain|food web|biodiversity/.test(n)) return '🌍';
+    if (/plant|leaf|root|stem|xylem|phloem/.test(n))        return '🌱';
+    if (/atom|element|compound|mixture/.test(n))            return '⚛️';
+    if (/bond|ionic|covalent|metallic/.test(n))             return '🔗';
+    if (/reaction|rate|equilibr/.test(n))                   return '⚗️';
+    if (/acid|base|ph|neutral/.test(n))                     return '🧪';
+    if (/energy|thermodynamic|enthalp/.test(n))             return '⚡';
+    if (/organic|carbon|hydrocarbon|polymer/.test(n))       return '🛢️';
+    if (/force|motion|velocity|speed|acceleration/.test(n)) return '🚀';
+    if (/wave|light|sound|electromag/.test(n))              return '🌊';
+    if (/electric|circuit|current|voltage|resistance/.test(n)) return '⚡';
+    if (/nuclear|radioactiv|decay/.test(n))                 return '☢️';
+    if (/space|star|planet|universe|galaxy/.test(n))        return '🌌';
+    if (/magnet/.test(n))                                   return '🧲';
+    if (/heat|thermal|temperature/.test(n))                 return '🌡️';
+    return '📚';
+  }
+
   function buildTopicList(ragData) {
     let cards = '';
     topics.forEach((topic, i) => {
@@ -1255,10 +1294,13 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
       const encodedTopic = encodeURIComponent(topic);
       const xpLabel = score > 0 ? `${emoji} ${score} XP` : `⚪ No XP`;
 
+      const icon = topicEmoji(topic);
       cards += `<div class="revise-card">
-        <div class="revise-card-top" style="background:${colour}"></div>
+        <div class="revise-card-graphic" style="background:linear-gradient(135deg,${colour}28 0%,${colour}10 100%)">
+          <span style="filter:drop-shadow(0 2px 6px ${colour}44)">${icon}</span>
+          <span class="revise-card-graphic-num">Topic ${i + 1}</span>
+        </div>
         <div class="revise-card-body">
-          <div class="revise-card-num">Topic ${i + 1}</div>
           <div class="revise-card-name">${topic}</div>
           <div class="revise-card-xp" style="background:${colour}18;color:${colour};border:1.5px solid ${colour}33">${xpLabel}</div>
         </div>
