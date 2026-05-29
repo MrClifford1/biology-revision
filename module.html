@@ -577,6 +577,21 @@
     }
     /* ── END SHARED NAV ──────────────────────────────────────────────────────── */
 
+  @keyframes xp-float {
+    0%   { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+    15%  { opacity: 1; transform: translateX(-50%) translateY(-10px) scale(1.15); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(-60px) scale(0.9); }
+  }
+  .xp-toast {
+    position: fixed; left: 50%; top: 42%;
+    font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.3rem;
+    color: white; background: #3b82f6;
+    padding: 0.45rem 1.25rem; border-radius: 100px;
+    pointer-events: none; z-index: 9999;
+    box-shadow: 0 4px 20px rgba(59,130,246,0.5);
+    animation: xp-float 1.8s ease-out forwards;
+  }
+
   </style>
 </head>
 <body>
@@ -1386,6 +1401,15 @@ const RAG_SCORE_CAPS = {
   scribble_free:   90,  // can reach Mastered but not Retained
 };
 
+function showXPToast(xp) {
+  if (!xp || xp <= 0) return;
+  const toast = document.createElement('div');
+  toast.className = 'xp-toast';
+  toast.textContent = `+${Math.round(xp * 10) / 10} XP`;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 1800);
+}
+
 function computeTier(score) {
   if (!score || score === 0) return 'not_started';
   if (score <= 33)  return 'beginning';
@@ -1549,14 +1573,19 @@ async function reloadRAGFromHistory(uid) {
       const updates = window._pendingRAGUpdates;
       window._pendingRAGUpdates = [];
       let currentState = { ...loaded };
+      let mockXPGained = 0;
       for (const { topic, activityPct, inputType } of updates) {
         const idx = fuzzyMatchTopic(topic, meta.topics);
         if (idx < 0) continue;
         const topicName = meta.topics[idx];
-        currentState[topicName] = computeNewTopicScore(currentState[topicName] || null, activityPct, inputType);
+        const oldScore = currentState[topicName]?.score ?? 0;
+        const newEntry = computeNewTopicScore(currentState[topicName] || null, activityPct, inputType);
+        currentState[topicName] = newEntry;
+        mockXPGained += Math.max(0, (newEntry.score ?? 0) - oldScore);
       }
       renderChecklist(currentState);
       if (window._saveRAG) await window._saveRAG(uid, `${subjectId}-${moduleId}`, currentState);
+      showXPToast(mockXPGained);
     }
   } catch(e) { console.log('RAG reload failed:', e); }
 }
@@ -1752,10 +1781,12 @@ async function recordFCAnswer(isCorrect) {
     const idx = fuzzyMatchTopic(card.sub_topic, meta.topics);
     if (idx >= 0) {
       const topicName = meta.topics[idx];
+      const oldScore = ragState[topicName]?.score ?? 0;
       const updated = computeNewTopicScore(ragState[topicName] || null, isCorrect ? 100 : 0, 'flashcard');
       ragState[topicName] = updated;
       renderChecklist(ragState);
       if (window._saveRAG) window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState).catch(()=>{});
+      if (isCorrect) showXPToast((updated.score ?? 0) - oldScore);
     }
   }
   updateFCProgress();
@@ -2017,19 +2048,23 @@ function submitGame() {
   // Feed into RAG — only real pairs
   if (window._currentUser) {
     const topicResults = [];
+    let wordsXPGained = 0;
     gamePairs.forEach(pair => {
       const placed = currentPlacements[pair.word];
       const isCorrect = placed === pair.word;
       const idx = fuzzyMatchTopic(pair.sub_topic || pair.word, meta.topics);
       if (idx >= 0) {
         const topicName = meta.topics[idx];
+        const oldScore = ragState[topicName]?.score ?? 0;
         const updated = computeNewTopicScore(ragState[topicName] || null, isCorrect ? 100 : 0, 'words');
         ragState[topicName] = updated;
+        wordsXPGained += Math.max(0, (updated.score ?? 0) - oldScore);
         topicResults.push({ topic: topicName, correct: isCorrect });
       }
     });
     renderChecklist(ragState);
     if (window._saveRAG) window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState).catch(()=>{});
+    showXPToast(wordsXPGained);
     // Log to activity history
     const correct = topicResults.filter(t=>t.correct).length;
     window._logActivity({
@@ -2467,9 +2502,14 @@ document.getElementById('paper-submit-btn').addEventListener('click', async () =
     const wr = wa.length ? await markAnswers(wa) : [];
     displayResults(selectedPaperQuestions, wr, wa, 'paper-overall-result', 'paper-results-container', 'paper-marking-section', 'paper-loading-overlay');
     let paperTotal = 0, paperAwarded = 0;
-    selectedPaperQuestions.forEach(q => { paperTotal += q.marks || 0; });
+    const wm2 = {}; wr.forEach((r, i) => { wm2[wa[i]?.id] = r; });
+    selectedPaperQuestions.forEach(q => {
+      paperTotal += q.marks || 0;
+      paperAwarded += autoMarkedResults[q.id]?.marks_awarded ?? wm2[q.id]?.marks_awarded ?? 0;
+    });
     const paperPct = paperTotal > 0 ? Math.round((paperAwarded / paperTotal) * 100) : 0;
     window._logActivity({ type: 'paper', score: paperAwarded, total: paperTotal, pct: paperPct, topics: [] });
+    if (window._currentUser) await reloadRAGFromHistory(window._currentUser.uid);
   } catch(e) {
     document.getElementById('paper-loading-overlay').style.display = 'none';
     document.getElementById('paper-questions-section').style.display = 'block';
@@ -3165,10 +3205,12 @@ document.getElementById('scribble-submit-btn').addEventListener('click', async (
     const idx = fuzzyMatchTopic(_scribbleCurrentTopic, meta.topics);
     if (idx >= 0 && window._currentUser) {
       const topicName = meta.topics[idx];
+      const oldScore = ragState[topicName]?.score ?? 0;
       const newEntry  = computeNewTopicScore(ragState[topicName] || null, activityPct, inputType);
       ragState[topicName] = newEntry;
       renderChecklist(ragState);
       if (window._saveRAG) window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState).catch(() => {});
+      showXPToast((newEntry.score ?? 0) - oldScore);
     }
 
     // ── Log activity ─────────────────────────────────────────────────────────
@@ -3644,6 +3686,7 @@ window.submitCloze = async () => {
         ragState[_clozeCurrentTopic] = { ...(entry || {}), score: newScore, lastActivity: new Date().toISOString() };
         if (window._saveRAG) await window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState).catch(()=>{});
         renderChecklist(ragState);
+        showXPToast(newScore - currentScore);
       }
     } catch(e) {}
   }
