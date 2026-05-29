@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Notice — Streetly Science Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #1a2a4f;
+      --navy-dark: #0f1d3d;
+      --red: #c8202c;
+      --gold: #d4a534;
+      --bg: #f5f6fa;
+      --text: #1a2a4f;
+      --subtext: #5a6885;
+      --border: #e2e6f0;
+      --accent: #0d9488;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Nunito Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; }
+
+    /* NAV */
+    .topnav { background: var(--navy-dark); padding: 0 1.25rem; display: flex; align-items: center; gap: 0.75rem; height: 48px; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 8px rgba(0,0,0,0.25); }
+    .topnav a { color: #94a3b8; text-decoration: none; font-size: 0.8rem; font-weight: 700; font-family: 'Nunito', sans-serif; transition: color 0.15s; }
+    .topnav a:hover { color: white; }
+    .topnav-divider { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+    .topnav-title { color: white; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.9rem; }
+
+    /* HEADER */
+    header { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%); color: white; padding: 2.5rem 1.5rem 3rem; position: relative; overflow: hidden; }
+    header::before { content: ''; position: absolute; top: -80px; right: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(212,165,52,0.08) 0%, transparent 70%); border-radius: 50%; }
+    .header-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 1; }
+    .header-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(212,165,52,0.15); border: 1px solid rgba(212,165,52,0.3); color: var(--gold); font-family: 'Nunito', sans-serif; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.85rem; border-radius: 100px; margin-bottom: 0.75rem; }
+    header h1 { font-family: 'Nunito', sans-serif; font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 900; line-height: 1.15; margin-bottom: 0.5rem; }
+    header p { color: #c5cee8; font-size: 0.9rem; line-height: 1.6; max-width: 560px; }
+
+    /* MAIN */
+    main { flex: 1; max-width: 780px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; width: 100%; }
+
+    /* LAST UPDATED */
+    .last-updated { display: inline-flex; align-items: center; gap: 0.4rem; background: white; border: 1.5px solid var(--border); border-radius: 100px; padding: 0.3rem 0.85rem; font-size: 0.75rem; font-weight: 700; color: var(--subtext); margin-bottom: 2rem; font-family: 'Nunito', sans-serif; }
+
+    /* SECTIONS */
+    .section { background: white; border: 1.5px solid var(--border); border-radius: 16px; padding: 1.75rem 1.75rem; margin-bottom: 1.25rem; }
+    .section-icon { font-size: 1.5rem; margin-bottom: 0.6rem; display: block; }
+    .section h2 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.05rem; color: var(--navy); margin-bottom: 0.75rem; }
+    .section p { font-size: 0.875rem; line-height: 1.75; color: var(--text); margin-bottom: 0.75rem; }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul { padding-left: 1.25rem; margin-bottom: 0.75rem; }
+    .section ul:last-child { margin-bottom: 0; }
+    .section li { font-size: 0.875rem; line-height: 1.7; margin-bottom: 0.25rem; color: var(--text); }
+
+    /* DATA TABLE */
+    .data-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin: 0.75rem 0; }
+    .data-table th { background: #f8fafc; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--subtext); padding: 0.6rem 0.85rem; text-align: left; border-bottom: 1.5px solid var(--border); }
+    .data-table td { padding: 0.65rem 0.85rem; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; color: var(--text); }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* HIGHLIGHT BOX */
+    .highlight { background: #f0fdfa; border: 1.5px solid #99f6e4; border-radius: 12px; padding: 1rem 1.25rem; margin: 0.75rem 0; }
+    .highlight p { color: #0f766e; font-size: 0.85rem; margin-bottom: 0; }
+
+    /* CONTACT CARD */
+    .contact-card { background: #f8fafc; border: 1.5px solid var(--border); border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column; gap: 0.4rem; }
+    .contact-line { font-size: 0.85rem; color: var(--text); display: flex; align-items: flex-start; gap: 0.5rem; }
+    .contact-label { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--subtext); width: 80px; flex-shrink: 0; padding-top: 0.1rem; }
+
+    /* RIGHTS GRID */
+    .rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.75rem; }
+    @media (max-width: 540px) { .rights-grid { grid-template-columns: 1fr; } }
+    .right-card { background: #f8fafc; border: 1.5px solid var(--border); border-radius: 10px; padding: 0.85rem 1rem; }
+    .right-card .right-title { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.82rem; color: var(--navy); margin-bottom: 0.3rem; }
+    .right-card p { font-size: 0.78rem; color: var(--subtext); margin-bottom: 0; line-height: 1.55; }
+
+    /* FOOTER */
+    footer { background: var(--navy); color: #a8b4d4; padding: 1.25rem; text-align: center; font-size: 0.78rem; }
+    footer a { color: #a8b4d4; text-decoration: underline; }
+    footer .small { font-size: 0.68rem; color: #6b7a9c; margin-top: 0.3rem; }
+  </style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="index.html">🏠 Hub</a>
+  <div class="topnav-divider"></div>
+  <span class="topnav-title">Privacy Notice</span>
+</nav>
+
+<header>
+  <div class="header-inner">
+    <div class="header-badge">🔒 Privacy &amp; Data</div>
+    <h1>Privacy Notice</h1>
+    <p>This notice explains what information Streetly Science Hub collects when you use it, why we collect it, and how it is kept safe. We've written it in plain English so it's easy to understand.</p>
+  </div>
+</header>
+
+<main>
+
+  <div class="last-updated">📅 Last updated: May 2025</div>
+
+  <!-- WHO WE ARE -->
+  <div class="section">
+    <span class="section-icon">🏫</span>
+    <h2>Who we are</h2>
+    <p>Streetly Science Hub is a revision tool built for students at The Streetly Academy. It is developed and maintained by a member of the science teaching staff.</p>
+    <p>The data controller for this service is:</p>
+    <div class="contact-card">
+      <div class="contact-line"><span class="contact-label">School</span> The Streetly Academy, Sutton Road, Streetly, Sutton Coldfield, B74 3EL</div>
+      <div class="contact-line"><span class="contact-label">Contact</span> [Deputy Head name] — [email address]</div>
+      <div class="contact-line"><span class="contact-label">ICO Reg.</span> [ICO Registration Number — search ico.org.uk for "Streetly Academy"]</div>
+    </div>
+  </div>
+
+  <!-- WHAT WE COLLECT -->
+  <div class="section">
+    <span class="section-icon">📋</span>
+    <h2>What information we collect</h2>
+    <p>We only collect the information needed to make the revision tool work and to let your teacher track your progress.</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Information</th>
+          <th>Where it comes from</th>
+          <th>Why we need it</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Your name</strong></td>
+          <td>Your Google account (when you sign in)</td>
+          <td>So your teacher can identify your progress in the dashboard</td>
+        </tr>
+        <tr>
+          <td><strong>Your school email address</strong></td>
+          <td>Your Google account (when you sign in)</td>
+          <td>To link your account to The Streetly Academy and your class</td>
+        </tr>
+        <tr>
+          <td><strong>Your profile photo</strong></td>
+          <td>Your Google account (optional)</td>
+          <td>Displayed on your profile only — not shared with teachers</td>
+        </tr>
+        <tr>
+          <td><strong>Your class</strong></td>
+          <td>You select it when you first sign in</td>
+          <td>So your teacher can see progress for their specific class</td>
+        </tr>
+        <tr>
+          <td><strong>Your revision activity and scores</strong></td>
+          <td>Generated as you use the site</td>
+          <td>To show your Brain XP progress and help your teacher support you</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="highlight">
+      <p>💡 We do <strong>not</strong> collect any sensitive personal data (such as medical information, ethnicity, or financial details). We do not use advertising or tracking cookies.</p>
+    </div>
+  </div>
+
+  <!-- LEGAL BASIS -->
+  <div class="section">
+    <span class="section-icon">⚖️</span>
+    <h2>Our legal basis for using your data</h2>
+    <p>Under UK GDPR, we need a lawful reason to process your personal data. We rely on <strong>legitimate interests</strong> — specifically, providing an educational revision tool that supports student learning and allows teachers to monitor and improve progress.</p>
+    <p>Because most users are under 18, we take extra care to limit what we collect to only what is strictly necessary for this educational purpose.</p>
+  </div>
+
+  <!-- HOW LONG -->
+  <div class="section">
+    <span class="section-icon">🗓️</span>
+    <h2>How long we keep your data</h2>
+    <p>Your data is kept for as long as you are a student at The Streetly Academy and using this service. When you leave the school, your account and all associated data will be deleted within one academic year.</p>
+    <p>You can also request deletion of your data at any time — see the "Your rights" section below.</p>
+  </div>
+
+  <!-- WHO CAN SEE IT -->
+  <div class="section">
+    <span class="section-icon">👀</span>
+    <h2>Who can see your information</h2>
+    <ul>
+      <li><strong>You</strong> — you can always see your own scores and progress.</li>
+      <li><strong>Your science teachers at The Streetly Academy</strong> — they can see your name, class, and revision scores to help support your learning.</li>
+      <li><strong>School administrators</strong> — can access data for safeguarding or school improvement purposes.</li>
+      <li><strong>No one else</strong> — your data is never sold, shared with third parties for marketing, or used for any purpose outside of this school revision tool.</li>
+    </ul>
+  </div>
+
+  <!-- THIRD PARTY SERVICES -->
+  <div class="section">
+    <span class="section-icon">☁️</span>
+    <h2>Third-party services we use</h2>
+    <p>Streetly Science Hub is built using the following external services. These act as <strong>data processors</strong> — they store and process data on our behalf but cannot use it for their own purposes.</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>What it does</th>
+          <th>Privacy information</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Google Firebase</strong> (Google LLC)</td>
+          <td>Stores your account data, scores and revision progress securely in the cloud</td>
+          <td>Data is stored on EU/UK servers. Google is certified under the UK adequacy framework.</td>
+        </tr>
+        <tr>
+          <td><strong>Google Sign-In</strong> (Google LLC)</td>
+          <td>Handles your login using your school Google account</td>
+          <td>We only request your name, email and profile photo — nothing else from your Google account.</td>
+        </tr>
+        <tr>
+          <td><strong>Netlify</strong></td>
+          <td>Hosts the website and serves the pages you visit</td>
+          <td>Standard web server logs (IP address, browser type) are retained briefly for security purposes.</td>
+        </tr>
+        <tr>
+          <td><strong>Anthropic Claude AI</strong></td>
+          <td>Powers the AI marking in the Scribble and Mini Mock tabs</td>
+          <td>Your written answers are sent to Claude for marking. Answers are not stored or used to train AI models.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- YOUR RIGHTS -->
+  <div class="section">
+    <span class="section-icon">✅</span>
+    <h2>Your rights</h2>
+    <p>Under UK GDPR you have the following rights regarding your personal data:</p>
+    <div class="rights-grid">
+      <div class="right-card">
+        <div class="right-title">👁️ Right to access</div>
+        <p>You can ask to see a copy of all the personal data we hold about you.</p>
+      </div>
+      <div class="right-card">
+        <div class="right-title">✏️ Right to correction</div>
+        <p>You can ask us to correct any information that is inaccurate or incomplete.</p>
+      </div>
+      <div class="right-card">
+        <div class="right-title">🗑️ Right to deletion</div>
+        <p>You can ask us to delete your account and all associated data at any time.</p>
+      </div>
+      <div class="right-card">
+        <div class="right-title">⏸️ Right to restriction</div>
+        <p>You can ask us to limit how we use your data while a concern is being resolved.</p>
+      </div>
+      <div class="right-card">
+        <div class="right-title">📦 Right to portability</div>
+        <p>You can ask for a copy of your data in a portable format.</p>
+      </div>
+      <div class="right-card">
+        <div class="right-title">🚫 Right to object</div>
+        <p>You can object to us processing your data based on legitimate interests.</p>
+      </div>
+    </div>
+    <p style="margin-top:1rem">To exercise any of these rights, please contact us using the details in the "Who we are" section above. We will respond within 30 days.</p>
+  </div>
+
+  <!-- COMPLAINTS -->
+  <div class="section">
+    <span class="section-icon">📣</span>
+    <h2>How to make a complaint</h2>
+    <p>If you have a concern about how we handle your data, please contact us first and we will do our best to resolve it.</p>
+    <p>If you are not satisfied with our response, you have the right to complain to the UK's data protection regulator:</p>
+    <div class="contact-card">
+      <div class="contact-line"><span class="contact-label">Name</span> Information Commissioner's Office (ICO)</div>
+      <div class="contact-line"><span class="contact-label">Website</span> ico.org.uk</div>
+      <div class="contact-line"><span class="contact-label">Phone</span> 0303 123 1113</div>
+    </div>
+  </div>
+
+  <!-- CHANGES -->
+  <div class="section">
+    <span class="section-icon">🔄</span>
+    <h2>Changes to this notice</h2>
+    <p>We may update this privacy notice from time to time. When we do, we will update the "last updated" date at the top of this page. We will notify students of any significant changes via the site.</p>
+  </div>
+
+</main>
+
+<footer>
+  <p style="color:white;font-family:'Nunito',sans-serif;font-weight:800">Streetly Science Revision Hub</p>
+  <p>Built for AQA GCSE Combined Science (8464) · <a href="privacy.html">Privacy Notice</a></p>
+  <p class="small">A teaching resource for The Streetly Academy · Not affiliated with AQA</p>
+</footer>
+
+</body>
+</html>
