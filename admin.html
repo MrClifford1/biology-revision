@@ -423,10 +423,11 @@
               <th>Email</th>
               <th>Class</th>
               <th>Joined</th>
+              <th>Last login</th>
             </tr>
           </thead>
           <tbody id="student-tbody">
-            <tr><td colspan="4" style="text-align:center;padding:2rem;color:var(--subtext)">Loading students...</td></tr>
+            <tr><td colspan="5" style="text-align:center;padding:2rem;color:var(--subtext)">Loading students...</td></tr>
           </tbody>
         </table>
       </div>
@@ -690,10 +691,11 @@
     filtered.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
 
     if (filtered.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;padding:2rem;color:var(--subtext)">No students found.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:2rem;color:var(--subtext)">No students found.</td></tr>';
       return;
     }
 
+    const oneYearAgo = new Date(); oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
     tbody.innerHTML = filtered.map(s => {
       const joinDate = s.createdAt?.toDate ? s.createdAt.toDate().toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' }) : '—';
       const classHtml = s.class
@@ -703,12 +705,22 @@
       const avatarHtml = s.photoURL
         ? `<img src="${s.photoURL}" style="width:26px;height:26px;border-radius:50%;object-fit:cover;vertical-align:middle;margin-right:0.5rem" alt="">`
         : `<span style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--navy);color:white;font-family:'Nunito',sans-serif;font-weight:900;font-size:0.65rem;vertical-align:middle;margin-right:0.5rem">${initials}</span>`;
+      let lastLoginHtml = '<span style="color:var(--subtext)">—</span>';
+      if (s.lastLoginAt?.toDate) {
+        const d = s.lastLoginAt.toDate();
+        const label = d.toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
+        const stale = d < oneYearAgo;
+        lastLoginHtml = stale
+          ? `<span style="color:#b91c1c;font-weight:700" title="Over 1 year — eligible for deletion">⚠️ ${label}</span>`
+          : `<span style="color:var(--subtext)">${label}</span>`;
+      }
       return `
         <tr>
           <td>${avatarHtml}<strong>${s.name || '—'}</strong></td>
           <td style="color:var(--subtext)">${s.email || '—'}</td>
           <td>${classHtml}</td>
           <td style="color:var(--subtext)">${joinDate}</td>
+          <td>${lastLoginHtml}</td>
         </tr>
       `;
     }).join('');

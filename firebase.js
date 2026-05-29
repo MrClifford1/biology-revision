@@ -70,6 +70,7 @@ async function ensureUserProfile(user) {
       email: email || null,
       photoURL: user.photoURL || null,
       createdAt: serverTimestamp(),
+      lastLoginAt: serverTimestamp(),
       examTarget: null,
       yearGroup: null,
       class: null,
@@ -82,8 +83,8 @@ async function ensureUserProfile(user) {
     if (!data.name && displayName)   patch.name = displayName;
     if (!data.email && email)         patch.email = email;
     if (!data.photoURL && user.photoURL) patch.photoURL = user.photoURL;
-    // Clear the backfill flag if we now have good data
     if (data._needsProfileUpdate && (displayName || email)) patch._needsProfileUpdate = false;
+    patch.lastLoginAt = serverTimestamp();
     if (Object.keys(patch).length) {
       await setDoc(ref, patch, { merge: true });
     }
