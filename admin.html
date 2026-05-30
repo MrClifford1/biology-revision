@@ -462,7 +462,7 @@
 </div>
 
 <script type="module">
-  import { onAuthChange, signOutUser, getAllStaff, getAllStudents, addRole, addTeacherRole, removeRole, removeTeacherRole, getUserRole, canAccessAdmin, isSuperAdmin } from './firebase.js';
+  import { onAuthChange, signOutUser, getAllStaff, getAllStudents, deleteStudentData, addRole, addTeacherRole, removeRole, removeTeacherRole, getUserRole, canAccessAdmin, isSuperAdmin } from './firebase.js';
 
   const SUPER_ADMIN_EMAIL = 'n.clifford@thestreetlyacademy.co.uk';
 
@@ -711,7 +711,11 @@
         const label = d.toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
         const stale = d < oneYearAgo;
         lastLoginHtml = stale
-          ? `<span style="color:#b91c1c;font-weight:700" title="Over 1 year — eligible for deletion">⚠️ ${label}</span>`
+          ? `<span style="color:#b91c1c;font-weight:700" title="Over 1 year — eligible for deletion">⚠️ ${label}</span>
+             <button onclick="deleteStudent('${s.uid}','${(s.name||'this student').replace(/'/g,"\\'")}',this)"
+               style="margin-left:0.5rem;background:#fee2e2;color:#b91c1c;border:1px solid #fca5a5;border-radius:6px;padding:0.2rem 0.55rem;font-size:0.72rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif">
+               🗑️ Delete
+             </button>`
           : `<span style="color:var(--subtext)">${label}</span>`;
       }
       return `
@@ -725,6 +729,21 @@
       `;
     }).join('');
   }
+
+  window.deleteStudent = async (uid, name, btn) => {
+    if (!confirm(`Delete all data for ${name}?\n\nThis removes their account, progress, and XP from the database. This cannot be undone.`)) return;
+    btn.disabled = true;
+    btn.textContent = 'Deleting…';
+    try {
+      await deleteStudentData(uid);
+      allStudents = allStudents.filter(s => s.uid !== uid);
+      renderStudentTable();
+    } catch (e) {
+      btn.disabled = false;
+      btn.textContent = '🗑️ Delete';
+      alert('Deletion failed — please try again.');
+    }
+  };
 
   window.filterStudents = (filter, btn) => {
     activeFilter = filter;
