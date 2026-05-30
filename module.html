@@ -582,6 +582,249 @@
     }
     /* ── END SHARED NAV ──────────────────────────────────────────────────────── */
 
+  /* ── LEARN CARD LAYOUT ───────────────────────────────────────────────────── */
+  .learn-card-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    font-family: 'Nunito', sans-serif;
+  }
+  .learn-card-title-bar {
+    background: var(--accent, #4338ca);
+    color: white;
+    padding: 1rem 1.4rem;
+    border-radius: 12px 12px 0 0;
+    font-size: 1.35rem;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .learn-card-intro {
+    background: #e8f4fd;
+    border-left: 5px solid #2980b9;
+    padding: 0.85rem 1.1rem;
+    border-radius: 0 0 8px 8px;
+    margin-bottom: 1rem;
+    font-size: 0.92rem;
+    color: #1a3a5c;
+    line-height: 1.55;
+  }
+  .learn-card-section {
+    background: white;
+    border-left: 5px solid var(--accent, #4338ca);
+    border-radius: 0 10px 10px 0;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.85rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  }
+  .learn-card-section-header {
+    font-size: 0.98rem;
+    font-weight: 800;
+    color: var(--accent, #4338ca);
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .learn-card-section-text {
+    font-size: 0.87rem;
+    color: #374151;
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+  }
+  .learn-card-points {
+    list-style: none;
+    padding: 0;
+    margin: 0.2rem 0 0 0;
+  }
+  .learn-card-points li {
+    padding: 0.22rem 0 0.22rem 1.3rem;
+    font-size: 0.85rem;
+    color: #374151;
+    line-height: 1.45;
+    position: relative;
+  }
+  .learn-card-points li::before {
+    content: '▸';
+    position: absolute;
+    left: 0.1rem;
+    color: var(--accent, #4338ca);
+    font-size: 0.8rem;
+  }
+  .learn-card-callout {
+    background: #fffbeb;
+    border: 1.5px solid #f59e0b;
+    border-radius: 7px;
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.5rem;
+    font-size: 0.82rem;
+    color: #78350f;
+    line-height: 1.45;
+  }
+  .learn-card-callout-label {
+    font-weight: 800;
+    margin-right: 0.3rem;
+    color: #b45309;
+  }
+  .learn-card-mnemonic {
+    background: #fffde7;
+    border: 2px solid #fdd835;
+    border-radius: 10px;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .learn-card-mnemonic-header {
+    font-size: 0.95rem;
+    font-weight: 900;
+    color: #f57f17;
+    margin-bottom: 0.4rem;
+  }
+  .learn-card-mnemonic-text {
+    font-size: 0.87rem;
+    color: #5f4200;
+    line-height: 1.55;
+  }
+  .learn-card-diagram {
+    background: white;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    overflow-x: auto;
+  }
+  .learn-card-diagram svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .learn-card-diagram-label {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-top: 0.4rem;
+    font-style: italic;
+  }
+  .learn-card-keyterms {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  @media (max-width: 480px) {
+    .learn-card-keyterms { grid-template-columns: 1fr; }
+  }
+  .learn-card-keyterm-chip {
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 0.45rem 0.65rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+  .learn-card-keyterm-chip strong {
+    color: var(--accent, #4338ca);
+    display: block;
+    font-size: 0.83rem;
+  }
+  .learn-card-keyterm-chip span {
+    color: #4b5563;
+  }
+  .learn-card-mistakes {
+    background: #fff5f5;
+    border: 2px solid #fc8181;
+    border-radius: 10px;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .learn-card-mistakes-header {
+    font-size: 0.95rem;
+    font-weight: 900;
+    color: #c53030;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .learn-card-mistake-item {
+    font-size: 0.85rem;
+    color: #742a2a;
+    padding: 0.25rem 0;
+    line-height: 1.45;
+  }
+  .learn-card-mistake-item::before {
+    content: '✗ ';
+    color: #c53030;
+    font-weight: 900;
+  }
+  .learn-card-tips {
+    background: #fffbeb;
+    border: 2px solid #f6c90e;
+    border-radius: 10px;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .learn-card-tips-header {
+    font-size: 0.95rem;
+    font-weight: 900;
+    color: #b7791f;
+    margin-bottom: 0.5rem;
+  }
+  .learn-card-tip-item {
+    font-size: 0.85rem;
+    color: #744210;
+    padding: 0.25rem 0;
+    line-height: 1.45;
+  }
+  .learn-card-tip-item::before {
+    content: '★ ';
+    color: #d97706;
+    font-weight: 900;
+  }
+  .learn-card-summary {
+    background: #1e2a4a;
+    color: white;
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .learn-card-summary-header {
+    font-size: 1rem;
+    font-weight: 900;
+    margin-bottom: 0.6rem;
+    color: #93c5fd;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .learn-card-summary-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .learn-card-summary-list li {
+    font-size: 0.84rem;
+    padding: 0.18rem 0 0.18rem 1.2rem;
+    position: relative;
+    color: #e2e8f0;
+    line-height: 1.45;
+  }
+  .learn-card-summary-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0.2rem;
+    color: #60a5fa;
+    font-size: 1rem;
+    line-height: 1.1;
+  }
+  .learn-card-section-divider {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 1rem 0 0.5rem 0;
+  }
+  /* ── END LEARN CARD LAYOUT ───────────────────────────────────────────────── */
+
   @keyframes xp-float {
     0%   { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
     15%  { opacity: 1; transform: translateX(-50%) translateY(-10px) scale(1.15); }
@@ -2678,7 +2921,7 @@ async function loadLearnData() {
         if (sec.text) readingHTML += `<p>${sec.text}</p>`;
         if (sec.points?.length) readingHTML += '<ul>' + sec.points.map(p => `<li>${p}</li>`).join('') + '</ul>';
       });
-      return { name, readingHTML, keyTerms: data.keyTerms || [], clozePassages: data.clozePassages || [] };
+      return { name, readingHTML, keyTerms: data.keyTerms || [], clozePassages: data.clozePassages || [], _rawData: data };
     });
 
     _learnQuestionBank = byTopic;
@@ -2708,7 +2951,94 @@ function pickLearnQuestions(topicName, count) {
 
 // ── Build reading HTML for a topic ────────────────────────────────────────────
 function buildLearnReading(topic) {
-  return `<div class="learn-reading-content">${topic.readingHTML}</div>`;
+  const d = topic._rawData;
+  if (!d) return `<div class="learn-reading-content">${topic.readingHTML}</div>`;
+
+  let html = `<div class="learn-card-wrap">`;
+
+  // 1. Title bar
+  html += `<div class="learn-card-title-bar">${topic.name}</div>`;
+
+  // 2. Intro box
+  if (d.intro) {
+    html += `<div class="learn-card-intro">${d.intro}</div>`;
+  }
+
+  // 3. Diagram
+  if (d.diagram) {
+    html += `<div class="learn-card-diagram">${d.diagram}<div class="learn-card-diagram-label">Diagram — ${topic.name}</div></div>`;
+  }
+
+  // 4. Mnemonic / memory aid
+  if (d.mnemonic) {
+    html += `<div class="learn-card-mnemonic">
+      <div class="learn-card-mnemonic-header">💡 How to Remember</div>
+      <div class="learn-card-mnemonic-text">${d.mnemonic}</div>
+    </div>`;
+  }
+
+  // 5. Sections
+  if (d.sections && d.sections.length) {
+    html += `<div class="learn-card-section-divider">📚 Key Content</div>`;
+    d.sections.forEach(sec => {
+      html += `<div class="learn-card-section">
+        <div class="learn-card-section-header">${sec.icon || '📌'} ${sec.title || ''}</div>`;
+      if (sec.text) {
+        html += `<div class="learn-card-section-text">${sec.text}</div>`;
+      }
+      if (sec.points && sec.points.length) {
+        html += `<ul class="learn-card-points">` + sec.points.map(p => `<li>${p}</li>`).join('') + `</ul>`;
+      }
+      if (sec.callout) {
+        html += `<div class="learn-card-callout"><span class="learn-card-callout-label">${sec.callout.label || 'Note'}:</span>${sec.callout.text || ''}</div>`;
+      }
+      html += `</div>`;
+    });
+  }
+
+  // 6. Key terms — two-column grid
+  if (d.keyTerms && d.keyTerms.length) {
+    html += `<div class="learn-card-section-divider">🔑 Key Terms</div>`;
+    html += `<div class="learn-card-keyterms">`;
+    d.keyTerms.forEach(kt => {
+      html += `<div class="learn-card-keyterm-chip"><strong>${kt.term}</strong><span>${kt.def}</span></div>`;
+    });
+    html += `</div>`;
+  }
+
+  // 7. Common mistakes
+  if (d.commonMistakes && d.commonMistakes.length) {
+    html += `<div class="learn-card-mistakes">
+      <div class="learn-card-mistakes-header">⚠ Common Exam Mistakes</div>`;
+    d.commonMistakes.forEach(m => {
+      html += `<div class="learn-card-mistake-item">${m}</div>`;
+    });
+    html += `</div>`;
+  }
+
+  // 8. Exam tips
+  if (d.examTips && d.examTips.length) {
+    html += `<div class="learn-card-tips">
+      <div class="learn-card-tips-header">💛 Exam Tips</div>`;
+    d.examTips.forEach(t => {
+      html += `<div class="learn-card-tip-item">${t}</div>`;
+    });
+    html += `</div>`;
+  }
+
+  // 9. Summary — dark navy box with key terms as quick-reference
+  if (d.keyTerms && d.keyTerms.length) {
+    html += `<div class="learn-card-summary">
+      <div class="learn-card-summary-header">📋 Summary</div>
+      <ul class="learn-card-summary-list">`;
+    d.keyTerms.forEach(kt => {
+      html += `<li><strong>${kt.term}</strong> — ${kt.def}</li>`;
+    });
+    html += `</ul></div>`;
+  }
+
+  html += `</div>`; // end .learn-card-wrap
+  return html;
 }
 
 // ── Build cloze fallback check ────────────────────────────────────────────────
@@ -2959,7 +3289,7 @@ function buildLearnAccordion() {
         </div>
       </div>
       <div class="learn-accordion-body">
-        <div class="learn-reading-content">${topic.readingHTML}</div>
+        ${buildLearnReading(topic)}
         <div class="learn-check-section" id="learn-check-${idx}"></div>
       </div>`;
 
