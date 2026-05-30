@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help — Streetly Science Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #1a2a4f; --navy-dark: #0f1d3d;
+      --bg: #f5f6fa; --text: #1a2a4f; --subtext: #5a6885;
+      --border: #e2e6f0; --card: #ffffff;
+      --green: #16a34a; --amber: #d97706; --red: #c8202c;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Nunito Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+    /* NAV */
+    .ssh-nav {
+      background: var(--navy-dark); padding: 0 1.25rem;
+      display: flex; align-items: center; gap: 0.75rem; height: 48px; position: sticky; top: 0; z-index: 100;
+    }
+    .ssh-nav-back { color: #94a3b8; text-decoration: none; font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; transition: color 0.2s; }
+    .ssh-nav-back:hover { color: white; }
+    .ssh-nav-divider { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+    .ssh-nav-title { color: white; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.9rem; }
+    .ssh-nav-right { margin-left: auto; display: flex; align-items: center; gap: 0.35rem; }
+    .ssh-nav-icon-btn {
+      background: rgba(255,255,255,0.08); border: none; color: #94a3b8;
+      font-family: 'Nunito Sans', sans-serif; font-size: 0.8rem; font-weight: 600;
+      padding: 0.3rem 0.7rem; border-radius: 8px; cursor: pointer; transition: all 0.18s;
+    }
+    .ssh-nav-icon-btn:hover { background: rgba(255,255,255,0.16); color: white; }
+    .ssh-nav-badge {
+      font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.7rem;
+      padding: 0.2rem 0.65rem; border-radius: 100px; text-decoration: none; transition: opacity 0.18s;
+    }
+    .ssh-nav-badge:hover { opacity: 0.85; }
+    .ssh-badge-teacher { background: #0d9488; color: white; }
+    .ssh-badge-admin   { background: #3b82f6; color: white; }
+    .ssh-badge-super   { background: #c8202c; color: white; }
+
+    /* AUTH GATE */
+    #auth-loading {
+      position: fixed; inset: 0; background: var(--navy-dark);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+      color: white; padding: 1.75rem 2rem;
+    }
+    .page-header-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; gap: 1rem; }
+    .page-header h1 { font-family: 'Nunito', sans-serif; font-size: 1.7rem; font-weight: 900; }
+    .page-header p { color: #c5cee8; font-size: 0.875rem; margin-top: 0.2rem; }
+
+    /* TABS */
+    .tab-bar { background: white; border-bottom: 2px solid var(--border); position: sticky; top: 48px; z-index: 90; }
+    .tab-bar-inner { max-width: 860px; margin: 0 auto; display: flex; padding: 0 1.5rem; }
+    .help-tab {
+      padding: 0.85rem 1.25rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.875rem;
+      color: var(--subtext); border: none; background: none; cursor: pointer;
+      border-bottom: 3px solid transparent; margin-bottom: -2px; transition: all 0.18s;
+    }
+    .help-tab:hover { color: var(--navy); }
+    .help-tab.active { color: var(--navy); border-bottom-color: var(--navy); }
+    #teacher-tab-btn { display: none; }
+
+    /* MAIN */
+    main { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+    .help-panel { display: none; }
+    .help-panel.active { display: block; }
+
+    /* SECTION */
+    .help-section { margin-bottom: 2.5rem; }
+    .help-section h2 {
+      font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem;
+      color: var(--navy); margin-bottom: 1rem; padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 0.5rem;
+    }
+    .help-section p { font-size: 0.9rem; line-height: 1.7; color: #374151; margin-bottom: 0.75rem; }
+    .help-section p:last-child { margin-bottom: 0; }
+    .help-section ul, .help-section ol { font-size: 0.9rem; line-height: 1.7; color: #374151; padding-left: 1.4rem; }
+    .help-section li { margin-bottom: 0.35rem; }
+
+    /* CARDS GRID */
+    .activity-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.85rem; margin-top: 0.75rem; }
+    @media (max-width: 560px) { .activity-grid { grid-template-columns: 1fr; } }
+    .activity-card {
+      background: var(--card); border: 1.5px solid var(--border); border-radius: 14px;
+      padding: 1rem 1.1rem; display: flex; flex-direction: column; gap: 0.4rem;
+    }
+    .activity-card-top { display: flex; align-items: center; gap: 0.6rem; }
+    .activity-icon { font-size: 1.5rem; }
+    .activity-name { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; color: var(--navy); }
+    .activity-desc { font-size: 0.82rem; line-height: 1.5; color: var(--subtext); }
+    .activity-xp {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe;
+      border-radius: 100px; padding: 0.15rem 0.65rem; font-size: 0.75rem;
+      font-family: 'Nunito', sans-serif; font-weight: 800; width: fit-content;
+    }
+
+    /* XP TIERS TABLE */
+    .tier-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 0.6rem; margin-top: 0.75rem; }
+    .tier-card {
+      background: var(--card); border: 1.5px solid var(--border); border-radius: 12px;
+      padding: 0.75rem 0.85rem; text-align: center;
+    }
+    .tier-icon { font-size: 1.4rem; }
+    .tier-name { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.82rem; color: var(--navy); margin: 0.2rem 0 0.1rem; }
+    .tier-range { font-size: 0.75rem; color: var(--subtext); }
+
+    /* STEPS */
+    .steps { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem; }
+    .step { display: flex; gap: 0.9rem; align-items: flex-start; }
+    .step-num {
+      width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: white;
+      font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.8rem;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.1rem;
+    }
+    .step-body { font-size: 0.88rem; line-height: 1.6; color: #374151; }
+    .step-body strong { color: var(--navy); }
+
+    /* CALLOUT */
+    .callout {
+      border-radius: 12px; padding: 0.9rem 1.1rem; font-size: 0.875rem; line-height: 1.6;
+      margin-bottom: 1rem; display: flex; gap: 0.6rem; align-items: flex-start;
+    }
+    .callout-info  { background: #eff6ff; border: 1.5px solid #bfdbfe; color: #1e40af; }
+    .callout-tip   { background: #f0fdf4; border: 1.5px solid #bbf7d0; color: #14532d; }
+    .callout-warn  { background: #fff7ed; border: 1.5px solid #fed7aa; color: #92400e; }
+    .callout-icon  { font-size: 1rem; flex-shrink: 0; margin-top: 0.05rem; }
+
+    /* FAQ */
+    .faq { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.75rem; }
+    .faq-item { background: var(--card); border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .faq-q {
+      width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+      padding: 0.85rem 1rem; font-family: 'Nunito', sans-serif; font-weight: 800;
+      font-size: 0.875rem; color: var(--navy); display: flex; justify-content: space-between; align-items: center;
+    }
+    .faq-q:hover { background: #f8fafc; }
+    .faq-arrow { transition: transform 0.2s; font-size: 0.75rem; color: var(--subtext); }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a { display: none; padding: 0 1rem 0.85rem; font-size: 0.86rem; line-height: 1.65; color: #374151; border-top: 1px solid var(--border); padding-top: 0.75rem; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* TEACHER SECTIONS */
+    .teacher-badge {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      background: #0d9488; color: white; border-radius: 100px;
+      font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.7rem;
+      padding: 0.15rem 0.6rem; vertical-align: middle; margin-left: 0.4rem;
+    }
+
+    footer { background: var(--navy); color: #a8b4d4; padding: 1rem; text-align: center; font-family: 'Nunito Sans', sans-serif; font-size: 0.75rem; margin-top: 2rem; }
+    footer a { color: #6b7a9c; text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<nav class="ssh-nav">
+  <a href="index.html" class="ssh-nav-back">← Hub</a>
+  <div class="ssh-nav-divider"></div>
+  <span class="ssh-nav-title">Help &amp; Guide</span>
+  <div class="ssh-nav-right">
+    <a href="teacher.html" class="ssh-nav-badge ssh-badge-teacher" id="ssh-badge-teacher" style="display:none">👨‍🏫 Teacher</a>
+    <a href="admin.html"   class="ssh-nav-badge ssh-badge-admin"   id="ssh-badge-admin"   style="display:none">🏫 Admin</a>
+    <a href="superadmin.html" class="ssh-nav-badge ssh-badge-super" id="ssh-badge-super"  style="display:none">🛡️ Super</a>
+    <button class="ssh-nav-icon-btn" onclick="signOutUser && signOutUser()">↩ Out</button>
+  </div>
+</nav>
+
+<div id="auth-loading">
+  <svg width="56" height="64" viewBox="0 0 88 100" xmlns="http://www.w3.org/2000/svg">
+    <path d="M44 0 L88 14 L88 50 Q88 80 44 100 Q0 80 0 50 L0 14 Z" fill="#c8202c" stroke="#d4a534" stroke-width="2"/>
+  </svg>
+  <div style="color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:1rem;margin-top:0.75rem">Loading...</div>
+</div>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div style="font-size:2.5rem">❓</div>
+    <div>
+      <h1>Help &amp; Guide</h1>
+      <p>Everything you need to know about using Streetly Science Hub</p>
+    </div>
+  </div>
+</div>
+
+<div class="tab-bar">
+  <div class="tab-bar-inner">
+    <button class="help-tab active" onclick="switchTab('student', this)">🧑‍🎓 Student Guide</button>
+    <button class="help-tab" id="teacher-tab-btn" onclick="switchTab('teacher', this)">👨‍🏫 Teacher &amp; Admin Guide</button>
+  </div>
+</div>
+
+<main>
+
+  <!-- ── STUDENT PANEL ──────────────────────────────────────────────────── -->
+  <div class="help-panel active" id="panel-student">
+
+    <!-- Getting started -->
+    <div class="help-section">
+      <h2>🚀 Getting started</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body"><strong>Sign in with your school Google account</strong> — use your <code>@thestreetlyacademy.co.uk</code> email at the login page.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body"><strong>Select your class</strong> — a prompt will appear asking you to choose your class group (e.g. 10S4). This helps your teacher track your progress.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body"><strong>Pick a subject</strong> — choose Biology, Chemistry, or Physics from the home screen.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body"><strong>Choose a module</strong> — select the topic your class is currently studying. Modules are organised by unit.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-body"><strong>Start revising!</strong> — use the activity tabs (Revise, Flashcards, Words, Cloze, Scribble, Mini Mock, Paper) to earn XP and track your progress.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- XP and tiers -->
+    <div class="help-section">
+      <h2>⭐ XP and Brain Tiers</h2>
+      <p>Every topic has an XP score from 0 to 100. As you complete activities you earn XP, which raises your score and unlocks higher Brain Tiers. Your tier shows how well you know each topic.</p>
+
+      <div class="tier-grid">
+        <div class="tier-card">
+          <div class="tier-icon">⚪</div>
+          <div class="tier-name">Not started</div>
+          <div class="tier-range">0 XP</div>
+        </div>
+        <div class="tier-card">
+          <div class="tier-icon">🔴</div>
+          <div class="tier-name">Rookie</div>
+          <div class="tier-range">1 – 33 XP</div>
+        </div>
+        <div class="tier-card">
+          <div class="tier-icon">🟠</div>
+          <div class="tier-name">Apprentice</div>
+          <div class="tier-range">34 – 55 XP</div>
+        </div>
+        <div class="tier-card">
+          <div class="tier-icon">🟡</div>
+          <div class="tier-name">Scholar</div>
+          <div class="tier-range">56 – 75 XP</div>
+        </div>
+        <div class="tier-card">
+          <div class="tier-icon">🟢</div>
+          <div class="tier-name">Expert</div>
+          <div class="tier-range">76 – 89 XP</div>
+        </div>
+        <div class="tier-card">
+          <div class="tier-icon">⭐</div>
+          <div class="tier-name">Legend</div>
+          <div class="tier-range">90 – 100 XP</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip" style="margin-top:1rem">
+        <span class="callout-icon">💡</span>
+        <span>Work through the activities in order — start with <strong>Learn</strong> and <strong>Revise</strong>, then move to Flashcards and Words, then tackle Mini Mock and Paper for the biggest XP gains.</span>
+      </div>
+    </div>
+
+    <!-- Activities -->
+    <div class="help-section">
+      <h2>🎮 Activities explained</h2>
+      <p>Each module has 8 tabs. Here's what each one does and how much XP you can earn:</p>
+
+      <div class="activity-grid">
+        <div class="activity-card">
+          <div class="activity-top">
+            <div class="activity-icon">🎓</div>
+            <div class="activity-name">Learn</div>
+          </div>
+          <div class="activity-desc">Read through the topic notes. No XP — but this is where you build the understanding you need for everything else.</div>
+          <div class="activity-xp">No XP</div>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-top">
+            <div class="activity-icon">📖</div>
+            <div class="activity-name">Revise</div>
+          </div>
+          <div class="activity-desc">A 3-question quiz. Answer questions from each topic in the module. 3 XP per correct answer. Once a topic hits 10 XP, it stops earning here.</div>
+          <div class="activity-xp">⚡ Up to 9 XP · Max 10 per topic</div>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-top">
+            <div class="activity-icon">🃏</div>
+            <div class="activity-name">Flashcards</div>
+          </div>
+          <div class="activity-desc">5 flashcards per round. Flip each card and mark yourself. 1 XP for every card you get right. Keeps going until a topic reaches 35 XP.</div>
+          <div class="activity-xp">⚡ 1 XP per card · Max 35 per topic</div>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-top">
+            <div class="activity-icon">🔤</div>
+            <div class="activity-name">Words</div>
+          </div>
+          <div class="activity-desc">Drag keywords to their definitions. 1 XP for every correct word. Stops earning once a topic reaches 35 XP.</div>
+          <div class="activity-xp">⚡ 1 XP per word · Max 35 per topic</div>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-top">
+            <div class="activity-icon">🧩</div>
+            <div class="activity-name">Cloze</div>
+          </div>
+          <div class="activity-desc">Fill in the blanks in a passage of text. Up to 5 XP per round depending on how many blanks you fill correctly. Stops at 35 XP per topic.</div>
+          <div class="activity-xp">⚡ Up to 5 XP · Max 35 per topic</div>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-top">
+            <div class="activity-icon">✍️</div>
+            <div class="activity-name">Scribble</div>
+          </div>
+          <div class="activity-desc">Write everything you can remember about the topic from memory, then check it against the mark scheme. XP scales with how much you remembered. Stops at 50 XP per topic.</div>
+          <div class="activity-xp">⚡ Up to 10 XP · Max 50 per topic</div>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-top">
+            <div class="activity-icon">✏️</div>
+            <div class="activity-name">Mini Mock</div>
+          </div>
+          <div class="activity-desc">Exam-style questions on individual topics. Marks are scaled: 7/10 = 7 XP, 10/10 = 15 XP etc. No XP cap — you can take it up to 100.</div>
+          <div class="activity-xp">⚡ Up to 15 XP · No cap</div>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-top">
+            <div class="activity-icon">📝</div>
+            <div class="activity-name">Paper</div>
+          </div>
+          <div class="activity-desc">A full past paper covering multiple topics. Results are split by topic and XP is awarded for each. The best way to push topics to Expert and Legend.</div>
+          <div class="activity-xp">⚡ Up to 15 XP per topic · No cap</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress page -->
+    <div class="help-section">
+      <h2>📊 My Progress</h2>
+      <p>Click <strong>📊 My Progress</strong> in the top navigation bar to see a summary of your XP across all subjects and modules. You can see which topics are your strongest and which need more work.</p>
+      <div class="callout callout-info">
+        <span class="callout-icon">ℹ️</span>
+        <span>Your teacher can also see your progress — this helps them know which topics to focus on in class.</span>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="help-section">
+      <h2>❓ Frequently asked questions</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Why can't I earn more XP on Flashcards? <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a">Each activity has a cap to encourage you to move on to harder activities. Once Flashcards reaches 35 XP for a topic, you've mastered the basics — use Mini Mock or Paper to push higher.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            My XP didn't save — what happened? <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a">XP saves automatically after each activity. If it didn't save, check your internet connection and try again. Make sure you're signed in with your school account.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Can I change my class? <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a">Yes — click the ⚙️ settings icon in the top navigation bar on any page. You'll see your current class and an option to change it.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            I can't sign in — what should I do? <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a">Make sure you're using your school Google account (<strong>@thestreetlyacademy.co.uk</strong>). If you're on a personal device, try signing out of personal Google accounts first. Still stuck? Ask your science teacher.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Does it matter which order I do activities in? <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a">You can do them in any order, but the activities are designed to build on each other. Start with <strong>Learn</strong> to understand the content, then use <strong>Revise</strong>, <strong>Flashcards</strong> and <strong>Words</strong> to remember it, then test yourself with <strong>Mini Mock</strong> and <strong>Paper</strong>.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            What does the Watch button do? <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a">The Watch button on the Revise topic cards links to a relevant YouTube video (usually Free Science Lessons or Science with Hazel) covering that topic. Great if you'd rather watch than read.</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /panel-student -->
+
+  <!-- ── TEACHER PANEL ───────────────────────────────────────────────────── -->
+  <div class="help-panel" id="panel-teacher">
+
+    <div class="callout callout-warn" style="margin-bottom:1.5rem">
+      <span class="callout-icon">🔒</span>
+      <span>This section is only visible to staff. Students see the Student Guide only.</span>
+    </div>
+
+    <!-- Teacher portal -->
+    <div class="help-section">
+      <h2>👨‍🏫 The Teacher Portal</h2>
+      <p>Access the Teacher Portal from the <strong>👨‍🏫 Teacher</strong> badge in the navigation bar. From here you can:</p>
+      <ul>
+        <li>View progress for all students in your classes</li>
+        <li>See XP scores and Brain Tier breakdowns by topic</li>
+        <li>Create and manage assignments</li>
+        <li>Set assessment dates for your class groups</li>
+      </ul>
+      <div class="callout callout-info" style="margin-top:0.75rem">
+        <span class="callout-icon">ℹ️</span>
+        <span>If you don't have access to the Teacher Portal, ask the site administrator (<strong>n.clifford@thestreetlyacademy.co.uk</strong>) to grant you teacher access.</span>
+      </div>
+    </div>
+
+    <!-- Reading progress -->
+    <div class="help-section">
+      <h2>📊 Reading student progress</h2>
+      <p>In the Teacher Portal, select a class to see all students in that group. Click any student to expand their full topic-by-topic XP breakdown across all three subjects.</p>
+      <p>Brain Tier colours give a quick at-a-glance summary:</p>
+      <ul>
+        <li>⚪ Not started — student hasn't attempted this topic yet</li>
+        <li>🔴 Rookie (1–33) — early stages, needs more work</li>
+        <li>🟠 Apprentice (34–55) — getting there</li>
+        <li>🟡 Scholar (56–75) — solid understanding</li>
+        <li>🟢 Expert (76–89) — strong grasp</li>
+        <li>⭐ Legend (90–100) — excellent, ready for exam conditions</li>
+      </ul>
+    </div>
+
+    <!-- Assignments -->
+    <div class="help-section">
+      <h2>📋 Creating assignments</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">Go to the <strong>Teacher Portal</strong> and click <strong>Assignments</strong>.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">Click <strong>New Assignment</strong>. Fill in the title, subject, module, and which activity tab to direct students to.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">Select the <strong>class groups</strong> to assign it to, set a due date, and optionally add a note.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">Click <strong>Create</strong>. Students in the selected classes will see the assignment flagged on the relevant module card.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Assessment dates -->
+    <div class="help-section">
+      <h2>📅 Setting assessment dates</h2>
+      <p>Assessment dates appear as coloured flags on module cards for students in the relevant class (🔴 within 7 days, 🟠 within 14 days, 📅 further out).</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">Go to <strong>Admin Panel → Curriculum Schedule</strong>.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">Select the class group and subject, then add the assessment date and which modules it covers.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">Students in that class will immediately see the flag on the relevant module cards when they log in.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Admin panel -->
+    <div class="help-section">
+      <h2>🏫 Admin panel</h2>
+      <p>The Admin Panel (<strong>🏫 Admin</strong> badge in the nav) is available to admin and superadmin roles. From here you can:</p>
+      <ul>
+        <li><strong>Accounts tab</strong> — grant or remove teacher access for staff members</li>
+        <li><strong>Students tab</strong> — view all registered students, their class, when they joined, and when they last logged in</li>
+        <li><strong>Curriculum Schedule tab</strong> — manage assessment dates across all class groups</li>
+      </ul>
+      <div class="callout callout-warn" style="margin-top:0.75rem">
+        <span class="callout-icon">⚠️</span>
+        <span><strong>Data deletion:</strong> Students who haven't logged in for over 1 year are flagged with ⚠️ in the Students tab and a Delete button appears. This is part of GDPR compliance — run a sweep each September after results day.</span>
+      </div>
+    </div>
+
+    <!-- Teacher FAQ -->
+    <div class="help-section">
+      <h2>❓ Staff FAQs</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            How do I get teacher access for a colleague? <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a">Go to <strong>Admin Panel → Accounts</strong>, enter their school email address, and click <strong>Add Teacher</strong>. They'll have access next time they sign in.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            A student is in the wrong class — how do I fix it? <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a">Students can update their own class via the ⚙️ Settings icon. Alternatively, you can see their current class in Admin → Students, but direct editing requires superadmin access.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Can students see each other's progress? <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a">No. Students can only see their own progress. Teachers can see progress for students in their assigned classes. Only admins and superadmins can see all students.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Where is student data stored? <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a">All data is stored in Google Firebase (Firestore), hosted in EU data centres. See the <a href="privacy.html">Privacy Notice</a> for full details.</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /panel-teacher -->
+
+</main>
+
+<footer>
+  <p>A teaching resource for The Streetly Academy · Not affiliated with AQA</p>
+  <p><a href="privacy.html">Privacy Notice</a></p>
+</footer>
+
+<script type="module">
+  import { onAuthChange, signOutUser, getUserRole } from './firebase.js';
+
+  window.signOutUser = signOutUser;
+
+  onAuthChange(async user => {
+    if (!user) { window.location.href = 'login.html'; return; }
+    document.getElementById('auth-loading').style.display = 'none';
+
+    const role = await getUserRole(user.email);
+    const isStaff = ['teacher','admin','superadmin'].includes(role);
+
+    if (isStaff) {
+      document.getElementById('teacher-tab-btn').style.display = 'block';
+    }
+    if (['teacher','admin','superadmin'].includes(role)) {
+      document.getElementById('ssh-badge-teacher').style.display = 'inline-flex';
+    }
+    if (['admin','superadmin'].includes(role)) {
+      document.getElementById('ssh-badge-admin').style.display = 'inline-flex';
+    }
+    if (role === 'superadmin') {
+      document.getElementById('ssh-badge-super').style.display = 'inline-flex';
+    }
+  });
+</script>
+
+<script>
+  function switchTab(name, btn) {
+    document.querySelectorAll('.help-tab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.help-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + name).classList.add('active');
+  }
+
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    item.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
