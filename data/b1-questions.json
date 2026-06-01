@@ -90,12 +90,12 @@
     "topic": "Microscopy",
     "question": "A cell has an actual size of 0.1 mm and appears 5 mm under a microscope. What is the magnification?",
     "options": [
-      "\u00d75",
-      "\u00d750",
-      "\u00d7500",
-      "\u00d70.5"
+      "×5",
+      "×50",
+      "×500",
+      "×0.5"
     ],
-    "correct": "\u00d750"
+    "correct": "×50"
   },
   {
     "id": "B1-MC-008",
@@ -248,7 +248,7 @@
     "type": "fill_in_blank",
     "marks": 1,
     "topic": "Microscopy",
-    "question": "Magnification = image size \u00f7 __________.",
+    "question": "Magnification = image size ÷ __________.",
     "correct": "actual size",
     "acceptable": [
       "actual size",
@@ -337,7 +337,7 @@
     "pairs": [
       {
         "term": "Mitochondria",
-        "definition": "Site of aerobic respiration \u2014 releases energy"
+        "definition": "Site of aerobic respiration — releases energy"
       },
       {
         "term": "Ribosome",
@@ -345,7 +345,7 @@
       },
       {
         "term": "Chloroplast",
-        "definition": "Site of photosynthesis \u2014 contains chlorophyll"
+        "definition": "Site of photosynthesis — contains chlorophyll"
       },
       {
         "term": "Vacuole",
@@ -370,7 +370,7 @@
     "pairs": [
       {
         "term": "Diffusion",
-        "definition": "Movement of particles from high to low concentration \u2014 no energy needed"
+        "definition": "Movement of particles from high to low concentration — no energy needed"
       },
       {
         "term": "Osmosis",
@@ -378,7 +378,7 @@
       },
       {
         "term": "Active transport",
-        "definition": "Movement of substances against the concentration gradient \u2014 requires energy"
+        "definition": "Movement of substances against the concentration gradient — requires energy"
       }
     ]
   },
@@ -391,23 +391,23 @@
     "pairs": [
       {
         "term": "Red blood cell",
-        "definition": "Biconcave shape and no nucleus \u2014 carries oxygen via haemoglobin"
+        "definition": "Biconcave shape and no nucleus — carries oxygen via haemoglobin"
       },
       {
         "term": "Sperm cell",
-        "definition": "Long tail and many mitochondria \u2014 swims to fertilise the egg"
+        "definition": "Long tail and many mitochondria — swims to fertilise the egg"
       },
       {
         "term": "Root hair cell",
-        "definition": "Hair-like extension \u2014 large surface area for absorbing water"
+        "definition": "Hair-like extension — large surface area for absorbing water"
       },
       {
         "term": "Ciliated cell",
-        "definition": "Tiny hairs that beat \u2014 moves mucus along the trachea"
+        "definition": "Tiny hairs that beat — moves mucus along the trachea"
       },
       {
         "term": "Nerve cell",
-        "definition": "Long axon and many dendrites \u2014 rapidly transmits electrical impulses"
+        "definition": "Long axon and many dendrites — rapidly transmits electrical impulses"
       }
     ]
   },
@@ -468,7 +468,7 @@
     "command_word": "State",
     "topic": "Cell Structure",
     "question": "State one difference between a prokaryotic cell and a eukaryotic cell.",
-    "mark_scheme": "Prokaryotic cells have no membrane-bound nucleus (1) / prokaryotic cells are smaller (1) / prokaryotic cells have no mitochondria (1) \u2014 any one."
+    "mark_scheme": "Prokaryotic cells have no membrane-bound nucleus (1) / prokaryotic cells are smaller (1) / prokaryotic cells have no mitochondria (1) — any one."
   },
   {
     "id": "B1-SA-002",
@@ -504,7 +504,7 @@
     "command_word": "State",
     "topic": "Cell Structure",
     "question": "State two structures found in a plant cell but not in an animal cell.",
-    "mark_scheme": "Cell wall (1); chloroplast (1); permanent vacuole (1) \u2014 any two."
+    "mark_scheme": "Cell wall (1); chloroplast (1); permanent vacuole (1) — any two."
   },
   {
     "id": "B1-SA-006",
@@ -531,7 +531,7 @@
     "command_word": "Explain",
     "topic": "Specialised Cells",
     "question": "Explain why red blood cells are well adapted to carry oxygen.",
-    "mark_scheme": "Biconcave shape gives large surface area (1); no nucleus so more space for haemoglobin (1); packed with haemoglobin to carry oxygen (1) \u2014 any two."
+    "mark_scheme": "Biconcave shape gives large surface area (1); no nucleus so more space for haemoglobin (1); packed with haemoglobin to carry oxygen (1) — any two."
   },
   {
     "id": "B1-SA-009",
@@ -558,7 +558,7 @@
     "command_word": "Explain",
     "topic": "Transport",
     "question": "Explain how active transport differs from diffusion.",
-    "mark_scheme": "Diffusion moves particles down a concentration gradient (1); active transport moves particles against a concentration gradient (1); active transport requires energy from respiration (1); diffusion does not require energy (1) \u2014 any three."
+    "mark_scheme": "Diffusion moves particles down a concentration gradient (1); active transport moves particles against a concentration gradient (1); active transport requires energy from respiration (1); diffusion does not require energy (1) — any three."
   },
   {
     "id": "B1-SA-012",
@@ -567,7 +567,7 @@
     "command_word": "Explain",
     "topic": "Specialised Cells",
     "question": "Explain how a root hair cell is adapted for the absorption of water and mineral ions.",
-    "mark_scheme": "Large surface area due to hair-like extension (1); increases rate of osmosis / absorption (1); mineral ions absorbed by active transport (1); many mitochondria to provide energy for active transport (1) \u2014 any three."
+    "mark_scheme": "Large surface area due to hair-like extension (1); increases rate of osmosis / absorption (1); mineral ions absorbed by active transport (1); many mitochondria to provide energy for active transport (1) — any three."
   },
   {
     "id": "B1-SA-013",
@@ -576,7 +576,7 @@
     "command_word": "Describe",
     "topic": "Transport",
     "question": "Describe three factors that affect the rate of diffusion across a membrane.",
-    "mark_scheme": "Concentration gradient (1); surface area (1); temperature (1); thickness of membrane (1) \u2014 any three."
+    "mark_scheme": "Concentration gradient (1); surface area (1); temperature (1); thickness of membrane (1) — any three."
   },
   {
     "id": "B1-SA-014",
@@ -585,7 +585,7 @@
     "command_word": "Explain",
     "topic": "Cell Structure",
     "question": "Explain why bacterial cells are described as prokaryotic.",
-    "mark_scheme": "No membrane-bound nucleus (1); DNA floats freely in cytoplasm (1); no membrane-bound organelles such as mitochondria (1); generally smaller than eukaryotic cells (1) \u2014 any three."
+    "mark_scheme": "No membrane-bound nucleus (1); DNA floats freely in cytoplasm (1); no membrane-bound organelles such as mitochondria (1); generally smaller than eukaryotic cells (1) — any three."
   },
   {
     "id": "B1-SA-015",
@@ -594,7 +594,7 @@
     "command_word": "Describe",
     "topic": "Cell Division",
     "question": "Describe the role of stem cells in the body. Include two different types of stem cell in your answer.",
-    "mark_scheme": "Stem cells are undifferentiated cells (1); embryonic stem cells can differentiate into any cell type (1); adult stem cells found in specific tissues e.g. bone marrow (1); adult stem cells can only differentiate into a limited range of cell types (1) \u2014 any three."
+    "mark_scheme": "Stem cells are undifferentiated cells (1); embryonic stem cells can differentiate into any cell type (1); adult stem cells found in specific tissues e.g. bone marrow (1); adult stem cells can only differentiate into a limited range of cell types (1) — any three."
   },
   {
     "id": "B1-LA-001",
@@ -603,7 +603,7 @@
     "command_word": "Explain",
     "topic": "Cell Division",
     "question": "Explain the process of mitosis and why it is important in the body.",
-    "mark_scheme": "DNA / chromosomes are copied (1); cell divides into two daughter cells (1); daughter cells are genetically identical (1); used for growth (1); used for repair of tissues (1) \u2014 any four."
+    "mark_scheme": "DNA / chromosomes are copied (1); cell divides into two daughter cells (1); daughter cells are genetically identical (1); used for growth (1); used for repair of tissues (1) — any four."
   },
   {
     "id": "B1-LA-002",
@@ -612,7 +612,7 @@
     "command_word": "Describe",
     "topic": "Cell Division",
     "question": "Describe how stem cells could be used to treat disease, and include one argument against their use.",
-    "mark_scheme": "Stem cells can differentiate into specialised cells (1); could replace damaged tissue e.g. in diabetes / paralysis (1); therapeutic cloning could prevent rejection (1); argument against: destruction of embryo is ethically controversial (1); risk of immune rejection (1) \u2014 any four."
+    "mark_scheme": "Stem cells can differentiate into specialised cells (1); could replace damaged tissue e.g. in diabetes / paralysis (1); therapeutic cloning could prevent rejection (1); argument against: destruction of embryo is ethically controversial (1); risk of immune rejection (1) — any four."
   },
   {
     "id": "B1-LA-003",
@@ -621,7 +621,7 @@
     "command_word": "Explain",
     "topic": "Transport",
     "question": "A student places potato cylinders into solutions of different salt concentrations and measures the change in mass. Explain why the potato cylinders change mass.",
-    "mark_scheme": "Water moves by osmosis (1); from high water concentration to low water concentration (1); through the partially permeable cell membrane (1); in dilute solutions water moves into the potato so mass increases (1); in concentrated solutions water moves out so mass decreases (1) \u2014 any four."
+    "mark_scheme": "Water moves by osmosis (1); from high water concentration to low water concentration (1); through the partially permeable cell membrane (1); in dilute solutions water moves into the potato so mass increases (1); in concentrated solutions water moves out so mass decreases (1) — any four."
   },
   {
     "id": "B1-LA-004",
@@ -630,7 +630,7 @@
     "command_word": "Explain",
     "topic": "Specialised Cells",
     "question": "Explain how the structure of a nerve cell is adapted for its function.",
-    "mark_scheme": "Long axon to transmit impulses over long distances (1); myelin sheath speeds up transmission (1); many dendrites to receive signals (1); many mitochondria to provide energy (1); synaptic terminals to pass signals to next neurone (1) \u2014 any four."
+    "mark_scheme": "Long axon to transmit impulses over long distances (1); myelin sheath speeds up transmission (1); many dendrites to receive signals (1); many mitochondria to provide energy (1); synaptic terminals to pass signals to next neurone (1) — any four."
   },
   {
     "id": "B1-LA-005",
@@ -657,7 +657,7 @@
     "command_word": "Evaluate",
     "topic": "Cell Division",
     "question": "Evaluate the use of embryonic stem cells in medicine. Include both arguments for and against their use in your answer.",
-    "mark_scheme": "For: can differentiate into any specialised cell type (1); could treat diabetes / Parkinson's / paralysis (1); therapeutic cloning reduces risk of rejection (1); could save many lives (1). Against: involves destruction of a human embryo (1); some consider the embryo a human life (1); risk of tumour formation (1) \u2014 any six points."
+    "mark_scheme": "For: can differentiate into any specialised cell type (1); could treat diabetes / Parkinson's / paralysis (1); therapeutic cloning reduces risk of rejection (1); could save many lives (1). Against: involves destruction of a human embryo (1); some consider the embryo a human life (1); risk of tumour formation (1) — any six points."
   },
   {
     "id": "B1-LA-008",
@@ -666,7 +666,7 @@
     "command_word": "Explain",
     "topic": "Cell Structure",
     "question": "Explain the differences between a plant cell and an animal cell. Name two structures found only in plant cells and explain the function of each.",
-    "mark_scheme": "Cell wall (1) \u2014 provides structural support and prevents the cell from bursting (1); chloroplast (1) \u2014 contains chlorophyll and is the site of photosynthesis (1). Accept: permanent vacuole \u2014 stores cell sap/maintains turgor pressure."
+    "mark_scheme": "Cell wall (1) — provides structural support and prevents the cell from bursting (1); chloroplast (1) — contains chlorophyll and is the site of photosynthesis (1). Accept: permanent vacuole — stores cell sap/maintains turgor pressure."
   },
   {
     "id": "B1-LA-009",
@@ -675,7 +675,7 @@
     "command_word": "Describe",
     "topic": "Microscopy",
     "question": "Describe how to prepare a temporary slide of onion cells to observe under a light microscope. Include the reagents used and the reason for each step.",
-    "mark_scheme": "Peel a layer from the onion and place on a slide (1); add a drop of iodine solution to stain the cells (1) \u2014 iodine stains starch/makes cells more visible (1); lower a coverslip at an angle to avoid air bubbles (1). Accept: add water first to prevent drying."
+    "mark_scheme": "Peel a layer from the onion and place on a slide (1); add a drop of iodine solution to stain the cells (1) — iodine stains starch/makes cells more visible (1); lower a coverslip at an angle to avoid air bubbles (1). Accept: add water first to prevent drying."
   },
   {
     "id": "B1-LA-010",
@@ -684,7 +684,7 @@
     "command_word": "Explain",
     "topic": "Transport",
     "question": "Explain why osmosis is described as a 'special type of diffusion'. In your answer, refer to the concentration gradient and the membrane involved.",
-    "mark_scheme": "Osmosis is the movement of water molecules (1) from a region of high water potential to low water potential (1) / down a concentration gradient (1); across a partially permeable membrane (1) \u2014 the membrane allows water but not large solute molecules through."
+    "mark_scheme": "Osmosis is the movement of water molecules (1) from a region of high water potential to low water potential (1) / down a concentration gradient (1); across a partially permeable membrane (1) — the membrane allows water but not large solute molecules through."
   },
   {
     "id": "B1-LA-011",
@@ -720,7 +720,7 @@
     "command_word": "Evaluate",
     "topic": "Cell Division",
     "question": "Evaluate the use of adult stem cells compared to embryonic stem cells for treating disease.",
-    "mark_scheme": "Adult stem cells: ethically less controversial (1); less likely to be rejected if taken from patient (1); but more limited \u2014 can only produce a few cell types (1). Embryonic stem cells: can produce any cell type (pluripotent) (1); but involve embryo destruction which raises ethical concerns (1) \u2014 award 4 marks for balanced evaluation."
+    "mark_scheme": "Adult stem cells: ethically less controversial (1); less likely to be rejected if taken from patient (1); but more limited — can only produce a few cell types (1). Embryonic stem cells: can produce any cell type (pluripotent) (1); but involve embryo destruction which raises ethical concerns (1) — award 4 marks for balanced evaluation."
   },
   {
     "id": "B1-LA-015",
@@ -746,8 +746,8 @@
     "marks": 4,
     "command_word": "Describe",
     "topic": "Microscopy",
-    "question": "A student uses a light microscope to view a cell that appears to be 2 mm wide on the slide. The magnification used is \u00d7400. Calculate the actual size of the cell and describe how magnification is calculated.",
-    "mark_scheme": "Magnification = image size \u00f7 actual size (1); actual size = image size \u00f7 magnification = 2 mm \u00f7 400 (1) = 0.005 mm / 5 \u00b5m (1); units correct and clearly shown (1)."
+    "question": "A student uses a light microscope to view a cell that appears to be 2 mm wide on the slide. The magnification used is ×400. Calculate the actual size of the cell and describe how magnification is calculated.",
+    "mark_scheme": "Magnification = image size ÷ actual size (1); actual size = image size ÷ magnification = 2 mm ÷ 400 (1) = 0.005 mm / 5 µm (1); units correct and clearly shown (1)."
   },
   {
     "id": "B1-LA-018",
@@ -756,7 +756,7 @@
     "command_word": "Explain",
     "topic": "Transport",
     "question": "A student places carrot sticks into pure water and into a concentrated salt solution. Explain the expected results using your knowledge of osmosis.",
-    "mark_scheme": "In pure water: water moves into the carrot cells by osmosis (1) \u2014 from high water potential to low water potential (1); cells become turgid / carrot feels firm (1). In salt solution: water moves out of cells (1); cells become plasmolysed / carrot feels soft/flaccid (1) \u2014 award 4 from these 5 points."
+    "mark_scheme": "In pure water: water moves into the carrot cells by osmosis (1) — from high water potential to low water potential (1); cells become turgid / carrot feels firm (1). In salt solution: water moves out of cells (1); cells become plasmolysed / carrot feels soft/flaccid (1) — award 4 from these 5 points."
   },
   {
     "id": "B1-LA-019",
@@ -774,7 +774,7 @@
     "command_word": "Explain",
     "topic": "Microscopy",
     "question": "Explain the advantages of using an electron microscope instead of a light microscope. Include reference to magnification, resolution and what can be observed.",
-    "mark_scheme": "Electron microscope has greater magnification (1); greater resolution \u2014 can distinguish between objects closer together (1); can see ultrastructure of cells e.g. mitochondria, ribosomes in detail (1); light microscope limited to ~1500\u00d7 magnification (1); electron microscope can magnify up to \u00d7500,000 (1)."
+    "mark_scheme": "Electron microscope has greater magnification (1); greater resolution — can distinguish between objects closer together (1); can see ultrastructure of cells e.g. mitochondria, ribosomes in detail (1); light microscope limited to ~1500× magnification (1); electron microscope can magnify up to ×500,000 (1)."
   },
   {
     "id": "B1-LA-021",
@@ -783,7 +783,7 @@
     "command_word": "Describe",
     "topic": "Transport",
     "question": "Describe and explain the process of diffusion. Include the factors that affect the rate of diffusion and one example from a living organism.",
-    "mark_scheme": "Diffusion is the net movement of particles from high to low concentration (1); down a concentration gradient (1); factors: steeper gradient increases rate (1); larger surface area increases rate (1); shorter diffusion distance increases rate (1); example: oxygen diffusing into red blood cells in the lungs / glucose into blood from the small intestine (1) \u2014 award 5 from these 6 points."
+    "mark_scheme": "Diffusion is the net movement of particles from high to low concentration (1); down a concentration gradient (1); factors: steeper gradient increases rate (1); larger surface area increases rate (1); shorter diffusion distance increases rate (1); example: oxygen diffusing into red blood cells in the lungs / glucose into blood from the small intestine (1) — award 5 from these 6 points."
   },
   {
     "id": "B1-LA-022",
@@ -792,7 +792,7 @@
     "command_word": "Explain",
     "topic": "Cell Division",
     "question": "Explain the role of mitosis in growth, repair and asexual reproduction. Include what is meant by the term 'diploid'.",
-    "mark_scheme": "Mitosis produces two genetically identical daughter cells (1); daughter cells are diploid \u2014 contain the same number of chromosomes as the parent cell / two sets of chromosomes (1); used in growth \u2014 increases cell number in multicellular organisms (1); used in repair \u2014 replaces damaged or dead cells (1); used in asexual reproduction \u2014 e.g. in plants by runners / in bacteria by binary fission (1)."
+    "mark_scheme": "Mitosis produces two genetically identical daughter cells (1); daughter cells are diploid — contain the same number of chromosomes as the parent cell / two sets of chromosomes (1); used in growth — increases cell number in multicellular organisms (1); used in repair — replaces damaged or dead cells (1); used in asexual reproduction — e.g. in plants by runners / in bacteria by binary fission (1)."
   },
   {
     "id": "B1-LA-023",
@@ -801,7 +801,7 @@
     "command_word": "Explain",
     "topic": "Specialised Cells",
     "question": "Explain how differentiation allows a multicellular organism to carry out a wide range of functions. Include reference to what genes are switched on and off.",
-    "mark_scheme": "All cells contain the same DNA / genome (1); differentiation is the process by which cells become specialised (1); different genes are switched on / expressed in different cell types (1); this produces different proteins, giving cells different structures (1); different structures allow different functions \u2014 e.g. muscle cells contract, nerve cells transmit impulses (1)."
+    "mark_scheme": "All cells contain the same DNA / genome (1); differentiation is the process by which cells become specialised (1); different genes are switched on / expressed in different cell types (1); this produces different proteins, giving cells different structures (1); different structures allow different functions — e.g. muscle cells contract, nerve cells transmit impulses (1)."
   },
   {
     "id": "B1-LA-024",
@@ -819,7 +819,7 @@
     "command_word": "Explain",
     "topic": "Cell Structure",
     "question": "Explain why prokaryotic cells are classified separately from eukaryotic cells. Include three structural differences in your answer.",
-    "mark_scheme": "Prokaryotic cells have no membrane-bound nucleus \u2014 DNA floats freely in cytoplasm (1); prokaryotic cells have no mitochondria (1); prokaryotic cells have a cell wall made of peptidoglycan, not cellulose (1); prokaryotic cells are smaller \u2014 typically 1\u201310 \u00b5m (1); prokaryotic cells may have plasmids \u2014 extra loops of DNA (1)."
+    "mark_scheme": "Prokaryotic cells have no membrane-bound nucleus — DNA floats freely in cytoplasm (1); prokaryotic cells have no mitochondria (1); prokaryotic cells have a cell wall made of peptidoglycan, not cellulose (1); prokaryotic cells are smaller — typically 1–10 µm (1); prokaryotic cells may have plasmids — extra loops of DNA (1)."
   },
   {
     "id": "B1-LA-026",
@@ -846,7 +846,7 @@
     "command_word": "Explain",
     "topic": "Microscopy",
     "question": "A student stains a slide of human cheek cells with methylene blue. Explain why staining is used, what structures would be visible, and one limitation of the light microscope for this investigation.",
-    "mark_scheme": "Staining makes cell structures more visible / increases contrast (1); nucleus would be visible \u2014 stained dark blue (1); cell membrane and cytoplasm would also be visible (1); limitation: cannot see ribosomes or detailed structure of mitochondria (1); because resolution of light microscope is insufficient for objects below ~200 nm (1)."
+    "mark_scheme": "Staining makes cell structures more visible / increases contrast (1); nucleus would be visible — stained dark blue (1); cell membrane and cytoplasm would also be visible (1); limitation: cannot see ribosomes or detailed structure of mitochondria (1); because resolution of light microscope is insufficient for objects below ~200 nm (1)."
   },
   {
     "id": "B1-LA-029",
@@ -855,7 +855,7 @@
     "command_word": "Explain",
     "topic": "Cell Division",
     "question": "Explain the difference between embryonic and adult stem cells in terms of their ability to differentiate. Include the terms 'pluripotent' and 'multipotent'.",
-    "mark_scheme": "Embryonic stem cells are pluripotent (1) \u2014 they can differentiate into any type of cell in the body (1); adult stem cells are multipotent (1) \u2014 they can only differentiate into a limited number of cell types (1); embryonic stem cells are found in the embryo; adult stem cells are found in specific tissues e.g. bone marrow (1)."
+    "mark_scheme": "Embryonic stem cells are pluripotent (1) — they can differentiate into any type of cell in the body (1); adult stem cells are multipotent (1) — they can only differentiate into a limited number of cell types (1); embryonic stem cells are found in the embryo; adult stem cells are found in specific tissues e.g. bone marrow (1)."
   },
   {
     "id": "B1-LA-030",
@@ -864,7 +864,7 @@
     "command_word": "Explain",
     "topic": "Cell Structure",
     "question": "Explain how the structures found in a eukaryotic cell allow it to carry out the processes needed for life. Refer to at least four cell organelles in your answer.",
-    "mark_scheme": "Nucleus: contains DNA, which carries instructions for making proteins / controlling cell activity (1); mitochondria: site of aerobic respiration, provides ATP/energy (1); ribosomes: site of protein synthesis, translating mRNA instructions (1); cell membrane: controls what enters and leaves the cell (1); cytoplasm: site of many metabolic reactions (1); for plant cells \u2014 chloroplasts absorb light for photosynthesis / cell wall provides support (1) \u2014 any 6 points."
+    "mark_scheme": "Nucleus: contains DNA, which carries instructions for making proteins / controlling cell activity (1); mitochondria: site of aerobic respiration, provides ATP/energy (1); ribosomes: site of protein synthesis, translating mRNA instructions (1); cell membrane: controls what enters and leaves the cell (1); cytoplasm: site of many metabolic reactions (1); for plant cells — chloroplasts absorb light for photosynthesis / cell wall provides support (1) — any 6 points."
   },
   {
     "id": "B1-LA-031",
@@ -872,8 +872,8 @@
     "marks": 6,
     "command_word": "Evaluate",
     "topic": "Transport",
-    "question": "A student investigates the effect of salt concentration on the mass of potato cylinders. The results show that at 0.5 mol/dm\u00b3 there is no change in mass. Evaluate the student's method and suggest how the results could be used to find the water potential of potato cells.",
-    "mark_scheme": "The point of no change (0.5 mol/dm\u00b3) is the isotonic point \u2014 water potential of cells equals that of solution (1); below this concentration potato gains mass \u2014 water enters by osmosis (1); above this concentration potato loses mass \u2014 water leaves (1); to find water potential: identify the concentration at which mass change = 0 (1); the method could be improved by using more concentrations for a more accurate result (1); repeating each concentration and averaging reduces random error (1)."
+    "question": "A student investigates the effect of salt concentration on the mass of potato cylinders. The results show that at 0.5 mol/dm³ there is no change in mass. Evaluate the student's method and suggest how the results could be used to find the water potential of potato cells.",
+    "mark_scheme": "The point of no change (0.5 mol/dm³) is the isotonic point — water potential of cells equals that of solution (1); below this concentration potato gains mass — water enters by osmosis (1); above this concentration potato loses mass — water leaves (1); to find water potential: identify the concentration at which mass change = 0 (1); the method could be improved by using more concentrations for a more accurate result (1); repeating each concentration and averaging reduces random error (1)."
   },
   {
     "id": "B1-LA-032",
@@ -891,7 +891,7 @@
     "command_word": "Describe",
     "topic": "Microscopy",
     "question": "Describe the development of microscopy from simple light microscopes to modern electron microscopes. Explain how advances in microscopy have changed our understanding of cell biology.",
-    "mark_scheme": "Early light microscopes had low magnification and resolution \u2014 could see cells but not internal detail (1); modern light microscopes can magnify up to ~1500\u00d7 with resolution ~200 nm (1); electron microscopes were developed in the 20th century \u2014 transmission electron microscope (TEM) can magnify up to \u00d7500,000 (1); electron microscopes have much higher resolution \u2014 can see organelles like ribosomes, detailed mitochondria structure (1); electron microscopes revealed the ultrastructure of cells \u2014 double membrane of nucleus, cristae in mitochondria (1); this led to new understanding of cell function \u2014 e.g. role of ribosomes in protein synthesis (1)."
+    "mark_scheme": "Early light microscopes had low magnification and resolution — could see cells but not internal detail (1); modern light microscopes can magnify up to ~1500× with resolution ~200 nm (1); electron microscopes were developed in the 20th century — transmission electron microscope (TEM) can magnify up to ×500,000 (1); electron microscopes have much higher resolution — can see organelles like ribosomes, detailed mitochondria structure (1); electron microscopes revealed the ultrastructure of cells — double membrane of nucleus, cristae in mitochondria (1); this led to new understanding of cell function — e.g. role of ribosomes in protein synthesis (1)."
   },
   {
     "id": "B1-LA-034",
@@ -900,7 +900,7 @@
     "command_word": "Explain",
     "topic": "Transport",
     "question": "Explain how the small intestine is adapted to maximise the absorption of digested food. In your answer, refer to diffusion, active transport and the role of villi.",
-    "mark_scheme": "Villi increase the surface area of the small intestine wall (1); microvilli on villi cells further increase surface area (1); glucose and amino acids move into blood by diffusion \u2014 from high concentration in gut to low concentration in blood (1); mineral ions and some glucose are absorbed by active transport against the concentration gradient (1); good blood supply / capillaries in each villus maintain the concentration gradient (1); thin cell walls / single cell layer reduces diffusion distance (1)."
+    "mark_scheme": "Villi increase the surface area of the small intestine wall (1); microvilli on villi cells further increase surface area (1); glucose and amino acids move into blood by diffusion — from high concentration in gut to low concentration in blood (1); mineral ions and some glucose are absorbed by active transport against the concentration gradient (1); good blood supply / capillaries in each villus maintain the concentration gradient (1); thin cell walls / single cell layer reduces diffusion distance (1)."
   },
   {
     "id": "B1-LA-035",
@@ -909,7 +909,7 @@
     "command_word": "Evaluate",
     "topic": "Specialised Cells",
     "question": "Evaluate the claim that 'all cells in a multicellular organism contain the same DNA but carry out different functions'. Use examples of at least three specialised cells to support your answer.",
-    "mark_scheme": "All cells produced from the same fertilised egg by mitosis \u2014 so all contain identical DNA (1); differentiation switches on certain genes and switches off others (1); red blood cells: no nucleus (lost during development) \u2014 biconcave shape maximises surface area for oxygen absorption (1); nerve cells: long axon with myelin sheath \u2014 adapted to conduct electrical impulses rapidly over long distances (1); muscle cells: contain many mitochondria \u2014 to supply ATP for contraction (1); this shows that DNA is the same but gene expression is different \u2014 leads to different protein production and different cell structure/function (1)."
+    "mark_scheme": "All cells produced from the same fertilised egg by mitosis — so all contain identical DNA (1); differentiation switches on certain genes and switches off others (1); red blood cells: no nucleus (lost during development) — biconcave shape maximises surface area for oxygen absorption (1); nerve cells: long axon with myelin sheath — adapted to conduct electrical impulses rapidly over long distances (1); muscle cells: contain many mitochondria — to supply ATP for contraction (1); this shows that DNA is the same but gene expression is different — leads to different protein production and different cell structure/function (1)."
   },
   {
     "id": "B1-LA-036",
@@ -918,7 +918,7 @@
     "command_word": "Explain",
     "topic": "Cell Division",
     "question": "Explain the stages of the cell cycle. Include interphase, what happens during mitosis, and the result of the cycle. Refer to the behaviour of chromosomes at each stage.",
-    "mark_scheme": "Interphase: cell grows and DNA is replicated \u2014 each chromosome is copied to form two identical chromatids (1); cell enters mitosis \u2014 chromosomes condense and become visible (1); chromosomes line up at the cell equator / middle of the cell (1); spindle fibres pull chromatids to opposite poles of the cell (1); nuclear envelopes reform around each set of chromosomes (1); cytoplasm divides (cytokinesis) \u2014 producing two genetically identical diploid daughter cells (1)."
+    "mark_scheme": "Interphase: cell grows and DNA is replicated — each chromosome is copied to form two identical chromatids (1); cell enters mitosis — chromosomes condense and become visible (1); chromosomes line up at the cell equator / middle of the cell (1); spindle fibres pull chromatids to opposite poles of the cell (1); nuclear envelopes reform around each set of chromosomes (1); cytoplasm divides (cytokinesis) — producing two genetically identical diploid daughter cells (1)."
   },
   {
     "id": "B1-LA-037",
@@ -927,7 +927,7 @@
     "command_word": "Evaluate",
     "topic": "Cell Structure",
     "question": "A scientist claims that the evolution of eukaryotic cells from prokaryotic cells can explain the origin of mitochondria. Evaluate this endosymbiotic theory, referring to evidence for and against.",
-    "mark_scheme": "Endosymbiotic theory: mitochondria were once free-living prokaryotes that were engulfed by a larger cell (1); evidence for: mitochondria have their own circular DNA, like prokaryotes (1); mitochondria have their own ribosomes, similar in size to prokaryotic ribosomes (1); mitochondria reproduce by binary fission, like bacteria (1); mitochondria have a double membrane \u2014 inner membrane from original prokaryote, outer from host cell (1); evidence against: no direct fossil record / cannot be directly observed (1) \u2014 award 6 marks for a balanced scientific evaluation."
+    "mark_scheme": "Endosymbiotic theory: mitochondria were once free-living prokaryotes that were engulfed by a larger cell (1); evidence for: mitochondria have their own circular DNA, like prokaryotes (1); mitochondria have their own ribosomes, similar in size to prokaryotic ribosomes (1); mitochondria reproduce by binary fission, like bacteria (1); mitochondria have a double membrane — inner membrane from original prokaryote, outer from host cell (1); evidence against: no direct fossil record / cannot be directly observed (1) — award 6 marks for a balanced scientific evaluation."
   },
   {
     "id": "B1-SA-016",
@@ -936,7 +936,7 @@
     "command_word": "State",
     "topic": "Cell Structure",
     "question": "State two differences between a plant cell and an animal cell.",
-    "mark_scheme": "Plant cells have a cell wall (1); plant cells have chloroplasts / a permanent vacuole (1) \u2014 any two differences."
+    "mark_scheme": "Plant cells have a cell wall (1); plant cells have chloroplasts / a permanent vacuole (1) — any two differences."
   },
   {
     "id": "B1-SA-017",
@@ -945,7 +945,7 @@
     "command_word": "Give",
     "topic": "Transport",
     "question": "Give two factors that affect the rate of diffusion.",
-    "mark_scheme": "Concentration gradient (1); surface area (1); temperature (1); thickness/distance of membrane (1) \u2014 any two."
+    "mark_scheme": "Concentration gradient (1); surface area (1); temperature (1); thickness/distance of membrane (1) — any two."
   },
   {
     "id": "B1-SA-018",
@@ -954,7 +954,7 @@
     "command_word": "State",
     "topic": "Cell Division",
     "question": "State two uses of mitosis in the human body.",
-    "mark_scheme": "Growth (1); repair of damaged tissues (1); replacement of old or dead cells (1) \u2014 any two."
+    "mark_scheme": "Growth (1); repair of damaged tissues (1); replacement of old or dead cells (1) — any two."
   },
   {
     "id": "B1-SA-019",
@@ -972,7 +972,7 @@
     "command_word": "Compare",
     "topic": "Cell Structure",
     "question": "Compare the size of a prokaryotic cell with that of a eukaryotic cell.",
-    "mark_scheme": "Prokaryotic cells are smaller than eukaryotic cells (1); prokaryotic cells are typically 1\u201310 \u00b5m; eukaryotic cells are typically 10\u2013100 \u00b5m (1)."
+    "mark_scheme": "Prokaryotic cells are smaller than eukaryotic cells (1); prokaryotic cells are typically 1–10 µm; eukaryotic cells are typically 10–100 µm (1)."
   },
   {
     "id": "B1-SA-021",
@@ -981,7 +981,7 @@
     "command_word": "Describe",
     "topic": "Microscopy",
     "question": "Describe how to calculate the actual size of a cell viewed under a microscope.",
-    "mark_scheme": "Use the formula: actual size = image size \u00f7 magnification (1); measure the image size and divide by the magnification used (1)."
+    "mark_scheme": "Use the formula: actual size = image size ÷ magnification (1); measure the image size and divide by the magnification used (1)."
   },
   {
     "id": "B1-SA-022",
@@ -1026,7 +1026,7 @@
     "command_word": "Describe",
     "topic": "Stem Cells",
     "question": "Describe three ways in which stem cells could be used in medicine.",
-    "mark_scheme": "Replacing damaged nerve cells in spinal cord injuries (1); producing insulin-secreting cells to treat diabetes (1); treating leukaemia using bone marrow transplants (1); growing replacement skin for burns patients (1) \u2014 any three."
+    "mark_scheme": "Replacing damaged nerve cells in spinal cord injuries (1); producing insulin-secreting cells to treat diabetes (1); treating leukaemia using bone marrow transplants (1); growing replacement skin for burns patients (1) — any three."
   },
   {
     "id": "B1-SA-027",
@@ -1044,7 +1044,7 @@
     "command_word": "Describe",
     "topic": "Microscopy",
     "question": "Describe three ways in which an electron microscope differs from a light microscope.",
-    "mark_scheme": "Electron microscopes use a beam of electrons, not light (1); electron microscopes have much higher resolution (1); electron microscopes have much higher magnification (1); electron microscopes cannot be used to view living specimens (1) \u2014 any three."
+    "mark_scheme": "Electron microscopes use a beam of electrons, not light (1); electron microscopes have much higher resolution (1); electron microscopes have much higher magnification (1); electron microscopes cannot be used to view living specimens (1) — any three."
   },
   {
     "id": "B1-SA-029",
@@ -1053,7 +1053,7 @@
     "command_word": "Explain",
     "topic": "Cell Division",
     "question": "Explain why cancer is caused by mutations in genes that control cell division.",
-    "mark_scheme": "Normally cell division is controlled by genes (1); mutations can cause these genes to malfunction (1); cells divide uncontrollably, forming a tumour (1); mutagens such as UV radiation or chemicals increase the chance of these mutations (1) \u2014 any three."
+    "mark_scheme": "Normally cell division is controlled by genes (1); mutations can cause these genes to malfunction (1); cells divide uncontrollably, forming a tumour (1); mutagens such as UV radiation or chemicals increase the chance of these mutations (1) — any three."
   },
   {
     "id": "B1-SA-030",
@@ -1062,7 +1062,7 @@
     "command_word": "Compare",
     "topic": "Cell Structure",
     "question": "Compare the structure of a bacterial cell with that of a plant cell.",
-    "mark_scheme": "Bacteria are prokaryotes with no membrane-bound nucleus; plant cells are eukaryotes with a membrane-bound nucleus (1); bacteria have no mitochondria; plant cells do (1); bacteria may have plasmids; plant cells do not (1); both have a cell wall but bacterial walls are made of peptidoglycan, plant walls of cellulose (1) \u2014 any three."
+    "mark_scheme": "Bacteria are prokaryotes with no membrane-bound nucleus; plant cells are eukaryotes with a membrane-bound nucleus (1); bacteria have no mitochondria; plant cells do (1); bacteria may have plasmids; plant cells do not (1); both have a cell wall but bacterial walls are made of peptidoglycan, plant walls of cellulose (1) — any three."
   },
   {
     "id": "B1-SA-031",
@@ -1071,7 +1071,7 @@
     "command_word": "Describe",
     "topic": "Transport",
     "question": "Describe what happens to a plant cell placed in a very dilute solution.",
-    "mark_scheme": "The dilute solution has a higher water concentration than the cell contents (1); water moves into the cell by osmosis (1); the cell becomes turgid as the vacuole fills with water (1); the cell wall prevents the cell from bursting (1) \u2014 any three."
+    "mark_scheme": "The dilute solution has a higher water concentration than the cell contents (1); water moves into the cell by osmosis (1); the cell becomes turgid as the vacuole fills with water (1); the cell wall prevents the cell from bursting (1) — any three."
   },
   {
     "id": "B1-SA-032",
@@ -1099,5 +1099,68 @@
     "topic": "Transport",
     "question": "Explain how the small intestine is adapted for absorption by active transport and diffusion.",
     "mark_scheme": "Villi provide a large surface area for absorption (1); glucose is absorbed by diffusion down a concentration gradient maintained by the blood supply (1); mineral ions are absorbed by active transport using energy from respiration when their concentration in the blood is already high (1)."
+  },
+  {
+    "id": "B1-SA-035",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Stem Cells",
+    "question": "State what is meant by a stem cell.",
+    "mark_scheme": "A stem cell is an undifferentiated cell that has not yet specialised for a particular function (1)."
+  },
+  {
+    "id": "B1-SA-036",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Stem Cells",
+    "question": "State where adult stem cells can be found in the human body. Give one example.",
+    "mark_scheme": "Adult stem cells are found in specific tissues (1); e.g. bone marrow (1) — accept one valid location for 1 mark."
+  },
+  {
+    "id": "B1-SA-037",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Stem Cells",
+    "question": "Explain why stem cells from a patient's own body are less likely to be rejected when used in treatment.",
+    "mark_scheme": "The stem cells have the same antigens as the patient's cells (1); the immune system does not recognise them as foreign, so does not attack them (1)."
+  },
+  {
+    "id": "B1-SA-038",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Compare",
+    "topic": "Stem Cells",
+    "question": "Compare embryonic stem cells and adult stem cells in terms of where they are found and what they can differentiate into.",
+    "mark_scheme": "Embryonic stem cells are found in embryos (1); they can differentiate into any cell type (pluripotent) (1); adult stem cells are found in specific tissues e.g. bone marrow (1); they can only differentiate into a limited range of cell types (1) — any two."
+  },
+  {
+    "id": "B1-SA-039",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Give",
+    "topic": "Stem Cells",
+    "question": "Give two medical conditions that scientists hope to treat using stem cells.",
+    "mark_scheme": "Any two from: diabetes (1); Parkinson's disease (1); spinal cord injuries (1); leukaemia (1); heart disease (1)."
+  },
+  {
+    "id": "B1-SA-040",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Stem Cells",
+    "question": "Explain why some people object to the use of embryonic stem cells in medical research.",
+    "mark_scheme": "Embryos must be destroyed to obtain embryonic stem cells (1); some people consider the embryo to be a human life from the moment of fertilisation (1); destroying the embryo is therefore considered unethical (1); some argue the potential benefits do not justify this (1) — any three."
+  },
+  {
+    "id": "B1-SA-041",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Stem Cells",
+    "question": "Describe how therapeutic cloning could be used to produce stem cells that are less likely to be rejected by a patient.",
+    "mark_scheme": "An embryo is created by inserting the patient's own nucleus into an enucleated egg cell (1); the embryo is grown to the blastocyst stage (1); embryonic stem cells are harvested from the embryo (1); the cells have the same DNA as the patient so are unlikely to be rejected by the immune system (1) — any three."
   }
 ]

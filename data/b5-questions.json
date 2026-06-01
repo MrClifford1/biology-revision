@@ -20,12 +20,12 @@
     "topic": "Nervous System",
     "question": "What is the correct order of a reflex arc?",
     "options": [
-      "Effector \u2192 Motor neurone \u2192 Relay neurone \u2192 Sensory neurone \u2192 Receptor",
-      "Receptor \u2192 Sensory neurone \u2192 Relay neurone \u2192 Motor neurone \u2192 Effector",
-      "Receptor \u2192 Motor neurone \u2192 Relay neurone \u2192 Sensory neurone \u2192 Effector",
-      "Effector \u2192 Relay neurone \u2192 Sensory neurone \u2192 Motor neurone \u2192 Receptor"
+      "Effector → Motor neurone → Relay neurone → Sensory neurone → Receptor",
+      "Receptor → Sensory neurone → Relay neurone → Motor neurone → Effector",
+      "Receptor → Motor neurone → Relay neurone → Sensory neurone → Effector",
+      "Effector → Relay neurone → Sensory neurone → Motor neurone → Receptor"
     ],
-    "correct": "Receptor \u2192 Sensory neurone \u2192 Relay neurone \u2192 Motor neurone \u2192 Effector"
+    "correct": "Receptor → Sensory neurone → Relay neurone → Motor neurone → Effector"
   },
   {
     "id": "B5-MC-003",
@@ -356,11 +356,11 @@
     "pairs": [
       {
         "term": "Insulin",
-        "definition": "Causes cells to absorb glucose \u2014 lowers blood glucose"
+        "definition": "Causes cells to absorb glucose — lowers blood glucose"
       },
       {
         "term": "Glucagon",
-        "definition": "Causes liver to convert glycogen to glucose \u2014 raises blood glucose"
+        "definition": "Causes liver to convert glycogen to glucose — raises blood glucose"
       }
     ]
   },
@@ -373,19 +373,19 @@
     "pairs": [
       {
         "term": "Vasodilation",
-        "definition": "Blood vessels widen to increase heat loss \u2014 too hot"
+        "definition": "Blood vessels widen to increase heat loss — too hot"
       },
       {
         "term": "Vasoconstriction",
-        "definition": "Blood vessels narrow to reduce heat loss \u2014 too cold"
+        "definition": "Blood vessels narrow to reduce heat loss — too cold"
       },
       {
         "term": "Sweating",
-        "definition": "Evaporation of sweat cools the body \u2014 too hot"
+        "definition": "Evaporation of sweat cools the body — too hot"
       },
       {
         "term": "Shivering",
-        "definition": "Muscle contractions generate heat \u2014 too cold"
+        "definition": "Muscle contractions generate heat — too cold"
       }
     ]
   },
@@ -402,7 +402,7 @@
       },
       {
         "term": "LH",
-        "definition": "Triggers ovulation \u2014 release of a mature egg"
+        "definition": "Triggers ovulation — release of a mature egg"
       },
       {
         "term": "Oestrogen",
@@ -427,7 +427,7 @@
       },
       {
         "term": "Coordinator",
-        "definition": "The brain or spinal cord \u2014 processes information"
+        "definition": "The brain or spinal cord — processes information"
       },
       {
         "term": "Effector",
@@ -464,7 +464,7 @@
     "command_word": "Name",
     "topic": "Nervous System",
     "question": "Name the two organs that make up the central nervous system.",
-    "mark_scheme": "Brain (1) and spinal cord (1) \u2014 both needed."
+    "mark_scheme": "Brain (1) and spinal cord (1) — both needed."
   },
   {
     "id": "B5-SA-004",
@@ -482,7 +482,7 @@
     "command_word": "Explain",
     "topic": "Nervous System",
     "question": "Explain how a signal is transmitted across a synapse.",
-    "mark_scheme": "Neurotransmitter is released from the end of the first neurone (1); diffuses across the gap (1); binds to receptors on the next neurone (1); triggers a new electrical impulse (1) \u2014 any two."
+    "mark_scheme": "Neurotransmitter is released from the end of the first neurone (1); diffuses across the gap (1); binds to receptors on the next neurone (1); triggers a new electrical impulse (1) — any two."
   },
   {
     "id": "B5-SA-006",
@@ -491,7 +491,7 @@
     "command_word": "Explain",
     "topic": "Blood Glucose",
     "question": "Explain how the body responds when blood glucose levels rise after a meal.",
-    "mark_scheme": "Pancreas detects high blood glucose (1); releases insulin (1); cells absorb more glucose from the blood (1); liver converts glucose to glycogen (1); blood glucose returns to normal (1) \u2014 any two."
+    "mark_scheme": "Pancreas detects high blood glucose (1); releases insulin (1); cells absorb more glucose from the blood (1); liver converts glucose to glycogen (1); blood glucose returns to normal (1) — any two."
   },
   {
     "id": "B5-SA-007",
@@ -500,7 +500,7 @@
     "command_word": "Explain",
     "topic": "Homeostasis",
     "question": "Explain how sweating helps to cool the body down.",
-    "mark_scheme": "Sweat glands produce sweat on skin surface (1); water in sweat evaporates (1); evaporation requires heat energy which is taken from the skin (1); body temperature decreases (1) \u2014 any two."
+    "mark_scheme": "Sweat glands produce sweat on skin surface (1); water in sweat evaporates (1); evaporation requires heat energy which is taken from the skin (1); body temperature decreases (1) — any two."
   },
   {
     "id": "B5-SA-008",
@@ -509,7 +509,7 @@
     "command_word": "Compare",
     "topic": "Blood Glucose",
     "question": "Compare Type 1 and Type 2 diabetes.",
-    "mark_scheme": "Type 1 \u2014 pancreas produces no insulin (1); Type 2 \u2014 cells do not respond to insulin (1); Type 1 treated with insulin injections (1); Type 2 treated with diet and exercise (1); Type 2 associated with obesity (1) \u2014 any two."
+    "mark_scheme": "Type 1 — pancreas produces no insulin (1); Type 2 — cells do not respond to insulin (1); Type 1 treated with insulin injections (1); Type 2 treated with diet and exercise (1); Type 2 associated with obesity (1) — any two."
   },
   {
     "id": "B5-SA-009",
@@ -518,7 +518,7 @@
     "command_word": "Explain",
     "topic": "Nervous System",
     "question": "Explain why reflex actions are important for survival.",
-    "mark_scheme": "Reflex actions are rapid and automatic (1); do not require conscious thought (1); protect the body from harm before the brain has time to process the stimulus (1); coordinated by spinal cord (1) \u2014 any two."
+    "mark_scheme": "Reflex actions are rapid and automatic (1); do not require conscious thought (1); protect the body from harm before the brain has time to process the stimulus (1); coordinated by spinal cord (1) — any two."
   },
   {
     "id": "B5-SA-010",
@@ -527,7 +527,7 @@
     "command_word": "Explain",
     "topic": "Homeostasis",
     "question": "Explain how the body responds when core body temperature drops below normal.",
-    "mark_scheme": "Hypothalamus detects drop in blood temperature (1); vasoconstriction \u2014 blood vessels near skin narrow (1); reduces heat loss from skin (1); shivering \u2014 muscles contract rapidly generating heat (1); hairs stand on end to trap air (1) \u2014 any three."
+    "mark_scheme": "Hypothalamus detects drop in blood temperature (1); vasoconstriction — blood vessels near skin narrow (1); reduces heat loss from skin (1); shivering — muscles contract rapidly generating heat (1); hairs stand on end to trap air (1) — any three."
   },
   {
     "id": "B5-SA-011",
@@ -536,7 +536,7 @@
     "command_word": "Describe",
     "topic": "Nervous System",
     "question": "Describe the pathway of a reflex arc when you touch a hot object.",
-    "mark_scheme": "Receptor in skin detects heat / pain stimulus (1); sensory neurone carries impulse to spinal cord (1); relay neurone in spinal cord connects to motor neurone (1); motor neurone carries impulse to effector / muscle (1); muscle contracts and hand is withdrawn (1) \u2014 any three."
+    "mark_scheme": "Receptor in skin detects heat / pain stimulus (1); sensory neurone carries impulse to spinal cord (1); relay neurone in spinal cord connects to motor neurone (1); motor neurone carries impulse to effector / muscle (1); muscle contracts and hand is withdrawn (1) — any three."
   },
   {
     "id": "B5-SA-012",
@@ -545,7 +545,7 @@
     "command_word": "Explain",
     "topic": "Reproduction",
     "question": "Explain how hormones control the menstrual cycle.",
-    "mark_scheme": "FSH from pituitary causes egg to mature (1); oestrogen produced by ovaries rebuilds uterus lining (1); oestrogen inhibits FSH and stimulates LH (1); LH surge triggers ovulation (1); progesterone maintains uterus lining (1) \u2014 any three."
+    "mark_scheme": "FSH from pituitary causes egg to mature (1); oestrogen produced by ovaries rebuilds uterus lining (1); oestrogen inhibits FSH and stimulates LH (1); LH surge triggers ovulation (1); progesterone maintains uterus lining (1) — any three."
   },
   {
     "id": "B5-LA-001",
@@ -554,7 +554,7 @@
     "command_word": "Explain",
     "topic": "Blood Glucose",
     "question": "Explain how blood glucose concentration is regulated by the pancreas, including the roles of both insulin and glucagon.",
-    "mark_scheme": "After eating, blood glucose rises (1); pancreas releases insulin (1); cells absorb glucose and liver converts glucose to glycogen (1); blood glucose falls back to normal (1); if blood glucose falls too low, glucagon is released (1); liver converts glycogen back to glucose (1) \u2014 any four."
+    "mark_scheme": "After eating, blood glucose rises (1); pancreas releases insulin (1); cells absorb glucose and liver converts glucose to glycogen (1); blood glucose falls back to normal (1); if blood glucose falls too low, glucagon is released (1); liver converts glycogen back to glucose (1) — any four."
   },
   {
     "id": "B5-LA-002",
@@ -563,7 +563,7 @@
     "command_word": "Describe",
     "topic": "Nervous System",
     "question": "Describe the differences between nervous system control and hormonal control in the body.",
-    "mark_scheme": "Nervous system uses electrical impulses (1); hormones are chemical messengers carried in blood (1); nervous response is faster (1); hormonal response is slower but longer lasting (1); nervous system targets specific effectors (1); hormones travel to all cells but only affect target organs (1) \u2014 any four."
+    "mark_scheme": "Nervous system uses electrical impulses (1); hormones are chemical messengers carried in blood (1); nervous response is faster (1); hormonal response is slower but longer lasting (1); nervous system targets specific effectors (1); hormones travel to all cells but only affect target organs (1) — any four."
   },
   {
     "id": "B5-LA-003",
@@ -571,8 +571,8 @@
     "marks": 4,
     "command_word": "Explain",
     "topic": "Homeostasis",
-    "question": "Explain how the body maintains a constant core temperature of 37\u00b0C, referring to both overheating and overcooling responses.",
-    "mark_scheme": "Hypothalamus monitors blood temperature (1); too hot: vasodilation increases heat loss (1); sweating \u2014 evaporation cools body (1); too cold: vasoconstriction reduces heat loss (1); shivering generates heat (1); negative feedback returns temperature to normal (1) \u2014 any four."
+    "question": "Explain how the body maintains a constant core temperature of 37°C, referring to both overheating and overcooling responses.",
+    "mark_scheme": "Hypothalamus monitors blood temperature (1); too hot: vasodilation increases heat loss (1); sweating — evaporation cools body (1); too cold: vasoconstriction reduces heat loss (1); shivering generates heat (1); negative feedback returns temperature to normal (1) — any four."
   },
   {
     "id": "B5-LA-004",
@@ -581,7 +581,7 @@
     "command_word": "Evaluate",
     "topic": "Reproduction",
     "question": "Evaluate the use of hormones in contraception and fertility treatment.",
-    "mark_scheme": "Hormonal contraceptives prevent ovulation (1); effective but may have side effects (1); fertility treatment uses FSH to stimulate egg production (1); IVF fertilises eggs outside the body (1); success rate not 100% (1); ethical issues around unused embryos (1) \u2014 any four."
+    "mark_scheme": "Hormonal contraceptives prevent ovulation (1); effective but may have side effects (1); fertility treatment uses FSH to stimulate egg production (1); IVF fertilises eggs outside the body (1); success rate not 100% (1); ethical issues around unused embryos (1) — any four."
   },
   {
     "id": "B5-LA-005",
@@ -590,7 +590,7 @@
     "command_word": "Explain",
     "topic": "Nervous System",
     "question": "Explain how the nervous system detects and responds to stimuli, using the example of a reflex action.",
-    "mark_scheme": "Receptor detects stimulus (1); sensory neurone carries electrical impulse to CNS (1); relay neurone in spinal cord processes signal (1); motor neurone carries impulse to effector (1); effector responds \u2014 muscle contracts or gland secretes (1); reflex bypasses brain for speed (1) \u2014 any five."
+    "mark_scheme": "Receptor detects stimulus (1); sensory neurone carries electrical impulse to CNS (1); relay neurone in spinal cord processes signal (1); motor neurone carries impulse to effector (1); effector responds — muscle contracts or gland secretes (1); reflex bypasses brain for speed (1) — any five."
   },
   {
     "id": "B5-LA-006",
@@ -599,7 +599,7 @@
     "command_word": "Explain",
     "topic": "Blood Glucose",
     "question": "Explain how Type 1 and Type 2 diabetes develop, and describe the treatments available for each condition.",
-    "mark_scheme": "Type 1: pancreas does not produce insulin (1); immune system destroys insulin-producing cells (1); treated with insulin injections (1); blood glucose monitored carefully (1). Type 2: cells become resistant to insulin (1); associated with obesity and poor diet (1); treated with healthy diet and exercise (1); medication may be needed (1) \u2014 any six."
+    "mark_scheme": "Type 1: pancreas does not produce insulin (1); immune system destroys insulin-producing cells (1); treated with insulin injections (1); blood glucose monitored carefully (1). Type 2: cells become resistant to insulin (1); associated with obesity and poor diet (1); treated with healthy diet and exercise (1); medication may be needed (1) — any six."
   },
   {
     "id": "B5-LA-007",
@@ -608,7 +608,7 @@
     "command_word": "Evaluate",
     "topic": "Reproduction",
     "question": "Evaluate the use of IVF as a fertility treatment. Include the procedure, success rates, and ethical considerations in your answer.",
-    "mark_scheme": "FSH given to stimulate multiple egg production (1); eggs collected and fertilised with sperm outside the body (1); embryos implanted into uterus (1); success rate around 25-30% per cycle (1); multiple embryos may be created \u2014 ethical issues around unused embryos (1); emotional and physical stress for patients (1); expensive treatment (1); can result in multiple births (1) \u2014 any six."
+    "mark_scheme": "FSH given to stimulate multiple egg production (1); eggs collected and fertilised with sperm outside the body (1); embryos implanted into uterus (1); success rate around 25-30% per cycle (1); multiple embryos may be created — ethical issues around unused embryos (1); emotional and physical stress for patients (1); expensive treatment (1); can result in multiple births (1) — any six."
   },
   {
     "type": "written",
@@ -616,7 +616,7 @@
     "command_word": "Explain",
     "topic": "Nervous System",
     "question": "Explain how the structure of a synapse allows a nerve impulse to be transmitted from one neurone to the next.",
-    "mark_scheme": "Nerve impulse arrives at the presynaptic membrane (1); vesicles containing neurotransmitter fuse with the membrane (1); neurotransmitter is released into the synaptic cleft (1); neurotransmitter diffuses across the gap (1); binds to complementary receptors on the postsynaptic membrane (1); triggers a new electrical impulse in the next neurone (1) \u2014 any four.",
+    "mark_scheme": "Nerve impulse arrives at the presynaptic membrane (1); vesicles containing neurotransmitter fuse with the membrane (1); neurotransmitter is released into the synaptic cleft (1); neurotransmitter diffuses across the gap (1); binds to complementary receptors on the postsynaptic membrane (1); triggers a new electrical impulse in the next neurone (1) — any four.",
     "id": "B5-LA-008"
   },
   {
@@ -625,7 +625,7 @@
     "command_word": "Describe",
     "topic": "Hormones",
     "question": "Describe the role of adrenaline in the body's response to a perceived threat.",
-    "mark_scheme": "Adrenaline is released from the adrenal glands (1); travels in the bloodstream to target organs (1); increases heart rate to deliver more oxygen to muscles (1); dilates pupils for better vision (1); raises blood glucose concentration for extra energy (1); diverts blood away from digestive system to muscles (1) \u2014 any four.",
+    "mark_scheme": "Adrenaline is released from the adrenal glands (1); travels in the bloodstream to target organs (1); increases heart rate to deliver more oxygen to muscles (1); dilates pupils for better vision (1); raises blood glucose concentration for extra energy (1); diverts blood away from digestive system to muscles (1) — any four.",
     "id": "B5-LA-009"
   },
   {
@@ -633,8 +633,8 @@
     "marks": 4,
     "command_word": "Explain",
     "topic": "Homeostasis",
-    "question": "Explain why it is important for the body to maintain a constant internal temperature of approximately 37\u00b0C.",
-    "mark_scheme": "Enzymes in the body work best at 37\u00b0C / optimal temperature (1); enzymes catalyse metabolic reactions (1); if temperature is too high, enzymes denature (1); if temperature is too low, enzyme activity decreases / reactions slow down (1); cell processes including respiration and protein synthesis would be affected (1) \u2014 any four.",
+    "question": "Explain why it is important for the body to maintain a constant internal temperature of approximately 37°C.",
+    "mark_scheme": "Enzymes in the body work best at 37°C / optimal temperature (1); enzymes catalyse metabolic reactions (1); if temperature is too high, enzymes denature (1); if temperature is too low, enzyme activity decreases / reactions slow down (1); cell processes including respiration and protein synthesis would be affected (1) — any four.",
     "id": "B5-LA-010"
   },
   {
@@ -643,7 +643,7 @@
     "command_word": "Compare",
     "topic": "Hormones",
     "question": "Compare the nervous system and the endocrine system as methods of communication in the body.",
-    "mark_scheme": "Nervous system uses electrical impulses; endocrine uses chemical hormones (1); nervous system is faster; hormonal response is slower (1); nervous system effects are short-lived; hormonal effects are longer lasting (1); nervous system targets specific cells; hormones travel to all cells but only affect target organs with receptors (1); nervous impulses travel along neurones; hormones travel in the bloodstream (1) \u2014 any four.",
+    "mark_scheme": "Nervous system uses electrical impulses; endocrine uses chemical hormones (1); nervous system is faster; hormonal response is slower (1); nervous system effects are short-lived; hormonal effects are longer lasting (1); nervous system targets specific cells; hormones travel to all cells but only affect target organs with receptors (1); nervous impulses travel along neurones; hormones travel in the bloodstream (1) — any four.",
     "id": "B5-LA-011"
   },
   {
@@ -652,7 +652,7 @@
     "command_word": "Explain",
     "topic": "Reproduction",
     "question": "Explain the role of progesterone in the menstrual cycle and early pregnancy.",
-    "mark_scheme": "Progesterone is produced by the corpus luteum after ovulation (1); maintains the uterus lining (1); inhibits FSH and LH preventing further ovulation (1); if fertilisation occurs, progesterone levels remain high (1); if no fertilisation, corpus luteum breaks down and progesterone falls (1); uterus lining breaks down causing menstruation (1) \u2014 any four.",
+    "mark_scheme": "Progesterone is produced by the corpus luteum after ovulation (1); maintains the uterus lining (1); inhibits FSH and LH preventing further ovulation (1); if fertilisation occurs, progesterone levels remain high (1); if no fertilisation, corpus luteum breaks down and progesterone falls (1); uterus lining breaks down causing menstruation (1) — any four.",
     "id": "B5-LA-012"
   },
   {
@@ -661,7 +661,7 @@
     "command_word": "Evaluate",
     "topic": "Blood Glucose",
     "question": "Evaluate the use of technology such as continuous glucose monitors and insulin pumps in managing Type 1 diabetes.",
-    "mark_scheme": "Continuous glucose monitors measure blood glucose without finger pricks (1); gives real-time data (1); insulin pumps deliver insulin automatically (1); reduces risk of dangerous highs and lows (1); improves quality of life (1); technology is expensive and not universally available (1); devices may malfunction (1) \u2014 any four.",
+    "mark_scheme": "Continuous glucose monitors measure blood glucose without finger pricks (1); gives real-time data (1); insulin pumps deliver insulin automatically (1); reduces risk of dangerous highs and lows (1); improves quality of life (1); technology is expensive and not universally available (1); devices may malfunction (1) — any four.",
     "id": "B5-LA-013"
   },
   {
@@ -670,7 +670,7 @@
     "command_word": "Explain",
     "topic": "Homeostasis",
     "question": "Explain how negative feedback is used to maintain homeostasis, using blood glucose regulation as an example.",
-    "mark_scheme": "Homeostasis maintains internal conditions within narrow limits (1); a change from the set point is detected (1); corrective mechanisms are activated (1); blood glucose rises \u2014 insulin released (1); blood glucose falls back to normal level (1); the response is then switched off (1) \u2014 any four.",
+    "mark_scheme": "Homeostasis maintains internal conditions within narrow limits (1); a change from the set point is detected (1); corrective mechanisms are activated (1); blood glucose rises — insulin released (1); blood glucose falls back to normal level (1); the response is then switched off (1) — any four.",
     "id": "B5-LA-014"
   },
   {
@@ -679,7 +679,7 @@
     "command_word": "Describe",
     "topic": "Reproduction",
     "question": "Describe how hormones are used in oral contraceptives to prevent pregnancy.",
-    "mark_scheme": "Combined pill contains oestrogen and progesterone (1); high levels of oestrogen inhibit FSH (1); eggs do not mature so ovulation does not occur (1); progesterone causes mucus in cervix to thicken preventing sperm entry (1); uterus lining is maintained so implantation is less likely (1); pill must be taken consistently to be effective (1) \u2014 any four.",
+    "mark_scheme": "Combined pill contains oestrogen and progesterone (1); high levels of oestrogen inhibit FSH (1); eggs do not mature so ovulation does not occur (1); progesterone causes mucus in cervix to thicken preventing sperm entry (1); uterus lining is maintained so implantation is less likely (1); pill must be taken consistently to be effective (1) — any four.",
     "id": "B5-LA-015"
   },
   {
@@ -688,7 +688,7 @@
     "command_word": "Explain",
     "topic": "Nervous System",
     "question": "Explain what is meant by a voluntary response and contrast it with a reflex action.",
-    "mark_scheme": "A voluntary response involves conscious thought (1); impulse travels to the brain for processing (1); brain decides on appropriate response (1); slower than a reflex (1); reflex action does not involve conscious thought (1); coordinated by the spinal cord (1); reflex is faster and protects the body from harm (1) \u2014 any four.",
+    "mark_scheme": "A voluntary response involves conscious thought (1); impulse travels to the brain for processing (1); brain decides on appropriate response (1); slower than a reflex (1); reflex action does not involve conscious thought (1); coordinated by the spinal cord (1); reflex is faster and protects the body from harm (1) — any four.",
     "id": "B5-LA-016"
   },
   {
@@ -697,7 +697,7 @@
     "command_word": "Explain",
     "topic": "Homeostasis",
     "question": "Explain how the kidneys maintain water balance in the body, including the role of ADH.",
-    "mark_scheme": "Kidneys filter the blood (1); water content is monitored by the hypothalamus (1); if blood is too concentrated, more ADH is released from pituitary gland (1); ADH causes kidney tubules to reabsorb more water (1); concentrated urine is produced (1); if blood is too dilute, less ADH is released and dilute urine is produced (1) \u2014 any four.",
+    "mark_scheme": "Kidneys filter the blood (1); water content is monitored by the hypothalamus (1); if blood is too concentrated, more ADH is released from pituitary gland (1); ADH causes kidney tubules to reabsorb more water (1); concentrated urine is produced (1); if blood is too dilute, less ADH is released and dilute urine is produced (1) — any four.",
     "id": "B5-LA-017"
   },
   {
@@ -706,7 +706,7 @@
     "command_word": "Describe",
     "topic": "Hormones",
     "question": "Describe the role of thyroxine in the body and explain how its levels are regulated.",
-    "mark_scheme": "Thyroxine is produced by the thyroid gland (1); regulates metabolic rate (1); controls growth and development (1); TSH from the pituitary stimulates thyroxine release (1); when thyroxine levels are high, TSH production is reduced \u2014 negative feedback (1); low thyroxine levels stimulate more TSH release (1) \u2014 any four.",
+    "mark_scheme": "Thyroxine is produced by the thyroid gland (1); regulates metabolic rate (1); controls growth and development (1); TSH from the pituitary stimulates thyroxine release (1); when thyroxine levels are high, TSH production is reduced — negative feedback (1); low thyroxine levels stimulate more TSH release (1) — any four.",
     "id": "B5-LA-018"
   },
   {
@@ -715,7 +715,7 @@
     "command_word": "Explain",
     "topic": "Homeostasis",
     "question": "Explain how the body responds to overheating, including the roles of the skin, blood vessels and sweat glands.",
-    "mark_scheme": "Hypothalamus detects rise in blood temperature (1); vasodilation \u2014 blood vessels near skin surface widen (1); more blood flows to skin surface (1); more heat is lost by radiation from skin (1); sweat glands produce more sweat (1); evaporation of sweat from skin surface removes heat energy (1) \u2014 any five.",
+    "mark_scheme": "Hypothalamus detects rise in blood temperature (1); vasodilation — blood vessels near skin surface widen (1); more blood flows to skin surface (1); more heat is lost by radiation from skin (1); sweat glands produce more sweat (1); evaporation of sweat from skin surface removes heat energy (1) — any five.",
     "id": "B5-LA-019"
   },
   {
@@ -724,7 +724,7 @@
     "command_word": "Describe",
     "topic": "Blood Glucose",
     "question": "Describe how blood glucose levels are regulated by the pancreas after a meal high in carbohydrates.",
-    "mark_scheme": "Blood glucose concentration rises after the meal (1); detected by receptors in the pancreas (1); beta cells in the pancreas release insulin (1); insulin causes body cells to absorb glucose from the blood (1); liver cells convert glucose to glycogen for storage (1); blood glucose falls back to the normal level (1) \u2014 any five.",
+    "mark_scheme": "Blood glucose concentration rises after the meal (1); detected by receptors in the pancreas (1); beta cells in the pancreas release insulin (1); insulin causes body cells to absorb glucose from the blood (1); liver cells convert glucose to glycogen for storage (1); blood glucose falls back to the normal level (1) — any five.",
     "id": "B5-LA-020"
   },
   {
@@ -733,7 +733,7 @@
     "command_word": "Explain",
     "topic": "Reproduction",
     "question": "Explain how fertility drugs work to help couples conceive, including the hormones involved.",
-    "mark_scheme": "Some women do not produce enough FSH (1); fertility drugs containing FSH are given (1); FSH stimulates egg maturation in the ovaries (1); oestrogen levels rise stimulating LH release (1); LH surge triggers ovulation (1); increases the chance of fertilisation (1); may result in multiple pregnancies as more than one egg may be released (1) \u2014 any five.",
+    "mark_scheme": "Some women do not produce enough FSH (1); fertility drugs containing FSH are given (1); FSH stimulates egg maturation in the ovaries (1); oestrogen levels rise stimulating LH release (1); LH surge triggers ovulation (1); increases the chance of fertilisation (1); may result in multiple pregnancies as more than one egg may be released (1) — any five.",
     "id": "B5-LA-021"
   },
   {
@@ -742,7 +742,7 @@
     "command_word": "Explain",
     "topic": "Nervous System",
     "question": "Explain how the eye responds to bright light, including the muscles and structures involved.",
-    "mark_scheme": "Bright light enters the eye (1); circular muscles of the iris contract (1); radial muscles relax (1); pupil becomes smaller / constricts (1); less light enters the eye (1); protects the retina from damage (1) \u2014 any five.",
+    "mark_scheme": "Bright light enters the eye (1); circular muscles of the iris contract (1); radial muscles relax (1); pupil becomes smaller / constricts (1); less light enters the eye (1); protects the retina from damage (1) — any five.",
     "id": "B5-LA-022"
   },
   {
@@ -751,7 +751,7 @@
     "command_word": "Evaluate",
     "topic": "Hormones",
     "question": "Evaluate the use of hormonal treatments for infertility compared to adoption as a solution for childless couples.",
-    "mark_scheme": "Hormonal treatment: can allow couple to have biological child (1); uses FSH and LH to stimulate ovulation (1); IVF may also be used (1); can be expensive and emotionally stressful (1); success rates are not guaranteed (1); adoption: provides a home for a child who needs one (1); no physical health risks (1); lengthy process with legal requirements (1) \u2014 any five.",
+    "mark_scheme": "Hormonal treatment: can allow couple to have biological child (1); uses FSH and LH to stimulate ovulation (1); IVF may also be used (1); can be expensive and emotionally stressful (1); success rates are not guaranteed (1); adoption: provides a home for a child who needs one (1); no physical health risks (1); lengthy process with legal requirements (1) — any five.",
     "id": "B5-LA-023"
   },
   {
@@ -760,7 +760,7 @@
     "command_word": "Describe",
     "topic": "Homeostasis",
     "question": "Describe how the body responds to exercising in a warm environment, explaining how both temperature and water balance are maintained.",
-    "mark_scheme": "Core temperature rises during exercise (1); vasodilation increases blood flow to skin (1); sweating increases to cool the body (1); sweating causes water loss (1); blood becomes more concentrated \u2014 osmoreceptors in hypothalamus detect this (1); more ADH released \u2014 kidneys reabsorb more water (1); concentrated urine produced (1) \u2014 any five.",
+    "mark_scheme": "Core temperature rises during exercise (1); vasodilation increases blood flow to skin (1); sweating increases to cool the body (1); sweating causes water loss (1); blood becomes more concentrated — osmoreceptors in hypothalamus detect this (1); more ADH released — kidneys reabsorb more water (1); concentrated urine produced (1) — any five.",
     "id": "B5-LA-024"
   },
   {
@@ -769,7 +769,7 @@
     "command_word": "Explain",
     "topic": "Blood Glucose",
     "question": "Explain why Type 2 diabetes is increasing in the population, and describe the lifestyle changes that can prevent or manage the condition.",
-    "mark_scheme": "Type 2 diabetes \u2014 cells become resistant to insulin (1); associated with obesity and poor diet high in sugar (1); rising rates linked to sedentary lifestyle and processed food (1); lifestyle changes: eating a balanced diet with less refined carbohydrate (1); regular physical exercise (1); maintaining a healthy body weight (1); these measures can prevent cells becoming resistant to insulin (1) \u2014 any five.",
+    "mark_scheme": "Type 2 diabetes — cells become resistant to insulin (1); associated with obesity and poor diet high in sugar (1); rising rates linked to sedentary lifestyle and processed food (1); lifestyle changes: eating a balanced diet with less refined carbohydrate (1); regular physical exercise (1); maintaining a healthy body weight (1); these measures can prevent cells becoming resistant to insulin (1) — any five.",
     "id": "B5-LA-025"
   },
   {
@@ -778,7 +778,7 @@
     "command_word": "Explain",
     "topic": "Nervous System",
     "question": "Explain how accommodation allows the eye to focus on both near and distant objects, referring to the lens, ciliary muscles and suspensory ligaments.",
-    "mark_scheme": "To focus on a near object: ciliary muscles contract (1); suspensory ligaments slacken (1); lens becomes more curved / fatter (1); light is refracted more strongly (1); to focus on a distant object: ciliary muscles relax (1); suspensory ligaments pull taut (1); lens becomes less curved / thinner / flatter (1) \u2014 any five.",
+    "mark_scheme": "To focus on a near object: ciliary muscles contract (1); suspensory ligaments slacken (1); lens becomes more curved / fatter (1); light is refracted more strongly (1); to focus on a distant object: ciliary muscles relax (1); suspensory ligaments pull taut (1); lens becomes less curved / thinner / flatter (1) — any five.",
     "id": "B5-LA-026"
   },
   {
@@ -787,7 +787,7 @@
     "command_word": "Explain",
     "topic": "Hormones",
     "question": "Explain how the endocrine system uses the pituitary gland as a 'master gland' to control other glands in the body.",
-    "mark_scheme": "The pituitary gland is in the brain (1); releases hormones that stimulate other glands (1); e.g. TSH stimulates thyroid gland to produce thyroxine (1); FSH stimulates ovaries to produce oestrogen (1); negative feedback controls hormone levels \u2014 when target hormone is high, pituitary reduces stimulating hormone (1); this maintains hormones within normal ranges (1) \u2014 any five.",
+    "mark_scheme": "The pituitary gland is in the brain (1); releases hormones that stimulate other glands (1); e.g. TSH stimulates thyroid gland to produce thyroxine (1); FSH stimulates ovaries to produce oestrogen (1); negative feedback controls hormone levels — when target hormone is high, pituitary reduces stimulating hormone (1); this maintains hormones within normal ranges (1) — any five.",
     "id": "B5-LA-027"
   },
   {
@@ -796,7 +796,7 @@
     "command_word": "Describe",
     "topic": "Reproduction",
     "question": "Describe the changes in the uterus lining during a full 28-day menstrual cycle, linking these to changes in hormone levels.",
-    "mark_scheme": "Days 1\u20135: uterus lining breaks down \u2014 menstruation (1); oestrogen levels are low (1); days 5\u201314: FSH causes egg to mature, oestrogen levels rise (1); uterus lining thickens and repairs (1); day 14: LH surge triggers ovulation (1); days 14\u201328: progesterone maintains lining (1); if no fertilisation, progesterone falls and lining breaks down again (1) \u2014 any five.",
+    "mark_scheme": "Days 1–5: uterus lining breaks down — menstruation (1); oestrogen levels are low (1); days 5–14: FSH causes egg to mature, oestrogen levels rise (1); uterus lining thickens and repairs (1); day 14: LH surge triggers ovulation (1); days 14–28: progesterone maintains lining (1); if no fertilisation, progesterone falls and lining breaks down again (1) — any five.",
     "id": "B5-LA-028"
   },
   {
@@ -805,7 +805,7 @@
     "command_word": "Explain",
     "topic": "Homeostasis",
     "question": "Explain why the internal conditions of the body need to be kept within narrow limits, and give three examples of conditions that are regulated.",
-    "mark_scheme": "Cells need a stable environment to function properly (1); enzymes have an optimum temperature and pH (1); conditions outside these limits cause enzyme denaturation (1); blood glucose regulated by insulin and glucagon (1); body temperature regulated by hypothalamus (1); water content regulated by kidneys and ADH (1) \u2014 any five.",
+    "mark_scheme": "Cells need a stable environment to function properly (1); enzymes have an optimum temperature and pH (1); conditions outside these limits cause enzyme denaturation (1); blood glucose regulated by insulin and glucagon (1); body temperature regulated by hypothalamus (1); water content regulated by kidneys and ADH (1) — any five.",
     "id": "B5-LA-029"
   },
   {
@@ -814,7 +814,7 @@
     "command_word": "Explain",
     "topic": "Homeostasis",
     "question": "Explain how the kidneys and the hormone ADH work together to regulate the water content of the blood.",
-    "mark_scheme": "Kidneys filter blood removing waste urea and excess water (1); water content of blood is monitored by osmoreceptors in the hypothalamus (1); if blood is too concentrated, more ADH is released from the pituitary gland (1); ADH causes the collecting ducts in the kidney to become more permeable to water (1); more water is reabsorbed back into the blood (1); a small volume of concentrated urine is produced (1); if blood is too dilute, less ADH is released (1); less water reabsorbed and a large volume of dilute urine is produced (1) \u2014 any six.",
+    "mark_scheme": "Kidneys filter blood removing waste urea and excess water (1); water content of blood is monitored by osmoreceptors in the hypothalamus (1); if blood is too concentrated, more ADH is released from the pituitary gland (1); ADH causes the collecting ducts in the kidney to become more permeable to water (1); more water is reabsorbed back into the blood (1); a small volume of concentrated urine is produced (1); if blood is too dilute, less ADH is released (1); less water reabsorbed and a large volume of dilute urine is produced (1) — any six.",
     "id": "B5-LA-030"
   },
   {
@@ -823,7 +823,7 @@
     "command_word": "Evaluate",
     "topic": "Nervous System",
     "question": "Evaluate the different methods used to treat problems of the nervous system, such as synaptic drugs, prosthetics and reflex testing.",
-    "mark_scheme": "Drugs can alter synaptic transmission e.g. antidepressants increase serotonin levels (1); painkillers block receptor sites preventing pain signals (1); can be effective but may have side effects or cause addiction (1); prosthetic limbs connected to nervous system allow some movement control (1); reflex testing used to check nervous system function in diagnosis (1); new technologies such as cochlear implants restore hearing by stimulating auditory nerve (1); deep brain stimulation used for Parkinson's disease (1); benefits must be weighed against risks and costs (1) \u2014 any six.",
+    "mark_scheme": "Drugs can alter synaptic transmission e.g. antidepressants increase serotonin levels (1); painkillers block receptor sites preventing pain signals (1); can be effective but may have side effects or cause addiction (1); prosthetic limbs connected to nervous system allow some movement control (1); reflex testing used to check nervous system function in diagnosis (1); new technologies such as cochlear implants restore hearing by stimulating auditory nerve (1); deep brain stimulation used for Parkinson's disease (1); benefits must be weighed against risks and costs (1) — any six.",
     "id": "B5-LA-031"
   },
   {
@@ -831,8 +831,8 @@
     "marks": 6,
     "command_word": "Explain",
     "topic": "Reproduction",
-    "question": "Explain the roles of the four main hormones \u2014 FSH, LH, oestrogen and progesterone \u2014 in controlling the menstrual cycle.",
-    "mark_scheme": "FSH produced by pituitary gland (1); causes egg to mature in the ovary (1); stimulates ovaries to produce oestrogen (1); oestrogen causes uterus lining to thicken (1); oestrogen inhibits FSH and stimulates LH production (1); LH surge at around day 14 triggers ovulation (1); after ovulation, corpus luteum produces progesterone (1); progesterone maintains uterus lining (1); if no pregnancy, progesterone falls and menstruation occurs (1) \u2014 any six.",
+    "question": "Explain the roles of the four main hormones — FSH, LH, oestrogen and progesterone — in controlling the menstrual cycle.",
+    "mark_scheme": "FSH produced by pituitary gland (1); causes egg to mature in the ovary (1); stimulates ovaries to produce oestrogen (1); oestrogen causes uterus lining to thicken (1); oestrogen inhibits FSH and stimulates LH production (1); LH surge at around day 14 triggers ovulation (1); after ovulation, corpus luteum produces progesterone (1); progesterone maintains uterus lining (1); if no pregnancy, progesterone falls and menstruation occurs (1) — any six.",
     "id": "B5-LA-032"
   },
   {
@@ -841,7 +841,7 @@
     "command_word": "Explain",
     "topic": "Nervous System",
     "question": "Explain the structure of a neurone, the mechanism of an electrical impulse along it, and how the impulse passes from one neurone to the next at a synapse.",
-    "mark_scheme": "Neurone has a cell body, axon and dendrites (1); axon is insulated by a myelin sheath which speeds up impulse transmission (1); impulse is an electrical signal that travels along the axon (1); impulse arrives at the synaptic knob (1); neurotransmitter vesicles fuse with presynaptic membrane (1); neurotransmitter released into synaptic cleft (1); diffuses across and binds to receptors on postsynaptic membrane (1); generates a new electrical impulse in the next neurone (1) \u2014 any six.",
+    "mark_scheme": "Neurone has a cell body, axon and dendrites (1); axon is insulated by a myelin sheath which speeds up impulse transmission (1); impulse is an electrical signal that travels along the axon (1); impulse arrives at the synaptic knob (1); neurotransmitter vesicles fuse with presynaptic membrane (1); neurotransmitter released into synaptic cleft (1); diffuses across and binds to receptors on postsynaptic membrane (1); generates a new electrical impulse in the next neurone (1) — any six.",
     "id": "B5-LA-033"
   },
   {
@@ -850,7 +850,7 @@
     "command_word": "Explain",
     "topic": "Blood Glucose",
     "question": "Explain how the body detects and responds to both a rise and a fall in blood glucose concentration, naming all the hormones and organs involved.",
-    "mark_scheme": "Blood glucose rises after eating (1); detected by beta cells in the pancreas (1); insulin released into the bloodstream (1); insulin causes liver to convert glucose to glycogen (1); cells absorb glucose \u2014 blood glucose falls (1); if blood glucose falls too low, alpha cells in pancreas release glucagon (1); glucagon causes liver to convert glycogen back to glucose \u2014 glycogenolysis (1); blood glucose rises back to normal (1) \u2014 any six.",
+    "mark_scheme": "Blood glucose rises after eating (1); detected by beta cells in the pancreas (1); insulin released into the bloodstream (1); insulin causes liver to convert glucose to glycogen (1); cells absorb glucose — blood glucose falls (1); if blood glucose falls too low, alpha cells in pancreas release glucagon (1); glucagon causes liver to convert glycogen back to glucose — glycogenolysis (1); blood glucose rises back to normal (1) — any six.",
     "id": "B5-LA-034"
   },
   {
@@ -859,7 +859,7 @@
     "command_word": "Evaluate",
     "topic": "Homeostasis",
     "question": "Evaluate the importance of homeostasis for the proper functioning of cells, referring to temperature, water balance and blood glucose regulation.",
-    "mark_scheme": "Homeostasis maintains a stable internal environment (1); enzymes require a specific temperature \u2014 37\u00b0C is optimal for human enzymes (1); deviations cause denaturation or slowed reactions (1); cells need correct water balance to prevent osmotic damage \u2014 bursting or shrinking (1); blood glucose provides energy for all metabolic processes (1); too little glucose causes unconsciousness / too much causes osmotic effects (1); negative feedback mechanisms correct deviations from the set point (1); failure of homeostasis e.g. diabetes or hypothermia can be life-threatening (1) \u2014 any six.",
+    "mark_scheme": "Homeostasis maintains a stable internal environment (1); enzymes require a specific temperature — 37°C is optimal for human enzymes (1); deviations cause denaturation or slowed reactions (1); cells need correct water balance to prevent osmotic damage — bursting or shrinking (1); blood glucose provides energy for all metabolic processes (1); too little glucose causes unconsciousness / too much causes osmotic effects (1); negative feedback mechanisms correct deviations from the set point (1); failure of homeostasis e.g. diabetes or hypothermia can be life-threatening (1) — any six.",
     "id": "B5-LA-035"
   },
   {
@@ -868,7 +868,7 @@
     "command_word": "Explain",
     "topic": "Hormones",
     "question": "Explain how hormones are used in both contraception and the treatment of infertility. In your answer, name the hormones used and explain how each works.",
-    "mark_scheme": "Contraception: combined pill contains oestrogen and progesterone (1); oestrogen inhibits FSH so eggs do not mature (1); progesterone thickens cervical mucus blocking sperm (1); Treatment of infertility: FSH given to stimulate egg maturation (1); LH may be given to trigger ovulation (1); eggs can be collected for IVF (1); embryos implanted into the uterus (1); progesterone may be used to maintain uterus lining for implantation (1) \u2014 any six.",
+    "mark_scheme": "Contraception: combined pill contains oestrogen and progesterone (1); oestrogen inhibits FSH so eggs do not mature (1); progesterone thickens cervical mucus blocking sperm (1); Treatment of infertility: FSH given to stimulate egg maturation (1); LH may be given to trigger ovulation (1); eggs can be collected for IVF (1); embryos implanted into the uterus (1); progesterone may be used to maintain uterus lining for implantation (1) — any six.",
     "id": "B5-LA-036"
   },
   {
@@ -877,7 +877,7 @@
     "command_word": "Evaluate",
     "topic": "Reproduction",
     "question": "Evaluate the scientific, ethical and social issues surrounding the use of embryo screening during IVF treatment.",
-    "mark_scheme": "Embryo screening involves testing embryos for genetic disorders before implantation (1); can prevent serious inherited conditions such as cystic fibrosis (1); only healthy embryos are implanted (1); reduces suffering of the child and family (1); ethical concerns: embryos that are not used are destroyed (1); some argue life begins at fertilisation so destruction is wrong (1); risk of 'designer babies' \u2014 selecting for non-medical characteristics (1); high cost and limited NHS availability (1); emotional impact on parents (1); benefits must be weighed against ethical concerns (1) \u2014 any six.",
+    "mark_scheme": "Embryo screening involves testing embryos for genetic disorders before implantation (1); can prevent serious inherited conditions such as cystic fibrosis (1); only healthy embryos are implanted (1); reduces suffering of the child and family (1); ethical concerns: embryos that are not used are destroyed (1); some argue life begins at fertilisation so destruction is wrong (1); risk of 'designer babies' — selecting for non-medical characteristics (1); high cost and limited NHS availability (1); emotional impact on parents (1); benefits must be weighed against ethical concerns (1) — any six.",
     "id": "B5-LA-037"
   },
   {
@@ -887,7 +887,7 @@
     "command_word": "State",
     "topic": "Homeostasis",
     "question": "State two ways the body responds when core temperature rises too high.",
-    "mark_scheme": "Vasodilation \u2014 blood vessels near the skin widen (1); sweating increases (1)."
+    "mark_scheme": "Vasodilation — blood vessels near the skin widen (1); sweating increases (1)."
   },
   {
     "id": "B5-SA-014",
@@ -977,7 +977,7 @@
     "command_word": "Explain",
     "topic": "Diabetes",
     "question": "Explain how insulin controls blood glucose levels after a carbohydrate-rich meal.",
-    "mark_scheme": "Blood glucose rises after eating (1); pancreas detects the rise and releases insulin (1); insulin causes body cells to absorb glucose from the blood (1); liver converts excess glucose to glycogen for storage (1) \u2014 any three."
+    "mark_scheme": "Blood glucose rises after eating (1); pancreas detects the rise and releases insulin (1); insulin causes body cells to absorb glucose from the blood (1); liver converts excess glucose to glycogen for storage (1) — any three."
   },
   {
     "id": "B5-SA-024",
@@ -986,7 +986,7 @@
     "command_word": "Describe",
     "topic": "Homeostasis",
     "question": "Describe the role of the hypothalamus in temperature regulation.",
-    "mark_scheme": "The hypothalamus monitors the temperature of blood flowing through it (1); acts as a thermostat \u2014 detects deviations from 37\u00b0C (1); sends signals to effectors such as sweat glands and muscles to correct the temperature (1)."
+    "mark_scheme": "The hypothalamus monitors the temperature of blood flowing through it (1); acts as a thermostat — detects deviations from 37°C (1); sends signals to effectors such as sweat glands and muscles to correct the temperature (1)."
   },
   {
     "id": "B5-SA-025",
@@ -995,7 +995,7 @@
     "command_word": "Explain",
     "topic": "Nervous System",
     "question": "Explain how neurotransmitters are involved in synaptic transmission.",
-    "mark_scheme": "An electrical impulse arrives at the presynaptic knob (1); neurotransmitter molecules are released into the synaptic cleft (1); they diffuse across and bind to receptors on the postsynaptic membrane (1); triggering a new electrical impulse in the next neurone (1) \u2014 any three."
+    "mark_scheme": "An electrical impulse arrives at the presynaptic knob (1); neurotransmitter molecules are released into the synaptic cleft (1); they diffuse across and bind to receptors on the postsynaptic membrane (1); triggering a new electrical impulse in the next neurone (1) — any three."
   },
   {
     "id": "B5-SA-026",
@@ -1004,7 +1004,7 @@
     "command_word": "Describe",
     "topic": "Hormonal coordination",
     "question": "Describe how adrenaline prepares the body for a fight-or-flight response.",
-    "mark_scheme": "Adrenaline is released from the adrenal glands (1); increases heart rate to deliver more oxygen and glucose to muscles (1); raises blood glucose concentration to provide more energy (1); diverts blood away from the digestive system to muscles (1) \u2014 any three."
+    "mark_scheme": "Adrenaline is released from the adrenal glands (1); increases heart rate to deliver more oxygen and glucose to muscles (1); raises blood glucose concentration to provide more energy (1); diverts blood away from the digestive system to muscles (1) — any three."
   },
   {
     "id": "B5-SA-027",
@@ -1013,7 +1013,7 @@
     "command_word": "Explain",
     "topic": "Homeostasis",
     "question": "Explain why it is important for the body to maintain blood glucose at a constant level.",
-    "mark_scheme": "Cells need a constant supply of glucose for respiration (1); too little glucose causes lack of energy for cell processes and can lead to unconsciousness (1); too much glucose causes osmotic problems \u2014 water moves out of cells by osmosis (1)."
+    "mark_scheme": "Cells need a constant supply of glucose for respiration (1); too little glucose causes lack of energy for cell processes and can lead to unconsciousness (1); too much glucose causes osmotic problems — water moves out of cells by osmosis (1)."
   },
   {
     "id": "B5-SA-028",
@@ -1022,7 +1022,7 @@
     "command_word": "Describe",
     "topic": "Nervous System",
     "question": "Describe how the pupil reflex protects the eye in bright light.",
-    "mark_scheme": "Bright light is detected by receptors in the retina (1); circular muscles of the iris contract (1); radial muscles relax (1); the pupil constricts / becomes smaller, reducing light entering the eye (1) \u2014 any three."
+    "mark_scheme": "Bright light is detected by receptors in the retina (1); circular muscles of the iris contract (1); radial muscles relax (1); the pupil constricts / becomes smaller, reducing light entering the eye (1) — any three."
   },
   {
     "id": "B5-SA-029",
@@ -1031,7 +1031,7 @@
     "command_word": "Explain",
     "topic": "Diabetes",
     "question": "Explain how glucagon raises blood glucose levels when they fall too low.",
-    "mark_scheme": "Low blood glucose is detected by alpha cells in the pancreas (1); glucagon is released into the blood (1); glucagon causes liver cells to convert glycogen back to glucose (glycogenolysis) (1); glucose is released into the blood, raising blood glucose back to normal (1) \u2014 any three."
+    "mark_scheme": "Low blood glucose is detected by alpha cells in the pancreas (1); glucagon is released into the blood (1); glucagon causes liver cells to convert glycogen back to glucose (glycogenolysis) (1); glucose is released into the blood, raising blood glucose back to normal (1) — any three."
   },
   {
     "id": "B5-SA-030",
@@ -1040,7 +1040,7 @@
     "command_word": "Compare",
     "topic": "Hormonal coordination",
     "question": "Compare the roles of insulin and glucagon in regulating blood glucose.",
-    "mark_scheme": "Insulin lowers blood glucose; glucagon raises blood glucose (1); both are produced by the pancreas (1); insulin is released when blood glucose is high; glucagon is released when blood glucose is low (1); they work antagonistically to maintain blood glucose within normal limits (1) \u2014 any three."
+    "mark_scheme": "Insulin lowers blood glucose; glucagon raises blood glucose (1); both are produced by the pancreas (1); insulin is released when blood glucose is high; glucagon is released when blood glucose is low (1); they work antagonistically to maintain blood glucose within normal limits (1) — any three."
   },
   {
     "id": "B5-SA-031",
@@ -1049,7 +1049,7 @@
     "command_word": "Describe",
     "topic": "Homeostasis",
     "question": "Describe what happens to the body when core temperature drops below normal.",
-    "mark_scheme": "Vasoconstriction reduces blood flow to skin to reduce heat loss (1); shivering \u2014 muscles contract rapidly generating heat (1); hairs stand on end to trap a layer of insulating air (1); metabolic rate may increase to generate more heat (1) \u2014 any three."
+    "mark_scheme": "Vasoconstriction reduces blood flow to skin to reduce heat loss (1); shivering — muscles contract rapidly generating heat (1); hairs stand on end to trap a layer of insulating air (1); metabolic rate may increase to generate more heat (1) — any three."
   },
   {
     "id": "B5-SA-032",
@@ -1058,7 +1058,7 @@
     "command_word": "Explain",
     "topic": "Nervous System",
     "question": "Explain why a reflex arc passes through the spinal cord rather than the brain.",
-    "mark_scheme": "Reflex arcs are coordinated by relay neurones in the spinal cord (1); this means the response does not need to travel all the way to the brain and back (1); the response is therefore much faster (1); this is important for protecting the body quickly from harm (1) \u2014 any three."
+    "mark_scheme": "Reflex arcs are coordinated by relay neurones in the spinal cord (1); this means the response does not need to travel all the way to the brain and back (1); the response is therefore much faster (1); this is important for protecting the body quickly from harm (1) — any three."
   },
   {
     "id": "B5-SA-033",
@@ -1067,7 +1067,7 @@
     "command_word": "Describe",
     "topic": "Diabetes",
     "question": "Describe two ways Type 1 diabetes can be managed.",
-    "mark_scheme": "Insulin injections \u2014 replace the insulin the pancreas cannot produce (1); monitoring blood glucose levels regularly (1); controlling diet to avoid large spikes in blood glucose (1); insulin pump can deliver insulin continuously (1) \u2014 any three points covering two methods."
+    "mark_scheme": "Insulin injections — replace the insulin the pancreas cannot produce (1); monitoring blood glucose levels regularly (1); controlling diet to avoid large spikes in blood glucose (1); insulin pump can deliver insulin continuously (1) — any three points covering two methods."
   },
   {
     "id": "B5-SA-034",
@@ -1076,6 +1076,96 @@
     "command_word": "Explain",
     "topic": "Hormonal coordination",
     "question": "Explain how thyroxine levels are regulated by negative feedback involving the pituitary gland.",
-    "mark_scheme": "Low thyroxine levels are detected \u2014 pituitary gland releases more TSH (thyroid-stimulating hormone) (1); TSH stimulates the thyroid gland to produce more thyroxine (1); when thyroxine levels rise, the pituitary reduces TSH production (1); this negative feedback keeps thyroxine levels within normal limits (1) \u2014 any three."
+    "mark_scheme": "Low thyroxine levels are detected — pituitary gland releases more TSH (thyroid-stimulating hormone) (1); TSH stimulates the thyroid gland to produce more thyroxine (1); when thyroxine levels rise, the pituitary reduces TSH production (1); this negative feedback keeps thyroxine levels within normal limits (1) — any three."
+  },
+  {
+    "id": "B5-SA-035",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Diabetes",
+    "question": "State which organ produces insulin in the body.",
+    "mark_scheme": "The pancreas (1)."
+  },
+  {
+    "id": "B5-SA-036",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Diabetes",
+    "question": "State one symptom of uncontrolled diabetes.",
+    "mark_scheme": "Any one from: very high blood glucose (1); excessive thirst (1); frequent urination (1); fatigue (1)."
+  },
+  {
+    "id": "B5-SA-037",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Diabetes",
+    "question": "Explain why a person with Type 1 diabetes must take insulin injections every day.",
+    "mark_scheme": "In Type 1 diabetes the pancreas does not produce insulin (1); without insulin, cells cannot absorb glucose from the blood so blood glucose remains dangerously high (1)."
+  },
+  {
+    "id": "B5-SA-038",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Diabetes",
+    "question": "Describe how Type 2 diabetes can be managed without insulin injections.",
+    "mark_scheme": "A healthy diet low in sugar and refined carbohydrates helps prevent large blood glucose spikes (1); regular exercise helps cells become more sensitive to insulin (1); medication such as metformin may be prescribed to improve insulin sensitivity (1) — any two."
+  },
+  {
+    "id": "B5-SA-039",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Diabetes",
+    "question": "Explain how insulin controls blood glucose levels after a meal. Include the roles of the pancreas and liver.",
+    "mark_scheme": "Blood glucose rises after eating (1); the pancreas detects the rise and releases insulin (1); insulin causes liver and muscle cells to convert glucose into glycogen for storage (1); cells also absorb more glucose, so blood glucose falls back to normal (1) — any three."
+  },
+  {
+    "id": "B5-SA-040",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Hormonal coordination",
+    "question": "State what is meant by a hormone.",
+    "mark_scheme": "A chemical messenger produced by a gland and carried in the blood to a target organ (1)."
+  },
+  {
+    "id": "B5-SA-041",
+    "type": "written",
+    "marks": 1,
+    "command_word": "Name",
+    "topic": "Hormonal coordination",
+    "question": "Name the gland that is often called the 'master gland' of the endocrine system.",
+    "mark_scheme": "The pituitary gland (1)."
+  },
+  {
+    "id": "B5-SA-042",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Hormonal coordination",
+    "question": "Explain why hormones only affect their target organs even though they travel to all organs in the blood.",
+    "mark_scheme": "Hormones only bind to specific receptor molecules (1); only target organs have the correct complementary receptor for that hormone (1)."
+  },
+  {
+    "id": "B5-SA-043",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Hormonal coordination",
+    "question": "Describe the role of adrenaline in the body's fight-or-flight response. Include three effects it has on the body.",
+    "mark_scheme": "Adrenaline is released from the adrenal glands in response to stress or danger (1); it increases heart rate to deliver more oxygen to muscles (1); it raises blood glucose concentration to provide extra energy (1); it diverts blood away from the digestive system to skeletal muscles (1); it dilates the pupils for better vision (1) — any three."
+  },
+  {
+    "id": "B5-SA-044",
+    "type": "written",
+    "marks": 1,
+    "command_word": "Name",
+    "topic": "Hormones",
+    "question": "Name the gland that produces insulin.",
+    "mark_scheme": "Pancreas (1)."
   }
 ]

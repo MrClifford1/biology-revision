@@ -20,12 +20,12 @@
     "topic": "Energy Stores",
     "question": "A ball is thrown upwards. As it rises, which energy transfer occurs?",
     "options": [
-      "Kinetic → Thermal",
-      "Kinetic → Gravitational potential",
-      "Gravitational potential → Kinetic",
-      "Chemical → Kinetic"
+      "Kinetic \u2192 Thermal",
+      "Kinetic \u2192 Gravitational potential",
+      "Gravitational potential \u2192 Kinetic",
+      "Chemical \u2192 Kinetic"
     ],
-    "correct": "Kinetic → Gravitational potential"
+    "correct": "Kinetic \u2192 Gravitational potential"
   },
   {
     "id": "P1-MC-003",
@@ -77,11 +77,11 @@
     "question": "What does specific heat capacity tell us?",
     "options": [
       "The energy needed to melt 1 kg of a substance",
-      "The energy needed to raise 1 kg of a substance by 1°C",
+      "The energy needed to raise 1 kg of a substance by 1\u00b0C",
       "The rate at which a substance loses heat",
       "The temperature at which a substance boils"
     ],
-    "correct": "The energy needed to raise 1 kg of a substance by 1°C"
+    "correct": "The energy needed to raise 1 kg of a substance by 1\u00b0C"
   },
   {
     "id": "P1-MC-007",
@@ -214,7 +214,7 @@
     "type": "fill_in_blank",
     "marks": 1,
     "topic": "Energy Transfer",
-    "question": "Energy cannot be created or destroyed — this is the law of conservation of __________.",
+    "question": "Energy cannot be created or destroyed \u2014 this is the law of conservation of __________.",
     "correct": "energy",
     "acceptable": [
       "energy"
@@ -225,7 +225,7 @@
     "type": "fill_in_blank",
     "marks": 1,
     "topic": "Energy Transfer",
-    "question": "Work done = force × __________.",
+    "question": "Work done = force \u00d7 __________.",
     "correct": "distance",
     "acceptable": [
       "distance",
@@ -237,7 +237,7 @@
     "type": "fill_in_blank",
     "marks": 1,
     "topic": "Efficiency",
-    "question": "Efficiency = useful output energy ÷ __________ input energy.",
+    "question": "Efficiency = useful output energy \u00f7 __________ input energy.",
     "correct": "total",
     "acceptable": [
       "total"
@@ -248,7 +248,7 @@
     "type": "fill_in_blank",
     "marks": 1,
     "topic": "Specific Heat Capacity",
-    "question": "The energy needed to raise 1 kg of a material by 1°C is called its specific __________ capacity.",
+    "question": "The energy needed to raise 1 kg of a material by 1\u00b0C is called its specific __________ capacity.",
     "correct": "heat",
     "acceptable": [
       "heat"
@@ -362,23 +362,23 @@
     "pairs": [
       {
         "term": "Wind",
-        "definition": "Renewable — will not run out"
+        "definition": "Renewable \u2014 will not run out"
       },
       {
         "term": "Coal",
-        "definition": "Non-renewable — will eventually run out"
+        "definition": "Non-renewable \u2014 will eventually run out"
       },
       {
         "term": "Solar",
-        "definition": "Renewable — replenished by the sun"
+        "definition": "Renewable \u2014 replenished by the sun"
       },
       {
         "term": "Nuclear fuel",
-        "definition": "Non-renewable — uses uranium which is finite"
+        "definition": "Non-renewable \u2014 uses uranium which is finite"
       },
       {
         "term": "Hydroelectric",
-        "definition": "Renewable — uses the water cycle"
+        "definition": "Renewable \u2014 uses the water cycle"
       }
     ]
   },
@@ -390,7 +390,7 @@
     "question": "Match each equation to its correct quantity.",
     "pairs": [
       {
-        "term": "E = mcΔT",
+        "term": "E = mc\u0394T",
         "definition": "Energy needed to heat a substance"
       },
       {
@@ -399,10 +399,10 @@
       },
       {
         "term": "P = E/t",
-        "definition": "Power — rate of energy transfer"
+        "definition": "Power \u2014 rate of energy transfer"
       },
       {
-        "term": "Ek = ½mv²",
+        "term": "Ek = \u00bdmv\u00b2",
         "definition": "Kinetic energy of a moving object"
       }
     ]
@@ -416,7 +416,7 @@
     "pairs": [
       {
         "term": "Efficiency",
-        "definition": "Useful output energy ÷ total input energy"
+        "definition": "Useful output energy \u00f7 total input energy"
       },
       {
         "term": "Dissipation",
@@ -464,7 +464,7 @@
     "command_word": "State",
     "topic": "Energy Transfer",
     "question": "State the principle of conservation of energy.",
-    "mark_scheme": "Energy cannot be created or destroyed (1); it can only be transferred from one store to another (1) — accept either point."
+    "mark_scheme": "Energy cannot be created or destroyed (1); it can only be transferred from one store to another (1) \u2014 accept either point."
   },
   {
     "id": "P1-SA-002",
@@ -473,7 +473,7 @@
     "command_word": "State",
     "topic": "Efficiency",
     "question": "State what is meant by the term efficiency.",
-    "mark_scheme": "The proportion of input energy that is usefully transferred (1) / useful output ÷ total input (1) — accept either."
+    "mark_scheme": "The proportion of input energy that is usefully transferred (1) / useful output \u00f7 total input (1) \u2014 accept either."
   },
   {
     "id": "P1-SA-003",
@@ -482,7 +482,7 @@
     "command_word": "Name",
     "topic": "Energy Resources",
     "question": "Name two renewable energy resources.",
-    "mark_scheme": "Any two from: wind, solar, hydroelectric, tidal, wave, geothermal, biomass (1 mark each) — 2 marks total."
+    "mark_scheme": "Any two from: wind, solar, hydroelectric, tidal, wave, geothermal, biomass (1 mark each) \u2014 2 marks total."
   },
   {
     "id": "P1-SA-004",
@@ -491,7 +491,7 @@
     "command_word": "Calculate",
     "topic": "Energy Transfer",
     "question": "A force of 50 N moves an object 8 m. Calculate the work done.",
-    "mark_scheme": "W = Fs = 50 × 8 = 400 J (1)."
+    "mark_scheme": "W = Fs = 50 \u00d7 8 = 400 J (1)."
   },
   {
     "id": "P1-SA-005",
@@ -500,7 +500,7 @@
     "command_word": "Explain",
     "topic": "Efficiency",
     "question": "Explain why no machine is 100% efficient.",
-    "mark_scheme": "Some energy is always transferred to unwanted stores (1); usually as thermal energy due to friction / sound (1); this energy is dissipated to the surroundings (1) — any two."
+    "mark_scheme": "Some energy is always transferred to unwanted stores (1); usually as thermal energy due to friction / sound (1); this energy is dissipated to the surroundings (1) \u2014 any two."
   },
   {
     "id": "P1-SA-006",
@@ -509,7 +509,7 @@
     "command_word": "Describe",
     "topic": "Energy Stores",
     "question": "Describe the energy transfers that occur when a ball is dropped from a height.",
-    "mark_scheme": "Gravitational potential energy decreases (1); kinetic energy increases as ball falls (1); on hitting the ground, kinetic energy transferred to thermal/sound energy (1) — any two."
+    "mark_scheme": "Gravitational potential energy decreases (1); kinetic energy increases as ball falls (1); on hitting the ground, kinetic energy transferred to thermal/sound energy (1) \u2014 any two."
   },
   {
     "id": "P1-SA-007",
@@ -517,8 +517,8 @@
     "marks": 2,
     "command_word": "Calculate",
     "topic": "Specific Heat Capacity",
-    "question": "Calculate the energy needed to heat 2 kg of water by 10°C. The specific heat capacity of water is 4200 J/kg°C.",
-    "mark_scheme": "E = mcΔT = 2 × 4200 × 10 (1) = 84 000 J (1)."
+    "question": "Calculate the energy needed to heat 2 kg of water by 10\u00b0C. The specific heat capacity of water is 4200 J/kg\u00b0C.",
+    "mark_scheme": "E = mc\u0394T = 2 \u00d7 4200 \u00d7 10 (1) = 84 000 J (1)."
   },
   {
     "id": "P1-SA-008",
@@ -527,7 +527,7 @@
     "command_word": "Compare",
     "topic": "Energy Resources",
     "question": "Compare the environmental impact of fossil fuels and wind energy.",
-    "mark_scheme": "Fossil fuels release CO₂ / greenhouse gases contributing to climate change (1); wind energy produces no greenhouse gases / carbon emissions (1); wind turbines may affect wildlife / landscape (1) — any two."
+    "mark_scheme": "Fossil fuels release CO\u2082 / greenhouse gases contributing to climate change (1); wind energy produces no greenhouse gases / carbon emissions (1); wind turbines may affect wildlife / landscape (1) \u2014 any two."
   },
   {
     "id": "P1-SA-009",
@@ -536,7 +536,7 @@
     "command_word": "Explain",
     "topic": "Energy Resources",
     "question": "Explain why countries are increasing their use of renewable energy resources.",
-    "mark_scheme": "Fossil fuels are non-renewable and will eventually run out (1); fossil fuels produce greenhouse gases / CO₂ causing climate change (1); renewable resources will not run out (1); renewable resources produce little or no greenhouse gases (1); advances in technology have reduced costs (1) — any three."
+    "mark_scheme": "Fossil fuels are non-renewable and will eventually run out (1); fossil fuels produce greenhouse gases / CO\u2082 causing climate change (1); renewable resources will not run out (1); renewable resources produce little or no greenhouse gases (1); advances in technology have reduced costs (1) \u2014 any three."
   },
   {
     "id": "P1-SA-010",
@@ -545,7 +545,7 @@
     "command_word": "Describe",
     "topic": "Specific Heat Capacity",
     "question": "Describe how you would determine the specific heat capacity of a metal block in the laboratory.",
-    "mark_scheme": "Heat the metal block using an immersion heater (1); measure the temperature change using a thermometer (1); measure the energy supplied using a joulemeter / calculate using P × t (1); use E = mcΔT to calculate specific heat capacity (1); insulate the block to reduce energy losses (1) — any three."
+    "mark_scheme": "Heat the metal block using an immersion heater (1); measure the temperature change using a thermometer (1); measure the energy supplied using a joulemeter / calculate using P \u00d7 t (1); use E = mc\u0394T to calculate specific heat capacity (1); insulate the block to reduce energy losses (1) \u2014 any three."
   },
   {
     "id": "P1-SA-011",
@@ -554,7 +554,7 @@
     "command_word": "Explain",
     "topic": "Efficiency",
     "question": "Explain three ways in which the efficiency of a car engine can be increased.",
-    "mark_scheme": "Lubricate moving parts to reduce friction (1); use more aerodynamic design to reduce air resistance (1); use regenerative braking to recover kinetic energy (1); use lighter materials to reduce mass (1) — any three."
+    "mark_scheme": "Lubricate moving parts to reduce friction (1); use more aerodynamic design to reduce air resistance (1); use regenerative braking to recover kinetic energy (1); use lighter materials to reduce mass (1) \u2014 any three."
   },
   {
     "id": "P1-LA-001",
@@ -563,7 +563,7 @@
     "command_word": "Evaluate",
     "topic": "Energy Resources",
     "question": "Evaluate the use of nuclear power as an energy resource. Include advantages and disadvantages in your answer.",
-    "mark_scheme": "Advantages: produces large amounts of electricity (1); no greenhouse gas emissions during operation (1); reliable — not dependent on weather (1). Disadvantages: produces radioactive waste that is difficult to dispose of (1); risk of accidents e.g. Chernobyl / Fukushima (1); high cost to build and decommission (1); uses non-renewable uranium fuel (1) — any four."
+    "mark_scheme": "Advantages: produces large amounts of electricity (1); no greenhouse gas emissions during operation (1); reliable \u2014 not dependent on weather (1). Disadvantages: produces radioactive waste that is difficult to dispose of (1); risk of accidents e.g. Chernobyl / Fukushima (1); high cost to build and decommission (1); uses non-renewable uranium fuel (1) \u2014 any four."
   },
   {
     "id": "P1-LA-002",
@@ -572,7 +572,7 @@
     "command_word": "Explain",
     "topic": "Energy Transfer",
     "question": "A rollercoaster starts from rest at the top of a hill. Explain the energy transfers that take place as it travels down the hill and comes to a stop at the bottom.",
-    "mark_scheme": "At the top: large gravitational potential energy store (1); as it descends GPE decreases and kinetic energy increases (1); some energy transferred to thermal energy by friction (1); at the bottom kinetic energy is greatest (1); brakes transfer kinetic energy to thermal energy (1) — any four."
+    "mark_scheme": "At the top: large gravitational potential energy store (1); as it descends GPE decreases and kinetic energy increases (1); some energy transferred to thermal energy by friction (1); at the bottom kinetic energy is greatest (1); brakes transfer kinetic energy to thermal energy (1) \u2014 any four."
   },
   {
     "id": "P1-LA-003",
@@ -580,8 +580,8 @@
     "marks": 4,
     "command_word": "Calculate",
     "topic": "Specific Heat Capacity",
-    "question": "A 3 kg block of aluminium is heated using a 50 W heater for 5 minutes. The temperature rises from 20°C to 80°C. Calculate the specific heat capacity of aluminium and suggest why your answer may differ from the accepted value.",
-    "mark_scheme": "Energy supplied = P × t = 50 × 300 = 15 000 J (1); E = mcΔT → c = E ÷ (m × ΔT) = 15 000 ÷ (3 × 60) (1) = 83.3 J/kg°C (1); answer differs because energy is lost to surroundings / block not perfectly insulated (1)."
+    "question": "A 3 kg block of aluminium is heated using a 50 W heater for 5 minutes. The temperature rises from 20\u00b0C to 80\u00b0C. Calculate the specific heat capacity of aluminium and suggest why your answer may differ from the accepted value.",
+    "mark_scheme": "Energy supplied = P \u00d7 t = 50 \u00d7 300 = 15 000 J (1); E = mc\u0394T \u2192 c = E \u00f7 (m \u00d7 \u0394T) = 15 000 \u00f7 (3 \u00d7 60) (1) = 83.3 J/kg\u00b0C (1); answer differs because energy is lost to surroundings / block not perfectly insulated (1)."
   },
   {
     "id": "P1-LA-004",
@@ -590,7 +590,7 @@
     "command_word": "Explain",
     "topic": "Energy Resources",
     "question": "Explain how the National Grid distributes electricity efficiently across the country.",
-    "mark_scheme": "Power stations generate electricity at low voltage (1); transformers step up the voltage for transmission (1); high voltage means low current (1); lower current means less energy wasted as heat in cables (1); step-down transformers reduce voltage for safe use in homes (1) — any four."
+    "mark_scheme": "Power stations generate electricity at low voltage (1); transformers step up the voltage for transmission (1); high voltage means low current (1); lower current means less energy wasted as heat in cables (1); step-down transformers reduce voltage for safe use in homes (1) \u2014 any four."
   },
   {
     "id": "P1-LA-005",
@@ -599,7 +599,7 @@
     "command_word": "Evaluate",
     "topic": "Energy Resources",
     "question": "Evaluate the advantages and disadvantages of wind energy as a replacement for fossil fuels.",
-    "mark_scheme": "Advantages: renewable — will not run out (1); no greenhouse gas emissions during operation (1); low running costs once built (1); can be built offshore (1). Disadvantages: intermittent — only generates when wind blows (1); visual and noise pollution (1); large areas of land needed (1); expensive to build and maintain (1); may harm birds / wildlife (1) — any five."
+    "mark_scheme": "Advantages: renewable \u2014 will not run out (1); no greenhouse gas emissions during operation (1); low running costs once built (1); can be built offshore (1). Disadvantages: intermittent \u2014 only generates when wind blows (1); visual and noise pollution (1); large areas of land needed (1); expensive to build and maintain (1); may harm birds / wildlife (1) \u2014 any five."
   },
   {
     "id": "P1-LA-006",
@@ -608,7 +608,7 @@
     "command_word": "Evaluate",
     "topic": "Energy Resources",
     "question": "The UK needs to meet its energy demands while reducing carbon emissions. Evaluate the options available, including both renewable and non-renewable sources, and suggest which combination of energy resources the UK should use.",
-    "mark_scheme": "Fossil fuels are reliable but produce CO₂ / contribute to climate change (1); nuclear is reliable with no CO₂ emissions but produces radioactive waste (1); wind and solar are clean but intermittent (1); hydroelectric is reliable and renewable but limited locations (1); combination of sources provides reliability and reduces emissions (1); energy storage (batteries) needed to deal with intermittency (1); energy conservation also important to reduce demand (1); accept any well-reasoned suggestion for UK energy mix with justification (1) — any six."
+    "mark_scheme": "Fossil fuels are reliable but produce CO\u2082 / contribute to climate change (1); nuclear is reliable with no CO\u2082 emissions but produces radioactive waste (1); wind and solar are clean but intermittent (1); hydroelectric is reliable and renewable but limited locations (1); combination of sources provides reliability and reduces emissions (1); energy storage (batteries) needed to deal with intermittency (1); energy conservation also important to reduce demand (1); accept any well-reasoned suggestion for UK energy mix with justification (1) \u2014 any six."
   },
   {
     "id": "P1-LA-007",
@@ -617,7 +617,7 @@
     "command_word": "Explain",
     "topic": "Efficiency",
     "question": "A student investigates the efficiency of a motor lifting a weight. The motor uses 200 J of electrical energy to lift a 5 kg weight by 3 m. Explain how to calculate the efficiency of the motor and suggest reasons why it is less than 100%.",
-    "mark_scheme": "GPE gained = mgh = 5 × 10 × 3 = 150 J (1); efficiency = useful output ÷ total input = 150 ÷ 200 = 0.75 or 75% (1); efficiency is less than 100% because some energy is wasted (1); wasted as thermal energy due to friction in motor (1); wasted as sound energy (1); energy dissipated to surroundings (1); cannot be recovered for useful work (1) — any six."
+    "mark_scheme": "GPE gained = mgh = 5 \u00d7 10 \u00d7 3 = 150 J (1); efficiency = useful output \u00f7 total input = 150 \u00f7 200 = 0.75 or 75% (1); efficiency is less than 100% because some energy is wasted (1); wasted as thermal energy due to friction in motor (1); wasted as sound energy (1); energy dissipated to surroundings (1); cannot be recovered for useful work (1) \u2014 any six."
   },
   {
     "id": "P1-LA-008",
@@ -635,7 +635,7 @@
     "command_word": "Explain",
     "topic": "Energy Transfer",
     "question": "Explain how convection currents transfer thermal energy in a liquid.",
-    "mark_scheme": "Liquid near heat source warms up (1); particles move faster and spread apart — liquid becomes less dense (1); less dense liquid rises (1); cooler, denser liquid sinks to replace it (1); this sets up a convection current that transfers energy throughout the liquid (1) — any four."
+    "mark_scheme": "Liquid near heat source warms up (1); particles move faster and spread apart \u2014 liquid becomes less dense (1); less dense liquid rises (1); cooler, denser liquid sinks to replace it (1); this sets up a convection current that transfers energy throughout the liquid (1) \u2014 any four."
   },
   {
     "id": "P1-LA-010",
@@ -643,8 +643,8 @@
     "marks": 4,
     "command_word": "Calculate",
     "topic": "Specific Heat Capacity",
-    "question": "A 5 kg block of copper is heated from 25°C to 125°C. The specific heat capacity of copper is 385 J/kg°C. Calculate the energy needed and the power of a heater that would achieve this in 5 minutes.",
-    "mark_scheme": "E = mcΔT = 5 × 385 × 100 (1) = 192 500 J (1); P = E/t = 192 500 ÷ 300 (1) = 641.7 W (accept 642 W) (1)."
+    "question": "A 5 kg block of copper is heated from 25\u00b0C to 125\u00b0C. The specific heat capacity of copper is 385 J/kg\u00b0C. Calculate the energy needed and the power of a heater that would achieve this in 5 minutes.",
+    "mark_scheme": "E = mc\u0394T = 5 \u00d7 385 \u00d7 100 (1) = 192 500 J (1); P = E/t = 192 500 \u00f7 300 (1) = 641.7 W (accept 642 W) (1)."
   },
   {
     "id": "P1-LA-011",
@@ -662,7 +662,7 @@
     "command_word": "Explain",
     "topic": "Efficiency",
     "question": "A light bulb has an efficiency of 0.15 (15%). Calculate the useful light energy output if 300 J of electrical energy is supplied, and explain what happens to the remaining energy.",
-    "mark_scheme": "Useful light output = efficiency × input = 0.15 × 300 = 45 J (1); remaining energy = 300 − 45 = 255 J (1); wasted as thermal energy / heat (1); dissipated to the surroundings (1)."
+    "mark_scheme": "Useful light output = efficiency \u00d7 input = 0.15 \u00d7 300 = 45 J (1); remaining energy = 300 \u2212 45 = 255 J (1); wasted as thermal energy / heat (1); dissipated to the surroundings (1)."
   },
   {
     "id": "P1-LA-013",
@@ -671,7 +671,7 @@
     "command_word": "Evaluate",
     "topic": "Energy Resources",
     "question": "Evaluate solar panels as an energy resource for homes in the United Kingdom. Include economic and environmental considerations.",
-    "mark_scheme": "Advantage: renewable — will not run out (1); no greenhouse gas emissions during use (1); reduces electricity bills / excess can be sold back to the grid (1); disadvantage: intermittent — only generates in daylight / reduced output in cloudy UK weather (1); high initial installation cost (1); manufacturing panels has environmental impact (1) — any four."
+    "mark_scheme": "Advantage: renewable \u2014 will not run out (1); no greenhouse gas emissions during use (1); reduces electricity bills / excess can be sold back to the grid (1); disadvantage: intermittent \u2014 only generates in daylight / reduced output in cloudy UK weather (1); high initial installation cost (1); manufacturing panels has environmental impact (1) \u2014 any four."
   },
   {
     "id": "P1-LA-014",
@@ -680,7 +680,7 @@
     "command_word": "Explain",
     "topic": "Energy Stores",
     "question": "A car travelling at 20 m/s has a mass of 1200 kg. Calculate its kinetic energy and explain what happens to this energy when the car brakes to a stop.",
-    "mark_scheme": "Ek = ½mv² = 0.5 × 1200 × 20² = 0.5 × 1200 × 400 (1) = 240 000 J (1); brakes apply friction force to wheels (1); kinetic energy transferred to thermal energy in brakes/surroundings (1)."
+    "mark_scheme": "Ek = \u00bdmv\u00b2 = 0.5 \u00d7 1200 \u00d7 20\u00b2 = 0.5 \u00d7 1200 \u00d7 400 (1) = 240 000 J (1); brakes apply friction force to wheels (1); kinetic energy transferred to thermal energy in brakes/surroundings (1)."
   },
   {
     "id": "P1-LA-015",
@@ -689,7 +689,7 @@
     "command_word": "Describe",
     "topic": "Energy Transfer",
     "question": "Describe how thermal energy is transferred by infrared radiation. State two factors that affect the rate of radiation from a surface.",
-    "mark_scheme": "Infrared radiation is emitted by all objects above absolute zero (1); transferred as electromagnetic waves — no medium required (1); darker/matt surfaces are better emitters than shiny/light surfaces (1); rate of radiation increases with temperature (1); surface area also affects total rate of emission (1) — any four."
+    "mark_scheme": "Infrared radiation is emitted by all objects above absolute zero (1); transferred as electromagnetic waves \u2014 no medium required (1); darker/matt surfaces are better emitters than shiny/light surfaces (1); rate of radiation increases with temperature (1); surface area also affects total rate of emission (1) \u2014 any four."
   },
   {
     "id": "P1-LA-016",
@@ -698,7 +698,7 @@
     "command_word": "Calculate",
     "topic": "Energy Stores",
     "question": "A 2 kg ball is dropped from a height of 5 m. Calculate its gravitational potential energy at the top (g = 10 N/kg) and its maximum speed just before it hits the ground, assuming no air resistance.",
-    "mark_scheme": "GPE = mgh = 2 × 10 × 5 = 100 J (1); at the bottom all GPE converted to KE: ½mv² = 100 (1); v² = 200/2 = 100; v = 10 m/s (1); correct working shown (1)."
+    "mark_scheme": "GPE = mgh = 2 \u00d7 10 \u00d7 5 = 100 J (1); at the bottom all GPE converted to KE: \u00bdmv\u00b2 = 100 (1); v\u00b2 = 200/2 = 100; v = 10 m/s (1); correct working shown (1)."
   },
   {
     "id": "P1-LA-017",
@@ -716,7 +716,7 @@
     "command_word": "Explain",
     "topic": "Efficiency",
     "question": "Explain the difference between insulating a building to reduce heat loss and using a more efficient boiler. Why are both strategies useful for reducing energy consumption?",
-    "mark_scheme": "Insulation reduces the rate of heat loss through walls/roof/windows (1); less energy needed to maintain indoor temperature (1); more efficient boiler transfers a greater proportion of fuel's chemical energy to heat (1); less fuel wasted — lower bills and emissions (1); both together give greater overall reduction in energy use than either alone (1) — any four."
+    "mark_scheme": "Insulation reduces the rate of heat loss through walls/roof/windows (1); less energy needed to maintain indoor temperature (1); more efficient boiler transfers a greater proportion of fuel's chemical energy to heat (1); less fuel wasted \u2014 lower bills and emissions (1); both together give greater overall reduction in energy use than either alone (1) \u2014 any four."
   },
   {
     "id": "P1-LA-019",
@@ -725,7 +725,7 @@
     "command_word": "Explain",
     "topic": "Energy Transfer",
     "question": "Explain how conduction, convection and radiation each transfer thermal energy. Give one example of each.",
-    "mark_scheme": "Conduction: energy transferred through vibrations of particles / free electron collisions (1); e.g. metal spoon in hot drink (1); convection: warmer, less dense fluid rises and cooler, denser fluid sinks setting up currents (1); e.g. central heating radiator warming a room (1); radiation: energy transferred by infrared electromagnetic waves with no medium needed (1); e.g. warmth felt from the Sun (1) — any five."
+    "mark_scheme": "Conduction: energy transferred through vibrations of particles / free electron collisions (1); e.g. metal spoon in hot drink (1); convection: warmer, less dense fluid rises and cooler, denser fluid sinks setting up currents (1); e.g. central heating radiator warming a room (1); radiation: energy transferred by infrared electromagnetic waves with no medium needed (1); e.g. warmth felt from the Sun (1) \u2014 any five."
   },
   {
     "id": "P1-LA-020",
@@ -734,7 +734,7 @@
     "command_word": "Calculate",
     "topic": "Efficiency",
     "question": "A wind turbine produces 8 MW of electrical power when the wind delivers 20 MW of kinetic energy to its blades. Calculate the efficiency of the turbine, and explain two reasons why it cannot be 100% efficient.",
-    "mark_scheme": "Efficiency = useful output/total input = 8/20 = 0.4 or 40% (1); correct working shown (1); energy wasted as sound/vibration (1); energy wasted due to friction in bearings/gearbox (1); some wind passes through without transferring energy to blades (1) — any five."
+    "mark_scheme": "Efficiency = useful output/total input = 8/20 = 0.4 or 40% (1); correct working shown (1); energy wasted as sound/vibration (1); energy wasted due to friction in bearings/gearbox (1); some wind passes through without transferring energy to blades (1) \u2014 any five."
   },
   {
     "id": "P1-LA-021",
@@ -743,7 +743,7 @@
     "command_word": "Explain",
     "topic": "Specific Heat Capacity",
     "question": "Explain why water is used as a coolant in car engines and why it is also used in central heating systems. Refer to its specific heat capacity in your answer.",
-    "mark_scheme": "Water has a very high specific heat capacity (4200 J/kg°C) (1); can absorb large amounts of energy with small temperature rise (1); effective at carrying heat away from engine preventing overheating (1); in central heating: water stores large amounts of energy at the boiler (1); releases energy gradually to radiators around the house (1)."
+    "mark_scheme": "Water has a very high specific heat capacity (4200 J/kg\u00b0C) (1); can absorb large amounts of energy with small temperature rise (1); effective at carrying heat away from engine preventing overheating (1); in central heating: water stores large amounts of energy at the boiler (1); releases energy gradually to radiators around the house (1)."
   },
   {
     "id": "P1-LA-022",
@@ -752,7 +752,7 @@
     "command_word": "Evaluate",
     "topic": "Energy Resources",
     "question": "Evaluate geothermal energy as a source of electricity. Consider its advantages, disadvantages and suitability for the UK.",
-    "mark_scheme": "Geothermal: heat from underground rocks used to produce steam to drive turbines (1); advantage: renewable — heat from Earth's interior is effectively unlimited (1); no greenhouse gas emissions (1); reliable — not dependent on weather (1); disadvantage: only viable in geologically active areas (volcanoes/hot springs) (1); UK has limited geothermal resources (1); high drilling costs (1) — any five."
+    "mark_scheme": "Geothermal: heat from underground rocks used to produce steam to drive turbines (1); advantage: renewable \u2014 heat from Earth's interior is effectively unlimited (1); no greenhouse gas emissions (1); reliable \u2014 not dependent on weather (1); disadvantage: only viable in geologically active areas (volcanoes/hot springs) (1); UK has limited geothermal resources (1); high drilling costs (1) \u2014 any five."
   },
   {
     "id": "P1-LA-023",
@@ -770,7 +770,7 @@
     "command_word": "Explain",
     "topic": "Energy Resources",
     "question": "Explain how a coal-fired power station generates electricity. Include all the energy transfers and one environmental impact.",
-    "mark_scheme": "Coal (chemical energy) burned — chemical energy transferred to thermal energy (1); thermal energy heats water to produce steam (1); steam drives a turbine — thermal/kinetic energy transferred (1); turbine connected to generator — kinetic energy transferred to electrical energy (1); environmental impact: combustion produces CO₂ which is a greenhouse gas causing global warming (1)."
+    "mark_scheme": "Coal (chemical energy) burned \u2014 chemical energy transferred to thermal energy (1); thermal energy heats water to produce steam (1); steam drives a turbine \u2014 thermal/kinetic energy transferred (1); turbine connected to generator \u2014 kinetic energy transferred to electrical energy (1); environmental impact: combustion produces CO\u2082 which is a greenhouse gas causing global warming (1)."
   },
   {
     "id": "P1-LA-025",
@@ -778,8 +778,8 @@
     "marks": 5,
     "command_word": "Calculate",
     "topic": "Specific Heat Capacity",
-    "question": "A 4 kg block of steel (c = 500 J/kg°C) and a 4 kg block of aluminium (c = 900 J/kg°C) are both heated by a 200 W heater for 10 minutes. Calculate the temperature rise of each block and explain which is better for storing thermal energy.",
-    "mark_scheme": "Energy = Pt = 200 × 600 = 120 000 J (1); ΔT (steel) = E/(mc) = 120 000/(4 × 500) = 60°C (1); ΔT (aluminium) = 120 000/(4 × 900) = 33.3°C (1); aluminium has smaller temperature rise for same energy input (1); aluminium stores more energy per degree so is better for thermal storage (1)."
+    "question": "A 4 kg block of steel (c = 500 J/kg\u00b0C) and a 4 kg block of aluminium (c = 900 J/kg\u00b0C) are both heated by a 200 W heater for 10 minutes. Calculate the temperature rise of each block and explain which is better for storing thermal energy.",
+    "mark_scheme": "Energy = Pt = 200 \u00d7 600 = 120 000 J (1); \u0394T (steel) = E/(mc) = 120 000/(4 \u00d7 500) = 60\u00b0C (1); \u0394T (aluminium) = 120 000/(4 \u00d7 900) = 33.3\u00b0C (1); aluminium has smaller temperature rise for same energy input (1); aluminium stores more energy per degree so is better for thermal storage (1)."
   },
   {
     "id": "P1-LA-026",
@@ -797,7 +797,7 @@
     "command_word": "Evaluate",
     "topic": "Energy Resources",
     "question": "Evaluate the use of tidal barrages to generate electricity. In your answer include advantages, disadvantages and compare with wind power.",
-    "mark_scheme": "Tidal: uses kinetic energy of tidal water to drive turbines (1); advantage: predictable and reliable — tides follow regular patterns (1); no fuel costs / no greenhouse gas emissions (1); disadvantage: very high construction costs (1); disrupts marine ecosystems / estuary habitats (1); wind: cheaper to build and more widespread (1); disadvantage: intermittent — unpredictable (1) — any five."
+    "mark_scheme": "Tidal: uses kinetic energy of tidal water to drive turbines (1); advantage: predictable and reliable \u2014 tides follow regular patterns (1); no fuel costs / no greenhouse gas emissions (1); disadvantage: very high construction costs (1); disrupts marine ecosystems / estuary habitats (1); wind: cheaper to build and more widespread (1); disadvantage: intermittent \u2014 unpredictable (1) \u2014 any five."
   },
   {
     "id": "P1-LA-028",
@@ -806,7 +806,7 @@
     "command_word": "Describe",
     "topic": "Efficiency",
     "question": "A student measures the efficiency of an electric motor lifting a load. Describe the steps the student would take, including what measurements to make and how to calculate efficiency. Suggest two sources of error.",
-    "mark_scheme": "Measure mass of load and height lifted (1); use GPE = mgh to find useful output energy (1); measure electrical energy input using joulemeter or E = Pt (1); efficiency = useful output/total input (1); sources of error: energy wasted as heat in motor (1); friction in pulley/string (1); energy used to lift the string itself (1) — any five."
+    "mark_scheme": "Measure mass of load and height lifted (1); use GPE = mgh to find useful output energy (1); measure electrical energy input using joulemeter or E = Pt (1); efficiency = useful output/total input (1); sources of error: energy wasted as heat in motor (1); friction in pulley/string (1); energy used to lift the string itself (1) \u2014 any five."
   },
   {
     "id": "P1-LA-029",
@@ -815,7 +815,7 @@
     "command_word": "Explain",
     "topic": "Energy Resources",
     "question": "Explain why biomass is considered a renewable energy resource but still has environmental concerns. Discuss whether it should be considered 'carbon neutral'.",
-    "mark_scheme": "Biomass is renewable because new plants can be grown to replace those burned (1); plants absorb CO₂ during photosynthesis (1); burning biomass releases CO₂ — theoretically balanced (1); but energy used in growing, harvesting, transporting adds extra carbon emissions (1); deforestation for biomass reduces CO₂ absorption (1); not truly carbon neutral in practice (1) — any five."
+    "mark_scheme": "Biomass is renewable because new plants can be grown to replace those burned (1); plants absorb CO\u2082 during photosynthesis (1); burning biomass releases CO\u2082 \u2014 theoretically balanced (1); but energy used in growing, harvesting, transporting adds extra carbon emissions (1); deforestation for biomass reduces CO\u2082 absorption (1); not truly carbon neutral in practice (1) \u2014 any five."
   },
   {
     "id": "P1-LA-030",
@@ -823,8 +823,8 @@
     "marks": 6,
     "command_word": "Explain",
     "topic": "Specific Heat Capacity",
-    "question": "Explain what specific heat capacity means and why coastal areas have a more moderate climate than inland areas. Include calculations to support your answer given that water has c = 4200 J/kg°C and land has c = 800 J/kg°C.",
-    "mark_scheme": "Specific heat capacity is the energy needed to raise 1 kg of a substance by 1°C (1); water has a much higher specific heat capacity than land (1); for same energy input, land heats up and cools down much faster than water: e.g. 1 kg of water needs 4200 J per °C but land needs only 800 J (1); sea acts as a thermal reservoir — absorbs heat in summer and releases it slowly in winter (1); coastal areas stay warmer in winter and cooler in summer compared to inland (1); inland areas have greater seasonal temperature variation (1)."
+    "question": "Explain what specific heat capacity means and why coastal areas have a more moderate climate than inland areas. Include calculations to support your answer given that water has c = 4200 J/kg\u00b0C and land has c = 800 J/kg\u00b0C.",
+    "mark_scheme": "Specific heat capacity is the energy needed to raise 1 kg of a substance by 1\u00b0C (1); water has a much higher specific heat capacity than land (1); for same energy input, land heats up and cools down much faster than water: e.g. 1 kg of water needs 4200 J per \u00b0C but land needs only 800 J (1); sea acts as a thermal reservoir \u2014 absorbs heat in summer and releases it slowly in winter (1); coastal areas stay warmer in winter and cooler in summer compared to inland (1); inland areas have greater seasonal temperature variation (1)."
   },
   {
     "id": "P1-LA-031",
@@ -833,7 +833,7 @@
     "command_word": "Evaluate",
     "topic": "Energy Transfer",
     "question": "A house loses heat through its walls, roof, windows and floors. Evaluate different methods of reducing heat loss from a house. For each method, explain the mechanism of heat transfer it reduces and assess its effectiveness and cost.",
-    "mark_scheme": "Loft insulation: traps air reducing convection and conduction through roof (1); inexpensive and effective as most heat lost through roof (1); cavity wall insulation: fills air gap in walls reducing convection currents (1); effective but more expensive to install (1); double glazing: air/vacuum gap between panes reduces conduction (1); costly but also reduces draughts and noise (1); draught-proofing: reduces convection through gaps (1); cheap and easy to install (1) — any six."
+    "mark_scheme": "Loft insulation: traps air reducing convection and conduction through roof (1); inexpensive and effective as most heat lost through roof (1); cavity wall insulation: fills air gap in walls reducing convection currents (1); effective but more expensive to install (1); double glazing: air/vacuum gap between panes reduces conduction (1); costly but also reduces draughts and noise (1); draught-proofing: reduces convection through gaps (1); cheap and easy to install (1) \u2014 any six."
   },
   {
     "id": "P1-LA-032",
@@ -842,7 +842,7 @@
     "command_word": "Explain",
     "topic": "Energy Stores",
     "question": "A bungee jumper of mass 70 kg jumps from a platform 50 m above the ground. Explain all the energy transfers from the moment of jumping to when the jumper momentarily comes to rest. Use g = 10 N/kg. Include numerical values where appropriate.",
-    "mark_scheme": "Initial GPE = mgh = 70 × 10 × 50 = 35 000 J (1); as jumper falls, GPE transferred to kinetic energy (1); cord begins to stretch — KE transferred to elastic potential energy in cord (1); at lowest point, KE = 0, energy in GPE + elastic PE stores (1); some energy transferred to thermal energy due to air resistance throughout fall (1); at lowest point, sum of GPE and elastic PE equals original GPE minus energy wasted (1)."
+    "mark_scheme": "Initial GPE = mgh = 70 \u00d7 10 \u00d7 50 = 35 000 J (1); as jumper falls, GPE transferred to kinetic energy (1); cord begins to stretch \u2014 KE transferred to elastic potential energy in cord (1); at lowest point, KE = 0, energy in GPE + elastic PE stores (1); some energy transferred to thermal energy due to air resistance throughout fall (1); at lowest point, sum of GPE and elastic PE equals original GPE minus energy wasted (1)."
   },
   {
     "id": "P1-LA-033",
@@ -851,7 +851,7 @@
     "command_word": "Evaluate",
     "topic": "Energy Resources",
     "question": "A remote island community currently relies on diesel generators for electricity. Evaluate whether they should switch to a combination of wind and solar power with battery storage, considering reliability, environmental impact, and cost.",
-    "mark_scheme": "Diesel: reliable but burns fossil fuel producing CO₂ (1); fuel must be imported increasing cost and supply risk (1); wind: free fuel and low emissions once built (1); intermittent — may not generate in calm weather (1); solar: free fuel, no emissions (1); only generates in daylight, reduced in cloudy conditions (1); battery storage: allows excess energy to be stored for use when generation is low (1); combination increases reliability compared to single source (1); high upfront cost but lower long-term running costs (1) — any six."
+    "mark_scheme": "Diesel: reliable but burns fossil fuel producing CO\u2082 (1); fuel must be imported increasing cost and supply risk (1); wind: free fuel and low emissions once built (1); intermittent \u2014 may not generate in calm weather (1); solar: free fuel, no emissions (1); only generates in daylight, reduced in cloudy conditions (1); battery storage: allows excess energy to be stored for use when generation is low (1); combination increases reliability compared to single source (1); high upfront cost but lower long-term running costs (1) \u2014 any six."
   },
   {
     "id": "P1-LA-034",
@@ -860,7 +860,7 @@
     "command_word": "Explain",
     "topic": "Efficiency",
     "question": "Explain the concept of energy dissipation and why it means useful energy is always less than input energy. Use the example of a car engine to illustrate your answer, and suggest how the efficiency of a car can be improved.",
-    "mark_scheme": "Energy dissipation means energy spreading out into the surroundings as thermal energy (1); once dissipated, energy cannot be recovered for useful work (1); car engine: chemical energy in fuel converted to kinetic energy (1); but energy wasted as heat in engine, exhaust gases, friction (1); typical car engine is only ~25–35% efficient (1); improvements: streamlined bodywork reduces air resistance (1); lubricate moving parts to reduce friction (1); regenerative braking recovers kinetic energy (1); use lighter materials (1) — any six."
+    "mark_scheme": "Energy dissipation means energy spreading out into the surroundings as thermal energy (1); once dissipated, energy cannot be recovered for useful work (1); car engine: chemical energy in fuel converted to kinetic energy (1); but energy wasted as heat in engine, exhaust gases, friction (1); typical car engine is only ~25\u201335% efficient (1); improvements: streamlined bodywork reduces air resistance (1); lubricate moving parts to reduce friction (1); regenerative braking recovers kinetic energy (1); use lighter materials (1) \u2014 any six."
   },
   {
     "id": "P1-LA-035",
@@ -869,7 +869,7 @@
     "command_word": "Evaluate",
     "topic": "Energy Resources",
     "question": "Evaluate the environmental, social and economic impacts of building a large wind farm offshore. Consider impacts during construction, operation and decommissioning.",
-    "mark_scheme": "Construction: ships and equipment use fossil fuels releasing emissions (1); disruption to seabed and marine life (1); Operation: no greenhouse gas emissions (1); noise impact on wildlife / nearby residents minimal offshore (1); visual impact minimal if far offshore (1); provides jobs in construction and maintenance (1); decommissioning: turbines must be removed responsibly / materials can be recycled (1); overall: much lower lifecycle emissions than fossil fuels (1); helps reduce dependence on imported fuels (1) — any six."
+    "mark_scheme": "Construction: ships and equipment use fossil fuels releasing emissions (1); disruption to seabed and marine life (1); Operation: no greenhouse gas emissions (1); noise impact on wildlife / nearby residents minimal offshore (1); visual impact minimal if far offshore (1); provides jobs in construction and maintenance (1); decommissioning: turbines must be removed responsibly / materials can be recycled (1); overall: much lower lifecycle emissions than fossil fuels (1); helps reduce dependence on imported fuels (1) \u2014 any six."
   },
   {
     "id": "P1-LA-036",
@@ -878,7 +878,7 @@
     "command_word": "Explain",
     "topic": "Energy Transfer",
     "question": "Explain in detail how a thermal power station converts stored chemical energy in coal into electrical energy. Describe the energy transfers at each stage and identify where energy is wasted.",
-    "mark_scheme": "Coal burned in furnace — chemical energy to thermal energy (1); thermal energy heats water in boiler — steam produced (1); high-pressure steam drives turbine blades — thermal/pressure energy to kinetic energy (1); turbine connected to generator — kinetic energy to electrical energy (1); energy wasted as heat in furnace/boiler (1); energy wasted in turbine due to friction (1); exhaust steam condensed — heat released to environment (1); overall efficiency typically 30–40% (1) — any six."
+    "mark_scheme": "Coal burned in furnace \u2014 chemical energy to thermal energy (1); thermal energy heats water in boiler \u2014 steam produced (1); high-pressure steam drives turbine blades \u2014 thermal/pressure energy to kinetic energy (1); turbine connected to generator \u2014 kinetic energy to electrical energy (1); energy wasted as heat in furnace/boiler (1); energy wasted in turbine due to friction (1); exhaust steam condensed \u2014 heat released to environment (1); overall efficiency typically 30\u201340% (1) \u2014 any six."
   },
   {
     "id": "P1-LA-037",
@@ -887,16 +887,16 @@
     "command_word": "Evaluate",
     "topic": "Energy Resources",
     "question": "The UK government is planning to increase the use of hydrogen as a fuel. Evaluate hydrogen as an energy carrier, considering how it is produced, stored, used and its environmental impact compared to fossil fuels.",
-    "mark_scheme": "Hydrogen produced by electrolysis of water (1); if powered by renewable energy, production is carbon-free — 'green hydrogen' (1); if produced from natural gas, releases CO₂ — 'grey hydrogen' (1); combustion of hydrogen only produces water — no direct emissions (1); storage challenge: hydrogen is highly flammable and difficult to store safely under pressure (1); fuel cells can convert hydrogen directly to electricity efficiently (1); environmental benefit only if renewable energy used in production (1); could replace natural gas in heating / transport (1) — any six."
+    "mark_scheme": "Hydrogen produced by electrolysis of water (1); if powered by renewable energy, production is carbon-free \u2014 'green hydrogen' (1); if produced from natural gas, releases CO\u2082 \u2014 'grey hydrogen' (1); combustion of hydrogen only produces water \u2014 no direct emissions (1); storage challenge: hydrogen is highly flammable and difficult to store safely under pressure (1); fuel cells can convert hydrogen directly to electricity efficiently (1); environmental benefit only if renewable energy used in production (1); could replace natural gas in heating / transport (1) \u2014 any six."
   },
   {
     "id": "P1-SA-012",
     "type": "written",
     "marks": 2,
     "command_word": "State",
-    "topic": "Energy stores",
+    "topic": "Energy Stores",
     "question": "State four different types of energy store.",
-    "mark_scheme": "Any four from: kinetic, gravitational potential, elastic potential, chemical, thermal, nuclear, electrostatic, magnetic (1 mark for each pair of two named, so any 2 for 2 marks — adjust: any two stores named for 1 mark each)."
+    "mark_scheme": "Any four from: kinetic, gravitational potential, elastic potential, chemical, thermal, nuclear, electrostatic, magnetic (1 mark for each pair of two named, so any 2 for 2 marks \u2014 adjust: any two stores named for 1 mark each)."
   },
   {
     "id": "P1-SA-013",
@@ -905,7 +905,7 @@
     "command_word": "Explain",
     "topic": "Power",
     "question": "Explain the difference between energy and power.",
-    "mark_scheme": "Energy is the total amount stored or transferred, measured in joules (1); power is the rate of energy transfer — how quickly energy is transferred — measured in watts (1)."
+    "mark_scheme": "Energy is the total amount stored or transferred, measured in joules (1); power is the rate of energy transfer \u2014 how quickly energy is transferred \u2014 measured in watts (1)."
   },
   {
     "id": "P1-SA-014",
@@ -923,14 +923,14 @@
     "command_word": "State",
     "topic": "Renewable energy",
     "question": "State two advantages and one disadvantage of wind power.",
-    "mark_scheme": "Advantages: renewable / will not run out (1); no greenhouse gas emissions during operation (1); disadvantage: any valid — intermittent, visual/noise pollution, wildlife impact (1) — two advantages for 2 marks."
+    "mark_scheme": "Advantages: renewable / will not run out (1); no greenhouse gas emissions during operation (1); disadvantage: any valid \u2014 intermittent, visual/noise pollution, wildlife impact (1) \u2014 two advantages for 2 marks."
   },
   {
     "id": "P1-SA-016",
     "type": "written",
     "marks": 2,
     "command_word": "Describe",
-    "topic": "Energy stores",
+    "topic": "Energy Stores",
     "question": "Describe the energy transfers when a stretched elastic band is released and propels a ball upwards.",
     "mark_scheme": "Elastic potential energy in the band is transferred to kinetic energy of the ball on release (1); as the ball rises, kinetic energy is transferred to gravitational potential energy (1)."
   },
@@ -941,7 +941,7 @@
     "command_word": "Give",
     "topic": "Power",
     "question": "Give the equation for power in terms of energy and time, and state the unit of power.",
-    "mark_scheme": "Power = energy ÷ time / P = E/t (1); unit is the watt (W) (1)."
+    "mark_scheme": "Power = energy \u00f7 time / P = E/t (1); unit is the watt (W) (1)."
   },
   {
     "id": "P1-SA-018",
@@ -950,16 +950,16 @@
     "command_word": "State",
     "topic": "Renewable energy",
     "question": "State two non-renewable energy resources and give one environmental disadvantage of each.",
-    "mark_scheme": "Any two: coal → produces CO₂ / acid rain pollutants (1); oil → produces CO₂ / risk of oil spills (1); natural gas → produces CO₂ (1); nuclear → produces radioactive waste (1)."
+    "mark_scheme": "Any two: coal \u2192 produces CO\u2082 / acid rain pollutants (1); oil \u2192 produces CO\u2082 / risk of oil spills (1); natural gas \u2192 produces CO\u2082 (1); nuclear \u2192 produces radioactive waste (1)."
   },
   {
     "id": "P1-SA-019",
     "type": "written",
     "marks": 2,
     "command_word": "Name",
-    "topic": "Energy stores",
+    "topic": "Energy Stores",
     "question": "Name the type of energy store that increases when an object is lifted higher above the ground.",
-    "mark_scheme": "Gravitational potential energy (1); GPE increases because the object is at a greater height — GPE = mgh (1)."
+    "mark_scheme": "Gravitational potential energy (1); GPE increases because the object is at a greater height \u2014 GPE = mgh (1)."
   },
   {
     "id": "P1-SA-020",
@@ -968,7 +968,7 @@
     "command_word": "Give",
     "topic": "Efficiency",
     "question": "Give the equation for efficiency and state the maximum possible value of efficiency.",
-    "mark_scheme": "Efficiency = useful output energy / total input energy (1); maximum efficiency = 1 (or 100%) — no real device can be 100% efficient (1)."
+    "mark_scheme": "Efficiency = useful output energy / total input energy (1); maximum efficiency = 1 (or 100%) \u2014 no real device can be 100% efficient (1)."
   },
   {
     "id": "P1-SA-021",
@@ -993,9 +993,9 @@
     "type": "written",
     "marks": 3,
     "command_word": "Explain",
-    "topic": "Energy stores",
+    "topic": "Energy Stores",
     "question": "Explain the energy transfers in a pendulum as it swings from one side to the other. Include what happens to the energy if the pendulum eventually stops.",
-    "mark_scheme": "At the highest point of the swing, the pendulum has maximum gravitational potential energy and zero kinetic energy (1); as it swings down, GPE is transferred to kinetic energy — maximum KE at the lowest point (1); as it swings up the other side, KE is transferred back to GPE; the pendulum slows because air resistance and friction at the pivot continuously transfer small amounts of energy to thermal energy in the surroundings (1)."
+    "mark_scheme": "At the highest point of the swing, the pendulum has maximum gravitational potential energy and zero kinetic energy (1); as it swings down, GPE is transferred to kinetic energy \u2014 maximum KE at the lowest point (1); as it swings up the other side, KE is transferred back to GPE; the pendulum slows because air resistance and friction at the pivot continuously transfer small amounts of energy to thermal energy in the surroundings (1)."
   },
   {
     "id": "P1-SA-024",
@@ -1004,7 +1004,7 @@
     "command_word": "Explain",
     "topic": "Power",
     "question": "Explain why transmitting electricity at high voltage across the National Grid reduces energy losses.",
-    "mark_scheme": "The same power can be transmitted at high voltage and low current (since P = IV) (1); power wasted as heat in cables is given by P = I²R, so lower current means much less energy is wasted as heat (1); step-up transformers increase voltage before transmission; step-down transformers reduce voltage to a safe level for homes (1)."
+    "mark_scheme": "The same power can be transmitted at high voltage and low current (since P = IV) (1); power wasted as heat in cables is given by P = I\u00b2R, so lower current means much less energy is wasted as heat (1); step-up transformers increase voltage before transmission; step-down transformers reduce voltage to a safe level for homes (1)."
   },
   {
     "id": "P1-SA-025",
@@ -1013,7 +1013,7 @@
     "command_word": "Describe",
     "topic": "Efficiency",
     "question": "Describe an experiment to measure the efficiency of an electric motor lifting a weight.",
-    "mark_scheme": "Measure the mass of the weight and the height it is lifted (1); calculate useful output energy: GPE = mgh (1); measure electrical energy input using a joulemeter or by calculating E = P × t; efficiency = GPE gained / electrical energy input (1)."
+    "mark_scheme": "Measure the mass of the weight and the height it is lifted (1); calculate useful output energy: GPE = mgh (1); measure electrical energy input using a joulemeter or by calculating E = P \u00d7 t; efficiency = GPE gained / electrical energy input (1)."
   },
   {
     "id": "P1-SA-026",
@@ -1022,7 +1022,7 @@
     "command_word": "Explain",
     "topic": "Renewable energy",
     "question": "Explain how a hydroelectric power station generates electricity, including all the energy transfers.",
-    "mark_scheme": "Water stored in a reservoir at height has gravitational potential energy (1); water flows down through pipes and drives turbines — GPE transferred to kinetic energy of the turbines (1); turbines are connected to generators — kinetic energy is transferred to electrical energy (1)."
+    "mark_scheme": "Water stored in a reservoir at height has gravitational potential energy (1); water flows down through pipes and drives turbines \u2014 GPE transferred to kinetic energy of the turbines (1); turbines are connected to generators \u2014 kinetic energy is transferred to electrical energy (1)."
   },
   {
     "id": "P1-SA-027",
@@ -1031,16 +1031,16 @@
     "command_word": "Compare",
     "topic": "Renewable energy",
     "question": "Compare wind power and solar power as energy resources. Include reliability and environmental impact.",
-    "mark_scheme": "Both are renewable and produce no greenhouse gases during operation (1); wind power: intermittent — only generates when wind blows; suitable for windy coastal/highland areas; may affect wildlife (1); solar power: only generates in daylight; less effective in cloudy regions like the UK; manufacturing panels has environmental cost (1)."
+    "mark_scheme": "Both are renewable and produce no greenhouse gases during operation (1); wind power: intermittent \u2014 only generates when wind blows; suitable for windy coastal/highland areas; may affect wildlife (1); solar power: only generates in daylight; less effective in cloudy regions like the UK; manufacturing panels has environmental cost (1)."
   },
   {
     "id": "P1-SA-028",
     "type": "written",
     "marks": 3,
     "command_word": "Explain",
-    "topic": "Energy stores",
+    "topic": "Energy Stores",
     "question": "Explain what happens to the kinetic energy of a car when the brakes are applied. Include the energy transfer and the effect on the brakes.",
-    "mark_scheme": "When brakes are applied, friction between brake pads and discs creates a force opposing motion (1); kinetic energy of the car is transferred to thermal energy in the brakes and surroundings (1); the brakes heat up — over repeated heavy braking, this can cause brake fade as the brakes become too hot to be effective (1)."
+    "mark_scheme": "When brakes are applied, friction between brake pads and discs creates a force opposing motion (1); kinetic energy of the car is transferred to thermal energy in the brakes and surroundings (1); the brakes heat up \u2014 over repeated heavy braking, this can cause brake fade as the brakes become too hot to be effective (1)."
   },
   {
     "id": "P1-SA-029",
@@ -1049,7 +1049,7 @@
     "command_word": "Describe",
     "topic": "Power",
     "question": "Describe how the power consumption of a household appliance can be used to calculate the cost of using it for a given time.",
-    "mark_scheme": "Convert power to kilowatts (kW) (1); multiply by time in hours to get energy in kilowatt-hours (kWh): Energy = P(kW) × t(hours) (1); multiply by the cost per kWh to find total cost (1)."
+    "mark_scheme": "Convert power to kilowatts (kW) (1); multiply by time in hours to get energy in kilowatt-hours (kWh): Energy = P(kW) \u00d7 t(hours) (1); multiply by the cost per kWh to find total cost (1)."
   },
   {
     "id": "P1-SA-030",
@@ -1058,7 +1058,7 @@
     "command_word": "Explain",
     "topic": "Efficiency",
     "question": "Explain why buildings lose heat more quickly in winter and describe two measures that reduce this heat loss.",
-    "mark_scheme": "Greater temperature difference between inside and outside in winter increases the rate of heat transfer (1); loft insulation traps air in fibres, reducing convection and conduction through the roof (1); double glazing reduces conduction through windows — air or vacuum gap between panes acts as insulator (1)."
+    "mark_scheme": "Greater temperature difference between inside and outside in winter increases the rate of heat transfer (1); loft insulation traps air in fibres, reducing convection and conduction through the roof (1); double glazing reduces conduction through windows \u2014 air or vacuum gap between panes acts as insulator (1)."
   },
   {
     "id": "P1-SA-031",
@@ -1074,9 +1074,9 @@
     "type": "written",
     "marks": 3,
     "command_word": "Compare",
-    "topic": "Energy stores",
+    "topic": "Energy Stores",
     "question": "Compare the gravitational potential energy of two objects: Object A has a mass of 2 kg at a height of 5 m, and Object B has a mass of 5 kg at a height of 2 m. Use g = 10 N/kg.",
-    "mark_scheme": "GPE(A) = mgh = 2 × 10 × 5 = 100 J (1); GPE(B) = mgh = 5 × 10 × 2 = 100 J (1); both objects have equal gravitational potential energy despite having different masses and heights (1)."
+    "mark_scheme": "GPE(A) = mgh = 2 \u00d7 10 \u00d7 5 = 100 J (1); GPE(B) = mgh = 5 \u00d7 10 \u00d7 2 = 100 J (1); both objects have equal gravitational potential energy despite having different masses and heights (1)."
   },
   {
     "id": "P1-SA-033",
@@ -1085,7 +1085,7 @@
     "command_word": "Explain",
     "topic": "Efficiency",
     "question": "Explain why a filament light bulb is less efficient than an LED bulb, and calculate the efficiency of a filament bulb that transfers 5 J of light energy from 50 J of electrical energy.",
-    "mark_scheme": "A filament bulb converts most electrical energy to heat rather than light — wasteful (1); an LED converts more electrical energy to light with less heat waste (1); efficiency = useful output / total input = 5/50 = 0.1 or 10% (1)."
+    "mark_scheme": "A filament bulb converts most electrical energy to heat rather than light \u2014 wasteful (1); an LED converts more electrical energy to light with less heat waste (1); efficiency = useful output / total input = 5/50 = 0.1 or 10% (1)."
   },
   {
     "id": "P1-SA-034",
@@ -1094,6 +1094,87 @@
     "command_word": "Describe",
     "topic": "Power",
     "question": "Describe what a Sankey diagram shows and explain how it represents wasted energy.",
-    "mark_scheme": "A Sankey diagram shows all energy transfers from a device — input and all outputs (1); the width of each arrow is proportional to the amount of energy it represents (1); wasted energy is shown as arrows leaving in unintended directions, usually thermal energy to the surroundings (1)."
+    "mark_scheme": "A Sankey diagram shows all energy transfers from a device \u2014 input and all outputs (1); the width of each arrow is proportional to the amount of energy it represents (1); wasted energy is shown as arrows leaving in unintended directions, usually thermal energy to the surroundings (1)."
+  },
+  {
+    "id": "P1-SA-035",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Power",
+    "question": "State the equation linking power, energy transferred and time.",
+    "mark_scheme": "Power = energy transferred \u00f7 time (1)."
+  },
+  {
+    "id": "P1-SA-036",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Calculate",
+    "topic": "Power",
+    "question": "A motor transfers 6000 J of energy in 30 s. Calculate the power of the motor.",
+    "mark_scheme": "P = E \u00f7 t (1); P = 6000 \u00f7 30 = 200 W (1)."
+  },
+  {
+    "id": "P1-SA-037",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Power",
+    "question": "Explain why a more powerful device is not always more efficient.",
+    "mark_scheme": "Power measures the rate of energy transfer (1); a high-power device may still waste a large proportion of energy as heat/sound, so efficiency depends on the ratio of useful to total energy (1)."
+  },
+  {
+    "id": "P1-SA-038",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Calculate",
+    "topic": "Power",
+    "question": "A kettle has a power rating of 2.5 kW. Calculate the energy transferred in 4 minutes. Give your answer in kilojoules.",
+    "mark_scheme": "Convert time: 4 min = 240 s (1); E = P \u00d7 t = 2500 \u00d7 240 (1); E = 600 000 J = 600 kJ (1)."
+  },
+  {
+    "id": "P1-SA-039",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Renewable energy",
+    "question": "State one advantage of using solar panels to generate electricity compared with burning fossil fuels.",
+    "mark_scheme": "Any one from: no carbon dioxide/greenhouse gas emissions; fuel (sunlight) is free / renewable; low running costs (1)."
+  },
+  {
+    "id": "P1-SA-040",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Compare",
+    "topic": "Renewable energy",
+    "question": "Compare the reliability of wind turbines and nuclear power stations as sources of electricity.",
+    "mark_scheme": "Wind turbines are intermittent / depend on wind speed so output is variable (1); nuclear power stations provide a continuous, reliable baseload output (1)."
+  },
+  {
+    "id": "P1-SA-041",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Renewable energy",
+    "question": "Explain why hydroelectric power stations can respond quickly to changes in electricity demand.",
+    "mark_scheme": "Water stored in the reservoir can be released immediately (1); so the turbines generate electricity almost instantly when demand increases (1)."
+  },
+  {
+    "id": "P1-SA-042",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Evaluate",
+    "topic": "Renewable energy",
+    "question": "Evaluate the use of wind turbines as a source of electricity for the UK.",
+    "mark_scheme": "Advantage: no greenhouse gases emitted during operation (1); Advantage: renewable / fuel is free (1); Disadvantage: intermittent / not always windy so backup supply needed, OR visual/noise impact on landscape (1)."
+  },
+  {
+    "id": "P1-SA-043",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Calculate",
+    "topic": "Specific Heat Capacity",
+    "question": "A 2 kg block of copper is heated and its temperature rises by 25 \u00b0C. The specific heat capacity of copper is 385 J/kg\u00b0C. Calculate the energy stored in the copper.",
+    "mark_scheme": "Q = mc\u0394T = 2 \u00d7 385 \u00d7 25 (1); Q = 19 250 J (1)."
   }
 ]

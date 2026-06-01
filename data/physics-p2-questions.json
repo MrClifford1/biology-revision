@@ -20,12 +20,12 @@
     "topic": "Basic Electricity",
     "question": "A resistor has a voltage of 12 V across it and a current of 3 A flowing through it. What is its resistance?",
     "options": [
-      "36 Ω",
-      "4 Ω",
-      "9 Ω",
-      "0.25 Ω"
+      "36 \u03a9",
+      "4 \u03a9",
+      "9 \u03a9",
+      "0.25 \u03a9"
     ],
-    "correct": "4 Ω"
+    "correct": "4 \u03a9"
   },
   {
     "id": "P2-MC-003",
@@ -263,7 +263,7 @@
     "type": "fill_in_blank",
     "marks": 1,
     "topic": "Power and Energy",
-    "question": "Power = current × __________.",
+    "question": "Power = current \u00d7 __________.",
     "correct": "voltage",
     "acceptable": [
       "voltage",
@@ -356,7 +356,7 @@
       },
       {
         "term": "Filament lamp",
-        "definition": "Resistance increases as temperature increases — non-ohmic"
+        "definition": "Resistance increases as temperature increases \u2014 non-ohmic"
       }
     ]
   },
@@ -369,15 +369,15 @@
     "pairs": [
       {
         "term": "Live wire",
-        "definition": "Brown — carries current from the supply at high voltage"
+        "definition": "Brown \u2014 carries current from the supply at high voltage"
       },
       {
         "term": "Neutral wire",
-        "definition": "Blue — completes the circuit back to the supply at 0 V"
+        "definition": "Blue \u2014 completes the circuit back to the supply at 0 V"
       },
       {
         "term": "Earth wire",
-        "definition": "Green and yellow — safety wire to prevent electric shock"
+        "definition": "Green and yellow \u2014 safety wire to prevent electric shock"
       }
     ]
   },
@@ -447,7 +447,7 @@
     "command_word": "State",
     "topic": "Basic Electricity",
     "question": "State Ohm's Law.",
-    "mark_scheme": "Voltage = current × resistance / V = IR (1); for an ohmic conductor at constant temperature (1) — accept either."
+    "mark_scheme": "Voltage = current \u00d7 resistance / V = IR (1); for an ohmic conductor at constant temperature (1) \u2014 accept either."
   },
   {
     "id": "P2-SA-002",
@@ -455,8 +455,8 @@
     "marks": 1,
     "command_word": "Calculate",
     "topic": "Basic Electricity",
-    "question": "A current of 2 A flows through a resistor with a resistance of 15 Ω. Calculate the voltage across it.",
-    "mark_scheme": "V = IR = 2 × 15 = 30 V (1)."
+    "question": "A current of 2 A flows through a resistor with a resistance of 15 \u03a9. Calculate the voltage across it.",
+    "mark_scheme": "V = IR = 2 \u00d7 15 = 30 V (1)."
   },
   {
     "id": "P2-SA-003",
@@ -465,7 +465,7 @@
     "command_word": "State",
     "topic": "Domestic Electricity",
     "question": "State the voltage and frequency of UK mains electricity.",
-    "mark_scheme": "230 V (1) and 50 Hz (1) — both needed for the mark."
+    "mark_scheme": "230 V (1) and 50 Hz (1) \u2014 both needed for the mark."
   },
   {
     "id": "P2-SA-004",
@@ -483,7 +483,7 @@
     "command_word": "Explain",
     "topic": "Circuits",
     "question": "Explain why the resistance of a thermistor decreases as temperature increases.",
-    "mark_scheme": "As temperature increases, more electrons are freed from atoms (1); more charge carriers available (1); current increases for same voltage so resistance decreases (1) — any two."
+    "mark_scheme": "As temperature increases, more electrons are freed from atoms (1); more charge carriers available (1); current increases for same voltage so resistance decreases (1) \u2014 any two."
   },
   {
     "id": "P2-SA-006",
@@ -492,7 +492,7 @@
     "command_word": "Describe",
     "topic": "Domestic Electricity",
     "question": "Describe how a fuse protects an electrical appliance.",
-    "mark_scheme": "If current exceeds the fuse rating (1); the wire in the fuse melts / breaks the circuit (1); preventing further current flow / preventing damage or fire (1) — any two."
+    "mark_scheme": "If current exceeds the fuse rating (1); the wire in the fuse melts / breaks the circuit (1); preventing further current flow / preventing damage or fire (1) \u2014 any two."
   },
   {
     "id": "P2-SA-007",
@@ -501,7 +501,7 @@
     "command_word": "Calculate",
     "topic": "Power and Energy",
     "question": "A kettle has a power rating of 2.5 kW. Calculate the energy transferred in 4 minutes. Give your answer in joules.",
-    "mark_scheme": "E = Pt = 2500 × 240 (1) = 600 000 J (1)."
+    "mark_scheme": "E = Pt = 2500 \u00d7 240 (1) = 600 000 J (1)."
   },
   {
     "id": "P2-SA-008",
@@ -510,7 +510,7 @@
     "command_word": "Explain",
     "topic": "Power and Energy",
     "question": "Explain why the National Grid uses high voltages to transmit electricity.",
-    "mark_scheme": "High voltage means lower current (1); lower current means less energy wasted as heat in the cables (1); makes transmission more efficient (1) — any two."
+    "mark_scheme": "High voltage means lower current (1); lower current means less energy wasted as heat in the cables (1); makes transmission more efficient (1) \u2014 any two."
   },
   {
     "id": "P2-SA-009",
@@ -519,7 +519,7 @@
     "command_word": "Explain",
     "topic": "Static Electricity",
     "question": "Explain how a plastic rod becomes negatively charged when rubbed with a cloth.",
-    "mark_scheme": "Friction between rod and cloth (1); electrons transferred from cloth to rod (1); rod gains electrons so becomes negatively charged (1) — any two."
+    "mark_scheme": "Friction between rod and cloth (1); electrons transferred from cloth to rod (1); rod gains electrons so becomes negatively charged (1) \u2014 any two."
   },
   {
     "id": "P2-SA-010",
@@ -528,7 +528,7 @@
     "command_word": "Describe",
     "topic": "Circuits",
     "question": "Describe how you would investigate the I-V characteristic of a filament lamp in the lab.",
-    "mark_scheme": "Set up circuit with lamp, variable resistor, ammeter in series (1); voltmeter connected in parallel across the lamp (1); vary the resistance to change the current (1); record current and voltage readings (1); plot I-V graph (1); curve shows resistance increases as temperature increases (1) — any three."
+    "mark_scheme": "Set up circuit with lamp, variable resistor, ammeter in series (1); voltmeter connected in parallel across the lamp (1); vary the resistance to change the current (1); record current and voltage readings (1); plot I-V graph (1); curve shows resistance increases as temperature increases (1) \u2014 any three."
   },
   {
     "id": "P2-SA-011",
@@ -537,7 +537,7 @@
     "command_word": "Explain",
     "topic": "Basic Electricity",
     "question": "Explain the difference between an ohmic and a non-ohmic conductor. Give one example of each.",
-    "mark_scheme": "Ohmic conductor: current proportional to voltage (1); resistance stays constant (1); example: resistor (1). Non-ohmic: resistance changes with temperature or other factors (1); example: filament lamp / thermistor / diode (1) — any three."
+    "mark_scheme": "Ohmic conductor: current proportional to voltage (1); resistance stays constant (1); example: resistor (1). Non-ohmic: resistance changes with temperature or other factors (1); example: filament lamp / thermistor / diode (1) \u2014 any three."
   },
   {
     "id": "P2-SA-012",
@@ -546,7 +546,7 @@
     "command_word": "Explain",
     "topic": "Circuits",
     "question": "Explain why adding more lamps in parallel to a circuit increases the total current drawn from the battery.",
-    "mark_scheme": "Each lamp is connected in a separate branch (1); voltage across each lamp is the same as the supply voltage (1); each lamp draws its own current (1); total current = sum of currents in each branch (1); more branches = more total current (1) — any three."
+    "mark_scheme": "Each lamp is connected in a separate branch (1); voltage across each lamp is the same as the supply voltage (1); each lamp draws its own current (1); total current = sum of currents in each branch (1); more branches = more total current (1) \u2014 any three."
   },
   {
     "id": "P2-LA-001",
@@ -555,7 +555,7 @@
     "command_word": "Explain",
     "topic": "Domestic Electricity",
     "question": "Explain why AC is used for mains electricity rather than DC, and describe the role of transformers in the National Grid.",
-    "mark_scheme": "AC can easily be stepped up or down using transformers (1); DC cannot be transformed (1); high voltage used for transmission reduces current (1); lower current means less energy wasted as heat in cables (1); step-down transformers reduce voltage to safe level for homes (1) — any four."
+    "mark_scheme": "AC can easily be stepped up or down using transformers (1); DC cannot be transformed (1); high voltage used for transmission reduces current (1); lower current means less energy wasted as heat in cables (1); step-down transformers reduce voltage to safe level for homes (1) \u2014 any four."
   },
   {
     "id": "P2-LA-002",
@@ -564,7 +564,7 @@
     "command_word": "Describe",
     "topic": "Circuits",
     "question": "Describe the differences between series and parallel circuits. Include what happens to current and voltage in each.",
-    "mark_scheme": "Series: single loop, one path for current (1); current same throughout (1); voltage shared between components (1). Parallel: multiple branches (1); voltage same across each branch (1); current shared between branches (1); total resistance lower in parallel (1) — any four."
+    "mark_scheme": "Series: single loop, one path for current (1); current same throughout (1); voltage shared between components (1). Parallel: multiple branches (1); voltage same across each branch (1); current shared between branches (1); total resistance lower in parallel (1) \u2014 any four."
   },
   {
     "id": "P2-LA-003",
@@ -573,7 +573,7 @@
     "command_word": "Calculate",
     "topic": "Power and Energy",
     "question": "A heater operates at 230 V and draws a current of 8 A. Calculate its power, and the energy transferred in 2 hours. Give your answer in kWh.",
-    "mark_scheme": "P = IV = 230 × 8 = 1840 W (1); convert to kW: 1.84 kW (1); E = Pt = 1.84 × 2 = 3.68 kWh (1); correct unit stated (1)."
+    "mark_scheme": "P = IV = 230 \u00d7 8 = 1840 W (1); convert to kW: 1.84 kW (1); E = Pt = 1.84 \u00d7 2 = 3.68 kWh (1); correct unit stated (1)."
   },
   {
     "id": "P2-LA-004",
@@ -582,7 +582,7 @@
     "command_word": "Explain",
     "topic": "Static Electricity",
     "question": "Explain how static electricity builds up on a van de Graaff generator and describe the risks of static electricity in fuelling aircraft.",
-    "mark_scheme": "Friction between belt and roller transfers electrons (1); charge builds up on the dome (1); large potential difference created (1). Fuelling aircraft: fuel flowing through pipe causes static build-up (1); spark could ignite fuel vapour causing fire / explosion (1); aircraft earthed to prevent build-up (1) — any four."
+    "mark_scheme": "Friction between belt and roller transfers electrons (1); charge builds up on the dome (1); large potential difference created (1). Fuelling aircraft: fuel flowing through pipe causes static build-up (1); spark could ignite fuel vapour causing fire / explosion (1); aircraft earthed to prevent build-up (1) \u2014 any four."
   },
   {
     "id": "P2-LA-005",
@@ -591,7 +591,7 @@
     "command_word": "Evaluate",
     "topic": "Circuits",
     "question": "A student tests three different resistors and plots their I-V graphs. Resistor A gives a straight line through the origin. Resistor B gives a curve that flattens at higher voltages. Resistor C only allows current to flow in one direction. Evaluate what each graph tells us about the component.",
-    "mark_scheme": "Resistor A: straight line shows constant resistance / ohmic conductor (1); current proportional to voltage (1). Resistor B: resistance increases as voltage increases (1); likely a filament lamp as resistance increases with temperature (1). Resistor C: only conducts one way (1); must be a diode (1); very high resistance in reverse direction (1) — any five."
+    "mark_scheme": "Resistor A: straight line shows constant resistance / ohmic conductor (1); current proportional to voltage (1). Resistor B: resistance increases as voltage increases (1); likely a filament lamp as resistance increases with temperature (1). Resistor C: only conducts one way (1); must be a diode (1); very high resistance in reverse direction (1) \u2014 any five."
   },
   {
     "id": "P2-LA-006",
@@ -600,7 +600,7 @@
     "command_word": "Explain",
     "topic": "Domestic Electricity",
     "question": "Explain how the wiring in a plug keeps users safe, including the roles of the live, neutral and earth wires, and the fuse.",
-    "mark_scheme": "Live wire (brown) carries current at high voltage (1); neutral wire (blue) completes the circuit at ~0 V (1); earth wire (green/yellow) connects metal case to earth (1); if fault causes case to become live, large current flows through earth wire (1); this blows the fuse (1); fuse melts and breaks the circuit (1); prevents electric shock / fire (1) — any six."
+    "mark_scheme": "Live wire (brown) carries current at high voltage (1); neutral wire (blue) completes the circuit at ~0 V (1); earth wire (green/yellow) connects metal case to earth (1); if fault causes case to become live, large current flows through earth wire (1); this blows the fuse (1); fuse melts and breaks the circuit (1); prevents electric shock / fire (1) \u2014 any six."
   },
   {
     "id": "P2-LA-007",
@@ -609,7 +609,7 @@
     "command_word": "Evaluate",
     "topic": "Power and Energy",
     "question": "A household is deciding between using a gas boiler and an electric heat pump for heating. Evaluate both options considering efficiency, running costs and environmental impact.",
-    "mark_scheme": "Gas boiler: burns fossil fuel (1); produces CO₂ contributing to climate change (1); relatively cheap fuel but prices variable (1). Heat pump: uses electricity (1); moves heat rather than generating it — efficiency over 100% (1); running costs depend on electricity price (1); environmental impact depends on how electricity is generated (1); if renewable electricity used then very low carbon (1) — any six."
+    "mark_scheme": "Gas boiler: burns fossil fuel (1); produces CO\u2082 contributing to climate change (1); relatively cheap fuel but prices variable (1). Heat pump: uses electricity (1); moves heat rather than generating it \u2014 efficiency over 100% (1); running costs depend on electricity price (1); environmental impact depends on how electricity is generated (1); if renewable electricity used then very low carbon (1) \u2014 any six."
   },
   {
     "id": "P2-LA-008",
@@ -617,8 +617,8 @@
     "marks": 4,
     "command_word": "Calculate",
     "topic": "Basic Electricity",
-    "question": "A circuit contains a 12 V battery and two resistors in series: R1 = 4 Ω and R2 = 8 Ω. Calculate the total resistance, the current flowing and the voltage across each resistor.",
-    "mark_scheme": "Total resistance = 4 + 8 = 12 Ω (1); I = V/R = 12/12 = 1 A (1); V₁ = IR₁ = 1 × 4 = 4 V (1); V₂ = IR₂ = 1 × 8 = 8 V (1)."
+    "question": "A circuit contains a 12 V battery and two resistors in series: R1 = 4 \u03a9 and R2 = 8 \u03a9. Calculate the total resistance, the current flowing and the voltage across each resistor.",
+    "mark_scheme": "Total resistance = 4 + 8 = 12 \u03a9 (1); I = V/R = 12/12 = 1 A (1); V\u2081 = IR\u2081 = 1 \u00d7 4 = 4 V (1); V\u2082 = IR\u2082 = 1 \u00d7 8 = 8 V (1)."
   },
   {
     "id": "P2-LA-009",
@@ -627,7 +627,7 @@
     "command_word": "Explain",
     "topic": "Circuits",
     "question": "Explain why a filament lamp is a non-ohmic conductor. Describe how its I-V characteristic differs from that of a fixed resistor.",
-    "mark_scheme": "Filament lamp is non-ohmic because resistance is not constant (1); as current increases, filament temperature increases (1); higher temperature means greater resistance (1); I-V graph is a curve that flattens at high voltages — current increases less than proportionally (1); fixed resistor gives straight line through origin showing constant resistance (1) — any four."
+    "mark_scheme": "Filament lamp is non-ohmic because resistance is not constant (1); as current increases, filament temperature increases (1); higher temperature means greater resistance (1); I-V graph is a curve that flattens at high voltages \u2014 current increases less than proportionally (1); fixed resistor gives straight line through origin showing constant resistance (1) \u2014 any four."
   },
   {
     "id": "P2-LA-010",
@@ -636,7 +636,7 @@
     "command_word": "Describe",
     "topic": "Circuits",
     "question": "Describe what happens to the total resistance of a circuit when more resistors are added (a) in series and (b) in parallel. Explain why the parallel case occurs.",
-    "mark_scheme": "Series: total resistance increases — resistances add together (1); parallel: total resistance decreases (1); in parallel, each branch provides an additional path for current (1); total current from battery increases — effectively lower overall resistance (1)."
+    "mark_scheme": "Series: total resistance increases \u2014 resistances add together (1); parallel: total resistance decreases (1); in parallel, each branch provides an additional path for current (1); total current from battery increases \u2014 effectively lower overall resistance (1)."
   },
   {
     "id": "P2-LA-011",
@@ -654,7 +654,7 @@
     "command_word": "Calculate",
     "topic": "Power and Energy",
     "question": "A 60 W light bulb and a 1200 W kettle are both operated on 230 V mains. Calculate the current drawn by each device and the charge that flows through the kettle in 3 minutes.",
-    "mark_scheme": "I (bulb) = P/V = 60/230 = 0.26 A (1); I (kettle) = 1200/230 = 5.22 A (1); Q = It = 5.22 × 180 (1) = 939.6 C (accept 940 C) (1)."
+    "mark_scheme": "I (bulb) = P/V = 60/230 = 0.26 A (1); I (kettle) = 1200/230 = 5.22 A (1); Q = It = 5.22 \u00d7 180 (1) = 939.6 C (accept 940 C) (1)."
   },
   {
     "id": "P2-LA-013",
@@ -681,7 +681,7 @@
     "command_word": "Explain",
     "topic": "Static Electricity",
     "question": "Explain how static electricity can be a hazard when refuelling aircraft, and describe the precautions taken to prevent accidents.",
-    "mark_scheme": "Fuel flowing through pipes causes friction — electrons transferred to fuel creating static charge (1); large potential difference can build up on aircraft (1); spark could ignite fuel vapour causing fire or explosion (1); aircraft is connected to earth by a wire/bonded before fuelling (1); this allows charge to flow safely to earth preventing build-up (1) — any four."
+    "mark_scheme": "Fuel flowing through pipes causes friction \u2014 electrons transferred to fuel creating static charge (1); large potential difference can build up on aircraft (1); spark could ignite fuel vapour causing fire or explosion (1); aircraft is connected to earth by a wire/bonded before fuelling (1); this allows charge to flow safely to earth preventing build-up (1) \u2014 any four."
   },
   {
     "id": "P2-LA-016",
@@ -689,8 +689,8 @@
     "marks": 4,
     "command_word": "Calculate",
     "topic": "Circuits",
-    "question": "A parallel circuit has two branches. Branch 1 contains a 6 Ω resistor and branch 2 contains a 12 Ω resistor. The supply voltage is 12 V. Calculate the current in each branch and the total current from the supply.",
-    "mark_scheme": "I₁ = V/R₁ = 12/6 = 2 A (1); I₂ = V/R₂ = 12/12 = 1 A (1); total current = 2 + 1 = 3 A (1); correct working shown (1)."
+    "question": "A parallel circuit has two branches. Branch 1 contains a 6 \u03a9 resistor and branch 2 contains a 12 \u03a9 resistor. The supply voltage is 12 V. Calculate the current in each branch and the total current from the supply.",
+    "mark_scheme": "I\u2081 = V/R\u2081 = 12/6 = 2 A (1); I\u2082 = V/R\u2082 = 12/12 = 1 A (1); total current = 2 + 1 = 3 A (1); correct working shown (1)."
   },
   {
     "id": "P2-LA-017",
@@ -699,7 +699,7 @@
     "command_word": "Explain",
     "topic": "Domestic Electricity",
     "question": "Explain why household appliances are connected in parallel rather than in series. Include what would happen if one appliance stopped working in each type of circuit.",
-    "mark_scheme": "In parallel, each appliance receives full mains voltage (1); each appliance can be switched on/off independently (1); if one appliance fails in parallel, others continue working (1); in series, if one fails the circuit is broken and all fail (1); also in series, voltage is shared so appliances would not work at correct voltage (1) — any four."
+    "mark_scheme": "In parallel, each appliance receives full mains voltage (1); each appliance can be switched on/off independently (1); if one appliance fails in parallel, others continue working (1); in series, if one fails the circuit is broken and all fail (1); also in series, voltage is shared so appliances would not work at correct voltage (1) \u2014 any four."
   },
   {
     "id": "P2-LA-018",
@@ -708,7 +708,7 @@
     "command_word": "Explain",
     "topic": "Basic Electricity",
     "question": "Explain what is meant by charge, current and resistance. Give the unit for each and state how they are related by Ohm's Law.",
-    "mark_scheme": "Charge: amount of electrical charge, unit = coulombs (C) (1); current: rate of flow of charge, unit = amperes (A) (1); resistance: opposition to current flow, unit = ohms (Ω) (1); Ohm's Law: V = IR — voltage = current × resistance (1)."
+    "mark_scheme": "Charge: amount of electrical charge, unit = coulombs (C) (1); current: rate of flow of charge, unit = amperes (A) (1); resistance: opposition to current flow, unit = ohms (\u03a9) (1); Ohm's Law: V = IR \u2014 voltage = current \u00d7 resistance (1)."
   },
   {
     "id": "P2-LA-019",
@@ -717,7 +717,7 @@
     "command_word": "Explain",
     "topic": "Domestic Electricity",
     "question": "Explain how the earth wire and fuse in a plug work together to protect a user from electric shock if the live wire touches the metal case of an appliance.",
-    "mark_scheme": "If live wire touches metal case, the case becomes live at 230 V (1); earth wire connects case to earth at 0 V (1); large current flows through earth wire (1); large current blows the fuse (1); fuse melts and breaks the circuit (1); current stops — user protected from electric shock (1) — any five."
+    "mark_scheme": "If live wire touches metal case, the case becomes live at 230 V (1); earth wire connects case to earth at 0 V (1); large current flows through earth wire (1); large current blows the fuse (1); fuse melts and breaks the circuit (1); current stops \u2014 user protected from electric shock (1) \u2014 any five."
   },
   {
     "id": "P2-LA-020",
@@ -726,7 +726,7 @@
     "command_word": "Calculate",
     "topic": "Power and Energy",
     "question": "A household uses the following appliances: a 3 kW oven for 2 hours, a 0.1 kW TV for 5 hours, and a 2.5 kW washing machine for 1.5 hours. Calculate the total energy used in kWh and the cost at 28p per kWh.",
-    "mark_scheme": "Oven: 3 × 2 = 6 kWh (1); TV: 0.1 × 5 = 0.5 kWh (1); washing machine: 2.5 × 1.5 = 3.75 kWh (1); total = 10.25 kWh (1); cost = 10.25 × 28 = 287p = £2.87 (1)."
+    "mark_scheme": "Oven: 3 \u00d7 2 = 6 kWh (1); TV: 0.1 \u00d7 5 = 0.5 kWh (1); washing machine: 2.5 \u00d7 1.5 = 3.75 kWh (1); total = 10.25 kWh (1); cost = 10.25 \u00d7 28 = 287p = \u00a32.87 (1)."
   },
   {
     "id": "P2-LA-021",
@@ -753,7 +753,7 @@
     "command_word": "Evaluate",
     "topic": "Static Electricity",
     "question": "Evaluate the uses and dangers of static electricity. Refer to at least two uses and two dangers in your answer.",
-    "mark_scheme": "Use 1: electrostatic paint spraying — charged droplets attracted to earthed object, giving even coverage (1); use 2: electrostatic precipitators remove dust/ash from chimney gases (1); use 3: defibrillators use high-voltage charge to restart heart (1); danger 1: fuel tankers can build up charge causing sparks and fire (1); danger 2: lightning — large static discharge between cloud and ground (1); danger 3: shocks from synthetic clothing (1) — any five."
+    "mark_scheme": "Use 1: electrostatic paint spraying \u2014 charged droplets attracted to earthed object, giving even coverage (1); use 2: electrostatic precipitators remove dust/ash from chimney gases (1); use 3: defibrillators use high-voltage charge to restart heart (1); danger 1: fuel tankers can build up charge causing sparks and fire (1); danger 2: lightning \u2014 large static discharge between cloud and ground (1); danger 3: shocks from synthetic clothing (1) \u2014 any five."
   },
   {
     "id": "P2-LA-024",
@@ -761,8 +761,8 @@
     "marks": 5,
     "command_word": "Explain",
     "topic": "Power and Energy",
-    "question": "Explain the energy transfers that occur when a current flows through a resistor. Derive the equation P = I²R from P = IV and V = IR, and explain what it tells us about power and resistance.",
-    "mark_scheme": "Current causes electrons to collide with ions in the resistor (1); kinetic energy of electrons transferred to ions — resistor heats up (1); P = IV and V = IR (1); substituting: P = I × IR = I²R (1); tells us power is proportional to the square of current and directly proportional to resistance (1)."
+    "question": "Explain the energy transfers that occur when a current flows through a resistor. Derive the equation P = I\u00b2R from P = IV and V = IR, and explain what it tells us about power and resistance.",
+    "mark_scheme": "Current causes electrons to collide with ions in the resistor (1); kinetic energy of electrons transferred to ions \u2014 resistor heats up (1); P = IV and V = IR (1); substituting: P = I \u00d7 IR = I\u00b2R (1); tells us power is proportional to the square of current and directly proportional to resistance (1)."
   },
   {
     "id": "P2-LA-025",
@@ -771,7 +771,7 @@
     "command_word": "Describe",
     "topic": "Domestic Electricity",
     "question": "Describe the structure of a standard UK three-pin plug and explain the safety function of each component.",
-    "mark_scheme": "Live wire (brown) — carries current from supply at 230 V (1); neutral wire (blue) — returns current to supply at ~0 V (1); earth wire (green/yellow) — safety connection to earth preventing shock if fault occurs (1); fuse — breaks circuit if current too high preventing fire/damage (1); plastic casing — insulates user from live conductors (1)."
+    "mark_scheme": "Live wire (brown) \u2014 carries current from supply at 230 V (1); neutral wire (blue) \u2014 returns current to supply at ~0 V (1); earth wire (green/yellow) \u2014 safety connection to earth preventing shock if fault occurs (1); fuse \u2014 breaks circuit if current too high preventing fire/damage (1); plastic casing \u2014 insulates user from live conductors (1)."
   },
   {
     "id": "P2-LA-026",
@@ -779,8 +779,8 @@
     "marks": 5,
     "command_word": "Explain",
     "topic": "Circuits",
-    "question": "A student sets up a parallel circuit with three identical 6 Ω resistors connected to a 12 V supply. Explain and calculate what happens to the current from the supply compared to a single resistor in the circuit.",
-    "mark_scheme": "Single resistor: I = V/R = 12/6 = 2 A (1); in parallel, each resistor has same 12 V across it (1); current in each branch = 12/6 = 2 A (1); total current = 3 × 2 = 6 A (1); total current is three times greater — adding parallel branches lowers effective resistance (1)."
+    "question": "A student sets up a parallel circuit with three identical 6 \u03a9 resistors connected to a 12 V supply. Explain and calculate what happens to the current from the supply compared to a single resistor in the circuit.",
+    "mark_scheme": "Single resistor: I = V/R = 12/6 = 2 A (1); in parallel, each resistor has same 12 V across it (1); current in each branch = 12/6 = 2 A (1); total current = 3 \u00d7 2 = 6 A (1); total current is three times greater \u2014 adding parallel branches lowers effective resistance (1)."
   },
   {
     "id": "P2-LA-027",
@@ -789,7 +789,7 @@
     "command_word": "Evaluate",
     "topic": "Domestic Electricity",
     "question": "Evaluate the advantages and disadvantages of using circuit breakers instead of fuses in household circuits.",
-    "mark_scheme": "Circuit breakers can be reset after tripping — do not need to be replaced (1); faster response time than fuses — breaks circuit more quickly (1); fuses must be replaced after blowing — inconvenient (1); fuses are cheaper to manufacture and install initially (1); RCDs (residual current devices) detect very small current differences and can prevent fatal shocks (1); circuit breakers more reliable — fuse wire may age and blow at wrong current (1) — any five."
+    "mark_scheme": "Circuit breakers can be reset after tripping \u2014 do not need to be replaced (1); faster response time than fuses \u2014 breaks circuit more quickly (1); fuses must be replaced after blowing \u2014 inconvenient (1); fuses are cheaper to manufacture and install initially (1); RCDs (residual current devices) detect very small current differences and can prevent fatal shocks (1); circuit breakers more reliable \u2014 fuse wire may age and blow at wrong current (1) \u2014 any five."
   },
   {
     "id": "P2-LA-028",
@@ -798,7 +798,7 @@
     "command_word": "Explain",
     "topic": "Basic Electricity",
     "question": "Explain the difference between conventional current and electron flow. State which direction each moves in a circuit and explain why conventional current was defined before the discovery of electrons.",
-    "mark_scheme": "Conventional current: flows from positive to negative terminal of battery (1); electron flow: electrons flow from negative to positive terminal (1); opposite directions because electrons have negative charge (1); conventional current defined before electrons discovered (1); scientists assumed positive charges moved — convention retained for historical reasons (1)."
+    "mark_scheme": "Conventional current: flows from positive to negative terminal of battery (1); electron flow: electrons flow from negative to positive terminal (1); opposite directions because electrons have negative charge (1); conventional current defined before electrons discovered (1); scientists assumed positive charges moved \u2014 convention retained for historical reasons (1)."
   },
   {
     "id": "P2-LA-029",
@@ -807,7 +807,7 @@
     "command_word": "Calculate",
     "topic": "Basic Electricity",
     "question": "A battery delivers a charge of 540 C in 3 minutes. Calculate the current. If the battery voltage is 9 V, calculate the power output and the total energy transferred.",
-    "mark_scheme": "I = Q/t = 540/180 = 3 A (1); P = IV = 3 × 9 = 27 W (1); E = Pt = 27 × 180 (1) = 4860 J (1); alternatively E = QV = 540 × 9 = 4860 J (1) — any five steps correct."
+    "mark_scheme": "I = Q/t = 540/180 = 3 A (1); P = IV = 3 \u00d7 9 = 27 W (1); E = Pt = 27 \u00d7 180 (1) = 4860 J (1); alternatively E = QV = 540 \u00d7 9 = 4860 J (1) \u2014 any five steps correct."
   },
   {
     "id": "P2-LA-030",
@@ -815,8 +815,8 @@
     "marks": 6,
     "command_word": "Explain",
     "topic": "Basic Electricity",
-    "question": "Explain, in detail, what happens to the current and voltage in a series circuit when a third resistor is added. Support your answer with calculations using R1 = 2 Ω, R2 = 3 Ω, supply = 12 V, then adding R3 = 5 Ω.",
-    "mark_scheme": "Original: R_total = 2 + 3 = 5 Ω (1); I = 12/5 = 2.4 A (1); after adding R3: R_total = 2 + 3 + 5 = 10 Ω (1); I = 12/10 = 1.2 A — current halved (1); voltage shared: V1 = 1.2×2 = 2.4 V, V2 = 1.2×3 = 3.6 V, V3 = 1.2×5 = 6 V (1); adding series resistance reduces current and increases voltage dropped across the new component (1)."
+    "question": "Explain, in detail, what happens to the current and voltage in a series circuit when a third resistor is added. Support your answer with calculations using R1 = 2 \u03a9, R2 = 3 \u03a9, supply = 12 V, then adding R3 = 5 \u03a9.",
+    "mark_scheme": "Original: R_total = 2 + 3 = 5 \u03a9 (1); I = 12/5 = 2.4 A (1); after adding R3: R_total = 2 + 3 + 5 = 10 \u03a9 (1); I = 12/10 = 1.2 A \u2014 current halved (1); voltage shared: V1 = 1.2\u00d72 = 2.4 V, V2 = 1.2\u00d73 = 3.6 V, V3 = 1.2\u00d75 = 6 V (1); adding series resistance reduces current and increases voltage dropped across the new component (1)."
   },
   {
     "id": "P2-LA-031",
@@ -825,7 +825,7 @@
     "command_word": "Evaluate",
     "topic": "Domestic Electricity",
     "question": "Evaluate the safety features built into domestic electrical systems, including wiring in a plug, fuses, circuit breakers and RCDs. Explain what each protects against.",
-    "mark_scheme": "Earth wire: protects against shock if metal case becomes live (1); fuse: melts if too much current flows, breaking circuit and preventing fire (1); circuit breaker: switches off automatically if current too high, can be reset (1); RCD: detects difference between live and neutral current indicating leakage — disconnects within milliseconds (1); double insulation: appliances without earth wire have extra plastic insulation preventing shock (1); cable grip in plug: prevents strain on live/neutral connections (1)."
+    "mark_scheme": "Earth wire: protects against shock if metal case becomes live (1); fuse: melts if too much current flows, breaking circuit and preventing fire (1); circuit breaker: switches off automatically if current too high, can be reset (1); RCD: detects difference between live and neutral current indicating leakage \u2014 disconnects within milliseconds (1); double insulation: appliances without earth wire have extra plastic insulation preventing shock (1); cable grip in plug: prevents strain on live/neutral connections (1)."
   },
   {
     "id": "P2-LA-032",
@@ -834,7 +834,7 @@
     "command_word": "Explain",
     "topic": "Power and Energy",
     "question": "Explain in detail how step-up and step-down transformers work and why they are essential for the efficient transmission of electricity across the National Grid. Include a numerical example.",
-    "mark_scheme": "Step-up transformer increases voltage (e.g. from 25 kV to 400 kV) before transmission (1); high voltage means low current (P = IV, same power at higher V means lower I) (1); low current means less energy wasted as heat in cables (P = I²R) (1); step-down transformer reduces voltage to 230 V for safe home use (1); without transformers, very high currents needed causing excessive heating losses (1); e.g. P = 1 MW: at 1 kV, I = 1000 A; at 400 kV, I = 2.5 A — far less heating loss (1)."
+    "mark_scheme": "Step-up transformer increases voltage (e.g. from 25 kV to 400 kV) before transmission (1); high voltage means low current (P = IV, same power at higher V means lower I) (1); low current means less energy wasted as heat in cables (P = I\u00b2R) (1); step-down transformer reduces voltage to 230 V for safe home use (1); without transformers, very high currents needed causing excessive heating losses (1); e.g. P = 1 MW: at 1 kV, I = 1000 A; at 400 kV, I = 2.5 A \u2014 far less heating loss (1)."
   },
   {
     "id": "P2-LA-033",
@@ -843,7 +843,7 @@
     "command_word": "Evaluate",
     "topic": "Circuits",
     "question": "A scientist investigates three components: a resistor, a filament lamp and a diode. Evaluate what the I-V characteristic of each component tells us about its behaviour. Explain the physical reasons for the shape of each graph.",
-    "mark_scheme": "Resistor: straight line through origin (1); constant resistance, current proportional to voltage — ohmic (1); Filament lamp: curve that flattens at higher voltages (1); as current increases, temperature increases, resistance increases (1); Diode: conducts in one direction only, very high reverse resistance (1); in forward direction conducts above threshold voltage (~0.7 V) (1)."
+    "mark_scheme": "Resistor: straight line through origin (1); constant resistance, current proportional to voltage \u2014 ohmic (1); Filament lamp: curve that flattens at higher voltages (1); as current increases, temperature increases, resistance increases (1); Diode: conducts in one direction only, very high reverse resistance (1); in forward direction conducts above threshold voltage (~0.7 V) (1)."
   },
   {
     "id": "P2-LA-034",
@@ -852,7 +852,7 @@
     "command_word": "Explain",
     "topic": "Static Electricity",
     "question": "Explain in detail how static electricity builds up on objects and how this can be both useful and dangerous. Use the concept of charge transfer, electric fields and potential difference in your answer.",
-    "mark_scheme": "Friction transfers electrons between surfaces — insulating materials cannot allow charge to flow away (1); object gaining electrons becomes negatively charged, object losing electrons becomes positively charged (1); electric field forms around charged object (1); large potential difference can cause sparks/discharge (1); useful: electrostatic spray painting gives even coat and reduces overspray (1); useful: photocopier uses static to attract toner particles to charged drum (1); dangerous: sparks near flammable gases/liquids can cause fire (1) — any six."
+    "mark_scheme": "Friction transfers electrons between surfaces \u2014 insulating materials cannot allow charge to flow away (1); object gaining electrons becomes negatively charged, object losing electrons becomes positively charged (1); electric field forms around charged object (1); large potential difference can cause sparks/discharge (1); useful: electrostatic spray painting gives even coat and reduces overspray (1); useful: photocopier uses static to attract toner particles to charged drum (1); dangerous: sparks near flammable gases/liquids can cause fire (1) \u2014 any six."
   },
   {
     "id": "P2-LA-035",
@@ -861,7 +861,7 @@
     "command_word": "Evaluate",
     "topic": "Power and Energy",
     "question": "A family is considering switching from gas central heating to electric underfloor heating. Evaluate this decision considering cost, efficiency, environmental impact and practicality.",
-    "mark_scheme": "Gas central heating: burns fossil fuel producing CO₂ (1); relatively cheap per unit of energy currently (1); requires boiler, pipes and radiators — complex installation (1); electric underfloor heating: runs on electricity — no direct emissions at point of use (1); more even heat distribution / comfortable (1); if powered by renewable electricity, low carbon footprint (1); electricity currently more expensive per unit than gas in UK (1); underfloor heating is difficult and expensive to install retrospectively (1) — any six."
+    "mark_scheme": "Gas central heating: burns fossil fuel producing CO\u2082 (1); relatively cheap per unit of energy currently (1); requires boiler, pipes and radiators \u2014 complex installation (1); electric underfloor heating: runs on electricity \u2014 no direct emissions at point of use (1); more even heat distribution / comfortable (1); if powered by renewable electricity, low carbon footprint (1); electricity currently more expensive per unit than gas in UK (1); underfloor heating is difficult and expensive to install retrospectively (1) \u2014 any six."
   },
   {
     "id": "P2-LA-036",
@@ -870,7 +870,7 @@
     "command_word": "Explain",
     "topic": "Basic Electricity",
     "question": "A student claims that the more cells you add to a series circuit, the brighter all the bulbs will be. Evaluate this claim fully, using knowledge of voltage, current, resistance and power.",
-    "mark_scheme": "Adding cells in series increases total EMF/voltage (1); total resistance of circuit remains the same (resistance of bulbs doesn't change) (1); greater voltage across same resistance means greater current I = V/R (1); greater current through bulbs means greater power P = I²R (1); so bulbs are brighter — claim is correct (1); however, too much current may cause bulbs to overheat and blow (1)."
+    "mark_scheme": "Adding cells in series increases total EMF/voltage (1); total resistance of circuit remains the same (resistance of bulbs doesn't change) (1); greater voltage across same resistance means greater current I = V/R (1); greater current through bulbs means greater power P = I\u00b2R (1); so bulbs are brighter \u2014 claim is correct (1); however, too much current may cause bulbs to overheat and blow (1)."
   },
   {
     "id": "P2-LA-037",
@@ -879,14 +879,14 @@
     "command_word": "Evaluate",
     "topic": "Circuits",
     "question": "Evaluate the advantages and disadvantages of series and parallel circuits for connecting lights in a home. Explain which arrangement is used in practice and why, using evidence from your knowledge of circuits.",
-    "mark_scheme": "Series: all lights on same loop — if one fails all fail (1); voltage shared between lights — each gets less than mains voltage (1); cannot be switched independently (1); Parallel: each light receives full mains voltage (1); if one fails others remain on (1); each can be switched on/off independently (1); parallel used in homes for all these reasons (1); consistent brightness regardless of how many lights on (1) — any six."
+    "mark_scheme": "Series: all lights on same loop \u2014 if one fails all fail (1); voltage shared between lights \u2014 each gets less than mains voltage (1); cannot be switched independently (1); Parallel: each light receives full mains voltage (1); if one fails others remain on (1); each can be switched on/off independently (1); parallel used in homes for all these reasons (1); consistent brightness regardless of how many lights on (1) \u2014 any six."
   },
   {
     "id": "P2-SA-013",
     "type": "written",
     "marks": 2,
     "command_word": "State",
-    "topic": "Current",
+    "topic": "Circuits",
     "question": "State what is meant by electric current and give its unit.",
     "mark_scheme": "Electric current is the rate of flow of charge (1); the unit is the ampere (A) (1)."
   },
@@ -895,7 +895,7 @@
     "type": "written",
     "marks": 2,
     "command_word": "Give",
-    "topic": "Voltage",
+    "topic": "Circuits",
     "question": "Give the equation that links voltage, current and resistance, and state what each letter represents.",
     "mark_scheme": "V = IR (1); V = voltage in volts, I = current in amperes, R = resistance in ohms (1)."
   },
@@ -904,16 +904,16 @@
     "type": "written",
     "marks": 2,
     "command_word": "Name",
-    "topic": "Resistance",
+    "topic": "Circuits",
     "question": "Name two components whose resistance changes with environmental conditions, and state what condition changes each one.",
-    "mark_scheme": "Thermistor — resistance changes with temperature (1); LDR (light-dependent resistor) — resistance changes with light intensity (1)."
+    "mark_scheme": "Thermistor \u2014 resistance changes with temperature (1); LDR (light-dependent resistor) \u2014 resistance changes with light intensity (1)."
   },
   {
     "id": "P2-SA-016",
     "type": "written",
     "marks": 2,
     "command_word": "State",
-    "topic": "Series and parallel circuits",
+    "topic": "Circuits",
     "question": "State two differences between series and parallel circuits in terms of current and voltage.",
     "mark_scheme": "Series: current is the same throughout; voltage is shared between components (1); parallel: current is split between branches; voltage is the same across each branch (1)."
   },
@@ -922,16 +922,16 @@
     "type": "written",
     "marks": 2,
     "command_word": "Give",
-    "topic": "Current",
+    "topic": "Circuits",
     "question": "Give the equation linking charge, current and time. Calculate the charge that flows when a current of 3 A flows for 10 seconds.",
-    "mark_scheme": "Q = It (1); Q = 3 × 10 = 30 C (1)."
+    "mark_scheme": "Q = It (1); Q = 3 \u00d7 10 = 30 C (1)."
   },
   {
     "id": "P2-SA-018",
     "type": "written",
     "marks": 2,
     "command_word": "Describe",
-    "topic": "Voltage",
+    "topic": "Circuits",
     "question": "Describe what is meant by potential difference and state how it is measured in a circuit.",
     "mark_scheme": "Potential difference (voltage) is the energy transferred per unit charge between two points in a circuit (1); it is measured in volts using a voltmeter connected in parallel with the component (1)."
   },
@@ -940,16 +940,16 @@
     "type": "written",
     "marks": 2,
     "command_word": "State",
-    "topic": "Resistance",
+    "topic": "Circuits",
     "question": "State what is meant by an ohmic conductor and give one example.",
-    "mark_scheme": "An ohmic conductor is one where current is directly proportional to voltage — resistance stays constant at constant temperature (1); example: a fixed resistor (or any valid example such as a length of resistance wire) (1)."
+    "mark_scheme": "An ohmic conductor is one where current is directly proportional to voltage \u2014 resistance stays constant at constant temperature (1); example: a fixed resistor (or any valid example such as a length of resistance wire) (1)."
   },
   {
     "id": "P2-SA-020",
     "type": "written",
     "marks": 2,
     "command_word": "Give",
-    "topic": "Series and parallel circuits",
+    "topic": "Circuits",
     "question": "Give two reasons why household appliances are connected in parallel rather than in series.",
     "mark_scheme": "Any two: each appliance receives the full mains voltage (1); appliances can be switched on and off independently (1); if one fails, the others continue to work (1)."
   },
@@ -958,16 +958,16 @@
     "type": "written",
     "marks": 2,
     "command_word": "Name",
-    "topic": "Current",
+    "topic": "Circuits",
     "question": "Name the instrument used to measure current in a circuit and describe how it is connected.",
-    "mark_scheme": "Ammeter (1); connected in series with the component — the current to be measured flows through it (1)."
+    "mark_scheme": "Ammeter (1); connected in series with the component \u2014 the current to be measured flows through it (1)."
   },
   {
     "id": "P2-SA-022",
     "type": "written",
     "marks": 2,
     "command_word": "Describe",
-    "topic": "Resistance",
+    "topic": "Circuits",
     "question": "Describe how the resistance of a filament lamp changes as it gets hotter.",
     "mark_scheme": "As the filament heats up, its resistance increases (1); this is because the increased temperature causes the ions in the metal to vibrate more, making it harder for electrons to flow through (1)."
   },
@@ -976,16 +976,16 @@
     "type": "written",
     "marks": 3,
     "command_word": "Explain",
-    "topic": "Current",
+    "topic": "Circuits",
     "question": "Explain how charge flows around a circuit and what role the battery plays.",
-    "mark_scheme": "Electrons are negatively charged particles that carry charge around the circuit (1); the battery provides an electromotive force (EMF) that gives the electrons energy to move (1); electrons flow from the negative terminal, around the circuit, and return to the positive terminal — charge is conserved and no charge is created or destroyed (1)."
+    "mark_scheme": "Electrons are negatively charged particles that carry charge around the circuit (1); the battery provides an electromotive force (EMF) that gives the electrons energy to move (1); electrons flow from the negative terminal, around the circuit, and return to the positive terminal \u2014 charge is conserved and no charge is created or destroyed (1)."
   },
   {
     "id": "P2-SA-024",
     "type": "written",
     "marks": 3,
     "command_word": "Describe",
-    "topic": "Voltage",
+    "topic": "Circuits",
     "question": "Describe how voltage is distributed in a series circuit with two resistors of different values.",
     "mark_scheme": "In a series circuit the total voltage is shared between the components (1); the component with the higher resistance has a greater voltage across it (1); the sum of the voltages across all components equals the supply voltage (Kirchhoff's voltage law) (1)."
   },
@@ -994,7 +994,7 @@
     "type": "written",
     "marks": 3,
     "command_word": "Explain",
-    "topic": "Resistance",
+    "topic": "Circuits",
     "question": "Explain why the resistance of a wire increases as its temperature increases, using a particle model.",
     "mark_scheme": "At higher temperatures, the metal ions in the wire vibrate more vigorously (1); this makes it more difficult for electrons to flow through the wire without colliding with ions (1); more collisions means greater opposition to electron flow, so resistance increases (1)."
   },
@@ -1003,34 +1003,34 @@
     "type": "written",
     "marks": 3,
     "command_word": "Describe",
-    "topic": "Series and parallel circuits",
+    "topic": "Circuits",
     "question": "Describe what happens to the total resistance of a circuit when resistors are added in parallel. Explain why this occurs.",
-    "mark_scheme": "Total resistance decreases when more resistors are added in parallel (1); each additional parallel branch provides an additional path for current to flow (1); more paths means more total current can flow from the battery for the same voltage — equivalent to a lower overall resistance (1)."
+    "mark_scheme": "Total resistance decreases when more resistors are added in parallel (1); each additional parallel branch provides an additional path for current to flow (1); more paths means more total current can flow from the battery for the same voltage \u2014 equivalent to a lower overall resistance (1)."
   },
   {
     "id": "P2-SA-027",
     "type": "written",
     "marks": 3,
     "command_word": "Explain",
-    "topic": "Current",
+    "topic": "Circuits",
     "question": "Explain the difference between AC and DC current. State which type is supplied by the mains in the UK and which is supplied by a battery.",
-    "mark_scheme": "DC (direct current): charge flows continuously in one direction only (1); AC (alternating current): current regularly reverses direction — in the UK at 50 Hz (1); UK mains supplies AC; a battery supplies DC (1)."
+    "mark_scheme": "DC (direct current): charge flows continuously in one direction only (1); AC (alternating current): current regularly reverses direction \u2014 in the UK at 50 Hz (1); UK mains supplies AC; a battery supplies DC (1)."
   },
   {
     "id": "P2-SA-028",
     "type": "written",
     "marks": 3,
     "command_word": "Compare",
-    "topic": "Series and parallel circuits",
+    "topic": "Circuits",
     "question": "Compare what happens in a series circuit and a parallel circuit when one component stops working.",
-    "mark_scheme": "Series circuit: if one component breaks, the circuit is broken and all components stop working — the current path is interrupted (1); parallel circuit: if one component in a branch fails, current can still flow through the other branches — the remaining components continue to work (1); this is why parallel circuits are used in homes — failure of one appliance does not affect others (1)."
+    "mark_scheme": "Series circuit: if one component breaks, the circuit is broken and all components stop working \u2014 the current path is interrupted (1); parallel circuit: if one component in a branch fails, current can still flow through the other branches \u2014 the remaining components continue to work (1); this is why parallel circuits are used in homes \u2014 failure of one appliance does not affect others (1)."
   },
   {
     "id": "P2-SA-029",
     "type": "written",
     "marks": 3,
     "command_word": "Explain",
-    "topic": "Voltage",
+    "topic": "Circuits",
     "question": "Explain why a voltmeter must have a very high resistance to measure voltage accurately.",
     "mark_scheme": "A voltmeter is connected in parallel with a component (1); if the voltmeter had low resistance, it would draw a significant current from the circuit, changing the current through the component being measured (1); high resistance means very little current flows through the voltmeter, so it does not significantly affect the circuit it is measuring (1)."
   },
@@ -1039,7 +1039,7 @@
     "type": "written",
     "marks": 3,
     "command_word": "Describe",
-    "topic": "Resistance",
+    "topic": "Circuits",
     "question": "Describe how you would determine the resistance of a wire using an ammeter and a voltmeter. Include how you would make the measurement reliable.",
     "mark_scheme": "Connect the ammeter in series with the wire and the voltmeter in parallel across it (1); record the current and voltage; calculate resistance using R = V/I (1); to make reliable: take repeat readings and calculate a mean; vary the current using a variable resistor; check for any systematic errors (1)."
   },
@@ -1048,7 +1048,7 @@
     "type": "written",
     "marks": 3,
     "command_word": "Explain",
-    "topic": "Current",
+    "topic": "Circuits",
     "question": "Explain what static electricity is and describe how it is produced when two insulating materials are rubbed together.",
     "mark_scheme": "Static electricity is a build-up of charge on an insulating surface that cannot flow away (1); when two insulators are rubbed together, electrons are transferred from one surface to the other (1); the material gaining electrons becomes negatively charged; the one losing electrons becomes positively charged (1)."
   },
@@ -1057,26 +1057,53 @@
     "type": "written",
     "marks": 3,
     "command_word": "Compare",
-    "topic": "Voltage",
+    "topic": "Circuits",
     "question": "Compare the roles of the live, neutral and earth wires in a three-pin plug.",
-    "mark_scheme": "Live wire (brown): carries current to the appliance at 230 V — the dangerous wire (1); neutral wire (blue): completes the circuit, returning current to the supply at approximately 0 V (1); earth wire (green/yellow): safety wire — connects metal casing to earth; if the casing becomes live, current flows to earth, blowing the fuse and breaking the circuit to prevent electric shock (1)."
+    "mark_scheme": "Live wire (brown): carries current to the appliance at 230 V \u2014 the dangerous wire (1); neutral wire (blue): completes the circuit, returning current to the supply at approximately 0 V (1); earth wire (green/yellow): safety wire \u2014 connects metal casing to earth; if the casing becomes live, current flows to earth, blowing the fuse and breaking the circuit to prevent electric shock (1)."
   },
   {
     "id": "P2-SA-033",
     "type": "written",
     "marks": 3,
     "command_word": "Explain",
-    "topic": "Series and parallel circuits",
+    "topic": "Circuits",
     "question": "Explain why adding a resistor in series to a circuit reduces the brightness of a lamp already in the circuit.",
-    "mark_scheme": "Adding a resistor in series increases the total resistance of the circuit (1); greater resistance means smaller current flows (I = V/R) with the same supply voltage (1); smaller current through the lamp means less power is transferred (P = I²R), so the lamp is dimmer (1)."
+    "mark_scheme": "Adding a resistor in series increases the total resistance of the circuit (1); greater resistance means smaller current flows (I = V/R) with the same supply voltage (1); smaller current through the lamp means less power is transferred (P = I\u00b2R), so the lamp is dimmer (1)."
   },
   {
     "id": "P2-SA-034",
     "type": "written",
     "marks": 3,
     "command_word": "Describe",
-    "topic": "Resistance",
+    "topic": "Circuits",
     "question": "Describe the shape of the current-voltage graph for a diode and explain what it tells us about how a diode behaves.",
     "mark_scheme": "The I-V graph of a diode shows very little or no current in one direction (reverse bias); current increases steeply in the forward direction above a threshold voltage of about 0.7 V (1); this tells us that a diode only allows significant current to flow in one direction (1); in the reverse direction, the resistance is extremely high; in the forward direction above threshold, resistance is very low (1)."
+  },
+  {
+    "id": "P2-SA-035",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Static Electricity",
+    "question": "State what type of charge is transferred when an insulator is rubbed with a cloth.",
+    "mark_scheme": "Electrons (negatively charged particles) are transferred (1)."
+  },
+  {
+    "id": "P2-SA-036",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Static Electricity",
+    "question": "Explain why a charged balloon can stick to a neutral wall.",
+    "mark_scheme": "The charged balloon induces a charge on the surface of the wall / redistributes charges in the wall (1); the opposite induced charge on the near surface of the wall is attracted to the balloon (1)."
+  },
+  {
+    "id": "P2-SA-037",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Static Electricity",
+    "question": "Explain the risk of static electricity when refuelling aircraft and state how this risk is reduced.",
+    "mark_scheme": "Fuel flowing through the pipe can cause charge to build up on the aircraft (1); a spark could ignite the fuel causing a fire or explosion (1); the aircraft is earthed/bonded to the fuel tanker to allow charge to flow safely to the ground (1)."
   }
 ]

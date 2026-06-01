@@ -146,12 +146,12 @@
     "topic": "Nanoparticles",
     "question": "What is the size range of nanoparticles?",
     "options": [
-      "1\u2013100 mm",
-      "1\u2013100 cm",
-      "1\u2013100 nm",
-      "1\u2013100 \u00b5m"
+      "1–100 mm",
+      "1–100 cm",
+      "1–100 nm",
+      "1–100 µm"
     ],
-    "correct": "1\u2013100 nm"
+    "correct": "1–100 nm"
   },
   {
     "id": "C2-MC-012",
@@ -298,10 +298,10 @@
     "marks": 1,
     "topic": "Covalent Substances",
     "question": "Buckminsterfullerene has the chemical formula __________.",
-    "correct": "C\u2086\u2080",
+    "correct": "C₆₀",
     "acceptable": [
       "C60",
-      "C\u2086\u2080"
+      "C₆₀"
     ]
   },
   {
@@ -336,7 +336,7 @@
     "pairs": [
       {
         "term": "Ionic bonding",
-        "definition": "Electrons transferred from metal to non-metal \u2014 forms oppositely charged ions"
+        "definition": "Electrons transferred from metal to non-metal — forms oppositely charged ions"
       },
       {
         "term": "Covalent bonding",
@@ -365,11 +365,11 @@
       },
       {
         "term": "Graphene",
-        "definition": "Single layer of carbon atoms \u2014 very strong and excellent conductor"
+        "definition": "Single layer of carbon atoms — very strong and excellent conductor"
       },
       {
         "term": "Buckminsterfullerene",
-        "definition": "Hollow sphere of 60 carbon atoms \u2014 used in drug delivery"
+        "definition": "Hollow sphere of 60 carbon atoms — used in drug delivery"
       }
     ]
   },
@@ -377,24 +377,24 @@
     "id": "C2-MATCH-003",
     "type": "match",
     "marks": 3,
-    "topic": "Structures",
+    "topic": "Covalent Substances",
     "question": "Match each structure type to its melting point and conductivity.",
     "pairs": [
       {
         "term": "Ionic compound (solid)",
-        "definition": "High melting point \u2014 does not conduct electricity when solid"
+        "definition": "High melting point — does not conduct electricity when solid"
       },
       {
         "term": "Simple molecule",
-        "definition": "Low melting point \u2014 does not conduct electricity"
+        "definition": "Low melting point — does not conduct electricity"
       },
       {
         "term": "Metal",
-        "definition": "Variable melting point \u2014 conducts electricity in all states"
+        "definition": "Variable melting point — conducts electricity in all states"
       },
       {
         "term": "Giant covalent",
-        "definition": "Very high melting point \u2014 usually does not conduct electricity"
+        "definition": "Very high melting point — usually does not conduct electricity"
       }
     ]
   },
@@ -415,7 +415,7 @@
       },
       {
         "term": "Alloy",
-        "definition": "Mixture of a metal with other elements \u2014 harder than pure metal"
+        "definition": "Mixture of a metal with other elements — harder than pure metal"
       },
       {
         "term": "Delocalised electron",
@@ -440,7 +440,7 @@
       },
       {
         "term": "Nanometre",
-        "definition": "Unit of measurement equal to 1 \u00d7 10\u207b\u2079 m"
+        "definition": "Unit of measurement equal to 1 × 10⁻⁹ m"
       }
     ]
   },
@@ -541,7 +541,7 @@
     "command_word": "Explain",
     "topic": "Bonding",
     "question": "Explain what happens to electrons when sodium and chlorine react to form sodium chloride.",
-    "mark_scheme": "The sodium atom loses one electron (1); the chlorine atom gains one electron (1); forming Na\u207a and Cl\u207b ions held together by electrostatic attraction (1) \u2014 any two."
+    "mark_scheme": "The sodium atom loses one electron (1); the chlorine atom gains one electron (1); forming Na⁺ and Cl⁻ ions held together by electrostatic attraction (1) — any two."
   },
   {
     "id": "C2-SA-012",
@@ -568,7 +568,7 @@
     "command_word": "Explain",
     "topic": "Nanoparticles",
     "question": "Explain why nanoparticles may have different properties from the same material in bulk form.",
-    "mark_scheme": "Nanoparticles are very small (1\u2013100 nm) (1); they have a much larger surface area to volume ratio (1); this means more atoms are on the surface, changing their chemical and physical properties (1)."
+    "mark_scheme": "Nanoparticles are very small (1–100 nm) (1); they have a much larger surface area to volume ratio (1); this means more atoms are on the surface, changing their chemical and physical properties (1)."
   },
   {
     "id": "C2-SA-015",
@@ -586,7 +586,7 @@
     "command_word": "Explain",
     "topic": "Ionic Compounds",
     "question": "Explain the structure and bonding in sodium chloride and use this to explain its properties.",
-    "mark_scheme": "Giant ionic lattice of Na\u207a and Cl\u207b ions (1); held together by strong electrostatic attraction (1); high melting point because a lot of energy is needed to break these forces (1); conducts electricity when molten or dissolved because ions are free to move (1)."
+    "mark_scheme": "Giant ionic lattice of Na⁺ and Cl⁻ ions (1); held together by strong electrostatic attraction (1); high melting point because a lot of energy is needed to break these forces (1); conducts electricity when molten or dissolved because ions are free to move (1)."
   },
   {
     "id": "C2-LA-002",
@@ -604,7 +604,7 @@
     "command_word": "Explain",
     "topic": "Metallic Structures",
     "question": "Explain the structure and bonding in metals and use this to explain why metals are good conductors of electricity and heat, and why they are malleable.",
-    "mark_scheme": "Giant lattice of positive metal ions surrounded by delocalised electrons (1); delocalised electrons carry charge so metals conduct electricity (1); delocalised electrons transfer energy so metals conduct heat (1); layers of ions can slide without breaking bonds \u2014 metals are malleable (1)."
+    "mark_scheme": "Giant lattice of positive metal ions surrounded by delocalised electrons (1); delocalised electrons carry charge so metals conduct electricity (1); delocalised electrons transfer energy so metals conduct heat (1); layers of ions can slide without breaking bonds — metals are malleable (1)."
   },
   {
     "id": "C2-LA-004",
@@ -613,7 +613,7 @@
     "command_word": "Evaluate",
     "topic": "Nanoparticles",
     "question": "Evaluate the use of nanoparticles in everyday products. Include potential benefits and risks in your answer.",
-    "mark_scheme": "Benefits: large surface area makes them effective catalysts (1); used in sunscreens, antibacterial products, drug delivery systems (1); can target cancer cells specifically / more effective than bulk materials (1); risks: potential toxicity to human cells / unknown long-term health effects (1); may accumulate in environment / organisms (1) \u2014 any four."
+    "mark_scheme": "Benefits: large surface area makes them effective catalysts (1); used in sunscreens, antibacterial products, drug delivery systems (1); can target cancer cells specifically / more effective than bulk materials (1); risks: potential toxicity to human cells / unknown long-term health effects (1); may accumulate in environment / organisms (1) — any four."
   },
   {
     "id": "C2-LA-005",
@@ -622,16 +622,16 @@
     "command_word": "Explain",
     "topic": "Covalent Substances",
     "question": "Explain the structures and properties of fullerenes and nanotubes. Include their uses in your answer.",
-    "mark_scheme": "Fullerenes are hollow molecules made of carbon atoms arranged in rings (1); buckminsterfullerene (C\u2086\u2080) is a spherical example (1); nanotubes are cylindrical fullerenes with very high tensile strength (1); both have delocalised electrons so can conduct electricity (1); uses: drug delivery, lubricants, catalysts, electronics, reinforcing materials (1)."
+    "mark_scheme": "Fullerenes are hollow molecules made of carbon atoms arranged in rings (1); buckminsterfullerene (C₆₀) is a spherical example (1); nanotubes are cylindrical fullerenes with very high tensile strength (1); both have delocalised electrons so can conduct electricity (1); uses: drug delivery, lubricants, catalysts, electronics, reinforcing materials (1)."
   },
   {
     "id": "C2-LA-006",
     "type": "written",
     "marks": 6,
     "command_word": "Evaluate",
-    "topic": "Structures",
-    "question": "A student tests four substances to find out which conducts electricity and measures their melting points. Substance A melts at 801\u00b0C and conducts when dissolved. Substance B melts at 3550\u00b0C and never conducts. Substance C melts at \u2013114\u00b0C and never conducts. Substance D melts at 1085\u00b0C and always conducts. Identify the type of structure of each substance and justify your answers.",
-    "mark_scheme": "Substance A: ionic compound \u2014 high melting point and conducts when dissolved (ions free to move) (1); substance B: giant covalent structure \u2014 very high melting point and never conducts (no free electrons/ions) (1); substance C: simple molecular \u2014 very low melting point (weak intermolecular forces) and never conducts (1); substance D: metal \u2014 high melting point and always conducts (delocalised electrons) (1); full justifications referencing bonding/structure for each (1); clear reasoning linking evidence to conclusion (1)."
+    "topic": "Covalent Substances",
+    "question": "A student tests four substances to find out which conducts electricity and measures their melting points. Substance A melts at 801°C and conducts when dissolved. Substance B melts at 3550°C and never conducts. Substance C melts at –114°C and never conducts. Substance D melts at 1085°C and always conducts. Identify the type of structure of each substance and justify your answers.",
+    "mark_scheme": "Substance A: ionic compound — high melting point and conducts when dissolved (ions free to move) (1); substance B: giant covalent structure — very high melting point and never conducts (no free electrons/ions) (1); substance C: simple molecular — very low melting point (weak intermolecular forces) and never conducts (1); substance D: metal — high melting point and always conducts (delocalised electrons) (1); full justifications referencing bonding/structure for each (1); clear reasoning linking evidence to conclusion (1)."
   },
   {
     "id": "C2-LA-007",
@@ -640,7 +640,7 @@
     "command_word": "Explain",
     "topic": "Bonding",
     "question": "Explain how ionic, covalent, and metallic bonds are formed and compare the properties of substances with each type of bonding. Use examples in your answer.",
-    "mark_scheme": "Ionic: electrons transferred from metal to non-metal \u2014 forms ions attracted by electrostatic forces e.g. NaCl \u2014 high mp, conducts when molten/dissolved (1); covalent: electrons shared between non-metals e.g. H\u2082O \u2014 simple molecules have low mp / giant covalent has very high mp, generally poor conductors (1); metallic: delocalised electrons in lattice of positive ions e.g. copper \u2014 conducts electricity and heat, malleable, variable mp (1); ionic and metallic have giant structures with high melting points; simple molecules have low melting points (1); only metals and graphite conduct as solids (1); ionic compounds only conduct when ions are free to move (1)."
+    "mark_scheme": "Ionic: electrons transferred from metal to non-metal — forms ions attracted by electrostatic forces e.g. NaCl — high mp, conducts when molten/dissolved (1); covalent: electrons shared between non-metals e.g. H₂O — simple molecules have low mp / giant covalent has very high mp, generally poor conductors (1); metallic: delocalised electrons in lattice of positive ions e.g. copper — conducts electricity and heat, malleable, variable mp (1); ionic and metallic have giant structures with high melting points; simple molecules have low melting points (1); only metals and graphite conduct as solids (1); ionic compounds only conduct when ions are free to move (1)."
   },
   {
     "id": "C2-LA-005",
@@ -649,7 +649,7 @@
     "command_word": "Explain",
     "topic": "Bonding",
     "question": "Explain the difference between ionic and covalent bonding. Include which types of elements form each and the particles involved.",
-    "mark_scheme": "Ionic bonding: between a metal and a non-metal \u2014 electrons transferred from metal to non-metal (1); metal loses electrons to form positive ion; non-metal gains electrons to form negative ion (1); covalent bonding: between two non-metals \u2014 electrons shared between atoms (1); both atoms achieve a full outer shell through sharing (1)."
+    "mark_scheme": "Ionic bonding: between a metal and a non-metal — electrons transferred from metal to non-metal (1); metal loses electrons to form positive ion; non-metal gains electrons to form negative ion (1); covalent bonding: between two non-metals — electrons shared between atoms (1); both atoms achieve a full outer shell through sharing (1)."
   },
   {
     "id": "C2-LA-006",
@@ -658,7 +658,7 @@
     "command_word": "Describe",
     "topic": "Ionic Compounds",
     "question": "Describe the structure of an ionic compound and explain why ionic compounds have high melting points.",
-    "mark_scheme": "Ionic compounds form a giant ionic lattice \u2014 regular arrangement of positive and negative ions (1); held together by strong electrostatic forces of attraction between oppositely charged ions (1); high melting points because a large amount of energy needed to overcome these strong forces (1); melting requires breaking many ionic bonds throughout the whole lattice (1)."
+    "mark_scheme": "Ionic compounds form a giant ionic lattice — regular arrangement of positive and negative ions (1); held together by strong electrostatic forces of attraction between oppositely charged ions (1); high melting points because a large amount of energy needed to overcome these strong forces (1); melting requires breaking many ionic bonds throughout the whole lattice (1)."
   },
   {
     "id": "C2-LA-007",
@@ -667,7 +667,7 @@
     "command_word": "Explain",
     "topic": "Covalent Substances",
     "question": "Explain why simple molecular covalent substances (e.g. water, oxygen) have low boiling points, while giant covalent structures (e.g. diamond) have very high boiling points.",
-    "mark_scheme": "Simple molecular: held together by weak intermolecular forces between molecules (1); little energy needed to overcome these \u2014 low boiling point (1); giant covalent: atoms joined by strong covalent bonds throughout the whole structure (1); very large amount of energy needed to break all bonds \u2014 very high melting/boiling point (1)."
+    "mark_scheme": "Simple molecular: held together by weak intermolecular forces between molecules (1); little energy needed to overcome these — low boiling point (1); giant covalent: atoms joined by strong covalent bonds throughout the whole structure (1); very large amount of energy needed to break all bonds — very high melting/boiling point (1)."
   },
   {
     "id": "C2-LA-008",
@@ -676,7 +676,7 @@
     "command_word": "Explain",
     "topic": "Metallic Structures",
     "question": "Explain why metals are good conductors of electricity and heat. Include the term 'delocalised electrons' in your answer.",
-    "mark_scheme": "Metals have a giant metallic lattice structure \u2014 positive ions in a regular arrangement (1); outer electrons are delocalised \u2014 free to move throughout the structure (1); delocalised electrons carry electrical charge \u2014 conduct electricity (1); delocalised electrons also transfer kinetic energy \u2014 conduct heat (1)."
+    "mark_scheme": "Metals have a giant metallic lattice structure — positive ions in a regular arrangement (1); outer electrons are delocalised — free to move throughout the structure (1); delocalised electrons carry electrical charge — conduct electricity (1); delocalised electrons also transfer kinetic energy — conduct heat (1)."
   },
   {
     "id": "C2-LA-009",
@@ -685,7 +685,7 @@
     "command_word": "Describe",
     "topic": "Covalent Substances",
     "question": "Describe the structure and properties of graphite and explain why it is used as a lubricant and as an electrode.",
-    "mark_scheme": "Graphite: layers of carbon atoms in hexagonal rings \u2014 each carbon bonded to three others (1); layers held by weak intermolecular forces \u2014 can slide over each other easily (1); lubricant: layers slide \u2014 reduces friction between surfaces (1); electrode: one delocalised electron per carbon atom \u2014 free to move along layers \u2014 conducts electricity (1)."
+    "mark_scheme": "Graphite: layers of carbon atoms in hexagonal rings — each carbon bonded to three others (1); layers held by weak intermolecular forces — can slide over each other easily (1); lubricant: layers slide — reduces friction between surfaces (1); electrode: one delocalised electron per carbon atom — free to move along layers — conducts electricity (1)."
   },
   {
     "id": "C2-LA-010",
@@ -694,7 +694,7 @@
     "command_word": "Explain",
     "topic": "Ionic Compounds",
     "question": "Explain why ionic compounds conduct electricity when dissolved in water or melted, but not when solid.",
-    "mark_scheme": "When solid: ions held in fixed positions in the lattice \u2014 cannot move to carry charge (1); when dissolved in water: lattice breaks down, ions separate and are free to move (1); when melted: ions gain enough energy to break free from lattice \u2014 free to move (1); moving charged ions carry electrical current (1)."
+    "mark_scheme": "When solid: ions held in fixed positions in the lattice — cannot move to carry charge (1); when dissolved in water: lattice breaks down, ions separate and are free to move (1); when melted: ions gain enough energy to break free from lattice — free to move (1); moving charged ions carry electrical current (1)."
   },
   {
     "id": "C2-LA-011",
@@ -703,16 +703,16 @@
     "command_word": "Describe",
     "topic": "Polymers",
     "question": "Describe how addition polymers are formed from monomers. Use poly(ethene) as an example and draw a repeat unit.",
-    "mark_scheme": "Monomers contain a C=C double bond (1); under high pressure and with a catalyst, the double bond opens \u2014 monomers join together (1); long chain polymer formed \u2014 no other products (addition polymerisation) (1); repeat unit of poly(ethene): \u2013(CH\u2082\u2013CH\u2082)\u2099\u2013 (1)."
+    "mark_scheme": "Monomers contain a C=C double bond (1); under high pressure and with a catalyst, the double bond opens — monomers join together (1); long chain polymer formed — no other products (addition polymerisation) (1); repeat unit of poly(ethene): –(CH₂–CH₂)ₙ– (1)."
   },
   {
     "id": "C2-LA-012",
     "type": "written",
     "marks": 4,
     "command_word": "Explain",
-    "topic": "States of Matter",
+    "topic": "Bonding",
     "question": "Explain what happens to the particles in a substance as it is heated from solid to liquid to gas. Include changes in energy and arrangement.",
-    "mark_scheme": "Solid: particles vibrate in fixed positions (1); on heating: particles gain kinetic energy \u2014 vibrate more; at melting point, forces overcome \u2014 become liquid (1); liquid: particles move freely but still close together (1); at boiling point: particles gain enough energy to overcome all intermolecular forces \u2014 become gas with particles far apart and moving randomly (1)."
+    "mark_scheme": "Solid: particles vibrate in fixed positions (1); on heating: particles gain kinetic energy — vibrate more; at melting point, forces overcome — become liquid (1); liquid: particles move freely but still close together (1); at boiling point: particles gain enough energy to overcome all intermolecular forces — become gas with particles far apart and moving randomly (1)."
   },
   {
     "id": "C2-LA-013",
@@ -721,7 +721,7 @@
     "command_word": "Evaluate",
     "topic": "Covalent Substances",
     "question": "Evaluate the properties of diamond and graphite as forms of carbon. Compare their structures and suggest an appropriate use for each.",
-    "mark_scheme": "Diamond: each carbon bonded to 4 others in giant tetrahedral lattice \u2014 extremely hard; no delocalised electrons \u2014 does not conduct electricity (1); used as cutting tools and in drill bits (1); graphite: layers of hexagonal rings \u2014 soft and slippery; delocalised electrons \u2014 conducts electricity (1); used as lubricant and in electrodes/pencils (1)."
+    "mark_scheme": "Diamond: each carbon bonded to 4 others in giant tetrahedral lattice — extremely hard; no delocalised electrons — does not conduct electricity (1); used as cutting tools and in drill bits (1); graphite: layers of hexagonal rings — soft and slippery; delocalised electrons — conducts electricity (1); used as lubricant and in electrodes/pencils (1)."
   },
   {
     "id": "C2-LA-014",
@@ -729,8 +729,8 @@
     "marks": 4,
     "command_word": "Describe",
     "topic": "Bonding",
-    "question": "Describe how to draw a dot-and-cross diagram for a covalent molecule. Use water (H\u2082O) as an example and show all lone pairs.",
-    "mark_scheme": "Water: oxygen has 6 outer electrons, each hydrogen has 1 (1); each O\u2013H bond: one pair of shared electrons shown between O and H (1); two lone pairs on oxygen shown (1); diagram shows all electrons in outer shells; crosses for one atom, dots for the other (1)."
+    "question": "Describe how to draw a dot-and-cross diagram for a covalent molecule. Use water (H₂O) as an example and show all lone pairs.",
+    "mark_scheme": "Water: oxygen has 6 outer electrons, each hydrogen has 1 (1); each O–H bond: one pair of shared electrons shown between O and H (1); two lone pairs on oxygen shown (1); diagram shows all electrons in outer shells; crosses for one atom, dots for the other (1)."
   },
   {
     "id": "C2-LA-015",
@@ -739,7 +739,7 @@
     "command_word": "Explain",
     "topic": "Metallic Structures",
     "question": "Explain why metals can be bent and shaped (malleable and ductile) without breaking. Relate this to their structure.",
-    "mark_scheme": "Metals have layers of positive ions in a sea of delocalised electrons (1); when force applied, layers of ions can slide over each other (1); delocalised electrons move with the layers \u2014 maintaining the bonding (1); unlike ionic compounds, slipping layers doesn't bring like charges together \u2014 so metal doesn't shatter (1)."
+    "mark_scheme": "Metals have layers of positive ions in a sea of delocalised electrons (1); when force applied, layers of ions can slide over each other (1); delocalised electrons move with the layers — maintaining the bonding (1); unlike ionic compounds, slipping layers doesn't bring like charges together — so metal doesn't shatter (1)."
   },
   {
     "id": "C2-LA-016",
@@ -748,7 +748,7 @@
     "command_word": "Explain",
     "topic": "Ionic Compounds",
     "question": "Explain how to predict the formula of an ionic compound. Use magnesium chloride as an example and explain why ionic compounds are electrically neutral.",
-    "mark_scheme": "Magnesium: Group 2 \u2014 forms Mg\u00b2\u207a ion (loses 2 electrons) (1); chlorine: Group 7 \u2014 forms Cl\u207b ion (gains 1 electron) (1); need 2 Cl\u207b to balance one Mg\u00b2\u207a \u2014 formula MgCl\u2082 (1); ionic compounds are neutral because total positive charge equals total negative charge (1); same principle applies to all ionic compounds \u2014 cross-charge method to find formula (1)."
+    "mark_scheme": "Magnesium: Group 2 — forms Mg²⁺ ion (loses 2 electrons) (1); chlorine: Group 7 — forms Cl⁻ ion (gains 1 electron) (1); need 2 Cl⁻ to balance one Mg²⁺ — formula MgCl₂ (1); ionic compounds are neutral because total positive charge equals total negative charge (1); same principle applies to all ionic compounds — cross-charge method to find formula (1)."
   },
   {
     "id": "C2-LA-017",
@@ -757,16 +757,16 @@
     "command_word": "Describe",
     "topic": "Covalent Substances",
     "question": "Describe the properties of fullerenes and graphene. Include their structures and suggest one potential use for each.",
-    "mark_scheme": "Fullerenes: carbon atoms arranged in spheres (C\u2086\u2080 \u2014 buckminsterfullerene) or tubes (carbon nanotubes) (1); very strong and can conduct electricity \u2014 delocalised electrons (1); potential use: drug delivery \u2014 hollow cage can carry drug molecules to specific cells (1); graphene: single layer of graphite \u2014 one atom thick, hexagonal arrangement (1); extremely strong, flexible, and conducts electricity \u2014 potential use in flexible electronics / touchscreens (1)."
+    "mark_scheme": "Fullerenes: carbon atoms arranged in spheres (C₆₀ — buckminsterfullerene) or tubes (carbon nanotubes) (1); very strong and can conduct electricity — delocalised electrons (1); potential use: drug delivery — hollow cage can carry drug molecules to specific cells (1); graphene: single layer of graphite — one atom thick, hexagonal arrangement (1); extremely strong, flexible, and conducts electricity — potential use in flexible electronics / touchscreens (1)."
   },
   {
     "id": "C2-LA-018",
     "type": "written",
     "marks": 5,
     "command_word": "Explain",
-    "topic": "States of Matter",
+    "topic": "Bonding",
     "question": "Explain the differences in properties between the three states of matter using particle theory. Include compressibility, density, and ability to flow.",
-    "mark_scheme": "Solids: particles in fixed, regular arrangement \u2014 incompressible, high density, cannot flow (1); liquids: particles close together but randomly arranged and can move past each other \u2014 incompressible, high density, can flow (1); gases: particles far apart and moving randomly \u2014 very compressible (1); low density compared to solid/liquid of same substance (1); gas flows easily \u2014 particles move freely in any direction; no fixed shape or volume (1)."
+    "mark_scheme": "Solids: particles in fixed, regular arrangement — incompressible, high density, cannot flow (1); liquids: particles close together but randomly arranged and can move past each other — incompressible, high density, can flow (1); gases: particles far apart and moving randomly — very compressible (1); low density compared to solid/liquid of same substance (1); gas flows easily — particles move freely in any direction; no fixed shape or volume (1)."
   },
   {
     "id": "C2-LA-019",
@@ -775,7 +775,7 @@
     "command_word": "Evaluate",
     "topic": "Polymers",
     "question": "Evaluate the use of polymers in everyday life. Include both addition and condensation polymers, their properties and the environmental concerns.",
-    "mark_scheme": "Addition polymers: strong, cheap, waterproof \u2014 e.g. poly(ethene) in plastic bags, poly(propene) in ropes (1); condensation polymers: nylon (clothing), polyester (fabric) \u2014 can be biodegradable (1); advantages: lightweight, durable, versatile, cheap to produce (1); environmental concerns: most addition polymers non-biodegradable \u2014 persist in environment for centuries (1); plastic pollution in oceans harms wildlife; solution: recycling, bioplastics, reducing use (1)."
+    "mark_scheme": "Addition polymers: strong, cheap, waterproof — e.g. poly(ethene) in plastic bags, poly(propene) in ropes (1); condensation polymers: nylon (clothing), polyester (fabric) — can be biodegradable (1); advantages: lightweight, durable, versatile, cheap to produce (1); environmental concerns: most addition polymers non-biodegradable — persist in environment for centuries (1); plastic pollution in oceans harms wildlife; solution: recycling, bioplastics, reducing use (1)."
   },
   {
     "id": "C2-LA-020",
@@ -793,7 +793,7 @@
     "command_word": "Describe",
     "topic": "Metallic Structures",
     "question": "Describe the properties of alloys and explain why alloys are harder than pure metals. Include at least one example.",
-    "mark_scheme": "Alloy: mixture of a metal with one or more other elements (1); e.g. steel: iron + carbon; bronze: copper + tin (1); in pure metal, layers of identical atoms can slide easily over each other (1); in alloy, different-sized atoms disrupt the regular arrangement (1); layers cannot slide as easily \u2014 alloy is harder and stronger than pure metal (1)."
+    "mark_scheme": "Alloy: mixture of a metal with one or more other elements (1); e.g. steel: iron + carbon; bronze: copper + tin (1); in pure metal, layers of identical atoms can slide easily over each other (1); in alloy, different-sized atoms disrupt the regular arrangement (1); layers cannot slide as easily — alloy is harder and stronger than pure metal (1)."
   },
   {
     "id": "C2-LA-022",
@@ -802,7 +802,7 @@
     "command_word": "Explain",
     "topic": "Covalent Substances",
     "question": "Explain why covalent bonds are strong but many covalent substances still have low melting points. Include intermolecular forces in your answer.",
-    "mark_scheme": "Covalent bonds within molecules are strong \u2014 require large energy to break (1); but simple molecular substances have weak intermolecular forces between molecules (1); boiling/melting involves overcoming intermolecular forces \u2014 not breaking covalent bonds (1); little energy needed to separate molecules \u2014 low boiling point (1); molecules remain intact after melting/boiling \u2014 covalent bonds not broken during state changes (1)."
+    "mark_scheme": "Covalent bonds within molecules are strong — require large energy to break (1); but simple molecular substances have weak intermolecular forces between molecules (1); boiling/melting involves overcoming intermolecular forces — not breaking covalent bonds (1); little energy needed to separate molecules — low boiling point (1); molecules remain intact after melting/boiling — covalent bonds not broken during state changes (1)."
   },
   {
     "id": "C2-LA-023",
@@ -811,7 +811,7 @@
     "command_word": "Evaluate",
     "topic": "Bonding",
     "question": "Evaluate the bonding in sodium chloride, silicon dioxide and poly(ethene). Explain how the bonding determines the uses of each substance.",
-    "mark_scheme": "NaCl: ionic bonding \u2014 high melting point; dissolves in water; used as table salt and in food preservation (1); SiO\u2082: giant covalent \u2014 very high melting point, hard, insoluble \u2014 used in glass making (1); poly(ethene): covalent, long chains \u2014 flexible, waterproof, low density \u2014 used in packaging (1); each use reflects the properties determined by bonding (1); comparing: ionic needs high temp to melt; giant covalent even harder to melt; simple molecular easily deformed (1)."
+    "mark_scheme": "NaCl: ionic bonding — high melting point; dissolves in water; used as table salt and in food preservation (1); SiO₂: giant covalent — very high melting point, hard, insoluble — used in glass making (1); poly(ethene): covalent, long chains — flexible, waterproof, low density — used in packaging (1); each use reflects the properties determined by bonding (1); comparing: ionic needs high temp to melt; giant covalent even harder to melt; simple molecular easily deformed (1)."
   },
   {
     "id": "C2-LA-024",
@@ -820,7 +820,7 @@
     "command_word": "Describe",
     "topic": "Polymers",
     "question": "Describe how condensation polymerisation differs from addition polymerisation. Include the monomers used, the bonds formed and a named example of each.",
-    "mark_scheme": "Addition: monomers with C=C double bonds; no other products formed (1); e.g. ethene \u2192 poly(ethene) (1); condensation: two different monomers with two functional groups each (1); small molecule (water or HCl) released with each bond formed (1); e.g. nylon: diamine + dicarboxylic acid \u2192 polyamide + water (1)."
+    "mark_scheme": "Addition: monomers with C=C double bonds; no other products formed (1); e.g. ethene → poly(ethene) (1); condensation: two different monomers with two functional groups each (1); small molecule (water or HCl) released with each bond formed (1); e.g. nylon: diamine + dicarboxylic acid → polyamide + water (1)."
   },
   {
     "id": "C2-LA-025",
@@ -829,7 +829,7 @@
     "command_word": "Explain",
     "topic": "Ionic Compounds",
     "question": "Explain what is meant by the term 'electrostatic force' in an ionic compound. Describe the factors that affect the strength of ionic bonding.",
-    "mark_scheme": "Electrostatic force: attraction between oppositely charged ions (1); ionic bond strength depends on size of charge \u2014 Mg\u00b2\u207a forms stronger bonds than Na\u207a (1); smaller ions: closer together \u2014 stronger attraction (1); higher charge density = stronger ionic bond = higher melting point (1); e.g. MgO melts at 2852\u00b0C vs NaCl at 801\u00b0C \u2014 Mg\u00b2\u207a and O\u00b2\u207b both 2+ charges vs 1+ and 1\u2212 (1)."
+    "mark_scheme": "Electrostatic force: attraction between oppositely charged ions (1); ionic bond strength depends on size of charge — Mg²⁺ forms stronger bonds than Na⁺ (1); smaller ions: closer together — stronger attraction (1); higher charge density = stronger ionic bond = higher melting point (1); e.g. MgO melts at 2852°C vs NaCl at 801°C — Mg²⁺ and O²⁻ both 2+ charges vs 1+ and 1− (1)."
   },
   {
     "id": "C2-LA-026",
@@ -838,7 +838,7 @@
     "command_word": "Explain",
     "topic": "Bonding",
     "question": "Explain the bonding and structure of diamond, graphite and graphene. For each, relate the structure to at least one specific property and use.",
-    "mark_scheme": "Diamond: each C atom forms 4 covalent bonds \u2014 giant covalent tetrahedral lattice (1); extremely hard \u2014 used in cutting tools; very high melting point; no free electrons \u2014 does not conduct (1); graphite: each C forms 3 bonds \u2014 hexagonal layers (1); layers held by weak forces \u2014 can slide; one free electron per C \u2014 conducts electricity; used as lubricant and electrode (1); graphene: single layer of graphite \u2014 one atom thick (1); incredibly strong per unit mass, flexible and transparent \u2014 potential for flexible electronics, composites; conducts electricity (1)."
+    "mark_scheme": "Diamond: each C atom forms 4 covalent bonds — giant covalent tetrahedral lattice (1); extremely hard — used in cutting tools; very high melting point; no free electrons — does not conduct (1); graphite: each C forms 3 bonds — hexagonal layers (1); layers held by weak forces — can slide; one free electron per C — conducts electricity; used as lubricant and electrode (1); graphene: single layer of graphite — one atom thick (1); incredibly strong per unit mass, flexible and transparent — potential for flexible electronics, composites; conducts electricity (1)."
   },
   {
     "id": "C2-LA-027",
@@ -847,16 +847,16 @@
     "command_word": "Evaluate",
     "topic": "Polymers",
     "question": "Evaluate the environmental impact of synthetic polymers. Include how they are produced, why they are difficult to dispose of, and methods to reduce their impact.",
-    "mark_scheme": "Most synthetic polymers made from crude oil \u2014 non-renewable resource (1); non-biodegradable \u2014 persist for hundreds of years in landfill and oceans (1); microplastics break off and enter food chains \u2014 harmful to wildlife (1); incineration releases CO\u2082 and toxic gases (1); recycling: reduces landfill and resource use but requires sorting; not all types recyclable (1); bioplastics: made from plant starch \u2014 biodegradable; but require land use to grow crops (1)."
+    "mark_scheme": "Most synthetic polymers made from crude oil — non-renewable resource (1); non-biodegradable — persist for hundreds of years in landfill and oceans (1); microplastics break off and enter food chains — harmful to wildlife (1); incineration releases CO₂ and toxic gases (1); recycling: reduces landfill and resource use but requires sorting; not all types recyclable (1); bioplastics: made from plant starch — biodegradable; but require land use to grow crops (1)."
   },
   {
     "id": "C2-LA-028",
     "type": "written",
     "marks": 6,
     "command_word": "Describe",
-    "topic": "States of Matter",
-    "question": "Describe the changes of state that occur when water is heated from \u221220\u00b0C to 120\u00b0C. Include what is happening to particles, energy, and bonds at each stage.",
-    "mark_scheme": "\u221220\u00b0C to 0\u00b0C: solid ice \u2014 particles vibrate; temperature rises as KE increases (1); at 0\u00b0C (melting point): temperature stays constant \u2014 energy breaks intermolecular forces in lattice; solid \u2192 liquid (1); 0\u2013100\u00b0C: liquid water \u2014 particles move freely; temperature rises (1); at 100\u00b0C (boiling point): temperature constant \u2014 energy overcomes intermolecular forces between water molecules; liquid \u2192 gas (1); above 100\u00b0C: steam \u2014 particles move rapidly and independently (1); covalent O\u2013H bonds within water molecules NOT broken at any stage \u2014 only intermolecular forces change (1)."
+    "topic": "Bonding",
+    "question": "Describe the changes of state that occur when water is heated from −20°C to 120°C. Include what is happening to particles, energy, and bonds at each stage.",
+    "mark_scheme": "−20°C to 0°C: solid ice — particles vibrate; temperature rises as KE increases (1); at 0°C (melting point): temperature stays constant — energy breaks intermolecular forces in lattice; solid → liquid (1); 0–100°C: liquid water — particles move freely; temperature rises (1); at 100°C (boiling point): temperature constant — energy overcomes intermolecular forces between water molecules; liquid → gas (1); above 100°C: steam — particles move rapidly and independently (1); covalent O–H bonds within water molecules NOT broken at any stage — only intermolecular forces change (1)."
   },
   {
     "id": "C2-LA-029",
@@ -865,7 +865,7 @@
     "command_word": "Explain",
     "topic": "Ionic Compounds",
     "question": "Explain why sodium chloride does not conduct electricity as a solid but does when dissolved in water. Include the process of dissolution and electrolysis.",
-    "mark_scheme": "Solid NaCl: ions held in fixed positions in lattice \u2014 cannot move to carry charge (1); dissolution: water molecules surround and pull apart Na\u207a and Cl\u207b ions \u2014 lattice breaks down (1); aqueous ions free to move \u2014 solution conducts electricity (1); electrolysis: when current applied, Na\u207a moves to cathode (\u2212), Cl\u207b moves to anode (+) (1); at cathode: Na\u207a + e\u207b \u2192 Na (reduction) \u2014 though in water, H\u2082 produced preferentially (1); at anode: 2Cl\u207b \u2192 Cl\u2082 + 2e\u207b (oxidation) \u2014 chlorine gas produced (1)."
+    "mark_scheme": "Solid NaCl: ions held in fixed positions in lattice — cannot move to carry charge (1); dissolution: water molecules surround and pull apart Na⁺ and Cl⁻ ions — lattice breaks down (1); aqueous ions free to move — solution conducts electricity (1); electrolysis: when current applied, Na⁺ moves to cathode (−), Cl⁻ moves to anode (+) (1); at cathode: Na⁺ + e⁻ → Na (reduction) — though in water, H₂ produced preferentially (1); at anode: 2Cl⁻ → Cl₂ + 2e⁻ (oxidation) — chlorine gas produced (1)."
   },
   {
     "id": "C2-LA-030",
@@ -874,7 +874,7 @@
     "command_word": "Evaluate",
     "topic": "Metallic Structures",
     "question": "Evaluate the properties of different types of steel (mild steel, stainless steel, high carbon steel) and explain how their composition relates to their uses.",
-    "mark_scheme": "Mild steel: low carbon content (~0.2%) \u2014 malleable, easily shaped; used in car bodies, buildings (1); high carbon steel: more carbon \u2014 harder, more brittle; used in cutting tools, blades (1); stainless steel: contains chromium (~18%) and nickel \u2014 resists corrosion (1); chromium forms thin oxide layer on surface \u2014 prevents rusting (1); all harder than pure iron \u2014 alloying atoms disrupt regular lattice, prevent layer sliding (1); choice of steel determined by required balance of strength, hardness, flexibility and corrosion resistance (1)."
+    "mark_scheme": "Mild steel: low carbon content (~0.2%) — malleable, easily shaped; used in car bodies, buildings (1); high carbon steel: more carbon — harder, more brittle; used in cutting tools, blades (1); stainless steel: contains chromium (~18%) and nickel — resists corrosion (1); chromium forms thin oxide layer on surface — prevents rusting (1); all harder than pure iron — alloying atoms disrupt regular lattice, prevent layer sliding (1); choice of steel determined by required balance of strength, hardness, flexibility and corrosion resistance (1)."
   },
   {
     "id": "C2-LA-031",
@@ -883,7 +883,7 @@
     "command_word": "Explain",
     "topic": "Covalent Substances",
     "question": "Explain the properties of fullerenes, including carbon nanotubes, and evaluate their potential uses in medicine and technology.",
-    "mark_scheme": "Fullerenes: closed carbon structures \u2014 C\u2086\u2080 sphere (buckminsterfullerene) or cylindrical nanotubes (1); nanotubes: very high length-to-diameter ratio \u2014 extremely strong and conduct electricity (1); medical use: drug delivery \u2014 C\u2086\u2080 can be functionalised to carry drug molecules to cancer cells specifically (1); reduces side effects compared to conventional chemotherapy (1); technology: carbon nanotube composites \u2014 lightweight but stronger than steel for aerospace/sports equipment (1); nanoelectronics: transistors from nanotubes could be much smaller than silicon \u2014 faster computers (1)."
+    "mark_scheme": "Fullerenes: closed carbon structures — C₆₀ sphere (buckminsterfullerene) or cylindrical nanotubes (1); nanotubes: very high length-to-diameter ratio — extremely strong and conduct electricity (1); medical use: drug delivery — C₆₀ can be functionalised to carry drug molecules to cancer cells specifically (1); reduces side effects compared to conventional chemotherapy (1); technology: carbon nanotube composites — lightweight but stronger than steel for aerospace/sports equipment (1); nanoelectronics: transistors from nanotubes could be much smaller than silicon — faster computers (1)."
   },
   {
     "id": "C2-LA-032",
@@ -892,7 +892,7 @@
     "command_word": "Describe",
     "topic": "Bonding",
     "question": "Describe the three types of strong chemical bonding (ionic, covalent, metallic). For each, describe the bonding model and explain one property that arises from it.",
-    "mark_scheme": "Ionic: electrostatic attraction between oppositely charged ions in a lattice (1); high melting point \u2014 large amount of energy needed to break many strong electrostatic forces (1); Covalent: electrons shared between non-metal atoms \u2014 strong bonds within molecules (1); simple molecular substances have low boiling points because intermolecular forces between molecules are weak (1); Metallic: positive ions in a sea of delocalised electrons (1); good electrical conductivity \u2014 delocalised electrons free to move and carry charge (1)."
+    "mark_scheme": "Ionic: electrostatic attraction between oppositely charged ions in a lattice (1); high melting point — large amount of energy needed to break many strong electrostatic forces (1); Covalent: electrons shared between non-metal atoms — strong bonds within molecules (1); simple molecular substances have low boiling points because intermolecular forces between molecules are weak (1); Metallic: positive ions in a sea of delocalised electrons (1); good electrical conductivity — delocalised electrons free to move and carry charge (1)."
   },
   {
     "id": "C2-LA-033",
@@ -901,7 +901,7 @@
     "command_word": "Evaluate",
     "topic": "Bonding",
     "question": "A student claims that all substances with high melting points must have ionic bonds. Evaluate this claim using evidence from different types of bonding and structure.",
-    "mark_scheme": "Claim is incorrect \u2014 there are other reasons for high melting point (1); giant covalent structures also have very high melting points: diamond (~3550\u00b0C), SiO\u2082 (~1610\u00b0C) \u2014 due to many strong covalent bonds to break (1); metals also have high melting points: tungsten (~3400\u00b0C) \u2014 due to strong metallic bonding (1); ionic compounds vary: NaCl (801\u00b0C), MgO (2852\u00b0C) depending on charge and ion size (1); simple molecular covalent substances have LOW melting points despite having strong covalent bonds (1); conclusion: melting point depends on type of bonding AND structure \u2014 cannot determine bonding type from melting point alone (1)."
+    "mark_scheme": "Claim is incorrect — there are other reasons for high melting point (1); giant covalent structures also have very high melting points: diamond (~3550°C), SiO₂ (~1610°C) — due to many strong covalent bonds to break (1); metals also have high melting points: tungsten (~3400°C) — due to strong metallic bonding (1); ionic compounds vary: NaCl (801°C), MgO (2852°C) depending on charge and ion size (1); simple molecular covalent substances have LOW melting points despite having strong covalent bonds (1); conclusion: melting point depends on type of bonding AND structure — cannot determine bonding type from melting point alone (1)."
   },
   {
     "id": "C2-LA-034",
@@ -910,7 +910,7 @@
     "command_word": "Describe",
     "topic": "Ionic Compounds",
     "question": "Describe what is meant by a giant ionic lattice and explain how the arrangement of ions relates to the properties of sodium chloride.",
-    "mark_scheme": "Giant ionic lattice: regular 3D arrangement of alternating positive and negative ions (1); each Na\u207a surrounded by 6 Cl\u207b ions and vice versa (1); strong electrostatic forces in all directions \u2014 high melting point (1); lattice extends throughout whole crystal \u2014 brittle (layers of same charge repel when shifted) (1); dissolves in water \u2014 polar water molecules attract and surround individual ions (1)."
+    "mark_scheme": "Giant ionic lattice: regular 3D arrangement of alternating positive and negative ions (1); each Na⁺ surrounded by 6 Cl⁻ ions and vice versa (1); strong electrostatic forces in all directions — high melting point (1); lattice extends throughout whole crystal — brittle (layers of same charge repel when shifted) (1); dissolves in water — polar water molecules attract and surround individual ions (1)."
   },
   {
     "id": "C2-SA-016",
@@ -964,7 +964,7 @@
     "command_word": "Give",
     "topic": "Metallic Structures",
     "question": "Give two examples of alloys and state what they are made from.",
-    "mark_scheme": "Any two from: steel \u2014 iron and carbon (1); brass \u2014 copper and zinc (1); bronze \u2014 copper and tin (1); solder \u2014 tin and lead (1)."
+    "mark_scheme": "Any two from: steel — iron and carbon (1); brass — copper and zinc (1); bronze — copper and tin (1); solder — tin and lead (1)."
   },
   {
     "id": "C2-SA-022",
@@ -982,7 +982,7 @@
     "command_word": "Explain",
     "topic": "Bonding",
     "question": "Explain how an ionic bond is formed between magnesium and oxygen. Include the charges of the ions formed.",
-    "mark_scheme": "Magnesium is a metal and loses 2 electrons to form a Mg\u00b2\u207a ion (1); oxygen is a non-metal and gains 2 electrons to form an O\u00b2\u207b ion (1); the oppositely charged ions are attracted to each other by electrostatic forces \u2014 forming an ionic bond (1)."
+    "mark_scheme": "Magnesium is a metal and loses 2 electrons to form a Mg²⁺ ion (1); oxygen is a non-metal and gains 2 electrons to form an O²⁻ ion (1); the oppositely charged ions are attracted to each other by electrostatic forces — forming an ionic bond (1)."
   },
   {
     "id": "C2-SA-024",
@@ -991,7 +991,7 @@
     "command_word": "Describe",
     "topic": "Ionic Compounds",
     "question": "Describe the structure of an ionic compound and explain why it cannot conduct electricity when solid.",
-    "mark_scheme": "Ionic compounds form a giant ionic lattice \u2014 regular 3D arrangement of oppositely charged ions (1); held together by strong electrostatic forces (1); when solid, the ions are held in fixed positions and cannot move to carry electrical charge (1)."
+    "mark_scheme": "Ionic compounds form a giant ionic lattice — regular 3D arrangement of oppositely charged ions (1); held together by strong electrostatic forces (1); when solid, the ions are held in fixed positions and cannot move to carry electrical charge (1)."
   },
   {
     "id": "C2-SA-025",
@@ -1000,7 +1000,7 @@
     "command_word": "Explain",
     "topic": "Covalent Substances",
     "question": "Explain why simple molecular substances have low melting points even though the covalent bonds within molecules are strong.",
-    "mark_scheme": "Simple molecular substances have strong covalent bonds within each molecule (1); however, only weak intermolecular forces exist between molecules (1); it is the weak intermolecular forces \u2014 not the covalent bonds \u2014 that are broken during melting, so little energy is required (1)."
+    "mark_scheme": "Simple molecular substances have strong covalent bonds within each molecule (1); however, only weak intermolecular forces exist between molecules (1); it is the weak intermolecular forces — not the covalent bonds — that are broken during melting, so little energy is required (1)."
   },
   {
     "id": "C2-SA-026",
@@ -1009,7 +1009,7 @@
     "command_word": "Describe",
     "topic": "Metallic Structures",
     "question": "Describe the structure of a metal and explain why metals are good conductors of both electricity and heat.",
-    "mark_scheme": "Metals consist of a giant lattice of positive metal ions surrounded by a sea of delocalised electrons (1); delocalised electrons carry electrical charge so metals conduct electricity (1); delocalised electrons also transfer kinetic energy through the lattice \u2014 metals conduct heat (1)."
+    "mark_scheme": "Metals consist of a giant lattice of positive metal ions surrounded by a sea of delocalised electrons (1); delocalised electrons carry electrical charge so metals conduct electricity (1); delocalised electrons also transfer kinetic energy through the lattice — metals conduct heat (1)."
   },
   {
     "id": "C2-SA-027",
@@ -1018,7 +1018,7 @@
     "command_word": "Explain",
     "topic": "Nanoparticles",
     "question": "Explain why nanoparticles have different properties from the bulk material, and give one potential risk of their use.",
-    "mark_scheme": "Nanoparticles have a very large surface area to volume ratio (1); this gives them different chemical and physical properties compared to larger particles of the same material (1); potential risk: unknown long-term health effects \u2014 nanoparticles may be inhaled and enter cells, causing damage (1)."
+    "mark_scheme": "Nanoparticles have a very large surface area to volume ratio (1); this gives them different chemical and physical properties compared to larger particles of the same material (1); potential risk: unknown long-term health effects — nanoparticles may be inhaled and enter cells, causing damage (1)."
   },
   {
     "id": "C2-SA-028",
@@ -1045,7 +1045,7 @@
     "command_word": "Compare",
     "topic": "Ionic Compounds",
     "question": "Compare the electrical conductivity of an ionic compound when solid and when dissolved in water.",
-    "mark_scheme": "When solid: ions are held in fixed positions in the lattice and cannot move \u2014 does not conduct electricity (1); when dissolved in water: the lattice breaks apart and ions become free to move (1); the movement of charged ions allows an electrical current to flow \u2014 conducts electricity (1)."
+    "mark_scheme": "When solid: ions are held in fixed positions in the lattice and cannot move — does not conduct electricity (1); when dissolved in water: the lattice breaks apart and ions become free to move (1); the movement of charged ions allows an electrical current to flow — conducts electricity (1)."
   },
   {
     "id": "C2-SA-031",
@@ -1054,7 +1054,7 @@
     "command_word": "Describe",
     "topic": "Metallic Structures",
     "question": "Describe why alloys are harder than the pure metals they are made from.",
-    "mark_scheme": "Pure metals have a regular arrangement of identical-sized atoms \u2014 layers can slide over each other easily (1); in alloys, atoms of different sizes are mixed in the lattice (1); the different-sized atoms distort the regular arrangement making it harder for layers to slide \u2014 the alloy is harder and stronger (1)."
+    "mark_scheme": "Pure metals have a regular arrangement of identical-sized atoms — layers can slide over each other easily (1); in alloys, atoms of different sizes are mixed in the lattice (1); the different-sized atoms distort the regular arrangement making it harder for layers to slide — the alloy is harder and stronger (1)."
   },
   {
     "id": "C2-SA-032",
@@ -1072,7 +1072,7 @@
     "command_word": "Describe",
     "topic": "Nanoparticles",
     "question": "Describe what fullerenes are and give one use of buckminsterfullerene.",
-    "mark_scheme": "Fullerenes are molecules made entirely of carbon atoms arranged in hollow spheres or tubes (1); buckminsterfullerene (C\u2086\u2080) consists of 60 carbon atoms arranged in a sphere (1); one use: drug delivery \u2014 the hollow cage can carry drug molecules to specific target cells in the body (1)."
+    "mark_scheme": "Fullerenes are molecules made entirely of carbon atoms arranged in hollow spheres or tubes (1); buckminsterfullerene (C₆₀) consists of 60 carbon atoms arranged in a sphere (1); one use: drug delivery — the hollow cage can carry drug molecules to specific target cells in the body (1)."
   },
   {
     "id": "C2-SA-034",
@@ -1082,5 +1082,41 @@
     "topic": "Bonding",
     "question": "Compare ionic and covalent bonding in terms of the particles involved and how the bond is formed.",
     "mark_scheme": "Ionic bonding: involves a metal and a non-metal; electrons are transferred from the metal to the non-metal, forming oppositely charged ions held by electrostatic attraction (1); covalent bonding: involves two non-metals; electrons are shared between the atoms so both achieve a full outer shell (1); ionic compounds form giant lattice structures; covalent compounds can be simple molecular or giant covalent (1)."
+  },
+  {
+    "id": "C2-SA-035",
+    "type": "written",
+    "marks": 1,
+    "command_word": "State",
+    "topic": "Polymers",
+    "question": "State the type of polymerisation used to make poly(propene) from propene.",
+    "mark_scheme": "Addition polymerisation (1)."
+  },
+  {
+    "id": "C2-SA-036",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Polymers",
+    "question": "State one property of polymers that makes them useful for food packaging and one environmental disadvantage of this use.",
+    "mark_scheme": "Property: waterproof / flexible / lightweight / cheap (1); disadvantage: non-biodegradable so persists in landfill / oceans for hundreds of years (1)."
+  },
+  {
+    "id": "C2-SA-037",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Polymers",
+    "question": "Explain why most addition polymers are non-biodegradable.",
+    "mark_scheme": "They are made of very long carbon chains (1); microorganisms do not have enzymes to break down these C–C bonds / the polymer backbone (1)."
+  },
+  {
+    "id": "C2-SA-038",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Compare",
+    "topic": "Polymers",
+    "question": "Compare the monomers and products of addition polymerisation and condensation polymerisation.",
+    "mark_scheme": "Addition: monomers contain a C=C double bond; only one product — the polymer (1); condensation: monomers have two functional groups (e.g. –OH and –COOH); two products formed — the polymer and a small molecule (water) (1); example of each: e.g. poly(ethene) from ethene (addition); nylon from diamine and dicarboxylic acid (condensation) (1)."
   }
 ]

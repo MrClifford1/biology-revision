@@ -18,14 +18,14 @@
     "type": "multiple_choice",
     "marks": 1,
     "topic": "Density",
-    "question": "A block has a mass of 600 g and a volume of 200 cm³. What is its density?",
+    "question": "A block has a mass of 600 g and a volume of 200 cm\u00b3. What is its density?",
     "options": [
-      "3 g/cm³",
-      "0.33 g/cm³",
-      "120000 g/cm³",
-      "2 g/cm³"
+      "3 g/cm\u00b3",
+      "0.33 g/cm\u00b3",
+      "120000 g/cm\u00b3",
+      "2 g/cm\u00b3"
     ],
-    "correct": "3 g/cm³"
+    "correct": "3 g/cm\u00b3"
   },
   {
     "id": "P3-MC-003",
@@ -48,7 +48,7 @@
     "topic": "Changes of State",
     "question": "What is latent heat?",
     "options": [
-      "The energy needed to raise temperature by 1°C",
+      "The energy needed to raise temperature by 1\u00b0C",
       "The energy needed to change state without changing temperature",
       "The energy stored in chemical bonds",
       "The heat lost to the surroundings"
@@ -62,12 +62,12 @@
     "topic": "Gas Pressure",
     "question": "What is absolute zero?",
     "options": [
-      "0°C — the temperature at which water freezes",
-      "−100°C — the temperature of liquid nitrogen",
-      "−273°C — the lowest possible temperature",
-      "100°C — the boiling point of water"
+      "0\u00b0C \u2014 the temperature at which water freezes",
+      "\u2212100\u00b0C \u2014 the temperature of liquid nitrogen",
+      "\u2212273\u00b0C \u2014 the lowest possible temperature",
+      "100\u00b0C \u2014 the boiling point of water"
     ],
-    "correct": "−273°C — the lowest possible temperature"
+    "correct": "\u2212273\u00b0C \u2014 the lowest possible temperature"
   },
   {
     "id": "P3-MC-006",
@@ -91,11 +91,11 @@
     "question": "What is Brownian motion evidence for?",
     "options": [
       "The existence of atoms",
-      "The particle model — that matter is made of small moving particles",
+      "The particle model \u2014 that matter is made of small moving particles",
       "The law of conservation of energy",
       "The greenhouse effect"
     ],
-    "correct": "The particle model — that matter is made of small moving particles"
+    "correct": "The particle model \u2014 that matter is made of small moving particles"
   },
   {
     "id": "P3-MC-008",
@@ -172,7 +172,7 @@
     "type": "multiple_choice",
     "marks": 1,
     "topic": "Density",
-    "question": "Why do objects float on water if their density is less than 1000 kg/m³?",
+    "question": "Why do objects float on water if their density is less than 1000 kg/m\u00b3?",
     "options": [
       "They are lighter than water",
       "Their density is less than water so the upthrust exceeds their weight",
@@ -186,14 +186,14 @@
     "type": "multiple_choice",
     "marks": 1,
     "topic": "Specific Heat Capacity",
-    "question": "Which substance requires the most energy to heat by 1°C per kilogram?",
+    "question": "Which substance requires the most energy to heat by 1\u00b0C per kilogram?",
     "options": [
-      "Iron (c = 450 J/kg°C)",
-      "Copper (c = 385 J/kg°C)",
-      "Water (c = 4200 J/kg°C)",
-      "Aluminium (c = 900 J/kg°C)"
+      "Iron (c = 450 J/kg\u00b0C)",
+      "Copper (c = 385 J/kg\u00b0C)",
+      "Water (c = 4200 J/kg\u00b0C)",
+      "Aluminium (c = 900 J/kg\u00b0C)"
     ],
-    "correct": "Water (c = 4200 J/kg°C)"
+    "correct": "Water (c = 4200 J/kg\u00b0C)"
   },
   {
     "id": "P3-MC-015",
@@ -214,7 +214,7 @@
     "type": "fill_in_blank",
     "marks": 1,
     "topic": "Density",
-    "question": "Density = mass ÷ __________.",
+    "question": "Density = mass \u00f7 __________.",
     "correct": "volume",
     "acceptable": [
       "volume"
@@ -240,7 +240,7 @@
     "correct": "-273",
     "acceptable": [
       "-273",
-      "−273",
+      "\u2212273",
       "minus 273"
     ]
   },
@@ -318,10 +318,10 @@
     "type": "fill_in_blank",
     "marks": 1,
     "topic": "Density",
-    "question": "Density is measured in kg/m³ or __________.",
-    "correct": "g/cm³",
+    "question": "Density is measured in kg/m\u00b3 or __________.",
+    "correct": "g/cm\u00b3",
     "acceptable": [
-      "g/cm³",
+      "g/cm\u00b3",
       "g/cm3",
       "gcm-3"
     ]
@@ -356,23 +356,23 @@
     "pairs": [
       {
         "term": "Melting",
-        "definition": "Solid → Liquid"
+        "definition": "Solid \u2192 Liquid"
       },
       {
         "term": "Boiling",
-        "definition": "Liquid → Gas throughout the liquid"
+        "definition": "Liquid \u2192 Gas throughout the liquid"
       },
       {
         "term": "Condensation",
-        "definition": "Gas → Liquid"
+        "definition": "Gas \u2192 Liquid"
       },
       {
         "term": "Sublimation",
-        "definition": "Solid → Gas directly"
+        "definition": "Solid \u2192 Gas directly"
       },
       {
         "term": "Freezing",
-        "definition": "Liquid → Solid"
+        "definition": "Liquid \u2192 Solid"
       }
     ]
   },
@@ -419,23 +419,23 @@
     "type": "match",
     "marks": 2,
     "topic": "Density",
-    "question": "Match each material to whether it would float or sink in water (density 1000 kg/m³).",
+    "question": "Match each material to whether it would float or sink in water (density 1000 kg/m\u00b3).",
     "pairs": [
       {
-        "term": "Wood (600 kg/m³)",
-        "definition": "Floats — density less than water"
+        "term": "Wood (600 kg/m\u00b3)",
+        "definition": "Floats \u2014 density less than water"
       },
       {
-        "term": "Iron (7800 kg/m³)",
-        "definition": "Sinks — density greater than water"
+        "term": "Iron (7800 kg/m\u00b3)",
+        "definition": "Sinks \u2014 density greater than water"
       },
       {
-        "term": "Ice (917 kg/m³)",
-        "definition": "Floats — density slightly less than water"
+        "term": "Ice (917 kg/m\u00b3)",
+        "definition": "Floats \u2014 density slightly less than water"
       },
       {
-        "term": "Lead (11300 kg/m³)",
-        "definition": "Sinks — density much greater than water"
+        "term": "Lead (11300 kg/m\u00b3)",
+        "definition": "Sinks \u2014 density much greater than water"
       }
     ]
   },
@@ -446,7 +446,7 @@
     "command_word": "State",
     "topic": "Density",
     "question": "State the equation for density.",
-    "mark_scheme": "Density = mass ÷ volume / ρ = m/V (1)."
+    "mark_scheme": "Density = mass \u00f7 volume / \u03c1 = m/V (1)."
   },
   {
     "id": "P3-SA-002",
@@ -455,7 +455,7 @@
     "command_word": "State",
     "topic": "Gas Pressure",
     "question": "State what is meant by absolute zero.",
-    "mark_scheme": "The lowest possible temperature (1); −273°C or 0 K (1) — accept either."
+    "mark_scheme": "The lowest possible temperature (1); \u2212273\u00b0C or 0 K (1) \u2014 accept either."
   },
   {
     "id": "P3-SA-003",
@@ -463,8 +463,8 @@
     "marks": 1,
     "command_word": "Calculate",
     "topic": "Density",
-    "question": "A stone has a mass of 150 g and a volume of 50 cm³. Calculate its density.",
-    "mark_scheme": "ρ = m/V = 150 ÷ 50 = 3 g/cm³ (1)."
+    "question": "A stone has a mass of 150 g and a volume of 50 cm\u00b3. Calculate its density.",
+    "mark_scheme": "\u03c1 = m/V = 150 \u00f7 50 = 3 g/cm\u00b3 (1)."
   },
   {
     "id": "P3-SA-004",
@@ -482,7 +482,7 @@
     "command_word": "Explain",
     "topic": "Gas Pressure",
     "question": "Explain why the pressure of a gas increases when it is heated at constant volume.",
-    "mark_scheme": "Particles move faster when heated (1); collide more frequently and with greater force with container walls (1); greater force per unit area means higher pressure (1) — any two."
+    "mark_scheme": "Particles move faster when heated (1); collide more frequently and with greater force with container walls (1); greater force per unit area means higher pressure (1) \u2014 any two."
   },
   {
     "id": "P3-SA-006",
@@ -491,7 +491,7 @@
     "command_word": "Explain",
     "topic": "States of Matter",
     "question": "Explain what Brownian motion is and what it tells us about matter.",
-    "mark_scheme": "Random motion of small visible particles (e.g. pollen / smoke) (1); caused by collisions with smaller invisible molecules (1); provides evidence for the particle model (1) — any two."
+    "mark_scheme": "Random motion of small visible particles (e.g. pollen / smoke) (1); caused by collisions with smaller invisible molecules (1); provides evidence for the particle model (1) \u2014 any two."
   },
   {
     "id": "P3-SA-007",
@@ -500,7 +500,7 @@
     "command_word": "Calculate",
     "topic": "Changes of State",
     "question": "Calculate the energy needed to melt 500 g of ice. The specific latent heat of fusion of water is 334 000 J/kg.",
-    "mark_scheme": "E = mL = 0.5 × 334 000 (1) = 167 000 J (1)."
+    "mark_scheme": "E = mL = 0.5 \u00d7 334 000 (1) = 167 000 J (1)."
   },
   {
     "id": "P3-SA-008",
@@ -509,7 +509,7 @@
     "command_word": "Describe",
     "topic": "Density",
     "question": "Describe how you would measure the density of an irregularly shaped stone in the laboratory.",
-    "mark_scheme": "Measure the mass using a balance (1); measure volume by displacement — submerge in water and measure the volume of water displaced (1); calculate density = mass ÷ volume (1) — any two."
+    "mark_scheme": "Measure the mass using a balance (1); measure volume by displacement \u2014 submerge in water and measure the volume of water displaced (1); calculate density = mass \u00f7 volume (1) \u2014 any two."
   },
   {
     "id": "P3-SA-009",
@@ -518,7 +518,7 @@
     "command_word": "Explain",
     "topic": "Changes of State",
     "question": "Explain why the temperature does not change while a substance is melting, even though energy is being supplied.",
-    "mark_scheme": "Energy is used to break bonds between particles (1); not to increase kinetic energy / temperature (1); energy is stored as increased potential energy (1) — any two."
+    "mark_scheme": "Energy is used to break bonds between particles (1); not to increase kinetic energy / temperature (1); energy is stored as increased potential energy (1) \u2014 any two."
   },
   {
     "id": "P3-SA-010",
@@ -527,7 +527,7 @@
     "command_word": "Explain",
     "topic": "Gas Pressure",
     "question": "Explain, using the particle model, why a gas exerts pressure on the walls of its container.",
-    "mark_scheme": "Gas particles move randomly at high speed (1); they collide with the walls of the container (1); each collision exerts a small force on the wall (1); the total force per unit area is the pressure (1) — any three."
+    "mark_scheme": "Gas particles move randomly at high speed (1); they collide with the walls of the container (1); each collision exerts a small force on the wall (1); the total force per unit area is the pressure (1) \u2014 any three."
   },
   {
     "id": "P3-SA-011",
@@ -536,7 +536,7 @@
     "command_word": "Describe",
     "topic": "Specific Heat Capacity",
     "question": "Describe how you would measure the specific heat capacity of water in the lab.",
-    "mark_scheme": "Heat known mass of water using an immersion heater (1); measure temperature change with thermometer (1); measure energy supplied using joulemeter or calculate E = Pt (1); use E = mcΔT to calculate c (1); insulate container to reduce energy losses (1) — any three."
+    "mark_scheme": "Heat known mass of water using an immersion heater (1); measure temperature change with thermometer (1); measure energy supplied using joulemeter or calculate E = Pt (1); use E = mc\u0394T to calculate c (1); insulate container to reduce energy losses (1) \u2014 any three."
   },
   {
     "id": "P3-SA-012",
@@ -545,7 +545,7 @@
     "command_word": "Explain",
     "topic": "States of Matter",
     "question": "Use the particle model to explain the differences in density between solids, liquids and gases.",
-    "mark_scheme": "Solids have particles closely packed in regular arrangement (1); so high density (1); gases have particles far apart (1); so very low density (1); liquids are between solids and gases in density (1) — any three."
+    "mark_scheme": "Solids have particles closely packed in regular arrangement (1); so high density (1); gases have particles far apart (1); so very low density (1); liquids are between solids and gases in density (1) \u2014 any three."
   },
   {
     "id": "P3-LA-001",
@@ -553,8 +553,8 @@
     "marks": 4,
     "command_word": "Explain",
     "topic": "Gas Pressure",
-    "question": "A sealed syringe contains gas at a pressure of 100 kPa and a volume of 60 cm³. The plunger is pushed in to reduce the volume to 20 cm³ at constant temperature. Calculate the new pressure and explain why it increases.",
-    "mark_scheme": "P₁V₁ = P₂V₂ → 100 × 60 = P₂ × 20 (1); P₂ = 300 kPa (1); pressure increases because same number of particles in smaller volume (1); particles collide more frequently with walls (1)."
+    "question": "A sealed syringe contains gas at a pressure of 100 kPa and a volume of 60 cm\u00b3. The plunger is pushed in to reduce the volume to 20 cm\u00b3 at constant temperature. Calculate the new pressure and explain why it increases.",
+    "mark_scheme": "P\u2081V\u2081 = P\u2082V\u2082 \u2192 100 \u00d7 60 = P\u2082 \u00d7 20 (1); P\u2082 = 300 kPa (1); pressure increases because same number of particles in smaller volume (1); particles collide more frequently with walls (1)."
   },
   {
     "id": "P3-LA-002",
@@ -563,7 +563,7 @@
     "command_word": "Explain",
     "topic": "Changes of State",
     "question": "Sketch and explain what a temperature-time graph would look like when a pure substance is heated from solid to gas at a constant rate.",
-    "mark_scheme": "Temperature rises as solid is heated (1); flat section at melting point — temperature constant while melting (1); temperature rises again as liquid is heated (1); flat section at boiling point — temperature constant while boiling (1); temperature rises as gas is heated (1) — any four."
+    "mark_scheme": "Temperature rises as solid is heated (1); flat section at melting point \u2014 temperature constant while melting (1); temperature rises again as liquid is heated (1); flat section at boiling point \u2014 temperature constant while boiling (1); temperature rises as gas is heated (1) \u2014 any four."
   },
   {
     "id": "P3-LA-003",
@@ -571,8 +571,8 @@
     "marks": 4,
     "command_word": "Calculate",
     "topic": "Specific Heat Capacity",
-    "question": "A 2 kg block of iron is heated from 20°C to 120°C using a 100 W heater. The specific heat capacity of iron is 450 J/kg°C. Calculate the energy needed and the time the heater must be on.",
-    "mark_scheme": "E = mcΔT = 2 × 450 × 100 (1) = 90 000 J (1); t = E/P = 90 000 ÷ 100 (1) = 900 s (1)."
+    "question": "A 2 kg block of iron is heated from 20\u00b0C to 120\u00b0C using a 100 W heater. The specific heat capacity of iron is 450 J/kg\u00b0C. Calculate the energy needed and the time the heater must be on.",
+    "mark_scheme": "E = mc\u0394T = 2 \u00d7 450 \u00d7 100 (1) = 90 000 J (1); t = E/P = 90 000 \u00f7 100 (1) = 900 s (1)."
   },
   {
     "id": "P3-LA-004",
@@ -581,7 +581,7 @@
     "command_word": "Explain",
     "topic": "Gas Pressure",
     "question": "A gas in a rigid container has a pressure of 150 kPa at 300 K. The container is heated until the pressure reaches 250 kPa. Calculate the new temperature and explain the change in terms of particle behaviour.",
-    "mark_scheme": "P₁/T₁ = P₂/T₂ → 150/300 = 250/T₂ (1); T₂ = 500 K (1); particles have more kinetic energy at higher temperature (1); collide more frequently and with greater force increasing pressure (1)."
+    "mark_scheme": "P\u2081/T\u2081 = P\u2082/T\u2082 \u2192 150/300 = 250/T\u2082 (1); T\u2082 = 500 K (1); particles have more kinetic energy at higher temperature (1); collide more frequently and with greater force increasing pressure (1)."
   },
   {
     "id": "P3-LA-005",
@@ -590,7 +590,7 @@
     "command_word": "Explain",
     "topic": "Changes of State",
     "question": "Explain the difference between evaporation and boiling. Include how temperature, location and energy are involved in each process.",
-    "mark_scheme": "Evaporation occurs at the surface of a liquid (1); can occur at any temperature below boiling point (1); fastest particles escape from surface (1). Boiling occurs throughout the liquid (1); only at the boiling point (1); requires continuous energy input (1); temperature stays constant during boiling (1) — any five."
+    "mark_scheme": "Evaporation occurs at the surface of a liquid (1); can occur at any temperature below boiling point (1); fastest particles escape from surface (1). Boiling occurs throughout the liquid (1); only at the boiling point (1); requires continuous energy input (1); temperature stays constant during boiling (1) \u2014 any five."
   },
   {
     "id": "P3-LA-006",
@@ -598,8 +598,8 @@
     "marks": 6,
     "command_word": "Evaluate",
     "topic": "Specific Heat Capacity",
-    "question": "A student conducts an experiment to find the specific heat capacity of aluminium. They heat a 1 kg block with a 50 W heater for 10 minutes and record a temperature rise of 62°C. Evaluate the experiment, calculate the specific heat capacity and explain why it differs from the accepted value of 900 J/kg°C.",
-    "mark_scheme": "E = Pt = 50 × 600 = 30 000 J (1); c = E/(mΔT) = 30 000 ÷ (1 × 62) (1) = 484 J/kg°C (1); this is lower than 900 J/kg°C (1); because energy was lost to surroundings / not all energy went into the block (1); could improve by insulating the block / using a lid (1); thermometer may not have been in best position (1) — any six."
+    "question": "A student conducts an experiment to find the specific heat capacity of aluminium. They heat a 1 kg block with a 50 W heater for 10 minutes and record a temperature rise of 62\u00b0C. Evaluate the experiment, calculate the specific heat capacity and explain why it differs from the accepted value of 900 J/kg\u00b0C.",
+    "mark_scheme": "E = Pt = 50 \u00d7 600 = 30 000 J (1); c = E/(m\u0394T) = 30 000 \u00f7 (1 \u00d7 62) (1) = 484 J/kg\u00b0C (1); this is lower than 900 J/kg\u00b0C (1); because energy was lost to surroundings / not all energy went into the block (1); could improve by insulating the block / using a lid (1); thermometer may not have been in best position (1) \u2014 any six."
   },
   {
     "id": "P3-LA-007",
@@ -608,7 +608,7 @@
     "command_word": "Explain",
     "topic": "Gas Pressure",
     "question": "Explain how the particle model accounts for gas pressure, and how changes in temperature and volume affect pressure. Include reference to absolute zero in your answer.",
-    "mark_scheme": "Gas particles move randomly and collide with container walls (1); each collision exerts a force — total force per unit area is pressure (1); increasing temperature increases kinetic energy of particles (1); more frequent and harder collisions increase pressure (1); decreasing volume means same particles in smaller space (1); more frequent collisions increase pressure (1); at absolute zero particles have minimum kinetic energy (1); gas pressure would theoretically be zero at 0 K (1) — any six."
+    "mark_scheme": "Gas particles move randomly and collide with container walls (1); each collision exerts a force \u2014 total force per unit area is pressure (1); increasing temperature increases kinetic energy of particles (1); more frequent and harder collisions increase pressure (1); decreasing volume means same particles in smaller space (1); more frequent collisions increase pressure (1); at absolute zero particles have minimum kinetic energy (1); gas pressure would theoretically be zero at 0 K (1) \u2014 any six."
   },
   {
     "id": "P3-LA-008",
@@ -616,8 +616,8 @@
     "marks": 4,
     "command_word": "Calculate",
     "topic": "Density",
-    "question": "An object has a mass of 8.1 kg and dimensions 30 cm × 15 cm × 20 cm. Calculate its volume in m³ and its density in kg/m³.",
-    "mark_scheme": "Volume = 0.30 × 0.15 × 0.20 = 0.009 m³ (1); density = mass/volume = 8.1/0.009 (1) = 900 kg/m³ (1); correct unit stated (1)."
+    "question": "An object has a mass of 8.1 kg and dimensions 30 cm \u00d7 15 cm \u00d7 20 cm. Calculate its volume in m\u00b3 and its density in kg/m\u00b3.",
+    "mark_scheme": "Volume = 0.30 \u00d7 0.15 \u00d7 0.20 = 0.009 m\u00b3 (1); density = mass/volume = 8.1/0.009 (1) = 900 kg/m\u00b3 (1); correct unit stated (1)."
   },
   {
     "id": "P3-LA-009",
@@ -626,7 +626,7 @@
     "command_word": "Explain",
     "topic": "States of Matter",
     "question": "Explain the differences in the arrangement and movement of particles in solids, liquids and gases. Explain why gases are much less dense than solids.",
-    "mark_scheme": "Solid: particles in fixed positions, closely packed, regular arrangement, vibrating (1); liquid: particles close but able to move past each other, no fixed positions (1); gas: particles far apart, moving randomly at high speed (1); gases less dense because particles far apart — much more space between them than in solids (1)."
+    "mark_scheme": "Solid: particles in fixed positions, closely packed, regular arrangement, vibrating (1); liquid: particles close but able to move past each other, no fixed positions (1); gas: particles far apart, moving randomly at high speed (1); gases less dense because particles far apart \u2014 much more space between them than in solids (1)."
   },
   {
     "id": "P3-LA-010",
@@ -635,7 +635,7 @@
     "command_word": "Explain",
     "topic": "Changes of State",
     "question": "Explain why sweating cools the body. Include reference to evaporation, latent heat and the kinetic energy of particles.",
-    "mark_scheme": "Sweat (water) on skin evaporates (1); the faster-moving molecules escape from the surface (1); energy transferred from skin to water molecules to provide latent heat of vaporisation (1); this reduces the average kinetic energy of remaining skin molecules — skin cools (1)."
+    "mark_scheme": "Sweat (water) on skin evaporates (1); the faster-moving molecules escape from the surface (1); energy transferred from skin to water molecules to provide latent heat of vaporisation (1); this reduces the average kinetic energy of remaining skin molecules \u2014 skin cools (1)."
   },
   {
     "id": "P3-LA-011",
@@ -643,8 +643,8 @@
     "marks": 4,
     "command_word": "Calculate",
     "topic": "Changes of State",
-    "question": "Calculate the total energy needed to convert 200 g of ice at 0°C into steam at 100°C. Specific latent heat of fusion = 334 000 J/kg; specific heat capacity of water = 4200 J/kg°C; specific latent heat of vaporisation = 2 260 000 J/kg.",
-    "mark_scheme": "Energy to melt ice: E = mL = 0.2 × 334 000 = 66 800 J (1); energy to heat water: E = mcΔT = 0.2 × 4200 × 100 = 84 000 J (1); energy to vaporise: E = mL = 0.2 × 2 260 000 = 452 000 J (1); total = 66 800 + 84 000 + 452 000 = 602 800 J (1)."
+    "question": "Calculate the total energy needed to convert 200 g of ice at 0\u00b0C into steam at 100\u00b0C. Specific latent heat of fusion = 334 000 J/kg; specific heat capacity of water = 4200 J/kg\u00b0C; specific latent heat of vaporisation = 2 260 000 J/kg.",
+    "mark_scheme": "Energy to melt ice: E = mL = 0.2 \u00d7 334 000 = 66 800 J (1); energy to heat water: E = mc\u0394T = 0.2 \u00d7 4200 \u00d7 100 = 84 000 J (1); energy to vaporise: E = mL = 0.2 \u00d7 2 260 000 = 452 000 J (1); total = 66 800 + 84 000 + 452 000 = 602 800 J (1)."
   },
   {
     "id": "P3-LA-012",
@@ -662,7 +662,7 @@
     "command_word": "Describe",
     "topic": "Density",
     "question": "Describe how you would measure the density of a liquid, such as oil, in the laboratory. Include all measurements and calculations needed.",
-    "mark_scheme": "Measure mass of empty measuring cylinder using balance (1); pour known volume of liquid into cylinder and measure mass again (1); mass of liquid = total mass − mass of empty cylinder (1); density = mass/volume — calculate with correct values and units (1)."
+    "mark_scheme": "Measure mass of empty measuring cylinder using balance (1); pour known volume of liquid into cylinder and measure mass again (1); mass of liquid = total mass \u2212 mass of empty cylinder (1); density = mass/volume \u2014 calculate with correct values and units (1)."
   },
   {
     "id": "P3-LA-014",
@@ -679,8 +679,8 @@
     "marks": 4,
     "command_word": "Calculate",
     "topic": "Gas Pressure",
-    "question": "A gas at 20°C has a pressure of 120 kPa. It is heated at constant volume until the pressure reaches 180 kPa. Calculate the new temperature in both kelvin and degrees Celsius.",
-    "mark_scheme": "T₁ = 20 + 273 = 293 K (1); P₁/T₁ = P₂/T₂ → 120/293 = 180/T₂ (1); T₂ = 180 × 293/120 = 439.5 K (1); T in °C = 439.5 − 273 = 166.5°C (accept 167°C) (1)."
+    "question": "A gas at 20\u00b0C has a pressure of 120 kPa. It is heated at constant volume until the pressure reaches 180 kPa. Calculate the new temperature in both kelvin and degrees Celsius.",
+    "mark_scheme": "T\u2081 = 20 + 273 = 293 K (1); P\u2081/T\u2081 = P\u2082/T\u2082 \u2192 120/293 = 180/T\u2082 (1); T\u2082 = 180 \u00d7 293/120 = 439.5 K (1); T in \u00b0C = 439.5 \u2212 273 = 166.5\u00b0C (accept 167\u00b0C) (1)."
   },
   {
     "id": "P3-LA-016",
@@ -697,8 +697,8 @@
     "marks": 4,
     "command_word": "Calculate",
     "topic": "Density",
-    "question": "A piece of wood floats with half its volume submerged in water (density 1000 kg/m³). The wood has a volume of 0.004 m³. Calculate the mass and density of the wood.",
-    "mark_scheme": "Volume submerged = 0.002 m³ (1); upthrust = weight of water displaced = 0.002 × 1000 × 10 = 20 N (1); since floating, weight of wood = 20 N; mass = 20/10 = 2 kg (1); density of wood = 2/0.004 = 500 kg/m³ (1)."
+    "question": "A piece of wood floats with half its volume submerged in water (density 1000 kg/m\u00b3). The wood has a volume of 0.004 m\u00b3. Calculate the mass and density of the wood.",
+    "mark_scheme": "Volume submerged = 0.002 m\u00b3 (1); upthrust = weight of water displaced = 0.002 \u00d7 1000 \u00d7 10 = 20 N (1); since floating, weight of wood = 20 N; mass = 20/10 = 2 kg (1); density of wood = 2/0.004 = 500 kg/m\u00b3 (1)."
   },
   {
     "id": "P3-LA-018",
@@ -707,7 +707,7 @@
     "command_word": "Explain",
     "topic": "Changes of State",
     "question": "Explain the difference between boiling and evaporation at the particle level. Why does evaporation cause cooling but boiling does not cool a substance below its boiling point?",
-    "mark_scheme": "Evaporation: occurs at the surface at any temperature; only the fastest particles escape (1); as fastest particles leave, average kinetic energy of remaining particles decreases — temperature falls (1); boiling: occurs throughout liquid at boiling point (1); energy input maintains temperature at boiling point — temperature stays constant while boiling (1)."
+    "mark_scheme": "Evaporation: occurs at the surface at any temperature; only the fastest particles escape (1); as fastest particles leave, average kinetic energy of remaining particles decreases \u2014 temperature falls (1); boiling: occurs throughout liquid at boiling point (1); energy input maintains temperature at boiling point \u2014 temperature stays constant while boiling (1)."
   },
   {
     "id": "P3-LA-019",
@@ -715,8 +715,8 @@
     "marks": 5,
     "command_word": "Explain",
     "topic": "Gas Pressure",
-    "question": "Explain, using kinetic theory, what would happen to the pressure of a fixed amount of gas if (a) the volume is halved at constant temperature, (b) the temperature is doubled at constant volume. Support with calculations using P₁ = 100 kPa, V₁ = 2 L, T₁ = 300 K.",
-    "mark_scheme": "(a) P₁V₁ = P₂V₂: 100 × 2 = P₂ × 1; P₂ = 200 kPa (1); smaller volume means more frequent collisions with walls (1); (b) P₁/T₁ = P₂/T₂: 100/300 = P₂/600; P₂ = 200 kPa (1); higher temperature means particles have more kinetic energy (1); more frequent and harder collisions with walls increase pressure (1)."
+    "question": "Explain, using kinetic theory, what would happen to the pressure of a fixed amount of gas if (a) the volume is halved at constant temperature, (b) the temperature is doubled at constant volume. Support with calculations using P\u2081 = 100 kPa, V\u2081 = 2 L, T\u2081 = 300 K.",
+    "mark_scheme": "(a) P\u2081V\u2081 = P\u2082V\u2082: 100 \u00d7 2 = P\u2082 \u00d7 1; P\u2082 = 200 kPa (1); smaller volume means more frequent collisions with walls (1); (b) P\u2081/T\u2081 = P\u2082/T\u2082: 100/300 = P\u2082/600; P\u2082 = 200 kPa (1); higher temperature means particles have more kinetic energy (1); more frequent and harder collisions with walls increase pressure (1)."
   },
   {
     "id": "P3-LA-020",
@@ -724,8 +724,8 @@
     "marks": 5,
     "command_word": "Evaluate",
     "topic": "Specific Heat Capacity",
-    "question": "Evaluate the suitability of water versus sand as a material to absorb and release thermal energy in a solar energy storage system. Use specific heat capacities (water c = 4200 J/kg°C, sand c = 800 J/kg°C).",
-    "mark_scheme": "Water has much higher specific heat capacity than sand (1); water can store more energy per kg per degree (1); e.g. 1 kg water stores 4200 J/°C vs 800 J/°C for sand — water stores 5× more (1); water better for absorbing large amounts of solar energy with small temperature change (1); sand heats up quickly but stores less energy — releases heat quickly (1)."
+    "question": "Evaluate the suitability of water versus sand as a material to absorb and release thermal energy in a solar energy storage system. Use specific heat capacities (water c = 4200 J/kg\u00b0C, sand c = 800 J/kg\u00b0C).",
+    "mark_scheme": "Water has much higher specific heat capacity than sand (1); water can store more energy per kg per degree (1); e.g. 1 kg water stores 4200 J/\u00b0C vs 800 J/\u00b0C for sand \u2014 water stores 5\u00d7 more (1); water better for absorbing large amounts of solar energy with small temperature change (1); sand heats up quickly but stores less energy \u2014 releases heat quickly (1)."
   },
   {
     "id": "P3-LA-021",
@@ -733,8 +733,8 @@
     "marks": 5,
     "command_word": "Explain",
     "topic": "Changes of State",
-    "question": "Explain in detail what happens to the particles and energy when steam at 100°C condenses to form water. Include reference to internal energy, kinetic energy and the forces between particles.",
-    "mark_scheme": "Steam particles have high kinetic energy moving randomly at high speed (1); as steam cools, particles lose kinetic energy (1); at condensation point, particles slow enough for intermolecular forces to pull them together (1); potential energy decreases as bonds form between molecules (1); internal energy decreases — latent heat released to surroundings (1)."
+    "question": "Explain in detail what happens to the particles and energy when steam at 100\u00b0C condenses to form water. Include reference to internal energy, kinetic energy and the forces between particles.",
+    "mark_scheme": "Steam particles have high kinetic energy moving randomly at high speed (1); as steam cools, particles lose kinetic energy (1); at condensation point, particles slow enough for intermolecular forces to pull them together (1); potential energy decreases as bonds form between molecules (1); internal energy decreases \u2014 latent heat released to surroundings (1)."
   },
   {
     "id": "P3-LA-022",
@@ -743,7 +743,7 @@
     "command_word": "Describe",
     "topic": "Density",
     "question": "Describe how the densities of solids, liquids and gases compare and explain these differences using the particle model. Include a worked example comparing ice, water and steam.",
-    "mark_scheme": "Solids: particles closely and regularly packed — high density (1); liquids: similar particle spacing to solids but slight increase — similar density to solids (1); gases: particles far apart — very low density (1); e.g. ice ~917 kg/m³, water ~1000 kg/m³ — close because particles similar spacing (1); steam ~0.6 kg/m³ — very low because particles far apart (1)."
+    "mark_scheme": "Solids: particles closely and regularly packed \u2014 high density (1); liquids: similar particle spacing to solids but slight increase \u2014 similar density to solids (1); gases: particles far apart \u2014 very low density (1); e.g. ice ~917 kg/m\u00b3, water ~1000 kg/m\u00b3 \u2014 close because particles similar spacing (1); steam ~0.6 kg/m\u00b3 \u2014 very low because particles far apart (1)."
   },
   {
     "id": "P3-LA-023",
@@ -751,8 +751,8 @@
     "marks": 5,
     "command_word": "Calculate",
     "topic": "Gas Pressure",
-    "question": "A gas occupies 3.0 L at a pressure of 200 kPa and a temperature of 27°C. Calculate the volume when the temperature is raised to 127°C and the pressure is reduced to 100 kPa.",
-    "mark_scheme": "T₁ = 27 + 273 = 300 K (1); T₂ = 127 + 273 = 400 K (1); P₁V₁/T₁ = P₂V₂/T₂: (200 × 3.0)/300 = (100 × V₂)/400 (1); 2 = 100V₂/400; V₂ = 8.0 L (1); correct rearrangement and solution (1)."
+    "question": "A gas occupies 3.0 L at a pressure of 200 kPa and a temperature of 27\u00b0C. Calculate the volume when the temperature is raised to 127\u00b0C and the pressure is reduced to 100 kPa.",
+    "mark_scheme": "T\u2081 = 27 + 273 = 300 K (1); T\u2082 = 127 + 273 = 400 K (1); P\u2081V\u2081/T\u2081 = P\u2082V\u2082/T\u2082: (200 \u00d7 3.0)/300 = (100 \u00d7 V\u2082)/400 (1); 2 = 100V\u2082/400; V\u2082 = 8.0 L (1); correct rearrangement and solution (1)."
   },
   {
     "id": "P3-LA-024",
@@ -760,8 +760,8 @@
     "marks": 5,
     "command_word": "Explain",
     "topic": "Specific Heat Capacity",
-    "question": "A student heats 0.5 kg of water from 20°C to 100°C and then converts it all to steam. Calculate (a) the energy to heat the water (c = 4200 J/kg°C) and (b) the energy to vaporise it (L = 2 260 000 J/kg). Explain why so much more energy is needed for vaporisation.",
-    "mark_scheme": "E₁ = mcΔT = 0.5 × 4200 × 80 = 168 000 J (1); E₂ = mL = 0.5 × 2 260 000 = 1 130 000 J (1); vaporisation requires ~6.7× more energy than heating (1); because during vaporisation, bonds between all molecules must be completely broken (1); much greater separation of particles required — far greater increase in potential energy (1)."
+    "question": "A student heats 0.5 kg of water from 20\u00b0C to 100\u00b0C and then converts it all to steam. Calculate (a) the energy to heat the water (c = 4200 J/kg\u00b0C) and (b) the energy to vaporise it (L = 2 260 000 J/kg). Explain why so much more energy is needed for vaporisation.",
+    "mark_scheme": "E\u2081 = mc\u0394T = 0.5 \u00d7 4200 \u00d7 80 = 168 000 J (1); E\u2082 = mL = 0.5 \u00d7 2 260 000 = 1 130 000 J (1); vaporisation requires ~6.7\u00d7 more energy than heating (1); because during vaporisation, bonds between all molecules must be completely broken (1); much greater separation of particles required \u2014 far greater increase in potential energy (1)."
   },
   {
     "id": "P3-LA-025",
@@ -770,7 +770,7 @@
     "command_word": "Describe",
     "topic": "States of Matter",
     "question": "Describe the particle model of a gas and use it to explain all three of the following observations: (a) gases fill their containers, (b) gases can be compressed, (c) gases exert pressure on container walls.",
-    "mark_scheme": "Gas particles move randomly in all directions at high speed (1); (a) particles travel in straight lines until collision — they naturally fill all available space (1); (b) large spaces between particles allow them to be pushed closer together — gases are compressible (1); (c) particles collide with walls — each collision exerts a force (1); many collisions per second produce a net force per unit area = pressure (1)."
+    "mark_scheme": "Gas particles move randomly in all directions at high speed (1); (a) particles travel in straight lines until collision \u2014 they naturally fill all available space (1); (b) large spaces between particles allow them to be pushed closer together \u2014 gases are compressible (1); (c) particles collide with walls \u2014 each collision exerts a force (1); many collisions per second produce a net force per unit area = pressure (1)."
   },
   {
     "id": "P3-LA-026",
@@ -779,7 +779,7 @@
     "command_word": "Evaluate",
     "topic": "Changes of State",
     "question": "Evaluate the evidence that temperature stays constant during a change of state. Describe an experiment, sketch the expected results and explain what the data shows about energy and particle behaviour.",
-    "mark_scheme": "Experiment: heat ice in beaker from −10°C to 110°C at constant rate, record temperature every minute (1); expected graph: temperature rises, flat section at 0°C (melting), rises again, flat section at 100°C (boiling), rises (1); flat sections show temperature constant despite continuous energy input (1); energy used to break bonds between particles not to increase kinetic energy (1); confirms energy absorbed as latent heat during state change (1)."
+    "mark_scheme": "Experiment: heat ice in beaker from \u221210\u00b0C to 110\u00b0C at constant rate, record temperature every minute (1); expected graph: temperature rises, flat section at 0\u00b0C (melting), rises again, flat section at 100\u00b0C (boiling), rises (1); flat sections show temperature constant despite continuous energy input (1); energy used to break bonds between particles not to increase kinetic energy (1); confirms energy absorbed as latent heat during state change (1)."
   },
   {
     "id": "P3-LA-027",
@@ -788,7 +788,7 @@
     "command_word": "Explain",
     "topic": "Gas Pressure",
     "question": "Explain the significance of absolute zero and what it means physically for gas particles. Explain why it is impossible to cool anything below absolute zero.",
-    "mark_scheme": "Absolute zero = −273°C = 0 K (1); at absolute zero, particles have minimum possible kinetic energy (1); in theory, gas pressure would be zero at 0 K (1); impossible to go below because that would mean negative kinetic energy (1); cannot have less than zero kinetic energy — particles cannot move less than not at all (1)."
+    "mark_scheme": "Absolute zero = \u2212273\u00b0C = 0 K (1); at absolute zero, particles have minimum possible kinetic energy (1); in theory, gas pressure would be zero at 0 K (1); impossible to go below because that would mean negative kinetic energy (1); cannot have less than zero kinetic energy \u2014 particles cannot move less than not at all (1)."
   },
   {
     "id": "P3-LA-028",
@@ -796,8 +796,8 @@
     "marks": 5,
     "command_word": "Calculate",
     "topic": "Specific Heat Capacity",
-    "question": "A 0.5 kg metal is heated from 20°C to 70°C by a 100 W heater in 250 seconds. Calculate the specific heat capacity of the metal, compare it to aluminium (c = 900 J/kg°C) and suggest an identity for the metal from the data.",
-    "mark_scheme": "E = Pt = 100 × 250 = 25 000 J (1); c = E/(mΔT) = 25 000/(0.5 × 50) (1) = 1000 J/kg°C (1); value close to iron (~450) or water (~4200) — likely not these (1); c = 1000 J/kg°C is close to glass/granite; student should identify a plausible metal (1) — accept any well-reasoned answer."
+    "question": "A 0.5 kg metal is heated from 20\u00b0C to 70\u00b0C by a 100 W heater in 250 seconds. Calculate the specific heat capacity of the metal, compare it to aluminium (c = 900 J/kg\u00b0C) and suggest an identity for the metal from the data.",
+    "mark_scheme": "E = Pt = 100 \u00d7 250 = 25 000 J (1); c = E/(m\u0394T) = 25 000/(0.5 \u00d7 50) (1) = 1000 J/kg\u00b0C (1); value close to iron (~450) or water (~4200) \u2014 likely not these (1); c = 1000 J/kg\u00b0C is close to glass/granite; student should identify a plausible metal (1) \u2014 accept any well-reasoned answer."
   },
   {
     "id": "P3-LA-029",
@@ -805,8 +805,8 @@
     "marks": 5,
     "command_word": "Explain",
     "topic": "Density",
-    "question": "Explain why icebergs float on water, why this is important for marine life, and calculate the fraction of an iceberg submerged (density of ice = 917 kg/m³, density of water = 1000 kg/m³).",
-    "mark_scheme": "Ice less dense than water (917 < 1000 kg/m³) so it floats (1); fraction submerged = density of ice/density of water = 917/1000 = 0.917 (1); 91.7% submerged, only about 8.3% visible above water (1); ice layer insulates water below — allows marine life to survive in cold winters (1); if ice were denser than water, oceans would freeze from the bottom up destroying ecosystems (1)."
+    "question": "Explain why icebergs float on water, why this is important for marine life, and calculate the fraction of an iceberg submerged (density of ice = 917 kg/m\u00b3, density of water = 1000 kg/m\u00b3).",
+    "mark_scheme": "Ice less dense than water (917 < 1000 kg/m\u00b3) so it floats (1); fraction submerged = density of ice/density of water = 917/1000 = 0.917 (1); 91.7% submerged, only about 8.3% visible above water (1); ice layer insulates water below \u2014 allows marine life to survive in cold winters (1); if ice were denser than water, oceans would freeze from the bottom up destroying ecosystems (1)."
   },
   {
     "id": "P3-LA-030",
@@ -815,7 +815,7 @@
     "command_word": "Evaluate",
     "topic": "Specific Heat Capacity",
     "question": "Evaluate the method of using a calorimeter to determine the specific heat capacity of a metal. Include a description of the method, the sources of error and how results could be improved.",
-    "mark_scheme": "Heat known mass of metal in boiling water — record temperature (1); transfer to insulated calorimeter containing known mass of water — record water temperature before and after (1); use E_gained_by_water = mcΔT to find energy transferred (1); assume energy lost by metal = energy gained by water; use to calculate metal's SHC (1); error: heat lost to surroundings during transfer (1); error: incomplete thermal equilibrium — some energy stays in calorimeter (1); improvement: insulate calorimeter better / correct for heat capacity of calorimeter (1) — any six."
+    "mark_scheme": "Heat known mass of metal in boiling water \u2014 record temperature (1); transfer to insulated calorimeter containing known mass of water \u2014 record water temperature before and after (1); use E_gained_by_water = mc\u0394T to find energy transferred (1); assume energy lost by metal = energy gained by water; use to calculate metal's SHC (1); error: heat lost to surroundings during transfer (1); error: incomplete thermal equilibrium \u2014 some energy stays in calorimeter (1); improvement: insulate calorimeter better / correct for heat capacity of calorimeter (1) \u2014 any six."
   },
   {
     "id": "P3-LA-031",
@@ -824,7 +824,7 @@
     "command_word": "Explain",
     "topic": "Gas Pressure",
     "question": "Explain in detail what happens to a gas when it is compressed rapidly, such as in a bicycle pump. Include reference to work done, temperature change, particle behaviour and pressure. Predict whether the compression is isothermal or adiabatic in practice.",
-    "mark_scheme": "Work done on gas by piston (1); kinetic energy of gas particles increases (1); temperature of gas rises (1); higher temperature particles collide more frequently and with greater force (1); pressure increases both because of compression and temperature rise (1); in practice compression is adiabatic (not isothermal) — happens too quickly for heat to escape (1)."
+    "mark_scheme": "Work done on gas by piston (1); kinetic energy of gas particles increases (1); temperature of gas rises (1); higher temperature particles collide more frequently and with greater force (1); pressure increases both because of compression and temperature rise (1); in practice compression is adiabatic (not isothermal) \u2014 happens too quickly for heat to escape (1)."
   },
   {
     "id": "P3-LA-032",
@@ -833,7 +833,7 @@
     "command_word": "Evaluate",
     "topic": "Changes of State",
     "question": "Evaluate the use of water as a coolant in industrial processes. Consider its thermal properties, including specific heat capacity, latent heat of vaporisation, and compare it with oil as an alternative coolant.",
-    "mark_scheme": "Water: high specific heat capacity (4200 J/kg°C) — can absorb large amounts of energy per kg (1); high latent heat of vaporisation (2.26 MJ/kg) — effective when evaporation allowed (1); cheap and widely available (1); disadvantage: corrodes metals, conducts electricity — safety issue in some applications (1); oil: lower specific heat capacity (~2000 J/kg°C) — less effective per kg (1); does not corrode metals / electrical insulator (1); used where water unsuitable e.g. transformer cooling (1) — any six."
+    "mark_scheme": "Water: high specific heat capacity (4200 J/kg\u00b0C) \u2014 can absorb large amounts of energy per kg (1); high latent heat of vaporisation (2.26 MJ/kg) \u2014 effective when evaporation allowed (1); cheap and widely available (1); disadvantage: corrodes metals, conducts electricity \u2014 safety issue in some applications (1); oil: lower specific heat capacity (~2000 J/kg\u00b0C) \u2014 less effective per kg (1); does not corrode metals / electrical insulator (1); used where water unsuitable e.g. transformer cooling (1) \u2014 any six."
   },
   {
     "id": "P3-LA-033",
@@ -842,7 +842,7 @@
     "command_word": "Explain",
     "topic": "Density",
     "question": "Explain how density can be used to identify unknown materials. Describe the method for measuring density of (a) a regular solid, (b) an irregular solid, and (c) a liquid. Give one source of error for each.",
-    "mark_scheme": "(a) regular solid: measure dimensions with ruler, calculate volume; measure mass with balance; ρ = m/V (1); error: ruler measurement uncertainty in calculating volume (1); (b) irregular solid: measure mass; use water displacement to find volume (1); error: air bubbles trapped on surface giving wrong volume (1); (c) liquid: measure mass of empty container, add liquid of known volume, find mass of liquid; ρ = m/V (1); error: liquid left on sides of container when pouring (1)."
+    "mark_scheme": "(a) regular solid: measure dimensions with ruler, calculate volume; measure mass with balance; \u03c1 = m/V (1); error: ruler measurement uncertainty in calculating volume (1); (b) irregular solid: measure mass; use water displacement to find volume (1); error: air bubbles trapped on surface giving wrong volume (1); (c) liquid: measure mass of empty container, add liquid of known volume, find mass of liquid; \u03c1 = m/V (1); error: liquid left on sides of container when pouring (1)."
   },
   {
     "id": "P3-LA-034",
@@ -851,7 +851,7 @@
     "command_word": "Explain",
     "topic": "States of Matter",
     "question": "Explain the particle model and how it accounts for the properties of each state of matter. Include reference to particle spacing, kinetic energy, forces between particles and compressibility.",
-    "mark_scheme": "Solid: particles closely packed in regular arrangement, strong forces between particles (1); low kinetic energy — only vibration, cannot move past each other — fixed shape and volume (1); Liquid: similar spacing to solid, weaker forces — particles slide past each other (1); takes shape of container but has fixed volume — not easily compressed (1); Gas: particles far apart, negligible forces (1); high kinetic energy, move freely and rapidly — fills container, easily compressed (1)."
+    "mark_scheme": "Solid: particles closely packed in regular arrangement, strong forces between particles (1); low kinetic energy \u2014 only vibration, cannot move past each other \u2014 fixed shape and volume (1); Liquid: similar spacing to solid, weaker forces \u2014 particles slide past each other (1); takes shape of container but has fixed volume \u2014 not easily compressed (1); Gas: particles far apart, negligible forces (1); high kinetic energy, move freely and rapidly \u2014 fills container, easily compressed (1)."
   },
   {
     "id": "P3-LA-035",
@@ -860,7 +860,7 @@
     "command_word": "Evaluate",
     "topic": "Gas Pressure",
     "question": "Evaluate the risks and benefits of using pressurised gas in aerosol cans. Explain the physics of how they work and what safety precautions are needed.",
-    "mark_scheme": "Aerosol contains liquid propellant under high pressure (1); pressure greater than atmospheric so gas pushes liquid out when valve opened (1); if can is heated, gas pressure increases (P ∝ T at constant volume) (1); if pressure exceeds can's strength, can explodes — hazard (1); benefit: convenient delivery of product in fine spray (1); safety: do not store near heat sources — temperature increases pressure (1); do not puncture — sudden release of high pressure can cause injury (1) — any six."
+    "mark_scheme": "Aerosol contains liquid propellant under high pressure (1); pressure greater than atmospheric so gas pushes liquid out when valve opened (1); if can is heated, gas pressure increases (P \u221d T at constant volume) (1); if pressure exceeds can's strength, can explodes \u2014 hazard (1); benefit: convenient delivery of product in fine spray (1); safety: do not store near heat sources \u2014 temperature increases pressure (1); do not puncture \u2014 sudden release of high pressure can cause injury (1) \u2014 any six."
   },
   {
     "id": "P3-LA-036",
@@ -869,7 +869,7 @@
     "command_word": "Explain",
     "topic": "Changes of State",
     "question": "Explain, using the particle model and energy concepts, how freeze-drying food works. Include changes of state, pressure, latent heat and why this is better than conventional drying for preserving food quality.",
-    "mark_scheme": "Food frozen — water turns to ice (1); pressure reduced to below triple point so ice sublimes directly to water vapour without melting (1); sublimation requires latent heat — absorbed from surroundings keeping food cold (1); water vapour removed by vacuum pump (1); low temperature prevents degradation of vitamins/flavour (1); conventional drying uses heat — damages nutrients and changes texture (1)."
+    "mark_scheme": "Food frozen \u2014 water turns to ice (1); pressure reduced to below triple point so ice sublimes directly to water vapour without melting (1); sublimation requires latent heat \u2014 absorbed from surroundings keeping food cold (1); water vapour removed by vacuum pump (1); low temperature prevents degradation of vitamins/flavour (1); conventional drying uses heat \u2014 damages nutrients and changes texture (1)."
   },
   {
     "id": "P3-LA-037",
@@ -878,7 +878,7 @@
     "command_word": "Evaluate",
     "topic": "Density",
     "question": "Evaluate the design of a hot air balloon. Explain the physics of why it rises, including reference to density, buoyancy and the gas laws. Discuss the factors a pilot must control to maintain altitude.",
-    "mark_scheme": "Heating air in envelope increases temperature — particles move faster and some escape (1); remaining air has same volume but lower mass — density decreases (1); buoyancy (upthrust) = weight of air displaced; if envelope density < surrounding air density, balloon rises (1); pilot increases burner to heat air, increasing temperature further reducing density (1); to descend: allow air to cool or open vent — density increases (1); gas law: at constant pressure, volume ∝ temperature — envelope expands as heated (1)."
+    "mark_scheme": "Heating air in envelope increases temperature \u2014 particles move faster and some escape (1); remaining air has same volume but lower mass \u2014 density decreases (1); buoyancy (upthrust) = weight of air displaced; if envelope density < surrounding air density, balloon rises (1); pilot increases burner to heat air, increasing temperature further reducing density (1); to descend: allow air to cool or open vent \u2014 density increases (1); gas law: at constant pressure, volume \u221d temperature \u2014 envelope expands as heated (1)."
   },
   {
     "id": "P3-SA-013",
@@ -887,14 +887,14 @@
     "command_word": "State",
     "topic": "Density",
     "question": "State the equation for density and give the SI unit of density.",
-    "mark_scheme": "Density = mass ÷ volume / ρ = m/V (1); unit: kg/m³ (1)."
+    "mark_scheme": "Density = mass \u00f7 volume / \u03c1 = m/V (1); unit: kg/m\u00b3 (1)."
   },
   {
     "id": "P3-SA-014",
     "type": "written",
     "marks": 2,
     "command_word": "Give",
-    "topic": "States of matter",
+    "topic": "States of Matter",
     "question": "Give two differences between the arrangement of particles in a solid and a gas.",
     "mark_scheme": "Any two: solids have closely packed particles; gases have particles far apart (1); solids have particles in a regular arrangement; gas particles are randomly distributed (1); solids have particles that only vibrate; gas particles move rapidly and randomly in all directions (1)."
   },
@@ -903,7 +903,7 @@
     "type": "written",
     "marks": 2,
     "command_word": "Name",
-    "topic": "Internal energy",
+    "topic": "Specific Heat Capacity",
     "question": "Name the two types of energy that make up the internal energy of a substance.",
     "mark_scheme": "Kinetic energy (energy due to particle motion) (1); potential energy (energy due to forces between particles) (1)."
   },
@@ -912,7 +912,7 @@
     "type": "written",
     "marks": 2,
     "command_word": "State",
-    "topic": "Latent heat",
+    "topic": "Changes of State",
     "question": "State what is meant by specific latent heat of fusion.",
     "mark_scheme": "The energy needed to change the state of 1 kg of a substance from solid to liquid (or liquid to solid) (1); without changing its temperature (1)."
   },
@@ -923,32 +923,32 @@
     "command_word": "Describe",
     "topic": "Density",
     "question": "Describe how you would measure the density of a small, irregularly shaped stone.",
-    "mark_scheme": "Measure the mass of the stone using a balance (1); measure the volume by water displacement — submerge in a measuring cylinder and read the volume of water displaced; calculate ρ = m/V (1)."
+    "mark_scheme": "Measure the mass of the stone using a balance (1); measure the volume by water displacement \u2014 submerge in a measuring cylinder and read the volume of water displaced; calculate \u03c1 = m/V (1)."
   },
   {
     "id": "P3-SA-018",
     "type": "written",
     "marks": 2,
     "command_word": "Give",
-    "topic": "Specific heat capacity",
+    "topic": "Specific Heat Capacity",
     "question": "Give the equation for calculating the energy needed to heat a substance and state what each variable represents.",
-    "mark_scheme": "E = mcΔT (1); E = energy in J, m = mass in kg, c = specific heat capacity in J/kg°C, ΔT = temperature change in °C (1)."
+    "mark_scheme": "E = mc\u0394T (1); E = energy in J, m = mass in kg, c = specific heat capacity in J/kg\u00b0C, \u0394T = temperature change in \u00b0C (1)."
   },
   {
     "id": "P3-SA-019",
     "type": "written",
     "marks": 2,
     "command_word": "State",
-    "topic": "States of matter",
+    "topic": "States of Matter",
     "question": "State what happens to the temperature of water as it is heated from solid ice to boiling water, including any periods where temperature does not change.",
-    "mark_scheme": "Temperature rises as ice is heated (1); temperature stays constant at 0°C while ice melts; temperature rises again through 0°C to 100°C; stays constant at 100°C while water boils (1)."
+    "mark_scheme": "Temperature rises as ice is heated (1); temperature stays constant at 0\u00b0C while ice melts; temperature rises again through 0\u00b0C to 100\u00b0C; stays constant at 100\u00b0C while water boils (1)."
   },
   {
     "id": "P3-SA-020",
     "type": "written",
     "marks": 2,
     "command_word": "Give",
-    "topic": "Internal energy",
+    "topic": "Specific Heat Capacity",
     "question": "Give two ways in which the internal energy of a substance can be increased.",
     "mark_scheme": "Any two: heating the substance (1); doing work on the substance, e.g. compressing a gas (1); exothermic chemical reactions release energy increasing internal energy (1)."
   },
@@ -957,18 +957,18 @@
     "type": "written",
     "marks": 2,
     "command_word": "Describe",
-    "topic": "Latent heat",
+    "topic": "Changes of State",
     "question": "Describe what happens to the energy supplied to a substance and to its particles during melting.",
-    "mark_scheme": "Energy supplied is used to break bonds between particles rather than to increase their kinetic energy (1); as a result the temperature does not rise — energy is stored as increased potential energy of the particles (1)."
+    "mark_scheme": "Energy supplied is used to break bonds between particles rather than to increase their kinetic energy (1); as a result the temperature does not rise \u2014 energy is stored as increased potential energy of the particles (1)."
   },
   {
     "id": "P3-SA-022",
     "type": "written",
     "marks": 2,
     "command_word": "Name",
-    "topic": "States of matter",
+    "topic": "States of Matter",
     "question": "Name the change of state that occurs when a gas is cooled and turns directly into a solid, and give an example.",
-    "mark_scheme": "Deposition (or reverse sublimation) (1); example: frost forming on a cold surface / carbon dioxide dry ice forming (1). Award credit for sublimation if student answers the reverse — solid to gas."
+    "mark_scheme": "Deposition (or reverse sublimation) (1); example: frost forming on a cold surface / carbon dioxide dry ice forming (1). Award credit for sublimation if student answers the reverse \u2014 solid to gas."
   },
   {
     "id": "P3-SA-023",
@@ -984,45 +984,45 @@
     "type": "written",
     "marks": 3,
     "command_word": "Describe",
-    "topic": "States of matter",
+    "topic": "States of Matter",
     "question": "Describe the particle arrangement, movement and spacing in each of the three states of matter.",
-    "mark_scheme": "Solid: closely packed, regular arrangement, particles only vibrate about fixed positions (1); liquid: particles close together but no fixed positions — can move past each other, slightly more disordered than solid (1); gas: particles far apart, moving rapidly and randomly in all directions, no fixed positions (1)."
+    "mark_scheme": "Solid: closely packed, regular arrangement, particles only vibrate about fixed positions (1); liquid: particles close together but no fixed positions \u2014 can move past each other, slightly more disordered than solid (1); gas: particles far apart, moving rapidly and randomly in all directions, no fixed positions (1)."
   },
   {
     "id": "P3-SA-025",
     "type": "written",
     "marks": 3,
     "command_word": "Explain",
-    "topic": "Internal energy",
+    "topic": "Specific Heat Capacity",
     "question": "Explain what happens to the internal energy of a substance when it is heated as a solid, and then when it starts to melt.",
-    "mark_scheme": "When heated as a solid, the kinetic energy of the particles increases — particles vibrate faster and internal energy increases (1); temperature rises as kinetic energy increases (1); during melting, energy supplied increases the potential energy of particles as bonds begin to break — kinetic energy does not increase so temperature stays constant while melting occurs (1)."
+    "mark_scheme": "When heated as a solid, the kinetic energy of the particles increases \u2014 particles vibrate faster and internal energy increases (1); temperature rises as kinetic energy increases (1); during melting, energy supplied increases the potential energy of particles as bonds begin to break \u2014 kinetic energy does not increase so temperature stays constant while melting occurs (1)."
   },
   {
     "id": "P3-SA-026",
     "type": "written",
     "marks": 3,
     "command_word": "Explain",
-    "topic": "Specific heat capacity",
+    "topic": "Specific Heat Capacity",
     "question": "Explain why water is used as a coolant in car engines. Include reference to its specific heat capacity.",
-    "mark_scheme": "Water has a high specific heat capacity (4200 J/kg°C) (1); this means it can absorb large amounts of thermal energy for a small rise in temperature (1); water is effective at carrying heat away from the engine without boiling, preventing overheating (1)."
+    "mark_scheme": "Water has a high specific heat capacity (4200 J/kg\u00b0C) (1); this means it can absorb large amounts of thermal energy for a small rise in temperature (1); water is effective at carrying heat away from the engine without boiling, preventing overheating (1)."
   },
   {
     "id": "P3-SA-027",
     "type": "written",
     "marks": 3,
     "command_word": "Describe",
-    "topic": "Latent heat",
+    "topic": "Changes of State",
     "question": "Describe an experiment to measure the specific latent heat of fusion of ice.",
-    "mark_scheme": "Set up a funnel with ice and a heater — measure the mass of water collected in a known time with the heater on (1); repeat with heater off (same time) to account for melting from room temperature alone — subtract to find mass melted by heater alone (1); energy supplied by heater = P × t; L = E/m (1)."
+    "mark_scheme": "Set up a funnel with ice and a heater \u2014 measure the mass of water collected in a known time with the heater on (1); repeat with heater off (same time) to account for melting from room temperature alone \u2014 subtract to find mass melted by heater alone (1); energy supplied by heater = P \u00d7 t; L = E/m (1)."
   },
   {
     "id": "P3-SA-028",
     "type": "written",
     "marks": 3,
     "command_word": "Compare",
-    "topic": "States of matter",
+    "topic": "States of Matter",
     "question": "Compare the compressibility of solids, liquids and gases. Explain the difference in terms of particle spacing.",
-    "mark_scheme": "Gases are highly compressible — large spaces between particles that can be reduced (1); liquids are almost incompressible — particles are already close together with little space between them (1); solids are virtually incompressible — particles are tightly packed in fixed positions; the strong forces between particles resist compression (1)."
+    "mark_scheme": "Gases are highly compressible \u2014 large spaces between particles that can be reduced (1); liquids are almost incompressible \u2014 particles are already close together with little space between them (1); solids are virtually incompressible \u2014 particles are tightly packed in fixed positions; the strong forces between particles resist compression (1)."
   },
   {
     "id": "P3-SA-029",
@@ -1031,41 +1031,41 @@
     "command_word": "Explain",
     "topic": "Density",
     "question": "Explain why ice floats on water despite both being made of water molecules.",
-    "mark_scheme": "Ice is less dense than liquid water (ice ≈ 917 kg/m³; water ≈ 1000 kg/m³) (1); when water freezes, the molecules form a hexagonal crystal structure that is less tightly packed than liquid water (1); because ice is less dense than water, the upthrust on it exceeds its weight, so it floats (1)."
+    "mark_scheme": "Ice is less dense than liquid water (ice \u2248 917 kg/m\u00b3; water \u2248 1000 kg/m\u00b3) (1); when water freezes, the molecules form a hexagonal crystal structure that is less tightly packed than liquid water (1); because ice is less dense than water, the upthrust on it exceeds its weight, so it floats (1)."
   },
   {
     "id": "P3-SA-030",
     "type": "written",
     "marks": 3,
     "command_word": "Explain",
-    "topic": "Specific heat capacity",
+    "topic": "Specific Heat Capacity",
     "question": "Explain why coastal areas have a more moderate climate than inland areas. Use the concept of specific heat capacity in your answer.",
-    "mark_scheme": "Water has a much higher specific heat capacity than land (4200 J/kg°C vs ~800 J/kg°C for soil) (1); the sea absorbs large amounts of energy in summer with only a small temperature rise, and releases this energy slowly in winter (1); coastal areas are kept cooler in summer and warmer in winter by proximity to the sea — smaller temperature range than inland areas (1)."
+    "mark_scheme": "Water has a much higher specific heat capacity than land (4200 J/kg\u00b0C vs ~800 J/kg\u00b0C for soil) (1); the sea absorbs large amounts of energy in summer with only a small temperature rise, and releases this energy slowly in winter (1); coastal areas are kept cooler in summer and warmer in winter by proximity to the sea \u2014 smaller temperature range than inland areas (1)."
   },
   {
     "id": "P3-SA-031",
     "type": "written",
     "marks": 3,
     "command_word": "Describe",
-    "topic": "Latent heat",
-    "question": "Describe the energy changes that occur when steam at 100°C condenses to liquid water.",
-    "mark_scheme": "As steam condenses, energy is released — the latent heat of vaporisation is released to the surroundings (1); the potential energy of the particles decreases as bonds (intermolecular forces) form between molecules (1); during condensation, the temperature stays constant at 100°C — kinetic energy of the particles does not change until all the steam has condensed (1)."
+    "topic": "Changes of State",
+    "question": "Describe the energy changes that occur when steam at 100\u00b0C condenses to liquid water.",
+    "mark_scheme": "As steam condenses, energy is released \u2014 the latent heat of vaporisation is released to the surroundings (1); the potential energy of the particles decreases as bonds (intermolecular forces) form between molecules (1); during condensation, the temperature stays constant at 100\u00b0C \u2014 kinetic energy of the particles does not change until all the steam has condensed (1)."
   },
   {
     "id": "P3-SA-032",
     "type": "written",
     "marks": 3,
     "command_word": "Compare",
-    "topic": "Specific heat capacity",
-    "question": "Compare the time taken to heat 1 kg of water and 1 kg of iron by 10°C using the same heater, given that c(water) = 4200 J/kg°C and c(iron) = 450 J/kg°C.",
-    "mark_scheme": "Energy to heat water = 1 × 4200 × 10 = 42 000 J (1); energy to heat iron = 1 × 450 × 10 = 4500 J (1); water requires approximately 9.3 times more energy — it takes much longer to heat water than iron by the same temperature rise using the same heater (1)."
+    "topic": "Specific Heat Capacity",
+    "question": "Compare the time taken to heat 1 kg of water and 1 kg of iron by 10\u00b0C using the same heater, given that c(water) = 4200 J/kg\u00b0C and c(iron) = 450 J/kg\u00b0C.",
+    "mark_scheme": "Energy to heat water = 1 \u00d7 4200 \u00d7 10 = 42 000 J (1); energy to heat iron = 1 \u00d7 450 \u00d7 10 = 4500 J (1); water requires approximately 9.3 times more energy \u2014 it takes much longer to heat water than iron by the same temperature rise using the same heater (1)."
   },
   {
     "id": "P3-SA-033",
     "type": "written",
     "marks": 3,
     "command_word": "Explain",
-    "topic": "Internal energy",
+    "topic": "Specific Heat Capacity",
     "question": "Explain the difference between temperature and internal energy of a substance.",
     "mark_scheme": "Temperature is a measure of the average kinetic energy of the particles in a substance (1); internal energy is the total kinetic and potential energy of all the particles in a substance (1); a large cold object can have more internal energy than a small hot object, because it has more particles even if each has lower average kinetic energy (1)."
   },
@@ -1076,6 +1076,6 @@
     "command_word": "Describe",
     "topic": "Density",
     "question": "Describe how you would measure the density of a liquid in the laboratory. Include all measurements needed.",
-    "mark_scheme": "Measure the mass of an empty measuring cylinder using a balance (1); pour a measured volume of liquid into the cylinder and record the volume; measure the total mass again (1); mass of liquid = total mass − mass of empty cylinder; calculate density = mass/volume with correct units (kg/m³ or g/cm³) (1)."
+    "mark_scheme": "Measure the mass of an empty measuring cylinder using a balance (1); pour a measured volume of liquid into the cylinder and record the volume; measure the total mass again (1); mass of liquid = total mass \u2212 mass of empty cylinder; calculate density = mass/volume with correct units (kg/m\u00b3 or g/cm\u00b3) (1)."
   }
 ]

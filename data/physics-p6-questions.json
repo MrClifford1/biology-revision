@@ -90,12 +90,12 @@
     "topic": "EM Spectrum",
     "question": "What is the speed of all electromagnetic waves in a vacuum?",
     "options": [
-      "3 × 10⁶ m/s",
-      "3 × 10⁸ m/s",
-      "3 × 10¹⁰ m/s",
-      "3 × 10⁴ m/s"
+      "3 \u00d7 10\u2076 m/s",
+      "3 \u00d7 10\u2078 m/s",
+      "3 \u00d7 10\u00b9\u2070 m/s",
+      "3 \u00d7 10\u2074 m/s"
     ],
-    "correct": "3 × 10⁸ m/s"
+    "correct": "3 \u00d7 10\u2078 m/s"
   },
   {
     "id": "P6-MC-008",
@@ -121,7 +121,7 @@
       "Angle of incidence = angle of refraction",
       "Angle of incidence = angle of reflection",
       "Angle of refraction = angle of reflection",
-      "Angle of incidence = 90°"
+      "Angle of incidence = 90\u00b0"
     ],
     "correct": "Angle of incidence = angle of reflection"
   },
@@ -214,7 +214,7 @@
     "type": "fill_in_blank",
     "marks": 1,
     "topic": "Wave Properties",
-    "question": "Wave speed = frequency × __________",
+    "question": "Wave speed = frequency \u00d7 __________",
     "correct": "wavelength",
     "acceptable": [
       "wavelength"
@@ -415,11 +415,11 @@
     "pairs": [
       {
         "term": "Specular reflection",
-        "definition": "Reflection from a smooth surface — parallel rays stay parallel"
+        "definition": "Reflection from a smooth surface \u2014 parallel rays stay parallel"
       },
       {
         "term": "Diffuse reflection",
-        "definition": "Reflection from a rough surface — rays scattered in many directions"
+        "definition": "Reflection from a rough surface \u2014 rays scattered in many directions"
       },
       {
         "term": "Total internal reflection",
@@ -443,7 +443,7 @@
     "command_word": "Calculate",
     "topic": "Wave Properties",
     "question": "A sound wave has a frequency of 340 Hz and a wavelength of 1 m. Calculate the wave speed.",
-    "mark_scheme": "Wave speed = frequency × wavelength (1); v = 340 × 1 = 340 m/s (1)."
+    "mark_scheme": "Wave speed = frequency \u00d7 wavelength (1); v = 340 \u00d7 1 = 340 m/s (1)."
   },
   {
     "id": "P6-SA-003",
@@ -452,7 +452,7 @@
     "command_word": "Describe",
     "topic": "EM Spectrum",
     "question": "State two properties that all electromagnetic waves share.",
-    "mark_scheme": "Any two from: all travel at the same speed in a vacuum (3 × 10⁸ m/s) (1); all are transverse waves (1); all can travel through a vacuum (1); all transfer energy (1)."
+    "mark_scheme": "Any two from: all travel at the same speed in a vacuum (3 \u00d7 10\u2078 m/s) (1); all are transverse waves (1); all can travel through a vacuum (1); all transfer energy (1)."
   },
   {
     "id": "P6-SA-004",
@@ -497,7 +497,7 @@
     "command_word": "Describe",
     "topic": "Black Body Radiation",
     "question": "Describe the properties of a perfect black body.",
-    "mark_scheme": "Absorbs all electromagnetic radiation that falls on it — reflects none (1); is also the best possible emitter of radiation (1)."
+    "mark_scheme": "Absorbs all electromagnetic radiation that falls on it \u2014 reflects none (1); is also the best possible emitter of radiation (1)."
   },
   {
     "id": "P6-SA-009",
@@ -524,7 +524,7 @@
     "command_word": "Calculate",
     "topic": "Wave Properties",
     "question": "A water wave has a wave speed of 6 m/s and a wavelength of 0.03 m. Calculate its frequency.",
-    "mark_scheme": "v = fλ, so f = v ÷ λ (1); f = 6 ÷ 0.03 (1); f = 200 Hz (1)."
+    "mark_scheme": "v = f\u03bb, so f = v \u00f7 \u03bb (1); f = 6 \u00f7 0.03 (1); f = 200 Hz (1)."
   },
   {
     "id": "P6-SA-012",
@@ -542,7 +542,7 @@
     "command_word": "Explain",
     "topic": "Wave Properties",
     "question": "Explain the difference between transverse and longitudinal waves, using sound and light as examples. Include a description of compressions and rarefactions in your answer.",
-    "mark_scheme": "Transverse: oscillations perpendicular to direction of energy transfer — light is an example (1); longitudinal: oscillations parallel to direction of energy transfer — sound is an example (1); compressions: regions where particles are pushed closer together (1); rarefactions: regions where particles are spread further apart (1)."
+    "mark_scheme": "Transverse: oscillations perpendicular to direction of energy transfer \u2014 light is an example (1); longitudinal: oscillations parallel to direction of energy transfer \u2014 sound is an example (1); compressions: regions where particles are pushed closer together (1); rarefactions: regions where particles are spread further apart (1)."
   },
   {
     "id": "P6-LA-002",
@@ -551,7 +551,7 @@
     "command_word": "Describe",
     "topic": "EM Spectrum",
     "question": "Describe the electromagnetic spectrum. Include the order of waves, their relative wavelengths and frequencies, and give one use for each of three different wave types.",
-    "mark_scheme": "Correct order: radio, microwave, infrared, visible, ultraviolet, X-ray, gamma (1); frequency increases / wavelength decreases from radio to gamma (1); any three waves with correct uses, e.g. radio — broadcasting, microwaves — cooking/communication, infrared — remote controls, UV — sterilisation, X-rays — medical imaging, gamma — cancer treatment (1 mark per correct use, up to 2 marks)."
+    "mark_scheme": "Correct order: radio, microwave, infrared, visible, ultraviolet, X-ray, gamma (1); frequency increases / wavelength decreases from radio to gamma (1); any three waves with correct uses, e.g. radio \u2014 broadcasting, microwaves \u2014 cooking/communication, infrared \u2014 remote controls, UV \u2014 sterilisation, X-rays \u2014 medical imaging, gamma \u2014 cancer treatment (1 mark per correct use, up to 2 marks)."
   },
   {
     "id": "P6-LA-003",
@@ -560,7 +560,7 @@
     "command_word": "Explain",
     "topic": "Light",
     "question": "Explain what happens to light when it travels from air into a glass block and back out again. Include refraction and the conditions for total internal reflection in your answer.",
-    "mark_scheme": "Light slows down entering glass and bends towards the normal (refraction) (1); light speeds up leaving glass and bends away from the normal (1); if the angle of incidence inside the glass exceeds the critical angle (1); total internal reflection occurs — all light reflects back inside the glass (1); application e.g. optical fibres use total internal reflection to carry light signals (1)."
+    "mark_scheme": "Light slows down entering glass and bends towards the normal (refraction) (1); light speeds up leaving glass and bends away from the normal (1); if the angle of incidence inside the glass exceeds the critical angle (1); total internal reflection occurs \u2014 all light reflects back inside the glass (1); application e.g. optical fibres use total internal reflection to carry light signals (1)."
   },
   {
     "id": "P6-LA-004",
@@ -569,7 +569,7 @@
     "command_word": "Evaluate",
     "topic": "EM Spectrum",
     "question": "Evaluate the risks and benefits of using electromagnetic radiation in medicine. Refer to at least two different types of EM radiation in your answer.",
-    "mark_scheme": "X-rays: benefit — image bones and dense tissue for diagnosis (1); risk — ionising radiation can damage cells/cause cancer (1); gamma rays: benefit — used in radiotherapy to kill cancer cells / sterilise medical equipment (1); risk — can damage healthy tissue / cause mutations (1); infrared/UV may also be credited with appropriate use and risk; well-reasoned conclusion weighing benefits against risks (1)."
+    "mark_scheme": "X-rays: benefit \u2014 image bones and dense tissue for diagnosis (1); risk \u2014 ionising radiation can damage cells/cause cancer (1); gamma rays: benefit \u2014 used in radiotherapy to kill cancer cells / sterilise medical equipment (1); risk \u2014 can damage healthy tissue / cause mutations (1); infrared/UV may also be credited with appropriate use and risk; well-reasoned conclusion weighing benefits against risks (1)."
   },
   {
     "id": "P6-LA-005",
@@ -578,7 +578,7 @@
     "command_word": "Explain",
     "topic": "Black Body Radiation",
     "question": "Explain what is meant by a perfect black body and how black body radiation relates to the temperature of stars. Include how scientists can use this information.",
-    "mark_scheme": "Perfect black body absorbs all radiation — reflects none — and is the best possible emitter (1); all objects emit radiation; hotter objects emit more radiation and at shorter wavelengths (1); stars behave approximately as black bodies (1); hotter stars emit peak radiation at shorter wavelengths — appear blue/white; cooler stars appear red/orange (1); scientists can determine the temperature of a star from the peak wavelength of its emitted radiation (1)."
+    "mark_scheme": "Perfect black body absorbs all radiation \u2014 reflects none \u2014 and is the best possible emitter (1); all objects emit radiation; hotter objects emit more radiation and at shorter wavelengths (1); stars behave approximately as black bodies (1); hotter stars emit peak radiation at shorter wavelengths \u2014 appear blue/white; cooler stars appear red/orange (1); scientists can determine the temperature of a star from the peak wavelength of its emitted radiation (1)."
   },
   {
     "id": "P6-LA-006",
@@ -587,7 +587,7 @@
     "command_word": "Evaluate",
     "topic": "Sound",
     "question": "Evaluate the use of ultrasound in medicine compared to X-rays. In your answer, explain how ultrasound works, the advantages and disadvantages of each method, and suggest when each would be most appropriate.",
-    "mark_scheme": "Ultrasound: high frequency sound waves (above 20,000 Hz) sent into the body (1); reflected at boundaries between tissues; time taken to return used to build an image (1); advantage of ultrasound: non-ionising — no risk of cell damage / safe for use in pregnancy (1); disadvantage: less clear images of bone/dense structures than X-rays (1); X-rays: better for imaging bones and dense tissue / faster to use (1); disadvantage: ionising radiation — repeated exposure increases cancer risk (1). Award mark for well-reasoned conclusion about appropriate use of each."
+    "mark_scheme": "Ultrasound: high frequency sound waves (above 20,000 Hz) sent into the body (1); reflected at boundaries between tissues; time taken to return used to build an image (1); advantage of ultrasound: non-ionising \u2014 no risk of cell damage / safe for use in pregnancy (1); disadvantage: less clear images of bone/dense structures than X-rays (1); X-rays: better for imaging bones and dense tissue / faster to use (1); disadvantage: ionising radiation \u2014 repeated exposure increases cancer risk (1). Award mark for well-reasoned conclusion about appropriate use of each."
   },
   {
     "id": "P6-LA-007",
@@ -596,7 +596,7 @@
     "command_word": "Evaluate",
     "topic": "EM Spectrum",
     "question": "A communications engineer is designing a system to transmit data over long distances. Evaluate the suitability of using radio waves, microwaves, and optical fibres (using visible light or infrared) for this purpose.",
-    "mark_scheme": "Radio waves: long wavelength, can diffract around obstacles and follow curvature of Earth — good for broadcasting over large areas (1); can be affected by interference / lower data capacity (1); microwaves: used for satellite communication — pass through atmosphere (1); require line of sight / can be absorbed by water/rain (1); optical fibres: use total internal reflection to carry light/infrared signals (1); very high data capacity / fast / not affected by electromagnetic interference — suitable for internet/phone cables (1). Award mark for justified conclusion recommending a method for a specific context."
+    "mark_scheme": "Radio waves: long wavelength, can diffract around obstacles and follow curvature of Earth \u2014 good for broadcasting over large areas (1); can be affected by interference / lower data capacity (1); microwaves: used for satellite communication \u2014 pass through atmosphere (1); require line of sight / can be absorbed by water/rain (1); optical fibres: use total internal reflection to carry light/infrared signals (1); very high data capacity / fast / not affected by electromagnetic interference \u2014 suitable for internet/phone cables (1). Award mark for justified conclusion recommending a method for a specific context."
   },
   {
     "id": "P6-LA-008",
@@ -604,8 +604,8 @@
     "marks": 4,
     "command_word": "Calculate",
     "topic": "Wave Properties",
-    "question": "A radio station broadcasts on a wavelength of 1500 m. The speed of radio waves is 3 × 10⁸ m/s. Calculate the frequency of the broadcast. Then calculate the wavelength of a wave with frequency 2.5 × 10⁹ Hz travelling at the same speed.",
-    "mark_scheme": "v = fλ, so f = v / λ = 3 × 10⁸ / 1500 (1); f = 2 × 10⁵ Hz (200 kHz) (1); λ = v / f = 3 × 10⁸ / 2.5 × 10⁹ (1); λ = 0.12 m (12 cm) (1)."
+    "question": "A radio station broadcasts on a wavelength of 1500 m. The speed of radio waves is 3 \u00d7 10\u2078 m/s. Calculate the frequency of the broadcast. Then calculate the wavelength of a wave with frequency 2.5 \u00d7 10\u2079 Hz travelling at the same speed.",
+    "mark_scheme": "v = f\u03bb, so f = v / \u03bb = 3 \u00d7 10\u2078 / 1500 (1); f = 2 \u00d7 10\u2075 Hz (200 kHz) (1); \u03bb = v / f = 3 \u00d7 10\u2078 / 2.5 \u00d7 10\u2079 (1); \u03bb = 0.12 m (12 cm) (1)."
   },
   {
     "id": "P6-LA-009",
@@ -613,8 +613,8 @@
     "marks": 4,
     "command_word": "Explain",
     "topic": "Reflection and Refraction",
-    "question": "Explain why refraction occurs when light passes from air into water. A ray hits the water surface at an angle of incidence of 40°. Describe qualitatively what happens to the ray and why the change in direction occurs.",
-    "mark_scheme": "Light travels slower in water than in air because water is optically denser (1); as light enters water, it slows down (1); the change in speed at the boundary causes the ray to change direction — bending towards the normal (1); the angle of refraction is less than the angle of incidence when going from less dense to more dense medium (1)."
+    "question": "Explain why refraction occurs when light passes from air into water. A ray hits the water surface at an angle of incidence of 40\u00b0. Describe qualitatively what happens to the ray and why the change in direction occurs.",
+    "mark_scheme": "Light travels slower in water than in air because water is optically denser (1); as light enters water, it slows down (1); the change in speed at the boundary causes the ray to change direction \u2014 bending towards the normal (1); the angle of refraction is less than the angle of incidence when going from less dense to more dense medium (1)."
   },
   {
     "id": "P6-LA-010",
@@ -623,7 +623,7 @@
     "command_word": "Describe",
     "topic": "Sound",
     "question": "Describe how ultrasound is used to measure the depth of a seabed. Include an explanation of how the depth is calculated from the data collected. An ultrasound pulse is sent down and returns after 0.06 s. The speed of sound in water is 1500 m/s. Calculate the depth.",
-    "mark_scheme": "An ultrasound pulse is transmitted downward through the water (1); the pulse reflects off the seabed and returns to the receiver (1); depth = (speed × time) / 2 — divide by 2 because sound travels down and back (1); depth = (1500 × 0.06) / 2 = 45 m (1)."
+    "mark_scheme": "An ultrasound pulse is transmitted downward through the water (1); the pulse reflects off the seabed and returns to the receiver (1); depth = (speed \u00d7 time) / 2 \u2014 divide by 2 because sound travels down and back (1); depth = (1500 \u00d7 0.06) / 2 = 45 m (1)."
   },
   {
     "id": "P6-LA-011",
@@ -632,7 +632,7 @@
     "command_word": "Explain",
     "topic": "EM Spectrum",
     "question": "Explain why gamma rays and X-rays are considered harmful but are still used in medicine. Include one specific medical use for each and the precautions taken to minimise risk.",
-    "mark_scheme": "Gamma rays and X-rays are ionising radiation — can remove electrons from atoms, damaging living cells and DNA (1); X-rays: used for imaging bones/dense tissue — patients wear lead aprons to shield non-target areas (1); gamma rays: used in radiotherapy to kill cancer cells / sterilising equipment — controlled doses directed precisely at tumours (1); precaution: medical staff leave the room or stand behind lead screens to minimise repeated exposure (1)."
+    "mark_scheme": "Gamma rays and X-rays are ionising radiation \u2014 can remove electrons from atoms, damaging living cells and DNA (1); X-rays: used for imaging bones/dense tissue \u2014 patients wear lead aprons to shield non-target areas (1); gamma rays: used in radiotherapy to kill cancer cells / sterilising equipment \u2014 controlled doses directed precisely at tumours (1); precaution: medical staff leave the room or stand behind lead screens to minimise repeated exposure (1)."
   },
   {
     "id": "P6-LA-012",
@@ -650,7 +650,7 @@
     "command_word": "Describe",
     "topic": "Reflection and Refraction",
     "question": "Describe an experiment to measure the refractive index of a glass block. State the measurements you would take, how you would process the data, and what the refractive index tells us about light in glass.",
-    "mark_scheme": "Shine a ray of light into the glass block at a measured angle of incidence; measure the angle of refraction inside the glass using a protractor (1); repeat for different angles of incidence and record corresponding angles of refraction (1); refractive index n = sin(angle of incidence) / sin(angle of refraction) — calculate for each pair and take a mean (1); refractive index > 1 shows light slows down in glass compared to air — the higher n, the slower light travels in the material (1)."
+    "mark_scheme": "Shine a ray of light into the glass block at a measured angle of incidence; measure the angle of refraction inside the glass using a protractor (1); repeat for different angles of incidence and record corresponding angles of refraction (1); refractive index n = sin(angle of incidence) / sin(angle of refraction) \u2014 calculate for each pair and take a mean (1); refractive index > 1 shows light slows down in glass compared to air \u2014 the higher n, the slower light travels in the material (1)."
   },
   {
     "id": "P6-LA-014",
@@ -659,7 +659,7 @@
     "command_word": "Calculate",
     "topic": "Wave Properties",
     "question": "A sound wave in air has a speed of 340 m/s and a frequency of 680 Hz. Calculate the wavelength. Then explain how the wavelength and frequency change if the same sound enters water, where the wave speed is 1360 m/s.",
-    "mark_scheme": "λ = v / f = 340 / 680 = 0.5 m (1); in water: speed is 4× greater (1360 / 340 = 4) (1); frequency does not change when a wave crosses a boundary (1); new wavelength = v / f = 1360 / 680 = 2 m (4× longer) (1)."
+    "mark_scheme": "\u03bb = v / f = 340 / 680 = 0.5 m (1); in water: speed is 4\u00d7 greater (1360 / 340 = 4) (1); frequency does not change when a wave crosses a boundary (1); new wavelength = v / f = 1360 / 680 = 2 m (4\u00d7 longer) (1)."
   },
   {
     "id": "P6-LA-015",
@@ -668,7 +668,7 @@
     "command_word": "Explain",
     "topic": "Sound",
     "question": "Explain why sound waves are longitudinal. Describe the pattern of compressions and rarefactions in a sound wave and explain how the amplitude and frequency of the wave relate to the loudness and pitch of the sound.",
-    "mark_scheme": "Sound waves are longitudinal because the particles vibrate parallel to the direction of energy transfer (1); compressions: regions where particles are pushed closer together (higher pressure) (1); rarefactions: regions where particles spread further apart (lower pressure) (1); amplitude relates to loudness — larger amplitude = louder sound; frequency relates to pitch — higher frequency = higher pitch (1)."
+    "mark_scheme": "Sound waves are longitudinal because the particles vibrate parallel to the direction of energy transfer (1); compressions: regions where particles are pushed closer together (higher pressure) (1); rarefactions: regions where particles spread further apart (lower pressure) (1); amplitude relates to loudness \u2014 larger amplitude = louder sound; frequency relates to pitch \u2014 higher frequency = higher pitch (1)."
   },
   {
     "id": "P6-LA-016",
@@ -677,7 +677,7 @@
     "command_word": "Describe",
     "topic": "EM Spectrum",
     "question": "Describe the properties and uses of infrared radiation. Explain how infrared cameras work and why infrared is used in thermal imaging rather than visible light.",
-    "mark_scheme": "Infrared radiation has a longer wavelength than visible light, just beyond the red end of the spectrum (1); all objects emit infrared radiation; hotter objects emit more infrared (1); infrared cameras detect the infrared emitted by warm objects and convert it to a visible image / false colour display (1); infrared is used for thermal imaging because hot objects emit infrared even in the dark — visible light cameras would not detect them without illumination (1)."
+    "mark_scheme": "Infrared radiation has a longer wavelength than visible light, just beyond the red end of the spectrum (1); all objects emit infrared radiation; hotter objects emit more infrared (1); infrared cameras detect the infrared emitted by warm objects and convert it to a visible image / false colour display (1); infrared is used for thermal imaging because hot objects emit infrared even in the dark \u2014 visible light cameras would not detect them without illumination (1)."
   },
   {
     "id": "P6-LA-017",
@@ -686,7 +686,7 @@
     "command_word": "Explain",
     "topic": "Reflection and Refraction",
     "question": "Explain total internal reflection. State the two conditions required, describe what happens to light at each stage as the angle of incidence increases to and beyond the critical angle, and give one practical application.",
-    "mark_scheme": "Total internal reflection (TIR) occurs when light travels from a denser to a less dense medium (1); and the angle of incidence is greater than or equal to the critical angle (1); as angle increases: refracted ray bends further from normal; at critical angle, refracted ray travels along the boundary (angle of refraction = 90°); beyond critical angle, all light is reflected back into the denser medium — TIR (1); application: optical fibres use TIR to carry light signals along a cable for communications or medical endoscopes (1)."
+    "mark_scheme": "Total internal reflection (TIR) occurs when light travels from a denser to a less dense medium (1); and the angle of incidence is greater than or equal to the critical angle (1); as angle increases: refracted ray bends further from normal; at critical angle, refracted ray travels along the boundary (angle of refraction = 90\u00b0); beyond critical angle, all light is reflected back into the denser medium \u2014 TIR (1); application: optical fibres use TIR to carry light signals along a cable for communications or medical endoscopes (1)."
   },
   {
     "id": "P6-LA-018",
@@ -695,7 +695,7 @@
     "command_word": "Calculate",
     "topic": "Wave Properties",
     "question": "A student measures a wave in a ripple tank. The distance between 5 successive crests is 8 cm. The wave completes 20 oscillations in 4 seconds. Calculate the frequency, wavelength, and wave speed.",
-    "mark_scheme": "Wavelength: 5 crests means 4 gaps; λ = 8 / 4 = 2 cm = 0.02 m (1); frequency = oscillations / time = 20 / 4 = 5 Hz (1); wave speed v = f × λ = 5 × 0.02 (1); v = 0.1 m/s (1)."
+    "mark_scheme": "Wavelength: 5 crests means 4 gaps; \u03bb = 8 / 4 = 2 cm = 0.02 m (1); frequency = oscillations / time = 20 / 4 = 5 Hz (1); wave speed v = f \u00d7 \u03bb = 5 \u00d7 0.02 (1); v = 0.1 m/s (1)."
   },
   {
     "id": "P6-LA-019",
@@ -704,7 +704,7 @@
     "command_word": "Explain",
     "topic": "EM Spectrum",
     "question": "Explain the properties of radio waves that make them suitable for broadcasting. Include their wavelength, ability to diffract, and compare them to microwaves for long-distance communication.",
-    "mark_scheme": "Radio waves have very long wavelengths (metres to kilometres) (1); long wavelength means they diffract significantly around obstacles such as hills and buildings (1); can also be reflected by the ionosphere — long-range transmission possible (1); microwaves have shorter wavelength, less diffraction, require line-of-sight — better for point-to-point satellite links but not broad broadcasting; radio waves better for broadcasting to large areas (1)."
+    "mark_scheme": "Radio waves have very long wavelengths (metres to kilometres) (1); long wavelength means they diffract significantly around obstacles such as hills and buildings (1); can also be reflected by the ionosphere \u2014 long-range transmission possible (1); microwaves have shorter wavelength, less diffraction, require line-of-sight \u2014 better for point-to-point satellite links but not broad broadcasting; radio waves better for broadcasting to large areas (1)."
   },
   {
     "id": "P6-LA-020",
@@ -713,7 +713,7 @@
     "command_word": "Describe",
     "topic": "Black Body Radiation",
     "question": "Describe how the Earth maintains a stable temperature by balancing absorbed radiation from the Sun and emitted radiation. Explain what would happen to the Earth's temperature if the amount of radiation absorbed increased.",
-    "mark_scheme": "The Earth absorbs short-wavelength radiation (visible/UV) from the Sun (1); the Earth also emits longer-wavelength infrared radiation into space (1); at a stable temperature, the power absorbed equals the power emitted (1); if absorbed radiation increases (e.g. from increased solar output or reduced reflection), more energy absorbed than emitted → Earth's temperature rises until a new equilibrium is reached where more infrared is emitted (1)."
+    "mark_scheme": "The Earth absorbs short-wavelength radiation (visible/UV) from the Sun (1); the Earth also emits longer-wavelength infrared radiation into space (1); at a stable temperature, the power absorbed equals the power emitted (1); if absorbed radiation increases (e.g. from increased solar output or reduced reflection), more energy absorbed than emitted \u2192 Earth's temperature rises until a new equilibrium is reached where more infrared is emitted (1)."
   },
   {
     "id": "P6-LA-021",
@@ -722,7 +722,7 @@
     "command_word": "Explain",
     "topic": "Wave Properties",
     "question": "Explain the terms frequency, wavelength, amplitude and period. A wave has a period of 0.005 s and a wavelength of 0.68 m. Calculate its frequency and wave speed. Explain the effect of increasing the frequency on the wavelength if wave speed remains constant.",
-    "mark_scheme": "Frequency = number of complete waves per second (Hz); wavelength = distance between two successive identical points; amplitude = maximum displacement from equilibrium; period = time for one complete oscillation (1 for all four correct, or 1 per two correct); f = 1 / T = 1 / 0.005 = 200 Hz (1); v = fλ = 200 × 0.68 = 136 m/s (1); if wave speed is constant, v = fλ, so increasing f means λ must decrease — inversely proportional (1); higher frequency = shorter wavelength (1)."
+    "mark_scheme": "Frequency = number of complete waves per second (Hz); wavelength = distance between two successive identical points; amplitude = maximum displacement from equilibrium; period = time for one complete oscillation (1 for all four correct, or 1 per two correct); f = 1 / T = 1 / 0.005 = 200 Hz (1); v = f\u03bb = 200 \u00d7 0.68 = 136 m/s (1); if wave speed is constant, v = f\u03bb, so increasing f means \u03bb must decrease \u2014 inversely proportional (1); higher frequency = shorter wavelength (1)."
   },
   {
     "id": "P6-LA-022",
@@ -731,7 +731,7 @@
     "command_word": "Evaluate",
     "topic": "Sound",
     "question": "Ultrasound is used in medical scanning. Evaluate this use compared to using X-rays for examining a developing foetus. Include how ultrasound works, the advantages and disadvantages of both methods, and give a justified recommendation.",
-    "mark_scheme": "Ultrasound: pulses of high-frequency sound (>20 000 Hz) sent into body; reflected at boundaries between different tissues; time of echo used to build up an image (1); advantage of ultrasound: non-ionising — no risk of DNA damage or cell mutation to foetus (1); disadvantage of ultrasound: images less clear for dense tissue / bones than X-rays (1); X-rays: ionising radiation — risk of cell damage and mutation, particularly harmful to developing foetus (1); recommendation: ultrasound is strongly preferred for foetal scanning due to no ionising risk — X-rays only used if absolutely necessary for diagnosis of specific conditions (1)."
+    "mark_scheme": "Ultrasound: pulses of high-frequency sound (>20 000 Hz) sent into body; reflected at boundaries between different tissues; time of echo used to build up an image (1); advantage of ultrasound: non-ionising \u2014 no risk of DNA damage or cell mutation to foetus (1); disadvantage of ultrasound: images less clear for dense tissue / bones than X-rays (1); X-rays: ionising radiation \u2014 risk of cell damage and mutation, particularly harmful to developing foetus (1); recommendation: ultrasound is strongly preferred for foetal scanning due to no ionising risk \u2014 X-rays only used if absolutely necessary for diagnosis of specific conditions (1)."
   },
   {
     "id": "P6-LA-023",
@@ -740,7 +740,7 @@
     "command_word": "Explain",
     "topic": "Reflection and Refraction",
     "question": "Explain how optical fibres use total internal reflection to transmit data. Include the conditions for TIR, how the light travels through the fibre, and evaluate one advantage and one disadvantage of optical fibres compared to copper cables for internet communication.",
-    "mark_scheme": "Light enters the fibre and hits the fibre-cladding boundary at an angle greater than the critical angle (1); total internal reflection occurs — all light reflected back into the glass fibre — no refraction or energy loss at the boundary (1); light travels along the fibre bouncing off the walls repeatedly until it reaches the other end (1); advantage: optical fibres can carry much more data at higher speeds than copper cables; also not affected by electromagnetic interference (1); disadvantage: more expensive to install / more fragile / harder to repair than copper cables (1)."
+    "mark_scheme": "Light enters the fibre and hits the fibre-cladding boundary at an angle greater than the critical angle (1); total internal reflection occurs \u2014 all light reflected back into the glass fibre \u2014 no refraction or energy loss at the boundary (1); light travels along the fibre bouncing off the walls repeatedly until it reaches the other end (1); advantage: optical fibres can carry much more data at higher speeds than copper cables; also not affected by electromagnetic interference (1); disadvantage: more expensive to install / more fragile / harder to repair than copper cables (1)."
   },
   {
     "id": "P6-LA-024",
@@ -749,7 +749,7 @@
     "command_word": "Describe",
     "topic": "EM Spectrum",
     "question": "Describe the full electromagnetic spectrum in order of increasing frequency. For each of the following, state one use and one hazard or limitation: microwaves, X-rays, gamma rays.",
-    "mark_scheme": "Correct order: radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, gamma rays — increasing frequency / decreasing wavelength (1); microwaves: use — cooking food / satellite communication; hazard — can heat internal body tissues (1); X-rays: use — medical imaging of bones; hazard — ionising radiation, can cause cell mutations / cancer with repeated exposure (1); gamma rays: use — cancer radiotherapy / sterilising medical equipment; hazard — highly ionising, can cause severe cell damage / cancer (1); all EM waves travel at 3 × 10⁸ m/s in a vacuum; all are transverse waves (1)."
+    "mark_scheme": "Correct order: radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, gamma rays \u2014 increasing frequency / decreasing wavelength (1); microwaves: use \u2014 cooking food / satellite communication; hazard \u2014 can heat internal body tissues (1); X-rays: use \u2014 medical imaging of bones; hazard \u2014 ionising radiation, can cause cell mutations / cancer with repeated exposure (1); gamma rays: use \u2014 cancer radiotherapy / sterilising medical equipment; hazard \u2014 highly ionising, can cause severe cell damage / cancer (1); all EM waves travel at 3 \u00d7 10\u2078 m/s in a vacuum; all are transverse waves (1)."
   },
   {
     "id": "P6-LA-025",
@@ -757,8 +757,8 @@
     "marks": 5,
     "command_word": "Explain",
     "topic": "Black Body Radiation",
-    "question": "Explain the greenhouse effect and how it relates to black body radiation. Include how Earth absorbs and emits radiation, the role of greenhouse gases, and explain why increasing CO₂ concentrations may lead to global warming.",
-    "mark_scheme": "Earth absorbs short-wavelength radiation (visible/UV) from the Sun (1); Earth's surface warms and re-emits longer-wavelength infrared radiation (1); greenhouse gases (CO₂, methane, water vapour) absorb this infrared and re-emit it in all directions, including back toward Earth (1); this keeps Earth warmer than it would otherwise be — the natural greenhouse effect is essential for life (1); increasing CO₂ concentrations absorb more outgoing infrared, reducing energy lost to space — Earth's temperature increases (global warming) (1)."
+    "question": "Explain the greenhouse effect and how it relates to black body radiation. Include how Earth absorbs and emits radiation, the role of greenhouse gases, and explain why increasing CO\u2082 concentrations may lead to global warming.",
+    "mark_scheme": "Earth absorbs short-wavelength radiation (visible/UV) from the Sun (1); Earth's surface warms and re-emits longer-wavelength infrared radiation (1); greenhouse gases (CO\u2082, methane, water vapour) absorb this infrared and re-emit it in all directions, including back toward Earth (1); this keeps Earth warmer than it would otherwise be \u2014 the natural greenhouse effect is essential for life (1); increasing CO\u2082 concentrations absorb more outgoing infrared, reducing energy lost to space \u2014 Earth's temperature increases (global warming) (1)."
   },
   {
     "id": "P6-LA-026",
@@ -766,8 +766,8 @@
     "marks": 5,
     "command_word": "Calculate",
     "topic": "Wave Properties",
-    "question": "A microwave oven uses microwaves of frequency 2.45 GHz. Calculate the wavelength of these microwaves (speed of EM waves = 3 × 10⁸ m/s). Explain why microwaves of this frequency are effective at heating food and describe one safety feature of a microwave oven.",
-    "mark_scheme": "λ = v / f = 3 × 10⁸ / 2.45 × 10⁹ (1); λ = 0.122 m ≈ 12.2 cm (1); microwaves of this frequency are absorbed by water molecules in food (1); the energy absorbed causes water molecules to vibrate more, heating the food from within (1); safety feature: metal mesh in the door reflects microwaves, preventing them from escaping and harming the user (1)."
+    "question": "A microwave oven uses microwaves of frequency 2.45 GHz. Calculate the wavelength of these microwaves (speed of EM waves = 3 \u00d7 10\u2078 m/s). Explain why microwaves of this frequency are effective at heating food and describe one safety feature of a microwave oven.",
+    "mark_scheme": "\u03bb = v / f = 3 \u00d7 10\u2078 / 2.45 \u00d7 10\u2079 (1); \u03bb = 0.122 m \u2248 12.2 cm (1); microwaves of this frequency are absorbed by water molecules in food (1); the energy absorbed causes water molecules to vibrate more, heating the food from within (1); safety feature: metal mesh in the door reflects microwaves, preventing them from escaping and harming the user (1)."
   },
   {
     "id": "P6-LA-027",
@@ -776,7 +776,7 @@
     "command_word": "Explain",
     "topic": "Sound",
     "question": "Explain how the speed of sound varies in different media. Describe how scientists use the echo method to measure the speed of sound in air, and calculate the speed of sound if a clap echo from a wall 85 m away is heard 0.5 s after the original clap.",
-    "mark_scheme": "Sound travels faster in denser / more elastic media: faster in solids than liquids, faster in liquids than gases (1); echo method: stand a measured distance from a large flat wall; clap and measure time until echo heard — use a stopwatch or recording device (1); repeat several times and take mean to reduce error (1); speed = total distance / time = (2 × 85) / 0.5 = 170 / 0.5 (1); speed = 340 m/s (1)."
+    "mark_scheme": "Sound travels faster in denser / more elastic media: faster in solids than liquids, faster in liquids than gases (1); echo method: stand a measured distance from a large flat wall; clap and measure time until echo heard \u2014 use a stopwatch or recording device (1); repeat several times and take mean to reduce error (1); speed = total distance / time = (2 \u00d7 85) / 0.5 = 170 / 0.5 (1); speed = 340 m/s (1)."
   },
   {
     "id": "P6-LA-028",
@@ -785,7 +785,7 @@
     "command_word": "Describe",
     "topic": "EM Spectrum",
     "question": "Describe the properties of ultraviolet radiation. Explain how it is produced by the Sun, the effects it has on the human body (both beneficial and harmful), and describe how the ozone layer protects life on Earth.",
-    "mark_scheme": "UV radiation has shorter wavelength than visible light, longer than X-rays; produced in nuclear reactions in the Sun (1); harmful effects: causes sunburn, premature skin ageing, and skin cancer by damaging DNA; can also damage eyes (1); beneficial effects: skin produces vitamin D when exposed to UV; used in sunbeds (some medical uses); causes fluorescent materials to glow (1); ozone layer in upper atmosphere absorbs most of the UV from the Sun, preventing it from reaching Earth's surface (1); without the ozone layer, UV levels would be too high for life as we know it — skin cancer rates would increase dramatically (1)."
+    "mark_scheme": "UV radiation has shorter wavelength than visible light, longer than X-rays; produced in nuclear reactions in the Sun (1); harmful effects: causes sunburn, premature skin ageing, and skin cancer by damaging DNA; can also damage eyes (1); beneficial effects: skin produces vitamin D when exposed to UV; used in sunbeds (some medical uses); causes fluorescent materials to glow (1); ozone layer in upper atmosphere absorbs most of the UV from the Sun, preventing it from reaching Earth's surface (1); without the ozone layer, UV levels would be too high for life as we know it \u2014 skin cancer rates would increase dramatically (1)."
   },
   {
     "id": "P6-LA-029",
@@ -793,8 +793,8 @@
     "marks": 5,
     "command_word": "Explain",
     "topic": "Reflection and Refraction",
-    "question": "Light travels from glass (refractive index 1.5) into air. The critical angle for this glass is approximately 42°. Explain what happens at angles of incidence of 30°, 42°, and 60°, and calculate the speed of light in glass. (speed of light in air = 3 × 10⁸ m/s)",
-    "mark_scheme": "At 30° (below critical angle): light refracts out into air, bending away from the normal (1); at 42° (critical angle): refracted ray travels along the boundary — angle of refraction = 90° (1); at 60° (above critical angle): total internal reflection — all light reflected back into the glass (1); speed in glass = speed in air / refractive index = 3 × 10⁸ / 1.5 (1); speed = 2 × 10⁸ m/s (1)."
+    "question": "Light travels from glass (refractive index 1.5) into air. The critical angle for this glass is approximately 42\u00b0. Explain what happens at angles of incidence of 30\u00b0, 42\u00b0, and 60\u00b0, and calculate the speed of light in glass. (speed of light in air = 3 \u00d7 10\u2078 m/s)",
+    "mark_scheme": "At 30\u00b0 (below critical angle): light refracts out into air, bending away from the normal (1); at 42\u00b0 (critical angle): refracted ray travels along the boundary \u2014 angle of refraction = 90\u00b0 (1); at 60\u00b0 (above critical angle): total internal reflection \u2014 all light reflected back into the glass (1); speed in glass = speed in air / refractive index = 3 \u00d7 10\u2078 / 1.5 (1); speed = 2 \u00d7 10\u2078 m/s (1)."
   },
   {
     "id": "P6-LA-030",
@@ -803,7 +803,7 @@
     "command_word": "Evaluate",
     "topic": "EM Spectrum",
     "question": "Evaluate the risks and benefits of using mobile phones and Wi-Fi, which use microwave and radio wave radiation. Consider the evidence for and against health risks, compare with other everyday sources of radiation, and give a reasoned conclusion.",
-    "mark_scheme": "Mobile phones and Wi-Fi use non-ionising microwave/radio wave radiation (1); non-ionising radiation cannot remove electrons from atoms or directly break DNA — lower risk than ionising radiation (1); some studies have suggested possible links to health effects with very high exposure, but large-scale studies have found no conclusive evidence of harm at normal levels (1); comparison: people are exposed to low-level background radiation constantly from natural sources; medical X-rays carry far higher risk per exposure (1); precautions are still taken: SAR limits on devices, keeping phones away from the head with a hands-free kit (1); reasoned conclusion: current evidence suggests mobile phones at normal use levels do not pose a significant health risk, but research is ongoing; regulation ensures devices are within safe limits (1)."
+    "mark_scheme": "Mobile phones and Wi-Fi use non-ionising microwave/radio wave radiation (1); non-ionising radiation cannot remove electrons from atoms or directly break DNA \u2014 lower risk than ionising radiation (1); some studies have suggested possible links to health effects with very high exposure, but large-scale studies have found no conclusive evidence of harm at normal levels (1); comparison: people are exposed to low-level background radiation constantly from natural sources; medical X-rays carry far higher risk per exposure (1); precautions are still taken: SAR limits on devices, keeping phones away from the head with a hands-free kit (1); reasoned conclusion: current evidence suggests mobile phones at normal use levels do not pose a significant health risk, but research is ongoing; regulation ensures devices are within safe limits (1)."
   },
   {
     "id": "P6-LA-031",
@@ -812,7 +812,7 @@
     "command_word": "Explain",
     "topic": "Wave Properties",
     "question": "Explain how waves transfer energy without transferring matter. Use the examples of water waves, sound waves, and light waves to illustrate your answer. Include the key differences between transverse and longitudinal waves and explain how scientists measure the properties of each.",
-    "mark_scheme": "Waves transfer energy by making particles (or fields) oscillate — particles return to their original positions, so matter is not transferred (1); water waves: transverse — particles move up and down as wave moves horizontally; can see objects bobbing up and down (1); sound waves: longitudinal — air particles move back and forth parallel to wave direction; compressions and rarefactions (1); light waves: transverse electromagnetic waves — oscillating electric and magnetic fields; can travel through vacuum (1); measuring transverse waves: measure wavelength peak to peak, amplitude as maximum displacement from rest position, frequency with an oscilloscope/timer (1); measuring longitudinal waves (sound): oscilloscope shows the wave pattern; frequency from oscilloscope; wavelength calculated from v = fλ; speed measured by echo or timing over known distance (1)."
+    "mark_scheme": "Waves transfer energy by making particles (or fields) oscillate \u2014 particles return to their original positions, so matter is not transferred (1); water waves: transverse \u2014 particles move up and down as wave moves horizontally; can see objects bobbing up and down (1); sound waves: longitudinal \u2014 air particles move back and forth parallel to wave direction; compressions and rarefactions (1); light waves: transverse electromagnetic waves \u2014 oscillating electric and magnetic fields; can travel through vacuum (1); measuring transverse waves: measure wavelength peak to peak, amplitude as maximum displacement from rest position, frequency with an oscilloscope/timer (1); measuring longitudinal waves (sound): oscilloscope shows the wave pattern; frequency from oscilloscope; wavelength calculated from v = f\u03bb; speed measured by echo or timing over known distance (1)."
   },
   {
     "id": "P6-LA-032",
@@ -821,7 +821,7 @@
     "command_word": "Evaluate",
     "topic": "Black Body Radiation",
     "question": "Evaluate the evidence that human activity is causing climate change, with reference to black body radiation and the greenhouse effect. Include the natural greenhouse effect, how human activities are enhancing it, the evidence for increasing global temperatures, and the potential consequences.",
-    "mark_scheme": "Natural greenhouse effect: greenhouse gases absorb and re-emit infrared from Earth's surface, keeping Earth warm enough for life (1); human activities (burning fossil fuels, deforestation) have increased atmospheric CO₂ and methane concentrations (1); more greenhouse gases absorb more outgoing infrared, so less energy escapes to space — enhanced greenhouse effect causes global warming (1); evidence: direct measurements show CO₂ levels have risen from ~280 ppm pre-industrial to over 420 ppm; global average temperatures have risen approximately 1.1°C since pre-industrial times (1); consequences: sea level rise due to ice melting and thermal expansion; more extreme weather events; disruption to ecosystems (1); evaluation: scientific consensus strongly supports human-caused climate change; some natural variation exists but cannot account for the rate of observed change (1)."
+    "mark_scheme": "Natural greenhouse effect: greenhouse gases absorb and re-emit infrared from Earth's surface, keeping Earth warm enough for life (1); human activities (burning fossil fuels, deforestation) have increased atmospheric CO\u2082 and methane concentrations (1); more greenhouse gases absorb more outgoing infrared, so less energy escapes to space \u2014 enhanced greenhouse effect causes global warming (1); evidence: direct measurements show CO\u2082 levels have risen from ~280 ppm pre-industrial to over 420 ppm; global average temperatures have risen approximately 1.1\u00b0C since pre-industrial times (1); consequences: sea level rise due to ice melting and thermal expansion; more extreme weather events; disruption to ecosystems (1); evaluation: scientific consensus strongly supports human-caused climate change; some natural variation exists but cannot account for the rate of observed change (1)."
   },
   {
     "id": "P6-LA-033",
@@ -830,7 +830,7 @@
     "command_word": "Explain",
     "topic": "Sound",
     "question": "Explain how sound is produced and detected. Describe how a microphone and an oscilloscope can be used to compare two sounds, explaining what features of the oscilloscope trace tell us about the pitch and loudness. Calculate the frequency of a sound whose trace shows 4 complete waves in a time window of 0.01 s.",
-    "mark_scheme": "Sound produced by vibrating objects — vibrations cause pressure variations in the surrounding medium (compressions and rarefactions) (1); microphone converts sound energy to electrical energy by a diaphragm vibrating in response to pressure changes (1); oscilloscope displays the electrical signal as a wave trace — x-axis is time, y-axis is amplitude/voltage (1); taller wave on trace = greater amplitude = louder sound (1); more waves in same time window = higher frequency = higher pitch (1); frequency = number of waves / time = 4 / 0.01 = 400 Hz (1)."
+    "mark_scheme": "Sound produced by vibrating objects \u2014 vibrations cause pressure variations in the surrounding medium (compressions and rarefactions) (1); microphone converts sound energy to electrical energy by a diaphragm vibrating in response to pressure changes (1); oscilloscope displays the electrical signal as a wave trace \u2014 x-axis is time, y-axis is amplitude/voltage (1); taller wave on trace = greater amplitude = louder sound (1); more waves in same time window = higher frequency = higher pitch (1); frequency = number of waves / time = 4 / 0.01 = 400 Hz (1)."
   },
   {
     "id": "P6-LA-034",
@@ -839,7 +839,7 @@
     "command_word": "Evaluate",
     "topic": "Reflection and Refraction",
     "question": "Evaluate the use of optical fibres in modern communication and medical endoscopy. Explain the physics of total internal reflection, describe how it is exploited in each application, and compare optical fibres to alternative technologies for each use.",
-    "mark_scheme": "TIR occurs when light travels from denser to less dense medium at an angle exceeding the critical angle — all light reflected back into the denser medium (1); in optical fibres for communications: light/infrared pulses travel along the fibre by repeated TIR; very high data capacity, fast, immune to EM interference (1); compared to copper cables: optical fibres carry more data faster with less signal loss over long distances — preferable for internet backbone cables (1); disadvantage: more expensive, less flexible, harder to connect than copper; copper sufficient for short distances (1); in endoscopes: bundle of optical fibres carries light into the body and returns an image to the doctor; allows internal examination without surgery (1); compared to alternatives: capsule endoscopy (swallowable camera) possible but optical fibre endoscope allows two-way use (light in + image out) and allows instruments to be passed through for biopsies (1)."
+    "mark_scheme": "TIR occurs when light travels from denser to less dense medium at an angle exceeding the critical angle \u2014 all light reflected back into the denser medium (1); in optical fibres for communications: light/infrared pulses travel along the fibre by repeated TIR; very high data capacity, fast, immune to EM interference (1); compared to copper cables: optical fibres carry more data faster with less signal loss over long distances \u2014 preferable for internet backbone cables (1); disadvantage: more expensive, less flexible, harder to connect than copper; copper sufficient for short distances (1); in endoscopes: bundle of optical fibres carries light into the body and returns an image to the doctor; allows internal examination without surgery (1); compared to alternatives: capsule endoscopy (swallowable camera) possible but optical fibre endoscope allows two-way use (light in + image out) and allows instruments to be passed through for biopsies (1)."
   },
   {
     "id": "P6-LA-035",
@@ -848,7 +848,7 @@
     "command_word": "Explain",
     "topic": "EM Spectrum",
     "question": "Explain how the electromagnetic spectrum is produced and detected. For each of the following regions, explain how waves are produced and give one method of detection: radio waves, infrared, X-rays, gamma rays.",
-    "mark_scheme": "EM waves produced by oscillating charged particles / accelerating charges / changes in energy levels of electrons or nuclei (1); radio waves: produced by oscillating electrons in an aerial/transmitter; detected by a receiver aerial/radio (1); infrared: emitted by all objects above absolute zero due to vibrating atoms/molecules; detected by thermometer, infrared sensor, thermal camera, photographic film (1); X-rays: produced by firing high-energy electrons at a metal target; detected by photographic film / digital detector / fluorescent screen (1); gamma rays: emitted from the nucleus of unstable radioactive atoms during nuclear decay; detected by a Geiger-Müller tube, photographic film, scintillation detector (1); all EM waves are transverse, travel at 3 × 10⁸ m/s in vacuum; differ only in wavelength/frequency (1)."
+    "mark_scheme": "EM waves produced by oscillating charged particles / accelerating charges / changes in energy levels of electrons or nuclei (1); radio waves: produced by oscillating electrons in an aerial/transmitter; detected by a receiver aerial/radio (1); infrared: emitted by all objects above absolute zero due to vibrating atoms/molecules; detected by thermometer, infrared sensor, thermal camera, photographic film (1); X-rays: produced by firing high-energy electrons at a metal target; detected by photographic film / digital detector / fluorescent screen (1); gamma rays: emitted from the nucleus of unstable radioactive atoms during nuclear decay; detected by a Geiger-M\u00fcller tube, photographic film, scintillation detector (1); all EM waves are transverse, travel at 3 \u00d7 10\u2078 m/s in vacuum; differ only in wavelength/frequency (1)."
   },
   {
     "id": "P6-LA-036",
@@ -857,7 +857,7 @@
     "command_word": "Evaluate",
     "topic": "Wave Properties",
     "question": "A student investigates waves in a ripple tank. Evaluate the reliability of using a ripple tank to demonstrate wave properties such as reflection, refraction, and diffraction. Include how each phenomenon is demonstrated, sources of error in the experiment, and improvements that could be made.",
-    "mark_scheme": "Reflection: straight waves hit a flat barrier and reflect at equal angles to the normal — demonstrates law of reflection (1); refraction: wave passes over a shallow region (perspex block) — speed and wavelength decrease, direction changes — demonstrates refraction (1); diffraction: waves pass through a gap of similar width to wavelength — waves spread out — demonstrates diffraction (1); sources of error: waves difficult to measure accurately; ripple tank water not perfectly still; stroboscope timing may be imprecise; parallax when reading measurements (1); improvements: use a digital camera or video to freeze the image for accurate measurement; use calibrated stroboscope; minimise vibrations on the bench; use a ruler in the tank for scale (1); overall evaluation: ripple tank is a good qualitative demonstration tool but quantitative measurements have significant uncertainty — suitable for showing trends rather than precise values (1)."
+    "mark_scheme": "Reflection: straight waves hit a flat barrier and reflect at equal angles to the normal \u2014 demonstrates law of reflection (1); refraction: wave passes over a shallow region (perspex block) \u2014 speed and wavelength decrease, direction changes \u2014 demonstrates refraction (1); diffraction: waves pass through a gap of similar width to wavelength \u2014 waves spread out \u2014 demonstrates diffraction (1); sources of error: waves difficult to measure accurately; ripple tank water not perfectly still; stroboscope timing may be imprecise; parallax when reading measurements (1); improvements: use a digital camera or video to freeze the image for accurate measurement; use calibrated stroboscope; minimise vibrations on the bench; use a ruler in the tank for scale (1); overall evaluation: ripple tank is a good qualitative demonstration tool but quantitative measurements have significant uncertainty \u2014 suitable for showing trends rather than precise values (1)."
   },
   {
     "id": "P6-LA-037",
@@ -866,14 +866,14 @@
     "command_word": "Explain",
     "topic": "Reflection and Refraction",
     "question": "Explain how a converging lens forms a real image. Describe the path of three key rays through the lens, explain how the position of the object affects the image, and calculate the focal length of a lens that forms a real image 30 cm from the lens when the object is 15 cm from the lens. (1/f = 1/v + 1/u; use sign convention u negative for real object)",
-    "mark_scheme": "Three key rays: ray parallel to axis refracts through focal point; ray through optical centre passes straight through; ray through focal point refracts parallel to axis (1); all three rays converge at the image point (1); object beyond 2f: real, inverted, diminished image; object at 2f: real, inverted, same size; object between f and 2f: real, inverted, magnified; object inside f: virtual, upright, magnified (1); 1/f = 1/v + 1/u; u = −15 cm (using sign convention), v = +30 cm (1); 1/f = 1/30 + 1/(−15) = 1/30 − 2/30 = −1/30 — check: use 1/f = 1/v − 1/|u|; alternatively 1/f = 1/30 + 1/15 (accepting simpler convention) = 1/30 + 2/30 = 3/30 (1); f = 10 cm (1)."
+    "mark_scheme": "Three key rays: ray parallel to axis refracts through focal point; ray through optical centre passes straight through; ray through focal point refracts parallel to axis (1); all three rays converge at the image point (1); object beyond 2f: real, inverted, diminished image; object at 2f: real, inverted, same size; object between f and 2f: real, inverted, magnified; object inside f: virtual, upright, magnified (1); 1/f = 1/v + 1/u; u = \u221215 cm (using sign convention), v = +30 cm (1); 1/f = 1/30 + 1/(\u221215) = 1/30 \u2212 2/30 = \u22121/30 \u2014 check: use 1/f = 1/v \u2212 1/|u|; alternatively 1/f = 1/30 + 1/15 (accepting simpler convention) = 1/30 + 2/30 = 3/30 (1); f = 10 cm (1)."
   },
   {
     "id": "P6-SA-013",
     "type": "written",
     "marks": 2,
     "command_word": "State",
-    "topic": "Transverse and longitudinal",
+    "topic": "Wave Properties",
     "question": "State the difference between a transverse wave and a longitudinal wave.",
     "mark_scheme": "Transverse wave: oscillations are perpendicular (at right angles) to the direction of energy transfer (1); longitudinal wave: oscillations are parallel (in the same direction) to the direction of energy transfer (1)."
   },
@@ -882,16 +882,16 @@
     "type": "written",
     "marks": 2,
     "command_word": "Give",
-    "topic": "EM spectrum",
+    "topic": "EM Spectrum",
     "question": "Give the wave equation linking wave speed, frequency and wavelength.",
-    "mark_scheme": "wave speed = frequency × wavelength / v = fλ (1); with v in m/s, f in Hz, λ in m (1)."
+    "mark_scheme": "wave speed = frequency \u00d7 wavelength / v = f\u03bb (1); with v in m/s, f in Hz, \u03bb in m (1)."
   },
   {
     "id": "P6-SA-015",
     "type": "written",
     "marks": 2,
     "command_word": "Name",
-    "topic": "EM spectrum",
+    "topic": "EM Spectrum",
     "question": "Name the seven types of electromagnetic radiation in order of increasing frequency.",
     "mark_scheme": "Radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, gamma rays (2 marks for all 7 in correct order; 1 mark for at least 5 correct in order)."
   },
@@ -900,18 +900,18 @@
     "type": "written",
     "marks": 2,
     "command_word": "Describe",
-    "topic": "Reflection",
+    "topic": "Reflection and Refraction",
     "question": "Describe the law of reflection and explain how it applies to a ray of light hitting a flat mirror.",
-    "mark_scheme": "The angle of incidence equals the angle of reflection (1); both angles are measured from the normal to the surface — when light hits the mirror, the ray bounces off at the same angle on the other side of the normal (1)."
+    "mark_scheme": "The angle of incidence equals the angle of reflection (1); both angles are measured from the normal to the surface \u2014 when light hits the mirror, the ray bounces off at the same angle on the other side of the normal (1)."
   },
   {
     "id": "P6-SA-017",
     "type": "written",
     "marks": 2,
     "command_word": "State",
-    "topic": "Refraction",
+    "topic": "Reflection and Refraction",
     "question": "State what happens to the speed and direction of light when it passes from air into glass.",
-    "mark_scheme": "The speed of light decreases as it enters the denser glass (1); the light is refracted towards the normal — the ray bends toward the normal as it slows down (1)."
+    "mark_scheme": "The speed of light decreases as it enters the denser glass (1); the light is refracted towards the normal \u2014 the ray bends toward the normal as it slows down (1)."
   },
   {
     "id": "P6-SA-018",
@@ -927,34 +927,34 @@
     "type": "written",
     "marks": 2,
     "command_word": "Describe",
-    "topic": "Transverse and longitudinal",
+    "topic": "Wave Properties",
     "question": "Describe how compressions and rarefactions are formed in a longitudinal sound wave.",
-    "mark_scheme": "Compressions are regions where particles are pushed together — higher pressure (1); rarefactions are regions where particles are spread apart — lower pressure; the vibrating source alternately pushes and pulls the particles, creating a pattern of compressions and rarefactions that travels through the medium (1)."
+    "mark_scheme": "Compressions are regions where particles are pushed together \u2014 higher pressure (1); rarefactions are regions where particles are spread apart \u2014 lower pressure; the vibrating source alternately pushes and pulls the particles, creating a pattern of compressions and rarefactions that travels through the medium (1)."
   },
   {
     "id": "P6-SA-020",
     "type": "written",
     "marks": 3,
     "command_word": "Explain",
-    "topic": "Transverse and longitudinal",
+    "topic": "Wave Properties",
     "question": "Explain why sound cannot travel through a vacuum but light can. Use the particle model in your answer.",
-    "mark_scheme": "Sound is a longitudinal wave that requires a medium — it travels as vibrations of particles (compressions and rarefactions) (1); a vacuum has no particles, so there is nothing to vibrate — sound cannot travel through it (1); light is an electromagnetic wave that does not require a medium — it can propagate through space as oscillating electric and magnetic fields (1)."
+    "mark_scheme": "Sound is a longitudinal wave that requires a medium \u2014 it travels as vibrations of particles (compressions and rarefactions) (1); a vacuum has no particles, so there is nothing to vibrate \u2014 sound cannot travel through it (1); light is an electromagnetic wave that does not require a medium \u2014 it can propagate through space as oscillating electric and magnetic fields (1)."
   },
   {
     "id": "P6-SA-021",
     "type": "written",
     "marks": 3,
     "command_word": "Describe",
-    "topic": "EM spectrum",
+    "topic": "EM Spectrum",
     "question": "Describe three uses of electromagnetic waves from different parts of the spectrum. Include the type of wave and why its properties make it suitable for that use.",
-    "mark_scheme": "Any three with correct type and reasoning: radio waves used in broadcasting — long wavelength passes through buildings (1); microwaves used in cooking — absorbed by water molecules generating heat (1); infrared used in thermal imaging cameras — all objects above 0 K emit IR (1); X-rays used in medical imaging — penetrate soft tissue but absorbed by bone (1); gamma rays used in radiotherapy — high energy destroys cancer cells (1)."
+    "mark_scheme": "Any three with correct type and reasoning: radio waves used in broadcasting \u2014 long wavelength passes through buildings (1); microwaves used in cooking \u2014 absorbed by water molecules generating heat (1); infrared used in thermal imaging cameras \u2014 all objects above 0 K emit IR (1); X-rays used in medical imaging \u2014 penetrate soft tissue but absorbed by bone (1); gamma rays used in radiotherapy \u2014 high energy destroys cancer cells (1)."
   },
   {
     "id": "P6-SA-022",
     "type": "written",
     "marks": 3,
     "command_word": "Explain",
-    "topic": "Reflection",
+    "topic": "Reflection and Refraction",
     "question": "Explain how an image is formed in a plane mirror. Describe the properties of the image.",
     "mark_scheme": "Light from an object reflects off the mirror following the law of reflection (equal angles) (1); the reflected rays diverge but appear to the eye to come from a point behind the mirror (1); the image is virtual (cannot be projected), the same size as the object, upright, and the same distance behind the mirror as the object is in front (1)."
   },
@@ -963,16 +963,16 @@
     "type": "written",
     "marks": 3,
     "command_word": "Explain",
-    "topic": "Refraction",
+    "topic": "Reflection and Refraction",
     "question": "Explain what total internal reflection is and give one application that uses it.",
-    "mark_scheme": "When light travels from a denser to a less dense medium and the angle of incidence exceeds the critical angle, all the light is reflected back into the denser medium — no refraction occurs (1); this is total internal reflection (1); application: optical fibres — light is repeatedly totally internally reflected along the fibre; used in endoscopes (medical) or telecommunications (1)."
+    "mark_scheme": "When light travels from a denser to a less dense medium and the angle of incidence exceeds the critical angle, all the light is reflected back into the denser medium \u2014 no refraction occurs (1); this is total internal reflection (1); application: optical fibres \u2014 light is repeatedly totally internally reflected along the fibre; used in endoscopes (medical) or telecommunications (1)."
   },
   {
     "id": "P6-SA-024",
     "type": "written",
     "marks": 3,
     "command_word": "Compare",
-    "topic": "Transverse and longitudinal",
+    "topic": "Wave Properties",
     "question": "Compare the properties of transverse and longitudinal waves. Give one example of each type.",
     "mark_scheme": "Transverse: oscillations perpendicular to energy transfer direction; can be polarised; e.g. light / water waves (1); longitudinal: oscillations parallel to energy transfer; cannot be polarised; e.g. sound (1); both types transfer energy without transferring matter; both can be described by wavelength, frequency, amplitude and speed (1)."
   },
@@ -983,34 +983,34 @@
     "command_word": "Describe",
     "topic": "Sound",
     "question": "Describe how an ultrasound scan is used to produce an image of a foetus. Explain how the image is formed.",
-    "mark_scheme": "An ultrasound transducer emits pulses of high-frequency sound waves (above 20 kHz) into the body (1); the waves are partly reflected at boundaries between different tissues — the reflected pulses are detected by the transducer (1); the time taken for each echo to return is used to calculate the distance to each boundary; a computer processes this information to build up a two-dimensional image (1)."
+    "mark_scheme": "An ultrasound transducer emits pulses of high-frequency sound waves (above 20 kHz) into the body (1); the waves are partly reflected at boundaries between different tissues \u2014 the reflected pulses are detected by the transducer (1); the time taken for each echo to return is used to calculate the distance to each boundary; a computer processes this information to build up a two-dimensional image (1)."
   },
   {
     "id": "P6-SA-026",
     "type": "written",
     "marks": 3,
     "command_word": "Explain",
-    "topic": "EM spectrum",
+    "topic": "EM Spectrum",
     "question": "Explain the dangers of ultraviolet radiation, X-rays and gamma rays. Include what property makes them dangerous.",
-    "mark_scheme": "All three are ionising radiation — they can remove electrons from atoms and damage molecules (1); UV radiation damages skin cells and DNA — causes sunburn and increases risk of skin cancer (1); X-rays and gamma rays penetrate deeper tissue — can damage DNA and cells; high doses cause radiation sickness; long-term exposure increases cancer risk (1)."
+    "mark_scheme": "All three are ionising radiation \u2014 they can remove electrons from atoms and damage molecules (1); UV radiation damages skin cells and DNA \u2014 causes sunburn and increases risk of skin cancer (1); X-rays and gamma rays penetrate deeper tissue \u2014 can damage DNA and cells; high doses cause radiation sickness; long-term exposure increases cancer risk (1)."
   },
   {
     "id": "P6-SA-027",
     "type": "written",
     "marks": 3,
     "command_word": "Compare",
-    "topic": "Reflection",
+    "topic": "Reflection and Refraction",
     "question": "Compare specular reflection from a smooth surface with diffuse reflection from a rough surface.",
-    "mark_scheme": "Specular reflection: parallel rays hit a smooth surface and reflect as parallel rays at equal angles to the normal — produces a clear image (e.g. mirror) (1); diffuse reflection: parallel rays hit a rough surface and scatter in many different directions because the normal direction varies across the surface (1); diffuse reflection allows us to see non-shiny objects from many angles — the scattered light reaches our eyes even when we are not in the angle of specular reflection (1)."
+    "mark_scheme": "Specular reflection: parallel rays hit a smooth surface and reflect as parallel rays at equal angles to the normal \u2014 produces a clear image (e.g. mirror) (1); diffuse reflection: parallel rays hit a rough surface and scatter in many different directions because the normal direction varies across the surface (1); diffuse reflection allows us to see non-shiny objects from many angles \u2014 the scattered light reaches our eyes even when we are not in the angle of specular reflection (1)."
   },
   {
     "id": "P6-SA-028",
     "type": "written",
     "marks": 3,
     "command_word": "Describe",
-    "topic": "Refraction",
+    "topic": "Reflection and Refraction",
     "question": "Describe what happens to the frequency, wavelength and speed of light when it refracts as it passes from air into water.",
-    "mark_scheme": "Speed decreases as light enters the denser medium (water) (1); frequency remains unchanged — it is determined by the source (1); wavelength decreases because wavelength = speed/frequency — slower speed with same frequency means shorter wavelength (1)."
+    "mark_scheme": "Speed decreases as light enters the denser medium (water) (1); frequency remains unchanged \u2014 it is determined by the source (1); wavelength decreases because wavelength = speed/frequency \u2014 slower speed with same frequency means shorter wavelength (1)."
   },
   {
     "id": "P6-SA-029",
@@ -1019,15 +1019,33 @@
     "command_word": "Explain",
     "topic": "Sound",
     "question": "Explain why sound travels faster in solids than in gases. Use the particle model in your answer.",
-    "mark_scheme": "Sound travels by passing vibrations from one particle to the next (1); in solids, particles are closely packed together — vibrations are transmitted quickly from particle to particle with little delay (1); in gases, particles are far apart and must travel further between collisions — energy takes longer to transfer, so sound travels more slowly (1)."
+    "mark_scheme": "Sound travels by passing vibrations from one particle to the next (1); in solids, particles are closely packed together \u2014 vibrations are transmitted quickly from particle to particle with little delay (1); in gases, particles are far apart and must travel further between collisions \u2014 energy takes longer to transfer, so sound travels more slowly (1)."
   },
   {
     "id": "P6-SA-030",
     "type": "written",
     "marks": 3,
     "command_word": "Compare",
-    "topic": "EM spectrum",
+    "topic": "EM Spectrum",
     "question": "Compare infrared radiation and ultraviolet radiation in terms of wavelength, uses and health effects.",
-    "mark_scheme": "Infrared: longer wavelength than UV; uses include thermal imaging, remote controls, short-range communication; health: heating of tissue — can cause burns with intense exposure but not ionising (1); ultraviolet: shorter wavelength than infrared but longer than X-rays; uses include sterilisation, detecting forged banknotes, fluorescent lighting; health: ionising — damages DNA, causes sunburn and increases skin cancer risk (1); both are part of the electromagnetic spectrum and travel at the speed of light in a vacuum (1)."
+    "mark_scheme": "Infrared: longer wavelength than UV; uses include thermal imaging, remote controls, short-range communication; health: heating of tissue \u2014 can cause burns with intense exposure but not ionising (1); ultraviolet: shorter wavelength than infrared but longer than X-rays; uses include sterilisation, detecting forged banknotes, fluorescent lighting; health: ionising \u2014 damages DNA, causes sunburn and increases skin cancer risk (1); both are part of the electromagnetic spectrum and travel at the speed of light in a vacuum (1)."
+  },
+  {
+    "id": "P6-SA-031",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Black Body Radiation",
+    "question": "Explain why a perfect black body is both the best absorber and the best emitter of radiation.",
+    "mark_scheme": "A perfect black body absorbs all incident radiation / reflects none (1); by Kirchhoff's law, it also emits the maximum possible radiation at every wavelength for a given temperature (1)."
+  },
+  {
+    "id": "P6-SA-032",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Light",
+    "question": "Explain what total internal reflection is and state the condition required for it to occur.",
+    "mark_scheme": "Total internal reflection occurs when light travelling in a denser medium strikes the boundary with a less dense medium at an angle greater than the critical angle (1); all the light is reflected back into the denser medium / none is refracted (1)."
   }
 ]
