@@ -1141,6 +1141,7 @@
 
   // ── XP LEAGUE TABLE ─────────────────────────────────────────────────────────
   let _xpScope = 'class'; // 'class' or 'school'
+  let _xpWindowMins = 30; // recent XP window, default 30 min
   let _xpRefreshTimer = null;
   let _xpLastStudents = []; // students in current class
   let _lastAllProgress = {};
@@ -1150,6 +1151,11 @@
     _xpScope = scope;
     document.querySelectorAll('.xp-toggle-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+    loadXpLeague();
+  };
+
+  window.xpSetWindow = (val) => {
+    _xpWindowMins = parseInt(val, 10);
     loadXpLeague();
   };
 
@@ -1170,21 +1176,23 @@
         students = _xpLastStudents.length ? _xpLastStudents : await getStudentsByClass(selectedClass);
       }
 
-      // Compute XP gained in last 30 min from activity logs
+      // Compute XP from activity logs — total and recent window
       const now = Date.now();
-      const cutoff30 = now - 30 * 60 * 1000;
-      const XP_PER_ACTIVITY = { mock: 10, mini_mock: 10, paper: 15, flashcards: 5, flashcard: 5, words: 3, keywords: 3 };
+      const cutoffRecent = now - _xpWindowMins * 60 * 1000;
+      const XP_PER_ACTIVITY = { mock: 10, mini_mock: 10, paper: 15, flashcards: 5, flashcard: 5, words: 3, keywords: 3, learn: 5, scribble: 5, cloze: 3 };
 
       const rows = await Promise.all(students.map(async s => {
-        const totalXp = s.xp || 0;
-        let recentXp = 0;
+        let totalXp = 0, recentXp = 0;
         try {
-          const { entries } = await getActivityLog(s.uid, 100);
-          recentXp = entries.filter(e => {
-            if (!e.timestamp) return false;
-            const ts = typeof e.timestamp === 'number' ? e.timestamp : new Date(e.timestamp).getTime();
-            return ts >= cutoff30;
-          }).reduce((sum, e) => sum + (XP_PER_ACTIVITY[e.type] || 5), 0);
+          const { entries } = await getActivityLog(s.uid, 500);
+          entries.forEach(e => {
+            const xp = XP_PER_ACTIVITY[e.type] || 5;
+            totalXp += xp;
+            if (e.timestamp) {
+              const ts = typeof e.timestamp === 'number' ? e.timestamp : new Date(e.timestamp).getTime();
+              if (ts >= cutoffRecent) recentXp += xp;
+            }
+          });
         } catch(e) {}
         return { name: getStudentDisplayName(s), totalXp, recentXp };
       }));
@@ -1192,10 +1200,11 @@
       // Sort by total XP descending
       rows.sort((a,b) => b.totalXp - a.totalXp);
 
-      // Top earner in last 30min
+      // Top earner in recent window
+      const windowLabel = TIME_WINDOW_OPTIONS.find(o => o.value === _xpWindowMins)?.label || `${_xpWindowMins} min`;
       const topEarner = [...rows].sort((a,b) => b.recentXp - a.recentXp)[0];
       if (topEarner && topEarner.recentXp > 0) {
-        earnerEl.innerHTML = `🔥 <strong>${topEarner.name}</strong> — most XP in last 30 min (+${topEarner.recentXp} XP)`;
+        earnerEl.innerHTML = `🔥 <strong>${topEarner.name}</strong> — most XP in last ${windowLabel} (+${topEarner.recentXp} XP)`;
       } else {
         earnerEl.textContent = '';
       }
@@ -1213,8 +1222,10 @@
       };
       const rowClass = (i) => i === 0 ? 'xp-row-gold' : i === 1 ? 'xp-row-silver' : i === 2 ? 'xp-row-bronze' : '';
 
+      const winLabel = TIME_WINDOW_OPTIONS.find(o => o.value === _xpWindowMins)?.label || `${_xpWindowMins} min`;
+      const winSel = TIME_WINDOW_OPTIONS.map(o=>`<option value="${o.value}"${o.value===_xpWindowMins?' selected':''}>${o.label}</option>`).join('');
       content.innerHTML = `<table class="xp-table">
-        <thead><tr><th>Rank</th><th>Student</th><th>Total XP</th><th>XP (last 30 min)</th></tr></thead>
+        <thead><tr><th>Rank</th><th>Student</th><th>Total XP</th><th>XP (last <select onchange="window.xpSetWindow(this.value)" style="font:inherit;font-size:0.7rem;font-weight:700;border:none;background:transparent;cursor:pointer;color:inherit;padding:0 2px">${winSel}</select>)</th></tr></thead>
         <tbody>
           ${rows.map((r,i) => `<tr class="${rowClass(i)}">
             <td>${rankIcon(i)}</td>
