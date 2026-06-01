@@ -553,22 +553,16 @@
       html += `</div>`;
     }
 
-    // Videos
-    const videos = topicData.videos || [];
-    if (videos.length) {
-      html += `<div class="videos-section"><h2>▶ Recommended Videos</h2><div class="video-grid">`;
-      videos.forEach(v => {
-        html += `<a href="${v.url}" target="_blank" rel="noopener" class="video-card">
-          <div class="video-thumb">▶️</div>
-          <div class="video-info">
-            <div class="video-title">${v.title}</div>
-            <div class="video-channel">${v.channel}</div>
-          </div>
-          <span class="video-arrow">↗</span>
-        </a>`;
-      });
-      html += `</div></div>`;
-    }
+    // Videos — coming soon
+    html += `<div class="videos-section"><h2>▶ Videos</h2>
+      <div style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;background:#f8fafc;border:1.5px dashed #cbd5e1;border-radius:12px;color:#94a3b8;">
+        <span style="font-size:1.6rem">🎬</span>
+        <div>
+          <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.85rem;color:#64748b">Video links coming soon</div>
+          <div style="font-size:0.75rem;margin-top:0.1rem">Curated video resources for this topic will appear here</div>
+        </div>
+      </div>
+    </div>`;
 
     // ── Quick Quiz ────────────────────────────────────────────────────────────
     html += `<div class="quiz-wrap" id="quiz-wrap">

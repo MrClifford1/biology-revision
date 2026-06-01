@@ -1553,7 +1553,7 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
       const tier = getTier(score);
       const colour = TIER_COLOURS[tier];
       const emoji = TIER_EMOJIS[tier];
-      const hasVideos = (reviseData.topics[topic]?.videos || []).length > 0;
+      const hasVideos = false; // videos coming soon
       const encodedTopic = encodeURIComponent(topic);
       const xpLabel = score > 0 ? `${emoji} ${score} XP` : `⚪ No XP`;
 
@@ -1576,7 +1576,7 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
         </div>
         <div class="revise-card-actions">
           <a href="revise.html?subject=${revSubject}&module=${revModule}&topic=${encodedTopic}" class="btn-revise-read">📖 Read</a>
-          ${hasVideos ? `<button class="btn-revise-watch" onclick="openVideoModal('${topic.replace(/'/g,"\\'")}')">▶ Watch</button>` : ''}
+          <span style="font-size:0.7rem;color:#94a3b8;padding:0.25rem 0.5rem;background:#f1f5f9;border-radius:6px;font-family:'Nunito',sans-serif;font-weight:700;" title="Video resources coming soon">🎬 Soon</span>
         </div>
       </div>`;
     });
