@@ -942,7 +942,13 @@
     modal.classList.add('open');
 
     try {
-      const { entries } = await getActivityLog(uid, 50);
+      let { entries } = await getActivityLog(uid, 200);
+      // Sort newest first, handling both ISO strings and numeric timestamps
+      entries = entries.slice().sort((a, b) => {
+        const ta = typeof a.timestamp === 'number' ? a.timestamp : new Date(a.timestamp).getTime();
+        const tb = typeof b.timestamp === 'number' ? b.timestamp : new Date(b.timestamp).getTime();
+        return tb - ta;
+      });
       if (!entries.length) {
         content.innerHTML = '<div class="empty-state">No activity recorded yet.</div>';
         return;
