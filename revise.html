@@ -428,7 +428,7 @@
 
   // push=true (default): add to history (prev/next buttons)
   // push=false: called from popstate restore — don't add another entry
-  function showTopicByName(topicName, push = true) {
+  window.showTopicByName = function showTopicByName(topicName, push = true) {
     const btns = document.querySelectorAll('.topic-nav-btn');
     btns.forEach(b => {
       b.classList.toggle('active', b.textContent === topicName);
