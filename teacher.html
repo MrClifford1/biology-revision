@@ -870,12 +870,17 @@
   function estimateTimeFromLogs(logs) {
     if (!logs || !logs.length) return 0;
     const cutoff = Date.now() - _timeWindowMins * 60000;
-    const recent = logs.filter(e => {
-      if (!e.timestamp) return false;
-      const ts = typeof e.timestamp === 'number' ? e.timestamp : new Date(e.timestamp).getTime();
-      return ts >= cutoff;
-    });
-    return recent.reduce((sum, e) => sum + (ACTIVITY_TIMES[e.type] || 5), 0);
+    const SESSION_GAP_MS = 15 * 60 * 1000;
+    const timestamps = logs
+      .map(e => ({ ts: typeof e.timestamp === 'number' ? e.timestamp : new Date(e.timestamp).getTime(), type: e.type }))
+      .filter(e => !isNaN(e.ts) && e.ts >= cutoff)
+      .sort((a, b) => a.ts - b.ts);
+    let mins = 0;
+    for (let i = 0; i < timestamps.length; i++) {
+      const gap = i === 0 ? 0 : timestamps[i].ts - timestamps[i - 1].ts;
+      mins += gap > 0 && gap <= SESSION_GAP_MS ? gap / 60000 : (ACTIVITY_TIMES[timestamps[i].type] || 5);
+    }
+    return Math.round(mins);
   }
 
   function formatTime(mins) {
@@ -1014,8 +1019,19 @@
     const points = students.map(s => {
       const logs = allLogs[s.uid] || [];
 
-      // Total time: sum all activity log entries
-      const totalMins = logs.reduce((sum, e) => sum + (ACTIVITY_TIMES[e.type] || 5), 0);
+      // Total time: calculate from actual timestamps grouped into sessions
+      // A session gap > 15 mins means a new session starts — prevents rapid-fire inflation
+      const SESSION_GAP_MS = 15 * 60 * 1000;
+      const timestamps = logs
+        .map(e => typeof e.timestamp === 'number' ? e.timestamp : new Date(e.timestamp).getTime())
+        .filter(t => !isNaN(t))
+        .sort((a, b) => a - b);
+      let totalMins = 0;
+      for (let i = 0; i < timestamps.length; i++) {
+        const gap = i === 0 ? 0 : timestamps[i] - timestamps[i - 1];
+        totalMins += gap > 0 && gap <= SESSION_GAP_MS ? gap / 60000 : (ACTIVITY_TIMES[logs[i]?.type] || 5);
+      }
+      totalMins = Math.round(totalMins);
 
       // Average score from any scored activity in logs
       let totalScore = 0, totalPossible = 0;

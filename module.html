@@ -4207,9 +4207,20 @@ window.resetCloze = () => {
   window._saveRAG = async (uid, moduleKey, state) => {
     try { await saveRAG(uid, moduleKey, state); } catch(e) {}
   };
+  // Per-type cooldown to prevent rapid repeat logging (e.g. 50 flashcards in 2 mins)
+  const _logCooldowns = {};
+  const LOG_COOLDOWN_MS = { flashcard: 60000, flashcards: 60000, words: 60000, keywords: 60000, cloze: 30000 };
+
   window._logActivity = async (entry) => {
     try {
       if (!window._currentUser) return;
+      // Rate-limit: skip if same type logged within cooldown window
+      const cooldown = LOG_COOLDOWN_MS[entry.type];
+      if (cooldown) {
+        const lastTs = _logCooldowns[entry.type] || 0;
+        if (Date.now() - lastTs < cooldown) return;
+        _logCooldowns[entry.type] = Date.now();
+      }
       const fullEntry = {
         subjectId: window._moduleMeta?.subject || '',
         moduleId: window._moduleMeta?.id || '',
