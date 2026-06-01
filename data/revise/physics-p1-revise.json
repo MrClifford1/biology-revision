@@ -3,29 +3,52 @@
   "topics": {
     "Energy Stores": {
       "intro": "Energy cannot be created or destroyed — only transferred between stores. Understanding the different types of energy store is the starting point for all of P1.",
+      "mnemonic": "\"King George Can't Eat Nachos, Even Mildly\" — Kinetic, Gravitational, Chemical, (thermal) Energy, Nuclear, Electrostatic, Magnetic — the 8 energy stores.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Energy Stores</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Types of Energy Store",
           "icon": "⚡",
+          "text": "Energy can be held in eight distinct stores; recognising these stores is the foundation of all energy analysis in GCSE Physics.",
           "points": [
-            "<strong>Kinetic</strong> — energy of moving objects",
-            "<strong>Gravitational potential</strong> — energy due to height above ground",
-            "<strong>Elastic potential</strong> — energy stored in stretched/compressed objects",
-            "<strong>Chemical</strong> — energy stored in chemical bonds (food, fuel, batteries)",
-            "<strong>Thermal</strong> — energy stored due to temperature (internal energy)",
-            "<strong>Nuclear</strong> — energy stored in atomic nuclei",
-            "<strong>Electrostatic</strong> — energy due to charges",
-            "<strong>Magnetic</strong> — energy in magnetic fields"
+            "<strong>Kinetic</strong> — energy of moving objects; calculated using KE = ½mv²",
+            "<strong>Gravitational potential</strong> — energy due to height above ground; calculated using GPE = mgh",
+            "<strong>Elastic potential</strong> — energy stored in stretched or compressed objects such as springs",
+            "<strong>Chemical</strong> — energy stored in chemical bonds (food, fuel, batteries); released in reactions",
+            "<strong>Thermal</strong> — energy stored in the internal energy of a substance; increases with temperature",
+            "<strong>Nuclear</strong> — energy stored in atomic nuclei; released in fission or fusion reactions",
+            "<strong>Electrostatic</strong> — energy stored due to the positions of charged objects relative to each other",
+            "<strong>Magnetic</strong> — energy stored in magnetic fields; e.g. between poles of magnets"
           ]
         },
         {
           "title": "Conservation of Energy",
           "icon": "♾️",
+          "text": "The total energy in a closed system always remains constant — energy is never created or destroyed, only transferred.",
+          "points": [
+            "<strong>Law of conservation</strong> — energy cannot be created or destroyed, only transferred between stores",
+            "<strong>Closed system</strong> — no energy enters or leaves; total energy remains constant",
+            "<strong>Dissipation</strong> — in real systems, some energy always transfers to thermal store of surroundings",
+            "<strong>Practical example</strong> — a falling ball transfers GPE to KE; at impact, KE transfers to thermal and sound stores",
+            "<strong>Language matters</strong> — say 'energy is transferred FROM the chemical store TO the kinetic store', not 'energy changes'"
+          ],
           "callout": {
             "type": "exam",
             "label": "Law of Conservation",
             "text": "Energy cannot be created or destroyed — it can only be transferred from one store to another. The total energy always stays the same."
           }
+        },
+        {
+          "title": "KE and GPE Calculations",
+          "icon": "📐",
+          "text": "Two key equations allow you to calculate energy in the kinetic and gravitational potential stores.",
+          "points": [
+            "<strong>KE = ½mv²</strong> — KE in joules (J), mass m in kg, speed v in m/s",
+            "<strong>Example KE</strong> — a 2 kg ball moving at 3 m/s: KE = ½ × 2 × 3² = ½ × 2 × 9 = 9 J",
+            "<strong>GPE = mgh</strong> — GPE in joules, mass m in kg, g = 10 N/kg, height h in metres",
+            "<strong>Example GPE</strong> — a 5 kg object raised 4 m: GPE = 5 × 10 × 4 = 200 J",
+            "<strong>Energy conservation link</strong> — if an object falls freely, the loss in GPE equals the gain in KE"
+          ]
         }
       ],
       "keyTerms": [
@@ -40,15 +63,33 @@
         {
           "term": "Kinetic energy store",
           "def": "Energy stored in moving objects"
+        },
+        {
+          "term": "Gravitational potential energy",
+          "def": "Energy stored due to an object's height above a reference point; GPE = mgh"
+        },
+        {
+          "term": "Elastic potential energy",
+          "def": "Energy stored in a stretched or compressed spring or elastic material"
+        },
+        {
+          "term": "Thermal energy store",
+          "def": "Energy held in the internal energy (vibration of particles) of a substance"
+        },
+        {
+          "term": "Dissipation",
+          "def": "Energy spreading out into surroundings as thermal energy, becoming less useful"
         }
       ],
       "examTips": [
         "Use precise language: 'energy is transferred FROM the chemical store TO the kinetic store' — not just 'energy changes'.",
-        "Name both the starting store and the ending store in energy transfer descriptions."
+        "Name both the starting store and the ending store in energy transfer descriptions.",
+        "KE = ½mv² — remember to square the speed, not the mass. A common error is squaring the wrong value."
       ],
       "commonMistakes": [
         "Saying energy is 'used up' — energy is always conserved, just transferred to less useful stores (e.g. thermal).",
-        "Confusing energy stores with energy transfer pathways."
+        "Confusing energy stores with energy transfer pathways — stores are where energy is held; pathways are how it moves.",
+        "Forgetting to halve in the KE equation — KE = ½mv², not mv²."
       ],
       "videos": [
         {
@@ -75,33 +116,43 @@
     },
     "Energy Transfer": {
       "intro": "Energy is transferred between stores by four pathways: mechanically, electrically, by heating, and by radiation. Understanding these pathways is essential for P1.",
+      "mnemonic": "\"MEER\" — Mechanical, Electrical, heating (thermal), Radiation — the four energy transfer pathways.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Energy Transfer Pathways</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Transfer Pathways",
           "icon": "➡️",
+          "text": "Energy moves between stores via four specific pathways — it is important to name the pathway correctly, not just the stores.",
           "points": [
-            "<strong>Mechanically</strong> — by a force acting over a distance (work done)",
-            "<strong>Electrically</strong> — by an electric current through a circuit",
-            "<strong>By heating</strong> — by conduction, convection or radiation",
-            "<strong>By radiation</strong> — electromagnetic waves (light, infrared, etc.)"
+            "<strong>Mechanically</strong> — by a force acting over a distance (work done); W = F × d in joules",
+            "<strong>Electrically</strong> — by an electric current carrying energy through a circuit",
+            "<strong>By heating</strong> — by conduction (solids), convection (fluids), or radiation (electromagnetic waves)",
+            "<strong>By radiation</strong> — electromagnetic waves transfer energy without a medium (e.g. infrared, light, microwaves)",
+            "<strong>Example</strong> — a kettle: electrical pathway transfers energy from chemical store (power station) to thermal store (water)"
           ]
         },
         {
           "title": "Energy Diagrams",
           "icon": "📊",
+          "text": "Sankey diagrams visually represent energy inputs and outputs, making efficiency easy to assess at a glance.",
           "points": [
-            "Sankey diagrams show energy transfers — width of arrow proportional to amount",
-            "Useful energy goes right; wasted energy (usually thermal) goes down",
-            "Energy dissipated = energy spread out into surroundings as thermal energy"
+            "<strong>Sankey diagrams</strong> — width of each arrow is proportional to the amount of energy it represents",
+            "<strong>Useful energy</strong> — arrow points in the intended direction (usually right)",
+            "<strong>Wasted energy</strong> — arrows branch off, usually downwards, representing thermal losses",
+            "<strong>Conservation</strong> — total width of output arrows must equal width of input arrow",
+            "<strong>Reading efficiency</strong> — wider the useful arrow relative to input, the more efficient the device"
           ]
         },
         {
           "title": "Reducing Wasted Energy",
           "icon": "♻️",
+          "text": "Wasted energy cannot be eliminated but can be reduced through engineering and design improvements.",
           "points": [
-            "Lubrication — reduces friction → less thermal energy wasted",
-            "Insulation — reduces heat loss to surroundings",
-            "Streamlining — reduces air resistance"
+            "<strong>Lubrication</strong> — oil or grease between moving surfaces reduces friction, cutting thermal waste",
+            "<strong>Thermal insulation</strong> — lagging on pipes and walls reduces heat transfer to surroundings",
+            "<strong>Streamlining</strong> — aerodynamic shapes reduce air resistance, cutting energy wasted overcoming drag",
+            "<strong>Regenerative braking</strong> — electric vehicles capture kinetic energy during braking and store it as electrical energy",
+            "<strong>LED lighting</strong> — transfers much more electrical energy to light than old filament bulbs"
           ]
         }
       ],
@@ -117,15 +168,33 @@
         {
           "term": "Dissipation",
           "def": "Energy spreading out into surroundings as thermal energy — becomes less useful"
+        },
+        {
+          "term": "Conduction",
+          "def": "Transfer of thermal energy through a material by vibration of particles and (in metals) free electrons"
+        },
+        {
+          "term": "Convection",
+          "def": "Transfer of thermal energy through a fluid by the bulk movement of the fluid itself"
+        },
+        {
+          "term": "Radiation (thermal)",
+          "def": "Transfer of energy by infrared electromagnetic waves — does not require a medium"
+        },
+        {
+          "term": "Mechanical work",
+          "def": "Energy transferred when a force acts through a distance — W = F × d"
         }
       ],
       "examTips": [
-        "All energy eventually dissipates as thermal energy — it isn't 'lost', just less useful.",
-        "In Sankey diagrams: total width in = total width out (conservation of energy)."
+        "All energy eventually dissipates as thermal energy — it isn't 'lost', just less useful; state this in exam answers.",
+        "In Sankey diagrams: total width in = total width out (conservation of energy); use this to find missing values.",
+        "For work done questions: W = F × d; always check the units — force in N, distance in m, work in J."
       ],
       "commonMistakes": [
-        "Saying wasted energy disappears — it is transferred to the thermal store of surroundings.",
-        "Confusing work done (mechanical transfer) with power (rate of energy transfer)."
+        "Saying wasted energy disappears — it is transferred to the thermal store of surroundings; never destroyed.",
+        "Confusing work done (mechanical transfer) with power (rate of energy transfer).",
+        "Drawing Sankey diagrams where output arrows are wider than the input — this violates conservation of energy."
       ],
       "videos": [
         {
@@ -152,28 +221,48 @@
     },
     "Efficiency": {
       "intro": "Efficiency measures how well a device transfers energy usefully. No device is 100% efficient — some energy is always wasted.",
+      "mnemonic": "\"Useful Output Over Total Input\" — the efficiency fraction in plain English: useful ÷ total.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Efficiency and Sankey Diagrams</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Efficiency Formula",
           "icon": "📐",
+          "text": "Efficiency compares the useful energy output to the total energy input and can be expressed as a decimal or percentage.",
+          "points": [
+            "<strong>Efficiency = useful output ÷ total input</strong> — gives a decimal between 0 and 1",
+            "<strong>Percentage efficiency</strong> — multiply by 100 to express as a percentage (0% to 100%)",
+            "<strong>Example</strong> — a motor transfers 600 J of 800 J input usefully: efficiency = 600/800 = 0.75 (75%)",
+            "<strong>Wasted energy</strong> — total input − useful output = wasted energy (e.g. 800 − 600 = 200 J wasted)",
+            "<strong>Can also use power</strong> — efficiency = useful power output ÷ total power input"
+          ],
           "callout": {
             "type": "exam",
             "label": "Formula",
             "text": "Efficiency = useful output energy ÷ total input energy (× 100 for percentage). Or: efficiency = useful power output ÷ total power input."
-          },
-          "points": [
-            "Efficiency is always between 0 and 1 (or 0% and 100%)",
-            "No device is 100% efficient — some energy always wasted as heat",
-            "More efficient = less energy wasted"
-          ]
+          }
         },
         {
           "title": "Improving Efficiency",
           "icon": "⬆️",
+          "text": "Efficiency can be improved by reducing the energy wasted at each transfer stage.",
           "points": [
-            "Lubrication — reduces friction in moving parts",
-            "Better thermal insulation — reduces heat loss",
-            "Regenerative braking in electric cars — captures kinetic energy"
+            "<strong>Lubrication</strong> — reduces friction between moving parts, cutting thermal energy waste",
+            "<strong>Thermal insulation</strong> — reduces heat loss through walls, pipes, and engine components",
+            "<strong>Regenerative braking</strong> — electric cars capture kinetic energy on braking, storing it in the battery",
+            "<strong>LED technology</strong> — LEDs are ~90% efficient; old filament bulbs only ~5% efficient",
+            "<strong>Better design</strong> — streamlining vehicles and using low-resistance conductors reduces wasted energy"
+          ]
+        },
+        {
+          "title": "Efficiency in Context",
+          "icon": "⚖️",
+          "text": "Understanding efficiency helps evaluate devices and energy systems, and underpins decisions about energy use.",
+          "points": [
+            "<strong>Power stations</strong> — coal power stations ~35% efficient; combined cycle gas ~60% efficient",
+            "<strong>Electric motors</strong> — up to 95% efficient; far more efficient than internal combustion engines (~25%)",
+            "<strong>Human body</strong> — muscles convert chemical energy to kinetic energy at ~25% efficiency",
+            "<strong>Comparison</strong> — a device with efficiency 0.85 wastes 15% of input energy as thermal energy",
+            "<strong>Never 100%</strong> — the second law of thermodynamics means some energy always dissipates to thermal stores"
           ]
         }
       ],
@@ -189,16 +278,29 @@
         {
           "term": "Wasted energy",
           "def": "Energy transferred in an unwanted way — usually as thermal energy"
+        },
+        {
+          "term": "Input energy",
+          "def": "The total energy supplied to a device"
+        },
+        {
+          "term": "Output energy",
+          "def": "The energy produced by a device — split into useful and wasted portions"
+        },
+        {
+          "term": "Lubrication",
+          "def": "Applying oil or grease to reduce friction between moving surfaces, improving efficiency"
         }
       ],
       "examTips": [
-        "Efficiency can be expressed as a decimal (0.75) or percentage (75%).",
-        "Wasted energy = total input − useful output.",
-        "An efficiency of 0.75 means 75% of energy is usefully transferred."
+        "Efficiency can be expressed as a decimal (0.75) or percentage (75%) — check what the question asks for.",
+        "Wasted energy = total input − useful output; use this to find missing values in multi-step questions.",
+        "An efficiency of 0.75 means 75% of energy is usefully transferred and 25% is wasted as thermal energy."
       ],
       "commonMistakes": [
-        "Giving efficiency greater than 1 (or 100%) — this is impossible.",
-        "Forgetting to subtract wasted energy: useful = total − wasted."
+        "Giving efficiency greater than 1 (or 100%) — this is physically impossible; check your calculation if this happens.",
+        "Forgetting to subtract wasted energy: useful = total − wasted, not total + wasted.",
+        "Using energy values in different units without converting — always check that J and J (or W and W) are used consistently."
       ],
       "videos": [
         {
@@ -225,10 +327,20 @@
     },
     "Specific Heat Capacity": {
       "intro": "Specific heat capacity (SHC) measures how much energy is needed to raise the temperature of 1 kg of a substance by 1°C.",
+      "mnemonic": "\"Queen Might Change Temperatures\" — Q = mcΔT — the specific heat capacity equation letter by letter.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Specific Heat Capacity</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "The Formula",
           "icon": "📐",
+          "text": "The specific heat capacity equation links energy supplied, mass, SHC, and temperature change in a single expression.",
+          "points": [
+            "<strong>Q = mcΔT</strong> — energy Q in joules (J), mass m in kg, specific heat capacity c in J/kg°C, temperature change ΔT in °C",
+            "<strong>Example 1</strong> — heating 2 kg of water (c = 4200) by 10°C: Q = 2 × 4200 × 10 = 84,000 J",
+            "<strong>Example 2</strong> — find c: 6000 J heats 0.5 kg of copper by 30°C: c = 6000 ÷ (0.5 × 30) = 400 J/kg°C",
+            "<strong>ΔT</strong> — means change in temperature = final temperature − initial temperature",
+            "<strong>Rearrangements</strong> — m = Q ÷ (cΔT); c = Q ÷ (mΔT); ΔT = Q ÷ (mc)"
+          ],
           "callout": {
             "type": "exam",
             "label": "Formula",
@@ -238,10 +350,25 @@
         {
           "title": "What SHC Means",
           "icon": "🌡️",
+          "text": "SHC values tell us how much energy a material stores per kilogram per degree — high SHC means slow to heat and cool.",
           "points": [
-            "High SHC = needs lots of energy to heat up (e.g. water = 4200 J/kg°C)",
-            "Low SHC = heats up quickly with less energy (e.g. copper = 390 J/kg°C)",
-            "Water has a very high SHC — why it is used in cooling systems and is used as a thermal store"
+            "<strong>High SHC</strong> — needs lots of energy to heat up, releases lots when cooling; e.g. water = 4200 J/kg°C",
+            "<strong>Low SHC</strong> — heats up quickly with less energy; e.g. copper = 390 J/kg°C, aluminium = 900 J/kg°C",
+            "<strong>Water's high SHC</strong> — explains why the sea moderates coastal climates and why it is used in cooling systems",
+            "<strong>Central heating</strong> — water used in radiators because high SHC means it carries a large amount of thermal energy per kg",
+            "<strong>Storage heaters</strong> — use concrete or brick (high SHC) to store heat overnight and release during day"
+          ]
+        },
+        {
+          "title": "SHC Experiment",
+          "icon": "🧪",
+          "text": "The SHC of a solid or liquid can be measured using an electrical heater and thermometer in a controlled experiment.",
+          "points": [
+            "<strong>Setup</strong> — known mass of material in an insulated container; immersion heater connected to a joulemeter",
+            "<strong>Measurement</strong> — record energy supplied (Q from joulemeter) and temperature rise (ΔT from thermometer)",
+            "<strong>Calculate c</strong> — c = Q ÷ (mΔT) using the measured values",
+            "<strong>Sources of error</strong> — energy lost to surroundings makes measured c higher than the true value",
+            "<strong>Improvement</strong> — wrap sample in insulation; use a lid; allow time for temperature to equilibrate"
           ]
         }
       ],
@@ -253,15 +380,33 @@
         {
           "term": "Thermal capacity",
           "def": "The energy needed to raise an object's temperature by 1°C"
+        },
+        {
+          "term": "Temperature change (ΔT)",
+          "def": "The difference between final and initial temperature — used in Q = mcΔT"
+        },
+        {
+          "term": "Internal energy",
+          "def": "Total kinetic and potential energy of all particles in a substance — increases with temperature"
+        },
+        {
+          "term": "Joulemeter",
+          "def": "Instrument that measures the total electrical energy supplied to a device in joules"
+        },
+        {
+          "term": "Thermal store",
+          "def": "The energy held in a substance due to the temperature and mass of its particles"
         }
       ],
       "examTips": [
-        "Q = mcΔT — learn this formula and the units for each quantity.",
-        "Water has the highest SHC of common substances — explain why it is used in central heating."
+        "Q = mcΔT — learn this formula and the units for each quantity; it appears in almost every P1 exam.",
+        "Water has the highest SHC of common substances (4200 J/kg°C) — explain why it is used in central heating and cooling systems.",
+        "In SHC experiments, the measured value is always higher than the true value due to energy loss to surroundings."
       ],
       "commonMistakes": [
-        "Using temperature in Kelvin instead of °C for ΔT — the change is the same in either scale.",
-        "Forgetting that ΔT = final temperature − initial temperature."
+        "Using temperature in Kelvin instead of °C for ΔT — the change is the same in either scale, but use °C consistently.",
+        "Forgetting that ΔT = final temperature − initial temperature, not just the final temperature.",
+        "Swapping m and c in calculations — keep track of which value is mass (kg) and which is specific heat capacity (J/kg°C)."
       ],
       "videos": [
         {
@@ -288,33 +433,46 @@
     },
     "Energy Resources": {
       "intro": "Energy resources are used to generate electricity and heat. Understanding the advantages and disadvantages of renewable and non-renewable sources is essential for P1.",
+      "mnemonic": "\"Never Run, Get Tired; Swim, Wave, Go Biking\" — Nuclear, (coal/oil/gas) Renewable: Geothermal, Tidal, Solar, Wind, hydroelectric (Go), Biomass — all energy sources.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Energy Resources</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Non-Renewable Resources",
           "icon": "⛽",
+          "text": "Fossil fuels and nuclear fuels provide reliable, high-output power but are finite and have significant environmental costs.",
           "points": [
-            "Fossil fuels: coal, oil, natural gas — burn to produce steam → turbine → generator",
-            "Nuclear: uranium fission heats water → steam → turbine",
-            "Advantages: reliable, high output, available on demand",
-            "Disadvantages: finite (will run out), produce CO₂ (fossil fuels) or radioactive waste (nuclear)"
+            "<strong>Fossil fuels</strong> — coal, oil, natural gas; burn to produce steam → turbine → generator",
+            "<strong>Nuclear</strong> — uranium/plutonium fission heats water → steam → turbine; no CO₂ but produces radioactive waste",
+            "<strong>Reliable</strong> — can generate power on demand, regardless of weather; suitable as base-load power",
+            "<strong>High output</strong> — concentrated energy; small mass of fuel produces large amounts of electricity",
+            "<strong>Disadvantages</strong> — finite (will run out), CO₂ emissions (fossil fuels), radioactive waste (nuclear), pollution"
           ]
         },
         {
           "title": "Renewable Resources",
           "icon": "☀️",
+          "text": "Renewable energy sources are replenished naturally and produce little or no pollution, but many are intermittent.",
           "points": [
-            "<strong>Solar</strong> — panels absorb light; PV cells or solar thermal",
-            "<strong>Wind</strong> — turbines turned by wind; no fuel costs",
-            "<strong>Hydroelectric</strong> — falling water drives turbines; reliable",
-            "<strong>Tidal</strong> — tides drive turbines; predictable",
-            "<strong>Wave</strong> — waves move generators; variable",
-            "<strong>Geothermal</strong> — heat from Earth used to make steam",
-            "<strong>Biomass</strong> — burning biological material; considered carbon neutral"
+            "<strong>Solar</strong> — PV cells convert light to electricity; solar thermal systems heat water directly",
+            "<strong>Wind</strong> — turbines turned by wind; no fuel costs; best offshore where wind is stronger",
+            "<strong>Hydroelectric</strong> — falling water drives turbines; very reliable; requires dam construction (habitat impact)",
+            "<strong>Tidal</strong> — tidal barrages or stream turbines; predictable but limited suitable locations",
+            "<strong>Wave</strong> — wave motion drives generators; variable and technology still developing",
+            "<strong>Geothermal</strong> — heat from Earth used to produce steam; continuous supply; limited to volcanic regions",
+            "<strong>Biomass</strong> — burning biological material (wood, crops); considered carbon neutral over lifecycle"
           ]
         },
         {
-          "title": "Reliability and Environmental Impact",
+          "title": "Comparing Energy Sources",
           "icon": "⚖️",
+          "text": "Choosing energy sources involves balancing reliability, cost, environmental impact, land use, and energy security.",
+          "points": [
+            "<strong>Intermittency</strong> — wind and solar are only available when conditions are right; cannot guarantee supply",
+            "<strong>Land use</strong> — wind farms and solar farms require large areas; hydroelectric dams flood valleys",
+            "<strong>Carbon emissions</strong> — fossil fuels produce most CO₂; nuclear, wind, solar produce very little in operation",
+            "<strong>Start-up time</strong> — gas power stations start quickly (useful for peak demand); nuclear is slow to start",
+            "<strong>Cost</strong> — renewables have high installation cost but very low running costs; fossil fuels have ongoing fuel costs"
+          ],
           "callout": {
             "type": "exam",
             "label": "Key Comparison",
@@ -338,16 +496,29 @@
         {
           "term": "Generator",
           "def": "Device that converts rotational kinetic energy into electrical energy"
+        },
+        {
+          "term": "Intermittent",
+          "def": "Not continuously available — wind and solar power are intermittent as they depend on weather"
+        },
+        {
+          "term": "Carbon neutral",
+          "def": "A process that does not add net CO₂ to the atmosphere over its lifecycle"
+        },
+        {
+          "term": "National Grid",
+          "def": "The network of cables and transformers that distributes electricity at high voltage across the UK"
         }
       ],
       "examTips": [
-        "Most power stations work the same way: fuel heats water → steam → turbine → generator (except solar PV, wind turbines).",
-        "Renewable ≠ always available. Wind and solar are intermittent.",
-        "Be able to evaluate energy sources for 6-mark questions — consider reliability, cost, environment, land use."
+        "Most power stations work the same way: fuel heats water → steam → turbine → generator (except solar PV, wind turbines, and hydroelectric).",
+        "Renewable ≠ always available. Wind and solar are intermittent — this is a key limitation to mention in evaluation answers.",
+        "Be able to evaluate energy sources for 6-mark questions — consider reliability, cost, environment, land use, and energy security."
       ],
       "commonMistakes": [
-        "Saying nuclear is renewable — it uses uranium which is a finite resource.",
-        "Saying biomass produces no CO₂ — it does, but the carbon was recently absorbed from the atmosphere."
+        "Saying nuclear is renewable — it uses uranium which is a finite resource; it is non-renewable but low carbon.",
+        "Saying biomass produces no CO₂ — it does produce CO₂ when burned, but the carbon was recently absorbed from the atmosphere during growth.",
+        "Forgetting that hydroelectric has environmental impacts — flooding valleys and disrupting river ecosystems."
       ],
       "videos": [
         {

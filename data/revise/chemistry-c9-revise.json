@@ -3,32 +3,46 @@
   "topics": {
     "Earth's Atmosphere": {
       "intro": "The composition of Earth's atmosphere has changed dramatically over billions of years. Understanding this history is essential for C9.",
+      "mnemonic": "\"Volcanoes Cooked Oxygen Nicely\" — Volcanoes (early gases), Condensation (oceans formed), Oxygen (from photosynthesis), Nitrogen (accumulated as unreactive).",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Earth's Atmosphere</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "The Early Atmosphere",
           "icon": "🌋",
+          "text": "Billions of years ago, volcanic activity released gases that formed Earth's first atmosphere, rich in CO₂ and water vapour with almost no oxygen.",
           "points": [
-            "Formed by volcanic outgassing — volcanoes released gases from inside Earth",
-            "Mainly: carbon dioxide (CO₂), water vapour, nitrogen (N₂)",
-            "Very little or no oxygen (O₂)",
-            "Similar to current atmospheres of Mars and Venus"
+            "<strong>Volcanic outgassing</strong> — volcanoes released gases from inside Earth to form the early atmosphere",
+            "<strong>Main gases</strong> — carbon dioxide (CO₂), water vapour (H₂O), nitrogen (N₂); very little or no oxygen",
+            "<strong>Similar planets</strong> — early Earth's atmosphere resembled current atmospheres of Mars and Venus",
+            "<strong>No free oxygen</strong> — O₂ was absent; life as we know it could not have survived",
+            "<strong>High CO₂</strong> — CO₂ concentrations far higher than today, making the early atmosphere very different"
           ]
         },
         {
           "title": "How the Atmosphere Changed",
           "icon": "🌍",
-          "numbered": [
-            "Water vapour condensed as Earth cooled → formed oceans",
-            "CO₂ dissolved in oceans → reduced CO₂ levels; carbonates formed in rocks",
-            "Photosynthetic organisms (algae, plants) evolved → removed CO₂, released O₂",
-            "Oxygen levels gradually increased over billions of years",
-            "Nitrogen accumulated — unreactive, not removed by reactions",
-            "Ozone (O₃) layer formed from O₂ → absorbed UV radiation, allowed life on land"
+          "text": "Over billions of years, cooling oceans, photosynthesis, and the accumulation of unreactive nitrogen gradually shifted the atmosphere to its current composition.",
+          "points": [
+            "<strong>Ocean formation</strong> — water vapour condensed as Earth cooled, forming the oceans",
+            "<strong>CO₂ dissolved</strong> — CO₂ dissolved in the oceans and formed carbonate rocks, reducing atmospheric CO₂",
+            "<strong>Photosynthesis</strong> — early algae and plants evolved, removing CO₂ and releasing O₂ into the atmosphere",
+            "<strong>Oxygen rise</strong> — O₂ levels gradually increased over billions of years to ~21%",
+            "<strong>Nitrogen accumulation</strong> — N₂ built up because it is unreactive and not removed by any natural process",
+            "<strong>Ozone layer</strong> — O₃ formed from O₂ in the upper atmosphere, absorbing UV radiation and allowing life to colonise land"
           ]
         },
         {
           "title": "Current Atmosphere",
           "icon": "📊",
+          "text": "Today's atmosphere has remained relatively stable for about 200 million years, though human activity is now altering its composition.",
+          "points": [
+            "<strong>Nitrogen (N₂)</strong> — approximately 78% of the atmosphere; unreactive and stable",
+            "<strong>Oxygen (O₂)</strong> — approximately 21%; produced by photosynthesis and maintained by the carbon cycle",
+            "<strong>Argon (Ar)</strong> — approximately 0.9%; a noble gas and completely inert",
+            "<strong>Carbon dioxide (CO₂)</strong> — approximately 0.04%; essential for photosynthesis but rising due to human activity",
+            "<strong>Water vapour</strong> — variable (0–4%); plays a key role in the water cycle and greenhouse effect",
+            "<strong>Stability</strong> — the balance of photosynthesis and respiration has kept O₂ and CO₂ levels roughly constant for millions of years"
+          ],
           "callout": {
             "type": "exam",
             "label": "Current Composition",
@@ -48,16 +62,34 @@
         {
           "term": "Ozone layer",
           "def": "Layer of O₃ in the stratosphere that absorbs UV radiation"
+        },
+        {
+          "term": "Condensation",
+          "def": "Water vapour cooling and turning to liquid water — how the oceans first formed"
+        },
+        {
+          "term": "Carbon cycle",
+          "def": "The natural cycling of carbon between the atmosphere, organisms, oceans, and rocks"
+        },
+        {
+          "term": "Carbonate rocks",
+          "def": "Rocks such as limestone formed when CO₂ dissolved in oceans and was deposited as sediment"
+        },
+        {
+          "term": "Noble gas",
+          "def": "An unreactive gas in Group 0 of the periodic table; argon is a noble gas in the atmosphere"
         }
       ],
       "examTips": [
         "The key process that increased O₂: photosynthesis by early algae and plants.",
-        "CO₂ decreased because: dissolved in oceans AND used in photosynthesis.",
-        "Nitrogen built up because it is unreactive — not removed by any process."
+        "CO₂ decreased because of TWO processes — it dissolved in oceans AND was used in photosynthesis; give both in exam answers.",
+        "Nitrogen built up because it is unreactive — it was not produced by any single reaction, just not removed.",
+        "Learn the percentages: 78% N₂, 21% O₂, 0.9% Ar, 0.04% CO₂ — these numbers come up in multiple-choice questions."
       ],
       "commonMistakes": [
-        "Saying nitrogen was produced by a specific process — it accumulated because it is unreactive.",
-        "Forgetting that CO₂ also dissolved in the oceans, not just used in photosynthesis."
+        "Saying nitrogen was produced by a specific process — it accumulated because it is unreactive and nothing removed it.",
+        "Forgetting that CO₂ also dissolved in the oceans, not just used in photosynthesis — always give both reasons.",
+        "Claiming the current atmosphere is exactly the same as billions of years ago — it has changed enormously over geological time."
       ],
       "videos": [
         {
@@ -84,36 +116,45 @@
     },
     "Greenhouse Effect": {
       "intro": "Greenhouse gases trap heat in the atmosphere, keeping Earth warm enough for life. Human activities are enhancing this effect, causing climate change.",
+      "mnemonic": "\"Cows Munch Warm Nights\" — CO₂, Methane, Water vapour, Nitrous oxide — the four main greenhouse gases.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Greenhouse Effect</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "How the Greenhouse Effect Works",
           "icon": "☀️",
+          "text": "Greenhouse gases act like a blanket around Earth, trapping outgoing infrared radiation and warming the surface.",
           "points": [
-            "Short-wave solar radiation passes through the atmosphere to Earth's surface",
-            "Earth absorbs it and re-emits as long-wave infrared radiation",
-            "Greenhouse gases absorb this infrared — re-emit in all directions",
-            "Net effect: heat is trapped, warming the atmosphere"
+            "<strong>Short-wave solar radiation</strong> — UV and visible light pass through the atmosphere to Earth's surface",
+            "<strong>Absorption</strong> — Earth's surface absorbs solar radiation and warms up",
+            "<strong>Infrared re-emission</strong> — warmed Earth re-emits long-wave infrared radiation upwards",
+            "<strong>Greenhouse gas absorption</strong> — greenhouse gases absorb this infrared radiation",
+            "<strong>Re-emission in all directions</strong> — some infrared is re-emitted back towards Earth, trapping heat",
+            "<strong>Net warming</strong> — without this effect, Earth's average temperature would be −18°C instead of +15°C"
           ]
         },
         {
           "title": "Greenhouse Gases",
           "icon": "🌡️",
+          "text": "Several gases contribute to the greenhouse effect; human activity has increased the concentration of many of them.",
           "points": [
-            "Carbon dioxide (CO₂) — burning fossil fuels, deforestation",
-            "Methane (CH₄) — livestock (digestion), landfill, rice paddies, natural gas leaks",
-            "Water vapour (H₂O) — natural; increases as temperature rises",
-            "Nitrous oxide (N₂O) — fertilisers, agriculture"
+            "<strong>Carbon dioxide (CO₂)</strong> — from burning fossil fuels, deforestation, cement production",
+            "<strong>Methane (CH₄)</strong> — from livestock digestion, landfill, rice paddies, natural gas leaks; more potent than CO₂ per molecule",
+            "<strong>Water vapour (H₂O)</strong> — natural; increases as temperature rises (positive feedback)",
+            "<strong>Nitrous oxide (N₂O)</strong> — from fertilisers and agriculture",
+            "<strong>Human impact</strong> — industrial revolution has significantly raised CO₂ from ~280 ppm to over 420 ppm"
           ]
         },
         {
           "title": "Climate Change Consequences",
           "icon": "🌊",
+          "text": "The enhanced greenhouse effect is causing measurable changes to global climate with wide-ranging consequences.",
           "points": [
-            "Rising average global temperatures",
-            "Melting ice caps and glaciers → rising sea levels",
-            "More extreme weather events (floods, droughts, storms)",
-            "Changing distribution of species",
-            "Disruption to agriculture and food security"
+            "<strong>Rising temperatures</strong> — global average surface temperatures have risen ~1°C since pre-industrial times",
+            "<strong>Melting ice</strong> — Arctic sea ice, Antarctic ice sheets, and glaciers are shrinking, raising sea levels",
+            "<strong>Extreme weather</strong> — more frequent and intense floods, droughts, heatwaves, and storms",
+            "<strong>Species distribution</strong> — changing habitats force species to move or face extinction",
+            "<strong>Agriculture</strong> — shifts in rainfall patterns and temperature disrupt food production globally",
+            "<strong>Ocean acidification</strong> — CO₂ dissolving in oceans lowers pH, threatening marine ecosystems"
           ]
         }
       ],
@@ -129,16 +170,34 @@
         {
           "term": "Climate change",
           "def": "Long-term changes in global climate patterns due to enhanced greenhouse effect"
+        },
+        {
+          "term": "Infrared radiation",
+          "def": "Long-wave electromagnetic radiation emitted by Earth's surface that greenhouse gases absorb"
+        },
+        {
+          "term": "Carbon footprint",
+          "def": "Total greenhouse gas emissions (in CO₂ equivalent) caused by an individual, event, or product"
+        },
+        {
+          "term": "Global warming potential",
+          "def": "A measure of how much heat a greenhouse gas traps relative to CO₂ over 100 years"
+        },
+        {
+          "term": "Positive feedback",
+          "def": "A cycle where rising temperature causes more warming, e.g. melting ice reduces reflectivity"
         }
       ],
       "examTips": [
-        "The natural greenhouse effect is essential for life — the enhanced effect is the problem.",
-        "Methane is more potent than CO₂ as a greenhouse gas per molecule.",
-        "Be able to evaluate evidence for climate change — scientific consensus is overwhelming."
+        "The natural greenhouse effect is essential for life — the enhanced effect caused by humans is the problem; make this distinction clearly.",
+        "Methane is more potent than CO₂ as a greenhouse gas per molecule — useful to mention in 6-mark evaluation questions.",
+        "Be able to evaluate evidence for climate change — scientific consensus is overwhelming; ice core data shows CO₂ is at its highest in 800,000 years.",
+        "Know the difference between the greenhouse effect and the ozone hole — they are completely separate issues."
       ],
       "commonMistakes": [
-        "Confusing the ozone hole (separate issue) with the greenhouse effect.",
-        "Saying the greenhouse effect is entirely man-made — it is a natural process that is being enhanced."
+        "Confusing the ozone hole (separate UV issue caused by CFCs) with the greenhouse effect (heat trapping by CO₂/CH₄).",
+        "Saying the greenhouse effect is entirely man-made — it is a natural process that is being enhanced by human activities.",
+        "Saying infrared radiation passes through greenhouse gases — it is absorbed and re-emitted, not transmitted."
       ],
       "videos": [
         {
@@ -165,35 +224,44 @@
     },
     "Air Pollution": {
       "intro": "Burning fossil fuels releases pollutant gases that damage health and the environment. Understanding sources, effects and solutions is required for C9.",
+      "mnemonic": "\"Carbon Stays Naughty Passing Pollution\" — CO, SO₂, NOₓ, Particulates, Prevention (catalytic converters) — the key pollutant sequence.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Air Pollution</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Pollutants from Combustion",
           "icon": "🏭",
+          "text": "Burning fossil fuels produces several harmful gases depending on whether combustion is complete or incomplete and whether impurities are present.",
           "points": [
-            "<strong>Carbon dioxide (CO₂)</strong> — greenhouse gas; from complete combustion of fossil fuels",
-            "<strong>Carbon monoxide (CO)</strong> — toxic; from incomplete combustion; binds to haemoglobin preventing O₂ transport",
-            "<strong>Soot/particulates</strong> — from incomplete combustion; cause respiratory problems; global dimming",
+            "<strong>Carbon dioxide (CO₂)</strong> — greenhouse gas; from complete combustion of fossil fuels; contributes to climate change",
+            "<strong>Carbon monoxide (CO)</strong> — toxic, colourless, odourless; from incomplete combustion; binds to haemoglobin preventing O₂ transport",
+            "<strong>Soot/particulates</strong> — from incomplete combustion; cause respiratory problems and global dimming",
             "<strong>Sulfur dioxide (SO₂)</strong> — from sulfur impurities in fuels; dissolves in rainwater → sulfuric acid → acid rain",
-            "<strong>Nitrogen oxides (NOₓ)</strong> — N₂ + O₂ at high engine temperatures; → acid rain and photochemical smog"
+            "<strong>Nitrogen oxides (NOₓ)</strong> — N₂ + O₂ react at high engine temperatures; contribute to acid rain and photochemical smog",
+            "<strong>Unburned hydrocarbons</strong> — from incomplete combustion; contribute to smog and are toxic"
           ]
         },
         {
           "title": "Effects of Pollutants",
           "icon": "⚠️",
+          "text": "Air pollutants have serious consequences for human health, ecosystems, and the built environment.",
           "points": [
-            "Acid rain: lowers pH of lakes (kills fish), erodes limestone buildings and statues, damages trees",
-            "Carbon monoxide: binds to haemoglobin → reduces O₂ in blood → suffocation at high concentrations",
-            "Particulates: respiratory problems, asthma, reduced sunlight (global dimming)"
+            "<strong>Acid rain</strong> — SO₂ and NOₓ dissolve in water; lowers pH of lakes (kills fish), erodes limestone buildings, damages trees",
+            "<strong>Carbon monoxide poisoning</strong> — CO binds to haemoglobin 200× more strongly than O₂; reduces oxygen in blood; can be fatal",
+            "<strong>Respiratory disease</strong> — particulates penetrate deep into lungs; worsen asthma, bronchitis, and cardiovascular disease",
+            "<strong>Global dimming</strong> — particulates reflect sunlight; reduce solar energy reaching Earth's surface",
+            "<strong>Photochemical smog</strong> — NOₓ reacts with sunlight and hydrocarbons; creates ground-level ozone; irritates eyes and lungs"
           ]
         },
         {
-          "title": "Solutions",
+          "title": "Solutions to Air Pollution",
           "icon": "✅",
+          "text": "Various technological and policy solutions can reduce harmful emissions from combustion.",
           "points": [
-            "Catalytic converters in cars: convert CO and NOₓ to CO₂ and N₂",
-            "Flue gas desulfurisation: removes SO₂ from power station emissions using calcium oxide",
-            "Switching to low-sulfur fuels",
-            "Renewable energy to replace fossil fuels"
+            "<strong>Catalytic converters</strong> — convert CO and NOₓ to CO₂ and N₂ using a platinum catalyst; fitted in car exhausts",
+            "<strong>Flue gas desulfurisation</strong> — removes SO₂ from power station emissions by reacting with calcium oxide or limestone",
+            "<strong>Low-sulfur fuels</strong> — reducing sulfur content in petrol and diesel cuts SO₂ emissions",
+            "<strong>Renewable energy</strong> — replacing fossil fuels with wind, solar, and hydroelectric power eliminates combustion pollutants",
+            "<strong>Legislation</strong> — emission standards and clean air laws limit how much pollution industries and vehicles can produce"
           ]
         }
       ],
@@ -213,16 +281,30 @@
         {
           "term": "Catalytic converter",
           "def": "Device in car exhaust that converts CO and NOₓ to CO₂ and N₂"
+        },
+        {
+          "term": "Particulates",
+          "def": "Tiny solid particles (soot) from incomplete combustion — cause respiratory damage"
+        },
+        {
+          "term": "Nitrogen oxides (NOₓ)",
+          "def": "Gases formed when N₂ and O₂ react at high temperatures in engines — contribute to acid rain and smog"
+        },
+        {
+          "term": "Flue gas desulfurisation",
+          "def": "Industrial process that removes SO₂ from power station exhaust gases using calcium oxide"
         }
       ],
       "examTips": [
-        "CO is toxic because it binds to haemoglobin — prevents oxygen transport.",
-        "SO₂ + H₂O → sulfurous/sulfuric acid → acid rain.",
-        "Catalytic converters reduce CO and NOₓ — they do NOT reduce CO₂."
+        "CO is toxic because it binds to haemoglobin — prevents oxygen transport. State this mechanism clearly in exam answers.",
+        "SO₂ + H₂O → sulfurous/sulfuric acid → acid rain. Know the chain of reactions.",
+        "Catalytic converters reduce CO and NOₓ — they do NOT reduce CO₂; they actually produce it from CO.",
+        "Know two solutions for each pollutant — e.g. for SO₂: low-sulfur fuels AND flue gas desulfurisation."
       ],
       "commonMistakes": [
-        "Saying catalytic converters reduce CO₂ — they convert CO and NOₓ but produce CO₂.",
-        "Confusing CO (toxic, colourless) with CO₂ (not directly toxic at normal concentrations)."
+        "Saying catalytic converters reduce CO₂ — they convert CO to CO₂, so actually produce more CO₂ while reducing toxic emissions.",
+        "Confusing CO (toxic, colourless, odourless) with CO₂ (not directly toxic at normal concentrations).",
+        "Forgetting that NOₓ formation requires high temperature — it is the temperature in the engine that causes N₂ and O₂ to react."
       ],
       "videos": [
         {

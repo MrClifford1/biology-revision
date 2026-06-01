@@ -3,30 +3,47 @@
   "topics": {
     "Energy Changes": {
       "intro": "Chemical reactions involve energy changes. Exothermic reactions release energy to the surroundings; endothermic reactions absorb energy from the surroundings.",
+      "mnemonic": "EXothermic = EXits heat (temperature goes UP). ENdothermic = ENters heat (temperature goes DOWN). Think: EX = Exit, EN = Enter.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Energy Changes</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Exothermic Reactions",
           "icon": "🔥",
+          "text": "Exothermic reactions transfer energy to the surroundings, causing the temperature to rise. Products have less energy stored than reactants.",
           "points": [
-            "Release energy to surroundings — temperature INCREASES",
-            "Products have less energy than reactants",
-            "Examples: combustion, neutralisation, respiration, hand warmers",
-            "Energy profile: products lower than reactants"
+            "<strong>Energy released</strong> — transferred to the surroundings; temperature INCREASES",
+            "<strong>Products</strong> have less energy than reactants — energy has left the system",
+            "<strong>Examples</strong> — combustion, neutralisation, respiration, oxidation, hand warmers",
+            "<strong>ΔH is negative</strong> — e.g. ΔH = −890 kJ/mol for methane combustion",
+            "<strong>Energy profile</strong> — products drawn lower than reactants on diagram",
+            "<strong>Applications</strong> — hand warmers use exothermic reactions between iron powder and oxygen"
           ]
         },
         {
           "title": "Endothermic Reactions",
           "icon": "❄️",
+          "text": "Endothermic reactions absorb energy from the surroundings, causing the temperature to fall. Products have more energy stored than reactants.",
           "points": [
-            "Absorb energy from surroundings — temperature DECREASES",
-            "Products have more energy than reactants",
-            "Examples: thermal decomposition, photosynthesis, dissolving ammonium nitrate, sports cold packs",
-            "Energy profile: products higher than reactants"
+            "<strong>Energy absorbed</strong> — taken in from surroundings; temperature DECREASES",
+            "<strong>Products</strong> have more energy than reactants — energy has entered the system",
+            "<strong>Examples</strong> — thermal decomposition, photosynthesis, dissolving ammonium nitrate, sports cold packs",
+            "<strong>ΔH is positive</strong> — e.g. ΔH = +178 kJ/mol for thermal decomposition of calcium carbonate",
+            "<strong>Energy profile</strong> — products drawn higher than reactants on diagram",
+            "<strong>Sports cold packs</strong> — dissolving ammonium nitrate in water is endothermic, absorbing heat from the injury"
           ]
         },
         {
           "title": "Energy Profile Diagrams",
           "icon": "📈",
+          "text": "Energy profiles show how the energy of the system changes during a reaction, including the activation energy barrier and the overall ΔH.",
+          "points": [
+            "<strong>Activation energy (Ea)</strong> — the energy barrier; measured from reactants to the peak",
+            "<strong>ΔH</strong> — overall energy change; measured from reactants to products",
+            "<strong>Exothermic profile</strong> — products are lower than reactants; ΔH is negative",
+            "<strong>Endothermic profile</strong> — products are higher than reactants; ΔH is positive",
+            "<strong>Catalyst effect</strong> — lowers the peak (activation energy) but does not change the level of reactants or products",
+            "<strong>Calorimetry</strong> — experimental method to measure energy changes using Q = mcΔT"
+          ],
           "callout": {
             "type": "exam",
             "label": "Key Features",
@@ -37,28 +54,39 @@
       "keyTerms": [
         {
           "term": "Exothermic",
-          "def": "Reaction that releases energy — surroundings get warmer"
+          "def": "Reaction that releases energy to the surroundings — temperature increases; ΔH is negative"
         },
         {
           "term": "Endothermic",
-          "def": "Reaction that absorbs energy — surroundings get cooler"
+          "def": "Reaction that absorbs energy from the surroundings — temperature decreases; ΔH is positive"
         },
         {
           "term": "Activation energy",
-          "def": "Minimum energy needed for a reaction to occur — the peak on an energy profile"
+          "def": "Minimum energy needed for a reaction to occur — the peak on an energy profile diagram"
         },
         {
-          "term": "ΔH",
-          "def": "Enthalpy change — negative for exothermic, positive for endothermic"
+          "term": "ΔH (enthalpy change)",
+          "def": "The overall energy change of a reaction; negative for exothermic, positive for endothermic"
+        },
+        {
+          "term": "Calorimetry",
+          "def": "Experimental technique for measuring heat energy transferred using Q = mcΔT"
+        },
+        {
+          "term": "Energy profile diagram",
+          "def": "A graph showing how the energy of the reacting system changes from reactants through the transition state to products"
         }
       ],
       "examTips": [
-        "Exothermic = temperature UP (energy OUT to surroundings). Endothermic = temperature DOWN (energy IN from surroundings).",
-        "On energy profiles: activation energy is measured from reactants to the peak. ΔH is from reactants to products."
+        "Exothermic = temperature UP (energy OUT to surroundings). Endothermic = temperature DOWN (energy IN from surroundings). Always state the direction of energy transfer.",
+        "On energy profiles: activation energy is measured from reactants to the peak. ΔH is from reactants to products — do not mix these up.",
+        "In 6-mark questions on evaluating energy experiments, always mention heat loss to the surroundings as a source of error and suggest using insulation/a lid to improve accuracy.",
+        "When using Q = mcΔT in the exam: m is in grams, c = 4.18 J/g°C for water, ΔT is the temperature change. Show all steps clearly."
       ],
       "commonMistakes": [
-        "Saying exothermic reactions have a temperature decrease — it's the opposite.",
-        "Confusing activation energy (reactants to peak) with ΔH (reactants to products)."
+        "Saying exothermic reactions have a temperature decrease — it's the opposite; exothermic reactions release energy so the surroundings get warmer.",
+        "Confusing activation energy (reactants to peak) with ΔH (reactants to products) on energy profile diagrams.",
+        "Drawing the catalyst on an energy profile as changing the height of reactants or products — catalysts only lower the activation energy peak."
       ],
       "videos": [
         {
@@ -85,48 +113,90 @@
     },
     "Bond Energies": {
       "intro": "During reactions, bonds in reactants break (requiring energy) and new bonds form in products (releasing energy). The overall energy change depends on the difference.",
+      "mnemonic": "Breaking Bonds = Big effort needed (endothermic). Making bonds = Magnificent energy released (exothermic). BBB-MMM: Break Bonds Big, Make bonds Magnificent!",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Bond Energies</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Bond Breaking and Making",
           "icon": "🔗",
+          "text": "Energy must be supplied to break bonds (endothermic) and is released when new bonds form (exothermic). The net energy change determines whether the reaction is exo- or endothermic overall.",
           "points": [
-            "Breaking bonds = ENDOTHERMIC (energy IN required)",
-            "Making bonds = EXOTHERMIC (energy OUT released)",
-            "Exothermic overall: energy released making bonds > energy needed breaking bonds",
-            "Endothermic overall: energy needed breaking bonds > energy released making bonds"
+            "<strong>Breaking bonds</strong> — ENDOTHERMIC; energy must be INPUT to overcome the attractive forces",
+            "<strong>Making bonds</strong> — EXOTHERMIC; energy is RELEASED as attractive forces form between atoms",
+            "<strong>Exothermic overall</strong> — energy released making bonds > energy needed breaking bonds",
+            "<strong>Endothermic overall</strong> — energy needed breaking bonds > energy released making bonds",
+            "<strong>Bond energy units</strong> — measured in kJ/mol; represent energy to break one mole of that bond",
+            "<strong>Average bond energies</strong> — values are averages across many molecules; give approximate ΔH values"
           ]
         },
         {
           "title": "Calculating Energy Changes",
           "icon": "📐",
+          "text": "To calculate ΔH using bond energies: sum all energy needed to break bonds in reactants, then subtract all energy released making bonds in products.",
+          "points": [
+            "<strong>Step 1</strong> — list all bonds broken in the reactants and their bond energies (kJ/mol)",
+            "<strong>Step 2</strong> — list all bonds formed in the products and their bond energies (kJ/mol)",
+            "<strong>Step 3</strong> — ΔH = Σ(energy in to break bonds) − Σ(energy out making bonds)",
+            "<strong>Negative ΔH</strong> — more energy released than absorbed = exothermic reaction",
+            "<strong>Positive ΔH</strong> — more energy absorbed than released = endothermic reaction",
+            "<strong>Worked example</strong> — H₂ + Cl₂ → 2HCl: break H-H (436) + Cl-Cl (243) = 679 kJ in; make 2×H-Cl (2×432 = 864 kJ out); ΔH = 679 − 864 = −185 kJ/mol (exothermic)"
+          ],
           "callout": {
             "type": "exam",
             "label": "Method",
             "text": "1. List all bonds broken (reactants) and their energies. 2. List all bonds formed (products) and their energies. 3. ΔH = Σ(energy in) − Σ(energy out). Negative answer = exothermic."
           }
+        },
+        {
+          "title": "Common Bond Energies to Know",
+          "icon": "📋",
+          "text": "Knowing approximate bond energies helps you tackle calculation questions confidently in the exam.",
+          "points": [
+            "<strong>C-H bond</strong> — approximately 413 kJ/mol; very common in organic molecules",
+            "<strong>C=C double bond</strong> — approximately 614 kJ/mol; stronger than single C-C (347 kJ/mol)",
+            "<strong>O=O bond</strong> — approximately 498 kJ/mol; in oxygen gas O₂",
+            "<strong>O-H bond</strong> — approximately 464 kJ/mol; in water molecules",
+            "<strong>C=O bond</strong> — approximately 805 kJ/mol (in CO₂); very strong double bond",
+            "<strong>H-H bond</strong> — approximately 436 kJ/mol; in hydrogen gas H₂"
+          ]
         }
       ],
       "keyTerms": [
         {
           "term": "Bond energy",
-          "def": "Energy needed to break one mole of a specific bond"
+          "def": "The energy required to break one mole of a specific covalent bond in the gaseous state; measured in kJ/mol"
         },
         {
           "term": "Bond breaking",
-          "def": "Endothermic process — requires energy input"
+          "def": "An endothermic process — energy must be supplied to overcome the forces holding atoms together"
         },
         {
           "term": "Bond making",
-          "def": "Exothermic process — releases energy"
+          "def": "An exothermic process — energy is released as atoms are held together by new bonds"
+        },
+        {
+          "term": "ΔH (enthalpy change)",
+          "def": "The overall energy change of a reaction: ΔH = energy in (breaking) − energy out (making)"
+        },
+        {
+          "term": "Average bond energy",
+          "def": "The mean energy required to break a particular type of bond, averaged across many different molecules"
+        },
+        {
+          "term": "Exothermic reaction",
+          "def": "A reaction where more energy is released making bonds than is needed to break bonds; ΔH is negative"
         }
       ],
       "examTips": [
-        "Bond breaking = endothermic. Bond making = exothermic. This is a common exam question.",
-        "Show all working in bond energy calculations — list every bond broken and formed separately."
+        "Bond breaking = endothermic (energy IN). Bond making = exothermic (energy OUT). This is a very common exam question — state it clearly.",
+        "Show all working in bond energy calculations — list every bond broken and formed separately with its energy value. Examiners award method marks.",
+        "Remember to count ALL bonds including the correct number based on subscripts (e.g. CH₄ has 4 C-H bonds; 2H₂O has 4 O-H bonds total).",
+        "If ΔH is negative, the reaction is exothermic. If positive, it is endothermic. Always state which type it is as part of your answer."
       ],
       "commonMistakes": [
-        "Reversing bond breaking/making — breaking bonds requires energy, making bonds releases it.",
-        "Forgetting to count all bonds — check subscripts carefully in formulas."
+        "Reversing bond breaking and making — breaking bonds always requires energy (endothermic); making bonds always releases energy (exothermic).",
+        "Forgetting to multiply bond energies by the number of bonds — e.g. 2H₂O means 4 O-H bonds, not 2.",
+        "Not counting bonds in all molecules on both sides of the equation — always draw out the full structural formula mentally to count bonds accurately."
       ],
       "videos": [
         {
@@ -153,44 +223,84 @@
     },
     "Fuel Cells": {
       "intro": "Fuel cells generate electricity directly from a chemical reaction between a fuel and oxygen, without combustion. The hydrogen fuel cell is the key example for GCSE.",
+      "mnemonic": "Fuel cells: H₂ goes to the Anode (A comes before C), O₂ goes to the Cathode. HAO-C: Hydrogen At the Anode, Oxygen at the Cathode. Only Water produced!",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Fuel Cells</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "How Hydrogen Fuel Cells Work",
           "icon": "⚡",
+          "text": "A hydrogen fuel cell converts chemical energy directly into electrical energy through an electrochemical reaction, producing only water as a by-product.",
           "points": [
-            "Hydrogen fed to anode: H₂ → 2H⁺ + 2e⁻ (oxidation)",
-            "Electrons flow through external circuit — this is the electrical current",
-            "Oxygen fed to cathode: O₂ + 4H⁺ + 4e⁻ → 2H₂O (reduction)",
-            "Overall reaction: hydrogen + oxygen → water",
-            "No combustion — direct electrochemical conversion"
+            "<strong>Hydrogen at the anode</strong> — H₂ → 2H⁺ + 2e⁻ (oxidation — loses electrons)",
+            "<strong>Electrons flow</strong> through the external circuit — this is the electrical current that powers devices",
+            "<strong>Oxygen at the cathode</strong> — O₂ + 4H⁺ + 4e⁻ → 2H₂O (reduction — gains electrons)",
+            "<strong>Overall reaction</strong> — hydrogen + oxygen → water (2H₂ + O₂ → 2H₂O)",
+            "<strong>No combustion</strong> — direct electrochemical conversion is more efficient than burning",
+            "<strong>Electrolyte membrane</strong> — allows H⁺ ions to pass through but not electrons"
           ]
         },
         {
           "title": "Advantages and Disadvantages",
           "icon": "⚖️",
+          "text": "Fuel cells have significant environmental benefits but also real-world challenges around hydrogen production and storage.",
           "points": [
-            "Advantages: only product is water (no CO₂); efficient; no moving parts; continuous supply of fuel",
-            "Disadvantages: hydrogen is explosive and hard to store safely; currently produced from fossil fuels (not truly green); expensive technology; infrastructure lacking"
+            "<strong>Advantage: only water produced</strong> — no CO₂ or pollutant emissions at the point of use",
+            "<strong>Advantage: high efficiency</strong> — converts chemical energy directly to electrical; no energy lost as heat in combustion",
+            "<strong>Advantage: continuous supply</strong> — unlike batteries, works as long as fuel is supplied; does not need recharging",
+            "<strong>Disadvantage: hydrogen storage</strong> — H₂ is explosive and difficult to store safely under pressure",
+            "<strong>Disadvantage: hydrogen production</strong> — most H₂ is currently made from natural gas (steam reforming), releasing CO₂",
+            "<strong>Disadvantage: cost and infrastructure</strong> — fuel cell technology and hydrogen refuelling stations are expensive"
+          ]
+        },
+        {
+          "title": "Comparison with Batteries and Combustion Engines",
+          "icon": "🔋",
+          "text": "Fuel cells compare favourably to alternatives in efficiency and emissions, but face practical hurdles in widespread adoption.",
+          "points": [
+            "<strong>vs batteries</strong> — fuel cells don't run down; batteries store finite charge and must be recharged",
+            "<strong>vs combustion engines</strong> — fuel cells produce no CO₂ at point of use; engines emit CO₂ and other pollutants",
+            "<strong>Renewable H₂</strong> — if hydrogen is made by electrolysis using renewable electricity, fuel cells are truly zero-emission",
+            "<strong>Current use</strong> — used in some buses, cars (Toyota Mirai), and as backup power generators",
+            "<strong>Green hydrogen</strong> — the future goal; requires large amounts of renewable electricity for electrolysis",
+            "<strong>Overall verdict</strong> — promising technology but dependent on clean H₂ supply to be truly sustainable"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Fuel cell",
-          "def": "A device that converts chemical energy from a fuel directly into electrical energy"
+          "def": "A device that converts chemical energy from a fuel directly into electrical energy via an electrochemical reaction"
         },
         {
           "term": "Hydrogen fuel cell",
-          "def": "Fuel cell where H₂ and O₂ react to produce water and electricity"
+          "def": "A fuel cell where H₂ and O₂ react electrochemically to produce water and electricity"
+        },
+        {
+          "term": "Anode",
+          "def": "The negative electrode in a fuel cell where hydrogen is oxidised (loses electrons)"
+        },
+        {
+          "term": "Cathode",
+          "def": "The positive electrode in a fuel cell where oxygen is reduced (gains electrons)"
+        },
+        {
+          "term": "Oxidation",
+          "def": "Loss of electrons — hydrogen is oxidised at the anode of a fuel cell"
+        },
+        {
+          "term": "Green hydrogen",
+          "def": "Hydrogen produced by electrolysis using renewable electricity — truly zero-carbon"
         }
       ],
       "examTips": [
-        "Fuel cells produce water as the only product — no CO₂ emissions at point of use.",
-        "For evaluation questions: benefits (clean, efficient) vs issues (hydrogen storage, production method)."
+        "Fuel cells produce water as the only product at the point of use — no CO₂ emissions. However always add 'at the point of use' because CO₂ may be produced making the hydrogen.",
+        "For evaluation questions on fuel cells: always discuss both advantages (clean, efficient, continuous) AND disadvantages (hydrogen storage, production method, cost, infrastructure).",
+        "Remember: hydrogen is oxidised at the anode (OILRIG — Oxidation Is Loss, Reduction Is Gain). State this clearly in exam answers about fuel cell half-equations."
       ],
       "commonMistakes": [
-        "Saying fuel cells have no disadvantages — hydrogen storage and production are significant issues.",
-        "Forgetting that hydrogen is currently made from fossil fuels in most cases."
+        "Saying fuel cells have no environmental disadvantages — hydrogen is currently mostly produced from fossil fuels, so there is still an indirect carbon footprint.",
+        "Forgetting that hydrogen is highly flammable and explosive — storage is a genuine safety and engineering challenge.",
+        "Confusing the anode and cathode roles — hydrogen goes to the anode (oxidation), oxygen goes to the cathode (reduction)."
       ],
       "videos": [
         {

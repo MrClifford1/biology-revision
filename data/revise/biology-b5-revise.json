@@ -3,18 +3,25 @@
   "topics": {
     "Homeostasis": {
       "intro": "Homeostasis is the maintenance of a stable internal environment. It ensures cells can function correctly despite changes in conditions.",
+      "mnemonic": "Think of homeostasis as the body's 'THERMOSTAT': Temperature, Hormones, Electrolytes, Respiration, Metabolism, Osmosis, Sugar, Toxins, and Acidity are all regulated. Or remember the feedback loop: 'RRCEF' — Receptor detects change, Response triggered, Corrects the error, Effectors act, Feedback returns to normal.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Homeostasis</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "What is Homeostasis?",
           "icon": "⚖️",
+          "text": "Homeostasis keeps the internal environment of the body stable so that cells can function optimally.",
           "points": [
-            "Control of internal conditions: body temperature (37°C), blood glucose, water content",
-            "Uses negative feedback — when conditions change, the response corrects them back to the set point"
+            "<strong>Internal conditions regulated</strong> — body temperature (37°C), blood glucose concentration, water content of the blood",
+            "<strong>Negative feedback</strong> — when conditions deviate from the set point, the response corrects them back",
+            "<strong>Set point</strong> — the ideal value the body aims to maintain (e.g. 37°C for body temperature)",
+            "<strong>Automatic control</strong> — homeostatic responses do not require conscious thought",
+            "<strong>Why it matters</strong> — enzymes work at an optimal temperature and pH; cells need stable water potential to function"
           ]
         },
         {
           "title": "Negative Feedback",
           "icon": "🔄",
+          "text": "Negative feedback is the mechanism that brings any deviation back toward the set point.",
           "numbered": [
             "Stimulus detected (e.g. temperature too high)",
             "Receptors detect the change",
@@ -22,11 +29,28 @@
             "Effectors carry out the correction",
             "Conditions return to normal"
           ],
+          "points": [
+            "<strong>Receptor</strong> — detects the stimulus and sends information to the control centre",
+            "<strong>Control centre</strong> — processes the information and coordinates the response (e.g. hypothalamus for temperature)",
+            "<strong>Effector</strong> — a muscle or gland that carries out the corrective response",
+            "<strong>Opposes the change</strong> — if temperature rises, response cools the body; if it falls, response warms it"
+          ],
           "callout": {
             "type": "exam",
             "label": "Key Concept",
             "text": "Negative feedback always returns conditions BACK to the normal level. Response always OPPOSES the original change."
           }
+        },
+        {
+          "title": "Temperature Regulation",
+          "icon": "🌡️",
+          "text": "The hypothalamus acts as the body's thermostat, detecting blood temperature and coordinating responses.",
+          "points": [
+            "<strong>Too hot</strong> — sweat glands produce sweat (evaporation cools skin); vasodilation (blood vessels near skin widen, more heat lost by radiation)",
+            "<strong>Too cold</strong> — vasoconstriction (blood vessels near skin narrow, less heat lost); shivering (muscle contractions generate heat); hairs stand on end (traps air insulation layer)",
+            "<strong>Hypothalamus</strong> — the thermoregulatory centre in the brain that detects and controls temperature",
+            "<strong>Core temperature</strong> — the temperature deep within the body, kept at approximately 37°C"
+          ]
         }
       ],
       "keyTerms": [
@@ -41,14 +65,37 @@
         {
           "term": "Effector",
           "def": "A muscle or gland that brings about a response"
+        },
+        {
+          "term": "Receptor",
+          "def": "A cell or organ that detects a change (stimulus) in the environment"
+        },
+        {
+          "term": "Set point",
+          "def": "The ideal value that homeostatic mechanisms aim to maintain"
+        },
+        {
+          "term": "Vasodilation",
+          "def": "Widening of blood vessels near the skin to increase heat loss"
+        },
+        {
+          "term": "Vasoconstriction",
+          "def": "Narrowing of blood vessels near the skin to reduce heat loss"
+        },
+        {
+          "term": "Hypothalamus",
+          "def": "The region of the brain that acts as the body's thermostat"
         }
       ],
       "examTips": [
-        "Negative feedback always returns to the set point — the response opposes the change.",
-        "Examples: temperature, blood glucose, water balance."
+        "Negative feedback always returns to the set point — the response opposes the change, never amplifies it.",
+        "Name all three conditions regulated: body temperature, blood glucose concentration, and water content.",
+        "For temperature questions, distinguish between vasodilation (widening) and vasoconstriction (narrowing) — and know which direction each causes heat loss to change."
       ],
       "commonMistakes": [
-        "Confusing negative feedback (corrects) with positive feedback (amplifies)."
+        "Confusing negative feedback (corrects and returns to set point) with positive feedback (amplifies the change further — e.g. childbirth contractions).",
+        "Saying blood vessels 'move closer to' or 'away from' the skin — the vessels don't move. They widen (vasodilation) or narrow (vasoconstriction) in place.",
+        "Forgetting that shivering generates heat through rapid muscle contractions — it is an effector response, not just a sensation."
       ],
       "videos": [
         {
@@ -70,19 +117,25 @@
     },
     "Nervous System": {
       "intro": "The nervous system allows rapid detection and response to changes. It consists of the CNS (brain and spinal cord) and peripheral nerves.",
+      "mnemonic": "Remember the reflex arc order with: 'Silly Rabbits Should Run More' — Stimulus, Receptor, Sensory neurone, Relay neurone, Motor neurone (then effector). For neurone direction: 'Sensory = Sends TO brain; Motor = Moves FROM brain'.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Nervous System</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
-          "title": "Structure",
+          "title": "Structure of the Nervous System",
           "icon": "🧠",
+          "text": "The nervous system is divided into the central nervous system (CNS) and the peripheral nervous system.",
           "points": [
-            "Sensory neurones — from receptors TO CNS",
-            "Motor neurones — from CNS TO effectors",
-            "Relay neurones — connect in CNS"
+            "<strong>CNS</strong> — brain and spinal cord; the control centre for the whole body",
+            "<strong>Sensory neurones</strong> — carry impulses FROM receptors TO the CNS",
+            "<strong>Motor neurones</strong> — carry impulses FROM the CNS TO effectors",
+            "<strong>Relay neurones</strong> — connect sensory and motor neurones within the CNS",
+            "<strong>Effectors</strong> — muscles (contract) or glands (secrete) that produce the response"
           ]
         },
         {
           "title": "Reflex Arc",
           "icon": "⚡",
+          "text": "A reflex is a rapid, automatic response to a stimulus that does not involve conscious decision-making.",
           "numbered": [
             "Stimulus → receptor detects change",
             "Sensory neurone → spinal cord",
@@ -90,11 +143,29 @@
             "Motor neurone → effector",
             "Effector responds"
           ],
+          "points": [
+            "<strong>Speed</strong> — reflexes bypass the brain, so the response is faster than voluntary actions",
+            "<strong>Automatic</strong> — no conscious thought required; happens without decision-making",
+            "<strong>Examples</strong> — knee-jerk reflex, pupil reflex, withdrawal of hand from heat",
+            "<strong>Protective function</strong> — reflexes often protect the body from harm"
+          ],
           "callout": {
             "type": "tip",
             "label": "Why Reflexes Are Fast",
             "text": "Reflexes bypass the brain — coordinated in spinal cord. Pupil reflex, withdrawal reflex."
           }
+        },
+        {
+          "title": "Synapses",
+          "icon": "🔗",
+          "text": "Synapses are junctions between neurones where chemical signals transfer the electrical message.",
+          "points": [
+            "<strong>Synapse</strong> — the tiny gap between the end of one neurone and the start of the next",
+            "<strong>Neurotransmitters</strong> — chemical molecules released into the synaptic gap to carry the signal",
+            "<strong>Diffusion</strong> — neurotransmitters diffuse across the gap and bind to receptors on the next neurone",
+            "<strong>New impulse</strong> — binding triggers a new electrical impulse in the next neurone",
+            "<strong>Drugs</strong> — many drugs affect synaptic transmission by blocking receptors or preventing reuptake of neurotransmitters"
+          ]
         }
       ],
       "keyTerms": [
@@ -109,15 +180,37 @@
         {
           "term": "Reflex arc",
           "def": "Pathway of neurones in a reflex action"
+        },
+        {
+          "term": "CNS",
+          "def": "Central nervous system — brain and spinal cord"
+        },
+        {
+          "term": "Neurotransmitter",
+          "def": "Chemical released at a synapse that carries the signal to the next neurone"
+        },
+        {
+          "term": "Receptor",
+          "def": "A cell that detects a stimulus and converts it to an electrical impulse"
+        },
+        {
+          "term": "Sensory neurone",
+          "def": "Neurone carrying impulses from receptors to the CNS"
+        },
+        {
+          "term": "Motor neurone",
+          "def": "Neurone carrying impulses from the CNS to effectors"
         }
       ],
       "examTips": [
-        "Reflexes bypass the brain — faster response.",
-        "Sensory = TO CNS. Motor = FROM CNS."
+        "Reflexes bypass the brain — they are coordinated in the spinal cord, which is why they are faster than voluntary responses.",
+        "Sensory neurones carry impulses TO the CNS; Motor neurones carry impulses FROM the CNS — remember: Sensory = inward, Motor = outward.",
+        "At synapses, electrical impulses are converted to chemical signals (neurotransmitters) — make sure you describe this two-step process in exam answers."
       ],
       "commonMistakes": [
-        "Saying reflexes involve conscious thought — they do not.",
-        "Confusing sensory and motor neurones."
+        "Saying reflexes involve conscious thought — they do not. The brain may become aware of the reflex AFTER it happens, but it does not initiate it.",
+        "Confusing sensory and motor neurones — remember 'Sensory = TO brain, Motor = FROM brain'.",
+        "Describing synapses as electrical connections — they are chemical junctions; neurotransmitters diffuse across the gap."
       ],
       "videos": [
         {
@@ -144,24 +237,43 @@
     },
     "Hormones": {
       "intro": "Hormones are chemical messengers produced by glands, carried in blood to target organs. Slower and longer-lasting than nervous responses.",
+      "mnemonic": "To remember key hormones and their glands, use: 'Adrenal glands = Adrenaline (fight/flight); Pancreas = Insulin/glucagon (glucose); Ovaries = Oestrogen; Testes = Testosterone; Pituitary = FSH/LH'. Nervous vs Hormonal: FEELS — Fast Electrical Exact Local Short-lived (nervous) vs SCABS — Slow Chemical All-body Blood-carried Sustained (hormonal).",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Hormones</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Nervous vs Hormonal",
           "icon": "⚡",
+          "text": "The nervous and hormonal systems both coordinate responses but work in very different ways.",
           "points": [
-            "Nervous: fast, short-lived, electrical, specific pathway",
-            "Hormonal: slower, longer-lasting, chemical, bloodstream"
+            "<strong>Nervous system</strong> — fast, short-lived, electrical impulse, travels along specific neurones to specific muscles/glands",
+            "<strong>Hormonal system</strong> — slower, longer-lasting, chemical messenger, carried in blood to all parts of body",
+            "<strong>Target organ specificity</strong> — hormones travel everywhere in blood but only affect cells with the right receptors",
+            "<strong>Combined action</strong> — some responses involve both systems working together (e.g. adrenaline and the nervous system in a fight-or-flight response)"
           ]
         },
         {
           "title": "Key Hormones",
           "icon": "💉",
+          "text": "You need to know the main hormones, where they are produced, and what they do.",
           "points": [
-            "Adrenaline — adrenal glands; fight or flight; increases heart rate",
-            "Insulin — pancreas; lowers blood glucose",
-            "Glucagon — pancreas; raises blood glucose",
-            "Oestrogen — ovaries; female puberty, menstrual cycle",
-            "Testosterone — testes; male puberty"
+            "<strong>Adrenaline</strong> — adrenal glands; fight or flight response; increases heart rate, dilates pupils, redirects blood to muscles",
+            "<strong>Insulin</strong> — pancreas (beta cells); lowers blood glucose by stimulating uptake and glycogen storage",
+            "<strong>Glucagon</strong> — pancreas (alpha cells); raises blood glucose by stimulating glycogen breakdown",
+            "<strong>Oestrogen</strong> — ovaries; controls female puberty and the menstrual cycle; triggers LH surge",
+            "<strong>Testosterone</strong> — testes; controls male puberty, sperm production, secondary sexual characteristics",
+            "<strong>FSH and LH</strong> — pituitary gland; control the menstrual cycle and egg/sperm development"
+          ]
+        },
+        {
+          "title": "The Endocrine System",
+          "icon": "🏥",
+          "text": "The endocrine system is a collection of glands that produce and secrete hormones directly into the bloodstream.",
+          "points": [
+            "<strong>Pituitary gland</strong> — the 'master gland'; produces FSH, LH, ADH and other hormones that control other glands",
+            "<strong>Thyroid gland</strong> — produces thyroxine, which controls metabolic rate",
+            "<strong>Adrenal glands</strong> — produce adrenaline for emergency responses",
+            "<strong>Pancreas</strong> — produces insulin and glucagon to regulate blood glucose",
+            "<strong>Ovaries/testes</strong> — produce sex hormones controlling reproduction and puberty"
           ]
         }
       ],
@@ -177,15 +289,33 @@
         {
           "term": "Target organ",
           "def": "Organ that responds to a specific hormone"
+        },
+        {
+          "term": "Endocrine gland",
+          "def": "A gland that secretes hormones directly into the bloodstream"
+        },
+        {
+          "term": "Pituitary gland",
+          "def": "The master gland in the brain that controls other endocrine glands"
+        },
+        {
+          "term": "Testosterone",
+          "def": "Male sex hormone produced by the testes; controls puberty and sperm production"
+        },
+        {
+          "term": "Oestrogen",
+          "def": "Female sex hormone produced by ovaries; controls puberty and menstrual cycle"
         }
       ],
       "examTips": [
-        "Hormones travel in blood — reach all organs but only affect targets.",
-        "Hormonal = slow and long-lasting; Nervous = fast and short."
+        "Hormones travel in blood — they reach ALL organs but only affect target organs that have the correct receptors.",
+        "Hormonal responses are slow and long-lasting; Nervous responses are fast and short-lived — always compare both features in contrast questions.",
+        "Know at least five endocrine glands, the hormone each produces, and the effect — pituitary, thyroid, adrenal, pancreas, ovaries/testes."
       ],
       "commonMistakes": [
-        "Saying hormones travel through nerves.",
-        "Confusing slow hormonal with fast nervous responses."
+        "Saying hormones travel through nerves — they travel in the bloodstream, not along nerves.",
+        "Confusing the speed: hormonal responses are SLOW (minutes to hours); nervous responses are FAST (milliseconds).",
+        "Forgetting that the pituitary gland is the 'master gland' — it controls many other endocrine glands."
       ],
       "videos": [
         {
@@ -212,13 +342,19 @@
     },
     "Blood Glucose": {
       "intro": "Blood glucose must be kept within a narrow range. Insulin and glucagon work together as a negative feedback pair to achieve this.",
+      "mnemonic": "Remember with 'I Go Down, Glucagon Goes Up': Insulin is released when glucose is high (brings it Down); Glucagon is released when glucose is low (brings it Up). Or picture a seesaw — when glucose is high, insulin tips the seesaw down; when glucose is low, glucagon tips it back up. Never confuse glycoGEN (storage) with glucaGON (the hormone that mobilises it).",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Blood Glucose</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
-          "title": "Regulation",
+          "title": "Blood Glucose Regulation",
           "icon": "🩸",
+          "text": "The pancreas monitors blood glucose continuously and releases hormones to correct any deviation.",
           "points": [
-            "High glucose → pancreas releases INSULIN → glucose → glycogen in liver → glucose falls",
-            "Low glucose → pancreas releases GLUCAGON → glycogen → glucose in liver → glucose rises"
+            "<strong>High glucose</strong> — pancreas releases INSULIN → cells take up glucose → liver converts glucose to glycogen → blood glucose falls",
+            "<strong>Low glucose</strong> — pancreas releases GLUCAGON → liver converts glycogen back to glucose → glucose released into blood → glucose rises",
+            "<strong>Negative feedback</strong> — insulin and glucagon are antagonistic hormones working as a pair",
+            "<strong>Glycogen</strong> — the storage polysaccharide in the liver and muscles; made from glucose and broken back down as needed",
+            "<strong>Target organs</strong> — liver cells and body cells respond to insulin; liver responds to glucagon"
           ],
           "callout": {
             "type": "exam",
@@ -229,9 +365,25 @@
         {
           "title": "Diabetes",
           "icon": "💉",
+          "text": "Diabetes is a condition where blood glucose is not controlled properly.",
           "points": [
-            "Type 1 — pancreas makes no insulin; autoimmune; treated with insulin injections",
-            "Type 2 — cells don't respond to insulin; linked to obesity; managed by diet/exercise/medication"
+            "<strong>Type 1 diabetes</strong> — autoimmune condition; pancreas produces no insulin; blood glucose cannot be lowered; requires daily insulin injections",
+            "<strong>Type 2 diabetes</strong> — cells become less responsive to insulin (insulin resistance); linked to obesity and poor diet; managed by diet, exercise, and medication",
+            "<strong>Symptoms</strong> — high blood glucose causes thirst, frequent urination, fatigue, and blurred vision",
+            "<strong>Complications</strong> — uncontrolled diabetes damages blood vessels and nerves over time",
+            "<strong>Treatment differences</strong> — Type 1 always needs insulin; Type 2 may be managed without insulin initially"
+          ]
+        },
+        {
+          "title": "Insulin and the Body",
+          "icon": "🔬",
+          "text": "Understanding how insulin works at the cellular level helps explain both normal regulation and diabetes.",
+          "points": [
+            "<strong>Insulin receptors</strong> — found on body cells; insulin binds to these to allow glucose uptake",
+            "<strong>Glucose uptake</strong> — insulin increases the rate at which cells absorb glucose from the blood",
+            "<strong>Glycogenesis</strong> — conversion of glucose to glycogen in the liver (stimulated by insulin)",
+            "<strong>Glycogenolysis</strong> — breakdown of glycogen to glucose (stimulated by glucagon)",
+            "<strong>Insulin therapy</strong> — Type 1 diabetics inject insulin to replace what the pancreas cannot produce; doses timed with meals"
           ]
         }
       ],
@@ -255,16 +407,29 @@
         {
           "term": "Type 2 diabetes",
           "def": "Cells resistant to insulin — linked to lifestyle"
+        },
+        {
+          "term": "Pancreas",
+          "def": "Organ that produces both insulin and glucagon to regulate blood glucose"
+        },
+        {
+          "term": "Glycogenesis",
+          "def": "Conversion of glucose into glycogen for storage"
+        },
+        {
+          "term": "Glycogenolysis",
+          "def": "Breakdown of glycogen back into glucose, stimulated by glucagon"
         }
       ],
       "examTips": [
-        "Insulin = stores glucose as glycogen. Glucagon = releases glucose from glycogen.",
-        "Glycogen ≠ glucagon — easy to confuse!",
-        "Type 1 treated with insulin; Type 2 often managed with lifestyle changes."
+        "Insulin = stores glucose as glycogen (glucose goes IN to storage). Glucagon = releases glucose from glycogen (glucose comes OUT of storage).",
+        "Glycogen and glucagon sound similar but are completely different — glycogen is the storage molecule; glucagon is the hormone that breaks it down.",
+        "Type 1 is always treated with insulin injections because no insulin is produced. Type 2 is often managed initially with lifestyle changes — this distinction is commonly tested."
       ],
       "commonMistakes": [
-        "Mixing up insulin and glucagon.",
-        "Forgetting glycogen is stored in LIVER and muscles."
+        "Mixing up insulin and glucagon — insulin LOWERS blood glucose; glucagon RAISES it.",
+        "Forgetting that glycogen is stored in BOTH the liver AND muscles — not just the liver.",
+        "Saying Type 2 diabetes means the pancreas stops working — it still produces insulin, but the cells no longer respond to it properly."
       ],
       "videos": [
         {
@@ -291,34 +456,43 @@
     },
     "Reproduction": {
       "intro": "Reproduction is controlled by hormones. The menstrual cycle involves four key hormones, and fertility can be controlled using synthetic hormones.",
+      "mnemonic": "Remember the four menstrual cycle hormones in order with: 'For Ovulation, Look Prepared' — FSH, Oestrogen, LH, Progesterone. For what each does: FSH = Follicle stimulated (egg matures); Oestrogen = lining builds and LH triggered; LH = launches egg (ovulation day 14); Progesterone = Protects lining (maintains uterus).",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Reproduction</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "The Menstrual Cycle",
           "icon": "📅",
+          "text": "The menstrual cycle is a monthly cycle of hormonal changes that prepares the body for potential pregnancy.",
           "points": [
-            "FSH (pituitary) — stimulates egg maturation; stimulates oestrogen",
-            "Oestrogen (ovary) — repairs uterus lining; inhibits FSH; stimulates LH surge",
-            "LH (pituitary) — triggers ovulation at day 14",
-            "Progesterone (corpus luteum) — maintains uterus lining; inhibits FSH and LH"
+            "<strong>FSH</strong> (pituitary gland) — stimulates follicle and egg maturation; stimulates oestrogen production",
+            "<strong>Oestrogen</strong> (ovary) — repairs and thickens the uterus lining; inhibits FSH (negative feedback); stimulates LH surge",
+            "<strong>LH</strong> (pituitary gland) — triggers ovulation at approximately day 14",
+            "<strong>Progesterone</strong> (corpus luteum) — maintains the uterus lining; inhibits FSH and LH; falls at end of cycle triggering menstruation",
+            "<strong>Negative feedback</strong> — oestrogen inhibits FSH; progesterone inhibits FSH and LH"
           ]
         },
         {
           "title": "Contraception",
           "icon": "🚫",
+          "text": "Contraception prevents pregnancy by interfering with fertilisation, ovulation, or implantation.",
           "points": [
-            "Pill — contains oestrogen/progesterone; inhibits FSH; prevents ovulation",
-            "Implant/injection — long-acting progesterone",
-            "Barrier methods (condoms, diaphragm) — not hormonal"
+            "<strong>Combined pill</strong> — contains oestrogen and progesterone; inhibits FSH production; prevents egg maturation and ovulation",
+            "<strong>Progesterone-only pill</strong> — thickens cervical mucus; prevents sperm reaching egg",
+            "<strong>Implant/injection</strong> — long-acting progesterone hormone; same mechanism as progesterone pill",
+            "<strong>Barrier methods</strong> — condoms, diaphragm; physically prevent sperm reaching egg; not hormonal; also protect against STIs",
+            "<strong>IUD</strong> — intrauterine device; prevents implantation; some release hormones"
           ]
         },
         {
           "title": "IVF",
           "icon": "🧪",
+          "text": "In vitro fertilisation (IVF) is a fertility treatment where fertilisation takes place outside the body.",
           "points": [
-            "FSH and LH given to stimulate multiple egg production",
-            "Eggs collected and fertilised with sperm outside body",
-            "Embryo(s) implanted into uterus",
-            "Low success rate; emotional strain; ethical issues with unused embryos"
+            "<strong>Step 1</strong> — FSH and LH given to stimulate multiple egg production",
+            "<strong>Step 2</strong> — eggs collected surgically and fertilised with sperm outside the body",
+            "<strong>Step 3</strong> — embryo(s) checked and one or two implanted into the uterus",
+            "<strong>Success rate</strong> — relatively low (around 25-30% per cycle); decreases with age",
+            "<strong>Ethical issues</strong> — unused embryos are destroyed; risk of multiple pregnancies; emotional and physical strain on the mother"
           ]
         }
       ],
@@ -342,16 +516,29 @@
         {
           "term": "IVF",
           "def": "In vitro fertilisation — fertilisation outside the body"
+        },
+        {
+          "term": "Ovulation",
+          "def": "Release of a mature egg from the ovary (approximately day 14)"
+        },
+        {
+          "term": "Corpus luteum",
+          "def": "Structure that forms after ovulation and produces progesterone"
+        },
+        {
+          "term": "Contraception",
+          "def": "Methods used to prevent pregnancy"
         }
       ],
       "examTips": [
-        "FSH stimulates oestrogen; oestrogen inhibits FSH (negative feedback).",
-        "IVF uses FSH to stimulate multiple egg production.",
-        "Know pros and cons of IVF for evaluate questions."
+        "FSH stimulates oestrogen production; oestrogen then inhibits FSH — this is negative feedback within the menstrual cycle.",
+        "IVF uses FSH and LH to stimulate multiple egg production so that several eggs can be collected in one cycle.",
+        "For evaluate questions on IVF, give both sides: benefits (helps infertile couples have children) and drawbacks (low success rate, ethical issues with unused embryos, risk of multiple births)."
       ],
       "commonMistakes": [
-        "Confusing FSH (egg maturation) with LH (ovulation trigger).",
-        "Forgetting oestrogen inhibits FSH — this is the negative feedback."
+        "Confusing FSH (stimulates egg maturation in the follicle) with LH (triggers the actual release of the egg at ovulation — day 14).",
+        "Forgetting that oestrogen INHIBITS FSH — this negative feedback prevents multiple eggs maturing at once.",
+        "Saying the pill prevents fertilisation — the combined pill primarily prevents ovulation (no egg = no fertilisation possible), not fertilisation itself."
       ],
       "videos": [
         {

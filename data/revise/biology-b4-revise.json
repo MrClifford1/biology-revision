@@ -3,6 +3,8 @@
   "topics": {
     "Photosynthesis": {
       "intro": "Photosynthesis is the process by which plants use light energy to make glucose from carbon dioxide and water. It is the foundation of almost all food chains.",
+      "mnemonic": "Remember the photosynthesis equation: 'Carbon dioxide and Water, with Light and Chlorophyll, make Glucose and Oxygen.' CO₂ + H₂O → C₆H₁₂O₆ + O₂. Mnemonic: 'Clever Worms Light Candles, Growing Outdoors' — CO₂, Water, Light, Chlorophyll, Glucose, O₂. Or: 'Six Sixes make Twelve and Six' — 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Photosynthesis</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "The Equation",
@@ -28,6 +30,19 @@
             "<strong>Making starch</strong> — stored in leaves and stems",
             "<strong>Making fats and oils</strong> — stored in seeds"
           ]
+        },
+        {
+          "title": "Adaptations of Leaves for Photosynthesis",
+          "icon": "🍃",
+          "text": "Leaf structure is closely linked to maximising the rate of photosynthesis:",
+          "points": [
+            "<strong>Large surface area</strong> — maximises light absorption and CO₂ uptake",
+            "<strong>Thin</strong> — short diffusion distance for CO₂ to reach palisade cells",
+            "<strong>Chloroplasts in palisade cells</strong> — located near upper surface where light is strongest",
+            "<strong>Stomata on lower surface</strong> — allow CO₂ in and O₂ out; guard cells control opening",
+            "<strong>Vascular bundles (xylem + phloem)</strong> — supply water and remove glucose produced",
+            "<strong>Waxy cuticle</strong> — reduces water loss by evaporation while letting light through"
+          ]
         }
       ],
       "keyTerms": [
@@ -42,14 +57,30 @@
         {
           "term": "Chloroplast",
           "def": "Organelle where photosynthesis takes place"
+        },
+        {
+          "term": "Glucose",
+          "def": "The sugar produced by photosynthesis, used for respiration and building other molecules"
+        },
+        {
+          "term": "Starch",
+          "def": "The storage form of glucose in plants"
+        },
+        {
+          "term": "Cellulose",
+          "def": "A carbohydrate made from glucose that forms plant cell walls"
         }
       ],
       "examTips": [
         "Know the balanced symbol equation: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂",
-        "Glucose is used for respiration FIRST — excess is stored as starch."
+        "Glucose is used for respiration FIRST — excess is stored as starch.",
+        "Do not say plants only photosynthesise and do not respire — plants respire ALL the time; in daylight, photosynthesis rate exceeds respiration rate so there is a net uptake of CO₂.",
+        "In questions about what glucose is used for, give at least THREE uses with examples."
       ],
       "commonMistakes": [
-        "Saying plants only respire at night — they respire all the time, but in daylight photosynthesis rate > respiration rate."
+        "Saying plants only respire at night — they respire all the time, but in daylight photosynthesis rate > respiration rate.",
+        "Forgetting that amino acid production requires nitrogen from nitrates absorbed through roots — glucose alone is not enough.",
+        "Confusing the reactants and products — CO₂ and water are USED UP; glucose and oxygen are PRODUCED."
       ],
       "videos": [
         {
@@ -76,6 +107,8 @@
     },
     "Limiting Factors": {
       "intro": "The rate of photosynthesis is controlled by limiting factors — the factor in shortest supply that restricts the rate. Understanding these is essential for B4.",
+      "mnemonic": "Remember the three limiting factors: 'LCT' — Light intensity, CO₂ concentration, Temperature. Or picture a plant trying to photosynthesize at maximum rate needing all three topped up like a three-legged stool — if any one leg is too short (limiting), the whole stool (photosynthesis rate) falls. For the inverse square law: 'Double distance = Quarter light' — if you move twice as far away, you get only a quarter of the light.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Limiting Factors</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "The Three Limiting Factors",
@@ -105,6 +138,19 @@
             "Control temperature",
             "This maximises photosynthesis rate for crop production"
           ]
+        },
+        {
+          "title": "Interpreting Limiting Factor Graphs",
+          "icon": "📈",
+          "text": "AQA often shows graphs of photosynthesis rate vs one factor — you must be able to explain the shape:",
+          "points": [
+            "<strong>Rising section</strong> — the factor on the x-axis is limiting; increasing it increases the rate",
+            "<strong>Plateau (flat section)</strong> — another factor has become limiting; increasing x-axis factor has no more effect",
+            "<strong>Temperature graph — sudden drop after optimum</strong> — enzyme denaturation; active site changes shape permanently",
+            "<strong>CO₂ graph — plateau</strong> — light or temperature is now limiting, not CO₂",
+            "<strong>Light graph — plateau</strong> — CO₂ or temperature is now limiting",
+            "<strong>Practical tip</strong> — in pondweed experiments, count bubbles (O₂ produced) per minute as a measure of photosynthesis rate"
+          ]
         }
       ],
       "keyTerms": [
@@ -115,15 +161,30 @@
         {
           "term": "Inverse square law",
           "def": "Light intensity is proportional to 1/d² — doubling distance quarters intensity"
+        },
+        {
+          "term": "Optimum temperature",
+          "def": "The temperature at which enzymes work fastest — above this, denaturation causes rate to fall"
+        },
+        {
+          "term": "Denaturation",
+          "def": "Irreversible change in enzyme shape caused by high temperature or extreme pH"
+        },
+        {
+          "term": "Compensation point",
+          "def": "The light intensity at which the rate of photosynthesis equals the rate of respiration in a plant"
         }
       ],
       "examTips": [
         "In graph questions, the plateau is caused by a DIFFERENT factor becoming limiting — not the factor on the x-axis.",
-        "Temperature affects enzymes — above optimum they denature, causing rate to drop sharply."
+        "Temperature affects enzymes — above optimum they denature, causing rate to drop sharply.",
+        "For inverse square law calculations: light intensity = 1/d². If distance doubles (×2), intensity = 1/4 (×0.25).",
+        "In greenhouse questions, always explain WHY each factor is controlled and the economic benefit — more crop yield = more profit."
       ],
       "commonMistakes": [
         "Saying light is always the limiting factor — any of the three can be limiting depending on conditions.",
-        "Forgetting that increasing CO₂ beyond a certain point has no further effect if light or temperature is limiting."
+        "Forgetting that increasing CO₂ beyond a certain point has no further effect if light or temperature is limiting.",
+        "Saying enzymes are 'killed' at high temperatures — they are 'denatured'; the active site changes shape permanently."
       ],
       "videos": [
         {
@@ -150,6 +211,8 @@
     },
     "Aerobic Respiration": {
       "intro": "Aerobic respiration is the process of releasing energy from glucose using oxygen. It occurs in the mitochondria and is the main way cells get energy.",
+      "mnemonic": "Remember the aerobic respiration equation: 'Glucose and Oxygen make Carbon dioxide, Water, and Energy'. C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O. The reverse of photosynthesis! Remember: aerobic respiration is the OPPOSITE equation to photosynthesis — reactants and products swap. Or: 'GOod CaWfee Energises' — Glucose, Oxygen → CO₂, Water, Energy.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Aerobic Respiration</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "The Equation",
@@ -175,6 +238,18 @@
             "Active transport",
             "Maintaining body temperature (mammals and birds)"
           ]
+        },
+        {
+          "title": "Aerobic vs Anaerobic Respiration",
+          "icon": "⚖️",
+          "text": "It is essential to be able to compare aerobic and anaerobic respiration:",
+          "points": [
+            "<strong>Aerobic — uses oxygen</strong>: glucose + oxygen → carbon dioxide + water; produces large amounts of ATP",
+            "<strong>Anaerobic (animals)</strong>: glucose → lactic acid; produces much less ATP; no oxygen needed",
+            "<strong>Anaerobic (yeast/plants)</strong>: glucose → ethanol + CO₂; produces much less ATP; no oxygen needed",
+            "<strong>Location</strong>: aerobic respiration mainly in mitochondria; anaerobic respiration in cytoplasm",
+            "<strong>Efficiency</strong>: aerobic produces up to 38 ATP per glucose molecule; anaerobic produces only 2 ATP per glucose — aerobic is approximately 19 times more efficient"
+          ]
         }
       ],
       "keyTerms": [
@@ -189,15 +264,30 @@
         {
           "term": "Mitochondria",
           "def": "Organelles where aerobic respiration takes place"
+        },
+        {
+          "term": "Glucose",
+          "def": "The sugar used as the main fuel for cellular respiration"
+        },
+        {
+          "term": "Metabolic rate",
+          "def": "The rate at which chemical reactions occur in the body; increases during exercise"
+        },
+        {
+          "term": "Glycolysis",
+          "def": "The first stage of respiration; splits glucose into pyruvate in the cytoplasm"
         }
       ],
       "examTips": [
         "Respiration releases energy — it is not the same as breathing (which is ventilation).",
-        "Aerobic respiration is more efficient than anaerobic — produces more ATP per glucose."
+        "Aerobic respiration is more efficient than anaerobic — produces more ATP per glucose.",
+        "Do not confuse respiration (releases energy in cells) with breathing (moves air in and out of lungs) — they are completely different processes.",
+        "For 'why do cells with more mitochondria respire faster' questions: more mitochondria = more sites for aerobic respiration = more ATP produced per unit time."
       ],
       "commonMistakes": [
         "Confusing respiration (cellular process) with breathing (gas exchange).",
-        "Forgetting respiration happens in ALL living cells, all the time — not just during exercise."
+        "Forgetting respiration happens in ALL living cells, all the time — not just during exercise.",
+        "Writing the equation backwards — oxygen is a REACTANT, not a product of aerobic respiration."
       ],
       "videos": [
         {
@@ -224,6 +314,8 @@
     },
     "Anaerobic Respiration": {
       "intro": "When oxygen is not available, cells can still release energy through anaerobic respiration — but less efficiently. The products are different depending on whether it's in animals or plants/yeast.",
+      "mnemonic": "Remember the two types of anaerobic respiration: 'Animals make Lactic acid; Yeast makes Ethanol (and CO₂)'. Think: 'Animals Lactic — ALL'. 'Yeast EthanoL — YEL'. Or use a rhyme: 'In muscles lactic acid makes you ache, in yeast and bread dough it makes it bake' — lactic acid in animals, ethanol + CO₂ in yeast/bread-making.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Anaerobic Respiration</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "In Animals (muscles)",
@@ -252,6 +344,18 @@
             "Used in brewing (alcohol production) and bread-making (CO₂ causes dough to rise)",
             "Yeast is a microorganism that can respire both aerobically and anaerobically"
           ]
+        },
+        {
+          "title": "Oxygen Debt and Recovery",
+          "icon": "😮‍💨",
+          "text": "After intense exercise, the body must remove the lactic acid that has built up:",
+          "points": [
+            "<strong>Oxygen debt definition</strong> — the extra volume of oxygen consumed after exercise, above resting levels, to break down lactic acid",
+            "<strong>Lactic acid removal</strong> — transported in blood to the liver; oxidised back to glucose using oxygen",
+            "<strong>Why you keep breathing hard after exercise</strong> — extra oxygen is needed to repay the oxygen debt",
+            "<strong>Heart rate stays elevated</strong> — to deliver oxygen to the liver to oxidise lactic acid",
+            "<strong>Complete oxidation</strong> — lactic acid → CO₂ + H₂O (using oxygen); this releases more energy and fully disposes of the lactic acid"
+          ]
         }
       ],
       "keyTerms": [
@@ -270,15 +374,26 @@
         {
           "term": "Oxygen debt",
           "def": "The extra oxygen needed after exercise to break down lactic acid"
+        },
+        {
+          "term": "Ethanol",
+          "def": "Alcohol produced by yeast during anaerobic respiration (fermentation)"
+        },
+        {
+          "term": "Lysis",
+          "def": "The bursting of a cell — in respiration context, the breakdown of glucose molecules"
         }
       ],
       "examTips": [
         "In animals: glucose → lactic acid. In plants/yeast: glucose → ethanol + CO₂.",
-        "Anaerobic releases MUCH less energy than aerobic — always state this."
+        "Anaerobic releases MUCH less energy than aerobic — always state this.",
+        "For oxygen debt questions: state what lactic acid is, where it goes (to the liver), and what happens to it (oxidised back to glucose or CO₂ + H₂O).",
+        "Fermentation has industrial applications — use brewing (alcohol) and baking (CO₂ raises dough) as specific examples."
       ],
       "commonMistakes": [
         "Using the wrong products — animals make lactic acid; yeast/plants make ethanol and CO₂.",
-        "Saying anaerobic respiration uses oxygen — it does not, that's the whole point."
+        "Saying anaerobic respiration uses oxygen — it does not, that's the whole point.",
+        "Forgetting that lactic acid is removed by being oxidised in the liver — students often say it is 'broken down in muscles'."
       ],
       "videos": [
         {
@@ -305,6 +420,8 @@
     },
     "Response to Exercise": {
       "intro": "During exercise, the body must respond quickly to deliver more oxygen and glucose to muscles and remove waste products. Understanding these physiological responses is required for B4.",
+      "mnemonic": "Remember the body's responses to exercise: 'HB-GD': Heart rate up, Breathing rate up, Glycogen broken down to glucose, blood vessels Dilate. Or imagine a car accelerating: 'Rev the engine (heart), open the air vents (breathe more), use the fuel tank (glycogen), open the fuel lines wider (dilate blood vessels)'.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Response to Exercise</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Immediate Responses to Exercise",
@@ -326,6 +443,18 @@
             "label": "Oxygen Debt",
             "text": "After exercise, you continue breathing heavily — this extra oxygen is used to break down lactic acid into CO₂ and water (aerobic oxidation of lactic acid)."
           }
+        },
+        {
+          "title": "Long-Term Effects of Regular Exercise",
+          "icon": "📈",
+          "text": "Regular exercise causes lasting adaptations that make the body more efficient:",
+          "points": [
+            "<strong>Stronger heart muscle</strong> — larger stroke volume; can pump more blood per beat; lower resting heart rate",
+            "<strong>More capillaries in muscles</strong> — improved oxygen and glucose delivery to muscle cells",
+            "<strong>More mitochondria in muscle cells</strong> — more sites for aerobic respiration; muscles can work harder before going anaerobic",
+            "<strong>Increased lung capacity</strong> — more oxygen can be taken in per breath",
+            "<strong>Improved removal of waste</strong> — CO₂ and lactic acid removed more efficiently, delaying fatigue"
+          ]
         }
       ],
       "keyTerms": [
@@ -340,15 +469,30 @@
         {
           "term": "Tidal volume",
           "def": "The volume of air breathed in or out in one breath"
+        },
+        {
+          "term": "Stroke volume",
+          "def": "The volume of blood pumped by the heart per beat"
+        },
+        {
+          "term": "Vasodilation",
+          "def": "Widening of blood vessels, increasing blood flow to muscles during exercise"
+        },
+        {
+          "term": "Adrenaline",
+          "def": "Hormone released during exercise that increases heart rate and prepares the body for action"
         }
       ],
       "examTips": [
         "Know that glycogen is the stored form of glucose — it is broken down during exercise.",
-        "Oxygen debt explains why you keep breathing hard after stopping exercise."
+        "Oxygen debt explains why you keep breathing hard after stopping exercise.",
+        "For 'explain why heart rate increases during exercise' — say: muscles need more oxygen and glucose for aerobic respiration; heart rate increases to deliver these faster and remove CO₂ more quickly.",
+        "Heart rate and breathing rate BOTH increase — and BOTH stay elevated after exercise to repay the oxygen debt."
       ],
       "commonMistakes": [
         "Saying heart rate increases to supply more oxygen only — it also supplies more glucose and removes CO₂ and lactic acid.",
-        "Forgetting that glycogen is broken down to glucose during exercise."
+        "Forgetting that glycogen is broken down to glucose during exercise.",
+        "Saying exercise stops when oxygen runs out — in fact, anaerobic respiration kicks in to allow exercise to continue, but lactic acid builds up causing fatigue."
       ],
       "videos": [
         {

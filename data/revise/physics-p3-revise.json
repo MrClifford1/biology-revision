@@ -3,23 +3,43 @@
   "topics": {
     "States of Matter": {
       "intro": "The particle model explains the properties of solids, liquids and gases in terms of how particles are arranged and how they move.",
+      "mnemonic": "\"Solid Stays, Liquid Loves to flow, Gas Goes everywhere\" — remember the three states by what particles DO.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: States of Matter</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "The Three States",
           "icon": "🔵",
+          "text": "All matter exists as solid, liquid or gas. The state depends on how strongly particles are attracted to each other and how much energy they have.",
           "points": [
             "<strong>Solid</strong> — particles close together in regular pattern; vibrate about fixed positions; cannot flow; not compressible",
             "<strong>Liquid</strong> — particles close together but random arrangement; move freely past each other; can flow; not compressible",
-            "<strong>Gas</strong> — particles far apart; random arrangement; move quickly in all directions; can flow; easily compressed"
+            "<strong>Gas</strong> — particles far apart; random arrangement; move quickly in all directions; can flow; easily compressed",
+            "<strong>Shape and volume</strong> — solids have fixed shape and volume; liquids have fixed volume but take shape of container; gases fill any container",
+            "<strong>Compressibility</strong> — only gases are compressible because there is large empty space between particles"
           ]
         },
         {
           "title": "Internal Energy",
           "icon": "🌡️",
+          "text": "The internal energy of a substance is the total kinetic and potential energy of all its particles. Heating increases internal energy.",
           "points": [
-            "Internal energy = total kinetic + potential energy of all particles",
-            "Heating increases internal energy — particles move faster (kinetic energy increases)",
-            "Temperature is a measure of average kinetic energy of particles"
+            "<strong>Internal energy</strong> — total kinetic + potential energy of all particles in the substance",
+            "<strong>Heating increases internal energy</strong> — particles move faster (kinetic energy increases)",
+            "<strong>Temperature</strong> — a measure of the average kinetic energy of particles; higher temp = faster particles",
+            "<strong>Heat vs temperature</strong> — heat is energy transferred; temperature measures average KE; they are NOT the same",
+            "<strong>Potential energy</strong> — related to the separation of particles and intermolecular forces between them"
+          ]
+        },
+        {
+          "title": "Particle Arrangement and Forces",
+          "icon": "⚛️",
+          "text": "Intermolecular forces hold particles together. The balance between forces and kinetic energy determines the state of a substance.",
+          "points": [
+            "<strong>Intermolecular forces</strong> — attractive forces between particles; strongest in solids, weakest in gases",
+            "<strong>Regular lattice (solid)</strong> — particles locked into repeating 3D pattern with strong forces between them",
+            "<strong>Random arrangement (liquid/gas)</strong> — particles have enough energy to overcome the regular lattice",
+            "<strong>Pressure from gases</strong> — gas particles collide with container walls, exerting force per unit area",
+            "<strong>Brownian motion</strong> — random movement of particles in a fluid caused by collisions with surrounding molecules"
           ]
         }
       ],
@@ -35,15 +55,29 @@
         {
           "term": "Temperature",
           "def": "A measure of the average kinetic energy of particles in a substance"
+        },
+        {
+          "term": "Intermolecular force",
+          "def": "Attractive force between particles — strongest in solids, weakest in gases"
+        },
+        {
+          "term": "Compressibility",
+          "def": "The ability to be squashed into a smaller volume — only gases are compressible"
+        },
+        {
+          "term": "Brownian motion",
+          "def": "Random motion of particles in a fluid caused by collisions with surrounding molecules"
         }
       ],
       "examTips": [
-        "Temperature measures average kinetic energy — higher temperature = particles move faster.",
-        "Gases are compressible; solids and liquids are not — particles in gases are far apart."
+        "Temperature measures average kinetic energy — higher temperature = particles move faster. Never say particles in solids are stationary — they vibrate.",
+        "Gases are compressible; solids and liquids are not — particles in gases are far apart with lots of empty space between them.",
+        "AQA often asks you to 'use the particle model to explain' a property — always link particle arrangement/movement to the macroscopic property being asked about."
       ],
       "commonMistakes": [
-        "Saying all particles in a solid are stationary — they vibrate around fixed positions.",
-        "Confusing temperature (average KE) with heat (total energy transferred)."
+        "Saying all particles in a solid are stationary — they vibrate around fixed positions; they just don't move from place to place.",
+        "Confusing temperature (average KE per particle) with heat/internal energy (total energy of all particles).",
+        "Saying liquids are compressible — liquids cannot be compressed because particles are already touching each other."
       ],
       "videos": [
         {
@@ -70,30 +104,48 @@
     },
     "Changes of State": {
       "intro": "When substances are heated or cooled they can change state. These changes involve energy transfers and are physical, not chemical, changes.",
+      "mnemonic": "\"Melting Boils Every Condensed Freezing Substance\" — Melting, Boiling, Evaporating, Condensing, Freezing, Sublimating. Or remember: heating ABSORBS energy (endothermic); cooling RELEASES energy (exothermic).",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Changes of State</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Changes of State",
           "icon": "🌡️",
+          "text": "Matter can change between states when energy is added or removed. These are physical changes — the substance itself remains the same.",
           "points": [
-            "Melting: solid → liquid (absorb energy)",
-            "Boiling/evaporating: liquid → gas (absorb energy)",
-            "Condensing: gas → liquid (release energy)",
-            "Freezing: liquid → solid (release energy)",
-            "Sublimation: solid → gas directly"
+            "<strong>Melting</strong> — solid → liquid (absorb energy); occurs at the melting point",
+            "<strong>Boiling/evaporating</strong> — liquid → gas (absorb energy); boiling at fixed point, evaporation at any temperature",
+            "<strong>Condensing</strong> — gas → liquid (release energy); releases latent heat of vaporisation",
+            "<strong>Freezing</strong> — liquid → solid (release energy); releases latent heat of fusion",
+            "<strong>Sublimation</strong> — solid → gas directly (e.g. dry ice, iodine)"
           ]
         },
         {
           "title": "Latent Heat",
           "icon": "🔥",
+          "text": "Latent heat is the energy transferred during a change of state without a temperature change. It is used to break or form intermolecular bonds.",
           "callout": {
             "type": "exam",
             "label": "Why Temperature Stays Constant",
             "text": "During a change of state, temperature stays constant even though energy is being supplied. The energy is used to break intermolecular bonds (latent heat), not to increase KE of particles."
           },
           "points": [
-            "Specific latent heat of fusion (l_f) — energy to melt/freeze 1 kg",
-            "Specific latent heat of vaporisation (l_v) — energy to boil/condense 1 kg",
-            "Formula: Q = m × L"
+            "<strong>Specific latent heat of fusion (L_f)</strong> — energy to melt/freeze 1 kg at constant temperature; unit: J/kg",
+            "<strong>Specific latent heat of vaporisation (L_v)</strong> — energy to boil/condense 1 kg; larger than L_f",
+            "<strong>Formula: Q = mL</strong> — energy (J) = mass (kg) × specific latent heat (J/kg)",
+            "<strong>Worked example</strong> — melting 2 kg of ice (L_f = 334 000 J/kg): Q = 2 × 334 000 = 668 000 J",
+            "<strong>Why L_v > L_f</strong> — vaporisation requires complete separation of particles; fusion only partially disrupts structure"
+          ]
+        },
+        {
+          "title": "Heating Curves",
+          "icon": "📈",
+          "text": "A heating curve shows how temperature changes as energy is added. Flat sections show where latent heat is being absorbed during a change of state.",
+          "points": [
+            "<strong>Rising sections</strong> — temperature increases as kinetic energy of particles increases (Q = mcΔT)",
+            "<strong>Flat sections</strong> — temperature constant during melting or boiling; energy breaks intermolecular bonds",
+            "<strong>Melting point</strong> — first flat section; solid converting to liquid",
+            "<strong>Boiling point</strong> — second flat section; liquid converting to gas",
+            "<strong>Steepness</strong> — slope of rising section depends on specific heat capacity (less steep = higher SHC)"
           ]
         }
       ],
@@ -104,25 +156,34 @@
         },
         {
           "term": "Specific latent heat",
-          "def": "Energy needed to change the state of 1 kg of a substance"
+          "def": "Energy needed to change the state of 1 kg of a substance without changing temperature (J/kg)"
         },
         {
           "term": "Evaporation",
-          "def": "Liquid → gas at any temperature (from the surface)"
+          "def": "Liquid → gas at any temperature (from the surface only)"
         },
         {
           "term": "Boiling",
           "def": "Liquid → gas throughout the liquid at a fixed boiling point"
+        },
+        {
+          "term": "Sublimation",
+          "def": "Direct change from solid to gas without passing through liquid state"
+        },
+        {
+          "term": "Heating curve",
+          "def": "Graph of temperature vs energy supplied; flat sections show changes of state"
         }
       ],
       "examTips": [
-        "During a change of state, temperature is CONSTANT — energy goes into breaking bonds, not heating.",
-        "Q = mL for latent heat calculations. Q = mcΔT for temperature changes.",
-        "Latent heat of vaporisation > latent heat of fusion for the same substance."
+        "During a change of state, temperature is CONSTANT — energy goes into breaking bonds, not heating particles. This is a very common AQA 'explain' question.",
+        "Q = mL for latent heat calculations; Q = mcΔT for temperature change calculations. Know which to use and when.",
+        "Latent heat of vaporisation > latent heat of fusion for the same substance — vaporisation requires complete separation of particles."
       ],
       "commonMistakes": [
-        "Saying temperature rises during melting — it stays constant until fully melted.",
-        "Confusing evaporation (any temperature, from surface) with boiling (specific temperature, throughout)."
+        "Saying temperature rises during melting — it stays constant at the melting point until all the solid has melted.",
+        "Confusing evaporation (any temperature, surface only) with boiling (specific boiling point, throughout the liquid).",
+        "Forgetting units: specific latent heat is in J/kg, NOT J/kg°C — there is no temperature change involved."
       ],
       "videos": [
         {
@@ -149,52 +210,86 @@
     },
     "Density": {
       "intro": "Density is the mass per unit volume of a substance. It explains why some materials float and others sink.",
+      "mnemonic": "\"Ducks Must Visit ponds\" — Density = Mass ÷ Volume. Or think of ρ (rho) as 'rho = m over V'.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Density</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Density Formula",
           "icon": "📐",
+          "text": "Density links mass and volume. A substance is denser if more mass is packed into the same volume.",
           "callout": {
             "type": "exam",
             "label": "Formula",
-            "text": "ρ = m/V (density = mass ÷ volume). Units: kg/m³ or g/cm³."
-          }
+            "text": "ρ = m/V (density = mass ÷ volume). Units: kg/m³ or g/cm³. Rearranged: m = ρV and V = m/ρ."
+          },
+          "points": [
+            "<strong>ρ = m/V</strong> — density (kg/m³) = mass (kg) ÷ volume (m³)",
+            "<strong>Unit conversion</strong> — 1 g/cm³ = 1000 kg/m³; be careful in calculations",
+            "<strong>Worked example</strong> — mass = 500 g = 0.5 kg; volume = 250 cm³ = 0.00025 m³; ρ = 0.5/0.00025 = 2000 kg/m³",
+            "<strong>Denser states</strong> — solids generally denser than liquids; liquids denser than gases (particles more closely packed)",
+            "<strong>Ice anomaly</strong> — ice is less dense than liquid water (unusual) — particles in ice lattice are more spread out"
+          ]
         },
         {
           "title": "Measuring Density",
           "icon": "🔬",
+          "text": "Density can be measured experimentally by finding mass and volume separately, then calculating using ρ = m/V.",
           "points": [
-            "Regular solid: measure mass (balance), measure dimensions, calculate volume",
-            "Irregular solid: measure mass, use displacement can to find volume",
-            "Liquid: measure mass and volume using measuring cylinder"
+            "<strong>Regular solid</strong> — measure mass with balance; calculate volume from dimensions (l × w × h); ρ = m/V",
+            "<strong>Irregular solid</strong> — measure mass with balance; use displacement can (eureka can) to find volume",
+            "<strong>Displacement method</strong> — volume of water displaced = volume of object; read from measuring cylinder",
+            "<strong>Liquid</strong> — measure mass of empty then filled measuring cylinder; volume read directly from cylinder",
+            "<strong>Accuracy</strong> — use a top-pan balance for mass (to 2 d.p. in grams); repeat volume measurements"
           ]
         },
         {
           "title": "Floating and Sinking",
           "icon": "🚢",
+          "text": "Whether an object floats or sinks depends on how its density compares to the density of the fluid it is placed in.",
           "points": [
-            "Object floats if its density < density of liquid",
-            "Object sinks if its density > density of liquid",
-            "Ice is less dense than water — floats"
+            "<strong>Floats</strong> — if object density < fluid density (e.g. wood in water; ρ_wood ≈ 600 kg/m³ < ρ_water = 1000 kg/m³)",
+            "<strong>Sinks</strong> — if object density > fluid density (e.g. iron; ρ_iron ≈ 7900 kg/m³ > ρ_water)",
+            "<strong>Upthrust</strong> — buoyancy force pushing up on a submerged object; equal to weight of fluid displaced",
+            "<strong>Ships float</strong> — even though steel is dense, the hull traps air — average density of ship < water",
+            "<strong>Layering of fluids</strong> — less dense fluids float on denser ones (oil on water)"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Density",
-          "def": "Mass per unit volume of a substance: ρ = m/V"
+          "def": "Mass per unit volume of a substance: ρ = m/V; units kg/m³ or g/cm³"
         },
         {
           "term": "Displacement",
           "def": "Volume of water displaced by a submerged object equals the object's volume"
+        },
+        {
+          "term": "Upthrust",
+          "def": "The upward buoyancy force on an object submerged in a fluid"
+        },
+        {
+          "term": "Eureka can",
+          "def": "Overflow can used to measure the volume of an irregular solid by water displacement"
+        },
+        {
+          "term": "Volume",
+          "def": "The amount of space occupied by an object, measured in m³ or cm³"
+        },
+        {
+          "term": "Mass",
+          "def": "The amount of matter in an object, measured in kg — does not change with location"
         }
       ],
       "examTips": [
-        "ρ = m/V — learn this formula. Units: kg/m³ or g/cm³.",
-        "For irregular shapes, use water displacement to find volume."
+        "ρ = m/V — learn this formula and both rearrangements (m = ρV and V = m/ρ). Units must be consistent: use kg and m³, or g and cm³.",
+        "For irregular shapes, use the water displacement method — the volume of water displaced equals the object's volume. AQA may ask you to describe the method step-by-step.",
+        "Unit conversion trap: 1 g/cm³ = 1000 kg/m³. If density is given in g/cm³ and mass in kg, convert carefully before calculating."
       ],
       "commonMistakes": [
-        "Confusing density with mass — a large object isn't necessarily denser.",
-        "Forgetting to convert units — 1 g/cm³ = 1000 kg/m³."
+        "Confusing density with mass — a large object isn't necessarily denser than a small one. Density depends on how tightly particles are packed.",
+        "Forgetting to convert units — 1 g/cm³ = 1000 kg/m³. Mixing units in calculations gives wrong answers.",
+        "Saying denser objects always sink — an object floats if its density is LESS than the fluid, regardless of its mass."
       ],
       "videos": [
         {
@@ -221,44 +316,86 @@
     },
     "Specific Heat Capacity": {
       "intro": "Specific heat capacity (SHC) is the energy needed to raise 1 kg of a substance by 1°C. It explains why different materials heat up at different rates.",
+      "mnemonic": "\"Every Mug Contains Delta-Temperature\" — E = mcΔT. The 'm' is mass, 'c' is SHC, and ΔT is the temperature change.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Specific Heat Capacity</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
-          "title": "Formula",
+          "title": "The Formula",
           "icon": "📐",
+          "text": "The specific heat capacity equation links the energy transferred to the mass, material, and temperature change.",
           "callout": {
             "type": "exam",
             "label": "Formula",
-            "text": "Q = mcΔT — Energy (J) = mass (kg) × SHC (J/kg°C) × temperature change (°C)."
-          }
+            "text": "Q = mcΔT — Energy (J) = mass (kg) × SHC (J/kg°C) × temperature change (°C). Rearranged: c = Q/(mΔT) and ΔT = Q/(mc)."
+          },
+          "points": [
+            "<strong>Q = mcΔT</strong> — Q in joules, m in kg, c in J/kg°C, ΔT in °C or K",
+            "<strong>ΔT = T_final − T_initial</strong> — always use the CHANGE in temperature, not the final temperature",
+            "<strong>Worked example</strong> — heat 2 kg of water (c = 4200 J/kg°C) by 10°C: Q = 2 × 4200 × 10 = 84 000 J",
+            "<strong>High SHC</strong> — material needs more energy to heat up; heats slowly but also cools slowly",
+            "<strong>Water's SHC</strong> — 4200 J/kg°C; very high compared to metals (e.g. copper ≈ 385 J/kg°C)"
+          ]
         },
         {
           "title": "Practical: Finding SHC",
           "icon": "🧪",
+          "text": "The SHC of a material can be measured experimentally using an electric heater and thermometer.",
           "points": [
-            "Heat a known mass of material using an immersion heater",
-            "Record temperature change and energy supplied (E = P × t)",
-            "Calculate SHC: c = Q ÷ (m × ΔT)",
-            "Real value higher than calculated — energy lost to surroundings"
+            "<strong>Method</strong> — heat known mass with immersion heater; record energy from E = P × t (power × time)",
+            "<strong>Calculate SHC</strong> — c = Q ÷ (m × ΔT); compare to accepted value",
+            "<strong>Source of error</strong> — energy lost to surroundings means measured c is HIGHER than true value",
+            "<strong>Improving accuracy</strong> — insulate the block; stir liquid; use a lid; place thermometer in block not in heater hole",
+            "<strong>Joulemeter</strong> — measures energy directly and more accurately than P × t"
+          ]
+        },
+        {
+          "title": "Applications",
+          "icon": "🌍",
+          "text": "High specific heat capacity has many practical applications in storing and transferring thermal energy.",
+          "points": [
+            "<strong>Water as coolant</strong> — high SHC means it absorbs large amounts of energy without getting too hot; used in car engines and nuclear reactors",
+            "<strong>Sea moderates climate</strong> — heats and cools slowly; coastal areas have milder temperatures than inland",
+            "<strong>Central heating</strong> — water carries energy from boiler to radiators efficiently due to high SHC",
+            "<strong>Sweating</strong> — body uses water's high SHC to regulate temperature; evaporation removes thermal energy",
+            "<strong>Storage heaters</strong> — use materials with high SHC (e.g. clay bricks) to store heat overnight and release slowly"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Specific heat capacity",
-          "def": "Energy needed to raise 1 kg of substance by 1°C (J/kg°C)"
+          "def": "Energy needed to raise the temperature of 1 kg of a substance by 1°C; unit: J/kg°C"
         },
         {
           "term": "Thermal capacity",
-          "def": "Total energy needed to raise an object by 1°C"
+          "def": "Total energy needed to raise the temperature of an object by 1°C (mass × SHC)"
+        },
+        {
+          "term": "Temperature change (ΔT)",
+          "def": "The difference between final and initial temperature: ΔT = T_final − T_initial"
+        },
+        {
+          "term": "Immersion heater",
+          "def": "Electrical heating element placed directly in a material to supply a known amount of energy"
+        },
+        {
+          "term": "Joulemeter",
+          "def": "Device that measures electrical energy transferred directly in joules"
+        },
+        {
+          "term": "Insulation",
+          "def": "Material used to reduce unwanted energy transfer to surroundings in SHC experiments"
         }
       ],
       "examTips": [
-        "Water has very high SHC (4200 J/kg°C) — explain why it is good for storing or transferring heat.",
-        "In practicals, actual SHC will be higher than calculated — energy lost to surroundings."
+        "Water has a very high SHC (4200 J/kg°C) — AQA commonly asks you to explain why water is used as a coolant or why coastal areas have mild climates. The answer is always high SHC.",
+        "In SHC practicals, the measured value will be HIGHER than the true value because energy is lost to surroundings, not all going into the material.",
+        "Always use ΔT (temperature change) in Q = mcΔT — never substitute the final temperature alone. If water starts at 20°C and reaches 80°C, ΔT = 60°C."
       ],
       "commonMistakes": [
-        "Using temperature (absolute value) instead of ΔT (change) in calculations.",
-        "Forgetting to convert mass to kg if given in grams."
+        "Using the final temperature instead of ΔT (change in temperature) in calculations — this gives a wildly wrong answer.",
+        "Forgetting to convert mass to kg if given in grams — 500 g = 0.5 kg.",
+        "Saying a material with a high SHC heats up quickly — it is the OPPOSITE: high SHC means more energy is needed, so it heats up more slowly."
       ],
       "videos": [
         {
@@ -285,58 +422,86 @@
     },
     "Gas Pressure": {
       "intro": "Gas pressure is caused by particles colliding with the walls of their container. Temperature, volume and pressure are all related.",
+      "mnemonic": "\"Pressured particles Push more when they're Hot or Hemmed in\" — Pressure increases when temperature rises (faster particles) or volume decreases (more frequent collisions).",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Gas Pressure</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "What Causes Gas Pressure?",
           "icon": "💨",
+          "text": "Gas pressure is the result of billions of gas particles constantly colliding with the walls of their container, exerting a force per unit area.",
           "points": [
-            "Gas particles move randomly and collide with container walls",
-            "Each collision exerts a tiny force — billions of collisions per second create pressure",
-            "Increase temperature → particles move faster → more frequent, higher-energy collisions → higher pressure",
-            "Decrease volume → particles hit walls more often → higher pressure"
+            "<strong>Particle collisions</strong> — gas particles move randomly and collide with container walls, exerting a tiny force each time",
+            "<strong>Pressure = force/area</strong> — billions of collisions per second create a measurable pressure on the walls",
+            "<strong>Higher temperature</strong> — particles move faster → more frequent and harder collisions → higher pressure",
+            "<strong>Smaller volume</strong> — particles hit walls more often per second → higher pressure",
+            "<strong>More particles</strong> — more particles in same volume = more collisions per second = higher pressure"
           ]
         },
         {
-          "title": "Pressure-Volume Relationship",
+          "title": "Pressure-Volume Relationship (Boyle's Law)",
           "icon": "📊",
+          "text": "At constant temperature, pressure and volume are inversely proportional — compressing a gas increases its pressure.",
           "callout": {
             "type": "exam",
             "label": "Boyle's Law",
             "text": "At constant temperature: pressure × volume = constant. P₁V₁ = P₂V₂. Compress gas (↓V) → pressure increases (↑P)."
-          }
+          },
+          "points": [
+            "<strong>P₁V₁ = P₂V₂</strong> — use this equation for pressure-volume calculations at constant temperature",
+            "<strong>Inverse relationship</strong> — doubling pressure halves volume; halving pressure doubles volume",
+            "<strong>Worked example</strong> — gas at 100 kPa, 2 L compressed to 1 L: P₂ = 100 × 2 ÷ 1 = 200 kPa",
+            "<strong>Particle explanation</strong> — smaller volume means particles hit walls more frequently → higher pressure",
+            "<strong>Units</strong> — pressure in Pa or kPa; volume in m³ or cm³; keep consistent throughout"
+          ]
         },
         {
           "title": "Temperature and Pressure",
           "icon": "🌡️",
+          "text": "Increasing temperature at constant volume increases pressure because particles move faster and collide more energetically with the walls.",
           "points": [
-            "Increase temperature (constant volume) → particles move faster → more collisions → pressure increases",
-            "Absolute zero (0 K = -273°C) — theoretical temperature where particles have no kinetic energy",
-            "Convert °C to K: K = °C + 273"
+            "<strong>Temperature ∝ pressure</strong> — at constant volume, pressure is proportional to absolute temperature (Kelvin)",
+            "<strong>Absolute zero (0 K = −273°C)</strong> — theoretical temperature where particles have minimum kinetic energy and pressure → 0",
+            "<strong>Kelvin conversion</strong> — K = °C + 273 (always use Kelvin in gas law calculations)",
+            "<strong>P₁/T₁ = P₂/T₂</strong> — pressure-temperature law at constant volume",
+            "<strong>Worked example</strong> — gas at 300 K, 100 kPa heated to 600 K: P₂ = 100 × 600 ÷ 300 = 200 kPa"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Gas pressure",
-          "def": "Force per unit area exerted by gas particles colliding with container walls"
+          "def": "Force per unit area exerted by gas particles colliding with container walls; unit: Pa (pascal)"
         },
         {
           "term": "Absolute zero",
-          "def": "Theoretical minimum temperature (0 K = -273°C) where particles have no kinetic energy"
+          "def": "Theoretical minimum temperature (0 K = −273°C) where particles have minimum kinetic energy"
         },
         {
           "term": "Boyle's Law",
-          "def": "At constant temperature, pressure × volume = constant"
+          "def": "At constant temperature, pressure × volume = constant (P₁V₁ = P₂V₂)"
+        },
+        {
+          "term": "Kelvin scale",
+          "def": "Absolute temperature scale starting at absolute zero; K = °C + 273"
+        },
+        {
+          "term": "Pascal (Pa)",
+          "def": "SI unit of pressure — 1 Pa = 1 N/m²; atmospheric pressure ≈ 100 000 Pa"
+        },
+        {
+          "term": "Ideal gas",
+          "def": "A theoretical gas that perfectly obeys the gas laws; real gases deviate at high pressure or very low temperature"
         }
       ],
       "examTips": [
-        "Always explain gas pressure using particle collisions — mention frequency and force of collisions.",
-        "P₁V₁ = P₂V₂ — use this for pressure-volume calculations at constant temperature.",
-        "Kelvin = Celsius + 273."
+        "Always explain gas pressure using particle collisions — AQA mark schemes require you to mention both the frequency AND force of collisions. Saying 'more collisions' alone may not gain full marks.",
+        "P₁V₁ = P₂V₂ — use this for pressure-volume calculations at constant temperature. Always check units are consistent (both pressures in same unit, both volumes in same unit).",
+        "Kelvin = Celsius + 273. ALWAYS convert to Kelvin before using gas law equations involving temperature. Forgetting this is a very common mark-losing error."
       ],
       "commonMistakes": [
-        "Forgetting to convert to Kelvin for gas law calculations.",
-        "Saying gas pressure is caused by gravity — it is caused by particle collisions."
+        "Forgetting to convert °C to Kelvin for gas law calculations — using Celsius in the formula gives completely wrong answers.",
+        "Saying gas pressure is caused by gravity — it is caused by particle collisions with the walls, not gravity.",
+        "Ignoring direction of change — if volume decreases, pressure must increase (they are inversely proportional); if temperature increases, pressure increases (directly proportional)."
       ],
       "videos": [
         {

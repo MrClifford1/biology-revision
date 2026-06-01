@@ -3,60 +3,92 @@
   "topics": {
     "Magnetism": {
       "intro": "Magnets exert forces on other magnets and on magnetic materials. Understanding magnetic fields and how they are represented is essential for P7.",
+      "mnemonic": "\"FINE Steel\" — Field lines from North to South; Iron = temporary (soft); North-south = attract, same = repel; Every magnet has 2 poles; Steel = permanent (hard). Or remember pole rules: 'Likes Repel, Unlikes Attract' (LRU-A).",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Magnetism</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Magnetic Materials and Poles",
           "icon": "🧲",
+          "text": "Only certain materials are magnetic. Magnets always have two poles and exert non-contact forces on each other and on magnetic materials.",
           "points": [
-            "Magnetic materials: iron, steel, nickel, cobalt",
-            "Every magnet has a north and south pole",
-            "Like poles repel; unlike poles attract",
-            "The Earth has a magnetic field — its geographic north pole is near a magnetic south pole"
+            "<strong>Magnetic materials</strong> — iron, steel, nickel, cobalt are the only magnetic materials; NOT aluminium, copper, or other metals",
+            "<strong>Two poles</strong> — every magnet has a north-seeking (N) and south-seeking (S) pole; cannot be separated",
+            "<strong>Attraction and repulsion</strong> — like poles repel (N–N, S–S); unlike poles attract (N–S); this is a non-contact force",
+            "<strong>Earth's magnetic field</strong> — geographic north pole is near a magnetic south pole; a compass north needle points to geographic north",
+            "<strong>Non-contact force</strong> — magnetic force acts at a distance through a magnetic field; no physical contact needed"
           ]
         },
         {
           "title": "Magnetic Field Lines",
           "icon": "🌐",
+          "text": "Magnetic field lines are a way of representing the direction and strength of a magnetic field. They follow strict rules.",
           "points": [
-            "Show direction and strength of magnetic field",
-            "Direction: from north pole to south pole (outside magnet)",
-            "Closer lines = stronger field",
-            "Never cross each other"
+            "<strong>Direction</strong> — field lines go from north pole to south pole outside the magnet; loop inside from S to N",
+            "<strong>Strength</strong> — field is strongest where lines are closest together; weakest where lines are most spread out",
+            "<strong>Never cross</strong> — magnetic field lines never cross or touch each other; only one field direction at any point",
+            "<strong>Uniform field</strong> — between two opposite poles: parallel, equally spaced field lines indicating a uniform field",
+            "<strong>Plotting with compass</strong> — a plotting compass always points in the direction of the field line at that point"
           ]
         },
         {
-          "title": "Induced Magnetism",
+          "title": "Induced Magnetism and Magnetic Domains",
           "icon": "🔩",
+          "text": "Magnetic materials can be temporarily or permanently magnetised. The behaviour depends on whether the material is magnetically hard or soft.",
           "points": [
-            "When a magnetic material is placed in a magnetic field it becomes magnetised",
-            "Induced magnet always attracted to the magnet causing induction",
-            "Iron: loses magnetism easily (soft magnetic material — used in transformers, electromagnets)",
-            "Steel: retains magnetism (hard magnetic material — used in permanent magnets)"
+            "<strong>Induced magnetism</strong> — when a magnetic material is placed near a magnet, it becomes temporarily magnetised",
+            "<strong>Always attracted</strong> — an induced magnet always has the opposite pole facing the inducing magnet, so it is always attracted",
+            "<strong>Magnetic domains</strong> — tiny regions in magnetic materials where atomic magnets are aligned; in an unmagnetised material, domains point randomly",
+            "<strong>Soft magnetic materials (iron)</strong> — domains align easily in a field but randomise again when field removed; used in electromagnets and transformer cores",
+            "<strong>Hard magnetic materials (steel)</strong> — domains remain aligned after field is removed; used in permanent magnets and loudspeaker magnets",
+            "<strong>Demagnetisation</strong> — can be achieved by heating, hammering, or placing in an alternating magnetic field"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Magnetic field",
-          "def": "The region around a magnet where magnetic forces act"
+          "def": "The region around a magnet where a magnetic force acts on magnetic materials or other magnets"
+        },
+        {
+          "term": "Magnetic field line",
+          "def": "Line showing the direction of the magnetic force; runs from N to S pole outside the magnet; never cross"
         },
         {
           "term": "Induced magnetism",
-          "def": "Magnetism produced in a material when placed in a magnetic field"
+          "def": "Magnetism produced in a magnetic material when placed in a magnetic field; always creates attraction"
         },
         {
           "term": "Permanent magnet",
-          "def": "Magnet that retains its magnetism without an external field"
+          "def": "Magnet made of hard magnetic material (e.g. steel) that retains its magnetism without an external field"
+        },
+        {
+          "term": "Soft magnetic material",
+          "def": "Material (e.g. iron) that is easily magnetised and demagnetised; used in electromagnets"
+        },
+        {
+          "term": "Hard magnetic material",
+          "def": "Material (e.g. steel) that is difficult to magnetise but retains magnetism; used in permanent magnets"
+        },
+        {
+          "term": "Magnetic domain",
+          "def": "A small region within a magnetic material where atomic magnetic dipoles are aligned in the same direction"
+        },
+        {
+          "term": "Poles",
+          "def": "The two ends of a magnet (north and south) where the magnetic field is strongest"
         }
       ],
       "examTips": [
-        "Magnetic field lines go from N to S outside the magnet.",
-        "Iron = soft (temporary magnet). Steel = hard (permanent magnet).",
-        "The force between magnets is non-contact — acts at a distance."
+        "Magnetic field lines go from N to S outside the magnet — draw arrows on lines to show direction. AQA diagram questions require arrows for full marks.",
+        "Iron = soft (temporary magnet) — used where you want the magnet to switch off. Steel = hard (permanent magnet) — used where you need a lasting field. Know which is used in which device.",
+        "The force between magnets is non-contact — acts at a distance. AQA may ask you to describe this as a field force or compare to gravitational/electric forces.",
+        "Induced magnetism ALWAYS causes attraction — this is why a magnet picks up unmagnetised iron. The induced pole nearest the magnet is always opposite to the magnet's pole."
       ],
       "commonMistakes": [
-        "Saying all metals are magnetic — only iron, steel, nickel and cobalt are magnetic.",
-        "Drawing field lines that cross each other — they never cross."
+        "Saying all metals are magnetic — only iron, steel, nickel and cobalt are magnetic materials. Aluminium, copper and gold are NOT magnetic.",
+        "Drawing field lines that cross each other — they never cross. Each point in a field has only one direction.",
+        "Saying an induced magnet might repel the original magnet — induced magnets always attract because they always form an opposite pole facing the original magnet.",
+        "Confusing geographic and magnetic north — a compass needle points to geographic north because Earth's magnetic south pole is near geographic north."
       ],
       "videos": [
         {
@@ -83,49 +115,83 @@
     },
     "Electromagnetism": {
       "intro": "An electric current produces a magnetic field. This is the principle behind electromagnets and many electrical devices.",
+      "mnemonic": "\"Coils Increase Strength Three ways\" — more Current, more turns (coIls), iron core (Strength) — CIS. For field direction around a wire, use the Right-Hand Grip Rule: thumb = current direction, curled fingers = field direction.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Electromagnetism</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
-          "title": "Magnetic Field from Current",
+          "title": "Magnetic Field from a Current",
           "icon": "⚡",
+          "text": "Any current-carrying conductor produces a magnetic field around it. The shape and direction of this field depends on the geometry of the conductor.",
           "points": [
-            "A current-carrying wire produces a circular magnetic field around it",
-            "Direction: use right-hand rule (curl fingers around wire — thumb points in current direction, fingers show field direction)",
-            "Solenoid (coil of wire): magnetic field like a bar magnet inside",
-            "Field strength increases with: more current, more turns in coil, iron core"
+            "<strong>Straight wire</strong> — current produces circular magnetic field lines concentric around the wire",
+            "<strong>Right-hand grip rule</strong> — wrap right hand around wire with thumb pointing in current direction; curled fingers show field direction",
+            "<strong>Field strength</strong> — increases with larger current; decreases with distance from wire",
+            "<strong>Solenoid</strong> — coil of wire; produces a uniform field inside similar to a bar magnet; field lines emerge from one end (N) and enter the other (S)",
+            "<strong>Direction in solenoid</strong> — use right-hand rule on the coil: curl fingers in direction of conventional current; thumb points to north pole"
           ]
         },
         {
           "title": "Electromagnets",
           "icon": "🔧",
+          "text": "An electromagnet is a controllable magnet made by passing current through a coil. Its field can be switched on and off or varied in strength.",
           "points": [
-            "Current through a coil of wire produces a strong magnetic field",
-            "Field can be switched on and off (unlike permanent magnets)",
-            "Iron core concentrates field — makes it much stronger",
-            "Uses: electric bells, scrapyard cranes, MRI scanners, loudspeakers, relays"
+            "<strong>Construction</strong> — coil of insulated wire wrapped around a soft iron core; iron concentrates and amplifies the field",
+            "<strong>Advantages over permanent magnets</strong> — can be switched on/off; strength can be varied; direction of field can be reversed by reversing current",
+            "<strong>Increasing strength</strong> — more current; more turns of wire; stronger iron core; less air gaps",
+            "<strong>Applications</strong> — electric bells, scrapyard cranes (lift and release metal), MRI scanners, loudspeakers, relays, maglev trains, circuit breakers",
+            "<strong>Relay</strong> — small current in control circuit activates electromagnet, which closes switch in high-current circuit; used in cars, computers"
+          ]
+        },
+        {
+          "title": "The Electromagnet in Devices",
+          "icon": "🔌",
+          "text": "Electromagnets are at the heart of many everyday devices. Understanding how they work in context is essential for AQA exam questions.",
+          "points": [
+            "<strong>Electric bell</strong> — current → electromagnet attracts iron armature → hammer strikes bell → circuit breaks → spring returns armature → circuit makes again → repeats",
+            "<strong>Loudspeaker</strong> — varying current in coil around permanent magnet → varying force → coil and cone vibrate → produce sound waves",
+            "<strong>Circuit breaker</strong> — too large a current → electromagnet strong enough to pull on iron catch → switch opens, breaking circuit",
+            "<strong>MRI scanner</strong> — very strong superconducting electromagnet creates field; aligns hydrogen nuclei; radio waves produce signal used to build images",
+            "<strong>Scrapyard crane</strong> — electromagnet switched on to pick up steel/iron, switched off to release it; works only on magnetic metals"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Solenoid",
-          "def": "A coil of wire that acts as a magnet when current flows through it"
+          "def": "A coil of wire that produces a magnetic field similar to a bar magnet when current flows through it"
         },
         {
           "term": "Electromagnet",
-          "def": "A magnet created by passing an electric current through a coil of wire"
+          "def": "A magnet created by passing electric current through a coil of wire, usually with a soft iron core"
         },
         {
-          "term": "Right-hand rule",
-          "def": "Method to find magnetic field direction around a current-carrying wire"
+          "term": "Right-hand grip rule",
+          "def": "Method to find magnetic field direction around a current-carrying wire: thumb = current, curled fingers = field direction"
+        },
+        {
+          "term": "Soft iron core",
+          "def": "Iron core inside an electromagnet coil that concentrates the magnetic field and greatly increases strength"
+        },
+        {
+          "term": "Relay",
+          "def": "Electromagnetic switch where a small current activates an electromagnet to control a larger current in a separate circuit"
+        },
+        {
+          "term": "Magnetic flux",
+          "def": "The total amount of magnetic field passing through an area; symbol Φ; measured in webers (Wb)"
         }
       ],
       "examTips": [
-        "Electromagnet strength increases with: more current, more turns, iron core.",
-        "Advantage over permanent magnets: can be switched on/off and varied in strength."
+        "Electromagnet strength increases with: more current, more turns of wire, iron core — AQA often asks 'suggest two ways to increase the strength of an electromagnet'. Give two of these three.",
+        "Advantage over permanent magnets: can be switched on/off and varied in strength — AQA exam questions often ask for one advantage; make sure to include 'can be switched off' not just 'stronger'.",
+        "Iron core (soft magnetic material) is essential — it can be magnetised and demagnetised quickly. Steel would remain magnetised and the electromagnet could not be switched off.",
+        "For field direction around a solenoid: use the right-hand rule. Curl fingers in direction of conventional current flow around the coil; thumb points to the north pole."
       ],
       "commonMistakes": [
-        "Saying electromagnets are always stronger than permanent magnets — not necessarily.",
-        "Forgetting the iron core magnifies the field — without it, field is much weaker."
+        "Saying electromagnets are always stronger than permanent magnets — not necessarily. The advantage is that they can be switched on and off, not that they are always stronger.",
+        "Forgetting the iron core magnifies the field — without it the field from a simple coil is much weaker and cannot pick up heavy loads.",
+        "Using steel instead of iron as the core — steel is a hard magnetic material and would stay magnetised when current is off, preventing the electromagnet from releasing its load.",
+        "Not stating that the field is circular around a straight wire — many students draw the field as straight lines parallel to the wire, which is incorrect."
       ],
       "videos": [
         {
@@ -152,54 +218,89 @@
     },
     "Motor Effect": {
       "intro": "A current-carrying conductor in a magnetic field experiences a force. This is the motor effect — the principle behind electric motors.",
+      "mnemonic": "\"FBI\" for Fleming's Left-Hand rule: First finger = Field (B), seCond finger = Current (I), thuMb = Motion (F for force). LEFT hand for MOTOR (both have an 'L' or think: 'Motors use Left-hand rule, Generators use Right'). Remember: 'Left = L = Loco-motion'.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Motor Effect</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "The Motor Effect",
           "icon": "🔄",
+          "text": "A current-carrying conductor in a magnetic field experiences a force perpendicular to both the current and the field. This is called the motor effect.",
+          "points": [
+            "<strong>Motor effect</strong> — a current-carrying conductor in a magnetic field experiences a force at right angles to both the current and the field",
+            "<strong>Increasing force</strong> — force increases with: larger current (I), stronger magnetic field (B), longer conductor in the field",
+            "<strong>Reversing force</strong> — reverse the current direction OR reverse the field direction (but not both) to reverse the force direction",
+            "<strong>Maximum force</strong> — force is greatest when current is perpendicular (90°) to the magnetic field; zero force when parallel",
+            "<strong>Force equation (HT)</strong> — F = BIL, where F = force (N), B = magnetic flux density (T), I = current (A), L = length of conductor (m)"
+          ],
           "callout": {
             "type": "exam",
             "label": "Fleming's Left-Hand Rule",
             "text": "Point left hand: First finger = Field direction, seCond finger = Current direction, thuMb = Motion (force) direction. FBI — Field, Current, Motion."
-          },
+          }
+        },
+        {
+          "title": "Fleming's Left-Hand Rule",
+          "icon": "✋",
+          "text": "Fleming's left-hand rule gives the direction of the force on a current-carrying conductor in a magnetic field.",
           "points": [
-            "Force is perpendicular to both current and magnetic field",
-            "Force increases with: stronger magnetic field, larger current",
-            "Reversing current OR field reverses direction of force"
+            "<strong>First finger (Field)</strong> — points in the direction of the magnetic field (N to S)",
+            "<strong>seCond finger (Current)</strong> — points in the direction of conventional current flow (+ to −)",
+            "<strong>thuMb (Motion/Force)</strong> — points in the direction of the force (motion) on the conductor",
+            "<strong>Three fingers at right angles</strong> — all three must be held perpendicular to each other for the rule to work",
+            "<strong>LEFT hand ONLY for motors</strong> — use right hand only for generators/dynamo effect (Fleming's right-hand rule)"
           ]
         },
         {
           "title": "The Electric Motor",
           "icon": "⚙️",
+          "text": "An electric motor uses the motor effect to convert electrical energy into continuous rotational kinetic energy.",
           "points": [
-            "A coil of wire carrying current in a magnetic field experiences forces on opposite sides",
-            "Forces in opposite directions → turning effect (torque)",
-            "Commutator (split ring) reverses current direction each half turn → keeps motor spinning same way",
-            "Brushes maintain electrical contact with commutator"
+            "<strong>Coil in field</strong> — a rectangular coil carrying current sits between magnetic poles; opposite sides experience forces in opposite directions",
+            "<strong>Turning effect (torque)</strong> — opposite forces on opposite sides of coil create a couple that rotates the coil",
+            "<strong>Commutator (split ring)</strong> — reverses current direction through the coil every half turn; keeps rotation in the same direction",
+            "<strong>Brushes</strong> — stationary carbon contacts that maintain electrical connection to the rotating commutator",
+            "<strong>Increasing motor speed/force</strong> — increase current, stronger magnets, more turns on coil, add iron core",
+            "<strong>Applications</strong> — fans, drills, electric vehicles, washing machines, pumps, conveyor belts"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Motor effect",
-          "def": "Force experienced by a current-carrying conductor in a magnetic field"
+          "def": "The force experienced by a current-carrying conductor placed in an external magnetic field"
         },
         {
           "term": "Fleming's left-hand rule",
-          "def": "Rule for finding force direction: Field (first finger), Current (second), Motion/Force (thumb)"
+          "def": "Rule for finding the direction of force on a current in a field: First finger = Field, seCond = Current, thuMb = Motion"
         },
         {
           "term": "Commutator",
-          "def": "Split ring in a DC motor that reverses current direction each half turn"
+          "def": "Split ring in a DC motor that reverses the current direction every half turn to maintain continuous rotation"
+        },
+        {
+          "term": "Brushes",
+          "def": "Stationary carbon contacts that press against the commutator to maintain electrical connection as it spins"
+        },
+        {
+          "term": "Torque",
+          "def": "The turning effect produced by two equal and opposite forces acting on opposite sides of the motor coil"
+        },
+        {
+          "term": "Magnetic flux density (B)",
+          "def": "The strength of a magnetic field, measured in tesla (T); used in F = BIL"
         }
       ],
       "examTips": [
-        "Fleming's LEFT-hand rule for MOTOR effect (force/motion). Right-hand rule for generators.",
-        "Force is largest when current is perpendicular to the magnetic field.",
-        "To reverse motor direction: reverse current OR reverse field (not both)."
+        "Fleming's LEFT-hand rule for MOTOR effect; right-hand rule for generator effect. AQA specifically tests this distinction — never mix them up. 'Motor = Left, Generator = Right'.",
+        "Force is largest when current is perpendicular to the magnetic field (angle = 90°). Zero force when parallel. AQA may ask you to describe how force varies with angle.",
+        "To reverse motor direction: reverse current OR reverse field (not both) — if you reverse both, the force direction stays the same.",
+        "For the F = BIL equation (Higher Tier): F in newtons (N), B in tesla (T), I in amps (A), L in metres (m). Worked example: B = 0.5 T, I = 2 A, L = 0.1 m → F = 0.5 × 2 × 0.1 = 0.1 N."
       ],
       "commonMistakes": [
-        "Using right-hand rule for motor effect — it's LEFT hand for motors.",
-        "Forgetting the commutator's function — without it the motor would oscillate, not rotate continuously."
+        "Using right-hand rule for motor effect — always use the LEFT hand for the motor effect. Using the wrong hand gives the opposite (wrong) direction.",
+        "Forgetting the commutator's function — without it the coil would oscillate back and forth instead of rotating continuously, as the force direction would reverse each half turn.",
+        "Saying the force acts along the wire — the force is always perpendicular to both the current direction and the field direction.",
+        "Reversing both current and field and expecting the force to reverse — reversing both leaves the force direction unchanged; only reverse one to reverse the force."
       ],
       "videos": [
         {
@@ -226,58 +327,88 @@
     },
     "Generators": {
       "intro": "Generators use electromagnetic induction to convert kinetic energy into electrical energy. They are the reverse of motors.",
+      "mnemonic": "\"FIRM\" for increasing induced EMF — Faster movement, Increase field strength, more Revolutions (turns), Magnet stronger. For AC vs DC generators: 'AC uses Slip rings, DC uses spit-ring Commutator' — A=Slip, D=Commutator. Generators use the RIGHT-hand rule (opposite of motors).",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Generators</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Electromagnetic Induction",
           "icon": "⚡",
+          "text": "When a conductor cuts through magnetic field lines (or field lines change around it), an EMF is induced. This is the generator effect.",
           "points": [
-            "Moving a conductor through a magnetic field (or changing field around a conductor) induces a voltage",
-            "If circuit is complete: induces a current",
-            "This is the generator effect — opposite of the motor effect",
-            "Induced voltage increases with: faster movement, stronger field, more turns"
+            "<strong>Generator effect</strong> — moving a conductor through a magnetic field, or changing the field around a conductor, induces an EMF (voltage)",
+            "<strong>Current flows if circuit is complete</strong> — the induced EMF drives a current if there is a closed circuit",
+            "<strong>Increasing induced EMF</strong> — move the conductor faster; use a stronger magnetic field; use more turns of wire; use an iron core",
+            "<strong>Changing field</strong> — a stationary conductor in a changing field also has EMF induced (key for transformers)",
+            "<strong>Lenz's law (HT)</strong> — the induced current always opposes the change that caused it (energy conservation)"
           ]
         },
         {
           "title": "AC Generator (Alternator)",
           "icon": "〜",
+          "text": "An AC generator (alternator) converts mechanical energy into alternating electrical energy by rotating a coil in a magnetic field.",
           "points": [
-            "Coil rotates in a magnetic field — continuously changing flux",
-            "Produces alternating current (AC) — current reverses direction each half turn",
-            "Slip rings and brushes maintain continuous contact",
-            "UK mains supply: 230V, 50Hz"
+            "<strong>Rotating coil</strong> — as coil rotates in field, the rate at which it cuts field lines changes, inducing a continuously varying EMF",
+            "<strong>AC output</strong> — EMF and current reverse direction every half turn, producing alternating current (AC)",
+            "<strong>Slip rings and brushes</strong> — slip rings maintain continuous contact with rotating coil; no current reversal (unlike commutator)",
+            "<strong>Maximum EMF</strong> — when coil sides move perpendicular to field (cutting maximum field lines per second)",
+            "<strong>Zero EMF</strong> — when coil sides move parallel to field (cutting no field lines)",
+            "<strong>UK mains supply</strong> — 230 V, 50 Hz (50 complete cycles per second)"
           ]
         },
         {
-          "title": "Microphones and Speakers",
+          "title": "Microphones and Loudspeakers",
           "icon": "🎤",
+          "text": "Microphones and loudspeakers are transducers that convert between sound energy and electrical energy using electromagnetic induction and the motor effect respectively.",
           "points": [
-            "Microphone: sound waves → diaphragm vibrates → coil moves in field → induces current",
-            "Speaker: varying current in coil → force in field → coil/cone vibrates → sound waves"
+            "<strong>Microphone (induction)</strong> — sound waves cause diaphragm to vibrate; attached coil moves in magnetic field; induces a changing EMF matching the sound",
+            "<strong>Loudspeaker (motor effect)</strong> — varying electrical current in coil around permanent magnet produces varying force; coil and cone vibrate at frequency of current; produces sound",
+            "<strong>Both use coil and magnet</strong> — microphone is generator effect; loudspeaker is motor effect; they are inverses of each other",
+            "<strong>DC generator</strong> — uses split ring commutator (like motor but in reverse) to produce unidirectional (pulsed DC) current",
+            "<strong>Power station generators</strong> — turbines (driven by steam or water) rotate large coils in strong magnetic fields to produce AC"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Electromagnetic induction",
-          "def": "Inducing a voltage (and current) by relative motion between a conductor and a magnetic field"
+          "def": "The process of inducing an EMF (and current if circuit is complete) by relative motion between a conductor and a magnetic field"
         },
         {
           "term": "Generator effect",
-          "def": "Producing an electric current from motion in a magnetic field"
+          "def": "Producing an induced EMF and current from the relative motion of a conductor and a magnetic field"
         },
         {
-          "term": "Alternating current",
-          "def": "Current that reverses direction periodically — produced by generators"
+          "term": "Alternating current (AC)",
+          "def": "Current that repeatedly reverses direction; produced by AC generators; UK mains = 230 V, 50 Hz"
+        },
+        {
+          "term": "Slip rings",
+          "def": "Continuous rings in an AC generator that maintain electrical contact with the coil without reversing current"
+        },
+        {
+          "term": "Induced EMF",
+          "def": "The electromotive force generated in a conductor when the magnetic flux through it changes"
+        },
+        {
+          "term": "Faraday's law",
+          "def": "The induced EMF is proportional to the rate of change of magnetic flux; more turns or faster movement = greater EMF"
+        },
+        {
+          "term": "Alternator",
+          "def": "An AC generator that uses slip rings to produce alternating current from rotational motion"
         }
       ],
       "examTips": [
-        "Generator is opposite of motor: kinetic → electrical vs electrical → kinetic.",
-        "Increase induced voltage: move faster, stronger magnet, more turns, add iron core.",
-        "AC generators use slip rings; DC generators use commutator."
+        "Generator is the opposite of motor: kinetic energy → electrical energy (generator) vs electrical energy → kinetic energy (motor). AQA asks you to compare them — motor uses LEFT-hand rule, generator uses RIGHT-hand rule.",
+        "Increase induced EMF/voltage: move conductor faster, stronger magnet, more turns of wire — AQA commonly asks 'suggest two ways to increase the output of a generator'. Give two from these three.",
+        "AC generators use slip rings; DC generators use a commutator — make sure you know which produces which type of current and why. Slip rings allow continuous rotation without current reversal.",
+        "A stationary conductor in a CHANGING field also has an EMF induced — this is the principle behind transformers. Students often think only motion causes induction."
       ],
       "commonMistakes": [
-        "Confusing generators (motion → electricity) with motors (electricity → motion).",
-        "Forgetting that stationary conductor in changing field also induces voltage."
+        "Confusing generators (motion → electricity) with motors (electricity → motion) — they are the reverse of each other and use opposite hands in Fleming's rules.",
+        "Forgetting that a stationary conductor in a changing magnetic field also has an EMF induced — motion is not essential; changing flux is what matters.",
+        "Saying AC generators use commutators — AC generators use slip rings; only DC generators (and DC motors) use the split-ring commutator.",
+        "Forgetting to mention 'rate of change' of flux — induced EMF is proportional to the rate of change, not just the amount of field. Faster movement → greater rate of change → larger EMF."
       ],
       "videos": [
         {
@@ -304,19 +435,33 @@
     },
     "Transformers": {
       "intro": "Transformers change the voltage of an AC supply using electromagnetic induction. They are essential for efficient electricity transmission.",
+      "mnemonic": "\"VIP NaS\" — Voltage primary/secondary = turns Primary/secondary: Vp/Vs = Np/Ns. For step-Up: more turns on secondary (Up = sUperior = more). For power: 'Power In = Power Out for ideal transformer': Vp × Ip = Vs × Is. Remember: high-voltage transmission = low current = low power loss (P = I²R).",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Transformers</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "How Transformers Work",
           "icon": "⚡",
+          "text": "Transformers use electromagnetic induction to transfer electrical energy between two coils at different voltages. They only work with alternating current.",
           "points": [
-            "AC in primary coil → changing magnetic field in iron core → induced EMF in secondary coil",
-            "Iron core concentrates and transfers magnetic field",
-            "Only work with AC — DC produces no changing field, so no induction"
+            "<strong>AC in primary coil</strong> — alternating current creates a continuously changing magnetic field in the iron core",
+            "<strong>Changing field in core</strong> — the laminated iron core carries the changing magnetic flux to the secondary coil",
+            "<strong>Induction in secondary</strong> — the changing flux induces an alternating EMF in the secondary coil",
+            "<strong>AC only</strong> — DC produces a steady (non-changing) field; no induction occurs; transformers do NOT work with DC",
+            "<strong>Laminated iron core</strong> — made of layers of iron separated by insulation to reduce energy losses from eddy currents"
           ]
         },
         {
-          "title": "Turns Ratio Formula",
+          "title": "Turns Ratio and Calculations",
           "icon": "📐",
+          "text": "The ratio of turns on the primary and secondary coils determines how the voltage is changed. This relationship is captured in the turns ratio equation.",
+          "points": [
+            "<strong>Turns ratio equation</strong> — Vp/Vs = Np/Ns; rearrange as Vs = Vp × (Ns/Np)",
+            "<strong>Worked example</strong> — Vp = 230 V, Np = 1000 turns, Ns = 50 turns: Vs = 230 × (50/1000) = 11.5 V (step-down)",
+            "<strong>Step-up transformer</strong> — more turns on secondary (Ns > Np) → higher output voltage (Vs > Vp)",
+            "<strong>Step-down transformer</strong> — fewer turns on secondary (Ns < Np) → lower output voltage (Vs < Vp)",
+            "<strong>Power equation (ideal)</strong> — Vp × Ip = Vs × Is; increasing voltage decreases current proportionally",
+            "<strong>Worked example (power)</strong> — Vp = 230 V, Ip = 2 A, Vs = 11.5 V: Is = (230 × 2) / 11.5 = 40 A"
+          ],
           "callout": {
             "type": "exam",
             "label": "Turns Ratio Formula",
@@ -324,42 +469,64 @@
           }
         },
         {
-          "title": "Power Transmission",
+          "title": "Power Transmission and the National Grid",
           "icon": "🏭",
+          "text": "Transformers make the National Grid efficient by transmitting electricity at high voltage and low current, minimising energy losses in cables.",
           "points": [
-            "Power stations generate at ~25 kV — stepped up to ~400 kV for transmission",
-            "High voltage transmission reduces current → reduces power loss (P = I²R)",
-            "Step-down transformers reduce voltage to safe levels for homes (230V)",
-            "Ideal transformer: power in = power out (Vp × Ip = Vs × Is)"
+            "<strong>Generation</strong> — power stations generate electricity at ~25 kV; step-up transformers increase to ~400 kV for long-distance transmission",
+            "<strong>Why high voltage?</strong> — high voltage means low current for same power (P = IV); low current reduces power lost as heat in cables: P_loss = I²R",
+            "<strong>Worked example</strong> — doubling voltage halves current; power loss ∝ I² so loss drops to ¼ of original",
+            "<strong>Step-down transformers</strong> — reduce voltage at substations to safe levels: 33 kV (industry), 11 kV (local), 230 V (homes)",
+            "<strong>Efficiency</strong> — ideal transformer: Vp × Ip = Vs × Is (100% efficient); real transformers have small losses from resistance in coils and eddy currents in core",
+            "<strong>Energy losses</strong> — reduced by using thick low-resistance cables, laminating the iron core, using superconducting materials at very low temperatures"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Transformer",
-          "def": "Device that changes AC voltage using electromagnetic induction"
+          "def": "Device that uses electromagnetic induction to change the voltage of an AC supply"
         },
         {
           "term": "Step-up transformer",
-          "def": "Increases voltage — more turns on secondary than primary"
+          "def": "Transformer with more turns on the secondary than primary — increases voltage, decreases current"
         },
         {
           "term": "Step-down transformer",
-          "def": "Decreases voltage — fewer turns on secondary than primary"
+          "def": "Transformer with fewer turns on the secondary than primary — decreases voltage, increases current"
         },
         {
           "term": "Turns ratio",
-          "def": "Ratio of primary to secondary turns — determines voltage change"
+          "def": "The ratio Np:Ns which determines the voltage change: Vp/Vs = Np/Ns"
+        },
+        {
+          "term": "Primary coil",
+          "def": "The input coil of a transformer connected to the AC supply"
+        },
+        {
+          "term": "Secondary coil",
+          "def": "The output coil of a transformer from which the changed voltage is taken"
+        },
+        {
+          "term": "National Grid",
+          "def": "The network of cables and transformers that distributes electricity from power stations to homes and businesses across the UK"
+        },
+        {
+          "term": "Eddy currents",
+          "def": "Unwanted circulating currents induced in the iron core of a transformer that waste energy as heat; reduced by laminating the core"
         }
       ],
       "examTips": [
-        "Vp/Vs = Np/Ns — cross-multiply to solve for any unknown.",
-        "Transformers only work with AC — DC won't induce a current in the secondary.",
-        "High voltage transmission reduces power loss: P lost = I²R; less I → less P lost."
+        "Vp/Vs = Np/Ns — cross-multiply to solve for any unknown. Show working clearly. AQA often gives three values and asks for the fourth. Check your answer makes sense: step-up → Vs > Vp.",
+        "Transformers only work with AC — DC won't create a changing magnetic field, so no induction occurs in the secondary coil. This is a classic one-mark AQA question.",
+        "High-voltage transmission reduces power loss: P_loss = I²R. Halving current reduces losses by a factor of 4 (because I is squared). AQA frequently asks you to explain WHY high voltage is used.",
+        "For 6-mark questions on the National Grid: explain step-up at power station, reason (high V = low I = less P_loss in cables via P = I²R), then step-down transformers at substations for safe use in homes."
       ],
       "commonMistakes": [
-        "Saying transformers work with DC — they do not; the field must be changing.",
-        "Confusing step-up (more secondary turns, higher voltage) with step-down."
+        "Saying transformers work with DC — they do not; the magnetic field must be changing to induce an EMF in the secondary coil. DC produces a constant (unchanging) field.",
+        "Confusing step-up (more secondary turns, higher output voltage) with step-down — remember: more turns on secondary = steps UP the voltage.",
+        "Forgetting that increasing voltage decreases current — students often say high voltage transmission increases power loss. In fact, higher voltage → lower current → much less P = I²R loss.",
+        "Using Vp × Ip = Vs × Is incorrectly — this equation only holds for an ideal (100% efficient) transformer. In a real transformer, output power is slightly less than input power."
       ],
       "videos": [
         {

@@ -3,32 +3,49 @@
   "topics": {
     "Basic Electricity": {
       "intro": "Electric current is the flow of charge. Understanding the basic concepts of voltage, current and resistance is essential for all of P2.",
+      "mnemonic": "\"Very Intelligent Rabbits\" — V = IR (Voltage = Current × Resistance) — Ohm's Law in one phrase.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Basic Electricity — V, I, R</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Current, Voltage and Resistance",
           "icon": "⚡",
+          "text": "These three quantities describe the electrical behaviour of any circuit component and are linked by Ohm's Law.",
           "points": [
-            "<strong>Current (I)</strong> — rate of flow of charge; measured in amperes (A)",
+            "<strong>Current (I)</strong> — rate of flow of charge; measured in amperes (A); 1 A = 1 coulomb per second",
             "<strong>Voltage/potential difference (V)</strong> — energy transferred per unit charge; measured in volts (V)",
-            "<strong>Resistance (R)</strong> — opposition to current flow; measured in ohms (Ω)"
+            "<strong>Resistance (R)</strong> — opposition to current flow; measured in ohms (Ω); caused by collisions of electrons with the lattice",
+            "<strong>Relationship</strong> — increasing voltage increases current; increasing resistance decreases current",
+            "<strong>Units summary</strong> — Amps (A), Volts (V), Ohms (Ω), Coulombs (C) — know these for every question"
           ]
         },
         {
           "title": "Ohm's Law",
           "icon": "📐",
+          "text": "Ohm's Law relates voltage, current, and resistance for ohmic conductors and is the most important equation in electricity.",
+          "points": [
+            "<strong>V = IR</strong> — rearranged: I = V/R (find current) and R = V/I (find resistance)",
+            "<strong>Example</strong> — a 12 V battery drives a current through a 4 Ω resistor: I = 12/4 = 3 A",
+            "<strong>Ohmic conductor</strong> — resistance stays constant at constant temperature (e.g. resistor, metal wire)",
+            "<strong>Filament bulb</strong> — non-ohmic; as it heats up, resistance increases (I-V graph curves)",
+            "<strong>Diode</strong> — non-ohmic; only conducts in one direction; very high resistance in reverse direction"
+          ],
           "callout": {
             "type": "exam",
             "label": "Formula",
             "text": "V = I × R (Voltage = Current × Resistance). Rearranged: I = V/R and R = V/I. An ohmic conductor has constant resistance."
-          },
-          "points": [
-            "Ohmic conductor: resistance stays constant at constant temperature (e.g. resistor)",
-            "Non-ohmic: resistance changes (e.g. filament bulb — gets hotter, resistance increases; diode — only conducts in one direction)"
-          ]
+          }
         },
         {
           "title": "Charge Flow",
           "icon": "🔋",
+          "text": "Charge is the fundamental quantity in electricity — current measures the rate at which charge flows.",
+          "points": [
+            "<strong>Q = It</strong> — charge Q in coulombs (C), current I in amperes (A), time t in seconds (s)",
+            "<strong>Example</strong> — a current of 2 A flows for 30 s: Q = 2 × 30 = 60 C",
+            "<strong>Electron flow</strong> — in metals, current is carried by free electrons moving through the lattice",
+            "<strong>Conventional current</strong> — defined as flowing from positive to negative terminal (opposite to electron flow)",
+            "<strong>One coulomb</strong> — the charge transferred when 1 A flows for 1 second"
+          ],
           "callout": {
             "type": "exam",
             "label": "Formula",
@@ -52,16 +69,29 @@
         {
           "term": "Ohm's law",
           "def": "V = IR — voltage, current and resistance are proportionally related in ohmic conductors"
+        },
+        {
+          "term": "Ohmic conductor",
+          "def": "A component whose resistance remains constant as voltage changes, at constant temperature"
+        },
+        {
+          "term": "Coulomb",
+          "def": "The unit of electric charge (C) — the charge transferred by 1 A flowing for 1 second"
+        },
+        {
+          "term": "Non-ohmic conductor",
+          "def": "A component whose resistance changes with current or voltage, e.g. filament bulb, diode"
         }
       ],
       "examTips": [
-        "V = IR is the most used formula in electricity. Learn the triangle.",
-        "Ohmic conductors have constant resistance. Filament bulbs and diodes do not.",
-        "Charge = current × time. Charge is in coulombs (C)."
+        "V = IR is the most used formula in electricity — learn the triangle: cover the quantity you want to find.",
+        "Ohmic conductors have constant resistance. Filament bulbs and diodes do not — their I-V graphs are not straight lines.",
+        "Charge = current × time. Charge is in coulombs (C) — don't confuse C (coulombs) with °C (temperature)."
       ],
       "commonMistakes": [
-        "Confusing current (flow of charge) with voltage (energy per charge).",
-        "Saying current is 'used up' in a circuit — current is the same everywhere in a series circuit."
+        "Confusing current (flow of charge) with voltage (energy per charge) — they are very different quantities.",
+        "Saying current is 'used up' in a circuit — current is the same everywhere in a series circuit.",
+        "Forgetting to check units in charge calculations — time must be in seconds, not minutes."
       ],
       "videos": [
         {
@@ -88,36 +118,43 @@
     },
     "Circuits": {
       "intro": "Electrical circuits can be arranged in series or parallel. Each arrangement has different rules for current, voltage and resistance.",
+      "mnemonic": "\"Series Voltages Add — Parallel Currents Add\" — the key rule for each circuit type in one sentence.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Series and Parallel Circuits</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Series Circuits",
           "icon": "🔗",
+          "text": "In a series circuit, all components share the same current and the total voltage is divided between them.",
           "points": [
-            "Components connected in a single loop",
-            "Same current flows through all components",
-            "Voltages add up to total voltage: Vtotal = V₁ + V₂",
-            "Resistances add up: Rtotal = R₁ + R₂",
-            "If one component breaks — circuit breaks; all go off"
+            "<strong>Single loop</strong> — all components connected in one continuous path; no branches",
+            "<strong>Same current</strong> — the same current flows through every component in the loop",
+            "<strong>Voltages add</strong> — Vtotal = V₁ + V₂ + V₃; the supply voltage is shared between components",
+            "<strong>Resistances add</strong> — Rtotal = R₁ + R₂; adding more components increases total resistance",
+            "<strong>Break in circuit</strong> — if one component fails, the whole circuit stops; all go off"
           ]
         },
         {
           "title": "Parallel Circuits",
           "icon": "⑆",
+          "text": "In a parallel circuit, each branch receives the full supply voltage and carries its own share of the total current.",
           "points": [
-            "Components connected in separate branches",
-            "Same voltage across all branches",
-            "Currents split between branches; add up to total: Itotal = I₁ + I₂",
-            "Total resistance LESS than smallest individual resistance",
-            "If one branch breaks — others still work"
+            "<strong>Separate branches</strong> — components on independent paths between the same two points",
+            "<strong>Same voltage</strong> — the full supply voltage appears across every branch",
+            "<strong>Currents split</strong> — total current = sum of branch currents: Itotal = I₁ + I₂",
+            "<strong>Lower resistance</strong> — total resistance is less than the smallest individual resistance; more paths = less resistance",
+            "<strong>Independent branches</strong> — if one branch breaks, others continue to work; used in household wiring"
           ]
         },
         {
-          "title": "Circuit Symbols",
+          "title": "Circuit Symbols and Measurement",
           "icon": "📋",
+          "text": "Knowing standard circuit symbols and how to place measuring instruments correctly is essential for exam diagrams.",
           "points": [
-            "Cell, battery, switch, resistor, variable resistor, lamp",
-            "Ammeter — in series; voltmeter — in parallel",
-            "Diode, LED, thermistor, LDR"
+            "<strong>Ammeter</strong> — measures current; connected in series in the circuit; has very low resistance",
+            "<strong>Voltmeter</strong> — measures potential difference; connected in parallel across a component; has very high resistance",
+            "<strong>Thermistor</strong> — resistance decreases as temperature increases; used in temperature sensors",
+            "<strong>LDR (light-dependent resistor)</strong> — resistance decreases as light intensity increases; used in light sensors",
+            "<strong>Diode</strong> — allows current in one direction only; used to convert AC to DC"
           ]
         }
       ],
@@ -137,16 +174,29 @@
         {
           "term": "Voltmeter",
           "def": "Instrument measuring potential difference — connected in parallel"
+        },
+        {
+          "term": "Thermistor",
+          "def": "A resistor whose resistance decreases as temperature increases"
+        },
+        {
+          "term": "LDR",
+          "def": "Light-dependent resistor — resistance decreases as light intensity increases"
+        },
+        {
+          "term": "Total resistance",
+          "def": "In series: sum of all resistances. In parallel: less than the smallest individual resistance."
         }
       ],
       "examTips": [
-        "Series: same current, voltages add. Parallel: same voltage, currents add.",
-        "Ammeter = series (low resistance). Voltmeter = parallel (high resistance).",
-        "Adding more parallel branches reduces total resistance."
+        "Series: same current, voltages add. Parallel: same voltage, currents add. Learn these rules — they come up every year.",
+        "Ammeter = series (low resistance). Voltmeter = parallel (high resistance) — connecting them the wrong way is a common error.",
+        "Adding more parallel branches reduces total resistance — always explain why using the concept of more current paths."
       ],
       "commonMistakes": [
-        "Saying voltages are the same in series — they're the same in PARALLEL.",
-        "Connecting ammeter in parallel or voltmeter in series — this is wrong."
+        "Saying voltages are the same in series — voltages are shared in series and the SAME in PARALLEL.",
+        "Connecting ammeter in parallel or voltmeter in series — this is experimentally wrong and loses method marks.",
+        "Forgetting that adding resistors in parallel always reduces total resistance below the smallest individual value."
       ],
       "videos": [
         {
@@ -178,33 +228,43 @@
     },
     "Domestic Electricity": {
       "intro": "Mains electricity in the UK is alternating current (AC) at 230V and 50Hz. Understanding how it is safely used in the home is required for P2.",
+      "mnemonic": "\"Brown Lives Near Earth\" — Brown = Live, Neutral = blue (Near), Earth = green/yellow — the three plug wire colours.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Three-Pin Plug and Domestic Electricity</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "AC vs DC",
           "icon": "〜",
+          "text": "The two types of electric current have different properties and are suited to different applications.",
           "points": [
-            "AC (alternating current) — direction of current reverses periodically; mains supply (230V, 50Hz UK)",
-            "DC (direct current) — current flows in one direction only; batteries and phone chargers"
+            "<strong>AC (alternating current)</strong> — direction of current reverses periodically; UK mains supply is 230 V at 50 Hz",
+            "<strong>DC (direct current)</strong> — current flows in one direction only; produced by batteries and cells",
+            "<strong>50 Hz</strong> — UK mains alternates 50 times per second (50 complete cycles per second)",
+            "<strong>Why AC for mains?</strong> — AC can be transformed to very high voltages for efficient transmission over long distances",
+            "<strong>DC for devices</strong> — most electronic components require DC; phone chargers convert AC to DC"
           ]
         },
         {
           "title": "The Three-Pin Plug",
           "icon": "🔌",
+          "text": "The UK three-pin plug is designed for safety, with colour-coded wires and a fuse to protect against overcurrent.",
           "points": [
-            "<strong>Live (brown)</strong> — carries current at 230V",
-            "<strong>Neutral (blue)</strong> — completes circuit at 0V",
-            "<strong>Earth (green/yellow)</strong> — safety wire; prevents shock if appliance develops fault",
-            "Fuse in live wire — melts if current too high, breaking circuit"
+            "<strong>Live (brown)</strong> — carries current at 230 V; the dangerous wire",
+            "<strong>Neutral (blue)</strong> — completes circuit at 0 V; current returns via this wire",
+            "<strong>Earth (green/yellow)</strong> — safety wire; connected to metal case; provides low-resistance path to earth if fault develops",
+            "<strong>Fuse</strong> — in the live wire; thin wire that melts if current too high, breaking the circuit",
+            "<strong>Cable grip</strong> — holds the cable in place to prevent wires being pulled loose"
           ]
         },
         {
           "title": "Fuses and Circuit Breakers",
           "icon": "🔧",
+          "text": "Safety devices protect circuits and people by automatically breaking the circuit if a dangerous overcurrent occurs.",
           "points": [
-            "Fuse: thin wire that melts if current exceeds rating — breaks circuit",
-            "Circuit breaker: electronic switch that trips if current too high — can be reset",
-            "Choose fuse rating just above normal operating current",
-            "RCD (residual current device): detects difference in current in live and neutral — trips if earth fault"
+            "<strong>Fuse</strong> — thin wire in live wire that melts if current exceeds rating; must be replaced after blowing",
+            "<strong>Circuit breaker</strong> — electronic switch that trips if current too high; can be reset by flipping the switch",
+            "<strong>Choose fuse rating</strong> — select the fuse rating just above the normal operating current of the appliance",
+            "<strong>RCD (residual current device)</strong> — detects difference in current between live and neutral; trips instantly; protects against electric shock",
+            "<strong>How earth + fuse work together</strong> — if live touches metal casing: current flows through earth wire → large current → fuse melts → circuit breaks"
           ]
         }
       ],
@@ -224,16 +284,29 @@
         {
           "term": "Earth wire",
           "def": "Safety wire that provides a low-resistance path to earth if appliance develops a fault"
+        },
+        {
+          "term": "RCD",
+          "def": "Residual current device — detects a difference between live and neutral currents and trips the circuit"
+        },
+        {
+          "term": "Circuit breaker",
+          "def": "An automatic switch that trips and cuts the circuit if current exceeds a set value — can be reset"
+        },
+        {
+          "term": "Frequency",
+          "def": "Number of complete AC cycles per second — measured in hertz (Hz); UK mains = 50 Hz"
         }
       ],
       "examTips": [
-        "Live = brown, Neutral = blue, Earth = green/yellow. Learn the colours.",
+        "Live = brown, Neutral = blue, Earth = green/yellow. Learn the colours — they come up in almost every P2 exam.",
         "Earth wire prevents shock — if live wire touches metal casing, current flows to earth through earth wire, blowing the fuse.",
-        "AC frequency in UK = 50 Hz (50 complete cycles per second)."
+        "AC frequency in UK = 50 Hz (50 complete cycles per second) — not 50 V or 50 A."
       ],
       "commonMistakes": [
-        "Saying neutral wire carries current at high voltage — neutral is at 0V.",
-        "Forgetting the earth wire's function — it is a safety device, not needed for the circuit to work."
+        "Saying neutral wire carries current at high voltage — neutral is at 0 V; it is the live wire that is at 230 V.",
+        "Forgetting the earth wire's function — it is a safety device, not needed for the circuit to operate normally.",
+        "Mixing up fuses and circuit breakers — fuses must be replaced, circuit breakers can be reset."
       ],
       "videos": [
         {
@@ -260,10 +333,20 @@
     },
     "Power and Energy": {
       "intro": "Power is the rate of energy transfer. Electrical power depends on both current and voltage.",
+      "mnemonic": "\"PIV — Power Is Voltage times current\" — P = IV — and don't forget P = I²R for when V is missing.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Power and Energy in Circuits</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Power Formulae",
           "icon": "📐",
+          "text": "Three versions of the power equation allow you to calculate power from any two of the three electrical quantities.",
+          "points": [
+            "<strong>P = IV</strong> — power equals current × voltage; works for any electrical component",
+            "<strong>P = I²R</strong> — use when voltage is not given; derived from P = IV and V = IR",
+            "<strong>P = V²/R</strong> — use when current is not given; also derived from P = IV and V = IR",
+            "<strong>Example</strong> — a kettle takes 13 A from 230 V: P = 13 × 230 = 2990 W ≈ 3 kW",
+            "<strong>Units</strong> — power in watts (W); 1 kW = 1000 W"
+          ],
           "callout": {
             "type": "exam",
             "label": "Formulae",
@@ -271,17 +354,32 @@
           }
         },
         {
-          "title": "Energy Transfer",
+          "title": "Energy Transfer and Bills",
           "icon": "⚡",
+          "text": "Energy is power multiplied by time, and electricity bills are calculated using kilowatt-hours as the unit of energy.",
+          "points": [
+            "<strong>E = Pt</strong> — energy equals power × time; energy in joules, power in W, time in seconds",
+            "<strong>E = QV</strong> — energy equals charge × voltage; an alternative energy formula",
+            "<strong>Kilowatt-hour (kWh)</strong> — the commercial unit of electrical energy; 1 kWh = 3,600,000 J",
+            "<strong>Cost calculation</strong> — cost = power (kW) × time (hours) × price per kWh",
+            "<strong>Example</strong> — a 2 kW heater running for 3 hours at 30p/kWh: cost = 2 × 3 × 0.30 = £1.80"
+          ],
           "callout": {
             "type": "exam",
             "label": "Energy Formula",
             "text": "E = P × t (Energy = Power × Time). Energy in joules (J) when time in seconds. E = Q × V (Energy = Charge × Voltage)."
-          },
+          }
+        },
+        {
+          "title": "Power in Transmission",
+          "icon": "🔌",
+          "text": "Understanding P = I²R explains why the National Grid transmits electricity at high voltage and low current to minimise energy loss.",
           "points": [
-            "Kilowatt-hour (kWh) = energy unit used in electricity bills",
-            "1 kWh = 3,600,000 J",
-            "Cost = power (kW) × time (hours) × price per kWh"
+            "<strong>P = I²R</strong> — power lost in a cable depends on the square of the current",
+            "<strong>High voltage, low current</strong> — step-up transformers increase voltage; lower current reduces cable losses",
+            "<strong>Example</strong> — doubling voltage halves current; power loss in cables drops by factor of 4",
+            "<strong>Step-down transformers</strong> — reduce voltage to safe levels (230 V) at substations near homes",
+            "<strong>Why it matters</strong> — without high-voltage transmission, a large fraction of generated power would be wasted as heat"
           ]
         }
       ],
@@ -297,15 +395,29 @@
         {
           "term": "Kilowatt-hour",
           "def": "Unit of energy used in electricity billing = 3.6 MJ"
+        },
+        {
+          "term": "Joule",
+          "def": "The SI unit of energy — 1 J = 1 W × 1 s"
+        },
+        {
+          "term": "Energy transfer",
+          "def": "E = Pt — energy transferred equals power multiplied by time in seconds"
+        },
+        {
+          "term": "National Grid",
+          "def": "The high-voltage network that transmits electricity from power stations to homes and businesses"
         }
       ],
       "examTips": [
-        "P = IV is the most important power formula. Also know P = I²R for when V is not given.",
-        "For electricity bills: use kW and hours; multiply by cost per kWh."
+        "P = IV is the most important power formula. Also know P = I²R for when V is not given — it appears in higher-grade questions.",
+        "For electricity bills: use kW and hours; multiply by cost per kWh — never use watts for bill calculations.",
+        "In transmission questions: explain that high voltage means low current, and lower current means less power wasted (P = I²R)."
       ],
       "commonMistakes": [
-        "Confusing power (rate) with energy (total amount).",
-        "Using watts instead of kilowatts in electricity cost calculations."
+        "Confusing power (rate of energy transfer, in watts) with energy (total amount transferred, in joules).",
+        "Using watts instead of kilowatts in electricity cost calculations — always convert W to kW before calculating bills.",
+        "Forgetting to convert time to seconds when using E = Pt in joules — if using kWh, time must be in hours."
       ],
       "videos": [
         {
@@ -332,33 +444,43 @@
     },
     "Static Electricity": {
       "intro": "Static electricity is the build-up of electrical charge on insulating materials. It occurs when electrons are transferred by friction.",
+      "mnemonic": "\"Friction Electrons Negative, Positive Loses\" — Friction transfers Electrons; the gainer is Negative, the loser is Positive.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Static Electricity and Electric Fields</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Charging by Friction",
           "icon": "⚡",
+          "text": "When two insulators are rubbed together, electrons transfer from one to the other, leaving both objects charged.",
           "points": [
-            "When two insulators are rubbed together, electrons are transferred",
-            "Object gaining electrons becomes negatively charged",
-            "Object losing electrons becomes positively charged",
-            "Like charges repel; unlike charges attract"
+            "<strong>Electron transfer</strong> — only electrons move during friction charging; protons remain fixed in nuclei",
+            "<strong>Gaining electrons</strong> — object that gains electrons becomes negatively charged",
+            "<strong>Losing electrons</strong> — object that loses electrons becomes positively charged",
+            "<strong>Like charges repel</strong> — two negative or two positive objects push each other apart",
+            "<strong>Unlike charges attract</strong> — positive and negative objects are attracted to each other"
           ]
         },
         {
           "title": "Electric Fields",
           "icon": "🌐",
+          "text": "Every charged object creates an electric field — a region of space where other charges experience a force.",
           "points": [
-            "A charged object creates an electric field around it",
-            "Electric field lines point from positive to negative",
-            "A charged object in an electric field experiences a force"
+            "<strong>Field lines</strong> — show the direction of force on a positive test charge; point away from + and towards −",
+            "<strong>Radial field</strong> — field lines spread outward from an isolated point charge; weaker further away",
+            "<strong>Uniform field</strong> — between two parallel plates with opposite charges; field lines are parallel and equally spaced",
+            "<strong>Force on charge</strong> — a charged object in an electric field experiences a force in the direction of field lines (if positive)",
+            "<strong>Field strength</strong> — greatest where field lines are closest together"
           ]
         },
         {
-          "title": "Uses and Hazards",
+          "title": "Uses and Hazards of Static Electricity",
           "icon": "⚠️",
+          "text": "Static electricity has important practical applications but also poses hazards that require engineering solutions.",
           "points": [
-            "Uses: photocopiers, inkjet printers, paint sprayers, defibrillators",
-            "Hazards: sparks from fuel tankers (earth the tanker); risk of electric shock from large static charges",
-            "Lightning conductors: provide safe path for charge to earth"
+            "<strong>Electrostatic spray painting</strong> — charged paint droplets attracted to earthed object; even coverage, less waste",
+            "<strong>Photocopiers</strong> — charged drum attracts toner powder; toner transferred to paper by static forces",
+            "<strong>Defibrillators</strong> — store large static charge on capacitor; discharge through patient to restart heart",
+            "<strong>Fuel tanker hazard</strong> — static builds up from fuel movement; earthing prevents sparks near flammable fuel",
+            "<strong>Lightning conductors</strong> — pointed conductor on buildings provides easy path for charge to discharge safely to earth"
           ]
         }
       ],
@@ -374,15 +496,33 @@
         {
           "term": "Earthing",
           "def": "Connecting a charged object to earth to safely discharge it"
+        },
+        {
+          "term": "Electrostatic induction",
+          "def": "Redistribution of charges in a neutral object when a charged object is brought near"
+        },
+        {
+          "term": "Electric field lines",
+          "def": "Lines showing the direction and relative strength of an electric field; point from + to −"
+        },
+        {
+          "term": "Conductor",
+          "def": "A material that allows charge to flow freely through it — metals are good conductors"
+        },
+        {
+          "term": "Insulator",
+          "def": "A material that does not allow charge to flow — insulators can build up static charge"
         }
       ],
       "examTips": [
-        "Only electrons move when charging by friction — protons stay in the nucleus.",
-        "Like charges repel; unlike charges attract — apply this in all static questions."
+        "Only electrons move when charging by friction — protons stay in the nucleus; state this explicitly in exam answers.",
+        "Like charges repel; unlike charges attract — apply this to all static electricity questions about forces.",
+        "Electric field lines always point from positive to negative; they never cross each other."
       ],
       "commonMistakes": [
-        "Saying protons move during friction charging — only electrons are transferred.",
-        "Confusing static electricity (no flow) with current electricity (continuous flow)."
+        "Saying protons move during friction charging — only electrons are transferred; protons are fixed in nuclei.",
+        "Confusing static electricity (charge that stays on an insulator) with current electricity (continuous flow of charge through a conductor).",
+        "Drawing electric field lines pointing from negative to positive — they always go from positive to negative."
       ],
       "videos": [
         {

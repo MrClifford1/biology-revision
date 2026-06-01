@@ -3,53 +3,89 @@
   "topics": {
     "Acids and Bases": {
       "intro": "Acids and bases are fundamental in chemistry. The pH scale measures how acidic or alkaline a solution is.",
+      "mnemonic": "For acid reactions: 'MASH Makes Salts and Hydrogen' — Metal + Acid → Salt + Hydrogen. 'HASH Makes Water' — Hydroxide + Acid → Salt + H₂O. 'CASH Makes Water and CO₂' — Carbonate + Acid → Salt + H₂O + CO₂. For salt names: HCl → cHLoride, H₂SO₄ → SULphate, HNO₃ → NiTrate.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Acids and Bases</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "The pH Scale",
           "icon": "🎨",
+          "text": "The pH scale measures the concentration of H⁺ ions in a solution. pH runs from 0 to 14; below 7 is acidic, 7 is neutral, above 7 is alkaline.",
           "points": [
-            "pH 0-6 = acidic (H⁺ ions)",
-            "pH 7 = neutral",
-            "pH 8-14 = alkaline (OH⁻ ions)",
-            "Strong acids/alkalis fully ionise; weak acids/alkalis partially ionise",
-            "Universal indicator or pH meter to measure pH"
+            "<strong>pH 0–6 = acidic</strong> — high concentration of H⁺ ions; lower pH = more acidic (more H⁺)",
+            "<strong>pH 7 = neutral</strong> — pure water; [H⁺] = [OH⁻]",
+            "<strong>pH 8–14 = alkaline</strong> — high concentration of OH⁻ ions; higher pH = more alkaline",
+            "<strong>Strong acid</strong> — fully ionises in solution (e.g. HCl → H⁺ + Cl⁻); low pH at same concentration as weak acid",
+            "<strong>Weak acid</strong> — partially ionises (e.g. CH₃COOH ⇌ H⁺ + CH₃COO⁻); higher pH than strong acid at same concentration",
+            "<strong>Measuring pH</strong> — universal indicator (colour change), pH meter (most accurate), litmus (rough)"
           ]
         },
         {
           "title": "Reactions of Acids",
           "icon": "⚗️",
+          "text": "Acids react with metals, metal oxides, metal hydroxides, and metal carbonates in characteristic ways, always forming a salt.",
           "points": [
-            "Acid + metal → salt + hydrogen",
-            "Acid + metal oxide → salt + water",
-            "Acid + metal hydroxide → salt + water (neutralisation)",
-            "Acid + metal carbonate → salt + water + carbon dioxide"
+            "<strong>Acid + metal</strong> → salt + hydrogen gas (e.g. 2HCl + Mg → MgCl₂ + H₂)",
+            "<strong>Acid + metal oxide</strong> → salt + water (e.g. H₂SO₄ + CuO → CuSO₄ + H₂O)",
+            "<strong>Acid + metal hydroxide</strong> → salt + water (neutralisation, e.g. HCl + NaOH → NaCl + H₂O)",
+            "<strong>Acid + metal carbonate</strong> → salt + water + carbon dioxide (e.g. 2HCl + CaCO₃ → CaCl₂ + H₂O + CO₂)",
+            "<strong>Test for hydrogen</strong> — lit splint gives squeaky pop",
+            "<strong>Test for CO₂</strong> — turns limewater milky"
+          ]
+        },
+        {
+          "title": "Strong vs Weak Acids and Naming Salts",
+          "icon": "🔬",
+          "text": "Acid strength (strong/weak) is different from acid concentration (concentrated/dilute). Salts are named from the acid and base used.",
+          "points": [
+            "<strong>Strong acid</strong> — 100% ionised in water: HCl, H₂SO₄, HNO₃",
+            "<strong>Weak acid</strong> — partially ionised (equilibrium): ethanoic acid, citric acid, carbonic acid",
+            "<strong>Strength ≠ concentration</strong> — a weak acid can be concentrated; a strong acid can be dilute",
+            "<strong>HCl → chloride salts</strong>: e.g. sodium chloride (NaCl)",
+            "<strong>H₂SO₄ → sulfate salts</strong>: e.g. copper sulfate (CuSO₄)",
+            "<strong>HNO₃ → nitrate salts</strong>: e.g. potassium nitrate (KNO₃)"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Acid",
-          "def": "A substance that produces H⁺ ions in solution; pH below 7"
+          "def": "A substance that produces H⁺ ions in aqueous solution; pH below 7"
         },
         {
           "term": "Alkali",
-          "def": "A soluble base that produces OH⁻ ions; pH above 7"
+          "def": "A soluble base that produces OH⁻ ions in solution; pH above 7"
+        },
+        {
+          "term": "Base",
+          "def": "A substance that neutralises an acid — includes metal oxides, hydroxides, and carbonates"
         },
         {
           "term": "Neutralisation",
-          "def": "Reaction between an acid and a base to form salt and water"
+          "def": "The reaction between an acid and a base to form salt and water; H⁺ + OH⁻ → H₂O"
         },
         {
           "term": "Salt",
-          "def": "An ionic compound formed when an acid reacts with a base"
+          "def": "An ionic compound formed when the H⁺ in an acid is replaced by a metal ion"
+        },
+        {
+          "term": "Strong acid",
+          "def": "An acid that fully ionises in water — e.g. HCl, H₂SO₄, HNO₃"
+        },
+        {
+          "term": "Weak acid",
+          "def": "An acid that only partially ionises in water — e.g. ethanoic acid, citric acid"
         }
       ],
       "examTips": [
-        "Neutralisation: acid + base → salt + water. Remember this general equation.",
-        "The name of the salt depends on the acid: HCl → chloride, H₂SO₄ → sulphate, HNO₃ → nitrate."
+        "Neutralisation ionic equation: H⁺(aq) + OH⁻(aq) → H₂O(l) — this is worth knowing for higher tier.",
+        "The name of the salt depends on the acid: HCl → chloride, H₂SO₄ → sulfate, HNO₃ → nitrate — learn these three.",
+        "Acid + carbonate reaction produces CO₂ as well as salt and water — don't forget the CO₂.",
+        "Strong acid strength is about degree of ionisation, NOT concentration — a dilute strong acid is still a strong acid."
       ],
       "commonMistakes": [
-        "Confusing acid + carbonate (also makes CO₂) with acid + metal oxide (no CO₂)."
+        "Confusing acid + carbonate (produces CO₂) with acid + metal oxide (no CO₂, only salt + water).",
+        "Confusing acid strength (strong/weak = degree of ionisation) with concentration (concentrated/dilute = amount dissolved).",
+        "Forgetting to include CO₂ in the products of acid + carbonate reactions."
       ],
       "videos": [
         {
@@ -76,47 +112,83 @@
     },
     "Salts": {
       "intro": "Salts are ionic compounds formed from neutralisation reactions. Making pure dry salt requires specific practical techniques.",
+      "mnemonic": "For making salts remember: 'Excess, Filter, Evaporate' — EFE. Add EXCESS solid base/metal/carbonate (to ensure all acid reacts), FILTER off the excess solid, then EVAPORATE to crystallise the salt. For insoluble salts: just MIX two solutions (precipitation).",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Salts</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
-          "title": "Making Salts",
+          "title": "Making Soluble Salts",
           "icon": "🧪",
+          "text": "Soluble salts are made by reacting an acid with an excess of a base, metal, or carbonate. The excess solid is filtered off and the solution evaporated.",
           "points": [
-            "Soluble salts made by reacting acid with excess solid base/carbonate/metal",
-            "Filter off excess solid",
-            "Evaporate solution to crystallise salt",
-            "Insoluble salts made by precipitation — mixing two solutions"
+            "<strong>Step 1 — add excess solid base/carbonate/metal</strong> to the acid; ensures all the acid reacts",
+            "<strong>Step 2 — filter</strong> to remove the excess unreacted solid",
+            "<strong>Step 3 — evaporate</strong> the filtrate (solution) to concentrate it; allow to cool and crystallise",
+            "<strong>Step 4 — filter and dry</strong> the salt crystals",
+            "<strong>Why excess?</strong> — ensures all acid is neutralised; makes filtration effective to remove excess solid",
+            "<strong>Example</strong> — copper sulfate from CuO + H₂SO₄: add excess CuO to warm H₂SO₄; filter off excess CuO; evaporate blue solution"
           ]
         },
         {
           "title": "Naming Salts",
           "icon": "📝",
+          "text": "The name of a salt comes from the metal in the base and the acid used. The acid provides the anion name.",
           "points": [
-            "Named from the acid and the base",
-            "HCl → chloride; H₂SO₄ → sulphate; HNO₃ → nitrate",
-            "NaOH + HCl → NaCl + H₂O (sodium chloride)"
+            "<strong>Two-part name</strong> — metal name from the base + anion name from the acid",
+            "<strong>HCl → chloride</strong>: e.g. NaOH + HCl → NaCl (sodium chloride)",
+            "<strong>H₂SO₄ → sulfate</strong>: e.g. CuO + H₂SO₄ → CuSO₄ (copper sulfate)",
+            "<strong>HNO₃ → nitrate</strong>: e.g. KOH + HNO₃ → KNO₃ (potassium nitrate)",
+            "<strong>H₃PO₄ → phosphate</strong>: e.g. Ca(OH)₂ + H₃PO₄ → Ca₃(PO₄)₂ (calcium phosphate)"
+          ]
+        },
+        {
+          "title": "Making Insoluble Salts by Precipitation",
+          "icon": "🌊",
+          "text": "Insoluble salts cannot be made by dissolving — they are made by mixing two solutions that contain the required ions, causing the insoluble salt to precipitate.",
+          "points": [
+            "<strong>Precipitation</strong> — mixing two solutions to form an insoluble solid (precipitate)",
+            "<strong>Example</strong> — barium sulfate: BaCl₂(aq) + Na₂SO₄(aq) → BaSO₄(s) + 2NaCl(aq)",
+            "<strong>Method</strong> — mix solutions, filter off precipitate, wash with distilled water, dry",
+            "<strong>Ionic equation</strong> — Ba²⁺(aq) + SO₄²⁻(aq) → BaSO₄(s) — spectator ions not included",
+            "<strong>Applications</strong> — water treatment (removing unwanted ions); testing for sulfate ions (barium chloride test)",
+            "<strong>Solubility rules</strong> — most chlorides, sulfates, nitrates are soluble; most carbonates and hydroxides are insoluble"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Crystallisation",
-          "def": "The process of forming crystals from a saturated solution"
+          "def": "The process of forming salt crystals from a saturated solution by evaporation and cooling"
         },
         {
           "term": "Precipitation",
-          "def": "Formation of an insoluble solid from two solutions"
+          "def": "The formation of an insoluble solid (precipitate) from two solutions mixed together"
         },
         {
           "term": "Neutralisation",
-          "def": "Acid + base → salt + water"
+          "def": "The reaction of an acid with a base to form salt and water"
+        },
+        {
+          "term": "Filtration",
+          "def": "Separation technique to remove insoluble solids from a liquid using filter paper"
+        },
+        {
+          "term": "Spectator ions",
+          "def": "Ions present in solution that do not take part in the reaction — not included in ionic equations"
+        },
+        {
+          "term": "Excess",
+          "def": "More than the amount needed to react completely — ensures all of the other reactant is used up"
         }
       ],
       "examTips": [
-        "For making soluble salts: use EXCESS base to ensure all acid reacts, then filter off excess base.",
-        "Precipitation: mix solutions containing the required ions."
+        "For making soluble salts: always add EXCESS base to ensure all acid reacts, then FILTER off excess solid — examiners expect both steps.",
+        "For precipitation: state that an insoluble precipitate forms when two solutions are mixed; identify the correct ions.",
+        "Ionic equations for precipitation: only include the ions that react — leave out spectator ions (e.g. Na⁺, K⁺, NO₃⁻)."
       ],
       "commonMistakes": [
-        "Forgetting to add excess base to neutralise all the acid."
+        "Forgetting to add EXCESS base when making a soluble salt — without excess, some acid remains in the filtrate.",
+        "Trying to make an insoluble salt by the 'excess solid' method — insoluble salts must be made by precipitation.",
+        "Including spectator ions in ionic equations — only the reacting ions and precipitate should appear."
       ],
       "videos": [
         {
@@ -138,42 +210,84 @@
     },
     "Reactivity Series": {
       "intro": "The reactivity series ranks metals from most to least reactive. It can be used to predict displacement reactions and the stability of metal compounds.",
+      "mnemonic": "Learn the reactivity series with: 'Please Stop Calling Me A Zebra In Loose Clothing, Silly Gold' — Potassium, Sodium, Calcium, Magnesium, Aluminium, Zinc, Iron, Lead, Copper, Silver, Gold. Most reactive at the top, least at the bottom.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Reactivity Series</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "The Reactivity Series",
           "icon": "📊",
+          "text": "The reactivity series ranks metals in order of how readily they lose electrons and react with water, acids, and oxygen.",
           "points": [
-            "Potassium > Sodium > Calcium > Magnesium > Aluminium > Zinc > Iron > Copper > Silver > Gold",
-            "More reactive metals: react vigorously with water/acid; form stable oxides",
-            "Less reactive metals: react slowly or not at all; found native (uncombined) in Earth"
+            "<strong>Most reactive</strong> — K > Na > Ca > Mg > Al > Zn > Fe > Pb > Cu > Ag > Au (least reactive)",
+            "<strong>Most reactive metals</strong> — react vigorously with cold water and acids; form very stable oxides",
+            "<strong>Middle metals</strong> — react with acids but slowly or not with cold water (e.g. iron rusts slowly)",
+            "<strong>Least reactive metals</strong> — copper, silver, gold do not react with dilute acids; found native (uncombined) in Earth's crust",
+            "<strong>Hydrogen is included</strong> — metals above hydrogen in the series displace it from acids",
+            "<strong>Extraction method</strong> — metals above carbon extracted by electrolysis; below carbon extracted by reduction with carbon"
           ]
         },
         {
           "title": "Displacement Reactions",
           "icon": "⚔️",
+          "text": "A more reactive metal will displace a less reactive metal from a solution of its salt. The more reactive metal gets oxidised while the less reactive one is reduced.",
           "points": [
-            "More reactive metal displaces less reactive from compound",
-            "Example: Zn + CuSO₄ → ZnSO₄ + Cu (zinc displaces copper)",
-            "Used to extract metals: aluminium displaces iron in thermite reaction"
+            "<strong>Rule</strong> — more reactive metal displaces less reactive metal from its compound",
+            "<strong>Example</strong> — Zn + CuSO₄ → ZnSO₄ + Cu (zinc displaces copper; zinc more reactive)",
+            "<strong>Observations</strong> — the solid copper deposits on zinc; blue colour fades (Cu²⁺ removed); zinc dissolves",
+            "<strong>Example 2</strong> — Fe + CuSO₄ → FeSO₄ + Cu (iron is more reactive than copper)",
+            "<strong>Cannot happen in reverse</strong> — Cu + ZnSO₄ → no reaction (copper less reactive than zinc)",
+            "<strong>Ionic half equations</strong> — Zn → Zn²⁺ + 2e⁻ (oxidation); Cu²⁺ + 2e⁻ → Cu (reduction)"
+          ]
+        },
+        {
+          "title": "Metal Extraction and the Reactivity Series",
+          "icon": "⛏️",
+          "text": "The method used to extract a metal from its ore depends on its position in the reactivity series.",
+          "points": [
+            "<strong>Very reactive metals (K, Na, Ca, Mg, Al)</strong> — too reactive to be reduced by carbon; extracted by electrolysis",
+            "<strong>Middle reactivity metals (Zn, Fe, Pb)</strong> — extracted by reduction with carbon (coke) in a blast furnace",
+            "<strong>Iron extraction</strong> — Fe₂O₃ + 3CO → 2Fe + 3CO₂ (carbon monoxide reduces the iron oxide)",
+            "<strong>Aluminium extraction</strong> — electrolysis of molten aluminium oxide (Al₂O₃ dissolved in cryolite); expensive",
+            "<strong>Low reactivity metals (Cu, Ag, Au)</strong> — found native or easily extracted; copper also obtained by displacement",
+            "<strong>Bioleaching and phytomining</strong> — newer sustainable methods for extracting copper from low-grade ores"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Reactivity series",
-          "def": "A list of metals in order of decreasing reactivity"
+          "def": "A list of metals arranged in order of decreasing reactivity, from potassium (most) to gold (least)"
         },
         {
           "term": "Displacement reaction",
-          "def": "A more reactive metal displaces a less reactive one from a compound"
+          "def": "A reaction where a more reactive metal displaces a less reactive metal from a solution of its salt"
+        },
+        {
+          "term": "Native metal",
+          "def": "A metal found uncombined in the Earth's crust — e.g. gold and silver; found because they are unreactive"
+        },
+        {
+          "term": "Reduction",
+          "def": "In metal extraction, the removal of oxygen from a metal oxide — done using carbon or carbon monoxide"
+        },
+        {
+          "term": "Electrolysis",
+          "def": "Process of using electrical energy to extract very reactive metals that cannot be reduced by carbon"
+        },
+        {
+          "term": "Bioleaching",
+          "def": "Using bacteria to extract metals from low-grade ores — a sustainable extraction method"
         }
       ],
       "examTips": [
-        "Use MASH CuSG as a mnemonic: Mg Al Zn Fe Cu (most to least reactive of common metals).",
-        "Only a MORE reactive metal can displace a LESS reactive one."
+        "Only a MORE reactive metal can displace a LESS reactive one — never the other way around; state this principle clearly.",
+        "Remember the extraction method links to reactivity: very reactive (above carbon) → electrolysis; less reactive (below carbon) → reduction with carbon/CO.",
+        "In displacement reactions, identify which metal is oxidised (loses electrons, forms ions) and which is reduced (gains electrons, forms atoms)."
       ],
       "commonMistakes": [
-        "Saying a less reactive metal displaces a more reactive one — this cannot happen."
+        "Saying a less reactive metal can displace a more reactive one — this CANNOT happen.",
+        "Forgetting that aluminium is extracted by electrolysis despite being common — it is very reactive, above carbon in the series.",
+        "Not explaining displacement in terms of electron transfer — always link to oxidation (metal loses electrons) and reduction (ion gains electrons)."
       ],
       "videos": [
         {
@@ -200,10 +314,21 @@
     },
     "Redox": {
       "intro": "Redox reactions involve the simultaneous transfer of electrons. Oxidation and reduction always occur together.",
+      "mnemonic": "OIL RIG — Oxidation Is Loss (of electrons), Reduction Is Gain (of electrons). Never forget this! Also: 'LEO the lion says GER' — Lose Electrons = Oxidation; Gain Electrons = Reduction. The reducing AGENT gets oxidised; the oxidising AGENT gets reduced — they are agents DOING the work to the other substance.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Redox</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "OIL RIG",
           "icon": "🛢️",
+          "text": "OIL RIG is the essential memory aid for redox: Oxidation Is Loss of electrons, Reduction Is Gain of electrons. Both always happen simultaneously.",
+          "points": [
+            "<strong>Oxidation</strong> — loss of electrons (or gain of oxygen); oxidation number INCREASES",
+            "<strong>Reduction</strong> — gain of electrons (or loss of oxygen); oxidation number DECREASES",
+            "<strong>Redox reaction</strong> — oxidation and reduction always occur simultaneously; electrons are transferred",
+            "<strong>Reducing agent</strong> — the substance that donates electrons to another; it is itself OXIDISED",
+            "<strong>Oxidising agent</strong> — the substance that accepts electrons; it is itself REDUCED",
+            "<strong>Example</strong> — Zn + Cu²⁺ → Zn²⁺ + Cu: Zn is oxidised (loses 2e⁻); Cu²⁺ is reduced (gains 2e⁻)"
+          ],
           "callout": {
             "type": "exam",
             "label": "Memory Aid",
@@ -213,38 +338,68 @@
         {
           "title": "Oxidation States",
           "icon": "📊",
+          "text": "Oxidation states (numbers) track electron transfer in redox reactions. An increase in oxidation state = oxidation; a decrease = reduction.",
           "points": [
-            "Oxidation: loss of electrons; increase in oxidation number",
-            "Reduction: gain of electrons; decrease in oxidation number",
-            "Reducing agent: gives electrons (gets oxidised)",
-            "Oxidising agent: takes electrons (gets reduced)"
+            "<strong>Oxidation state rules</strong> — uncombined element = 0; O usually −2; H usually +1; sum of states in neutral compound = 0",
+            "<strong>Increase in oxidation state</strong> = oxidised (lost electrons)",
+            "<strong>Decrease in oxidation state</strong> = reduced (gained electrons)",
+            "<strong>Example — Fe₂O₃ + 3CO → 2Fe + 3CO₂</strong>: Fe goes from +3 to 0 (reduced); C in CO goes from +2 to +4 (oxidised)",
+            "<strong>Half equations</strong> — Zn → Zn²⁺ + 2e⁻ (oxidation); Cu²⁺ + 2e⁻ → Cu (reduction)",
+            "<strong>Electrons cancel</strong> — in a balanced redox equation, electrons lost = electrons gained"
+          ]
+        },
+        {
+          "title": "Redox in Familiar Reactions",
+          "icon": "🔄",
+          "text": "Many familiar chemical processes are redox reactions — combustion, rusting, metal extraction, and electrolysis all involve electron transfer.",
+          "points": [
+            "<strong>Combustion</strong> — C + O₂ → CO₂: carbon is oxidised (gains oxygen / loses electrons)",
+            "<strong>Rusting</strong> — iron is oxidised: 4Fe + 3O₂ + water → 2Fe₂O₃ (iron gains oxygen, increases oxidation state)",
+            "<strong>Displacement reactions</strong> — more reactive metal is oxidised; less reactive metal ion is reduced",
+            "<strong>Electrolysis</strong> — at cathode: reduction (ions gain electrons); at anode: oxidation (ions lose electrons)",
+            "<strong>Metal extraction by carbon</strong> — metal oxide is reduced (loses O); carbon is oxidised (gains O)"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Oxidation",
-          "def": "Loss of electrons (or gain of oxygen)"
+          "def": "Loss of electrons (or gain of oxygen); oxidation state increases"
         },
         {
           "term": "Reduction",
-          "def": "Gain of electrons (or loss of oxygen)"
+          "def": "Gain of electrons (or loss of oxygen); oxidation state decreases"
         },
         {
           "term": "Redox",
-          "def": "Reaction involving simultaneous oxidation and reduction"
+          "def": "A reaction involving simultaneous oxidation and reduction; electrons are transferred"
         },
         {
           "term": "OIL RIG",
-          "def": "Oxidation Is Loss; Reduction Is Gain — memory aid for electron transfer"
+          "def": "Oxidation Is Loss (of electrons); Reduction Is Gain (of electrons) — the key mnemonic"
+        },
+        {
+          "term": "Reducing agent",
+          "def": "A substance that donates electrons to another substance — it is itself oxidised"
+        },
+        {
+          "term": "Oxidising agent",
+          "def": "A substance that accepts electrons from another substance — it is itself reduced"
+        },
+        {
+          "term": "Oxidation state",
+          "def": "A number representing the degree of oxidation of an atom — increases when oxidised, decreases when reduced"
         }
       ],
       "examTips": [
-        "OIL RIG — learn this! Oxidation and reduction always happen together.",
-        "Reducing agent gets OXIDISED; oxidising agent gets REDUCED."
+        "OIL RIG — memorise and use it every time: Oxidation Is Loss of electrons, Reduction Is Gain.",
+        "The reducing AGENT is OXIDISED (it donates electrons); the oxidising AGENT is REDUCED (it accepts electrons) — these seem counterintuitive but follow from OIL RIG.",
+        "In half equations, check electrons are balanced: same number lost on oxidation half equation as gained on reduction half equation."
       ],
       "commonMistakes": [
-        "Confusing which species is oxidised and which is reduced."
+        "Confusing which species is oxidised and which is reduced — apply OIL RIG systematically to each species.",
+        "Saying the oxidising agent is oxidised — the oxidising agent is REDUCED (it gains electrons and does the oxidising of the other substance).",
+        "Forgetting that oxidation and reduction ALWAYS occur simultaneously — you cannot have one without the other."
       ],
       "videos": [
         {
@@ -271,52 +426,86 @@
     },
     "Electrolysis": {
       "intro": "Electrolysis uses electrical energy to break down ionic compounds. It is used to extract reactive metals and purify copper.",
+      "mnemonic": "Remember: 'Cats Are Negative, An-odes Are Positive' (Cathode = negative = reduction; Anode = positive = oxidation). Or: 'CAtions go to CAthode; ANions go to ANode' — both start with the same letters! PANIC: Positive Anode Negative Is Cathode.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Electrolysis</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "How Electrolysis Works",
           "icon": "⚡",
+          "text": "Electrolysis uses direct current to decompose an ionic compound. The compound must be molten or dissolved so that ions are free to move.",
           "points": [
-            "Ionic compound must be MOLTEN or DISSOLVED in water",
-            "Positive ions (cations) move to negative electrode (cathode) — reduced",
-            "Negative ions (anions) move to positive electrode (anode) — oxidised",
-            "At cathode: metal deposited OR hydrogen gas produced",
-            "At anode: oxygen produced (from solution) OR halogen gas"
+            "<strong>Electrolyte</strong> — molten or dissolved ionic compound; ions must be free to move",
+            "<strong>Cathode (negative electrode)</strong> — positive ions (cations) attracted here; they GAIN electrons → REDUCED",
+            "<strong>Anode (positive electrode)</strong> — negative ions (anions) attracted here; they LOSE electrons → OXIDISED",
+            "<strong>At cathode</strong> — metal deposited OR hydrogen gas produced (if metal is above hydrogen in reactivity series)",
+            "<strong>At anode</strong> — oxygen gas produced (from OH⁻ or water) OR halogen gas (if halide ion present — halide preferentially discharged)",
+            "<strong>OIL RIG applies</strong> — cathode = reduction (gain electrons); anode = oxidation (lose electrons)"
           ]
         },
         {
           "title": "Products from Electrolysis",
           "icon": "🔬",
+          "text": "The products of electrolysis depend on what is being electrolysed. Key examples include molten ionic compounds, brine, and copper sulfate solution.",
           "points": [
-            "Molten ionic compound: metal at cathode, non-metal at anode",
-            "Sodium chloride solution (brine): hydrogen at cathode, chlorine at anode, sodium hydroxide remains",
-            "Copper sulphate solution: copper at cathode, oxygen at anode"
+            "<strong>Molten ionic compound</strong> — cathode: metal atom deposited; anode: non-metal gas produced (e.g. molten NaCl → Na at cathode, Cl₂ at anode)",
+            "<strong>Brine (NaCl solution)</strong> — cathode: H₂ gas; anode: Cl₂ gas; remaining: NaOH solution",
+            "<strong>Copper sulfate solution</strong> — cathode: Cu deposited; anode: O₂ gas (or Cu dissolved if copper anode — used in purification)",
+            "<strong>Aluminium extraction</strong> — electrolysis of molten Al₂O₃ (dissolved in molten cryolite to lower MP); Al at cathode, O₂ at anode",
+            "<strong>Products of brine electrolysis</strong> — H₂ (used to make margarine/fuel cells), Cl₂ (bleach, PVC), NaOH (soap, paper)"
+          ]
+        },
+        {
+          "title": "Half Equations at Electrodes",
+          "icon": "✏️",
+          "text": "Half equations describe what happens at each electrode — showing electrons gained or lost.",
+          "points": [
+            "<strong>Cathode (reduction)</strong> — add electrons to the left side: e.g. Cu²⁺ + 2e⁻ → Cu",
+            "<strong>Anode (oxidation)</strong> — electrons on the right side: e.g. 2Cl⁻ → Cl₂ + 2e⁻; or 4OH⁻ → 2H₂O + O₂ + 4e⁻",
+            "<strong>Hydrogen at cathode</strong> — 2H⁺ + 2e⁻ → H₂ (or 2H₂O + 2e⁻ → H₂ + 2OH⁻)",
+            "<strong>Balancing half equations</strong> — balance atoms first, then balance charge by adding electrons",
+            "<strong>Overall equation</strong> — add half equations together (electrons must cancel) to get full balanced equation"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Electrolysis",
-          "def": "Decomposition of an ionic compound using electricity"
+          "def": "Decomposition of an ionic compound using electrical energy"
         },
         {
           "term": "Cathode",
-          "def": "Negative electrode — where reduction occurs (positive ions discharged)"
+          "def": "The negative electrode — where reduction occurs; cations are discharged here"
         },
         {
           "term": "Anode",
-          "def": "Positive electrode — where oxidation occurs (negative ions discharged)"
+          "def": "The positive electrode — where oxidation occurs; anions are discharged here"
         },
         {
           "term": "Electrolyte",
-          "def": "The molten or dissolved ionic compound that is electrolysed"
+          "def": "The molten or dissolved ionic compound through which current passes during electrolysis"
+        },
+        {
+          "term": "Brine",
+          "def": "Concentrated sodium chloride solution — electrolysed to produce Cl₂, H₂, and NaOH"
+        },
+        {
+          "term": "Half equation",
+          "def": "An equation showing what happens at one electrode, including electrons gained or lost"
+        },
+        {
+          "term": "Cryolite",
+          "def": "A mineral (Na₃AlF₆) used to dissolve aluminium oxide and lower its melting point in aluminium extraction"
         }
       ],
       "examTips": [
-        "Cathode = negative = metals/hydrogen produced. Anode = positive = non-metals/oxygen produced.",
-        "If electrolysing a solution: hydrogen may form at cathode instead of metal if metal is more reactive than hydrogen."
+        "Cathode = NEGATIVE = REDUCTION (cations discharged, gain electrons). Anode = POSITIVE = OXIDATION (anions discharged, lose electrons).",
+        "When electrolysing a solution: hydrogen forms at the cathode instead of the metal if the metal is MORE reactive than hydrogen.",
+        "At the anode in solutions: halide ions (Cl⁻, Br⁻, I⁻) are preferentially discharged over OH⁻ — so Cl₂ forms instead of O₂ if chloride is present."
       ],
       "commonMistakes": [
-        "Confusing anode (positive, oxidation) and cathode (negative, reduction)."
+        "Confusing anode (positive, oxidation) and cathode (negative, reduction) — use the PANIC mnemonic: Positive Anode, Negative Is Cathode.",
+        "Saying metals always form at the cathode in aqueous solution — if the metal is more reactive than hydrogen, H₂ forms instead.",
+        "Forgetting the three useful products of brine electrolysis — hydrogen, chlorine, AND sodium hydroxide."
       ],
       "videos": [
         {

@@ -3,48 +3,84 @@
   "topics": {
     "Purity and Formulations": {
       "intro": "In chemistry, a pure substance contains only one element or compound. Formulations are mixtures carefully designed for specific purposes.",
+      "mnemonic": "Pure = ONE thing only, SHARP melting point. Impure = mixture, LOWER and BROADER melting range. Think: a pure diamond is sharp and precise; an impure one is blurry and lower quality!",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Purity and Formulations</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Pure Substances",
           "icon": "🔬",
+          "text": "In chemistry, a pure substance contains only one type of element or compound. This is different from the everyday meaning of 'pure'.",
           "points": [
-            "Contains only one type of element or compound — no other substances",
-            "Has a sharp, specific melting and boiling point",
-            "Impurities lower the melting point and broaden the melting range",
-            "Melting point test: pure substance melts at exact temperature; impure melts over a range"
+            "<strong>Contains only one type of particle</strong> — one element or one compound; no other substances mixed in",
+            "<strong>Sharp, precise melting point</strong> — changes state at an exact temperature; this is used to test purity",
+            "<strong>Sharp, precise boiling point</strong> — similarly, boils at a specific temperature",
+            "<strong>Impurities lower the melting point</strong> — and broaden the melting range (melts over a range of temperatures instead of at one exact point)",
+            "<strong>Melting point test</strong> — compare to known value; if it matches and is sharp = pure; if lower and broad = impure",
+            "<strong>Everyday vs chemical 'pure'</strong> — 'pure orange juice' means unprocessed; in chemistry 'pure' means one substance only"
           ]
         },
         {
           "title": "Formulations",
           "icon": "🧴",
+          "text": "Formulations are carefully designed mixtures where each component has a specific purpose and the proportions are precisely controlled.",
           "points": [
-            "A formulation is a useful mixture with precise proportions of each component",
-            "Each component has a specific purpose",
-            "Examples: medicines (precise drug dose + inactive ingredients), fuels (additives for performance), cleaning products, alloys, paints, fertilisers, foods"
+            "<strong>Definition</strong> — a mixture with precisely controlled proportions designed for a specific use",
+            "<strong>Each component has a function</strong> — e.g. in a tablet: active drug + filler + binder + coating",
+            "<strong>Medicine</strong> — precise drug dose (active ingredient) mixed with excipients; right amount to right place",
+            "<strong>Fuels</strong> — additives improve performance, prevent engine knock, reduce emissions",
+            "<strong>Cleaning products</strong> — surfactants, solvents, enzymes, fragrances in precise amounts",
+            "<strong>Other examples</strong> — alloys, paints (pigment, binder, solvent), fertilisers, cosmetics, foods"
+          ]
+        },
+        {
+          "title": "Testing Purity",
+          "icon": "🧪",
+          "text": "Melting point and boiling point measurements are the standard experimental methods to assess the purity of a substance.",
+          "points": [
+            "<strong>Melting point apparatus</strong> — capillary tube with sample; heat slowly; note temperature at which melting begins and ends",
+            "<strong>Pure substance</strong> — begins and ends melting at the same temperature (sharp melting point)",
+            "<strong>Impure substance</strong> — begins melting at a lower temperature than expected; melts over a range of several degrees",
+            "<strong>Compare to data book</strong> — look up the known melting point; a match (and sharpness) confirms purity",
+            "<strong>Boiling point equally useful</strong> — impurities raise the boiling point; pure water boils at exactly 100°C",
+            "<strong>Chromatography</strong> — also used; a single spot in all solvents suggests a pure substance"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Pure substance",
-          "def": "A substance containing only one type of element or compound; has a sharp melting point"
+          "def": "A substance containing only one type of element or compound; has a precise, sharp melting and boiling point"
         },
         {
           "term": "Formulation",
-          "def": "A mixture designed with precise proportions for a specific purpose"
+          "def": "A mixture designed with precisely controlled proportions, where each component serves a specific purpose"
         },
         {
           "term": "Melting point",
-          "def": "The temperature at which a substance changes from solid to liquid"
+          "def": "The temperature at which a substance changes from solid to liquid; a sharp melting point indicates purity"
+        },
+        {
+          "term": "Impurity",
+          "def": "A substance present as a contaminant; lowers and broadens the melting point of the main substance"
+        },
+        {
+          "term": "Active ingredient",
+          "def": "The component of a formulation that provides the intended effect; e.g. the drug in a tablet"
+        },
+        {
+          "term": "Excipient",
+          "def": "An inactive ingredient in a pharmaceutical formulation that aids delivery, stability, or taste"
         }
       ],
       "examTips": [
-        "Pure = sharp melting point. Impure = lower and broader melting range.",
-        "Formulations are NOT pure — they are deliberately designed mixtures."
+        "Pure substance = sharp, precise melting point at the correct literature value. Impure = melts at a lower temperature AND over a range. Always mention BOTH effects of impurities.",
+        "Formulations are NOT pure — they are deliberately designed mixtures. The question may ask you to explain why a product is a formulation: answer by saying it is a mixture with specific components in precise proportions.",
+        "Impurities LOWER the melting point and RAISE the boiling point. This is the opposite of what students sometimes expect."
       ],
       "commonMistakes": [
-        "Saying pure water is a formulation — it is a pure compound.",
-        "Forgetting that impurities lower (not raise) the melting point."
+        "Saying pure water is a formulation — pure water is a pure compound (only H₂O); a formulation is a designed mixture.",
+        "Forgetting that impurities LOWER (not raise) the melting point AND broaden the melting range.",
+        "Confusing the everyday meaning of 'pure' (natural, unprocessed) with the chemical meaning (contains only one substance)."
       ],
       "videos": [
         {
@@ -71,20 +107,34 @@
     },
     "Chromatography": {
       "intro": "Chromatography separates mixtures based on how strongly each component interacts with the stationary and mobile phases. It is used to identify substances.",
+      "mnemonic": "Rf = distance by Substance ÷ distance by Solvent. Remember: 'Runners (substance) never beat the Starter (solvent front)' — Rf is always less than 1. More soluble = runs further = higher Rf.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Chromatography</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "How Chromatography Works",
           "icon": "🌈",
+          "text": "Chromatography separates mixtures because each component distributes differently between the mobile phase (solvent) and stationary phase (paper), causing different rates of movement.",
           "points": [
-            "Mobile phase: solvent that travels through the stationary phase",
-            "Stationary phase: paper (or other medium) that doesn't move",
-            "Each substance moves different distances depending on: solubility in solvent AND attraction to paper",
-            "More soluble / less attracted to paper → moves further up"
+            "<strong>Mobile phase</strong> — the solvent; moves through or over the stationary phase, carrying dissolved substances",
+            "<strong>Stationary phase</strong> — the paper (or other medium); does not move",
+            "<strong>Separation principle</strong> — substances travel at different speeds based on their solubility in solvent and attraction to paper",
+            "<strong>More soluble in solvent / less attracted to paper</strong> → travels further up; higher Rf value",
+            "<strong>Less soluble / more attracted to paper</strong> → travels shorter distance; lower Rf value",
+            "<strong>Baseline</strong> — drawn in PENCIL below the solvent level; spot placed on baseline before solvent is added"
           ]
         },
         {
           "title": "Rf Values",
           "icon": "📐",
+          "text": "The Rf value is a ratio that identifies substances — it is constant for a given substance in a given solvent under controlled conditions.",
+          "points": [
+            "<strong>Formula</strong> — Rf = distance moved by substance ÷ distance moved by solvent front",
+            "<strong>Always between 0 and 1</strong> — substance can never travel further than the solvent front",
+            "<strong>Measured from the baseline</strong> — both distances measured from where the spot was originally placed",
+            "<strong>Worked example</strong> — substance travels 4.5 cm; solvent front travels 6.0 cm; Rf = 4.5 ÷ 6.0 = 0.75",
+            "<strong>Same Rf = possibly same substance</strong> — but must test in multiple solvents to confirm identity",
+            "<strong>Characteristic value</strong> — like a fingerprint for a substance in a given solvent"
+          ],
           "callout": {
             "type": "exam",
             "label": "Rf Formula",
@@ -94,40 +144,52 @@
         {
           "title": "Interpreting Results",
           "icon": "📊",
+          "text": "Analysing a chromatogram allows you to determine how many substances are in a mixture and identify unknowns by comparing Rf values.",
           "points": [
-            "One spot = pure substance (or only one component present)",
-            "Multiple spots = mixture",
-            "Compare Rf values with known substances to identify unknowns",
-            "Use multiple solvents to confirm identity — same Rf in different solvents = likely same substance"
+            "<strong>One spot</strong> — substance may be pure (only one component) OR two substances with the same Rf happened to overlap",
+            "<strong>Multiple spots</strong> — definitely a mixture containing at least that many substances",
+            "<strong>Compare with known standards</strong> — run reference substances alongside unknown; matching Rf suggests same substance",
+            "<strong>Use multiple solvents</strong> — same Rf in several different solvents gives much stronger evidence of identity",
+            "<strong>Locating agents</strong> — colourless substances made visible using UV light or ninhydrin spray",
+            "<strong>Gas chromatography (GC)</strong> — separates volatile mixtures; retention time identifies components; can link to mass spectrometry (GC-MS)"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Rf value",
-          "def": "Ratio of distance moved by substance to distance moved by solvent — always 0 to 1"
+          "def": "The ratio of distance moved by a substance to distance moved by the solvent front; always between 0 and 1"
         },
         {
           "term": "Mobile phase",
-          "def": "The solvent that carries substances through the stationary phase"
+          "def": "The solvent that moves through the chromatography system, carrying dissolved substances with it"
         },
         {
           "term": "Stationary phase",
-          "def": "The paper or other medium that does not move"
+          "def": "The medium that does not move (e.g. chromatography paper); substances interact with this as they travel"
         },
         {
           "term": "Chromatography",
-          "def": "Technique that separates mixtures based on different affinities for mobile and stationary phases"
+          "def": "A technique that separates mixtures by distributing components between a mobile phase and a stationary phase"
+        },
+        {
+          "term": "Retention time",
+          "def": "In gas chromatography, the time taken for a component to travel through the column — used to identify substances"
+        },
+        {
+          "term": "Locating agent",
+          "def": "A chemical spray or UV light used to make colourless spots on a chromatogram visible"
         }
       ],
       "examTips": [
-        "Rf = substance distance ÷ solvent distance. Always measure from the BASELINE.",
-        "Rf is the same for a substance in the same solvent — useful for identification.",
-        "One spot doesn't always mean pure — two substances might have the same Rf."
+        "Rf = substance distance ÷ solvent distance. ALWAYS measure both distances from the BASELINE, not from the top or bottom of the paper.",
+        "Rf is the same for a substance in the same solvent under the same conditions — this is what makes it useful for identification.",
+        "One spot does NOT prove purity — two substances could have the same Rf. To confirm identity, run in multiple solvents AND compare with known standards."
       ],
       "commonMistakes": [
-        "Measuring Rf from the top instead of from the baseline.",
-        "Saying one Rf value proves identity — need to test in multiple solvents."
+        "Measuring the solvent distance from the top of the paper rather than from the baseline — always measure from the pencil baseline.",
+        "Saying one matching Rf value proves identity — you need consistent Rf values in multiple solvents AND comparison with reference standards.",
+        "Calculating Rf greater than 1 — this is impossible; if your answer is >1, you have measured from the wrong starting point."
       ],
       "videos": [
         {
@@ -159,60 +221,85 @@
     },
     "Identifying Substances": {
       "intro": "Chemists use a range of tests to identify unknown elements, ions and compounds. Flame tests and gas tests are the most common examples at GCSE.",
+      "mnemonic": "Flame test colours: 'Little Sodium Keeps Calling Copper' = Li crimson, Na yellow, K lilac, Ca orange-red, Cu green. Gas tests: 'Squeaky Hydrogen, Glowing Oxygen, Cloudy CO₂, Bleached Chlorine' — SGCB!",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Identifying Substances</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Flame Tests",
           "icon": "🔥",
+          "text": "Flame tests identify metal ions by the characteristic colour of light emitted when the metal's electrons are excited by heat.",
           "points": [
-            "Lithium (Li⁺) — crimson/red",
-            "Sodium (Na⁺) — yellow/orange",
-            "Potassium (K⁺) — lilac/purple",
-            "Calcium (Ca²⁺) — orange-red",
-            "Copper (Cu²⁺) — green/blue-green"
+            "<strong>Lithium (Li⁺)</strong> — crimson/red flame",
+            "<strong>Sodium (Na⁺)</strong> — intense yellow/orange flame (can mask other colours in mixtures)",
+            "<strong>Potassium (K⁺)</strong> — lilac/pale purple flame",
+            "<strong>Calcium (Ca²⁺)</strong> — orange-red flame",
+            "<strong>Copper (Cu²⁺)</strong> — green/blue-green flame",
+            "<strong>Method</strong> — clean platinum/nichrome wire loop; dip in acid then sample; hold in blue Bunsen flame; observe colour"
           ]
         },
         {
           "title": "Gas Tests",
           "icon": "💨",
+          "text": "Simple chemical tests identify common laboratory gases using a splint, limewater, or damp litmus paper.",
           "points": [
-            "<strong>Hydrogen</strong> — lit splint → squeaky pop",
-            "<strong>Oxygen</strong> — glowing splint → relights",
-            "<strong>Carbon dioxide</strong> — limewater → turns cloudy (milky)",
-            "<strong>Chlorine</strong> — damp litmus paper → turns white (bleaches)"
+            "<strong>Hydrogen (H₂)</strong> — hold lit splint at mouth of tube → 'squeaky pop' as H₂ ignites",
+            "<strong>Oxygen (O₂)</strong> — hold glowing splint at mouth of tube → splint relights (supports combustion)",
+            "<strong>Carbon dioxide (CO₂)</strong> — bubble through limewater (Ca(OH)₂ solution) → turns cloudy/milky white",
+            "<strong>Chlorine (Cl₂)</strong> — hold damp litmus paper at mouth of tube → turns white (bleaches the dye)",
+            "<strong>Ammonia (NH₃)</strong> — hold damp red litmus paper near gas → turns blue (alkaline gas)",
+            "<strong>Water vapour</strong> — blue cobalt chloride paper → turns pink; anhydrous white CuSO₄ → turns blue"
           ]
         },
         {
           "title": "Ion Tests",
           "icon": "🧪",
+          "text": "Precipitation reactions and acid tests identify specific ions in solution by producing characteristic colour changes or precipitates.",
           "points": [
-            "Carbonate (CO₃²⁻): add dilute acid → fizzes (CO₂ produced)",
-            "Sulfate (SO₄²⁻): add dilute HCl then BaCl₂ → white precipitate",
-            "Halides: add dilute HNO₃ then AgNO₃ → white (Cl⁻), cream (Br⁻), yellow (I⁻) precipitate"
+            "<strong>Carbonate (CO₃²⁻)</strong> — add dilute acid → fizzes (CO₂ produced); test gas with limewater to confirm",
+            "<strong>Sulfate (SO₄²⁻)</strong> — add dilute HCl (to remove carbonates first), THEN add BaCl₂ → white precipitate (BaSO₄)",
+            "<strong>Chloride (Cl⁻)</strong> — add dilute HNO₃ then AgNO₃ → white precipitate (AgCl)",
+            "<strong>Bromide (Br⁻)</strong> — add dilute HNO₃ then AgNO₃ → cream precipitate (AgBr)",
+            "<strong>Iodide (I⁻)</strong> — add dilute HNO₃ then AgNO₃ → yellow precipitate (AgI)",
+            "<strong>Metal ions with NaOH</strong> — Cu²⁺ blue precipitate; Fe²⁺ green precipitate; Fe³⁺ red-brown precipitate; Al³⁺ white (dissolves in excess NaOH)"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Flame test",
-          "def": "Test identifying metal ions by the colour produced in a flame"
+          "def": "A test to identify metal ions by the colour produced when the metal compound is held in a hot flame"
         },
         {
           "term": "Precipitate",
-          "def": "An insoluble solid formed when two solutions are mixed"
+          "def": "An insoluble solid that forms when two solutions are mixed together"
         },
         {
           "term": "Limewater",
-          "def": "Calcium hydroxide solution — turns cloudy in presence of CO₂"
+          "def": "Calcium hydroxide solution — turns cloudy (milky white) in the presence of carbon dioxide"
+        },
+        {
+          "term": "Atomic emission spectroscopy",
+          "def": "An analytical technique that identifies elements from the specific wavelengths of light they emit — more precise than flame tests"
+        },
+        {
+          "term": "Silver nitrate test",
+          "def": "Adding acidified silver nitrate solution to test for halide ions: white (Cl⁻), cream (Br⁻), yellow (I⁻) precipitate"
+        },
+        {
+          "term": "Barium chloride test",
+          "def": "Adding acidified barium chloride to test for sulfate ions — a white precipitate of barium sulfate forms"
         }
       ],
       "examTips": [
-        "Sodium gives a very intense yellow flame — can mask other ions in a mixture.",
-        "Oxygen = glowing splint relights. Hydrogen = lit splint squeaky pop. Don't mix these up.",
-        "For sulfate test: add HCl FIRST to remove any carbonate ions, THEN add BaCl₂."
+        "Sodium flame is very intense yellow — it can mask the colours of other metal ions if both are present in a mixture. Mention this limitation.",
+        "Gas tests: Oxygen = glowing splint RELIGHTS. Hydrogen = lit splint SQUEAKY POP. These are different tests — do not mix them up.",
+        "For the sulfate test: ALWAYS add dilute HCl FIRST to remove any carbonate ions, THEN add BaCl₂. Without this step, a false positive from BaCO₃ is possible.",
+        "When describing precipitation reactions in answers: state what you add, what you observe, and what the precipitate is."
       ],
       "commonMistakes": [
-        "Confusing hydrogen (squeaky pop) with oxygen (relights glowing splint).",
-        "Saying calcium is yellow — sodium is yellow; calcium is orange-red."
+        "Confusing hydrogen (squeaky pop with LIT splint) with oxygen (relights GLOWING splint) — remember: H is loud (pop), O is glowing.",
+        "Saying calcium gives a yellow flame — SODIUM is yellow/orange; calcium is orange-RED. They are different colours.",
+        "Forgetting to acidify with HCl before the sulfate test — without this, the precipitate could be barium carbonate (a false positive) rather than barium sulfate."
       ],
       "videos": [
         {

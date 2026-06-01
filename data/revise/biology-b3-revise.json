@@ -3,6 +3,8 @@
   "topics": {
     "Pathogens": {
       "intro": "Pathogens are microorganisms that cause disease. There are four main types you need to know for GCSE Combined Science.",
+      "mnemonic": "Remember the four types of pathogen with 'BVFP': Bacteria, Viruses, Fungi, Protists. Or use the story: 'Bad Villains Fight Poorly' — Bacteria, Viruses, Fungi, Protists. For how they spread: 'DCWV' — Direct contact, Droplets, Contaminated water, Vectors.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Pathogens</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Types of Pathogen",
@@ -23,6 +25,18 @@
             "<strong>Contaminated water</strong> — drinking infected water (e.g. cholera)",
             "<strong>Vectors</strong> — carried by another organism (e.g. mosquitoes spread malaria)"
           ]
+        },
+        {
+          "title": "How Pathogens Cause Disease",
+          "icon": "⚠️",
+          "text": "Different types of pathogen damage the body in different ways:",
+          "points": [
+            "<strong>Bacteria damage</strong> — produce toxins (poisonous chemicals) that harm body cells and tissues",
+            "<strong>Virus damage</strong> — invade host cells and take over their machinery to replicate, then burst the cell to release new viruses",
+            "<strong>Fungi damage</strong> — produce toxins or digest body tissues; can also trigger allergic responses",
+            "<strong>Protist damage</strong> — invade and destroy red blood cells (e.g. Plasmodium in malaria), releasing toxins",
+            "<strong>Symptoms</strong> — caused both by direct cell damage AND by the body's own immune response (fever, inflammation)"
+          ]
         }
       ],
       "keyTerms": [
@@ -37,15 +51,30 @@
         {
           "term": "Toxin",
           "def": "A poisonous substance produced by bacteria that damages body cells"
+        },
+        {
+          "term": "Bacteria",
+          "def": "Prokaryotic microorganisms that can cause disease by producing toxins"
+        },
+        {
+          "term": "Virus",
+          "def": "Non-cellular pathogen that replicates inside host cells, destroying them in the process"
+        },
+        {
+          "term": "Droplet infection",
+          "def": "Spread of pathogens through tiny droplets released by coughing or sneezing"
         }
       ],
       "examTips": [
         "Viruses are NOT killed by antibiotics — antibiotics only work on bacteria.",
-        "Know the difference: bacteria produce toxins; viruses destroy host cells from the inside."
+        "Know the difference: bacteria produce toxins; viruses destroy host cells from the inside.",
+        "In exam answers, state specifically HOW a pathogen causes damage — 'bacteria produce toxins' or 'viruses cause host cells to burst'.",
+        "A vector is not the pathogen itself — the mosquito is the vector for malaria, not the cause of the disease."
       ],
       "commonMistakes": [
         "Saying antibiotics kill viruses — they do not.",
-        "Confusing vectors (carriers) with pathogens (disease-causers)."
+        "Confusing vectors (carriers) with pathogens (disease-causers).",
+        "Saying bacteria cause disease by 'invading cells' — this is what viruses do; bacteria produce toxins."
       ],
       "videos": [
         {
@@ -67,6 +96,8 @@
     },
     "Viral Diseases": {
       "intro": "Viruses cause disease by replicating inside host cells and destroying them. You need to know measles, HIV and tobacco mosaic virus.",
+      "mnemonic": "Remember the three viral diseases with 'MHT': Measles (rash, droplets, MMR), HIV (immune system, sexual/blood, antiretrovirals), TMV (mosaic pattern on plants, chloroplasts). Think 'My HIV is Terrible' — Measles, HIV, TMV.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Viral Diseases</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Measles",
@@ -98,6 +129,18 @@
             "Chloroplasts disrupted — reduces photosynthesis",
             "Spread by: contact between plants, contaminated tools"
           ]
+        },
+        {
+          "title": "How Viruses Replicate",
+          "icon": "🧬",
+          "text": "Understanding the viral replication cycle helps explain why viruses are hard to treat:",
+          "points": [
+            "<strong>Attachment</strong> — virus binds to specific receptor on host cell surface",
+            "<strong>Injection</strong> — viral genetic material enters the host cell",
+            "<strong>Replication</strong> — host cell machinery is hijacked to make new virus particles",
+            "<strong>Release</strong> — new viruses burst out of the cell (lysis), destroying it, and infect neighbouring cells",
+            "<strong>Why antibiotics don't work</strong> — antibiotics target bacterial cell structures (e.g. cell walls); viruses have no cell wall or metabolism of their own to target"
+          ]
         }
       ],
       "keyTerms": [
@@ -112,15 +155,30 @@
         {
           "term": "TMV",
           "def": "Tobacco Mosaic Virus — a plant virus causing mosaic discolouration of leaves"
+        },
+        {
+          "term": "Antiretroviral drugs",
+          "def": "Drugs that suppress HIV replication, preventing progression to AIDS"
+        },
+        {
+          "term": "MMR vaccine",
+          "def": "Vaccine protecting against measles, mumps, and rubella"
+        },
+        {
+          "term": "Mosaic pattern",
+          "def": "The distinctive patchy discolouration of leaves caused by Tobacco Mosaic Virus"
         }
       ],
       "examTips": [
         "HIV is treated but not cured — antiretroviral drugs prevent it developing into AIDS.",
-        "TMV reduces photosynthesis because it disrupts chloroplasts."
+        "TMV reduces photosynthesis because it disrupts chloroplasts.",
+        "For HIV questions: distinguish between HIV (the virus) and AIDS (the condition that results from untreated HIV).",
+        "TMV is spread by contact and contaminated tools — no vector and no vaccine; infected plants must be destroyed."
       ],
       "commonMistakes": [
         "Saying HIV can be cured — it cannot, only managed.",
-        "Forgetting TMV is a plant disease."
+        "Forgetting TMV is a plant disease.",
+        "Confusing HIV and AIDS — HIV is the virus, AIDS is the syndrome caused by advanced HIV infection."
       ],
       "videos": [
         {
@@ -142,6 +200,8 @@
     },
     "Bacterial Diseases": {
       "intro": "Bacteria cause disease by producing toxins. You need to know salmonella and gonorrhoea for Combined Science.",
+      "mnemonic": "Remember the two bacterial diseases: 'SG' — Salmonella (food, poultry, gut toxins) and Gonorrhoea (STI, discharge, antibiotics). Think 'Stomach and Groin' for Salmonella and Gonorrhoea.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Bacterial Diseases</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Salmonella",
@@ -162,6 +222,18 @@
             "Treated with antibiotics (but antibiotic-resistant strains are increasing)",
             "Prevention: condoms, testing and treating infected partners"
           ]
+        },
+        {
+          "title": "Antibiotic Resistance — The Growing Problem",
+          "icon": "⚠️",
+          "text": "Antibiotic resistance is a major global health threat, particularly relevant to gonorrhoea:",
+          "points": [
+            "<strong>Natural selection drives resistance</strong> — random mutation gives some bacteria resistance; they survive treatment and reproduce; resistance spreads",
+            "<strong>Gonorrhoea resistance</strong> — strains resistant to many antibiotics are increasingly common; fewer effective treatments remain",
+            "<strong>MRSA</strong> — methicillin-resistant Staphylococcus aureus; hospital 'superbug'; resistant to most antibiotics",
+            "<strong>Slowing resistance</strong> — only prescribe antibiotics when necessary; always complete the course; do not share antibiotics",
+            "<strong>New antibiotic development</strong> — slow and expensive; few new antibiotics have been developed in recent decades"
+          ]
         }
       ],
       "keyTerms": [
@@ -176,15 +248,30 @@
         {
           "term": "Antibiotic resistance",
           "def": "When bacteria evolve so that antibiotics no longer kill them"
+        },
+        {
+          "term": "MRSA",
+          "def": "Methicillin-resistant Staphylococcus aureus — a bacterium resistant to many antibiotics"
+        },
+        {
+          "term": "Natural selection",
+          "def": "The process by which organisms with advantageous traits survive and reproduce, passing on those traits"
+        },
+        {
+          "term": "Toxin",
+          "def": "Poisonous chemical produced by bacteria that damages the body's cells and tissues"
         }
       ],
       "examTips": [
         "Gonorrhoea is becoming harder to treat due to antibiotic-resistant strains — a key evaluative point.",
-        "Salmonella is prevented by vaccination of poultry in the UK."
+        "Salmonella is prevented by vaccination of poultry in the UK.",
+        "For antibiotic resistance questions: always describe it as a process of natural selection — do not say bacteria 'become resistant on purpose' or 'try to adapt'.",
+        "MRSA and gonorrhoea resistance are both good examples to use in 6-mark questions about antibiotic resistance."
       ],
       "commonMistakes": [
         "Confusing the symptoms of salmonella with food allergies.",
-        "Forgetting that some people with gonorrhoea have no symptoms."
+        "Forgetting that some people with gonorrhoea have no symptoms.",
+        "Saying bacteria 'develop' resistance deliberately — resistance arises by random mutation and natural selection."
       ],
       "videos": [
         {
@@ -206,6 +293,8 @@
     },
     "Fungal and Protist Diseases": {
       "intro": "Fungi and protists can also cause disease in plants and animals. Rose black spot and malaria are the key examples.",
+      "mnemonic": "Remember: 'Roses have Black Spots from Fungus; Mosquitoes carry Malaria Protists'. Or: 'Fungi cause Flowers to fail (rose black spot); Protists cause People to Panic (malaria)'. The key: Fungi → plants; Protists → animals (via mosquito vector).",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Fungal and Protist Diseases</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Rose Black Spot (Fungal)",
@@ -228,6 +317,19 @@
             "Prevention: insect repellent, mosquito nets, anti-malarial drugs, draining stagnant water",
             "No vaccine currently in widespread use"
           ]
+        },
+        {
+          "title": "Comparing Fungal and Protist Diseases",
+          "icon": "🔬",
+          "text": "A useful comparison for exam answers:",
+          "points": [
+            "<strong>Rose black spot — pathogen type</strong>: fungus (eukaryotic, multicellular or single-celled); treated with antifungals",
+            "<strong>Malaria — pathogen type</strong>: protist (eukaryotic, single-celled Plasmodium); no antifungal — treated with antimalarials",
+            "<strong>Rose black spot spread</strong>: no animal vector; spread by water splash and wind — direct contact with spores",
+            "<strong>Malaria spread</strong>: requires a vector (female Anopheles mosquito); cannot spread by direct human-to-human contact",
+            "<strong>Control of malaria</strong>: target the vector (drain stagnant water, use nets and repellents) as well as treating the disease",
+            "<strong>Rose black spot control</strong>: remove infected leaves, apply fungicide, improve air circulation around plants"
+          ]
         }
       ],
       "keyTerms": [
@@ -242,15 +344,30 @@
         {
           "term": "Plasmodium",
           "def": "The protist that causes malaria"
+        },
+        {
+          "term": "Fungicide",
+          "def": "A chemical used to kill or prevent the growth of fungi"
+        },
+        {
+          "term": "Anopheles mosquito",
+          "def": "The vector for malaria; the female mosquito transmits Plasmodium when it bites a human"
+        },
+        {
+          "term": "Antimalarial drug",
+          "def": "A drug used to prevent or treat malaria caused by Plasmodium"
         }
       ],
       "examTips": [
         "The mosquito is the VECTOR for malaria — it carries the Plasmodium protist but is not itself the pathogen.",
-        "Rose black spot is prevented by fungicides AND removing infected leaves."
+        "Rose black spot is prevented by fungicides AND removing infected leaves.",
+        "For malaria prevention questions, give examples that target different stages: nets (stop bites), draining water (remove breeding grounds), drugs (prevent infection).",
+        "Exam questions may ask you to explain why controlling the mosquito vector helps prevent malaria — state that without the vector, Plasmodium cannot be transmitted between humans."
       ],
       "commonMistakes": [
         "Saying malaria is caused by mosquitoes — mosquitoes are the vector; the pathogen is the protist Plasmodium.",
-        "Confusing fungal (rose black spot) with viral or bacterial diseases."
+        "Confusing fungal (rose black spot) with viral or bacterial diseases.",
+        "Saying rose black spot is treated with antibiotics — it is treated with fungicides, not antibiotics."
       ],
       "videos": [
         {
@@ -272,6 +389,8 @@
     },
     "Defence Systems": {
       "intro": "The body has several lines of defence to prevent pathogens from entering and to destroy those that do get in.",
+      "mnemonic": "Remember the body's defences as three lines: 'Physical → Chemical → Immune'. Think of a castle: 'Walls (skin), Moat (stomach acid/tears), Soldiers (white blood cells)'. Or: 'Skin Stops Sneaky Microbes, Acid Annihilates Almost All, White cells Wipe out Whatever's left'.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Defence Systems</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Physical Barriers",
@@ -290,6 +409,18 @@
             "<strong>Tears</strong> — contain lysozyme enzyme which destroys bacteria",
             "<strong>Skin oils (sebum)</strong> — antibacterial properties"
           ]
+        },
+        {
+          "title": "The Immune Response (White Blood Cells)",
+          "icon": "🔬",
+          "text": "If pathogens get past physical and chemical barriers, white blood cells respond:",
+          "points": [
+            "<strong>Phagocytes</strong> — engulf and digest pathogens by phagocytosis; non-specific (attack anything foreign)",
+            "<strong>Lymphocytes</strong> — produce antibodies specific to the pathogen's antigens; slower but precise response",
+            "<strong>Memory cells</strong> — remain after infection; allow rapid response if same pathogen returns",
+            "<strong>Antitoxins</strong> — produced by lymphocytes to neutralise bacterial toxins",
+            "<strong>Inflammation</strong> — increased blood flow to infected area; brings more white blood cells to the site"
+          ]
         }
       ],
       "keyTerms": [
@@ -304,15 +435,30 @@
         {
           "term": "Lysozyme",
           "def": "Enzyme found in tears and saliva that destroys bacterial cell walls"
+        },
+        {
+          "term": "Phagocytosis",
+          "def": "The process by which a phagocyte engulfs and destroys a pathogen"
+        },
+        {
+          "term": "Non-specific defence",
+          "def": "A defence that attacks all pathogens regardless of type (e.g. phagocytosis, skin)"
+        },
+        {
+          "term": "Sebum",
+          "def": "Oil produced by skin glands that has antibacterial properties and helps waterproof skin"
         }
       ],
       "examTips": [
         "The skin is the FIRST line of defence. If pathogens get past it, the immune system responds.",
-        "Cilia move mucus away from the lungs — they are part of the physical defence, not the immune response."
+        "Cilia move mucus away from the lungs — they are part of the physical defence, not the immune response.",
+        "For 6-mark questions on defence, organise your answer into: physical barriers → chemical defences → immune response.",
+        "Smokers are more susceptible to lung infections because smoking damages cilia — fewer cilia means mucus and pathogens build up in the airways."
       ],
       "commonMistakes": [
         "Confusing mucus (traps pathogens) with antibodies (destroy pathogens).",
-        "Forgetting that stomach acid kills most pathogens before they reach the gut."
+        "Forgetting that stomach acid kills most pathogens before they reach the gut.",
+        "Saying the immune system 'fights off' colds — it is the specific immune response involving lymphocytes that responds to specific pathogens."
       ],
       "videos": [
         {
@@ -334,6 +480,8 @@
     },
     "Immune System": {
       "intro": "When pathogens get past the body's physical defences, the immune system responds. White blood cells play a central role.",
+      "mnemonic": "Remember antibodies are specific to antigens like a lock and key: 'One antibody, one antigen — like one key, one lock.' For the immune response sequence: 'Pathogen In → Antigens Spotted → Lymphocytes Activated → Antibodies Made → Memory Cells Left'. Or: 'PAALM' — Pathogen, Antigens, Activated lymphocytes, make Lots of antibodies, Memory cells.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Immune System</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Phagocytes",
@@ -363,6 +511,18 @@
             "label": "Key Point",
             "text": "Antibodies are specific — one type of antibody only works against one specific antigen. Memory cells allow faster response to second infection."
           }
+        },
+        {
+          "title": "Primary vs Secondary Immune Response",
+          "icon": "📈",
+          "text": "The secondary immune response is faster and stronger — this is the basis of immunity:",
+          "points": [
+            "<strong>Primary response</strong> — first exposure to a pathogen; slow (days to weeks); person may feel ill; relatively low antibody levels produced",
+            "<strong>Memory cells formed</strong> — some lymphocytes differentiate into long-lived memory cells after the infection clears",
+            "<strong>Secondary response</strong> — second exposure to same pathogen; memory cells rapidly divide and produce large amounts of antibody; infection cleared before symptoms appear",
+            "<strong>This is why vaccines work</strong> — they trigger a primary response safely, so memory cells are ready for real infection",
+            "<strong>Monoclonal antibodies</strong> — produced in the lab from a single lymphocyte clone; used in pregnancy tests, cancer treatment, and disease diagnosis"
+          ]
         }
       ],
       "keyTerms": [
@@ -385,12 +545,21 @@
         {
           "term": "Memory cell",
           "def": "Long-lived lymphocyte that enables rapid immune response upon second infection"
+        },
+        {
+          "term": "Antitoxin",
+          "def": "A protein produced by lymphocytes that neutralises a specific bacterial toxin"
+        },
+        {
+          "term": "Monoclonal antibody",
+          "def": "Identical antibodies produced from a single clone of lymphocytes, designed to target a specific antigen"
         }
       ],
       "examTips": [
         "Antibodies are complementary to antigens — use 'specific' or 'complementary' in exam answers.",
         "Memory cells are the basis of immunity — they allow faster, larger response on second exposure.",
-        "Secondary immune response is faster and stronger than primary."
+        "Secondary immune response is faster and stronger than primary.",
+        "For monoclonal antibody questions: state they are produced from ONE type of lymphocyte, so all antibodies are identical and target ONE specific antigen."
       ],
       "commonMistakes": [
         "Saying antibodies kill pathogens directly — they mark pathogens for destruction by phagocytes.",
@@ -421,6 +590,8 @@
     },
     "Vaccination": {
       "intro": "Vaccines protect individuals and communities from infectious diseases by training the immune system to respond to specific pathogens.",
+      "mnemonic": "Remember how vaccines work: 'Dead or Weakened pathogen In → Antibodies Out → Memory Cells Stay'. Think of it as a 'wanted poster' for your immune system — the vaccine shows your immune system what the pathogen looks like without the danger, so it's ready if the real one turns up.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Vaccination</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "How Vaccines Work",
@@ -441,6 +612,18 @@
             "label": "Evaluate",
             "text": "Vaccines have side effects in some people, but the benefits (protection, herd immunity, eradication of disease) outweigh the risks in most cases."
           }
+        },
+        {
+          "title": "Evaluating Vaccination Programmes",
+          "icon": "⚖️",
+          "text": "AQA often asks you to evaluate vaccines — know both benefits and limitations:",
+          "points": [
+            "<strong>Benefits</strong> — prevent serious illness and death; can eradicate diseases (smallpox was eliminated by vaccination); protect vulnerable people through herd immunity",
+            "<strong>Limitations</strong> — some people cannot be vaccinated (immunocompromised, allergies to vaccine components); vaccines may not be 100% effective; some people refuse on religious or personal grounds",
+            "<strong>Herd immunity threshold</strong> — typically 80–95% of population needs to be immune to prevent spread; varies by disease",
+            "<strong>MMR vaccine</strong> — protects against measles, mumps, and rubella; given to children; essential for maintaining herd immunity against measles",
+            "<strong>Side effects</strong> — mild reactions (soreness, fever) are common and temporary; severe reactions are extremely rare"
+          ]
         }
       ],
       "keyTerms": [
@@ -455,15 +638,30 @@
         {
           "term": "Memory cells",
           "def": "Long-lived lymphocytes produced after vaccination or infection that enable rapid response"
+        },
+        {
+          "term": "Immunisation",
+          "def": "The process of making someone immune to a disease, usually through vaccination"
+        },
+        {
+          "term": "Booster dose",
+          "def": "An additional vaccine dose given to maintain immunity over time"
+        },
+        {
+          "term": "Smallpox",
+          "def": "A viral disease eradicated worldwide through a global vaccination programme — the only human disease to be fully eradicated"
         }
       ],
       "examTips": [
         "Vaccines contain antigens, not live dangerous pathogens (usually).",
-        "Herd immunity protects those who cannot be vaccinated (e.g. newborns, immunocompromised people)."
+        "Herd immunity protects those who cannot be vaccinated (e.g. newborns, immunocompromised people).",
+        "For evaluate questions on vaccination: always give at least one benefit AND one limitation, then state a balanced conclusion.",
+        "Smallpox eradication is the key success story — mention it in answers about the importance of vaccines."
       ],
       "commonMistakes": [
         "Saying vaccines contain the disease — they contain antigens or dead/weakened forms only.",
-        "Forgetting that vaccines work through memory cells, not direct antibodies."
+        "Forgetting that vaccines work through memory cells, not direct antibodies.",
+        "Saying vaccines 'give you immunity immediately' — there is a delay while memory cells are produced."
       ],
       "videos": [
         {
@@ -490,6 +688,8 @@
     },
     "Drugs": {
       "intro": "Drugs are chemical substances that affect the way the body works. Understanding different types of drugs and how they work is required for B3.",
+      "mnemonic": "Remember antibiotics: 'Antibiotics Attack And Annihilate bacterial Ailments — but Are Absolutely useless Against viral Attacks'. For antibiotic resistance: think evolution — 'Random Mutation → Resistant Bacteria Survive → Reproduce → Resistance Spreads'. Fleming found Penicillin by accident — 'A Messy Lab Made Medicine History'.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Drugs</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Painkillers",
@@ -526,6 +726,18 @@
             "label": "Critical Issue",
             "text": "MRSA is an example of a 'superbug' — resistant to many antibiotics. To slow resistance: complete courses, don't use antibiotics unnecessarily, develop new antibiotics."
           }
+        },
+        {
+          "title": "Why Antibiotics Don't Work on Viruses",
+          "icon": "🧬",
+          "text": "Understanding why helps you answer 'explain' questions precisely:",
+          "points": [
+            "<strong>Antibiotics target bacterial structures</strong> — e.g. cell walls, ribosomes, or metabolic processes",
+            "<strong>Viruses lack these structures</strong> — they have no cell wall and no independent metabolism",
+            "<strong>Viruses live inside host cells</strong> — any drug targeting viruses risks damaging host cells too",
+            "<strong>Antiviral drugs do exist</strong> — e.g. antiretrovirals for HIV — but are harder to develop and less broadly effective",
+            "<strong>Why not use antibiotics just in case?</strong> — overuse drives antibiotic resistance even when the patient has a virus"
+          ]
         }
       ],
       "keyTerms": [
@@ -544,12 +756,21 @@
         {
           "term": "MRSA",
           "def": "Methicillin-resistant Staphylococcus aureus — a bacterium resistant to many antibiotics"
+        },
+        {
+          "term": "Penicillin",
+          "def": "The first antibiotic, discovered by Alexander Fleming from the Penicillium mould"
+        },
+        {
+          "term": "Antiviral drug",
+          "def": "A drug that treats viral infections by inhibiting viral replication (e.g. antiretrovirals for HIV)"
         }
       ],
       "examTips": [
         "Antibiotics treat bacterial infections only — never viral.",
         "Completing antibiotic courses prevents resistance developing.",
-        "Painkillers treat symptoms; antibiotics treat bacterial infections."
+        "Painkillers treat symptoms; antibiotics treat bacterial infections.",
+        "For 'explain how antibiotic resistance develops' — always use the words: mutation, natural selection, survive, reproduce, resistance passed on."
       ],
       "commonMistakes": [
         "Saying antibiotics treat viral infections like the flu or COVID-19 — they do not.",
@@ -580,6 +801,8 @@
     },
     "Drug Development": {
       "intro": "New drugs must go through extensive testing before they can be used. Understanding the process of drug development and clinical trials is required for B3.",
+      "mnemonic": "Remember the stages of drug testing: 'PC-C' — Pre-Clinical (cells, tissues, animals), then Clinical trials (humans). For clinical trial phases: 'SLE' — Safety (Phase 1, small healthy group), Larger group for effectiveness (Phase 2), Everyone in a large RCT (Phase 3). Thalidomide: 'Terrible Testing led to Tragedy' — the lesson that testing must include pregnant women.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Drug Development</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "How New Drugs are Developed",
@@ -610,6 +833,18 @@
             "label": "Case Study",
             "text": "Thalidomide is now used to treat leprosy and some cancers — showing that a drug can be harmful in one context but useful in another."
           }
+        },
+        {
+          "title": "Why Drug Testing Takes So Long",
+          "icon": "⏳",
+          "text": "The lengthy process is necessary to ensure drugs are safe and effective:",
+          "points": [
+            "<strong>Safety testing in animals</strong> — before human trials, drugs are tested in multiple animal species to identify toxic effects",
+            "<strong>Ethical issues with animal testing</strong> — causes suffering; results may not translate to humans; some scientists and groups oppose it",
+            "<strong>Long duration of human trials</strong> — long-term side effects may only appear after years; cancer drugs need years of follow-up",
+            "<strong>Peer review</strong> — results must be published and reviewed by independent scientists before a drug is approved",
+            "<strong>Regulatory approval</strong> — drug must be approved by regulatory bodies (e.g. MHRA in UK) before doctors can prescribe it"
+          ]
         }
       ],
       "keyTerms": [
@@ -628,12 +863,21 @@
         {
           "term": "Thalidomide",
           "def": "Drug that caused birth defects when given to pregnant women; now used for leprosy/cancer"
+        },
+        {
+          "term": "Pre-clinical testing",
+          "def": "Testing a drug on cells, tissues, and animals before human trials begin"
+        },
+        {
+          "term": "Peer review",
+          "def": "The process of independent scientists checking the methods and conclusions of a study before publication"
         }
       ],
       "examTips": [
         "Double-blind trials prevent bias — if doctors knew who had the drug they might treat patients differently.",
         "Placebos allow scientists to distinguish real drug effects from psychological effects.",
-        "Thalidomide is used as a case study for why drug testing must include effects on pregnancy."
+        "Thalidomide is used as a case study for why drug testing must include effects on pregnancy.",
+        "For 'evaluate double-blind trials' questions: benefit = removes bias from both patients AND doctors; limitation = difficult to organise, and some patients may guess which group they are in."
       ],
       "commonMistakes": [
         "Confusing double-blind (both patient and doctor unaware) with single-blind (only patient unaware).",

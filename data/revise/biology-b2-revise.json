@@ -3,6 +3,8 @@
   "topics": {
     "Organisation": {
       "intro": "Multicellular organisms are organised into a hierarchy of increasing complexity. Understanding this hierarchy is essential for B2.",
+      "mnemonic": "Remember the order with: 'Clever Tigers Often Outrun Ordinary Slowpokes' — Cells, Tissues, Organs, Organ systems, Organisms. Or just picture a building: bricks (cells) → walls (tissues) → rooms (organs) → the whole house (organ system) → the neighbourhood (organism).",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Organisation</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "The Hierarchy of Organisation",
@@ -20,6 +22,30 @@
             "label": "Memory Aid",
             "text": "Cell → Tissue → Organ → Organ System → Organism. Remember: 'C-T-O-O-O' or 'Cells Typically Organise Organisms Outstandingly'."
           }
+        },
+        {
+          "title": "Examples at Each Level",
+          "icon": "🔍",
+          "text": "Being able to give examples at each level is a common exam question:",
+          "points": [
+            "<strong>Cell example</strong> — muscle cell, red blood cell, nerve cell",
+            "<strong>Tissue example</strong> — muscle tissue (many muscle cells), epithelial tissue (lining cells)",
+            "<strong>Organ example</strong> — stomach (muscle tissue + epithelial tissue + nerve tissue)",
+            "<strong>Organ system example</strong> — digestive system (mouth, oesophagus, stomach, intestines, liver, pancreas)",
+            "<strong>Organism example</strong> — a human being — all organ systems working together"
+          ]
+        },
+        {
+          "title": "Enzymes and the Digestive System",
+          "icon": "⚗️",
+          "text": "The digestive system is a key organ system in B2. Enzymes are biological catalysts that speed up digestion:",
+          "points": [
+            "<strong>Enzyme</strong> — biological catalyst; speeds up reactions; not used up",
+            "<strong>Active site</strong> — specific shape that only fits one substrate (lock and key model)",
+            "<strong>Optimum temperature</strong> — body enzymes work best at ~37°C",
+            "<strong>Denaturation</strong> — irreversible change in enzyme shape caused by high temperature or extreme pH",
+            "<strong>pH sensitivity</strong> — stomach enzymes work best at pH 2; small intestine enzymes at pH 7–8"
+          ]
         }
       ],
       "keyTerms": [
@@ -34,15 +60,34 @@
         {
           "term": "Organ system",
           "def": "A group of organs working together to perform a major function"
+        },
+        {
+          "term": "Cell",
+          "def": "The basic structural and functional unit of all living organisms"
+        },
+        {
+          "term": "Enzyme",
+          "def": "A biological catalyst that speeds up chemical reactions without being used up"
+        },
+        {
+          "term": "Denaturation",
+          "def": "The permanent change in shape of an enzyme's active site caused by high temperature or extreme pH, stopping it working"
+        },
+        {
+          "term": "Active site",
+          "def": "The specific region of an enzyme where the substrate binds"
         }
       ],
       "examTips": [
         "Know the correct order of the hierarchy — cells are the smallest, organisms the largest.",
-        "Be able to give examples at each level: e.g. muscle cell → muscle tissue → heart → cardiovascular system."
+        "Be able to give examples at each level: e.g. muscle cell → muscle tissue → heart → cardiovascular system.",
+        "In 6-mark questions on organisation, always link structure to function — explain WHY each level is organised as it is.",
+        "Enzymes denature above their optimum temperature — the active site changes shape so the substrate no longer fits. Do not say enzymes are 'killed'."
       ],
       "commonMistakes": [
-        "Reversing the order of the hierarchy.",
-        "Confusing a tissue (same cells) with an organ (different tissues)."
+        "Reversing the order of the hierarchy — always go cells → tissues → organs → organ systems → organisms.",
+        "Confusing a tissue (same cells) with an organ (different tissues working together).",
+        "Saying enzymes are 'killed' by heat — the correct term is 'denatured'. Enzymes are proteins, not living things."
       ],
       "videos": [
         {
@@ -64,6 +109,8 @@
     },
     "Digestion": {
       "intro": "Digestion is the process of breaking down large food molecules into smaller ones that can be absorbed into the bloodstream. Enzymes are key to this process.",
+      "mnemonic": "Remember the three main digestive enzymes with 'APL': Amylase (starch → sugars), Protease (proteins → amino acids), Lipase (lipids → fatty acids + glycerol). Or: 'A Proper Lunch' — A for Amylase, P for Protease, L for Lipase.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Digestion</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Enzymes in Digestion",
@@ -96,6 +143,18 @@
             "Bile is alkaline — neutralises stomach acid in the small intestine",
             "Bile is NOT an enzyme — it does not break down fats chemically"
           ]
+        },
+        {
+          "title": "Absorption in the Small Intestine",
+          "icon": "🔬",
+          "text": "The small intestine is highly adapted for absorbing the products of digestion into the blood:",
+          "points": [
+            "<strong>Villi</strong> — finger-like projections that massively increase surface area for absorption",
+            "<strong>Microvilli</strong> — tiny projections on each villus cell, further increasing surface area",
+            "<strong>Rich blood supply</strong> — maintains a concentration gradient so absorption is rapid",
+            "<strong>Lacteals</strong> — lymph vessels inside villi that absorb fatty acids and glycerol",
+            "<strong>One cell thick walls</strong> — short diffusion distance for rapid absorption of glucose and amino acids"
+          ]
         }
       ],
       "keyTerms": [
@@ -122,12 +181,21 @@
         {
           "term": "Emulsification",
           "def": "Breaking large fat droplets into smaller droplets to increase surface area"
+        },
+        {
+          "term": "Villi",
+          "def": "Finger-like projections lining the small intestine that increase surface area for absorption"
+        },
+        {
+          "term": "Peristalsis",
+          "def": "Wave-like muscle contractions that push food along the digestive tract"
         }
       ],
       "examTips": [
         "Bile is NOT an enzyme — it physically breaks up fat droplets (emulsification) rather than chemically digesting them.",
         "Know where each enzyme is produced AND where it acts — these are often different places.",
-        "The stomach is acidic (HCl); the small intestine is alkaline (bile neutralises the acid)."
+        "The stomach is acidic (HCl); the small intestine is alkaline (bile neutralises the acid).",
+        "For 'explain the role of villi' questions, always mention: large surface area, rich blood supply, and thin walls — all three features together maximise absorption."
       ],
       "commonMistakes": [
         "Saying bile digests fats — bile only emulsifies (physically breaks up) fats.",
@@ -159,6 +227,8 @@
     },
     "Heart and Circulation": {
       "intro": "The heart is a muscular organ that pumps blood around the body through a double circulatory system. Understanding its structure and function is key to B2.",
+      "mnemonic": "To remember blood flow through the heart: 'All Vans Are Cool, People Love Awesome Vehicles' — Atria → Valves → Atria Contract → Pulmonary / Left → Aorta → Ventricles. Simpler: Right side = lungs (Pulmonary), Left side = body (systemic). 'Right is short-haul, Left is long-haul.'",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Heart and Circulation</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Double Circulatory System",
@@ -188,6 +258,18 @@
             "<strong>Veins</strong> — carry blood TO the heart; thin walls; low pressure; have valves to prevent backflow",
             "<strong>Capillaries</strong> — very narrow; walls one cell thick; site of exchange between blood and tissues"
           ]
+        },
+        {
+          "title": "The Cardiac Cycle and Rate",
+          "icon": "📈",
+          "text": "The heart beats in a regular cycle controlled by electrical signals:",
+          "points": [
+            "<strong>Sinoatrial node (SAN)</strong> — natural pacemaker; sends electrical impulse across atria",
+            "<strong>Atria contract first</strong> — pushing blood into ventricles through atrioventricular valves",
+            "<strong>Ventricles contract</strong> — push blood out to lungs and body through semilunar valves",
+            "<strong>Artificial pacemaker</strong> — fitted under the skin when the SAN is faulty",
+            "<strong>Resting heart rate</strong> — typically 60–100 bpm; lower in trained athletes due to stronger heart muscle"
+          ]
         }
       ],
       "keyTerms": [
@@ -214,12 +296,21 @@
         {
           "term": "Capillary",
           "def": "Tiny blood vessel with walls one cell thick where exchange occurs"
+        },
+        {
+          "term": "Sinoatrial node",
+          "def": "The heart's natural pacemaker — generates electrical impulses to control heartbeat"
+        },
+        {
+          "term": "Pulmonary circulation",
+          "def": "The circuit of blood between the heart and the lungs"
         }
       ],
       "examTips": [
         "Left ventricle has thicker walls than right — it pumps blood the full length of the body.",
         "Arteries ALWAYS carry blood away from the heart (even pulmonary artery carries deoxygenated blood away from the heart to the lungs).",
-        "Veins have valves; arteries do not (they rely on high pressure)."
+        "Veins have valves; arteries do not (they rely on high pressure).",
+        "In questions about heart structure, always connect wall thickness to the distance blood must travel — left = whole body = thicker walls."
       ],
       "commonMistakes": [
         "Saying arteries always carry oxygenated blood — the pulmonary artery carries deoxygenated blood.",
@@ -251,6 +342,8 @@
     },
     "Blood": {
       "intro": "Blood is a tissue made up of several components, each with a specific function. Understanding these components is essential for B2.",
+      "mnemonic": "Remember the four components of blood with 'PRWP': Plasma, Red blood cells, White blood cells, Platelets. Or use the silly phrase 'Pretty Red Wolves Play' — Plasma (pretty yellow), Red blood cells, White blood cells (wolves — defenders!), Platelets (play — they patch up wounds).",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Blood</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Components of Blood",
@@ -272,6 +365,18 @@
             "Flexible — can squeeze through narrow capillaries",
             "Haemoglobin + O₂ → oxyhaemoglobin (in lungs)",
             "Oxyhaemoglobin → haemoglobin + O₂ (at body tissues)"
+          ]
+        },
+        {
+          "title": "Plasma and Platelets",
+          "icon": "💛",
+          "text": "Plasma is the liquid component of blood; platelets help seal wounds:",
+          "points": [
+            "<strong>Plasma composition</strong> — water (~90%), dissolved substances including glucose, amino acids, CO₂, urea, hormones, and heat",
+            "<strong>CO₂ transport</strong> — most CO₂ is carried dissolved in plasma (some in red blood cells as carbonic acid)",
+            "<strong>Urea transport</strong> — urea produced in liver from amino acid breakdown is carried in plasma to kidneys",
+            "<strong>Platelets trigger clotting</strong> — a cascade of reactions produces fibrin, a protein mesh that traps red blood cells to form a clot",
+            "<strong>Scab formation</strong> — the clot dries to form a scab, preventing pathogen entry"
           ]
         }
       ],
@@ -295,12 +400,21 @@
         {
           "term": "Platelets",
           "def": "Cell fragments that help blood clot at wounds"
+        },
+        {
+          "term": "Oxyhaemoglobin",
+          "def": "The compound formed when haemoglobin combines with oxygen in the lungs"
+        },
+        {
+          "term": "Fibrin",
+          "def": "A protein produced during clotting that forms a mesh to trap red blood cells and seal wounds"
         }
       ],
       "examTips": [
         "Red blood cells have no nucleus — this is an adaptation allowing more haemoglobin and therefore more oxygen carried.",
         "Plasma transports many things — CO₂, urea, hormones, glucose, amino acids, heat.",
-        "Know the two types of white blood cells: phagocytes (engulf) and lymphocytes (antibodies)."
+        "Know the two types of white blood cells: phagocytes (engulf) and lymphocytes (antibodies).",
+        "When explaining red blood cell adaptations, always link each feature to its function — e.g. 'biconcave shape increases surface area, so more oxygen can be absorbed in a shorter time'."
       ],
       "commonMistakes": [
         "Saying red blood cells carry carbon dioxide — they mainly carry oxygen (CO₂ is mostly carried in plasma).",
@@ -327,6 +441,8 @@
     },
     "Heart Disease": {
       "intro": "Coronary heart disease is one of the most common diseases in the UK. Understanding its causes, symptoms, and treatments is important for B2.",
+      "mnemonic": "Remember the risk factors for heart disease with 'SHOD FO': Smoking, High blood pressure, Obesity, Diet (high fat), Family history, Old age. And treatments: 'SSB' — Statins, Stents, Bypass surgery.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Heart Disease</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Coronary Heart Disease (CHD)",
@@ -358,6 +474,17 @@
             "Regular exercise — strengthens heart muscle, reduces blood pressure",
             "Maintain healthy weight — reduces strain on heart"
           ]
+        },
+        {
+          "title": "Evaluating Treatments",
+          "icon": "⚖️",
+          "text": "AQA often asks you to evaluate treatments — weigh up risks and benefits:",
+          "points": [
+            "<strong>Statins — benefit</strong>: reduce cholesterol long-term, reduce heart attack risk; <strong>risk</strong>: side effects (muscle pain), must be taken daily for life",
+            "<strong>Stents — benefit</strong>: quick, minimally invasive, immediate improvement; <strong>risk</strong>: infection, blood clots around stent",
+            "<strong>Bypass surgery — benefit</strong>: restores full blood flow, long-lasting; <strong>risk</strong>: major surgery with anaesthetic risk, long recovery",
+            "<strong>Lifestyle changes — benefit</strong>: no side effects, improve overall health; <strong>limitation</strong>: require willpower and sustained behaviour change"
+          ]
         }
       ],
       "keyTerms": [
@@ -380,16 +507,26 @@
         {
           "term": "Angina",
           "def": "Chest pain caused by restricted blood flow to the heart muscle"
+        },
+        {
+          "term": "Heart attack",
+          "def": "Occurs when a coronary artery is completely blocked, depriving heart muscle of oxygen"
+        },
+        {
+          "term": "Cholesterol",
+          "def": "A fatty substance in blood that contributes to plaque formation in arteries"
         }
       ],
       "examTips": [
         "Statins reduce cholesterol — they slow plaque build-up but don't remove existing plaques.",
         "Stents keep arteries open mechanically; bypass surgery creates a new route for blood flow.",
-        "Be able to evaluate treatments — consider risks vs benefits."
+        "Be able to evaluate treatments — consider risks vs benefits.",
+        "In 'evaluate' questions, give at least one benefit AND one risk for each treatment mentioned, then justify a conclusion."
       ],
       "commonMistakes": [
         "Saying statins dissolve plaques — they only prevent new ones forming by reducing cholesterol.",
-        "Confusing coronary arteries (supply the heart) with pulmonary arteries (go to lungs)."
+        "Confusing coronary arteries (supply the heart) with pulmonary arteries (go to lungs).",
+        "Forgetting to mention that coronary heart disease affects the heart MUSCLE'S blood supply — not the blood inside the heart."
       ],
       "videos": [
         {
@@ -411,6 +548,8 @@
     },
     "Cancer": {
       "intro": "Cancer is caused by uncontrolled cell division. Understanding the difference between benign and malignant tumours, and the risk factors for cancer, is required for B2.",
+      "mnemonic": "Remember the difference: 'Benign = Boring (stays in one place). Malignant = Moves (metastasises).' Or think: Malignant starts with M, just like Metastasis and Moving — malignant tumours MOVE to other parts of the body.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Cancer</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "What is Cancer?",
@@ -433,6 +572,30 @@
             "label": "Key Distinction",
             "text": "Benign = stays put. Malignant = spreads (metastasises). Only malignant tumours are truly cancer."
           }
+        },
+        {
+          "title": "Risk Factors for Cancer",
+          "icon": "🚨",
+          "text": "Risk factors increase the probability of developing cancer but do not guarantee it:",
+          "points": [
+            "<strong>Smoking</strong> — chemicals in cigarette smoke are carcinogens; strongly linked to lung cancer",
+            "<strong>UV radiation</strong> — from the sun; damages DNA in skin cells; causes melanoma (skin cancer)",
+            "<strong>Viral infections</strong> — HPV (human papillomavirus) is linked to cervical cancer",
+            "<strong>Ionising radiation</strong> — X-rays and gamma rays can damage DNA",
+            "<strong>Inherited mutations</strong> — BRCA1 gene mutation increases breast and ovarian cancer risk; shows genetic factors matter",
+            "<strong>Alcohol</strong> — linked to liver, mouth, and throat cancer"
+          ]
+        },
+        {
+          "title": "Cancer Treatments",
+          "icon": "💉",
+          "text": "Several treatments are used depending on the type and stage of cancer:",
+          "points": [
+            "<strong>Surgery</strong> — physically removes the tumour; most effective when cancer has not spread",
+            "<strong>Radiotherapy</strong> — targeted ionising radiation kills cancer cells by damaging their DNA",
+            "<strong>Chemotherapy</strong> — drugs that kill rapidly dividing cells; side effects because healthy cells are also affected",
+            "<strong>Side effects of treatment</strong> — hair loss, nausea, and fatigue because treatments affect all rapidly dividing cells, not just cancer cells"
+          ]
         }
       ],
       "keyTerms": [
@@ -455,15 +618,26 @@
         {
           "term": "Carcinogen",
           "def": "A substance that causes cancer by mutating DNA"
+        },
+        {
+          "term": "Radiotherapy",
+          "def": "Use of ionising radiation to destroy cancer cells"
+        },
+        {
+          "term": "Chemotherapy",
+          "def": "Drug treatment targeting rapidly dividing cells to kill cancer"
         }
       ],
       "examTips": [
         "Always distinguish between benign (non-spreading) and malignant (spreading/cancer) tumours.",
-        "Cancer = uncontrolled mitosis due to DNA mutations."
+        "Cancer = uncontrolled mitosis due to DNA mutations.",
+        "For 'explain why chemotherapy causes side effects' — it kills rapidly dividing healthy cells too, such as hair follicle cells and gut lining cells.",
+        "Risk factors increase the CHANCE of cancer — they do not mean cancer will definitely develop."
       ],
       "commonMistakes": [
         "Saying all tumours are cancer — only malignant tumours are cancerous.",
-        "Forgetting that cancer is caused by mutations in cell division genes, not just any mutation."
+        "Forgetting that cancer is caused by mutations in cell division genes, not just any mutation.",
+        "Confusing risk factor with cause — having a risk factor does not guarantee you will get cancer."
       ],
       "videos": [
         {
@@ -485,6 +659,8 @@
     },
     "Plant Organisation": {
       "intro": "Plants are also organised into tissues and organs. The leaf is the main organ for photosynthesis and understanding its structure is important for B2.",
+      "mnemonic": "Remember the two transport tissues with 'X marks the spot for water' — Xylem carries water (X = water). Phloem carries food (Phloem = Food). Or: 'eXit water up Xylem; food Flows in Phloem'. For factors increasing transpiration: 'HoT Wind Lights up' — Higher temperature, airflow (wind), Taller light intensity.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Plant Organisation</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Plant Tissues",
@@ -516,6 +692,18 @@
             "Factors that increase transpiration: higher temperature, lower humidity, wind, more light",
             "Measured using a potometer (measures water uptake as a proxy for transpiration)"
           ]
+        },
+        {
+          "title": "Translocation vs Transpiration",
+          "icon": "🔄",
+          "text": "These two processes are frequently confused — know the distinction clearly:",
+          "points": [
+            "<strong>Transpiration</strong> — loss of water vapour from leaves through stomata; drives water UP through xylem",
+            "<strong>Translocation</strong> — transport of dissolved sugars in phloem; can go UP or DOWN the plant",
+            "<strong>Xylem cells are dead</strong> — hollow tubes strengthened with lignin; water moves by cohesion",
+            "<strong>Phloem cells are alive</strong> — have companion cells to supply energy for active loading of sugars",
+            "<strong>Source to sink</strong> — sugars move from where they are made (leaves) to where they are used (roots, fruits, growing points)"
+          ]
         }
       ],
       "keyTerms": [
@@ -538,12 +726,25 @@
         {
           "term": "Guard cells",
           "def": "Cells that surround stomata and control their opening and closing"
+        },
+        {
+          "term": "Translocation",
+          "def": "The transport of dissolved sugars through phloem from leaves to other parts of the plant"
+        },
+        {
+          "term": "Palisade mesophyll",
+          "def": "Layer of tightly packed cells near the top of a leaf, rich in chloroplasts, main site of photosynthesis"
+        },
+        {
+          "term": "Waxy cuticle",
+          "def": "Waterproof layer on the upper surface of leaves that reduces water loss by evaporation"
         }
       ],
       "examTips": [
         "Xylem transports water UP; phloem transports sugars (translocation) both up and down.",
         "Transpiration is affected by temperature, humidity, wind speed and light intensity.",
-        "Stomata open in light (photosynthesis needs CO₂) and close in dark or when water is scarce."
+        "Stomata open in light (photosynthesis needs CO₂) and close in dark or when water is scarce.",
+        "In potometer experiments, the bubble moves because water is taken up by the plant — it measures water uptake, not transpiration directly."
       ],
       "commonMistakes": [
         "Saying phloem transports water — it transports sugars. Xylem transports water.",
