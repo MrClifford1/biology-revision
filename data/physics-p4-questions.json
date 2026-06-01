@@ -875,5 +875,176 @@
     "topic": "Nuclear Fission",
     "question": "Explain in detail how the chain reaction in a nuclear weapon differs from that in a nuclear reactor, and explain how reactor design prevents a nuclear explosion.",
     "mark_scheme": "Reactor: controlled chain reaction — each fission triggers on average exactly one further fission (critical) (1); control rods absorb excess neutrons to regulate reaction rate (1); coolant removes heat at controlled rate — used to generate steam/electricity (1); if control rods fully inserted, reaction stops — inherently controllable (1); weapon: supercritical chain reaction — each fission triggers more than one further fission (1); uncontrolled exponential growth of fissions in microseconds releases enormous energy as explosion (1); reactor cannot explode like a bomb because fuel is not in the correct configuration or concentration for supercritical mass (1) — any six."
+  },
+  {
+    "id": "P4-SA-013",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Atomic Structure",
+    "question": "State what is meant by the atomic number and the mass number of an atom.",
+    "mark_scheme": "Atomic number: the number of protons in the nucleus (1); mass number: the total number of protons and neutrons in the nucleus (1)."
+  },
+  {
+    "id": "P4-SA-014",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Give",
+    "topic": "Radioactivity",
+    "question": "Give the name and symbol for the unit of radioactive activity and state what it measures.",
+    "mark_scheme": "Becquerel (Bq) (1); it measures the number of radioactive decays per second in a sample (1)."
+  },
+  {
+    "id": "P4-SA-015",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Name",
+    "topic": "Nuclear decay",
+    "question": "Name the three types of nuclear radiation and state what each is made of.",
+    "mark_scheme": "Alpha — helium nucleus (2 protons and 2 neutrons) (1); beta — fast-moving electron from the nucleus (1); gamma — high-energy electromagnetic radiation (1) — two correct for 2 marks."
+  },
+  {
+    "id": "P4-SA-016",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Half-life",
+    "question": "Describe what is meant by the half-life of a radioactive isotope.",
+    "mark_scheme": "The half-life is the time taken for the activity of a radioactive sample to halve (1); or the time for half the radioactive atoms in a sample to decay (1)."
+  },
+  {
+    "id": "P4-SA-017",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Nuclear fission and fusion",
+    "question": "State what happens to the mass number and atomic number of a nucleus during alpha decay.",
+    "mark_scheme": "Mass number decreases by 4 (1); atomic number decreases by 2 (1)."
+  },
+  {
+    "id": "P4-SA-018",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Give",
+    "topic": "Radioactivity",
+    "question": "Give one medical use and one industrial use of radioactive isotopes.",
+    "mark_scheme": "Medical use: any valid e.g. gamma-emitting tracer for diagnosis / radiotherapy to treat cancer (1); industrial use: any valid e.g. thickness gauging / smoke detectors / sterilising medical equipment (1)."
+  },
+  {
+    "id": "P4-SA-019",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Atomic Structure",
+    "question": "State what isotopes are and explain why isotopes of the same element have the same chemical properties.",
+    "mark_scheme": "Isotopes are atoms of the same element with the same number of protons but different numbers of neutrons (1); they have the same chemical properties because they have the same number of electrons and the same electron configuration, which determines chemical behaviour (1)."
+  },
+  {
+    "id": "P4-SA-020",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Atomic Structure",
+    "question": "Explain how Rutherford's alpha scattering experiment provided evidence for the nuclear model of the atom. Include at least two specific observations and what each revealed.",
+    "mark_scheme": "Most alpha particles passed straight through the gold foil — shows the atom is mostly empty space (1); a small number were deflected at large angles — shows there is a small, dense, positively charged nucleus that repels the positively charged alpha particles (1); a very small number bounced almost straight back — confirms the nucleus is very massive and concentrated at the centre (1)."
+  },
+  {
+    "id": "P4-SA-021",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Radioactivity",
+    "question": "Describe the properties of alpha, beta and gamma radiation in terms of penetrating power, ionising ability and charge.",
+    "mark_scheme": "Alpha: low penetrating power (stopped by paper/few cm air), highly ionising, charge +2 (1); beta: medium penetrating power (stopped by few mm aluminium), moderately ionising, charge −1 (1); gamma: high penetrating power (reduced by lead/thick concrete), weakly ionising, no charge (1)."
+  },
+  {
+    "id": "P4-SA-022",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Nuclear decay",
+    "question": "Explain what happens to the nucleus during beta decay. Include what changes occur to the proton number and mass number.",
+    "mark_scheme": "During beta decay, a neutron in the nucleus changes into a proton (1); a beta particle (fast-moving electron) is emitted from the nucleus (1); the mass number stays the same (same total nucleons), but the proton number increases by 1 (1)."
+  },
+  {
+    "id": "P4-SA-023",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Half-life",
+    "question": "Describe how you would determine the half-life of a radioactive sample from a graph of activity against time.",
+    "mark_scheme": "Plot a graph of activity (Bq) against time (1); choose a starting activity value on the curve and read the time at that point; find the time at which the activity has halved (1); the difference in time is one half-life — repeat from different starting points and take an average to improve reliability (1)."
+  },
+  {
+    "id": "P4-SA-024",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Nuclear fission and fusion",
+    "question": "Explain why nuclear fusion releases energy. State why it requires extremely high temperatures to occur.",
+    "mark_scheme": "In fusion, two light nuclei combine to form a heavier nucleus; the products have less mass than the reactants (1); the 'missing' mass is converted to energy according to E = mc² — a large amount of energy is released (1); very high temperatures are needed to give the nuclei enough kinetic energy to overcome the electrostatic repulsion between their positive charges so they can get close enough for the strong nuclear force to fuse them (1)."
+  },
+  {
+    "id": "P4-SA-025",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Compare",
+    "topic": "Nuclear fission and fusion",
+    "question": "Compare nuclear fission and nuclear fusion in terms of the reactions involved, the fuels used and the waste produced.",
+    "mark_scheme": "Fission: a large nucleus (e.g. uranium-235) is split into two smaller nuclei when it absorbs a neutron; fuel is uranium (non-renewable, mined ore) (1); fusion: two light nuclei (e.g. hydrogen isotopes deuterium and tritium) join to form a heavier nucleus; fuel is hydrogen isotopes (more abundant) (1); fission produces long-lived radioactive waste; fusion produces helium — a non-radioactive product — much less problematic waste (1)."
+  },
+  {
+    "id": "P4-SA-026",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Radioactivity",
+    "question": "Explain why radioactive decay is described as random and spontaneous. Include what these terms mean.",
+    "mark_scheme": "Spontaneous: decay is not triggered by external conditions — it cannot be sped up or slowed down by changes in temperature, pressure or chemical environment (1); random: it is impossible to predict when any particular nucleus will decay — each nucleus has the same probability of decaying in a given time period (1); this means we can only give a probability for a single nucleus, but for a large sample the overall decay rate is predictable (1)."
+  },
+  {
+    "id": "P4-SA-027",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Nuclear fission and fusion",
+    "question": "Describe how a chain reaction occurs during nuclear fission and explain why it must be controlled in a nuclear reactor.",
+    "mark_scheme": "A neutron is absorbed by a uranium-235 nucleus, causing it to become unstable and split into two smaller nuclei (1); fission releases 2–3 more neutrons which can each trigger further fission — the reaction can multiply rapidly (1); in a reactor, control rods absorb excess neutrons to keep the reaction at a steady, controlled rate — if uncontrolled, the chain reaction would grow exponentially, releasing too much energy too quickly (1)."
+  },
+  {
+    "id": "P4-SA-028",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Half-life",
+    "question": "Explain why a short half-life is preferred for radioactive tracers used in medical diagnosis, but a very short half-life would cause problems.",
+    "mark_scheme": "Short half-life reduces the total radiation dose received by the patient, minimising risk of radiation damage (1); but the half-life must be long enough that the tracer is still radioactive for the entire duration of the diagnostic procedure (1); if the half-life is too short, the tracer may decay before the scan is complete, giving insufficient signal (1)."
+  },
+  {
+    "id": "P4-SA-029",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Compare",
+    "topic": "Radioactivity",
+    "question": "Compare the dangers of alpha radiation from a source outside the body with alpha radiation from a source inside the body.",
+    "mark_scheme": "Outside the body: alpha particles are stopped by a few centimetres of air or by the skin — cannot penetrate to internal organs, so relatively safe from external sources (1); inside the body: if an alpha-emitting source is inhaled or ingested, it is directly adjacent to sensitive internal tissues (1); highly ionising alpha particles cause severe localised damage to DNA and cells — much more dangerous internally than externally (1)."
+  },
+  {
+    "id": "P4-SA-030",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Atomic Structure",
+    "question": "Explain what background radiation is and give three sources of it.",
+    "mark_scheme": "Background radiation is low-level ionising radiation that is always present in the environment from natural and artificial sources (1); sources (any three): cosmic rays from space (1); radon gas from rocks and soil, especially granite (1); radioactive materials in food and drink (1); medical sources such as X-rays (1); nuclear weapons testing fallout (1)."
+  },
+  {
+    "id": "P4-SA-031",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Nuclear decay",
+    "question": "Describe what happens to the proton number and mass number of a nucleus when it emits each of the three types of radiation: alpha, beta and gamma.",
+    "mark_scheme": "Alpha: mass number decreases by 4, proton number decreases by 2 (1); beta: mass number unchanged, proton number increases by 1 (1); gamma: mass number unchanged, proton number unchanged — a gamma ray is emitted without changing the nucleus composition (1)."
   }
 ]

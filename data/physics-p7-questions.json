@@ -870,5 +870,167 @@
     "topic": "Motor Effect",
     "question": "Explain how the motor effect is used in a moving-coil galvanometer (current-measuring instrument). Include how the deflection depends on current, the role of the radial magnetic field, the control spring, and explain how the instrument can be adapted to measure both voltage and larger currents.",
     "mark_scheme": "A coil of wire is suspended in the field of a permanent magnet; when current flows, F = BIL creates forces on opposite sides of the coil, causing it to rotate (motor effect) (1); radial magnetic field (curved pole pieces ensure field is always parallel to the coil sides): ensures the force is proportional to current for all angles of deflection — gives a linear scale (1); the control spring opposes the turning force; the coil rotates until the spring force equals the magnetic force — deflection proportional to current (1); the pointer attached to the coil indicates the current on a calibrated scale (1); to measure voltage (voltmeter): connect a high-value resistor (multiplier) in series — reduces current for given voltage; V = IR so deflection ∝ voltage (1); to measure larger currents (ammeter): connect a low-value resistor (shunt) in parallel — most current bypasses the coil; small fraction through coil still proportional to total current (1)."
+  },
+  {
+    "id": "P7-SA-013",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Magnetism",
+    "question": "State the three magnetic materials and describe what happens when a magnetic material is placed near a permanent magnet.",
+    "mark_scheme": "Iron, nickel, cobalt (any two for 1 mark) (1); the magnetic material becomes induced (magnetised) — attracted to the permanent magnet (1)."
+  },
+  {
+    "id": "P7-SA-014",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Give",
+    "topic": "Electromagnets",
+    "question": "Give three ways to increase the strength of an electromagnet.",
+    "mark_scheme": "Any three: increase the current in the coil (1); increase the number of turns in the coil (1); add an iron core (1); decrease the length of the coil (1) — any two for 2 marks."
+  },
+  {
+    "id": "P7-SA-015",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Motor effect",
+    "question": "Describe the motor effect. State what happens when a current-carrying conductor is placed in a magnetic field.",
+    "mark_scheme": "A current-carrying conductor in an external magnetic field experiences a force — this is the motor effect (1); the force is perpendicular to both the direction of current flow and the direction of the magnetic field (1)."
+  },
+  {
+    "id": "P7-SA-016",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Transformers",
+    "question": "State the equation relating the voltages and number of turns in a transformer.",
+    "mark_scheme": "Primary voltage / secondary voltage = primary turns / secondary turns (1); Vp/Vs = np/ns (1)."
+  },
+  {
+    "id": "P7-SA-017",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Name",
+    "topic": "Magnetism",
+    "question": "Name two types of magnet and state one difference between them.",
+    "mark_scheme": "Permanent magnet and electromagnet (or induced magnet) (1); permanent magnet maintains its magnetism without an external field; electromagnet only acts as a magnet when current flows (1)."
+  },
+  {
+    "id": "P7-SA-018",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Give",
+    "topic": "Motor effect",
+    "question": "Give the equation for the force on a current-carrying conductor in a magnetic field and state what each symbol represents.",
+    "mark_scheme": "F = BIl (1); F = force (N), B = magnetic flux density (T), I = current (A), l = length of conductor in the field (m) (1)."
+  },
+  {
+    "id": "P7-SA-019",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Electromagnets",
+    "question": "Describe how to determine the direction of the magnetic field around a straight current-carrying wire.",
+    "mark_scheme": "Use the right-hand rule: point the thumb of the right hand in the direction of conventional current (1); the fingers curl in the direction of the magnetic field lines — forming concentric circles around the wire (1)."
+  },
+  {
+    "id": "P7-SA-020",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Magnetism",
+    "question": "Explain the difference between a permanent magnet and an induced magnet. Give one application of each.",
+    "mark_scheme": "Permanent magnet: retains its magnetism without an external field — made of steel or special alloys (1); induced magnet: only becomes magnetised when in the presence of an external magnetic field — becomes demagnetised when removed; made of iron (1); permanent magnet: used in fridge magnets, loudspeaker, compass; induced magnet: used in electromagnets, magnetic cranes (1)."
+  },
+  {
+    "id": "P7-SA-021",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Electromagnets",
+    "question": "Describe how an electromagnet can be used to make a simple relay switch. Explain the advantage of using a relay.",
+    "mark_scheme": "An electromagnet is energised by a small current in a control circuit (1); the magnetic field attracts an iron armature, closing (or opening) a switch in a separate, higher-voltage circuit (1); advantage: a small, low-power signal can safely switch a high-power device — the control circuit is electrically isolated from the high-power circuit, providing safety (1)."
+  },
+  {
+    "id": "P7-SA-022",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Motor effect",
+    "question": "Explain how Fleming's left-hand rule is used to predict the direction of force on a current-carrying conductor in a magnetic field.",
+    "mark_scheme": "Hold the left hand with the thumb, index finger and middle finger mutually perpendicular (at right angles) (1); the index finger points in the direction of the magnetic field (from N to S) (1); the middle finger points in the direction of conventional current; the thumb then gives the direction of the force on the conductor (1)."
+  },
+  {
+    "id": "P7-SA-023",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Transformers",
+    "question": "Describe how a transformer works and explain why it can only work with AC, not DC.",
+    "mark_scheme": "A transformer has two coils of wire (primary and secondary) wound around a soft iron core (1); an alternating current in the primary coil creates a changing magnetic field in the iron core (1); this changing magnetic field induces an alternating voltage in the secondary coil; DC would create a constant magnetic field — no change means no induced voltage in the secondary coil (1)."
+  },
+  {
+    "id": "P7-SA-024",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Compare",
+    "topic": "Magnetism",
+    "question": "Compare the magnetic fields around a bar magnet and around a solenoid. Describe the shape of the field in each case.",
+    "mark_scheme": "Bar magnet: field lines go from north pole to south pole outside the magnet; lines are closest together at the poles where the field is strongest (1); solenoid: field lines inside are parallel and uniform — strong uniform field; outside, the field resembles that of a bar magnet with a north and south pole at each end (1); both have similar field patterns outside; the solenoid's field can be switched on/off and reversed by changing the current (1)."
+  },
+  {
+    "id": "P7-SA-025",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Motor effect",
+    "question": "Explain how a simple electric motor works. Describe the role of the split-ring commutator.",
+    "mark_scheme": "A current-carrying coil in a magnetic field experiences forces — the motor effect (1); one side of the coil is forced upward and the other downward, causing the coil to rotate (1); the split-ring commutator reverses the direction of the current through the coil every half turn, ensuring the forces always act in the same rotational direction — the coil spins continuously (1)."
+  },
+  {
+    "id": "P7-SA-026",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Transformers",
+    "question": "Describe how step-up and step-down transformers are used in the National Grid to reduce energy losses.",
+    "mark_scheme": "Power stations generate electricity at moderate voltage (e.g. 25 kV); step-up transformers increase this to very high voltage (e.g. 400 kV) for transmission (1); high voltage means lower current for the same power (P = IV) (1); lower current reduces energy wasted as heat in cables (P = I²R); step-down transformers reduce the voltage to safe levels (230 V) for homes (1)."
+  },
+  {
+    "id": "P7-SA-027",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Electromagnets",
+    "question": "Explain what induced potential (electromagnetic induction) is and state the conditions required for it to occur.",
+    "mark_scheme": "Induced potential (EMF) is a voltage generated in a conductor as a result of changes in a magnetic field (1); it occurs when there is a change in magnetic flux through a conductor — either the conductor moves in a magnetic field, or the magnetic field changes around a stationary conductor (1); the size of the induced EMF is greater if the conductor moves faster, the magnetic field is stronger, or more turns of wire are in the changing field (1)."
+  },
+  {
+    "id": "P7-SA-028",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Compare",
+    "topic": "Motor effect",
+    "question": "Compare the motor effect and electromagnetic induction as opposite processes.",
+    "mark_scheme": "Motor effect: electrical energy is converted to kinetic (mechanical) energy — a current in a magnetic field produces a force (1); electromagnetic induction: kinetic energy is converted to electrical energy — a conductor moving in a magnetic field has a voltage induced in it (1); both involve current-carrying conductors and magnetic fields; a motor uses the motor effect to spin; a generator uses electromagnetic induction to produce electricity (1)."
+  },
+  {
+    "id": "P7-SA-029",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Transformers",
+    "question": "Explain why an ideal (100% efficient) transformer obeys the equation Vp × Ip = Vs × Is, and state what this represents.",
+    "mark_scheme": "In an ideal transformer, no energy is lost — all power in the primary is transferred to the secondary (1); power = voltage × current, so primary power = Vp × Ip and secondary power = Vs × Is (1); since primary power = secondary power: Vp × Ip = Vs × Is — this is conservation of energy applied to the transformer (1)."
+  },
+  {
+    "id": "P7-SA-030",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Electromagnets",
+    "question": "Describe how the speed of movement of a magnet into a coil affects the induced EMF, and explain why this occurs.",
+    "mark_scheme": "Faster movement of the magnet into the coil produces a larger induced EMF (1); this is because EMF is proportional to the rate of change of magnetic flux — faster movement means a greater rate of change (1); a larger EMF drives a larger current if the circuit is closed; slower movement produces a smaller rate of change and smaller EMF (1)."
   }
 ]

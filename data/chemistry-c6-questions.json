@@ -102,7 +102,7 @@
     "type": "multiple_choice",
     "marks": 1,
     "topic": "Equilibrium",
-    "question": "What does the symbol \u21cc represent in a chemical equation?",
+    "question": "What does the symbol ⇌ represent in a chemical equation?",
     "options": [
       "An irreversible reaction",
       "A reversible reaction",
@@ -130,14 +130,14 @@
     "type": "multiple_choice",
     "marks": 1,
     "topic": "Equilibrium",
-    "question": "For the reaction N\u2082 + 3H\u2082 \u21cc 2NH\u2083 (forward reaction is exothermic), what happens to the yield of NH\u2083 if the temperature is increased?",
+    "question": "For the reaction N₂ + 3H₂ ⇌ 2NH₃ (forward reaction is exothermic), what happens to the yield of NH₃ if the temperature is increased?",
     "options": [
-      "Increases \u2014 more product formed",
-      "Decreases \u2014 equilibrium shifts to the left",
+      "Increases — more product formed",
+      "Decreases — equilibrium shifts to the left",
       "Stays the same",
       "The reaction stops"
     ],
-    "correct": "Decreases \u2014 equilibrium shifts to the left"
+    "correct": "Decreases — equilibrium shifts to the left"
   },
   {
     "id": "C6-MC-011",
@@ -172,14 +172,14 @@
     "type": "multiple_choice",
     "marks": 1,
     "topic": "Rate of Reaction",
-    "question": "24 cm\u00b3 of gas is produced in 60 seconds. What is the mean rate of reaction?",
+    "question": "24 cm³ of gas is produced in 60 seconds. What is the mean rate of reaction?",
     "options": [
-      "0.2 cm\u00b3/s",
-      "0.4 cm\u00b3/s",
-      "2.5 cm\u00b3/s",
-      "1440 cm\u00b3/s"
+      "0.2 cm³/s",
+      "0.4 cm³/s",
+      "2.5 cm³/s",
+      "1440 cm³/s"
     ],
-    "correct": "0.4 cm\u00b3/s"
+    "correct": "0.4 cm³/s"
   },
   {
     "id": "C6-MC-014",
@@ -214,7 +214,7 @@
     "type": "fill_in_blank",
     "marks": 1,
     "topic": "Rate of Reaction",
-    "question": "Mean rate of reaction = quantity of product formed \u00f7 __________.",
+    "question": "Mean rate of reaction = quantity of product formed ÷ __________.",
     "correct": "time",
     "acceptable": [
       "time",
@@ -226,7 +226,7 @@
     "type": "fill_in_blank",
     "marks": 1,
     "topic": "Rate of Reaction",
-    "question": "Reactions occur when particles collide with sufficient energy \u2014 this minimum energy is called the __________ energy.",
+    "question": "Reactions occur when particles collide with sufficient energy — this minimum energy is called the __________ energy.",
     "correct": "activation",
     "acceptable": [
       "activation"
@@ -333,15 +333,15 @@
     "pairs": [
       {
         "term": "Increasing temperature",
-        "definition": "Particles move faster \u2014 more frequent collisions with more energy"
+        "definition": "Particles move faster — more frequent collisions with more energy"
       },
       {
         "term": "Increasing concentration",
-        "definition": "More particles per unit volume \u2014 more frequent collisions"
+        "definition": "More particles per unit volume — more frequent collisions"
       },
       {
         "term": "Increasing surface area",
-        "definition": "More particles exposed \u2014 more frequent collisions"
+        "definition": "More particles exposed — more frequent collisions"
       },
       {
         "term": "Adding a catalyst",
@@ -354,19 +354,19 @@
     "type": "match",
     "marks": 3,
     "topic": "Equilibrium",
-    "question": "Match each change to how it affects the equilibrium position. (N\u2082 + 3H\u2082 \u21cc 2NH\u2083, forward reaction exothermic)",
+    "question": "Match each change to how it affects the equilibrium position. (N₂ + 3H₂ ⇌ 2NH₃, forward reaction exothermic)",
     "pairs": [
       {
         "term": "Increase temperature",
-        "definition": "Equilibrium shifts left \u2014 less NH\u2083 produced"
+        "definition": "Equilibrium shifts left — less NH₃ produced"
       },
       {
         "term": "Increase pressure",
-        "definition": "Equilibrium shifts right \u2014 more NH\u2083 produced (fewer moles of gas)"
+        "definition": "Equilibrium shifts right — more NH₃ produced (fewer moles of gas)"
       },
       {
-        "term": "Increase concentration of N\u2082",
-        "definition": "Equilibrium shifts right \u2014 more NH\u2083 produced"
+        "term": "Increase concentration of N₂",
+        "definition": "Equilibrium shifts right — more NH₃ produced"
       }
     ]
   },
@@ -379,7 +379,7 @@
     "pairs": [
       {
         "term": "Recording mass loss",
-        "definition": "Measures gas escaping \u2014 mass decreases over time"
+        "definition": "Measures gas escaping — mass decreases over time"
       },
       {
         "term": "Collecting gas in a syringe",
@@ -387,7 +387,7 @@
       },
       {
         "term": "Disappearing cross",
-        "definition": "Measures time for a precipitate to obscure a cross \u2014 faster reaction = shorter time"
+        "definition": "Measures time for a precipitate to obscure a cross — faster reaction = shorter time"
       }
     ]
   },
@@ -400,7 +400,7 @@
     "pairs": [
       {
         "term": "Reversible reaction",
-        "definition": "Products can react to reform reactants \u2014 shown by \u21cc"
+        "definition": "Products can react to reform reactants — shown by ⇌"
       },
       {
         "term": "Dynamic equilibrium",
@@ -412,7 +412,7 @@
       },
       {
         "term": "Closed system",
-        "definition": "No substances enter or leave \u2014 required for equilibrium"
+        "definition": "No substances enter or leave — required for equilibrium"
       }
     ]
   },
@@ -425,7 +425,7 @@
     "pairs": [
       {
         "term": "Steep initial gradient",
-        "definition": "Fast initial rate \u2014 high concentration of reactants"
+        "definition": "Fast initial rate — high concentration of reactants"
       },
       {
         "term": "Levelling off curve",
@@ -433,11 +433,11 @@
       },
       {
         "term": "Same final amount of product",
-        "definition": "Same amount of limiting reactant used \u2014 same total product"
+        "definition": "Same amount of limiting reactant used — same total product"
       },
       {
         "term": "Steeper curve",
-        "definition": "Faster rate \u2014 e.g. higher temperature or concentration"
+        "definition": "Faster rate — e.g. higher temperature or concentration"
       }
     ]
   },
@@ -448,7 +448,7 @@
     "command_word": "State",
     "topic": "Rate of Reaction",
     "question": "State the formula for calculating the mean rate of reaction.",
-    "mark_scheme": "Mean rate = quantity of reactant used (or product formed) \u00f7 time taken (1)."
+    "mark_scheme": "Mean rate = quantity of reactant used (or product formed) ÷ time taken (1)."
   },
   {
     "id": "C6-SA-002",
@@ -501,8 +501,8 @@
     "marks": 2,
     "command_word": "Calculate",
     "topic": "Rate of Reaction",
-    "question": "40 cm\u00b3 of gas is produced in 80 seconds. Calculate the mean rate of reaction.",
-    "mark_scheme": "Rate = 40 \u00f7 80 (1); = 0.5 cm\u00b3/s (1)."
+    "question": "40 cm³ of gas is produced in 80 seconds. Calculate the mean rate of reaction.",
+    "mark_scheme": "Rate = 40 ÷ 80 (1); = 0.5 cm³/s (1)."
   },
   {
     "id": "C6-SA-008",
@@ -529,7 +529,7 @@
     "command_word": "Describe",
     "topic": "Rate of Reaction",
     "question": "Describe how you could measure the rate of the reaction between marble chips and hydrochloric acid.",
-    "mark_scheme": "Any valid method: measure volume of CO\u2082 gas produced over time using a gas syringe (1); or measure loss in mass over time using a balance (1)."
+    "mark_scheme": "Any valid method: measure volume of CO₂ gas produced over time using a gas syringe (1); or measure loss in mass over time using a balance (1)."
   },
   {
     "id": "C6-SA-011",
@@ -537,8 +537,8 @@
     "marks": 2,
     "command_word": "Explain",
     "topic": "Equilibrium",
-    "question": "For the reaction N\u2082 + 3H\u2082 \u21cc 2NH\u2083, explain what happens to the yield of ammonia when pressure is increased.",
-    "mark_scheme": "There are 4 moles of gas on the left and 2 on the right (1); increasing pressure shifts equilibrium to the right (fewer moles of gas) \u2014 yield of ammonia increases (1)."
+    "question": "For the reaction N₂ + 3H₂ ⇌ 2NH₃, explain what happens to the yield of ammonia when pressure is increased.",
+    "mark_scheme": "There are 4 moles of gas on the left and 2 on the right (1); increasing pressure shifts equilibrium to the right (fewer moles of gas) — yield of ammonia increases (1)."
   },
   {
     "id": "C6-SA-012",
@@ -556,7 +556,7 @@
     "command_word": "Explain",
     "topic": "Rate of Reaction",
     "question": "Explain, using collision theory, how increasing the concentration of a reactant increases the rate of reaction.",
-    "mark_scheme": "Higher concentration means more particles per unit volume (1); particles collide more frequently (1); more collisions have energy \u2265 activation energy, so more successful collisions per second (1)."
+    "mark_scheme": "Higher concentration means more particles per unit volume (1); particles collide more frequently (1); more collisions have energy ≥ activation energy, so more successful collisions per second (1)."
   },
   {
     "id": "C6-SA-014",
@@ -573,8 +573,8 @@
     "marks": 3,
     "command_word": "Explain",
     "topic": "Equilibrium",
-    "question": "The reaction A + B \u21cc C + D is exothermic in the forward direction. Explain what happens to the equilibrium position if the temperature is decreased.",
-    "mark_scheme": "Decreasing temperature removes energy from the system (1); the equilibrium shifts to oppose this change \u2014 shifts to the right (exothermic direction) to release more heat (1); equilibrium position moves to the right \u2014 more C and D produced, higher yield (1)."
+    "question": "The reaction A + B ⇌ C + D is exothermic in the forward direction. Explain what happens to the equilibrium position if the temperature is decreased.",
+    "mark_scheme": "Decreasing temperature removes energy from the system (1); the equilibrium shifts to oppose this change — shifts to the right (exothermic direction) to release more heat (1); equilibrium position moves to the right — more C and D produced, higher yield (1)."
   },
   {
     "id": "C6-LA-001",
@@ -583,7 +583,7 @@
     "command_word": "Explain",
     "topic": "Factors Affecting Rate",
     "question": "Explain the effect of four different factors on the rate of a chemical reaction. Use collision theory in your answer.",
-    "mark_scheme": "Temperature: higher temperature \u2192 particles move faster \u2192 more frequent and more energetic collisions (1); concentration/pressure: more particles per unit volume \u2192 more frequent collisions (1); surface area: more particles exposed \u2192 more collisions (1); catalyst: lowers activation energy \u2192 more particles have sufficient energy to react (1)."
+    "mark_scheme": "Temperature: higher temperature → particles move faster → more frequent and more energetic collisions (1); concentration/pressure: more particles per unit volume → more frequent collisions (1); surface area: more particles exposed → more collisions (1); catalyst: lowers activation energy → more particles have sufficient energy to react (1)."
   },
   {
     "id": "C6-LA-002",
@@ -592,7 +592,7 @@
     "command_word": "Describe",
     "topic": "Rate of Reaction",
     "question": "Describe an experiment to investigate how changing the concentration of hydrochloric acid affects the rate of its reaction with marble chips. Include variables, measurements, and how to present the data.",
-    "mark_scheme": "Independent variable: concentration of HCl; dependent variable: rate of reaction (measured by gas volume or mass loss) (1); control variables: mass and size of marble chips, temperature, volume of acid (1); measure gas volume at regular time intervals and plot volume vs time (1); compare initial gradients of graphs for different concentrations \u2014 steeper gradient = faster rate (1)."
+    "mark_scheme": "Independent variable: concentration of HCl; dependent variable: rate of reaction (measured by gas volume or mass loss) (1); control variables: mass and size of marble chips, temperature, volume of acid (1); measure gas volume at regular time intervals and plot volume vs time (1); compare initial gradients of graphs for different concentrations — steeper gradient = faster rate (1)."
   },
   {
     "id": "C6-LA-003",
@@ -601,7 +601,7 @@
     "command_word": "Explain",
     "topic": "Equilibrium",
     "question": "Explain the concept of dynamic equilibrium and describe how Le Chatelier's principle can be used to predict the effect of changing conditions.",
-    "mark_scheme": "Dynamic equilibrium: in a closed system, forward and reverse reactions occur at equal rates \u2014 concentrations remain constant (1); Le Chatelier: any change to equilibrium is opposed by a shift (1); increase concentration of reactant \u2192 shifts right to reduce it (1); increase temperature for exothermic reaction \u2192 shifts left to absorb heat (1)."
+    "mark_scheme": "Dynamic equilibrium: in a closed system, forward and reverse reactions occur at equal rates — concentrations remain constant (1); Le Chatelier: any change to equilibrium is opposed by a shift (1); increase concentration of reactant → shifts right to reduce it (1); increase temperature for exothermic reaction → shifts left to absorb heat (1)."
   },
   {
     "id": "C6-LA-004",
@@ -610,7 +610,7 @@
     "command_word": "Evaluate",
     "topic": "Factors Affecting Rate",
     "question": "Evaluate the use of catalysts in industrial chemical processes. Include the benefits, the economic importance, and any limitations.",
-    "mark_scheme": "Catalysts speed up reactions without being used up \u2014 remain available for repeated use (1); allows lower temperatures to be used \u2014 saves energy costs (1); increases rate without changing equilibrium position (1); limitation: catalysts can be poisoned by impurities / specific to one reaction (1)."
+    "mark_scheme": "Catalysts speed up reactions without being used up — remain available for repeated use (1); allows lower temperatures to be used — saves energy costs (1); increases rate without changing equilibrium position (1); limitation: catalysts can be poisoned by impurities / specific to one reaction (1)."
   },
   {
     "id": "C6-LA-005",
@@ -618,8 +618,8 @@
     "marks": 5,
     "command_word": "Explain",
     "topic": "Equilibrium",
-    "question": "The Haber process produces ammonia: N\u2082 + 3H\u2082 \u21cc 2NH\u2083 (forward reaction exothermic).\nExplain how changing temperature and pressure affects the yield of ammonia. State the conditions actually used in industry and explain why these are a compromise.",
-    "mark_scheme": "Increasing pressure shifts equilibrium right (4 moles gas \u2192 2) \u2014 increases yield of NH\u2083 (1); decreasing temperature shifts equilibrium right (exothermic) \u2014 increases yield (1); but lower temperature = slower rate (1); industry uses ~200 atm and 450\u00b0C as a compromise between yield and rate (1); catalyst (iron) also used to increase rate without affecting equilibrium (1)."
+    "question": "The Haber process produces ammonia: N₂ + 3H₂ ⇌ 2NH₃ (forward reaction exothermic).\nExplain how changing temperature and pressure affects the yield of ammonia. State the conditions actually used in industry and explain why these are a compromise.",
+    "mark_scheme": "Increasing pressure shifts equilibrium right (4 moles gas → 2) — increases yield of NH₃ (1); decreasing temperature shifts equilibrium right (exothermic) — increases yield (1); but lower temperature = slower rate (1); industry uses ~200 atm and 450°C as a compromise between yield and rate (1); catalyst (iron) also used to increase rate without affecting equilibrium (1)."
   },
   {
     "id": "C6-LA-006",
@@ -627,8 +627,8 @@
     "marks": 6,
     "command_word": "Evaluate",
     "topic": "Rate of Reaction",
-    "question": "A student investigates the reaction between marble chips and hydrochloric acid at different temperatures. Sketch and describe the shape of the volume-time graphs for reactions at 20\u00b0C and 40\u00b0C. Explain the differences using collision theory, and state what would be the same about both graphs and why.",
-    "mark_scheme": "Both graphs curve upward then level off (1); 40\u00b0C graph has a steeper initial gradient \u2014 faster rate (1); 40\u00b0C levels off sooner \u2014 reaction complete in less time (1); higher temperature \u2192 particles have more kinetic energy \u2192 more frequent collisions with energy \u2265 activation energy (1); both graphs reach the same final volume of gas (1); same amount of limiting reactant used \u2014 same total product regardless of temperature (1)."
+    "question": "A student investigates the reaction between marble chips and hydrochloric acid at different temperatures. Sketch and describe the shape of the volume-time graphs for reactions at 20°C and 40°C. Explain the differences using collision theory, and state what would be the same about both graphs and why.",
+    "mark_scheme": "Both graphs curve upward then level off (1); 40°C graph has a steeper initial gradient — faster rate (1); 40°C levels off sooner — reaction complete in less time (1); higher temperature → particles have more kinetic energy → more frequent collisions with energy ≥ activation energy (1); both graphs reach the same final volume of gas (1); same amount of limiting reactant used — same total product regardless of temperature (1)."
   },
   {
     "id": "C6-LA-007",
@@ -637,7 +637,7 @@
     "command_word": "Evaluate",
     "topic": "Equilibrium",
     "question": "Evaluate the conditions used in the Haber process for making ammonia. Consider the effects of temperature, pressure, and catalyst on both the rate of reaction and the equilibrium yield. Justify the conditions chosen.",
-    "mark_scheme": "High pressure increases yield (equilibrium shifts right) and increases rate \u2014 but high pressure is expensive and dangerous to maintain (1); compromise pressure of around 200 atm chosen (1); low temperature increases yield (exothermic forward reaction) but slows rate significantly (1); high temperature increases rate but decreases yield (1); compromise temperature of ~450\u00b0C used \u2014 acceptable rate and reasonable yield (1); iron catalyst used to increase rate without affecting equilibrium position \u2014 allows lower temperature to be viable (1)."
+    "mark_scheme": "High pressure increases yield (equilibrium shifts right) and increases rate — but high pressure is expensive and dangerous to maintain (1); compromise pressure of around 200 atm chosen (1); low temperature increases yield (exothermic forward reaction) but slows rate significantly (1); high temperature increases rate but decreases yield (1); compromise temperature of ~450°C used — acceptable rate and reasonable yield (1); iron catalyst used to increase rate without affecting equilibrium position — allows lower temperature to be viable (1)."
   },
   {
     "id": "C6-LA-005",
@@ -646,7 +646,7 @@
     "command_word": "Explain",
     "topic": "Rate of Reaction",
     "question": "Explain how increasing temperature increases the rate of a chemical reaction. Include reference to collision theory and activation energy.",
-    "mark_scheme": "Increasing temperature gives particles more kinetic energy (1); particles move faster \u2014 more frequent collisions (1); more collisions have energy \u2265 activation energy (1); therefore more successful collisions per second \u2014 faster rate (1)."
+    "mark_scheme": "Increasing temperature gives particles more kinetic energy (1); particles move faster — more frequent collisions (1); more collisions have energy ≥ activation energy (1); therefore more successful collisions per second — faster rate (1)."
   },
   {
     "id": "C6-LA-006",
@@ -655,7 +655,7 @@
     "command_word": "Describe",
     "topic": "Factors Affecting Rate",
     "question": "Describe an experiment to investigate the effect of surface area on the rate of reaction between marble chips and hydrochloric acid. Include what you would measure and the variables.",
-    "mark_scheme": "Use large chips, small chips, and powdered marble \u2014 same total mass (1); add to same volume and concentration of HCl (1); measure volume of CO\u2082 produced per minute (or time for reaction to complete) (1); control variables: mass of marble, concentration and volume of acid, temperature (1)."
+    "mark_scheme": "Use large chips, small chips, and powdered marble — same total mass (1); add to same volume and concentration of HCl (1); measure volume of CO₂ produced per minute (or time for reaction to complete) (1); control variables: mass of marble, concentration and volume of acid, temperature (1)."
   },
   {
     "id": "C6-LA-007",
@@ -664,7 +664,7 @@
     "command_word": "Explain",
     "topic": "Factors Affecting Rate",
     "question": "Explain how a catalyst increases the rate of a chemical reaction without being used up.",
-    "mark_scheme": "Catalyst provides an alternative reaction pathway with lower activation energy (1); more reactant particles have energy \u2265 new lower activation energy (1); more successful collisions per second \u2014 faster rate (1); catalyst not consumed \u2014 can be reused; same \u0394H for reaction (1)."
+    "mark_scheme": "Catalyst provides an alternative reaction pathway with lower activation energy (1); more reactant particles have energy ≥ new lower activation energy (1); more successful collisions per second — faster rate (1); catalyst not consumed — can be reused; same ΔH for reaction (1)."
   },
   {
     "id": "C6-LA-008",
@@ -673,7 +673,7 @@
     "command_word": "Explain",
     "topic": "Equilibrium",
     "question": "Explain what is meant by a dynamic equilibrium. Include the conditions needed to establish it and what happens to the rates of forward and reverse reactions at equilibrium.",
-    "mark_scheme": "Dynamic equilibrium: reached in a closed system when the forward and reverse reactions occur at the same rate (1); concentrations of reactants and products remain constant (1); both reactions still occurring \u2014 hence 'dynamic' (1); rate of forward reaction = rate of reverse reaction at equilibrium (1)."
+    "mark_scheme": "Dynamic equilibrium: reached in a closed system when the forward and reverse reactions occur at the same rate (1); concentrations of reactants and products remain constant (1); both reactions still occurring — hence 'dynamic' (1); rate of forward reaction = rate of reverse reaction at equilibrium (1)."
   },
   {
     "id": "C6-LA-009",
@@ -681,8 +681,8 @@
     "marks": 4,
     "command_word": "Evaluate",
     "topic": "Equilibrium",
-    "question": "Use Le Chatelier's principle to predict the effect of increasing pressure on the equilibrium: N\u2082 + 3H\u2082 \u21cc 2NH\u2083. Explain why the industrial Haber process does not use an even higher pressure.",
-    "mark_scheme": "Increasing pressure: equilibrium shifts to side with fewer moles of gas \u2014 right side (2 mol vs 4 mol) (1); yield of ammonia increases (1); higher pressure increases yield but: very high pressure is expensive to maintain \u2014 requires thicker pipes and more energy (1); 200 atm is a compromise between yield and cost (1)."
+    "question": "Use Le Chatelier's principle to predict the effect of increasing pressure on the equilibrium: N₂ + 3H₂ ⇌ 2NH₃. Explain why the industrial Haber process does not use an even higher pressure.",
+    "mark_scheme": "Increasing pressure: equilibrium shifts to side with fewer moles of gas — right side (2 mol vs 4 mol) (1); yield of ammonia increases (1); higher pressure increases yield but: very high pressure is expensive to maintain — requires thicker pipes and more energy (1); 200 atm is a compromise between yield and cost (1)."
   },
   {
     "id": "C6-LA-010",
@@ -691,7 +691,7 @@
     "command_word": "Describe",
     "topic": "Rate of Reaction",
     "question": "Describe two methods for measuring the rate of a reaction. Include how each method works and give an example reaction for each.",
-    "mark_scheme": "Gas collection: collect gas in syringe, measure volume over time \u2014 e.g. Mg + HCl \u2192 MgCl\u2082 + H\u2082 (1); colorimetry: measure colour change over time using a colorimeter \u2014 e.g. reaction between phenolphthalein and NaOH (1); mass loss: place flask on balance, record mass decrease as gas escapes \u2014 e.g. CaCO\u2083 + HCl \u2192 CO\u2082 (1); precipitation: measure time until solution goes cloudy (cross disappears) \u2014 e.g. sodium thiosulfate + HCl (1). Award 4 marks for any two methods fully described."
+    "mark_scheme": "Gas collection: collect gas in syringe, measure volume over time — e.g. Mg + HCl → MgCl₂ + H₂ (1); colorimetry: measure colour change over time using a colorimeter — e.g. reaction between phenolphthalein and NaOH (1); mass loss: place flask on balance, record mass decrease as gas escapes — e.g. CaCO₃ + HCl → CO₂ (1); precipitation: measure time until solution goes cloudy (cross disappears) — e.g. sodium thiosulfate + HCl (1). Award 4 marks for any two methods fully described."
   },
   {
     "id": "C6-LA-011",
@@ -700,7 +700,7 @@
     "command_word": "Explain",
     "topic": "Factors Affecting Rate",
     "question": "Explain how concentration affects the rate of a reaction. Include reference to collision theory.",
-    "mark_scheme": "Increasing concentration: more particles of reactant per unit volume (1); more frequent collisions between reactant particles (1); more collisions with energy \u2265 activation energy (1); rate of reaction increases \u2014 faster rate of product formation (1)."
+    "mark_scheme": "Increasing concentration: more particles of reactant per unit volume (1); more frequent collisions between reactant particles (1); more collisions with energy ≥ activation energy (1); rate of reaction increases — faster rate of product formation (1)."
   },
   {
     "id": "C6-LA-012",
@@ -709,7 +709,7 @@
     "command_word": "Explain",
     "topic": "Equilibrium",
     "question": "Explain the effect of temperature on the position of equilibrium for an exothermic reaction. Include what happens to yield as temperature is increased.",
-    "mark_scheme": "For exothermic reaction: forward reaction releases heat (1); increasing temperature provides more energy \u2014 system responds to absorb excess heat (1); equilibrium shifts in the endothermic direction \u2014 reverse reaction favoured (1); yield of product decreases as temperature increases (1)."
+    "mark_scheme": "For exothermic reaction: forward reaction releases heat (1); increasing temperature provides more energy — system responds to absorb excess heat (1); equilibrium shifts in the endothermic direction — reverse reaction favoured (1); yield of product decreases as temperature increases (1)."
   },
   {
     "id": "C6-LA-013",
@@ -718,7 +718,7 @@
     "command_word": "Evaluate",
     "topic": "Rate of Reaction",
     "question": "Evaluate the use of enzymes as biological catalysts. Include the advantages over industrial catalysts and the conditions required.",
-    "mark_scheme": "Enzymes work at lower temperatures (e.g. 37\u00b0C) \u2014 lower energy costs than industrial catalysts (1); highly specific \u2014 only catalyse one reaction; reduces unwanted side reactions (1); used in industry: cheese making, brewing, washing powders (1); disadvantage: sensitive to pH and temperature \u2014 denature above optimum; must be kept in narrow conditions (1)."
+    "mark_scheme": "Enzymes work at lower temperatures (e.g. 37°C) — lower energy costs than industrial catalysts (1); highly specific — only catalyse one reaction; reduces unwanted side reactions (1); used in industry: cheese making, brewing, washing powders (1); disadvantage: sensitive to pH and temperature — denature above optimum; must be kept in narrow conditions (1)."
   },
   {
     "id": "C6-LA-014",
@@ -727,7 +727,7 @@
     "command_word": "Describe",
     "topic": "Factors Affecting Rate",
     "question": "Describe the effect of light intensity on the rate of a photochemical reaction. Give one example.",
-    "mark_scheme": "Photochemical reactions are initiated by light \u2014 photons provide activation energy (1); increasing light intensity increases rate \u2014 more photons available per second (1); example: photography \u2014 silver bromide decomposes in light: 2AgBr \u2192 2Ag + Br\u2082 (1); or: photosynthesis \u2014 rate increases with light intensity up to a limiting factor (1)."
+    "mark_scheme": "Photochemical reactions are initiated by light — photons provide activation energy (1); increasing light intensity increases rate — more photons available per second (1); example: photography — silver bromide decomposes in light: 2AgBr → 2Ag + Br₂ (1); or: photosynthesis — rate increases with light intensity up to a limiting factor (1)."
   },
   {
     "id": "C6-LA-015",
@@ -736,7 +736,7 @@
     "command_word": "Explain",
     "topic": "Equilibrium",
     "question": "Explain why adding a catalyst does not change the position of equilibrium or the yield of product.",
-    "mark_scheme": "A catalyst lowers the activation energy equally for both forward and reverse reactions (1); both reactions speed up by the same factor (1); equilibrium is reached more quickly but at the same position (1); yield of product is unchanged \u2014 catalyst only affects the rate, not the thermodynamics (1)."
+    "mark_scheme": "A catalyst lowers the activation energy equally for both forward and reverse reactions (1); both reactions speed up by the same factor (1); equilibrium is reached more quickly but at the same position (1); yield of product is unchanged — catalyst only affects the rate, not the thermodynamics (1)."
   },
   {
     "id": "C6-LA-016",
@@ -745,7 +745,7 @@
     "command_word": "Explain",
     "topic": "Rate of Reaction",
     "question": "Explain what a Maxwell-Boltzmann distribution shows. Include how it changes with temperature and what this means for reaction rate.",
-    "mark_scheme": "Maxwell-Boltzmann distribution shows the distribution of energies of particles in a gas at a given temperature (1); x-axis: kinetic energy; y-axis: number of particles with that energy (1); bell-shaped curve \u2014 most particles have intermediate energy; no particles have zero energy (1); increasing temperature: curve shifts right, peak lowers \u2014 more particles have higher energy (1); more particles exceed activation energy threshold \u2014 faster rate (1)."
+    "mark_scheme": "Maxwell-Boltzmann distribution shows the distribution of energies of particles in a gas at a given temperature (1); x-axis: kinetic energy; y-axis: number of particles with that energy (1); bell-shaped curve — most particles have intermediate energy; no particles have zero energy (1); increasing temperature: curve shifts right, peak lowers — more particles have higher energy (1); more particles exceed activation energy threshold — faster rate (1)."
   },
   {
     "id": "C6-LA-017",
@@ -753,8 +753,8 @@
     "marks": 5,
     "command_word": "Evaluate",
     "topic": "Equilibrium",
-    "question": "Evaluate the conditions used in the Haber process (450\u00b0C, 200 atm, iron catalyst). Explain the compromises made between yield and rate.",
-    "mark_scheme": "Temperature: lower temperature increases yield (exothermic reaction \u2014 Le Chatelier) but decreases rate (1); 450\u00b0C chosen: reasonable rate and acceptable yield (~15%) (1); pressure: higher pressure increases yield (fewer gas moles on right) but expensive and dangerous above 200 atm (1); catalyst (iron): increases rate without affecting equilibrium position \u2014 allows lower temperature (1); unreacted N\u2082 and H\u2082 recycled \u2014 overall conversion approaches 98% (1)."
+    "question": "Evaluate the conditions used in the Haber process (450°C, 200 atm, iron catalyst). Explain the compromises made between yield and rate.",
+    "mark_scheme": "Temperature: lower temperature increases yield (exothermic reaction — Le Chatelier) but decreases rate (1); 450°C chosen: reasonable rate and acceptable yield (~15%) (1); pressure: higher pressure increases yield (fewer gas moles on right) but expensive and dangerous above 200 atm (1); catalyst (iron): increases rate without affecting equilibrium position — allows lower temperature (1); unreacted N₂ and H₂ recycled — overall conversion approaches 98% (1)."
   },
   {
     "id": "C6-LA-018",
@@ -763,7 +763,7 @@
     "command_word": "Describe",
     "topic": "Rate of Reaction",
     "question": "Describe and explain the effect of surface area on reaction rate using the example of calcium carbonate and hydrochloric acid. Include a sketch of the rate curve you would expect.",
-    "mark_scheme": "Smaller particle size (larger surface area) \u2014 more surface exposed to acid (1); more frequent collisions between reactant particles (1); faster initial rate \u2014 steeper gradient on volume vs time graph (1); same total volume of CO\u2082 produced \u2014 same amount of CaCO\u2083 (1); graph: powder rises steeply and flattens quickly; large chips rises slowly over longer time; both reach same final volume (1)."
+    "mark_scheme": "Smaller particle size (larger surface area) — more surface exposed to acid (1); more frequent collisions between reactant particles (1); faster initial rate — steeper gradient on volume vs time graph (1); same total volume of CO₂ produced — same amount of CaCO₃ (1); graph: powder rises steeply and flattens quickly; large chips rises slowly over longer time; both reach same final volume (1)."
   },
   {
     "id": "C6-LA-019",
@@ -772,7 +772,7 @@
     "command_word": "Explain",
     "topic": "Factors Affecting Rate",
     "question": "Explain how heterogeneous catalysts work in industrial processes. Include the term 'active sites' and give two industrial examples.",
-    "mark_scheme": "Heterogeneous catalyst: different phase from reactants \u2014 usually solid catalyst with gas/liquid reactants (1); reactants adsorb onto active sites on catalyst surface (1); bonds in reactants weakened \u2014 reaction occurs more easily (1); products desorb from surface \u2014 catalyst regenerated (1); examples: iron catalyst in Haber process (N\u2082 + H\u2082 \u2192 NH\u2083); platinum in catalytic converters (CO + NO \u2192 CO\u2082 + N\u2082) (1)."
+    "mark_scheme": "Heterogeneous catalyst: different phase from reactants — usually solid catalyst with gas/liquid reactants (1); reactants adsorb onto active sites on catalyst surface (1); bonds in reactants weakened — reaction occurs more easily (1); products desorb from surface — catalyst regenerated (1); examples: iron catalyst in Haber process (N₂ + H₂ → NH₃); platinum in catalytic converters (CO + NO → CO₂ + N₂) (1)."
   },
   {
     "id": "C6-LA-020",
@@ -780,8 +780,8 @@
     "marks": 5,
     "command_word": "Evaluate",
     "topic": "Equilibrium",
-    "question": "Evaluate the effect of changing concentration on a system at equilibrium. Use the equilibrium: H\u2082(g) + I\u2082(g) \u21cc 2HI(g) as an example.",
-    "mark_scheme": "Equilibrium: H\u2082 + I\u2082 \u21cc 2HI \u2014 equal moles on both sides, so pressure has no effect (1); add more H\u2082: equilibrium shifts right \u2014 more HI produced, I\u2082 consumed (1); add more HI: equilibrium shifts left \u2014 more H\u2082 and I\u2082 produced (1); Le Chatelier: system opposes the change \u2014 shifts to counteract the increase in concentration (1); final concentrations all change but equilibrium constant Kc remains the same at constant temperature (1)."
+    "question": "Evaluate the effect of changing concentration on a system at equilibrium. Use the equilibrium: H₂(g) + I₂(g) ⇌ 2HI(g) as an example.",
+    "mark_scheme": "Equilibrium: H₂ + I₂ ⇌ 2HI — equal moles on both sides, so pressure has no effect (1); add more H₂: equilibrium shifts right — more HI produced, I₂ consumed (1); add more HI: equilibrium shifts left — more H₂ and I₂ produced (1); Le Chatelier: system opposes the change — shifts to counteract the increase in concentration (1); final concentrations all change but equilibrium constant Kc remains the same at constant temperature (1)."
   },
   {
     "id": "C6-LA-021",
@@ -790,7 +790,7 @@
     "command_word": "Describe",
     "topic": "Factors Affecting Rate",
     "question": "Describe how the concentration of a reactant affects the rate of reaction. Include how you would investigate this experimentally using the iodine clock reaction.",
-    "mark_scheme": "Higher concentration: more particles per unit volume \u2014 more frequent collisions \u2014 faster rate (1); iodine clock: react H\u2082O\u2082 with I\u207b (with thiosulfate and starch) \u2014 time until blue-black colour appears (1); vary concentration of one reactant while keeping others constant (1); shorter time to colour change = faster rate at higher concentration (1); plot rate (1/time) vs concentration \u2014 should show linear relationship (1)."
+    "mark_scheme": "Higher concentration: more particles per unit volume — more frequent collisions — faster rate (1); iodine clock: react H₂O₂ with I⁻ (with thiosulfate and starch) — time until blue-black colour appears (1); vary concentration of one reactant while keeping others constant (1); shorter time to colour change = faster rate at higher concentration (1); plot rate (1/time) vs concentration — should show linear relationship (1)."
   },
   {
     "id": "C6-LA-022",
@@ -799,7 +799,7 @@
     "command_word": "Evaluate",
     "topic": "Rate of Reaction",
     "question": "Evaluate the role of catalysts in sustainable industrial chemistry. Include homogeneous and heterogeneous catalysts and their environmental benefits.",
-    "mark_scheme": "Catalysts increase rate at lower temperature \u2014 reduces energy consumption (1); lower activation energy means less fuel burned \u2014 fewer CO\u2082 emissions (1); heterogeneous: solid catalyst in gas/liquid reaction \u2014 easier to separate from products; e.g. platinum in car catalytic converters (1); homogeneous: same phase as reactants \u2014 thorough mixing, high surface area; e.g. enzymes in fermentation (1); catalysts reduce waste by increasing selectivity \u2014 fewer unwanted by-products (1)."
+    "mark_scheme": "Catalysts increase rate at lower temperature — reduces energy consumption (1); lower activation energy means less fuel burned — fewer CO₂ emissions (1); heterogeneous: solid catalyst in gas/liquid reaction — easier to separate from products; e.g. platinum in car catalytic converters (1); homogeneous: same phase as reactants — thorough mixing, high surface area; e.g. enzymes in fermentation (1); catalysts reduce waste by increasing selectivity — fewer unwanted by-products (1)."
   },
   {
     "id": "C6-LA-023",
@@ -807,8 +807,8 @@
     "marks": 5,
     "command_word": "Explain",
     "topic": "Equilibrium",
-    "question": "Explain Kc (the equilibrium constant) for the reaction A + B \u21cc C + D. Explain what a high Kc means and how temperature affects Kc.",
-    "mark_scheme": "Kc = [C][D] \u00f7 [A][B] at equilibrium \u2014 concentrations in mol/dm\u00b3 (1); square brackets mean concentration at equilibrium (1); high Kc: equilibrium lies to the right \u2014 products favoured at equilibrium (1); Kc < 1: reactants favoured (1); temperature change alters Kc \u2014 for exothermic reaction, increasing temperature decreases Kc (shifts to reactants) (1)."
+    "question": "Explain Kc (the equilibrium constant) for the reaction A + B ⇌ C + D. Explain what a high Kc means and how temperature affects Kc.",
+    "mark_scheme": "Kc = [C][D] ÷ [A][B] at equilibrium — concentrations in mol/dm³ (1); square brackets mean concentration at equilibrium (1); high Kc: equilibrium lies to the right — products favoured at equilibrium (1); Kc < 1: reactants favoured (1); temperature change alters Kc — for exothermic reaction, increasing temperature decreases Kc (shifts to reactants) (1)."
   },
   {
     "id": "C6-LA-024",
@@ -816,8 +816,8 @@
     "marks": 5,
     "command_word": "Describe",
     "topic": "Rate of Reaction",
-    "question": "Describe what a rate\u2013concentration graph shows for a first-order reaction. Explain how the initial rate method can be used to determine the order of a reaction.",
-    "mark_scheme": "First-order: rate proportional to concentration \u2014 straight line through origin on rate vs [reactant] graph (1); initial rate method: measure initial rate at different starting concentrations (1); double concentration \u2192 double rate: first order (1); double concentration \u2192 quadruple rate: second order (1); zero order: rate unchanged when concentration changes \u2014 horizontal line (1)."
+    "question": "Describe what a rate–concentration graph shows for a first-order reaction. Explain how the initial rate method can be used to determine the order of a reaction.",
+    "mark_scheme": "First-order: rate proportional to concentration — straight line through origin on rate vs [reactant] graph (1); initial rate method: measure initial rate at different starting concentrations (1); double concentration → double rate: first order (1); double concentration → quadruple rate: second order (1); zero order: rate unchanged when concentration changes — horizontal line (1)."
   },
   {
     "id": "C6-LA-025",
@@ -826,7 +826,7 @@
     "command_word": "Explain",
     "topic": "Equilibrium",
     "question": "Explain how the Contact Process produces sulfuric acid. Include all stages, conditions, and how Le Chatelier's principle is applied to optimise yield.",
-    "mark_scheme": "Stage 1: burn sulfur in air: S + O\u2082 \u2192 SO\u2082 (1); Stage 2: oxidise SO\u2082 to SO\u2083: 2SO\u2082 + O\u2082 \u21cc 2SO\u2083 \u2014 using V\u2082O\u2085 catalyst at 450\u00b0C, 2 atm (1); this step is reversible \u2014 equilibrium; exothermic so lower temperature increases yield but reduces rate \u2014 450\u00b0C is a compromise (1); higher pressure increases yield (fewer moles on right) but expensive \u2014 2 atm used (1); Stage 3: absorb SO\u2083 in concentrated H\u2082SO\u2084 to form oleum: SO\u2083 + H\u2082SO\u2084 \u2192 H\u2082S\u2082O\u2087, then dilute to form H\u2082SO\u2084 (1); cannot absorb directly in water \u2014 produces acid mist (1)."
+    "mark_scheme": "Stage 1: burn sulfur in air: S + O₂ → SO₂ (1); Stage 2: oxidise SO₂ to SO₃: 2SO₂ + O₂ ⇌ 2SO₃ — using V₂O₅ catalyst at 450°C, 2 atm (1); this step is reversible — equilibrium; exothermic so lower temperature increases yield but reduces rate — 450°C is a compromise (1); higher pressure increases yield (fewer moles on right) but expensive — 2 atm used (1); Stage 3: absorb SO₃ in concentrated H₂SO₄ to form oleum: SO₃ + H₂SO₄ → H₂S₂O₇, then dilute to form H₂SO₄ (1); cannot absorb directly in water — produces acid mist (1)."
   },
   {
     "id": "C6-LA-026",
@@ -835,7 +835,7 @@
     "command_word": "Evaluate",
     "topic": "Factors Affecting Rate",
     "question": "Evaluate the use of surface area, temperature, and catalysts in industrial chemistry to improve rates of reaction. Include practical examples and consider trade-offs between cost and efficiency.",
-    "mark_scheme": "Surface area: powdered reactants react faster \u2014 iron in Haber process used as fine powder on a support (1); cost: grinding increases processing costs; finer powders may cause pressure drops in reactors (1); temperature: faster rate at higher T \u2014 but for reversible exothermic reactions, higher T reduces yield (1); compromise temperatures used e.g. 450\u00b0C in Haber and Contact processes (1); catalysts: lower activation energy \u2014 same rate at lower temperature; saves energy costs (1); catalyst cost and lifetime must be considered \u2014 poisoning by impurities reduces effectiveness; support materials increase surface area (1)."
+    "mark_scheme": "Surface area: powdered reactants react faster — iron in Haber process used as fine powder on a support (1); cost: grinding increases processing costs; finer powders may cause pressure drops in reactors (1); temperature: faster rate at higher T — but for reversible exothermic reactions, higher T reduces yield (1); compromise temperatures used e.g. 450°C in Haber and Contact processes (1); catalysts: lower activation energy — same rate at lower temperature; saves energy costs (1); catalyst cost and lifetime must be considered — poisoning by impurities reduces effectiveness; support materials increase surface area (1)."
   },
   {
     "id": "C6-LA-027",
@@ -844,7 +844,7 @@
     "command_word": "Describe",
     "topic": "Rate of Reaction",
     "question": "Describe how you would use the sodium thiosulfate and hydrochloric acid reaction to investigate the effect of temperature on reaction rate. Include the method, measurements, and how to calculate rate from your results.",
-    "mark_scheme": "Place a cross on paper under conical flask; add Na\u2082S\u2082O\u2083 solution and HCl (1); start timer; observe from above \u2014 time until cross disappears (sulfur precipitate obscures it) (1); repeat at different temperatures: heat or cool solutions before mixing (1); control variables: volume and concentration of both solutions, size of cross (1); rate = 1/time \u2014 faster reaction gives larger rate value (1); plot rate vs temperature \u2014 should show exponential increase (approximately doubles every 10\u00b0C) (1)."
+    "mark_scheme": "Place a cross on paper under conical flask; add Na₂S₂O₃ solution and HCl (1); start timer; observe from above — time until cross disappears (sulfur precipitate obscures it) (1); repeat at different temperatures: heat or cool solutions before mixing (1); control variables: volume and concentration of both solutions, size of cross (1); rate = 1/time — faster reaction gives larger rate value (1); plot rate vs temperature — should show exponential increase (approximately doubles every 10°C) (1)."
   },
   {
     "id": "C6-LA-028",
@@ -853,7 +853,7 @@
     "command_word": "Explain",
     "topic": "Equilibrium",
     "question": "Explain the industrial and commercial importance of controlling equilibrium conditions. Use the Haber process and the Contact process as examples and discuss economic and environmental considerations.",
-    "mark_scheme": "Haber: N\u2082 + 3H\u2082 \u21cc 2NH\u2083; ammonia used for fertilisers \u2014 feeds billions of people (1); 450\u00b0C and 200 atm chosen as cost-effective compromise between rate and yield (1); iron catalyst reduces energy needed \u2014 more sustainable (1); Contact: SO\u2083 for sulfuric acid \u2014 essential industrial chemical for fertilisers, cleaning agents, batteries (1); 450\u00b0C and V\u2082O\u2085 catalyst \u2014 ~99.5% conversion achieved with recycling (1); environmental: both produce waste streams; sulfuric acid plants must capture SO\u2082 emissions; Haber process accounts for ~1-2% of world energy use (1)."
+    "mark_scheme": "Haber: N₂ + 3H₂ ⇌ 2NH₃; ammonia used for fertilisers — feeds billions of people (1); 450°C and 200 atm chosen as cost-effective compromise between rate and yield (1); iron catalyst reduces energy needed — more sustainable (1); Contact: SO₃ for sulfuric acid — essential industrial chemical for fertilisers, cleaning agents, batteries (1); 450°C and V₂O₅ catalyst — ~99.5% conversion achieved with recycling (1); environmental: both produce waste streams; sulfuric acid plants must capture SO₂ emissions; Haber process accounts for ~1-2% of world energy use (1)."
   },
   {
     "id": "C6-LA-029",
@@ -862,7 +862,7 @@
     "command_word": "Evaluate",
     "topic": "Rate of Reaction",
     "question": "Evaluate how collision theory accounts for the effect of all four factors that affect reaction rate: temperature, concentration, surface area, and catalysts. Include limitations of the theory.",
-    "mark_scheme": "Collision theory: reactions occur when particles collide with sufficient energy (\u2265 Ea) and correct orientation (1); temperature: more KE \u2192 more frequent collisions AND more exceed Ea \u2014 dual effect; explains exponential rate increase (1); concentration: more particles per unit volume \u2192 more frequent collisions \u2192 faster rate (1); surface area: more exposed surface \u2192 more collisions between reactant and solid surface (1); catalyst: lowers Ea \u2192 greater proportion of collisions successful; orientation requirement sometimes relaxed by active site geometry (1); limitations: theory predicts rates based on frequency but many collisions still do not react \u2014 orientation and energy both matter; does not explain complex multi-step reactions (1)."
+    "mark_scheme": "Collision theory: reactions occur when particles collide with sufficient energy (≥ Ea) and correct orientation (1); temperature: more KE → more frequent collisions AND more exceed Ea — dual effect; explains exponential rate increase (1); concentration: more particles per unit volume → more frequent collisions → faster rate (1); surface area: more exposed surface → more collisions between reactant and solid surface (1); catalyst: lowers Ea → greater proportion of collisions successful; orientation requirement sometimes relaxed by active site geometry (1); limitations: theory predicts rates based on frequency but many collisions still do not react — orientation and energy both matter; does not explain complex multi-step reactions (1)."
   },
   {
     "id": "C6-LA-030",
@@ -871,7 +871,7 @@
     "command_word": "Describe",
     "topic": "Factors Affecting Rate",
     "question": "Describe how enzyme-controlled reactions differ from reactions catalysed by inorganic catalysts. Include the effect of pH, temperature, and substrate concentration on enzyme activity.",
-    "mark_scheme": "Enzymes are biological catalysts \u2014 proteins with specific active sites (1); highly specific \u2014 enzyme shape complements one substrate (lock-and-key model) (1); temperature: rate increases up to optimum (~37\u00b0C in humans); above optimum, enzyme denatures \u2014 active site shape changes permanently (1); pH: each enzyme has optimum pH; above/below, hydrogen bonds in enzyme break \u2014 active site changes shape (1); substrate concentration: rate increases until all active sites occupied \u2014 enzyme saturated, rate plateaus (1); inorganic catalysts: work over wider temperature and pH range; not denatured; less specific \u2014 can catalyse multiple reactions (1)."
+    "mark_scheme": "Enzymes are biological catalysts — proteins with specific active sites (1); highly specific — enzyme shape complements one substrate (lock-and-key model) (1); temperature: rate increases up to optimum (~37°C in humans); above optimum, enzyme denatures — active site shape changes permanently (1); pH: each enzyme has optimum pH; above/below, hydrogen bonds in enzyme break — active site changes shape (1); substrate concentration: rate increases until all active sites occupied — enzyme saturated, rate plateaus (1); inorganic catalysts: work over wider temperature and pH range; not denatured; less specific — can catalyse multiple reactions (1)."
   },
   {
     "id": "C6-LA-031",
@@ -880,7 +880,7 @@
     "command_word": "Evaluate",
     "topic": "Factors Affecting Rate",
     "question": "Evaluate the economic and environmental benefits of using zeolite catalysts in cracking crude oil fractions. Include how zeolites work and why they are preferred over thermal cracking.",
-    "mark_scheme": "Zeolites are porous aluminosilicate catalysts with very high surface area (1); catalytic cracking occurs at lower temperature (~500\u00b0C) than thermal cracking (~700\u00b0C) \u2014 less energy (1); zeolites are selective \u2014 produce more useful shorter-chain hydrocarbons and more branched isomers (1); better fuel quality: branched alkanes burn more smoothly in engines (higher octane rating) (1); environmental: lower temperature reduces CO\u2082 from energy use; catalyst can be regenerated \u2014 less waste (1)."
+    "mark_scheme": "Zeolites are porous aluminosilicate catalysts with very high surface area (1); catalytic cracking occurs at lower temperature (~500°C) than thermal cracking (~700°C) — less energy (1); zeolites are selective — produce more useful shorter-chain hydrocarbons and more branched isomers (1); better fuel quality: branched alkanes burn more smoothly in engines (higher octane rating) (1); environmental: lower temperature reduces CO₂ from energy use; catalyst can be regenerated — less waste (1)."
   },
   {
     "id": "C6-LA-032",
@@ -889,7 +889,7 @@
     "command_word": "Explain",
     "topic": "Rate of Reaction",
     "question": "Explain what is meant by the 'rate of reaction'. Describe two graphical methods for determining rate from experimental data.",
-    "mark_scheme": "Rate of reaction: change in amount/concentration of reactant or product per unit time; units: mol/dm\u00b3/s or g/s (1); Method 1: tangent to a curve on a concentration-time graph \u2014 gradient of tangent at a point gives instantaneous rate (1); steeper gradient early in reaction \u2014 higher concentration gives faster rate (1); Method 2: initial rate method \u2014 gradient of straight-line portion at the start of graph (1); comparing initial rates at different concentrations allows order of reaction to be determined (1)."
+    "mark_scheme": "Rate of reaction: change in amount/concentration of reactant or product per unit time; units: mol/dm³/s or g/s (1); Method 1: tangent to a curve on a concentration-time graph — gradient of tangent at a point gives instantaneous rate (1); steeper gradient early in reaction — higher concentration gives faster rate (1); Method 2: initial rate method — gradient of straight-line portion at the start of graph (1); comparing initial rates at different concentrations allows order of reaction to be determined (1)."
   },
   {
     "id": "C6-LA-033",
@@ -898,7 +898,7 @@
     "command_word": "Explain",
     "topic": "Rate of Reaction",
     "question": "Explain how changing concentration affects the rate of a reaction using collision theory. Show how to use rate data to determine the order of reaction with respect to a reactant.",
-    "mark_scheme": "Higher concentration: more particles per unit volume \u2014 more frequent collisions \u2014 faster rate (1); collision theory: reaction only occurs when particles collide with Ea or more energy (1); rate data: compare rates when concentration doubled \u2014 if rate doubles, first order; if rate quadruples, second order; if rate unchanged, zero order (1); first order: rate = k[A]; second order: rate = k[A]\u00b2 (1); example: [A]=0.1, rate=0.02; [A]=0.2, rate=0.04 \u2014 doubled, so first order (1); rate constant k calculated: k = rate \u00f7 [A] (first order) \u2014 units = s\u207b\u00b9 (1)."
+    "mark_scheme": "Higher concentration: more particles per unit volume — more frequent collisions — faster rate (1); collision theory: reaction only occurs when particles collide with Ea or more energy (1); rate data: compare rates when concentration doubled — if rate doubles, first order; if rate quadruples, second order; if rate unchanged, zero order (1); first order: rate = k[A]; second order: rate = k[A]² (1); example: [A]=0.1, rate=0.02; [A]=0.2, rate=0.04 — doubled, so first order (1); rate constant k calculated: k = rate ÷ [A] (first order) — units = s⁻¹ (1)."
   },
   {
     "id": "C6-LA-034",
@@ -907,6 +907,177 @@
     "command_word": "Evaluate",
     "topic": "Equilibrium",
     "question": "Evaluate how changing conditions affects both the rate and yield of a reversible reaction. Use the esterification of ethanol with ethanoic acid as an example, and consider practical industrial applications.",
-    "mark_scheme": "Esterification: CH\u2083COOH + C\u2082H\u2085OH \u21cc CH\u2083COOC\u2082H\u2085 + H\u2082O \u2014 reversible, no change in moles (1); acid catalyst (H\u2082SO\u2084): lowers activation energy \u2014 increases rate without changing equilibrium position (1); temperature: higher T increases rate but for exothermic direction may reduce yield; room temperature may be too slow (1); concentration: removing water product (e.g. with desiccant or distillation) shifts equilibrium right \u2014 increases yield (1); pressure: no effect as equal moles on both sides (1); industrial application: continuous removal of ester product shifts equilibrium right \u2014 high yield achieved; batch vs continuous process trade-offs (1)."
+    "mark_scheme": "Esterification: CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O — reversible, no change in moles (1); acid catalyst (H₂SO₄): lowers activation energy — increases rate without changing equilibrium position (1); temperature: higher T increases rate but for exothermic direction may reduce yield; room temperature may be too slow (1); concentration: removing water product (e.g. with desiccant or distillation) shifts equilibrium right — increases yield (1); pressure: no effect as equal moles on both sides (1); industrial application: continuous removal of ester product shifts equilibrium right — high yield achieved; batch vs continuous process trade-offs (1)."
+  },
+  {
+    "id": "C6-SA-016",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Rate of Reaction",
+    "question": "State two factors that affect the rate of a chemical reaction.",
+    "mark_scheme": "Any two from: temperature, concentration, surface area, pressure (for gases), catalyst (1 each)."
+  },
+  {
+    "id": "C6-SA-017",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Give",
+    "topic": "Factors Affecting Rate",
+    "question": "Give the meaning of the term activation energy.",
+    "mark_scheme": "The minimum energy (1); required for a reaction to occur / for collisions to be successful (1)."
+  },
+  {
+    "id": "C6-SA-018",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Equilibrium",
+    "question": "State what is meant by a dynamic equilibrium.",
+    "mark_scheme": "The rate of the forward reaction equals the rate of the reverse reaction (1); concentrations of reactants and products remain constant (1)."
+  },
+  {
+    "id": "C6-SA-019",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Name",
+    "topic": "Rate of Reaction",
+    "question": "Name the type of substance that increases the rate of a reaction without being used up.",
+    "mark_scheme": "Catalyst (1); (1 mark only if answer given)."
+  },
+  {
+    "id": "C6-SA-020",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Give",
+    "topic": "Equilibrium",
+    "question": "Give what happens to the position of equilibrium if the concentration of a reactant is increased.",
+    "mark_scheme": "The equilibrium shifts to the right (1); towards the products (1)."
+  },
+  {
+    "id": "C6-SA-021",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Factors Affecting Rate",
+    "question": "State what happens to the rate of reaction when the temperature is increased.",
+    "mark_scheme": "The rate of reaction increases (1); particles have more kinetic energy and collide more frequently and with more energy (1)."
+  },
+  {
+    "id": "C6-SA-022",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Name",
+    "topic": "Rate of Reaction",
+    "question": "Name one method that can be used to measure the rate of a reaction that produces a gas.",
+    "mark_scheme": "Any one from: gas syringe / collecting gas over water, measuring mass loss (1); (accept any valid method) (1)."
+  },
+  {
+    "id": "C6-SA-023",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Factors Affecting Rate",
+    "question": "Explain, using collision theory, why increasing the concentration of a reactant increases the rate of reaction.",
+    "mark_scheme": "Higher concentration means more particles per unit volume (1); particles collide more frequently (1); more collisions per second exceed the activation energy, increasing rate (1)."
+  },
+  {
+    "id": "C6-SA-024",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Rate of Reaction",
+    "question": "Describe how you would use a gas syringe to measure the rate of reaction between marble chips and hydrochloric acid.",
+    "mark_scheme": "Connect gas syringe to flask containing marble chips and acid (1); record volume of gas collected at regular time intervals (1); calculate rate from gradient of volume-time graph / volume of gas per unit time (1)."
+  },
+  {
+    "id": "C6-SA-025",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Factors Affecting Rate",
+    "question": "Explain why a catalyst increases the rate of a reaction without being used up.",
+    "mark_scheme": "Catalyst provides an alternative reaction pathway (1); with a lower activation energy (1); catalyst is not consumed in the reaction / regenerated (1)."
+  },
+  {
+    "id": "C6-SA-026",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Equilibrium",
+    "question": "Explain the effect of increasing pressure on the equilibrium position of the reaction: N₂(g) + 3H₂(g) ⇌ 2NH₃(g).",
+    "mark_scheme": "Increasing pressure shifts equilibrium to the side with fewer moles of gas (1); the product side has 2 moles compared to 4 moles on the reactant side (1); so the equilibrium shifts to the right, producing more ammonia (1)."
+  },
+  {
+    "id": "C6-SA-027",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Compare",
+    "topic": "Rate of Reaction",
+    "question": "Compare the rate of reaction when marble chips are used compared to marble powder with excess hydrochloric acid.",
+    "mark_scheme": "Marble powder has a greater surface area than chips (1); more collisions per second occur with the acid (1); rate of reaction is faster with powder / reaction finishes in less time, but same total amount of gas is produced (1)."
+  },
+  {
+    "id": "C6-SA-028",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Equilibrium",
+    "question": "Explain why the Haber process uses a temperature of approximately 450°C rather than a much lower temperature, even though lower temperatures favour ammonia production.",
+    "mark_scheme": "Lower temperature would give higher yield of ammonia (equilibrium favours products) (1); but the rate of reaction would be too slow at low temperature (1); 450°C is a compromise between a reasonable yield and an acceptable rate (1)."
+  },
+  {
+    "id": "C6-SA-029",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Factors Affecting Rate",
+    "question": "Describe how you could investigate the effect of temperature on the rate of the reaction between sodium thiosulfate and hydrochloric acid.",
+    "mark_scheme": "Mix sodium thiosulfate and HCl at different temperatures (1); measure time for a cross underneath the flask to disappear / solution to turn cloudy (1); repeat at several temperatures and record time; rate is proportional to 1/time (1)."
+  },
+  {
+    "id": "C6-SA-030",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Equilibrium",
+    "question": "Explain, using Le Chatelier's principle, what happens to the equilibrium position when temperature is increased in an exothermic reaction.",
+    "mark_scheme": "Le Chatelier's principle: system opposes the change (1); increasing temperature adds heat/energy, so equilibrium shifts to oppose this (1); equilibrium shifts to the endothermic / reverse direction, reducing yield of products (1)."
+  },
+  {
+    "id": "C6-SA-031",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Rate of Reaction",
+    "question": "Describe how the rate of reaction changes over time in a typical reaction and explain why.",
+    "mark_scheme": "Rate is fastest at the start (1); rate decreases over time (1); because reactant concentration decreases / fewer successful collisions per unit time as reaction proceeds (1)."
+  },
+  {
+    "id": "C6-SA-032",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Factors Affecting Rate",
+    "question": "Explain why increasing surface area of a solid reactant increases the rate of reaction.",
+    "mark_scheme": "Smaller pieces / powder has greater surface area exposed (1); more reactant particles are available for collisions at the surface (1); more frequent collisions leads to a faster rate of reaction (1)."
+  },
+  {
+    "id": "C6-SA-033",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Compare",
+    "topic": "Equilibrium",
+    "question": "Compare the effect of adding a catalyst on the rate of reaction and on the equilibrium position.",
+    "mark_scheme": "A catalyst increases the rate of both forward and reverse reactions equally (1); the equilibrium position is unchanged / same yield of products (1); but equilibrium is reached more quickly (1)."
+  },
+  {
+    "id": "C6-SA-034",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Rate of Reaction",
+    "question": "Explain what is meant by a successful collision in terms of collision theory.",
+    "mark_scheme": "A collision with sufficient energy (1); to overcome the activation energy (1); and with correct orientation of particles (1)."
   }
 ]

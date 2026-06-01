@@ -880,5 +880,203 @@
     "topic": "Circuits",
     "question": "Evaluate the advantages and disadvantages of series and parallel circuits for connecting lights in a home. Explain which arrangement is used in practice and why, using evidence from your knowledge of circuits.",
     "mark_scheme": "Series: all lights on same loop — if one fails all fail (1); voltage shared between lights — each gets less than mains voltage (1); cannot be switched independently (1); Parallel: each light receives full mains voltage (1); if one fails others remain on (1); each can be switched on/off independently (1); parallel used in homes for all these reasons (1); consistent brightness regardless of how many lights on (1) — any six."
+  },
+  {
+    "id": "P2-SA-013",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Current",
+    "question": "State what is meant by electric current and give its unit.",
+    "mark_scheme": "Electric current is the rate of flow of charge (1); the unit is the ampere (A) (1)."
+  },
+  {
+    "id": "P2-SA-014",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Give",
+    "topic": "Voltage",
+    "question": "Give the equation that links voltage, current and resistance, and state what each letter represents.",
+    "mark_scheme": "V = IR (1); V = voltage in volts, I = current in amperes, R = resistance in ohms (1)."
+  },
+  {
+    "id": "P2-SA-015",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Name",
+    "topic": "Resistance",
+    "question": "Name two components whose resistance changes with environmental conditions, and state what condition changes each one.",
+    "mark_scheme": "Thermistor — resistance changes with temperature (1); LDR (light-dependent resistor) — resistance changes with light intensity (1)."
+  },
+  {
+    "id": "P2-SA-016",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Series and parallel circuits",
+    "question": "State two differences between series and parallel circuits in terms of current and voltage.",
+    "mark_scheme": "Series: current is the same throughout; voltage is shared between components (1); parallel: current is split between branches; voltage is the same across each branch (1)."
+  },
+  {
+    "id": "P2-SA-017",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Give",
+    "topic": "Current",
+    "question": "Give the equation linking charge, current and time. Calculate the charge that flows when a current of 3 A flows for 10 seconds.",
+    "mark_scheme": "Q = It (1); Q = 3 × 10 = 30 C (1)."
+  },
+  {
+    "id": "P2-SA-018",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Voltage",
+    "question": "Describe what is meant by potential difference and state how it is measured in a circuit.",
+    "mark_scheme": "Potential difference (voltage) is the energy transferred per unit charge between two points in a circuit (1); it is measured in volts using a voltmeter connected in parallel with the component (1)."
+  },
+  {
+    "id": "P2-SA-019",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Resistance",
+    "question": "State what is meant by an ohmic conductor and give one example.",
+    "mark_scheme": "An ohmic conductor is one where current is directly proportional to voltage — resistance stays constant at constant temperature (1); example: a fixed resistor (or any valid example such as a length of resistance wire) (1)."
+  },
+  {
+    "id": "P2-SA-020",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Give",
+    "topic": "Series and parallel circuits",
+    "question": "Give two reasons why household appliances are connected in parallel rather than in series.",
+    "mark_scheme": "Any two: each appliance receives the full mains voltage (1); appliances can be switched on and off independently (1); if one fails, the others continue to work (1)."
+  },
+  {
+    "id": "P2-SA-021",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Name",
+    "topic": "Current",
+    "question": "Name the instrument used to measure current in a circuit and describe how it is connected.",
+    "mark_scheme": "Ammeter (1); connected in series with the component — the current to be measured flows through it (1)."
+  },
+  {
+    "id": "P2-SA-022",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Resistance",
+    "question": "Describe how the resistance of a filament lamp changes as it gets hotter.",
+    "mark_scheme": "As the filament heats up, its resistance increases (1); this is because the increased temperature causes the ions in the metal to vibrate more, making it harder for electrons to flow through (1)."
+  },
+  {
+    "id": "P2-SA-023",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Current",
+    "question": "Explain how charge flows around a circuit and what role the battery plays.",
+    "mark_scheme": "Electrons are negatively charged particles that carry charge around the circuit (1); the battery provides an electromotive force (EMF) that gives the electrons energy to move (1); electrons flow from the negative terminal, around the circuit, and return to the positive terminal — charge is conserved and no charge is created or destroyed (1)."
+  },
+  {
+    "id": "P2-SA-024",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Voltage",
+    "question": "Describe how voltage is distributed in a series circuit with two resistors of different values.",
+    "mark_scheme": "In a series circuit the total voltage is shared between the components (1); the component with the higher resistance has a greater voltage across it (1); the sum of the voltages across all components equals the supply voltage (Kirchhoff's voltage law) (1)."
+  },
+  {
+    "id": "P2-SA-025",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Resistance",
+    "question": "Explain why the resistance of a wire increases as its temperature increases, using a particle model.",
+    "mark_scheme": "At higher temperatures, the metal ions in the wire vibrate more vigorously (1); this makes it more difficult for electrons to flow through the wire without colliding with ions (1); more collisions means greater opposition to electron flow, so resistance increases (1)."
+  },
+  {
+    "id": "P2-SA-026",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Series and parallel circuits",
+    "question": "Describe what happens to the total resistance of a circuit when resistors are added in parallel. Explain why this occurs.",
+    "mark_scheme": "Total resistance decreases when more resistors are added in parallel (1); each additional parallel branch provides an additional path for current to flow (1); more paths means more total current can flow from the battery for the same voltage — equivalent to a lower overall resistance (1)."
+  },
+  {
+    "id": "P2-SA-027",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Current",
+    "question": "Explain the difference between AC and DC current. State which type is supplied by the mains in the UK and which is supplied by a battery.",
+    "mark_scheme": "DC (direct current): charge flows continuously in one direction only (1); AC (alternating current): current regularly reverses direction — in the UK at 50 Hz (1); UK mains supplies AC; a battery supplies DC (1)."
+  },
+  {
+    "id": "P2-SA-028",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Compare",
+    "topic": "Series and parallel circuits",
+    "question": "Compare what happens in a series circuit and a parallel circuit when one component stops working.",
+    "mark_scheme": "Series circuit: if one component breaks, the circuit is broken and all components stop working — the current path is interrupted (1); parallel circuit: if one component in a branch fails, current can still flow through the other branches — the remaining components continue to work (1); this is why parallel circuits are used in homes — failure of one appliance does not affect others (1)."
+  },
+  {
+    "id": "P2-SA-029",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Voltage",
+    "question": "Explain why a voltmeter must have a very high resistance to measure voltage accurately.",
+    "mark_scheme": "A voltmeter is connected in parallel with a component (1); if the voltmeter had low resistance, it would draw a significant current from the circuit, changing the current through the component being measured (1); high resistance means very little current flows through the voltmeter, so it does not significantly affect the circuit it is measuring (1)."
+  },
+  {
+    "id": "P2-SA-030",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Resistance",
+    "question": "Describe how you would determine the resistance of a wire using an ammeter and a voltmeter. Include how you would make the measurement reliable.",
+    "mark_scheme": "Connect the ammeter in series with the wire and the voltmeter in parallel across it (1); record the current and voltage; calculate resistance using R = V/I (1); to make reliable: take repeat readings and calculate a mean; vary the current using a variable resistor; check for any systematic errors (1)."
+  },
+  {
+    "id": "P2-SA-031",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Current",
+    "question": "Explain what static electricity is and describe how it is produced when two insulating materials are rubbed together.",
+    "mark_scheme": "Static electricity is a build-up of charge on an insulating surface that cannot flow away (1); when two insulators are rubbed together, electrons are transferred from one surface to the other (1); the material gaining electrons becomes negatively charged; the one losing electrons becomes positively charged (1)."
+  },
+  {
+    "id": "P2-SA-032",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Compare",
+    "topic": "Voltage",
+    "question": "Compare the roles of the live, neutral and earth wires in a three-pin plug.",
+    "mark_scheme": "Live wire (brown): carries current to the appliance at 230 V — the dangerous wire (1); neutral wire (blue): completes the circuit, returning current to the supply at approximately 0 V (1); earth wire (green/yellow): safety wire — connects metal casing to earth; if the casing becomes live, current flows to earth, blowing the fuse and breaking the circuit to prevent electric shock (1)."
+  },
+  {
+    "id": "P2-SA-033",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Series and parallel circuits",
+    "question": "Explain why adding a resistor in series to a circuit reduces the brightness of a lamp already in the circuit.",
+    "mark_scheme": "Adding a resistor in series increases the total resistance of the circuit (1); greater resistance means smaller current flows (I = V/R) with the same supply voltage (1); smaller current through the lamp means less power is transferred (P = I²R), so the lamp is dimmer (1)."
+  },
+  {
+    "id": "P2-SA-034",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Resistance",
+    "question": "Describe the shape of the current-voltage graph for a diode and explain what it tells us about how a diode behaves.",
+    "mark_scheme": "The I-V graph of a diode shows very little or no current in one direction (reverse bias); current increases steeply in the forward direction above a threshold voltage of about 0.7 V (1); this tells us that a diode only allows significant current to flow in one direction (1); in the reverse direction, the resistance is extremely high; in the forward direction above threshold, resistance is very low (1)."
   }
 ]

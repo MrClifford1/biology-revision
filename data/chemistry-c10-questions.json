@@ -35,11 +35,11 @@
     "question": "What is potable water?",
     "options": [
       "Completely pure water with no dissolved substances",
-      "Water that is safe to drink \u2014 contains dissolved substances at safe levels",
+      "Water that is safe to drink — contains dissolved substances at safe levels",
       "Water that has been distilled",
       "Seawater that has been filtered"
     ],
-    "correct": "Water that is safe to drink \u2014 contains dissolved substances at safe levels"
+    "correct": "Water that is safe to drink — contains dissolved substances at safe levels"
   },
   {
     "id": "C10-MC-004",
@@ -163,7 +163,7 @@
       "Thermosoftening polymers melt on heating and can be remoulded; thermosetting polymers do not melt",
       "Thermosetting polymers melt on heating; thermosoftening polymers do not",
       "Thermosoftening polymers are stronger than thermosetting polymers",
-      "There is no difference \u2014 both melt when heated"
+      "There is no difference — both melt when heated"
     ],
     "correct": "Thermosoftening polymers melt on heating and can be remoulded; thermosetting polymers do not melt"
   },
@@ -202,12 +202,12 @@
     "topic": "Water",
     "question": "In which order are the main stages of drinking water treatment carried out?",
     "options": [
-      "Chlorination \u2192 sedimentation \u2192 filtration",
-      "Filtration \u2192 chlorination \u2192 sedimentation",
-      "Sedimentation \u2192 filtration \u2192 chlorination",
-      "Chlorination \u2192 filtration \u2192 sedimentation"
+      "Chlorination → sedimentation → filtration",
+      "Filtration → chlorination → sedimentation",
+      "Sedimentation → filtration → chlorination",
+      "Chlorination → filtration → sedimentation"
     ],
-    "correct": "Sedimentation \u2192 filtration \u2192 chlorination"
+    "correct": "Sedimentation → filtration → chlorination"
   },
   {
     "id": "C10-FIB-001",
@@ -336,19 +336,19 @@
     "pairs": [
       {
         "term": "Sedimentation",
-        "definition": "Particles clump and settle \u2014 removes suspended solids"
+        "definition": "Particles clump and settle — removes suspended solids"
       },
       {
         "term": "Filtration",
-        "definition": "Water passed through sand and gravel beds \u2014 removes smaller particles"
+        "definition": "Water passed through sand and gravel beds — removes smaller particles"
       },
       {
         "term": "Chlorination",
-        "definition": "Chlorine added \u2014 kills bacteria and microorganisms"
+        "definition": "Chlorine added — kills bacteria and microorganisms"
       },
       {
         "term": "Reverse osmosis",
-        "definition": "Water forced through a membrane under pressure \u2014 removes dissolved ions"
+        "definition": "Water forced through a membrane under pressure — removes dissolved ions"
       }
     ]
   },
@@ -361,11 +361,11 @@
     "pairs": [
       {
         "term": "Smelting",
-        "definition": "Heating ore with a reducing agent at high temperature \u2014 used for medium-grade ores"
+        "definition": "Heating ore with a reducing agent at high temperature — used for medium-grade ores"
       },
       {
         "term": "Phytomining",
-        "definition": "Plants absorb metals from soil \u2014 harvested and burned to give metal-rich ash"
+        "definition": "Plants absorb metals from soil — harvested and burned to give metal-rich ash"
       },
       {
         "term": "Bioleaching",
@@ -386,7 +386,7 @@
     "pairs": [
       {
         "term": "Painting",
-        "definition": "Physical barrier \u2014 prevents oxygen and water reaching the iron surface"
+        "definition": "Physical barrier — prevents oxygen and water reaching the iron surface"
       },
       {
         "term": "Galvanising",
@@ -411,19 +411,19 @@
     "pairs": [
       {
         "term": "Ceramic",
-        "definition": "Hard, brittle, made by heating clay \u2014 e.g. pottery, bricks"
+        "definition": "Hard, brittle, made by heating clay — e.g. pottery, bricks"
       },
       {
         "term": "Composite",
-        "definition": "Two or more materials combined for improved properties \u2014 e.g. fibreglass"
+        "definition": "Two or more materials combined for improved properties — e.g. fibreglass"
       },
       {
         "term": "Thermosoftening polymer",
-        "definition": "Melts on heating, no cross-links \u2014 e.g. poly(ethene)"
+        "definition": "Melts on heating, no cross-links — e.g. poly(ethene)"
       },
       {
         "term": "Thermosetting polymer",
-        "definition": "Does not melt, cross-linked chains \u2014 e.g. Bakelite"
+        "definition": "Does not melt, cross-linked chains — e.g. Bakelite"
       }
     ]
   },
@@ -436,7 +436,7 @@
     "pairs": [
       {
         "term": "Raw material extraction",
-        "definition": "Mining, quarrying, or growing the materials needed \u2014 energy and land use considered"
+        "definition": "Mining, quarrying, or growing the materials needed — energy and land use considered"
       },
       {
         "term": "Manufacture and processing",
@@ -448,7 +448,7 @@
       },
       {
         "term": "Disposal",
-        "definition": "End of life \u2014 landfill, incineration, or recycling \u2014 and associated impacts"
+        "definition": "End of life — landfill, incineration, or recycling — and associated impacts"
       }
     ]
   },
@@ -459,7 +459,7 @@
     "command_word": "State",
     "topic": "Water",
     "question": "State what is meant by potable water.",
-    "mark_scheme": "Water that is safe to drink \u2014 not pure water, but contains dissolved substances at safe levels (1)."
+    "mark_scheme": "Water that is safe to drink — not pure water, but contains dissolved substances at safe levels (1)."
   },
   {
     "id": "C10-SA-002",
@@ -468,7 +468,7 @@
     "command_word": "State",
     "topic": "Corrosion",
     "question": "State the two substances needed for iron to rust.",
-    "mark_scheme": "Oxygen and water (1) \u2014 both needed for the mark."
+    "mark_scheme": "Oxygen and water (1) — both needed for the mark."
   },
   {
     "id": "C10-SA-003",
@@ -495,7 +495,7 @@
     "command_word": "Describe",
     "topic": "Water",
     "question": "Describe the three main stages used to treat fresh water to make it potable.",
-    "mark_scheme": "Sedimentation \u2014 particles settle out (1); filtration through sand and gravel \u2014 removes finer particles (1); chlorination \u2014 kills bacteria (1) \u2014 any two for 2 marks."
+    "mark_scheme": "Sedimentation — particles settle out (1); filtration through sand and gravel — removes finer particles (1); chlorination — kills bacteria (1) — any two for 2 marks."
   },
   {
     "id": "C10-SA-006",
@@ -504,7 +504,7 @@
     "command_word": "Explain",
     "topic": "Corrosion",
     "question": "Explain how galvanising protects iron from rusting.",
-    "mark_scheme": "The zinc coating acts as a physical barrier preventing oxygen and water reaching the iron (1); if the zinc is scratched, it still protects by sacrificial corrosion \u2014 zinc is more reactive and corrodes in preference to iron (1)."
+    "mark_scheme": "The zinc coating acts as a physical barrier preventing oxygen and water reaching the iron (1); if the zinc is scratched, it still protects by sacrificial corrosion — zinc is more reactive and corrodes in preference to iron (1)."
   },
   {
     "id": "C10-SA-007",
@@ -513,7 +513,7 @@
     "command_word": "Describe",
     "topic": "Alternative Metal Extraction",
     "question": "Describe how phytomining is used to extract copper.",
-    "mark_scheme": "Plants that absorb copper compounds are grown on low-grade copper ore or contaminated soil (1); the plants are harvested and burned \u2014 the ash is rich in copper compounds which can be processed to extract copper (1)."
+    "mark_scheme": "Plants that absorb copper compounds are grown on low-grade copper ore or contaminated soil (1); the plants are harvested and burned — the ash is rich in copper compounds which can be processed to extract copper (1)."
   },
   {
     "id": "C10-SA-008",
@@ -531,7 +531,7 @@
     "command_word": "Compare",
     "topic": "Materials",
     "question": "Compare thermosoftening and thermosetting polymers in terms of structure and properties.",
-    "mark_scheme": "Thermosoftening: polymer chains not cross-linked \u2014 softens on heating and can be remoulded/recycled (1); thermosetting: chains cross-linked in rigid structure \u2014 does not soften on heating, cannot be remoulded (1)."
+    "mark_scheme": "Thermosoftening: polymer chains not cross-linked — softens on heating and can be remoulded/recycled (1); thermosetting: chains cross-linked in rigid structure — does not soften on heating, cannot be remoulded (1)."
   },
   {
     "id": "C10-SA-010",
@@ -540,7 +540,7 @@
     "command_word": "Explain",
     "topic": "Life Cycle Assessment",
     "question": "Explain why life cycle assessments can be difficult to compare fairly.",
-    "mark_scheme": "Different stages involve value judgements \u2014 e.g. how to weigh energy use against water pollution (1); LCAs can be manipulated to favour a particular product depending on which factors are emphasised (1)."
+    "mark_scheme": "Different stages involve value judgements — e.g. how to weigh energy use against water pollution (1); LCAs can be manipulated to favour a particular product depending on which factors are emphasised (1)."
   },
   {
     "id": "C10-SA-011",
@@ -567,7 +567,7 @@
     "command_word": "Explain",
     "topic": "Life Cycle Assessment",
     "question": "Explain the four stages included in a life cycle assessment of a product.",
-    "mark_scheme": "Raw material extraction \u2014 energy and environmental cost of mining or growing materials (1); manufacturing and processing \u2014 energy used and waste/emissions from making the product (1); use \u2014 energy consumed during the product's working life (1); disposal \u2014 whether it is sent to landfill, incinerated, or recycled and the impact of each (1)."
+    "mark_scheme": "Raw material extraction — energy and environmental cost of mining or growing materials (1); manufacturing and processing — energy used and waste/emissions from making the product (1); use — energy consumed during the product's working life (1); disposal — whether it is sent to landfill, incinerated, or recycled and the impact of each (1)."
   },
   {
     "id": "C10-SA-014",
@@ -576,7 +576,7 @@
     "command_word": "Evaluate",
     "topic": "Alternative Metal Extraction",
     "question": "Evaluate the advantages and disadvantages of phytomining and bioleaching compared to traditional smelting.",
-    "mark_scheme": "Advantages of phytomining/bioleaching: can extract from low-grade ores uneconomical to smelt (1); lower energy use / less environmental damage than smelting (1); disadvantage: much slower process than smelting (1); smelting advantages: faster and higher yield for rich ores (1) \u2014 any three."
+    "mark_scheme": "Advantages of phytomining/bioleaching: can extract from low-grade ores uneconomical to smelt (1); lower energy use / less environmental damage than smelting (1); disadvantage: much slower process than smelting (1); smelting advantages: faster and higher yield for rich ores (1) — any three."
   },
   {
     "id": "C10-SA-015",
@@ -585,7 +585,7 @@
     "command_word": "Describe",
     "topic": "Corrosion",
     "question": "Describe three methods of preventing iron from rusting. Explain how each method works.",
-    "mark_scheme": "Any three with explanations: painting / oiling / greasing \u2014 physical barrier prevents oxygen and water reaching iron (1); galvanising \u2014 zinc physical barrier plus sacrificial protection (1); sacrificial protection (magnesium block) \u2014 more reactive metal corrodes first (1); alloying with chromium (stainless steel) \u2014 chromium forms oxide layer preventing further corrosion (1)."
+    "mark_scheme": "Any three with explanations: painting / oiling / greasing — physical barrier prevents oxygen and water reaching iron (1); galvanising — zinc physical barrier plus sacrificial protection (1); sacrificial protection (magnesium block) — more reactive metal corrodes first (1); alloying with chromium (stainless steel) — chromium forms oxide layer preventing further corrosion (1)."
   },
   {
     "id": "C10-LA-001",
@@ -594,7 +594,7 @@
     "command_word": "Evaluate",
     "topic": "Life Cycle Assessment",
     "question": "A company compares the LCA of a plastic bag with a cotton bag. The plastic bag uses less water to produce but is not biodegradable. The cotton bag requires large amounts of water and pesticides but can be reused many times. Evaluate which bag has the lower environmental impact.",
-    "mark_scheme": "Plastic bag: low water use in production, but non-biodegradable \u2014 persists in environment for hundreds of years (1); cotton bag: high water and pesticide use in production, but reusable \u2014 lower impact per use over lifetime (1); the cotton bag has lower impact if used many times (25+ uses outweighs production costs) (1); LCA comparison is complex and depends on value judgements and assumptions \u2014 no single correct answer (1)."
+    "mark_scheme": "Plastic bag: low water use in production, but non-biodegradable — persists in environment for hundreds of years (1); cotton bag: high water and pesticide use in production, but reusable — lower impact per use over lifetime (1); the cotton bag has lower impact if used many times (25+ uses outweighs production costs) (1); LCA comparison is complex and depends on value judgements and assumptions — no single correct answer (1)."
   },
   {
     "id": "C10-LA-002",
@@ -603,7 +603,7 @@
     "command_word": "Explain",
     "topic": "Water",
     "question": "Explain how fresh water is treated to make it safe to drink. Compare this with the process of desalination and explain why desalination is used in some countries but not others.",
-    "mark_scheme": "Fresh water treatment: sedimentation, filtration, chlorination \u2014 relatively cheap and energy-efficient (1); desalination: distillation or reverse osmosis removes salt from sea water (1); desalination is energy-intensive and expensive (1); used in countries with limited fresh water but available energy e.g. Middle East; not cost-effective in UK where fresh water is abundant (1)."
+    "mark_scheme": "Fresh water treatment: sedimentation, filtration, chlorination — relatively cheap and energy-efficient (1); desalination: distillation or reverse osmosis removes salt from sea water (1); desalination is energy-intensive and expensive (1); used in countries with limited fresh water but available energy e.g. Middle East; not cost-effective in UK where fresh water is abundant (1)."
   },
   {
     "id": "C10-LA-003",
@@ -612,7 +612,7 @@
     "command_word": "Evaluate",
     "topic": "Using Resources",
     "question": "Evaluate the importance of recycling as a strategy for sustainable use of resources. Include the benefits and any limitations of recycling.",
-    "mark_scheme": "Benefits: conserves finite ore deposits (1); uses less energy than extraction \u2014 e.g. recycling aluminium uses 5% of energy of extracting from bauxite (1); reduces mining and its environmental damage (1); limitation: some materials difficult to recycle (mixed plastics), contamination reduces quality, not always economically viable (1)."
+    "mark_scheme": "Benefits: conserves finite ore deposits (1); uses less energy than extraction — e.g. recycling aluminium uses 5% of energy of extracting from bauxite (1); reduces mining and its environmental damage (1); limitation: some materials difficult to recycle (mixed plastics), contamination reduces quality, not always economically viable (1)."
   },
   {
     "id": "C10-LA-004",
@@ -621,7 +621,7 @@
     "command_word": "Explain",
     "topic": "Corrosion",
     "question": "Explain why rusting is a significant economic and practical problem. Describe two methods used to protect iron and steel structures, explaining how each method works.",
-    "mark_scheme": "Rusting weakens iron structures \u2014 billions spent annually replacing corroded metal in bridges, vehicles, pipes (1); painting/coating: acts as a physical barrier excluding water and oxygen (1); galvanising with zinc: physical barrier plus if scratched, zinc corrodes sacrificially as it is more reactive than iron (1); needs regular maintenance \u2014 cost and sustainability implications (1)."
+    "mark_scheme": "Rusting weakens iron structures — billions spent annually replacing corroded metal in bridges, vehicles, pipes (1); painting/coating: acts as a physical barrier excluding water and oxygen (1); galvanising with zinc: physical barrier plus if scratched, zinc corrodes sacrificially as it is more reactive than iron (1); needs regular maintenance — cost and sustainability implications (1)."
   },
   {
     "id": "C10-LA-005",
@@ -629,8 +629,8 @@
     "marks": 5,
     "command_word": "Evaluate",
     "topic": "Materials",
-    "question": "Evaluate the use of different materials \u2014 metals, ceramics, polymers, and composites \u2014 for making a lightweight bicycle frame. Consider strength, weight, cost, and environmental impact.",
-    "mark_scheme": "Steel: strong but heavy, cheap, susceptible to corrosion (1); aluminium alloy: lighter and corrosion-resistant, more expensive to produce (1); carbon fibre composite: very strong and lightweight, excellent performance but expensive and difficult to recycle (1); ceramics: brittle \u2014 not suitable for frames (1); environmental: aluminium and steel more recyclable than carbon fibre \u2014 important sustainability consideration (1)."
+    "question": "Evaluate the use of different materials — metals, ceramics, polymers, and composites — for making a lightweight bicycle frame. Consider strength, weight, cost, and environmental impact.",
+    "mark_scheme": "Steel: strong but heavy, cheap, susceptible to corrosion (1); aluminium alloy: lighter and corrosion-resistant, more expensive to produce (1); carbon fibre composite: very strong and lightweight, excellent performance but expensive and difficult to recycle (1); ceramics: brittle — not suitable for frames (1); environmental: aluminium and steel more recyclable than carbon fibre — important sustainability consideration (1)."
   },
   {
     "id": "C10-LA-006",
@@ -639,7 +639,7 @@
     "command_word": "Evaluate",
     "topic": "Alternative Metal Extraction",
     "question": "Evaluate the environmental and economic impact of extracting copper using traditional mining and smelting compared to phytomining and bioleaching. Consider yield, speed, energy use, and land use.",
-    "mark_scheme": "Traditional mining: high yield from rich ores, fast, well-established \u2014 but energy-intensive, causes significant land damage/habitat loss, generates toxic waste (1); smelting releases SO\u2082 \u2014 contributes to acid rain (1); phytomining: plants slowly absorb copper over growing season, lower energy use, less damaging to land (1); bioleaching: uses bacteria on waste tips / low-grade ores, slow, low energy (1); both alternatives are economically viable for low-grade ores where traditional smelting is not (1); overall: phytomining and bioleaching are more sustainable but slower \u2014 suitable for lower value or marginal deposits; traditional methods needed for high-grade ore at scale (1)."
+    "mark_scheme": "Traditional mining: high yield from rich ores, fast, well-established — but energy-intensive, causes significant land damage/habitat loss, generates toxic waste (1); smelting releases SO₂ — contributes to acid rain (1); phytomining: plants slowly absorb copper over growing season, lower energy use, less damaging to land (1); bioleaching: uses bacteria on waste tips / low-grade ores, slow, low energy (1); both alternatives are economically viable for low-grade ores where traditional smelting is not (1); overall: phytomining and bioleaching are more sustainable but slower — suitable for lower value or marginal deposits; traditional methods needed for high-grade ore at scale (1)."
   },
   {
     "id": "C10-LA-007",
@@ -648,7 +648,7 @@
     "command_word": "Evaluate",
     "topic": "Using Resources",
     "question": "Evaluate the challenges of providing clean water to a growing global population. Consider the difference between fresh water treatment and desalination, the role of limited resources, and what steps can be taken to improve water security worldwide.",
-    "mark_scheme": "Approximately 2 billion people lack access to safe drinking water \u2014 major global challenge (1); fresh water treatment (sedimentation, filtration, chlorination) is cheap and effective but requires access to fresh water sources (1); desalination can produce potable water from sea water \u2014 viable where energy is available, but expensive and energy-intensive (1); climate change is reducing fresh water availability in many regions through drought and glacier melt (1); solutions: investment in water infrastructure, efficient irrigation, reducing waste, development of cheaper desalination technology, international cooperation (1); sustainable management of water as a shared global resource requires political will and funding \u2014 especially for lower-income countries (1)."
+    "mark_scheme": "Approximately 2 billion people lack access to safe drinking water — major global challenge (1); fresh water treatment (sedimentation, filtration, chlorination) is cheap and effective but requires access to fresh water sources (1); desalination can produce potable water from sea water — viable where energy is available, but expensive and energy-intensive (1); climate change is reducing fresh water availability in many regions through drought and glacier melt (1); solutions: investment in water infrastructure, efficient irrigation, reducing waste, development of cheaper desalination technology, international cooperation (1); sustainable management of water as a shared global resource requires political will and funding — especially for lower-income countries (1)."
   },
   {
     "id": "C10-LA-005",
@@ -657,7 +657,7 @@
     "command_word": "Explain",
     "topic": "Life Cycle Assessment",
     "question": "Explain what a Life Cycle Assessment (LCA) is. Include the four stages of an LCA and why it is important for product design.",
-    "mark_scheme": "LCA: assessment of the environmental impact of a product over its entire life (1); Stage 1: raw material extraction (1); Stage 2: manufacturing/processing (1); Stage 3: use/transport; Stage 4: disposal/end-of-life \u2014 recycling or landfill (1). Award 4 marks for identifying all 4 stages and explaining overall purpose."
+    "mark_scheme": "LCA: assessment of the environmental impact of a product over its entire life (1); Stage 1: raw material extraction (1); Stage 2: manufacturing/processing (1); Stage 3: use/transport; Stage 4: disposal/end-of-life — recycling or landfill (1). Award 4 marks for identifying all 4 stages and explaining overall purpose."
   },
   {
     "id": "C10-LA-006",
@@ -666,7 +666,7 @@
     "command_word": "Describe",
     "topic": "Water",
     "question": "Describe the main steps in treating water to make it safe to drink. Include the purpose of each step.",
-    "mark_scheme": "Sedimentation: large particles settle out by gravity (1); filtration: water passed through sand and gravel beds \u2014 removes smaller particles and some microorganisms (1); chlorination: chlorine gas or chloramine added \u2014 kills remaining bacteria and viruses (1); optional: fluoridation reduces tooth decay; pH adjustment; UV treatment (1)."
+    "mark_scheme": "Sedimentation: large particles settle out by gravity (1); filtration: water passed through sand and gravel beds — removes smaller particles and some microorganisms (1); chlorination: chlorine gas or chloramine added — kills remaining bacteria and viruses (1); optional: fluoridation reduces tooth decay; pH adjustment; UV treatment (1)."
   },
   {
     "id": "C10-LA-007",
@@ -675,7 +675,7 @@
     "command_word": "Explain",
     "topic": "Alternative Metal Extraction",
     "question": "Explain how phytomining can be used to extract copper from low-grade ores. Include the organisms involved and the process by which copper is ultimately obtained.",
-    "mark_scheme": "Phytomining: hyperaccumulator plants (e.g. some species of Thlaspi) absorb copper ions from soil through roots (1); plants grow in contaminated soil \u2014 accumulate copper in leaves and stems (1); plants harvested and burned \u2014 copper-rich ash (bioleachate) collected (1); copper extracted from solution by electrolysis or displacement with scrap iron (1)."
+    "mark_scheme": "Phytomining: hyperaccumulator plants (e.g. some species of Thlaspi) absorb copper ions from soil through roots (1); plants grow in contaminated soil — accumulate copper in leaves and stems (1); plants harvested and burned — copper-rich ash (bioleachate) collected (1); copper extracted from solution by electrolysis or displacement with scrap iron (1)."
   },
   {
     "id": "C10-LA-008",
@@ -684,7 +684,7 @@
     "command_word": "Describe",
     "topic": "Corrosion",
     "question": "Describe the conditions required for iron to rust. Explain how galvanising prevents rusting.",
-    "mark_scheme": "Iron requires both water and oxygen to rust \u2014 removing either prevents rusting (1); rusting is an electrochemical process producing iron(III) oxide hydrate (rust) (1); galvanising: coating iron with zinc (1); zinc acts as sacrificial anode \u2014 more reactive, oxidises preferentially even if coating scratched (1)."
+    "mark_scheme": "Iron requires both water and oxygen to rust — removing either prevents rusting (1); rusting is an electrochemical process producing iron(III) oxide hydrate (rust) (1); galvanising: coating iron with zinc (1); zinc acts as sacrificial anode — more reactive, oxidises preferentially even if coating scratched (1)."
   },
   {
     "id": "C10-LA-009",
@@ -693,7 +693,7 @@
     "command_word": "Evaluate",
     "topic": "Using Resources",
     "question": "Evaluate the use of recycling versus extracting new metals from ores. Include economic and environmental arguments.",
-    "mark_scheme": "Recycling: saves energy \u2014 aluminium recycling uses 5% of energy of extraction (1); reduces mining which damages habitats and produces waste (1); conserves finite ore resources (1); extraction: needed when recycled supply insufficient for demand; new technology requires new materials (1)."
+    "mark_scheme": "Recycling: saves energy — aluminium recycling uses 5% of energy of extraction (1); reduces mining which damages habitats and produces waste (1); conserves finite ore resources (1); extraction: needed when recycled supply insufficient for demand; new technology requires new materials (1)."
   },
   {
     "id": "C10-LA-010",
@@ -702,7 +702,7 @@
     "command_word": "Explain",
     "topic": "Materials",
     "question": "Explain the difference between ceramics, polymers, composites and metals in terms of structure and properties. Give one example of each.",
-    "mark_scheme": "Ceramics: ionic/covalent solid structures \u2014 hard, brittle, high melting point; e.g. alumina (Al\u2082O\u2083) in cutting tools (1); polymers: long chain molecules \u2014 flexible or rigid; low density; e.g. poly(ethene) in packaging (1); composites: combination of materials \u2014 properties of both; e.g. fibreglass (glass fibre + resin) in boats (1); metals: giant metallic structures \u2014 conduct electricity; malleable; e.g. copper in wiring (1)."
+    "mark_scheme": "Ceramics: ionic/covalent solid structures — hard, brittle, high melting point; e.g. alumina (Al₂O₃) in cutting tools (1); polymers: long chain molecules — flexible or rigid; low density; e.g. poly(ethene) in packaging (1); composites: combination of materials — properties of both; e.g. fibreglass (glass fibre + resin) in boats (1); metals: giant metallic structures — conduct electricity; malleable; e.g. copper in wiring (1)."
   },
   {
     "id": "C10-LA-011",
@@ -711,7 +711,7 @@
     "command_word": "Explain",
     "topic": "Alternative Metal Extraction",
     "question": "Explain how bioleaching is used to extract copper from low-grade ores. Include the microorganisms involved and the chemistry.",
-    "mark_scheme": "Bacteria (e.g. Acidithiobacillus ferrooxidans) are used to leach copper from ore (1); bacteria oxidise sulfide minerals: CuS + 2Fe\u00b3\u207a \u2192 Cu\u00b2\u207a + 2Fe\u00b2\u207a + S (1); copper ions in solution can be extracted by displacement with iron or by electrolysis (1); advantage: treats ores too low-grade for smelting; disadvantage: very slow (1)."
+    "mark_scheme": "Bacteria (e.g. Acidithiobacillus ferrooxidans) are used to leach copper from ore (1); bacteria oxidise sulfide minerals: CuS + 2Fe³⁺ → Cu²⁺ + 2Fe²⁺ + S (1); copper ions in solution can be extracted by displacement with iron or by electrolysis (1); advantage: treats ores too low-grade for smelting; disadvantage: very slow (1)."
   },
   {
     "id": "C10-LA-012",
@@ -720,7 +720,7 @@
     "command_word": "Describe",
     "topic": "Corrosion",
     "question": "Describe four methods used to prevent the rusting of iron. Include the principle behind each method.",
-    "mark_scheme": "Painting: forms barrier preventing water/O\u2082 contacting iron (1); electroplating: coat with less reactive metal (tin, chromium) \u2014 barrier (1); galvanising: zinc coat provides both barrier and sacrificial protection (1); sacrificial protection: attach block of more reactive metal (Mg or Zn) \u2014 oxidises instead of iron (1)."
+    "mark_scheme": "Painting: forms barrier preventing water/O₂ contacting iron (1); electroplating: coat with less reactive metal (tin, chromium) — barrier (1); galvanising: zinc coat provides both barrier and sacrificial protection (1); sacrificial protection: attach block of more reactive metal (Mg or Zn) — oxidises instead of iron (1)."
   },
   {
     "id": "C10-LA-013",
@@ -729,7 +729,7 @@
     "command_word": "Evaluate",
     "topic": "Life Cycle Assessment",
     "question": "Evaluate the limitations of life cycle assessments when comparing plastic bags with cotton bags. Include which bag has lower environmental impact.",
-    "mark_scheme": "LCA: assess raw materials, manufacturing, use, disposal for each product (1); plastic bag: low energy in production but non-biodegradable; cotton bag: much higher energy/water/land in production (1); cotton bag must be reused 130+ times (some studies: 20,000 times for organic cotton) to offset its higher production impact (1); LCA limitations: data quality varies; difficult to compare different environmental impacts (water vs CO\u2082); subjectivity in weightings used (1)."
+    "mark_scheme": "LCA: assess raw materials, manufacturing, use, disposal for each product (1); plastic bag: low energy in production but non-biodegradable; cotton bag: much higher energy/water/land in production (1); cotton bag must be reused 130+ times (some studies: 20,000 times for organic cotton) to offset its higher production impact (1); LCA limitations: data quality varies; difficult to compare different environmental impacts (water vs CO₂); subjectivity in weightings used (1)."
   },
   {
     "id": "C10-LA-014",
@@ -738,7 +738,7 @@
     "command_word": "Explain",
     "topic": "Water",
     "question": "Explain why desalination is used in some regions to produce drinking water. Include two methods and their relative advantages.",
-    "mark_scheme": "Desalination: removes salt from seawater \u2014 used in water-scarce regions (Middle East, Mediterranean) (1); multi-stage flash distillation: seawater heated, steam condensed \u2014 produces pure water; energy intensive (1); reverse osmosis: high pressure forces water through semi-permeable membrane \u2014 salts retained; lower energy than distillation (1); advantage of RO: increasingly used in drought-prone areas; becoming more affordable (1)."
+    "mark_scheme": "Desalination: removes salt from seawater — used in water-scarce regions (Middle East, Mediterranean) (1); multi-stage flash distillation: seawater heated, steam condensed — produces pure water; energy intensive (1); reverse osmosis: high pressure forces water through semi-permeable membrane — salts retained; lower energy than distillation (1); advantage of RO: increasingly used in drought-prone areas; becoming more affordable (1)."
   },
   {
     "id": "C10-LA-015",
@@ -747,7 +747,7 @@
     "command_word": "Describe",
     "topic": "Materials",
     "question": "Describe the properties of composites and explain why they are used in aircraft construction. Include the example of carbon fibre reinforced polymer (CFRP).",
-    "mark_scheme": "Composites: matrix material + reinforcing fibres \u2014 combines properties of both (1); CFRP: carbon fibres embedded in polymer resin (1); properties: very strong, very lightweight (density ~1.6 g/cm\u00b3 vs aluminium ~2.7 g/cm\u00b3) (1); aircraft: reduced weight saves fuel and emissions; strong enough to withstand aerodynamic forces; does not corrode (1)."
+    "mark_scheme": "Composites: matrix material + reinforcing fibres — combines properties of both (1); CFRP: carbon fibres embedded in polymer resin (1); properties: very strong, very lightweight (density ~1.6 g/cm³ vs aluminium ~2.7 g/cm³) (1); aircraft: reduced weight saves fuel and emissions; strong enough to withstand aerodynamic forces; does not corrode (1)."
   },
   {
     "id": "C10-LA-016",
@@ -756,7 +756,7 @@
     "command_word": "Evaluate",
     "topic": "Life Cycle Assessment",
     "question": "Evaluate the environmental impact of producing a reusable aluminium water bottle compared to single-use plastic bottles. Use LCA principles in your answer.",
-    "mark_scheme": "Raw materials: aluminium mining \u2014 high energy, landscape destruction; plastic from crude oil \u2014 finite resource (1); manufacturing: aluminium smelting uses large amounts of electricity; plastic bottle moulding \u2014 lower energy (1); use phase: both inert \u2014 no emissions; aluminium bottle reused thousands of times (1); end of life: aluminium highly recyclable (~75% global recycling rate); plastic often not recycled \u2014 goes to landfill or ocean (1); overall: aluminium bottle has much lower lifetime impact if used >100+ times \u2014 LCA favours reusable over single-use (1)."
+    "mark_scheme": "Raw materials: aluminium mining — high energy, landscape destruction; plastic from crude oil — finite resource (1); manufacturing: aluminium smelting uses large amounts of electricity; plastic bottle moulding — lower energy (1); use phase: both inert — no emissions; aluminium bottle reused thousands of times (1); end of life: aluminium highly recyclable (~75% global recycling rate); plastic often not recycled — goes to landfill or ocean (1); overall: aluminium bottle has much lower lifetime impact if used >100+ times — LCA favours reusable over single-use (1)."
   },
   {
     "id": "C10-LA-017",
@@ -765,7 +765,7 @@
     "command_word": "Explain",
     "topic": "Water",
     "question": "Explain why access to clean water is described as a global challenge. Include the causes of water insecurity and the approaches used to address it.",
-    "mark_scheme": "Over 2 billion people lack access to safe drinking water \u2014 developing world mainly (1); causes: uneven distribution of rainfall; industrial/agricultural pollution of groundwater; climate change making droughts more frequent (1); approaches: water treatment plants \u2014 filtration, chlorination (1); desalination \u2014 for coastal/arid regions; expensive but increasingly viable with solar power (1); improved sanitation: preventing water source contamination reduces disease burden (cholera, typhoid) (1)."
+    "mark_scheme": "Over 2 billion people lack access to safe drinking water — developing world mainly (1); causes: uneven distribution of rainfall; industrial/agricultural pollution of groundwater; climate change making droughts more frequent (1); approaches: water treatment plants — filtration, chlorination (1); desalination — for coastal/arid regions; expensive but increasingly viable with solar power (1); improved sanitation: preventing water source contamination reduces disease burden (cholera, typhoid) (1)."
   },
   {
     "id": "C10-LA-018",
@@ -774,7 +774,7 @@
     "command_word": "Describe",
     "topic": "Alternative Metal Extraction",
     "question": "Describe how the electrowinning process is used after bioleaching to extract pure copper. Include the electrode reactions and why this method is used over smelting.",
-    "mark_scheme": "Bioleaching produces copper sulfate solution (Cu\u00b2\u207a ions) (1); electrowinning: copper sulfate solution used as electrolyte (1); cathode: Cu\u00b2\u207a + 2e\u207b \u2192 Cu \u2014 pure copper deposited (1); anode: inert (lead alloy or stainless steel) \u2014 water oxidised (1); advantage: treats low-grade ores not viable for smelting; lower energy than smelting; less SO\u2082 produced (1)."
+    "mark_scheme": "Bioleaching produces copper sulfate solution (Cu²⁺ ions) (1); electrowinning: copper sulfate solution used as electrolyte (1); cathode: Cu²⁺ + 2e⁻ → Cu — pure copper deposited (1); anode: inert (lead alloy or stainless steel) — water oxidised (1); advantage: treats low-grade ores not viable for smelting; lower energy than smelting; less SO₂ produced (1)."
   },
   {
     "id": "C10-LA-019",
@@ -783,7 +783,7 @@
     "command_word": "Evaluate",
     "topic": "Using Resources",
     "question": "Evaluate the concept of a 'circular economy' as a replacement for the linear 'take-make-dispose' model. Include what a circular economy involves and examples of products designed for it.",
-    "mark_scheme": "Linear economy: resources extracted \u2192 product made \u2192 discarded \u2014 inefficient, depletes resources (1); circular: products designed to be reused, repaired, remanufactured, or recycled \u2014 nothing wasted (1); examples: modular smartphone design (Fairphone) \u2014 components replaced not whole device (1); carpet leasing (Interface) \u2014 manufacturer retains ownership, takes back for recycling (1); reduces raw material demand, energy use, and waste; but requires systemic change in business models and consumer behaviour (1)."
+    "mark_scheme": "Linear economy: resources extracted → product made → discarded — inefficient, depletes resources (1); circular: products designed to be reused, repaired, remanufactured, or recycled — nothing wasted (1); examples: modular smartphone design (Fairphone) — components replaced not whole device (1); carpet leasing (Interface) — manufacturer retains ownership, takes back for recycling (1); reduces raw material demand, energy use, and waste; but requires systemic change in business models and consumer behaviour (1)."
   },
   {
     "id": "C10-LA-020",
@@ -792,7 +792,7 @@
     "command_word": "Explain",
     "topic": "Corrosion",
     "question": "Explain the electrochemical mechanism of rusting. Include the anodic and cathodic reactions and explain why salt water accelerates rusting.",
-    "mark_scheme": "Rusting is electrochemical \u2014 requires electrolyte (water) to allow ion movement (1); anodic areas (where iron oxidises): Fe \u2192 Fe\u00b2\u207a + 2e\u207b (1); cathodic areas: O\u2082 + 2H\u2082O + 4e\u207b \u2192 4OH\u207b (1); Fe\u00b2\u207a + 2OH\u207b \u2192 Fe(OH)\u2082 \u2192 oxidised further to Fe(OH)\u2083 \u2192 dehydrates to rust (Fe\u2082O\u2083\u00b7nH\u2082O) (1); salt water: ions increase conductivity of electrolyte \u2014 faster ion movement; greater potential difference between anodic and cathodic areas \u2014 faster rusting (1)."
+    "mark_scheme": "Rusting is electrochemical — requires electrolyte (water) to allow ion movement (1); anodic areas (where iron oxidises): Fe → Fe²⁺ + 2e⁻ (1); cathodic areas: O₂ + 2H₂O + 4e⁻ → 4OH⁻ (1); Fe²⁺ + 2OH⁻ → Fe(OH)₂ → oxidised further to Fe(OH)₃ → dehydrates to rust (Fe₂O₃·nH₂O) (1); salt water: ions increase conductivity of electrolyte — faster ion movement; greater potential difference between anodic and cathodic areas — faster rusting (1)."
   },
   {
     "id": "C10-LA-021",
@@ -801,7 +801,7 @@
     "command_word": "Evaluate",
     "topic": "Materials",
     "question": "Evaluate the use of smart materials in modern technology. Include shape memory alloys, thermochromic pigments and self-healing polymers.",
-    "mark_scheme": "Shape memory alloys (e.g. nitinol): return to original shape when heated; used in medical stents, orthodontic wires (1); thermochromic pigments: change colour with temperature; used in thermometers, heat-sensitive mugs, food packaging (1); self-healing polymers: contain microcapsules of monomer \u2014 crack releases monomer which polymerises and seals crack; extend product life (1); advantages: add functionality, improve safety, reduce maintenance (1); limitations: higher cost; may be complex to manufacture; some applications still in development (1)."
+    "mark_scheme": "Shape memory alloys (e.g. nitinol): return to original shape when heated; used in medical stents, orthodontic wires (1); thermochromic pigments: change colour with temperature; used in thermometers, heat-sensitive mugs, food packaging (1); self-healing polymers: contain microcapsules of monomer — crack releases monomer which polymerises and seals crack; extend product life (1); advantages: add functionality, improve safety, reduce maintenance (1); limitations: higher cost; may be complex to manufacture; some applications still in development (1)."
   },
   {
     "id": "C10-LA-022",
@@ -810,7 +810,7 @@
     "command_word": "Describe",
     "topic": "Life Cycle Assessment",
     "question": "Describe how LCA data is used in product development to reduce environmental impact. Include an example of how a company changed a product based on LCA findings.",
-    "mark_scheme": "LCA generates data at each lifecycle stage \u2014 identifies 'hotspots' with highest environmental impact (1); designers can then target improvements at those hotspots (1); example: Patagonia clothing \u2014 LCA showed 57% of environmental impact from raw cotton; switched to organic cotton and recycled fibres (1); or: IKEA \u2014 LCA showed packaging was major contributor; redesigned flat-pack to maximise space \u2014 fewer transport trips (1); LCA allows comparison of alternative designs before production \u2014 prevents wasted investment in high-impact approaches (1)."
+    "mark_scheme": "LCA generates data at each lifecycle stage — identifies 'hotspots' with highest environmental impact (1); designers can then target improvements at those hotspots (1); example: Patagonia clothing — LCA showed 57% of environmental impact from raw cotton; switched to organic cotton and recycled fibres (1); or: IKEA — LCA showed packaging was major contributor; redesigned flat-pack to maximise space — fewer transport trips (1); LCA allows comparison of alternative designs before production — prevents wasted investment in high-impact approaches (1)."
   },
   {
     "id": "C10-LA-023",
@@ -819,7 +819,7 @@
     "command_word": "Explain",
     "topic": "Water",
     "question": "Explain what is meant by 'hard water' and 'soft water'. Include the chemistry of how hardness forms and is removed.",
-    "mark_scheme": "Hard water: contains Ca\u00b2\u207a and Mg\u00b2\u207a ions dissolved from limestone/chalk (1); forms when CO\u2082 dissolves in rainwater \u2192 H\u2082CO\u2083 \u2014 dissolves CaCO\u2083: CaCO\u2083 + H\u2082CO\u2083 \u2192 Ca(HCO\u2083)\u2082 (1); temporary hardness: HCO\u2083\u207b \u2014 removed by boiling: Ca(HCO\u2083)\u2082 \u2192 CaCO\u2083 + H\u2082O + CO\u2082 (1); permanent hardness: SO\u2084\u00b2\u207b \u2014 cannot be removed by boiling; removed by ion exchange resin (1); effects: forms scale in kettles/pipes; reduces soap lather; but provides calcium for health (1)."
+    "mark_scheme": "Hard water: contains Ca²⁺ and Mg²⁺ ions dissolved from limestone/chalk (1); forms when CO₂ dissolves in rainwater → H₂CO₃ — dissolves CaCO₃: CaCO₃ + H₂CO₃ → Ca(HCO₃)₂ (1); temporary hardness: HCO₃⁻ — removed by boiling: Ca(HCO₃)₂ → CaCO₃ + H₂O + CO₂ (1); permanent hardness: SO₄²⁻ — cannot be removed by boiling; removed by ion exchange resin (1); effects: forms scale in kettles/pipes; reduces soap lather; but provides calcium for health (1)."
   },
   {
     "id": "C10-LA-024",
@@ -828,7 +828,7 @@
     "command_word": "Evaluate",
     "topic": "Using Resources",
     "question": "Evaluate the sustainability of rare earth element (REE) extraction for use in electric vehicle batteries and wind turbines. Include the demand, extraction issues, and recycling.",
-    "mark_scheme": "REEs (e.g. neodymium, lithium, cobalt): essential for EV batteries, wind turbines, electronics (1); demand rising rapidly with green energy transition (1); extraction: primarily China (~60% of production) \u2014 geopolitical risk; mining causes significant habitat destruction, toxic waste (1); cobalt: mainly from DRC \u2014 human rights concerns over artisanal mining (1); recycling: battery recycling can recover REEs \u2014 currently low rates; infrastructure investment needed (1). Accept: reducing REE content through better battery chemistry (lithium iron phosphate avoids cobalt)."
+    "mark_scheme": "REEs (e.g. neodymium, lithium, cobalt): essential for EV batteries, wind turbines, electronics (1); demand rising rapidly with green energy transition (1); extraction: primarily China (~60% of production) — geopolitical risk; mining causes significant habitat destruction, toxic waste (1); cobalt: mainly from DRC — human rights concerns over artisanal mining (1); recycling: battery recycling can recover REEs — currently low rates; infrastructure investment needed (1). Accept: reducing REE content through better battery chemistry (lithium iron phosphate avoids cobalt)."
   },
   {
     "id": "C10-LA-025",
@@ -837,7 +837,7 @@
     "command_word": "Evaluate",
     "topic": "Life Cycle Assessment",
     "question": "Evaluate the LCA of electric vehicles (EVs) compared to petrol cars. Include manufacturing, use phase, and end-of-life, and comment on whether EVs are truly 'green'.",
-    "mark_scheme": "Manufacturing: EV battery production is carbon-intensive \u2014 lithium, cobalt mining; EV manufacturing has higher CO\u2082 than petrol car initially (1); use phase: EV uses electricity \u2014 emissions depend on grid; UK grid ~230 gCO\u2082/kWh (falling); petrol car ~200 gCO\u2082/km (1); EVs break even vs petrol at ~1\u20133 years of UK driving depending on grid mix (1); as grid gets cleaner (more renewables), EV lifetime emissions fall further (1); end of life: battery recycling \u2014 recovering lithium, cobalt; currently low rates (1); overall: EVs significantly lower lifetime emissions than petrol if charged with grid/renewable electricity; 'truly green' depends on grid decarbonisation (1)."
+    "mark_scheme": "Manufacturing: EV battery production is carbon-intensive — lithium, cobalt mining; EV manufacturing has higher CO₂ than petrol car initially (1); use phase: EV uses electricity — emissions depend on grid; UK grid ~230 gCO₂/kWh (falling); petrol car ~200 gCO₂/km (1); EVs break even vs petrol at ~1–3 years of UK driving depending on grid mix (1); as grid gets cleaner (more renewables), EV lifetime emissions fall further (1); end of life: battery recycling — recovering lithium, cobalt; currently low rates (1); overall: EVs significantly lower lifetime emissions than petrol if charged with grid/renewable electricity; 'truly green' depends on grid decarbonisation (1)."
   },
   {
     "id": "C10-LA-026",
@@ -846,7 +846,7 @@
     "command_word": "Explain",
     "topic": "Water",
     "question": "Explain the process of reverse osmosis for water purification. Include the physics and chemistry involved and evaluate its use for producing drinking water in water-scarce regions.",
-    "mark_scheme": "Osmosis: water moves from high to low water potential through semi-permeable membrane (1); reverse osmosis: high pressure applied to saline water \u2014 forces water molecules through membrane against osmotic gradient (1); membrane pore size ~0.0001 \u00b5m \u2014 allows water molecules but not hydrated ions or bacteria through (1); product: pure water; concentrated brine is by-product \u2014 must be disposed carefully (1); evaluation: produces very high purity water; increasingly used in Middle East, California, Mediterranean (1); limitations: energy intensive (high pressure needed); membrane fouling; brine disposal harms marine ecosystems; but solar-powered RO becoming viable in sunny, water-scarce regions (1)."
+    "mark_scheme": "Osmosis: water moves from high to low water potential through semi-permeable membrane (1); reverse osmosis: high pressure applied to saline water — forces water molecules through membrane against osmotic gradient (1); membrane pore size ~0.0001 µm — allows water molecules but not hydrated ions or bacteria through (1); product: pure water; concentrated brine is by-product — must be disposed carefully (1); evaluation: produces very high purity water; increasingly used in Middle East, California, Mediterranean (1); limitations: energy intensive (high pressure needed); membrane fouling; brine disposal harms marine ecosystems; but solar-powered RO becoming viable in sunny, water-scarce regions (1)."
   },
   {
     "id": "C10-LA-027",
@@ -855,7 +855,7 @@
     "command_word": "Describe",
     "topic": "Alternative Metal Extraction",
     "question": "Describe the traditional extraction of copper by smelting and compare it to the alternative methods of phytomining and bioleaching. Evaluate the sustainability of each.",
-    "mark_scheme": "Smelting: roast copper ore (CuS) in air \u2192 CuO; reduce with carbon \u2192 Cu; traditional, fast, high-grade ore needed (1); produces SO\u2082 \u2014 acid rain; large energy use; destroys landscape (1); phytomining: plants absorb Cu\u00b2\u207a; harvest and burn; extract from ash \u2014 very slow; low-grade ores viable; less waste (1); bioleaching: bacteria oxidise sulfide ores to release Cu\u00b2\u207a; electrowinning recovers copper; very slow (months\u2013years); no SO\u2082 produced (1); sustainability: traditional smelting high impact but efficient; phyto/bio lower impact, treat waste tips and marginal ores (1); increasingly important as high-grade ores depleted; but all have some environmental impact \u2014 no 'zero impact' extraction (1)."
+    "mark_scheme": "Smelting: roast copper ore (CuS) in air → CuO; reduce with carbon → Cu; traditional, fast, high-grade ore needed (1); produces SO₂ — acid rain; large energy use; destroys landscape (1); phytomining: plants absorb Cu²⁺; harvest and burn; extract from ash — very slow; low-grade ores viable; less waste (1); bioleaching: bacteria oxidise sulfide ores to release Cu²⁺; electrowinning recovers copper; very slow (months–years); no SO₂ produced (1); sustainability: traditional smelting high impact but efficient; phyto/bio lower impact, treat waste tips and marginal ores (1); increasingly important as high-grade ores depleted; but all have some environmental impact — no 'zero impact' extraction (1)."
   },
   {
     "id": "C10-LA-028",
@@ -864,7 +864,7 @@
     "command_word": "Evaluate",
     "topic": "Using Resources",
     "question": "Evaluate the claim that 'recycling is always better for the environment than producing materials from raw sources'. Include examples where recycling has clear benefits and cases where the advantage may not be straightforward.",
-    "mark_scheme": "Clear benefits: aluminium recycling uses 5% of energy of primary production from bauxite \u2014 major carbon saving (1); steel recycling saves iron ore and coal; copper recycling avoids mining impact (1); glass recycling reduces silica mining and energy use (1); less clear: paper recycling \u2014 depends on whether virgin paper comes from sustainable forestry; recycled paper still uses chemicals and energy (1); plastics: mixed plastics hard to separate; quality degrades \u2014 often down-cycled not truly recycled; can be more energy intensive than virgin plastic for some polymer types (1); conclusion: recycling almost always better than landfill; but choice between recycling and sustainable production depends on material, location and energy source (1)."
+    "mark_scheme": "Clear benefits: aluminium recycling uses 5% of energy of primary production from bauxite — major carbon saving (1); steel recycling saves iron ore and coal; copper recycling avoids mining impact (1); glass recycling reduces silica mining and energy use (1); less clear: paper recycling — depends on whether virgin paper comes from sustainable forestry; recycled paper still uses chemicals and energy (1); plastics: mixed plastics hard to separate; quality degrades — often down-cycled not truly recycled; can be more energy intensive than virgin plastic for some polymer types (1); conclusion: recycling almost always better than landfill; but choice between recycling and sustainable production depends on material, location and energy source (1)."
   },
   {
     "id": "C10-LA-029",
@@ -873,7 +873,7 @@
     "command_word": "Explain",
     "topic": "Materials",
     "question": "Explain how the development of new materials has transformed modern medicine and engineering. Include nanoparticles, smart materials, and composites.",
-    "mark_scheme": "Nanoparticles: extremely small (1\u2013100 nm); high surface area to volume ratio \u2014 highly reactive (1); silver nanoparticles: antimicrobial \u2014 used in wound dressings, coatings; titanium dioxide nanoparticles in sunscreen (1); smart materials: nitinol stents expand in body heat \u2014 minimally invasive surgery; drug-eluting stents release medication (1); composites: CFRP in aircraft; titanium alloy in hip replacements \u2014 strong, lightweight, biocompatible (1); risk: nanoparticles may cause unknown biological effects \u2014 long-term safety not fully established; regulation needed (1)."
+    "mark_scheme": "Nanoparticles: extremely small (1–100 nm); high surface area to volume ratio — highly reactive (1); silver nanoparticles: antimicrobial — used in wound dressings, coatings; titanium dioxide nanoparticles in sunscreen (1); smart materials: nitinol stents expand in body heat — minimally invasive surgery; drug-eluting stents release medication (1); composites: CFRP in aircraft; titanium alloy in hip replacements — strong, lightweight, biocompatible (1); risk: nanoparticles may cause unknown biological effects — long-term safety not fully established; regulation needed (1)."
   },
   {
     "id": "C10-LA-030",
@@ -882,7 +882,7 @@
     "command_word": "Evaluate",
     "topic": "Corrosion",
     "question": "Evaluate the economic and environmental costs of corrosion. Include the scale of the problem globally and the methods used to prevent it.",
-    "mark_scheme": "Economic cost: corrosion costs ~3.4% of global GDP (~$2.5 trillion/year) \u2014 infrastructure, vehicles, pipelines (1); bridges and infrastructure: steel corrosion can cause structural failure \u2014 safety risk as well as cost (1); prevention \u2014 painting: cheap, effective, but must be maintained; microplastics from paint flaking (1); galvanising: durable; used on pylons, crash barriers; zinc mining has environmental footprint (1); cathodic protection: impressed current or sacrificial anodes protect buried pipelines and ship hulls (1); stainless steel: chromium oxide passive layer prevents corrosion \u2014 long-lasting but expensive and energy-intensive to produce (1)."
+    "mark_scheme": "Economic cost: corrosion costs ~3.4% of global GDP (~$2.5 trillion/year) — infrastructure, vehicles, pipelines (1); bridges and infrastructure: steel corrosion can cause structural failure — safety risk as well as cost (1); prevention — painting: cheap, effective, but must be maintained; microplastics from paint flaking (1); galvanising: durable; used on pylons, crash barriers; zinc mining has environmental footprint (1); cathodic protection: impressed current or sacrificial anodes protect buried pipelines and ship hulls (1); stainless steel: chromium oxide passive layer prevents corrosion — long-lasting but expensive and energy-intensive to produce (1)."
   },
   {
     "id": "C10-LA-031",
@@ -891,7 +891,7 @@
     "command_word": "Explain",
     "topic": "Corrosion",
     "question": "Explain why alloys are more resistant to corrosion than pure metals in many applications. Use stainless steel and duralumin as examples.",
-    "mark_scheme": "Alloys have different surface chemistry to pure metals \u2014 disrupts electrochemical corrosion mechanism (1); stainless steel: chromium (>10.5%) reacts with O\u2082 to form Cr\u2082O\u2083 passive layer \u2014 self-repairing barrier (1); prevents Fe\u00b2\u207a ions from being released \u2014 no rust (1); duralumin (Al + Cu + Mg): natural Al\u2082O\u2083 layer protects surface; used in aircraft \u2014 strong and corrosion-resistant (1); trade-off: alloys often more expensive and harder to fabricate than pure metals (1)."
+    "mark_scheme": "Alloys have different surface chemistry to pure metals — disrupts electrochemical corrosion mechanism (1); stainless steel: chromium (>10.5%) reacts with O₂ to form Cr₂O₃ passive layer — self-repairing barrier (1); prevents Fe²⁺ ions from being released — no rust (1); duralumin (Al + Cu + Mg): natural Al₂O₃ layer protects surface; used in aircraft — strong and corrosion-resistant (1); trade-off: alloys often more expensive and harder to fabricate than pure metals (1)."
   },
   {
     "id": "C10-LA-032",
@@ -900,7 +900,7 @@
     "command_word": "Describe",
     "topic": "Using Resources",
     "question": "Describe how green chemistry principles guide the design of more sustainable industrial processes. Include at least four principles with examples.",
-    "mark_scheme": "Atom economy: maximise incorporation of starting materials into final product \u2014 reduce waste (1); use renewable feedstocks: bio-based chemicals from plant material rather than crude oil (1); catalysis: use catalysts to reduce energy requirements and improve selectivity (1); design for degradation: products should break down into harmless substances after use (1); prevent waste: better to prevent waste than to treat or clean up waste afterwards (1). Award 5 for any 4 principles with examples."
+    "mark_scheme": "Atom economy: maximise incorporation of starting materials into final product — reduce waste (1); use renewable feedstocks: bio-based chemicals from plant material rather than crude oil (1); catalysis: use catalysts to reduce energy requirements and improve selectivity (1); design for degradation: products should break down into harmless substances after use (1); prevent waste: better to prevent waste than to treat or clean up waste afterwards (1). Award 5 for any 4 principles with examples."
   },
   {
     "id": "C10-LA-033",
@@ -909,7 +909,7 @@
     "command_word": "Describe",
     "topic": "Life Cycle Assessment",
     "question": "Describe how LCA can be used to choose between packaging materials for food products. Include a comparison of glass, aluminium and plastic packaging using each lifecycle stage.",
-    "mark_scheme": "Raw material extraction: glass from silica/limestone \u2014 abundant; aluminium from bauxite \u2014 energy-intensive mining; plastic from crude oil \u2014 finite resource (1); manufacturing: glass making requires high temperatures \u2014 high energy; aluminium can production very energy-intensive; plastic bottle moulding \u2014 lower energy (1); transport: glass heavy \u2014 more fuel per unit; aluminium light; plastic lightest (1); use phase: all protect food adequately; glass and aluminium preserve taste better than some plastics (1); end of life: glass infinitely recyclable with no quality loss; aluminium highly recyclable; plastic often downcycled or to landfill/ocean (1); overall: aluminium can has best overall LCA if recycled; plastic best single-use footprint but worst end-of-life (1)."
+    "mark_scheme": "Raw material extraction: glass from silica/limestone — abundant; aluminium from bauxite — energy-intensive mining; plastic from crude oil — finite resource (1); manufacturing: glass making requires high temperatures — high energy; aluminium can production very energy-intensive; plastic bottle moulding — lower energy (1); transport: glass heavy — more fuel per unit; aluminium light; plastic lightest (1); use phase: all protect food adequately; glass and aluminium preserve taste better than some plastics (1); end of life: glass infinitely recyclable with no quality loss; aluminium highly recyclable; plastic often downcycled or to landfill/ocean (1); overall: aluminium can has best overall LCA if recycled; plastic best single-use footprint but worst end-of-life (1)."
   },
   {
     "id": "C10-LA-034",
@@ -919,5 +919,176 @@
     "topic": "Water",
     "question": "Evaluate the global water crisis. Include the causes of water stress, the impact on human health and ecosystems, and the technologies available to address it.",
     "mark_scheme": "Water stress: >40% of world population in water-stressed regions; growing demand from population growth, agriculture, industry (1); causes: uneven rainfall distribution; climate change intensifying droughts; overextraction of groundwater (1); human health: 2 billion lack safely managed drinking water; waterborne diseases (cholera, typhoid) kill millions annually (1); ecosystem impact: rivers run dry (Colorado River, Aral Sea); wetlands disappear; biodiversity loss (1); solutions: desalination (solar-powered RO becoming viable); water recycling and reuse; drip irrigation reduces agricultural water use by 30-50% (1); water pricing: reflecting true cost encourages efficiency; international water sharing agreements needed (1)."
+  },
+  {
+    "id": "C10-SA-016",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Water treatment",
+    "question": "State the three main stages used to treat fresh water to make it safe to drink, in the correct order.",
+    "mark_scheme": "Sedimentation (1); filtration (1); chlorination (1) — two stages in correct order for 2 marks."
+  },
+  {
+    "id": "C10-SA-017",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Give",
+    "topic": "Life cycle assessment",
+    "question": "Give two limitations of life cycle assessments when comparing products.",
+    "mark_scheme": "Any two: value judgements are subjective (1); data quality can vary between sources (1); difficult to compare different types of environmental impact (1); LCAs can be manipulated to favour a product (1)."
+  },
+  {
+    "id": "C10-SA-018",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Finite resources",
+    "question": "State two reasons why recycling metals is important for sustainable use of resources.",
+    "mark_scheme": "Any two: conserves finite ore deposits (1); requires less energy than extracting from ore (1); reduces environmental damage from mining (1); reduces waste sent to landfill (1)."
+  },
+  {
+    "id": "C10-SA-019",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Name",
+    "topic": "Alloys",
+    "question": "Name two alloys and state what metals each is made from.",
+    "mark_scheme": "Any two valid: brass = copper and zinc (1); steel = iron and carbon (1); stainless steel = iron, carbon and chromium (1); bronze = copper and tin (1)."
+  },
+  {
+    "id": "C10-SA-020",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Give",
+    "topic": "Ceramics",
+    "question": "Give two properties of ceramics and one example of their use.",
+    "mark_scheme": "Any two properties: hard (1); brittle (1); high melting point (1); electrical insulator (1); with valid use, e.g. pottery, bricks, electrical insulators (1)."
+  },
+  {
+    "id": "C10-SA-021",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Polymers",
+    "question": "State the difference between a thermosoftening and a thermosetting polymer.",
+    "mark_scheme": "Thermosoftening polymer: no cross-links between chains, softens on heating and can be remoulded (1); thermosetting polymer: cross-linked chains forming a rigid structure, does not soften on heating (1)."
+  },
+  {
+    "id": "C10-SA-022",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Give",
+    "topic": "Using Resources",
+    "question": "Give two advantages of using renewable resources rather than finite resources in manufacturing.",
+    "mark_scheme": "Any two: renewable resources will not run out (1); using them reduces depletion of finite resources for future generations (1); some have lower environmental impact to produce (1); support sustainable development (1)."
+  },
+  {
+    "id": "C10-SA-023",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Water treatment",
+    "question": "Explain why chlorination is an essential step in making water safe to drink and give one potential concern about its use.",
+    "mark_scheme": "Chlorine kills bacteria and other microorganisms in the water, preventing waterborne diseases such as cholera and typhoid (1); without chlorination, drinking water could contain pathogens harmful to health (1); concern: chlorine can react with organic matter in water to form chlorinated compounds (trihalomethanes) which may be harmful in large quantities (1)."
+  },
+  {
+    "id": "C10-SA-024",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Life cycle assessment",
+    "question": "Describe the four stages of a life cycle assessment and explain why each is important.",
+    "mark_scheme": "Raw material extraction: mining or growing materials — considers energy and land use (1); manufacturing: energy used in making the product and waste produced (1); use phase: energy consumed during the product's life (1); disposal: whether landfill, incineration or recycling and the environmental impact (1)."
+  },
+  {
+    "id": "C10-SA-025",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Finite resources",
+    "question": "Explain why some metals are described as finite resources and discuss the implications for future supply.",
+    "mark_scheme": "Finite resources exist in limited quantities in the Earth's crust and cannot be replaced once used (1); as easily accessible, high-grade ores are depleted, extraction becomes more expensive and environmentally damaging (1); implications: increased need for recycling, development of alternative extraction methods (phytomining/bioleaching), search for material substitutes (1)."
+  },
+  {
+    "id": "C10-SA-026",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Compare",
+    "topic": "Alloys",
+    "question": "Compare the properties of pure iron with those of steel, and explain why steel is more widely used.",
+    "mark_scheme": "Pure iron: soft and malleable because layers of atoms can slide over each other, limited structural applications (1); steel: alloying iron with carbon disrupts the regular layers, making it harder and stronger (1); steel is more widely used because it combines strength with malleability and can be manufactured with different properties by varying carbon content (1)."
+  },
+  {
+    "id": "C10-SA-027",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Polymers",
+    "question": "Explain why thermosetting polymers cannot be recycled in the same way as thermosoftening polymers.",
+    "mark_scheme": "Thermosoftening polymers have polymer chains that are not cross-linked (1); when heated they soften and can be remoulded into new shapes, making them recyclable (1); thermosetting polymers have chains joined by strong covalent cross-links — heating does not break these bonds so the polymer does not soften and cannot be remoulded or recycled by melting (1)."
+  },
+  {
+    "id": "C10-SA-028",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Ceramics",
+    "question": "Describe the properties of ceramics that make them suitable for use as cutting tools, and compare them with metals for this application.",
+    "mark_scheme": "Ceramics are very hard — can cut softer materials without wearing (1); they have high melting points so do not soften at the high temperatures generated during cutting (1); compared to metals: ceramics are more brittle and prone to cracking under impact, but maintain hardness at higher temperatures than most metals making them better for high-speed cutting applications (1)."
+  },
+  {
+    "id": "C10-SA-029",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Using Resources",
+    "question": "Explain what is meant by sustainable development and give two examples of how chemistry contributes to it.",
+    "mark_scheme": "Sustainable development meets the needs of the present without compromising the ability of future generations to meet their own needs (1); examples: developing biodegradable plastics reduces persistent waste (1); improving efficiency of metal recycling reduces need for mining (1); developing alternative extraction methods for low-grade ores (phytomining/bioleaching) (1)."
+  },
+  {
+    "id": "C10-SA-030",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Compare",
+    "topic": "Water treatment",
+    "question": "Compare the processes of filtration and sedimentation in water treatment. Explain the purpose of each stage.",
+    "mark_scheme": "Sedimentation: large particles clump together using coagulants and settle out under gravity — removes suspended solids and some larger particles (1); filtration: water is passed through sand and gravel beds — removes smaller particles and some microorganisms that did not settle (1); sedimentation comes first and removes the bulk of particles; filtration then polishes the water by removing smaller remaining particles — both are essential for producing clean water before sterilisation (1)."
+  },
+  {
+    "id": "C10-SA-031",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Alloys",
+    "question": "Explain why alloys are harder than pure metals, using ideas about atomic structure.",
+    "mark_scheme": "In a pure metal, atoms are arranged in regular layers that can slide over each other easily (1); in an alloy, atoms of different sizes are present — these disrupt the regular arrangement of atoms (1); the different-sized atoms prevent the layers from sliding, making the alloy harder and stronger than the pure metal (1)."
+  },
+  {
+    "id": "C10-SA-032",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Life cycle assessment",
+    "question": "Describe how a life cycle assessment could be used to compare a glass bottle with a plastic bottle for soft drinks. State which factors would be considered at each stage.",
+    "mark_scheme": "Raw materials: glass requires silica (abundant) and energy for melting; plastic requires oil (finite resource) (1); manufacturing: glass making requires very high temperatures and high energy; plastic bottle moulding requires less energy (1); use: both protect product; glass is heavier — more fuel for transport; plastic is lighter (1); disposal: glass can be recycled indefinitely; plastic is often not recycled and persists in the environment — LCA would need to account for actual recycling rates (1)."
+  },
+  {
+    "id": "C10-SA-033",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Finite resources",
+    "question": "Explain why it is important to develop alternative methods of metal extraction as ore grades decline.",
+    "mark_scheme": "Traditional smelting requires high-grade ores — as these are depleted, conventional extraction becomes uneconomical (1); lower-grade ores are still available in large quantities, requiring alternative methods like bioleaching or phytomining to extract economically (1); developing these alternatives is important to maintain metal supply for technology, infrastructure and manufacturing without massive price increases or complete resource depletion (1)."
+  },
+  {
+    "id": "C10-SA-034",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Compare",
+    "topic": "Polymers",
+    "question": "Compare the structures and uses of addition polymers and condensation polymers.",
+    "mark_scheme": "Addition polymers: formed from unsaturated monomers (alkenes) that join by opening double bonds — no other product formed; e.g. poly(ethene) used in packaging (1); condensation polymers: formed from monomers with two functional groups — small molecules (e.g. water) released as by-product; e.g. nylon, polyester (1); addition polymers generally non-biodegradable; some condensation polymers (e.g. those from plant-based materials) may be biodegradable, making them more sustainable (1)."
   }
 ]

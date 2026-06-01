@@ -50,10 +50,10 @@
     "options": [
       "Bond breaking is exothermic",
       "Bond breaking releases energy",
-      "Bond breaking requires energy \u2014 it is endothermic",
+      "Bond breaking requires energy — it is endothermic",
       "Bond breaking has no energy change"
     ],
-    "correct": "Bond breaking requires energy \u2014 it is endothermic"
+    "correct": "Bond breaking requires energy — it is endothermic"
   },
   {
     "id": "C5-MC-005",
@@ -130,7 +130,7 @@
     "type": "multiple_choice",
     "marks": 1,
     "topic": "Bond Energies",
-    "question": "Using bond energies, H-H = 436 kJ/mol, Cl-Cl = 243 kJ/mol, H-Cl = 432 kJ/mol. What is the overall energy change for H\u2082 + Cl\u2082 \u2192 2HCl?",
+    "question": "Using bond energies, H-H = 436 kJ/mol, Cl-Cl = 243 kJ/mol, H-Cl = 432 kJ/mol. What is the overall energy change for H₂ + Cl₂ → 2HCl?",
     "options": [
       "-185 kJ/mol",
       "+185 kJ/mol",
@@ -200,7 +200,7 @@
     "type": "multiple_choice",
     "marks": 1,
     "topic": "Energy Changes",
-    "question": "The specific heat capacity of water is 4200 J/kg\u00b0C. How much energy is needed to raise the temperature of 0.5 kg of water by 10\u00b0C?",
+    "question": "The specific heat capacity of water is 4200 J/kg°C. How much energy is needed to raise the temperature of 0.5 kg of water by 10°C?",
     "options": [
       "4200 J",
       "21000 J",
@@ -265,7 +265,7 @@
     "correct": "water",
     "acceptable": [
       "water",
-      "H\u2082O"
+      "H₂O"
     ]
   },
   {
@@ -296,7 +296,7 @@
     "type": "fill_in_blank",
     "marks": 1,
     "topic": "Energy Changes",
-    "question": "The energy needed to raise 1 kg of water by 1\u00b0C is called the specific __________ capacity.",
+    "question": "The energy needed to raise 1 kg of water by 1°C is called the specific __________ capacity.",
     "correct": "heat",
     "acceptable": [
       "heat"
@@ -333,19 +333,19 @@
     "pairs": [
       {
         "term": "Combustion of methane",
-        "definition": "Exothermic \u2014 releases heat to surroundings"
+        "definition": "Exothermic — releases heat to surroundings"
       },
       {
-        "term": "Thermal decomposition of CaCO\u2083",
-        "definition": "Endothermic \u2014 absorbs heat from surroundings"
+        "term": "Thermal decomposition of CaCO₃",
+        "definition": "Endothermic — absorbs heat from surroundings"
       },
       {
         "term": "Neutralisation of HCl + NaOH",
-        "definition": "Exothermic \u2014 temperature of surroundings increases"
+        "definition": "Exothermic — temperature of surroundings increases"
       },
       {
         "term": "Dissolving ammonium nitrate",
-        "definition": "Endothermic \u2014 temperature of surroundings decreases"
+        "definition": "Endothermic — temperature of surroundings decreases"
       }
     ]
   },
@@ -362,11 +362,11 @@
       },
       {
         "term": "Bond breaking",
-        "definition": "Endothermic process \u2014 requires energy input"
+        "definition": "Endothermic process — requires energy input"
       },
       {
         "term": "Bond forming",
-        "definition": "Exothermic process \u2014 releases energy"
+        "definition": "Exothermic process — releases energy"
       },
       {
         "term": "Activation energy",
@@ -383,11 +383,11 @@
     "pairs": [
       {
         "term": "Hand warmer",
-        "definition": "Exothermic \u2014 releases heat when activated"
+        "definition": "Exothermic — releases heat when activated"
       },
       {
         "term": "Sports cold pack",
-        "definition": "Endothermic \u2014 absorbs heat, reducing temperature"
+        "definition": "Endothermic — absorbs heat, reducing temperature"
       },
       {
         "term": "Hydrogen fuel cell",
@@ -408,11 +408,11 @@
       },
       {
         "term": "Reactants",
-        "definition": "Starting materials \u2014 shown at the beginning of the profile"
+        "definition": "Starting materials — shown at the beginning of the profile"
       },
       {
         "term": "Products",
-        "definition": "Substances formed \u2014 shown at a lower energy level in exothermic reactions"
+        "definition": "Substances formed — shown at a lower energy level in exothermic reactions"
       }
     ]
   },
@@ -425,15 +425,15 @@
     "pairs": [
       {
         "term": "Hydrogen fuel cell",
-        "definition": "Only produces water \u2014 no CO\u2082 emissions at point of use"
+        "definition": "Only produces water — no CO₂ emissions at point of use"
       },
       {
         "term": "Petrol engine",
-        "definition": "Produces CO\u2082 and other pollutants \u2014 contributes to climate change"
+        "definition": "Produces CO₂ and other pollutants — contributes to climate change"
       },
       {
         "term": "Battery",
-        "definition": "Portable energy store \u2014 contains toxic materials requiring careful disposal"
+        "definition": "Portable energy store — contains toxic materials requiring careful disposal"
       }
     ]
   },
@@ -462,7 +462,7 @@
     "command_word": "State",
     "topic": "Bond Energies",
     "question": "State whether bond breaking is exothermic or endothermic.",
-    "mark_scheme": "Endothermic \u2014 bond breaking requires energy (1)."
+    "mark_scheme": "Endothermic — bond breaking requires energy (1)."
   },
   {
     "id": "C5-SA-004",
@@ -488,8 +488,8 @@
     "marks": 2,
     "command_word": "Calculate",
     "topic": "Bond Energies",
-    "question": "Use the bond energies to calculate the overall energy change for the reaction H\u2082 + Cl\u2082 \u2192 2HCl.\n(H-H = 436 kJ/mol, Cl-Cl = 243 kJ/mol, H-Cl = 432 kJ/mol)",
-    "mark_scheme": "Energy to break bonds: 436 + 243 = 679 kJ (1); energy released forming bonds: 2 \u00d7 432 = 864 kJ; overall energy change = 679 - 864 = -185 kJ/mol (exothermic) (1)."
+    "question": "Use the bond energies to calculate the overall energy change for the reaction H₂ + Cl₂ → 2HCl.\n(H-H = 436 kJ/mol, Cl-Cl = 243 kJ/mol, H-Cl = 432 kJ/mol)",
+    "mark_scheme": "Energy to break bonds: 436 + 243 = 679 kJ (1); energy released forming bonds: 2 × 432 = 864 kJ; overall energy change = 679 - 864 = -185 kJ/mol (exothermic) (1)."
   },
   {
     "id": "C5-SA-007",
@@ -507,7 +507,7 @@
     "command_word": "Explain",
     "topic": "Fuel Cells",
     "question": "Explain one advantage and one disadvantage of using hydrogen fuel cells in vehicles.",
-    "mark_scheme": "Advantage: only produces water \u2014 no CO\u2082 or polluting emissions at point of use (1); disadvantage: hydrogen is difficult/expensive to store and transport safely / currently produced from fossil fuels (1)."
+    "mark_scheme": "Advantage: only produces water — no CO₂ or polluting emissions at point of use (1); disadvantage: hydrogen is difficult/expensive to store and transport safely / currently produced from fossil fuels (1)."
   },
   {
     "id": "C5-SA-009",
@@ -515,8 +515,8 @@
     "marks": 2,
     "command_word": "Calculate",
     "topic": "Energy Changes",
-    "question": "In a calorimetry experiment, 100 g of water is heated and its temperature rises by 15\u00b0C. Calculate the energy transferred. (specific heat capacity of water = 4.2 J/g\u00b0C)",
-    "mark_scheme": "Q = mc\u0394T = 100 \u00d7 4.2 \u00d7 15 (1); = 6300 J (1)."
+    "question": "In a calorimetry experiment, 100 g of water is heated and its temperature rises by 15°C. Calculate the energy transferred. (specific heat capacity of water = 4.2 J/g°C)",
+    "mark_scheme": "Q = mcΔT = 100 × 4.2 × 15 (1); = 6300 J (1)."
   },
   {
     "id": "C5-SA-010",
@@ -525,7 +525,7 @@
     "command_word": "Explain",
     "topic": "Bond Energies",
     "question": "Explain why a reaction is exothermic when more energy is released forming bonds than is used breaking bonds.",
-    "mark_scheme": "Bond breaking requires energy (endothermic step) (1); if more energy is released forming new bonds than is used breaking old bonds, the overall energy change is negative \u2014 energy is released to the surroundings (exothermic) (1)."
+    "mark_scheme": "Bond breaking requires energy (endothermic step) (1); if more energy is released forming new bonds than is used breaking old bonds, the overall energy change is negative — energy is released to the surroundings (exothermic) (1)."
   },
   {
     "id": "C5-SA-011",
@@ -551,8 +551,8 @@
     "marks": 3,
     "command_word": "Calculate",
     "topic": "Bond Energies",
-    "question": "Calculate the overall energy change for the combustion of hydrogen: 2H\u2082 + O\u2082 \u2192 2H\u2082O.\n(H-H = 436 kJ/mol, O=O = 498 kJ/mol, O-H = 463 kJ/mol)",
-    "mark_scheme": "Energy to break bonds: (2 \u00d7 436) + 498 = 1370 kJ (1); energy released forming bonds: 2 \u00d7 (2 \u00d7 463) = 1852 kJ (1); overall = 1370 - 1852 = -482 kJ/mol (exothermic) (1)."
+    "question": "Calculate the overall energy change for the combustion of hydrogen: 2H₂ + O₂ → 2H₂O.\n(H-H = 436 kJ/mol, O=O = 498 kJ/mol, O-H = 463 kJ/mol)",
+    "mark_scheme": "Energy to break bonds: (2 × 436) + 498 = 1370 kJ (1); energy released forming bonds: 2 × (2 × 463) = 1852 kJ (1); overall = 1370 - 1852 = -482 kJ/mol (exothermic) (1)."
   },
   {
     "id": "C5-SA-014",
@@ -561,7 +561,7 @@
     "command_word": "Describe",
     "topic": "Energy Changes",
     "question": "Describe how a student could use calorimetry to measure the energy released when a fuel burns.",
-    "mark_scheme": "Burn the fuel under a calorimeter containing a known mass of water (1); measure the temperature rise of the water (1); calculate energy using Q = mc\u0394T (1)."
+    "mark_scheme": "Burn the fuel under a calorimeter containing a known mass of water (1); measure the temperature rise of the water (1); calculate energy using Q = mcΔT (1)."
   },
   {
     "id": "C5-SA-015",
@@ -570,7 +570,7 @@
     "command_word": "Explain",
     "topic": "Fuel Cells",
     "question": "Explain how a hydrogen fuel cell works to produce electricity.",
-    "mark_scheme": "Hydrogen fuel is supplied at the anode and oxygen at the cathode (1); hydrogen is oxidised at the anode, producing H\u207a ions and electrons (1); electrons flow through the external circuit producing electricity; H\u207a ions and oxygen react at the cathode producing water (1)."
+    "mark_scheme": "Hydrogen fuel is supplied at the anode and oxygen at the cathode (1); hydrogen is oxidised at the anode, producing H⁺ ions and electrons (1); electrons flow through the external circuit producing electricity; H⁺ ions and oxygen react at the cathode producing water (1)."
   },
   {
     "id": "C5-LA-001",
@@ -579,7 +579,7 @@
     "command_word": "Explain",
     "topic": "Bond Energies",
     "question": "Explain how bond energies can be used to determine whether a reaction is exothermic or endothermic. Use an example in your answer.",
-    "mark_scheme": "Breaking bonds is endothermic \u2014 requires energy (1); forming bonds is exothermic \u2014 releases energy (1); if energy released forming bonds > energy needed breaking bonds \u2192 exothermic overall (1); example: combustion of hydrogen \u2014 more energy released forming O-H bonds than needed to break H-H and O=O bonds (1)."
+    "mark_scheme": "Breaking bonds is endothermic — requires energy (1); forming bonds is exothermic — releases energy (1); if energy released forming bonds > energy needed breaking bonds → exothermic overall (1); example: combustion of hydrogen — more energy released forming O-H bonds than needed to break H-H and O=O bonds (1)."
   },
   {
     "id": "C5-LA-002",
@@ -588,7 +588,7 @@
     "command_word": "Evaluate",
     "topic": "Fuel Cells",
     "question": "Evaluate the use of hydrogen fuel cells as an alternative to petrol engines in vehicles. Include benefits, limitations, and consider the source of hydrogen.",
-    "mark_scheme": "Benefit: only produces water at point of use \u2014 no CO\u2082 or harmful emissions (1); efficient conversion of chemical energy to electricity (1); limitation: hydrogen is highly flammable and difficult to store safely (1); most hydrogen is currently produced from natural gas \u2014 still produces CO\u2082 (1). Accept other valid points with justification."
+    "mark_scheme": "Benefit: only produces water at point of use — no CO₂ or harmful emissions (1); efficient conversion of chemical energy to electricity (1); limitation: hydrogen is highly flammable and difficult to store safely (1); most hydrogen is currently produced from natural gas — still produces CO₂ (1). Accept other valid points with justification."
   },
   {
     "id": "C5-LA-003",
@@ -597,7 +597,7 @@
     "command_word": "Describe",
     "topic": "Energy Changes",
     "question": "Describe an experiment to compare the energy released by burning different fuels. Include the measurements you would take and how you would use them to calculate energy released.",
-    "mark_scheme": "Set up spirit burner with fuel below a metal calorimeter containing a known mass of water (1); record initial and final temperature of water (1); measure mass of fuel burned (initial and final mass of burner) (1); calculate energy using Q = mc\u0394T; compare energy per gram of fuel (1)."
+    "mark_scheme": "Set up spirit burner with fuel below a metal calorimeter containing a known mass of water (1); record initial and final temperature of water (1); measure mass of fuel burned (initial and final mass of burner) (1); calculate energy using Q = mcΔT; compare energy per gram of fuel (1)."
   },
   {
     "id": "C5-LA-004",
@@ -606,7 +606,7 @@
     "command_word": "Explain",
     "topic": "Energy Changes",
     "question": "Explain the difference between exothermic and endothermic reactions using energy profile diagrams. Explain how activation energy is shown on each diagram.",
-    "mark_scheme": "Exothermic: products at lower energy than reactants \u2014 overall energy released (1); endothermic: products at higher energy than reactants \u2014 overall energy absorbed (1); activation energy shown as the peak/hump above the reactant energy level on both diagrams (1); activation energy is the energy barrier reactants must overcome to react (1)."
+    "mark_scheme": "Exothermic: products at lower energy than reactants — overall energy released (1); endothermic: products at higher energy than reactants — overall energy absorbed (1); activation energy shown as the peak/hump above the reactant energy level on both diagrams (1); activation energy is the energy barrier reactants must overcome to react (1)."
   },
   {
     "id": "C5-LA-005",
@@ -614,8 +614,8 @@
     "marks": 5,
     "command_word": "Calculate",
     "topic": "Bond Energies",
-    "question": "Calculate the overall energy change for the reaction: CH\u2084 + 2O\u2082 \u2192 CO\u2082 + 2H\u2082O\nBond energies: C-H = 413, O=O = 498, C=O = 805, O-H = 463 (all kJ/mol)",
-    "mark_scheme": "Bonds broken: 4 \u00d7 C-H = 1652; 2 \u00d7 O=O = 996; total = 2648 kJ (1)(1); bonds formed: 2 \u00d7 C=O = 1610; 4 \u00d7 O-H = 1852; total = 3462 kJ (1)(1); overall energy change = 2648 - 3462 = -814 kJ/mol (exothermic) (1)."
+    "question": "Calculate the overall energy change for the reaction: CH₄ + 2O₂ → CO₂ + 2H₂O\nBond energies: C-H = 413, O=O = 498, C=O = 805, O-H = 463 (all kJ/mol)",
+    "mark_scheme": "Bonds broken: 4 × C-H = 1652; 2 × O=O = 996; total = 2648 kJ (1)(1); bonds formed: 2 × C=O = 1610; 4 × O-H = 1852; total = 3462 kJ (1)(1); overall energy change = 2648 - 3462 = -814 kJ/mol (exothermic) (1)."
   },
   {
     "id": "C5-LA-006",
@@ -624,7 +624,7 @@
     "command_word": "Evaluate",
     "topic": "Energy Changes",
     "question": "Evaluate the use of chemical energy stores such as fuels, batteries, and fuel cells for powering vehicles. Consider energy efficiency, environmental impact, and practicality.",
-    "mark_scheme": "Fuels: high energy density, easy to store and refuel, but burn to produce CO\u2082 and pollutants (1); batteries: no emissions at point of use, rechargeable, but limited range, slow to charge, contain toxic materials (1); fuel cells: only produce water, efficient, but hydrogen is difficult to store and currently produced from fossil fuels (1); comparison of efficiency: fuel cells more efficient than combustion engines (1); environmental considerations: all have some environmental impact \u2014 depends on energy source (1); conclusion: no single perfect solution \u2014 trade-offs between practicality, cost, and environmental impact (1)."
+    "mark_scheme": "Fuels: high energy density, easy to store and refuel, but burn to produce CO₂ and pollutants (1); batteries: no emissions at point of use, rechargeable, but limited range, slow to charge, contain toxic materials (1); fuel cells: only produce water, efficient, but hydrogen is difficult to store and currently produced from fossil fuels (1); comparison of efficiency: fuel cells more efficient than combustion engines (1); environmental considerations: all have some environmental impact — depends on energy source (1); conclusion: no single perfect solution — trade-offs between practicality, cost, and environmental impact (1)."
   },
   {
     "id": "C5-LA-007",
@@ -633,7 +633,7 @@
     "command_word": "Explain",
     "topic": "Bond Energies",
     "question": "A student claims that all combustion reactions must be exothermic because they produce flames. Evaluate this claim. Use your knowledge of bond energies and energy profile diagrams to explain why combustion reactions are exothermic.",
-    "mark_scheme": "The student's reasoning is incomplete \u2014 the presence of a flame is a result of the exothermic reaction, not the cause (1); combustion is exothermic because more energy is released forming new bonds (C=O and O-H) than is needed to break old bonds (C-H and O=O) (1); energy profile shows products at lower energy level than reactants (1); the difference in energy is released to the surroundings as heat and light (1); activation energy is still needed to start the reaction \u2014 e.g. a spark or flame (1); all combustion reactions are exothermic by definition, but the student should understand why in terms of bond energy (1)."
+    "mark_scheme": "The student's reasoning is incomplete — the presence of a flame is a result of the exothermic reaction, not the cause (1); combustion is exothermic because more energy is released forming new bonds (C=O and O-H) than is needed to break old bonds (C-H and O=O) (1); energy profile shows products at lower energy level than reactants (1); the difference in energy is released to the surroundings as heat and light (1); activation energy is still needed to start the reaction — e.g. a spark or flame (1); all combustion reactions are exothermic by definition, but the student should understand why in terms of bond energy (1)."
   },
   {
     "id": "C5-LA-005",
@@ -642,7 +642,7 @@
     "command_word": "Explain",
     "topic": "Energy Changes",
     "question": "Explain the difference between an exothermic and an endothermic reaction. Include the energy changes involved and give two examples of each.",
-    "mark_scheme": "Exothermic: energy released to surroundings \u2014 temperature rises; bond making releases more energy than bond breaking (1); examples: combustion, neutralisation, respiration (1); endothermic: energy absorbed from surroundings \u2014 temperature falls; bond breaking requires more energy than bond making (1); examples: thermal decomposition, photosynthesis, dissolving ammonium nitrate in water (1)."
+    "mark_scheme": "Exothermic: energy released to surroundings — temperature rises; bond making releases more energy than bond breaking (1); examples: combustion, neutralisation, respiration (1); endothermic: energy absorbed from surroundings — temperature falls; bond breaking requires more energy than bond making (1); examples: thermal decomposition, photosynthesis, dissolving ammonium nitrate in water (1)."
   },
   {
     "id": "C5-LA-006",
@@ -650,8 +650,8 @@
     "marks": 4,
     "command_word": "Calculate",
     "topic": "Bond Energies",
-    "question": "Calculate the energy change for the reaction H\u2082 + Cl\u2082 \u2192 2HCl using bond energies. (H-H = 436 kJ/mol; Cl-Cl = 243 kJ/mol; H-Cl = 432 kJ/mol)",
-    "mark_scheme": "Energy to break bonds (reactants): H-H = 436, Cl-Cl = 243; total = 679 kJ/mol (1); energy released making bonds (products): 2 \u00d7 H-Cl = 2 \u00d7 432 = 864 kJ/mol (1); energy change = energy in \u2212 energy out = 679 \u2212 864 = \u2212185 kJ/mol (1); negative sign = exothermic \u2014 energy released (1)."
+    "question": "Calculate the energy change for the reaction H₂ + Cl₂ → 2HCl using bond energies. (H-H = 436 kJ/mol; Cl-Cl = 243 kJ/mol; H-Cl = 432 kJ/mol)",
+    "mark_scheme": "Energy to break bonds (reactants): H-H = 436, Cl-Cl = 243; total = 679 kJ/mol (1); energy released making bonds (products): 2 × H-Cl = 2 × 432 = 864 kJ/mol (1); energy change = energy in − energy out = 679 − 864 = −185 kJ/mol (1); negative sign = exothermic — energy released (1)."
   },
   {
     "id": "C5-LA-007",
@@ -660,7 +660,7 @@
     "command_word": "Describe",
     "topic": "Energy Changes",
     "question": "Describe how a simple calorimetry experiment can be used to measure the energy released when a fuel burns.",
-    "mark_scheme": "Burn measured mass of fuel under a copper can containing measured volume of water (1); record temperature rise of water (1); calculate energy: Q = mc\u0394T (m = mass water, c = 4.2 J/g/\u00b0C, \u0394T = temperature rise) (1); calculate energy per gram or per mole of fuel; repeat for reliability (1)."
+    "mark_scheme": "Burn measured mass of fuel under a copper can containing measured volume of water (1); record temperature rise of water (1); calculate energy: Q = mcΔT (m = mass water, c = 4.2 J/g/°C, ΔT = temperature rise) (1); calculate energy per gram or per mole of fuel; repeat for reliability (1)."
   },
   {
     "id": "C5-LA-008",
@@ -669,7 +669,7 @@
     "command_word": "Explain",
     "topic": "Energy Changes",
     "question": "Explain what is meant by activation energy and how it relates to the energy profile diagram of a reaction.",
-    "mark_scheme": "Activation energy: minimum energy required for a reaction to start (1); on energy profile diagram: the peak above reactants level \u2014 energy hill that must be overcome (1); exothermic: products at lower energy than reactants (1); activation energy shown as the difference between reactant energy level and the peak (1)."
+    "mark_scheme": "Activation energy: minimum energy required for a reaction to start (1); on energy profile diagram: the peak above reactants level — energy hill that must be overcome (1); exothermic: products at lower energy than reactants (1); activation energy shown as the difference between reactant energy level and the peak (1)."
   },
   {
     "id": "C5-LA-009",
@@ -678,7 +678,7 @@
     "command_word": "Explain",
     "topic": "Fuel Cells",
     "question": "Explain how a hydrogen-oxygen fuel cell works. Include what happens at each electrode and the overall reaction.",
-    "mark_scheme": "Hydrogen gas fed to anode \u2014 oxidised: H\u2082 \u2192 2H\u207a + 2e\u207b (1); electrons flow through external circuit \u2014 produces electrical current (1); oxygen fed to cathode \u2014 reduced: O\u2082 + 4H\u207a + 4e\u207b \u2192 2H\u2082O (1); overall reaction: 2H\u2082 + O\u2082 \u2192 2H\u2082O \u2014 only product is water (1)."
+    "mark_scheme": "Hydrogen gas fed to anode — oxidised: H₂ → 2H⁺ + 2e⁻ (1); electrons flow through external circuit — produces electrical current (1); oxygen fed to cathode — reduced: O₂ + 4H⁺ + 4e⁻ → 2H₂O (1); overall reaction: 2H₂ + O₂ → 2H₂O — only product is water (1)."
   },
   {
     "id": "C5-LA-010",
@@ -687,7 +687,7 @@
     "command_word": "Evaluate",
     "topic": "Energy Changes",
     "question": "Evaluate the reliability of calorimetry for measuring energy changes in reactions. Include sources of error and how to reduce them.",
-    "mark_scheme": "Heat lost to surroundings reduces accuracy \u2014 use insulation around the calorimeter (1); incomplete combustion \u2014 ensure good air supply (1); evaporation of fuel from wick before burning (1); measured value typically lower than data book values \u2014 systematic error (1)."
+    "mark_scheme": "Heat lost to surroundings reduces accuracy — use insulation around the calorimeter (1); incomplete combustion — ensure good air supply (1); evaporation of fuel from wick before burning (1); measured value typically lower than data book values — systematic error (1)."
   },
   {
     "id": "C5-LA-011",
@@ -695,8 +695,8 @@
     "marks": 4,
     "command_word": "Calculate",
     "topic": "Bond Energies",
-    "question": "Calculate the energy change for: CH\u2084 + 2O\u2082 \u2192 CO\u2082 + 2H\u2082O. (Bond energies: C-H = 413, O=O = 498, C=O = 805, O-H = 464 kJ/mol)",
-    "mark_scheme": "Bonds broken: 4 \u00d7 C-H + 2 \u00d7 O=O = (4\u00d7413) + (2\u00d7498) = 1652 + 996 = 2648 kJ (1); bonds formed: 2 \u00d7 C=O + 4 \u00d7 O-H = (2\u00d7805) + (4\u00d7464) = 1610 + 1856 = 3466 kJ (1); energy change = 2648 \u2212 3466 = \u2212818 kJ/mol (1); exothermic \u2014 energy released; negative value (1)."
+    "question": "Calculate the energy change for: CH₄ + 2O₂ → CO₂ + 2H₂O. (Bond energies: C-H = 413, O=O = 498, C=O = 805, O-H = 464 kJ/mol)",
+    "mark_scheme": "Bonds broken: 4 × C-H + 2 × O=O = (4×413) + (2×498) = 1652 + 996 = 2648 kJ (1); bonds formed: 2 × C=O + 4 × O-H = (2×805) + (4×464) = 1610 + 1856 = 3466 kJ (1); energy change = 2648 − 3466 = −818 kJ/mol (1); exothermic — energy released; negative value (1)."
   },
   {
     "id": "C5-LA-012",
@@ -705,7 +705,7 @@
     "command_word": "Explain",
     "topic": "Energy Changes",
     "question": "Explain what a reaction profile diagram shows for both an exothermic and an endothermic reaction. Include how a catalyst affects the diagram.",
-    "mark_scheme": "Exothermic: reactants higher energy than products \u2014 energy released; downhill profile (1); endothermic: products higher energy than reactants \u2014 energy absorbed; uphill profile (1); activation energy: energy barrier (peak) above reactants (1); catalyst: lowers activation energy \u2014 peak is lower; does not change energy levels of reactants or products (1)."
+    "mark_scheme": "Exothermic: reactants higher energy than products — energy released; downhill profile (1); endothermic: products higher energy than reactants — energy absorbed; uphill profile (1); activation energy: energy barrier (peak) above reactants (1); catalyst: lowers activation energy — peak is lower; does not change energy levels of reactants or products (1)."
   },
   {
     "id": "C5-LA-013",
@@ -714,7 +714,7 @@
     "command_word": "Evaluate",
     "topic": "Fuel Cells",
     "question": "Evaluate the advantages and disadvantages of hydrogen fuel cells compared to batteries for powering electric vehicles.",
-    "mark_scheme": "Fuel cells: only waste product is water \u2014 zero emissions at point of use (1); refuel quickly like petrol \u2014 no long charging time (1); disadvantages: hydrogen production, storage and infrastructure challenges (1); batteries: well-established technology; can be charged from grid (1). Accept: hydrogen currently produced mainly from fossil fuels; fuel cell vehicles expensive."
+    "mark_scheme": "Fuel cells: only waste product is water — zero emissions at point of use (1); refuel quickly like petrol — no long charging time (1); disadvantages: hydrogen production, storage and infrastructure challenges (1); batteries: well-established technology; can be charged from grid (1). Accept: hydrogen currently produced mainly from fossil fuels; fuel cell vehicles expensive."
   },
   {
     "id": "C5-LA-014",
@@ -723,7 +723,7 @@
     "command_word": "Explain",
     "topic": "Bond Energies",
     "question": "Explain why bond breaking is endothermic and bond forming is exothermic. Relate this to whether a reaction is overall exothermic or endothermic.",
-    "mark_scheme": "Bond breaking requires energy input \u2014 bonds are held together by electrostatic attraction, energy needed to overcome this (1); bond forming releases energy \u2014 when atoms join, energy is released as a more stable arrangement is formed (1); exothermic overall: energy released in bond forming > energy used in bond breaking (1); endothermic overall: energy used in bond breaking > energy released in bond forming (1)."
+    "mark_scheme": "Bond breaking requires energy input — bonds are held together by electrostatic attraction, energy needed to overcome this (1); bond forming releases energy — when atoms join, energy is released as a more stable arrangement is formed (1); exothermic overall: energy released in bond forming > energy used in bond breaking (1); endothermic overall: energy used in bond breaking > energy released in bond forming (1)."
   },
   {
     "id": "C5-LA-015",
@@ -732,7 +732,7 @@
     "command_word": "Describe",
     "topic": "Energy Changes",
     "question": "Describe how the energy stored in food is measured using a calorimeter. Explain why food packet values are often higher than values measured in school.",
-    "mark_scheme": "Known mass of food burned under a calorimeter of water (1); measure temperature rise: Q = mc\u0394T (1); calculate energy per gram (1); school values lower: heat lost to surroundings, incomplete combustion, food not fully burned; food packet values use bomb calorimeter \u2014 fully controlled, measures maximum energy (1)."
+    "mark_scheme": "Known mass of food burned under a calorimeter of water (1); measure temperature rise: Q = mcΔT (1); calculate energy per gram (1); school values lower: heat lost to surroundings, incomplete combustion, food not fully burned; food packet values use bomb calorimeter — fully controlled, measures maximum energy (1)."
   },
   {
     "id": "C5-LA-016",
@@ -741,7 +741,7 @@
     "command_word": "Evaluate",
     "topic": "Fuel Cells",
     "question": "Evaluate the potential of hydrogen fuel cells to replace fossil fuels as an energy source for transport and industry. Include the challenges that must be overcome.",
-    "mark_scheme": "Advantage: zero CO\u2082 emissions at point of use \u2014 only water produced (1); high efficiency compared to combustion engines (1); scalable for vehicles, buses, trains, shipping (1); challenge: 95% of current hydrogen produced by steam reforming of natural gas \u2014 releases CO\u2082 (1); green hydrogen (electrolysis using renewable electricity) cost-competitive barrier; safe storage and distribution network needed (1)."
+    "mark_scheme": "Advantage: zero CO₂ emissions at point of use — only water produced (1); high efficiency compared to combustion engines (1); scalable for vehicles, buses, trains, shipping (1); challenge: 95% of current hydrogen produced by steam reforming of natural gas — releases CO₂ (1); green hydrogen (electrolysis using renewable electricity) cost-competitive barrier; safe storage and distribution network needed (1)."
   },
   {
     "id": "C5-LA-017",
@@ -749,8 +749,8 @@
     "marks": 5,
     "command_word": "Calculate",
     "topic": "Bond Energies",
-    "question": "Calculate the energy change for the formation of ammonia: N\u2082 + 3H\u2082 \u2192 2NH\u2083. (Bond energies: N\u2261N = 945, H-H = 436, N-H = 391 kJ/mol). State whether the reaction is exothermic or endothermic and explain the significance for the Haber process.",
-    "mark_scheme": "Bonds broken: N\u2261N + 3 \u00d7 H-H = 945 + (3 \u00d7 436) = 945 + 1308 = 2253 kJ (1); bonds formed: 2 \u00d7 NH\u2083 = 2 \u00d7 3 \u00d7 N-H = 6 \u00d7 391 = 2346 kJ (1); energy change = 2253 \u2212 2346 = \u221293 kJ/mol (1); exothermic \u2014 energy released; reaction is reversible (1); for Haber process: exothermic means lower temperature increases yield; 450\u00b0C used as compromise for rate (1)."
+    "question": "Calculate the energy change for the formation of ammonia: N₂ + 3H₂ → 2NH₃. (Bond energies: N≡N = 945, H-H = 436, N-H = 391 kJ/mol). State whether the reaction is exothermic or endothermic and explain the significance for the Haber process.",
+    "mark_scheme": "Bonds broken: N≡N + 3 × H-H = 945 + (3 × 436) = 945 + 1308 = 2253 kJ (1); bonds formed: 2 × NH₃ = 2 × 3 × N-H = 6 × 391 = 2346 kJ (1); energy change = 2253 − 2346 = −93 kJ/mol (1); exothermic — energy released; reaction is reversible (1); for Haber process: exothermic means lower temperature increases yield; 450°C used as compromise for rate (1)."
   },
   {
     "id": "C5-LA-018",
@@ -758,8 +758,8 @@
     "marks": 5,
     "command_word": "Explain",
     "topic": "Energy Changes",
-    "question": "Explain the terms enthalpy change (\u0394H), standard conditions, and Hess's Law. Show how Hess's Law can be used to calculate an enthalpy change that cannot be measured directly.",
-    "mark_scheme": "Enthalpy change (\u0394H): heat energy exchanged at constant pressure; exothermic \u0394H is negative (1); standard conditions: 25\u00b0C, 100 kPa, solutions at 1 mol/dm\u00b3 (1); Hess's Law: total enthalpy change for a reaction is independent of the route taken (1); can calculate \u0394H for a reaction using known \u0394H values for other reactions in a cycle (1); e.g. formation of CO: \u0394Hf(CO) = \u0394Hf(CO\u2082) \u2212 \u0394Hcombustion(CO) \u2014 cannot burn carbon to CO directly; cycle provides indirect route (1)."
+    "question": "Explain the terms enthalpy change (ΔH), standard conditions, and Hess's Law. Show how Hess's Law can be used to calculate an enthalpy change that cannot be measured directly.",
+    "mark_scheme": "Enthalpy change (ΔH): heat energy exchanged at constant pressure; exothermic ΔH is negative (1); standard conditions: 25°C, 100 kPa, solutions at 1 mol/dm³ (1); Hess's Law: total enthalpy change for a reaction is independent of the route taken (1); can calculate ΔH for a reaction using known ΔH values for other reactions in a cycle (1); e.g. formation of CO: ΔHf(CO) = ΔHf(CO₂) − ΔHcombustion(CO) — cannot burn carbon to CO directly; cycle provides indirect route (1)."
   },
   {
     "id": "C5-LA-019",
@@ -768,7 +768,7 @@
     "command_word": "Describe",
     "topic": "Energy Changes",
     "question": "Describe how dissolving ammonium nitrate in water produces a significant temperature drop. Explain this in terms of bond breaking and bond forming, and give one use of this endothermic process.",
-    "mark_scheme": "Ammonium nitrate is an ionic solid \u2014 lattice energy holds ions together (1); dissolving breaks ionic bonds between NH\u2084\u207a and NO\u2083\u207b ions \u2014 requires energy (1); water molecules form bonds around ions (hydration) \u2014 releases energy (1); lattice energy > hydration energy \u2014 overall energy absorbed from surroundings \u2014 temperature drops (1); use: cold packs for sports injuries \u2014 reaction absorbs heat from skin (1)."
+    "mark_scheme": "Ammonium nitrate is an ionic solid — lattice energy holds ions together (1); dissolving breaks ionic bonds between NH₄⁺ and NO₃⁻ ions — requires energy (1); water molecules form bonds around ions (hydration) — releases energy (1); lattice energy > hydration energy — overall energy absorbed from surroundings — temperature drops (1); use: cold packs for sports injuries — reaction absorbs heat from skin (1)."
   },
   {
     "id": "C5-LA-020",
@@ -777,7 +777,7 @@
     "command_word": "Evaluate",
     "topic": "Bond Energies",
     "question": "Evaluate the use of bond energies to predict whether a reaction is feasible and why calculated values may differ from experimentally measured enthalpy changes.",
-    "mark_scheme": "Bond energy calculations estimate \u0394H using average bond energies (1); method: \u0394H = \u03a3(bonds broken) \u2212 \u03a3(bonds formed) (1); average bond energies: values averaged across many different compounds \u2014 not exact for specific molecule (1); actual \u0394H measured by calorimetry may differ because real bond strengths vary with molecular environment (1); despite limitations, useful for predicting sign of \u0394H (exo/endo) and comparing fuels \u2014 quick estimation method (1)."
+    "mark_scheme": "Bond energy calculations estimate ΔH using average bond energies (1); method: ΔH = Σ(bonds broken) − Σ(bonds formed) (1); average bond energies: values averaged across many different compounds — not exact for specific molecule (1); actual ΔH measured by calorimetry may differ because real bond strengths vary with molecular environment (1); despite limitations, useful for predicting sign of ΔH (exo/endo) and comparing fuels — quick estimation method (1)."
   },
   {
     "id": "C5-LA-021",
@@ -786,7 +786,7 @@
     "command_word": "Explain",
     "topic": "Energy Changes",
     "question": "Explain how exothermic reactions are used in hand warmers and self-heating cans. Include the chemistry involved and evaluate their sustainability.",
-    "mark_scheme": "Hand warmers: often use oxidation of iron \u2014 Fe + O\u2082 \u2192 Fe\u2082O\u2083; exothermic \u2014 releases heat slowly over hours (1); activated by opening packet \u2014 exposing to air (1); some use recrystallisation of sodium acetate \u2014 exothermic phase change when triggered (1); self-heating cans: reaction between calcium oxide and water: CaO + H\u2082O \u2192 Ca(OH)\u2082; exothermic (1); sustainability: iron hand warmers single use \u2014 waste material; sodium acetate type rechargeable by boiling (1)."
+    "mark_scheme": "Hand warmers: often use oxidation of iron — Fe + O₂ → Fe₂O₃; exothermic — releases heat slowly over hours (1); activated by opening packet — exposing to air (1); some use recrystallisation of sodium acetate — exothermic phase change when triggered (1); self-heating cans: reaction between calcium oxide and water: CaO + H₂O → Ca(OH)₂; exothermic (1); sustainability: iron hand warmers single use — waste material; sodium acetate type rechargeable by boiling (1)."
   },
   {
     "id": "C5-LA-022",
@@ -794,8 +794,8 @@
     "marks": 5,
     "command_word": "Calculate",
     "topic": "Energy Changes",
-    "question": "A student burns 0.65 g of ethanol (C\u2082H\u2085OH, Mr=46) and heats 100 g of water. The temperature rises from 22\u00b0C to 47\u00b0C. Calculate the energy released per mole of ethanol. (c = 4.2 J/g/\u00b0C)",
-    "mark_scheme": "Q = mc\u0394T = 100 \u00d7 4.2 \u00d7 25 = 10,500 J = 10.5 kJ (1); moles of ethanol = 0.65 \u00f7 46 = 0.01413 mol (1); energy per mole = 10.5 \u00f7 0.01413 = 743 kJ/mol (1); actual value = \u22121367 kJ/mol \u2014 significantly lower (1); reason: heat lost to surroundings, incomplete combustion (1)."
+    "question": "A student burns 0.65 g of ethanol (C₂H₅OH, Mr=46) and heats 100 g of water. The temperature rises from 22°C to 47°C. Calculate the energy released per mole of ethanol. (c = 4.2 J/g/°C)",
+    "mark_scheme": "Q = mcΔT = 100 × 4.2 × 25 = 10,500 J = 10.5 kJ (1); moles of ethanol = 0.65 ÷ 46 = 0.01413 mol (1); energy per mole = 10.5 ÷ 0.01413 = 743 kJ/mol (1); actual value = −1367 kJ/mol — significantly lower (1); reason: heat lost to surroundings, incomplete combustion (1)."
   },
   {
     "id": "C5-LA-023",
@@ -804,7 +804,7 @@
     "command_word": "Evaluate",
     "topic": "Energy Changes",
     "question": "Evaluate different fuels (hydrogen, ethanol, methane) in terms of their energy density, environmental impact and practicality for use in vehicles.",
-    "mark_scheme": "Methane (natural gas): high energy density, existing infrastructure, but releases CO\u2082 on combustion (1); ethanol: renewable if from crops; lower CO\u2082 footprint; can blend with petrol; lower energy density than petrol (1); hydrogen: highest energy per kg; zero CO\u2082 at point of use (1); but: hydrogen storage difficult \u2014 requires high pressure or liquefaction; limited infrastructure (1); all have trade-offs \u2014 best choice depends on energy source, infrastructure and use case (1)."
+    "mark_scheme": "Methane (natural gas): high energy density, existing infrastructure, but releases CO₂ on combustion (1); ethanol: renewable if from crops; lower CO₂ footprint; can blend with petrol; lower energy density than petrol (1); hydrogen: highest energy per kg; zero CO₂ at point of use (1); but: hydrogen storage difficult — requires high pressure or liquefaction; limited infrastructure (1); all have trade-offs — best choice depends on energy source, infrastructure and use case (1)."
   },
   {
     "id": "C5-LA-024",
@@ -813,7 +813,7 @@
     "command_word": "Evaluate",
     "topic": "Fuel Cells",
     "question": "Evaluate the use of hydrogen fuel cells compared with rechargeable lithium-ion batteries as energy storage and conversion technologies for electric vehicles. Consider efficiency, environmental impact and practicality.",
-    "mark_scheme": "Fuel cells: convert chemical energy directly to electrical \u2014 efficiency ~60% vs ~25% for combustion engines (1); emit only water at point of use (1); refuelling takes minutes \u2014 comparable to petrol (1); hydrogen production: currently mainly from fossil fuels (SMR) \u2014 significant CO\u2082; green hydrogen from electrolysis needed (1); Li-ion batteries: mature technology; can use electricity from renewable grid; ~95% round-trip efficiency (1); disadvantages: heavy; long charging times; lithium mining environmental impact; range anxiety (1)."
+    "mark_scheme": "Fuel cells: convert chemical energy directly to electrical — efficiency ~60% vs ~25% for combustion engines (1); emit only water at point of use (1); refuelling takes minutes — comparable to petrol (1); hydrogen production: currently mainly from fossil fuels (SMR) — significant CO₂; green hydrogen from electrolysis needed (1); Li-ion batteries: mature technology; can use electricity from renewable grid; ~95% round-trip efficiency (1); disadvantages: heavy; long charging times; lithium mining environmental impact; range anxiety (1)."
   },
   {
     "id": "C5-LA-025",
@@ -822,7 +822,7 @@
     "command_word": "Explain",
     "topic": "Bond Energies",
     "question": "Explain, using bond energy data, why methane is a better fuel than hydrogen in terms of energy released per mole, but why hydrogen may be preferable in terms of sustainability. Show calculations for both.",
-    "mark_scheme": "CH\u2084 + 2O\u2082 \u2192 CO\u2082 + 2H\u2082O: bonds broken = 4(C-H) + 2(O=O) = 4(413)+2(498)=2648; formed = 2(C=O)+4(O-H)=2(805)+4(464)=3466; \u0394H = \u2212818 kJ/mol (1); 2H\u2082 + O\u2082 \u2192 2H\u2082O: bonds broken = 2(H-H)+O=O=2(436)+498=1370; formed = 4(O-H)=4(464)=1856; \u0394H = \u2212486 kJ/mol total for 2 mol H\u2082 = \u2212243 kJ/mol H\u2082 (1); methane releases more energy per mole (1); but methane produces CO\u2082 \u2014 greenhouse gas (1); hydrogen produces only water \u2014 carbon neutral if made from renewable electrolysis (1); sustainability favours hydrogen despite lower energy per mole (1)."
+    "mark_scheme": "CH₄ + 2O₂ → CO₂ + 2H₂O: bonds broken = 4(C-H) + 2(O=O) = 4(413)+2(498)=2648; formed = 2(C=O)+4(O-H)=2(805)+4(464)=3466; ΔH = −818 kJ/mol (1); 2H₂ + O₂ → 2H₂O: bonds broken = 2(H-H)+O=O=2(436)+498=1370; formed = 4(O-H)=4(464)=1856; ΔH = −486 kJ/mol total for 2 mol H₂ = −243 kJ/mol H₂ (1); methane releases more energy per mole (1); but methane produces CO₂ — greenhouse gas (1); hydrogen produces only water — carbon neutral if made from renewable electrolysis (1); sustainability favours hydrogen despite lower energy per mole (1)."
   },
   {
     "id": "C5-LA-026",
@@ -831,7 +831,7 @@
     "command_word": "Describe",
     "topic": "Energy Changes",
     "question": "Describe how energy level diagrams for exothermic and endothermic reactions differ. Explain how a catalyst changes the diagram and include the concept of enthalpy change and activation energy.",
-    "mark_scheme": "Exothermic: reactants at higher energy level than products; energy released = \u0394H negative (1); endothermic: products at higher energy level than reactants; energy absorbed = \u0394H positive (1); activation energy (Ea): energy barrier between reactants and the transition state (peak) (1); catalyst: provides alternative reaction pathway with lower activation energy \u2014 peak is lower (1); catalyst does not change energy levels of reactants or products \u2014 \u0394H unchanged (1); lower Ea means more reactant particles have sufficient energy to react \u2014 faster rate (1)."
+    "mark_scheme": "Exothermic: reactants at higher energy level than products; energy released = ΔH negative (1); endothermic: products at higher energy level than reactants; energy absorbed = ΔH positive (1); activation energy (Ea): energy barrier between reactants and the transition state (peak) (1); catalyst: provides alternative reaction pathway with lower activation energy — peak is lower (1); catalyst does not change energy levels of reactants or products — ΔH unchanged (1); lower Ea means more reactant particles have sufficient energy to react — faster rate (1)."
   },
   {
     "id": "C5-LA-027",
@@ -840,7 +840,7 @@
     "command_word": "Evaluate",
     "topic": "Energy Changes",
     "question": "Evaluate the social and economic importance of exothermic reactions in industry and everyday life. Include combustion, neutralisation, and at least one industrial process.",
-    "mark_scheme": "Combustion of fossil fuels: powers electricity generation, transport, heating \u2014 essential to modern economies (1); releases large amounts of CO\u2082 \u2014 major cause of climate change (1); neutralisation: used in water treatment, antacids, food processing; controlled exothermic reactions (1); Haber process: exothermic formation of ammonia \u2014 essential for fertilisers that feed ~50% of world's population (1); Contact process: SO\u2082 \u2192 SO\u2083, exothermic \u2014 produces sulfuric acid, most used industrial chemical (1); social trade-off: exothermic industrial processes drive economic development but must be managed sustainably to avoid environmental harm (1)."
+    "mark_scheme": "Combustion of fossil fuels: powers electricity generation, transport, heating — essential to modern economies (1); releases large amounts of CO₂ — major cause of climate change (1); neutralisation: used in water treatment, antacids, food processing; controlled exothermic reactions (1); Haber process: exothermic formation of ammonia — essential for fertilisers that feed ~50% of world's population (1); Contact process: SO₂ → SO₃, exothermic — produces sulfuric acid, most used industrial chemical (1); social trade-off: exothermic industrial processes drive economic development but must be managed sustainably to avoid environmental harm (1)."
   },
   {
     "id": "C5-LA-028",
@@ -849,7 +849,7 @@
     "command_word": "Calculate",
     "topic": "Bond Energies",
     "question": "A student investigates the combustion of three fuels: methane, propane and octane. Using bond energies provided, explain why energy released per gram increases with chain length, and evaluate which fuel is most suitable for use in a portable gas stove. (Bond energies: C-H=413, C-C=347, O=O=498, C=O=805, O-H=464 kJ/mol)",
-    "mark_scheme": "Method: \u0394H = \u03a3 bonds broken \u2212 \u03a3 bonds formed for each fuel (1); methane CH\u2084: fewer C-H bonds, lower total \u0394H per mole but low Mr (1); propane C\u2083H\u2088: more bonds, higher \u0394H per mole; Mr=44; energy per gram higher than methane (1); octane C\u2088H\u2081\u2088: most C-H and C-C bonds; very high \u0394H per mole; stored as liquid (1); energy per gram increases with chain length as C:H ratio changes and more C-C bonds provide additional energy (1); portable stove: propane ideal \u2014 liquefied under moderate pressure, high energy density, safe and manageable; octane requires liquid fuel tank; methane hard to liquefy (1)."
+    "mark_scheme": "Method: ΔH = Σ bonds broken − Σ bonds formed for each fuel (1); methane CH₄: fewer C-H bonds, lower total ΔH per mole but low Mr (1); propane C₃H₈: more bonds, higher ΔH per mole; Mr=44; energy per gram higher than methane (1); octane C₈H₁₈: most C-H and C-C bonds; very high ΔH per mole; stored as liquid (1); energy per gram increases with chain length as C:H ratio changes and more C-C bonds provide additional energy (1); portable stove: propane ideal — liquefied under moderate pressure, high energy density, safe and manageable; octane requires liquid fuel tank; methane hard to liquefy (1)."
   },
   {
     "id": "C5-LA-029",
@@ -858,7 +858,7 @@
     "command_word": "Explain",
     "topic": "Energy Changes",
     "question": "Explain how the energy change of a reaction can be calculated from mean bond energies. Include the limitations of this method compared to experimentally measured enthalpy changes.",
-    "mark_scheme": "Energy change = \u03a3(bond energies of bonds broken) \u2212 \u03a3(bond energies of bonds formed) (1); bonds broken in reactants: endothermic \u2014 requires energy (1); bonds formed in products: exothermic \u2014 releases energy (1); limitation: mean bond energies are averages \u2014 actual bond strength varies by molecular environment (1); experimental \u0394H (from calorimetry or Hess's Law) is more accurate for specific compounds (1)."
+    "mark_scheme": "Energy change = Σ(bond energies of bonds broken) − Σ(bond energies of bonds formed) (1); bonds broken in reactants: endothermic — requires energy (1); bonds formed in products: exothermic — releases energy (1); limitation: mean bond energies are averages — actual bond strength varies by molecular environment (1); experimental ΔH (from calorimetry or Hess's Law) is more accurate for specific compounds (1)."
   },
   {
     "id": "C5-LA-030",
@@ -867,7 +867,7 @@
     "command_word": "Evaluate",
     "topic": "Energy Changes",
     "question": "Evaluate the use of nuclear power as an energy source compared to burning fossil fuels. Consider energy released, environmental impact and safety.",
-    "mark_scheme": "Nuclear fission releases ~million times more energy per kg than fossil fuel combustion (1); no CO\u2082 emissions during electricity generation (1); produces radioactive waste \u2014 requires long-term safe storage (1); risk of accidents: Chernobyl, Fukushima \u2014 public fear despite low statistical risk (1); fossil fuels: proven technology, existing infrastructure; but contributes 70%+ of greenhouse gas emissions (1)."
+    "mark_scheme": "Nuclear fission releases ~million times more energy per kg than fossil fuel combustion (1); no CO₂ emissions during electricity generation (1); produces radioactive waste — requires long-term safe storage (1); risk of accidents: Chernobyl, Fukushima — public fear despite low statistical risk (1); fossil fuels: proven technology, existing infrastructure; but contributes 70%+ of greenhouse gas emissions (1)."
   },
   {
     "id": "C5-LA-031",
@@ -876,7 +876,7 @@
     "command_word": "Explain",
     "topic": "Energy Changes",
     "question": "Explain what is meant by the specific heat capacity of a substance. Describe an experiment to determine the specific heat capacity of a metal block and evaluate the sources of error.",
-    "mark_scheme": "Specific heat capacity: energy needed to raise temperature of 1 kg by 1\u00b0C; J/kg/\u00b0C (or J/g/\u00b0C) (1); experiment: heat metal block with electric heater \u2014 measure power (P=IV) and time to calculate energy supplied: E=Pt (1); measure temperature rise using thermometer or temperature probe (1); calculate c = E \u00f7 (m \u00d7 \u0394T) (1); sources of error: heat lost to surroundings \u2014 insulate block with padding (1); thermal equilibrium not reached \u2014 allow time for temperature to stabilise before reading (1)."
+    "mark_scheme": "Specific heat capacity: energy needed to raise temperature of 1 kg by 1°C; J/kg/°C (or J/g/°C) (1); experiment: heat metal block with electric heater — measure power (P=IV) and time to calculate energy supplied: E=Pt (1); measure temperature rise using thermometer or temperature probe (1); calculate c = E ÷ (m × ΔT) (1); sources of error: heat lost to surroundings — insulate block with padding (1); thermal equilibrium not reached — allow time for temperature to stabilise before reading (1)."
   },
   {
     "id": "C5-LA-032",
@@ -885,7 +885,7 @@
     "command_word": "Evaluate",
     "topic": "Fuel Cells",
     "question": "Evaluate the development and use of fuel cell technology for stationary power generation. Consider efficiency, emissions, current limitations, and future potential.",
-    "mark_scheme": "Fuel cells convert chemical energy directly to electricity without combustion \u2014 higher efficiency (~60%) than turbine generators (~35%) (1); combined heat and power (CHP) systems: waste heat used for heating \u2014 efficiency up to 90% (1); hydrogen fuel cells produce only water \u2014 zero local emissions (1); current limitations: hydrogen production, distribution and storage infrastructure not yet widely available (1); cost: fuel cell systems currently expensive compared to grid electricity (1); future potential: green hydrogen + fuel cells could decarbonise industry, shipping, grid storage \u2014 essential component of net-zero energy system (1)."
+    "mark_scheme": "Fuel cells convert chemical energy directly to electricity without combustion — higher efficiency (~60%) than turbine generators (~35%) (1); combined heat and power (CHP) systems: waste heat used for heating — efficiency up to 90% (1); hydrogen fuel cells produce only water — zero local emissions (1); current limitations: hydrogen production, distribution and storage infrastructure not yet widely available (1); cost: fuel cell systems currently expensive compared to grid electricity (1); future potential: green hydrogen + fuel cells could decarbonise industry, shipping, grid storage — essential component of net-zero energy system (1)."
   },
   {
     "id": "C5-LA-033",
@@ -893,8 +893,8 @@
     "marks": 5,
     "command_word": "Calculate",
     "topic": "Energy Changes",
-    "question": "A student heats 200 g of water using a camping stove. The temperature rises from 18\u00b0C to 98\u00b0C in 5 minutes. Calculate the energy absorbed by the water. If 2.0 g of butane (C\u2084H\u2081\u2080, Mr=58) was burned, calculate the energy released per mole and suggest why this is lower than the data book value. (c = 4.2 J/g/\u00b0C)",
-    "mark_scheme": "Q = mc\u0394T = 200 \u00d7 4.2 \u00d7 80 = 67,200 J = 67.2 kJ (1); moles butane = 2.0 \u00f7 58 = 0.0345 mol (1); energy per mole = 67.2 \u00f7 0.0345 = 1948 kJ/mol (1); data book value for butane = ~2877 kJ/mol \u2014 much higher (1); reason: significant heat lost to surroundings/atmosphere; incomplete combustion (1)."
+    "question": "A student heats 200 g of water using a camping stove. The temperature rises from 18°C to 98°C in 5 minutes. Calculate the energy absorbed by the water. If 2.0 g of butane (C₄H₁₀, Mr=58) was burned, calculate the energy released per mole and suggest why this is lower than the data book value. (c = 4.2 J/g/°C)",
+    "mark_scheme": "Q = mcΔT = 200 × 4.2 × 80 = 67,200 J = 67.2 kJ (1); moles butane = 2.0 ÷ 58 = 0.0345 mol (1); energy per mole = 67.2 ÷ 0.0345 = 1948 kJ/mol (1); data book value for butane = ~2877 kJ/mol — much higher (1); reason: significant heat lost to surroundings/atmosphere; incomplete combustion (1)."
   },
   {
     "id": "C5-LA-034",
@@ -903,6 +903,177 @@
     "command_word": "Explain",
     "topic": "Bond Energies",
     "question": "Explain why the combustion of fuels is always exothermic. Use bond energy arguments and apply this to compare the energy released by hydrogen and methane per gram of fuel burned.",
-    "mark_scheme": "Combustion: fuel reacts with O\u2082; bonds in fuel and O\u2082 broken \u2014 endothermic; bonds in CO\u2082 and H\u2082O formed \u2014 exothermic (1); C=O and O-H bonds are very strong \u2014 large energy released when formed (1); total energy released in bond forming > energy needed for bond breaking in combustion reactions \u2014 always exothermic (1); H\u2082: Mr=2; \u0394H\u2248\u2212286 kJ/mol; energy per gram = 286\u00f72 = 143 kJ/g (1); CH\u2084: Mr=16; \u0394H\u2248\u2212890 kJ/mol; energy per gram = 890\u00f716 = 55.6 kJ/g (1); hydrogen releases more energy per gram \u2014 but storage difficulties make methane more practical for most applications (1)."
+    "mark_scheme": "Combustion: fuel reacts with O₂; bonds in fuel and O₂ broken — endothermic; bonds in CO₂ and H₂O formed — exothermic (1); C=O and O-H bonds are very strong — large energy released when formed (1); total energy released in bond forming > energy needed for bond breaking in combustion reactions — always exothermic (1); H₂: Mr=2; ΔH≈−286 kJ/mol; energy per gram = 286÷2 = 143 kJ/g (1); CH₄: Mr=16; ΔH≈−890 kJ/mol; energy per gram = 890÷16 = 55.6 kJ/g (1); hydrogen releases more energy per gram — but storage difficulties make methane more practical for most applications (1)."
+  },
+  {
+    "id": "C5-SA-016",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Energy Changes",
+    "question": "State what is meant by an exothermic reaction.",
+    "mark_scheme": "A reaction that transfers/releases energy to the surroundings (1); the temperature of the surroundings increases (1)."
+  },
+  {
+    "id": "C5-SA-017",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Give",
+    "topic": "Energy Changes",
+    "question": "Give one example of an endothermic process.",
+    "mark_scheme": "Any one from: thermal decomposition, dissolving ammonium nitrate, photosynthesis, sports injury packs (1); (accept any correct example) (1)."
+  },
+  {
+    "id": "C5-SA-018",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Bond Energies",
+    "question": "State what must be calculated to find the overall energy change of a reaction using bond energies.",
+    "mark_scheme": "Energy needed to break bonds in reactants (1); minus energy released when bonds are formed in products (1)."
+  },
+  {
+    "id": "C5-SA-019",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Name",
+    "topic": "Fuel Cells",
+    "question": "Name the two reactants used in a hydrogen fuel cell.",
+    "mark_scheme": "Hydrogen (1); oxygen (1)."
+  },
+  {
+    "id": "C5-SA-020",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Give",
+    "topic": "Bond Energies",
+    "question": "Give the meaning of the term bond energy.",
+    "mark_scheme": "The energy required (1); to break one mole of a particular bond (1)."
+  },
+  {
+    "id": "C5-SA-021",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Energy Changes",
+    "question": "State what a reaction profile (energy profile diagram) shows.",
+    "mark_scheme": "The relative energy levels of reactants and products (1); and the activation energy of the reaction (1)."
+  },
+  {
+    "id": "C5-SA-022",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Name",
+    "topic": "Energy Changes",
+    "question": "Name the minimum energy needed for a reaction to occur.",
+    "mark_scheme": "Activation energy (1); (accept Ea) (1)."
+  },
+  {
+    "id": "C5-SA-023",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Energy Changes",
+    "question": "Explain, in terms of bond breaking and bond making, why combustion reactions are exothermic.",
+    "mark_scheme": "Bonds in reactants must be broken, which requires energy (1); bonds in products are formed, which releases energy (1); more energy is released forming bonds than is used breaking bonds, so overall energy is released (1)."
+  },
+  {
+    "id": "C5-SA-024",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Bond Energies",
+    "question": "Describe how you would use bond energies to determine whether a reaction is exothermic or endothermic.",
+    "mark_scheme": "Calculate the total energy needed to break all bonds in the reactants (1); calculate the total energy released when all bonds in the products are formed (1); if energy released > energy required, reaction is exothermic; if energy required > energy released, reaction is endothermic (1)."
+  },
+  {
+    "id": "C5-SA-025",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Fuel Cells",
+    "question": "Explain how a hydrogen fuel cell generates electricity.",
+    "mark_scheme": "Hydrogen is oxidised at the anode, releasing electrons (1); electrons flow through external circuit producing electrical current (1); hydrogen ions move through electrolyte and combine with oxygen at cathode to form water (1)."
+  },
+  {
+    "id": "C5-SA-026",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Compare",
+    "topic": "Energy Changes",
+    "question": "Compare an exothermic and an endothermic reaction profile diagram.",
+    "mark_scheme": "In an exothermic profile, the products are at a lower energy level than the reactants (1); in an endothermic profile, the products are at a higher energy level (1); both diagrams show a peak representing the activation energy (1)."
+  },
+  {
+    "id": "C5-SA-027",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Fuel Cells",
+    "question": "Explain one advantage and one disadvantage of using hydrogen fuel cells in vehicles compared to petrol engines.",
+    "mark_scheme": "Advantage: only water is produced / no CO₂ emissions / more efficient (1); disadvantage: hydrogen is difficult to store safely / hydrogen production may use fossil fuels (1); comparison clearly stated (1)."
+  },
+  {
+    "id": "C5-SA-028",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Energy Changes",
+    "question": "Describe how a simple calorimetry experiment can be used to measure the energy released during combustion of a fuel.",
+    "mark_scheme": "Burn the fuel beneath a known volume/mass of water (1); measure the temperature rise of the water (1); use Q = mcΔT to calculate the energy transferred (1)."
+  },
+  {
+    "id": "C5-SA-029",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Bond Energies",
+    "question": "Explain why the value of ΔH calculated from bond energies is often different from the actual measured value.",
+    "mark_scheme": "Bond energy values are average values (1); actual bond energies vary depending on the molecule / surroundings (1); so the calculated value is an approximation (1)."
+  },
+  {
+    "id": "C5-SA-030",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Energy Changes",
+    "question": "Describe what happens to the temperature of the surroundings during an endothermic reaction and explain why.",
+    "mark_scheme": "The temperature of the surroundings decreases (1); because energy is absorbed from the surroundings by the reaction (1); more energy is required to break bonds in reactants than is released when bonds form in products (1)."
+  },
+  {
+    "id": "C5-SA-031",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Energy Changes",
+    "question": "Explain the difference between the activation energy of a reaction and the overall energy change.",
+    "mark_scheme": "Activation energy is the minimum energy needed to start the reaction / break bonds in reactants (1); overall energy change is the difference in energy between reactants and products (1); activation energy does not depend on whether the reaction is exothermic or endothermic (1)."
+  },
+  {
+    "id": "C5-SA-032",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Compare",
+    "topic": "Fuel Cells",
+    "question": "Compare the products of a hydrogen fuel cell with the products of burning hydrogen gas.",
+    "mark_scheme": "Both produce water (1); fuel cell produces water at the cathode via electrochemical reaction (1); burning produces water by combustion / directly reacting with oxygen and releasing heat (1)."
+  },
+  {
+    "id": "C5-SA-033",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Bond Energies",
+    "question": "Explain why breaking bonds requires energy but forming bonds releases energy.",
+    "mark_scheme": "Breaking bonds requires energy to overcome/break the forces of attraction between atoms (1); forming bonds releases energy as atoms are attracted to each other and a more stable arrangement is achieved (1); the direction of energy flow is opposite in each case (1)."
+  },
+  {
+    "id": "C5-SA-034",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Describe",
+    "topic": "Energy Changes",
+    "question": "Describe how a hand warmer and a sports cold pack use exothermic and endothermic reactions respectively.",
+    "mark_scheme": "A hand warmer contains a substance that undergoes an exothermic reaction when activated, releasing heat to surroundings (1); a sports cold pack contains substances that undergo an endothermic reaction, absorbing heat from surroundings / skin (1); both are single-use / the reactions are not easily reversible in the pack (1)."
   }
 ]
