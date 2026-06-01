@@ -776,8 +776,11 @@
     _lastAllProgress = allProgress;
     _lastAllLogs = allLogs;
     renderOverview(students, allProgress, allLogs);
-    renderHeatmap(students, allProgress, allLogs);
-    loadXpLeague();
+    try { renderHeatmap(students, allProgress, allLogs); } catch(err) {
+      console.error('renderHeatmap error:', err);
+      document.getElementById('scatter-content').innerHTML = `<div class="empty-state" style="color:#ef4444">Chart error: ${err.message}</div>`;
+    }
+    try { loadXpLeague(); } catch(err) { console.error('loadXpLeague error:', err); }
 
     // Update last-refreshed timestamp
     _lastRefreshed = Date.now();
@@ -1025,6 +1028,7 @@
           totalPossible += 100;
         }
       });
+      const avgScore = totalPossible > 0 ? Math.round((totalScore / totalPossible) * 100) : null;
       return {
         uid: s.uid,
         name: getStudentDisplayName(s),
