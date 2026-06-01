@@ -875,11 +875,11 @@
   function renderOverview(students, allProgress, allLogs = {}) {
     const rows = students.map(s => {
       const progress = allProgress[s.uid] || {};
-      let totalMocks = 0, totalScore = 0, totalPossible = 0, lastDate = null;
+      const logs = allLogs[s.uid] || [];
+      let totalScore = 0, totalPossible = 0, lastDate = null;
       Object.values(progress).forEach(p => {
         if (p.mocks) {
           p.mocks.forEach(m => {
-            totalMocks++;
             totalScore += m.score;
             totalPossible += m.total;
             const d = new Date(m.date);
@@ -887,19 +887,26 @@
           });
         }
       });
+      // Activities done = total log entries (any type)
+      const totalActivities = logs.length;
+      // Last active from logs if no mock date
+      if (!lastDate && logs.length) {
+        const sorted = [...logs].sort((a,b) => (b.timestamp||'').localeCompare(a.timestamp||''));
+        if (sorted[0]?.timestamp) lastDate = new Date(sorted[0].timestamp);
+      }
       const avg = totalPossible > 0 ? Math.round((totalScore / totalPossible) * 100) : null;
       const avgClass = avg === null ? 'avg-none' : avg >= 70 ? 'avg-high' : avg >= 45 ? 'avg-mid' : 'avg-low';
       const avgText = avg !== null ? avg + '%' : '—';
       const lastStr = lastDate ? lastDate.toLocaleDateString('en-GB', { day:'numeric', month:'short' }) : 'Never';
       const displayName = getStudentDisplayName(s);
-      const timeMins = estimateTimeFromLogs(allLogs[s.uid] || []);
+      const timeMins = estimateTimeFromLogs(logs);
       return `
         <tr>
           <td>
             <div class="student-name">${displayName}</div>
             <div class="student-email">${s.email || ''}</div>
           </td>
-          <td><span class="mock-count">${totalMocks}</span></td>
+          <td><span class="mock-count">${totalActivities}</span></td>
           <td><span class="avg-badge ${avgClass}">${avgText}</span></td>
           <td><span class="last-active">${lastStr}</span></td>
           <td class="time-badge">${formatTime(timeMins)}</td>
