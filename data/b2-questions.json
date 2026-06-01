@@ -6,12 +6,12 @@
     "topic": "Organisation",
     "question": "What is the correct order of organisation in the human body?",
     "options": [
-      "Organ → Cell → Tissue → Organ system",
-      "Cell → Tissue → Organ → Organ system",
-      "Tissue → Cell → Organ → Organ system",
-      "Cell → Organ → Tissue → Organ system"
+      "Organ \u2192 Cell \u2192 Tissue \u2192 Organ system",
+      "Cell \u2192 Tissue \u2192 Organ \u2192 Organ system",
+      "Tissue \u2192 Cell \u2192 Organ \u2192 Organ system",
+      "Cell \u2192 Organ \u2192 Tissue \u2192 Organ system"
     ],
-    "correct": "Cell → Tissue → Organ → Organ system"
+    "correct": "Cell \u2192 Tissue \u2192 Organ \u2192 Organ system"
   },
   {
     "id": "B2-MC-002",
@@ -33,7 +33,12 @@
     "marks": 1,
     "topic": "Digestion",
     "question": "Which enzyme breaks down starch?",
-    "options": ["Protease", "Lipase", "Amylase", "Bile"],
+    "options": [
+      "Protease",
+      "Lipase",
+      "Amylase",
+      "Bile"
+    ],
     "correct": "Amylase"
   },
   {
@@ -56,7 +61,12 @@
     "marks": 1,
     "topic": "Digestion",
     "question": "Where is bile produced?",
-    "options": ["Pancreas", "Stomach", "Liver", "Small intestine"],
+    "options": [
+      "Pancreas",
+      "Stomach",
+      "Liver",
+      "Small intestine"
+    ],
     "correct": "Liver"
   },
   {
@@ -65,7 +75,12 @@
     "marks": 1,
     "topic": "Heart and Circulation",
     "question": "Which blood vessel carries oxygenated blood away from the heart to the body?",
-    "options": ["Vena cava", "Pulmonary vein", "Aorta", "Pulmonary artery"],
+    "options": [
+      "Vena cava",
+      "Pulmonary vein",
+      "Aorta",
+      "Pulmonary artery"
+    ],
     "correct": "Aorta"
   },
   {
@@ -74,7 +89,12 @@
     "marks": 1,
     "topic": "Heart and Circulation",
     "question": "Which chambers of the heart pump blood out to the lungs and body?",
-    "options": ["Atria", "Ventricles", "Valves", "Coronary arteries"],
+    "options": [
+      "Atria",
+      "Ventricles",
+      "Valves",
+      "Coronary arteries"
+    ],
     "correct": "Ventricles"
   },
   {
@@ -97,7 +117,12 @@
     "marks": 1,
     "topic": "Heart and Circulation",
     "question": "Which blood vessel has the thickest walls?",
-    "options": ["Vein", "Capillary", "Artery", "Lymph vessel"],
+    "options": [
+      "Vein",
+      "Capillary",
+      "Artery",
+      "Lymph vessel"
+    ],
     "correct": "Artery"
   },
   {
@@ -120,7 +145,12 @@
     "marks": 1,
     "topic": "Blood",
     "question": "Which component of blood carries oxygen around the body?",
-    "options": ["Plasma", "Platelets", "White blood cells", "Red blood cells"],
+    "options": [
+      "Plasma",
+      "Platelets",
+      "White blood cells",
+      "Red blood cells"
+    ],
     "correct": "Red blood cells"
   },
   {
@@ -129,7 +159,12 @@
     "marks": 1,
     "topic": "Plant Organisation",
     "question": "Which tissue transports water and mineral ions up the plant?",
-    "options": ["Phloem", "Xylem", "Meristem", "Epidermis"],
+    "options": [
+      "Phloem",
+      "Xylem",
+      "Meristem",
+      "Epidermis"
+    ],
     "correct": "Xylem"
   },
   {
@@ -138,7 +173,12 @@
     "marks": 1,
     "topic": "Plant Organisation",
     "question": "What controls the opening and closing of stomata?",
-    "options": ["Xylem cells", "Palisade cells", "Guard cells", "Root hair cells"],
+    "options": [
+      "Xylem cells",
+      "Palisade cells",
+      "Guard cells",
+      "Root hair cells"
+    ],
     "correct": "Guard cells"
   },
   {
@@ -176,7 +216,10 @@
     "topic": "Digestion",
     "question": "An enzyme's shape is changed permanently by high temperatures. This is called being __________.",
     "correct": "denatured",
-    "acceptable": ["denatured", "denaturation"]
+    "acceptable": [
+      "denatured",
+      "denaturation"
+    ]
   },
   {
     "id": "B2-FIB-002",
@@ -185,7 +228,9 @@
     "topic": "Digestion",
     "question": "The enzyme __________ breaks down proteins into amino acids.",
     "correct": "protease",
-    "acceptable": ["protease"]
+    "acceptable": [
+      "protease"
+    ]
   },
   {
     "id": "B2-FIB-003",
@@ -194,7 +239,9 @@
     "topic": "Digestion",
     "question": "Bile is produced by the __________ and stored in the gall bladder.",
     "correct": "liver",
-    "acceptable": ["liver"]
+    "acceptable": [
+      "liver"
+    ]
   },
   {
     "id": "B2-FIB-004",
@@ -203,7 +250,11 @@
     "topic": "Heart and Circulation",
     "question": "The __________ are the upper chambers of the heart that receive blood.",
     "correct": "atria",
-    "acceptable": ["atria", "atriums", "atrium"]
+    "acceptable": [
+      "atria",
+      "atriums",
+      "atrium"
+    ]
   },
   {
     "id": "B2-FIB-005",
@@ -212,7 +263,10 @@
     "topic": "Heart and Circulation",
     "question": "Blood vessels called __________ carry blood away from the heart.",
     "correct": "arteries",
-    "acceptable": ["arteries", "artery"]
+    "acceptable": [
+      "arteries",
+      "artery"
+    ]
   },
   {
     "id": "B2-FIB-006",
@@ -221,7 +275,9 @@
     "topic": "Blood",
     "question": "The liquid part of blood that carries dissolved substances is called __________.",
     "correct": "plasma",
-    "acceptable": ["plasma"]
+    "acceptable": [
+      "plasma"
+    ]
   },
   {
     "id": "B2-FIB-007",
@@ -230,7 +286,9 @@
     "topic": "Plant Organisation",
     "question": "The loss of water vapour from plant leaves through the stomata is called __________.",
     "correct": "transpiration",
-    "acceptable": ["transpiration"]
+    "acceptable": [
+      "transpiration"
+    ]
   },
   {
     "id": "B2-FIB-008",
@@ -239,7 +297,9 @@
     "topic": "Plant Organisation",
     "question": "__________ tissue transports dissolved sugars from leaves to the rest of the plant.",
     "correct": "phloem",
-    "acceptable": ["phloem"]
+    "acceptable": [
+      "phloem"
+    ]
   },
   {
     "id": "B2-FIB-009",
@@ -248,7 +308,9 @@
     "topic": "Cancer",
     "question": "A tumour that spreads to other parts of the body is described as __________.",
     "correct": "malignant",
-    "acceptable": ["malignant"]
+    "acceptable": [
+      "malignant"
+    ]
   },
   {
     "id": "B2-FIB-010",
@@ -257,7 +319,9 @@
     "topic": "Digestion",
     "question": "The wave-like muscular contractions that move food along the digestive system are called __________.",
     "correct": "peristalsis",
-    "acceptable": ["peristalsis"]
+    "acceptable": [
+      "peristalsis"
+    ]
   },
   {
     "id": "B2-MATCH-001",
@@ -266,9 +330,18 @@
     "topic": "Digestion",
     "question": "Match each enzyme to the food molecule it breaks down.",
     "pairs": [
-      { "term": "Amylase", "definition": "Breaks down starch into sugars" },
-      { "term": "Protease", "definition": "Breaks down proteins into amino acids" },
-      { "term": "Lipase", "definition": "Breaks down lipids into fatty acids and glycerol" }
+      {
+        "term": "Amylase",
+        "definition": "Breaks down starch into sugars"
+      },
+      {
+        "term": "Protease",
+        "definition": "Breaks down proteins into amino acids"
+      },
+      {
+        "term": "Lipase",
+        "definition": "Breaks down lipids into fatty acids and glycerol"
+      }
     ]
   },
   {
@@ -278,9 +351,18 @@
     "topic": "Heart and Circulation",
     "question": "Match each blood vessel to its correct description.",
     "pairs": [
-      { "term": "Artery", "definition": "Carries blood away from the heart, thick muscular walls, no valves" },
-      { "term": "Vein", "definition": "Carries blood towards the heart, thin walls, has valves" },
-      { "term": "Capillary", "definition": "One cell thick, site of exchange between blood and tissues" }
+      {
+        "term": "Artery",
+        "definition": "Carries blood away from the heart, thick muscular walls, no valves"
+      },
+      {
+        "term": "Vein",
+        "definition": "Carries blood towards the heart, thin walls, has valves"
+      },
+      {
+        "term": "Capillary",
+        "definition": "One cell thick, site of exchange between blood and tissues"
+      }
     ]
   },
   {
@@ -290,11 +372,26 @@
     "topic": "Digestion",
     "question": "Match each digestive organ to its function.",
     "pairs": [
-      { "term": "Stomach", "definition": "Produces protease and hydrochloric acid to digest proteins" },
-      { "term": "Liver", "definition": "Produces bile to emulsify fats" },
-      { "term": "Pancreas", "definition": "Produces amylase, protease and lipase enzymes" },
-      { "term": "Small intestine", "definition": "Main site of digestion and absorption of nutrients" },
-      { "term": "Large intestine", "definition": "Absorbs water from undigested food to form faeces" }
+      {
+        "term": "Stomach",
+        "definition": "Produces protease and hydrochloric acid to digest proteins"
+      },
+      {
+        "term": "Liver",
+        "definition": "Produces bile to emulsify fats"
+      },
+      {
+        "term": "Pancreas",
+        "definition": "Produces amylase, protease and lipase enzymes"
+      },
+      {
+        "term": "Small intestine",
+        "definition": "Main site of digestion and absorption of nutrients"
+      },
+      {
+        "term": "Large intestine",
+        "definition": "Absorbs water from undigested food to form faeces"
+      }
     ]
   },
   {
@@ -304,10 +401,22 @@
     "topic": "Plant Organisation",
     "question": "Match each plant tissue to its function.",
     "pairs": [
-      { "term": "Xylem", "definition": "Transports water and mineral ions from roots to leaves" },
-      { "term": "Phloem", "definition": "Transports dissolved sugars from leaves to the rest of the plant" },
-      { "term": "Guard cells", "definition": "Control the opening and closing of stomata" },
-      { "term": "Palisade mesophyll", "definition": "Packed with chloroplasts — main site of photosynthesis in the leaf" }
+      {
+        "term": "Xylem",
+        "definition": "Transports water and mineral ions from roots to leaves"
+      },
+      {
+        "term": "Phloem",
+        "definition": "Transports dissolved sugars from leaves to the rest of the plant"
+      },
+      {
+        "term": "Guard cells",
+        "definition": "Control the opening and closing of stomata"
+      },
+      {
+        "term": "Palisade mesophyll",
+        "definition": "Packed with chloroplasts \u2014 main site of photosynthesis in the leaf"
+      }
     ]
   },
   {
@@ -317,10 +426,22 @@
     "topic": "Blood",
     "question": "Match each blood component to its function.",
     "pairs": [
-      { "term": "Red blood cells", "definition": "Carry oxygen around the body using haemoglobin" },
-      { "term": "White blood cells", "definition": "Defend the body against infection" },
-      { "term": "Platelets", "definition": "Help blood to clot at a wound" },
-      { "term": "Plasma", "definition": "Liquid that carries dissolved nutrients, hormones and waste" }
+      {
+        "term": "Red blood cells",
+        "definition": "Carry oxygen around the body using haemoglobin"
+      },
+      {
+        "term": "White blood cells",
+        "definition": "Defend the body against infection"
+      },
+      {
+        "term": "Platelets",
+        "definition": "Help blood to clot at a wound"
+      },
+      {
+        "term": "Plasma",
+        "definition": "Liquid that carries dissolved nutrients, hormones and waste"
+      }
     ]
   },
   {
@@ -330,7 +451,7 @@
     "command_word": "State",
     "topic": "Digestion",
     "question": "State what is meant by the term enzyme.",
-    "mark_scheme": "A biological catalyst (1) that speeds up chemical reactions without being used up (1) — accept either point."
+    "mark_scheme": "A biological catalyst (1) that speeds up chemical reactions without being used up (1) \u2014 accept either point."
   },
   {
     "id": "B2-SA-002",
@@ -348,7 +469,7 @@
     "command_word": "State",
     "topic": "Cancer",
     "question": "State the difference between a benign and a malignant tumour.",
-    "mark_scheme": "Benign tumour stays in one place / does not spread (1); malignant tumour spreads to other parts of the body (1) — accept either point for 1 mark."
+    "mark_scheme": "Benign tumour stays in one place / does not spread (1); malignant tumour spreads to other parts of the body (1) \u2014 accept either point for 1 mark."
   },
   {
     "id": "B2-SA-004",
@@ -357,7 +478,7 @@
     "command_word": "State",
     "topic": "Plant Organisation",
     "question": "State the function of stomata in a leaf.",
-    "mark_scheme": "Allow gas exchange (1) / allow water vapour to escape during transpiration (1) — accept either."
+    "mark_scheme": "Allow gas exchange (1) / allow water vapour to escape during transpiration (1) \u2014 accept either."
   },
   {
     "id": "B2-SA-005",
@@ -366,7 +487,7 @@
     "command_word": "Explain",
     "topic": "Digestion",
     "question": "Explain why enzymes are described as specific.",
-    "mark_scheme": "Each enzyme has a specific active site (1); only one substrate fits the active site — lock and key model (1); so each enzyme only catalyses one type of reaction (1) — any two."
+    "mark_scheme": "Each enzyme has a specific active site (1); only one substrate fits the active site \u2014 lock and key model (1); so each enzyme only catalyses one type of reaction (1) \u2014 any two."
   },
   {
     "id": "B2-SA-006",
@@ -375,7 +496,7 @@
     "command_word": "Explain",
     "topic": "Digestion",
     "question": "Explain why the small intestine is well adapted for absorption.",
-    "mark_scheme": "Villi increase the surface area (1); villi have a good blood supply to maintain a concentration gradient (1); villi have thin walls for a short diffusion distance (1) — any two."
+    "mark_scheme": "Villi increase the surface area (1); villi have a good blood supply to maintain a concentration gradient (1); villi have thin walls for a short diffusion distance (1) \u2014 any two."
   },
   {
     "id": "B2-SA-007",
@@ -384,7 +505,7 @@
     "command_word": "Describe",
     "topic": "Heart and Circulation",
     "question": "Describe the function of arteries and veins.",
-    "mark_scheme": "Arteries carry blood away from the heart (1); veins carry blood towards the heart (1); arteries have thick muscular walls (1); veins have valves to prevent backflow (1) — any two."
+    "mark_scheme": "Arteries carry blood away from the heart (1); veins carry blood towards the heart (1); arteries have thick muscular walls (1); veins have valves to prevent backflow (1) \u2014 any two."
   },
   {
     "id": "B2-SA-008",
@@ -393,7 +514,7 @@
     "command_word": "Explain",
     "topic": "Plant Organisation",
     "question": "Explain how guard cells control the opening of stomata.",
-    "mark_scheme": "When guard cells gain water they become turgid and change shape (1); this opens the stomata (1); when they lose water they become flaccid and stomata close (1) — any two."
+    "mark_scheme": "When guard cells gain water they become turgid and change shape (1); this opens the stomata (1); when they lose water they become flaccid and stomata close (1) \u2014 any two."
   },
   {
     "id": "B2-SA-009",
@@ -402,7 +523,7 @@
     "command_word": "Explain",
     "topic": "Heart Disease",
     "question": "Explain how a stent is used to treat coronary heart disease.",
-    "mark_scheme": "A stent is a metal mesh tube (1); inserted into a narrowed coronary artery (1); it holds the artery open / restores blood flow to the heart muscle (1) — any two."
+    "mark_scheme": "A stent is a metal mesh tube (1); inserted into a narrowed coronary artery (1); it holds the artery open / restores blood flow to the heart muscle (1) \u2014 any two."
   },
   {
     "id": "B2-SA-010",
@@ -411,7 +532,7 @@
     "command_word": "Explain",
     "topic": "Digestion",
     "question": "Explain the role of bile in the digestion of fats.",
-    "mark_scheme": "Bile is produced in the liver (1); stored in the gall bladder (1); emulsifies fats — breaks large fat droplets into smaller ones (1); increases surface area for lipase to work (1); bile is alkaline and neutralises stomach acid (1) — any three."
+    "mark_scheme": "Bile is produced in the liver (1); stored in the gall bladder (1); emulsifies fats \u2014 breaks large fat droplets into smaller ones (1); increases surface area for lipase to work (1); bile is alkaline and neutralises stomach acid (1) \u2014 any three."
   },
   {
     "id": "B2-SA-011",
@@ -420,7 +541,7 @@
     "command_word": "Describe",
     "topic": "Heart and Circulation",
     "question": "Describe the structure and function of capillaries.",
-    "mark_scheme": "Capillaries are the smallest blood vessels (1); walls are one cell thick (1); short diffusion distance for exchange of substances (1); large network provides large surface area (1); substances such as oxygen and glucose diffuse into tissues (1) — any three."
+    "mark_scheme": "Capillaries are the smallest blood vessels (1); walls are one cell thick (1); short diffusion distance for exchange of substances (1); large network provides large surface area (1); substances such as oxygen and glucose diffuse into tissues (1) \u2014 any three."
   },
   {
     "id": "B2-SA-012",
@@ -429,7 +550,7 @@
     "command_word": "Explain",
     "topic": "Digestion",
     "question": "Explain how increasing temperature affects enzyme activity, including what happens above the optimum temperature.",
-    "mark_scheme": "Increasing temperature increases rate of reaction (1); more enzyme-substrate collisions (1); above optimum temperature the enzyme denatures (1); active site changes shape (1); substrate no longer fits (1) — any three."
+    "mark_scheme": "Increasing temperature increases rate of reaction (1); more enzyme-substrate collisions (1); above optimum temperature the enzyme denatures (1); active site changes shape (1); substrate no longer fits (1) \u2014 any three."
   },
   {
     "id": "B2-SA-013",
@@ -438,7 +559,7 @@
     "command_word": "Explain",
     "topic": "Plant Organisation",
     "question": "Explain what transpiration is and describe the factors that affect its rate.",
-    "mark_scheme": "Transpiration is the loss of water vapour from leaves through stomata (1); light intensity — more light increases rate (1); temperature — higher temperature increases rate (1); humidity — lower humidity increases rate (1); wind speed — more wind increases rate (1) — any three."
+    "mark_scheme": "Transpiration is the loss of water vapour from leaves through stomata (1); light intensity \u2014 more light increases rate (1); temperature \u2014 higher temperature increases rate (1); humidity \u2014 lower humidity increases rate (1); wind speed \u2014 more wind increases rate (1) \u2014 any three."
   },
   {
     "id": "B2-LA-001",
@@ -447,7 +568,7 @@
     "command_word": "Explain",
     "topic": "Digestion",
     "question": "Explain how the digestive system breaks down a meal containing starch, protein and fat, naming the enzymes involved and where they act.",
-    "mark_scheme": "Amylase breaks down starch in the mouth and small intestine (1); protease breaks down proteins in the stomach and small intestine (1); lipase breaks down fats in the small intestine (1); bile emulsifies fats increasing surface area for lipase (1); products absorbed in the small intestine (1) — any four."
+    "mark_scheme": "Amylase breaks down starch in the mouth and small intestine (1); protease breaks down proteins in the stomach and small intestine (1); lipase breaks down fats in the small intestine (1); bile emulsifies fats increasing surface area for lipase (1); products absorbed in the small intestine (1) \u2014 any four."
   },
   {
     "id": "B2-LA-002",
@@ -456,7 +577,7 @@
     "command_word": "Describe",
     "topic": "Heart and Circulation",
     "question": "Describe the double circulation of blood in the human body, including the role of the heart.",
-    "mark_scheme": "Blood travels from the heart to the lungs to pick up oxygen (1); returns to the heart (1); then pumped to the rest of the body (1); heart has four chambers — two atria and two ventricles (1); left side pumps oxygenated blood to body (1); right side pumps deoxygenated blood to lungs (1) — any four."
+    "mark_scheme": "Blood travels from the heart to the lungs to pick up oxygen (1); returns to the heart (1); then pumped to the rest of the body (1); heart has four chambers \u2014 two atria and two ventricles (1); left side pumps oxygenated blood to body (1); right side pumps deoxygenated blood to lungs (1) \u2014 any four."
   },
   {
     "id": "B2-LA-003",
@@ -465,7 +586,7 @@
     "command_word": "Evaluate",
     "topic": "Heart Disease",
     "question": "Evaluate the use of statins and stents as treatments for coronary heart disease.",
-    "mark_scheme": "Statins lower cholesterol levels (1); reduce risk of fatty plaques forming (1); must be taken long-term / side effects possible (1); stents hold arteries open physically (1); immediate effect (1); risk of surgery / blood clots (1); statins are a preventive treatment, stents are a cure (1) — any four."
+    "mark_scheme": "Statins lower cholesterol levels (1); reduce risk of fatty plaques forming (1); must be taken long-term / side effects possible (1); stents hold arteries open physically (1); immediate effect (1); risk of surgery / blood clots (1); statins are a preventive treatment, stents are a cure (1) \u2014 any four."
   },
   {
     "id": "B2-LA-004",
@@ -474,7 +595,7 @@
     "command_word": "Explain",
     "topic": "Cancer",
     "question": "Explain what cancer is and describe the difference between benign and malignant tumours. Include risk factors for cancer in your answer.",
-    "mark_scheme": "Cancer is uncontrolled cell division (1); benign tumour stays in one place (1); malignant tumour spreads to other tissues / metastasis (1); risk factors include smoking / UV radiation / viral infections / inherited genes (1); lifestyle factors can increase or decrease risk (1) — any four."
+    "mark_scheme": "Cancer is uncontrolled cell division (1); benign tumour stays in one place (1); malignant tumour spreads to other tissues / metastasis (1); risk factors include smoking / UV radiation / viral infections / inherited genes (1); lifestyle factors can increase or decrease risk (1) \u2014 any four."
   },
   {
     "id": "B2-LA-005",
@@ -483,7 +604,7 @@
     "command_word": "Explain",
     "topic": "Digestion",
     "question": "Explain how the structure of the small intestine is adapted to maximise the absorption of digested food molecules.",
-    "mark_scheme": "Villi increase the surface area for absorption (1); microvilli on villi further increase surface area (1); villi have a rich blood supply — maintains concentration gradient (1); walls are one cell thick — short diffusion distance (1); large intestine absorbs water (1); lacteals in villi absorb fatty acids and glycerol (1) — any five."
+    "mark_scheme": "Villi increase the surface area for absorption (1); microvilli on villi further increase surface area (1); villi have a rich blood supply \u2014 maintains concentration gradient (1); walls are one cell thick \u2014 short diffusion distance (1); large intestine absorbs water (1); lacteals in villi absorb fatty acids and glycerol (1) \u2014 any five."
   },
   {
     "id": "B2-LA-006",
@@ -492,7 +613,7 @@
     "command_word": "Explain",
     "topic": "Heart and Circulation",
     "question": "A patient is diagnosed with coronary heart disease. Explain what causes this condition, the symptoms it produces, and the treatments available.",
-    "mark_scheme": "Fatty plaques build up in the coronary arteries (1); arteries become narrowed (1); blood flow to heart muscle is restricted (1); heart muscle receives less oxygen (1); symptoms include chest pain / angina / heart attack (1); treatments: statins lower cholesterol (1); stents hold arteries open (1); bypass surgery uses another blood vessel to go around the blockage (1) — any six."
+    "mark_scheme": "Fatty plaques build up in the coronary arteries (1); arteries become narrowed (1); blood flow to heart muscle is restricted (1); heart muscle receives less oxygen (1); symptoms include chest pain / angina / heart attack (1); treatments: statins lower cholesterol (1); stents hold arteries open (1); bypass surgery uses another blood vessel to go around the blockage (1) \u2014 any six."
   },
   {
     "id": "B2-LA-007",
@@ -501,6 +622,276 @@
     "command_word": "Evaluate",
     "topic": "Heart Disease",
     "question": "Evaluate the lifestyle changes and medical treatments available to reduce the risk of cardiovascular disease. In your answer, refer to both advantages and disadvantages.",
-    "mark_scheme": "Lifestyle: healthy diet reduces cholesterol (1); exercise strengthens heart muscle (1); stopping smoking reduces risk (1); no side effects from lifestyle changes (1); requires willpower and long-term commitment (1). Medical: statins reduce cholesterol effectively (1); may have side effects (1); stents give immediate relief (1); surgery carries risk (1); medical treatments may be needed when lifestyle changes are insufficient (1) — any six."
+    "mark_scheme": "Lifestyle: healthy diet reduces cholesterol (1); exercise strengthens heart muscle (1); stopping smoking reduces risk (1); no side effects from lifestyle changes (1); requires willpower and long-term commitment (1). Medical: statins reduce cholesterol effectively (1); may have side effects (1); stents give immediate relief (1); surgery carries risk (1); medical treatments may be needed when lifestyle changes are insufficient (1) \u2014 any six."
+  },
+  {
+    "id": "B2-LA-005",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Organisation",
+    "question": "Explain the levels of organisation in a multicellular organism, from cell to organism. Give an example at each level.",
+    "mark_scheme": "Cell: smallest unit of life, e.g. muscle cell (1); tissue: group of similar cells working together, e.g. muscle tissue (1); organ: group of tissues working together, e.g. stomach (1); organ system: group of organs working together, e.g. digestive system (1)."
+  },
+  {
+    "id": "B2-LA-006",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Digestion",
+    "question": "Describe the role of enzymes in digestion. Include where amylase, protease and lipase act and what they break down.",
+    "mark_scheme": "Amylase breaks down starch into sugars (1) \u2014 produced in salivary glands and pancreas (1); protease breaks down proteins into amino acids (1); lipase breaks down lipids into fatty acids and glycerol (1)."
+  },
+  {
+    "id": "B2-LA-007",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Heart and Circulation",
+    "question": "Explain why the heart has two separate sides and describe the route blood takes through the heart.",
+    "mark_scheme": "Right side pumps deoxygenated blood to the lungs (1); left side pumps oxygenated blood to the body (1); blood enters right atrium from vena cava, goes to right ventricle, to lungs via pulmonary artery (1); returns oxygenated via pulmonary vein to left atrium, left ventricle, then aorta to body (1)."
+  },
+  {
+    "id": "B2-LA-008",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Blood",
+    "question": "Describe the structure and function of red blood cells, white blood cells and platelets.",
+    "mark_scheme": "Red blood cells: biconcave, no nucleus, contain haemoglobin \u2014 carry oxygen (1); white blood cells: have nucleus, can change shape \u2014 defend against infection by engulfing pathogens or producing antibodies (1); platelets: cell fragments, no nucleus \u2014 involved in blood clotting (1); all three found in plasma which transports dissolved substances (1)."
+  },
+  {
+    "id": "B2-LA-009",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Heart Disease",
+    "question": "Explain how coronary heart disease develops and why it can lead to a heart attack.",
+    "mark_scheme": "Fatty deposits (atheroma) build up inside coronary arteries (1); this narrows the lumen of the artery \u2014 restricts blood flow (1); a blood clot may form at the site of the deposit (1); this can completely block the artery, cutting off oxygen supply to heart muscle, causing a heart attack (1)."
+  },
+  {
+    "id": "B2-LA-010",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Evaluate",
+    "topic": "Heart Disease",
+    "question": "Evaluate lifestyle changes versus medical treatments (statins and stents) for reducing the risk of coronary heart disease.",
+    "mark_scheme": "Lifestyle: diet low in saturated fat reduces cholesterol (1); regular exercise strengthens heart muscle (1); stopping smoking reduces risk of clot formation (1). Medical: statins lower cholesterol but have side effects (1); stents keep arteries open but require surgery (1) \u2014 award 4 marks for balanced evaluation."
+  },
+  {
+    "id": "B2-LA-011",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Cancer",
+    "question": "Explain the difference between benign and malignant tumours. Include what happens to cells in each type.",
+    "mark_scheme": "Benign tumours: cells divide uncontrollably but remain in one place (1); do not spread to other tissues (1); malignant tumours: cells invade neighbouring tissues (1); cells can break off and spread via blood/lymph to other parts of the body (metastasis) (1)."
+  },
+  {
+    "id": "B2-LA-012",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Digestion",
+    "question": "Describe how the pH of the digestive system varies and explain how this affects enzyme activity.",
+    "mark_scheme": "Stomach is acidic (pH ~2) \u2014 produced by hydrochloric acid (1); small intestine is alkaline (pH ~8) \u2014 bile neutralises acid (1); each enzyme has an optimum pH \u2014 e.g. pepsin works best at pH 2 (1); above or below optimum pH, enzyme shape changes / active site denatures \u2014 rate of reaction falls (1)."
+  },
+  {
+    "id": "B2-LA-013",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Heart and Circulation",
+    "question": "Explain the differences in structure between arteries, veins and capillaries, linking each to its function.",
+    "mark_scheme": "Arteries: thick muscular walls, narrow lumen \u2014 withstand high pressure from heart (1); veins: thinner walls, wider lumen, valves \u2014 blood at lower pressure, valves prevent backflow (1); capillaries: one-cell-thick walls \u2014 allow diffusion of substances to/from tissues (1); capillaries form networks near cells to reduce diffusion distance (1)."
+  },
+  {
+    "id": "B2-LA-014",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Organisation",
+    "question": "Describe the role of the liver in the human body. Include at least three different functions.",
+    "mark_scheme": "Produces bile to emulsify fats (1); regulates blood glucose \u2014 converts excess glucose to glycogen (1); breaks down excess amino acids \u2014 deamination producing urea (1); detoxifies alcohol and other harmful substances (1). Accept: produces heat / stores vitamins / produces blood clotting proteins."
+  },
+  {
+    "id": "B2-LA-015",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Blood",
+    "question": "Explain how the immune system responds when a pathogen enters the body for the first time. Include the roles of antibodies and memory cells.",
+    "mark_scheme": "White blood cells detect antigens on the pathogen (1); lymphocytes produce specific antibodies that bind to those antigens (1); antibodies neutralise or destroy the pathogen (1); memory cells remain in the blood after infection \u2014 produce antibodies rapidly if same pathogen enters again (1)."
+  },
+  {
+    "id": "B2-LA-016",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Digestion",
+    "question": "Explain how the small intestine is structurally adapted to maximise the absorption of digested food products.",
+    "mark_scheme": "Villi increase surface area (1); microvilli on epithelial cells further increase surface area (1); rich blood supply \u2014 maintains concentration gradient for diffusion (1); thin walls \u2014 short diffusion distance (1); long length of small intestine \u2014 more time for absorption (1)."
+  },
+  {
+    "id": "B2-LA-017",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Heart and Circulation",
+    "question": "Describe the cardiac cycle. Include what happens in the atria, ventricles, and what role valves play in ensuring one-way blood flow.",
+    "mark_scheme": "Atria contract, pushing blood into ventricles (1); ventricles contract, pushing blood out to lungs (right) and body (left) (1); valves between atria and ventricles (atrioventricular) close to prevent backflow (1); semilunar valves at base of arteries prevent backflow when ventricles relax (1); cycle repeats at resting rate of ~70 beats per minute (1)."
+  },
+  {
+    "id": "B2-LA-018",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Heart Disease",
+    "question": "Evaluate the use of artificial hearts as a treatment for heart failure. Include advantages, disadvantages and an ethical consideration.",
+    "mark_scheme": "Advantage: can keep patient alive while waiting for donor heart (1); no risk of rejection as no biological tissue (1); disadvantage: mechanical parts can fail (1); anticoagulant drugs needed to prevent blood clotting (1); ethical: very expensive, so access may be unequal (1)."
+  },
+  {
+    "id": "B2-LA-019",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Cancer",
+    "question": "Explain how lifestyle factors can increase the risk of cancer. Include at least three different risk factors and the type of cancer associated with each.",
+    "mark_scheme": "Smoking: lung cancer \u2014 carcinogens in smoke cause mutations in DNA (1); UV radiation from sun: skin cancer \u2014 UV damages DNA in skin cells (1); obesity/high fat diet: bowel or breast cancer \u2014 excess oestrogen in fat tissue (1); alcohol: liver cancer \u2014 liver processes alcohol, leading to DNA damage (1); these factors increase the chance of a mutation in a tumour-suppressor gene (1)."
+  },
+  {
+    "id": "B2-LA-020",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Blood",
+    "question": "Describe how blood transports oxygen from the lungs to respiring cells. Include the role of haemoglobin and the conditions that affect oxygen release.",
+    "mark_scheme": "In lungs: oxygen binds to haemoglobin to form oxyhaemoglobin (1); red blood cells travel in blood plasma to respiring tissues (1); in tissues: high CO\u2082 / lower pH causes haemoglobin to release oxygen (1); oxygen diffuses into cells down concentration gradient (1); CO\u2082 is picked up and transported back to lungs dissolved in plasma / as bicarbonate ions (1)."
+  },
+  {
+    "id": "B2-LA-021",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Organisation",
+    "question": "Explain how enzymes work using the lock-and-key model. Include the effect of temperature on enzyme activity and explain what happens when an enzyme is denatured.",
+    "mark_scheme": "Enzyme has an active site with a specific shape (1); substrate fits into active site \u2014 complementary shape (lock-and-key) (1); increasing temperature increases rate \u2014 more kinetic energy, more collisions (1); above optimum temperature: bonds in enzyme break, active site changes shape (1); enzyme is denatured \u2014 substrate can no longer fit, reaction stops (1)."
+  },
+  {
+    "id": "B2-LA-022",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Organisation",
+    "question": "Evaluate the use of monoclonal antibodies in medicine. Include how they are produced, one medical use, and one limitation.",
+    "mark_scheme": "Produced by injecting a mouse with antigen \u2014 mouse produces B lymphocytes (1); B lymphocytes fused with tumour cells to form hybridoma cells (1); hybridoma cells divide and produce large quantities of identical (monoclonal) antibodies (1); use: cancer treatment \u2014 antibodies carry radioactive/toxic drugs directly to tumour cells (1); limitation: can cause side effects; expensive to produce; can trigger immune reactions in patients (1)."
+  },
+  {
+    "id": "B2-LA-023",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Digestion",
+    "question": "Explain what happens when food reaches the stomach. Include the role of hydrochloric acid, the enzyme present, and the physical processes involved.",
+    "mark_scheme": "Stomach produces hydrochloric acid \u2014 creates pH 2 (1); acid kills most bacteria in food (1); acid provides optimum pH for pepsin (1); pepsin is a protease \u2014 breaks proteins into shorter polypeptide chains (1); muscular stomach wall churns food \u2014 physical digestion, increases surface area (1)."
+  },
+  {
+    "id": "B2-LA-024",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Heart and Circulation",
+    "question": "Describe the double circulatory system of mammals. Explain the advantage of this system compared to a single circulatory system.",
+    "mark_scheme": "Pulmonary circulation: heart \u2192 lungs \u2192 heart (1); systemic circulation: heart \u2192 body \u2192 heart (1); blood returns to heart after visiting lungs so pressure is restored (1); oxygenated and deoxygenated blood are kept separate (1); allows higher blood pressure to be maintained to the body \u2014 more efficient delivery of oxygen (1)."
+  },
+  {
+    "id": "B2-LA-025",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Heart Disease",
+    "question": "Explain why high blood pressure is a risk factor for cardiovascular disease. Include the effects on arteries and the heart.",
+    "mark_scheme": "High blood pressure puts excessive force on artery walls (1); damages the inner lining of arteries \u2014 makes them more prone to fatty deposit formation (1); increases risk of atherosclerosis \u2014 narrowing of arteries (1); heart must work harder to pump blood \u2014 can lead to heart failure over time (1); risk of blood vessel rupture / stroke increases (1)."
+  },
+  {
+    "id": "B2-LA-026",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Blood",
+    "question": "Evaluate the use of blood transfusions and artificial blood substitutes in emergency medicine. Consider the advantages and disadvantages of each.",
+    "mark_scheme": "Blood transfusions: provide all components including platelets and clotting factors (1); but require blood type matching to prevent rejection (1); artificial substitutes: no need for matching (1); do not carry disease risk (1); but cannot carry oxygen as effectively as red blood cells / limited shelf life (1)."
+  },
+  {
+    "id": "B2-LA-027",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Digestion",
+    "question": "Explain how the digestive system processes a meal containing starch, protein and fat from ingestion to absorption. Name the enzymes and organs involved.",
+    "mark_scheme": "Mouth: amylase in saliva begins breaking starch into maltose (1); stomach: HCl and pepsin begin protein digestion \u2014 proteins \u2192 polypeptides (1); small intestine: pancreatic amylase, protease (trypsin) and lipase continue digestion (1); bile from liver/gall bladder emulsifies fats \u2014 increases surface area for lipase (1); final products absorbed: glucose, amino acids, fatty acids, glycerol across villi into bloodstream (1); large intestine absorbs water, waste passes out as faeces (1)."
+  },
+  {
+    "id": "B2-LA-028",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Heart Disease",
+    "question": "Evaluate lifestyle and medical interventions for coronary heart disease. Consider their effectiveness, risks, and accessibility.",
+    "mark_scheme": "Lifestyle \u2014 diet: reducing saturated fat lowers LDL cholesterol, reducing plaque build-up (1); exercise strengthens heart, lowers resting heart rate, reduces blood pressure (1); Statins: lower cholesterol, shown to reduce heart attack risk; side effects include muscle pain (1); Stents: physically open narrowed arteries; procedure risk; may re-narrow (1); Heart transplant: most effective for end-stage disease but donor shortage and need for immunosuppressants (1); lifestyle changes most cost-effective and without medical risk, but compliance is difficult (1)."
+  },
+  {
+    "id": "B2-LA-029",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Describe",
+    "topic": "Blood",
+    "question": "Describe the role of the immune system in responding to infection by bacteria. Include the innate response, the adaptive response, and how vaccination can provide protection.",
+    "mark_scheme": "Innate: phagocytes engulf and destroy bacteria (phagocytosis) (1); adaptive: lymphocytes recognise specific antigens on bacteria (1); B-cells produce specific antibodies that bind to bacterial antigens (1); antibodies neutralise toxins / agglutinate bacteria for destruction (1); memory cells remain after infection \u2014 secondary response is faster and stronger (1); vaccination: introduces weakened/dead antigens \u2014 immune system produces memory cells without causing disease (1)."
+  },
+  {
+    "id": "B2-LA-030",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Cancer",
+    "question": "Explain the biological basis of cancer. Include the role of mutations, tumour-suppressor genes, and how cancer treatments such as radiotherapy and chemotherapy work.",
+    "mark_scheme": "Cancer caused by mutations in genes that control cell division (1); mutations in tumour-suppressor genes allow cells to divide uncontrollably (1); proto-oncogene mutations can switch on cell division permanently (1); radiotherapy: ionising radiation kills rapidly dividing cancer cells (1); but also damages nearby healthy tissue \u2014 causes side effects (1); chemotherapy: drugs target dividing cells throughout body (1); useful for widespread cancer but also affects healthy rapidly dividing cells (hair follicles, gut lining) (1) \u2014 any 6 points."
+  },
+  {
+    "id": "B2-LA-031",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Organisation",
+    "question": "Explain how enzyme activity is affected by temperature, pH and substrate concentration. For each factor, describe the shape of the graph and explain the biology.",
+    "mark_scheme": "Temperature: rate increases up to optimum (more kinetic energy, more collisions) (1); above optimum rate falls \u2014 enzyme denatured, active site shape changes (1); pH: rate highest at optimum pH; above or below, ionic bonds in enzyme break, active site shape changes (1); both sides show decrease \u2014 different enzymes have different optima (1); substrate concentration: rate increases with concentration as more substrate molecules available (1); rate plateaus when all active sites are occupied (enzyme is saturated) (1)."
+  },
+  {
+    "id": "B2-LA-032",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Organisation",
+    "question": "Evaluate the use of monoclonal antibodies in the diagnosis and treatment of disease. Include pregnancy tests, cancer treatment, and any ethical or practical limitations.",
+    "mark_scheme": "Pregnancy tests: monoclonal antibodies detect hCG hormone in urine \u2014 highly specific and rapid (1); cancer diagnosis: antibodies labelled with radioactive markers locate tumour cells (1); cancer treatment: antibodies carry toxic drugs directly to tumour \u2014 reduces damage to healthy tissue (1); advantages: highly specific, can be produced in large quantities (1); limitations: expensive to produce, side effects in some patients (1); ethical: hybridoma production uses animal experimentation (1)."
+  },
+  {
+    "id": "B2-LA-033",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Describe",
+    "topic": "Heart and Circulation",
+    "question": "Describe the structure of the heart and explain how its structure is adapted for its function as a double pump. Include the roles of the chambers, valves, and coronary arteries.",
+    "mark_scheme": "Four chambers: two atria (receive blood) and two ventricles (pump blood out) (1); right side: receives deoxygenated blood, pumps to lungs; left side: receives oxygenated blood, pumps to body (1); left ventricle wall is thicker than right \u2014 must pump blood further at higher pressure (1); valves (bicuspid, tricuspid, semilunar) ensure one-way blood flow (1); coronary arteries supply heart muscle itself with oxygen and glucose (1); if coronary arteries blocked \u2192 heart attack as muscle cannot respire (1)."
+  },
+  {
+    "id": "B2-LA-034",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Cancer",
+    "question": "A patient has been diagnosed with a malignant tumour. Evaluate the treatment options available, considering how each targets cancer cells and the potential side effects.",
+    "mark_scheme": "Surgery: physically removes tumour \u2014 effective for localised cancer (1); risk of infection, does not treat metastasised cells (1); radiotherapy: targeted radiation kills cancer cells by damaging DNA (1); damages nearby healthy tissue, causes fatigue and skin burns (1); chemotherapy: drugs target all rapidly dividing cells throughout body (1); kills cancer cells but also damages hair follicles, digestive lining \u2014 hair loss, nausea (1). Accept immunotherapy / monoclonal antibodies for full mark."
   }
 ]

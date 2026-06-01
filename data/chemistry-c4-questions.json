@@ -5,7 +5,12 @@
     "marks": 1,
     "topic": "Acids and Bases",
     "question": "What is the pH of a neutral solution?",
-    "options": ["0", "7", "14", "1"],
+    "options": [
+      "0",
+      "7",
+      "14",
+      "1"
+    ],
     "correct": "7"
   },
   {
@@ -14,8 +19,13 @@
     "marks": 1,
     "topic": "Acids and Bases",
     "question": "Which ion is produced by all acids when dissolved in water?",
-    "options": ["OH⁻", "Na⁺", "H⁺", "Cl⁻"],
-    "correct": "H⁺"
+    "options": [
+      "OH\u207b",
+      "Na\u207a",
+      "H\u207a",
+      "Cl\u207b"
+    ],
+    "correct": "H\u207a"
   },
   {
     "id": "C4-MC-003",
@@ -23,7 +33,12 @@
     "marks": 1,
     "topic": "Salts",
     "question": "What products are formed when an acid reacts with a metal carbonate?",
-    "options": ["Salt and water", "Salt, water and oxygen", "Salt, water and carbon dioxide", "Salt and hydrogen"],
+    "options": [
+      "Salt and water",
+      "Salt, water and oxygen",
+      "Salt, water and carbon dioxide",
+      "Salt and hydrogen"
+    ],
     "correct": "Salt, water and carbon dioxide"
   },
   {
@@ -32,7 +47,12 @@
     "marks": 1,
     "topic": "Salts",
     "question": "Which salt is formed when hydrochloric acid reacts with sodium hydroxide?",
-    "options": ["Sodium sulfate", "Sodium carbonate", "Sodium chloride", "Sodium nitrate"],
+    "options": [
+      "Sodium sulfate",
+      "Sodium carbonate",
+      "Sodium chloride",
+      "Sodium nitrate"
+    ],
     "correct": "Sodium chloride"
   },
   {
@@ -41,7 +61,12 @@
     "marks": 1,
     "topic": "Reactivity Series",
     "question": "Which metal is the most reactive in the reactivity series?",
-    "options": ["Iron", "Copper", "Gold", "Potassium"],
+    "options": [
+      "Iron",
+      "Copper",
+      "Gold",
+      "Potassium"
+    ],
     "correct": "Potassium"
   },
   {
@@ -50,7 +75,12 @@
     "marks": 1,
     "topic": "Reactivity Series",
     "question": "Iron is added to copper sulfate solution. What is observed?",
-    "options": ["No reaction", "Iron dissolves and copper is deposited", "Copper dissolves and iron is deposited", "Both metals dissolve"],
+    "options": [
+      "No reaction",
+      "Iron dissolves and copper is deposited",
+      "Copper dissolves and iron is deposited",
+      "Both metals dissolve"
+    ],
     "correct": "Iron dissolves and copper is deposited"
   },
   {
@@ -59,7 +89,12 @@
     "marks": 1,
     "topic": "Redox",
     "question": "Which statement correctly describes oxidation?",
-    "options": ["Gain of electrons", "Loss of electrons", "Gain of oxygen and gain of electrons", "Loss of hydrogen only"],
+    "options": [
+      "Gain of electrons",
+      "Loss of electrons",
+      "Gain of oxygen and gain of electrons",
+      "Loss of hydrogen only"
+    ],
     "correct": "Loss of electrons"
   },
   {
@@ -67,8 +102,13 @@
     "type": "multiple_choice",
     "marks": 1,
     "topic": "Redox",
-    "question": "In the reaction: Zn + CuSO₄ → ZnSO₄ + Cu, which species is oxidised?",
-    "options": ["Cu²⁺", "Zn", "SO₄²⁻", "ZnSO₄"],
+    "question": "In the reaction: Zn + CuSO\u2084 \u2192 ZnSO\u2084 + Cu, which species is oxidised?",
+    "options": [
+      "Cu\u00b2\u207a",
+      "Zn",
+      "SO\u2084\u00b2\u207b",
+      "ZnSO\u2084"
+    ],
     "correct": "Zn"
   },
   {
@@ -77,7 +117,12 @@
     "marks": 1,
     "topic": "Electrolysis",
     "question": "During electrolysis, what happens at the cathode?",
-    "options": ["Positive ions are oxidised", "Negative ions are reduced", "Positive ions are reduced", "Negative ions are oxidised"],
+    "options": [
+      "Positive ions are oxidised",
+      "Negative ions are reduced",
+      "Positive ions are reduced",
+      "Negative ions are oxidised"
+    ],
     "correct": "Positive ions are reduced"
   },
   {
@@ -86,7 +131,12 @@
     "marks": 1,
     "topic": "Electrolysis",
     "question": "Why is electrolysis used to extract aluminium rather than reduction with carbon?",
-    "options": ["Aluminium is cheaper than carbon", "Aluminium is below carbon in the reactivity series", "Aluminium is above carbon in the reactivity series", "Carbon reacts with aluminium"],
+    "options": [
+      "Aluminium is cheaper than carbon",
+      "Aluminium is below carbon in the reactivity series",
+      "Aluminium is above carbon in the reactivity series",
+      "Carbon reacts with aluminium"
+    ],
     "correct": "Aluminium is above carbon in the reactivity series"
   },
   {
@@ -95,7 +145,12 @@
     "marks": 1,
     "topic": "Electrolysis",
     "question": "What is an electrolyte?",
-    "options": ["A solid metal conductor", "An ionic compound in solution or molten state that conducts electricity", "A type of electrode", "A non-conductor"],
+    "options": [
+      "A solid metal conductor",
+      "An ionic compound in solution or molten state that conducts electricity",
+      "A type of electrode",
+      "A non-conductor"
+    ],
     "correct": "An ionic compound in solution or molten state that conducts electricity"
   },
   {
@@ -104,7 +159,12 @@
     "marks": 1,
     "topic": "Acids and Bases",
     "question": "What is the difference between a strong acid and a weak acid?",
-    "options": ["Strong acids are more concentrated", "Strong acids completely ionise in water; weak acids only partially ionise", "Weak acids have a lower pH", "Strong acids contain more hydrogen atoms"],
+    "options": [
+      "Strong acids are more concentrated",
+      "Strong acids completely ionise in water; weak acids only partially ionise",
+      "Weak acids have a lower pH",
+      "Strong acids contain more hydrogen atoms"
+    ],
     "correct": "Strong acids completely ionise in water; weak acids only partially ionise"
   },
   {
@@ -113,7 +173,12 @@
     "marks": 1,
     "topic": "Salts",
     "question": "What salt is formed when sulfuric acid reacts with copper oxide?",
-    "options": ["Copper chloride", "Copper nitrate", "Copper carbonate", "Copper sulfate"],
+    "options": [
+      "Copper chloride",
+      "Copper nitrate",
+      "Copper carbonate",
+      "Copper sulfate"
+    ],
     "correct": "Copper sulfate"
   },
   {
@@ -122,7 +187,12 @@
     "marks": 1,
     "topic": "Electrolysis",
     "question": "During the electrolysis of dilute sulfuric acid, what is produced at the cathode?",
-    "options": ["Oxygen", "Sulfur", "Hydrogen", "Water"],
+    "options": [
+      "Oxygen",
+      "Sulfur",
+      "Hydrogen",
+      "Water"
+    ],
     "correct": "Hydrogen"
   },
   {
@@ -131,7 +201,12 @@
     "marks": 1,
     "topic": "Acids and Bases",
     "question": "Which of the following is a base but NOT an alkali?",
-    "options": ["Sodium hydroxide", "Potassium hydroxide", "Copper oxide", "Ammonia solution"],
+    "options": [
+      "Sodium hydroxide",
+      "Potassium hydroxide",
+      "Copper oxide",
+      "Ammonia solution"
+    ],
     "correct": "Copper oxide"
   },
   {
@@ -141,7 +216,10 @@
     "topic": "Acids and Bases",
     "question": "A solution with a pH below 7 is __________.",
     "correct": "acidic",
-    "acceptable": ["acidic", "an acid"]
+    "acceptable": [
+      "acidic",
+      "an acid"
+    ]
   },
   {
     "id": "C4-FIB-002",
@@ -150,16 +228,24 @@
     "topic": "Acids and Bases",
     "question": "Acids produce __________ ions when dissolved in water.",
     "correct": "hydrogen",
-    "acceptable": ["hydrogen", "H⁺", "H+"]
+    "acceptable": [
+      "hydrogen",
+      "H\u207a",
+      "H+"
+    ]
   },
   {
     "id": "C4-FIB-003",
     "type": "fill_in_blank",
     "marks": 1,
     "topic": "Salts",
-    "question": "Acid + metal carbonate → salt + water + __________.",
+    "question": "Acid + metal carbonate \u2192 salt + water + __________.",
     "correct": "carbon dioxide",
-    "acceptable": ["carbon dioxide", "CO₂", "CO2"]
+    "acceptable": [
+      "carbon dioxide",
+      "CO\u2082",
+      "CO2"
+    ]
   },
   {
     "id": "C4-FIB-004",
@@ -168,7 +254,10 @@
     "topic": "Redox",
     "question": "OIL RIG stands for: Oxidation Is __________, Reduction Is Gain.",
     "correct": "Loss",
-    "acceptable": ["Loss", "loss of electrons"]
+    "acceptable": [
+      "Loss",
+      "loss of electrons"
+    ]
   },
   {
     "id": "C4-FIB-005",
@@ -177,7 +266,10 @@
     "topic": "Electrolysis",
     "question": "During electrolysis, positive ions move to the __________ electrode.",
     "correct": "cathode",
-    "acceptable": ["cathode", "negative"]
+    "acceptable": [
+      "cathode",
+      "negative"
+    ]
   },
   {
     "id": "C4-FIB-006",
@@ -186,7 +278,9 @@
     "topic": "Electrolysis",
     "question": "The positive electrode in electrolysis is called the __________.",
     "correct": "anode",
-    "acceptable": ["anode"]
+    "acceptable": [
+      "anode"
+    ]
   },
   {
     "id": "C4-FIB-007",
@@ -195,7 +289,11 @@
     "topic": "Reactivity Series",
     "question": "A more reactive metal will __________ a less reactive metal from a solution of its salt.",
     "correct": "displace",
-    "acceptable": ["displace", "push out", "replace"]
+    "acceptable": [
+      "displace",
+      "push out",
+      "replace"
+    ]
   },
   {
     "id": "C4-FIB-008",
@@ -204,7 +302,9 @@
     "topic": "Salts",
     "question": "Hydrochloric acid reacts with metals to form __________ salts.",
     "correct": "chloride",
-    "acceptable": ["chloride"]
+    "acceptable": [
+      "chloride"
+    ]
   },
   {
     "id": "C4-FIB-009",
@@ -213,7 +313,10 @@
     "topic": "Acids and Bases",
     "question": "A strong acid __________ ionises in water.",
     "correct": "completely",
-    "acceptable": ["completely", "fully"]
+    "acceptable": [
+      "completely",
+      "fully"
+    ]
   },
   {
     "id": "C4-FIB-010",
@@ -222,7 +325,9 @@
     "topic": "Salts",
     "question": "When two solutions react to form an insoluble solid, the solid is called a __________.",
     "correct": "precipitate",
-    "acceptable": ["precipitate"]
+    "acceptable": [
+      "precipitate"
+    ]
   },
   {
     "id": "C4-MATCH-001",
@@ -231,9 +336,18 @@
     "topic": "Salts",
     "question": "Match each acid to the type of salt it forms.",
     "pairs": [
-      { "term": "Hydrochloric acid", "definition": "Forms chloride salts" },
-      { "term": "Sulfuric acid", "definition": "Forms sulfate salts" },
-      { "term": "Nitric acid", "definition": "Forms nitrate salts" }
+      {
+        "term": "Hydrochloric acid",
+        "definition": "Forms chloride salts"
+      },
+      {
+        "term": "Sulfuric acid",
+        "definition": "Forms sulfate salts"
+      },
+      {
+        "term": "Nitric acid",
+        "definition": "Forms nitrate salts"
+      }
     ]
   },
   {
@@ -243,10 +357,22 @@
     "topic": "Acids and Bases",
     "question": "Match each reaction type to its products.",
     "pairs": [
-      { "term": "Acid + metal oxide", "definition": "Salt + water" },
-      { "term": "Acid + metal carbonate", "definition": "Salt + water + carbon dioxide" },
-      { "term": "Acid + metal", "definition": "Salt + hydrogen" },
-      { "term": "Acid + alkali", "definition": "Salt + water" }
+      {
+        "term": "Acid + metal oxide",
+        "definition": "Salt + water"
+      },
+      {
+        "term": "Acid + metal carbonate",
+        "definition": "Salt + water + carbon dioxide"
+      },
+      {
+        "term": "Acid + metal",
+        "definition": "Salt + hydrogen"
+      },
+      {
+        "term": "Acid + alkali",
+        "definition": "Salt + water"
+      }
     ]
   },
   {
@@ -256,10 +382,22 @@
     "topic": "Electrolysis",
     "question": "Match each electrolysis term to its correct description.",
     "pairs": [
-      { "term": "Cathode", "definition": "Negative electrode — positive ions gain electrons (reduction)" },
-      { "term": "Anode", "definition": "Positive electrode — negative ions lose electrons (oxidation)" },
-      { "term": "Electrolyte", "definition": "Ionic compound in solution or molten that conducts electricity" },
-      { "term": "Electrolysis", "definition": "Breakdown of an ionic compound using electricity" }
+      {
+        "term": "Cathode",
+        "definition": "Negative electrode \u2014 positive ions gain electrons (reduction)"
+      },
+      {
+        "term": "Anode",
+        "definition": "Positive electrode \u2014 negative ions lose electrons (oxidation)"
+      },
+      {
+        "term": "Electrolyte",
+        "definition": "Ionic compound in solution or molten that conducts electricity"
+      },
+      {
+        "term": "Electrolysis",
+        "definition": "Breakdown of an ionic compound using electricity"
+      }
     ]
   },
   {
@@ -269,10 +407,22 @@
     "topic": "Redox",
     "question": "Match each term to its correct definition in terms of electron transfer.",
     "pairs": [
-      { "term": "Oxidation", "definition": "Loss of electrons" },
-      { "term": "Reduction", "definition": "Gain of electrons" },
-      { "term": "Oxidising agent", "definition": "Substance that accepts electrons and is itself reduced" },
-      { "term": "Reducing agent", "definition": "Substance that donates electrons and is itself oxidised" }
+      {
+        "term": "Oxidation",
+        "definition": "Loss of electrons"
+      },
+      {
+        "term": "Reduction",
+        "definition": "Gain of electrons"
+      },
+      {
+        "term": "Oxidising agent",
+        "definition": "Substance that accepts electrons and is itself reduced"
+      },
+      {
+        "term": "Reducing agent",
+        "definition": "Substance that donates electrons and is itself oxidised"
+      }
     ]
   },
   {
@@ -282,10 +432,22 @@
     "topic": "Reactivity Series",
     "question": "Match each metal to its correct position in the reactivity series (most to least reactive).",
     "pairs": [
-      { "term": "Potassium", "definition": "Most reactive — reacts vigorously with water" },
-      { "term": "Zinc", "definition": "Moderately reactive — reacts slowly with dilute acids" },
-      { "term": "Iron", "definition": "Less reactive than zinc — used in construction" },
-      { "term": "Gold", "definition": "Least reactive — found naturally uncombined" }
+      {
+        "term": "Potassium",
+        "definition": "Most reactive \u2014 reacts vigorously with water"
+      },
+      {
+        "term": "Zinc",
+        "definition": "Moderately reactive \u2014 reacts slowly with dilute acids"
+      },
+      {
+        "term": "Iron",
+        "definition": "Less reactive than zinc \u2014 used in construction"
+      },
+      {
+        "term": "Gold",
+        "definition": "Least reactive \u2014 found naturally uncombined"
+      }
     ]
   },
   {
@@ -295,7 +457,7 @@
     "command_word": "State",
     "topic": "Acids and Bases",
     "question": "State the ion produced by all acids in aqueous solution.",
-    "mark_scheme": "Hydrogen ion / H⁺ (1)."
+    "mark_scheme": "Hydrogen ion / H\u207a (1)."
   },
   {
     "id": "C4-SA-002",
@@ -331,7 +493,7 @@
     "command_word": "Describe",
     "topic": "Salts",
     "question": "Describe what is observed when excess copper oxide is added to warm dilute sulfuric acid.",
-    "mark_scheme": "Black copper oxide dissolves (1); blue solution forms (copper sulfate solution) (1); excess black powder remains undissolved (1) — any two."
+    "mark_scheme": "Black copper oxide dissolves (1); blue solution forms (copper sulfate solution) (1); excess black powder remains undissolved (1) \u2014 any two."
   },
   {
     "id": "C4-SA-006",
@@ -358,7 +520,7 @@
     "command_word": "Write",
     "topic": "Salts",
     "question": "Write a word equation for the reaction between magnesium and sulfuric acid.",
-    "mark_scheme": "Magnesium + sulfuric acid → magnesium sulfate + hydrogen (1); correct reactants and products (1)."
+    "mark_scheme": "Magnesium + sulfuric acid \u2192 magnesium sulfate + hydrogen (1); correct reactants and products (1)."
   },
   {
     "id": "C4-SA-009",
@@ -367,7 +529,7 @@
     "command_word": "Explain",
     "topic": "Acids and Bases",
     "question": "Explain the difference between a strong acid and a weak acid of the same concentration.",
-    "mark_scheme": "Strong acid fully ionises in water, releasing all H⁺ ions (1); weak acid only partially ionises, fewer H⁺ ions in solution / higher pH (1)."
+    "mark_scheme": "Strong acid fully ionises in water, releasing all H\u207a ions (1); weak acid only partially ionises, fewer H\u207a ions in solution / higher pH (1)."
   },
   {
     "id": "C4-SA-010",
@@ -385,7 +547,7 @@
     "command_word": "Explain",
     "topic": "Redox",
     "question": "In the displacement reaction between zinc and copper sulfate solution, identify which species is oxidised and which is reduced. Explain your answer.",
-    "mark_scheme": "Zinc is oxidised — it loses electrons to form Zn²⁺ (1); Cu²⁺ ions are reduced — they gain electrons to form copper metal (1)."
+    "mark_scheme": "Zinc is oxidised \u2014 it loses electrons to form Zn\u00b2\u207a (1); Cu\u00b2\u207a ions are reduced \u2014 they gain electrons to form copper metal (1)."
   },
   {
     "id": "C4-SA-012",
@@ -403,7 +565,7 @@
     "command_word": "Explain",
     "topic": "Electrolysis",
     "question": "Explain how electrolysis is used to extract aluminium from aluminium oxide.",
-    "mark_scheme": "Aluminium oxide is melted to free the ions (1); electricity is passed through the molten electrolyte (1); Al³⁺ ions move to the cathode and gain electrons to form aluminium metal (1); oxide ions move to the anode and lose electrons, forming oxygen gas (1) — any three."
+    "mark_scheme": "Aluminium oxide is melted to free the ions (1); electricity is passed through the molten electrolyte (1); Al\u00b3\u207a ions move to the cathode and gain electrons to form aluminium metal (1); oxide ions move to the anode and lose electrons, forming oxygen gas (1) \u2014 any three."
   },
   {
     "id": "C4-SA-014",
@@ -421,7 +583,7 @@
     "command_word": "Explain",
     "topic": "Reactivity Series",
     "question": "Explain how the reactivity series can be used to predict whether a displacement reaction will occur. Give an example.",
-    "mark_scheme": "A more reactive metal will displace a less reactive metal from a solution of its salt (1); the more reactive metal takes the place of the less reactive one (1); e.g. zinc added to copper sulfate solution — zinc displaces copper as zinc is more reactive (1)."
+    "mark_scheme": "A more reactive metal will displace a less reactive metal from a solution of its salt (1); the more reactive metal takes the place of the less reactive one (1); e.g. zinc added to copper sulfate solution \u2014 zinc displaces copper as zinc is more reactive (1)."
   },
   {
     "id": "C4-LA-001",
@@ -430,7 +592,7 @@
     "command_word": "Explain",
     "topic": "Electrolysis",
     "question": "Explain the process of electrolysis of molten lead bromide. Include what happens at each electrode and the half equations for each reaction.",
-    "mark_scheme": "Lead bromide melted so ions free to move (1); Pb²⁺ ions move to cathode and are reduced: Pb²⁺ + 2e⁻ → Pb (1); Br⁻ ions move to anode and are oxidised: 2Br⁻ → Br₂ + 2e⁻ (1); lead metal produced at cathode, bromine gas at anode (1)."
+    "mark_scheme": "Lead bromide melted so ions free to move (1); Pb\u00b2\u207a ions move to cathode and are reduced: Pb\u00b2\u207a + 2e\u207b \u2192 Pb (1); Br\u207b ions move to anode and are oxidised: 2Br\u207b \u2192 Br\u2082 + 2e\u207b (1); lead metal produced at cathode, bromine gas at anode (1)."
   },
   {
     "id": "C4-LA-002",
@@ -439,7 +601,7 @@
     "command_word": "Describe",
     "topic": "Salts",
     "question": "Describe how to prepare a pure dry sample of zinc sulfate from zinc carbonate and sulfuric acid. Include all practical steps.",
-    "mark_scheme": "Add excess zinc carbonate to dilute sulfuric acid — effervescence indicates reaction (1); filter off excess zinc carbonate (1); heat the filtrate gently to evaporate water and concentrate the solution (1); leave to cool and crystallise, filter and dry the crystals (1)."
+    "mark_scheme": "Add excess zinc carbonate to dilute sulfuric acid \u2014 effervescence indicates reaction (1); filter off excess zinc carbonate (1); heat the filtrate gently to evaporate water and concentrate the solution (1); leave to cool and crystallise, filter and dry the crystals (1)."
   },
   {
     "id": "C4-LA-003",
@@ -448,7 +610,7 @@
     "command_word": "Explain",
     "topic": "Redox",
     "question": "Explain what happens in a redox reaction. Use the reaction between magnesium and oxygen as an example, identifying what is oxidised and reduced.",
-    "mark_scheme": "Redox involves simultaneous oxidation and reduction (1); 2Mg + O₂ → 2MgO (1); magnesium is oxidised — loses electrons to form Mg²⁺ (1); oxygen is reduced — gains electrons to form O²⁻ (1)."
+    "mark_scheme": "Redox involves simultaneous oxidation and reduction (1); 2Mg + O\u2082 \u2192 2MgO (1); magnesium is oxidised \u2014 loses electrons to form Mg\u00b2\u207a (1); oxygen is reduced \u2014 gains electrons to form O\u00b2\u207b (1)."
   },
   {
     "id": "C4-LA-004",
@@ -457,7 +619,7 @@
     "command_word": "Evaluate",
     "topic": "Electrolysis",
     "question": "Evaluate the use of electrolysis as a method for extracting metals. Include advantages, disadvantages, and state which metals require this method.",
-    "mark_scheme": "Metals above carbon in reactivity series (e.g. aluminium, sodium) must be extracted by electrolysis (1); advantage: only method available for highly reactive metals (1); disadvantage: requires large amounts of electrical energy — expensive and high carbon footprint (1); less reactive metals e.g. iron extracted more cheaply by reduction with carbon in a blast furnace (1)."
+    "mark_scheme": "Metals above carbon in reactivity series (e.g. aluminium, sodium) must be extracted by electrolysis (1); advantage: only method available for highly reactive metals (1); disadvantage: requires large amounts of electrical energy \u2014 expensive and high carbon footprint (1); less reactive metals e.g. iron extracted more cheaply by reduction with carbon in a blast furnace (1)."
   },
   {
     "id": "C4-LA-005",
@@ -466,7 +628,7 @@
     "command_word": "Explain",
     "topic": "Acids and Bases",
     "question": "Explain the difference between strong and weak acids. Include reference to ionisation, pH, and give an example of each. Explain how the concentration and strength of an acid are different concepts.",
-    "mark_scheme": "Strong acid fully ionises in water — all H⁺ ions released e.g. HCl (1); weak acid partially ionises — few H⁺ ions released e.g. ethanoic acid (1); same concentration: strong acid has lower pH than weak acid (1); concentration refers to amount of acid per dm³ — can have concentrated weak acid or dilute strong acid (1); strength and concentration are independent — both affect pH (1)."
+    "mark_scheme": "Strong acid fully ionises in water \u2014 all H\u207a ions released e.g. HCl (1); weak acid partially ionises \u2014 few H\u207a ions released e.g. ethanoic acid (1); same concentration: strong acid has lower pH than weak acid (1); concentration refers to amount of acid per dm\u00b3 \u2014 can have concentrated weak acid or dilute strong acid (1); strength and concentration are independent \u2014 both affect pH (1)."
   },
   {
     "id": "C4-LA-006",
@@ -475,7 +637,7 @@
     "command_word": "Evaluate",
     "topic": "Reactivity Series",
     "question": "Evaluate how the reactivity series is used in the extraction of metals from their ores. Discuss the methods used for different metals and the economic and environmental considerations.",
-    "mark_scheme": "Most reactive metals (above carbon) extracted by electrolysis e.g. aluminium (1); less reactive metals (below carbon) extracted by reduction with carbon e.g. iron in blast furnace (1); least reactive metals (e.g. gold, silver) found uncombined / native (1); electrolysis is expensive due to high energy costs (1); reduction with carbon is cheaper but releases CO₂ contributing to climate change (1); economic and environmental trade-offs must be considered — e.g. aluminium is expensive but very useful / recyclable (1)."
+    "mark_scheme": "Most reactive metals (above carbon) extracted by electrolysis e.g. aluminium (1); less reactive metals (below carbon) extracted by reduction with carbon e.g. iron in blast furnace (1); least reactive metals (e.g. gold, silver) found uncombined / native (1); electrolysis is expensive due to high energy costs (1); reduction with carbon is cheaper but releases CO\u2082 contributing to climate change (1); economic and environmental trade-offs must be considered \u2014 e.g. aluminium is expensive but very useful / recyclable (1)."
   },
   {
     "id": "C4-LA-007",
@@ -484,6 +646,276 @@
     "command_word": "Explain",
     "topic": "Electrolysis",
     "question": "Explain how electrolysis of brine (concentrated sodium chloride solution) is used in industry. State what is produced at each electrode, give the half equations, and describe two industrial uses of the products.",
-    "mark_scheme": "Brine is concentrated NaCl solution (1); at cathode: 2H⁺ + 2e⁻ → H₂ — hydrogen gas produced (1); at anode: 2Cl⁻ → Cl₂ + 2e⁻ — chlorine gas produced (1); sodium hydroxide solution remains (1); use of chlorine: making bleach / PVC / disinfecting water (1); use of hydrogen: making margarine / ammonia (Haber process) / fuel cells (1)."
+    "mark_scheme": "Brine is concentrated NaCl solution (1); at cathode: 2H\u207a + 2e\u207b \u2192 H\u2082 \u2014 hydrogen gas produced (1); at anode: 2Cl\u207b \u2192 Cl\u2082 + 2e\u207b \u2014 chlorine gas produced (1); sodium hydroxide solution remains (1); use of chlorine: making bleach / PVC / disinfecting water (1); use of hydrogen: making margarine / ammonia (Haber process) / fuel cells (1)."
+  },
+  {
+    "id": "C4-LA-005",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Acids and Bases",
+    "question": "Explain the difference between a strong acid and a weak acid. Include what happens when each dissolves in water and how pH relates to hydrogen ion concentration.",
+    "mark_scheme": "Strong acid: fully dissociates in water \u2014 all molecules ionise to produce H\u207a ions (1); weak acid: partially dissociates \u2014 equilibrium between ionised and un-ionised forms (1); same concentration: strong acid has lower pH \u2014 more H\u207a ions (1); pH decreases as H\u207a concentration increases \u2014 pH = \u2212log[H\u207a] (1)."
+  },
+  {
+    "id": "C4-LA-006",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Salts",
+    "question": "Describe how to prepare a pure, dry sample of copper sulfate crystals by reacting copper oxide with sulfuric acid.",
+    "mark_scheme": "Add excess copper oxide to warm dilute sulfuric acid (1); stir until no more dissolves \u2014 excess solid shows acid is neutralised (1); filter to remove excess copper oxide (1); evaporate solution to concentrate, then allow to crystallise; filter and dry crystals (1)."
+  },
+  {
+    "id": "C4-LA-007",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Reactivity Series",
+    "question": "Explain why gold is found as a pure element in the Earth's crust while iron must be extracted from its ore. Refer to the reactivity series.",
+    "mark_scheme": "Gold is very unreactive \u2014 low in the reactivity series (1); does not react with oxygen or water \u2014 remains as pure metal (1); iron is more reactive \u2014 reacts with oxygen to form iron(III) oxide ore (haematite) (1); more reactive metals form stable compounds with non-metals \u2014 require more energy/chemical methods to extract (1)."
+  },
+  {
+    "id": "C4-LA-008",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Redox",
+    "question": "Explain what is meant by oxidation and reduction in terms of electron transfer. Use the reaction between zinc and copper sulfate as an example.",
+    "mark_scheme": "Oxidation: loss of electrons; reduction: gain of electrons \u2014 OIL RIG (1); Zn + CuSO\u2084 \u2192 ZnSO\u2084 + Cu (1); zinc is oxidised: Zn \u2192 Zn\u00b2\u207a + 2e\u207b (loses electrons) (1); copper ions are reduced: Cu\u00b2\u207a + 2e\u207b \u2192 Cu (gains electrons) (1)."
+  },
+  {
+    "id": "C4-LA-009",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Electrolysis",
+    "question": "Describe what happens at each electrode during the electrolysis of molten lead bromide. Include the half-equations.",
+    "mark_scheme": "Lead bromide melted \u2014 ions free to move (1); cathode (negative): Pb\u00b2\u207a ions attracted, gain electrons \u2014 lead metal deposited: Pb\u00b2\u207a + 2e\u207b \u2192 Pb (1); anode (positive): Br\u207b ions attracted, lose electrons \u2014 bromine gas produced: 2Br\u207b \u2192 Br\u2082 + 2e\u207b (1); lead and bromine are the products of electrolysis (1)."
+  },
+  {
+    "id": "C4-LA-010",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Acids and Bases",
+    "question": "Explain what a neutralisation reaction is. Write a balanced equation for the reaction of sodium hydroxide with hydrochloric acid. Include the ionic equation.",
+    "mark_scheme": "Neutralisation: acid + base \u2192 salt + water (1); NaOH + HCl \u2192 NaCl + H\u2082O (1); ionic equation: H\u207a + OH\u207b \u2192 H\u2082O (1); the Na\u207a and Cl\u207b are spectator ions \u2014 not involved in the reaction (1)."
+  },
+  {
+    "id": "C4-LA-011",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Electrolysis",
+    "question": "Describe how the products of electrolysis of aqueous sodium chloride differ from electrolysis of molten sodium chloride. Explain why the products differ.",
+    "mark_scheme": "Molten NaCl: Na metal at cathode, Cl\u2082 gas at anode (1); aqueous NaCl: H\u2082 gas at cathode (not Na), Cl\u2082 at anode (1); in aqueous solution: water provides H\u207a and OH\u207b ions as well (1); H\u207a ions discharged in preference to Na\u207a at cathode \u2014 H\u207a more easily reduced (lower in reactivity series) (1)."
+  },
+  {
+    "id": "C4-LA-012",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Evaluate",
+    "topic": "Reactivity Series",
+    "question": "Evaluate the industrial extraction of aluminium by electrolysis. Explain why electrolysis is needed and one disadvantage of this method.",
+    "mark_scheme": "Aluminium is high in the reactivity series \u2014 too reactive to be reduced by carbon (1); electrolysis of molten aluminium oxide (bauxite) is used (1); Al\u00b3\u207a + 3e\u207b \u2192 Al at cathode (1); disadvantage: very high energy cost \u2014 aluminium oxide has high melting point (~2000\u00b0C); electrolysis uses large amounts of electricity (1)."
+  },
+  {
+    "id": "C4-LA-013",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Redox",
+    "question": "Explain what is meant by a displacement reaction in terms of redox. Use the reaction between iron and copper sulfate solution as an example.",
+    "mark_scheme": "In a displacement reaction, a more reactive metal displaces a less reactive metal from its compound (1); Fe + CuSO\u2084 \u2192 FeSO\u2084 + Cu (1); iron is oxidised: Fe \u2192 Fe\u00b2\u207a + 2e\u207b (1); copper ions are reduced: Cu\u00b2\u207a + 2e\u207b \u2192 Cu \u2014 copper deposited on iron (1)."
+  },
+  {
+    "id": "C4-LA-014",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Salts",
+    "question": "Describe the method for preparing an insoluble salt by precipitation. Use barium sulfate as an example.",
+    "mark_scheme": "Mix two soluble salt solutions \u2014 one containing Ba\u00b2\u207a ions and one containing SO\u2084\u00b2\u207b ions (1); e.g. barium chloride + sodium sulfate solutions (1); BaCl\u2082 + Na\u2082SO\u2084 \u2192 BaSO\u2084\u2193 + 2NaCl \u2014 precipitate forms immediately (1); filter to collect solid, wash with distilled water, dry (1)."
+  },
+  {
+    "id": "C4-LA-015",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Acids and Bases",
+    "question": "Explain the difference between the reactions of metals with dilute acids and their reactions with water. Give an example of a metal that reacts with water but not vigorously with acid.",
+    "mark_scheme": "Metals react with dilute acids to produce salt + hydrogen: Mg + H\u2082SO\u2084 \u2192 MgSO\u2084 + H\u2082 (1); reaction with water produces metal hydroxide + hydrogen (1); metals high in reactivity series (Na, K) react vigorously with water \u2014 may not react with acid safely (1); e.g. sodium: 2Na + 2H\u2082O \u2192 2NaOH + H\u2082 \u2014 reacts violently; reaction with acid would be explosive (1)."
+  },
+  {
+    "id": "C4-LA-016",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Electrolysis",
+    "question": "Explain the industrial electrolysis of brine (sodium chloride solution). Include the products at each electrode and their industrial uses.",
+    "mark_scheme": "Brine = aqueous NaCl \u2014 contains Na\u207a, Cl\u207b, H\u207a, OH\u207b ions (1); cathode: H\u207a discharged in preference to Na\u207a \u2014 hydrogen gas produced: 2H\u207a + 2e\u207b \u2192 H\u2082 (1); anode: Cl\u207b discharged in preference to OH\u207b \u2014 chlorine gas: 2Cl\u207b \u2192 Cl\u2082 + 2e\u207b (1); remaining solution: NaOH (sodium hydroxide) (1); uses: H\u2082 \u2192 fuel/margarine; Cl\u2082 \u2192 bleach/PVC/water treatment; NaOH \u2192 soap/paper manufacture (1)."
+  },
+  {
+    "id": "C4-LA-017",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Redox",
+    "question": "Evaluate the use of displacement reactions to extract metals from their ores. Include examples and compare with electrolysis.",
+    "mark_scheme": "Carbon reduction: iron ore (Fe\u2082O\u2083) + carbon \u2192 iron + CO\u2082 \u2014 carbon displaces iron (1); used for metals below carbon in reactivity series (Fe, Cu, Pb, Sn) (1); cheaper than electrolysis \u2014 carbon (coke) is inexpensive (1); electrolysis needed for metals above carbon (Al, Na) \u2014 too reactive for carbon reduction (1); electrolysis: more expensive due to electricity costs, but only method available for reactive metals (1)."
+  },
+  {
+    "id": "C4-LA-018",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Acids and Bases",
+    "question": "Describe how to measure the pH of solutions using universal indicator and a pH meter. Include the advantages of each method and give examples of pH values for common substances.",
+    "mark_scheme": "Universal indicator: add a few drops to solution \u2014 compare colour to chart; gives approximate pH (1); pH meter: calibrated with buffer solutions; probe placed in solution \u2014 gives precise numerical pH (1); pH meter more accurate \u2014 gives reading to 1 or 2 decimal places (1); UI useful for quick, rough measurement; pH meter better for lab investigations (1); examples: HCl pH~1, vinegar pH~3, water pH=7, NaOH pH~13 (1)."
+  },
+  {
+    "id": "C4-LA-019",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Reactivity Series",
+    "question": "Explain how the reactivity series of metals was established experimentally. Include reactions with oxygen, water, and acid.",
+    "mark_scheme": "Metals reacted with oxygen: those that burn brightly are more reactive (e.g. Mg burns vigorously, gold doesn't react) (1); reactions with water: potassium reacts explosively, sodium vigorously, calcium steadily \u2014 more reactive = faster reaction (1); reactions with dilute acid: magnesium reacts rapidly, zinc slowly, copper doesn't react (1); displacement reactions: more reactive metals displace less reactive from salt solutions (1); combining all evidence gives ordered reactivity series: K>Na>Ca>Mg>Al>Zn>Fe>Sn>Pb>Cu>Ag>Au (1)."
+  },
+  {
+    "id": "C4-LA-020",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Electrolysis",
+    "question": "Evaluate the use of copper plating by electrolysis for industrial applications. Include how copper plating works and why it is used.",
+    "mark_scheme": "Copper plating: object to be plated is cathode, copper anode, copper sulfate solution as electrolyte (1); Cu\u00b2\u207a ions deposited on cathode: Cu\u00b2\u207a + 2e\u207b \u2192 Cu (1); copper anode dissolves to replenish Cu\u00b2\u207a ions: Cu \u2192 Cu\u00b2\u207a + 2e\u207b (1); uses: decorative coating on jewellery/trophies (1); protects against corrosion; PCB circuit manufacture; electroforming complex shapes (1)."
+  },
+  {
+    "id": "C4-LA-021",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Salts",
+    "question": "Explain how to predict the solubility of ionic compounds and which salts are insoluble. Include solubility rules and an example of preparing an insoluble salt.",
+    "mark_scheme": "All sodium, potassium and ammonium salts are soluble (1); all nitrates are soluble (1); most chlorides are soluble except silver and lead chloride (1); most sulfates are soluble except barium, lead and calcium sulfate (1); preparation of insoluble salt: mix solutions containing the required ions \u2014 precipitate forms; filter, wash, dry (e.g. AgNO\u2083 + NaCl \u2192 AgCl\u2193 + NaNO\u2083) (1)."
+  },
+  {
+    "id": "C4-LA-022",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Acids and Bases",
+    "question": "Describe the reactions of acids with metals, metal oxides, metal hydroxides and metal carbonates. Include the products in each case.",
+    "mark_scheme": "Metal + acid \u2192 salt + hydrogen: Zn + H\u2082SO\u2084 \u2192 ZnSO\u2084 + H\u2082 (1); metal oxide + acid \u2192 salt + water: CuO + H\u2082SO\u2084 \u2192 CuSO\u2084 + H\u2082O (1); metal hydroxide + acid \u2192 salt + water: NaOH + HCl \u2192 NaCl + H\u2082O (1); metal carbonate + acid \u2192 salt + water + CO\u2082: CaCO\u2083 + 2HCl \u2192 CaCl\u2082 + H\u2082O + CO\u2082 (1); in all cases acid is neutralised \u2014 H\u207a ions react (1)."
+  },
+  {
+    "id": "C4-LA-023",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Redox",
+    "question": "Explain the terms oxidising agent and reducing agent. Use the thermite reaction between aluminium and iron(III) oxide as an example.",
+    "mark_scheme": "Oxidising agent: substance that oxidises another \u2014 gains electrons itself (is reduced) (1); reducing agent: substance that reduces another \u2014 loses electrons itself (is oxidised) (1); thermite reaction: 2Al + Fe\u2082O\u2083 \u2192 Al\u2082O\u2083 + 2Fe (1); aluminium is the reducing agent \u2014 reduces iron oxide to iron; Al \u2192 Al\u00b3\u207a (oxidised) (1); Fe\u2082O\u2083 is the oxidising agent \u2014 oxidises aluminium; Fe\u00b3\u207a \u2192 Fe (reduced) (1)."
+  },
+  {
+    "id": "C4-LA-024",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Salts",
+    "question": "Evaluate different methods for producing soluble and insoluble salts. Include direct acid-base neutralisation, precipitation and titration.",
+    "mark_scheme": "Soluble salts from acid + base: use excess solid base then filter \u2014 simple but requires care (1); acid + alkali titration: gives accurate quantities but product must be crystallised (1); precipitation: for insoluble salts \u2014 mix two solutions; rapid and simple (1); quality considerations: crystallisation gives pure product; precipitation may have impurities from residual ions (1); choice depends on solubility of desired product and available reagents (1)."
+  },
+  {
+    "id": "C4-LA-025",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Electrolysis",
+    "question": "Explain the electrolysis of aqueous copper sulfate using copper electrodes, compared with inert (graphite) electrodes. Include the electrode reactions in both cases.",
+    "mark_scheme": "With graphite electrodes: cathode \u2014 Cu\u00b2\u207a + 2e\u207b \u2192 Cu (copper deposited) (1); anode \u2014 2H\u2082O \u2192 O\u2082 + 4H\u207a + 4e\u207b (oxygen gas, water oxidised) (1); concentration of CuSO\u2084 decreases over time as Cu\u00b2\u207a used up (1); with copper electrodes: cathode reaction same \u2014 copper deposited (1); anode: Cu \u2192 Cu\u00b2\u207a + 2e\u207b \u2014 copper anode dissolves, replenishes Cu\u00b2\u207a (1); concentration of CuSO\u2084 stays constant; net transfer of copper from anode to cathode \u2014 used in copper purification (1)."
+  },
+  {
+    "id": "C4-LA-026",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Reactivity Series",
+    "question": "Evaluate the extraction methods used for copper, aluminium and iron. Include the method, why it is used, and its economic and environmental impact.",
+    "mark_scheme": "Iron: blast furnace, carbon reduction \u2014 iron ore + coke + limestone \u2192 iron + CO\u2082 + slag (1); suitable because iron is below carbon in reactivity series; CO\u2082 released contributes to climate change (1); aluminium: electrolysis of molten bauxite (Al\u2082O\u2083) \u2014 needed as Al above carbon (1); very high energy use \u2014 large electricity cost and carbon footprint unless renewable energy used (1); copper: smelting and electrolytic refining \u2014 or phytomining/bioleaching for low-grade ores (1); traditional smelting releases SO\u2082; phytomining more sustainable but slower (1)."
+  },
+  {
+    "id": "C4-LA-027",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Acids and Bases",
+    "question": "Explain the concept of acid-base reactions in terms of proton transfer (Br\u00f8nsted-Lowry theory). Include conjugate acid-base pairs and apply this to the reaction of ammonia with water.",
+    "mark_scheme": "Br\u00f8nsted-Lowry: acid = proton (H\u207a) donor; base = proton acceptor (1); NH\u2083 + H\u2082O \u21cc NH\u2084\u207a + OH\u207b (1); NH\u2083 acts as a base \u2014 accepts H\u207a from water to form NH\u2084\u207a (1); H\u2082O acts as acid \u2014 donates H\u207a to ammonia (1); conjugate pairs: NH\u2083/NH\u2084\u207a and H\u2082O/OH\u207b (1); reaction is reversible \u2014 NH\u2084\u207a can donate H\u207a back (conjugate acid acts as acid in reverse reaction) (1)."
+  },
+  {
+    "id": "C4-LA-028",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Describe",
+    "topic": "Redox",
+    "question": "Describe the redox reactions involved in the blast furnace extraction of iron. Include the role of coke, limestone, and hot air, and write the equations at each stage.",
+    "mark_scheme": "Coke (carbon) burns with hot air: C + O\u2082 \u2192 CO\u2082 (1); CO\u2082 then reduced by more coke: CO\u2082 + C \u2192 2CO (carbon monoxide formed) (1); CO reduces iron ore: Fe\u2082O\u2083 + 3CO \u2192 2Fe + 3CO\u2082 \u2014 carbon monoxide is reducing agent (1); Fe is reduced (gains electrons): Fe\u00b3\u207a \u2192 Fe (1); limestone decomposes: CaCO\u2083 \u2192 CaO + CO\u2082 (1); CaO reacts with silica impurity: CaO + SiO\u2082 \u2192 CaSiO\u2083 (slag) \u2014 removes acidic impurities (1)."
+  },
+  {
+    "id": "C4-LA-029",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Salts",
+    "question": "A student wants to make a pure, dry sample of zinc sulfate. Evaluate two different methods they could use: reacting zinc with dilute sulfuric acid, and reacting zinc oxide with dilute sulfuric acid. Include advantages and disadvantages of each.",
+    "mark_scheme": "Method 1 \u2014 Zn + H\u2082SO\u2084 \u2192 ZnSO\u2084 + H\u2082: advantages: straightforward, uses cheap reagents (1); disadvantages: hydrogen gas produced \u2014 safety concern (1); may be slow; zinc must be in excess to ensure all acid consumed; harder to filter (unreacted zinc vs. zinc sulfate solution) (1); Method 2 \u2014 ZnO + H\u2082SO\u2084 \u2192 ZnSO\u2084 + H\u2082O: safer \u2014 no gas produced (1); excess ZnO easy to filter off \u2014 leaves pure ZnSO\u2084 solution (1); evaporate and crystallise to get solid ZnSO\u2084\u00b77H\u2082O \u2014 preferred method (1)."
+  },
+  {
+    "id": "C4-LA-030",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Redox",
+    "question": "Explain oxidation states and use them to identify which elements are oxidised and reduced in the reaction: MnO\u2084\u207b + Fe\u00b2\u207a \u2192 Mn\u00b2\u207a + Fe\u00b3\u207a (in acid solution). Include half-equations.",
+    "mark_scheme": "Oxidation state rules: O = \u22122, overall charge = sum of oxidation states (1); in MnO\u2084\u207b: Mn oxidation state = +7 (1); Mn goes from +7 to +2 \u2014 decreases by 5 \u2014 Mn is reduced (1); Fe goes from +2 to +3 \u2014 increases by 1 \u2014 Fe is oxidised (1); half-equations: MnO\u2084\u207b + 8H\u207a + 5e\u207b \u2192 Mn\u00b2\u207a + 4H\u2082O (reduction) (1); Fe\u00b2\u207a \u2192 Fe\u00b3\u207a + e\u207b (oxidation) \u2014 multiply by 5 and combine (1)."
+  },
+  {
+    "id": "C4-LA-031",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Acids and Bases",
+    "question": "Explain what is meant by a buffer solution. Describe how an ethanoic acid / sodium ethanoate buffer resists changes in pH when small amounts of acid or alkali are added.",
+    "mark_scheme": "Buffer: a solution that resists changes in pH when small amounts of acid or alkali are added (1); weak acid (CH\u2083COOH) and its conjugate base (CH\u2083COO\u207b) present in solution (1); add acid: H\u207a ions react with CH\u2083COO\u207b \u2014 equilibrium shifts left, H\u207a absorbed (1); add alkali: OH\u207b reacts with CH\u2083COOH \u2014 equilibrium shifts right, OH\u207b absorbed (1); pH remains approximately constant \u2014 important in blood (pH 7.35\u20137.45) (1)."
+  },
+  {
+    "id": "C4-LA-032",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Redox",
+    "question": "Evaluate the use of fuel cells as an alternative to combustion engines. Include the redox reactions involved and compare in terms of efficiency and environmental impact.",
+    "mark_scheme": "Hydrogen fuel cell: H\u2082 oxidised at anode: H\u2082 \u2192 2H\u207a + 2e\u207b (1); O\u2082 reduced at cathode: O\u2082 + 4H\u207a + 4e\u207b \u2192 2H\u2082O (1); produces only water \u2014 no CO\u2082 emissions at point of use (1); more efficient than combustion \u2014 converts chemical energy directly to electrical energy (1); limitation: hydrogen production currently mainly from natural gas (SMR) \u2014 releases CO\u2082; storage and infrastructure challenges (1)."
+  },
+  {
+    "id": "C4-LA-033",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Describe",
+    "topic": "Acids and Bases",
+    "question": "Describe the industrial manufacture of nitric acid from ammonia (Ostwald process). Include all stages, conditions, and the redox chemistry involved.",
+    "mark_scheme": "Stage 1: catalytic oxidation of ammonia \u2014 4NH\u2083 + 5O\u2082 \u2192 4NO + 6H\u2082O; platinum/rhodium catalyst, 900\u00b0C (1); ammonia is oxidised: N goes from \u22123 to +2 (1); Stage 2: oxidation of NO to NO\u2082 \u2014 2NO + O\u2082 \u2192 2NO\u2082 (1); Stage 3: absorption of NO\u2082 in water \u2014 3NO\u2082 + H\u2082O \u2192 2HNO\u2083 + NO (1); NO recycled back to Stage 2 \u2014 improves efficiency (1); product is ~60% nitric acid \u2014 concentrated by distillation; used to make fertilisers (ammonium nitrate) and explosives (1)."
+  },
+  {
+    "id": "C4-LA-034",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Electrolysis",
+    "question": "Evaluate electrolysis as a method for the industrial production of chemicals. Include the production of aluminium, chlorine and sodium hydroxide. Consider energy costs and benefits to society.",
+    "mark_scheme": "Aluminium: electrolysis of molten cryolite/Al\u2082O\u2083 \u2014 only method for this reactive metal (1); very high energy use \u2014 aluminium recycling saves 95% of energy (1); chlorine: from brine electrolysis \u2014 essential for PVC, bleach, water purification (1); sodium hydroxide co-produced \u2014 used in soap, paper, food processing (1); hydrogen co-produced \u2014 potential clean fuel (1); environmental concerns: large electricity consumption; if from fossil fuels adds to CO\u2082 emissions; industrial scale benefits society through materials/chemicals (1)."
   }
 ]

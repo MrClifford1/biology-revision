@@ -5,7 +5,12 @@
     "marks": 1,
     "topic": "Basic Electricity",
     "question": "What is the unit of electrical resistance?",
-    "options": ["Ampere", "Volt", "Ohm", "Watt"],
+    "options": [
+      "Ampere",
+      "Volt",
+      "Ohm",
+      "Watt"
+    ],
     "correct": "Ohm"
   },
   {
@@ -14,7 +19,12 @@
     "marks": 1,
     "topic": "Basic Electricity",
     "question": "A resistor has a voltage of 12 V across it and a current of 3 A flowing through it. What is its resistance?",
-    "options": ["36 Ω", "4 Ω", "9 Ω", "0.25 Ω"],
+    "options": [
+      "36 Ω",
+      "4 Ω",
+      "9 Ω",
+      "0.25 Ω"
+    ],
     "correct": "4 Ω"
   },
   {
@@ -37,7 +47,12 @@
     "marks": 1,
     "topic": "Circuits",
     "question": "Which component has a resistance that decreases as temperature increases?",
-    "options": ["LDR", "Diode", "Thermistor", "Filament lamp"],
+    "options": [
+      "LDR",
+      "Diode",
+      "Thermistor",
+      "Filament lamp"
+    ],
     "correct": "Thermistor"
   },
   {
@@ -60,7 +75,12 @@
     "marks": 1,
     "topic": "Domestic Electricity",
     "question": "What colour is the live wire in a UK plug?",
-    "options": ["Blue", "Green and yellow", "Brown", "Red"],
+    "options": [
+      "Blue",
+      "Green and yellow",
+      "Brown",
+      "Red"
+    ],
     "correct": "Brown"
   },
   {
@@ -69,7 +89,12 @@
     "marks": 1,
     "topic": "Domestic Electricity",
     "question": "What is the frequency of mains AC electricity in the UK?",
-    "options": ["25 Hz", "100 Hz", "60 Hz", "50 Hz"],
+    "options": [
+      "25 Hz",
+      "100 Hz",
+      "60 Hz",
+      "50 Hz"
+    ],
     "correct": "50 Hz"
   },
   {
@@ -92,7 +117,12 @@
     "marks": 1,
     "topic": "Power and Energy",
     "question": "A device has a power of 2 kW and is used for 3 hours. How many kWh of energy does it use?",
-    "options": ["1.5 kWh", "6 kWh", "0.67 kWh", "5 kWh"],
+    "options": [
+      "1.5 kWh",
+      "6 kWh",
+      "0.67 kWh",
+      "5 kWh"
+    ],
     "correct": "6 kWh"
   },
   {
@@ -115,7 +145,12 @@
     "marks": 1,
     "topic": "Circuits",
     "question": "Which component only allows current to flow in one direction?",
-    "options": ["Resistor", "Thermistor", "Diode", "LDR"],
+    "options": [
+      "Resistor",
+      "Thermistor",
+      "Diode",
+      "LDR"
+    ],
     "correct": "Diode"
   },
   {
@@ -124,7 +159,12 @@
     "marks": 1,
     "topic": "Basic Electricity",
     "question": "What does Q = It calculate?",
-    "options": ["Power", "Resistance", "Charge", "Energy"],
+    "options": [
+      "Power",
+      "Resistance",
+      "Charge",
+      "Energy"
+    ],
     "correct": "Charge"
   },
   {
@@ -176,7 +216,12 @@
     "topic": "Basic Electricity",
     "question": "The equation V = IR is known as __________ Law.",
     "correct": "ohm's",
-    "acceptable": ["ohm's", "ohms", "Ohm's", "Ohms"]
+    "acceptable": [
+      "ohm's",
+      "ohms",
+      "Ohm's",
+      "Ohms"
+    ]
   },
   {
     "id": "P2-FIB-002",
@@ -185,7 +230,9 @@
     "topic": "Circuits",
     "question": "An ammeter is connected in __________ to measure current.",
     "correct": "series",
-    "acceptable": ["series"]
+    "acceptable": [
+      "series"
+    ]
   },
   {
     "id": "P2-FIB-003",
@@ -194,7 +241,9 @@
     "topic": "Domestic Electricity",
     "question": "The __________ wire in a UK plug is brown and carries current from the supply.",
     "correct": "live",
-    "acceptable": ["live"]
+    "acceptable": [
+      "live"
+    ]
   },
   {
     "id": "P2-FIB-004",
@@ -203,7 +252,11 @@
     "topic": "Domestic Electricity",
     "question": "UK mains electricity is __________ current, which regularly reverses direction.",
     "correct": "alternating",
-    "acceptable": ["alternating", "AC", "ac"]
+    "acceptable": [
+      "alternating",
+      "AC",
+      "ac"
+    ]
   },
   {
     "id": "P2-FIB-005",
@@ -212,7 +265,12 @@
     "topic": "Power and Energy",
     "question": "Power = current × __________.",
     "correct": "voltage",
-    "acceptable": ["voltage", "potential difference", "pd", "v"]
+    "acceptable": [
+      "voltage",
+      "potential difference",
+      "pd",
+      "v"
+    ]
   },
   {
     "id": "P2-FIB-006",
@@ -221,7 +279,12 @@
     "topic": "Circuits",
     "question": "A component whose resistance decreases as light intensity increases is called an __________.",
     "correct": "ldr",
-    "acceptable": ["ldr", "LDR", "light dependent resistor", "light-dependent resistor"]
+    "acceptable": [
+      "ldr",
+      "LDR",
+      "light dependent resistor",
+      "light-dependent resistor"
+    ]
   },
   {
     "id": "P2-FIB-007",
@@ -230,7 +293,10 @@
     "topic": "Power and Energy",
     "question": "A __________ transformer increases voltage for efficient transmission across the National Grid.",
     "correct": "step-up",
-    "acceptable": ["step-up", "step up"]
+    "acceptable": [
+      "step-up",
+      "step up"
+    ]
   },
   {
     "id": "P2-FIB-008",
@@ -239,7 +305,11 @@
     "topic": "Basic Electricity",
     "question": "Electric charge is measured in __________.",
     "correct": "coulombs",
-    "acceptable": ["coulombs", "coulomb", "C"]
+    "acceptable": [
+      "coulombs",
+      "coulomb",
+      "C"
+    ]
   },
   {
     "id": "P2-FIB-009",
@@ -248,7 +318,11 @@
     "topic": "Circuits",
     "question": "A filament lamp is a __________ component because its resistance changes with temperature.",
     "correct": "non-ohmic",
-    "acceptable": ["non-ohmic", "non ohmic", "nonohmic"]
+    "acceptable": [
+      "non-ohmic",
+      "non ohmic",
+      "nonohmic"
+    ]
   },
   {
     "id": "P2-FIB-010",
@@ -257,7 +331,9 @@
     "topic": "Static Electricity",
     "question": "The region around a charged object where another charge experiences a force is called an electric __________.",
     "correct": "field",
-    "acceptable": ["field"]
+    "acceptable": [
+      "field"
+    ]
   },
   {
     "id": "P2-MATCH-001",
@@ -266,10 +342,22 @@
     "topic": "Circuits",
     "question": "Match each circuit component to its correct description.",
     "pairs": [
-      { "term": "Thermistor", "definition": "Resistance decreases as temperature increases" },
-      { "term": "LDR", "definition": "Resistance decreases as light intensity increases" },
-      { "term": "Diode", "definition": "Only allows current to flow in one direction" },
-      { "term": "Filament lamp", "definition": "Resistance increases as temperature increases — non-ohmic" }
+      {
+        "term": "Thermistor",
+        "definition": "Resistance decreases as temperature increases"
+      },
+      {
+        "term": "LDR",
+        "definition": "Resistance decreases as light intensity increases"
+      },
+      {
+        "term": "Diode",
+        "definition": "Only allows current to flow in one direction"
+      },
+      {
+        "term": "Filament lamp",
+        "definition": "Resistance increases as temperature increases — non-ohmic"
+      }
     ]
   },
   {
@@ -279,9 +367,18 @@
     "topic": "Domestic Electricity",
     "question": "Match each wire in a plug to its correct colour and function.",
     "pairs": [
-      { "term": "Live wire", "definition": "Brown — carries current from the supply at high voltage" },
-      { "term": "Neutral wire", "definition": "Blue — completes the circuit back to the supply at 0 V" },
-      { "term": "Earth wire", "definition": "Green and yellow — safety wire to prevent electric shock" }
+      {
+        "term": "Live wire",
+        "definition": "Brown — carries current from the supply at high voltage"
+      },
+      {
+        "term": "Neutral wire",
+        "definition": "Blue — completes the circuit back to the supply at 0 V"
+      },
+      {
+        "term": "Earth wire",
+        "definition": "Green and yellow — safety wire to prevent electric shock"
+      }
     ]
   },
   {
@@ -291,10 +388,22 @@
     "topic": "Basic Electricity",
     "question": "Match each equation to what it calculates.",
     "pairs": [
-      { "term": "V = IR", "definition": "Voltage across a component" },
-      { "term": "Q = It", "definition": "Charge that flows in a given time" },
-      { "term": "P = IV", "definition": "Power of a device" },
-      { "term": "E = Pt", "definition": "Energy transferred by a device" }
+      {
+        "term": "V = IR",
+        "definition": "Voltage across a component"
+      },
+      {
+        "term": "Q = It",
+        "definition": "Charge that flows in a given time"
+      },
+      {
+        "term": "P = IV",
+        "definition": "Power of a device"
+      },
+      {
+        "term": "E = Pt",
+        "definition": "Energy transferred by a device"
+      }
     ]
   },
   {
@@ -304,8 +413,14 @@
     "topic": "Circuits",
     "question": "Match each circuit type to its correct property.",
     "pairs": [
-      { "term": "Series circuit", "definition": "Current is the same throughout; voltage is shared" },
-      { "term": "Parallel circuit", "definition": "Voltage is the same across each branch; current is shared" }
+      {
+        "term": "Series circuit",
+        "definition": "Current is the same throughout; voltage is shared"
+      },
+      {
+        "term": "Parallel circuit",
+        "definition": "Voltage is the same across each branch; current is shared"
+      }
     ]
   },
   {
@@ -315,8 +430,14 @@
     "topic": "Power and Energy",
     "question": "Match each transformer type to its function in the National Grid.",
     "pairs": [
-      { "term": "Step-up transformer", "definition": "Increases voltage for efficient long-distance transmission" },
-      { "term": "Step-down transformer", "definition": "Decreases voltage to a safe level for homes and businesses" }
+      {
+        "term": "Step-up transformer",
+        "definition": "Increases voltage for efficient long-distance transmission"
+      },
+      {
+        "term": "Step-down transformer",
+        "definition": "Decreases voltage to a safe level for homes and businesses"
+      }
     ]
   },
   {
@@ -489,5 +610,275 @@
     "topic": "Power and Energy",
     "question": "A household is deciding between using a gas boiler and an electric heat pump for heating. Evaluate both options considering efficiency, running costs and environmental impact.",
     "mark_scheme": "Gas boiler: burns fossil fuel (1); produces CO₂ contributing to climate change (1); relatively cheap fuel but prices variable (1). Heat pump: uses electricity (1); moves heat rather than generating it — efficiency over 100% (1); running costs depend on electricity price (1); environmental impact depends on how electricity is generated (1); if renewable electricity used then very low carbon (1) — any six."
+  },
+  {
+    "id": "P2-LA-008",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Calculate",
+    "topic": "Basic Electricity",
+    "question": "A circuit contains a 12 V battery and two resistors in series: R1 = 4 Ω and R2 = 8 Ω. Calculate the total resistance, the current flowing and the voltage across each resistor.",
+    "mark_scheme": "Total resistance = 4 + 8 = 12 Ω (1); I = V/R = 12/12 = 1 A (1); V₁ = IR₁ = 1 × 4 = 4 V (1); V₂ = IR₂ = 1 × 8 = 8 V (1)."
+  },
+  {
+    "id": "P2-LA-009",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Circuits",
+    "question": "Explain why a filament lamp is a non-ohmic conductor. Describe how its I-V characteristic differs from that of a fixed resistor.",
+    "mark_scheme": "Filament lamp is non-ohmic because resistance is not constant (1); as current increases, filament temperature increases (1); higher temperature means greater resistance (1); I-V graph is a curve that flattens at high voltages — current increases less than proportionally (1); fixed resistor gives straight line through origin showing constant resistance (1) — any four."
+  },
+  {
+    "id": "P2-LA-010",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Circuits",
+    "question": "Describe what happens to the total resistance of a circuit when more resistors are added (a) in series and (b) in parallel. Explain why the parallel case occurs.",
+    "mark_scheme": "Series: total resistance increases — resistances add together (1); parallel: total resistance decreases (1); in parallel, each branch provides an additional path for current (1); total current from battery increases — effectively lower overall resistance (1)."
+  },
+  {
+    "id": "P2-LA-011",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Basic Electricity",
+    "question": "Explain what is meant by potential difference. Describe the role of a battery in a circuit using the concept of charge and energy.",
+    "mark_scheme": "Potential difference (voltage) is the energy transferred per unit of charge (1); measured in volts where 1 V = 1 J/C (1); battery uses chemical energy to give charge (electrons) energy (1); as charge moves around the circuit it transfers energy to components (1)."
+  },
+  {
+    "id": "P2-LA-012",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Calculate",
+    "topic": "Power and Energy",
+    "question": "A 60 W light bulb and a 1200 W kettle are both operated on 230 V mains. Calculate the current drawn by each device and the charge that flows through the kettle in 3 minutes.",
+    "mark_scheme": "I (bulb) = P/V = 60/230 = 0.26 A (1); I (kettle) = 1200/230 = 5.22 A (1); Q = It = 5.22 × 180 (1) = 939.6 C (accept 940 C) (1)."
+  },
+  {
+    "id": "P2-LA-013",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Domestic Electricity",
+    "question": "Explain the difference between AC and DC electricity. Explain why AC is used for mains supply and DC is used in batteries.",
+    "mark_scheme": "DC: current flows in one direction only (1); AC: current reverses direction periodically (1); AC used for mains because it can be stepped up/down by transformers for efficient transmission (1); DC from batteries is suitable for portable devices requiring a steady current (1)."
+  },
+  {
+    "id": "P2-LA-014",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Circuits",
+    "question": "Describe how an LDR can be used in a circuit to automatically switch on a light when it gets dark. Explain how the resistance of the LDR changes and how this affects the circuit.",
+    "mark_scheme": "LDR resistance increases as light intensity decreases (1); in low light, high LDR resistance means high voltage across LDR (1); this voltage signal can be used to switch a transistor/relay (1); transistor switches on the light bulb circuit (1)."
+  },
+  {
+    "id": "P2-LA-015",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Static Electricity",
+    "question": "Explain how static electricity can be a hazard when refuelling aircraft, and describe the precautions taken to prevent accidents.",
+    "mark_scheme": "Fuel flowing through pipes causes friction — electrons transferred to fuel creating static charge (1); large potential difference can build up on aircraft (1); spark could ignite fuel vapour causing fire or explosion (1); aircraft is connected to earth by a wire/bonded before fuelling (1); this allows charge to flow safely to earth preventing build-up (1) — any four."
+  },
+  {
+    "id": "P2-LA-016",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Calculate",
+    "topic": "Circuits",
+    "question": "A parallel circuit has two branches. Branch 1 contains a 6 Ω resistor and branch 2 contains a 12 Ω resistor. The supply voltage is 12 V. Calculate the current in each branch and the total current from the supply.",
+    "mark_scheme": "I₁ = V/R₁ = 12/6 = 2 A (1); I₂ = V/R₂ = 12/12 = 1 A (1); total current = 2 + 1 = 3 A (1); correct working shown (1)."
+  },
+  {
+    "id": "P2-LA-017",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Domestic Electricity",
+    "question": "Explain why household appliances are connected in parallel rather than in series. Include what would happen if one appliance stopped working in each type of circuit.",
+    "mark_scheme": "In parallel, each appliance receives full mains voltage (1); each appliance can be switched on/off independently (1); if one appliance fails in parallel, others continue working (1); in series, if one fails the circuit is broken and all fail (1); also in series, voltage is shared so appliances would not work at correct voltage (1) — any four."
+  },
+  {
+    "id": "P2-LA-018",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Basic Electricity",
+    "question": "Explain what is meant by charge, current and resistance. Give the unit for each and state how they are related by Ohm's Law.",
+    "mark_scheme": "Charge: amount of electrical charge, unit = coulombs (C) (1); current: rate of flow of charge, unit = amperes (A) (1); resistance: opposition to current flow, unit = ohms (Ω) (1); Ohm's Law: V = IR — voltage = current × resistance (1)."
+  },
+  {
+    "id": "P2-LA-019",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Domestic Electricity",
+    "question": "Explain how the earth wire and fuse in a plug work together to protect a user from electric shock if the live wire touches the metal case of an appliance.",
+    "mark_scheme": "If live wire touches metal case, the case becomes live at 230 V (1); earth wire connects case to earth at 0 V (1); large current flows through earth wire (1); large current blows the fuse (1); fuse melts and breaks the circuit (1); current stops — user protected from electric shock (1) — any five."
+  },
+  {
+    "id": "P2-LA-020",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Calculate",
+    "topic": "Power and Energy",
+    "question": "A household uses the following appliances: a 3 kW oven for 2 hours, a 0.1 kW TV for 5 hours, and a 2.5 kW washing machine for 1.5 hours. Calculate the total energy used in kWh and the cost at 28p per kWh.",
+    "mark_scheme": "Oven: 3 × 2 = 6 kWh (1); TV: 0.1 × 5 = 0.5 kWh (1); washing machine: 2.5 × 1.5 = 3.75 kWh (1); total = 10.25 kWh (1); cost = 10.25 × 28 = 287p = £2.87 (1)."
+  },
+  {
+    "id": "P2-LA-021",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Circuits",
+    "question": "Explain how a thermistor can be used in a temperature-sensitive switch. Describe the circuit and explain what happens as temperature rises.",
+    "mark_scheme": "Thermistor connected in series with a fixed resistor (voltage divider circuit) (1); as temperature rises, thermistor resistance decreases (1); voltage across thermistor decreases / voltage across fixed resistor increases (1); this signal used to trigger a transistor (1); transistor switches on a component such as a fan or alarm (1)."
+  },
+  {
+    "id": "P2-LA-022",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Basic Electricity",
+    "question": "Describe how you would investigate whether a wire obeys Ohm's Law. Include the circuit setup, measurements taken, how you would process the data and what result would confirm Ohm's Law.",
+    "mark_scheme": "Set up circuit with wire, ammeter in series, voltmeter in parallel across wire (1); use variable resistor to change current (1); record multiple pairs of current and voltage values (1); plot I-V graph (1); straight line through origin confirms Ohm's Law / constant resistance (1)."
+  },
+  {
+    "id": "P2-LA-023",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Static Electricity",
+    "question": "Evaluate the uses and dangers of static electricity. Refer to at least two uses and two dangers in your answer.",
+    "mark_scheme": "Use 1: electrostatic paint spraying — charged droplets attracted to earthed object, giving even coverage (1); use 2: electrostatic precipitators remove dust/ash from chimney gases (1); use 3: defibrillators use high-voltage charge to restart heart (1); danger 1: fuel tankers can build up charge causing sparks and fire (1); danger 2: lightning — large static discharge between cloud and ground (1); danger 3: shocks from synthetic clothing (1) — any five."
+  },
+  {
+    "id": "P2-LA-024",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Power and Energy",
+    "question": "Explain the energy transfers that occur when a current flows through a resistor. Derive the equation P = I²R from P = IV and V = IR, and explain what it tells us about power and resistance.",
+    "mark_scheme": "Current causes electrons to collide with ions in the resistor (1); kinetic energy of electrons transferred to ions — resistor heats up (1); P = IV and V = IR (1); substituting: P = I × IR = I²R (1); tells us power is proportional to the square of current and directly proportional to resistance (1)."
+  },
+  {
+    "id": "P2-LA-025",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Domestic Electricity",
+    "question": "Describe the structure of a standard UK three-pin plug and explain the safety function of each component.",
+    "mark_scheme": "Live wire (brown) — carries current from supply at 230 V (1); neutral wire (blue) — returns current to supply at ~0 V (1); earth wire (green/yellow) — safety connection to earth preventing shock if fault occurs (1); fuse — breaks circuit if current too high preventing fire/damage (1); plastic casing — insulates user from live conductors (1)."
+  },
+  {
+    "id": "P2-LA-026",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Circuits",
+    "question": "A student sets up a parallel circuit with three identical 6 Ω resistors connected to a 12 V supply. Explain and calculate what happens to the current from the supply compared to a single resistor in the circuit.",
+    "mark_scheme": "Single resistor: I = V/R = 12/6 = 2 A (1); in parallel, each resistor has same 12 V across it (1); current in each branch = 12/6 = 2 A (1); total current = 3 × 2 = 6 A (1); total current is three times greater — adding parallel branches lowers effective resistance (1)."
+  },
+  {
+    "id": "P2-LA-027",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Domestic Electricity",
+    "question": "Evaluate the advantages and disadvantages of using circuit breakers instead of fuses in household circuits.",
+    "mark_scheme": "Circuit breakers can be reset after tripping — do not need to be replaced (1); faster response time than fuses — breaks circuit more quickly (1); fuses must be replaced after blowing — inconvenient (1); fuses are cheaper to manufacture and install initially (1); RCDs (residual current devices) detect very small current differences and can prevent fatal shocks (1); circuit breakers more reliable — fuse wire may age and blow at wrong current (1) — any five."
+  },
+  {
+    "id": "P2-LA-028",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Basic Electricity",
+    "question": "Explain the difference between conventional current and electron flow. State which direction each moves in a circuit and explain why conventional current was defined before the discovery of electrons.",
+    "mark_scheme": "Conventional current: flows from positive to negative terminal of battery (1); electron flow: electrons flow from negative to positive terminal (1); opposite directions because electrons have negative charge (1); conventional current defined before electrons discovered (1); scientists assumed positive charges moved — convention retained for historical reasons (1)."
+  },
+  {
+    "id": "P2-LA-029",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Calculate",
+    "topic": "Basic Electricity",
+    "question": "A battery delivers a charge of 540 C in 3 minutes. Calculate the current. If the battery voltage is 9 V, calculate the power output and the total energy transferred.",
+    "mark_scheme": "I = Q/t = 540/180 = 3 A (1); P = IV = 3 × 9 = 27 W (1); E = Pt = 27 × 180 (1) = 4860 J (1); alternatively E = QV = 540 × 9 = 4860 J (1) — any five steps correct."
+  },
+  {
+    "id": "P2-LA-030",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Basic Electricity",
+    "question": "Explain, in detail, what happens to the current and voltage in a series circuit when a third resistor is added. Support your answer with calculations using R1 = 2 Ω, R2 = 3 Ω, supply = 12 V, then adding R3 = 5 Ω.",
+    "mark_scheme": "Original: R_total = 2 + 3 = 5 Ω (1); I = 12/5 = 2.4 A (1); after adding R3: R_total = 2 + 3 + 5 = 10 Ω (1); I = 12/10 = 1.2 A — current halved (1); voltage shared: V1 = 1.2×2 = 2.4 V, V2 = 1.2×3 = 3.6 V, V3 = 1.2×5 = 6 V (1); adding series resistance reduces current and increases voltage dropped across the new component (1)."
+  },
+  {
+    "id": "P2-LA-031",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Domestic Electricity",
+    "question": "Evaluate the safety features built into domestic electrical systems, including wiring in a plug, fuses, circuit breakers and RCDs. Explain what each protects against.",
+    "mark_scheme": "Earth wire: protects against shock if metal case becomes live (1); fuse: melts if too much current flows, breaking circuit and preventing fire (1); circuit breaker: switches off automatically if current too high, can be reset (1); RCD: detects difference between live and neutral current indicating leakage — disconnects within milliseconds (1); double insulation: appliances without earth wire have extra plastic insulation preventing shock (1); cable grip in plug: prevents strain on live/neutral connections (1)."
+  },
+  {
+    "id": "P2-LA-032",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Power and Energy",
+    "question": "Explain in detail how step-up and step-down transformers work and why they are essential for the efficient transmission of electricity across the National Grid. Include a numerical example.",
+    "mark_scheme": "Step-up transformer increases voltage (e.g. from 25 kV to 400 kV) before transmission (1); high voltage means low current (P = IV, same power at higher V means lower I) (1); low current means less energy wasted as heat in cables (P = I²R) (1); step-down transformer reduces voltage to 230 V for safe home use (1); without transformers, very high currents needed causing excessive heating losses (1); e.g. P = 1 MW: at 1 kV, I = 1000 A; at 400 kV, I = 2.5 A — far less heating loss (1)."
+  },
+  {
+    "id": "P2-LA-033",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Circuits",
+    "question": "A scientist investigates three components: a resistor, a filament lamp and a diode. Evaluate what the I-V characteristic of each component tells us about its behaviour. Explain the physical reasons for the shape of each graph.",
+    "mark_scheme": "Resistor: straight line through origin (1); constant resistance, current proportional to voltage — ohmic (1); Filament lamp: curve that flattens at higher voltages (1); as current increases, temperature increases, resistance increases (1); Diode: conducts in one direction only, very high reverse resistance (1); in forward direction conducts above threshold voltage (~0.7 V) (1)."
+  },
+  {
+    "id": "P2-LA-034",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Static Electricity",
+    "question": "Explain in detail how static electricity builds up on objects and how this can be both useful and dangerous. Use the concept of charge transfer, electric fields and potential difference in your answer.",
+    "mark_scheme": "Friction transfers electrons between surfaces — insulating materials cannot allow charge to flow away (1); object gaining electrons becomes negatively charged, object losing electrons becomes positively charged (1); electric field forms around charged object (1); large potential difference can cause sparks/discharge (1); useful: electrostatic spray painting gives even coat and reduces overspray (1); useful: photocopier uses static to attract toner particles to charged drum (1); dangerous: sparks near flammable gases/liquids can cause fire (1) — any six."
+  },
+  {
+    "id": "P2-LA-035",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Power and Energy",
+    "question": "A family is considering switching from gas central heating to electric underfloor heating. Evaluate this decision considering cost, efficiency, environmental impact and practicality.",
+    "mark_scheme": "Gas central heating: burns fossil fuel producing CO₂ (1); relatively cheap per unit of energy currently (1); requires boiler, pipes and radiators — complex installation (1); electric underfloor heating: runs on electricity — no direct emissions at point of use (1); more even heat distribution / comfortable (1); if powered by renewable electricity, low carbon footprint (1); electricity currently more expensive per unit than gas in UK (1); underfloor heating is difficult and expensive to install retrospectively (1) — any six."
+  },
+  {
+    "id": "P2-LA-036",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Basic Electricity",
+    "question": "A student claims that the more cells you add to a series circuit, the brighter all the bulbs will be. Evaluate this claim fully, using knowledge of voltage, current, resistance and power.",
+    "mark_scheme": "Adding cells in series increases total EMF/voltage (1); total resistance of circuit remains the same (resistance of bulbs doesn't change) (1); greater voltage across same resistance means greater current I = V/R (1); greater current through bulbs means greater power P = I²R (1); so bulbs are brighter — claim is correct (1); however, too much current may cause bulbs to overheat and blow (1)."
+  },
+  {
+    "id": "P2-LA-037",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Circuits",
+    "question": "Evaluate the advantages and disadvantages of series and parallel circuits for connecting lights in a home. Explain which arrangement is used in practice and why, using evidence from your knowledge of circuits.",
+    "mark_scheme": "Series: all lights on same loop — if one fails all fail (1); voltage shared between lights — each gets less than mains voltage (1); cannot be switched independently (1); Parallel: each light receives full mains voltage (1); if one fails others remain on (1); each can be switched on/off independently (1); parallel used in homes for all these reasons (1); consistent brightness regardless of how many lights on (1) — any six."
   }
 ]

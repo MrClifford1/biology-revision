@@ -19,7 +19,12 @@
     "marks": 1,
     "topic": "Ecosystems",
     "question": "Which of the following is an abiotic factor?",
-    "options": ["Predation", "Competition", "Temperature", "Disease"],
+    "options": [
+      "Predation",
+      "Competition",
+      "Temperature",
+      "Disease"
+    ],
     "correct": "Temperature"
   },
   {
@@ -98,7 +103,12 @@
     "marks": 1,
     "topic": "Climate Change",
     "question": "Which gas is the main driver of the enhanced greenhouse effect?",
-    "options": ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"],
+    "options": [
+      "Oxygen",
+      "Nitrogen",
+      "Carbon dioxide",
+      "Hydrogen"
+    ],
     "correct": "Carbon dioxide"
   },
   {
@@ -137,7 +147,7 @@
     "question": "Which of the following is a consequence of deforestation?",
     "options": [
       "Increased biodiversity due to new habitats",
-      "Reduced CO₂ levels in the atmosphere",
+      "Reduced CO\u2082 levels in the atmosphere",
       "Loss of habitat and reduced biodiversity",
       "Increased rainfall in the area"
     ],
@@ -206,7 +216,9 @@
     "topic": "Ecosystems",
     "question": "All the populations of different species living in the same area is called a __________.",
     "correct": "community",
-    "acceptable": ["community"]
+    "acceptable": [
+      "community"
+    ]
   },
   {
     "id": "B7-FIB-002",
@@ -215,7 +227,9 @@
     "topic": "Food Webs",
     "question": "An organism that produces its own food by photosynthesis is called a __________.",
     "correct": "producer",
-    "acceptable": ["producer"]
+    "acceptable": [
+      "producer"
+    ]
   },
   {
     "id": "B7-FIB-003",
@@ -224,7 +238,10 @@
     "topic": "Nutrient Cycling",
     "question": "Organisms that break down dead material and recycle nutrients are called __________.",
     "correct": "decomposers",
-    "acceptable": ["decomposers", "decomposer"]
+    "acceptable": [
+      "decomposers",
+      "decomposer"
+    ]
   },
   {
     "id": "B7-FIB-004",
@@ -233,7 +250,9 @@
     "topic": "Biodiversity",
     "question": "The variety of different species in an ecosystem is called __________.",
     "correct": "biodiversity",
-    "acceptable": ["biodiversity"]
+    "acceptable": [
+      "biodiversity"
+    ]
   },
   {
     "id": "B7-FIB-005",
@@ -242,7 +261,9 @@
     "topic": "Climate Change",
     "question": "The increase in the Earth's average temperature due to the enhanced greenhouse effect is called __________ warming.",
     "correct": "global",
-    "acceptable": ["global"]
+    "acceptable": [
+      "global"
+    ]
   },
   {
     "id": "B7-FIB-006",
@@ -251,7 +272,9 @@
     "topic": "Sampling",
     "question": "A square frame used to sample organisms in an area is called a __________.",
     "correct": "quadrat",
-    "acceptable": ["quadrat"]
+    "acceptable": [
+      "quadrat"
+    ]
   },
   {
     "id": "B7-FIB-007",
@@ -260,7 +283,11 @@
     "topic": "Nutrient Cycling",
     "question": "Bacteria that convert nitrogen gas into usable nitrates are called __________ bacteria.",
     "correct": "nitrogen-fixing",
-    "acceptable": ["nitrogen-fixing", "nitrogen fixing", "nitrogenfixing"]
+    "acceptable": [
+      "nitrogen-fixing",
+      "nitrogen fixing",
+      "nitrogenfixing"
+    ]
   },
   {
     "id": "B7-FIB-008",
@@ -269,7 +296,9 @@
     "topic": "Ecosystems",
     "question": "A non-living factor affecting organisms in an ecosystem is called an __________ factor.",
     "correct": "abiotic",
-    "acceptable": ["abiotic"]
+    "acceptable": [
+      "abiotic"
+    ]
   },
   {
     "id": "B7-FIB-009",
@@ -278,7 +307,9 @@
     "topic": "Biodiversity",
     "question": "The process where excess fertilisers cause algal bloom and oxygen depletion in water is called __________.",
     "correct": "eutrophication",
-    "acceptable": ["eutrophication"]
+    "acceptable": [
+      "eutrophication"
+    ]
   },
   {
     "id": "B7-FIB-010",
@@ -287,7 +318,9 @@
     "topic": "Biodiversity",
     "question": "The build-up of toxic substances in organisms at higher trophic levels is called __________.",
     "correct": "bioaccumulation",
-    "acceptable": ["bioaccumulation"]
+    "acceptable": [
+      "bioaccumulation"
+    ]
   },
   {
     "id": "B7-MATCH-001",
@@ -296,10 +329,22 @@
     "topic": "Ecosystems",
     "question": "Match each ecological term to its correct definition.",
     "pairs": [
-      { "term": "Ecosystem", "definition": "All living organisms and non-living conditions in an area" },
-      { "term": "Community", "definition": "All the populations of different species in the same area" },
-      { "term": "Population", "definition": "All individuals of the same species in the same area" },
-      { "term": "Habitat", "definition": "The place where an organism lives" }
+      {
+        "term": "Ecosystem",
+        "definition": "All living organisms and non-living conditions in an area"
+      },
+      {
+        "term": "Community",
+        "definition": "All the populations of different species in the same area"
+      },
+      {
+        "term": "Population",
+        "definition": "All individuals of the same species in the same area"
+      },
+      {
+        "term": "Habitat",
+        "definition": "The place where an organism lives"
+      }
     ]
   },
   {
@@ -309,9 +354,18 @@
     "topic": "Nutrient Cycling",
     "question": "Match each type of bacteria to its role in the nitrogen cycle.",
     "pairs": [
-      { "term": "Nitrogen-fixing bacteria", "definition": "Convert nitrogen gas into ammonia or nitrates" },
-      { "term": "Denitrifying bacteria", "definition": "Convert nitrates back into nitrogen gas" },
-      { "term": "Decomposers", "definition": "Break down dead organic material releasing ammonia" }
+      {
+        "term": "Nitrogen-fixing bacteria",
+        "definition": "Convert nitrogen gas into ammonia or nitrates"
+      },
+      {
+        "term": "Denitrifying bacteria",
+        "definition": "Convert nitrates back into nitrogen gas"
+      },
+      {
+        "term": "Decomposers",
+        "definition": "Break down dead organic material releasing ammonia"
+      }
     ]
   },
   {
@@ -321,10 +375,22 @@
     "topic": "Biodiversity",
     "question": "Match each human activity to its impact on biodiversity.",
     "pairs": [
-      { "term": "Deforestation", "definition": "Destroys habitats and reduces species diversity" },
-      { "term": "Eutrophication", "definition": "Excess fertilisers cause algal bloom and kill aquatic life" },
-      { "term": "Bioaccumulation", "definition": "Pesticides build up in organisms at higher trophic levels" },
-      { "term": "Global warming", "definition": "Changes habitats and threatens species unable to adapt" }
+      {
+        "term": "Deforestation",
+        "definition": "Destroys habitats and reduces species diversity"
+      },
+      {
+        "term": "Eutrophication",
+        "definition": "Excess fertilisers cause algal bloom and kill aquatic life"
+      },
+      {
+        "term": "Bioaccumulation",
+        "definition": "Pesticides build up in organisms at higher trophic levels"
+      },
+      {
+        "term": "Global warming",
+        "definition": "Changes habitats and threatens species unable to adapt"
+      }
     ]
   },
   {
@@ -334,10 +400,22 @@
     "topic": "Food Webs",
     "question": "Match each feeding term to its correct description.",
     "pairs": [
-      { "term": "Producer", "definition": "Makes its own food by photosynthesis — first in food chain" },
-      { "term": "Primary consumer", "definition": "Eats producers — second trophic level" },
-      { "term": "Secondary consumer", "definition": "Eats primary consumers — third trophic level" },
-      { "term": "Decomposer", "definition": "Breaks down dead organisms returning nutrients to soil" }
+      {
+        "term": "Producer",
+        "definition": "Makes its own food by photosynthesis \u2014 first in food chain"
+      },
+      {
+        "term": "Primary consumer",
+        "definition": "Eats producers \u2014 second trophic level"
+      },
+      {
+        "term": "Secondary consumer",
+        "definition": "Eats primary consumers \u2014 third trophic level"
+      },
+      {
+        "term": "Decomposer",
+        "definition": "Breaks down dead organisms returning nutrients to soil"
+      }
     ]
   },
   {
@@ -347,9 +425,18 @@
     "topic": "Sampling",
     "question": "Match each sampling method to its use.",
     "pairs": [
-      { "term": "Quadrat", "definition": "Square frame used to count organisms in a sample area" },
-      { "term": "Transect", "definition": "A line along which organisms are sampled at intervals" },
-      { "term": "Capture-recapture", "definition": "Used to estimate population size of mobile animals" }
+      {
+        "term": "Quadrat",
+        "definition": "Square frame used to count organisms in a sample area"
+      },
+      {
+        "term": "Transect",
+        "definition": "A line along which organisms are sampled at intervals"
+      },
+      {
+        "term": "Capture-recapture",
+        "definition": "Used to estimate population size of mobile animals"
+      }
     ]
   },
   {
@@ -359,7 +446,7 @@
     "command_word": "State",
     "topic": "Ecosystems",
     "question": "State the difference between an abiotic and a biotic factor. Give one example of each.",
-    "mark_scheme": "Abiotic — non-living factor e.g. temperature / light / pH (1); biotic — living factor e.g. predation / competition / disease (1) — accept either for 1 mark."
+    "mark_scheme": "Abiotic \u2014 non-living factor e.g. temperature / light / pH (1); biotic \u2014 living factor e.g. predation / competition / disease (1) \u2014 accept either for 1 mark."
   },
   {
     "id": "B7-SA-002",
@@ -368,7 +455,7 @@
     "command_word": "State",
     "topic": "Nutrient Cycling",
     "question": "State the role of decomposers in the carbon cycle.",
-    "mark_scheme": "Decomposers break down dead organic material (1); releasing carbon dioxide back into the atmosphere through respiration (1) — accept either."
+    "mark_scheme": "Decomposers break down dead organic material (1); releasing carbon dioxide back into the atmosphere through respiration (1) \u2014 accept either."
   },
   {
     "id": "B7-SA-003",
@@ -395,7 +482,7 @@
     "command_word": "Explain",
     "topic": "Food Webs",
     "question": "Explain why energy is lost between trophic levels in a food chain.",
-    "mark_scheme": "Energy is used for movement / respiration at each trophic level (1); energy is lost as heat (1); some material is not digested and lost as waste (1); only about 10% of energy is passed to the next level (1) — any two."
+    "mark_scheme": "Energy is used for movement / respiration at each trophic level (1); energy is lost as heat (1); some material is not digested and lost as waste (1); only about 10% of energy is passed to the next level (1) \u2014 any two."
   },
   {
     "id": "B7-SA-006",
@@ -404,7 +491,7 @@
     "command_word": "Explain",
     "topic": "Climate Change",
     "question": "Explain how the greenhouse effect leads to global warming.",
-    "mark_scheme": "Greenhouse gases such as CO₂ and methane in the atmosphere (1); absorb infrared radiation from the Earth's surface (1); re-emit it back towards Earth (1); trapping heat and raising global temperatures (1) — any two."
+    "mark_scheme": "Greenhouse gases such as CO\u2082 and methane in the atmosphere (1); absorb infrared radiation from the Earth's surface (1); re-emit it back towards Earth (1); trapping heat and raising global temperatures (1) \u2014 any two."
   },
   {
     "id": "B7-SA-007",
@@ -413,7 +500,7 @@
     "command_word": "Describe",
     "topic": "Biodiversity",
     "question": "Describe how eutrophication harms aquatic ecosystems.",
-    "mark_scheme": "Fertilisers run into water (1); algae grow rapidly forming algal bloom (1); algae block light to plants below (1); plants die (1); decomposers break down dead plants using oxygen (1); oxygen levels fall killing aquatic animals (1) — any two."
+    "mark_scheme": "Fertilisers run into water (1); algae grow rapidly forming algal bloom (1); algae block light to plants below (1); plants die (1); decomposers break down dead plants using oxygen (1); oxygen levels fall killing aquatic animals (1) \u2014 any two."
   },
   {
     "id": "B7-SA-008",
@@ -422,7 +509,7 @@
     "command_word": "Explain",
     "topic": "Ecosystems",
     "question": "Explain what is meant by interdependence in an ecosystem.",
-    "mark_scheme": "Organisms in a community depend on each other (1); for food / shelter / pollination / seed dispersal (1); if one species is removed it can affect others in the community (1) — any two."
+    "mark_scheme": "Organisms in a community depend on each other (1); for food / shelter / pollination / seed dispersal (1); if one species is removed it can affect others in the community (1) \u2014 any two."
   },
   {
     "id": "B7-SA-009",
@@ -431,7 +518,7 @@
     "command_word": "Explain",
     "topic": "Sampling",
     "question": "Explain why sampling is used when studying ecosystems rather than counting every organism.",
-    "mark_scheme": "Too many organisms to count individually (1); sampling saves time (1); a representative sample can be used to estimate the total population (1); random sampling reduces bias (1) — any two."
+    "mark_scheme": "Too many organisms to count individually (1); sampling saves time (1); a representative sample can be used to estimate the total population (1); random sampling reduces bias (1) \u2014 any two."
   },
   {
     "id": "B7-SA-010",
@@ -440,7 +527,7 @@
     "command_word": "Explain",
     "topic": "Nutrient Cycling",
     "question": "Explain the role of microorganisms in the nitrogen cycle.",
-    "mark_scheme": "Nitrogen-fixing bacteria convert nitrogen gas into ammonia or nitrates (1); found in soil or root nodules of leguminous plants (1); decomposers break down proteins in dead organisms releasing ammonia (1); nitrifying bacteria convert ammonia to nitrates (1); denitrifying bacteria convert nitrates back to nitrogen gas (1) — any three."
+    "mark_scheme": "Nitrogen-fixing bacteria convert nitrogen gas into ammonia or nitrates (1); found in soil or root nodules of leguminous plants (1); decomposers break down proteins in dead organisms releasing ammonia (1); nitrifying bacteria convert ammonia to nitrates (1); denitrifying bacteria convert nitrates back to nitrogen gas (1) \u2014 any three."
   },
   {
     "id": "B7-SA-011",
@@ -449,7 +536,7 @@
     "command_word": "Describe",
     "topic": "Biodiversity",
     "question": "Describe three ways in which human activities are reducing biodiversity.",
-    "mark_scheme": "Deforestation destroys habitats (1); eutrophication from fertilisers kills aquatic life (1); global warming changes habitats (1); overhunting / overfishing reduces populations (1); introduction of non-native species outcompetes native species (1); pollution kills organisms (1) — any three."
+    "mark_scheme": "Deforestation destroys habitats (1); eutrophication from fertilisers kills aquatic life (1); global warming changes habitats (1); overhunting / overfishing reduces populations (1); introduction of non-native species outcompetes native species (1); pollution kills organisms (1) \u2014 any three."
   },
   {
     "id": "B7-SA-012",
@@ -458,7 +545,7 @@
     "command_word": "Explain",
     "topic": "Food Webs",
     "question": "Explain what a pyramid of biomass shows and why it is always pyramid-shaped.",
-    "mark_scheme": "Shows the relative biomass at each trophic level (1); producers have the most biomass at the base (1); biomass decreases at each higher trophic level (1); because energy and biomass are lost between levels (1); only around 10% of biomass is transferred to the next level (1) — any three."
+    "mark_scheme": "Shows the relative biomass at each trophic level (1); producers have the most biomass at the base (1); biomass decreases at each higher trophic level (1); because energy and biomass are lost between levels (1); only around 10% of biomass is transferred to the next level (1) \u2014 any three."
   },
   {
     "id": "B7-LA-001",
@@ -467,7 +554,7 @@
     "command_word": "Explain",
     "topic": "Nutrient Cycling",
     "question": "Explain how carbon is cycled through an ecosystem, including the processes of photosynthesis, respiration, decomposition and combustion.",
-    "mark_scheme": "Plants absorb CO₂ for photosynthesis (1); carbon incorporated into organic molecules / glucose (1); animals eat plants transferring carbon (1); respiration releases CO₂ back to atmosphere (1); decomposers break down dead organisms releasing CO₂ (1); combustion of fossil fuels releases stored carbon (1) — any four."
+    "mark_scheme": "Plants absorb CO\u2082 for photosynthesis (1); carbon incorporated into organic molecules / glucose (1); animals eat plants transferring carbon (1); respiration releases CO\u2082 back to atmosphere (1); decomposers break down dead organisms releasing CO\u2082 (1); combustion of fossil fuels releases stored carbon (1) \u2014 any four."
   },
   {
     "id": "B7-LA-002",
@@ -476,7 +563,7 @@
     "command_word": "Explain",
     "topic": "Ecosystems",
     "question": "Explain how a change in one species in a food web can affect other species in the ecosystem.",
-    "mark_scheme": "Species in a food web are interdependent (1); if a prey species decreases, predator numbers also decrease (1); if a predator is removed, prey numbers increase (1); this may cause another species' food to be depleted (1); changes ripple through the food web (1); ecosystem may become unbalanced (1) — any four."
+    "mark_scheme": "Species in a food web are interdependent (1); if a prey species decreases, predator numbers also decrease (1); if a predator is removed, prey numbers increase (1); this may cause another species' food to be depleted (1); changes ripple through the food web (1); ecosystem may become unbalanced (1) \u2014 any four."
   },
   {
     "id": "B7-LA-003",
@@ -485,7 +572,7 @@
     "command_word": "Evaluate",
     "topic": "Biodiversity",
     "question": "Evaluate the methods used to maintain and increase biodiversity.",
-    "mark_scheme": "Breeding programmes for endangered species (1); reintroduction to natural habitats (1); protecting habitats / nature reserves (1); reducing deforestation (1); legislation to protect species (1); international agreements on emissions (1); seed banks to preserve plant diversity (1); effectiveness depends on funding and cooperation (1) — any four."
+    "mark_scheme": "Breeding programmes for endangered species (1); reintroduction to natural habitats (1); protecting habitats / nature reserves (1); reducing deforestation (1); legislation to protect species (1); international agreements on emissions (1); seed banks to preserve plant diversity (1); effectiveness depends on funding and cooperation (1) \u2014 any four."
   },
   {
     "id": "B7-LA-004",
@@ -494,7 +581,7 @@
     "command_word": "Explain",
     "topic": "Climate Change",
     "question": "Explain how human activities are increasing the rate of global warming and describe the possible consequences.",
-    "mark_scheme": "Burning fossil fuels releases CO₂ (1); deforestation reduces CO₂ absorption (1); agriculture produces methane (1); greenhouse gases trap more heat (1); consequences: rising sea levels (1); more extreme weather events (1); loss of habitats and species (1); disruption to food production (1) — any four."
+    "mark_scheme": "Burning fossil fuels releases CO\u2082 (1); deforestation reduces CO\u2082 absorption (1); agriculture produces methane (1); greenhouse gases trap more heat (1); consequences: rising sea levels (1); more extreme weather events (1); loss of habitats and species (1); disruption to food production (1) \u2014 any four."
   },
   {
     "id": "B7-LA-005",
@@ -503,7 +590,7 @@
     "command_word": "Explain",
     "topic": "Nutrient Cycling",
     "question": "Explain the nitrogen cycle, including the roles of nitrogen-fixing bacteria, decomposers, nitrifying bacteria and denitrifying bacteria.",
-    "mark_scheme": "Nitrogen gas makes up 78% of the atmosphere but cannot be used directly (1); nitrogen-fixing bacteria in soil or root nodules convert N₂ to ammonia/nitrates (1); plants absorb nitrates and use them to make proteins (1); animals eat plants transferring nitrogen (1); decomposers break down dead organisms releasing ammonia (1); nitrifying bacteria convert ammonia to nitrates (1); denitrifying bacteria convert nitrates back to N₂ (1) — any five."
+    "mark_scheme": "Nitrogen gas makes up 78% of the atmosphere but cannot be used directly (1); nitrogen-fixing bacteria in soil or root nodules convert N\u2082 to ammonia/nitrates (1); plants absorb nitrates and use them to make proteins (1); animals eat plants transferring nitrogen (1); decomposers break down dead organisms releasing ammonia (1); nitrifying bacteria convert ammonia to nitrates (1); denitrifying bacteria convert nitrates back to N\u2082 (1) \u2014 any five."
   },
   {
     "id": "B7-LA-006",
@@ -512,7 +599,7 @@
     "command_word": "Evaluate",
     "topic": "Climate Change",
     "question": "Evaluate the evidence for climate change and the actions that could be taken to reduce its impact. Include both individual and government level actions in your answer.",
-    "mark_scheme": "Evidence: rising global temperatures recorded over decades (1); melting ice caps and rising sea levels (1); changes in species distribution (1); increased frequency of extreme weather (1). Individual actions: reducing energy use (1); eating less meat (1); using public transport (1). Government actions: international agreements e.g. Paris Agreement (1); investment in renewable energy (1); regulation of emissions (1); protecting forests (1) — any six."
+    "mark_scheme": "Evidence: rising global temperatures recorded over decades (1); melting ice caps and rising sea levels (1); changes in species distribution (1); increased frequency of extreme weather (1). Individual actions: reducing energy use (1); eating less meat (1); using public transport (1). Government actions: international agreements e.g. Paris Agreement (1); investment in renewable energy (1); regulation of emissions (1); protecting forests (1) \u2014 any six."
   },
   {
     "id": "B7-LA-007",
@@ -521,6 +608,276 @@
     "command_word": "Explain",
     "topic": "Biodiversity",
     "question": "Explain why maintaining biodiversity is important and describe the human activities that threaten it and the conservation methods that can protect it.",
-    "mark_scheme": "Biodiversity provides ecosystem stability (1); provides food, medicine and materials (1); loss of one species can have knock-on effects (1). Threats: deforestation (1); pollution / eutrophication (1); climate change (1); overhunting (1). Conservation: nature reserves (1); breeding programmes (1); reintroduction of species (1); international agreements (1); reducing pollution (1) — any six."
+    "mark_scheme": "Biodiversity provides ecosystem stability (1); provides food, medicine and materials (1); loss of one species can have knock-on effects (1). Threats: deforestation (1); pollution / eutrophication (1); climate change (1); overhunting (1). Conservation: nature reserves (1); breeding programmes (1); reintroduction of species (1); international agreements (1); reducing pollution (1) \u2014 any six."
+  },
+  {
+    "id": "B7-LA-035",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Ecosystems",
+    "question": "Explain what is meant by a 'community' and an 'ecosystem'. Include the difference between biotic and abiotic factors.",
+    "mark_scheme": "Community: all the organisms (populations of different species) living in an area (1); ecosystem: a community of organisms and the non-living environment they interact with (1); biotic factors: living factors affecting organisms, e.g. competition, predation (1); abiotic factors: non-living factors, e.g. temperature, light intensity, pH (1)."
+  },
+  {
+    "id": "B7-LA-036",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Food Webs",
+    "question": "Describe what happens to energy as it passes along a food chain. Explain why food chains rarely have more than four or five trophic levels.",
+    "mark_scheme": "Energy is transferred from one trophic level to the next (1); only about 10% of energy is transferred \u2014 most lost as heat (respiration), some in faeces/urine (1); less energy available at each level \u2014 so fewer organisms can be supported (1); beyond 4\u20135 levels, too little energy remains to support a viable population (1)."
+  },
+  {
+    "id": "B7-LA-037",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Nutrient Cycling",
+    "question": "Explain the role of decomposers in the carbon cycle. Include what decomposers are and how they release carbon back into the atmosphere.",
+    "mark_scheme": "Decomposers are bacteria and fungi (1); they break down dead organic matter \u2014 detritivores also help by mechanical breakdown (1); decomposers respire aerobically \u2014 release CO\u2082 into atmosphere (1); this returns carbon from living matter back to the atmosphere \u2014 completing the carbon cycle (1)."
+  },
+  {
+    "id": "B7-LA-008",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Decomposition",
+    "question": "Describe the conditions that affect the rate of decomposition. Include temperature, moisture and oxygen availability.",
+    "mark_scheme": "Temperature: higher temperature increases enzyme activity in decomposers \u2014 faster decomposition (up to optimum) (1); moisture: water needed for decomposer activity \u2014 too dry slows decomposition (1); oxygen: aerobic decomposers need O\u2082 \u2014 waterlogged or compacted soils slow decomposition (1); pH: neutral to slightly acidic is optimal \u2014 very acidic soils (e.g. peat bogs) preserve organic matter (1)."
+  },
+  {
+    "id": "B7-LA-009",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Biodiversity",
+    "question": "Explain why maintaining high biodiversity is important for ecosystems and for humans.",
+    "mark_scheme": "High biodiversity: more stable ecosystems \u2014 greater resilience to change (1); provides many ecosystem services: pollination, water purification, soil formation (1); source of medicines and food crops \u2014 many drugs derived from plants (1); loss of one species can affect whole food web \u2014 reduces ecosystem stability (1)."
+  },
+  {
+    "id": "B7-LA-010",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Climate Change",
+    "question": "Describe how human activities are causing climate change. Include two specific human activities and the gases involved.",
+    "mark_scheme": "Burning fossil fuels releases CO\u2082 (1); deforestation removes trees that absorb CO\u2082 \u2014 also releases CO\u2082 (1); rice paddies and livestock farming produce methane (CH\u2084) (1); these greenhouse gases trap heat in the atmosphere \u2014 leading to rising global temperatures (1)."
+  },
+  {
+    "id": "B7-LA-011",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Ecosystems",
+    "question": "Explain how organisms compete for resources in an ecosystem. Include examples of interspecific and intraspecific competition.",
+    "mark_scheme": "Intraspecific competition: between individuals of the same species for same resources (1); e.g. robins competing for territory and food (1); interspecific competition: between different species for similar resources (1); e.g. red squirrels and grey squirrels competing for nuts and habitat \u2014 grey squirrel outcompetes red (1)."
+  },
+  {
+    "id": "B7-LA-012",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Nutrient Cycling",
+    "question": "Describe the main stages of the nitrogen cycle. Include the roles of nitrogen-fixing bacteria, nitrifying bacteria and denitrifying bacteria.",
+    "mark_scheme": "Nitrogen-fixing bacteria in soil/root nodules convert N\u2082 gas to ammonium compounds (1); nitrifying bacteria convert ammonium \u2192 nitrites \u2192 nitrates (1); plants absorb nitrates through roots \u2014 use them to make proteins (1); denitrifying bacteria convert nitrates back to N\u2082 gas \u2014 complete the cycle (1)."
+  },
+  {
+    "id": "B7-LA-013",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Evaluate",
+    "topic": "Biodiversity",
+    "question": "Evaluate the effectiveness of conservation programmes in maintaining biodiversity. Include captive breeding and habitat protection as examples.",
+    "mark_scheme": "Captive breeding: prevents extinction; individuals reintroduced to wild \u2014 e.g. Arabian oryx (1); but: small gene pool \u2192 inbreeding; animals may struggle to survive in wild (1); habitat protection: preserves entire ecosystem including all species (1); but: requires large areas; difficult to enforce against economic pressures (1)."
+  },
+  {
+    "id": "B7-LA-014",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Ecosystems",
+    "question": "Explain how predator and prey populations are linked. Describe what happens to prey numbers if the predator population increases.",
+    "mark_scheme": "Predator and prey populations fluctuate in cycles (1); predator numbers follow prey with a time delay (1); if predators increase: more prey eaten \u2014 prey population falls (1); fewer prey \u2192 less food for predators \u2192 predator numbers fall \u2192 prey population recovers (1)."
+  },
+  {
+    "id": "B7-LA-015",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Climate Change",
+    "question": "Describe two ways in which climate change could affect ecosystems and species distributions.",
+    "mark_scheme": "Rising temperatures: species shift their range towards poles or higher altitudes to remain in suitable conditions (1); e.g. UK butterflies moving north (1); disruption of breeding seasons: animals breed earlier \u2014 may not align with food availability (1); coral bleaching: warmer seas cause corals to expel algae \u2014 reefs die \u2014 loss of habitat for hundreds of species (1)."
+  },
+  {
+    "id": "B7-LA-016",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Ecosystems",
+    "question": "Explain the concept of trophic levels and explain how the shape of an energy pyramid reflects the efficiency of energy transfer.",
+    "mark_scheme": "Trophic level 1: producers (plants) \u2014 trap energy from sunlight by photosynthesis (1); trophic level 2: primary consumers (herbivores) \u2014 eat plants (1); each trophic level receives ~10% of energy from level below (1); pyramid shape: wide base (producers) \u2192 narrower at top \u2014 less energy available at each level (1); explains why top predators are rare and why there are few trophic levels (1)."
+  },
+  {
+    "id": "B7-LA-017",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Nutrient Cycling",
+    "question": "Describe the carbon cycle. Include photosynthesis, respiration, decomposition, combustion and the ocean as a carbon store.",
+    "mark_scheme": "Photosynthesis removes CO\u2082 from atmosphere \u2014 stored as glucose in plants (1); respiration by all organisms releases CO\u2082 (1); decomposers break down dead matter \u2014 release CO\u2082 through respiration (1); combustion of fossil fuels and wood releases stored carbon as CO\u2082 (1); oceans absorb CO\u2082 \u2014 stored in water as carbonate ions; marine organisms form carbonate shells (1)."
+  },
+  {
+    "id": "B7-LA-018",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Climate Change",
+    "question": "Evaluate the measures that can be taken to reduce the impact of climate change. Include both personal and national/global level actions.",
+    "mark_scheme": "Personal: reduce energy use, eat less meat, use public transport \u2014 reduces individual carbon footprint (1); national: renewable energy targets \u2014 wind, solar replace fossil fuels (1); reforestation: planting trees absorbs CO\u2082 \u2014 carbon sequestration (1); global: international agreements (Paris Agreement) set targets to limit warming (1); limitation: economic development in poorer nations requires energy; political disagreement slows action (1)."
+  },
+  {
+    "id": "B7-LA-019",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Biodiversity",
+    "question": "Explain how human activities reduce biodiversity. Include deforestation, pollution, and introduction of invasive species as examples.",
+    "mark_scheme": "Deforestation: removes habitat, destroys ecosystems, many species lost (1); causes soil erosion and reduces water retention (1); pollution: pesticides/herbicides kill non-target species (1); introduction of invasive species: outcompete native species \u2014 reduce diversity e.g. grey squirrel vs red squirrel (1); climate change: alters habitats faster than species can adapt \u2014 causes extinctions (1)."
+  },
+  {
+    "id": "B7-LA-020",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Decomposition",
+    "question": "Describe how to investigate the effect of temperature on the rate of decomposition in a controlled experiment. Include the variables and how to measure decomposition.",
+    "mark_scheme": "Set up identical containers of leaf litter or compost (1); place at different temperatures (e.g. 5\u00b0C, 15\u00b0C, 25\u00b0C, 35\u00b0C) (1); measure mass loss over time \u2014 as organic matter decomposes, mass decreases (1); control variables: amount of material, moisture level, oxygen availability, type of material (1); repeat at each temperature and average to reduce error (1)."
+  },
+  {
+    "id": "B7-LA-021",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Food Webs",
+    "question": "Explain the effects on a food web of removing a species from the middle of the chain (a 'keystone species'). Use a named example to support your answer.",
+    "mark_scheme": "A keystone species has a disproportionately large effect on its ecosystem relative to its abundance (1); e.g. sea otters eat sea urchins \u2014 urchins eat kelp (1); without otters, sea urchins increase \u2014 kelp forests destroyed (1); many species depend on kelp for habitat and food \u2014 cascade effect through food web (1); removing middle species can cause both prey to increase and predators to decline \u2014 'trophic cascade' (1)."
+  },
+  {
+    "id": "B7-LA-022",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Biodiversity",
+    "question": "Evaluate the importance of international cooperation in protecting global biodiversity. Include specific threats and examples of conservation efforts.",
+    "mark_scheme": "Many species and habitats cross national boundaries \u2014 single country cannot protect them alone (1); deforestation in Amazon affects global climate \u2014 needs international action (1); Convention on International Trade in Endangered Species (CITES) \u2014 restricts trade in threatened species (1); global seed banks (Svalbard) preserve crop genetic diversity (1); challenges: developing nations prioritise economic growth over conservation; enforcement difficult (1)."
+  },
+  {
+    "id": "B7-LA-023",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Climate Change",
+    "question": "Explain the enhanced greenhouse effect and describe the evidence that climate change is caused by human activity.",
+    "mark_scheme": "Greenhouse gases (CO\u2082, CH\u2084, N\u2082O) trap infrared radiation \u2014 warm Earth's surface (1); enhanced greenhouse effect: increased concentrations due to human activity amplify warming (1); ice core evidence: CO\u2082 concentration closely tracks temperature over 800,000 years (1); CO\u2082 concentration increased from ~280 ppm pre-industrial to >420 ppm now \u2014 correlates with industrialisation (1); carbon isotope ratios in CO\u2082 show the carbon is from fossil fuels (1)."
+  },
+  {
+    "id": "B7-LA-024",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Nutrient Cycling",
+    "question": "Describe the water cycle and explain how changes in vegetation cover can affect it.",
+    "mark_scheme": "Evaporation from oceans/lakes \u2014 water vapour rises (1); condensation: water vapour cools and forms clouds (1); precipitation: rain or snow falls on land (1); transpiration from plants adds water vapour \u2014 significant especially in forests (1); deforestation reduces transpiration \u2014 less rainfall in deforested areas; increased surface runoff \u2014 flooding (1)."
+  },
+  {
+    "id": "B7-LA-025",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Ecosystems",
+    "question": "Evaluate the use of indicator species to monitor environmental pollution. Include examples of both water and air pollution indicators.",
+    "mark_scheme": "Water pollution: mayfly larvae only present in clean water \u2014 absence indicates pollution (1); bloodworms tolerate low O\u2082 \u2014 presence suggests organic pollution (1); air pollution: lichens are sensitive to sulfur dioxide \u2014 lichen diversity indicates air quality (1); advantages: cheap, continuous monitoring, reflect real biological impact (1); limitations: species distribution affected by factors other than pollution; cannot identify specific pollutants (1)."
+  },
+  {
+    "id": "B7-LA-026",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Nutrient Cycling",
+    "question": "Explain the nitrogen cycle in detail. Include all processes and the organisms involved at each stage.",
+    "mark_scheme": "Nitrogen gas (N\u2082) makes up 78% of atmosphere but most organisms cannot use it directly (1); nitrogen fixation: Rhizobium bacteria in legume root nodules fix N\u2082 to ammonium (NH\u2084\u207a) (1); nitrification: Nitrosomonas converts ammonium to nitrite; Nitrobacter converts nitrite to nitrate \u2014 aerobic process (1); plants absorb nitrates \u2014 used to make amino acids and proteins (1); animals obtain nitrogen by eating plants/other animals; excretion returns nitrogen to soil as urea/ammonia (1); denitrification: anaerobic bacteria convert nitrates back to N\u2082 \u2014 in waterlogged soils (1)."
+  },
+  {
+    "id": "B7-LA-027",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Climate Change",
+    "question": "Evaluate the consequences of climate change for ecosystems and biodiversity. Include both direct and indirect effects and consider different geographical regions.",
+    "mark_scheme": "Rising temperatures: species shift range poleward or to higher altitude \u2014 some cannot migrate fast enough (1); coral bleaching: ocean warming above 1\u00b0C above normal causes mass bleaching events \u2014 threatens 25% of marine species (1); polar regions: Arctic ice loss \u2014 polar bears, seals, penguins lose habitat (1); tropical regions: increased drought frequency and intensity \u2014 savanna turning to desert (1); indirect effects: food web disruption \u2014 seasonal timing mismatch between predators and prey (1); some species may benefit \u2014 invasive species expand range; overall biodiversity loss is the dominant trend (1)."
+  },
+  {
+    "id": "B7-LA-028",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Describe",
+    "topic": "Biodiversity",
+    "question": "Describe the main threats to biodiversity and evaluate the effectiveness of international and local conservation strategies to address them.",
+    "mark_scheme": "Threats: habitat destruction (agriculture, urbanisation, deforestation) is the primary cause of species loss (1); overexploitation \u2014 hunting, overfishing \u2014 reduces populations below viable levels (1); pollution destroys freshwater and marine habitats (1); invasive species outcompete natives (1); international: CITES limits trade in endangered species; Ramsar Convention protects wetlands (1); local: nature reserves, corridor habitats, rewilding \u2014 reintroducing lost species like beavers in UK (1). Accept: limited effectiveness without funding/enforcement; biodiversity still declining globally."
+  },
+  {
+    "id": "B7-LA-029",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Ecosystems",
+    "question": "Explain how energy flows through an ecosystem. Include the original source of energy, the role of producers and consumers, and why energy is lost at each trophic level.",
+    "mark_scheme": "Solar energy is absorbed by producers (plants) during photosynthesis \u2014 converted to chemical energy in glucose (1); only ~1% of solar energy actually fixed (1); producers eaten by primary consumers \u2014 energy transferred (1); only ~10% of energy transferred at each trophic level (1); energy lost as: heat through respiration, energy in faeces/urine not absorbed by consumer (1); this explains pyramids of biomass and number \u2014 why top predators are rare and require large territory (1)."
+  },
+  {
+    "id": "B7-LA-030",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Biodiversity",
+    "question": "Evaluate the role of zoos and captive breeding programmes in conserving endangered species. Include successes, limitations and the ethics of keeping wild animals in captivity.",
+    "mark_scheme": "Successes: Arabian oryx, California condor, black-footed ferret \u2014 brought back from brink of extinction (1); captive breeding creates insurance populations (1); zoos educate public \u2014 increase conservation awareness and funding (1); limitations: small captive populations have limited genetic diversity \u2014 inbreeding depression (1); reintroduction success rate low \u2014 animals may lack survival skills or suitable habitat no longer exists (1); ethics: wild animals in captivity may have reduced welfare; zoo resources could fund in-situ conservation instead (1)."
+  },
+  {
+    "id": "B7-LA-031",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Climate Change",
+    "question": "Explain how increased levels of CO\u2082 and methane in the atmosphere lead to global warming. Include the origin of each gas and the mechanism by which they trap heat.",
+    "mark_scheme": "CO\u2082 released by burning fossil fuels \u2014 concentrations rising since industrial revolution (1); methane produced by livestock, rice paddies, landfill sites (1); both are greenhouse gases \u2014 their molecules absorb and re-emit infrared radiation (1); Earth's surface absorbs solar radiation and emits infrared (heat) (1); greenhouse gases trap this heat in the lower atmosphere \u2014 raising surface temperature (1); feedback loops: warming melts Arctic permafrost releasing stored methane \u2014 amplifies warming further (1)."
+  },
+  {
+    "id": "B7-LA-032",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Ecosystems",
+    "question": "Evaluate the ecological and economic arguments for and against rewilding large areas of land. Include specific examples and consider the perspective of local communities.",
+    "mark_scheme": "Rewilding: reintroducing lost species and allowing natural processes to take over (1); ecological benefits: reintroduction of wolves in Yellowstone changed river courses (trophic cascade) \u2014 transformed ecosystem (1); beavers reintroduced in UK \u2014 reduce flooding, improve water quality (1); economic benefits: ecotourism \u2014 wildlife watching generates local income (1); economic concerns: farmers lose land; wolves/lynx may prey on livestock (1); local community perspective: must involve communities and provide compensation schemes for success (1)."
+  },
+  {
+    "id": "B7-LA-033",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Describe",
+    "topic": "Decomposition",
+    "question": "Describe the role of decomposers and detritivores in nutrient cycling. Explain why decomposition is essential for the continuation of life on Earth.",
+    "mark_scheme": "Detritivores (earthworms, woodlice) mechanically break down dead material into smaller pieces \u2014 increasing surface area (1); bacteria and fungi (decomposers) secrete enzymes that chemically break down organic molecules (1); decomposers respire \u2014 releasing CO\u2082 (carbon cycle) (1); nitrogen in proteins released as ammonium compounds \u2014 nitrifying bacteria convert to nitrates (1); without decomposers: dead material would accumulate, nutrients locked up \u2014 plants could not grow (1); decomposition essential for nutrient cycling \u2014 same atoms used repeatedly; life depends on this recycling (1)."
+  },
+  {
+    "id": "B7-LA-034",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Food Webs",
+    "question": "Explain how the removal of a top predator from a food web can have cascading effects throughout the ecosystem. Use specific examples to illustrate your answer.",
+    "mark_scheme": "Top predators regulate prey populations \u2014 their removal causes prey to increase unchecked (1); e.g. removal of sharks: fish populations surge, overgrazing of seagrass (1); increased herbivores overgraze vegetation \u2014 habitat degraded (1); other species dependent on that vegetation decline (1); shows interdependence in ecosystems \u2014 changing one species affects all (1)."
   }
 ]

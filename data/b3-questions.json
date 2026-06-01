@@ -5,7 +5,12 @@
     "marks": 1,
     "topic": "Pathogens",
     "question": "Which type of pathogen causes malaria?",
-    "options": ["Bacterium", "Virus", "Fungus", "Protist"],
+    "options": [
+      "Bacterium",
+      "Virus",
+      "Fungus",
+      "Protist"
+    ],
     "correct": "Protist"
   },
   {
@@ -70,7 +75,12 @@
     "marks": 1,
     "topic": "Immune System",
     "question": "What do lymphocytes produce in response to an infection?",
-    "options": ["Antigens", "Antibodies", "Toxins", "Enzymes"],
+    "options": [
+      "Antigens",
+      "Antibodies",
+      "Toxins",
+      "Enzymes"
+    ],
     "correct": "Antibodies"
   },
   {
@@ -149,7 +159,12 @@
     "marks": 1,
     "topic": "Fungal and Protist Diseases",
     "question": "Which organism transmits malaria to humans?",
-    "options": ["A tick", "The Anopheles mosquito", "A rat", "A housefly"],
+    "options": [
+      "A tick",
+      "The Anopheles mosquito",
+      "A rat",
+      "A housefly"
+    ],
     "correct": "The Anopheles mosquito"
   },
   {
@@ -201,7 +216,10 @@
     "topic": "Pathogens",
     "question": "A microorganism that causes disease is called a __________.",
     "correct": "pathogen",
-    "acceptable": ["pathogen", "pathogens"]
+    "acceptable": [
+      "pathogen",
+      "pathogens"
+    ]
   },
   {
     "id": "B3-FIB-002",
@@ -210,7 +228,10 @@
     "topic": "Immune System",
     "question": "White blood cells called __________ engulf and destroy pathogens.",
     "correct": "phagocytes",
-    "acceptable": ["phagocytes", "phagocyte"]
+    "acceptable": [
+      "phagocytes",
+      "phagocyte"
+    ]
   },
   {
     "id": "B3-FIB-003",
@@ -219,7 +240,10 @@
     "topic": "Immune System",
     "question": "Proteins produced by lymphocytes that bind to specific antigens are called __________.",
     "correct": "antibodies",
-    "acceptable": ["antibodies", "antibody"]
+    "acceptable": [
+      "antibodies",
+      "antibody"
+    ]
   },
   {
     "id": "B3-FIB-004",
@@ -228,7 +252,9 @@
     "topic": "Vaccination",
     "question": "When enough people are vaccinated to prevent the spread of disease, this is called __________ immunity.",
     "correct": "herd",
-    "acceptable": ["herd"]
+    "acceptable": [
+      "herd"
+    ]
   },
   {
     "id": "B3-FIB-005",
@@ -237,7 +263,10 @@
     "topic": "Drugs",
     "question": "Drugs that kill bacteria but do not work against viruses are called __________.",
     "correct": "antibiotics",
-    "acceptable": ["antibiotics", "antibiotic"]
+    "acceptable": [
+      "antibiotics",
+      "antibiotic"
+    ]
   },
   {
     "id": "B3-FIB-006",
@@ -246,7 +275,12 @@
     "topic": "Drug Development",
     "question": "The first antibiotic, penicillin, was discovered by __________.",
     "correct": "alexander fleming",
-    "acceptable": ["alexander fleming", "fleming", "Alexander Fleming", "Fleming"]
+    "acceptable": [
+      "alexander fleming",
+      "fleming",
+      "Alexander Fleming",
+      "Fleming"
+    ]
   },
   {
     "id": "B3-FIB-007",
@@ -255,7 +289,11 @@
     "topic": "Fungal and Protist Diseases",
     "question": "Malaria is caused by a __________ and transmitted by mosquitoes.",
     "correct": "protist",
-    "acceptable": ["protist", "protozoan", "protista"]
+    "acceptable": [
+      "protist",
+      "protozoan",
+      "protista"
+    ]
   },
   {
     "id": "B3-FIB-008",
@@ -264,7 +302,11 @@
     "topic": "Defence Systems",
     "question": "The stomach produces __________ to kill pathogens in food and drink.",
     "correct": "hydrochloric acid",
-    "acceptable": ["hydrochloric acid", "acid", "hcl"]
+    "acceptable": [
+      "hydrochloric acid",
+      "acid",
+      "hcl"
+    ]
   },
   {
     "id": "B3-FIB-009",
@@ -273,7 +315,10 @@
     "topic": "Immune System",
     "question": "A unique protein on the surface of a pathogen that triggers an immune response is called an __________.",
     "correct": "antigen",
-    "acceptable": ["antigen", "antigens"]
+    "acceptable": [
+      "antigen",
+      "antigens"
+    ]
   },
   {
     "id": "B3-FIB-010",
@@ -282,7 +327,10 @@
     "topic": "Viral Diseases",
     "question": "HIV eventually leads to __________, where the immune system can no longer fight infections.",
     "correct": "aids",
-    "acceptable": ["aids", "AIDS"]
+    "acceptable": [
+      "aids",
+      "AIDS"
+    ]
   },
   {
     "id": "B3-MATCH-001",
@@ -291,10 +339,22 @@
     "topic": "Pathogens",
     "question": "Match each disease to its type of pathogen.",
     "pairs": [
-      { "term": "Measles", "definition": "Virus" },
-      { "term": "Salmonella", "definition": "Bacterium" },
-      { "term": "Rose black spot", "definition": "Fungus" },
-      { "term": "Malaria", "definition": "Protist" }
+      {
+        "term": "Measles",
+        "definition": "Virus"
+      },
+      {
+        "term": "Salmonella",
+        "definition": "Bacterium"
+      },
+      {
+        "term": "Rose black spot",
+        "definition": "Fungus"
+      },
+      {
+        "term": "Malaria",
+        "definition": "Protist"
+      }
     ]
   },
   {
@@ -304,10 +364,22 @@
     "topic": "Defence Systems",
     "question": "Match each defence to how it protects the body.",
     "pairs": [
-      { "term": "Skin", "definition": "Acts as a physical barrier preventing pathogens from entering" },
-      { "term": "Mucus", "definition": "Traps pathogens in the nose and trachea" },
-      { "term": "Cilia", "definition": "Beat to move mucus and trapped pathogens away from the lungs" },
-      { "term": "Hydrochloric acid", "definition": "Kills pathogens in the stomach" }
+      {
+        "term": "Skin",
+        "definition": "Acts as a physical barrier preventing pathogens from entering"
+      },
+      {
+        "term": "Mucus",
+        "definition": "Traps pathogens in the nose and trachea"
+      },
+      {
+        "term": "Cilia",
+        "definition": "Beat to move mucus and trapped pathogens away from the lungs"
+      },
+      {
+        "term": "Hydrochloric acid",
+        "definition": "Kills pathogens in the stomach"
+      }
     ]
   },
   {
@@ -317,10 +389,22 @@
     "topic": "Immune System",
     "question": "Match each immune system term to its correct description.",
     "pairs": [
-      { "term": "Phagocyte", "definition": "White blood cell that engulfs and digests pathogens" },
-      { "term": "Lymphocyte", "definition": "White blood cell that produces antibodies" },
-      { "term": "Antibody", "definition": "Protein that binds specifically to an antigen on a pathogen" },
-      { "term": "Memory cell", "definition": "Long-lived cell that allows a faster response to the same pathogen" }
+      {
+        "term": "Phagocyte",
+        "definition": "White blood cell that engulfs and digests pathogens"
+      },
+      {
+        "term": "Lymphocyte",
+        "definition": "White blood cell that produces antibodies"
+      },
+      {
+        "term": "Antibody",
+        "definition": "Protein that binds specifically to an antigen on a pathogen"
+      },
+      {
+        "term": "Memory cell",
+        "definition": "Long-lived cell that allows a faster response to the same pathogen"
+      }
     ]
   },
   {
@@ -330,9 +414,18 @@
     "topic": "Drugs",
     "question": "Match each drug type to its correct description.",
     "pairs": [
-      { "term": "Antibiotic", "definition": "Kills or inhibits bacteria but not viruses" },
-      { "term": "Antiviral", "definition": "Inhibits the development of viruses inside host cells" },
-      { "term": "Painkiller", "definition": "Relieves symptoms such as pain but does not kill the pathogen" }
+      {
+        "term": "Antibiotic",
+        "definition": "Kills or inhibits bacteria but not viruses"
+      },
+      {
+        "term": "Antiviral",
+        "definition": "Inhibits the development of viruses inside host cells"
+      },
+      {
+        "term": "Painkiller",
+        "definition": "Relieves symptoms such as pain but does not kill the pathogen"
+      }
     ]
   },
   {
@@ -342,9 +435,18 @@
     "topic": "Viral Diseases",
     "question": "Match each viral disease to how it is transmitted.",
     "pairs": [
-      { "term": "Measles", "definition": "Spread by droplets from sneezes and coughs" },
-      { "term": "HIV", "definition": "Spread through sexual contact or exchange of blood" },
-      { "term": "TMV", "definition": "Spread through contact between plants" }
+      {
+        "term": "Measles",
+        "definition": "Spread by droplets from sneezes and coughs"
+      },
+      {
+        "term": "HIV",
+        "definition": "Spread through sexual contact or exchange of blood"
+      },
+      {
+        "term": "TMV",
+        "definition": "Spread through contact between plants"
+      }
     ]
   },
   {
@@ -363,7 +465,7 @@
     "command_word": "State",
     "topic": "Drugs",
     "question": "State why antibiotics cannot be used to treat viral infections.",
-    "mark_scheme": "Antibiotics only target processes in bacterial cells (1); viruses replicate inside host cells using the host's own machinery (1) — accept either point."
+    "mark_scheme": "Antibiotics only target processes in bacterial cells (1); viruses replicate inside host cells using the host's own machinery (1) \u2014 accept either point."
   },
   {
     "id": "B3-SA-003",
@@ -381,7 +483,7 @@
     "command_word": "State",
     "topic": "Vaccination",
     "question": "State what is meant by herd immunity.",
-    "mark_scheme": "When enough people in a population are vaccinated that pathogens cannot spread easily (1); protecting unvaccinated individuals (1) — accept either point."
+    "mark_scheme": "When enough people in a population are vaccinated that pathogens cannot spread easily (1); protecting unvaccinated individuals (1) \u2014 accept either point."
   },
   {
     "id": "B3-SA-005",
@@ -390,7 +492,7 @@
     "command_word": "Explain",
     "topic": "Immune System",
     "question": "Explain how phagocytes defend the body against infection.",
-    "mark_scheme": "Phagocytes detect and move towards pathogens (1); engulf the pathogen (1); enzymes digest and destroy the pathogen (1) — any two."
+    "mark_scheme": "Phagocytes detect and move towards pathogens (1); engulf the pathogen (1); enzymes digest and destroy the pathogen (1) \u2014 any two."
   },
   {
     "id": "B3-SA-006",
@@ -399,7 +501,7 @@
     "command_word": "Explain",
     "topic": "Vaccination",
     "question": "Explain how a vaccine protects a person against future infection.",
-    "mark_scheme": "Vaccine introduces dead or weakened pathogen / antigens (1); white blood cells produce antibodies (1); memory cells are produced (1); if the real pathogen enters, a faster and larger immune response occurs (1) — any two."
+    "mark_scheme": "Vaccine introduces dead or weakened pathogen / antigens (1); white blood cells produce antibodies (1); memory cells are produced (1); if the real pathogen enters, a faster and larger immune response occurs (1) \u2014 any two."
   },
   {
     "id": "B3-SA-007",
@@ -408,7 +510,7 @@
     "command_word": "Describe",
     "topic": "Pathogens",
     "question": "Describe two ways in which pathogens can be spread between people.",
-    "mark_scheme": "Through the air / droplets from sneezing or coughing (1); direct contact / touching (1); contaminated food or water (1); through a vector e.g. mosquito (1); exchange of body fluids (1) — any two."
+    "mark_scheme": "Through the air / droplets from sneezing or coughing (1); direct contact / touching (1); contaminated food or water (1); through a vector e.g. mosquito (1); exchange of body fluids (1) \u2014 any two."
   },
   {
     "id": "B3-SA-008",
@@ -417,7 +519,7 @@
     "command_word": "Explain",
     "topic": "Drugs",
     "question": "Explain how antibiotic resistance develops in bacteria.",
-    "mark_scheme": "Random mutation produces resistant bacteria (1); antibiotics kill non-resistant bacteria (1); resistant bacteria survive and reproduce (1); resistance genes passed to offspring (1) — any two."
+    "mark_scheme": "Random mutation produces resistant bacteria (1); antibiotics kill non-resistant bacteria (1); resistant bacteria survive and reproduce (1); resistance genes passed to offspring (1) \u2014 any two."
   },
   {
     "id": "B3-SA-009",
@@ -426,7 +528,7 @@
     "command_word": "Describe",
     "topic": "Drug Development",
     "question": "Describe what happens during a double blind clinical trial.",
-    "mark_scheme": "Some patients receive the real drug, others receive a placebo (1); neither the patients nor the doctors know who receives which (1); reduces bias in the results (1) — any two."
+    "mark_scheme": "Some patients receive the real drug, others receive a placebo (1); neither the patients nor the doctors know who receives which (1); reduces bias in the results (1) \u2014 any two."
   },
   {
     "id": "B3-SA-010",
@@ -435,7 +537,7 @@
     "command_word": "Explain",
     "topic": "Immune System",
     "question": "Explain how the immune system responds to a pathogen it has not encountered before.",
-    "mark_scheme": "Pathogen has antigens on its surface (1); lymphocytes detect the antigens (1); lymphocytes produce specific antibodies (1); antibodies bind to antigens and destroy the pathogen (1); memory cells are produced (1) — any three."
+    "mark_scheme": "Pathogen has antigens on its surface (1); lymphocytes detect the antigens (1); lymphocytes produce specific antibodies (1); antibodies bind to antigens and destroy the pathogen (1); memory cells are produced (1) \u2014 any three."
   },
   {
     "id": "B3-SA-011",
@@ -444,7 +546,7 @@
     "command_word": "Explain",
     "topic": "Pathogens",
     "question": "Explain the difference between how viruses and bacteria cause disease.",
-    "mark_scheme": "Bacteria are living cells that release toxins (1); toxins damage tissues and cause symptoms (1); viruses are not living / not cells (1); viruses invade host cells and replicate inside them (1); this damages or destroys the host cells (1) — any three."
+    "mark_scheme": "Bacteria are living cells that release toxins (1); toxins damage tissues and cause symptoms (1); viruses are not living / not cells (1); viruses invade host cells and replicate inside them (1); this damages or destroys the host cells (1) \u2014 any three."
   },
   {
     "id": "B3-SA-012",
@@ -453,7 +555,7 @@
     "command_word": "Describe",
     "topic": "Drug Development",
     "question": "Describe the stages involved in testing a new drug before it can be prescribed to patients.",
-    "mark_scheme": "Pre-clinical testing on cells / tissues / animals (1); checks for toxicity / efficacy / dosage (1); clinical trials on human volunteers (1); tested against a placebo (1); double blind trial used to prevent bias (1); approved by regulatory bodies (1) — any three."
+    "mark_scheme": "Pre-clinical testing on cells / tissues / animals (1); checks for toxicity / efficacy / dosage (1); clinical trials on human volunteers (1); tested against a placebo (1); double blind trial used to prevent bias (1); approved by regulatory bodies (1) \u2014 any three."
   },
   {
     "id": "B3-LA-001",
@@ -462,7 +564,7 @@
     "command_word": "Explain",
     "topic": "Vaccination",
     "question": "Explain how vaccination protects both individuals and populations from infectious disease.",
-    "mark_scheme": "Vaccine contains dead or weakened pathogen / antigens (1); immune system produces antibodies (1); memory cells remain (1); faster response if pathogen encountered again (1); herd immunity — if enough people vaccinated pathogen cannot spread (1); protects those who cannot be vaccinated e.g. babies / immunocompromised (1) — any four."
+    "mark_scheme": "Vaccine contains dead or weakened pathogen / antigens (1); immune system produces antibodies (1); memory cells remain (1); faster response if pathogen encountered again (1); herd immunity \u2014 if enough people vaccinated pathogen cannot spread (1); protects those who cannot be vaccinated e.g. babies / immunocompromised (1) \u2014 any four."
   },
   {
     "id": "B3-LA-002",
@@ -471,7 +573,7 @@
     "command_word": "Describe",
     "topic": "Immune System",
     "question": "Describe the non-specific and specific defences the human body uses to fight infection.",
-    "mark_scheme": "Non-specific: skin as physical barrier (1); mucus traps pathogens (1); cilia move mucus (1); stomach acid kills pathogens (1). Specific: phagocytes engulf pathogens (1); lymphocytes produce specific antibodies (1); memory cells for future immunity (1) — any four."
+    "mark_scheme": "Non-specific: skin as physical barrier (1); mucus traps pathogens (1); cilia move mucus (1); stomach acid kills pathogens (1). Specific: phagocytes engulf pathogens (1); lymphocytes produce specific antibodies (1); memory cells for future immunity (1) \u2014 any four."
   },
   {
     "id": "B3-LA-003",
@@ -480,7 +582,7 @@
     "command_word": "Explain",
     "topic": "Drugs",
     "question": "Explain why antibiotic resistance is a serious global health concern and describe steps that can be taken to reduce it.",
-    "mark_scheme": "Resistant bacteria cannot be killed by current antibiotics (1); infections become harder to treat (1); resistance spreads through populations (1); steps: only prescribe when necessary (1); complete full course of antibiotics (1); develop new antibiotics (1) — any four."
+    "mark_scheme": "Resistant bacteria cannot be killed by current antibiotics (1); infections become harder to treat (1); resistance spreads through populations (1); steps: only prescribe when necessary (1); complete full course of antibiotics (1); develop new antibiotics (1) \u2014 any four."
   },
   {
     "id": "B3-LA-004",
@@ -489,7 +591,7 @@
     "command_word": "Explain",
     "topic": "Pathogens",
     "question": "Explain how malaria is transmitted and describe methods used to control its spread.",
-    "mark_scheme": "Malaria caused by a protist (1); transmitted by the Anopheles mosquito — a vector (1); mosquito bites infected person then bites healthy person (1); control methods: insecticides to kill mosquitoes (1); mosquito nets to prevent bites (1); draining stagnant water where mosquitoes breed (1); antiviral drugs (1) — any four."
+    "mark_scheme": "Malaria caused by a protist (1); transmitted by the Anopheles mosquito \u2014 a vector (1); mosquito bites infected person then bites healthy person (1); control methods: insecticides to kill mosquitoes (1); mosquito nets to prevent bites (1); draining stagnant water where mosquitoes breed (1); antiviral drugs (1) \u2014 any four."
   },
   {
     "id": "B3-LA-005",
@@ -498,7 +600,7 @@
     "command_word": "Explain",
     "topic": "Immune System",
     "question": "Explain the difference between the primary and secondary immune response. Why does a secondary infection with the same pathogen result in milder or no symptoms?",
-    "mark_scheme": "Primary response: first encounter with pathogen (1); takes time to produce enough antibodies (1); symptoms develop during this time (1). Secondary response: memory cells recognise the antigen (1); faster and larger antibody production (1); pathogen destroyed before symptoms develop (1); explains basis of vaccination (1) — any five."
+    "mark_scheme": "Primary response: first encounter with pathogen (1); takes time to produce enough antibodies (1); symptoms develop during this time (1). Secondary response: memory cells recognise the antigen (1); faster and larger antibody production (1); pathogen destroyed before symptoms develop (1); explains basis of vaccination (1) \u2014 any five."
   },
   {
     "id": "B3-LA-006",
@@ -507,7 +609,7 @@
     "command_word": "Evaluate",
     "topic": "Vaccination",
     "question": "Evaluate the use of vaccination programmes to control infectious diseases. Include arguments for and against vaccination in your answer.",
-    "mark_scheme": "For: prevents disease in vaccinated individuals (1); herd immunity protects whole population (1); has eradicated diseases e.g. smallpox (1); cost-effective compared to treating disease (1). Against: some people have side effects (1); some people object on religious or ethical grounds (1); vaccines may not be 100% effective (1); some pathogens mutate so vaccines become less effective (1) — any six points."
+    "mark_scheme": "For: prevents disease in vaccinated individuals (1); herd immunity protects whole population (1); has eradicated diseases e.g. smallpox (1); cost-effective compared to treating disease (1). Against: some people have side effects (1); some people object on religious or ethical grounds (1); vaccines may not be 100% effective (1); some pathogens mutate so vaccines become less effective (1) \u2014 any six points."
   },
   {
     "id": "B3-LA-007",
@@ -516,6 +618,276 @@
     "command_word": "Explain",
     "topic": "Drug Development",
     "question": "Explain the process of developing a new drug from discovery to being available to patients. Include why this process takes a long time.",
-    "mark_scheme": "Discovery of potential drug compound (1); pre-clinical testing on cells and animals (1); checks for toxicity / side effects / efficacy (1); clinical trials on human volunteers (1); placebo used as control (1); double blind trial to avoid bias (1); tested on larger groups over time (1); regulatory approval required (1); process takes years to ensure safety (1) — any six."
+    "mark_scheme": "Discovery of potential drug compound (1); pre-clinical testing on cells and animals (1); checks for toxicity / side effects / efficacy (1); clinical trials on human volunteers (1); placebo used as control (1); double blind trial to avoid bias (1); tested on larger groups over time (1); regulatory approval required (1); process takes years to ensure safety (1) \u2014 any six."
+  },
+  {
+    "id": "B3-LA-005",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Pathogens",
+    "question": "Explain the difference between bacteria, viruses and fungi as pathogens. Include one disease caused by each type.",
+    "mark_scheme": "Bacteria: single-celled prokaryotes that reproduce rapidly and release toxins, e.g. Salmonella (1); viruses: non-living particles that invade cells and replicate inside them, e.g. influenza (1); fungi: eukaryotic organisms that can infect skin/organs, e.g. athlete's foot (1); each type requires a different treatment \u2014 bacteria: antibiotics; viruses: antivirals/vaccines (1)."
+  },
+  {
+    "id": "B3-LA-006",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Viral Diseases",
+    "question": "Describe how the HIV virus causes AIDS. Include how HIV is transmitted and why AIDS is life-threatening.",
+    "mark_scheme": "HIV attacks white blood cells / T-helper lymphocytes (1); reduces the number of immune cells available (1); AIDS occurs when immune system is so weakened it cannot fight infections (1); person becomes susceptible to 'opportunistic infections' that a healthy immune system would easily overcome (1)."
+  },
+  {
+    "id": "B3-LA-007",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Bacterial Diseases",
+    "question": "Explain how Salmonella bacteria cause food poisoning. Include how it is spread and the role of toxins.",
+    "mark_scheme": "Salmonella is ingested in contaminated food / undercooked poultry (1); bacteria multiply in the gut (1); bacteria produce toxins (1); toxins cause symptoms: vomiting, diarrhoea, stomach cramps, fever (1)."
+  },
+  {
+    "id": "B3-LA-008",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Defence Systems",
+    "question": "Describe three physical or chemical barriers the human body uses to prevent pathogens from entering.",
+    "mark_scheme": "Skin: forms a physical barrier, prevents entry (1); mucus in the breathing system traps pathogens (1); stomach acid (HCl) kills pathogens in food (1); cilia in the trachea sweep mucus away from lungs (1). Accept: nose hairs trap particles / tears contain lysozyme."
+  },
+  {
+    "id": "B3-LA-009",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Immune System",
+    "question": "Explain what is meant by the term 'specific immune response'. Include the role of antigens and antibodies.",
+    "mark_scheme": "Each pathogen has specific antigens on its surface (1); white blood cells (lymphocytes) produce antibodies specific to those antigens (1); antibodies bind to antigens \u2014 complementary shape (1); this leads to destruction of the pathogen, and memory cells remain for future infections (1)."
+  },
+  {
+    "id": "B3-LA-010",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Fungal and Protist Diseases",
+    "question": "Explain how malaria is transmitted and why it is difficult to control.",
+    "mark_scheme": "Malaria is caused by a Plasmodium protist (1); transmitted via the bite of infected female Anopheles mosquitoes (1); mosquito acts as a vector \u2014 carries the pathogen without being infected (1); difficult to control: mosquitoes widespread, insecticides harmful to environment, Plasmodium is developing drug resistance (1)."
+  },
+  {
+    "id": "B3-LA-011",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Immune System",
+    "question": "Describe how vaccination protects both an individual and a population (herd immunity).",
+    "mark_scheme": "Vaccine contains dead/weakened/fragment of pathogen (1); body produces antibodies and memory cells without suffering the disease (1); if exposed later, rapid antibody production prevents illness (1); herd immunity: if enough people are vaccinated, pathogen cannot spread \u2014 protects those who cannot be vaccinated (1)."
+  },
+  {
+    "id": "B3-LA-012",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Viral Diseases",
+    "question": "Explain how the measles virus spreads and describe the complications that can arise from measles infection.",
+    "mark_scheme": "Measles spreads via respiratory droplets / airborne transmission (1); highly contagious \u2014 one infected person can infect ~18 others (1); complications: pneumonia, encephalitis (brain inflammation) (1); MMR vaccine provides effective protection \u2014 second dose gives ~97% immunity (1)."
+  },
+  {
+    "id": "B3-LA-013",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Evaluate",
+    "topic": "Defence Systems",
+    "question": "Evaluate the use of antibiotics in treating bacterial infections. Include why antibiotics do not work against viruses and the problem of antibiotic resistance.",
+    "mark_scheme": "Antibiotics kill or inhibit growth of bacteria \u2014 effective against bacterial infections (1); antibiotics do not work on viruses \u2014 viruses do not have the cell structures antibiotics target (1); antibiotic resistance: random mutations produce bacteria that survive antibiotic treatment (1); resistant strains reproduce and spread \u2014 fewer effective treatments available (1)."
+  },
+  {
+    "id": "B3-LA-014",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Bacterial Diseases",
+    "question": "Describe the precautions taken in hospitals to prevent the spread of antibiotic-resistant bacteria such as MRSA.",
+    "mark_scheme": "Regular hand washing with soap and alcohol gel (1); isolation of infected patients (1); screening patients for MRSA before admission (1); cleaning surfaces with disinfectants; use of personal protective equipment (PPE) (1)."
+  },
+  {
+    "id": "B3-LA-015",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Immune System",
+    "question": "Explain why the secondary immune response is faster and stronger than the primary immune response.",
+    "mark_scheme": "After first infection, memory cells are produced (1); memory cells remain in the bloodstream for many years (1); on second exposure to same antigen, memory cells divide rapidly (1); large quantities of antibodies produced quickly before symptoms develop (1)."
+  },
+  {
+    "id": "B3-LA-016",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Defence Systems",
+    "question": "Explain how the body responds to a bacterial infection. Include both non-specific and specific defences and the role of phagocytes and lymphocytes.",
+    "mark_scheme": "Non-specific: inflammation at site of infection \u2014 increased blood flow (1); phagocytes engulf bacteria by phagocytosis (1); specific: lymphocytes detect antigens on bacteria (1); B lymphocytes produce specific antibodies (1); T lymphocytes destroy infected cells; memory cells form for future exposure (1)."
+  },
+  {
+    "id": "B3-LA-017",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Immune System",
+    "question": "Evaluate the advantages and disadvantages of using vaccines to control infectious diseases at a population level.",
+    "mark_scheme": "Advantages: prevents disease without risk of infection (1); creates herd immunity \u2014 protects vulnerable people who cannot be vaccinated (1); eradicated some diseases \u2014 e.g. smallpox (1); Disadvantages: some vaccines have rare side effects (1); requires high uptake in population to achieve herd immunity; some pathogens mutate rapidly requiring new vaccines (1)."
+  },
+  {
+    "id": "B3-LA-018",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Pathogens",
+    "question": "Explain how scientists develop and test new drugs to treat infectious diseases. Include the stages from laboratory testing to clinical trials.",
+    "mark_scheme": "Drug tested on cells/tissues in laboratory \u2014 checks for toxicity (1); tested on animals \u2014 checks effectiveness and safety at larger scale (1); clinical trials: drug tested on healthy volunteers at low dose first (1); then tested on patients \u2014 double-blind trials compare drug vs placebo (1); data analysed \u2014 drug only approved if safe and effective (1)."
+  },
+  {
+    "id": "B3-LA-019",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Fungal and Protist Diseases",
+    "question": "Describe how scientists work to control the spread of malaria. Include biological, chemical and physical methods.",
+    "mark_scheme": "Insecticides: spray mosquito breeding sites with chemicals to kill larvae (1); insecticide-treated bed nets prevent mosquito biting at night (1); draining stagnant water to remove mosquito breeding sites (1); biological control: using natural predators of mosquitoes (1); antimalarial drugs reduce symptoms and prevent death (1)."
+  },
+  {
+    "id": "B3-LA-020",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Viral Diseases",
+    "question": "Explain how the influenza virus causes disease and why new flu vaccines are needed each year.",
+    "mark_scheme": "Influenza virus infects cells in the respiratory tract (1); replicates inside host cells and destroys them (1); causes symptoms: fever, muscle aches, fatigue (1); influenza virus mutates frequently \u2014 antigens on surface change (1); existing antibodies / memory cells no longer recognise new strain \u2014 new vaccine needed annually (1)."
+  },
+  {
+    "id": "B3-LA-021",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Bacterial Diseases",
+    "question": "Describe how bacteria become resistant to antibiotics. Explain why this is a major global health concern.",
+    "mark_scheme": "Random mutations occur in bacterial DNA (1); some mutations make bacteria less susceptible to antibiotics (1); bacteria with resistant mutation survive and reproduce (1); resistant strain passes on resistance \u2014 natural selection (1); concern: fewer effective antibiotics available; infections become untreatable; resistant strains spread globally (1)."
+  },
+  {
+    "id": "B3-LA-022",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Immune System",
+    "question": "Explain how monoclonal antibodies can be used to treat cancer. Include how they are made and two ways they can target cancer cells.",
+    "mark_scheme": "Mouse immunised with tumour antigen \u2014 produces lymphocytes (1); lymphocytes fused with myeloma cells to make hybridoma cells (1); hybridoma cells produce large quantities of identical antibodies specific to tumour antigen (1); carry radioactive isotope directly to tumour \u2014 targeted radiation therapy (1); carry chemotherapy drug directly to cancer cells \u2014 reduces side effects on healthy tissue (1)."
+  },
+  {
+    "id": "B3-LA-023",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Viral Diseases",
+    "question": "Compare the way HIV and influenza viruses cause disease. Include how each is transmitted and the long-term effects on health.",
+    "mark_scheme": "HIV: sexually transmitted / blood contact; influenza: respiratory droplets (1); HIV attacks T-helper lymphocytes \u2014 progressive immune destruction (1); influenza attacks respiratory epithelial cells \u2014 acute infection (1); HIV leads to AIDS if untreated \u2014 susceptibility to opportunistic infections (1); influenza usually self-limiting but can be fatal in elderly/immunocompromised (1)."
+  },
+  {
+    "id": "B3-LA-024",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Defence Systems",
+    "question": "Describe how non-specific physical and chemical defences work together to prevent pathogens from entering the body.",
+    "mark_scheme": "Skin: tough barrier, produces acidic secretions that inhibit bacterial growth (1); cilia in trachea: beat to sweep mucus with trapped pathogens up to throat (1); mucus traps bacteria and viruses (1); stomach acid (pH 2) kills most bacteria in food (1); tears contain lysozyme enzyme \u2014 breaks down bacterial cell walls (1)."
+  },
+  {
+    "id": "B3-LA-025",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Pathogens",
+    "question": "Evaluate the claim that vaccination has been the most important medical advance in human history. Include evidence for and against this claim.",
+    "mark_scheme": "For: smallpox eradicated globally through vaccination (1); dramatic reduction in measles, polio, diphtheria deaths (1); herd immunity protects entire populations (1); cost-effective compared to treating illness (1); Against: improved sanitation/clean water also reduced disease (1) / no vaccine exists for many diseases e.g. HIV, malaria; antibiotic resistant bacteria increasing (1) \u2014 5 marks for balanced discussion."
+  },
+  {
+    "id": "B3-LA-026",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Immune System",
+    "question": "Explain how the immune system responds to infection and how vaccination exploits this response to provide protection. Include the roles of B-cells, T-cells, antibodies and memory cells.",
+    "mark_scheme": "Pathogen enters body; non-specific response (phagocytosis) begins (1); B lymphocytes identify specific antigens on pathogen surface (1); B cells differentiate and produce specific antibodies (1); antibodies bind to antigens \u2014 pathogen neutralised or destroyed (1); T-killer cells destroy infected body cells (1); memory B and T cells remain \u2014 rapid response on re-exposure (1). Vaccination: introduces harmless antigen \u2014 stimulates same response without disease, creating memory cells (bonus for clarity \u2014 any 6 points)."
+  },
+  {
+    "id": "B3-LA-027",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Pathogens",
+    "question": "Evaluate different methods of controlling the spread of communicable diseases at a global level. Include vaccination, antibiotics, quarantine and improved sanitation.",
+    "mark_scheme": "Vaccination: prevents disease in individuals, creates herd immunity \u2014 most effective for viral diseases (1); antibiotics: treat bacterial infections but overuse leads to resistance (1); quarantine: isolating infected individuals slows spread but impractical for mild illness (1); improved sanitation / clean water: prevents spread of water-borne diseases like cholera (1); each method has limitations \u2014 vaccines take years to develop; sanitation improvements costly (1); most effective approach combines multiple strategies (1)."
+  },
+  {
+    "id": "B3-LA-028",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Describe",
+    "topic": "Bacterial Diseases",
+    "question": "Describe the problem of antibiotic resistance and evaluate the measures that can be taken to slow its spread.",
+    "mark_scheme": "Antibiotic resistance arises through natural selection \u2014 resistant bacteria survive treatment (1); resistant genes passed to offspring / can be transferred between bacteria by plasmids (1); MRSA example \u2014 resistant to most antibiotics (1); measures: only prescribe antibiotics when essential (1); complete the full course of antibiotics (1); develop new antibiotics \u2014 but expensive and slow (1). Accept: better hygiene in hospitals / surveillance of resistance patterns."
+  },
+  {
+    "id": "B3-LA-029",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Fungal and Protist Diseases",
+    "question": "Explain the life cycle of the malaria parasite and why malaria is particularly difficult to treat and prevent.",
+    "mark_scheme": "Plasmodium parasite transmitted by female Anopheles mosquito bite (1); parasite enters bloodstream, travels to liver and reproduces (1); then enters and destroys red blood cells in cycles \u2014 causes cyclical fever (1); treatment: anti-malarial drugs target the parasite but resistance is developing (1); prevention: insecticide-treated nets, draining standing water, mosquito repellents (1); challenge: parasite has complex life cycle in two hosts; mosquitoes widespread in tropical regions; poverty limits access to prevention measures (1)."
+  },
+  {
+    "id": "B3-LA-030",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Immune System",
+    "question": "Evaluate the use of monoclonal antibodies in medicine. Include how they are produced, their diagnostic uses, therapeutic uses, and any limitations.",
+    "mark_scheme": "Production: immunise mouse \u2192 collect B lymphocytes \u2192 fuse with myeloma cells \u2192 hybridoma produces monoclonal antibodies (1); diagnostic: home pregnancy test detects hCG hormone (1); cancer diagnosis: labelled antibodies locate tumour cells in scans (1); therapeutic: carry chemotherapy drug specifically to cancer cells (1); advantages: highly specific, reduce side effects compared to traditional chemotherapy (1); limitations: expensive, some patients have side effects, require ongoing development (1)."
+  },
+  {
+    "id": "B3-LA-031",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Defence Systems",
+    "question": "Explain how the development of antiseptics and antibiotics has changed medicine. Include who discovered each and the impact on infection rates.",
+    "mark_scheme": "Ignaz Semmelweis: showed handwashing reduced childbed fever deaths \u2014 early evidence for germ theory (1); Joseph Lister: introduced carbolic acid spray as antiseptic during surgery \u2014 reduced surgical infections (1); Alexander Fleming: discovered penicillin from Penicillium mould (1); Florey and Chain: developed penicillin for medical use in World War II (1); dramatic reduction in deaths from infection \u2014 e.g. wound infections, pneumonia (1); now threatened by antibiotic resistance \u2014 importance of careful stewardship (1)."
+  },
+  {
+    "id": "B3-LA-032",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Viral Diseases",
+    "question": "The COVID-19 pandemic demonstrated both the power and limitations of modern medicine. Evaluate the scientific response to the pandemic, including vaccine development, antiviral drugs, and public health measures.",
+    "mark_scheme": "Vaccines developed in under a year using mRNA technology \u2014 new approach (1); trials showed >90% effectiveness at preventing severe disease (1); antivirals (e.g. antiprotease drugs) reduced hospitalisation for high-risk groups (1); public health measures: social distancing, masks, quarantine reduced transmission (1); limitations: vaccine hesitancy reduced uptake; virus mutated (variants) reducing vaccine effectiveness over time (1); global inequality: wealthy nations vaccinated faster than poorer nations (1)."
+  },
+  {
+    "id": "B3-LA-033",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Pathogens",
+    "question": "Explain how a new drug is developed and trialled before it becomes available to patients. Include ethical considerations in clinical trials.",
+    "mark_scheme": "Drug initially tested in laboratory on cells or tissues \u2014 checks basic toxicity (1); animal testing checks for safety and efficacy before human use (1); Phase I clinical trial: small group of healthy volunteers \u2014 checks safety and dosage (1); Phase II: patients given drug \u2014 checks effectiveness and side effects (1); Phase III: large-scale double-blind randomised controlled trial \u2014 compared against placebo or existing treatment (1); ethics: informed consent required; participants can withdraw; double-blind prevents bias (1)."
+  },
+  {
+    "id": "B3-LA-034",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Pathogens",
+    "question": "Explain how scientists use double-blind trials to test new drugs. Include the roles of the control group, placebo, and why neither patients nor doctors know who receives the drug.",
+    "mark_scheme": "Participants randomly assigned to treatment or control group (1); control group receives a placebo \u2014 identical in appearance but no active drug (1); double-blind: neither the patient nor the doctor knows who receives the drug (1); this prevents bias \u2014 doctors cannot unconsciously treat patients differently (1); results compared between groups to determine drug effectiveness (1)."
   }
 ]

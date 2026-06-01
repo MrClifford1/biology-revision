@@ -1,55 +1,874 @@
 [
-  {"id":"P7-MC-001","type":"multiple_choice","marks":1,"topic":"Magnetism","question":"Which of the following materials is magnetic?","options":["Copper","Aluminium","Nickel","Gold"],"correct":"Nickel"},
-  {"id":"P7-MC-002","type":"multiple_choice","marks":1,"topic":"Magnetism","question":"What happens when two north poles of magnets are brought together?","options":["They attract","They repel","Nothing happens","One pole reverses"],"correct":"They repel"},
-  {"id":"P7-MC-003","type":"multiple_choice","marks":1,"topic":"Magnetism","question":"What is the direction of magnetic field lines outside a bar magnet?","options":["From south to north","From north to south","Randomly in all directions","Parallel to the magnet"],"correct":"From north to south"},
-  {"id":"P7-MC-004","type":"multiple_choice","marks":1,"topic":"Magnetism","question":"Which type of magnet loses its magnetism when removed from an external magnetic field?","options":["Permanent magnet","Induced magnet","Electromagnet","Bar magnet"],"correct":"Induced magnet"},
-  {"id":"P7-MC-005","type":"multiple_choice","marks":1,"topic":"Electromagnetism","question":"What happens to the strength of an electromagnet if the number of coils is increased?","options":["It decreases","It stays the same","It increases","It reverses direction"],"correct":"It increases"},
-  {"id":"P7-MC-006","type":"multiple_choice","marks":1,"topic":"Electromagnetism","question":"What is the core of an electromagnet usually made from?","options":["Steel","Copper","Iron","Aluminium"],"correct":"Iron"},
-  {"id":"P7-MC-007","type":"multiple_choice","marks":1,"topic":"Motor Effect","question":"What is the unit of magnetic flux density?","options":["Watt","Tesla","Ampere","Newton"],"correct":"Tesla"},
-  {"id":"P7-MC-008","type":"multiple_choice","marks":1,"topic":"Motor Effect","question":"Fleming's left-hand rule is used to find the direction of which quantity?","options":["Current","Magnetic field","Force on a conductor","Voltage"],"correct":"Force on a conductor"},
-  {"id":"P7-MC-009","type":"multiple_choice","marks":1,"topic":"Motor Effect","question":"A wire carries a current of 2 A in a magnetic field of flux density 0.5 T. The length of wire in the field is 0.3 m. What is the force on the wire?","options":["0.3 N","1.0 N","0.3 N","0.6 N"],"correct":"0.3 N"},
-  {"id":"P7-MC-010","type":"multiple_choice","marks":1,"topic":"Motor Effect","question":"What is the function of the split-ring commutator in a DC motor?","options":["To increase the current","To reverse the current every half turn","To increase the magnetic field","To reduce friction"],"correct":"To reverse the current every half turn"},
-  {"id":"P7-MC-011","type":"multiple_choice","marks":1,"topic":"Generators","question":"What type of current does a generator produce?","options":["Direct current","Alternating current","Static current","Pulsed DC"],"correct":"Alternating current"},
-  {"id":"P7-MC-012","type":"multiple_choice","marks":1,"topic":"Generators","question":"Which of the following would increase the induced potential difference in a generator?","options":["Rotating the coil more slowly","Using a weaker magnet","Increasing the number of turns on the coil","Decreasing the size of the coil"],"correct":"Increasing the number of turns on the coil"},
-  {"id":"P7-MC-013","type":"multiple_choice","marks":1,"topic":"Transformers","question":"A step-up transformer has 100 turns on the primary coil and 500 turns on the secondary coil. If the input voltage is 20 V, what is the output voltage?","options":["4 V","100 V","20 V","500 V"],"correct":"100 V"},
-  {"id":"P7-MC-014","type":"multiple_choice","marks":1,"topic":"Transformers","question":"Why does the National Grid transmit electricity at high voltage?","options":["To increase the current","To reduce energy loss in the cables","To make it safer","To increase the power output"],"correct":"To reduce energy loss in the cables"},
-  {"id":"P7-MC-015","type":"multiple_choice","marks":1,"topic":"Transformers","question":"Which type of transformer is used to increase voltage before electricity is transmitted through the National Grid?","options":["Step-down transformer","Step-up transformer","Isolation transformer","Iron-core transformer"],"correct":"Step-up transformer"},
-
-  {"id":"P7-FIB-001","type":"fill_in_blank","marks":1,"topic":"Magnetism","question":"Like poles __________, unlike poles attract.","correct":"repel","acceptable":["repel"]},
-  {"id":"P7-FIB-002","type":"fill_in_blank","marks":1,"topic":"Magnetism","question":"The region around a magnet where a magnetic force is experienced is called the magnetic __________.","correct":"field","acceptable":["field"]},
-  {"id":"P7-FIB-003","type":"fill_in_blank","marks":1,"topic":"Electromagnetism","question":"A coil of wire carrying a current that produces a magnetic field is called a __________.","correct":"solenoid","acceptable":["solenoid"]},
-  {"id":"P7-FIB-004","type":"fill_in_blank","marks":1,"topic":"Motor Effect","question":"The force on a current-carrying conductor in a magnetic field is calculated using F = __________ × I × L.","correct":"B","acceptable":["B","magnetic flux density"]},
-  {"id":"P7-FIB-005","type":"fill_in_blank","marks":1,"topic":"Motor Effect","question":"Fleming's __________ rule is used to determine the direction of force on a current-carrying conductor in a magnetic field.","correct":"left-hand","acceptable":["left-hand","left hand"]},
-  {"id":"P7-FIB-006","type":"fill_in_blank","marks":1,"topic":"Generators","question":"The process by which a changing magnetic field generates a voltage in a conductor is called electromagnetic __________.","correct":"induction","acceptable":["induction"]},
-  {"id":"P7-FIB-007","type":"fill_in_blank","marks":1,"topic":"Generators","question":"A generator converts kinetic energy into __________ energy.","correct":"electrical","acceptable":["electrical","electric"]},
-  {"id":"P7-FIB-008","type":"fill_in_blank","marks":1,"topic":"Transformers","question":"A transformer only works with __________ current, not direct current.","correct":"alternating","acceptable":["alternating","AC"]},
-  {"id":"P7-FIB-009","type":"fill_in_blank","marks":1,"topic":"Transformers","question":"The transformer equation is: Vp ÷ Vs = np ÷ __________.","correct":"ns","acceptable":["ns","number of turns on secondary coil"]},
-  {"id":"P7-FIB-010","type":"fill_in_blank","marks":1,"topic":"Transformers","question":"Power loss in National Grid cables is calculated using P = I² × __________.","correct":"R","acceptable":["R","resistance"]},
-
-  {"id":"P7-MATCH-001","type":"match","marks":3,"topic":"Magnetism","question":"Match each magnetic material type to its correct description.","pairs":[{"term":"Permanent magnet","definition":"Produces its own magnetic field at all times — made from hard magnetic materials like steel"},{"term":"Induced magnet","definition":"Becomes magnetic only in an external field — loses magnetism when field is removed"},{"term":"Electromagnet","definition":"A solenoid with an iron core — magnetism can be switched on and off"}]},
-  {"id":"P7-MATCH-002","type":"match","marks":3,"topic":"Motor Effect","question":"Match each finger in Fleming's left-hand rule to what it represents.","pairs":[{"term":"Thumb","definition":"Direction of force (motion)"},{"term":"Index finger","definition":"Direction of magnetic field"},{"term":"Middle finger","definition":"Direction of conventional current"}]},
-  {"id":"P7-MATCH-003","type":"match","marks":3,"topic":"Transformers","question":"Match each transformer type to its effect on voltage and turns.","pairs":[{"term":"Step-up transformer","definition":"More turns on secondary coil — output voltage is higher than input"},{"term":"Step-down transformer","definition":"Fewer turns on secondary coil — output voltage is lower than input"},{"term":"National Grid transmission","definition":"Uses step-up transformers to reduce current and minimise power loss in cables"}]},
-  {"id":"P7-MATCH-004","type":"match","marks":3,"topic":"Generators","question":"Match each term to its correct definition.","pairs":[{"term":"Electromagnetic induction","definition":"Generation of a voltage by a changing magnetic field"},{"term":"Alternating current","definition":"Current that repeatedly reverses direction"},{"term":"Direct current","definition":"Current that flows in one direction only"}]},
-  {"id":"P7-MATCH-005","type":"match","marks":3,"topic":"Electromagnetism","question":"Match each method to how it increases the strength of an electromagnet.","pairs":[{"term":"Increase current","definition":"Greater current produces a stronger magnetic field"},{"term":"Increase number of coil turns","definition":"More turns concentrates the magnetic field"},{"term":"Add an iron core","definition":"Iron becomes an induced magnet, greatly amplifying the field"}]},
-
-  {"id":"P7-SA-001","type":"written","marks":2,"command_word":"State","topic":"Magnetism","question":"State the difference between a permanent magnet and an induced magnet.","mark_scheme":"A permanent magnet produces its own magnetic field at all times (1); an induced magnet only becomes magnetic when placed in an external magnetic field and loses its magnetism when removed (1)."},
-  {"id":"P7-SA-002","type":"written","marks":2,"command_word":"Describe","topic":"Magnetism","question":"Describe the magnetic field pattern around a bar magnet.","mark_scheme":"Field lines go from north to south pole outside the magnet (1); lines are closer together near the poles where the field is strongest (1)."},
-  {"id":"P7-SA-003","type":"written","marks":3,"command_word":"Explain","topic":"Electromagnetism","question":"Explain three ways to increase the strength of an electromagnet.","mark_scheme":"Increase the current through the coil (1); increase the number of turns of wire on the coil (1); add an iron core inside the solenoid (1)."},
-  {"id":"P7-SA-004","type":"written","marks":2,"command_word":"Describe","topic":"Motor Effect","question":"Describe how Fleming's left-hand rule is used to determine the direction of force on a current-carrying conductor.","mark_scheme":"Hold the left hand with thumb, index finger, and middle finger at right angles to each other (1); index finger = magnetic field direction, middle finger = conventional current direction, thumb = direction of force/motion (1)."},
-  {"id":"P7-SA-005","type":"written","marks":2,"command_word":"Calculate","topic":"Motor Effect","question":"A wire of length 0.5 m carries a current of 3 A in a magnetic field of flux density 0.4 T. Calculate the force on the wire.","mark_scheme":"F = BIL (1); F = 0.4 × 3 × 0.5 = 0.6 N (1)."},
-  {"id":"P7-SA-006","type":"written","marks":3,"command_word":"Explain","topic":"Generators","question":"Explain how a simple AC generator produces an alternating current.","mark_scheme":"A coil of wire rotates inside a magnetic field (1); as the coil rotates, the magnetic flux through it changes, inducing a potential difference (1); the direction of the induced current reverses every half turn, producing alternating current (1)."},
-  {"id":"P7-SA-007","type":"written","marks":2,"command_word":"Explain","topic":"Generators","question":"Explain why a transformer only works with alternating current and not direct current.","mark_scheme":"A transformer requires a changing magnetic field to induce a voltage in the secondary coil (1); DC produces a constant (non-changing) magnetic field so no voltage is induced (1)."},
-  {"id":"P7-SA-008","type":"written","marks":3,"command_word":"Calculate","topic":"Transformers","question":"A transformer has 200 turns on the primary coil and 50 turns on the secondary coil. The input voltage is 240 V. Calculate the output voltage and state what type of transformer this is.","mark_scheme":"Vp/Vs = np/ns → 240/Vs = 200/50 (1); Vs = 240 × 50/200 = 60 V (1); this is a step-down transformer (1)."},
-  {"id":"P7-SA-009","type":"written","marks":2,"command_word":"Explain","topic":"Transformers","question":"Explain why electricity is transmitted at high voltage through the National Grid.","mark_scheme":"High voltage means low current for the same power (P = IV) (1); lower current reduces power loss as heat in the cables (P = I²R) (1)."},
-  {"id":"P7-SA-010","type":"written","marks":2,"command_word":"Describe","topic":"Motor Effect","question":"Describe how an electric motor works.","mark_scheme":"A current-carrying coil is placed in a magnetic field and experiences a force due to the motor effect (1); the split-ring commutator reverses the current every half turn so the coil continues to rotate in the same direction (1)."},
-  {"id":"P7-SA-011","type":"written","marks":3,"command_word":"Explain","topic":"Generators","question":"Explain four ways to increase the induced potential difference in a generator.","mark_scheme":"Any three from: increase the speed of rotation of the coil (1); increase the strength of the magnetic field (1); increase the number of turns on the coil (1); increase the area of the coil (1)."},
-  {"id":"P7-SA-012","type":"written","marks":2,"command_word":"State","topic":"Magnetism","question":"State what is meant by the Earth's magnetic field and explain how a compass uses it.","mark_scheme":"The Earth produces a magnetic field, behaving like a giant bar magnet (1); a compass needle is a small magnet that aligns with the Earth's field, pointing towards magnetic north (1)."},
-
-  {"id":"P7-LA-001","type":"written","marks":4,"command_word":"Explain","topic":"Electromagnetism","question":"Explain how an electromagnet works and describe two uses of electromagnets in everyday devices. Explain why an electromagnet is more useful than a permanent magnet in these applications.","mark_scheme":"Current flows through a solenoid, creating a magnetic field; iron core becomes an induced magnet amplifying the field (1); use 1: electric bell / relay / scrapyard crane / circuit breaker (1); use 2: different device from above (1); electromagnets can be switched on and off / strength can be varied — permanent magnets cannot be switched off (1)."},
-  {"id":"P7-LA-002","type":"written","marks":4,"command_word":"Explain","topic":"Motor Effect","question":"Explain the motor effect and describe how it is used in an electric motor to produce continuous rotation.","mark_scheme":"A current-carrying conductor in a magnetic field experiences a force perpendicular to both field and current (motor effect) (1); in a motor, a coil carrying current in a magnetic field experiences forces on opposite sides in opposite directions, creating a turning effect (1); the split-ring commutator reverses the current direction every half turn (1); this ensures the forces always act in the same rotational direction, producing continuous rotation (1)."},
-  {"id":"P7-LA-003","type":"written","marks":5,"command_word":"Explain","topic":"Generators","question":"Explain the process of electromagnetic induction and describe how it is used in a generator to produce electricity. Include the factors that affect the size of the induced potential difference.","mark_scheme":"Electromagnetic induction: a changing magnetic field through a conductor induces a potential difference (1); in a generator, a coil rotates in a magnetic field — flux through the coil changes continuously (1); this induces an alternating potential difference / alternating current (1); induced PD increases with: faster rotation / stronger magnetic field / more turns on coil / larger coil area (1 for any two factors); if the coil is connected to an external circuit, an induced current flows (1)."},
-  {"id":"P7-LA-004","type":"written","marks":5,"command_word":"Explain","topic":"Transformers","question":"Explain how a transformer works and why transformers are essential to the operation of the National Grid. Include a calculation in your answer.","mark_scheme":"AC in primary coil creates a changing magnetic field in the iron core (1); changing field induces a potential difference in the secondary coil (1); step-up transformers increase voltage for transmission — reduces current (1); lower current means less power lost as heat in cables: P = I²R (1); step-down transformers reduce voltage to safe levels for homes (1). Calculation: correct use of Vp/Vs = np/ns with own values, correctly solved (1). [Max 5]"},
-  {"id":"P7-LA-005","type":"written","marks":5,"command_word":"Compare","topic":"Magnetism","question":"Compare permanent magnets and electromagnets. In your answer, discuss their properties, how their magnetic fields are produced, and evaluate which is more suitable for use in a scrapyard crane and in a compass.","mark_scheme":"Permanent magnet: always magnetic, field cannot be switched off, made from hard magnetic material like steel (1); electromagnet: magnetic only when current flows, field can be switched on/off, strength can be varied (1); scrapyard crane: electromagnet is better — can be switched off to release metal objects (1); compass: permanent magnet is better — needs to work without a power supply / always points north reliably (1); well-reasoned comparison with reference to both applications (1)."},
-  {"id":"P7-LA-006","type":"written","marks":6,"command_word":"Evaluate","topic":"Transformers","question":"Evaluate the role of the National Grid in distributing electricity efficiently across the country. In your answer, explain why high voltage is used for transmission, the role of transformers, and discuss any disadvantages of the current system.","mark_scheme":"National Grid transmits electricity from power stations to consumers via cables and transformers (1); step-up transformers increase voltage before transmission, reducing current (1); lower current reduces power loss in cables: P = I²R — less energy wasted as heat (1); step-down transformers reduce voltage to safe levels (230 V) for homes (1); disadvantage: high-voltage cables are a safety hazard / pylons are visually unappealing / energy is still lost despite high voltage (1); well-reasoned conclusion about overall efficiency and importance of the National Grid (1)."},
-  {"id":"P7-LA-007","type":"written","marks":6,"command_word":"Evaluate","topic":"Motor Effect","question":"Evaluate the use of electric motors compared to combustion engines for powering vehicles. In your answer, explain how an electric motor works and discuss the advantages and disadvantages of each power source, including environmental considerations.","mark_scheme":"Electric motor: current-carrying coil in magnetic field experiences a force — motor effect — producing rotation (1); split-ring commutator ensures continuous rotation in one direction (1); advantage of electric motor: no direct emissions / quieter / more energy efficient / lower running costs (1); disadvantage: depends on battery range / charging infrastructure / battery production has environmental impact (1); combustion engine: burns fuel releasing CO₂ and pollutants / contributes to climate change (1); well-reasoned conclusion considering environmental and practical factors (1)."}
+  {
+    "id": "P7-MC-001",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Magnetism",
+    "question": "Which of the following materials is magnetic?",
+    "options": [
+      "Copper",
+      "Aluminium",
+      "Nickel",
+      "Gold"
+    ],
+    "correct": "Nickel"
+  },
+  {
+    "id": "P7-MC-002",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Magnetism",
+    "question": "What happens when two north poles of magnets are brought together?",
+    "options": [
+      "They attract",
+      "They repel",
+      "Nothing happens",
+      "One pole reverses"
+    ],
+    "correct": "They repel"
+  },
+  {
+    "id": "P7-MC-003",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Magnetism",
+    "question": "What is the direction of magnetic field lines outside a bar magnet?",
+    "options": [
+      "From south to north",
+      "From north to south",
+      "Randomly in all directions",
+      "Parallel to the magnet"
+    ],
+    "correct": "From north to south"
+  },
+  {
+    "id": "P7-MC-004",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Magnetism",
+    "question": "Which type of magnet loses its magnetism when removed from an external magnetic field?",
+    "options": [
+      "Permanent magnet",
+      "Induced magnet",
+      "Electromagnet",
+      "Bar magnet"
+    ],
+    "correct": "Induced magnet"
+  },
+  {
+    "id": "P7-MC-005",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Electromagnetism",
+    "question": "What happens to the strength of an electromagnet if the number of coils is increased?",
+    "options": [
+      "It decreases",
+      "It stays the same",
+      "It increases",
+      "It reverses direction"
+    ],
+    "correct": "It increases"
+  },
+  {
+    "id": "P7-MC-006",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Electromagnetism",
+    "question": "What is the core of an electromagnet usually made from?",
+    "options": [
+      "Steel",
+      "Copper",
+      "Iron",
+      "Aluminium"
+    ],
+    "correct": "Iron"
+  },
+  {
+    "id": "P7-MC-007",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Motor Effect",
+    "question": "What is the unit of magnetic flux density?",
+    "options": [
+      "Watt",
+      "Tesla",
+      "Ampere",
+      "Newton"
+    ],
+    "correct": "Tesla"
+  },
+  {
+    "id": "P7-MC-008",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Motor Effect",
+    "question": "Fleming's left-hand rule is used to find the direction of which quantity?",
+    "options": [
+      "Current",
+      "Magnetic field",
+      "Force on a conductor",
+      "Voltage"
+    ],
+    "correct": "Force on a conductor"
+  },
+  {
+    "id": "P7-MC-009",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Motor Effect",
+    "question": "A wire carries a current of 2 A in a magnetic field of flux density 0.5 T. The length of wire in the field is 0.3 m. What is the force on the wire?",
+    "options": [
+      "0.3 N",
+      "1.0 N",
+      "0.3 N",
+      "0.6 N"
+    ],
+    "correct": "0.3 N"
+  },
+  {
+    "id": "P7-MC-010",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Motor Effect",
+    "question": "What is the function of the split-ring commutator in a DC motor?",
+    "options": [
+      "To increase the current",
+      "To reverse the current every half turn",
+      "To increase the magnetic field",
+      "To reduce friction"
+    ],
+    "correct": "To reverse the current every half turn"
+  },
+  {
+    "id": "P7-MC-011",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Generators",
+    "question": "What type of current does a generator produce?",
+    "options": [
+      "Direct current",
+      "Alternating current",
+      "Static current",
+      "Pulsed DC"
+    ],
+    "correct": "Alternating current"
+  },
+  {
+    "id": "P7-MC-012",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Generators",
+    "question": "Which of the following would increase the induced potential difference in a generator?",
+    "options": [
+      "Rotating the coil more slowly",
+      "Using a weaker magnet",
+      "Increasing the number of turns on the coil",
+      "Decreasing the size of the coil"
+    ],
+    "correct": "Increasing the number of turns on the coil"
+  },
+  {
+    "id": "P7-MC-013",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Transformers",
+    "question": "A step-up transformer has 100 turns on the primary coil and 500 turns on the secondary coil. If the input voltage is 20 V, what is the output voltage?",
+    "options": [
+      "4 V",
+      "100 V",
+      "20 V",
+      "500 V"
+    ],
+    "correct": "100 V"
+  },
+  {
+    "id": "P7-MC-014",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Transformers",
+    "question": "Why does the National Grid transmit electricity at high voltage?",
+    "options": [
+      "To increase the current",
+      "To reduce energy loss in the cables",
+      "To make it safer",
+      "To increase the power output"
+    ],
+    "correct": "To reduce energy loss in the cables"
+  },
+  {
+    "id": "P7-MC-015",
+    "type": "multiple_choice",
+    "marks": 1,
+    "topic": "Transformers",
+    "question": "Which type of transformer is used to increase voltage before electricity is transmitted through the National Grid?",
+    "options": [
+      "Step-down transformer",
+      "Step-up transformer",
+      "Isolation transformer",
+      "Iron-core transformer"
+    ],
+    "correct": "Step-up transformer"
+  },
+  {
+    "id": "P7-FIB-001",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Magnetism",
+    "question": "Like poles __________, unlike poles attract.",
+    "correct": "repel",
+    "acceptable": [
+      "repel"
+    ]
+  },
+  {
+    "id": "P7-FIB-002",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Magnetism",
+    "question": "The region around a magnet where a magnetic force is experienced is called the magnetic __________.",
+    "correct": "field",
+    "acceptable": [
+      "field"
+    ]
+  },
+  {
+    "id": "P7-FIB-003",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Electromagnetism",
+    "question": "A coil of wire carrying a current that produces a magnetic field is called a __________.",
+    "correct": "solenoid",
+    "acceptable": [
+      "solenoid"
+    ]
+  },
+  {
+    "id": "P7-FIB-004",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Motor Effect",
+    "question": "The force on a current-carrying conductor in a magnetic field is calculated using F = __________ × I × L.",
+    "correct": "B",
+    "acceptable": [
+      "B",
+      "magnetic flux density"
+    ]
+  },
+  {
+    "id": "P7-FIB-005",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Motor Effect",
+    "question": "Fleming's __________ rule is used to determine the direction of force on a current-carrying conductor in a magnetic field.",
+    "correct": "left-hand",
+    "acceptable": [
+      "left-hand",
+      "left hand"
+    ]
+  },
+  {
+    "id": "P7-FIB-006",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Generators",
+    "question": "The process by which a changing magnetic field generates a voltage in a conductor is called electromagnetic __________.",
+    "correct": "induction",
+    "acceptable": [
+      "induction"
+    ]
+  },
+  {
+    "id": "P7-FIB-007",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Generators",
+    "question": "A generator converts kinetic energy into __________ energy.",
+    "correct": "electrical",
+    "acceptable": [
+      "electrical",
+      "electric"
+    ]
+  },
+  {
+    "id": "P7-FIB-008",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Transformers",
+    "question": "A transformer only works with __________ current, not direct current.",
+    "correct": "alternating",
+    "acceptable": [
+      "alternating",
+      "AC"
+    ]
+  },
+  {
+    "id": "P7-FIB-009",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Transformers",
+    "question": "The transformer equation is: Vp ÷ Vs = np ÷ __________.",
+    "correct": "ns",
+    "acceptable": [
+      "ns",
+      "number of turns on secondary coil"
+    ]
+  },
+  {
+    "id": "P7-FIB-010",
+    "type": "fill_in_blank",
+    "marks": 1,
+    "topic": "Transformers",
+    "question": "Power loss in National Grid cables is calculated using P = I² × __________.",
+    "correct": "R",
+    "acceptable": [
+      "R",
+      "resistance"
+    ]
+  },
+  {
+    "id": "P7-MATCH-001",
+    "type": "match",
+    "marks": 3,
+    "topic": "Magnetism",
+    "question": "Match each magnetic material type to its correct description.",
+    "pairs": [
+      {
+        "term": "Permanent magnet",
+        "definition": "Produces its own magnetic field at all times — made from hard magnetic materials like steel"
+      },
+      {
+        "term": "Induced magnet",
+        "definition": "Becomes magnetic only in an external field — loses magnetism when field is removed"
+      },
+      {
+        "term": "Electromagnet",
+        "definition": "A solenoid with an iron core — magnetism can be switched on and off"
+      }
+    ]
+  },
+  {
+    "id": "P7-MATCH-002",
+    "type": "match",
+    "marks": 3,
+    "topic": "Motor Effect",
+    "question": "Match each finger in Fleming's left-hand rule to what it represents.",
+    "pairs": [
+      {
+        "term": "Thumb",
+        "definition": "Direction of force (motion)"
+      },
+      {
+        "term": "Index finger",
+        "definition": "Direction of magnetic field"
+      },
+      {
+        "term": "Middle finger",
+        "definition": "Direction of conventional current"
+      }
+    ]
+  },
+  {
+    "id": "P7-MATCH-003",
+    "type": "match",
+    "marks": 3,
+    "topic": "Transformers",
+    "question": "Match each transformer type to its effect on voltage and turns.",
+    "pairs": [
+      {
+        "term": "Step-up transformer",
+        "definition": "More turns on secondary coil — output voltage is higher than input"
+      },
+      {
+        "term": "Step-down transformer",
+        "definition": "Fewer turns on secondary coil — output voltage is lower than input"
+      },
+      {
+        "term": "National Grid transmission",
+        "definition": "Uses step-up transformers to reduce current and minimise power loss in cables"
+      }
+    ]
+  },
+  {
+    "id": "P7-MATCH-004",
+    "type": "match",
+    "marks": 3,
+    "topic": "Generators",
+    "question": "Match each term to its correct definition.",
+    "pairs": [
+      {
+        "term": "Electromagnetic induction",
+        "definition": "Generation of a voltage by a changing magnetic field"
+      },
+      {
+        "term": "Alternating current",
+        "definition": "Current that repeatedly reverses direction"
+      },
+      {
+        "term": "Direct current",
+        "definition": "Current that flows in one direction only"
+      }
+    ]
+  },
+  {
+    "id": "P7-MATCH-005",
+    "type": "match",
+    "marks": 3,
+    "topic": "Electromagnetism",
+    "question": "Match each method to how it increases the strength of an electromagnet.",
+    "pairs": [
+      {
+        "term": "Increase current",
+        "definition": "Greater current produces a stronger magnetic field"
+      },
+      {
+        "term": "Increase number of coil turns",
+        "definition": "More turns concentrates the magnetic field"
+      },
+      {
+        "term": "Add an iron core",
+        "definition": "Iron becomes an induced magnet, greatly amplifying the field"
+      }
+    ]
+  },
+  {
+    "id": "P7-SA-001",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Magnetism",
+    "question": "State the difference between a permanent magnet and an induced magnet.",
+    "mark_scheme": "A permanent magnet produces its own magnetic field at all times (1); an induced magnet only becomes magnetic when placed in an external magnetic field and loses its magnetism when removed (1)."
+  },
+  {
+    "id": "P7-SA-002",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Magnetism",
+    "question": "Describe the magnetic field pattern around a bar magnet.",
+    "mark_scheme": "Field lines go from north to south pole outside the magnet (1); lines are closer together near the poles where the field is strongest (1)."
+  },
+  {
+    "id": "P7-SA-003",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Electromagnetism",
+    "question": "Explain three ways to increase the strength of an electromagnet.",
+    "mark_scheme": "Increase the current through the coil (1); increase the number of turns of wire on the coil (1); add an iron core inside the solenoid (1)."
+  },
+  {
+    "id": "P7-SA-004",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Motor Effect",
+    "question": "Describe how Fleming's left-hand rule is used to determine the direction of force on a current-carrying conductor.",
+    "mark_scheme": "Hold the left hand with thumb, index finger, and middle finger at right angles to each other (1); index finger = magnetic field direction, middle finger = conventional current direction, thumb = direction of force/motion (1)."
+  },
+  {
+    "id": "P7-SA-005",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Calculate",
+    "topic": "Motor Effect",
+    "question": "A wire of length 0.5 m carries a current of 3 A in a magnetic field of flux density 0.4 T. Calculate the force on the wire.",
+    "mark_scheme": "F = BIL (1); F = 0.4 × 3 × 0.5 = 0.6 N (1)."
+  },
+  {
+    "id": "P7-SA-006",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Generators",
+    "question": "Explain how a simple AC generator produces an alternating current.",
+    "mark_scheme": "A coil of wire rotates inside a magnetic field (1); as the coil rotates, the magnetic flux through it changes, inducing a potential difference (1); the direction of the induced current reverses every half turn, producing alternating current (1)."
+  },
+  {
+    "id": "P7-SA-007",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Generators",
+    "question": "Explain why a transformer only works with alternating current and not direct current.",
+    "mark_scheme": "A transformer requires a changing magnetic field to induce a voltage in the secondary coil (1); DC produces a constant (non-changing) magnetic field so no voltage is induced (1)."
+  },
+  {
+    "id": "P7-SA-008",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Calculate",
+    "topic": "Transformers",
+    "question": "A transformer has 200 turns on the primary coil and 50 turns on the secondary coil. The input voltage is 240 V. Calculate the output voltage and state what type of transformer this is.",
+    "mark_scheme": "Vp/Vs = np/ns → 240/Vs = 200/50 (1); Vs = 240 × 50/200 = 60 V (1); this is a step-down transformer (1)."
+  },
+  {
+    "id": "P7-SA-009",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Explain",
+    "topic": "Transformers",
+    "question": "Explain why electricity is transmitted at high voltage through the National Grid.",
+    "mark_scheme": "High voltage means low current for the same power (P = IV) (1); lower current reduces power loss as heat in the cables (P = I²R) (1)."
+  },
+  {
+    "id": "P7-SA-010",
+    "type": "written",
+    "marks": 2,
+    "command_word": "Describe",
+    "topic": "Motor Effect",
+    "question": "Describe how an electric motor works.",
+    "mark_scheme": "A current-carrying coil is placed in a magnetic field and experiences a force due to the motor effect (1); the split-ring commutator reverses the current every half turn so the coil continues to rotate in the same direction (1)."
+  },
+  {
+    "id": "P7-SA-011",
+    "type": "written",
+    "marks": 3,
+    "command_word": "Explain",
+    "topic": "Generators",
+    "question": "Explain four ways to increase the induced potential difference in a generator.",
+    "mark_scheme": "Any three from: increase the speed of rotation of the coil (1); increase the strength of the magnetic field (1); increase the number of turns on the coil (1); increase the area of the coil (1)."
+  },
+  {
+    "id": "P7-SA-012",
+    "type": "written",
+    "marks": 2,
+    "command_word": "State",
+    "topic": "Magnetism",
+    "question": "State what is meant by the Earth's magnetic field and explain how a compass uses it.",
+    "mark_scheme": "The Earth produces a magnetic field, behaving like a giant bar magnet (1); a compass needle is a small magnet that aligns with the Earth's field, pointing towards magnetic north (1)."
+  },
+  {
+    "id": "P7-LA-001",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Electromagnetism",
+    "question": "Explain how an electromagnet works and describe two uses of electromagnets in everyday devices. Explain why an electromagnet is more useful than a permanent magnet in these applications.",
+    "mark_scheme": "Current flows through a solenoid, creating a magnetic field; iron core becomes an induced magnet amplifying the field (1); use 1: electric bell / relay / scrapyard crane / circuit breaker (1); use 2: different device from above (1); electromagnets can be switched on and off / strength can be varied — permanent magnets cannot be switched off (1)."
+  },
+  {
+    "id": "P7-LA-002",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Motor Effect",
+    "question": "Explain the motor effect and describe how it is used in an electric motor to produce continuous rotation.",
+    "mark_scheme": "A current-carrying conductor in a magnetic field experiences a force perpendicular to both field and current (motor effect) (1); in a motor, a coil carrying current in a magnetic field experiences forces on opposite sides in opposite directions, creating a turning effect (1); the split-ring commutator reverses the current direction every half turn (1); this ensures the forces always act in the same rotational direction, producing continuous rotation (1)."
+  },
+  {
+    "id": "P7-LA-003",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Generators",
+    "question": "Explain the process of electromagnetic induction and describe how it is used in a generator to produce electricity. Include the factors that affect the size of the induced potential difference.",
+    "mark_scheme": "Electromagnetic induction: a changing magnetic field through a conductor induces a potential difference (1); in a generator, a coil rotates in a magnetic field — flux through the coil changes continuously (1); this induces an alternating potential difference / alternating current (1); induced PD increases with: faster rotation / stronger magnetic field / more turns on coil / larger coil area (1 for any two factors); if the coil is connected to an external circuit, an induced current flows (1)."
+  },
+  {
+    "id": "P7-LA-004",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Transformers",
+    "question": "Explain how a transformer works and why transformers are essential to the operation of the National Grid. Include a calculation in your answer.",
+    "mark_scheme": "AC in primary coil creates a changing magnetic field in the iron core (1); changing field induces a potential difference in the secondary coil (1); step-up transformers increase voltage for transmission — reduces current (1); lower current means less power lost as heat in cables: P = I²R (1); step-down transformers reduce voltage to safe levels for homes (1). Calculation: correct use of Vp/Vs = np/ns with own values, correctly solved (1). [Max 5]"
+  },
+  {
+    "id": "P7-LA-005",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Compare",
+    "topic": "Magnetism",
+    "question": "Compare permanent magnets and electromagnets. In your answer, discuss their properties, how their magnetic fields are produced, and evaluate which is more suitable for use in a scrapyard crane and in a compass.",
+    "mark_scheme": "Permanent magnet: always magnetic, field cannot be switched off, made from hard magnetic material like steel (1); electromagnet: magnetic only when current flows, field can be switched on/off, strength can be varied (1); scrapyard crane: electromagnet is better — can be switched off to release metal objects (1); compass: permanent magnet is better — needs to work without a power supply / always points north reliably (1); well-reasoned comparison with reference to both applications (1)."
+  },
+  {
+    "id": "P7-LA-006",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Transformers",
+    "question": "Evaluate the role of the National Grid in distributing electricity efficiently across the country. In your answer, explain why high voltage is used for transmission, the role of transformers, and discuss any disadvantages of the current system.",
+    "mark_scheme": "National Grid transmits electricity from power stations to consumers via cables and transformers (1); step-up transformers increase voltage before transmission, reducing current (1); lower current reduces power loss in cables: P = I²R — less energy wasted as heat (1); step-down transformers reduce voltage to safe levels (230 V) for homes (1); disadvantage: high-voltage cables are a safety hazard / pylons are visually unappealing / energy is still lost despite high voltage (1); well-reasoned conclusion about overall efficiency and importance of the National Grid (1)."
+  },
+  {
+    "id": "P7-LA-007",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Motor Effect",
+    "question": "Evaluate the use of electric motors compared to combustion engines for powering vehicles. In your answer, explain how an electric motor works and discuss the advantages and disadvantages of each power source, including environmental considerations.",
+    "mark_scheme": "Electric motor: current-carrying coil in magnetic field experiences a force — motor effect — producing rotation (1); split-ring commutator ensures continuous rotation in one direction (1); advantage of electric motor: no direct emissions / quieter / more energy efficient / lower running costs (1); disadvantage: depends on battery range / charging infrastructure / battery production has environmental impact (1); combustion engine: burns fuel releasing CO₂ and pollutants / contributes to climate change (1); well-reasoned conclusion considering environmental and practical factors (1)."
+  },
+  {
+    "id": "P7-LA-008",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Calculate",
+    "topic": "Motor Effect",
+    "question": "A wire of length 0.8 m carries a current of 5 A in a magnetic field of flux density 0.3 T, perpendicular to the wire. Calculate the force on the wire. Then explain what happens to the force if the current is doubled and the length of wire in the field is halved.",
+    "mark_scheme": "F = BIL = 0.3 × 5 × 0.8 (1); F = 1.2 N (1); if current doubled: 2 × 5 = 10 A; if length halved: 0.4 m (1); new force = 0.3 × 10 × 0.4 = 1.2 N — force is unchanged (1)."
+  },
+  {
+    "id": "P7-LA-009",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Magnetism",
+    "question": "Explain how a magnetic field is produced by a current-carrying wire. Describe how the field pattern changes when the wire is formed into a solenoid, and explain how adding an iron core increases the magnetic field strength.",
+    "mark_scheme": "A current-carrying wire produces a circular magnetic field around it; direction given by the right-hand rule (1); in a solenoid (coil), the fields from each loop add together to produce a stronger, more uniform field like a bar magnet (1); field pattern outside solenoid is similar to a bar magnet — with north and south poles (1); iron core becomes an induced magnet when placed inside — its field aligns with and amplifies the solenoid's field, greatly increasing total field strength (1)."
+  },
+  {
+    "id": "P7-LA-010",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Electromagnetism",
+    "question": "Describe how a relay switch works. Include the role of the electromagnet, explain the advantage of using a relay to switch a high-current circuit from a low-current control circuit, and give one practical use.",
+    "mark_scheme": "Small current in control circuit energises the electromagnet (solenoid with iron core) (1); electromagnet attracts a soft iron armature, which pivots and closes the contacts of the second (high-current) circuit (1); advantage: a small, safe current can switch on a large, potentially dangerous current without the operator being directly connected to the high-current circuit (1); use: car starter motor relay / central heating thermostat / any correct example (1)."
+  },
+  {
+    "id": "P7-LA-011",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Calculate",
+    "topic": "Transformers",
+    "question": "A transformer has 400 turns on the primary coil and 2000 turns on the secondary coil. The primary voltage is 230 V. Calculate the secondary voltage and state the type of transformer. Then calculate the secondary current if the primary current is 10 A (assume 100% efficiency).",
+    "mark_scheme": "Vs / Vp = ns / np → Vs = 230 × (2000/400) = 230 × 5 = 1150 V (1); this is a step-up transformer (1); for 100% efficiency: Vp × Ip = Vs × Is → 230 × 10 = 1150 × Is (1); Is = 2300 / 1150 = 2 A (1)."
+  },
+  {
+    "id": "P7-LA-012",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Generators",
+    "question": "Explain how the induced EMF in a generator varies as the coil rotates through one full revolution. Describe what an oscilloscope trace of the output would look like and explain how the output can be increased.",
+    "mark_scheme": "As coil rotates, the rate of change of magnetic flux varies — maximum when coil is parallel to field, zero when coil is perpendicular to field (1); EMF is therefore a sinusoidal (AC) output — oscilloscope shows a smooth wave that rises to a positive maximum, returns through zero, goes to a negative maximum, returns through zero (one full cycle per revolution) (1); induced EMF is zero when coil is at 90° to field (perpendicular); maximum when coil is parallel to field (1); output increased by: rotating faster / stronger magnet / more turns on coil / larger coil area (any one) (1)."
+  },
+  {
+    "id": "P7-LA-013",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Magnetism",
+    "question": "Describe how you would plot the magnetic field lines around a bar magnet using iron filings and a plotting compass. Explain what the spacing and direction of field lines tell us about the magnetic field.",
+    "mark_scheme": "Place bar magnet on paper; sprinkle iron filings around it — they align with the field and reveal the field pattern (1); alternatively, use a plotting compass: place compass near the magnet; mark the direction the needle points; move compass to the next point and repeat to trace a field line (1); direction of field lines: from north pole to south pole outside the magnet (1); spacing: closely spaced lines indicate a strong field (e.g. near the poles); widely spaced lines indicate a weak field — field lines never cross (1)."
+  },
+  {
+    "id": "P7-LA-014",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Calculate",
+    "topic": "Transformers",
+    "question": "A transformer is 90% efficient. The primary coil has 500 turns and the secondary has 100 turns. The primary voltage is 240 V and the primary current is 2 A. Calculate the secondary voltage, the power input, and the actual power output.",
+    "mark_scheme": "Vs = Vp × (ns/np) = 240 × (100/500) = 48 V (1); power input = Vp × Ip = 240 × 2 = 480 W (1); power output = efficiency × power input = 0.90 × 480 (1); power output = 432 W (1)."
+  },
+  {
+    "id": "P7-LA-015",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Motor Effect",
+    "question": "Explain how Fleming's left-hand rule is applied to determine the force on a current-carrying conductor. Use it to describe what happens when current flows upward in a wire that is placed in a magnetic field pointing from left to right.",
+    "mark_scheme": "Point the index finger in the direction of the magnetic field (left to right) (1); point the middle finger in the direction of conventional current (upward) (1); the thumb then points in the direction of the force on the conductor (1); for current upward and field left to right: force acts out of the page (toward the reader) / perpendicular to both field and current (1)."
+  },
+  {
+    "id": "P7-LA-016",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Electromagnetism",
+    "question": "Describe how an electric bell works, explaining the role of the electromagnet, the make-and-break mechanism, and the spring. Explain why the bell produces a continuous ringing sound when the button is held.",
+    "mark_scheme": "Pressing the button completes the circuit; current flows through the electromagnet (1); electromagnet attracts the soft iron armature, causing the hammer to strike the bell (1); as armature moves, it breaks the contact at the make-and-break switch, so current stops and electromagnet loses magnetism (1); spring pulls armature back to original position, circuit is remade, electromagnet is re-energised — cycle repeats rapidly producing continuous ringing (1)."
+  },
+  {
+    "id": "P7-LA-017",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Generators",
+    "question": "Explain the difference between an AC generator and a DC dynamo (generator). Include the role of the slip rings and brushes versus the split-ring commutator, and explain why one produces AC and the other DC.",
+    "mark_scheme": "AC generator uses slip rings and brushes — the rings rotate with the coil and maintain continuous contact with the brushes (1); as the coil rotates, the current direction reverses every half turn, producing alternating current (AC) (1); DC dynamo (commutator generator) uses a split-ring commutator — as the coil passes through the vertical position, the commutator swaps the connections (1); this reversal of the external connections every half turn ensures current always flows in the same direction in the external circuit — direct current (DC) (1)."
+  },
+  {
+    "id": "P7-LA-018",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Evaluate",
+    "topic": "Transformers",
+    "question": "A power station generates electricity at 25 000 V. This is stepped up to 400 000 V for transmission through cables with a total resistance of 20 Ω. The power transmitted is 1 000 000 W. Calculate the current in the cables and the power lost in the cables. Then explain why transmitting at lower voltage would waste more energy.",
+    "mark_scheme": "I = P / V = 1 000 000 / 400 000 = 2.5 A (1); power loss = I²R = (2.5)² × 20 = 6.25 × 20 = 125 W (1); at lower voltage (e.g. 25 000 V): I = 1 000 000 / 25 000 = 40 A; power loss = (40)² × 20 = 32 000 W — much greater loss (1); high voltage keeps current low, and since power loss ∝ I², even a small increase in current massively increases losses (1)."
+  },
+  {
+    "id": "P7-LA-019",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Magnetism",
+    "question": "Explain what is meant by induced magnetism. Describe what happens to an iron nail when it is placed near a magnet and explain why the nail is attracted regardless of which pole of the magnet is closest.",
+    "mark_scheme": "Induced magnetism: a magnetic material (e.g. iron) becomes temporarily magnetised when placed in an external magnetic field (1); the domains (regions of aligned atoms) in the iron align with the external field (1); the end of the nail nearest the magnet always becomes the opposite pole to the magnet's pole — north pole of magnet induces a south pole in the nearest end of the nail (1); opposite poles always attract, so the nail is attracted regardless of which pole of the magnet faces it (1)."
+  },
+  {
+    "id": "P7-LA-020",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Calculate",
+    "topic": "Motor Effect",
+    "question": "A rectangular coil with 50 turns, each of length 0.1 m, carries a current of 2 A in a magnetic field of 0.4 T. Calculate the force on one side of the coil and the total force on the coil (considering both sides in the field).",
+    "mark_scheme": "Force on one conductor: F = BIL = 0.4 × 2 × 0.1 = 0.08 N (1); with 50 turns, each side of the coil has 50 wires, so force on one side = 50 × 0.08 = 4 N (1); two sides of the coil experience equal and opposite forces (1); total turning force produces a couple/torque — both sides contribute: total force pair = 4 N on each side (forces in opposite directions create rotation) (1)."
+  },
+  {
+    "id": "P7-LA-021",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Transformers",
+    "question": "Explain the complete operation of the National Grid from power station to consumer. Include the role of step-up and step-down transformers, explain the physics of why high-voltage transmission reduces energy loss, and calculate the percentage of power lost if 50 MW is transmitted at 400 kV with a cable resistance of 0.5 Ω.",
+    "mark_scheme": "Power station generates electricity (e.g. at 25 kV); step-up transformer increases to 400 kV for transmission (1); high voltage means low current for same power: I = P/V = 50 × 10⁶ / 400 × 10³ = 125 A (1); power lost in cables = I²R = (125)² × 0.5 = 15 625 / 0.5... = 7812.5 W ≈ 7813 W (1); percentage loss = 7813 / 50 000 000 × 100 ≈ 0.016% — very small loss (1); step-down transformers near homes reduce voltage to 230 V for safe domestic use (1)."
+  },
+  {
+    "id": "P7-LA-022",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Motor Effect",
+    "question": "Evaluate the use of electric motors in electric vehicles compared to combustion engines. Explain how the motor effect enables an electric motor to produce rotation, describe how the motor's efficiency compares to a petrol engine, and discuss the environmental impact of each.",
+    "mark_scheme": "Motor effect: current-carrying coil in magnetic field experiences forces on opposite sides (F = BIL) in opposite directions, creating a couple (1); split-ring commutator reverses current every half turn to maintain continuous rotation in the same direction (1); electric motors typically 85-95% efficient; petrol engines typically 25-40% efficient — much greater energy waste as heat (1); electric vehicles: no direct emissions; quieter; lower running costs; but depends on electricity generation source (1); overall environmental assessment: EVs produce fewer emissions in use, but battery manufacture has environmental cost; overall lower carbon footprint if electricity from renewables (1)."
+  },
+  {
+    "id": "P7-LA-023",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Electromagnetism",
+    "question": "Describe how to investigate the factors affecting the strength of an electromagnet. Include the variables to test, the method, how you would measure magnetic strength, and what results you would expect.",
+    "mark_scheme": "Variable to test: number of coil turns; keep current and core material constant (1); variable to test: current; keep number of turns and core material constant (1); method: wind coil around iron nail, connect to variable power supply; hang nail above paper clips and count how many it can pick up as a measure of strength (1); expected results: more turns → stronger electromagnet (more paper clips picked up); higher current → stronger electromagnet (1); additional variable: with iron core vs no core — iron core greatly increases strength; or iron vs steel core — iron loses magnetism quickly (soft iron preferred) (1)."
+  },
+  {
+    "id": "P7-LA-024",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Generators",
+    "question": "Explain the difference between power stations that use turbines driven by steam and those using wind. Describe how each converts energy to electricity and compare their environmental impacts. In both cases, explain the role of the generator.",
+    "mark_scheme": "Steam turbines: fuel (coal/gas/nuclear) heats water to steam; steam turns turbines (1); wind turbines: kinetic energy of wind drives the blades directly (1); in both cases, rotating turbine turns a coil in a magnetic field — electromagnetic induction produces an alternating potential difference (1); steam stations: continuous reliable power output but burning fossil fuels releases CO₂; nuclear has radioactive waste issues (1); wind: zero operational emissions; but intermittent (depends on wind); visual impact; large land area needed (1)."
+  },
+  {
+    "id": "P7-LA-025",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Calculate",
+    "topic": "Transformers",
+    "question": "A step-down transformer on a lamp post takes 11 000 V from the distribution network and supplies 230 V to street lights. Calculate the turns ratio required. If the street lights draw a total current of 8 A at 230 V and the transformer is 95% efficient, calculate the primary current.",
+    "mark_scheme": "Turns ratio: np/ns = Vp/Vs = 11 000 / 230 ≈ 47.8 : 1 (accept 48:1 or correct fraction) (1); power output = Vs × Is = 230 × 8 = 1840 W (1); efficiency = power output / power input → power input = power output / efficiency = 1840 / 0.95 = 1936.8 W (1); primary current = power input / Vp = 1936.8 / 11 000 (1); Ip ≈ 0.176 A (accept 0.18 A) (1)."
+  },
+  {
+    "id": "P7-LA-026",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Magnetism",
+    "question": "Explain the domain theory of magnetism. Describe what happens to the domains in an unmagnetised iron bar, a magnetised steel bar, and what happens when you heat a magnet above its Curie temperature.",
+    "mark_scheme": "Domain theory: magnetic materials contain small regions (domains) in which atoms are all aligned in the same direction (1); unmagnetised iron: domains are randomly oriented so their fields cancel out — no net magnetism (1); magnetised steel: domains are aligned in the same direction — their fields add together producing a strong net field (1); hard materials like steel have domains that are difficult to realign — make good permanent magnets; soft materials like iron realign easily — make good temporary/induced magnets (1); above the Curie temperature: thermal energy disrupts the alignment of the domains — magnetism is lost / the material becomes demagnetised (1)."
+  },
+  {
+    "id": "P7-LA-027",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Motor Effect",
+    "question": "Explain how a loudspeaker works using the motor effect. Include the role of the permanent magnet, the voice coil, and describe how changing the frequency and amplitude of the electrical signal produces different sounds.",
+    "mark_scheme": "The loudspeaker cone is attached to a voice coil (cylindrical coil of wire) which sits in the gap of a permanent magnet (1); an alternating current passes through the voice coil; the current in the magnetic field experiences a force (motor effect, F = BIL) (1); as the current direction alternates, the force on the coil alternates, pushing and pulling the coil (and cone) back and forth (1); the vibrating cone creates compressions and rarefactions in the air — producing sound waves (1); higher frequency AC → coil vibrates faster → higher frequency sound (higher pitch); larger amplitude AC → coil moves further → greater amplitude sound (louder) (1)."
+  },
+  {
+    "id": "P7-LA-028",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Electromagnetism",
+    "question": "Describe the differences between hard and soft magnetic materials. Explain why iron is used for transformer cores and electromagnet cores, while steel is used for permanent magnets. Include the concept of magnetic hysteresis and its relevance to transformer core material choice.",
+    "mark_scheme": "Soft magnetic materials (e.g. iron): easily magnetised and demagnetised — domains align and realign easily (1); hard magnetic materials (e.g. steel): difficult to magnetise and demagnetise — domains resist realignment, retaining magnetism (1); electromagnet/transformer cores use iron: must magnetise and demagnetise rapidly as AC current alternates; iron does this with little energy wasted (1); permanent magnets use steel: must retain magnetism without an external field; steel's high coercivity prevents demagnetisation (1); magnetic hysteresis: energy is lost as heat each time the domains are reversed in a transformer core; soft iron has low hysteresis loss — essential for efficient transformer operation (1)."
+  },
+  {
+    "id": "P7-LA-029",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Generators",
+    "question": "Explain Faraday's law of electromagnetic induction. Describe three different ways to induce a potential difference in a coil, and explain how Lenz's law relates to the direction of the induced current.",
+    "mark_scheme": "Faraday's law: the induced EMF is proportional to the rate of change of magnetic flux (through the circuit) (1); method 1: move a magnet into/out of a coil — changing flux induces a PD (1); method 2: rotate a coil in a magnetic field — changing flux linkage induces AC (as in a generator) (1); method 3: change the current in a nearby coil (transformer principle) — changing magnetic field induces PD in secondary coil (1); Lenz's law: the direction of the induced current is always such that it opposes the change that caused it — e.g. induced current creates a magnetic field that opposes the motion of the incoming magnet; this is consistent with conservation of energy (1)."
+  },
+  {
+    "id": "P7-LA-030",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Transformers",
+    "question": "Evaluate the advantages and disadvantages of the National Grid system compared to a system where every town had its own local power station generating electricity at mains voltage for direct use. Consider energy efficiency, safety, reliability, and environmental factors.",
+    "mark_scheme": "National Grid: uses HV transmission to minimise I²R losses — much more energy efficient over long distances than low-voltage local distribution (1); step-up and step-down transformers only work with AC — National Grid is AC (1); advantage of National Grid: large centralised power stations can be more efficient and controlled; surplus power can be redirected from where it's generated to where it's needed (1); disadvantage: HV cables are a visual and safety hazard; energy is still lost in transmission (1); local power stations: no long-distance transmission losses; could use local renewable sources (solar, wind, hydro); more resilient to failures elsewhere (1); overall evaluation: National Grid is more practical for managing national demand; local generation complementary but not currently sufficient on its own; smart grid developments could combine both approaches (1)."
+  },
+  {
+    "id": "P7-LA-031",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Motor Effect",
+    "question": "A student builds a simple DC electric motor using a rectangular coil, a permanent magnet, and a split-ring commutator. Explain fully how the motor produces continuous rotation, including the forces on the coil sides, the role of the commutator, and describe three ways the student could make the motor spin faster.",
+    "mark_scheme": "Current flows through the coil in the magnetic field; using F = BIL, opposite sides of the coil carry current in opposite directions so experience forces in opposite directions (1); these equal and opposite forces (a couple) create a net turning moment, rotating the coil (1); after half a turn, if current direction remained the same, the forces would act to rotate the coil back — the split-ring commutator reverses the current direction every half turn (1); this ensures the forces always act in the same rotational direction, producing continuous rotation (1); methods to increase speed: increase the current through the coil; use a stronger permanent magnet; increase the number of turns on the coil; use a soft iron core inside the coil to strengthen the field (any three) (1); practical consideration: carbon brushes maintain contact with the commutator but wear over time — limit to motor speed (1)."
+  },
+  {
+    "id": "P7-LA-032",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Generators",
+    "question": "Evaluate the use of different energy sources (fossil fuels, nuclear, wind, and hydroelectric) for generating electricity. For each, describe the energy transfer involved, the role of the generator, and evaluate the environmental and economic advantages and disadvantages.",
+    "mark_scheme": "All sources: turbine spins a coil in a magnetic field — electromagnetic induction produces AC electricity (1); fossil fuels (coal/gas): chemical → thermal → kinetic → electrical; reliable, controllable output; produces CO₂ contributing to climate change; air pollution (1); nuclear: nuclear → thermal → kinetic → electrical; low carbon emissions in operation; produces radioactive waste requiring safe long-term storage; very reliable baseload power (1); wind: kinetic → electrical (directly via generator); zero operational emissions; intermittent (wind-dependent); visual/noise impact; low running cost (1); hydroelectric: gravitational PE → kinetic → electrical; very reliable and controllable; zero operational emissions; but requires flooding of valleys — habitat destruction; limited suitable sites (1); overall evaluation: no single source is ideal — a mix of sources needed for reliable, low-carbon electricity; renewables growing in importance but need backup or storage for when wind/sun is insufficient (1)."
+  },
+  {
+    "id": "P7-LA-033",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Magnetism",
+    "question": "Explain how the Earth's magnetic field is produced and describe its overall shape. Explain how animals use the Earth's magnetic field for navigation and describe how a compass works. Explain why the geographic North Pole and the magnetic north pole are not in the same location and what implications this has for compass navigation.",
+    "mark_scheme": "Earth's magnetic field produced by convection currents of molten iron/nickel in the outer core — movement of conducting fluid creates electric currents which generate a magnetic field (1); field shape: like a giant bar magnet — field lines emerge near geographic south, arc around Earth and re-enter near geographic north; strongest at poles, weakest at equator (1); animals: some birds, fish, and turtles have magnetite crystals that allow them to sense the Earth's field direction / use it as a compass for migration (1); compass works: magnetised needle aligns with Earth's field; the north-seeking pole points toward magnetic north (1); Earth's magnetic north pole is approximately 500 km from geographic North Pole — compasses point to magnetic north, not true north (1); implication: navigators must apply a 'magnetic declination' correction to convert between compass bearing and true bearing; this varies by location and changes slowly over time (1)."
+  },
+  {
+    "id": "P7-LA-034",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Electromagnetism",
+    "question": "Evaluate the advantages of electromagnets over permanent magnets in industrial applications. Describe how an electromagnet works, give three specific industrial uses, and for each explain why an electromagnet is preferred over a permanent magnet.",
+    "mark_scheme": "Electromagnet: current through a solenoid with iron core creates a strong magnetic field; switching off current removes the field (iron demagnetises rapidly) (1); industrial use 1: scrapyard crane — electromagnet can be switched off to release metal objects; permanent magnet could not release the metal (1); industrial use 2: MRI scanner / maglev train — very strong, controllable fields needed; strength can be adjusted; permanent magnets cannot be varied (1); industrial use 3: electric bell / relay / solenoid valve — rapid switching on/off is essential; permanent magnet would not respond to changing signals (1); general advantage: strength can be varied by changing current; polarity can be reversed; can be switched on/off (1); disadvantage of electromagnets: require a constant power supply; will fail if power is cut (1)."
+  },
+  {
+    "id": "P7-LA-035",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Generators",
+    "question": "Explain the physics behind electromagnetic induction in detail. Describe how a transformer uses this principle, derive the transformer equation from first principles, and explain the energy losses that occur in a real transformer and how they are minimised.",
+    "mark_scheme": "Electromagnetic induction: when the magnetic flux through a conductor changes, a potential difference (EMF) is induced; greater rate of change → greater EMF (Faraday's law) (1); transformer: AC in primary coil creates a continuously changing magnetic field in the iron core (1); changing field passes through secondary coil, inducing an EMF; number of turns determines magnitude of induced EMF (1); transformer equation: each turn experiences the same rate of flux change; Vp / np = Vs / ns (each turn contributes equally) → Vp/Vs = np/ns (1); energy losses: resistive heating in coils (I²R) — minimised by using thick copper wire; eddy current losses in iron core (induced currents cause heating) — minimised by laminating the core (thin insulated layers); hysteresis losses (domain reversal energy) — minimised using soft iron (1); for ideal transformer: input power = output power; VpIp = VsIs (1)."
+  },
+  {
+    "id": "P7-LA-036",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Magnetism",
+    "question": "Evaluate the development of magnetic levitation (maglev) trains. Explain the physics principles involved (motor effect and magnetic forces), describe the advantages over conventional rail, discuss the technical challenges and costs, and give a reasoned judgement on whether maglev is likely to replace conventional high-speed rail.",
+    "mark_scheme": "Maglev trains use powerful electromagnets (superconducting in some designs) to create repulsive forces between train and track — levitation eliminates wheel-track friction (1); propulsion uses the motor effect: varying magnetic fields in the track interact with magnets on the train to produce a driving force (linear motor principle) (1); advantages: no mechanical contact so no wheel wear; very high speeds possible (500+ km/h); smoother, quieter ride; lower maintenance (1); technical challenges: very high energy consumption for levitation; complex and expensive infrastructure; must build entirely new track — cannot share existing rail network (1); cost: much higher construction cost per km than high-speed rail; only a few routes worldwide (Japan, China) — limited network effect (1); judgement: maglev superior in performance but extremely expensive and difficult to integrate into existing infrastructure; conventional high-speed rail (e.g. TGV, HS2) more practical for widespread deployment; maglev may be cost-effective for specific high-demand corridors — unlikely to fully replace conventional rail in near future (1)."
+  },
+  {
+    "id": "P7-LA-037",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Motor Effect",
+    "question": "Explain how the motor effect is used in a moving-coil galvanometer (current-measuring instrument). Include how the deflection depends on current, the role of the radial magnetic field, the control spring, and explain how the instrument can be adapted to measure both voltage and larger currents.",
+    "mark_scheme": "A coil of wire is suspended in the field of a permanent magnet; when current flows, F = BIL creates forces on opposite sides of the coil, causing it to rotate (motor effect) (1); radial magnetic field (curved pole pieces ensure field is always parallel to the coil sides): ensures the force is proportional to current for all angles of deflection — gives a linear scale (1); the control spring opposes the turning force; the coil rotates until the spring force equals the magnetic force — deflection proportional to current (1); the pointer attached to the coil indicates the current on a calibrated scale (1); to measure voltage (voltmeter): connect a high-value resistor (multiplier) in series — reduces current for given voltage; V = IR so deflection ∝ voltage (1); to measure larger currents (ammeter): connect a low-value resistor (shunt) in parallel — most current bypasses the coil; small fraction through coil still proportional to total current (1)."
+  }
 ]

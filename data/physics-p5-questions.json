@@ -5,7 +5,12 @@
     "marks": 1,
     "topic": "Scalars and Vectors",
     "question": "Which of the following is a vector quantity?",
-    "options": ["Speed", "Mass", "Temperature", "Velocity"],
+    "options": [
+      "Speed",
+      "Mass",
+      "Temperature",
+      "Velocity"
+    ],
     "correct": "Velocity"
   },
   {
@@ -14,7 +19,12 @@
     "marks": 1,
     "topic": "Forces",
     "question": "What is the weight of a 5 kg object on Earth? (g = 10 N/kg)",
-    "options": ["5 N", "0.5 N", "50 N", "500 N"],
+    "options": [
+      "5 N",
+      "0.5 N",
+      "50 N",
+      "500 N"
+    ],
     "correct": "50 N"
   },
   {
@@ -37,7 +47,12 @@
     "marks": 1,
     "topic": "Newton's Laws",
     "question": "A resultant force of 30 N acts on a 6 kg object. What is its acceleration?",
-    "options": ["0.2 m/s²", "180 m/s²", "5 m/s²", "24 m/s²"],
+    "options": [
+      "0.2 m/s²",
+      "180 m/s²",
+      "5 m/s²",
+      "24 m/s²"
+    ],
     "correct": "5 m/s²"
   },
   {
@@ -46,7 +61,12 @@
     "marks": 1,
     "topic": "Elasticity",
     "question": "A spring has a spring constant of 40 N/m. What force is needed to extend it by 0.25 m?",
-    "options": ["160 N", "0.00625 N", "10 N", "40.25 N"],
+    "options": [
+      "160 N",
+      "0.00625 N",
+      "10 N",
+      "40.25 N"
+    ],
     "correct": "10 N"
   },
   {
@@ -55,7 +75,12 @@
     "marks": 1,
     "topic": "Motion",
     "question": "What does the gradient of a distance-time graph represent?",
-    "options": ["Acceleration", "Force", "Speed", "Momentum"],
+    "options": [
+      "Acceleration",
+      "Force",
+      "Speed",
+      "Momentum"
+    ],
     "correct": "Speed"
   },
   {
@@ -64,7 +89,12 @@
     "marks": 1,
     "topic": "Motion",
     "question": "What does the area under a velocity-time graph represent?",
-    "options": ["Speed", "Acceleration", "Force", "Distance travelled"],
+    "options": [
+      "Speed",
+      "Acceleration",
+      "Force",
+      "Distance travelled"
+    ],
     "correct": "Distance travelled"
   },
   {
@@ -87,7 +117,12 @@
     "marks": 1,
     "topic": "Momentum",
     "question": "A 2 kg ball moves at 5 m/s. What is its momentum?",
-    "options": ["2.5 kg m/s", "10 kg m/s", "7 kg m/s", "0.4 kg m/s"],
+    "options": [
+      "2.5 kg m/s",
+      "10 kg m/s",
+      "7 kg m/s",
+      "0.4 kg m/s"
+    ],
     "correct": "10 kg m/s"
   },
   {
@@ -110,7 +145,12 @@
     "marks": 1,
     "topic": "Work Done",
     "question": "A force of 25 N moves an object 4 m in the direction of the force. How much work is done?",
-    "options": ["6.25 J", "100 J", "29 J", "21 J"],
+    "options": [
+      "6.25 J",
+      "100 J",
+      "29 J",
+      "21 J"
+    ],
     "correct": "100 J"
   },
   {
@@ -161,7 +201,12 @@
     "marks": 1,
     "topic": "Scalars and Vectors",
     "question": "A car travels 100 m north then 60 m south. What is its displacement?",
-    "options": ["160 m north", "40 m north", "40 m south", "160 m"],
+    "options": [
+      "160 m north",
+      "40 m north",
+      "40 m south",
+      "160 m"
+    ],
     "correct": "40 m north"
   },
   {
@@ -171,7 +216,9 @@
     "topic": "Newton's Laws",
     "question": "Newton's Second Law states that force = mass × __________.",
     "correct": "acceleration",
-    "acceptable": ["acceleration"]
+    "acceptable": [
+      "acceleration"
+    ]
   },
   {
     "id": "P5-FIB-002",
@@ -180,7 +227,9 @@
     "topic": "Forces",
     "question": "Weight = mass × gravitational field __________.",
     "correct": "strength",
-    "acceptable": ["strength"]
+    "acceptable": [
+      "strength"
+    ]
   },
   {
     "id": "P5-FIB-003",
@@ -189,7 +238,9 @@
     "topic": "Elasticity",
     "question": "Hooke's Law states that extension is proportional to force, provided the __________ limit is not exceeded.",
     "correct": "elastic",
-    "acceptable": ["elastic"]
+    "acceptable": [
+      "elastic"
+    ]
   },
   {
     "id": "P5-FIB-004",
@@ -198,7 +249,9 @@
     "topic": "Momentum",
     "question": "Momentum = mass × __________.",
     "correct": "velocity",
-    "acceptable": ["velocity"]
+    "acceptable": [
+      "velocity"
+    ]
   },
   {
     "id": "P5-FIB-005",
@@ -207,7 +260,9 @@
     "topic": "Stopping Distances",
     "question": "Stopping distance = thinking distance + __________ distance.",
     "correct": "braking",
-    "acceptable": ["braking"]
+    "acceptable": [
+      "braking"
+    ]
   },
   {
     "id": "P5-FIB-006",
@@ -216,7 +271,9 @@
     "topic": "Motion",
     "question": "The gradient of a velocity-time graph gives the __________.",
     "correct": "acceleration",
-    "acceptable": ["acceleration"]
+    "acceptable": [
+      "acceleration"
+    ]
   },
   {
     "id": "P5-FIB-007",
@@ -225,7 +282,9 @@
     "topic": "Work Done",
     "question": "Work done = __________ × distance.",
     "correct": "force",
-    "acceptable": ["force"]
+    "acceptable": [
+      "force"
+    ]
   },
   {
     "id": "P5-FIB-008",
@@ -234,7 +293,9 @@
     "topic": "Scalars and Vectors",
     "question": "Speed is a __________ quantity, while velocity is a vector quantity.",
     "correct": "scalar",
-    "acceptable": ["scalar"]
+    "acceptable": [
+      "scalar"
+    ]
   },
   {
     "id": "P5-FIB-009",
@@ -243,7 +304,9 @@
     "topic": "Newton's Laws",
     "question": "An object's tendency to resist changes in motion is called __________.",
     "correct": "inertia",
-    "acceptable": ["inertia"]
+    "acceptable": [
+      "inertia"
+    ]
   },
   {
     "id": "P5-FIB-010",
@@ -252,7 +315,9 @@
     "topic": "Momentum",
     "question": "The total momentum before a collision equals the total after — this is the law of conservation of __________.",
     "correct": "momentum",
-    "acceptable": ["momentum"]
+    "acceptable": [
+      "momentum"
+    ]
   },
   {
     "id": "P5-MATCH-001",
@@ -261,11 +326,26 @@
     "topic": "Scalars and Vectors",
     "question": "Match each quantity to whether it is a scalar or vector.",
     "pairs": [
-      { "term": "Speed", "definition": "Scalar — magnitude only" },
-      { "term": "Velocity", "definition": "Vector — magnitude and direction" },
-      { "term": "Distance", "definition": "Scalar — magnitude only" },
-      { "term": "Displacement", "definition": "Vector — magnitude and direction" },
-      { "term": "Force", "definition": "Vector — magnitude and direction" }
+      {
+        "term": "Speed",
+        "definition": "Scalar — magnitude only"
+      },
+      {
+        "term": "Velocity",
+        "definition": "Vector — magnitude and direction"
+      },
+      {
+        "term": "Distance",
+        "definition": "Scalar — magnitude only"
+      },
+      {
+        "term": "Displacement",
+        "definition": "Vector — magnitude and direction"
+      },
+      {
+        "term": "Force",
+        "definition": "Vector — magnitude and direction"
+      }
     ]
   },
   {
@@ -275,9 +355,18 @@
     "topic": "Newton's Laws",
     "question": "Match each Newton's Law to its correct statement.",
     "pairs": [
-      { "term": "Newton's First Law", "definition": "An object stays at rest or moves at constant velocity unless a resultant force acts" },
-      { "term": "Newton's Second Law", "definition": "Resultant force = mass × acceleration" },
-      { "term": "Newton's Third Law", "definition": "Every action has an equal and opposite reaction on a different object" }
+      {
+        "term": "Newton's First Law",
+        "definition": "An object stays at rest or moves at constant velocity unless a resultant force acts"
+      },
+      {
+        "term": "Newton's Second Law",
+        "definition": "Resultant force = mass × acceleration"
+      },
+      {
+        "term": "Newton's Third Law",
+        "definition": "Every action has an equal and opposite reaction on a different object"
+      }
     ]
   },
   {
@@ -287,10 +376,22 @@
     "topic": "Motion",
     "question": "Match each graph description to what it tells us about motion.",
     "pairs": [
-      { "term": "Steep gradient on distance-time graph", "definition": "Object moving at high speed" },
-      { "term": "Horizontal line on distance-time graph", "definition": "Object is stationary" },
-      { "term": "Steep gradient on velocity-time graph", "definition": "Large acceleration" },
-      { "term": "Area under velocity-time graph", "definition": "Distance travelled" }
+      {
+        "term": "Steep gradient on distance-time graph",
+        "definition": "Object moving at high speed"
+      },
+      {
+        "term": "Horizontal line on distance-time graph",
+        "definition": "Object is stationary"
+      },
+      {
+        "term": "Steep gradient on velocity-time graph",
+        "definition": "Large acceleration"
+      },
+      {
+        "term": "Area under velocity-time graph",
+        "definition": "Distance travelled"
+      }
     ]
   },
   {
@@ -300,10 +401,22 @@
     "topic": "Stopping Distances",
     "question": "Match each factor to whether it affects thinking distance or braking distance.",
     "pairs": [
-      { "term": "Driver tiredness", "definition": "Thinking distance — increases reaction time" },
-      { "term": "Wet roads", "definition": "Braking distance — reduces friction" },
-      { "term": "Worn tyres", "definition": "Braking distance — reduces grip" },
-      { "term": "Alcohol", "definition": "Thinking distance — slows reaction time" }
+      {
+        "term": "Driver tiredness",
+        "definition": "Thinking distance — increases reaction time"
+      },
+      {
+        "term": "Wet roads",
+        "definition": "Braking distance — reduces friction"
+      },
+      {
+        "term": "Worn tyres",
+        "definition": "Braking distance — reduces grip"
+      },
+      {
+        "term": "Alcohol",
+        "definition": "Thinking distance — slows reaction time"
+      }
     ]
   },
   {
@@ -313,10 +426,22 @@
     "topic": "Forces",
     "question": "Match each force to whether it is a contact or non-contact force.",
     "pairs": [
-      { "term": "Friction", "definition": "Contact force — objects must be touching" },
-      { "term": "Gravity", "definition": "Non-contact force — acts at a distance" },
-      { "term": "Tension", "definition": "Contact force — objects must be touching" },
-      { "term": "Magnetic force", "definition": "Non-contact force — acts at a distance" }
+      {
+        "term": "Friction",
+        "definition": "Contact force — objects must be touching"
+      },
+      {
+        "term": "Gravity",
+        "definition": "Non-contact force — acts at a distance"
+      },
+      {
+        "term": "Tension",
+        "definition": "Contact force — objects must be touching"
+      },
+      {
+        "term": "Magnetic force",
+        "definition": "Non-contact force — acts at a distance"
+      }
     ]
   },
   {
@@ -489,5 +614,275 @@
     "topic": "Newton's Laws",
     "question": "A rocket launches from Earth. Explain, using all three of Newton's Laws, how the rocket accelerates, reaches constant velocity, and how it could decelerate.",
     "mark_scheme": "First Law: rocket stays still until thrust acts (1); Second Law: thrust greater than weight so resultant force causes acceleration F = ma (1); as fuel burns rocket lighter so acceleration increases (1); Third Law: rocket expels gas down, gas pushes rocket up with equal and opposite force (1); air resistance increases with speed — eventually equals thrust giving constant velocity (1); to decelerate, thrust reduced so resultant force opposes motion (1) — any six."
+  },
+  {
+    "id": "P5-LA-008",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Scalars and Vectors",
+    "question": "A footballer kicks a ball with a force of 40 N at 30° above the horizontal. Explain the difference between a scalar and a vector quantity, and explain why force is a vector. State the horizontal and vertical components of the kick (sin 30° = 0.5, cos 30° = 0.87).",
+    "mark_scheme": "Scalar: magnitude only, no direction (1); vector: has both magnitude and direction (1); force is a vector because it has both size and direction (1); horizontal component = 40 × 0.87 = 34.8 N; vertical component = 40 × 0.5 = 20 N (1 for both correct)."
+  },
+  {
+    "id": "P5-LA-009",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Calculate",
+    "topic": "Motion",
+    "question": "A cyclist travels at 12 m/s and brakes uniformly to rest in 6 seconds. Calculate the deceleration of the cyclist and the distance travelled during braking.",
+    "mark_scheme": "a = (v − u) / t = (0 − 12) / 6 = −2 m/s² (1); deceleration = 2 m/s² (1); distance = area under v-t graph = ½ × 12 × 6 (1); distance = 36 m (1)."
+  },
+  {
+    "id": "P5-LA-010",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Forces",
+    "question": "Explain the difference between contact and non-contact forces. Give two examples of each and describe how the resultant force is calculated when two forces act in the same direction and in opposite directions along a straight line.",
+    "mark_scheme": "Contact forces require objects to be touching, e.g. friction, tension, normal reaction (any two) (1); non-contact forces act at a distance, e.g. gravity, magnetic force, electrostatic force (any two) (1); forces in same direction: add them together (1); forces in opposite directions: subtract the smaller from the larger; direction is that of the larger force (1)."
+  },
+  {
+    "id": "P5-LA-011",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Calculate",
+    "topic": "Elasticity",
+    "question": "A spring of spring constant 250 N/m is stretched by a force of 15 N. Calculate the extension of the spring and the elastic potential energy stored. (Ee = ½ ke²)",
+    "mark_scheme": "e = F / k = 15 / 250 = 0.06 m (1); Ee = ½ × k × e² (1); Ee = ½ × 250 × (0.06)² = ½ × 250 × 0.0036 (1); Ee = 0.45 J (1)."
+  },
+  {
+    "id": "P5-LA-012",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Newton's Laws",
+    "question": "Explain how Newton's Second Law applies to an aircraft taking off. The aircraft has a mass of 50 000 kg and engines provide a total thrust of 600 000 N. Friction and drag total 100 000 N. Calculate the acceleration.",
+    "mark_scheme": "Resultant force = thrust − drag = 600 000 − 100 000 = 500 000 N (1); F = ma, so a = F / m (1); a = 500 000 / 50 000 (1); a = 10 m/s² (1)."
+  },
+  {
+    "id": "P5-LA-013",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Motion",
+    "question": "Describe what a distance-time graph and a velocity-time graph each tell us about motion. For each type of graph, explain what a straight line and a curved line indicate.",
+    "mark_scheme": "Distance-time graph: gradient = speed (1); straight line = constant speed; curve = changing speed (acceleration or deceleration) (1); velocity-time graph: gradient = acceleration; area under graph = distance travelled (1); straight line = constant acceleration; curve = changing acceleration (1)."
+  },
+  {
+    "id": "P5-LA-014",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Calculate",
+    "topic": "Work Done and Energy",
+    "question": "A person of mass 60 kg climbs stairs of vertical height 4 m. Calculate the work done against gravity and explain why the actual energy used by the person is greater than this value. (g = 10 N/kg)",
+    "mark_scheme": "Weight = mg = 60 × 10 = 600 N (1); work done = force × distance = 600 × 4 = 2400 J (1); actual energy used is greater because the body is not 100% efficient (1); some energy is also used to move limbs and is dissipated as heat (1)."
+  },
+  {
+    "id": "P5-LA-015",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Momentum",
+    "question": "Explain how Newton's Third Law relates to conservation of momentum. Use the example of two ice skaters pushing off each other to support your answer.",
+    "mark_scheme": "Newton's Third Law: skater A pushes skater B with a force; B pushes A back with an equal and opposite force (1); forces act for the same time, so impulses are equal and opposite (1); impulse = change in momentum, so momentum changes are equal and opposite (1); total momentum before = 0; total momentum after = 0, so momentum is conserved (1)."
+  },
+  {
+    "id": "P5-LA-016",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Evaluate",
+    "topic": "Stopping Distances",
+    "question": "A driver is travelling at 30 m/s on a motorway in wet conditions at night. Evaluate the factors that would affect the stopping distance compared to dry daytime conditions.",
+    "mark_scheme": "Thinking distance affected by driver alertness / tiredness at night — may be longer (1); wet road reduces friction between tyres and road, increasing braking distance (1); higher speed greatly increases both thinking and braking distance (speed doubles, braking distance roughly quadruples) (1); any further factor: worn tyres, reduced visibility, vehicle load, tyre pressure (1)."
+  },
+  {
+    "id": "P5-LA-017",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Newton's Laws",
+    "question": "A book rests on a table. Identify all forces acting on the book, state which are Newton's Third Law pairs, and explain why the book remains stationary.",
+    "mark_scheme": "Weight of book acts downward (gravitational force from Earth) (1); normal contact force from table acts upward on book (1); Newton's Third Law pair: book's weight and the force the book exerts on the Earth (gravitational); normal force from table and force book exerts on table (1); book stationary because resultant force is zero — weight balanced by normal force (1)."
+  },
+  {
+    "id": "P5-LA-018",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Calculate",
+    "topic": "Momentum",
+    "question": "A 0.5 kg ball hits a wall at 10 m/s and bounces back at 8 m/s. The impact lasts 0.02 s. Calculate the change in momentum and the average force exerted on the ball.",
+    "mark_scheme": "Taking towards wall as positive: initial momentum = 0.5 × 10 = 5 kg m/s; final momentum = 0.5 × (−8) = −4 kg m/s (1); change in momentum = −4 − 5 = −9 kg m/s; magnitude = 9 kg m/s (1); F = Δp / t (1); F = 9 / 0.02 = 450 N (1)."
+  },
+  {
+    "id": "P5-LA-019",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Newton's Laws",
+    "question": "A car of mass 900 kg is travelling at 20 m/s when the driver sees an obstacle and brakes to a halt. The braking force is 4500 N. Calculate the deceleration and stopping time from when brakes are applied. Then explain how airbags and seatbelts reduce injury during the stop.",
+    "mark_scheme": "a = F / m = 4500 / 900 = 5 m/s² (deceleration) (1); t = (v − u) / a = (0 − 20) / (−5) = 4 s (1); airbags/seatbelts increase the time over which the passenger decelerates (1); same change in momentum spread over longer time means smaller force (F = Δp / t) (1); smaller force means less risk of serious injury to passenger (1)."
+  },
+  {
+    "id": "P5-LA-020",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Elasticity",
+    "question": "Explain the difference between elastic and inelastic deformation. Describe how a force-extension graph shows both types. Calculate the spring constant if a force of 12 N produces an extension of 0.08 m, and calculate the elastic potential energy stored at this extension.",
+    "mark_scheme": "Elastic deformation: object returns to original shape when force removed (1); inelastic (plastic) deformation: object does not return to original shape — permanently deformed (1); graph: straight line through origin = elastic region; curve beyond elastic limit = inelastic deformation (1); k = F / e = 12 / 0.08 = 150 N/m (1); Ee = ½ × 150 × (0.08)² = 0.48 J (1)."
+  },
+  {
+    "id": "P5-LA-021",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Motion",
+    "question": "Describe how you would use a light gate and data logger to measure the acceleration of a trolley on a ramp. Include how you would process the data and what graph you would plot to determine the acceleration.",
+    "mark_scheme": "Set up ramp with trolley; attach card of known length to trolley (1); light gate connected to data logger/timer measures velocity as card passes through (1); time how long card takes to cut beam; calculate velocity = card length / time (1); repeat at two points on ramp to get two velocities and the time between them; a = (v − u) / t (1); alternatively: plot velocity against time; gradient = acceleration (1)."
+  },
+  {
+    "id": "P5-LA-022",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Calculate",
+    "topic": "Newton's Laws",
+    "question": "A rocket of initial mass 20 000 kg (including 15 000 kg of fuel) produces a thrust of 250 000 N. Calculate the initial acceleration. Explain why the acceleration increases as fuel burns, even if the thrust remains constant.",
+    "mark_scheme": "Weight = 20 000 × 10 = 200 000 N (1); resultant force = 250 000 − 200 000 = 50 000 N (1); a = F / m = 50 000 / 20 000 = 2.5 m/s² (1); as fuel burns, mass decreases (1); same thrust on smaller mass gives greater acceleration (F = ma, smaller m means larger a) (1)."
+  },
+  {
+    "id": "P5-LA-023",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Scalars and Vectors",
+    "question": "A boat travels 30 m due north and then 40 m due east. Explain the difference between the distance travelled and the displacement. Calculate the magnitude of the final displacement and the angle from north.",
+    "mark_scheme": "Distance = total path length = 30 + 40 = 70 m (1); displacement = straight-line distance from start to finish with direction (1); displacement magnitude = √(30² + 40²) = √(900 + 1600) = √2500 = 50 m (1); angle from north: tan θ = 40/30, θ = 53° east of north (accept 53° or correct calculation) (1); because displacement includes direction, it is a vector; distance is a scalar (1)."
+  },
+  {
+    "id": "P5-LA-024",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Momentum",
+    "question": "In a crash test, a 1200 kg car travelling at 15 m/s collides with a wall and stops in 0.3 s. Calculate the average braking force. Then evaluate the effectiveness of crumple zones, which extend the stopping time to 1.5 s in a real crash.",
+    "mark_scheme": "Δp = m × Δv = 1200 × 15 = 18 000 kg m/s (1); F = Δp / t = 18 000 / 0.3 = 60 000 N without crumple zone (1); with crumple zone: F = 18 000 / 1.5 = 12 000 N (1); crumple zones reduce force by factor of 5 — significant reduction in risk of injury (1); same change in momentum but over longer time means much smaller force on occupants (1)."
+  },
+  {
+    "id": "P5-LA-025",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Forces",
+    "question": "A parachutist falls from a stationary helicopter. Explain the motion of the parachutist from release to reaching terminal velocity, referring to resultant force, acceleration, and air resistance at each stage.",
+    "mark_scheme": "At release, weight > air resistance so there is a downward resultant force (1); the parachutist accelerates downward (1); as speed increases, air resistance increases (1); resultant force decreases so acceleration decreases (1); eventually air resistance equals weight — resultant force zero — terminal velocity reached (constant speed, no acceleration) (1)."
+  },
+  {
+    "id": "P5-LA-026",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Work Done and Energy",
+    "question": "Describe the energy transfers when a ball is thrown upward and returns to its starting height. Explain why the ball's speed on return is slightly less than when thrown, and calculate the kinetic energy of a 0.3 kg ball thrown at 12 m/s.",
+    "mark_scheme": "KE → GPE as ball rises (1); GPE → KE as ball falls (1); some energy dissipated as heat due to air resistance during both up and down journeys (1); therefore not all GPE converts back to KE — ball returns with less speed (1); KE = ½ mv² = ½ × 0.3 × 12² = ½ × 0.3 × 144 = 21.6 J (1)."
+  },
+  {
+    "id": "P5-LA-027",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Newton's Laws",
+    "question": "Explain inertia and how it is related to mass. Describe how Newton's First Law links to inertia and give two everyday examples of inertia in action.",
+    "mark_scheme": "Inertia is the tendency of an object to remain at rest or continue moving at constant velocity (1); greater mass = greater inertia (1); Newton's First Law: object stays at rest / constant velocity unless acted on by a resultant force — this is a statement of inertia (1); example 1: passengers lurch forward when car brakes suddenly — their bodies tend to continue moving (1); example 2: a heavy lorry is harder to stop than a bicycle at the same speed — greater mass means greater inertia (accept any valid examples) (1)."
+  },
+  {
+    "id": "P5-LA-028",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Calculate",
+    "topic": "Motion",
+    "question": "A train accelerates uniformly from 5 m/s to 35 m/s over 600 m. Calculate the acceleration and the time taken to cover this distance. Then calculate the distance the train would travel if it continued at 35 m/s for a further 2 minutes.",
+    "mark_scheme": "v² = u² + 2as → (35)² = (5)² + 2 × a × 600 (1); 1225 − 25 = 1200a → a = 1 m/s² (1); t = (v − u) / a = (35 − 5) / 1 = 30 s (1); at constant 35 m/s for 2 min (120 s): d = v × t = 35 × 120 = 4200 m (1); allow full credit for any correct alternative method e.g. using area under graph (1 for correct formula, 1 for answer)."
+  },
+  {
+    "id": "P5-LA-029",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Momentum",
+    "question": "Explain the principle of conservation of momentum. A 4 kg trolley moving at 3 m/s collides with a 2 kg stationary trolley. After the collision the 4 kg trolley moves at 1 m/s in the same direction. Calculate the velocity of the 2 kg trolley after the collision and verify that momentum is conserved.",
+    "mark_scheme": "Conservation of momentum: total momentum before a collision equals total momentum after, provided no external forces act (1); momentum before = (4 × 3) + (2 × 0) = 12 kg m/s (1); momentum after = (4 × 1) + (2 × v) = 4 + 2v (1); 4 + 2v = 12 → 2v = 8 → v = 4 m/s (1); momentum after = 4 + 8 = 12 kg m/s = momentum before — conservation verified (1)."
+  },
+  {
+    "id": "P5-LA-030",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Motion",
+    "question": "A student investigates the motion of a ball rolled along a track. Sketch and describe the distance-time and velocity-time graphs for a ball that: rolls at constant speed, then accelerates, then decelerates to a stop. Explain what the gradient and area represent in each graph.",
+    "mark_scheme": "Distance-time: constant speed = straight line with positive gradient (1); accelerating = upward curve (increasing gradient) (1); decelerating = curve flattening as gradient decreases to zero (1); gradient of distance-time graph = speed (1); velocity-time: constant speed = horizontal line; accelerating = straight line with positive gradient; decelerating = straight line with negative gradient (1); gradient of v-t graph = acceleration; area under v-t graph = distance travelled (1)."
+  },
+  {
+    "id": "P5-LA-031",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Newton's Laws",
+    "question": "A logistics company is considering two lorries: Lorry A has mass 8000 kg and Lorry B has mass 12 000 kg, both with the same engine producing 60 000 N thrust. Friction on both is 20 000 N. Compare the performance of both lorries, calculating the acceleration of each and evaluating which is better suited to motorway driving versus urban stop-start driving.",
+    "mark_scheme": "Resultant force = 60 000 − 20 000 = 40 000 N for both (1); acceleration A = 40 000 / 8000 = 5 m/s² (1); acceleration B = 40 000 / 12 000 = 3.3 m/s² (1); Lorry A has greater acceleration so better for urban driving where frequent starting and stopping required (1); Lorry B has greater mass so greater momentum at motorway speed — harder to stop but may carry more cargo (1); overall evaluation: Lorry A better for urban / Lorry B may be better for cargo capacity on motorway — with justification (1)."
+  },
+  {
+    "id": "P5-LA-032",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Elasticity",
+    "question": "Explain Hooke's Law fully and describe the experiment to verify it. Include what measurements to take, what graph to plot, how to find the spring constant from the graph, and explain what happens when the elastic limit is exceeded.",
+    "mark_scheme": "Hooke's Law: extension is proportional to force applied, provided elastic limit is not exceeded (1); add known masses (weights) to a spring; measure extension each time using a ruler (1); plot force (y-axis) against extension (x-axis); expect straight line through origin (1); spring constant k = gradient of the straight-line section (k = F/e) (1); beyond elastic limit, graph curves — extension greater than predicted by Hooke's Law (1); the spring undergoes inelastic/plastic deformation and does not return to original length when force is removed (1)."
+  },
+  {
+    "id": "P5-LA-033",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Stopping Distances",
+    "question": "The Highway Code states that stopping distance at 30 mph is 23 m and at 60 mph is 73 m. Evaluate how thinking distance and braking distance each contribute to these totals, explain the physics behind why braking distance approximately quadruples when speed doubles, and discuss at least three factors that could make real-world stopping distances even longer.",
+    "mark_scheme": "Thinking distance is proportional to speed — doubles when speed doubles (1); braking distance depends on kinetic energy: KE = ½mv² — when speed doubles, KE quadruples, so braking distance approximately quadruples (1); at 30 mph: thinking ≈ 9 m, braking ≈ 14 m; at 60 mph: thinking ≈ 18 m, braking ≈ 55 m — braking increases more than doubles (1); factor 1: driver distraction/tiredness increases reaction time and thinking distance (1); factor 2: wet/icy roads reduce friction, increasing braking distance (1); factor 3: worn tyres / brake fade / heavy vehicle load / downhill gradient (1)."
+  },
+  {
+    "id": "P5-LA-034",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Scalars and Vectors",
+    "question": "Explain the difference between scalar and vector quantities. For a ship sailing 400 m north and then 300 m east, calculate the total distance travelled, the displacement magnitude and its direction. Explain why a navigator must use displacement rather than distance when plotting a course.",
+    "mark_scheme": "Scalar: magnitude only (e.g. distance, speed, mass, temperature) (1); vector: magnitude and direction (e.g. displacement, velocity, force, acceleration) (1); total distance = 400 + 300 = 700 m (1); displacement = √(400² + 300²) = √(160 000 + 90 000) = √250 000 = 500 m (1); direction: tan θ = 300/400, θ = 36.9° ≈ 37° east of north (1); navigator needs displacement to know the actual straight-line distance and direction to destination — distance alone does not tell the direction (1)."
+  },
+  {
+    "id": "P5-LA-035",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Momentum",
+    "question": "A gun of mass 2 kg fires a bullet of mass 0.02 kg at 400 m/s. The gun and bullet were initially stationary. Calculate the recoil velocity of the gun. Explain this using conservation of momentum and Newton's Third Law. Then explain why the bullet causes more damage than the recoil force on the shooter, even though the forces are equal and opposite.",
+    "mark_scheme": "Total initial momentum = 0 (both at rest) (1); conservation of momentum: 0 = (0.02 × 400) + (2 × v_gun) (1); 0 = 8 + 2v_gun → v_gun = −4 m/s; gun recoils at 4 m/s in opposite direction (1); Newton's Third Law: gun pushes bullet forward, bullet pushes gun backward with equal and opposite force (1); forces are equal but act on very different masses — bullet has tiny mass so enormous acceleration (a = F/m) (1); bullet has very high velocity and kinetic energy concentrated at a small point, causing much greater damage than the recoil force spread over the shooter's shoulder (1)."
+  },
+  {
+    "id": "P5-LA-036",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Forces",
+    "question": "Evaluate the forces acting on an aeroplane in level flight at constant speed. The plane has mass 50 000 kg. Calculate its weight, identify all four forces acting on it, explain what must be true about the resultant force, and describe what happens to the forces and motion if the engine thrust is suddenly reduced by 20%.",
+    "mark_scheme": "Weight = mg = 50 000 × 10 = 500 000 N downward (1); four forces: weight (down), lift (up), thrust (forward), drag (backward) (1); in level constant-speed flight: lift = weight AND thrust = drag — resultant force = zero (1); if thrust reduces by 20%: thrust < drag so resultant force backward — plane decelerates (1); also lift may reduce as airspeed decreases (1); pilot must increase thrust or adjust angle of attack to restore equilibrium or plane will slow down and potentially lose altitude (1)."
+  },
+  {
+    "id": "P5-LA-037",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Work Done and Energy",
+    "question": "Explain the relationship between work done, force, and distance. Calculate the work done pushing a 200 kg crate 15 m along a floor with a friction force of 400 N. Then explain how a ramp can make it easier to push the crate to a height of 2 m, comparing the force needed on the ramp versus lifting it vertically. (g = 10 N/kg)",
+    "mark_scheme": "Work done = force × distance (in direction of force) (1); W = 400 × 15 = 6000 J along the floor (1); to lift vertically: F = weight = 200 × 10 = 2000 N; W = 2000 × 2 = 4000 J (1); ramp: same work done but over longer distance — so smaller force needed (work = force × distance; same W, larger d, smaller F) (1); this is the mechanical advantage of an inclined plane (1); however, using a ramp requires pushing through a greater distance — total work done is the same (ignoring friction) but effort force is less (1)."
   }
 ]

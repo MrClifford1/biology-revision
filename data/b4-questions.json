@@ -6,12 +6,12 @@
     "topic": "Photosynthesis",
     "question": "Which of the following is the correct word equation for photosynthesis?",
     "options": [
-      "Glucose + Oxygen → Carbon dioxide + Water",
-      "Carbon dioxide + Water → Glucose + Oxygen",
-      "Glucose + Carbon dioxide → Oxygen + Water",
-      "Water + Oxygen → Glucose + Carbon dioxide"
+      "Glucose + Oxygen \u2192 Carbon dioxide + Water",
+      "Carbon dioxide + Water \u2192 Glucose + Oxygen",
+      "Glucose + Carbon dioxide \u2192 Oxygen + Water",
+      "Water + Oxygen \u2192 Glucose + Carbon dioxide"
     ],
-    "correct": "Carbon dioxide + Water → Glucose + Oxygen"
+    "correct": "Carbon dioxide + Water \u2192 Glucose + Oxygen"
   },
   {
     "id": "B4-MC-002",
@@ -19,7 +19,12 @@
     "marks": 1,
     "topic": "Photosynthesis",
     "question": "Where does photosynthesis take place in a plant cell?",
-    "options": ["Mitochondria", "Nucleus", "Chloroplast", "Vacuole"],
+    "options": [
+      "Mitochondria",
+      "Nucleus",
+      "Chloroplast",
+      "Vacuole"
+    ],
     "correct": "Chloroplast"
   },
   {
@@ -28,7 +33,12 @@
     "marks": 1,
     "topic": "Photosynthesis",
     "question": "Which of the following is a limiting factor for photosynthesis?",
-    "options": ["Oxygen concentration", "Nitrogen concentration", "Light intensity", "Water pressure"],
+    "options": [
+      "Oxygen concentration",
+      "Nitrogen concentration",
+      "Light intensity",
+      "Water pressure"
+    ],
     "correct": "Light intensity"
   },
   {
@@ -66,12 +76,12 @@
     "topic": "Respiration",
     "question": "Which of the following is the correct word equation for aerobic respiration?",
     "options": [
-      "Glucose → Lactic acid",
-      "Glucose + Carbon dioxide → Water + Oxygen",
-      "Glucose + Oxygen → Carbon dioxide + Water",
-      "Carbon dioxide + Water → Glucose + Oxygen"
+      "Glucose \u2192 Lactic acid",
+      "Glucose + Carbon dioxide \u2192 Water + Oxygen",
+      "Glucose + Oxygen \u2192 Carbon dioxide + Water",
+      "Carbon dioxide + Water \u2192 Glucose + Oxygen"
     ],
-    "correct": "Glucose + Oxygen → Carbon dioxide + Water"
+    "correct": "Glucose + Oxygen \u2192 Carbon dioxide + Water"
   },
   {
     "id": "B4-MC-007",
@@ -79,7 +89,12 @@
     "marks": 1,
     "topic": "Respiration",
     "question": "Where does aerobic respiration take place in the cell?",
-    "options": ["Chloroplast", "Nucleus", "Ribosome", "Mitochondria"],
+    "options": [
+      "Chloroplast",
+      "Nucleus",
+      "Ribosome",
+      "Mitochondria"
+    ],
     "correct": "Mitochondria"
   },
   {
@@ -201,7 +216,9 @@
     "topic": "Photosynthesis",
     "question": "The green pigment in chloroplasts that absorbs light energy is called __________.",
     "correct": "chlorophyll",
-    "acceptable": ["chlorophyll"]
+    "acceptable": [
+      "chlorophyll"
+    ]
   },
   {
     "id": "B4-FIB-002",
@@ -210,7 +227,9 @@
     "topic": "Photosynthesis",
     "question": "Plants store glucose as __________ for use when photosynthesis is not occurring.",
     "correct": "starch",
-    "acceptable": ["starch"]
+    "acceptable": [
+      "starch"
+    ]
   },
   {
     "id": "B4-FIB-003",
@@ -219,7 +238,9 @@
     "topic": "Photosynthesis",
     "question": "A factor that prevents photosynthesis from going faster because it is in short supply is called a __________ factor.",
     "correct": "limiting",
-    "acceptable": ["limiting"]
+    "acceptable": [
+      "limiting"
+    ]
   },
   {
     "id": "B4-FIB-004",
@@ -228,7 +249,10 @@
     "topic": "Respiration",
     "question": "Aerobic respiration takes place in the __________.",
     "correct": "mitochondria",
-    "acceptable": ["mitochondria", "mitochondrion"]
+    "acceptable": [
+      "mitochondria",
+      "mitochondrion"
+    ]
   },
   {
     "id": "B4-FIB-005",
@@ -237,7 +261,10 @@
     "topic": "Respiration",
     "question": "In animal cells, anaerobic respiration produces __________ which causes muscle fatigue.",
     "correct": "lactic acid",
-    "acceptable": ["lactic acid", "lactate"]
+    "acceptable": [
+      "lactic acid",
+      "lactate"
+    ]
   },
   {
     "id": "B4-FIB-006",
@@ -246,7 +273,11 @@
     "topic": "Respiration",
     "question": "The anaerobic respiration of yeast produces ethanol and __________.",
     "correct": "carbon dioxide",
-    "acceptable": ["carbon dioxide", "co2", "CO2"]
+    "acceptable": [
+      "carbon dioxide",
+      "co2",
+      "CO2"
+    ]
   },
   {
     "id": "B4-FIB-007",
@@ -255,7 +286,9 @@
     "topic": "Respiration",
     "question": "The extra oxygen needed after exercise to remove lactic acid is called __________ debt.",
     "correct": "oxygen",
-    "acceptable": ["oxygen"]
+    "acceptable": [
+      "oxygen"
+    ]
   },
   {
     "id": "B4-FIB-008",
@@ -264,7 +297,9 @@
     "topic": "Respiration",
     "question": "The sum of all chemical reactions in the body is called __________.",
     "correct": "metabolism",
-    "acceptable": ["metabolism"]
+    "acceptable": [
+      "metabolism"
+    ]
   },
   {
     "id": "B4-FIB-009",
@@ -273,7 +308,9 @@
     "topic": "Photosynthesis",
     "question": "Plants use glucose and nitrates to make __________ acids, which are used to build proteins.",
     "correct": "amino",
-    "acceptable": ["amino"]
+    "acceptable": [
+      "amino"
+    ]
   },
   {
     "id": "B4-FIB-010",
@@ -282,7 +319,9 @@
     "topic": "Respiration",
     "question": "Glucose is stored as __________ in animal liver and muscle cells.",
     "correct": "glycogen",
-    "acceptable": ["glycogen"]
+    "acceptable": [
+      "glycogen"
+    ]
   },
   {
     "id": "B4-MATCH-001",
@@ -291,9 +330,18 @@
     "topic": "Photosynthesis",
     "question": "Match each limiting factor to how it affects photosynthesis.",
     "pairs": [
-      { "term": "Light intensity", "definition": "Increasing it increases photosynthesis rate up to a point" },
-      { "term": "CO₂ concentration", "definition": "More of it allows more glucose to be produced" },
-      { "term": "Temperature", "definition": "Too high denatures enzymes and stops photosynthesis" }
+      {
+        "term": "Light intensity",
+        "definition": "Increasing it increases photosynthesis rate up to a point"
+      },
+      {
+        "term": "CO\u2082 concentration",
+        "definition": "More of it allows more glucose to be produced"
+      },
+      {
+        "term": "Temperature",
+        "definition": "Too high denatures enzymes and stops photosynthesis"
+      }
     ]
   },
   {
@@ -303,9 +351,18 @@
     "topic": "Respiration",
     "question": "Match each type of respiration to its correct description.",
     "pairs": [
-      { "term": "Aerobic respiration", "definition": "Uses oxygen, releases lots of energy, produces CO₂ and water" },
-      { "term": "Anaerobic respiration (animals)", "definition": "No oxygen, produces lactic acid, releases less energy" },
-      { "term": "Anaerobic respiration (yeast)", "definition": "No oxygen, produces ethanol and carbon dioxide" }
+      {
+        "term": "Aerobic respiration",
+        "definition": "Uses oxygen, releases lots of energy, produces CO\u2082 and water"
+      },
+      {
+        "term": "Anaerobic respiration (animals)",
+        "definition": "No oxygen, produces lactic acid, releases less energy"
+      },
+      {
+        "term": "Anaerobic respiration (yeast)",
+        "definition": "No oxygen, produces ethanol and carbon dioxide"
+      }
     ]
   },
   {
@@ -315,10 +372,22 @@
     "topic": "Photosynthesis",
     "question": "Match each use of glucose in plants to its correct description.",
     "pairs": [
-      { "term": "Starch", "definition": "Insoluble storage carbohydrate made from glucose" },
-      { "term": "Cellulose", "definition": "Used to build and strengthen plant cell walls" },
-      { "term": "Lipids", "definition": "Fats and oils used for energy storage in seeds" },
-      { "term": "Amino acids", "definition": "Made using glucose and nitrates, used to build proteins" }
+      {
+        "term": "Starch",
+        "definition": "Insoluble storage carbohydrate made from glucose"
+      },
+      {
+        "term": "Cellulose",
+        "definition": "Used to build and strengthen plant cell walls"
+      },
+      {
+        "term": "Lipids",
+        "definition": "Fats and oils used for energy storage in seeds"
+      },
+      {
+        "term": "Amino acids",
+        "definition": "Made using glucose and nitrates, used to build proteins"
+      }
     ]
   },
   {
@@ -328,10 +397,22 @@
     "topic": "Respiration",
     "question": "Match each response to exercise to why it happens.",
     "pairs": [
-      { "term": "Increased breathing rate", "definition": "To supply more oxygen and remove CO₂ for increased respiration" },
-      { "term": "Increased heart rate", "definition": "To deliver more oxygen and glucose to muscles faster" },
-      { "term": "Anaerobic respiration", "definition": "Occurs when oxygen cannot be supplied fast enough to muscles" },
-      { "term": "Oxygen debt", "definition": "Extra oxygen needed after exercise to break down lactic acid" }
+      {
+        "term": "Increased breathing rate",
+        "definition": "To supply more oxygen and remove CO\u2082 for increased respiration"
+      },
+      {
+        "term": "Increased heart rate",
+        "definition": "To deliver more oxygen and glucose to muscles faster"
+      },
+      {
+        "term": "Anaerobic respiration",
+        "definition": "Occurs when oxygen cannot be supplied fast enough to muscles"
+      },
+      {
+        "term": "Oxygen debt",
+        "definition": "Extra oxygen needed after exercise to break down lactic acid"
+      }
     ]
   },
   {
@@ -341,10 +422,22 @@
     "topic": "Photosynthesis",
     "question": "Match each term to its correct definition.",
     "pairs": [
-      { "term": "Chlorophyll", "definition": "Green pigment that absorbs light energy for photosynthesis" },
-      { "term": "Chloroplast", "definition": "Organelle where photosynthesis takes place" },
-      { "term": "Limiting factor", "definition": "A factor in short supply that prevents photosynthesis from going faster" },
-      { "term": "Glucose", "definition": "The sugar produced during photosynthesis" }
+      {
+        "term": "Chlorophyll",
+        "definition": "Green pigment that absorbs light energy for photosynthesis"
+      },
+      {
+        "term": "Chloroplast",
+        "definition": "Organelle where photosynthesis takes place"
+      },
+      {
+        "term": "Limiting factor",
+        "definition": "A factor in short supply that prevents photosynthesis from going faster"
+      },
+      {
+        "term": "Glucose",
+        "definition": "The sugar produced during photosynthesis"
+      }
     ]
   },
   {
@@ -354,7 +447,7 @@
     "command_word": "State",
     "topic": "Photosynthesis",
     "question": "State the two reactants needed for photosynthesis.",
-    "mark_scheme": "Carbon dioxide (1) and water (1) — both needed for the mark."
+    "mark_scheme": "Carbon dioxide (1) and water (1) \u2014 both needed for the mark."
   },
   {
     "id": "B4-SA-002",
@@ -363,7 +456,7 @@
     "command_word": "State",
     "topic": "Respiration",
     "question": "State the word equation for aerobic respiration.",
-    "mark_scheme": "Glucose + oxygen → carbon dioxide + water (1) — all four terms needed."
+    "mark_scheme": "Glucose + oxygen \u2192 carbon dioxide + water (1) \u2014 all four terms needed."
   },
   {
     "id": "B4-SA-003",
@@ -372,7 +465,7 @@
     "command_word": "State",
     "topic": "Respiration",
     "question": "State one difference between aerobic and anaerobic respiration.",
-    "mark_scheme": "Aerobic uses oxygen, anaerobic does not (1); aerobic releases more energy (1); aerobic produces CO₂ and water, anaerobic produces lactic acid or ethanol (1) — any one."
+    "mark_scheme": "Aerobic uses oxygen, anaerobic does not (1); aerobic releases more energy (1); aerobic produces CO\u2082 and water, anaerobic produces lactic acid or ethanol (1) \u2014 any one."
   },
   {
     "id": "B4-SA-004",
@@ -390,7 +483,7 @@
     "command_word": "Explain",
     "topic": "Photosynthesis",
     "question": "Explain why light intensity is a limiting factor for photosynthesis.",
-    "mark_scheme": "Without enough light the plant cannot absorb enough energy (1); rate of photosynthesis is reduced (1); even if CO₂ and temperature are ideal, lack of light limits the rate (1) — any two."
+    "mark_scheme": "Without enough light the plant cannot absorb enough energy (1); rate of photosynthesis is reduced (1); even if CO\u2082 and temperature are ideal, lack of light limits the rate (1) \u2014 any two."
   },
   {
     "id": "B4-SA-006",
@@ -399,7 +492,7 @@
     "command_word": "Explain",
     "topic": "Respiration",
     "question": "Explain why muscles become fatigued during intense exercise.",
-    "mark_scheme": "Oxygen cannot be supplied fast enough (1); anaerobic respiration occurs (1); lactic acid builds up in muscles (1); lactic acid causes pain and fatigue (1) — any two."
+    "mark_scheme": "Oxygen cannot be supplied fast enough (1); anaerobic respiration occurs (1); lactic acid builds up in muscles (1); lactic acid causes pain and fatigue (1) \u2014 any two."
   },
   {
     "id": "B4-SA-007",
@@ -408,7 +501,7 @@
     "command_word": "Describe",
     "topic": "Respiration",
     "question": "Describe what is meant by oxygen debt and how it is repaid.",
-    "mark_scheme": "Oxygen debt is the extra oxygen needed after exercise (1); to oxidise / break down lactic acid (1); lactic acid converted to glucose in the liver (1) — any two."
+    "mark_scheme": "Oxygen debt is the extra oxygen needed after exercise (1); to oxidise / break down lactic acid (1); lactic acid converted to glucose in the liver (1) \u2014 any two."
   },
   {
     "id": "B4-SA-008",
@@ -416,8 +509,8 @@
     "marks": 2,
     "command_word": "Explain",
     "topic": "Photosynthesis",
-    "question": "Explain how increasing CO₂ concentration affects the rate of photosynthesis.",
-    "mark_scheme": "More CO₂ available as a reactant (1); rate of photosynthesis increases (1); until another factor becomes limiting (1) — any two."
+    "question": "Explain how increasing CO\u2082 concentration affects the rate of photosynthesis.",
+    "mark_scheme": "More CO\u2082 available as a reactant (1); rate of photosynthesis increases (1); until another factor becomes limiting (1) \u2014 any two."
   },
   {
     "id": "B4-SA-009",
@@ -426,7 +519,7 @@
     "command_word": "Explain",
     "topic": "Photosynthesis",
     "question": "Explain how plants use glucose produced in photosynthesis. Give two examples.",
-    "mark_scheme": "Respiration to release energy (1); making starch for storage (1); making cellulose for cell walls (1); making lipids for storage (1); making amino acids with nitrates for proteins (1) — any two."
+    "mark_scheme": "Respiration to release energy (1); making starch for storage (1); making cellulose for cell walls (1); making lipids for storage (1); making amino acids with nitrates for proteins (1) \u2014 any two."
   },
   {
     "id": "B4-SA-010",
@@ -435,7 +528,7 @@
     "command_word": "Explain",
     "topic": "Photosynthesis",
     "question": "Explain why the rate of photosynthesis does not keep increasing as temperature rises.",
-    "mark_scheme": "Up to optimum temperature, increasing temperature increases the rate (1); enzymes work faster with more kinetic energy (1); above the optimum the enzymes denature (1); active site changes shape (1); substrate cannot bind (1) — any three."
+    "mark_scheme": "Up to optimum temperature, increasing temperature increases the rate (1); enzymes work faster with more kinetic energy (1); above the optimum the enzymes denature (1); active site changes shape (1); substrate cannot bind (1) \u2014 any three."
   },
   {
     "id": "B4-SA-011",
@@ -444,7 +537,7 @@
     "command_word": "Describe",
     "topic": "Respiration",
     "question": "Describe how the body responds to exercise, referring to heart rate, breathing rate and respiration.",
-    "mark_scheme": "Heart rate increases to deliver more oxygen and glucose to muscles (1); breathing rate increases to supply more oxygen and remove CO₂ (1); aerobic respiration rate increases (1); if oxygen supply is insufficient, anaerobic respiration occurs (1); lactic acid builds up (1) — any three."
+    "mark_scheme": "Heart rate increases to deliver more oxygen and glucose to muscles (1); breathing rate increases to supply more oxygen and remove CO\u2082 (1); aerobic respiration rate increases (1); if oxygen supply is insufficient, anaerobic respiration occurs (1); lactic acid builds up (1) \u2014 any three."
   },
   {
     "id": "B4-SA-012",
@@ -453,7 +546,7 @@
     "command_word": "Explain",
     "topic": "Respiration",
     "question": "Explain how fermentation by yeast is used in the food and drink industry.",
-    "mark_scheme": "Yeast respires anaerobically (1); glucose → ethanol + carbon dioxide (1); ethanol used in brewing alcoholic drinks (1); CO₂ used to make bread rise (1); process is called fermentation (1) — any three."
+    "mark_scheme": "Yeast respires anaerobically (1); glucose \u2192 ethanol + carbon dioxide (1); ethanol used in brewing alcoholic drinks (1); CO\u2082 used to make bread rise (1); process is called fermentation (1) \u2014 any three."
   },
   {
     "id": "B4-LA-001",
@@ -462,7 +555,7 @@
     "command_word": "Explain",
     "topic": "Photosynthesis",
     "question": "Explain how a farmer could use knowledge of limiting factors to increase the yield of crops grown in a greenhouse.",
-    "mark_scheme": "Increase light intensity using artificial lights (1); increase CO₂ concentration by burning fuel / adding CO₂ (1); maintain optimum temperature using heaters (1); each factor can limit yield if in short supply (1); cost of increasing factors must be balanced against increased yield (1) — any four."
+    "mark_scheme": "Increase light intensity using artificial lights (1); increase CO\u2082 concentration by burning fuel / adding CO\u2082 (1); maintain optimum temperature using heaters (1); each factor can limit yield if in short supply (1); cost of increasing factors must be balanced against increased yield (1) \u2014 any four."
   },
   {
     "id": "B4-LA-002",
@@ -471,7 +564,7 @@
     "command_word": "Explain",
     "topic": "Respiration",
     "question": "Compare aerobic and anaerobic respiration. Include reactants, products and energy released in your answer.",
-    "mark_scheme": "Aerobic uses oxygen, anaerobic does not (1); aerobic: glucose + oxygen → CO₂ + water (1); anaerobic in animals: glucose → lactic acid (1); anaerobic in yeast: glucose → ethanol + CO₂ (1); aerobic releases much more energy per glucose molecule (1) — any four."
+    "mark_scheme": "Aerobic uses oxygen, anaerobic does not (1); aerobic: glucose + oxygen \u2192 CO\u2082 + water (1); anaerobic in animals: glucose \u2192 lactic acid (1); anaerobic in yeast: glucose \u2192 ethanol + CO\u2082 (1); aerobic releases much more energy per glucose molecule (1) \u2014 any four."
   },
   {
     "id": "B4-LA-003",
@@ -480,7 +573,7 @@
     "command_word": "Explain",
     "topic": "Photosynthesis",
     "question": "A student investigates the effect of light intensity on the rate of photosynthesis using pondweed. Explain what results you would expect and why.",
-    "mark_scheme": "As light intensity increases, rate of photosynthesis increases (1); more oxygen bubbles produced (1); at high light intensity the rate levels off (1); another factor becomes limiting e.g. CO₂ or temperature (1); if the lamp is moved further away, light intensity decreases by inverse square law (1) — any four."
+    "mark_scheme": "As light intensity increases, rate of photosynthesis increases (1); more oxygen bubbles produced (1); at high light intensity the rate levels off (1); another factor becomes limiting e.g. CO\u2082 or temperature (1); if the lamp is moved further away, light intensity decreases by inverse square law (1) \u2014 any four."
   },
   {
     "id": "B4-LA-004",
@@ -489,7 +582,7 @@
     "command_word": "Explain",
     "topic": "Respiration",
     "question": "Explain what metabolism is and give examples of metabolic reactions that occur in the body.",
-    "mark_scheme": "Metabolism is the sum of all chemical reactions in the body (1); includes building up reactions (anabolism) and breaking down reactions (catabolism) (1); glucose converted to starch / glycogen for storage (1); glucose used in respiration to release energy (1); amino acids built into proteins (1); excess amino acids broken down to form urea (1) — any four."
+    "mark_scheme": "Metabolism is the sum of all chemical reactions in the body (1); includes building up reactions (anabolism) and breaking down reactions (catabolism) (1); glucose converted to starch / glycogen for storage (1); glucose used in respiration to release energy (1); amino acids built into proteins (1); excess amino acids broken down to form urea (1) \u2014 any four."
   },
   {
     "id": "B4-LA-005",
@@ -498,7 +591,7 @@
     "command_word": "Explain",
     "topic": "Photosynthesis",
     "question": "Explain the process of photosynthesis, including where it takes place, what is needed and what is produced. Include how the products are used by the plant.",
-    "mark_scheme": "Photosynthesis takes place in chloroplasts (1); chlorophyll absorbs light energy (1); CO₂ and water are reactants (1); glucose and oxygen are products (1); glucose used for respiration (1); stored as starch (1); used to make cellulose, lipids and amino acids (1) — any five."
+    "mark_scheme": "Photosynthesis takes place in chloroplasts (1); chlorophyll absorbs light energy (1); CO\u2082 and water are reactants (1); glucose and oxygen are products (1); glucose used for respiration (1); stored as starch (1); used to make cellulose, lipids and amino acids (1) \u2014 any five."
   },
   {
     "id": "B4-LA-006",
@@ -507,7 +600,7 @@
     "command_word": "Evaluate",
     "topic": "Photosynthesis",
     "question": "Evaluate the advantages and disadvantages of using artificial conditions to maximise photosynthesis in greenhouse crop production.",
-    "mark_scheme": "Advantages: controlled temperature maximises enzyme activity (1); increased CO₂ increases photosynthesis rate (1); artificial lighting extends growing season (1); higher yield (1). Disadvantages: cost of electricity for lighting and heating (1); burning fuel for CO₂ may have environmental impact (1); may not be economically viable for all crops (1); risk of overheating and denaturing enzymes (1) — any six."
+    "mark_scheme": "Advantages: controlled temperature maximises enzyme activity (1); increased CO\u2082 increases photosynthesis rate (1); artificial lighting extends growing season (1); higher yield (1). Disadvantages: cost of electricity for lighting and heating (1); burning fuel for CO\u2082 may have environmental impact (1); may not be economically viable for all crops (1); risk of overheating and denaturing enzymes (1) \u2014 any six."
   },
   {
     "id": "B4-LA-007",
@@ -516,6 +609,276 @@
     "command_word": "Explain",
     "topic": "Respiration",
     "question": "A marathon runner experiences muscle fatigue towards the end of a race. Explain why this happens and describe what occurs in the body during recovery after the race.",
-    "mark_scheme": "During intense exercise oxygen demand exceeds supply (1); anaerobic respiration occurs in muscle cells (1); glucose → lactic acid (1); lactic acid builds up causing fatigue and pain (1). Recovery: breathing rate stays elevated after exercise (1); extra oxygen used to break down lactic acid — oxygen debt (1); lactic acid transported to liver (1); converted back to glucose (1) — any six."
+    "mark_scheme": "During intense exercise oxygen demand exceeds supply (1); anaerobic respiration occurs in muscle cells (1); glucose \u2192 lactic acid (1); lactic acid builds up causing fatigue and pain (1). Recovery: breathing rate stays elevated after exercise (1); extra oxygen used to break down lactic acid \u2014 oxygen debt (1); lactic acid transported to liver (1); converted back to glucose (1) \u2014 any six."
+  },
+  {
+    "id": "B4-LA-005",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Photosynthesis",
+    "question": "Explain why photosynthesis is described as an endothermic reaction. Include the reactants, products and where energy comes from.",
+    "mark_scheme": "Photosynthesis requires energy input \u2014 light energy from the sun (1); reactants: carbon dioxide and water (1); products: glucose and oxygen (1); energy stored in the glucose molecules \u2014 endothermic because energy is absorbed (1)."
+  },
+  {
+    "id": "B4-LA-006",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Limiting Factors",
+    "question": "Describe how carbon dioxide concentration affects the rate of photosynthesis. Include reference to the limiting factor concept.",
+    "mark_scheme": "As CO\u2082 concentration increases, rate of photosynthesis increases (1); at low CO\u2082, the rate levels off \u2014 another factor becomes limiting (1); CO\u2082 is needed as a reactant in photosynthesis (1); even with high light intensity, if CO\u2082 is low it limits the rate \u2014 it is the limiting factor (1)."
+  },
+  {
+    "id": "B4-LA-007",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Aerobic Respiration",
+    "question": "Explain the difference between aerobic and anaerobic respiration. Include the products of each and where each occurs in the cell.",
+    "mark_scheme": "Aerobic respiration uses oxygen, produces CO\u2082 and water (1); releases much more ATP per glucose molecule (1); occurs in the mitochondria (1); anaerobic respiration occurs without oxygen \u2014 produces lactic acid in animals, or ethanol and CO\u2082 in yeast (1)."
+  },
+  {
+    "id": "B4-LA-008",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Anaerobic Respiration",
+    "question": "Explain what is meant by the 'oxygen debt' after intense exercise. Include what happens to lactic acid.",
+    "mark_scheme": "During intense exercise, anaerobic respiration produces lactic acid (1); lactic acid builds up in muscles causing fatigue/pain (1); after exercise, extra oxygen is needed to oxidise lactic acid (1); lactic acid transported to liver, converted back to glucose using oxygen \u2014 this extra oxygen = oxygen debt (1)."
+  },
+  {
+    "id": "B4-LA-009",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Response to Exercise",
+    "question": "Describe how the body responds to exercise to increase oxygen delivery to muscles.",
+    "mark_scheme": "Heart rate increases to pump more oxygenated blood to muscles (1); breathing rate and depth increase to take in more oxygen and remove CO\u2082 (1); blood vessels to muscles dilate \u2014 more blood flow to active muscles (1); glycogen in muscles broken down to provide more glucose for respiration (1)."
+  },
+  {
+    "id": "B4-LA-010",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Photosynthesis",
+    "question": "Explain why farmers use artificial lighting and add CO\u2082 to greenhouses in winter. Refer to limiting factors in your answer.",
+    "mark_scheme": "In winter, light intensity is low \u2014 light becomes a limiting factor for photosynthesis (1); artificial lighting maintains high light intensity so photosynthesis can continue (1); CO\u2082 concentration in air (~0.04%) may also limit photosynthesis (1); adding CO\u2082 raises concentration above atmospheric level \u2014 increases rate of photosynthesis, increasing crop yield (1)."
+  },
+  {
+    "id": "B4-LA-011",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Limiting Factors",
+    "question": "Explain the effect of increasing temperature on the rate of photosynthesis, including what happens at very high temperatures.",
+    "mark_scheme": "As temperature rises, rate of photosynthesis increases \u2014 enzymes have more kinetic energy (1); optimum temperature: highest rate (1); above optimum: enzymes (including RuBisCO) begin to denature (1); active site shape changes \u2014 rate of photosynthesis falls sharply (1)."
+  },
+  {
+    "id": "B4-LA-012",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Aerobic Respiration",
+    "question": "Describe what happens to glucose during aerobic respiration. Include where this process takes place and the ATP produced.",
+    "mark_scheme": "Glucose is broken down in the cytoplasm (glycolysis) \u2014 produces a small amount of ATP (1); products enter the mitochondria (1); Krebs cycle and oxidative phosphorylation occur in the mitochondria (1); overall: glucose + oxygen \u2192 CO\u2082 + water + large amount of ATP (~36\u201338 molecules per glucose) (1)."
+  },
+  {
+    "id": "B4-LA-013",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Evaluate",
+    "topic": "Anaerobic Respiration",
+    "question": "Evaluate the use of yeast in fermentation for food and drink production. Include the conditions required and what yeast produces.",
+    "mark_scheme": "Yeast ferments sugar anaerobically: glucose \u2192 ethanol + CO\u2082 (1); used in bread making \u2014 CO\u2082 causes dough to rise (1); used in beer/wine production \u2014 ethanol produced (1); requires warm temperature and sugar supply; too hot denatures yeast enzymes (1)."
+  },
+  {
+    "id": "B4-LA-014",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Photosynthesis",
+    "question": "Explain the role of chlorophyll in photosynthesis. Include why plants appear green and the role of the chloroplast.",
+    "mark_scheme": "Chlorophyll is a pigment found in chloroplasts (1); it absorbs light energy \u2014 mainly red and blue wavelengths (1); green light is reflected \u2014 which is why plants appear green (1); light energy is used to convert CO\u2082 and water into glucose (1)."
+  },
+  {
+    "id": "B4-LA-015",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Describe",
+    "topic": "Response to Exercise",
+    "question": "Describe how the cardiovascular system ensures working muscles receive enough glucose and oxygen during strenuous exercise.",
+    "mark_scheme": "Heart rate increases \u2014 cardiac output rises (1); arteries supplying muscles dilate \u2014 increased blood flow to muscles (1); capillary networks in muscle ensure short diffusion distance (1); oxyhaemoglobin in red blood cells releases oxygen more readily in acidic/warm conditions in active muscle (1)."
+  },
+  {
+    "id": "B4-LA-016",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Photosynthesis",
+    "question": "Explain how the structure of a leaf is adapted for efficient photosynthesis. Include references to at least four structural features.",
+    "mark_scheme": "Broad flat shape \u2014 large surface area to absorb light (1); thin \u2014 short diffusion distance for CO\u2082 (1); chloroplasts arranged in palisade cells near top surface \u2014 maximise light absorption (1); stomata on lower surface allow gas exchange \u2014 CO\u2082 in, O\u2082 out (1); vascular bundles supply water and remove glucose (1)."
+  },
+  {
+    "id": "B4-LA-017",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Limiting Factors",
+    "question": "A grower wants to maximise crop yield in a commercial greenhouse. Describe how they could manipulate limiting factors and justify each decision.",
+    "mark_scheme": "Increase light intensity using artificial LED lights \u2014 light is the most common limiting factor (1); increase CO\u2082 concentration by burning fossil fuels or using gas burners \u2014 CO\u2082 limits rate at atmospheric levels (1); maintain temperature at 25\u00b0C \u2014 enzyme activity optimised (1); irrigate regularly \u2014 water needed as a reactant (1); balance costs vs. benefit \u2014 energy costs of heating/lighting must not exceed value of extra yield (1)."
+  },
+  {
+    "id": "B4-LA-018",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Aerobic Respiration",
+    "question": "Explain why organisms need to release energy from food through respiration. Include examples of how ATP is used in the body.",
+    "mark_scheme": "ATP provides energy for all biological processes in cells (1); ATP used for muscle contraction \u2014 actin and myosin filaments require ATP (1); ATP used for active transport \u2014 moving ions against concentration gradients (1); ATP used for protein synthesis (1); ATP used to maintain body temperature in warm-blooded animals (1)."
+  },
+  {
+    "id": "B4-LA-019",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Response to Exercise",
+    "question": "Evaluate how training improves an athlete's ability to exercise at high intensity. Include cardiovascular, muscular and metabolic adaptations.",
+    "mark_scheme": "Cardiovascular: increased stroke volume \u2014 heart pumps more blood per beat (1); increased capillary density in muscles \u2014 more oxygen delivered (1); Muscular: increased mitochondria density \u2014 more aerobic respiration capacity (1); increased myoglobin \u2014 more oxygen stored in muscle (1); Metabolic: lactic acid threshold rises \u2014 can exercise harder before anaerobic respiration begins (1)."
+  },
+  {
+    "id": "B4-LA-020",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Anaerobic Respiration",
+    "question": "Explain the differences between aerobic and anaerobic respiration in terms of products, ATP yield and the role of oxygen. Include a word equation for each.",
+    "mark_scheme": "Aerobic: glucose + oxygen \u2192 carbon dioxide + water (1); produces ~36\u201338 ATP per glucose molecule \u2014 highly efficient (1); anaerobic (animals): glucose \u2192 lactic acid (1); anaerobic (yeast): glucose \u2192 ethanol + carbon dioxide (1); anaerobic produces only ~2 ATP per glucose \u2014 used as emergency short-term energy (1)."
+  },
+  {
+    "id": "B4-LA-021",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Limiting Factors",
+    "question": "Describe how you would carry out an investigation to determine the effect of light intensity on the rate of photosynthesis in aquatic plants.",
+    "mark_scheme": "Use aquatic plant (e.g. Elodea) in a beaker of water (1); place lamp at different distances from plant \u2014 further away = lower light intensity (1); count oxygen bubbles produced per minute (or measure volume of O\u2082) as measure of photosynthesis rate (1); control variables: temperature, CO\u2082 concentration (same water/bicarbonate solution) (1); repeat at each distance and average results to reduce random error (1)."
+  },
+  {
+    "id": "B4-LA-022",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Aerobic Respiration",
+    "question": "Explain the role of mitochondria in aerobic respiration. Include the structure of the mitochondria and how this aids the process.",
+    "mark_scheme": "Mitochondria have a double membrane \u2014 outer and inner (1); inner membrane is highly folded \u2014 cristae increase surface area (1); Krebs cycle occurs in the matrix (1); electron transport chain on inner membrane \u2014 produces most ATP (1); large number of mitochondria in active cells (e.g. muscle, liver) to meet high energy demand (1)."
+  },
+  {
+    "id": "B4-LA-023",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Photosynthesis",
+    "question": "Evaluate the use of greenhouses for growing crops. Include the advantages over outdoor growing, the environmental costs, and the benefits for food security.",
+    "mark_scheme": "Advantages: control of temperature, CO\u2082, light \u2014 maximises photosynthesis year-round (1); protection from pests and harsh weather \u2014 higher yields, less pesticide needed (1); year-round crop production \u2014 wider range of crops possible (1); costs: high energy use for heating and lighting \u2014 large carbon footprint (1); food security: enables local production of crops that would otherwise require importing (1)."
+  },
+  {
+    "id": "B4-LA-024",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Response to Exercise",
+    "question": "Describe what happens to breathing during exercise. Include how chemoreceptors detect changes in blood gases and how this alters breathing rate.",
+    "mark_scheme": "During exercise, CO\u2082 levels in blood rise and pH falls (1); chemoreceptors in the medulla and carotid body detect these changes (1); nerve signals sent to respiratory muscles \u2014 breathing rate and depth increase (1); more oxygen taken in and more CO\u2082 removed (1); when exercise stops, CO\u2082 levels return to normal \u2014 breathing rate drops back to resting level (1)."
+  },
+  {
+    "id": "B4-LA-025",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Anaerobic Respiration",
+    "question": "Evaluate the use of anaerobic respiration in sport. Include the advantages and disadvantages of lactic acid production during high-intensity exercise.",
+    "mark_scheme": "Advantage: provides ATP rapidly when oxygen supply is insufficient (1); allows high-intensity exercise e.g. sprinting, weightlifting to be sustained briefly (1); does not depend on lung/heart delivery of oxygen (1); disadvantage: lactic acid lowers muscle pH \u2014 causes fatigue and pain (1); only provides 2 ATP per glucose vs 36\u201338 aerobically \u2014 very inefficient (1)."
+  },
+  {
+    "id": "B4-LA-026",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Photosynthesis",
+    "question": "Explain how photosynthesis and respiration are linked in plants. Include how each process depends on the other, and how the balance changes during the day and night.",
+    "mark_scheme": "Photosynthesis produces glucose and oxygen \u2014 respiration uses these (1); respiration produces CO\u2082 and water \u2014 photosynthesis uses these (1); during daylight: photosynthesis rate exceeds respiration \u2014 net oxygen released, net CO\u2082 absorbed (1); compensation point: rate of photosynthesis equals rate of respiration \u2014 no net gas exchange (1); at night: only respiration occurs \u2014 plant absorbs oxygen and releases CO\u2082 (1); glucose made in photosynthesis also used for growth, structural materials, storage as starch (1)."
+  },
+  {
+    "id": "B4-LA-027",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Limiting Factors",
+    "question": "A farmer wants to increase crop yield in a greenhouse. Evaluate the use of increasing CO\u2082 concentration, temperature, and light intensity as strategies. Consider the benefits and the economic and environmental costs of each.",
+    "mark_scheme": "CO\u2082: increasing from 0.04% to ~0.1% significantly increases rate \u2014 CO\u2082 often the limiting factor indoors (1); can be achieved by burning gas \u2014 adds cost and CO\u2082 emissions (1); temperature: optimum ~25\u00b0C \u2014 above this enzymes begin to denature (1); heating is expensive and uses energy \u2014 must weigh against yield increase (1); light: LED grow lights allow 24-hr growing cycle (1); electricity cost significant \u2014 renewable energy makes this more sustainable (1). Accept: combination approach is most effective; economic viability depends on crop value."
+  },
+  {
+    "id": "B4-LA-028",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Aerobic Respiration",
+    "question": "Explain how the body maintains a constant supply of glucose for respiration. Include the roles of glycogen, glucagon, and insulin.",
+    "mark_scheme": "Blood glucose must be kept within narrow range for cells to respire (1); after a meal, blood glucose rises \u2014 insulin released from pancreas (1); insulin causes liver and muscle to convert glucose to glycogen (glycogenesis) (1); between meals, blood glucose falls \u2014 glucagon released from pancreas (1); glucagon stimulates liver to convert glycogen back to glucose (glycogenolysis) (1); this negative feedback system maintains blood glucose homeostasis (1)."
+  },
+  {
+    "id": "B4-LA-029",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Describe",
+    "topic": "Response to Exercise",
+    "question": "Describe and explain the physiological changes that occur in the body during a 100m sprint. Include cardiovascular, respiratory, and metabolic changes.",
+    "mark_scheme": "Heart rate and stroke volume increase immediately \u2014 cardiac output rises to deliver more oxygen (1); breathing rate and depth increase \u2014 more O\u2082 in, CO\u2082 out (1); blood vessels to muscles dilate \u2014 blood redirected from non-essential organs (1); glycogen in muscle broken down to glucose for respiration (1); aerobic respiration at first then switches to anaerobic as oxygen demand exceeds supply (1); lactic acid builds up \u2014 muscles fatigue, burning sensation; oxygen debt repaid after sprint ends (1)."
+  },
+  {
+    "id": "B4-LA-030",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Anaerobic Respiration",
+    "question": "Evaluate the industrial uses of anaerobic respiration in fermentation. Include bread making, alcohol production and biofuel production. Consider environmental and economic aspects.",
+    "mark_scheme": "Bread: yeast ferments sugars in dough \u2014 CO\u2082 causes rising; ethanol evaporates during baking (1); alcohol: controlled fermentation of grain/fruit sugars \u2014 ethanol produced for beer, wine, spirits (1); biofuels: ethanol from fermented crops used as petrol alternative \u2014 reduces fossil fuel use (1); environmental: biofuels are carbon neutral in theory but growing crops uses land/resources (1); economic: fermentation industries provide employment and food/fuel (1); limitations: competition with food crops for land; distillation of biofuels is energy intensive (1)."
+  },
+  {
+    "id": "B4-LA-031",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Photosynthesis",
+    "question": "Explain how scientists measure the rate of photosynthesis in the laboratory. Include the variables they control, the measurements they take, and how they calculate the rate.",
+    "mark_scheme": "Use aquatic plant (Elodea) so oxygen bubbles can be counted or collected (1); measure volume of oxygen produced per minute using a gas syringe (1); independent variable: light intensity (distance from lamp), CO\u2082 concentration, or temperature (1); control variables: all other factors kept constant (1); calculate rate = volume of O\u2082 \u00f7 time (1); repeat and average at each variable value to improve reliability (1)."
+  },
+  {
+    "id": "B4-LA-032",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Aerobic Respiration",
+    "question": "Evaluate the importance of respiration for living organisms. Include the processes that require ATP and explain what would happen if a cell could no longer respire aerobically.",
+    "mark_scheme": "ATP required for muscle contraction \u2014 movement impossible without it (1); ATP required for active transport across membranes \u2014 e.g. nerve impulses (1); ATP required for protein synthesis \u2014 cell maintenance and growth stops (1); ATP required for cell division (1); if aerobic respiration stopped: anaerobic respiration begins as backup (1); but anaerobic produces little ATP and lactic acid accumulates \u2014 cell function impairs and eventually cell death occurs (1)."
+  },
+  {
+    "id": "B4-LA-033",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Limiting Factors",
+    "question": "Explain the concept of limiting factors in photosynthesis. Describe an experiment to identify which factor is limiting for a plant in a given environment, and explain how you would interpret the results.",
+    "mark_scheme": "A limiting factor is the factor present in the lowest amount that restricts the rate of reaction (1); at low light intensity, light is limiting \u2014 increasing light increases rate (1); once light is not limiting, CO\u2082 or temperature may become limiting (1); experiment: vary one factor at a time while controlling others (1); measure O\u2082 produced per minute \u2014 if rate plateaus when factor increases, another factor is now limiting (1); graph shows rate rises then plateaus at different levels depending on which factors are optimised (1)."
+  },
+  {
+    "id": "B4-LA-034",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Anaerobic Respiration",
+    "question": "Describe how brewers use anaerobic respiration to produce beer. Include the conditions, the organisms and enzymes used, and how fermentation is controlled.",
+    "mark_scheme": "Yeast is added to a sugary solution (grain mash/wort) (1); kept at warm temperature ~20\u201325\u00b0C to maintain enzyme activity (1); anaerobic conditions maintained \u2014 oxygen excluded (1); yeast produces ethanol and CO\u2082 through anaerobic fermentation (1); fermentation stopped when ethanol concentration reaches ~15% \u2014 yeast killed by its own alcohol (1)."
   }
 ]

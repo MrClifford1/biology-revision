@@ -4,8 +4,13 @@
     "type": "multiple_choice",
     "marks": 1,
     "topic": "Moles and Mass",
-    "question": "What is the relative formula mass (Mr) of water (H₂O)? (H = 1, O = 16)",
-    "options": ["16", "17", "18", "20"],
+    "question": "What is the relative formula mass (Mr) of water (H\u2082O)? (H = 1, O = 16)",
+    "options": [
+      "16",
+      "17",
+      "18",
+      "20"
+    ],
     "correct": "18"
   },
   {
@@ -13,8 +18,13 @@
     "type": "multiple_choice",
     "marks": 1,
     "topic": "Moles and Mass",
-    "question": "How many moles are in 44 g of carbon dioxide (CO₂)? (Mr = 44)",
-    "options": ["0.5", "1", "2", "44"],
+    "question": "How many moles are in 44 g of carbon dioxide (CO\u2082)? (Mr = 44)",
+    "options": [
+      "0.5",
+      "1",
+      "2",
+      "44"
+    ],
     "correct": "1"
   },
   {
@@ -23,8 +33,13 @@
     "marks": 1,
     "topic": "Moles and Mass",
     "question": "What is the formula for calculating the number of moles?",
-    "options": ["moles = mass × Mr", "moles = Mr ÷ mass", "moles = mass ÷ Mr", "moles = mass + Mr"],
-    "correct": "moles = mass ÷ Mr"
+    "options": [
+      "moles = mass \u00d7 Mr",
+      "moles = Mr \u00f7 mass",
+      "moles = mass \u00f7 Mr",
+      "moles = mass + Mr"
+    ],
+    "correct": "moles = mass \u00f7 Mr"
   },
   {
     "id": "C3-MC-004",
@@ -32,7 +47,12 @@
     "marks": 1,
     "topic": "Conservation of Mass",
     "question": "Why is mass conserved in a chemical reaction?",
-    "options": ["Energy is released", "Atoms are rearranged but not created or destroyed", "New atoms are formed", "Some atoms disappear as gas"],
+    "options": [
+      "Energy is released",
+      "Atoms are rearranged but not created or destroyed",
+      "New atoms are formed",
+      "Some atoms disappear as gas"
+    ],
     "correct": "Atoms are rearranged but not created or destroyed"
   },
   {
@@ -41,7 +61,12 @@
     "marks": 1,
     "topic": "Conservation of Mass",
     "question": "What is the limiting reactant?",
-    "options": ["The reactant present in the largest amount", "The reactant that is completely used up, limiting the product formed", "The product of the reaction", "The reactant with the highest Mr"],
+    "options": [
+      "The reactant present in the largest amount",
+      "The reactant that is completely used up, limiting the product formed",
+      "The product of the reaction",
+      "The reactant with the highest Mr"
+    ],
     "correct": "The reactant that is completely used up, limiting the product formed"
   },
   {
@@ -50,7 +75,12 @@
     "marks": 1,
     "topic": "Yield and Atom Economy",
     "question": "A reaction has a theoretical yield of 50 g and an actual yield of 40 g. What is the percentage yield?",
-    "options": ["40%", "50%", "80%", "90%"],
+    "options": [
+      "40%",
+      "50%",
+      "80%",
+      "90%"
+    ],
     "correct": "80%"
   },
   {
@@ -59,7 +89,12 @@
     "marks": 1,
     "topic": "Yield and Atom Economy",
     "question": "Why is a high atom economy desirable in industry?",
-    "options": ["It produces more waste", "It uses more reactants", "It means more of the reactants end up as useful product, reducing waste", "It increases the cost of production"],
+    "options": [
+      "It produces more waste",
+      "It uses more reactants",
+      "It means more of the reactants end up as useful product, reducing waste",
+      "It increases the cost of production"
+    ],
     "correct": "It means more of the reactants end up as useful product, reducing waste"
   },
   {
@@ -68,17 +103,27 @@
     "marks": 1,
     "topic": "Concentration",
     "question": "What are the units of concentration when measured in moles?",
-    "options": ["g/dm³", "mol/dm³", "mol/cm³", "g/cm³"],
-    "correct": "mol/dm³"
+    "options": [
+      "g/dm\u00b3",
+      "mol/dm\u00b3",
+      "mol/cm\u00b3",
+      "g/cm\u00b3"
+    ],
+    "correct": "mol/dm\u00b3"
   },
   {
     "id": "C3-MC-009",
     "type": "multiple_choice",
     "marks": 1,
     "topic": "Concentration",
-    "question": "What is the concentration of a solution containing 2 moles of NaCl in 4 dm³ of solution?",
-    "options": ["0.5 mol/dm³", "2 mol/dm³", "4 mol/dm³", "8 mol/dm³"],
-    "correct": "0.5 mol/dm³"
+    "question": "What is the concentration of a solution containing 2 moles of NaCl in 4 dm\u00b3 of solution?",
+    "options": [
+      "0.5 mol/dm\u00b3",
+      "2 mol/dm\u00b3",
+      "4 mol/dm\u00b3",
+      "8 mol/dm\u00b3"
+    ],
+    "correct": "0.5 mol/dm\u00b3"
   },
   {
     "id": "C3-MC-010",
@@ -86,8 +131,13 @@
     "marks": 1,
     "topic": "Concentration",
     "question": "In a titration, what does the end point indicate?",
-    "options": ["The reaction has just started", "The reaction is just complete — shown by a colour change in the indicator", "The solution has been fully diluted", "The temperature has changed"],
-    "correct": "The reaction is just complete — shown by a colour change in the indicator"
+    "options": [
+      "The reaction has just started",
+      "The reaction is just complete \u2014 shown by a colour change in the indicator",
+      "The solution has been fully diluted",
+      "The temperature has changed"
+    ],
+    "correct": "The reaction is just complete \u2014 shown by a colour change in the indicator"
   },
   {
     "id": "C3-MC-011",
@@ -95,7 +145,12 @@
     "marks": 1,
     "topic": "Moles and Mass",
     "question": "What mass of NaOH (Mr = 40) is in 0.5 moles?",
-    "options": ["10 g", "20 g", "40 g", "80 g"],
+    "options": [
+      "10 g",
+      "20 g",
+      "40 g",
+      "80 g"
+    ],
     "correct": "20 g"
   },
   {
@@ -104,8 +159,13 @@
     "marks": 1,
     "topic": "Gas Volumes",
     "question": "What volume does 1 mole of any gas occupy at room temperature and pressure?",
-    "options": ["22.4 dm³", "24 dm³", "100 dm³", "1 dm³"],
-    "correct": "24 dm³"
+    "options": [
+      "22.4 dm\u00b3",
+      "24 dm\u00b3",
+      "100 dm\u00b3",
+      "1 dm\u00b3"
+    ],
+    "correct": "24 dm\u00b3"
   },
   {
     "id": "C3-MC-013",
@@ -113,7 +173,12 @@
     "marks": 1,
     "topic": "Conservation of Mass",
     "question": "Magnesium burns in air and the product has a greater mass than the original magnesium. Why?",
-    "options": ["New atoms are created", "Mass is not conserved in this reaction", "Magnesium has combined with oxygen from the air", "The magnesium absorbed water"],
+    "options": [
+      "New atoms are created",
+      "Mass is not conserved in this reaction",
+      "Magnesium has combined with oxygen from the air",
+      "The magnesium absorbed water"
+    ],
     "correct": "Magnesium has combined with oxygen from the air"
   },
   {
@@ -122,7 +187,12 @@
     "marks": 1,
     "topic": "Yield and Atom Economy",
     "question": "Which of the following would decrease the percentage yield of a reaction?",
-    "options": ["Using excess reactant", "Increasing temperature", "Product lost during filtration", "Using a catalyst"],
+    "options": [
+      "Using excess reactant",
+      "Increasing temperature",
+      "Product lost during filtration",
+      "Using a catalyst"
+    ],
     "correct": "Product lost during filtration"
   },
   {
@@ -131,17 +201,26 @@
     "marks": 1,
     "topic": "Moles and Mass",
     "question": "Avogadro's number is approximately:",
-    "options": ["6.02 × 10²¹", "6.02 × 10²³", "6.02 × 10²⁵", "6.02 × 10¹⁸"],
-    "correct": "6.02 × 10²³"
+    "options": [
+      "6.02 \u00d7 10\u00b2\u00b9",
+      "6.02 \u00d7 10\u00b2\u00b3",
+      "6.02 \u00d7 10\u00b2\u2075",
+      "6.02 \u00d7 10\u00b9\u2078"
+    ],
+    "correct": "6.02 \u00d7 10\u00b2\u00b3"
   },
   {
     "id": "C3-FIB-001",
     "type": "fill_in_blank",
     "marks": 1,
     "topic": "Moles and Mass",
-    "question": "The number of moles is calculated using: moles = mass ÷ __________.",
+    "question": "The number of moles is calculated using: moles = mass \u00f7 __________.",
     "correct": "molar mass",
-    "acceptable": ["molar mass", "Mr", "relative formula mass"]
+    "acceptable": [
+      "molar mass",
+      "Mr",
+      "relative formula mass"
+    ]
   },
   {
     "id": "C3-FIB-002",
@@ -150,34 +229,44 @@
     "topic": "Conservation of Mass",
     "question": "In a chemical reaction, the total mass of __________ equals the total mass of products.",
     "correct": "reactants",
-    "acceptable": ["reactants"]
+    "acceptable": [
+      "reactants"
+    ]
   },
   {
     "id": "C3-FIB-003",
     "type": "fill_in_blank",
     "marks": 1,
     "topic": "Yield and Atom Economy",
-    "question": "Percentage yield = (actual yield ÷ __________ yield) × 100.",
+    "question": "Percentage yield = (actual yield \u00f7 __________ yield) \u00d7 100.",
     "correct": "theoretical",
-    "acceptable": ["theoretical", "maximum"]
+    "acceptable": [
+      "theoretical",
+      "maximum"
+    ]
   },
   {
     "id": "C3-FIB-004",
     "type": "fill_in_blank",
     "marks": 1,
     "topic": "Yield and Atom Economy",
-    "question": "Atom economy = (Mr of desired product ÷ sum of Mr of all __________) × 100.",
+    "question": "Atom economy = (Mr of desired product \u00f7 sum of Mr of all __________) \u00d7 100.",
     "correct": "products",
-    "acceptable": ["products"]
+    "acceptable": [
+      "products"
+    ]
   },
   {
     "id": "C3-FIB-005",
     "type": "fill_in_blank",
     "marks": 1,
     "topic": "Concentration",
-    "question": "Concentration (mol/dm³) = moles ÷ __________.",
+    "question": "Concentration (mol/dm\u00b3) = moles \u00f7 __________.",
     "correct": "volume",
-    "acceptable": ["volume", "volume (dm³)"]
+    "acceptable": [
+      "volume",
+      "volume (dm\u00b3)"
+    ]
   },
   {
     "id": "C3-FIB-006",
@@ -186,25 +275,32 @@
     "topic": "Conservation of Mass",
     "question": "The reactant that is completely used up in a reaction is called the __________ reactant.",
     "correct": "limiting",
-    "acceptable": ["limiting"]
+    "acceptable": [
+      "limiting"
+    ]
   },
   {
     "id": "C3-FIB-007",
     "type": "fill_in_blank",
     "marks": 1,
     "topic": "Gas Volumes",
-    "question": "At room temperature and pressure, one mole of any gas occupies __________ dm³.",
+    "question": "At room temperature and pressure, one mole of any gas occupies __________ dm\u00b3.",
     "correct": "24",
-    "acceptable": ["24"]
+    "acceptable": [
+      "24"
+    ]
   },
   {
     "id": "C3-FIB-008",
     "type": "fill_in_blank",
     "marks": 1,
     "topic": "Moles and Mass",
-    "question": "One mole of any substance contains 6.02 × 10²³ particles, known as __________ number.",
+    "question": "One mole of any substance contains 6.02 \u00d7 10\u00b2\u00b3 particles, known as __________ number.",
     "correct": "Avogadro's",
-    "acceptable": ["Avogadro's", "Avogadro"]
+    "acceptable": [
+      "Avogadro's",
+      "Avogadro"
+    ]
   },
   {
     "id": "C3-FIB-009",
@@ -213,7 +309,9 @@
     "topic": "Concentration",
     "question": "In a titration, the __________ shows the end point by changing colour.",
     "correct": "indicator",
-    "acceptable": ["indicator"]
+    "acceptable": [
+      "indicator"
+    ]
   },
   {
     "id": "C3-FIB-010",
@@ -222,7 +320,9 @@
     "topic": "Moles and Mass",
     "question": "The relative formula mass (Mr) is found by adding up the __________ atomic masses of all atoms in a formula.",
     "correct": "relative",
-    "acceptable": ["relative"]
+    "acceptable": [
+      "relative"
+    ]
   },
   {
     "id": "C3-MATCH-001",
@@ -231,10 +331,22 @@
     "topic": "Moles and Mass",
     "question": "Match each term to its correct definition.",
     "pairs": [
-      { "term": "Mole", "definition": "Unit of amount — one mole contains 6.02 × 10²³ particles" },
-      { "term": "Molar mass", "definition": "The mass of one mole of a substance in g/mol" },
-      { "term": "Relative formula mass", "definition": "Sum of all relative atomic masses in a formula" },
-      { "term": "Avogadro's number", "definition": "6.02 × 10²³ — the number of particles in one mole" }
+      {
+        "term": "Mole",
+        "definition": "Unit of amount \u2014 one mole contains 6.02 \u00d7 10\u00b2\u00b3 particles"
+      },
+      {
+        "term": "Molar mass",
+        "definition": "The mass of one mole of a substance in g/mol"
+      },
+      {
+        "term": "Relative formula mass",
+        "definition": "Sum of all relative atomic masses in a formula"
+      },
+      {
+        "term": "Avogadro's number",
+        "definition": "6.02 \u00d7 10\u00b2\u00b3 \u2014 the number of particles in one mole"
+      }
     ]
   },
   {
@@ -244,10 +356,22 @@
     "topic": "Yield and Atom Economy",
     "question": "Match each term to its correct definition.",
     "pairs": [
-      { "term": "Percentage yield", "definition": "(Actual yield ÷ theoretical yield) × 100" },
-      { "term": "Atom economy", "definition": "(Mr of desired product ÷ sum of Mr of all products) × 100" },
-      { "term": "Theoretical yield", "definition": "Maximum mass of product calculated from the balanced equation" },
-      { "term": "Actual yield", "definition": "Mass of product actually obtained in a reaction" }
+      {
+        "term": "Percentage yield",
+        "definition": "(Actual yield \u00f7 theoretical yield) \u00d7 100"
+      },
+      {
+        "term": "Atom economy",
+        "definition": "(Mr of desired product \u00f7 sum of Mr of all products) \u00d7 100"
+      },
+      {
+        "term": "Theoretical yield",
+        "definition": "Maximum mass of product calculated from the balanced equation"
+      },
+      {
+        "term": "Actual yield",
+        "definition": "Mass of product actually obtained in a reaction"
+      }
     ]
   },
   {
@@ -257,9 +381,18 @@
     "topic": "Conservation of Mass",
     "question": "Match each term to its correct meaning.",
     "pairs": [
-      { "term": "Conservation of mass", "definition": "Total mass of reactants equals total mass of products" },
-      { "term": "Limiting reactant", "definition": "Reactant that is completely used up — limits amount of product formed" },
-      { "term": "Excess reactant", "definition": "Reactant that is not fully used up — some remains at the end" }
+      {
+        "term": "Conservation of mass",
+        "definition": "Total mass of reactants equals total mass of products"
+      },
+      {
+        "term": "Limiting reactant",
+        "definition": "Reactant that is completely used up \u2014 limits amount of product formed"
+      },
+      {
+        "term": "Excess reactant",
+        "definition": "Reactant that is not fully used up \u2014 some remains at the end"
+      }
     ]
   },
   {
@@ -269,10 +402,22 @@
     "topic": "Concentration",
     "question": "Match each term to its correct definition.",
     "pairs": [
-      { "term": "Solute", "definition": "The substance dissolved in a solution" },
-      { "term": "Solvent", "definition": "The liquid in which the solute dissolves" },
-      { "term": "Concentration", "definition": "Amount of solute dissolved per unit volume of solution" },
-      { "term": "Titration", "definition": "Technique to find the concentration of an unknown solution" }
+      {
+        "term": "Solute",
+        "definition": "The substance dissolved in a solution"
+      },
+      {
+        "term": "Solvent",
+        "definition": "The liquid in which the solute dissolves"
+      },
+      {
+        "term": "Concentration",
+        "definition": "Amount of solute dissolved per unit volume of solution"
+      },
+      {
+        "term": "Titration",
+        "definition": "Technique to find the concentration of an unknown solution"
+      }
     ]
   },
   {
@@ -282,10 +427,22 @@
     "topic": "Moles and Mass",
     "question": "Match each substance to its correct relative formula mass. (H=1, C=12, N=14, O=16, Na=23, Cl=35.5)",
     "pairs": [
-      { "term": "H₂O", "definition": "18" },
-      { "term": "CO₂", "definition": "44" },
-      { "term": "NaCl", "definition": "58.5" },
-      { "term": "NH₃", "definition": "17" }
+      {
+        "term": "H\u2082O",
+        "definition": "18"
+      },
+      {
+        "term": "CO\u2082",
+        "definition": "44"
+      },
+      {
+        "term": "NaCl",
+        "definition": "58.5"
+      },
+      {
+        "term": "NH\u2083",
+        "definition": "17"
+      }
     ]
   },
   {
@@ -295,7 +452,7 @@
     "command_word": "State",
     "topic": "Moles and Mass",
     "question": "State the formula used to calculate the number of moles of a substance.",
-    "mark_scheme": "Moles = mass ÷ molar mass (n = m ÷ Mr) (1)."
+    "mark_scheme": "Moles = mass \u00f7 molar mass (n = m \u00f7 Mr) (1)."
   },
   {
     "id": "C3-SA-002",
@@ -313,7 +470,7 @@
     "command_word": "Define",
     "topic": "Yield and Atom Economy",
     "question": "Define percentage yield.",
-    "mark_scheme": "(Actual yield ÷ theoretical yield) × 100 (1)."
+    "mark_scheme": "(Actual yield \u00f7 theoretical yield) \u00d7 100 (1)."
   },
   {
     "id": "C3-SA-004",
@@ -322,7 +479,7 @@
     "command_word": "State",
     "topic": "Gas Volumes",
     "question": "State the volume occupied by one mole of any gas at room temperature and pressure.",
-    "mark_scheme": "24 dm³ (1)."
+    "mark_scheme": "24 dm\u00b3 (1)."
   },
   {
     "id": "C3-SA-005",
@@ -330,8 +487,8 @@
     "marks": 2,
     "command_word": "Calculate",
     "topic": "Moles and Mass",
-    "question": "Calculate the relative formula mass (Mr) of calcium carbonate, CaCO₃. (Ca = 40, C = 12, O = 16)",
-    "mark_scheme": "40 + 12 + (3 × 16) (1); Mr = 100 (1)."
+    "question": "Calculate the relative formula mass (Mr) of calcium carbonate, CaCO\u2083. (Ca = 40, C = 12, O = 16)",
+    "mark_scheme": "40 + 12 + (3 \u00d7 16) (1); Mr = 100 (1)."
   },
   {
     "id": "C3-SA-006",
@@ -339,8 +496,8 @@
     "marks": 2,
     "command_word": "Calculate",
     "topic": "Moles and Mass",
-    "question": "Calculate the number of moles in 8 g of sulfur dioxide, SO₂. (Mr = 64)",
-    "mark_scheme": "Moles = mass ÷ Mr (1); 8 ÷ 64 = 0.125 mol (1)."
+    "question": "Calculate the number of moles in 8 g of sulfur dioxide, SO\u2082. (Mr = 64)",
+    "mark_scheme": "Moles = mass \u00f7 Mr (1); 8 \u00f7 64 = 0.125 mol (1)."
   },
   {
     "id": "C3-SA-007",
@@ -349,7 +506,7 @@
     "command_word": "Calculate",
     "topic": "Yield and Atom Economy",
     "question": "A reaction has a theoretical yield of 25 g. The actual yield is 18 g. Calculate the percentage yield.",
-    "mark_scheme": "Percentage yield = (18 ÷ 25) × 100 (1); = 72% (1)."
+    "mark_scheme": "Percentage yield = (18 \u00f7 25) \u00d7 100 (1); = 72% (1)."
   },
   {
     "id": "C3-SA-008",
@@ -366,8 +523,8 @@
     "marks": 2,
     "command_word": "Calculate",
     "topic": "Concentration",
-    "question": "Calculate the concentration of a solution containing 0.5 moles of HCl in 250 cm³ of solution.",
-    "mark_scheme": "Convert 250 cm³ to 0.25 dm³ (1); concentration = 0.5 ÷ 0.25 = 2 mol/dm³ (1)."
+    "question": "Calculate the concentration of a solution containing 0.5 moles of HCl in 250 cm\u00b3 of solution.",
+    "mark_scheme": "Convert 250 cm\u00b3 to 0.25 dm\u00b3 (1); concentration = 0.5 \u00f7 0.25 = 2 mol/dm\u00b3 (1)."
   },
   {
     "id": "C3-SA-010",
@@ -385,7 +542,7 @@
     "command_word": "Explain",
     "topic": "Conservation of Mass",
     "question": "A student heats calcium carbonate and notices the mass decreases. Explain why, even though mass is conserved.",
-    "mark_scheme": "Calcium carbonate decomposes to produce carbon dioxide gas (1); the gas escapes into the atmosphere so the measured mass decreases — overall mass is still conserved (1)."
+    "mark_scheme": "Calcium carbonate decomposes to produce carbon dioxide gas (1); the gas escapes into the atmosphere so the measured mass decreases \u2014 overall mass is still conserved (1)."
   },
   {
     "id": "C3-SA-012",
@@ -394,7 +551,7 @@
     "command_word": "Calculate",
     "topic": "Gas Volumes",
     "question": "Calculate the volume of 2 moles of hydrogen gas at room temperature and pressure.",
-    "mark_scheme": "Volume = moles × 24 (1); = 2 × 24 = 48 dm³ (1)."
+    "mark_scheme": "Volume = moles \u00d7 24 (1); = 2 \u00d7 24 = 48 dm\u00b3 (1)."
   },
   {
     "id": "C3-SA-013",
@@ -402,8 +559,8 @@
     "marks": 3,
     "command_word": "Calculate",
     "topic": "Moles and Mass",
-    "question": "Calculate the mass of iron produced when 160 g of iron oxide (Fe₂O₃) is reduced. (Fe = 56, O = 16)\nFe₂O₃ + 3CO → 2Fe + 3CO₂",
-    "mark_scheme": "Mr of Fe₂O₃ = (2 × 56) + (3 × 16) = 160 (1); moles of Fe₂O₃ = 160 ÷ 160 = 1 mol; moles of Fe = 2 mol (from equation) (1); mass of Fe = 2 × 56 = 112 g (1)."
+    "question": "Calculate the mass of iron produced when 160 g of iron oxide (Fe\u2082O\u2083) is reduced. (Fe = 56, O = 16)\nFe\u2082O\u2083 + 3CO \u2192 2Fe + 3CO\u2082",
+    "mark_scheme": "Mr of Fe\u2082O\u2083 = (2 \u00d7 56) + (3 \u00d7 16) = 160 (1); moles of Fe\u2082O\u2083 = 160 \u00f7 160 = 1 mol; moles of Fe = 2 mol (from equation) (1); mass of Fe = 2 \u00d7 56 = 112 g (1)."
   },
   {
     "id": "C3-SA-014",
@@ -421,7 +578,7 @@
     "command_word": "Describe",
     "topic": "Concentration",
     "question": "Describe how a titration is carried out to find the concentration of an unknown acid using a standard alkali solution.",
-    "mark_scheme": "Known volume of acid measured into a conical flask using a pipette (1); alkali added from a burette, with indicator, until end point — permanent colour change (1); volume of alkali used recorded and calculation performed to find concentration (1)."
+    "mark_scheme": "Known volume of acid measured into a conical flask using a pipette (1); alkali added from a burette, with indicator, until end point \u2014 permanent colour change (1); volume of alkali used recorded and calculation performed to find concentration (1)."
   },
   {
     "id": "C3-LA-001",
@@ -429,8 +586,8 @@
     "marks": 4,
     "command_word": "Calculate",
     "topic": "Moles and Mass",
-    "question": "In the reaction: 2Mg + O₂ → 2MgO\nCalculate the mass of MgO produced when 12 g of Mg reacts completely with excess oxygen. (Mg = 24, O = 16)",
-    "mark_scheme": "Moles of Mg = 12 ÷ 24 = 0.5 mol (1); from equation: moles of MgO = 0.5 mol (1:1 ratio) (1); Mr of MgO = 40; mass = 0.5 × 40 = 20 g (1); correct answer with working shown (1)."
+    "question": "In the reaction: 2Mg + O\u2082 \u2192 2MgO\nCalculate the mass of MgO produced when 12 g of Mg reacts completely with excess oxygen. (Mg = 24, O = 16)",
+    "mark_scheme": "Moles of Mg = 12 \u00f7 24 = 0.5 mol (1); from equation: moles of MgO = 0.5 mol (1:1 ratio) (1); Mr of MgO = 40; mass = 0.5 \u00d7 40 = 20 g (1); correct answer with working shown (1)."
   },
   {
     "id": "C3-LA-002",
@@ -439,7 +596,7 @@
     "command_word": "Explain",
     "topic": "Yield and Atom Economy",
     "question": "Explain the difference between percentage yield and atom economy. Explain why both are important considerations in industrial chemistry.",
-    "mark_scheme": "Percentage yield measures how much of the theoretical product is actually obtained (1); atom economy measures what proportion of reactant atoms end up in the desired product (1); high percentage yield is important for cost-effectiveness — less reactant wasted (1); high atom economy is important for sustainability — less waste produced, fewer environmental concerns (1)."
+    "mark_scheme": "Percentage yield measures how much of the theoretical product is actually obtained (1); atom economy measures what proportion of reactant atoms end up in the desired product (1); high percentage yield is important for cost-effectiveness \u2014 less reactant wasted (1); high atom economy is important for sustainability \u2014 less waste produced, fewer environmental concerns (1)."
   },
   {
     "id": "C3-LA-003",
@@ -447,8 +604,8 @@
     "marks": 4,
     "command_word": "Calculate",
     "topic": "Concentration",
-    "question": "25.0 cm³ of sodium hydroxide solution of unknown concentration was titrated against 0.1 mol/dm³ hydrochloric acid. 20.0 cm³ of HCl was needed to reach the end point. Calculate the concentration of the NaOH solution. (NaOH + HCl → NaCl + H₂O)",
-    "mark_scheme": "Moles of HCl = 0.1 × (20 ÷ 1000) = 0.002 mol (1); from equation moles of NaOH = 0.002 mol (1:1 ratio) (1); concentration of NaOH = 0.002 ÷ (25 ÷ 1000) = 0.08 mol/dm³ (1); correct answer with clear working (1)."
+    "question": "25.0 cm\u00b3 of sodium hydroxide solution of unknown concentration was titrated against 0.1 mol/dm\u00b3 hydrochloric acid. 20.0 cm\u00b3 of HCl was needed to reach the end point. Calculate the concentration of the NaOH solution. (NaOH + HCl \u2192 NaCl + H\u2082O)",
+    "mark_scheme": "Moles of HCl = 0.1 \u00d7 (20 \u00f7 1000) = 0.002 mol (1); from equation moles of NaOH = 0.002 mol (1:1 ratio) (1); concentration of NaOH = 0.002 \u00f7 (25 \u00f7 1000) = 0.08 mol/dm\u00b3 (1); correct answer with clear working (1)."
   },
   {
     "id": "C3-LA-004",
@@ -457,7 +614,7 @@
     "command_word": "Explain",
     "topic": "Conservation of Mass",
     "question": "Explain why the mass of a substance may appear to change during a chemical reaction even though mass is always conserved. Give two examples in your answer.",
-    "mark_scheme": "Mass is conserved because atoms are rearranged, not created or destroyed (1); apparent mass increase: magnesium burning — gains mass by combining with oxygen from air (1); apparent mass decrease: heating calcium carbonate — CO₂ gas escapes into the atmosphere (1); if reaction is carried out in a closed container, total mass would remain constant (1)."
+    "mark_scheme": "Mass is conserved because atoms are rearranged, not created or destroyed (1); apparent mass increase: magnesium burning \u2014 gains mass by combining with oxygen from air (1); apparent mass decrease: heating calcium carbonate \u2014 CO\u2082 gas escapes into the atmosphere (1); if reaction is carried out in a closed container, total mass would remain constant (1)."
   },
   {
     "id": "C3-LA-005",
@@ -465,8 +622,8 @@
     "marks": 5,
     "command_word": "Calculate",
     "topic": "Moles and Mass",
-    "question": "Calculate the atom economy for the production of iron (Fe) in the following reaction:\nFe₂O₃ + 3CO → 2Fe + 3CO₂\n(Fe = 56, O = 16, C = 12)\nThen explain why a high atom economy is desirable.",
-    "mark_scheme": "Mr of 2Fe = 2 × 56 = 112 (1); Mr of 3CO₂ = 3 × 44 = 132 (1); sum of Mr of all products = 112 + 132 = 244 (1); atom economy = (112 ÷ 244) × 100 = 45.9% (1); high atom economy desirable: less waste, more sustainable, more cost-effective (1)."
+    "question": "Calculate the atom economy for the production of iron (Fe) in the following reaction:\nFe\u2082O\u2083 + 3CO \u2192 2Fe + 3CO\u2082\n(Fe = 56, O = 16, C = 12)\nThen explain why a high atom economy is desirable.",
+    "mark_scheme": "Mr of 2Fe = 2 \u00d7 56 = 112 (1); Mr of 3CO\u2082 = 3 \u00d7 44 = 132 (1); sum of Mr of all products = 112 + 132 = 244 (1); atom economy = (112 \u00f7 244) \u00d7 100 = 45.9% (1); high atom economy desirable: less waste, more sustainable, more cost-effective (1)."
   },
   {
     "id": "C3-LA-006",
@@ -483,7 +640,277 @@
     "marks": 6,
     "command_word": "Calculate",
     "topic": "Moles and Mass",
-    "question": "Calcium carbonate decomposes on heating: CaCO₃ → CaO + CO₂\n(a) Calculate the mass of CaO produced from 50 g of CaCO₃. (Ca=40, C=12, O=16)\n(b) Calculate the volume of CO₂ produced at RTP.\n(c) The actual yield of CaO was 24 g. Calculate the percentage yield.",
-    "mark_scheme": "Mr CaCO₃ = 100; moles = 50 ÷ 100 = 0.5 mol (1); moles CaO = 0.5 mol; Mr CaO = 56; mass CaO = 0.5 × 56 = 28 g (1); moles CO₂ = 0.5; volume = 0.5 × 24 = 12 dm³ (1); percentage yield = (24 ÷ 28) × 100 = 85.7% (1); correct working shown throughout (1); all three parts attempted with correct method (1)."
+    "question": "Calcium carbonate decomposes on heating: CaCO\u2083 \u2192 CaO + CO\u2082\n(a) Calculate the mass of CaO produced from 50 g of CaCO\u2083. (Ca=40, C=12, O=16)\n(b) Calculate the volume of CO\u2082 produced at RTP.\n(c) The actual yield of CaO was 24 g. Calculate the percentage yield.",
+    "mark_scheme": "Mr CaCO\u2083 = 100; moles = 50 \u00f7 100 = 0.5 mol (1); moles CaO = 0.5 mol; Mr CaO = 56; mass CaO = 0.5 \u00d7 56 = 28 g (1); moles CO\u2082 = 0.5; volume = 0.5 \u00d7 24 = 12 dm\u00b3 (1); percentage yield = (24 \u00f7 28) \u00d7 100 = 85.7% (1); correct working shown throughout (1); all three parts attempted with correct method (1)."
+  },
+  {
+    "id": "C3-LA-005",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Calculate",
+    "topic": "Moles and Mass",
+    "question": "Calculate the number of moles in 40 g of calcium carbonate (CaCO\u2083). Show your working. (Relative atomic masses: Ca=40, C=12, O=16)",
+    "mark_scheme": "Mr of CaCO\u2083 = 40 + 12 + (3\u00d716) = 100 (1); moles = mass \u00f7 Mr = 40 \u00f7 100 (1); = 0.4 mol (1); correct units stated (1)."
+  },
+  {
+    "id": "C3-LA-006",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Conservation of Mass",
+    "question": "Explain why mass appears to decrease when magnesium burns in air, even though the law of conservation of mass states mass cannot be created or destroyed.",
+    "mark_scheme": "Magnesium reacts with oxygen in the air to form magnesium oxide (1); mass of magnesium oxide > mass of magnesium \u2014 oxygen has been gained from air (1); if mass appears to decrease, a gas product has escaped \u2014 e.g. if reaction produces CO\u2082 (1); conservation of mass: total mass of reactants = total mass of products \u2014 must account for all substances including gases (1)."
+  },
+  {
+    "id": "C3-LA-007",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Calculate",
+    "topic": "Yield and Atom Economy",
+    "question": "In a reaction, 4.4 g of CO\u2082 is produced. The theoretical yield is 8.8 g. Calculate the percentage yield. Explain one reason why the actual yield might be lower.",
+    "mark_scheme": "% yield = (actual yield \u00f7 theoretical yield) \u00d7 100 (1); = (4.4 \u00f7 8.8) \u00d7 100 (1); = 50% (1); reason: reaction may not go to completion / side reactions occur / product lost during separation (1)."
+  },
+  {
+    "id": "C3-LA-008",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Calculate",
+    "topic": "Concentration",
+    "question": "Calculate the concentration in mol/dm\u00b3 of a solution made by dissolving 5.85 g of sodium chloride (NaCl) in 500 cm\u00b3 of water. (Mr NaCl = 58.5)",
+    "mark_scheme": "Moles of NaCl = 5.85 \u00f7 58.5 = 0.1 mol (1); volume = 500 cm\u00b3 = 0.5 dm\u00b3 (1); concentration = moles \u00f7 volume = 0.1 \u00f7 0.5 (1); = 0.2 mol/dm\u00b3 (1)."
+  },
+  {
+    "id": "C3-LA-009",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Yield and Atom Economy",
+    "question": "Explain the term 'atom economy'. Calculate the atom economy for the reaction: CaCO\u2083 \u2192 CaO + CO\u2082, if CaO is the desired product. (Mr: CaCO\u2083=100, CaO=56, CO\u2082=44)",
+    "mark_scheme": "Atom economy = (Mr of desired product \u00f7 Mr of all products) \u00d7 100% (1); atom economy = (56 \u00f7 (56+44)) \u00d7 100% (1); = (56 \u00f7 100) \u00d7 100% = 56% (1); remaining 44% is waste as CO\u2082 \u2014 low atom economy means less efficient, more waste (1)."
+  },
+  {
+    "id": "C3-LA-010",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Calculate",
+    "topic": "Moles and Mass",
+    "question": "Magnesium reacts with oxygen: 2Mg + O\u2082 \u2192 2MgO. Calculate the mass of MgO produced when 4.8 g of Mg reacts completely. (Ar: Mg=24, O=16)",
+    "mark_scheme": "Moles of Mg = 4.8 \u00f7 24 = 0.2 mol (1); ratio Mg:MgO = 1:1, so moles MgO = 0.2 mol (1); Mr of MgO = 24 + 16 = 40 (1); mass MgO = 0.2 \u00d7 40 = 8.0 g (1)."
+  },
+  {
+    "id": "C3-LA-011",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Conservation of Mass",
+    "question": "A student heats a piece of copper in air. Explain what happens to the mass and why, referring to the law of conservation of mass.",
+    "mark_scheme": "Copper reacts with oxygen to form copper(II) oxide (1); mass increases because oxygen from the air is added to the copper (1); law of conservation: total mass of reactants (copper + oxygen) = mass of products (copper oxide) (1); no mass is lost \u2014 the gained mass comes from the oxygen in the air (1)."
+  },
+  {
+    "id": "C3-LA-012",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Calculate",
+    "topic": "Gas Volumes",
+    "question": "Calculate the volume of gas produced at room temperature and pressure (RTP) when 0.25 mol of CO\u2082 is produced. (Molar volume at RTP = 24 dm\u00b3/mol)",
+    "mark_scheme": "Volume = moles \u00d7 molar volume (1); = 0.25 \u00d7 24 (1); = 6.0 dm\u00b3 (1); units correct \u2014 dm\u00b3 (1)."
+  },
+  {
+    "id": "C3-LA-013",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Evaluate",
+    "topic": "Yield and Atom Economy",
+    "question": "Evaluate why the pharmaceutical industry aims for high atom economy reactions, while also being concerned with percentage yield.",
+    "mark_scheme": "High atom economy: less waste produced \u2014 fewer by-products to dispose of (1); more sustainable and cheaper (1); pharmaceutical: drugs require very high purity \u2014 by-products must be removed (1); even with high atom economy, percentage yield matters \u2014 low yield means more raw materials needed and higher cost (1)."
+  },
+  {
+    "id": "C3-LA-014",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Explain",
+    "topic": "Concentration",
+    "question": "Explain how a student could prepare a standard solution of sodium hydroxide (NaOH) with a concentration of 1 mol/dm\u00b3. Include all steps.",
+    "mark_scheme": "Calculate mass needed: Mr NaOH = 40; mass = 1 mol \u00d7 40 g/mol = 40 g (1); weigh accurately on a balance (1); dissolve in a small amount of distilled water in a beaker (1); transfer to a 1 dm\u00b3 volumetric flask and make up to the mark with distilled water (1)."
+  },
+  {
+    "id": "C3-LA-015",
+    "type": "written",
+    "marks": 4,
+    "command_word": "Calculate",
+    "topic": "Moles and Mass",
+    "question": "In an experiment, 6.0 g of carbon reacts with excess oxygen. Calculate the mass of CO\u2082 produced. Write the balanced equation. (Ar: C=12, O=16)",
+    "mark_scheme": "C + O\u2082 \u2192 CO\u2082 (balanced) (1); moles of C = 6.0 \u00f7 12 = 0.5 mol (1); ratio C:CO\u2082 = 1:1, so moles CO\u2082 = 0.5 mol (1); mass CO\u2082 = 0.5 \u00d7 44 = 22 g (1)."
+  },
+  {
+    "id": "C3-LA-016",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Moles and Mass",
+    "question": "Explain the concept of a mole. Include Avogadro's number and explain how relative atomic mass relates to the mole.",
+    "mark_scheme": "A mole is the amount of substance containing 6.02 \u00d7 10\u00b2\u00b3 particles (Avogadro's number) (1); one mole of any element has a mass equal to its relative atomic mass in grams (1); e.g. one mole of carbon (Ar=12) weighs 12 g (1); relative atomic mass is the average mass of atoms compared to 1/12 of carbon-12 (1); this allows chemists to count atoms by weighing \u2014 practical for lab use (1)."
+  },
+  {
+    "id": "C3-LA-017",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Conservation of Mass",
+    "question": "Describe how to investigate conservation of mass in a reaction. Include a reaction where a gas is produced and explain how to ensure no mass is apparently lost.",
+    "mark_scheme": "Measure mass of all reactants before reaction (1); if gas is produced (e.g. CaCO\u2083 + HCl \u2192 CO\u2082), carry out in a sealed container (1); measure total mass after reaction \u2014 should equal mass before (1); without sealed container: gas escapes \u2014 mass appears to decrease (1); demonstrates conservation of mass \u2014 atoms rearranged but not created or destroyed (1)."
+  },
+  {
+    "id": "C3-LA-018",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Calculate",
+    "topic": "Concentration",
+    "question": "A student titrates 25.0 cm\u00b3 of NaOH with 0.100 mol/dm\u00b3 HCl. The average titre is 20.0 cm\u00b3. Calculate the concentration of the NaOH. Include the equation NaOH + HCl \u2192 NaCl + H\u2082O.",
+    "mark_scheme": "Moles of HCl = concentration \u00d7 volume = 0.100 \u00d7 (20.0/1000) = 0.002 mol (1); ratio HCl:NaOH = 1:1 from equation (1); moles of NaOH = 0.002 mol (1); concentration of NaOH = moles \u00f7 volume = 0.002 \u00f7 (25.0/1000) (1); = 0.08 mol/dm\u00b3 (1)."
+  },
+  {
+    "id": "C3-LA-019",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Yield and Atom Economy",
+    "question": "Evaluate the factors that affect the choice of industrial process for making a chemical. Include atom economy, yield, cost and environmental impact.",
+    "mark_scheme": "Atom economy: high atom economy reduces waste disposal costs and is more sustainable (1); yield: higher yield means more product per batch \u2014 more profitable (1); cost: raw material cost, energy use, catalyst cost all affect viability (1); environmental: processes producing toxic by-products require expensive disposal (1); green chemistry aims to maximise efficiency, minimise waste and use renewable feedstocks \u2014 e.g. bio-based solvents (1)."
+  },
+  {
+    "id": "C3-LA-020",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Calculate",
+    "topic": "Gas Volumes",
+    "question": "Calcium carbonate reacts with hydrochloric acid: CaCO\u2083 + 2HCl \u2192 CaCl\u2082 + H\u2082O + CO\u2082. Calculate the volume of CO\u2082 produced at RTP when 5.0 g of CaCO\u2083 reacts with excess HCl. (Mr CaCO\u2083=100; molar volume at RTP=24 dm\u00b3/mol)",
+    "mark_scheme": "Moles CaCO\u2083 = 5.0 \u00f7 100 = 0.05 mol (1); ratio CaCO\u2083:CO\u2082 = 1:1 (1); moles CO\u2082 = 0.05 mol (1); volume = 0.05 \u00d7 24 = 1.2 dm\u00b3 (1); = 1200 cm\u00b3 (1)."
+  },
+  {
+    "id": "C3-LA-021",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Yield and Atom Economy",
+    "question": "Explain why percentage yield is rarely 100% in practice. Include at least three different reasons.",
+    "mark_scheme": "Reaction may not go to completion \u2014 equilibrium reached before all reactants used (1); side reactions producing unwanted products (1); product lost during transfer, filtration or purification (1); reactants may be impure \u2014 less actual reactant than calculated (1); for reversible reactions: forward and reverse reactions occur simultaneously \u2014 not all product remains (1)."
+  },
+  {
+    "id": "C3-LA-022",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Calculate",
+    "topic": "Moles and Mass",
+    "question": "Iron reacts with steam: 3Fe + 4H\u2082O \u2192 Fe\u2083O\u2084 + 4H\u2082. Calculate the mass of Fe\u2083O\u2084 produced when 16.8 g of Fe reacts with excess steam. (Ar: Fe=56, O=16; Mr Fe\u2083O\u2084=232)",
+    "mark_scheme": "Moles of Fe = 16.8 \u00f7 56 = 0.3 mol (1); from equation: 3 mol Fe \u2192 1 mol Fe\u2083O\u2084 (1); moles Fe\u2083O\u2084 = 0.3 \u00f7 3 = 0.1 mol (1); mass Fe\u2083O\u2084 = 0.1 \u00d7 232 = 23.2 g (1); correctly balanced equation checked (1)."
+  },
+  {
+    "id": "C3-LA-023",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Describe",
+    "topic": "Concentration",
+    "question": "Describe how to carry out a titration to find the concentration of an unknown acid using a standard sodium hydroxide solution. Include all key steps.",
+    "mark_scheme": "Fill burette with acid solution; note initial reading (1); pipette 25.0 cm\u00b3 of NaOH into conical flask; add indicator (e.g. phenolphthalein) (1); add acid slowly from burette, swirling (1); note colour change at end point \u2014 add acid dropwise near end (1); repeat titrations until concordant results (within 0.1 cm\u00b3); calculate mean titre (1)."
+  },
+  {
+    "id": "C3-LA-024",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Evaluate",
+    "topic": "Conservation of Mass",
+    "question": "Evaluate the evidence that supports the law of conservation of mass. Include a historical perspective and a modern experimental example.",
+    "mark_scheme": "Lavoisier (18th century): showed total mass before and after combustion is equal when all products collected (1); foundational to chemistry \u2014 all stoichiometry depends on it (1); modern: sealed-vessel reactions always show no mass change (1); if a reaction appears to gain or lose mass: always explained by unaccounted gas/material (1); conservation of mass is a fundamental law \u2014 no exceptions found; based on atoms being indestructible in chemical reactions (1)."
+  },
+  {
+    "id": "C3-LA-025",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Calculate",
+    "topic": "Moles and Mass",
+    "question": "A solution contains 4.9 g of sulfuric acid (H\u2082SO\u2084) in 250 cm\u00b3. Calculate the concentration in mol/dm\u00b3 and in g/dm\u00b3. (Mr H\u2082SO\u2084 = 98)",
+    "mark_scheme": "Moles H\u2082SO\u2084 = 4.9 \u00f7 98 = 0.05 mol (1); volume = 250 cm\u00b3 = 0.25 dm\u00b3 (1); concentration = 0.05 \u00f7 0.25 = 0.2 mol/dm\u00b3 (1); concentration in g/dm\u00b3 = 4.9 \u00f7 0.25 = 19.6 g/dm\u00b3 (1); OR: concentration in g/dm\u00b3 = mol/dm\u00b3 \u00d7 Mr = 0.2 \u00d7 98 = 19.6 g/dm\u00b3 (1)."
+  },
+  {
+    "id": "C3-LA-026",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Moles and Mass",
+    "question": "Explain how reacting masses calculations are performed. Use the reaction between aluminium and oxygen to form aluminium oxide as a worked example. (Ar: Al=27, O=16)",
+    "mark_scheme": "Write balanced equation: 4Al + 3O\u2082 \u2192 2Al\u2082O\u2083 (1); calculate Mr of each substance: Al=27, O\u2082=32, Al\u2082O\u2083=102 (1); calculate moles of known reactant (e.g. 5.4 g Al = 5.4\u00f727 = 0.2 mol) (1); use molar ratio from equation: 4 mol Al \u2192 2 mol Al\u2082O\u2083, so 0.2 mol Al \u2192 0.1 mol Al\u2082O\u2083 (1); calculate mass: 0.1 \u00d7 102 = 10.2 g Al\u2082O\u2083 (1); always identify limiting reagent if both amounts given \u2014 the one that runs out first (1)."
+  },
+  {
+    "id": "C3-LA-027",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Yield and Atom Economy",
+    "question": "Evaluate the Haber process for making ammonia from the perspective of atom economy, yield and sustainability. Include the conditions used and explain any compromises.",
+    "mark_scheme": "Haber process: N\u2082 + 3H\u2082 \u21cc 2NH\u2083 \u2014 atom economy = 100% (only product is ammonia) (1); but equilibrium yield at 450\u00b0C and 200 atm is only ~15% (1); higher pressure increases yield but too expensive/dangerous \u2014 compromise at 200 atm (1); lower temperature increases yield but reaction too slow \u2014 450\u00b0C compromise with iron catalyst (1); unreacted N\u2082 and H\u2082 recycled \u2014 improves overall yield significantly (1); sustainability concern: hydrogen from steam reforming of natural gas \u2014 large CO\u2082 footprint; green hydrogen from electrolysis being developed (1)."
+  },
+  {
+    "id": "C3-LA-028",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Calculate",
+    "topic": "Concentration",
+    "question": "A student wants to make 500 cm\u00b3 of 0.5 mol/dm\u00b3 copper sulfate solution. Calculate how much CuSO\u2084\u00b75H\u2082O is needed, then describe how to make the solution accurately in the lab. (Mr CuSO\u2084\u00b75H\u2082O = 250)",
+    "mark_scheme": "Moles needed = concentration \u00d7 volume = 0.5 \u00d7 0.5 = 0.25 mol (1); mass = moles \u00d7 Mr = 0.25 \u00d7 250 = 62.5 g (1); weigh 62.5 g accurately on a balance (1); dissolve in ~250 cm\u00b3 distilled water in a beaker \u2014 stir until dissolved (1); transfer quantitatively to a 500 cm\u00b3 volumetric flask (1); make up to the 500 cm\u00b3 mark with distilled water, stopper and invert several times to mix (1)."
+  },
+  {
+    "id": "C3-LA-029",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Explain",
+    "topic": "Conservation of Mass",
+    "question": "Explain how balancing chemical equations links to the law of conservation of mass. Use the combustion of propane (C\u2083H\u2088) as an example to balance the equation and calculate masses.",
+    "mark_scheme": "Conservation of mass: same number of each atom on both sides of equation (1); unbalanced: C\u2083H\u2088 + O\u2082 \u2192 CO\u2082 + H\u2082O (1); balanced: C\u2083H\u2088 + 5O\u2082 \u2192 3CO\u2082 + 4H\u2082O (1); check: left = 3C, 8H, 10O; right = 3C, 8H, 10O \u2014 balanced (1); mass of 1 mol C\u2083H\u2088 = 44 g; reacts with 5\u00d732=160 g O\u2082; produces 3\u00d744=132 g CO\u2082 + 4\u00d718=72 g H\u2082O (1); total mass reactants = 44+160=204 g = total mass products 132+72=204 g \u2014 confirms conservation (1)."
+  },
+  {
+    "id": "C3-LA-030",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Moles and Mass",
+    "question": "Evaluate the use of molar calculations in planning industrial chemical processes. Include the role of the limiting reagent, excess reagents, and how these affect cost and waste.",
+    "mark_scheme": "Molar ratios determine exact amounts of reactants needed \u2014 avoids waste (1); limiting reagent: the reactant that is completely used up \u2014 determines maximum yield (1); excess reagent: more than needed \u2014 ensures limiting reagent fully reacted (1); industry uses excess of cheaper reactant to ensure expensive reactant fully consumed (1); unreacted excess must be separated and recycled or disposed of \u2014 adds cost (1); optimising quantities reduces raw material cost and waste treatment costs \u2014 essential for profitability and sustainability (1)."
+  },
+  {
+    "id": "C3-LA-031",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Describe",
+    "topic": "Gas Volumes",
+    "question": "Describe how to experimentally determine the molar volume of a gas at room temperature and pressure. Include the method, calculations, and sources of error.",
+    "mark_scheme": "React known mass of metal (e.g. Mg) with excess acid to produce hydrogen gas (1); measure volume of gas using a gas syringe or inverted burette over water (1); calculate moles of Mg used: moles = mass \u00f7 Ar (1); ratio Mg:H\u2082 = 1:1 from equation \u2014 moles H\u2082 = moles Mg (1); molar volume = volume of gas \u00f7 moles = should give ~24 dm\u00b3/mol (1); sources of error: gas leaks from apparatus; gas dissolves slightly in water; temperature/pressure variations (1)."
+  },
+  {
+    "id": "C3-LA-032",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Calculate",
+    "topic": "Yield and Atom Economy",
+    "question": "In the production of aspirin: C\u2087H\u2086O\u2083 + C\u2084H\u2086O\u2083 \u2192 C\u2089H\u2088O\u2084 + C\u2082H\u2084O\u2082. A student uses 3.0 g of salicylic acid (Mr=138) and obtains 2.5 g of aspirin (Mr=180). Calculate the theoretical yield, percentage yield and atom economy for aspirin. (Mr acetic anhydride=102)",
+    "mark_scheme": "Moles salicylic acid = 3.0 \u00f7 138 = 0.0217 mol (1); molar ratio 1:1, so theoretical moles aspirin = 0.0217 mol (1); theoretical yield = 0.0217 \u00d7 180 = 3.91 g (1); percentage yield = (2.5 \u00f7 3.91) \u00d7 100 = 63.9% (1); atom economy = Mr aspirin \u00f7 (Mr aspirin + Mr acetic acid) \u00d7 100 = 180 \u00f7 (180+60) \u00d7 100 = 75% (1); acetic acid (Mr=60) is the by-product \u2014 25% of atom mass wasted (1)."
+  },
+  {
+    "id": "C3-LA-033",
+    "type": "written",
+    "marks": 5,
+    "command_word": "Explain",
+    "topic": "Concentration",
+    "question": "Explain what is meant by concentration of a solution and describe how diluting a solution affects concentration. Include the mathematical relationship.",
+    "mark_scheme": "Concentration = amount of solute dissolved in a given volume of solution (1); units: mol/dm\u00b3 or g/dm\u00b3 (1); diluting: adding more solvent increases volume but keeps moles of solute the same (1); concentration decreases proportionally: C\u2081V\u2081 = C\u2082V\u2082 (1); e.g. halving the concentration requires doubling the volume of water added (1)."
+  },
+  {
+    "id": "C3-LA-034",
+    "type": "written",
+    "marks": 6,
+    "command_word": "Evaluate",
+    "topic": "Concentration",
+    "question": "Evaluate the use of titration as a technique for determining the concentration of an unknown solution. Include sources of error and how to minimise them.",
+    "mark_scheme": "Titration: accurate technique for acid-base concentration determination using volumes of solutions (1); indicator signals the end point \u2014 colour change when neutralisation complete (1); repeat titrations until concordant results \u2014 reduces random error (1); sources of error: overshoot end point \u2014 adding too much acid past neutralisation (1); reading burette at eye level reduces parallax error (1); using a pipette rather than measuring cylinder for the NaOH gives more accurate volume (1)."
   }
 ]
