@@ -846,6 +846,7 @@
   const ACTIVITY_TIMES = {
     mock: 10, paper: 15, flashcards: 5, words: 3,
     flashcard: 5, mini_mock: 10, keywords: 3, learn: 5,
+    scribble: 5, cloze: 3,
   };
 
   let _timeWindowMins = 60; // default 1 hour
@@ -947,8 +948,8 @@
   }
 
   // ── HISTORY MODAL ───────────────────────────────────────────────────────────
-  const TYPE_ICONS = { mock:'📝', mini_mock:'📝', paper:'📄', flashcards:'🃏', flashcard:'🃏', words:'🔤', keywords:'🔤', learn:'🎓' };
-  const TYPE_NAMES = { mock:'Mini Mock', mini_mock:'Mini Mock', paper:'Practice Paper', flashcards:'Flashcards', flashcard:'Flashcards', words:'Keywords Game', keywords:'Keywords Game', learn:'Learn' };
+  const TYPE_ICONS = { mock:'📝', mini_mock:'📝', paper:'📄', flashcards:'🃏', flashcard:'🃏', words:'🔤', keywords:'🔤', learn:'🎓', scribble:'✏️', cloze:'🔡' };
+  const TYPE_NAMES = { mock:'Mini Mock', mini_mock:'Mini Mock', paper:'Practice Paper', flashcards:'Flashcards', flashcard:'Flashcards', words:'Keywords Game', keywords:'Keywords Game', learn:'Learn', scribble:'Scribble', cloze:'Fill the Gaps' };
 
   window.openHistoryModal = async (uid, name) => {
     const modal = document.getElementById('history-modal');
