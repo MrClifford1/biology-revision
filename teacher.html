@@ -759,18 +759,16 @@
 
     const uids = students.map(s => s.uid);
 
-    // Fetch progress and activity logs in parallel — no reason to wait for one before the other
+    // Fetch only activity logs (50 per student) — skip progress reads to save Firestore quota
     const allLogs = {};
-    const [allProgress] = await Promise.all([
-      getProgressForStudents(uids),
-      Promise.all(students.map(async s => {
-        try {
-          // Fetch all logs (500 max) so recent-hour filter has full data
-          const { entries } = await getActivityLog(s.uid, 500);
-          allLogs[s.uid] = entries;
-        } catch(e) { allLogs[s.uid] = []; }
-      }))
-    ]);
+    const allProgress = {};
+    await Promise.all(students.map(async s => {
+      try {
+        const { entries } = await getActivityLog(s.uid, 50);
+        allLogs[s.uid] = entries;
+        allProgress[s.uid] = {};
+      } catch(e) { allLogs[s.uid] = []; allProgress[s.uid] = {}; }
+    }));
 
     _xpLastStudents = students;
     _lastAllProgress = allProgress;
@@ -808,7 +806,7 @@
       if (document.visibilityState === 'visible' && selectedClass) {
         loadClassData();
       }
-    }, 60000);
+    }, 300000); // 5 min — reduce Firestore reads
     // Update the "X seconds ago" label every 5 seconds
     _refreshLabelTimer = setInterval(_updateRefreshLabel, 5000);
   }
@@ -967,7 +965,7 @@
     modal.classList.add('open');
 
     try {
-      let { entries } = await getActivityLog(uid, 200);
+      let { entries } = await getActivityLog(uid, 50);
       // Sort newest first, handling both ISO strings and numeric timestamps
       entries = entries.slice().sort((a, b) => {
         const ta = typeof a.timestamp === 'number' ? a.timestamp : new Date(a.timestamp).getTime();
@@ -1188,7 +1186,9 @@
     try {
       let students;
       if (_xpScope === 'school') {
-        students = await getAllStudents();
+        // Whole-school disabled on free Firestore plan — too many reads
+        content.innerHTML = '<div class="empty-state">Whole School view is disabled to stay within Firestore free limits. Upgrade to Firebase Blaze to enable.</div>';
+        return;
       } else {
         students = _xpLastStudents.length ? _xpLastStudents : await getStudentsByClass(selectedClass);
       }
@@ -1201,7 +1201,7 @@
       const rows = await Promise.all(students.map(async s => {
         let totalXp = 0, recentXp = 0;
         try {
-          const { entries } = await getActivityLog(s.uid, 500);
+          const { entries } = await getActivityLog(s.uid, 50);
           entries.forEach(e => {
             const xp = XP_PER_ACTIVITY[e.type] || 5;
             totalXp += xp;
@@ -1261,7 +1261,7 @@
     if (_xpRefreshTimer) clearInterval(_xpRefreshTimer);
     _xpRefreshTimer = setInterval(() => {
       if (document.visibilityState === 'visible') loadXpLeague();
-    }, 60000);
+    }, 300000); // 5 min — reduce Firestore reads
   }
 
   // ── MY CLASSES MODAL ────────────────────────────────────────────────────────
