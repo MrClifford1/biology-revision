@@ -431,8 +431,15 @@
       <div class="card">
         <div class="section-label">Student Intervention Scatter Chart</div>
         <p style="font-size:0.8rem;color:var(--subtext);margin-bottom:1rem">Each dot is a student. X = total time spent (minutes), Y = average score (%). Quadrants guide intervention decisions. Select a class above.</p>
-        <div id="scatter-content">
-          <div class="empty-state">Select a class above to view the chart.</div>
+        <div style="display:flex;gap:1rem;align-items:flex-start;flex-wrap:wrap">
+          <div id="scatter-content" style="flex:1;min-width:0">
+            <div class="empty-state">Select a class above to view the chart.</div>
+          </div>
+          <div id="scatter-roster" style="display:none;min-width:160px;max-width:200px">
+            <div style="font-size:0.7rem;font-weight:800;color:var(--subtext);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem">Students</div>
+            <div style="font-size:0.68rem;color:var(--subtext);margin-bottom:0.6rem">Click to exclude/include from chart</div>
+            <div id="scatter-roster-list" style="display:flex;flex-direction:column;gap:0.3rem"></div>
+          </div>
         </div>
       </div>
 
@@ -1012,9 +1019,48 @@
 
   // ── SCATTER CHART (Intervention View) ──────────────────────────────────────
   let _scatterChart = null;
+  let _scatterStudents = [];
+  let _scatterLogs = {};
+
+  function _getExcluded() {
+    try { return new Set(JSON.parse(localStorage.getItem('scatter_excluded') || '[]')); } catch(e) { return new Set(); }
+  }
+  function _saveExcluded(set) {
+    localStorage.setItem('scatter_excluded', JSON.stringify([...set]));
+  }
+
+  window.toggleScatterStudent = (uid) => {
+    const ex = _getExcluded();
+    if (ex.has(uid)) ex.delete(uid); else ex.add(uid);
+    _saveExcluded(ex);
+    renderHeatmap(_scatterStudents, {}, _scatterLogs);
+  };
+
+  function _renderRoster(students) {
+    const roster = document.getElementById('scatter-roster');
+    const list = document.getElementById('scatter-roster-list');
+    if (!roster || !list) return;
+    roster.style.display = students.length ? 'block' : 'none';
+    const ex = _getExcluded();
+    const COLOURS = ['#6366f1','#ec4899','#f59e0b','#10b981','#3b82f6','#ef4444','#8b5cf6','#06b6d4','#f97316','#84cc16','#e11d48','#0ea5e9','#a855f7','#14b8a6','#fb923c','#22c55e'];
+    list.innerHTML = students.map((s, i) => {
+      const excluded = ex.has(s.uid);
+      const colour = COLOURS[i % COLOURS.length];
+      return `<div onclick="toggleScatterStudent('${s.uid}')" style="display:flex;align-items:center;gap:0.4rem;padding:0.3rem 0.5rem;border-radius:6px;cursor:pointer;background:${excluded?'#f1f5f9':'white'};border:1.5px solid ${excluded?'#e2e8f0':colour};opacity:${excluded?0.45:1};transition:all 0.15s" title="${excluded?'Click to include':'Click to exclude'}">
+        <span style="width:10px;height:10px;border-radius:50%;background:${colour};flex-shrink:0"></span>
+        <span style="font-size:0.72rem;font-weight:700;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${getStudentDisplayName(s)}</span>
+        <span style="margin-left:auto;font-size:0.65rem;color:${excluded?'#94a3b8':'#10b981'}">${excluded?'off':'on'}</span>
+      </div>`;
+    }).join('');
+  }
 
   function renderHeatmap(students, allProgress, allLogs) {
-    const points = students.map(s => {
+    _scatterStudents = students;
+    _scatterLogs = allLogs;
+    const excluded = _getExcluded();
+    _renderRoster(students);
+    const activeStudents = students.filter(s => !excluded.has(s.uid));
+    const points = activeStudents.map(s => {
       const logs = allLogs[s.uid] || [];
 
       // Total time: calculate from actual timestamps grouped into sessions
@@ -1060,21 +1106,25 @@
     const avgX = Math.round(points.reduce((s,p) => s+p.x, 0) / points.length);
     const avgY = Math.round(points.reduce((s,p) => s+p.y, 0) / points.length);
 
-    // Colour palette — one colour per student
+    // Colour palette — index based on position in full student list for consistency
     const COLOURS = [
       '#6366f1','#ec4899','#f59e0b','#10b981','#3b82f6','#ef4444','#8b5cf6','#06b6d4',
       '#f97316','#84cc16','#e11d48','#0ea5e9','#a855f7','#14b8a6','#fb923c','#22c55e',
     ];
 
-    const datasets = points.map((p, i) => ({
-      label: p.name,
-      data: [{ x: p.x, y: p.y }],
-      backgroundColor: COLOURS[i % COLOURS.length] + 'cc',
-      borderColor: COLOURS[i % COLOURS.length],
-      borderWidth: 2,
-      pointRadius: 9,
-      pointHoverRadius: 12,
-    }));
+    const datasets = points.map((p) => {
+      const colourIdx = students.findIndex(s => s.uid === p.uid) % COLOURS.length;
+      const colour = COLOURS[colourIdx < 0 ? 0 : colourIdx];
+      return {
+        label: p.name,
+        data: [{ x: p.x, y: p.y }],
+        backgroundColor: colour + 'cc',
+        borderColor: colour,
+        borderWidth: 2,
+        pointRadius: 9,
+        pointHoverRadius: 12,
+      };
+    });
 
     document.getElementById('scatter-content').innerHTML = `
       <div class="scatter-wrap">
