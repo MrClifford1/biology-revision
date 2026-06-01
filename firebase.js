@@ -724,10 +724,23 @@ export async function logActivity(uid, entry) {
 export async function getActivityLog(uid, limitCount = 30, startAfterDoc = null) {
   // Simple collection fetch — sort client-side to avoid needing a composite index
   const snap = await getDocs(collection(db, 'users', uid, 'activityLog'));
+  const tsToMs = t => {
+    if (!t) return 0;
+    if (typeof t === 'number') return t;
+    if (typeof t.toMillis === 'function') return t.toMillis(); // Firestore Timestamp
+    if (typeof t === 'string') return new Date(t).getTime();
+    return 0;
+  };
   const all = snap.docs
-    .map(d => ({ id: d.id, _doc: d, ...d.data() }))
+    .map(d => {
+      const data = d.data();
+      // Normalise timestamp to ISO string for consistency downstream
+      const rawTs = data.timestamp;
+      const ms = tsToMs(rawTs);
+      return { id: d.id, _doc: d, ...data, timestamp: ms ? new Date(ms).toISOString() : data.timestamp };
+    })
     .filter(e => e.timestamp)
-    .sort((a, b) => b.timestamp.localeCompare(a.timestamp));
+    .sort((a, b) => tsToMs(b.timestamp) - tsToMs(a.timestamp));
 
   // Manual pagination using the last doc's timestamp as a cursor
   let startIdx = 0;
