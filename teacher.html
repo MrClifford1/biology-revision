@@ -1008,36 +1008,33 @@
   let _scatterChart = null;
 
   function renderHeatmap(students, allProgress, allLogs) {
-    // Compute per-student: total time (all logs) and average score (from mocks)
     const points = students.map(s => {
-      const progress = allProgress[s.uid] || {};
       const logs = allLogs[s.uid] || [];
 
-      // Total time: sum all activity log entries using estimated minutes
+      // Total time: sum all activity log entries
       const totalMins = logs.reduce((sum, e) => sum + (ACTIVITY_TIMES[e.type] || 5), 0);
 
-      // Average score from mocks
+      // Average score from any scored activity in logs
       let totalScore = 0, totalPossible = 0;
-      Object.values(progress).forEach(p => {
-        if (p.mocks) {
-          p.mocks.forEach(m => {
-            totalScore += m.score;
-            totalPossible += m.total;
-          });
+      logs.forEach(e => {
+        if (e.score != null && e.total > 0) {
+          totalScore += e.score;
+          totalPossible += e.total;
+        } else if (e.pct != null) {
+          totalScore += e.pct;
+          totalPossible += 100;
         }
       });
-      const avgScore = totalPossible > 0 ? Math.round((totalScore / totalPossible) * 100) : null;
-
       return {
         uid: s.uid,
         name: getStudentDisplayName(s),
         x: totalMins,
         y: avgScore,
       };
-    }).filter(p => p.y !== null); // only include students with at least one score
+    }).map(p => ({ ...p, y: p.y ?? 0 })); // default to 0 if no scores yet
 
     if (!points.length) {
-      document.getElementById('scatter-content').innerHTML = '<div class="empty-state">No score data yet for this class.</div>';
+      document.getElementById('scatter-content').innerHTML = '<div class="empty-state">No students found in this class.</div>';
       return;
     }
 
