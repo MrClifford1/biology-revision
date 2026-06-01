@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Teacher Dashboard — Streetly Science Hub</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
     :root {
       --navy: #1a2a4f; --navy-dark: #0f1d3d; --red: #c8202c; --gold: #d4a534;
@@ -188,6 +189,29 @@
     .adate-countdown.future { background: #f1f5f9; color: #475569; }
     .btn-adate-save { background: var(--purple); color: white; border: none; border-radius: 10px; padding: 0.6rem 1.4rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.875rem; cursor: pointer; }
     .btn-adate-save:hover { background: #6d28d9; }
+
+    /* ── SCATTER CHART ───────────────────────────────────────────────────────── */
+    .scatter-wrap { position:relative; width:100%; }
+    .scatter-canvas-wrap { position:relative; height:400px; }
+    .scatter-quadrant-labels { position:absolute; inset:0; pointer-events:none; }
+    .sq-label { position:absolute; font-family:'Nunito',sans-serif; font-weight:800; font-size:0.7rem; color:var(--subtext); opacity:0.65; background:rgba(255,255,255,0.7); padding:0.15rem 0.4rem; border-radius:6px; }
+
+    /* ── XP LEAGUE TABLE ─────────────────────────────────────────────────────── */
+    .xp-toggle-btn { background:none; border:none; padding:0.35rem 0.85rem; font-family:'Nunito',sans-serif; font-weight:700; font-size:0.78rem; color:var(--subtext); cursor:pointer; transition:all 0.15s; }
+    .xp-toggle-btn.active { background:var(--navy); color:white; }
+    .xp-table { width:100%; border-collapse:collapse; }
+    .xp-table th { font-family:'Nunito',sans-serif; font-weight:800; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--subtext); padding:0.5rem 0.75rem; text-align:left; border-bottom:2px solid var(--border); }
+    .xp-table td { padding:0.55rem 0.75rem; font-size:0.85rem; border-bottom:1px solid var(--border); vertical-align:middle; }
+    .xp-table tr:last-child td { border-bottom:none; }
+    .xp-rank { font-family:'Nunito',sans-serif; font-weight:900; font-size:1rem; width:2rem; text-align:center; }
+    .xp-rank-gold   { color:#d97706; }
+    .xp-rank-silver { color:#64748b; }
+    .xp-rank-bronze { color:#b45309; }
+    .xp-row-gold   { background:#fffbeb; }
+    .xp-row-silver { background:#f8fafc; }
+    .xp-row-bronze { background:#fefce8; }
+    .xp-gained { font-family:'Nunito',sans-serif; font-weight:800; font-size:0.8rem; padding:0.15rem 0.5rem; border-radius:100px; background:#dcfce7; color:#16a34a; }
+    .xp-gained-zero { color:#94a3b8; }
 
     @media (max-width:700px) {
       .assignment-form { grid-template-columns:1fr; }
@@ -384,7 +408,7 @@
   <div class="tabs-wrap">
     <div class="tabs">
       <button class="tab-btn active" data-tab="overview">📋 Class Overview</button>
-      <button class="tab-btn" data-tab="heatmap">🗺️ RAG Heatmap</button>
+      <button class="tab-btn" data-tab="heatmap">📊 Intervention View</button>
       <button class="tab-btn" data-tab="assignments">📌 Assignments</button>
       <button class="tab-btn" data-tab="assessments">📅 Assessment Dates</button>
     </div>
@@ -402,14 +426,29 @@
       </div>
     </div>
 
-    <!-- ── TAB: RAG HEATMAP ─────────────────────────────────────────────────────── -->
+    <!-- ── TAB: INTERVENTION VIEW ────────────────────────────────────────────────── -->
     <div class="tab-panel" id="tab-heatmap">
       <div class="card">
-        <div class="section-label">Topic Confidence Heatmap</div>
-        <p style="font-size:0.8rem;color:var(--subtext);margin-bottom:1rem">Each cell shows a student's average topic score for a module. Colour indicates tier. Select a class above.</p>
-        <div id="heatmap-content">
-          <div class="empty-state">Select a class above to view the heatmap.</div>
+        <div class="section-label">Student Intervention Scatter Chart</div>
+        <p style="font-size:0.8rem;color:var(--subtext);margin-bottom:1rem">Each dot is a student. X = total time spent (minutes), Y = average score (%). Quadrants guide intervention decisions. Select a class above.</p>
+        <div id="scatter-content">
+          <div class="empty-state">Select a class above to view the chart.</div>
         </div>
+      </div>
+
+      <!-- ── XP LEAGUE TABLE ──────────────────────────────────────────────────── -->
+      <div class="card" id="xp-league-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem">
+          <div class="section-label" style="margin-bottom:0">🏆 XP League Table</div>
+          <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">
+            <div style="display:flex;border:1.5px solid var(--border);border-radius:8px;overflow:hidden;background:white">
+              <button id="xp-toggle-class" class="xp-toggle-btn active" onclick="xpSetScope('class',this)">Class</button>
+              <button id="xp-toggle-school" class="xp-toggle-btn" onclick="xpSetScope('school',this)" style="border-left:1.5px solid var(--border)">Whole School</button>
+            </div>
+            <span id="xp-top-earner" style="font-size:0.8rem;font-weight:700;color:var(--subtext)"></span>
+          </div>
+        </div>
+        <div id="xp-league-content"><div class="empty-state">Select a class above to view the XP league.</div></div>
       </div>
     </div>
 
@@ -566,7 +605,7 @@
     createAssignment, updateAssignment, getAllAssignments, deleteAssignment,
     getAssignmentCompletions,
     isSuperAdmin, saveAssessmentDate, getAssessmentDates, deleteAssessmentDate,
-    getActivityLog
+    getActivityLog, getAllStudents
   } from './firebase.js';
 
 
@@ -717,14 +756,17 @@
       getProgressForStudents(uids),
       Promise.all(students.map(async s => {
         try {
-          const { entries } = await getActivityLog(s.uid, 200);
+          // Fetch all logs (500 max) so recent-hour filter has full data
+          const { entries } = await getActivityLog(s.uid, 500);
           allLogs[s.uid] = entries;
         } catch(e) { allLogs[s.uid] = []; }
       }))
     ]);
 
+    _xpLastStudents = students;
     renderOverview(students, allProgress, allLogs);
-    renderHeatmap(students, allProgress);
+    renderHeatmap(students, allProgress, allLogs);
+    loadXpLeague();
 
     // Update last-refreshed timestamp
     _lastRefreshed = Date.now();
@@ -766,8 +808,16 @@
   const _origSelectClass = window.selectClass;
   window.selectClass = (cls) => {
     _origSelectClass(cls);
-    if (selectedClass) { _startAutoRefresh(); }
-    else { _stopAutoRefresh(); }
+    if (selectedClass) {
+      _startAutoRefresh();
+      _startXpRefresh();
+    } else {
+      _stopAutoRefresh();
+      if (_xpRefreshTimer) { clearInterval(_xpRefreshTimer); _xpRefreshTimer = null; }
+      _xpLastStudents = [];
+      document.getElementById('xp-league-content').innerHTML = '<div class="empty-state">Select a class above to view the XP league.</div>';
+      document.getElementById('scatter-content').innerHTML = '<div class="empty-state">Select a class above to view the chart.</div>';
+    }
   };
 
   // Pause when tab hidden, resume when visible
@@ -789,8 +839,13 @@
 
   function estimateTimeFromLogs(logs) {
     if (!logs || !logs.length) return 0;
-    const oneHourAgo = new Date(Date.now() - 3600000).toISOString();
-    const recent = logs.filter(e => e.timestamp && e.timestamp >= oneHourAgo);
+    const cutoff = Date.now() - 3600000; // 1 hour ago in ms
+    const recent = logs.filter(e => {
+      if (!e.timestamp) return false;
+      // Handle both ISO strings and numeric timestamps
+      const ts = typeof e.timestamp === 'number' ? e.timestamp : new Date(e.timestamp).getTime();
+      return ts >= cutoff;
+    });
     return recent.reduce((sum, e) => sum + (ACTIVITY_TIMES[e.type] || 5), 0);
   }
 
@@ -848,7 +903,7 @@
         <table class="student-table">
           <thead><tr>
             <th>Student</th>
-            <th>Mocks Done</th>
+            <th>Activities Done</th>
             <th>Avg Score</th>
             <th>Last Active</th>
             <th>Time (last hr)</th>
@@ -900,59 +955,234 @@
     }
   };
 
-  // ── RAG HEATMAP ─────────────────────────────────────────────────────────────
-  function renderHeatmap(students, allProgress) {
-    const subjects = [
-      { label:'Biology', modules:['b1','b2','b3','b4','b5','b6','b7'] },
-      { label:'Physics', modules:['p1','p2','p3','p4','p5','p6','p7'] },
-      { label:'Chemistry', modules:['c1','c2','c3','c4','c5','c6','c7','c8','c9','c10'] },
+  // ── SCATTER CHART (Intervention View) ──────────────────────────────────────
+  let _scatterChart = null;
+
+  function renderHeatmap(students, allProgress, allLogs) {
+    // Compute per-student: total time (all logs) and average score (from mocks)
+    const points = students.map(s => {
+      const progress = allProgress[s.uid] || {};
+      const logs = allLogs[s.uid] || [];
+
+      // Total time: sum all activity log entries using estimated minutes
+      const totalMins = logs.reduce((sum, e) => sum + (ACTIVITY_TIMES[e.type] || 5), 0);
+
+      // Average score from mocks
+      let totalScore = 0, totalPossible = 0;
+      Object.values(progress).forEach(p => {
+        if (p.mocks) {
+          p.mocks.forEach(m => {
+            totalScore += m.score;
+            totalPossible += m.total;
+          });
+        }
+      });
+      const avgScore = totalPossible > 0 ? Math.round((totalScore / totalPossible) * 100) : null;
+
+      return {
+        uid: s.uid,
+        name: getStudentDisplayName(s),
+        x: totalMins,
+        y: avgScore,
+      };
+    }).filter(p => p.y !== null); // only include students with at least one score
+
+    if (!points.length) {
+      document.getElementById('scatter-content').innerHTML = '<div class="empty-state">No score data yet for this class.</div>';
+      return;
+    }
+
+    // Compute averages for quadrant lines
+    const avgX = Math.round(points.reduce((s,p) => s+p.x, 0) / points.length);
+    const avgY = Math.round(points.reduce((s,p) => s+p.y, 0) / points.length);
+
+    // Colour palette — one colour per student
+    const COLOURS = [
+      '#6366f1','#ec4899','#f59e0b','#10b981','#3b82f6','#ef4444','#8b5cf6','#06b6d4',
+      '#f97316','#84cc16','#e11d48','#0ea5e9','#a855f7','#14b8a6','#fb923c','#22c55e',
     ];
 
-    // Build header rows
-    let headerRow1 = '<tr><th class="name-col">Student</th>';
-    subjects.forEach(sub => {
-      headerRow1 += `<th colspan="${sub.modules.length}" class="subject-header">${sub.label}</th>`;
-    });
-    headerRow1 += '</tr>';
+    const datasets = points.map((p, i) => ({
+      label: p.name,
+      data: [{ x: p.x, y: p.y }],
+      backgroundColor: COLOURS[i % COLOURS.length] + 'cc',
+      borderColor: COLOURS[i % COLOURS.length],
+      borderWidth: 2,
+      pointRadius: 9,
+      pointHoverRadius: 12,
+    }));
 
-    let headerRow2 = '<tr><th class="name-col"></th>';
-    subjects.forEach(sub => {
-      sub.modules.forEach(m => {
-        headerRow2 += `<th>${MODULE_LABELS[m]}</th>`;
-      });
-    });
-    headerRow2 += '</tr>';
-
-    // Build data rows
-    const dataRows = students.map(s => {
-      const dn = getStudentDisplayName(s);
-      let row = `<tr><td class="name-cell">${dn.split(' ')[0]}</td>`;
-      subjects.forEach(sub => {
-        sub.modules.forEach(modId => {
-          const progress = allProgress[s.uid]?.[modId];
-          const rag = progress?.rag || {};
-          const entries = Object.values(rag).filter(e => typeof e === 'object' && e !== null);
-          if (entries.length === 0) {
-            row += `<td><span class="heat-cell" style="background:#f1f5f9;color:#94a3b8">—</span></td>`;
-          } else {
-            const avg = Math.round(entries.reduce((sum, e) => sum + (e.score || 0), 0) / entries.length);
-            const tier = computeTier(avg);
-            const tm = TIER_META[tier];
-            row += `<td><span class="heat-cell" style="background:${tm.bg};color:${tm.colour}">${tm.emoji}<br>${avg}%</span></td>`;
-          }
-        });
-      });
-      row += '</tr>';
-      return row;
-    }).join('');
-
-    document.getElementById('heatmap-content').innerHTML = `
-      <div class="heatmap-wrap">
-        <table class="heatmap-table">
-          <thead>${headerRow1}${headerRow2}</thead>
-          <tbody>${dataRows}</tbody>
-        </table>
+    document.getElementById('scatter-content').innerHTML = `
+      <div class="scatter-wrap">
+        <div class="scatter-canvas-wrap">
+          <canvas id="scatter-canvas"></canvas>
+        </div>
       </div>`;
+
+    if (_scatterChart) { _scatterChart.destroy(); _scatterChart = null; }
+
+    const ctx = document.getElementById('scatter-canvas').getContext('2d');
+    _scatterChart = new Chart(ctx, {
+      type: 'scatter',
+      data: { datasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (item) => {
+                const p = points[item.datasetIndex];
+                return [`${p.name}`, `Study time: ${p.x}m`, `Avg score: ${p.y}%`];
+              },
+            },
+          },
+        },
+        scales: {
+          x: {
+            title: { display: true, text: 'Time Spent (total minutes)', font: { family: 'Nunito Sans', weight: '700' } },
+            beginAtZero: true,
+          },
+          y: {
+            title: { display: true, text: 'Average Score (%)', font: { family: 'Nunito Sans', weight: '700' } },
+            min: 0, max: 100,
+          },
+        },
+      },
+      plugins: [{
+        id: 'quadrantLines',
+        afterDraw(chart) {
+          const { ctx: c, chartArea: { left, right, top, bottom }, scales } = chart;
+          const xPx = scales.x.getPixelForValue(avgX);
+          const yPx = scales.y.getPixelForValue(avgY);
+
+          c.save();
+          c.setLineDash([6, 4]);
+          c.strokeStyle = '#94a3b8';
+          c.lineWidth = 1.5;
+
+          // Vertical dashed line at avgX
+          c.beginPath(); c.moveTo(xPx, top); c.lineTo(xPx, bottom); c.stroke();
+          // Horizontal dashed line at avgY
+          c.beginPath(); c.moveTo(left, yPx); c.lineTo(right, yPx); c.stroke();
+
+          c.restore();
+
+          // Quadrant labels
+          const pad = 8;
+          const labels = [
+            { text: 'Needs stretch', x: left + pad, y: top + pad, align: 'left' },
+            { text: 'Praise for commitment', x: right - pad, y: top + pad, align: 'right' },
+            { text: 'Needs more effort', x: left + pad, y: bottom - pad, align: 'left' },
+            { text: 'Needs support', x: right - pad, y: bottom - pad, align: 'right' },
+          ];
+          c.save();
+          c.font = '700 11px Nunito Sans, sans-serif';
+          c.fillStyle = '#64748b';
+          labels.forEach(l => {
+            c.textAlign = l.align;
+            c.fillText(l.text, l.x, l.y + 10);
+          });
+          c.restore();
+        },
+      }],
+    });
+  }
+
+  // ── XP LEAGUE TABLE ─────────────────────────────────────────────────────────
+  let _xpScope = 'class'; // 'class' or 'school'
+  let _xpRefreshTimer = null;
+  let _xpLastStudents = []; // students in current class
+
+  window.xpSetScope = (scope, btn) => {
+    _xpScope = scope;
+    document.querySelectorAll('.xp-toggle-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    loadXpLeague();
+  };
+
+  async function loadXpLeague() {
+    const content = document.getElementById('xp-league-content');
+    const earnerEl = document.getElementById('xp-top-earner');
+    if (!selectedClass && _xpScope === 'class') {
+      content.innerHTML = '<div class="empty-state">Select a class to view the league.</div>';
+      return;
+    }
+    content.innerHTML = '<div class="loading-state">Loading XP data...</div>';
+
+    try {
+      let students;
+      if (_xpScope === 'school') {
+        students = await getAllStudents();
+      } else {
+        students = _xpLastStudents.length ? _xpLastStudents : await getStudentsByClass(selectedClass);
+      }
+
+      // Compute XP gained in last 30 min from activity logs
+      const now = Date.now();
+      const cutoff30 = now - 30 * 60 * 1000;
+      const XP_PER_ACTIVITY = { mock: 10, mini_mock: 10, paper: 15, flashcards: 5, flashcard: 5, words: 3, keywords: 3 };
+
+      const rows = await Promise.all(students.map(async s => {
+        const totalXp = s.xp || 0;
+        let recentXp = 0;
+        try {
+          const { entries } = await getActivityLog(s.uid, 100);
+          recentXp = entries.filter(e => {
+            if (!e.timestamp) return false;
+            const ts = typeof e.timestamp === 'number' ? e.timestamp : new Date(e.timestamp).getTime();
+            return ts >= cutoff30;
+          }).reduce((sum, e) => sum + (XP_PER_ACTIVITY[e.type] || 5), 0);
+        } catch(e) {}
+        return { name: getStudentDisplayName(s), totalXp, recentXp };
+      }));
+
+      // Sort by total XP descending
+      rows.sort((a,b) => b.totalXp - a.totalXp);
+
+      // Top earner in last 30min
+      const topEarner = [...rows].sort((a,b) => b.recentXp - a.recentXp)[0];
+      if (topEarner && topEarner.recentXp > 0) {
+        earnerEl.innerHTML = `🔥 <strong>${topEarner.name}</strong> — most XP in last 30 min (+${topEarner.recentXp} XP)`;
+      } else {
+        earnerEl.textContent = '';
+      }
+
+      if (!rows.length) {
+        content.innerHTML = '<div class="empty-state">No students found.</div>';
+        return;
+      }
+
+      const rankIcon = (i) => {
+        if (i === 0) return '<span class="xp-rank xp-rank-gold">🥇</span>';
+        if (i === 1) return '<span class="xp-rank xp-rank-silver">🥈</span>';
+        if (i === 2) return '<span class="xp-rank xp-rank-bronze">🥉</span>';
+        return `<span class="xp-rank" style="color:var(--subtext)">${i+1}</span>`;
+      };
+      const rowClass = (i) => i === 0 ? 'xp-row-gold' : i === 1 ? 'xp-row-silver' : i === 2 ? 'xp-row-bronze' : '';
+
+      content.innerHTML = `<table class="xp-table">
+        <thead><tr><th>Rank</th><th>Student</th><th>Total XP</th><th>XP (last 30 min)</th></tr></thead>
+        <tbody>
+          ${rows.map((r,i) => `<tr class="${rowClass(i)}">
+            <td>${rankIcon(i)}</td>
+            <td style="font-weight:700">${r.name}</td>
+            <td><span style="font-family:'Nunito',sans-serif;font-weight:900;color:var(--navy)">${r.totalXp.toLocaleString()}</span></td>
+            <td>${r.recentXp > 0 ? `<span class="xp-gained">+${r.recentXp} XP</span>` : '<span class="xp-gained-zero">—</span>'}</td>
+          </tr>`).join('')}
+        </tbody>
+      </table>`;
+    } catch(e) {
+      content.innerHTML = '<div class="empty-state">Could not load XP data.</div>';
+    }
+  }
+
+  function _startXpRefresh() {
+    if (_xpRefreshTimer) clearInterval(_xpRefreshTimer);
+    _xpRefreshTimer = setInterval(() => {
+      if (document.visibilityState === 'visible') loadXpLeague();
+    }, 60000);
   }
 
   // ── MY CLASSES MODAL ────────────────────────────────────────────────────────

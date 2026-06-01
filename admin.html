@@ -512,7 +512,8 @@
   // ── STAFF ────────────────────────────────────────────────────────────────────
   async function loadStaff() {
     const staff = await getAllStaff();
-    document.getElementById('stat-teachers').textContent = staff.filter(s => s.role === 'teacher').length;
+    // Admins also have teacher access, so count them too
+    document.getElementById('stat-teachers').textContent = staff.filter(s => ['teacher','admin','superadmin'].includes(s.role)).length;
     renderStaff(staff);
   }
 
@@ -530,13 +531,25 @@
   }
 
   function renderStaff(staff) {
+    // Admins implicitly have teacher access — show them in the teachers list too
     const teachers = staff.filter(s => s.role === 'teacher');
-    const admins = staff.filter(s => s.role === 'admin');
+    const admins = staff.filter(s => s.role === 'admin' || s.role === 'superadmin');
 
-    // Teachers list
+    // Teachers list: pure teachers + admins (since admin implies teacher)
+    const teacherListMembers = [...teachers, ...admins.map(a => ({ ...a, _impliedTeacher: true }))];
     const teacherList = document.getElementById('teacher-list');
-    teacherList.innerHTML = teachers.length
-      ? teachers.map(renderStaffRow).join('')
+    teacherList.innerHTML = teacherListMembers.length
+      ? teacherListMembers.map(t => {
+          const baseHtml = renderStaffRow(t);
+          if (t._impliedTeacher) {
+            // Insert an "Admin — teacher access implied" note
+            return baseHtml.replace(
+              `<div class="teacher-added">`,
+              `<span style="font-size:0.7rem;font-weight:800;background:#fef3c7;color:#92400e;padding:0.1rem 0.4rem;border-radius:100px;margin-right:0.5rem">Admin ✓</span><div class="teacher-added">`
+            );
+          }
+          return baseHtml;
+        }).join('')
       : '<div class="empty-state">No teachers added yet.</div>';
 
     // Admins list (only rendered if superadmin-only section is visible)
@@ -567,10 +580,18 @@
     btn.textContent = 'Adding...';
 
     try {
-      await addRole(email, 'teacher', window._adminUser.uid);
-      input.value = '';
-      msg.className = 'form-msg success';
-      msg.textContent = `✅ ${email} now has teacher access.`;
+      // If user already has admin/superadmin role, don't downgrade — admin implies teacher
+      const existingRole = await getUserRole(email);
+      if (['admin','superadmin'].includes(existingRole)) {
+        input.value = '';
+        msg.className = 'form-msg success';
+        msg.textContent = `✅ ${email} already has admin access (which includes teacher access).`;
+      } else {
+        await addRole(email, 'teacher', window._adminUser.uid);
+        input.value = '';
+        msg.className = 'form-msg success';
+        msg.textContent = `✅ ${email} now has teacher access.`;
+      }
       await loadStaff();
     } catch (e) {
       msg.className = 'form-msg error';
