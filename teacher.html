@@ -845,7 +845,7 @@
   // ── ACTIVITY TIME ESTIMATES (minutes per activity type) ─────────────────────
   const ACTIVITY_TIMES = {
     mock: 10, paper: 15, flashcards: 5, words: 3,
-    flashcard: 5, mini_mock: 10, keywords: 3,
+    flashcard: 5, mini_mock: 10, keywords: 3, learn: 5,
   };
 
   let _timeWindowMins = 60; // default 1 hour
@@ -947,8 +947,8 @@
   }
 
   // ── HISTORY MODAL ───────────────────────────────────────────────────────────
-  const TYPE_ICONS = { mock:'📝', mini_mock:'📝', paper:'📄', flashcards:'🃏', flashcard:'🃏', words:'🔤', keywords:'🔤' };
-  const TYPE_NAMES = { mock:'Mini Mock', mini_mock:'Mini Mock', paper:'Practice Paper', flashcards:'Flashcards', flashcard:'Flashcards', words:'Keywords Game', keywords:'Keywords Game' };
+  const TYPE_ICONS = { mock:'📝', mini_mock:'📝', paper:'📄', flashcards:'🃏', flashcard:'🃏', words:'🔤', keywords:'🔤', learn:'🎓' };
+  const TYPE_NAMES = { mock:'Mini Mock', mini_mock:'Mini Mock', paper:'Practice Paper', flashcards:'Flashcards', flashcard:'Flashcards', words:'Keywords Game', keywords:'Keywords Game', learn:'Learn' };
 
   window.openHistoryModal = async (uid, name) => {
     const modal = document.getElementById('history-modal');
@@ -973,12 +973,14 @@
         const icon = TYPE_ICONS[e.type] || '📌';
         const typeName = TYPE_NAMES[e.type] || e.type;
         const mod = e.moduleId ? e.moduleId.toUpperCase() : '';
-        const title = `${typeName}${mod ? ' · ' + mod : ''}${e.moduleTitle ? ' — ' + e.moduleTitle : ''}`;
+        const topicSuffix = e.topic ? ` — ${e.topic}` : (e.moduleTitle ? ` — ${e.moduleTitle}` : '');
+        const title = `${typeName}${mod ? ' · ' + mod : ''}${topicSuffix}`;
         const date = e.timestamp ? new Date(e.timestamp).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'}) : '';
-        const pct = e.pct ?? (e.total ? Math.round((e.score/e.total)*100) : null);
-        const scoreColour = pct === null ? '#94a3b8' : pct >= 70 ? '#16a34a' : pct >= 45 ? '#d97706' : '#dc2626';
-        const scoreBg = pct === null ? '#f1f5f9' : pct >= 70 ? '#dcfce7' : pct >= 45 ? '#fef3c7' : '#fee2e2';
-        const scoreText = pct !== null ? `${pct}%` : '—';
+        const pct = e.type === 'learn' ? null : (e.pct ?? (e.total ? Math.round((e.score/e.total)*100) : null));
+        const isLearn = e.type === 'learn';
+        const scoreColour = isLearn ? '#7c3aed' : (pct === null ? '#94a3b8' : pct >= 70 ? '#16a34a' : pct >= 45 ? '#d97706' : '#dc2626');
+        const scoreBg = isLearn ? '#ede9fe' : (pct === null ? '#f1f5f9' : pct >= 70 ? '#dcfce7' : pct >= 45 ? '#fef3c7' : '#fee2e2');
+        const scoreText = isLearn ? '✓ Read' : (pct !== null ? `${pct}%` : '—');
         return `<div class="history-entry">
           <div class="history-icon">${icon}</div>
           <div class="history-info">

@@ -3243,6 +3243,19 @@ function showLearnCheckResult(container, passed, topicName, correct, total, atte
 function markLearnTopicDone(topicName) {
   _learnState[topicName] = 'done';
 
+  // Log learn activity — 5 mins estimated per topic section read
+  if (window._logActivity) {
+    const sectionCount = (_learnTopics.find(t => t.name === topicName)?.sections?.length) || 1;
+    window._logActivity({
+      type: 'learn',
+      topic: topicName,
+      estimatedMins: sectionCount * 5,
+      score: null,
+      total: null,
+      pct: null,
+    });
+  }
+
   // Unlock the next locked topic immediately
   const currentIdx = _learnTopics.findIndex(t => t.name === topicName);
   const nextTopic  = _learnTopics[currentIdx + 1];
