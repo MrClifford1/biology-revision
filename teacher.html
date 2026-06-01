@@ -773,6 +773,8 @@
     ]);
 
     _xpLastStudents = students;
+    _lastAllProgress = allProgress;
+    _lastAllLogs = allLogs;
     renderOverview(students, allProgress, allLogs);
     renderHeatmap(students, allProgress, allLogs);
     loadXpLeague();
@@ -846,12 +848,26 @@
     flashcard: 5, mini_mock: 10, keywords: 3,
   };
 
+  let _timeWindowMins = 60; // default 1 hour
+
+  const TIME_WINDOW_OPTIONS = [
+    { value: 15,  label: '15 min' },
+    { value: 30,  label: '30 min' },
+    { value: 45,  label: '45 min' },
+    { value: 60,  label: '1 hr' },
+    { value: 75,  label: '1 hr 15' },
+    { value: 90,  label: '1 hr 30' },
+    { value: 105, label: '1 hr 45' },
+    { value: 120, label: '2 hrs' },
+    { value: 150, label: '2 hr 30' },
+    { value: 180, label: '3 hrs' },
+  ];
+
   function estimateTimeFromLogs(logs) {
     if (!logs || !logs.length) return 0;
-    const cutoff = Date.now() - 3600000; // 1 hour ago in ms
+    const cutoff = Date.now() - _timeWindowMins * 60000;
     const recent = logs.filter(e => {
       if (!e.timestamp) return false;
-      // Handle both ISO strings and numeric timestamps
       const ts = typeof e.timestamp === 'number' ? e.timestamp : new Date(e.timestamp).getTime();
       return ts >= cutoff;
     });
@@ -922,7 +938,7 @@
             <th>Activities Done</th>
             <th>Avg Score</th>
             <th>Last Active</th>
-            <th>Time (last hr)</th>
+            <th>Time (last <select id="time-window-sel" onchange="window.setTimeWindow(this.value)" style="font:inherit;font-size:0.7rem;font-weight:700;border:none;background:transparent;cursor:pointer;color:inherit;padding:0 2px">${TIME_WINDOW_OPTIONS.map(o=>`<option value="${o.value}"${o.value===_timeWindowMins?' selected':''}>${o.label}</option>`).join('')}</select>)</th>
             <th>Log</th>
           </tr></thead>
           <tbody>${rows}</tbody>
@@ -974,6 +990,14 @@
       }).join('');
     } catch(e) {
       content.innerHTML = '<div class="empty-state">Could not load activity log.</div>';
+    }
+  };
+
+  // Re-render time column when window changes — no Firebase refetch needed
+  window.setTimeWindow = (val) => {
+    _timeWindowMins = parseInt(val, 10);
+    if (_xpLastStudents && _xpLastStudents.length) {
+      renderOverview(_xpLastStudents, _lastAllProgress, _lastAllLogs);
     }
   };
 
@@ -1116,6 +1140,8 @@
   let _xpScope = 'class'; // 'class' or 'school'
   let _xpRefreshTimer = null;
   let _xpLastStudents = []; // students in current class
+  let _lastAllProgress = {};
+  let _lastAllLogs = {};
 
   window.xpSetScope = (scope, btn) => {
     _xpScope = scope;
