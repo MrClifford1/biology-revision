@@ -825,20 +825,36 @@
   }
   /* ── END LEARN CARD LAYOUT ───────────────────────────────────────────────── */
 
-  @keyframes xp-float {
-    0%   { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
-    15%  { opacity: 1; transform: translateX(-50%) translateY(-10px) scale(1.15); }
-    100% { opacity: 0; transform: translateX(-50%) translateY(-60px) scale(0.9); }
+  @keyframes xp-brain-pop {
+    0%   { opacity: 0; transform: translateX(-50%) translateY(0) scale(0.3) rotate(-15deg); }
+    18%  { opacity: 1; transform: translateX(-50%) translateY(-18px) scale(1.35) rotate(8deg); }
+    32%  { transform: translateX(-50%) translateY(-24px) scale(0.92) rotate(-4deg); }
+    46%  { transform: translateX(-50%) translateY(-28px) scale(1.1) rotate(3deg); }
+    60%  { transform: translateX(-50%) translateY(-30px) scale(1) rotate(0deg); }
+    80%  { opacity: 1; transform: translateX(-50%) translateY(-38px) scale(1) rotate(0deg); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(-65px) scale(0.85) rotate(0deg); }
+  }
+  @keyframes xp-brain-wobble {
+    0%,100% { transform: rotate(0deg) scale(1); }
+    25%      { transform: rotate(-12deg) scale(1.1); }
+    75%      { transform: rotate(10deg) scale(1.1); }
   }
   .xp-toast {
     position: fixed; left: 50%; top: 42%;
-    font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.3rem;
-    color: white; background: #3b82f6;
-    padding: 0.45rem 1.25rem; border-radius: 100px;
+    display: flex; align-items: center; gap: 0.4rem;
+    font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.1rem;
+    color: white; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    padding: 0.5rem 1.1rem 0.5rem 0.75rem; border-radius: 100px;
     pointer-events: none; z-index: 9999;
-    box-shadow: 0 4px 20px rgba(59,130,246,0.5);
-    animation: xp-float 1.8s ease-out forwards;
+    box-shadow: 0 6px 24px rgba(139,92,246,0.55), 0 0 0 3px rgba(255,255,255,0.25);
+    animation: xp-brain-pop 2s cubic-bezier(0.34,1.56,0.64,1) forwards;
   }
+  .xp-toast-brain {
+    font-size: 1.5rem; line-height: 1;
+    display: inline-block;
+    animation: xp-brain-wobble 0.5s ease-in-out 0.18s 2;
+  }
+  .xp-toast-label { letter-spacing: 0.03em; text-shadow: 0 1px 3px rgba(0,0,0,0.25); }
 
   </style>
 </head>
@@ -1709,9 +1725,9 @@ function showXPToast(xp) {
   if (!xp || xp <= 0) return;
   const toast = document.createElement('div');
   toast.className = 'xp-toast';
-  toast.textContent = `+${Math.round(xp * 10) / 10} XP`;
+  toast.innerHTML = `<span class="xp-toast-brain">🧠</span><span class="xp-toast-label">+${Math.round(xp * 10) / 10} XP</span>`;
   document.body.appendChild(toast);
-  setTimeout(() => toast.remove(), 1800);
+  setTimeout(() => toast.remove(), 2000);
 }
 
 function computeTier(score) {
