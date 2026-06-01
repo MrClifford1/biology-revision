@@ -739,7 +739,16 @@
       document.getElementById('heatmap-content').innerHTML = '<div class="loading-state">Loading heatmap...</div>';
     }
 
-    const students = await getStudentsByClass(selectedClass);
+    let students;
+    try {
+      students = await getStudentsByClass(selectedClass);
+    } catch(err) {
+      console.error('getStudentsByClass failed:', err);
+      document.getElementById('overview-content').innerHTML = `<div class="empty-state" style="color:#ef4444">Failed to load students: ${err.message}</div>`;
+      document.getElementById('heatmap-content').innerHTML = '';
+      document.getElementById('student-count').textContent = '';
+      return;
+    }
     document.getElementById('student-count').textContent = `${students.length} student${students.length !== 1 ? 's' : ''}`;
 
     if (students.length === 0) {
