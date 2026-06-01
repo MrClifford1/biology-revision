@@ -714,7 +714,7 @@
       document.querySelectorAll('.class-btn').forEach(b => b.classList.remove('active'));
       document.getElementById('student-count').textContent = '';
       document.getElementById('overview-content').innerHTML = '<div class="empty-state">Select a class above to view student data.</div>';
-      document.getElementById('heatmap-content').innerHTML = '<div class="empty-state">Select a class above to view the heatmap.</div>';
+      document.getElementById('scatter-content').innerHTML = '<div class="empty-state">Select a class above to view the heatmap.</div>';
       loadAssignments(); // refresh assignments with no filter
       return;
     }
@@ -729,14 +729,14 @@
   window.loadClassData = async () => {
     if (!selectedClass) {
       document.getElementById('overview-content').innerHTML = '<div class="empty-state">Select a class above to view student data.</div>';
-      document.getElementById('heatmap-content').innerHTML = '<div class="empty-state">Select a class above to view the heatmap.</div>';
+      document.getElementById('scatter-content').innerHTML = '<div class="empty-state">Select a class above to view the heatmap.</div>';
       document.getElementById('student-count').textContent = '';
       return;
     }
     if (!_lastRefreshed) {
       // Initial load only - show loading state
       document.getElementById('overview-content').innerHTML = '<div class="loading-state">Loading students...</div>';
-      document.getElementById('heatmap-content').innerHTML = '<div class="loading-state">Loading heatmap...</div>';
+      document.getElementById('scatter-content').innerHTML = '<div class="loading-state">Loading heatmap...</div>';
     }
 
     let students;
@@ -745,7 +745,7 @@
     } catch(err) {
       console.error('getStudentsByClass failed:', err);
       document.getElementById('overview-content').innerHTML = `<div class="empty-state" style="color:#ef4444">Failed to load students: ${err.message}</div>`;
-      document.getElementById('heatmap-content').innerHTML = '';
+      document.getElementById('scatter-content').innerHTML = '';
       document.getElementById('student-count').textContent = '';
       return;
     }
@@ -753,7 +753,7 @@
 
     if (students.length === 0) {
       document.getElementById('overview-content').innerHTML = '<div class="empty-state">No students found in this class.</div>';
-      document.getElementById('heatmap-content').innerHTML = '<div class="empty-state">No students found in this class.</div>';
+      document.getElementById('scatter-content').innerHTML = '<div class="empty-state">No students found in this class.</div>';
       return;
     }
 
