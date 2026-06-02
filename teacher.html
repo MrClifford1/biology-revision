@@ -219,6 +219,23 @@
     .scatter-quadrant-labels { position:absolute; inset:0; pointer-events:none; }
     .sq-label { position:absolute; font-family:'Nunito',sans-serif; font-weight:800; font-size:0.7rem; color:var(--subtext); opacity:0.65; background:rgba(255,255,255,0.7); padding:0.15rem 0.4rem; border-radius:6px; }
 
+    /* ── XP BATTLES ──────────────────────────────────────────────────────────── */
+    .battle-setup { display:grid;grid-template-columns:1fr 1fr;gap:0.85rem;margin-bottom:1rem; }
+    .battle-setup .full { grid-column:1/-1; }
+    .battle-roster { display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.3rem; }
+    .battle-student-chip { display:flex;align-items:center;gap:0.3rem;font-size:0.78rem;cursor:pointer;padding:0.25rem 0.6rem;border:1.5px solid var(--border);border-radius:6px;font-family:'Nunito',sans-serif;font-weight:700;transition:all 0.15s;user-select:none; }
+    .battle-student-chip:hover { border-color:#ef4444; }
+    .battle-student-chip.absent { opacity:0.35;border-color:#ef4444;text-decoration:line-through; }
+    .battle-countdown { font-family:'Nunito',sans-serif;font-weight:900;font-size:2.5rem;color:var(--navy);text-align:center;letter-spacing:0.04em;margin:0.5rem 0; }
+    .battle-countdown.urgent { color:#ef4444;animation:pulse 1s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.6} }
+    .battle-groups { display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.85rem;margin-top:1rem; }
+    .battle-group-card { border-radius:14px;padding:1rem;border:2px solid transparent;transition:all 0.3s;position:relative;overflow:hidden; }
+    .battle-group-card.leading { border-width:3px;transform:scale(1.02); }
+    .battle-group-name { font-family:'Nunito',sans-serif;font-weight:900;font-size:1rem;margin-bottom:0.25rem; }
+    .battle-group-xp { font-family:'Nunito',sans-serif;font-weight:900;font-size:1.8rem;margin:0.25rem 0; }
+    .battle-group-members { font-size:0.72rem;color:var(--subtext);margin-top:0.3rem;line-height:1.5; }
+    .battle-winner-banner { text-align:center;padding:2rem;background:linear-gradient(135deg,#fef9c3,#fef3c7);border-radius:16px;border:2px solid #d97706;margin-bottom:1rem; }
     /* ── XP LEAGUE TABLE ─────────────────────────────────────────────────────── */
     .xp-toggle-btn { background:none; border:none; padding:0.35rem 0.85rem; font-family:'Nunito',sans-serif; font-weight:700; font-size:0.78rem; color:var(--subtext); cursor:pointer; transition:all 0.15s; }
     .xp-toggle-btn.active { background:var(--navy); color:white; }
@@ -434,6 +451,7 @@
       <button class="tab-btn" data-tab="heatmap">📊 Intervention View</button>
       <button class="tab-btn" data-tab="assignments">📌 Assignments</button>
       <button class="tab-btn" data-tab="assessments">📅 Assessment Dates</button>
+      <button class="tab-btn" data-tab="xpwars">⚔️ XP Battles</button>
     </div>
   </div>
 
@@ -601,6 +619,50 @@
       </div>
     </div>
 
+    <!-- ── TAB: XP BATTLES ──────────────────────────────────────────────────────── -->
+    <div class="tab-panel" id="tab-xpwars">
+      <div class="card" id="battle-setup-card">
+        <div class="section-label">⚔️ XP Battles</div>
+        <p style="font-size:0.82rem;color:var(--subtext);margin-bottom:1rem">Split your class into teams. XP earned during the battle window adds to each team's score. Uncheck any absent students before starting.</p>
+        <div class="battle-setup">
+          <div class="form-field">
+            <label class="form-label">Class</label>
+            <select class="form-input" id="battle-class" onchange="battleClassChanged()">
+              <option value="">— Select class —</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Number of teams</label>
+            <select class="form-input" id="battle-groups">
+              <option value="2">2 teams</option>
+              <option value="3">3 teams</option>
+              <option value="4" selected>4 teams</option>
+              <option value="5">5 teams</option>
+              <option value="6">6 teams</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Duration (minutes)</label>
+            <input type="range" id="battle-duration" min="1" max="20" value="5" oninput="document.getElementById('battle-dur-label').textContent=this.value+' min'" style="width:100%;accent-color:var(--purple)">
+            <span id="battle-dur-label" style="font-size:0.8rem;font-weight:700;color:var(--purple)">5 min</span>
+          </div>
+          <div class="form-field full">
+            <label class="form-label">Students <span style="font-weight:400;color:var(--subtext)">(click to mark absent)</span></label>
+            <div class="battle-roster" id="battle-roster"><span style="font-size:0.8rem;color:var(--subtext)">Select a class above</span></div>
+          </div>
+        </div>
+        <button class="btn-create" onclick="startBattle()" id="battle-start-btn" disabled>⚔️ Start Battle</button>
+      </div>
+      <div class="card" id="battle-live-card" style="display:none">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem">
+          <div class="section-label" style="margin:0" id="battle-live-title">⚔️ XP Battle in Progress</div>
+          <button onclick="endBattleEarly()" style="background:none;border:1.5px solid #ef4444;color:#ef4444;border-radius:8px;padding:0.3rem 0.75rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.78rem;cursor:pointer">■ End Early</button>
+        </div>
+        <div class="battle-countdown" id="battle-countdown">5:00</div>
+        <div class="battle-groups" id="battle-groups-display"></div>
+      </div>
+    </div>
+
   </main>
 </div>
 
@@ -697,6 +759,7 @@
     // Load classes
     myClasses = await getTeacherClasses(user.uid);
     populateClassSelector();
+    populateBattleClassSelector();
     buildAssignClassGrid();
     loadAssignments();
     adLoadList();
@@ -1338,6 +1401,183 @@
     _xpRefreshTimer = setInterval(() => {
       if (document.visibilityState === 'visible') loadXpLeague();
     }, 300000); // 5 min — reduce Firestore reads
+  }
+
+  // ── XP BATTLES ──────────────────────────────────────────────────────────────
+  const BATTLE_ADJECTIVES = ['Crazy','Scary','Mighty','Sneaky','Fluffy','Grumpy','Zippy','Bouncy','Spooky','Cheeky','Wobbly','Dizzy','Fiery','Frosty','Speedy','Slimy','Brave','Wacky','Funky','Jumpy'];
+  const BATTLE_ANIMALS    = ['Pandas','Geese','Tigers','Penguins','Foxes','Wolves','Hedgehogs','Otters','Raccoons','Narwhals','Axolotls','Capybaras','Sloths','Platypuses','Badgers','Llamas','Wombats','Geckos','Piranhas','Quokkas'];
+  const BATTLE_COLOURS    = ['#6366f1','#16a34a','#ef4444','#d97706','#0891b2','#9333ea'];
+  const BATTLE_BG         = ['#eef2ff','#dcfce7','#fef2f2','#fef9c3','#e0f2fe','#f3e8ff'];
+
+  let _battle = null; // { groups:[{name,colour,bg,members:[{uid,name}],baseXp}], endTs, timer, pollTimer }
+  let _battleStudents = []; // [{uid,name,absent}]
+
+  window.battleClassChanged = async () => {
+    const cls = document.getElementById('battle-class').value;
+    const roster = document.getElementById('battle-roster');
+    const btn = document.getElementById('battle-start-btn');
+    if (!cls) { roster.innerHTML = '<span style="font-size:0.8rem;color:var(--subtext)">Select a class above</span>'; btn.disabled=true; return; }
+    roster.innerHTML = '<span style="font-size:0.8rem;color:var(--subtext)">Loading...</span>';
+    try {
+      const students = await getStudentsByClass(cls);
+      _battleStudents = students.map(s => ({ uid: s.uid, name: getStudentDisplayName(s), absent: false }));
+      renderBattleRoster();
+      btn.disabled = _battleStudents.length < 2;
+    } catch(e) { roster.innerHTML = '<span style="font-size:0.8rem;color:#ef4444">Could not load students</span>'; }
+  };
+
+  function renderBattleRoster() {
+    const roster = document.getElementById('battle-roster');
+    roster.innerHTML = _battleStudents.map((s,i) =>
+      `<span class="battle-student-chip${s.absent?' absent':''}" onclick="battleToggleAbsent(${i})">${s.absent?'✗':'✓'} ${s.name}</span>`
+    ).join('');
+  }
+
+  window.battleToggleAbsent = (i) => {
+    _battleStudents[i].absent = !_battleStudents[i].absent;
+    renderBattleRoster();
+  };
+
+  function generateBattleNames(n) {
+    const adjs = [...BATTLE_ADJECTIVES].sort(()=>Math.random()-0.5);
+    const ants = [...BATTLE_ANIMALS].sort(()=>Math.random()-0.5);
+    const names = [];
+    for (let i=0; i<n; i++) names.push(`${adjs[i]} ${ants[i]}`);
+    return names;
+  }
+
+  window.startBattle = async () => {
+    const present = _battleStudents.filter(s => !s.absent);
+    if (present.length < 2) { alert('Need at least 2 present students to start a battle.'); return; }
+    const numGroups = parseInt(document.getElementById('battle-groups').value);
+    const durMins   = parseInt(document.getElementById('battle-duration').value);
+    const names     = generateBattleNames(numGroups);
+
+    // Shuffle students and split into groups
+    const shuffled = [...present].sort(() => Math.random() - 0.5);
+    const groups = Array.from({length: numGroups}, (_, i) => ({
+      name: names[i], colour: BATTLE_COLOURS[i], bg: BATTLE_BG[i],
+      members: [], baseXp: 0, currentXp: 0,
+    }));
+    shuffled.forEach((s, i) => groups[i % numGroups].members.push(s));
+
+    // Snapshot baseline XP for each student
+    const XP_PER = { mock:10,mini_mock:10,paper:15,flashcards:5,flashcard:5,words:3,keywords:3,learn:5,scribble:5,cloze:3,video:10,revise:5,video_quiz:5 };
+    await Promise.all(groups.map(async g => {
+      let base = 0;
+      await Promise.all(g.members.map(async s => {
+        try {
+          const { entries } = await getActivityLog(s.uid, 200);
+          entries.forEach(e => { base += XP_PER[e.type] || 5; });
+        } catch(e) {}
+      }));
+      g.baseXp = base;
+    }));
+
+    const endTs = Date.now() + durMins * 60 * 1000;
+    _battle = { groups, endTs, durMins };
+
+    document.getElementById('battle-setup-card').style.display = 'none';
+    document.getElementById('battle-live-card').style.display = 'block';
+
+    renderBattleLive();
+    _battle.countdownTimer = setInterval(tickBattleCountdown, 1000);
+    _battle.pollTimer = setInterval(pollBattleXp, 30000);
+    pollBattleXp(); // immediate first poll
+  };
+
+  function tickBattleCountdown() {
+    const remaining = _battle.endTs - Date.now();
+    const el = document.getElementById('battle-countdown');
+    if (!el) return;
+    if (remaining <= 0) { endBattle(); return; }
+    const mins = Math.floor(remaining / 60000);
+    const secs = Math.floor((remaining % 60000) / 1000);
+    el.textContent = `${mins}:${secs.toString().padStart(2,'0')}`;
+    el.className = 'battle-countdown' + (remaining < 60000 ? ' urgent' : '');
+  }
+
+  async function pollBattleXp() {
+    if (!_battle) return;
+    const XP_PER = { mock:10,mini_mock:10,paper:15,flashcards:5,flashcard:5,words:3,keywords:3,learn:5,scribble:5,cloze:3,video:10,revise:5,video_quiz:5 };
+    const battleStart = _battle.endTs - _battle.durMins * 60 * 1000;
+    const maxSize = Math.max(..._battle.groups.map(g => g.members.length));
+    await Promise.all(_battle.groups.map(async g => {
+      let earned = 0;
+      await Promise.all(g.members.map(async s => {
+        try {
+          const { entries } = await getActivityLog(s.uid, 200);
+          entries.forEach(e => {
+            const ts = typeof e.timestamp === 'number' ? e.timestamp : (e.timestamp ? new Date(e.timestamp).getTime() : 0);
+            if (ts >= battleStart) earned += XP_PER[e.type] || 5;
+          });
+        } catch(e) {}
+      }));
+      // Fairness modifier: teams smaller than the largest get a boost
+      const modifier = g.members.length < maxSize ? maxSize / g.members.length : 1;
+      g.rawXp = earned;
+      g.modifier = Math.round(modifier * 10) / 10; // round to 1dp
+      g.currentXp = Math.round(earned * modifier);
+    }));
+    renderBattleLive();
+  }
+
+  function renderBattleLive() {
+    if (!_battle) return;
+    const maxXp = Math.max(..._battle.groups.map(g => g.currentXp), 1);
+    const sorted = [..._battle.groups].sort((a,b) => b.currentXp - a.currentXp);
+    document.getElementById('battle-groups-display').innerHTML = sorted.map((g, rank) => `
+      <div class="battle-group-card${rank===0?' leading':''}" style="background:${g.bg};border-color:${rank===0?g.colour:'transparent'}">
+        ${rank===0?`<div style="position:absolute;top:0.5rem;right:0.5rem;font-size:0.7rem;font-weight:800;background:${g.colour};color:white;padding:0.1rem 0.4rem;border-radius:100px">LEADING</div>`:''}
+        <div class="battle-group-name" style="color:${g.colour}">${rank===0?'🏆 ':''}${g.name}</div>
+        <div class="battle-group-xp" style="color:${g.colour}">+${g.currentXp} XP ${g.modifier>1?`<span style="font-size:0.65rem;font-weight:700;opacity:0.75">(×${g.modifier} boost)</span>`:''}</div>
+        <div style="height:6px;background:#e2e8f0;border-radius:100px;margin:0.4rem 0;overflow:hidden">
+          <div style="height:100%;width:${Math.round(g.currentXp/maxXp*100)}%;background:${g.colour};border-radius:100px;transition:width 0.5s ease"></div>
+        </div>
+        <div class="battle-group-members">${g.members.map(m=>m.name).join(' · ')}</div>
+      </div>`).join('');
+  }
+
+  function endBattle() {
+    if (!_battle) return;
+    clearInterval(_battle.countdownTimer);
+    clearInterval(_battle.pollTimer);
+    const sorted = [..._battle.groups].sort((a,b) => b.currentXp - a.currentXp);
+    const winner = sorted[0];
+    const isTie = sorted.length > 1 && sorted[1].currentXp === winner.currentXp;
+    document.getElementById('battle-countdown').textContent = '0:00';
+    document.getElementById('battle-live-title').textContent = '⚔️ Battle Complete!';
+    const display = document.getElementById('battle-groups-display');
+    const banner = `<div class="battle-winner-banner" style="grid-column:1/-1">
+      <div style="font-size:2rem;margin-bottom:0.4rem">${isTie?'🤝':'🏆'}</div>
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.3rem;color:var(--navy)">${isTie?'It\'s a tie!':winner.name+' wins!'}</div>
+      ${isTie?'':'<div style="font-size:0.85rem;color:var(--subtext);margin-top:0.25rem">+'+winner.currentXp+' XP earned</div>'}
+      <button onclick="resetBattle()" style="margin-top:1rem;background:var(--purple);color:white;border:none;border-radius:10px;padding:0.55rem 1.25rem;font-family:\'Nunito\',sans-serif;font-weight:800;font-size:0.875rem;cursor:pointer">New Battle</button>
+    </div>`;
+    display.innerHTML = banner + sorted.map((g, rank) => `
+      <div class="battle-group-card" style="background:${g.bg};border-color:${g.colour}">
+        <div class="battle-group-name" style="color:${g.colour}">${['🥇','🥈','🥉'][rank]||'#'+(rank+1)} ${g.name}</div>
+        <div class="battle-group-xp" style="color:${g.colour}">+${g.currentXp} XP</div>
+        <div class="battle-group-members">${g.members.map(m=>m.name).join(' · ')}</div>
+      </div>`).join('');
+    _battle = null;
+  }
+
+  window.endBattleEarly = () => { if (confirm('End the battle now?')) endBattle(); };
+
+  window.resetBattle = () => {
+    _battle = null;
+    document.getElementById('battle-live-card').style.display = 'none';
+    document.getElementById('battle-setup-card').style.display = 'block';
+    document.getElementById('battle-countdown').textContent = '5:00';
+    document.getElementById('battle-countdown').className = 'battle-countdown';
+    document.getElementById('battle-live-title').textContent = '⚔️ XP Battle in Progress';
+  };
+
+  function populateBattleClassSelector() {
+    const sel = document.getElementById('battle-class');
+    if (!sel) return;
+    sel.innerHTML = '<option value="">— Select class —</option>' + myClasses.map(c=>`<option value="${c}">${c}</option>`).join('');
   }
 
   // ── MY CLASSES MODAL ────────────────────────────────────────────────────────
