@@ -1221,6 +1221,7 @@
   // ── XP LEAGUE TABLE ─────────────────────────────────────────────────────────
   let _xpScope = 'class'; // 'class' or 'school'
   let _xpWindowMins = 30; // recent XP window, default 30 min
+  let _xpSortBy = 'total'; // 'total' or 'recent'
   let _xpRefreshTimer = null;
   let _xpLastStudents = []; // students in current class
   let _lastAllProgress = {};
@@ -1235,6 +1236,11 @@
 
   window.xpSetWindow = (val) => {
     _xpWindowMins = parseInt(val, 10);
+    loadXpLeague();
+  };
+
+  window.xpSetSort = (by) => {
+    _xpSortBy = by;
     loadXpLeague();
   };
 
@@ -1278,8 +1284,8 @@
         return { name: getStudentDisplayName(s), totalXp, recentXp };
       }));
 
-      // Sort by total XP descending
-      rows.sort((a,b) => b.totalXp - a.totalXp);
+      // Sort by selected column
+      rows.sort((a,b) => _xpSortBy === 'recent' ? b.recentXp - a.recentXp : b.totalXp - a.totalXp);
 
       // Top earner in recent window
       const windowLabel = TIME_WINDOW_OPTIONS.find(o => o.value === _xpWindowMins)?.label || `${_xpWindowMins} min`;
@@ -1305,13 +1311,19 @@
 
       const winLabel = TIME_WINDOW_OPTIONS.find(o => o.value === _xpWindowMins)?.label || `${_xpWindowMins} min`;
       const winSel = TIME_WINDOW_OPTIONS.map(o=>`<option value="${o.value}"${o.value===_xpWindowMins?' selected':''}>${o.label}</option>`).join('');
+      const thStyle = (col) => `cursor:pointer;user-select:none;white-space:nowrap;${_xpSortBy===col?'color:var(--navy);text-decoration:underline':'color:var(--subtext)'}`;
       content.innerHTML = `<table class="xp-table">
-        <thead><tr><th>Rank</th><th>Student</th><th>Total XP</th><th>XP (last <select onchange="window.xpSetWindow(this.value)" style="font:inherit;font-size:0.7rem;font-weight:700;border:none;background:transparent;cursor:pointer;color:inherit;padding:0 2px">${winSel}</select>)</th></tr></thead>
+        <thead><tr>
+          <th>Rank</th>
+          <th>Student</th>
+          <th onclick="window.xpSetSort('total')" style="${thStyle('total')}">Total XP ${_xpSortBy==='total'?'▼':''}</th>
+          <th onclick="window.xpSetSort('recent')" style="${thStyle('recent')}">XP (last <select onchange="window.xpSetWindow(this.value)" onclick="event.stopPropagation()" style="font:inherit;font-size:0.7rem;font-weight:700;border:none;background:transparent;cursor:pointer;color:inherit;padding:0 2px">${winSel}</select>) ${_xpSortBy==='recent'?'▼':''}</th>
+        </tr></thead>
         <tbody>
           ${rows.map((r,i) => `<tr class="${rowClass(i)}">
             <td>${rankIcon(i)}</td>
             <td style="font-weight:700">${r.name}</td>
-            <td><span style="font-family:'Nunito',sans-serif;font-weight:900;color:var(--navy)">${r.totalXp.toLocaleString()}</span></td>
+            <td><span style="font-family:'Nunito',sans-serif;font-weight:900;color:${_xpSortBy==='total'?'var(--navy)':'var(--subtext)'}">${r.totalXp.toLocaleString()}</span></td>
             <td>${r.recentXp > 0 ? `<span class="xp-gained">+${r.recentXp} XP</span>` : '<span class="xp-gained-zero">—</span>'}</td>
           </tr>`).join('')}
         </tbody>
