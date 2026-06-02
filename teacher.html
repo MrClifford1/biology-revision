@@ -1266,7 +1266,7 @@
       // Compute XP from activity logs — total and recent window
       const now = Date.now();
       const cutoffRecent = now - _xpWindowMins * 60 * 1000;
-      const XP_PER_ACTIVITY = { mock: 10, mini_mock: 10, paper: 15, flashcards: 5, flashcard: 5, words: 3, keywords: 3, learn: 5, scribble: 5, cloze: 3, video: 10 };
+      const XP_PER_ACTIVITY = { mock: 10, mini_mock: 10, paper: 15, flashcards: 5, flashcard: 5, words: 3, keywords: 3, learn: 5, scribble: 5, cloze: 3, video: 10, revise: 5, video_quiz: 5 };
 
       const rows = await Promise.all(students.map(async s => {
         let totalXp = 0, recentXp = 0;

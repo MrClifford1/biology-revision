@@ -370,7 +370,7 @@
 
 <script type="module">
   import {
- onAuthChange, loadRAG, saveRAG, updateTopicScore, signOutUser } from './firebase.js';
+ onAuthChange, loadRAG, saveRAG, updateTopicScore, signOutUser, logActivity } from './firebase.js';
 
 
 
@@ -789,6 +789,7 @@
           const updated = { ...(entry || {}), score: currentScore + xpGained, lastActivity: new Date().toISOString() };
           ragState[currentTopic] = updated;
           await saveRAG(currentUser.uid, moduleKey, ragState);
+          await logActivity(currentUser.uid, { type: 'revise', topic: currentTopic, moduleId, subject, score: correct, total: 3, pct: Math.round(correct/3*100), timestamp: Date.now() });
           showXPToast(xpGained);
         }
       } catch(e) {}
@@ -984,8 +985,8 @@
               <div style="font-size:0.82rem;color:var(--subtext);margin-bottom:1rem">${xpEarned > 0 ? `+${xpEarned} XP earned from the quiz` : 'Review the topic and watch again!'}</div>
               <button class="report-reason" style="text-align:center" onclick="this.closest('.report-overlay').remove()">Done ✓</button>
             </div>`;
-          if (xpEarned > 0 && currentUser && window._logActivity) {
-            window._logActivity('video_quiz', currentTopic, 1);
+          if (xpEarned > 0 && currentUser) {
+            logActivity(currentUser.uid, { type: 'video_quiz', topic: currentTopic, moduleId, subject, score: quizState.score, total: pool.length, pct: Math.round(quizState.score/pool.length*100), timestamp: Date.now() }).catch(()=>{});
           }
         }
       }, 1400);
