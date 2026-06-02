@@ -113,7 +113,16 @@
     /* ── VIDEO SECTION ── */
     .videos-section { margin-top: 2rem; }
     .videos-section h2 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem; color: var(--navy); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border); }
-    .video-grid { display: flex; flex-direction: column; gap: 1rem; }
+    .video-grid { display: flex; flex-direction: column; gap: 0.6rem; }
+    .creator-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .creator-tab { background: #f1f5f9; border: 1.5px solid var(--border); border-radius: 100px; padding: 0.35rem 0.9rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.78rem; color: #64748b; cursor: pointer; transition: all 0.15s; }
+    .creator-tab.active { background: var(--navy); color: white; border-color: var(--navy); }
+    .video-pick-list { display: flex; flex-direction: column; gap: 0.5rem; }
+    .video-pick-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.7rem 0.9rem; background: #f8fafc; border: 1.5px solid var(--border); border-radius: 12px; cursor: pointer; transition: border-color 0.15s; }
+    .video-pick-item:hover { border-color: var(--navy); }
+    .video-pick-thumb { width: 80px; height: 45px; object-fit: cover; border-radius: 6px; flex-shrink: 0; }
+    .video-pick-label { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.82rem; color: var(--navy); flex: 1; }
+    .video-pick-watched { font-size: 0.7rem; color: #16a34a; font-weight: 700; }
     .video-embed-wrap { border-radius: 12px; overflow: hidden; background: #000; position: relative; padding-top: 56.25%; }
     .video-embed-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
     .video-embed-cover { position: absolute; inset: 0; background: #0f172a; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; gap: 0.5rem; }
@@ -570,27 +579,18 @@
 
     // Videos
     const videos = topicData.videos || [];
-    if (videos.length) {
-      const channelClass = { 'FuseSchools': 'badge-fuse', 'Cognito': 'badge-cognito', 'Free Science Lessons': 'badge-fsl' };
-      html += `<div class="videos-section"><h2>🎬 Videos</h2><div class="video-grid">`;
-      videos.forEach((v, idx) => {
-        const vidKey = `${topicName}__${v.videoId}`;
-        const watched = _watchedVideos.has(vidKey);
-        html += `<div class="video-item" id="vi-${idx}">
-          <div class="video-embed-wrap">
-            <div class="video-embed-cover" id="cover-${idx}" onclick="playVideo('${v.videoId}','${idx}','${topicName.replace(/'/g,"\\'")}')">
-              <img src="https://img.youtube.com/vi/${v.videoId}/mqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.6">
-              <div class="play-btn-circle" style="position:relative;z-index:1"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
-            </div>
-          </div>
-          <div class="video-meta-row">
-            <span class="video-channel-badge ${channelClass[v.channel] || 'badge-fuse'}">${v.channel}</span>
-            ${watched ? `<span class="video-watched-badge">✓ Watched (+10 XP)</span>` : `<span class="video-xp-badge">+10 XP for watching</span>`}
-            <button class="video-report-btn" onclick="openReportModal('${v.videoId}','${v.url.replace(/'/g,"\\'")}','${topicName.replace(/'/g,"\\'")}')">⚑ Report</button>
-          </div>
-        </div>`;
-      });
-      html += `</div></div>`;
+    const CREATORS = ['FuseSchools', 'Cognito', 'Free Science Lessons'];
+    const availableCreators = CREATORS.filter(c => videos.some(v => v.channel === c));
+    if (availableCreators.length) {
+      const safeT = topicName.replace(/'/g, "\\'");
+      html += `<div class="videos-section" id="videos-section">
+        <h2>🎬 Videos</h2>
+        <div class="creator-tabs" id="creator-tabs">
+          ${availableCreators.map((c, i) => `<button class="creator-tab${i===0?' active':''}" onclick="selectCreator('${c}','${safeT}')">${c}</button>`).join('')}
+        </div>
+        <div id="video-picker"></div>
+        <div id="video-player-area" style="display:none"></div>
+      </div>`;
     } else {
       html += `<div class="videos-section"><h2>🎬 Videos</h2>
         <div style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;background:#f8fafc;border:1.5px dashed #cbd5e1;border-radius:12px;color:#94a3b8;">
@@ -625,6 +625,10 @@
 
     document.getElementById('content-wrap').innerHTML = html;
     nudgeRAG(topicName);
+
+    // Auto-select first available creator tab
+    const firstTab = document.querySelector('.creator-tab');
+    if (firstTab) firstTab.click();
   }
 
   window.scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -793,20 +797,85 @@
   }
 
   // ── VIDEO PLAYER ────────────────────────────────────────────────────────────
-  let _ytPlayers = {};
+  let _ytApiReady = false;
+  let _ytApiCallbacks = [];
+  let _activeYTPlayer = null;
+  let _activeVideoMeta = null; // {videoId, topicName}
 
-  window.playVideo = function(videoId, idx, topicName) {
-    const cover = document.getElementById(`cover-${idx}`);
-    if (!cover) return;
-    const wrap = cover.closest('.video-embed-wrap');
-    cover.style.display = 'none';
-    const iframe = document.createElement('iframe');
-    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&enablejsapi=1&origin=${encodeURIComponent(location.origin)}`;
-    iframe.allow = 'autoplay; fullscreen';
-    iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;';
-    wrap.appendChild(iframe);
+  // Load YouTube IFrame API once
+  function loadYTApi(cb) {
+    if (_ytApiReady) { cb(); return; }
+    _ytApiCallbacks.push(cb);
+    if (!window._ytApiLoading) {
+      window._ytApiLoading = true;
+      const s = document.createElement('script');
+      s.src = 'https://www.youtube.com/iframe_api';
+      document.head.appendChild(s);
+    }
+  }
+  window.onYouTubeIframeAPIReady = function() {
+    _ytApiReady = true;
+    _ytApiCallbacks.forEach(cb => cb());
+    _ytApiCallbacks = [];
+  };
 
-    // Award XP once per video per session
+  // Creator tab selection — show thumbnail list for that channel
+  window.selectCreator = function(channel, topicName) {
+    document.querySelectorAll('.creator-tab').forEach(b => b.classList.toggle('active', b.textContent.trim() === channel));
+    const topicData = contentData?.topics?.[topicName];
+    const vids = (topicData?.videos || []).filter(v => v.channel === channel);
+    const picker = document.getElementById('video-picker');
+    const playerArea = document.getElementById('video-player-area');
+    if (!picker) return;
+    if (playerArea) { playerArea.style.display = 'none'; playerArea.innerHTML = ''; }
+    if (_activeYTPlayer) { try { _activeYTPlayer.destroy(); } catch(e){} _activeYTPlayer = null; }
+
+    picker.innerHTML = `<div class="video-pick-list">${vids.map((v, i) => {
+      const watched = _watchedVideos.has(`${topicName}__${v.videoId}`);
+      return `<div class="video-pick-item" onclick="launchVideo('${v.videoId}','${topicName.replace(/'/g,"\\'")}','${channel}')">
+        <img class="video-pick-thumb" src="https://img.youtube.com/vi/${v.videoId}/mqdefault.jpg">
+        <span class="video-pick-label">Video ${i + 1}${watched ? ' <span class="video-pick-watched">✓ Watched</span>' : ''}</span>
+        <button onclick="event.stopPropagation();openReportModal('${v.videoId}','${v.url.replace(/'/g,"\\'")}','${topicName.replace(/'/g,"\\'")}')" class="video-report-btn">⚑</button>
+      </div>`;
+    }).join('')}</div>`;
+  };
+
+  // Launch selected video in player area
+  window.launchVideo = function(videoId, topicName, channel) {
+    const playerArea = document.getElementById('video-player-area');
+    const picker = document.getElementById('video-picker');
+    if (!playerArea) return;
+    if (_activeYTPlayer) { try { _activeYTPlayer.destroy(); } catch(e){} _activeYTPlayer = null; }
+
+    playerArea.style.display = 'block';
+    playerArea.innerHTML = `
+      <div style="position:relative;padding-top:56.25%;background:#000;border-radius:12px;overflow:hidden;margin-bottom:0.5rem">
+        <div id="yt-player-div" style="position:absolute;inset:0;width:100%;height:100%"></div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:0 0.1rem">
+        <span id="vid-xp-status" style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.75rem;color:#d97706">+10 XP on completion</span>
+        <button onclick="selectCreator('${channel}','${topicName.replace(/'/g,"\\'")}');document.getElementById('video-player-area').style.display='none'" style="background:none;border:none;font-size:0.78rem;color:#94a3b8;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:700">← Back to list</button>
+      </div>`;
+    // Scroll player into view
+    playerArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    _activeVideoMeta = { videoId, topicName };
+
+    loadYTApi(() => {
+      _activeYTPlayer = new YT.Player('yt-player-div', {
+        videoId,
+        playerVars: { autoplay: 1, rel: 0, modestbranding: 1 },
+        events: {
+          onStateChange: (e) => {
+            if (e.data === YT.PlayerState.ENDED) onVideoEnded(videoId, topicName);
+          }
+        }
+      });
+    });
+  };
+
+  // Called when YouTube reports video ended
+  function onVideoEnded(videoId, topicName) {
     const vidKey = `${topicName}__${videoId}`;
     if (!_watchedVideos.has(vidKey)) {
       _watchedVideos.add(vidKey);
@@ -814,14 +883,87 @@
       arr.push(vidKey);
       localStorage.setItem('watchedVideos', JSON.stringify(arr));
       showXPToast(10);
-      if (currentUser && window._logActivity) {
-        window._logActivity('video', topicName, 1);
-      }
-      // Update badge
-      const metaRow = cover.closest('.video-item')?.querySelector('.video-xp-badge');
-      if (metaRow) { metaRow.className = 'video-watched-badge'; metaRow.textContent = '✓ Watched (+10 XP)'; }
+      if (currentUser && window._logActivity) window._logActivity('video', topicName, 1);
+      const badge = document.getElementById('vid-xp-status');
+      if (badge) badge.textContent = '✓ +10 XP earned!';
+      // Refresh picker list to show watched state
+      const activetab = document.querySelector('.creator-tab.active');
+      if (activetab) selectCreator(activetab.textContent.trim(), topicName);
     }
-  };
+    // Show post-video quiz
+    showVideoQuiz(topicName);
+  }
+
+  // ── POST-VIDEO QUIZ ─────────────────────────────────────────────────────────
+  async function showVideoQuiz(topicName) {
+    const mcq = await getMcqData();
+    const bank = mcq?.topics?.[topicName];
+    if (!bank || !bank.length) return;
+
+    // Pick 3 random questions from bank (up to 10)
+    const pool = [...bank].sort(() => Math.random() - 0.5).slice(0, 3);
+
+    const overlay = document.createElement('div');
+    overlay.className = 'report-overlay';
+    overlay.style.zIndex = '600';
+
+    let quizState = { idx: 0, score: 0, answered: false };
+
+    function renderQ() {
+      const q = pool[quizState.idx];
+      overlay.innerHTML = `<div class="report-modal" style="max-width:460px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem">
+          <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:0.95rem;color:var(--navy)">🎬 Post-Video Quiz</div>
+          <div style="font-size:0.75rem;color:var(--subtext);font-family:'Nunito',sans-serif;font-weight:700">Q${quizState.idx+1} of ${pool.length}</div>
+        </div>
+        <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.88rem;color:var(--text);margin-bottom:1rem">${q.question}</p>
+        ${q.options.map((opt, oi) => `<button class="report-reason" id="vqopt-${oi}" onclick="vqAnswer(${oi})">${opt}</button>`).join('')}
+        <div id="vq-feedback" style="min-height:1.5rem;margin-top:0.5rem;font-size:0.8rem;font-family:'Nunito',sans-serif;font-weight:800"></div>
+      </div>`;
+    }
+
+    window.vqAnswer = function(oi) {
+      if (quizState.answered) return;
+      quizState.answered = true;
+      const q = pool[quizState.idx];
+      const correct = oi === q.correct;
+      if (correct) quizState.score++;
+      document.querySelectorAll('[id^=vqopt-]').forEach((b, i) => {
+        b.style.pointerEvents = 'none';
+        if (i === q.correct) { b.style.background = '#dcfce7'; b.style.borderColor = '#16a34a'; b.style.color = '#166534'; }
+        else if (i === oi && !correct) { b.style.background = '#fef2f2'; b.style.borderColor = '#ef4444'; b.style.color = '#ef4444'; }
+      });
+      const fb = document.getElementById('vq-feedback');
+      if (fb) fb.innerHTML = correct
+        ? `<span style="color:#16a34a">✓ Correct! +5 XP</span>`
+        : `<span style="color:#ef4444">✗ Not quite — review the topic and try again</span>`;
+      if (correct) showXPToast(5);
+
+      setTimeout(() => {
+        quizState.idx++;
+        quizState.answered = false;
+        if (quizState.idx < pool.length) {
+          renderQ();
+        } else {
+          // Final score screen
+          const xpEarned = quizState.score * 5;
+          overlay.querySelector('.report-modal').innerHTML = `
+            <div style="text-align:center;padding:0.5rem 0">
+              <div style="font-size:2.5rem;margin-bottom:0.5rem">${quizState.score === pool.length ? '🏆' : quizState.score > 0 ? '🎯' : '📖'}</div>
+              <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.1rem;color:var(--navy);margin-bottom:0.25rem">${quizState.score}/${pool.length} correct</div>
+              <div style="font-size:0.82rem;color:var(--subtext);margin-bottom:1rem">${xpEarned > 0 ? `+${xpEarned} XP earned from the quiz` : 'Review the topic and watch again!'}</div>
+              <button class="report-reason" style="text-align:center" onclick="this.closest('.report-overlay').remove()">Done ✓</button>
+            </div>`;
+          if (xpEarned > 0 && currentUser && window._logActivity) {
+            window._logActivity('video_quiz', currentTopic, 1);
+          }
+        }
+      }, 1400);
+    };
+
+    renderQ();
+    document.body.appendChild(overlay);
+  }
 
   // ── VIDEO REPORT ────────────────────────────────────────────────────────────
   const REPORT_REASONS = [
