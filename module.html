@@ -1622,15 +1622,20 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
     return null;
   }
 
-  // Switch embedded video in learn tab
+  // Switch embedded videos in learn tab — show all from creator, no autoplay
   window.learnSwitchVideo = function(topicName, channel, uniqueId) {
     const videos = window._reviseData?.topics?.[topicName]?.videos || [];
-    const vid = videos.find(v => v.channel === channel);
-    if (!vid) return;
+    const vids = videos.filter(v => v.channel === channel);
+    if (!vids.length) return;
     const player = document.getElementById(`${uniqueId}-player`);
     if (player) {
-      player.innerHTML = `<iframe src="https://www.youtube.com/embed/${vid.videoId}?autoplay=1&rel=0&modestbranding=1"
-        allow="autoplay;fullscreen" style="position:absolute;inset:0;width:100%;height:100%;border:none"></iframe>`;
+      player.innerHTML = vids.map((v, i) => `
+        <div style="${i > 0 ? 'margin-top:0.75rem' : ''}">
+          <div style="position:relative;padding-top:56.25%;background:#000;border-radius:10px;overflow:hidden">
+            <iframe src="https://www.youtube.com/embed/${v.videoId}?rel=0&modestbranding=1"
+              allow="fullscreen" style="position:absolute;inset:0;width:100%;height:100%;border:none" loading="lazy"></iframe>
+          </div>
+        </div>`).join('');
     }
     // Update tab styles
     document.querySelectorAll(`[id^="${uniqueId}-tab-"]`).forEach(b => {
@@ -3172,22 +3177,27 @@ function buildLearnReading(topic) {
     const CREATOR_ORDER = ['FuseSchools', 'Cognito', 'Free Science Lessons'];
     const safeT = topic.name.replace(/'/g, "\\'");
     const defaultCreator = CREATOR_ORDER.find(c => topicVideos.some(v => v.channel === c));
-    const defaultVid = topicVideos.find(v => v.channel === defaultCreator);
+    const defaultVids = topicVideos.filter(v => v.channel === defaultCreator);
     const availableCreators = CREATOR_ORDER.filter(c => topicVideos.some(v => v.channel === c));
     const uniqueId = `lv-${topic.name.replace(/\W/g,'').toLowerCase()}`;
     html += `<div class="learn-card-video-section" id="${uniqueId}-wrap">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem">
         <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:0.85rem;color:#1a2a4f">🎬 Watch</div>
-        ${availableCreators.length > 1 ? `<div style="display:flex;gap:0.3rem">
+        ${availableCreators.length > 1 ? `<div style="display:flex;gap:0.3rem;flex-wrap:wrap">
           ${availableCreators.map(c => `<button
             onclick="learnSwitchVideo('${safeT}','${c}','${uniqueId}')"
             id="${uniqueId}-tab-${c.replace(/\s/g,'')}"
             style="border:1.5px solid #e2e8f0;border-radius:100px;padding:0.2rem 0.65rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;cursor:pointer;background:${c===defaultCreator?'#1a2a4f':'#f1f5f9'};color:${c===defaultCreator?'#fff':'#64748b'}">${c}</button>`).join('')}
         </div>` : ''}
       </div>
-      <div id="${uniqueId}-player" style="position:relative;padding-top:56.25%;background:#000;border-radius:12px;overflow:hidden">
-        <iframe src="https://www.youtube.com/embed/${defaultVid.videoId}?rel=0&modestbranding=1"
-          allow="fullscreen" style="position:absolute;inset:0;width:100%;height:100%;border:none" loading="lazy"></iframe>
+      <div id="${uniqueId}-player">
+        ${defaultVids.map((v, i) => `
+          <div style="${i > 0 ? 'margin-top:0.75rem' : ''}">
+            <div style="position:relative;padding-top:56.25%;background:#000;border-radius:12px;overflow:hidden">
+              <iframe src="https://www.youtube.com/embed/${v.videoId}?rel=0&modestbranding=1"
+                allow="fullscreen" style="position:absolute;inset:0;width:100%;height:100%;border:none" loading="lazy"></iframe>
+            </div>
+          </div>`).join('')}
       </div>
     </div>`;
   }
