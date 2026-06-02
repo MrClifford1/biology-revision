@@ -1609,36 +1609,70 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
     btn.style.borderColor = active ? '#1a2a4f' : '#e2e8f0';
   }
 
+  // Cache video titles fetched from YouTube oEmbed
+  const _vidTitleCache = {};
+  async function _fetchTitle(videoId) {
+    if (_vidTitleCache[videoId]) return _vidTitleCache[videoId];
+    try {
+      const r = await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`);
+      if (r.ok) { const d = await r.json(); _vidTitleCache[videoId] = d.title; return d.title; }
+    } catch(e) {}
+    return null;
+  }
+
   window._modRenderCreator = function _modRenderCreator(channel, topicName, videos, overlay) {
     overlay.querySelectorAll('.mod-creator-tab').forEach(b => _modTabStyle(b, b.dataset.ch === channel));
     const vids = videos.filter(v => v.channel === channel);
+    const tabRow = overlay.querySelector('#mod-tab-row');
     const pickerEl = overlay.querySelector('#mod-vid-picker');
     const playerEl = overlay.querySelector('#mod-vid-player');
+    // Show picker, show tabs, hide player
+    if (tabRow) tabRow.style.display = 'flex';
+    pickerEl.style.display = 'block';
     playerEl.style.display = 'none';
     playerEl.innerHTML = '';
+    // Render picker with placeholder titles, then update async
     pickerEl.innerHTML = vids.map((v, i) => `
       <div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 0.75rem;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;cursor:pointer;margin-bottom:0.4rem"
            onclick="_modLaunchVideo('${v.videoId}','${topicName.replace(/'/g,"\\'")}','${channel}',this.closest('.video-modal-overlay'))">
         <img src="https://img.youtube.com/vi/${v.videoId}/mqdefault.jpg" style="width:72px;height:40px;object-fit:cover;border-radius:6px;flex-shrink:0">
-        <span style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.82rem;color:var(--navy);flex:1">Video ${i + 1}</span>
-        <button onclick="event.stopPropagation();submitModReport('${v.videoId}','${topicName.replace(/'/g,"\\'")}','prompt')" style="background:none;border:none;font-size:0.7rem;color:#94a3b8;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:700">⚑</button>
+        <div style="flex:1;min-width:0">
+          <div id="vtitle-${v.videoId}" style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.82rem;color:#1a2a4f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${_vidTitleCache[v.videoId] || 'Loading…'}</div>
+        </div>
+        <button onclick="event.stopPropagation();submitModReport('${v.videoId}','${topicName.replace(/'/g,"\\'")}','prompt')" style="background:none;border:none;font-size:0.7rem;color:#94a3b8;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:700;flex-shrink:0">⚑</button>
       </div>`).join('');
+    // Fetch titles async and update in place
+    vids.forEach(v => {
+      if (!_vidTitleCache[v.videoId]) {
+        _fetchTitle(v.videoId).then(title => {
+          if (title) { const el = document.getElementById(`vtitle-${v.videoId}`); if (el) el.textContent = title; }
+        });
+      }
+    });
   };
 
   window._modLaunchVideo = function(videoId, topicName, channel, overlay) {
+    const tabRow = overlay.querySelector('#mod-tab-row');
+    const pickerEl = overlay.querySelector('#mod-vid-picker');
     const playerEl = overlay.querySelector('#mod-vid-player');
+    // Hide picker and tabs, show only player
+    if (tabRow) tabRow.style.display = 'none';
+    pickerEl.style.display = 'none';
     playerEl.style.display = 'block';
+    const title = _vidTitleCache[videoId] || '';
     playerEl.innerHTML = `
-      <div style="position:relative;padding-top:56.25%;background:#000;border-radius:10px;overflow:hidden;margin-bottom:0.4rem">
+      <button onclick="_modRenderCreator('${channel}','${topicName.replace(/'/g,"\\'")}',window._reviseData?.topics?.['${topicName.replace(/'/g,"\\'")}']?.videos||[],this.closest('.video-modal-overlay'))"
+        style="display:flex;align-items:center;gap:0.4rem;background:none;border:none;font-size:0.82rem;color:#64748b;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:800;margin-bottom:0.75rem;padding:0">
+        ← Back to videos
+      </button>
+      ${title ? `<div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.88rem;color:#1a2a4f;margin-bottom:0.6rem">${title}</div>` : ''}
+      <div style="position:relative;padding-top:56.25%;background:#000;border-radius:10px;overflow:hidden;margin-bottom:0.5rem">
         <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1"
           allow="autoplay;fullscreen" style="position:absolute;inset:0;width:100%;height:100%;border:none"></iframe>
       </div>
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <span style="font-size:0.72rem;color:#d97706;font-family:'Nunito',sans-serif;font-weight:800">Visit Revision page to earn XP ✨</span>
-        <button onclick="_modRenderCreator('${channel}','${topicName.replace(/'/g,"\\'")}',window._reviseData?.topics?.['${topicName.replace(/'/g,"\\'")}']?.videos||[],this.closest('.video-modal-overlay'))"
-          style="background:none;border:none;font-size:0.75rem;color:#64748b;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:700">← Back</button>
+      <div style="font-size:0.72rem;color:#d97706;font-family:'Nunito',sans-serif;font-weight:800;text-align:center">
+        Visit the <a href="revise.html?subject=${window._revSubject}&module=${window._revModule}&topic=${encodeURIComponent(topicName)}" style="color:#d97706">Revision page</a> to earn XP ✨
       </div>`;
-    playerEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   };
 
   window.openVideoModal = (topicName) => {
@@ -1655,7 +1689,7 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
       <p style="font-size:0.75rem;color:var(--subtext);margin-bottom:0.75rem">
         Go to <a href="revise.html?subject=${window._revSubject}&module=${window._revModule}&topic=${encodeURIComponent(topicName)}" style="color:var(--navy);font-weight:800">Revision page</a> to watch and earn XP.
       </p>
-      <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.75rem">
+      <div id="mod-tab-row" style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.75rem">
         ${available.map(c => `<button class="mod-creator-tab" data-ch="${c}"
           onclick="_modRenderCreator('${c}','${topicName.replace(/'/g,"\\'")}',window._reviseData?.topics?.['${topicName.replace(/'/g,"\\'")}']?.videos||[],this.closest('.video-modal-overlay'))"
           style="border:1.5px solid #e2e8f0;border-radius:100px;padding:0.35rem 0.9rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.75rem;cursor:pointer;background:#f1f5f9;color:#64748b">${c}</button>`).join('')}
