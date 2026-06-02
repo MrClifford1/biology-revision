@@ -1601,11 +1601,16 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
   }, 300);
   setTimeout(() => clearInterval(ragPoll), 5000);
 
-  const _chBadge = { 'FuseSchools': 'background:#fef3c7;color:#92400e', 'Cognito': 'background:#ede9fe;color:#5b21b6', 'Free Science Lessons': 'background:#dcfce7;color:#166534' };
   const CREATORS = ['FuseSchools', 'Cognito', 'Free Science Lessons'];
 
+  function _modTabStyle(btn, active) {
+    btn.style.background = active ? 'var(--navy)' : '#f1f5f9';
+    btn.style.color = active ? 'white' : '#64748b';
+    btn.style.borderColor = active ? 'var(--navy)' : '#e2e8f0';
+  }
+
   function _modRenderCreator(channel, topicName, videos, overlay) {
-    overlay.querySelectorAll('.mod-creator-tab').forEach(b => b.classList.toggle('active', b.dataset.ch === channel));
+    overlay.querySelectorAll('.mod-creator-tab').forEach(b => _modTabStyle(b, b.dataset.ch === channel));
     const vids = videos.filter(v => v.channel === channel);
     const pickerEl = overlay.querySelector('#mod-vid-picker');
     const playerEl = overlay.querySelector('#mod-vid-player');
@@ -1653,23 +1658,15 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
       <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.75rem">
         ${available.map(c => `<button class="mod-creator-tab" data-ch="${c}"
           onclick="_modRenderCreator('${c}','${topicName.replace(/'/g,"\\'")}',window._reviseData?.topics?.['${topicName.replace(/'/g,"\\'")}']?.videos||[],this.closest('.video-modal-overlay'))"
-          style="background:#f1f5f9;border:1.5px solid #e2e8f0;border-radius:100px;padding:0.3rem 0.8rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.75rem;color:#64748b;cursor:pointer">${c}</button>`).join('')}
+          style="border:1.5px solid #e2e8f0;border-radius:100px;padding:0.35rem 0.9rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.75rem;cursor:pointer;background:#f1f5f9;color:#64748b">${c}</button>`).join('')}
       </div>
       <div id="mod-vid-picker"></div>
       <div id="mod-vid-player" style="display:none"></div>
     </div>`;
     overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
     document.body.appendChild(overlay);
-    // Auto-select first creator
+    // Auto-select first creator (also sets active tab styling)
     if (available.length) _modRenderCreator(available[0], topicName, videos, overlay);
-    // Style active tab
-    overlay.querySelectorAll('.mod-creator-tab').forEach(b => {
-      b.addEventListener('click', () => {
-        overlay.querySelectorAll('.mod-creator-tab').forEach(x => x.style.cssText = 'background:#f1f5f9;border:1.5px solid #e2e8f0;border-radius:100px;padding:0.3rem 0.8rem;font-family:Nunito,sans-serif;font-weight:800;font-size:0.75rem;color:#64748b;cursor:pointer');
-        b.style.cssText = 'background:var(--navy);border:1.5px solid var(--navy);border-radius:100px;padding:0.3rem 0.8rem;font-family:Nunito,sans-serif;font-weight:800;font-size:0.75rem;color:white;cursor:pointer';
-      });
-    });
-    overlay.querySelector('.mod-creator-tab')?.click();
   };
 
   window.submitModReport = async (videoId, topicName, reason) => {
