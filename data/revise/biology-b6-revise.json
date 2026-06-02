@@ -3,48 +3,48 @@
   "topics": {
     "DNA and Genome": {
       "intro": "DNA carries the genetic information that controls the characteristics of all living organisms. Understanding its structure and how it codes for proteins is fundamental to B6.",
-      "mnemonic": "Remember the base pairing rules with: 'AT the GC party' — A pairs with T, G pairs with C. For the hierarchy of genetic information, think: 'Nobody Can Get Everyone's Secret — Nucleotide, Codon, Gene, Exon, chromosome, Species'. For DNA structure: the double helix looks like a twisted ladder where the rungs are the base pairs and the sides are sugar-phosphate backbones.",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: DNA and Genome</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "Remember the base pairing rules with: 'AT the GC party' \u2014 A pairs with T, G pairs with C. For the hierarchy of genetic information, think: 'Nobody Can Get Everyone's Secret \u2014 Nucleotide, Codon, Gene, Exon, chromosome, Species'. For DNA structure: the double helix looks like a twisted ladder where the rungs are the base pairs and the sides are sugar-phosphate backbones.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: DNA and Genome</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "DNA Structure",
-          "icon": "🧬",
+          "icon": "\ud83e\uddec",
           "text": "DNA is a double helix polymer made of nucleotides, carrying instructions for all cell processes.",
           "points": [
-            "<strong>Double helix</strong> — two complementary strands twisted together like a twisted ladder",
-            "<strong>Nucleotides</strong> — each unit contains a deoxyribose sugar, a phosphate group, and one of four bases",
-            "<strong>Four bases</strong> — Adenine (A), Thymine (T), Guanine (G), Cytosine (C)",
-            "<strong>Complementary base pairing</strong> — A always pairs with T (2 hydrogen bonds); G always pairs with C (3 hydrogen bonds)",
-            "<strong>Location</strong> — DNA is found in the nucleus, tightly coiled around proteins to form chromosomes"
+            "<strong>Double helix</strong> \u2014 two complementary strands twisted together like a twisted ladder",
+            "<strong>Nucleotides</strong> \u2014 each unit contains a deoxyribose sugar, a phosphate group, and one of four bases",
+            "<strong>Four bases</strong> \u2014 Adenine (A), Thymine (T), Guanine (G), Cytosine (C)",
+            "<strong>Complementary base pairing</strong> \u2014 A always pairs with T (2 hydrogen bonds); G always pairs with C (3 hydrogen bonds)",
+            "<strong>Location</strong> \u2014 DNA is found in the nucleus, tightly coiled around proteins to form chromosomes"
           ]
         },
         {
           "title": "Genes and Proteins",
-          "icon": "🔬",
+          "icon": "\ud83d\udd2c",
           "text": "Genes are sections of DNA that code for specific proteins, which control cell structure and function.",
           "points": [
-            "<strong>Gene</strong> — a section of DNA that codes for one specific protein",
-            "<strong>Base sequence</strong> — the order of bases in a gene determines the amino acid sequence of the protein",
-            "<strong>Protein function</strong> — proteins act as enzymes, structural components, antibodies, and hormones",
-            "<strong>Human genome</strong> — contains approximately 20,000–25,000 protein-coding genes on 46 chromosomes"
+            "<strong>Gene</strong> \u2014 a section of DNA that codes for one specific protein",
+            "<strong>Base sequence</strong> \u2014 the order of bases in a gene determines the amino acid sequence of the protein",
+            "<strong>Protein function</strong> \u2014 proteins act as enzymes, structural components, antibodies, and hormones",
+            "<strong>Human genome</strong> \u2014 contains approximately 20,000\u201325,000 protein-coding genes on 46 chromosomes"
           ]
         },
         {
           "title": "The Human Genome Project",
-          "icon": "💻",
+          "icon": "\ud83d\udcbb",
           "text": "The Human Genome Project (completed 2003) mapped the entire sequence of bases in human DNA.",
           "points": [
-            "<strong>Disease identification</strong> — allows scientists to find genes linked to inherited diseases like cystic fibrosis",
-            "<strong>New medicines</strong> — targeted drugs can be developed for specific genetic diseases",
-            "<strong>Ancestry and evolution</strong> — comparing genomes reveals evolutionary relationships between species",
-            "<strong>Ethical concerns</strong> — genetic privacy; risk of discrimination by employers or insurance companies"
+            "<strong>Disease identification</strong> \u2014 allows scientists to find genes linked to inherited diseases like cystic fibrosis",
+            "<strong>New medicines</strong> \u2014 targeted drugs can be developed for specific genetic diseases",
+            "<strong>Ancestry and evolution</strong> \u2014 comparing genomes reveals evolutionary relationships between species",
+            "<strong>Ethical concerns</strong> \u2014 genetic privacy; risk of discrimination by employers or insurance companies"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "DNA",
-          "def": "Deoxyribonucleic acid — molecule that carries genetic information"
+          "def": "Deoxyribonucleic acid \u2014 molecule that carries genetic information"
         },
         {
           "term": "Gene",
@@ -76,83 +76,93 @@
         }
       ],
       "examTips": [
-        "Humans have 23 pairs of chromosomes (46 total) — each pair contains one chromosome from each parent.",
+        "Humans have 23 pairs of chromosomes (46 total) \u2014 each pair contains one chromosome from each parent.",
         "A gene codes for ONE protein. Many different genes make many different proteins.",
-        "Base pairing rules are always A with T and G with C — you can calculate the percentage of any base if you know one (e.g. if A = 30%, T = 30%, so G = C = 20%)."
+        "Base pairing rules are always A with T and G with C \u2014 you can calculate the percentage of any base if you know one (e.g. if A = 30%, T = 30%, so G = C = 20%)."
       ],
       "commonMistakes": [
-        "Saying a gene is a whole chromosome — a gene is just a short section of DNA on a chromosome; a single chromosome contains thousands of genes.",
-        "Mixing up A-T and G-C base pairs — remember 'AT' goes together like 'at' the same table.",
-        "Confusing the genome (all DNA in an organism) with a gene (one coding section) — the genome contains all genes."
+        "Saying a gene is a whole chromosome \u2014 a gene is just a short section of DNA on a chromosome; a single chromosome contains thousands of genes.",
+        "Mixing up A-T and G-C base pairs \u2014 remember 'AT' goes together like 'at' the same table.",
+        "Confusing the genome (all DNA in an organism) with a gene (one coding section) \u2014 the genome contains all genes."
       ],
       "videos": [
         {
-          "title": "DNA and the Genome",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=6MIxY-ER0O8"
+          "url": "https://www.youtube.com/watch?v=GIzNlISbCxI",
+          "videoId": "GIzNlISbCxI",
+          "channel": "FuseSchools"
         },
         {
-          "title": "DNA Structure",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=vKrRhfSMhGs"
+          "url": "https://www.youtube.com/watch?v=-hryHoTIHak",
+          "videoId": "-hryHoTIHak",
+          "channel": "FuseSchools"
         },
         {
-          "title": "DNA",
-          "channel": "Fuse School",
-          "url": "https://www.youtube.com/watch?v=TNKWgcFPHqw"
+          "url": "https://www.youtube.com/watch?v=fy2F8yFxqOI",
+          "videoId": "fy2F8yFxqOI",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=zOIV9IrMPH4",
+          "videoId": "zOIV9IrMPH4",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=TQ_iCf8mzMA",
+          "videoId": "TQ_iCf8mzMA",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
-        "<strong>DNA</strong> (deoxyribonucleic acid) carries the genetic information in cells. It is a double helix made of two strands of <strong>nucleotides</strong>. Each nucleotide contains a sugar, a phosphate group, and one of four <strong>bases</strong>: adenine, thymine, cytosine, and guanine. Base pairing is complementary — adenine pairs with thymine, and cytosine pairs with guanine. Sections of DNA that code for proteins are called <strong>genes</strong>.",
-        "The <strong>genome</strong> is the complete set of genetic information in an organism. The Human Genome Project mapped the entire human genome. A <strong>gene</strong> is a section of DNA that codes for a specific protein. Proteins are made of <strong>amino acids</strong> — the sequence of bases in a gene determines the sequence of amino acids in the protein. Most DNA in eukaryotic cells is found in the <strong>nucleus</strong> on chromosomes.",
-        "<strong>Mutations</strong> are changes to the sequence of <strong>bases</strong> in DNA. Most mutations have no effect on the protein produced. Some mutations change the protein slightly. Rarely, a mutation produces a significant change that alters the protein's function — this can be harmful (e.g. causing cancer) or occasionally beneficial. Mutations can occur spontaneously during DNA replication or be caused by mutagens such as UV radiation or certain chemicals."
+        "<strong>DNA</strong> (deoxyribonucleic acid) carries the genetic information in cells. It is a double helix made of two strands of <strong>nucleotides</strong>. Each nucleotide contains a sugar, a phosphate group, and one of four <strong>bases</strong>: adenine, thymine, cytosine, and guanine. Base pairing is complementary \u2014 adenine pairs with thymine, and cytosine pairs with guanine. Sections of DNA that code for proteins are called <strong>genes</strong>.",
+        "The <strong>genome</strong> is the complete set of genetic information in an organism. The Human Genome Project mapped the entire human genome. A <strong>gene</strong> is a section of DNA that codes for a specific protein. Proteins are made of <strong>amino acids</strong> \u2014 the sequence of bases in a gene determines the sequence of amino acids in the protein. Most DNA in eukaryotic cells is found in the <strong>nucleus</strong> on chromosomes.",
+        "<strong>Mutations</strong> are changes to the sequence of <strong>bases</strong> in DNA. Most mutations have no effect on the protein produced. Some mutations change the protein slightly. Rarely, a mutation produces a significant change that alters the protein's function \u2014 this can be harmful (e.g. causing cancer) or occasionally beneficial. Mutations can occur spontaneously during DNA replication or be caused by mutagens such as UV radiation or certain chemicals."
       ]
     },
     "Inheritance": {
       "intro": "Inheritance is the passing of characteristics from parents to offspring through genes. Understanding dominant and recessive alleles and Punnett squares is essential for B6.",
-      "mnemonic": "Remember key terms: 'Dominant = Determines appearance even alone (one copy is enough)'; 'Recessive = Requires two copies to show'. For Punnett squares, write the parents' alleles along the top and side, then fill in the boxes — easy as a times table! For sex determination: 'XX = female (two X chromosomes, like the female symbol ♀); XY = male'.",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Inheritance</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "Remember key terms: 'Dominant = Determines appearance even alone (one copy is enough)'; 'Recessive = Requires two copies to show'. For Punnett squares, write the parents' alleles along the top and side, then fill in the boxes \u2014 easy as a times table! For sex determination: 'XX = female (two X chromosomes, like the female symbol \u2640); XY = male'.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Inheritance</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Key Genetic Terms",
-          "icon": "🔑",
+          "icon": "\ud83d\udd11",
           "text": "Understanding these key terms is essential for answering all inheritance questions.",
           "points": [
-            "<strong>Allele</strong> — a version of a gene (e.g. B = brown eyes, b = blue eyes)",
-            "<strong>Dominant</strong> — allele expressed even with only one copy present (written with capital letter)",
-            "<strong>Recessive</strong> — allele only expressed when two copies are present (written with lowercase letter)",
-            "<strong>Genotype</strong> — the combination of alleles an organism has (e.g. Bb, BB, or bb)",
-            "<strong>Phenotype</strong> — the observable/visible characteristic produced by the genotype (e.g. brown eyes)",
-            "<strong>Homozygous</strong> — two identical alleles (BB or bb)",
-            "<strong>Heterozygous</strong> — two different alleles (Bb)"
+            "<strong>Allele</strong> \u2014 a version of a gene (e.g. B = brown eyes, b = blue eyes)",
+            "<strong>Dominant</strong> \u2014 allele expressed even with only one copy present (written with capital letter)",
+            "<strong>Recessive</strong> \u2014 allele only expressed when two copies are present (written with lowercase letter)",
+            "<strong>Genotype</strong> \u2014 the combination of alleles an organism has (e.g. Bb, BB, or bb)",
+            "<strong>Phenotype</strong> \u2014 the observable/visible characteristic produced by the genotype (e.g. brown eyes)",
+            "<strong>Homozygous</strong> \u2014 two identical alleles (BB or bb)",
+            "<strong>Heterozygous</strong> \u2014 two different alleles (Bb)"
           ]
         },
         {
           "title": "Punnett Squares",
-          "icon": "⬛",
+          "icon": "\u2b1b",
           "text": "Punnett squares predict the probability of offspring genotypes and phenotypes from a cross.",
           "points": [
-            "<strong>Method</strong> — write one parent's alleles across the top; the other's down the side; fill in the boxes",
-            "<strong>Bb × Bb cross</strong> — gives genotype ratio BB : Bb : bb = 1 : 2 : 1",
-            "<strong>Phenotype ratio</strong> — 3 dominant : 1 recessive (75% : 25%)",
-            "<strong>Probability</strong> — each box represents a 25% probability for a single offspring; not a guarantee"
+            "<strong>Method</strong> \u2014 write one parent's alleles across the top; the other's down the side; fill in the boxes",
+            "<strong>Bb \u00d7 Bb cross</strong> \u2014 gives genotype ratio BB : Bb : bb = 1 : 2 : 1",
+            "<strong>Phenotype ratio</strong> \u2014 3 dominant : 1 recessive (75% : 25%)",
+            "<strong>Probability</strong> \u2014 each box represents a 25% probability for a single offspring; not a guarantee"
           ],
           "callout": {
             "type": "exam",
             "label": "Punnett Square",
-            "text": "Bb × Bb gives BB:Bb:bb in ratio 1:2:1. Probability of dominant phenotype = 3/4 (75%). Probability of recessive phenotype = 1/4 (25%)."
+            "text": "Bb \u00d7 Bb gives BB:Bb:bb in ratio 1:2:1. Probability of dominant phenotype = 3/4 (75%). Probability of recessive phenotype = 1/4 (25%)."
           }
         },
         {
           "title": "Sex Determination",
-          "icon": "⚧",
+          "icon": "\u26a7",
           "text": "Sex in humans is determined by the sex chromosomes inherited from each parent.",
           "points": [
-            "<strong>23 pairs</strong> — humans have 22 pairs of autosomes and 1 pair of sex chromosomes",
-            "<strong>Female</strong> — XX (two X chromosomes, one from each parent)",
-            "<strong>Male</strong> — XY (one X from mother, one Y from father)",
-            "<strong>Y chromosome</strong> — carries the SRY gene that triggers male development",
-            "<strong>50:50 chance</strong> — each pregnancy has an equal probability of producing a boy or girl"
+            "<strong>23 pairs</strong> \u2014 humans have 22 pairs of autosomes and 1 pair of sex chromosomes",
+            "<strong>Female</strong> \u2014 XX (two X chromosomes, one from each parent)",
+            "<strong>Male</strong> \u2014 XY (one X from mother, one Y from father)",
+            "<strong>Y chromosome</strong> \u2014 carries the SRY gene that triggers male development",
+            "<strong>50:50 chance</strong> \u2014 each pregnancy has an equal probability of producing a boy or girl"
           ]
         }
       ],
@@ -191,30 +201,40 @@
         }
       ],
       "examTips": [
-        "Dominant does NOT mean more common in the population — it simply means it is expressed when even one copy is present.",
-        "Punnett squares give probabilities, not certainties — in a real family you might get all one phenotype even if the probability says 3:1.",
-        "Always use correct notation: capital letter for dominant allele, lower case for recessive — never use the same letter for both (e.g. don't use B and b for a trait, then also B and b for another)."
+        "Dominant does NOT mean more common in the population \u2014 it simply means it is expressed when even one copy is present.",
+        "Punnett squares give probabilities, not certainties \u2014 in a real family you might get all one phenotype even if the probability says 3:1.",
+        "Always use correct notation: capital letter for dominant allele, lower case for recessive \u2014 never use the same letter for both (e.g. don't use B and b for a trait, then also B and b for another)."
       ],
       "commonMistakes": [
-        "Saying 'dominant = more common' — this is incorrect. Dominant just means expressed with one copy; blue eyes (recessive) can be common in some populations.",
-        "Forgetting that a recessive characteristic requires TWO copies of the recessive allele — a single copy in a heterozygous individual is masked by the dominant allele.",
-        "Mixing up genotype and phenotype — genotype is the alleles (Bb); phenotype is what you can see or measure (brown eyes)."
+        "Saying 'dominant = more common' \u2014 this is incorrect. Dominant just means expressed with one copy; blue eyes (recessive) can be common in some populations.",
+        "Forgetting that a recessive characteristic requires TWO copies of the recessive allele \u2014 a single copy in a heterozygous individual is masked by the dominant allele.",
+        "Mixing up genotype and phenotype \u2014 genotype is the alleles (Bb); phenotype is what you can see or measure (brown eyes)."
       ],
       "videos": [
         {
-          "title": "Genetics and Inheritance",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=NWqgZUnJdAY"
+          "url": "https://www.youtube.com/watch?v=BRMcTdKNpOA",
+          "videoId": "BRMcTdKNpOA",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Punnett Squares",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=MYywSHoB8Ek"
+          "url": "https://www.youtube.com/watch?v=d1fOswSUkWw",
+          "videoId": "d1fOswSUkWw",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Inheritance",
-          "channel": "Fuse School",
-          "url": "https://www.youtube.com/watch?v=4iyRQFpZKGY"
+          "url": "https://www.youtube.com/watch?v=4PtOgToaKP8",
+          "videoId": "4PtOgToaKP8",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=BtPo9F-nkho",
+          "videoId": "BtPo9F-nkho",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=Lomr_t5Pdjs",
+          "videoId": "Lomr_t5Pdjs",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
@@ -225,42 +245,42 @@
     },
     "Inherited Disorders": {
       "intro": "Some disorders are caused by faulty alleles that are inherited. You need to know polydactyly (dominant) and cystic fibrosis (recessive).",
-      "mnemonic": "Remember: 'Polydactyly = P for Plus fingers and P for Powerful (dominant — one copy is enough). Cystic fibrosis = CF = Carry First (you can carry it without showing it — recessive).' For carriers: a carrier has one working copy and one faulty copy — they are safe but can pass on the faulty allele.",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Inherited Disorders</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "Remember: 'Polydactyly = P for Plus fingers and P for Powerful (dominant \u2014 one copy is enough). Cystic fibrosis = CF = Carry First (you can carry it without showing it \u2014 recessive).' For carriers: a carrier has one working copy and one faulty copy \u2014 they are safe but can pass on the faulty allele.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Inherited Disorders</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Polydactyly",
-          "icon": "✋",
+          "icon": "\u270b",
           "text": "Polydactyly is a condition caused by a dominant allele, resulting in extra fingers or toes.",
           "points": [
-            "<strong>Dominant allele</strong> — only ONE copy of the faulty allele is needed for the condition to appear",
-            "<strong>Extra digits</strong> — an affected person has one or more extra fingers or toes",
-            "<strong>Inheritance</strong> — if a parent has genotype Pp, there is a 50% chance of passing the condition to each child",
-            "<strong>Not life-threatening</strong> — polydactyly does not usually affect life expectancy or cause serious health issues",
-            "<strong>Both parents</strong> — a child can be affected even if only one parent is affected (unlike cystic fibrosis)"
+            "<strong>Dominant allele</strong> \u2014 only ONE copy of the faulty allele is needed for the condition to appear",
+            "<strong>Extra digits</strong> \u2014 an affected person has one or more extra fingers or toes",
+            "<strong>Inheritance</strong> \u2014 if a parent has genotype Pp, there is a 50% chance of passing the condition to each child",
+            "<strong>Not life-threatening</strong> \u2014 polydactyly does not usually affect life expectancy or cause serious health issues",
+            "<strong>Both parents</strong> \u2014 a child can be affected even if only one parent is affected (unlike cystic fibrosis)"
           ]
         },
         {
           "title": "Cystic Fibrosis",
-          "icon": "🫁",
+          "icon": "\ud83e\udec1",
           "text": "Cystic fibrosis (CF) is a recessive inherited disorder affecting mucus production throughout the body.",
           "points": [
-            "<strong>Recessive allele</strong> — TWO copies of the faulty allele are needed (genotype ff) for the condition to appear",
-            "<strong>Thick sticky mucus</strong> — clogs the lungs causing breathing difficulties, and the digestive system causing malabsorption",
-            "<strong>Carrier</strong> — a person with genotype Ff has one copy; they are unaffected but can pass the allele to children",
-            "<strong>Both parents must be at least carriers</strong> — two carriers (Ff × Ff) have a 25% chance of an affected child",
-            "<strong>Treatment</strong> — physiotherapy, enzyme supplements, new gene therapy approaches — no complete cure yet"
+            "<strong>Recessive allele</strong> \u2014 TWO copies of the faulty allele are needed (genotype ff) for the condition to appear",
+            "<strong>Thick sticky mucus</strong> \u2014 clogs the lungs causing breathing difficulties, and the digestive system causing malabsorption",
+            "<strong>Carrier</strong> \u2014 a person with genotype Ff has one copy; they are unaffected but can pass the allele to children",
+            "<strong>Both parents must be at least carriers</strong> \u2014 two carriers (Ff \u00d7 Ff) have a 25% chance of an affected child",
+            "<strong>Treatment</strong> \u2014 physiotherapy, enzyme supplements, new gene therapy approaches \u2014 no complete cure yet"
           ]
         },
         {
           "title": "Embryo Screening",
-          "icon": "🔬",
+          "icon": "\ud83d\udd2c",
           "text": "Embryos can be tested for genetic disorders before implantation (during IVF) or during pregnancy.",
           "points": [
-            "<strong>Pre-implantation genetic diagnosis (PGD)</strong> — a cell is removed from an IVF embryo and tested for faulty alleles",
-            "<strong>Prenatal testing</strong> — amniocentesis or chorionic villus sampling during pregnancy",
-            "<strong>Argument for</strong> — prevents children being born with serious conditions; reduces suffering",
-            "<strong>Argument against</strong> — embryos with 'faulty' genes are destroyed; could lead to selection for non-medical traits ('designer babies'); discriminates against disabled people"
+            "<strong>Pre-implantation genetic diagnosis (PGD)</strong> \u2014 a cell is removed from an IVF embryo and tested for faulty alleles",
+            "<strong>Prenatal testing</strong> \u2014 amniocentesis or chorionic villus sampling during pregnancy",
+            "<strong>Argument for</strong> \u2014 prevents children being born with serious conditions; reduces suffering",
+            "<strong>Argument against</strong> \u2014 embryos with 'faulty' genes are destroyed; could lead to selection for non-medical traits ('designer babies'); discriminates against disabled people"
           ],
           "callout": {
             "type": "exam",
@@ -272,7 +292,7 @@
       "keyTerms": [
         {
           "term": "Polydactyly",
-          "def": "Having extra fingers or toes — caused by a dominant allele"
+          "def": "Having extra fingers or toes \u2014 caused by a dominant allele"
         },
         {
           "term": "Cystic fibrosis",
@@ -288,7 +308,7 @@
         },
         {
           "term": "Dominant disorder",
-          "def": "A genetic condition caused by a dominant allele — one copy causes the condition"
+          "def": "A genetic condition caused by a dominant allele \u2014 one copy causes the condition"
         },
         {
           "term": "Recessive disorder",
@@ -301,81 +321,96 @@
       ],
       "examTips": [
         "Polydactyly = dominant (one copy is enough to show the condition). Cystic fibrosis = recessive (two copies needed, and carriers are unaffected).",
-        "A carrier of cystic fibrosis has genotype Ff — they do NOT show symptoms but CAN pass the allele to their children.",
-        "Be ready to evaluate embryo screening ethically — give both arguments for and against in 'evaluate' or 'discuss' questions."
+        "A carrier of cystic fibrosis has genotype Ff \u2014 they do NOT show symptoms but CAN pass the allele to their children.",
+        "Be ready to evaluate embryo screening ethically \u2014 give both arguments for and against in 'evaluate' or 'discuss' questions."
       ],
       "commonMistakes": [
-        "Saying carriers of cystic fibrosis are affected — they are NOT. Carriers (Ff) have one working allele that produces enough functional protein.",
-        "Forgetting that both parents must be at least carriers for a recessive disorder to appear in a child — if only one parent carries the allele, no child can be affected (though they might be carriers).",
-        "Thinking polydactyly is caused by a recessive allele — it is DOMINANT. This means one affected parent is enough for there to be a 50% risk to each child."
+        "Saying carriers of cystic fibrosis are affected \u2014 they are NOT. Carriers (Ff) have one working allele that produces enough functional protein.",
+        "Forgetting that both parents must be at least carriers for a recessive disorder to appear in a child \u2014 if only one parent carries the allele, no child can be affected (though they might be carriers).",
+        "Thinking polydactyly is caused by a recessive allele \u2014 it is DOMINANT. This means one affected parent is enough for there to be a 50% risk to each child."
       ],
       "videos": [
         {
-          "title": "Inherited Disorders",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=GgGunhWMbeU"
+          "url": "https://www.youtube.com/watch?v=UC-YwiB_FFg",
+          "videoId": "UC-YwiB_FFg",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Cystic Fibrosis Genetics",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=mfB06WBqEZ0"
+          "url": "https://www.youtube.com/watch?v=6-4W1betnFI",
+          "videoId": "6-4W1betnFI",
+          "channel": "FuseSchools"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=3XhzsN8TpTI",
+          "videoId": "3XhzsN8TpTI",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=oYEr8wIe5G0",
+          "videoId": "oYEr8wIe5G0",
+          "channel": "Free Science Lessons"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=Q4hSQJ0bl9g",
+          "videoId": "Q4hSQJ0bl9g",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
         "<strong>Cystic fibrosis</strong> is a genetic disorder caused by a <strong>recessive</strong> allele. It affects the cell membranes, causing the production of thick, sticky <strong>mucus</strong> that clogs the lungs and digestive system. Both parents must carry the recessive allele for a child to be affected. Carriers have one dominant and one recessive allele and show no symptoms. Treatment includes physiotherapy and enzyme supplements but there is no cure.",
         "<strong>Polydactyly</strong> is a genetic disorder caused by a <strong>dominant</strong> allele, resulting in extra fingers or toes. Because the allele is dominant, only one copy is needed for the condition to be expressed. A person with polydactyly has a 50% chance of passing the condition to each child if their other allele is recessive. Unlike cystic fibrosis, someone can have polydactyly without both parents being affected.",
-        "<strong>Embryo screening</strong> allows embryos to be tested for genetic disorders before implantation during IVF. Cells are removed from the embryo and tested for faulty <strong>alleles</strong> such as those causing cystic fibrosis. Only healthy embryos are implanted. This raises ethical issues — some argue it prevents suffering while others feel it could lead to selection of embryos for non-medical traits. <strong>Genetic counselling</strong> helps families make informed decisions."
+        "<strong>Embryo screening</strong> allows embryos to be tested for genetic disorders before implantation during IVF. Cells are removed from the embryo and tested for faulty <strong>alleles</strong> such as those causing cystic fibrosis. Only healthy embryos are implanted. This raises ethical issues \u2014 some argue it prevents suffering while others feel it could lead to selection of embryos for non-medical traits. <strong>Genetic counselling</strong> helps families make informed decisions."
       ]
     },
     "Variation and Evolution": {
       "intro": "Variation between organisms can be genetic or environmental. Natural selection acts on genetic variation to drive evolution over many generations.",
-      "mnemonic": "Natural selection in four steps — remember 'VASA': Variation exists in the population; Advantageous traits help survival; Survivors reproduce and pass on genes; Allele frequency increases over generations. Also remember: mutations are the RAW material of evolution — Random, Arbitrary, and Without direction.",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Variation and Evolution</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "Natural selection in four steps \u2014 remember 'VASA': Variation exists in the population; Advantageous traits help survival; Survivors reproduce and pass on genes; Allele frequency increases over generations. Also remember: mutations are the RAW material of evolution \u2014 Random, Arbitrary, and Without direction.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Variation and Evolution</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Types of Variation",
-          "icon": "🎲",
+          "icon": "\ud83c\udfb2",
           "text": "Variation within a species can arise from genetic factors, environmental factors, or a combination of both.",
           "points": [
-            "<strong>Genetic variation</strong> — caused by different alleles inherited from parents; cannot be changed by the environment",
-            "<strong>Environmental variation</strong> — caused by conditions during development (diet, exercise, accidents, climate)",
-            "<strong>Combined variation</strong> — most characteristics (e.g. height, intelligence) are influenced by both genes AND environment",
-            "<strong>Continuous variation</strong> — characteristics with a range of values (e.g. height) — usually affected by many genes and environment",
-            "<strong>Discontinuous variation</strong> — distinct categories with no intermediates (e.g. blood group A, B, AB, O)"
+            "<strong>Genetic variation</strong> \u2014 caused by different alleles inherited from parents; cannot be changed by the environment",
+            "<strong>Environmental variation</strong> \u2014 caused by conditions during development (diet, exercise, accidents, climate)",
+            "<strong>Combined variation</strong> \u2014 most characteristics (e.g. height, intelligence) are influenced by both genes AND environment",
+            "<strong>Continuous variation</strong> \u2014 characteristics with a range of values (e.g. height) \u2014 usually affected by many genes and environment",
+            "<strong>Discontinuous variation</strong> \u2014 distinct categories with no intermediates (e.g. blood group A, B, AB, O)"
           ]
         },
         {
           "title": "Natural Selection",
-          "icon": "🦕",
-          "text": "Natural selection is Darwin's mechanism for evolution — the process by which favourable traits become more common over generations.",
+          "icon": "\ud83e\udd95",
+          "text": "Natural selection is Darwin's mechanism for evolution \u2014 the process by which favourable traits become more common over generations.",
           "numbered": [
             "Variation exists in a population (due to mutation and sexual reproduction)",
             "Some individuals have advantageous characteristics",
-            "These individuals are better adapted — more likely to survive and reproduce",
+            "These individuals are better adapted \u2014 more likely to survive and reproduce",
             "They pass on their advantageous alleles to offspring",
             "Over many generations, advantageous characteristics become more common"
           ],
           "points": [
-            "<strong>Selection pressure</strong> — the environmental factor that determines which traits are advantageous (e.g. predators, disease, food competition)",
-            "<strong>Survival of the fittest</strong> — 'fittest' means best adapted to the current environment, not physically strongest",
-            "<strong>No direction</strong> — natural selection is not planned; beneficial mutations arise randomly and are then selected for"
+            "<strong>Selection pressure</strong> \u2014 the environmental factor that determines which traits are advantageous (e.g. predators, disease, food competition)",
+            "<strong>Survival of the fittest</strong> \u2014 'fittest' means best adapted to the current environment, not physically strongest",
+            "<strong>No direction</strong> \u2014 natural selection is not planned; beneficial mutations arise randomly and are then selected for"
           ],
           "callout": {
             "type": "tip",
             "label": "Darwin's Key Idea",
-            "text": "Survival of the fittest — 'fittest' means best adapted to the environment, not strongest."
+            "text": "Survival of the fittest \u2014 'fittest' means best adapted to the environment, not strongest."
           }
         },
         {
           "title": "Mutation",
-          "icon": "⚡",
+          "icon": "\u26a1",
           "text": "Mutations are the ultimate source of all new genetic variation in populations.",
           "points": [
-            "<strong>Definition</strong> — a random change in the DNA base sequence of a gene",
-            "<strong>Usually neutral</strong> — most mutations have no effect on the protein produced (especially in non-coding DNA)",
-            "<strong>Occasionally harmful</strong> — some mutations produce a non-functional or malfunctioning protein",
-            "<strong>Rarely beneficial</strong> — a mutation that improves the protein's function can confer a survival advantage",
-            "<strong>Mutagen rate increased by</strong> — ionising radiation (UV, X-rays), certain chemicals (tobacco smoke), some viruses"
+            "<strong>Definition</strong> \u2014 a random change in the DNA base sequence of a gene",
+            "<strong>Usually neutral</strong> \u2014 most mutations have no effect on the protein produced (especially in non-coding DNA)",
+            "<strong>Occasionally harmful</strong> \u2014 some mutations produce a non-functional or malfunctioning protein",
+            "<strong>Rarely beneficial</strong> \u2014 a mutation that improves the protein's function can confer a survival advantage",
+            "<strong>Mutagen rate increased by</strong> \u2014 ionising radiation (UV, X-rays), certain chemicals (tobacco smoke), some viruses"
           ]
         }
       ],
@@ -411,82 +446,92 @@
       ],
       "examTips": [
         "Natural selection requires four things: variation in the population, a selection pressure, differential survival and reproduction, and inheritance of advantageous traits.",
-        "Mutations are the SOURCE of new variation — they are random, not directed. Organisms do not mutate on purpose to survive.",
-        "When describing natural selection in an exam, use the word 'more likely to survive and reproduce' — not just 'survive'. Reproduction is essential for passing on alleles."
+        "Mutations are the SOURCE of new variation \u2014 they are random, not directed. Organisms do not mutate on purpose to survive.",
+        "When describing natural selection in an exam, use the word 'more likely to survive and reproduce' \u2014 not just 'survive'. Reproduction is essential for passing on alleles."
       ],
       "commonMistakes": [
-        "Saying organisms 'try to adapt' or 'develop adaptations' purposefully — natural selection is entirely random; there is no intent, planning or direction.",
-        "Confusing natural selection (the process) with evolution (the result — change in allele frequencies over many generations).",
-        "Saying 'the strongest survive' — 'fittest' means best adapted to the specific environment, which could mean the best camouflaged, the most disease resistant, etc."
+        "Saying organisms 'try to adapt' or 'develop adaptations' purposefully \u2014 natural selection is entirely random; there is no intent, planning or direction.",
+        "Confusing natural selection (the process) with evolution (the result \u2014 change in allele frequencies over many generations).",
+        "Saying 'the strongest survive' \u2014 'fittest' means best adapted to the specific environment, which could mean the best camouflaged, the most disease resistant, etc."
       ],
       "videos": [
         {
-          "title": "Natural Selection and Evolution",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=0SCjhI86grU"
+          "url": "https://www.youtube.com/watch?v=jUHokSPkzT8",
+          "videoId": "jUHokSPkzT8",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Natural Selection GCSE",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=gO0g8QqBU0A"
+          "url": "https://www.youtube.com/watch?v=ccdXeaP1l_s",
+          "videoId": "ccdXeaP1l_s",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Evolution",
-          "channel": "Fuse School",
-          "url": "https://www.youtube.com/watch?v=hOfRN0KihOU"
+          "url": "https://www.youtube.com/watch?v=4PtOgToaKP8",
+          "videoId": "4PtOgToaKP8",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=BtPo9F-nkho",
+          "videoId": "BtPo9F-nkho",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=_LoPYfhTgeI",
+          "videoId": "_LoPYfhTgeI",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
-        "<strong>Variation</strong> is the differences between individuals of the same species. <strong>Genetic variation</strong> arises from mutations and sexual reproduction. <strong>Environmental variation</strong> is caused by factors such as diet, climate, and lifestyle. Most variation is a combination of both. Genetic variation is heritable — it can be passed to offspring. Environmental variation is not heritable.",
+        "<strong>Variation</strong> is the differences between individuals of the same species. <strong>Genetic variation</strong> arises from mutations and sexual reproduction. <strong>Environmental variation</strong> is caused by factors such as diet, climate, and lifestyle. Most variation is a combination of both. Genetic variation is heritable \u2014 it can be passed to offspring. Environmental variation is not heritable.",
         "<strong>Natural selection</strong> is the mechanism of evolution proposed by <strong>Charles Darwin</strong>. Individuals with advantageous characteristics are more likely to survive, reproduce, and pass on their <strong>genes</strong>. Over many generations, the frequency of beneficial alleles increases in the population. This gradual change in the inherited characteristics of a population over time is called <strong>evolution</strong>. Evidence for evolution comes from fossils, DNA analysis, and observed changes in species.",
-        "<strong>Speciation</strong> occurs when populations of the same species become <strong>reproductively isolated</strong>. If two populations are separated — by geography, for example — they accumulate different mutations and are subject to different selection pressures. Over time, the populations may become so different that they can no longer interbreed to produce fertile offspring, making them separate <strong>species</strong>. This process can take thousands of generations."
+        "<strong>Speciation</strong> occurs when populations of the same species become <strong>reproductively isolated</strong>. If two populations are separated \u2014 by geography, for example \u2014 they accumulate different mutations and are subject to different selection pressures. Over time, the populations may become so different that they can no longer interbreed to produce fertile offspring, making them separate <strong>species</strong>. This process can take thousands of generations."
       ]
     },
     "Selective Breeding and Genetic Engineering": {
       "intro": "Humans can influence the characteristics of plants and animals through selective breeding and genetic engineering, both of which have important ethical implications.",
-      "mnemonic": "Remember the difference: 'Selective Breeding = Slow and Stays within the species (uses existing alleles over generations). Genetic Engineering = Gene Goes in from anywhere (any species, much faster).' For genetic engineering steps, remember: 'Cut, Vector, Insert, Check' — restriction enzymes Cut the gene; a Vector (plasmid) carries it; ligase enzymes Insert it; scientists then Check the organism expresses it.",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Selective Breeding and Genetic Engineering</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "Remember the difference: 'Selective Breeding = Slow and Stays within the species (uses existing alleles over generations). Genetic Engineering = Gene Goes in from anywhere (any species, much faster).' For genetic engineering steps, remember: 'Cut, Vector, Insert, Check' \u2014 restriction enzymes Cut the gene; a Vector (plasmid) carries it; ligase enzymes Insert it; scientists then Check the organism expresses it.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Selective Breeding and Genetic Engineering</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Selective Breeding",
-          "icon": "🌾",
+          "icon": "\ud83c\udf3e",
           "text": "Selective breeding (artificial selection) involves choosing individuals with desirable characteristics to breed over many generations.",
           "points": [
-            "<strong>Process</strong> — select parents with desired traits → breed → select offspring with best traits → repeat over many generations",
-            "<strong>Agriculture examples</strong> — disease-resistant crop varieties, high-yield wheat, cows that produce more milk",
-            "<strong>Companion animals</strong> — dogs bred for specific traits (size, temperament, herding ability)",
-            "<strong>Disadvantage</strong> — reduces genetic diversity; inbred populations are more vulnerable to new diseases",
-            "<strong>Inbreeding problems</strong> — many pedigree dogs suffer health problems due to reduced gene pool"
+            "<strong>Process</strong> \u2014 select parents with desired traits \u2192 breed \u2192 select offspring with best traits \u2192 repeat over many generations",
+            "<strong>Agriculture examples</strong> \u2014 disease-resistant crop varieties, high-yield wheat, cows that produce more milk",
+            "<strong>Companion animals</strong> \u2014 dogs bred for specific traits (size, temperament, herding ability)",
+            "<strong>Disadvantage</strong> \u2014 reduces genetic diversity; inbred populations are more vulnerable to new diseases",
+            "<strong>Inbreeding problems</strong> \u2014 many pedigree dogs suffer health problems due to reduced gene pool"
           ]
         },
         {
           "title": "Genetic Engineering",
-          "icon": "🧬",
+          "icon": "\ud83e\uddec",
           "text": "Genetic engineering involves cutting a specific gene from one organism and inserting it into another organism.",
           "points": [
-            "<strong>Restriction enzymes</strong> — molecular scissors that cut DNA at specific sequences, producing sticky ends",
-            "<strong>Vector</strong> — a carrier (usually a bacterial plasmid) used to insert the gene into the host organism",
-            "<strong>Ligase enzymes</strong> — join the cut ends of the donor gene to the plasmid, sealing the DNA",
-            "<strong>Human insulin</strong> — human insulin gene inserted into bacteria; bacteria produce insulin for diabetics; safer and cheaper than animal-derived insulin",
-            "<strong>GM crops</strong> — crops engineered to be herbicide-resistant, pest-resistant, or nutritionally enhanced (e.g. golden rice with vitamin A gene)"
+            "<strong>Restriction enzymes</strong> \u2014 molecular scissors that cut DNA at specific sequences, producing sticky ends",
+            "<strong>Vector</strong> \u2014 a carrier (usually a bacterial plasmid) used to insert the gene into the host organism",
+            "<strong>Ligase enzymes</strong> \u2014 join the cut ends of the donor gene to the plasmid, sealing the DNA",
+            "<strong>Human insulin</strong> \u2014 human insulin gene inserted into bacteria; bacteria produce insulin for diabetics; safer and cheaper than animal-derived insulin",
+            "<strong>GM crops</strong> \u2014 crops engineered to be herbicide-resistant, pest-resistant, or nutritionally enhanced (e.g. golden rice with vitamin A gene)"
           ]
         },
         {
           "title": "Ethical Considerations",
-          "icon": "⚖️",
+          "icon": "\u2696\ufe0f",
           "text": "Both selective breeding and genetic engineering raise ethical questions that the AQA exam may ask you to evaluate.",
           "points": [
-            "<strong>Arguments for GM</strong> — can solve food security issues; GM insulin saves lives; pest-resistant crops reduce pesticide use",
-            "<strong>Arguments against GM</strong> — unknown long-term ecological effects; GM genes may spread to wild relatives; ethical concerns about altering life",
-            "<strong>Selective breeding concerns</strong> — health problems in pedigree breeds; reduced genetic diversity in crop monocultures",
-            "<strong>Genetic engineering benefits</strong> — faster and more precise than selective breeding; can insert genes from completely different species"
+            "<strong>Arguments for GM</strong> \u2014 can solve food security issues; GM insulin saves lives; pest-resistant crops reduce pesticide use",
+            "<strong>Arguments against GM</strong> \u2014 unknown long-term ecological effects; GM genes may spread to wild relatives; ethical concerns about altering life",
+            "<strong>Selective breeding concerns</strong> \u2014 health problems in pedigree breeds; reduced genetic diversity in crop monocultures",
+            "<strong>Genetic engineering benefits</strong> \u2014 faster and more precise than selective breeding; can insert genes from completely different species"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Selective breeding",
-          "def": "Choosing organisms with desired traits to breed — artificial selection"
+          "def": "Choosing organisms with desired traits to breed \u2014 artificial selection"
         },
         {
           "term": "Genetic engineering",
@@ -502,11 +547,11 @@
         },
         {
           "term": "Restriction enzyme",
-          "def": "Enzyme that cuts DNA at specific sequences — used in genetic engineering"
+          "def": "Enzyme that cuts DNA at specific sequences \u2014 used in genetic engineering"
         },
         {
           "term": "Ligase enzyme",
-          "def": "Enzyme that joins cut DNA strands together — seals the gene into the plasmid"
+          "def": "Enzyme that joins cut DNA strands together \u2014 seals the gene into the plasmid"
         },
         {
           "term": "Vector",
@@ -514,59 +559,74 @@
         }
       ],
       "examTips": [
-        "Selective breeding reduces genetic diversity — this is a KEY disadvantage that examiners want you to mention.",
+        "Selective breeding reduces genetic diversity \u2014 this is a KEY disadvantage that examiners want you to mention.",
         "Genetic engineering inserts ONE specific gene from any source; selective breeding selects for traits already present using existing alleles over many generations.",
-        "Be able to evaluate BOTH methods — state benefits AND risks clearly. In evaluate questions, always reach a balanced conclusion."
+        "Be able to evaluate BOTH methods \u2014 state benefits AND risks clearly. In evaluate questions, always reach a balanced conclusion."
       ],
       "commonMistakes": [
         "Confusing selective breeding (works with naturally existing alleles within a species over many generations) with genetic engineering (cuts and transfers a specific gene from any organism, much faster).",
-        "Forgetting that selective breeding reduces genetic diversity — this is the main disadvantage and is frequently tested.",
-        "Saying restriction enzymes 'destroy' DNA — they cut it at specific sequences to produce sticky ends that can be joined to another piece of DNA."
+        "Forgetting that selective breeding reduces genetic diversity \u2014 this is the main disadvantage and is frequently tested.",
+        "Saying restriction enzymes 'destroy' DNA \u2014 they cut it at specific sequences to produce sticky ends that can be joined to another piece of DNA."
       ],
       "videos": [
         {
-          "title": "Selective Breeding and GM",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=FAxAzpHBd5k"
+          "url": "https://www.youtube.com/watch?v=fHS-OY9XDZc",
+          "videoId": "fHS-OY9XDZc",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Genetic Engineering GCSE",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=ZbUXCVJxk4g"
+          "url": "https://www.youtube.com/watch?v=DIM38NlkWEo",
+          "videoId": "DIM38NlkWEo",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Selective Breeding",
-          "channel": "Fuse School",
-          "url": "https://www.youtube.com/watch?v=yVNastrrtWg"
+          "url": "https://www.youtube.com/watch?v=In6Rl3Q2THQ",
+          "videoId": "In6Rl3Q2THQ",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=4Wu86ACPTKY",
+          "videoId": "4Wu86ACPTKY",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=99nEQd2k6k4",
+          "videoId": "99nEQd2k6k4",
+          "channel": "Free Science Lessons"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=gu9T91GJXDo",
+          "videoId": "gu9T91GJXDo",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
         "<strong>Selective breeding</strong> (artificial selection) involves choosing parents with desirable characteristics to breed together over many generations. It has been used to produce high-yield <strong>crop</strong> plants, disease-resistant animals, and dogs with specific traits. However, selective breeding reduces <strong>genetic diversity</strong>, making populations more vulnerable to new diseases. Many pedigree dog breeds suffer health problems as a result of selective breeding.",
         "<strong>Genetic engineering</strong> involves inserting a gene from one organism into the genome of another. A useful gene is cut from donor DNA using <strong>restriction enzymes</strong> and inserted into a <strong>vector</strong> (usually a bacterial plasmid) using ligase enzymes. The vector is introduced into the host organism. <strong>GM crops</strong> (genetically modified crops) have been engineered to be herbicide-resistant, pest-resistant, or to contain extra nutrients.",
-        "<strong>Insulin</strong> used to treat diabetes was once extracted from pig and cow pancreases. Now it is produced by genetically engineered bacteria. The human insulin gene is inserted into bacterial <strong>plasmids</strong>, and the bacteria produce large quantities of human insulin. This is cheaper, more reliable, and does not risk rejection. <strong>Golden rice</strong> is another example — it has been engineered to produce beta-carotene, addressing vitamin A deficiency in developing countries."
+        "<strong>Insulin</strong> used to treat diabetes was once extracted from pig and cow pancreases. Now it is produced by genetically engineered bacteria. The human insulin gene is inserted into bacterial <strong>plasmids</strong>, and the bacteria produce large quantities of human insulin. This is cheaper, more reliable, and does not risk rejection. <strong>Golden rice</strong> is another example \u2014 it has been engineered to produce beta-carotene, addressing vitamin A deficiency in developing countries."
       ]
     },
     "Evidence for Evolution": {
       "intro": "There is extensive evidence that all life on Earth evolved from a common ancestor. Understanding this evidence is important for B6.",
-      "mnemonic": "Remember the four types of evidence for evolution with 'FADE': Fossils show change over time; Antibiotic resistance shows evolution happening now; DNA comparisons show how closely related species are; Embryology and anatomy reveal common ancestry. Darwin was brave — his theory 'FACED' controversy: Fossil gaps, Absence of genetics knowledge, Creation beliefs challenged, Evidence limited in his day.",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Evidence for Evolution</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "Remember the four types of evidence for evolution with 'FADE': Fossils show change over time; Antibiotic resistance shows evolution happening now; DNA comparisons show how closely related species are; Embryology and anatomy reveal common ancestry. Darwin was brave \u2014 his theory 'FACED' controversy: Fossil gaps, Absence of genetics knowledge, Creation beliefs challenged, Evidence limited in his day.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Evidence for Evolution</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Fossil Evidence",
-          "icon": "🦕",
+          "icon": "\ud83e\udd95",
           "text": "Fossils are the preserved remains or traces of ancient organisms found in sedimentary rock.",
           "points": [
-            "<strong>Evidence of change</strong> — fossils show how organisms looked millions of years ago, demonstrating how species have changed",
-            "<strong>Stratification</strong> — found in sedimentary rock with older fossils deeper down; rock layers provide a timeline",
-            "<strong>Gaps in record</strong> — soft tissue rarely fossilises; conditions must be just right for fossilisation to occur",
-            "<strong>Despite gaps</strong> — the fossil record clearly shows a progression of life forms and supports evolution",
-            "<strong>Transitional fossils</strong> — organisms like Archaeopteryx (part reptile, part bird) show evolutionary links"
+            "<strong>Evidence of change</strong> \u2014 fossils show how organisms looked millions of years ago, demonstrating how species have changed",
+            "<strong>Stratification</strong> \u2014 found in sedimentary rock with older fossils deeper down; rock layers provide a timeline",
+            "<strong>Gaps in record</strong> \u2014 soft tissue rarely fossilises; conditions must be just right for fossilisation to occur",
+            "<strong>Despite gaps</strong> \u2014 the fossil record clearly shows a progression of life forms and supports evolution",
+            "<strong>Transitional fossils</strong> \u2014 organisms like Archaeopteryx (part reptile, part bird) show evolutionary links"
           ]
         },
         {
           "title": "Antibiotic Resistance",
-          "icon": "🦠",
-          "text": "Antibiotic resistance in bacteria is evolution by natural selection happening in real time — observable evidence.",
+          "icon": "\ud83e\udda0",
+          "text": "Antibiotic resistance in bacteria is evolution by natural selection happening in real time \u2014 observable evidence.",
           "numbered": [
             "Random mutation gives some bacteria resistance to an antibiotic",
             "Antibiotics kill non-resistant bacteria",
@@ -574,20 +634,20 @@
             "Resistance gene becomes common in the population"
           ],
           "points": [
-            "<strong>MRSA</strong> — methicillin-resistant Staphylococcus aureus is a well-known example of evolved antibiotic resistance",
-            "<strong>Practical implication</strong> — always complete a course of antibiotics to reduce chance of resistant bacteria surviving"
+            "<strong>MRSA</strong> \u2014 methicillin-resistant Staphylococcus aureus is a well-known example of evolved antibiotic resistance",
+            "<strong>Practical implication</strong> \u2014 always complete a course of antibiotics to reduce chance of resistant bacteria surviving"
           ]
         },
         {
           "title": "Why Darwin's Theory Was Controversial",
-          "icon": "📚",
+          "icon": "\ud83d\udcda",
           "text": "Darwin's theory of evolution by natural selection challenged deeply held beliefs and was not immediately accepted.",
           "points": [
-            "<strong>Religious challenge</strong> — contradicted the widely held view of special creation by God",
-            "<strong>No genetics</strong> — Darwin had no knowledge of DNA, genes, or how traits were inherited",
-            "<strong>Limited fossil evidence</strong> — in Darwin's era, far fewer fossils had been discovered",
-            "<strong>Gradual acceptance</strong> — as genetics, DNA sequencing, and fossil evidence accumulated, the theory became accepted",
-            "<strong>Wallace</strong> — Alfred Russel Wallace developed the same theory independently, prompting Darwin to publish"
+            "<strong>Religious challenge</strong> \u2014 contradicted the widely held view of special creation by God",
+            "<strong>No genetics</strong> \u2014 Darwin had no knowledge of DNA, genes, or how traits were inherited",
+            "<strong>Limited fossil evidence</strong> \u2014 in Darwin's era, far fewer fossils had been discovered",
+            "<strong>Gradual acceptance</strong> \u2014 as genetics, DNA sequencing, and fossil evidence accumulated, the theory became accepted",
+            "<strong>Wallace</strong> \u2014 Alfred Russel Wallace developed the same theory independently, prompting Darwin to publish"
           ]
         }
       ],
@@ -606,7 +666,7 @@
         },
         {
           "term": "Antibiotic resistance",
-          "def": "The ability of bacteria to survive antibiotic treatment — evolved through natural selection"
+          "def": "The ability of bacteria to survive antibiotic treatment \u2014 evolved through natural selection"
         },
         {
           "term": "Natural selection",
@@ -618,71 +678,81 @@
         }
       ],
       "examTips": [
-        "Antibiotic resistance is DIRECT evidence for evolution by natural selection happening today — bacteria are NOT trying to become resistant; resistance arises by random mutation.",
-        "The fossil record is incomplete but still strongly supports evolution — gaps exist because of poor preservation conditions, not because evolution did not happen.",
+        "Antibiotic resistance is DIRECT evidence for evolution by natural selection happening today \u2014 bacteria are NOT trying to become resistant; resistance arises by random mutation.",
+        "The fossil record is incomplete but still strongly supports evolution \u2014 gaps exist because of poor preservation conditions, not because evolution did not happen.",
         "When asked why Darwin's theory was controversial, give at least TWO reasons: religious challenge AND lack of genetic knowledge."
       ],
       "commonMistakes": [
-        "Saying gaps in the fossil record disprove evolution — gaps exist because fossilisation is rare (requires specific conditions) and many fossils have been destroyed over millions of years.",
-        "Saying bacteria 'develop' resistance in response to antibiotics — resistance arises by random mutation BEFORE antibiotic exposure; the antibiotic then selects which bacteria survive.",
-        "Forgetting Alfred Russel Wallace — he developed the theory of evolution by natural selection independently at the same time as Darwin."
+        "Saying gaps in the fossil record disprove evolution \u2014 gaps exist because fossilisation is rare (requires specific conditions) and many fossils have been destroyed over millions of years.",
+        "Saying bacteria 'develop' resistance in response to antibiotics \u2014 resistance arises by random mutation BEFORE antibiotic exposure; the antibiotic then selects which bacteria survive.",
+        "Forgetting Alfred Russel Wallace \u2014 he developed the theory of evolution by natural selection independently at the same time as Darwin."
       ],
       "videos": [
         {
-          "title": "Evidence for Evolution",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=0SCjhI86grU"
+          "url": "https://www.youtube.com/watch?v=iYr3sYS9e0w",
+          "videoId": "iYr3sYS9e0w",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Fossil Evidence GCSE",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=D0dJgNkGCl8"
+          "url": "https://www.youtube.com/watch?v=j-COGCN3U9I",
+          "videoId": "j-COGCN3U9I",
+          "channel": "FuseSchools"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=_AkfWlXK20A",
+          "videoId": "_AkfWlXK20A",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=P5a3dAUod38",
+          "videoId": "P5a3dAUod38",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
-        "The <strong>fossil record</strong> provides evidence for evolution. Fossils show how organisms have changed over millions of years. However, the fossil record is incomplete because soft-bodied organisms rarely fossilise and many fossils have been destroyed. <strong>Comparative anatomy</strong> shows similarities in the bone structure of different species, suggesting common ancestry. <strong>DNA analysis</strong> reveals how closely related different species are — the more similar the DNA, the more recently they shared a common ancestor.",
-        "<strong>Antibiotic resistance</strong> in bacteria is an observable example of evolution by <strong>natural selection</strong>. Bacteria with random <strong>mutations</strong> that give resistance to an antibiotic survive treatment and reproduce. Their offspring inherit the resistance gene. Over time, the resistant strain becomes more common. This is why completing a full course of antibiotics is important — it reduces the chance of resistant bacteria surviving.",
+        "The <strong>fossil record</strong> provides evidence for evolution. Fossils show how organisms have changed over millions of years. However, the fossil record is incomplete because soft-bodied organisms rarely fossilise and many fossils have been destroyed. <strong>Comparative anatomy</strong> shows similarities in the bone structure of different species, suggesting common ancestry. <strong>DNA analysis</strong> reveals how closely related different species are \u2014 the more similar the DNA, the more recently they shared a common ancestor.",
+        "<strong>Antibiotic resistance</strong> in bacteria is an observable example of evolution by <strong>natural selection</strong>. Bacteria with random <strong>mutations</strong> that give resistance to an antibiotic survive treatment and reproduce. Their offspring inherit the resistance gene. Over time, the resistant strain becomes more common. This is why completing a full course of antibiotics is important \u2014 it reduces the chance of resistant bacteria surviving.",
         "Charles Darwin and Alfred Russel Wallace independently developed the theory of <strong>evolution</strong> by natural selection. Darwin collected extensive evidence during his voyage on the <strong>Beagle</strong>, particularly from the Galapagos Islands. Initially, his theory was controversial as it contradicted religious beliefs. Over time, evidence from <strong>genetics</strong>, DNA sequencing, and the fossil record has provided overwhelming support for the theory of evolution."
       ]
     },
     "Classification": {
       "intro": "Classification is the grouping of organisms based on their characteristics. Modern classification uses evolutionary relationships based on DNA evidence.",
-      "mnemonic": "Remember the classification hierarchy with: 'King Philip Came Over For Good Soup' — Kingdom, Phylum, Class, Order, Family, Genus, Species. For the three domains, think: 'ABE — Archaea, Bacteria, Eukaryota'. For binomial names: 'Genus gets the Glory (capital letter); species stays small (lowercase)' — e.g. Homo sapiens.",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Classification</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "Remember the classification hierarchy with: 'King Philip Came Over For Good Soup' \u2014 Kingdom, Phylum, Class, Order, Family, Genus, Species. For the three domains, think: 'ABE \u2014 Archaea, Bacteria, Eukaryota'. For binomial names: 'Genus gets the Glory (capital letter); species stays small (lowercase)' \u2014 e.g. Homo sapiens.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Classification</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "The Linnaean Classification System",
-          "icon": "📊",
+          "icon": "\ud83d\udcca",
           "text": "Carl Linnaeus devised a hierarchical system for classifying all living organisms based on shared characteristics.",
           "points": [
-            "<strong>Hierarchy</strong> — Kingdom → Phylum → Class → Order → Family → Genus → Species (largest to smallest group)",
-            "<strong>Mnemonic</strong> — 'King Philip Came Over For Good Soup'",
-            "<strong>Binomial nomenclature</strong> — every species has a two-part Latin name: Genus (capital) + species (lowercase)",
-            "<strong>Example</strong> — Homo sapiens (human); Canis lupus (wolf); Panthera leo (lion)",
-            "<strong>Italicised or underlined</strong> — binomial names are always written in italics or underlined"
+            "<strong>Hierarchy</strong> \u2014 Kingdom \u2192 Phylum \u2192 Class \u2192 Order \u2192 Family \u2192 Genus \u2192 Species (largest to smallest group)",
+            "<strong>Mnemonic</strong> \u2014 'King Philip Came Over For Good Soup'",
+            "<strong>Binomial nomenclature</strong> \u2014 every species has a two-part Latin name: Genus (capital) + species (lowercase)",
+            "<strong>Example</strong> \u2014 Homo sapiens (human); Canis lupus (wolf); Panthera leo (lion)",
+            "<strong>Italicised or underlined</strong> \u2014 binomial names are always written in italics or underlined"
           ]
         },
         {
           "title": "The Three-Domain System",
-          "icon": "🌳",
+          "icon": "\ud83c\udf33",
           "text": "Carl Woese proposed a three-domain system based on molecular (RNA) evidence that replaced the five-kingdom system.",
           "points": [
-            "<strong>Archaea</strong> — primitive prokaryotes found in extreme environments (extremophiles); lack peptidoglycan in cell walls",
-            "<strong>Bacteria</strong> — true bacteria; prokaryotes with peptidoglycan cell walls",
-            "<strong>Eukaryota</strong> — all organisms with a true nucleus, including plants, animals, fungi, and protists",
-            "<strong>Based on ribosomal RNA</strong> — molecular evidence is more reliable than physical appearance alone",
-            "<strong>Replaced five-kingdom system</strong> — Woese's system is now accepted as more accurate"
+            "<strong>Archaea</strong> \u2014 primitive prokaryotes found in extreme environments (extremophiles); lack peptidoglycan in cell walls",
+            "<strong>Bacteria</strong> \u2014 true bacteria; prokaryotes with peptidoglycan cell walls",
+            "<strong>Eukaryota</strong> \u2014 all organisms with a true nucleus, including plants, animals, fungi, and protists",
+            "<strong>Based on ribosomal RNA</strong> \u2014 molecular evidence is more reliable than physical appearance alone",
+            "<strong>Replaced five-kingdom system</strong> \u2014 Woese's system is now accepted as more accurate"
           ]
         },
         {
           "title": "Evolutionary Trees",
-          "icon": "🌿",
+          "icon": "\ud83c\udf3f",
           "text": "Evolutionary trees (phylogenetic trees) show how species are related through common ancestors.",
           "points": [
-            "<strong>Branching points</strong> — represent common ancestors from which species diverged",
-            "<strong>DNA similarity</strong> — the more similar two organisms' DNA, the more recently they shared a common ancestor",
-            "<strong>Can override appearance</strong> — some organisms look similar but are not closely related (convergent evolution); others look different but share recent ancestors",
-            "<strong>Continuously updated</strong> — new DNA evidence regularly revises our understanding of evolutionary relationships"
+            "<strong>Branching points</strong> \u2014 represent common ancestors from which species diverged",
+            "<strong>DNA similarity</strong> \u2014 the more similar two organisms' DNA, the more recently they shared a common ancestor",
+            "<strong>Can override appearance</strong> \u2014 some organisms look similar but are not closely related (convergent evolution); others look different but share recent ancestors",
+            "<strong>Continuously updated</strong> \u2014 new DNA evidence regularly revises our understanding of evolutionary relationships"
           ]
         }
       ],
@@ -717,36 +787,46 @@
         }
       ],
       "examTips": [
-        "The three-domain system is based on DNA and RNA evidence — more reliable than physical appearance because similar appearances can evolve independently (convergent evolution).",
-        "Binomial names: first word is genus (capital letter), second is species (lower case) — BOTH are italicised or underlined.",
-        "Know the full hierarchy order: Kingdom, Phylum, Class, Order, Family, Genus, Species — examiners may ask you to put scrambled levels in order."
+        "The three-domain system is based on DNA and RNA evidence \u2014 more reliable than physical appearance because similar appearances can evolve independently (convergent evolution).",
+        "Binomial names: first word is genus (capital letter), second is species (lower case) \u2014 BOTH are italicised or underlined.",
+        "Know the full hierarchy order: Kingdom, Phylum, Class, Order, Family, Genus, Species \u2014 examiners may ask you to put scrambled levels in order."
       ],
       "commonMistakes": [
-        "Capitalising the species name — only the genus name is capitalised in binomial nomenclature (e.g. Homo sapiens, NOT Homo Sapiens).",
-        "Forgetting that the three-domain system replaced the five-kingdom system — the older system put all bacteria in one kingdom; Woese showed archaea and bacteria are fundamentally different.",
-        "Thinking organisms in the same genus are the same species — a genus can contain many different species (e.g. Panthera includes lions, tigers, and leopards)."
+        "Capitalising the species name \u2014 only the genus name is capitalised in binomial nomenclature (e.g. Homo sapiens, NOT Homo Sapiens).",
+        "Forgetting that the three-domain system replaced the five-kingdom system \u2014 the older system put all bacteria in one kingdom; Woese showed archaea and bacteria are fundamentally different.",
+        "Thinking organisms in the same genus are the same species \u2014 a genus can contain many different species (e.g. Panthera includes lions, tigers, and leopards)."
       ],
       "videos": [
         {
-          "title": "Classification GCSE Biology",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=3m4eo3A2opE"
+          "url": "https://www.youtube.com/watch?v=L6anmd7DnYw",
+          "videoId": "L6anmd7DnYw",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Classification and Evolution",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=vGPHCRuE8jE"
+          "url": "https://www.youtube.com/watch?v=lnvlMlopu2A",
+          "videoId": "lnvlMlopu2A",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Classification",
-          "channel": "Fuse School",
-          "url": "https://www.youtube.com/watch?v=SA02un37GaI"
+          "url": "https://www.youtube.com/watch?v=qRqa454ZIro",
+          "videoId": "qRqa454ZIro",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=Xzy4Ze93G3g",
+          "videoId": "Xzy4Ze93G3g",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=S2O6sVcUtLU",
+          "videoId": "S2O6sVcUtLU",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
         "<strong>Classification</strong> is the organisation of living organisms into groups based on their characteristics. The modern system classifies organisms into three <strong>domains</strong>: Bacteria, Archaea, and Eukarya. Within each domain, organisms are grouped into kingdom, phylum, class, order, family, genus, and species. The more groups two organisms share, the more closely related they are. This hierarchical system was developed by <strong>Carl Linnaeus</strong>.",
         "The <strong>binomial naming system</strong> gives each species a two-part Latin name. The first part is the <strong>genus</strong> and the second is the species. For example, humans are Homo sapiens. This system is used worldwide, avoiding confusion between different common names in different languages. Two organisms belong to the same species if they can interbreed to produce <strong>fertile</strong> offspring.",
-        "Modern classification uses <strong>DNA analysis</strong> in addition to physical characteristics. Organisms with very similar DNA sequences are more closely related and share a more recent common ancestor. This has led to revisions of classification — some organisms that look similar have been found to be distantly related, while others that look different are closely related. <strong>Evolutionary trees</strong> show the relationships between species based on genetic and physical evidence."
+        "Modern classification uses <strong>DNA analysis</strong> in addition to physical characteristics. Organisms with very similar DNA sequences are more closely related and share a more recent common ancestor. This has led to revisions of classification \u2014 some organisms that look similar have been found to be distantly related, while others that look different are closely related. <strong>Evolutionary trees</strong> show the relationships between species based on genetic and physical evidence."
       ]
     }
   }

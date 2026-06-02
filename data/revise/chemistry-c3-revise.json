@@ -3,58 +3,58 @@
   "topics": {
     "Moles and Mass": {
       "intro": "The mole is the unit used to count atoms and molecules. Understanding moles allows chemists to calculate the amounts of substances in reactions.",
-      "mnemonic": "Use the 'Mole Triangle' — draw a triangle with Mass on top, and Moles × Mr at the bottom. Cover what you want to find: Mass = Moles × Mr; Moles = Mass ÷ Mr; Mr = Mass ÷ Moles. Or remember: 'Mr Mole has Mass!' (Mr × Moles = Mass).",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Moles and Mass</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "Use the 'Mole Triangle' \u2014 draw a triangle with Mass on top, and Moles \u00d7 Mr at the bottom. Cover what you want to find: Mass = Moles \u00d7 Mr; Moles = Mass \u00f7 Mr; Mr = Mass \u00f7 Moles. Or remember: 'Mr Mole has Mass!' (Mr \u00d7 Moles = Mass).",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Moles and Mass</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "The Mole",
-          "icon": "🧮",
-          "text": "The mole is the chemist's counting unit. One mole of any substance contains 6.02 × 10²³ particles and has a mass equal to its relative formula mass in grams.",
+          "icon": "\ud83e\uddee",
+          "text": "The mole is the chemist's counting unit. One mole of any substance contains 6.02 \u00d7 10\u00b2\u00b3 particles and has a mass equal to its relative formula mass in grams.",
           "points": [
-            "<strong>1 mole = 6.02 × 10²³ particles</strong> — this is Avogadro's number (NA)",
-            "<strong>Molar mass</strong> — the mass of 1 mole of a substance in grams = its relative formula mass (Mr) in g/mol",
-            "<strong>Formula: moles = mass ÷ Mr</strong> — the most important formula in quantitative chemistry",
-            "<strong>Rearranged: mass = moles × Mr</strong>; Mr = mass ÷ moles",
-            "<strong>Worked example 1</strong> — moles of 18 g of H₂O (Mr = 18): moles = 18 ÷ 18 = 1 mol",
-            "<strong>Worked example 2</strong> — mass of 2 mol of CaCO₃ (Mr = 100): mass = 2 × 100 = 200 g"
+            "<strong>1 mole = 6.02 \u00d7 10\u00b2\u00b3 particles</strong> \u2014 this is Avogadro's number (NA)",
+            "<strong>Molar mass</strong> \u2014 the mass of 1 mole of a substance in grams = its relative formula mass (Mr) in g/mol",
+            "<strong>Formula: moles = mass \u00f7 Mr</strong> \u2014 the most important formula in quantitative chemistry",
+            "<strong>Rearranged: mass = moles \u00d7 Mr</strong>; Mr = mass \u00f7 moles",
+            "<strong>Worked example 1</strong> \u2014 moles of 18 g of H\u2082O (Mr = 18): moles = 18 \u00f7 18 = 1 mol",
+            "<strong>Worked example 2</strong> \u2014 mass of 2 mol of CaCO\u2083 (Mr = 100): mass = 2 \u00d7 100 = 200 g"
           ],
           "callout": {
             "type": "exam",
             "label": "Triangle Formula",
-            "text": "Moles = Mass ÷ Mr | Mass = Moles × Mr | Mr = Mass ÷ Moles"
+            "text": "Moles = Mass \u00f7 Mr | Mass = Moles \u00d7 Mr | Mr = Mass \u00f7 Moles"
           }
         },
         {
           "title": "Relative Formula Mass (Mr)",
-          "icon": "📐",
+          "icon": "\ud83d\udcd0",
           "text": "The relative formula mass (Mr) of a compound is the sum of all relative atomic masses in its formula. It is used in all mole calculations.",
           "points": [
-            "<strong>Add up all relative atomic masses</strong> — use the periodic table for Ar values",
-            "<strong>Example: H₂O</strong> — (2 × 1) + 16 = 18",
-            "<strong>Example: CaCO₃</strong> — 40 + 12 + (3 × 16) = 40 + 12 + 48 = 100",
-            "<strong>Example: H₂SO₄</strong> — (2 × 1) + 32 + (4 × 16) = 2 + 32 + 64 = 98",
-            "<strong>Multiply by subscripts</strong> — e.g. in Ca(OH)₂: Ca + 2×(O + H) = 40 + 2×(16+1) = 40 + 34 = 74",
-            "<strong>Mr has no units</strong> — it is a ratio (relative to carbon-12)"
+            "<strong>Add up all relative atomic masses</strong> \u2014 use the periodic table for Ar values",
+            "<strong>Example: H\u2082O</strong> \u2014 (2 \u00d7 1) + 16 = 18",
+            "<strong>Example: CaCO\u2083</strong> \u2014 40 + 12 + (3 \u00d7 16) = 40 + 12 + 48 = 100",
+            "<strong>Example: H\u2082SO\u2084</strong> \u2014 (2 \u00d7 1) + 32 + (4 \u00d7 16) = 2 + 32 + 64 = 98",
+            "<strong>Multiply by subscripts</strong> \u2014 e.g. in Ca(OH)\u2082: Ca + 2\u00d7(O + H) = 40 + 2\u00d7(16+1) = 40 + 34 = 74",
+            "<strong>Mr has no units</strong> \u2014 it is a ratio (relative to carbon-12)"
           ]
         },
         {
           "title": "Using Moles in Reacting Mass Calculations",
-          "icon": "⚗️",
+          "icon": "\u2697\ufe0f",
           "text": "Molar ratios from balanced equations allow us to calculate the masses of reactants and products.",
           "points": [
-            "<strong>Step 1</strong> — write and balance the equation",
-            "<strong>Step 2</strong> — calculate moles of the given substance (moles = mass ÷ Mr)",
-            "<strong>Step 3</strong> — use the molar ratio from the equation to find moles of the desired substance",
-            "<strong>Step 4</strong> — convert moles back to mass (mass = moles × Mr)",
-            "<strong>Worked example</strong> — 2Mg + O₂ → 2MgO: how much MgO from 24 g Mg (Mr = 24)? Moles Mg = 24÷24 = 1 mol; ratio 2:2 so 1 mol MgO formed; mass MgO = 1 × 40 = 40 g",
-            "<strong>Ratio matters</strong> — always read the coefficients in the balanced equation as the mole ratio"
+            "<strong>Step 1</strong> \u2014 write and balance the equation",
+            "<strong>Step 2</strong> \u2014 calculate moles of the given substance (moles = mass \u00f7 Mr)",
+            "<strong>Step 3</strong> \u2014 use the molar ratio from the equation to find moles of the desired substance",
+            "<strong>Step 4</strong> \u2014 convert moles back to mass (mass = moles \u00d7 Mr)",
+            "<strong>Worked example</strong> \u2014 2Mg + O\u2082 \u2192 2MgO: how much MgO from 24 g Mg (Mr = 24)? Moles Mg = 24\u00f724 = 1 mol; ratio 2:2 so 1 mol MgO formed; mass MgO = 1 \u00d7 40 = 40 g",
+            "<strong>Ratio matters</strong> \u2014 always read the coefficients in the balanced equation as the mole ratio"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Mole",
-          "def": "The amount of substance containing 6.02 × 10²³ particles (Avogadro's number)"
+          "def": "The amount of substance containing 6.02 \u00d7 10\u00b2\u00b3 particles (Avogadro's number)"
         },
         {
           "term": "Relative formula mass (Mr)",
@@ -62,11 +62,11 @@
         },
         {
           "term": "Molar mass",
-          "def": "The mass of one mole of a substance in grams — numerically equal to Mr"
+          "def": "The mass of one mole of a substance in grams \u2014 numerically equal to Mr"
         },
         {
           "term": "Avogadro's number",
-          "def": "6.02 × 10²³ — the number of particles in one mole of any substance"
+          "def": "6.02 \u00d7 10\u00b2\u00b3 \u2014 the number of particles in one mole of any substance"
         },
         {
           "term": "Molar ratio",
@@ -78,85 +78,105 @@
         }
       ],
       "examTips": [
-        "Show working clearly in all mole calculations — write the formula, substitute values, then calculate.",
-        "moles = mass ÷ Mr is the key formula; always identify which substance you're calculating moles for first.",
-        "Always check units: mass in grams, volume in dm³ — never mix units mid-calculation.",
-        "Multiply by subscripts when calculating Mr — e.g. for SO₄²⁻: 32 + (4 × 16) = 96."
+        "Show working clearly in all mole calculations \u2014 write the formula, substitute values, then calculate.",
+        "moles = mass \u00f7 Mr is the key formula; always identify which substance you're calculating moles for first.",
+        "Always check units: mass in grams, volume in dm\u00b3 \u2014 never mix units mid-calculation.",
+        "Multiply by subscripts when calculating Mr \u2014 e.g. for SO\u2084\u00b2\u207b: 32 + (4 \u00d7 16) = 96."
       ],
       "commonMistakes": [
-        "Using mass number from the periodic table instead of relative atomic mass — for GCSE these are often the same, but use the Ar value.",
-        "Forgetting to multiply by subscripts in formulas — e.g. O₃ = 3 × 16 = 48, not 16.",
-        "Not reading the molar ratio from the balanced equation — a 2:1 ratio means you must halve or double the moles."
+        "Using mass number from the periodic table instead of relative atomic mass \u2014 for GCSE these are often the same, but use the Ar value.",
+        "Forgetting to multiply by subscripts in formulas \u2014 e.g. O\u2083 = 3 \u00d7 16 = 48, not 16.",
+        "Not reading the molar ratio from the balanced equation \u2014 a 2:1 ratio means you must halve or double the moles."
       ],
       "videos": [
         {
-          "title": "Moles GCSE Chemistry",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=A14tDuFxNlg"
+          "url": "https://www.youtube.com/watch?v=3Cq1Std7Mb8",
+          "videoId": "3Cq1Std7Mb8",
+          "channel": "FuseSchools"
         },
         {
-          "title": "The Mole",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=A14tDuFxNlg"
+          "url": "https://www.youtube.com/watch?v=UxOC6PGKkmo",
+          "videoId": "UxOC6PGKkmo",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Moles and Molar Mass",
-          "channel": "Fuse School",
-          "url": "https://www.youtube.com/watch?v=TYHI4YW3MnI"
+          "url": "https://www.youtube.com/watch?v=rNOyYegPsiE",
+          "videoId": "rNOyYegPsiE",
+          "channel": "FuseSchools"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=b_JS_Ubqogs",
+          "videoId": "b_JS_Ubqogs",
+          "channel": "FuseSchools"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=kBlmEfS_P00",
+          "videoId": "kBlmEfS_P00",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=Md4BQL91U6w",
+          "videoId": "Md4BQL91U6w",
+          "channel": "Free Science Lessons"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=-_-fNVmDwJk",
+          "videoId": "-_-fNVmDwJk",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
-        "The <strong>mole</strong> is the unit used by chemists to measure amounts of substance. One mole contains 6.02 × 10²³ particles — this is called <strong>Avogadro's number</strong>. The <strong>molar mass</strong> of a substance is its relative formula mass in grams. For example, one mole of water (H₂O) has a molar mass of 18 g/mol. The formula to calculate moles is: moles = mass ÷ <strong>molar mass</strong>.",
+        "The <strong>mole</strong> is the unit used by chemists to measure amounts of substance. One mole contains 6.02 \u00d7 10\u00b2\u00b3 particles \u2014 this is called <strong>Avogadro's number</strong>. The <strong>molar mass</strong> of a substance is its relative formula mass in grams. For example, one mole of water (H\u2082O) has a molar mass of 18 g/mol. The formula to calculate moles is: moles = mass \u00f7 <strong>molar mass</strong>.",
         "The <strong>relative formula mass</strong> (Mr) of a compound is calculated by adding up the relative atomic masses of all the atoms in its formula. For example, NaCl has an Mr of 23 + 35.5 = 58.5. Using moles allows chemists to calculate the exact <strong>masses</strong> of reactants and products in a chemical reaction. <strong>Reacting masses</strong> can be calculated by using the molar ratio from the balanced equation.",
         "Chemists use the concept of the <strong>mole</strong> to work out how much of each reactant is needed and how much product is made. The <strong>balanced equation</strong> gives the ratio of moles of reactants to products. For example, if 2 moles of hydrogen react with 1 mole of oxygen, 2 moles of water are produced. Using this ratio and molar masses, the masses of reactants and products in any reaction can be calculated."
       ]
     },
     "Conservation of Mass": {
-      "intro": "In chemical reactions, mass is always conserved — atoms are rearranged but not created or destroyed.",
-      "mnemonic": "Remember: 'Atoms are like Lego bricks — you rearrange them but never lose them.' Mass in = Mass out. If mass seems to change, think: is a GAS escaping (mass decreases) or is a gas being ABSORBED from the air (mass increases)?",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Conservation of Mass</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "intro": "In chemical reactions, mass is always conserved \u2014 atoms are rearranged but not created or destroyed.",
+      "mnemonic": "Remember: 'Atoms are like Lego bricks \u2014 you rearrange them but never lose them.' Mass in = Mass out. If mass seems to change, think: is a GAS escaping (mass decreases) or is a gas being ABSORBED from the air (mass increases)?",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Conservation of Mass</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "The Law of Conservation of Mass",
-          "icon": "⚖️",
+          "icon": "\u2696\ufe0f",
           "text": "In any chemical reaction, the total mass of reactants equals the total mass of products. No atoms are created or destroyed.",
           "points": [
-            "<strong>Total mass of reactants = total mass of products</strong> — always, in any reaction",
-            "<strong>Atoms are rearranged</strong> — bonds are broken and new ones form, but atoms are not created or destroyed",
-            "<strong>Balanced equations reflect this</strong> — same number of each type of atom on both sides",
-            "<strong>Apparent mass decrease</strong> — a gas has been produced and escaped (e.g. CO₂ from CaCO₃ decomposition)",
-            "<strong>Apparent mass increase</strong> — a gas has been absorbed from the air (e.g. magnesium burning in oxygen — Mg + O₂ → MgO)",
-            "<strong>Closed vs open systems</strong> — in a closed system, mass is always constant; in an open system, gases can escape"
+            "<strong>Total mass of reactants = total mass of products</strong> \u2014 always, in any reaction",
+            "<strong>Atoms are rearranged</strong> \u2014 bonds are broken and new ones form, but atoms are not created or destroyed",
+            "<strong>Balanced equations reflect this</strong> \u2014 same number of each type of atom on both sides",
+            "<strong>Apparent mass decrease</strong> \u2014 a gas has been produced and escaped (e.g. CO\u2082 from CaCO\u2083 decomposition)",
+            "<strong>Apparent mass increase</strong> \u2014 a gas has been absorbed from the air (e.g. magnesium burning in oxygen \u2014 Mg + O\u2082 \u2192 MgO)",
+            "<strong>Closed vs open systems</strong> \u2014 in a closed system, mass is always constant; in an open system, gases can escape"
           ]
         },
         {
           "title": "Balancing Equations",
-          "icon": "⚗️",
+          "icon": "\u2697\ufe0f",
           "text": "Balanced equations ensure the same number of atoms appear on each side, reflecting conservation of mass.",
           "points": [
-            "<strong>Add coefficients (big numbers)</strong> in front of formulas — never change subscripts within a formula",
-            "<strong>Check each element</strong> — count atoms on each side; adjust coefficients until equal",
-            "<strong>Example</strong> — H₂ + Cl₂ → 2HCl: 2 H and 2 Cl each side; balanced",
-            "<strong>Example</strong> — CH₄ + 2O₂ → CO₂ + 2H₂O: C:1=1, H:4=4, O:4=4; balanced",
-            "<strong>Ionic equations</strong> — can also be balanced; charge must balance as well as atoms",
-            "<strong>State symbols</strong> — (s) solid, (l) liquid, (g) gas, (aq) aqueous (dissolved)"
+            "<strong>Add coefficients (big numbers)</strong> in front of formulas \u2014 never change subscripts within a formula",
+            "<strong>Check each element</strong> \u2014 count atoms on each side; adjust coefficients until equal",
+            "<strong>Example</strong> \u2014 H\u2082 + Cl\u2082 \u2192 2HCl: 2 H and 2 Cl each side; balanced",
+            "<strong>Example</strong> \u2014 CH\u2084 + 2O\u2082 \u2192 CO\u2082 + 2H\u2082O: C:1=1, H:4=4, O:4=4; balanced",
+            "<strong>Ionic equations</strong> \u2014 can also be balanced; charge must balance as well as atoms",
+            "<strong>State symbols</strong> \u2014 (s) solid, (l) liquid, (g) gas, (aq) aqueous (dissolved)"
           ],
           "callout": {
             "type": "exam",
             "label": "Example",
-            "text": "H₂ + Cl₂ → 2HCl (balanced: 2 H atoms and 2 Cl atoms on each side)"
+            "text": "H\u2082 + Cl\u2082 \u2192 2HCl (balanced: 2 H atoms and 2 Cl atoms on each side)"
           }
         },
         {
           "title": "Reacting Mass Calculations using Conservation of Mass",
-          "icon": "🧮",
+          "icon": "\ud83e\uddee",
           "text": "Conservation of mass allows us to find missing masses in reactions without needing to know the full equation.",
           "points": [
-            "<strong>Find missing mass</strong> — if all other masses are known: missing mass = total reactant mass − known product masses",
-            "<strong>Worked example</strong> — 10 g CaCO₃ heated; 5.6 g CaO remains. Mass of CO₂ = 10 − 5.6 = 4.4 g",
-            "<strong>Verify with formula masses</strong> — CaCO₃ (Mr = 100), CaO (Mr = 56), CO₂ (Mr = 44): ratio 100:56:44 matches",
-            "<strong>Percentage composition</strong> — % by mass of element = (Ar × number of atoms ÷ Mr) × 100",
-            "<strong>Example % composition</strong> — % Fe in Fe₂O₃: Mr = 160; % Fe = (2×56 ÷ 160) × 100 = 70%"
+            "<strong>Find missing mass</strong> \u2014 if all other masses are known: missing mass = total reactant mass \u2212 known product masses",
+            "<strong>Worked example</strong> \u2014 10 g CaCO\u2083 heated; 5.6 g CaO remains. Mass of CO\u2082 = 10 \u2212 5.6 = 4.4 g",
+            "<strong>Verify with formula masses</strong> \u2014 CaCO\u2083 (Mr = 100), CaO (Mr = 56), CO\u2082 (Mr = 44): ratio 100:56:44 matches",
+            "<strong>Percentage composition</strong> \u2014 % by mass of element = (Ar \u00d7 number of atoms \u00f7 Mr) \u00d7 100",
+            "<strong>Example % composition</strong> \u2014 % Fe in Fe\u2082O\u2083: Mr = 160; % Fe = (2\u00d756 \u00f7 160) \u00d7 100 = 70%"
           ]
         }
       ],
@@ -179,7 +199,7 @@
         },
         {
           "term": "Closed system",
-          "def": "A system where no matter can enter or leave — total mass is always constant"
+          "def": "A system where no matter can enter or leave \u2014 total mass is always constant"
         },
         {
           "term": "Percentage composition",
@@ -188,94 +208,99 @@
       ],
       "examTips": [
         "If a reaction in an open container appears to lose mass, always state: 'a gas was produced and escaped into the atmosphere'.",
-        "Always check balanced equations before using them in calculations — AQA may give unbalanced equations to test this.",
-        "When finding a missing mass, simply subtract known product masses from total reactant mass — show this clearly in your working."
+        "Always check balanced equations before using them in calculations \u2014 AQA may give unbalanced equations to test this.",
+        "When finding a missing mass, simply subtract known product masses from total reactant mass \u2014 show this clearly in your working."
       ],
       "commonMistakes": [
-        "Forgetting that in an open container, gas can escape — causing an apparent mass decrease, not a violation of conservation of mass.",
-        "Changing subscripts to balance equations instead of adding coefficients — NEVER change subscripts (e.g. H₂O must stay H₂O, not H₃O).",
-        "Not accounting for all products — remember reactions can produce gases like CO₂ or H₂O vapour that aren't always obvious."
+        "Forgetting that in an open container, gas can escape \u2014 causing an apparent mass decrease, not a violation of conservation of mass.",
+        "Changing subscripts to balance equations instead of adding coefficients \u2014 NEVER change subscripts (e.g. H\u2082O must stay H\u2082O, not H\u2083O).",
+        "Not accounting for all products \u2014 remember reactions can produce gases like CO\u2082 or H\u2082O vapour that aren't always obvious."
       ],
       "videos": [
         {
-          "title": "Conservation of Mass",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=C_-bQ8LFwIQ"
+          "url": "https://www.youtube.com/watch?v=JCyjLPYXl1I",
+          "videoId": "JCyjLPYXl1I",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Balancing Equations",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=UWRYLRxZq5U"
+          "url": "https://www.youtube.com/watch?v=YZi5DnMX0XM",
+          "videoId": "YZi5DnMX0XM",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=K4pw_-U6Xpc",
+          "videoId": "K4pw_-U6Xpc",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
-        "The <strong>law of conservation of mass</strong> states that mass is neither created nor destroyed in a chemical reaction. The total mass of the <strong>reactants</strong> equals the total mass of the <strong>products</strong>. This is because atoms are rearranged but not created or destroyed. Chemical equations must be <strong>balanced</strong> — the number of each type of atom must be the same on both sides of the equation.",
+        "The <strong>law of conservation of mass</strong> states that mass is neither created nor destroyed in a chemical reaction. The total mass of the <strong>reactants</strong> equals the total mass of the <strong>products</strong>. This is because atoms are rearranged but not created or destroyed. Chemical equations must be <strong>balanced</strong> \u2014 the number of each type of atom must be the same on both sides of the equation.",
         "When a reaction appears to show a change in mass, it can usually be explained. If a solid seems to gain mass, it may be reacting with <strong>oxygen</strong> from the air. If mass appears to be lost, it may be because a <strong>gas</strong> has been produced and escaped. For example, when calcium carbonate is heated, carbon dioxide gas is released, so the solid remaining has less mass. In a closed system, <strong>total mass</strong> always remains constant.",
-        "<strong>Balancing equations</strong> reflects the law of conservation of mass. In a balanced equation, the number of atoms of each element is equal on both sides. Coefficients are placed in front of <strong>formulae</strong> to balance the equation — never subscripts within the formula. For example, the equation for burning hydrogen: 2H₂ + O₂ → 2H₂O shows that 2 moles of hydrogen react with 1 mole of <strong>oxygen</strong> to produce 2 moles of water."
+        "<strong>Balancing equations</strong> reflects the law of conservation of mass. In a balanced equation, the number of atoms of each element is equal on both sides. Coefficients are placed in front of <strong>formulae</strong> to balance the equation \u2014 never subscripts within the formula. For example, the equation for burning hydrogen: 2H\u2082 + O\u2082 \u2192 2H\u2082O shows that 2 moles of hydrogen react with 1 mole of <strong>oxygen</strong> to produce 2 moles of water."
       ]
     },
     "Yield and Atom Economy": {
       "intro": "In real reactions, the actual yield is often less than the theoretical maximum. Atom economy measures how efficiently reactant atoms end up in useful products.",
-      "mnemonic": "For % yield: 'What you GOT over what you were SUPPOSED to get, × 100' — GOT ÷ SUPPOSED × 100. For atom economy: 'Useful Mr over All Mr × 100' — think of a factory: atom economy = useful output ÷ total output × 100. High both = green chemistry!",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Yield and Atom Economy</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "For % yield: 'What you GOT over what you were SUPPOSED to get, \u00d7 100' \u2014 GOT \u00f7 SUPPOSED \u00d7 100. For atom economy: 'Useful Mr over All Mr \u00d7 100' \u2014 think of a factory: atom economy = useful output \u00f7 total output \u00d7 100. High both = green chemistry!",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Yield and Atom Economy</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Percentage Yield",
-          "icon": "📊",
+          "icon": "\ud83d\udcca",
           "text": "Percentage yield compares how much product was actually made to the theoretical maximum. It is always 100% or less.",
           "points": [
-            "<strong>Formula</strong> — % yield = (actual yield ÷ theoretical yield) × 100",
-            "<strong>Theoretical yield</strong> — maximum mass of product possible, calculated from moles",
-            "<strong>Actual yield</strong> — mass of product actually obtained in the experiment",
-            "<strong>Reasons yield < 100%</strong> — reversible reaction doesn't go to completion; product lost in filtration/evaporation; side reactions occur; incomplete reaction",
-            "<strong>Worked example</strong> — theoretical yield = 50 g; actual yield = 35 g: % yield = (35 ÷ 50) × 100 = 70%",
-            "<strong>Industrial importance</strong> — higher yield = less waste, lower cost, more profitable"
+            "<strong>Formula</strong> \u2014 % yield = (actual yield \u00f7 theoretical yield) \u00d7 100",
+            "<strong>Theoretical yield</strong> \u2014 maximum mass of product possible, calculated from moles",
+            "<strong>Actual yield</strong> \u2014 mass of product actually obtained in the experiment",
+            "<strong>Reasons yield < 100%</strong> \u2014 reversible reaction doesn't go to completion; product lost in filtration/evaporation; side reactions occur; incomplete reaction",
+            "<strong>Worked example</strong> \u2014 theoretical yield = 50 g; actual yield = 35 g: % yield = (35 \u00f7 50) \u00d7 100 = 70%",
+            "<strong>Industrial importance</strong> \u2014 higher yield = less waste, lower cost, more profitable"
           ],
           "callout": {
             "type": "exam",
             "label": "Formula",
-            "text": "% yield = (actual yield ÷ theoretical yield) × 100"
+            "text": "% yield = (actual yield \u00f7 theoretical yield) \u00d7 100"
           }
         },
         {
           "title": "Atom Economy",
-          "icon": "♻️",
+          "icon": "\u267b\ufe0f",
           "text": "Atom economy measures what percentage of the total mass of reactant atoms ends up in the desired product. High atom economy = less waste.",
           "points": [
-            "<strong>Formula</strong> — % atom economy = (Mr of desired product ÷ sum of Mr of all products) × 100",
-            "<strong>High atom economy</strong> — more atoms end up in useful product; less waste; more sustainable",
-            "<strong>Addition reactions = 100% atom economy</strong> — all atoms from reactants go into the single product",
-            "<strong>Substitution reactions</strong> — have lower atom economy because by-products are also formed",
-            "<strong>Worked example</strong> — CH₂=CH₂ + H₂ → CH₃CH₃ (addition): all atoms in product = 100% atom economy",
-            "<strong>Worked example 2</strong> — CaCO₃ → CaO + CO₂: desired product CaO (Mr = 56); all products 56+44 = 100: atom economy = (56÷100)×100 = 56%"
+            "<strong>Formula</strong> \u2014 % atom economy = (Mr of desired product \u00f7 sum of Mr of all products) \u00d7 100",
+            "<strong>High atom economy</strong> \u2014 more atoms end up in useful product; less waste; more sustainable",
+            "<strong>Addition reactions = 100% atom economy</strong> \u2014 all atoms from reactants go into the single product",
+            "<strong>Substitution reactions</strong> \u2014 have lower atom economy because by-products are also formed",
+            "<strong>Worked example</strong> \u2014 CH\u2082=CH\u2082 + H\u2082 \u2192 CH\u2083CH\u2083 (addition): all atoms in product = 100% atom economy",
+            "<strong>Worked example 2</strong> \u2014 CaCO\u2083 \u2192 CaO + CO\u2082: desired product CaO (Mr = 56); all products 56+44 = 100: atom economy = (56\u00f7100)\u00d7100 = 56%"
           ],
           "callout": {
             "type": "exam",
             "label": "Formula",
-            "text": "% atom economy = (Mr of desired product ÷ sum of Mr of all products) × 100"
+            "text": "% atom economy = (Mr of desired product \u00f7 sum of Mr of all products) \u00d7 100"
           }
         },
         {
           "title": "Green Chemistry and Sustainability",
-          "icon": "🌿",
+          "icon": "\ud83c\udf3f",
           "text": "Both percentage yield and atom economy are important in making industrial chemistry more sustainable and economically viable.",
           "points": [
-            "<strong>Green chemistry</strong> — aims for high yield AND high atom economy to reduce waste and energy use",
-            "<strong>High yield</strong> — means less raw material is wasted; more economical",
-            "<strong>High atom economy</strong> — fewer by-products to dispose of; reduces pollution; more sustainable",
-            "<strong>Catalysts improve both</strong> — increase rate and yield without appearing in the products; not consumed",
-            "<strong>Industrial trade-off</strong> — the most atom-economical reaction may not always be the fastest or cheapest"
+            "<strong>Green chemistry</strong> \u2014 aims for high yield AND high atom economy to reduce waste and energy use",
+            "<strong>High yield</strong> \u2014 means less raw material is wasted; more economical",
+            "<strong>High atom economy</strong> \u2014 fewer by-products to dispose of; reduces pollution; more sustainable",
+            "<strong>Catalysts improve both</strong> \u2014 increase rate and yield without appearing in the products; not consumed",
+            "<strong>Industrial trade-off</strong> \u2014 the most atom-economical reaction may not always be the fastest or cheapest"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Percentage yield",
-          "def": "The actual yield as a percentage of the maximum theoretical yield: (actual ÷ theoretical) × 100"
+          "def": "The actual yield as a percentage of the maximum theoretical yield: (actual \u00f7 theoretical) \u00d7 100"
         },
         {
           "term": "Atom economy",
-          "def": "The proportion of reactant atoms that end up in the desired product: (Mr of desired product ÷ total Mr of all products) × 100"
+          "def": "The proportion of reactant atoms that end up in the desired product: (Mr of desired product \u00f7 total Mr of all products) \u00d7 100"
         },
         {
           "term": "Theoretical yield",
@@ -291,88 +316,108 @@
         },
         {
           "term": "Addition reaction",
-          "def": "A reaction where all atoms from the reactants combine into one product — gives 100% atom economy"
+          "def": "A reaction where all atoms from the reactants combine into one product \u2014 gives 100% atom economy"
         }
       ],
       "examTips": [
-        "% yield asks: how much did we get vs how much we expected? Atom economy asks: of all the atoms used, how many ended up in useful product? — distinguish these clearly.",
-        "Addition reactions always have 100% atom economy — state this and the reason (only one product formed).",
+        "% yield asks: how much did we get vs how much we expected? Atom economy asks: of all the atoms used, how many ended up in useful product? \u2014 distinguish these clearly.",
+        "Addition reactions always have 100% atom economy \u2014 state this and the reason (only one product formed).",
         "Show all working for % yield calculations: write formula, substitute actual and theoretical values, calculate."
       ],
       "commonMistakes": [
-        "Confusing % yield (comparing actual to expected amount) with atom economy (how efficiently atoms are used) — they measure different things.",
-        "Calculating atom economy using masses of reactants instead of masses of products — use the Mr of products, not reactants.",
-        "Saying % yield can be greater than 100% — it cannot; actual yield cannot exceed theoretical yield."
+        "Confusing % yield (comparing actual to expected amount) with atom economy (how efficiently atoms are used) \u2014 they measure different things.",
+        "Calculating atom economy using masses of reactants instead of masses of products \u2014 use the Mr of products, not reactants.",
+        "Saying % yield can be greater than 100% \u2014 it cannot; actual yield cannot exceed theoretical yield."
       ],
       "videos": [
         {
-          "title": "Yield and Atom Economy",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=FuU6DW9x0bc"
+          "url": "https://www.youtube.com/watch?v=Zuyk4hfbjSA",
+          "videoId": "Zuyk4hfbjSA",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Percentage Yield",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=pj9mD8WXWZ8"
+          "url": "https://www.youtube.com/watch?v=eZCtGJwns0Q",
+          "videoId": "eZCtGJwns0Q",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=DIird9oZVII",
+          "videoId": "DIird9oZVII",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=8B_9nVR2Xlw",
+          "videoId": "8B_9nVR2Xlw",
+          "channel": "Free Science Lessons"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=9EV0Oq8g708",
+          "videoId": "9EV0Oq8g708",
+          "channel": "Free Science Lessons"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=A3ndfwX5lyI",
+          "videoId": "A3ndfwX5lyI",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
-        "The <strong>percentage yield</strong> of a reaction compares the actual amount of product obtained to the maximum theoretical yield. It is calculated as: (actual yield ÷ theoretical yield) × 100. Yields are rarely 100% because reactions may be reversible, some product may be lost during separation, or side reactions may occur. Maximising <strong>yield</strong> is important in industrial chemistry to reduce waste and increase profitability.",
-        "<strong>Atom economy</strong> measures how much of the starting materials end up as useful product. The formula is: (molar mass of desired product ÷ total molar mass of all products) × 100. A high atom economy means less waste is produced. <strong>Addition reactions</strong> have 100% atom economy because only one product is formed. <strong>Substitution reactions</strong> have lower atom economy as other products are also formed. High atom economy is important for sustainable chemistry.",
+        "The <strong>percentage yield</strong> of a reaction compares the actual amount of product obtained to the maximum theoretical yield. It is calculated as: (actual yield \u00f7 theoretical yield) \u00d7 100. Yields are rarely 100% because reactions may be reversible, some product may be lost during separation, or side reactions may occur. Maximising <strong>yield</strong> is important in industrial chemistry to reduce waste and increase profitability.",
+        "<strong>Atom economy</strong> measures how much of the starting materials end up as useful product. The formula is: (molar mass of desired product \u00f7 total molar mass of all products) \u00d7 100. A high atom economy means less waste is produced. <strong>Addition reactions</strong> have 100% atom economy because only one product is formed. <strong>Substitution reactions</strong> have lower atom economy as other products are also formed. High atom economy is important for sustainable chemistry.",
         "In industrial chemistry, both <strong>percentage yield</strong> and <strong>atom economy</strong> are important. A high atom economy means the reaction produces fewer unwanted by-products, reducing waste and the cost of disposal. Industrial chemists try to find reaction conditions and <strong>catalysts</strong> that maximise yield and atom economy. The principles of <strong>green chemistry</strong> aim to design processes that are more efficient, less wasteful, and less harmful to the environment."
       ]
     },
     "Concentration": {
       "intro": "Concentration measures how much solute is dissolved in a given volume of solution. It is essential for quantitative chemistry calculations.",
-      "mnemonic": "Use the 'CVn triangle' — Concentration (mol/dm³), Volume (dm³), moles (n) — just like the moles triangle. Cover the variable you want: C = n ÷ V; n = C × V; V = n ÷ C. Always convert cm³ to dm³ by dividing by 1000 BEFORE using the formula!",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Concentration</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "Use the 'CVn triangle' \u2014 Concentration (mol/dm\u00b3), Volume (dm\u00b3), moles (n) \u2014 just like the moles triangle. Cover the variable you want: C = n \u00f7 V; n = C \u00d7 V; V = n \u00f7 C. Always convert cm\u00b3 to dm\u00b3 by dividing by 1000 BEFORE using the formula!",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Concentration</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Concentration Formula",
-          "icon": "📐",
-          "text": "Concentration tells us how many moles of solute are in each dm³ of solution. The higher the concentration, the more solute particles per unit volume.",
+          "icon": "\ud83d\udcd0",
+          "text": "Concentration tells us how many moles of solute are in each dm\u00b3 of solution. The higher the concentration, the more solute particles per unit volume.",
           "points": [
-            "<strong>Formula</strong> — concentration (mol/dm³) = moles ÷ volume (dm³)",
-            "<strong>Also</strong> — concentration (g/dm³) = mass (g) ÷ volume (dm³)",
-            "<strong>Units</strong> — mol/dm³ (most common); g/dm³; M (molar — same as mol/dm³)",
-            "<strong>Worked example 1</strong> — 0.5 mol NaCl dissolved in 2 dm³: concentration = 0.5 ÷ 2 = 0.25 mol/dm³",
-            "<strong>Worked example 2</strong> — 2 mol/dm³ HCl, 250 cm³ (= 0.25 dm³): moles = 2 × 0.25 = 0.5 mol",
-            "<strong>Effect on rate</strong> — more concentrated solution → more solute particles per dm³ → more frequent collisions → faster reaction"
+            "<strong>Formula</strong> \u2014 concentration (mol/dm\u00b3) = moles \u00f7 volume (dm\u00b3)",
+            "<strong>Also</strong> \u2014 concentration (g/dm\u00b3) = mass (g) \u00f7 volume (dm\u00b3)",
+            "<strong>Units</strong> \u2014 mol/dm\u00b3 (most common); g/dm\u00b3; M (molar \u2014 same as mol/dm\u00b3)",
+            "<strong>Worked example 1</strong> \u2014 0.5 mol NaCl dissolved in 2 dm\u00b3: concentration = 0.5 \u00f7 2 = 0.25 mol/dm\u00b3",
+            "<strong>Worked example 2</strong> \u2014 2 mol/dm\u00b3 HCl, 250 cm\u00b3 (= 0.25 dm\u00b3): moles = 2 \u00d7 0.25 = 0.5 mol",
+            "<strong>Effect on rate</strong> \u2014 more concentrated solution \u2192 more solute particles per dm\u00b3 \u2192 more frequent collisions \u2192 faster reaction"
           ],
           "callout": {
             "type": "exam",
             "label": "Formula",
-            "text": "Concentration (mol/dm³) = moles ÷ volume (dm³). Also: concentration (g/dm³) = mass ÷ volume"
+            "text": "Concentration (mol/dm\u00b3) = moles \u00f7 volume (dm\u00b3). Also: concentration (g/dm\u00b3) = mass \u00f7 volume"
           }
         },
         {
           "title": "Converting Units",
-          "icon": "📏",
-          "text": "Volume unit conversion is a common source of errors. Always convert cm³ to dm³ before using in the concentration formula.",
+          "icon": "\ud83d\udccf",
+          "text": "Volume unit conversion is a common source of errors. Always convert cm\u00b3 to dm\u00b3 before using in the concentration formula.",
           "points": [
-            "<strong>1 dm³ = 1000 cm³ = 1 litre</strong>",
-            "<strong>cm³ → dm³: divide by 1000</strong> — e.g. 250 cm³ = 0.25 dm³",
-            "<strong>dm³ → cm³: multiply by 1000</strong> — e.g. 0.1 dm³ = 100 cm³",
-            "<strong>More concentrated</strong> — more solute particles dissolved in the same volume of solution"
+            "<strong>1 dm\u00b3 = 1000 cm\u00b3 = 1 litre</strong>",
+            "<strong>cm\u00b3 \u2192 dm\u00b3: divide by 1000</strong> \u2014 e.g. 250 cm\u00b3 = 0.25 dm\u00b3",
+            "<strong>dm\u00b3 \u2192 cm\u00b3: multiply by 1000</strong> \u2014 e.g. 0.1 dm\u00b3 = 100 cm\u00b3",
+            "<strong>More concentrated</strong> \u2014 more solute particles dissolved in the same volume of solution"
           ]
         },
         {
           "title": "Titration and Calculating Concentrations",
-          "icon": "🧪",
+          "icon": "\ud83e\uddea",
           "text": "Titration is a practical technique used to find the concentration of an unknown solution using a solution of known concentration.",
           "points": [
-            "<strong>Titration</strong> — add solution from a burette to a known volume of another solution until the endpoint (indicator changes colour)",
-          "<strong>Using titration data</strong> — moles of known solution = concentration × volume (in dm³); use molar ratio from equation; find moles of unknown; concentration = moles ÷ volume",
-            "<strong>Worked example</strong> — 25 cm³ NaOH neutralised by 20 cm³ of 0.1 mol/dm³ HCl: moles HCl = 0.1 × 0.020 = 0.002 mol; ratio 1:1 so moles NaOH = 0.002 mol; concentration NaOH = 0.002 ÷ 0.025 = 0.08 mol/dm³",
-            "<strong>Repeat titrations</strong> — perform concordant titrations (within 0.10 cm³) and average for accuracy",
-            "<strong>Indicator choice</strong> — methyl orange for strong acid/strong base; phenolphthalein also used"
+            "<strong>Titration</strong> \u2014 add solution from a burette to a known volume of another solution until the endpoint (indicator changes colour)",
+            "<strong>Using titration data</strong> \u2014 moles of known solution = concentration \u00d7 volume (in dm\u00b3); use molar ratio from equation; find moles of unknown; concentration = moles \u00f7 volume",
+            "<strong>Worked example</strong> \u2014 25 cm\u00b3 NaOH neutralised by 20 cm\u00b3 of 0.1 mol/dm\u00b3 HCl: moles HCl = 0.1 \u00d7 0.020 = 0.002 mol; ratio 1:1 so moles NaOH = 0.002 mol; concentration NaOH = 0.002 \u00f7 0.025 = 0.08 mol/dm\u00b3",
+            "<strong>Repeat titrations</strong> \u2014 perform concordant titrations (within 0.10 cm\u00b3) and average for accuracy",
+            "<strong>Indicator choice</strong> \u2014 methyl orange for strong acid/strong base; phenolphthalein also used"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Concentration",
-          "def": "The amount of solute dissolved per unit volume of solution, measured in mol/dm³ or g/dm³"
+          "def": "The amount of solute dissolved per unit volume of solution, measured in mol/dm\u00b3 or g/dm\u00b3"
         },
         {
           "term": "Solute",
@@ -383,8 +428,8 @@
           "def": "The liquid in which a solute dissolves (often water in chemistry)"
         },
         {
-          "term": "dm³",
-          "def": "Cubic decimetre — a unit of volume equal to 1000 cm³ (1 litre)"
+          "term": "dm\u00b3",
+          "def": "Cubic decimetre \u2014 a unit of volume equal to 1000 cm\u00b3 (1 litre)"
         },
         {
           "term": "Titration",
@@ -392,97 +437,112 @@
         },
         {
           "term": "Concordant titres",
-          "def": "Titration readings within 0.10 cm³ of each other — used to calculate a reliable average"
+          "def": "Titration readings within 0.10 cm\u00b3 of each other \u2014 used to calculate a reliable average"
         }
       ],
       "examTips": [
-        "ALWAYS convert cm³ to dm³ (÷1000) before using in the concentration formula — this is the most common error in titration calculations.",
-        "For titration calculations, always show the 4 steps: moles of known → ratio → moles of unknown → concentration.",
-        "Concentration in mol/dm³ is most common in AQA papers; g/dm³ may also appear — check which unit is asked for."
+        "ALWAYS convert cm\u00b3 to dm\u00b3 (\u00f71000) before using in the concentration formula \u2014 this is the most common error in titration calculations.",
+        "For titration calculations, always show the 4 steps: moles of known \u2192 ratio \u2192 moles of unknown \u2192 concentration.",
+        "Concentration in mol/dm\u00b3 is most common in AQA papers; g/dm\u00b3 may also appear \u2014 check which unit is asked for."
       ],
       "commonMistakes": [
-        "Forgetting to convert cm³ to dm³ before calculating concentration — dividing by 1000 is essential.",
-        "Using the wrong molar ratio in titration calculations — always write and balance the equation first.",
-        "Quoting titration averages using anomalous results — only average concordant titres (within 0.10 cm³)."
+        "Forgetting to convert cm\u00b3 to dm\u00b3 before calculating concentration \u2014 dividing by 1000 is essential.",
+        "Using the wrong molar ratio in titration calculations \u2014 always write and balance the equation first.",
+        "Quoting titration averages using anomalous results \u2014 only average concordant titres (within 0.10 cm\u00b3)."
       ],
       "videos": [
         {
-          "title": "Concentration Calculations",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=7QExnFTEaCA"
+          "url": "https://www.youtube.com/watch?v=XCX0PkZdUjM",
+          "videoId": "XCX0PkZdUjM",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Concentration GCSE Chemistry",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=7QExnFTEaCA"
+          "url": "https://www.youtube.com/watch?v=6VH1Joe64b8",
+          "videoId": "6VH1Joe64b8",
+          "channel": "FuseSchools"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=rluAIfmi7x8",
+          "videoId": "rluAIfmi7x8",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=3G3KQIyoZDI",
+          "videoId": "3G3KQIyoZDI",
+          "channel": "Free Science Lessons"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=Z93_atEmxNI",
+          "videoId": "Z93_atEmxNI",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
-        "The <strong>concentration</strong> of a solution is the amount of solute dissolved in a given volume of solvent. It is measured in mol/dm³ (moles per cubic decimetre) or g/dm³ (grams per cubic decimetre). The formula is: concentration = <strong>moles</strong> ÷ volume. A higher concentration means more solute particles per unit volume, which increases the rate of reaction by increasing the frequency of collisions.",
-        "<strong>Titration</strong> is a technique used to find the concentration of an unknown solution. A known volume of one solution is placed in a conical flask with an indicator. The other solution is added from a <strong>burette</strong> until the <strong>end point</strong> is reached — shown by a colour change in the indicator. The volume of solution used (the titre) allows the concentration to be calculated. Titration is used in quality control and research.",
-        "When solutions are <strong>diluted</strong>, the number of moles of solute stays the same but the volume increases, reducing the concentration. The formula C₁V₁ = C₂V₂ can be used to calculate concentrations after dilution. When comparing reactions in solution, concentration determines how frequently <strong>particles</strong> collide. A more concentrated solution contains more solute particles per dm³, leading to more frequent collisions and a faster reaction rate."
+        "The <strong>concentration</strong> of a solution is the amount of solute dissolved in a given volume of solvent. It is measured in mol/dm\u00b3 (moles per cubic decimetre) or g/dm\u00b3 (grams per cubic decimetre). The formula is: concentration = <strong>moles</strong> \u00f7 volume. A higher concentration means more solute particles per unit volume, which increases the rate of reaction by increasing the frequency of collisions.",
+        "<strong>Titration</strong> is a technique used to find the concentration of an unknown solution. A known volume of one solution is placed in a conical flask with an indicator. The other solution is added from a <strong>burette</strong> until the <strong>end point</strong> is reached \u2014 shown by a colour change in the indicator. The volume of solution used (the titre) allows the concentration to be calculated. Titration is used in quality control and research.",
+        "When solutions are <strong>diluted</strong>, the number of moles of solute stays the same but the volume increases, reducing the concentration. The formula C\u2081V\u2081 = C\u2082V\u2082 can be used to calculate concentrations after dilution. When comparing reactions in solution, concentration determines how frequently <strong>particles</strong> collide. A more concentrated solution contains more solute particles per dm\u00b3, leading to more frequent collisions and a faster reaction rate."
       ]
     },
     "Gas Volumes": {
       "intro": "Gases are measured by volume rather than mass. At the same temperature and pressure, equal volumes of gases contain equal numbers of molecules.",
-      "mnemonic": "Remember: 'At RTP, 1 mole = 24 dm³' — the magic number is 24. To find volume: Moles × 24 = Volume (dm³). To find moles from volume: Volume ÷ 24. Or use the rhyme: '24 dm³ per mole at RTP — that's the rule for you and me!'",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Gas Volumes</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "Remember: 'At RTP, 1 mole = 24 dm\u00b3' \u2014 the magic number is 24. To find volume: Moles \u00d7 24 = Volume (dm\u00b3). To find moles from volume: Volume \u00f7 24. Or use the rhyme: '24 dm\u00b3 per mole at RTP \u2014 that's the rule for you and me!'",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Gas Volumes</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Molar Volume of Gas",
-          "icon": "💨",
-          "text": "At room temperature and pressure, one mole of any gas always occupies 24 dm³ (24,000 cm³), regardless of the type of gas.",
+          "icon": "\ud83d\udca8",
+          "text": "At room temperature and pressure, one mole of any gas always occupies 24 dm\u00b3 (24,000 cm\u00b3), regardless of the type of gas.",
           "points": [
-            "<strong>At RTP: 1 mole of any gas = 24 dm³</strong> — applies to all gases (H₂, O₂, CO₂, N₂ etc.)",
-            "<strong>Volume of gas</strong> — volume (dm³) = moles × 24",
-            "<strong>Moles of gas from volume</strong> — moles = volume (dm³) ÷ 24",
-            "<strong>Worked example 1</strong> — volume of 0.5 mol CO₂ at RTP: volume = 0.5 × 24 = 12 dm³",
-            "<strong>Worked example 2</strong> — moles of gas in 6 dm³ at RTP: moles = 6 ÷ 24 = 0.25 mol",
-            "<strong>Converting units</strong> — 1 dm³ = 1000 cm³; at RTP, 1 mole = 24,000 cm³"
+            "<strong>At RTP: 1 mole of any gas = 24 dm\u00b3</strong> \u2014 applies to all gases (H\u2082, O\u2082, CO\u2082, N\u2082 etc.)",
+            "<strong>Volume of gas</strong> \u2014 volume (dm\u00b3) = moles \u00d7 24",
+            "<strong>Moles of gas from volume</strong> \u2014 moles = volume (dm\u00b3) \u00f7 24",
+            "<strong>Worked example 1</strong> \u2014 volume of 0.5 mol CO\u2082 at RTP: volume = 0.5 \u00d7 24 = 12 dm\u00b3",
+            "<strong>Worked example 2</strong> \u2014 moles of gas in 6 dm\u00b3 at RTP: moles = 6 \u00f7 24 = 0.25 mol",
+            "<strong>Converting units</strong> \u2014 1 dm\u00b3 = 1000 cm\u00b3; at RTP, 1 mole = 24,000 cm\u00b3"
           ],
           "callout": {
             "type": "exam",
             "label": "Key Fact",
-            "text": "At room temperature and pressure (RTP): 1 mole of any gas occupies 24 dm³ (24,000 cm³)."
+            "text": "At room temperature and pressure (RTP): 1 mole of any gas occupies 24 dm\u00b3 (24,000 cm\u00b3)."
           }
         },
         {
           "title": "Using Gas Volumes in Calculations",
-          "icon": "⚗️",
+          "icon": "\u2697\ufe0f",
           "text": "Gas volume ratios match the molar ratios in balanced equations. This allows direct comparison of gas volumes without calculating mass.",
           "points": [
-            "<strong>Volume ratio = mole ratio</strong> — at the same temperature and pressure, volume is proportional to moles",
-            "<strong>Example</strong> — H₂ + Cl₂ → 2HCl: 1 volume H₂ + 1 volume Cl₂ → 2 volumes HCl",
-            "<strong>Example 2</strong> — 2H₂ + O₂ → 2H₂O: 2 volumes H₂ react with 1 volume O₂",
-            "<strong>Worked example</strong> — 48 dm³ H₂ reacts with O₂ (ratio 2:1): volume O₂ needed = 48 ÷ 2 = 24 dm³",
-            "<strong>Mixed calculations</strong> — can combine moles, mass, concentration, and gas volume in multi-step problems"
+            "<strong>Volume ratio = mole ratio</strong> \u2014 at the same temperature and pressure, volume is proportional to moles",
+            "<strong>Example</strong> \u2014 H\u2082 + Cl\u2082 \u2192 2HCl: 1 volume H\u2082 + 1 volume Cl\u2082 \u2192 2 volumes HCl",
+            "<strong>Example 2</strong> \u2014 2H\u2082 + O\u2082 \u2192 2H\u2082O: 2 volumes H\u2082 react with 1 volume O\u2082",
+            "<strong>Worked example</strong> \u2014 48 dm\u00b3 H\u2082 reacts with O\u2082 (ratio 2:1): volume O\u2082 needed = 48 \u00f7 2 = 24 dm\u00b3",
+            "<strong>Mixed calculations</strong> \u2014 can combine moles, mass, concentration, and gas volume in multi-step problems"
           ]
         },
         {
           "title": "Factors Affecting Gas Volume",
-          "icon": "🌡️",
+          "icon": "\ud83c\udf21\ufe0f",
           "text": "Temperature and pressure affect the volume of a gas. At constant temperature, increasing pressure decreases volume; at constant pressure, increasing temperature increases volume.",
           "points": [
-            "<strong>Temperature effect</strong> — higher temperature → particles move faster → gas expands (greater volume)",
-            "<strong>Pressure effect</strong> — higher pressure → particles pushed closer together → smaller volume",
-            "<strong>RTP = room temperature and pressure</strong> — defined as 25°C (298 K) and 1 atmosphere (101 kPa)",
-            "<strong>STP (standard)</strong> — sometimes used: 0°C and 1 atm; molar volume at STP = 22.4 dm³",
-            "<strong>Industrial relevance</strong> — industrial reactors must account for T and P effects on gas volumes"
+            "<strong>Temperature effect</strong> \u2014 higher temperature \u2192 particles move faster \u2192 gas expands (greater volume)",
+            "<strong>Pressure effect</strong> \u2014 higher pressure \u2192 particles pushed closer together \u2192 smaller volume",
+            "<strong>RTP = room temperature and pressure</strong> \u2014 defined as 25\u00b0C (298 K) and 1 atmosphere (101 kPa)",
+            "<strong>STP (standard)</strong> \u2014 sometimes used: 0\u00b0C and 1 atm; molar volume at STP = 22.4 dm\u00b3",
+            "<strong>Industrial relevance</strong> \u2014 industrial reactors must account for T and P effects on gas volumes"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Molar volume",
-          "def": "The volume occupied by one mole of gas — at RTP this is 24 dm³ for any gas"
+          "def": "The volume occupied by one mole of gas \u2014 at RTP this is 24 dm\u00b3 for any gas"
         },
         {
           "term": "RTP",
-          "def": "Room temperature and pressure — defined as 25°C and 1 atmosphere; used for gas volume calculations"
+          "def": "Room temperature and pressure \u2014 defined as 25\u00b0C and 1 atmosphere; used for gas volume calculations"
         },
         {
-          "term": "dm³",
-          "def": "Cubic decimetre — a unit of volume equal to 1 litre = 1000 cm³"
+          "term": "dm\u00b3",
+          "def": "Cubic decimetre \u2014 a unit of volume equal to 1 litre = 1000 cm\u00b3"
         },
         {
           "term": "Avogadro's law",
@@ -490,33 +550,43 @@
         },
         {
           "term": "Volume ratio",
-          "def": "The ratio of volumes of gases in a reaction — equal to the mole ratio from the balanced equation"
+          "def": "The ratio of volumes of gases in a reaction \u2014 equal to the mole ratio from the balanced equation"
         }
       ],
       "examTips": [
-        "At RTP: 1 mole of ANY gas = 24 dm³ — memorise this and use it for all gas volume calculations.",
-        "Gas volume ratio = mole ratio from the balanced equation — use this for comparing volumes of different gases.",
-        "Always check if the volume is in dm³ or cm³ — convert cm³ to dm³ (÷1000) before using the 24 dm³/mol formula."
+        "At RTP: 1 mole of ANY gas = 24 dm\u00b3 \u2014 memorise this and use it for all gas volume calculations.",
+        "Gas volume ratio = mole ratio from the balanced equation \u2014 use this for comparing volumes of different gases.",
+        "Always check if the volume is in dm\u00b3 or cm\u00b3 \u2014 convert cm\u00b3 to dm\u00b3 (\u00f71000) before using the 24 dm\u00b3/mol formula."
       ],
       "commonMistakes": [
-        "Confusing dm³ and cm³ — 1 dm³ = 1000 cm³; 1 mole at RTP = 24 dm³ = 24,000 cm³.",
-        "Using 22.4 dm³ instead of 24 dm³ — 22.4 is at STP (0°C); at RTP (25°C) use 24 dm³.",
-        "Forgetting that gas volume ratio equals mole ratio — 2H₂ + O₂ → 2H₂O means 2 volumes H₂ react with 1 volume O₂."
+        "Confusing dm\u00b3 and cm\u00b3 \u2014 1 dm\u00b3 = 1000 cm\u00b3; 1 mole at RTP = 24 dm\u00b3 = 24,000 cm\u00b3.",
+        "Using 22.4 dm\u00b3 instead of 24 dm\u00b3 \u2014 22.4 is at STP (0\u00b0C); at RTP (25\u00b0C) use 24 dm\u00b3.",
+        "Forgetting that gas volume ratio equals mole ratio \u2014 2H\u2082 + O\u2082 \u2192 2H\u2082O means 2 volumes H\u2082 react with 1 volume O\u2082."
       ],
       "videos": [
         {
-          "title": "Gas Volume Calculations",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=A14tDuFxNlg"
+          "url": "https://www.youtube.com/watch?v=_CyIgvYNolE",
+          "videoId": "_CyIgvYNolE",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Molar Volume of Gases",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=A14tDuFxNlg"
+          "url": "https://www.youtube.com/watch?v=NxD7L4B7fRE",
+          "videoId": "NxD7L4B7fRE",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=tYE-1nywlFs",
+          "videoId": "tYE-1nywlFs",
+          "channel": "Free Science Lessons"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=OzutTl0sYd0",
+          "videoId": "OzutTl0sYd0",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
-        "At the same temperature and pressure, equal volumes of all gases contain the same number of <strong>moles</strong>. At room temperature and pressure (RTP), one mole of any gas occupies 24 dm³ (24,000 cm³). This allows the volume of a gas to be calculated from the number of moles using: volume = moles × <strong>molar volume</strong> (24 dm³). This is useful for calculating volumes of gases produced or used in reactions.",
+        "At the same temperature and pressure, equal volumes of all gases contain the same number of <strong>moles</strong>. At room temperature and pressure (RTP), one mole of any gas occupies 24 dm\u00b3 (24,000 cm\u00b3). This allows the volume of a gas to be calculated from the number of moles using: volume = moles \u00d7 <strong>molar volume</strong> (24 dm\u00b3). This is useful for calculating volumes of gases produced or used in reactions.",
         "The volume of a gas is affected by temperature and <strong>pressure</strong>. Increasing temperature increases the volume of a gas (at constant pressure) because the particles move faster and spread out more. Increasing pressure decreases the volume (at constant temperature) by pushing particles closer together. These relationships are described by <strong>Boyle's Law</strong> and Charles's Law. Industrial processes must account for these factors when working with gases.",
         "Gases in a mixture each exert their own <strong>partial pressure</strong>. The total pressure of a gas mixture equals the sum of the partial pressures of each gas. When calculating reacting volumes of <strong>gases</strong>, the molar ratios from the balanced equation can be used directly, since equal volumes of gases at the same temperature and pressure contain equal numbers of <strong>moles</strong>. This simplifies calculations involving gaseous reactions."
       ]

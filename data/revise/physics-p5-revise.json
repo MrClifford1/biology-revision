@@ -3,50 +3,50 @@
   "topics": {
     "Scalars and Vectors": {
       "intro": "Physical quantities can be either scalar (magnitude only) or vector (magnitude and direction). This distinction is fundamental to understanding forces.",
-      "mnemonic": "\"Vectors have Direction — think of a VD satnav\" — Velocity, Displacement, force, acceleration, momentum are Vectors (all need a direction). Speed, Distance, mass, energy, temperature are Scalars.",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Scalars and Vectors</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "\"Vectors have Direction \u2014 think of a VD satnav\" \u2014 Velocity, Displacement, force, acceleration, momentum are Vectors (all need a direction). Speed, Distance, mass, energy, temperature are Scalars.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Scalars and Vectors</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Scalars vs Vectors",
-          "icon": "➡️",
+          "icon": "\u27a1\ufe0f",
           "text": "All physical quantities are either scalars (magnitude only) or vectors (magnitude and direction). Many quantities come in scalar/vector pairs.",
           "points": [
-            "<strong>Scalar</strong> — magnitude only: speed, distance, mass, energy, temperature, time, pressure",
-            "<strong>Vector</strong> — magnitude AND direction: velocity, displacement, force, acceleration, momentum, weight",
-            "<strong>Scalar/vector pairs</strong> — speed (scalar) & velocity (vector); distance (scalar) & displacement (vector)",
-            "<strong>Representing vectors</strong> — drawn as arrows; arrow length = magnitude; arrow direction = direction of quantity",
-            "<strong>Negative vectors</strong> — a negative value indicates the opposite direction (e.g. −5 m/s means 5 m/s in the reverse direction)"
+            "<strong>Scalar</strong> \u2014 magnitude only: speed, distance, mass, energy, temperature, time, pressure",
+            "<strong>Vector</strong> \u2014 magnitude AND direction: velocity, displacement, force, acceleration, momentum, weight",
+            "<strong>Scalar/vector pairs</strong> \u2014 speed (scalar) & velocity (vector); distance (scalar) & displacement (vector)",
+            "<strong>Representing vectors</strong> \u2014 drawn as arrows; arrow length = magnitude; arrow direction = direction of quantity",
+            "<strong>Negative vectors</strong> \u2014 a negative value indicates the opposite direction (e.g. \u22125 m/s means 5 m/s in the reverse direction)"
           ]
         },
         {
           "title": "Adding Vectors",
-          "icon": "📐",
+          "icon": "\ud83d\udcd0",
           "text": "When combining vectors, direction must be taken into account. Vectors in opposite directions partially cancel.",
           "points": [
-            "<strong>Same direction</strong> — add magnitudes: two 5 N forces in same direction = 10 N resultant",
-            "<strong>Opposite directions</strong> — subtract magnitudes: 8 N right + 3 N left = 5 N right",
-            "<strong>At right angles</strong> — use Pythagoras: resultant² = a² + b²; use trigonometry for direction",
-            "<strong>Scale drawing</strong> — draw vectors tip-to-tail; resultant = line from start to end; measure length and angle",
-            "<strong>Equilibrium</strong> — when resultant of all forces = 0, object is in equilibrium (no acceleration)"
+            "<strong>Same direction</strong> \u2014 add magnitudes: two 5 N forces in same direction = 10 N resultant",
+            "<strong>Opposite directions</strong> \u2014 subtract magnitudes: 8 N right + 3 N left = 5 N right",
+            "<strong>At right angles</strong> \u2014 use Pythagoras: resultant\u00b2 = a\u00b2 + b\u00b2; use trigonometry for direction",
+            "<strong>Scale drawing</strong> \u2014 draw vectors tip-to-tail; resultant = line from start to end; measure length and angle",
+            "<strong>Equilibrium</strong> \u2014 when resultant of all forces = 0, object is in equilibrium (no acceleration)"
           ]
         },
         {
           "title": "Free Body Diagrams",
-          "icon": "📊",
+          "icon": "\ud83d\udcca",
           "text": "Free body diagrams show all the forces acting on an object as arrows, helping to find the resultant force.",
           "points": [
-            "<strong>Free body diagram</strong> — arrows showing all forces on a single object; arrow length proportional to magnitude",
-            "<strong>Labelling</strong> — each arrow must be labelled with the force name and value (e.g. Weight = 500 N downward)",
-            "<strong>Resultant force</strong> — the single vector that replaces all forces; determines acceleration by F = ma",
-            "<strong>Balanced forces</strong> — arrows of equal length in opposite directions; resultant = 0; object in equilibrium",
-            "<strong>Unbalanced forces</strong> — arrows unequal; object accelerates in direction of resultant"
+            "<strong>Free body diagram</strong> \u2014 arrows showing all forces on a single object; arrow length proportional to magnitude",
+            "<strong>Labelling</strong> \u2014 each arrow must be labelled with the force name and value (e.g. Weight = 500 N downward)",
+            "<strong>Resultant force</strong> \u2014 the single vector that replaces all forces; determines acceleration by F = ma",
+            "<strong>Balanced forces</strong> \u2014 arrows of equal length in opposite directions; resultant = 0; object in equilibrium",
+            "<strong>Unbalanced forces</strong> \u2014 arrows unequal; object accelerates in direction of resultant"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Scalar",
-          "def": "A quantity with magnitude only — no direction (e.g. speed, mass, temperature)"
+          "def": "A quantity with magnitude only \u2014 no direction (e.g. speed, mass, temperature)"
         },
         {
           "term": "Vector",
@@ -58,11 +58,11 @@
         },
         {
           "term": "Displacement",
-          "def": "Distance travelled in a specified direction from a starting point — a vector quantity"
+          "def": "Distance travelled in a specified direction from a starting point \u2014 a vector quantity"
         },
         {
           "term": "Equilibrium",
-          "def": "State where the resultant of all forces is zero — object is stationary or moving at constant velocity"
+          "def": "State where the resultant of all forces is zero \u2014 object is stationary or moving at constant velocity"
         },
         {
           "term": "Free body diagram",
@@ -70,89 +70,89 @@
         }
       ],
       "examTips": [
-        "Speed is scalar; velocity is vector. Distance is scalar; displacement is vector. AQA regularly asks students to classify quantities — memorise all common examples.",
-        "When forces are balanced (resultant = 0), the object is in equilibrium — it could be stationary OR moving at constant velocity. Do not say it must be stationary.",
-        "For vectors at right angles, use Pythagoras to find magnitude: resultant² = a² + b². Use tan(θ) = opposite/adjacent to find the angle."
+        "Speed is scalar; velocity is vector. Distance is scalar; displacement is vector. AQA regularly asks students to classify quantities \u2014 memorise all common examples.",
+        "When forces are balanced (resultant = 0), the object is in equilibrium \u2014 it could be stationary OR moving at constant velocity. Do not say it must be stationary.",
+        "For vectors at right angles, use Pythagoras to find magnitude: resultant\u00b2 = a\u00b2 + b\u00b2. Use tan(\u03b8) = opposite/adjacent to find the angle."
       ],
       "commonMistakes": [
-        "Saying speed and velocity are the same — velocity has a specific direction, speed does not. A car going around a roundabout at constant speed has changing velocity.",
-        "Forgetting to state direction when describing a vector quantity — '10 m/s' is speed; '10 m/s north' is velocity.",
-        "Adding vector magnitudes regardless of direction — vectors in opposite directions must be subtracted, not added."
+        "Saying speed and velocity are the same \u2014 velocity has a specific direction, speed does not. A car going around a roundabout at constant speed has changing velocity.",
+        "Forgetting to state direction when describing a vector quantity \u2014 '10 m/s' is speed; '10 m/s north' is velocity.",
+        "Adding vector magnitudes regardless of direction \u2014 vectors in opposite directions must be subtracted, not added."
       ],
       "videos": [
         {
-          "title": "Scalars and Vectors GCSE Physics",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=ihNZlp7iUHE"
+          "url": "https://www.youtube.com/watch?v=D0Hkd5TaaTQ",
+          "videoId": "D0Hkd5TaaTQ",
+          "channel": "Cognito"
         },
         {
-          "title": "Vectors and Scalars",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=ihNZlp7iUHE"
+          "url": "https://www.youtube.com/watch?v=Ry5-WEiTUs4",
+          "videoId": "Ry5-WEiTUs4",
+          "channel": "Cognito"
         },
         {
-          "title": "Scalars vs Vectors",
-          "channel": "Fuse School",
-          "url": "https://www.youtube.com/watch?v=ml4NSzCQobk"
+          "url": "https://www.youtube.com/watch?v=P1lSWWUkMdQ",
+          "videoId": "P1lSWWUkMdQ",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
-        "A <strong>scalar</strong> quantity has only magnitude (size). Examples include speed, distance, mass, temperature, and energy. A <strong>vector</strong> quantity has both magnitude and direction. Examples include velocity, displacement, force, acceleration, and momentum. The difference is important — a car travelling at 30 m/s north has a different <strong>velocity</strong> from one travelling at 30 m/s south, even though both have the same speed.",
-        "<strong>Vector quantities</strong> can be represented by arrows — the length of the arrow shows the magnitude and the direction of the arrow shows the direction. When adding vectors in the same direction, the magnitudes simply add. When vectors are in opposite directions, they subtract. For vectors at other angles, the <strong>resultant</strong> can be found by drawing a scale diagram. Two forces can be combined to find a single resultant force.",
+        "A <strong>scalar</strong> quantity has only magnitude (size). Examples include speed, distance, mass, temperature, and energy. A <strong>vector</strong> quantity has both magnitude and direction. Examples include velocity, displacement, force, acceleration, and momentum. The difference is important \u2014 a car travelling at 30 m/s north has a different <strong>velocity</strong> from one travelling at 30 m/s south, even though both have the same speed.",
+        "<strong>Vector quantities</strong> can be represented by arrows \u2014 the length of the arrow shows the magnitude and the direction of the arrow shows the direction. When adding vectors in the same direction, the magnitudes simply add. When vectors are in opposite directions, they subtract. For vectors at other angles, the <strong>resultant</strong> can be found by drawing a scale diagram. Two forces can be combined to find a single resultant force.",
         "The <strong>resultant force</strong> is the single force that has the same effect as all the forces acting on an object combined. If the resultant force is zero, the forces are <strong>balanced</strong> and the object is in equilibrium. If the resultant force is non-zero, it is an <strong>unbalanced</strong> force and will cause the object to accelerate. Force diagrams (free body diagrams) show all the forces acting on an object with arrows indicating direction and magnitude."
       ]
     },
     "Forces": {
       "intro": "Forces are pushes or pulls that can change the speed, direction or shape of an object. Understanding forces and their effects is central to P5.",
-      "mnemonic": "\"Weight = mg: Wimpy mice get weighed\" — W = mg. On Earth, g = 9.8 N/kg (use 10 N/kg for estimates). Weight is a Force (newtons), not mass (kilograms).",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Forces</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "\"Weight = mg: Wimpy mice get weighed\" \u2014 W = mg. On Earth, g = 9.8 N/kg (use 10 N/kg for estimates). Weight is a Force (newtons), not mass (kilograms).",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Forces</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Contact and Non-Contact Forces",
-          "icon": "🤜",
+          "icon": "\ud83e\udd1c",
           "text": "Forces are either contact forces (require physical touching) or non-contact forces (act at a distance through fields).",
           "points": [
-            "<strong>Contact forces</strong> — friction, normal (contact) force, tension, air resistance (drag), upthrust",
-            "<strong>Non-contact forces</strong> — gravity (weight), magnetic force, electrostatic force",
-            "<strong>Normal force</strong> — perpendicular to surface; stops objects passing through each other",
-            "<strong>Tension</strong> — pulling force in a rope, string or cable; acts along the rope",
-            "<strong>Friction</strong> — always opposes relative motion; converts kinetic energy to thermal energy"
+            "<strong>Contact forces</strong> \u2014 friction, normal (contact) force, tension, air resistance (drag), upthrust",
+            "<strong>Non-contact forces</strong> \u2014 gravity (weight), magnetic force, electrostatic force",
+            "<strong>Normal force</strong> \u2014 perpendicular to surface; stops objects passing through each other",
+            "<strong>Tension</strong> \u2014 pulling force in a rope, string or cable; acts along the rope",
+            "<strong>Friction</strong> \u2014 always opposes relative motion; converts kinetic energy to thermal energy"
           ]
         },
         {
           "title": "Resultant Force",
-          "icon": "⚖️",
+          "icon": "\u2696\ufe0f",
           "text": "The resultant force is the vector sum of all forces on an object. It determines whether the object accelerates.",
           "points": [
-            "<strong>Balanced forces</strong> — resultant = 0; object stays at rest OR moves at constant velocity (Newton's 1st law)",
-            "<strong>Unbalanced forces</strong> — resultant ≠ 0; object accelerates in direction of resultant (Newton's 2nd law)",
-            "<strong>Terminal velocity</strong> — when drag = driving force; resultant = 0; object moves at constant velocity",
-            "<strong>Free body diagram</strong> — shows all forces on object; resultant found by vector addition",
-            "<strong>Resolving forces</strong> — splitting a force into horizontal and vertical components using trigonometry"
+            "<strong>Balanced forces</strong> \u2014 resultant = 0; object stays at rest OR moves at constant velocity (Newton's 1st law)",
+            "<strong>Unbalanced forces</strong> \u2014 resultant \u2260 0; object accelerates in direction of resultant (Newton's 2nd law)",
+            "<strong>Terminal velocity</strong> \u2014 when drag = driving force; resultant = 0; object moves at constant velocity",
+            "<strong>Free body diagram</strong> \u2014 shows all forces on object; resultant found by vector addition",
+            "<strong>Resolving forces</strong> \u2014 splitting a force into horizontal and vertical components using trigonometry"
           ]
         },
         {
           "title": "Weight and Mass",
-          "icon": "🌍",
+          "icon": "\ud83c\udf0d",
           "text": "Weight and mass are different quantities. Weight is the gravitational force on an object; mass is the amount of matter.",
           "callout": {
             "type": "exam",
             "label": "Formula",
-            "text": "W = m × g (Weight = mass × gravitational field strength). On Earth, g = 9.8 N/kg. Weight is a FORCE (newtons); mass is an amount of matter (kilograms)."
+            "text": "W = m \u00d7 g (Weight = mass \u00d7 gravitational field strength). On Earth, g = 9.8 N/kg. Weight is a FORCE (newtons); mass is an amount of matter (kilograms)."
           },
           "points": [
-            "<strong>W = mg</strong> — weight (N) = mass (kg) × gravitational field strength (N/kg)",
-            "<strong>g on Earth</strong> — 9.8 N/kg (≈ 10 N/kg for estimates); g on Moon ≈ 1.6 N/kg",
-            "<strong>Worked example</strong> — 60 kg person: W = 60 × 9.8 = 588 N on Earth; 60 × 1.6 = 96 N on Moon",
-            "<strong>Mass is constant</strong> — does not change with location; weight changes because g changes",
-            "<strong>Centre of gravity</strong> — the point where the weight of an object appears to act"
+            "<strong>W = mg</strong> \u2014 weight (N) = mass (kg) \u00d7 gravitational field strength (N/kg)",
+            "<strong>g on Earth</strong> \u2014 9.8 N/kg (\u2248 10 N/kg for estimates); g on Moon \u2248 1.6 N/kg",
+            "<strong>Worked example</strong> \u2014 60 kg person: W = 60 \u00d7 9.8 = 588 N on Earth; 60 \u00d7 1.6 = 96 N on Moon",
+            "<strong>Mass is constant</strong> \u2014 does not change with location; weight changes because g changes",
+            "<strong>Centre of gravity</strong> \u2014 the point where the weight of an object appears to act"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Force",
-          "def": "A push or pull that can change an object's speed, direction or shape — measured in newtons (N)"
+          "def": "A push or pull that can change an object's speed, direction or shape \u2014 measured in newtons (N)"
         },
         {
           "term": "Weight",
@@ -164,99 +164,114 @@
         },
         {
           "term": "Equilibrium",
-          "def": "State where all forces are balanced (resultant = 0) — no acceleration"
+          "def": "State where all forces are balanced (resultant = 0) \u2014 no acceleration"
         },
         {
           "term": "Friction",
-          "def": "Contact force opposing relative motion between surfaces — converts KE to thermal energy"
+          "def": "Contact force opposing relative motion between surfaces \u2014 converts KE to thermal energy"
         },
         {
           "term": "Terminal velocity",
-          "def": "Constant velocity reached when drag force equals driving force — zero resultant, zero acceleration"
+          "def": "Constant velocity reached when drag force equals driving force \u2014 zero resultant, zero acceleration"
         }
       ],
       "examTips": [
-        "Weight = mg. On Earth, g = 9.8 N/kg (use 10 N/kg for estimates). AQA papers will specify which value to use. Remember: weight is in newtons, mass is in kilograms — never mix them up.",
-        "Balanced forces do NOT mean no forces are acting. Balanced means zero RESULTANT force. The object can still be moving — at constant velocity.",
+        "Weight = mg. On Earth, g = 9.8 N/kg (use 10 N/kg for estimates). AQA papers will specify which value to use. Remember: weight is in newtons, mass is in kilograms \u2014 never mix them up.",
+        "Balanced forces do NOT mean no forces are acting. Balanced means zero RESULTANT force. The object can still be moving \u2014 at constant velocity.",
         "Friction always acts opposite to the direction of motion or tendency of motion. It never acts in the same direction as movement."
       ],
       "commonMistakes": [
-        "Confusing mass (kg, constant) and weight (N, depends on gravitational field strength) — an astronaut on the Moon has the same mass but less weight.",
-        "Saying balanced forces mean the object is stationary — it could be moving at constant velocity. Only an UNBALANCED force causes acceleration.",
-        "Saying friction acts in the direction of motion — friction ALWAYS opposes motion or the tendency to move."
+        "Confusing mass (kg, constant) and weight (N, depends on gravitational field strength) \u2014 an astronaut on the Moon has the same mass but less weight.",
+        "Saying balanced forces mean the object is stationary \u2014 it could be moving at constant velocity. Only an UNBALANCED force causes acceleration.",
+        "Saying friction acts in the direction of motion \u2014 friction ALWAYS opposes motion or the tendency to move."
       ],
       "videos": [
         {
-          "title": "Forces GCSE Physics",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=ihNZlp7iUHE"
+          "url": "https://www.youtube.com/watch?v=joVOE3sLeGI",
+          "videoId": "joVOE3sLeGI",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Forces and Motion",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=7pUAydjne5M"
+          "url": "https://www.youtube.com/watch?v=xdrE0kP8GTM",
+          "videoId": "xdrE0kP8GTM",
+          "channel": "Cognito"
         },
         {
-          "title": "Forces",
-          "channel": "Fuse School",
-          "url": "https://www.youtube.com/watch?v=ml4NSzCQobk"
+          "url": "https://www.youtube.com/watch?v=SYU1TKQru1c",
+          "videoId": "SYU1TKQru1c",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=xxK8N23nx9M",
+          "videoId": "xxK8N23nx9M",
+          "channel": "Free Science Lessons"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=PL8ATKipoB4",
+          "videoId": "PL8ATKipoB4",
+          "channel": "Free Science Lessons"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=8RI2_gJy0L0",
+          "videoId": "8RI2_gJy0L0",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
-        "A <strong>force</strong> is a push or pull that can change the shape, speed, or direction of an object. Forces are measured in <strong>newtons</strong> (N). Contact forces include <strong>friction</strong>, normal contact force, and tension. Non-contact forces include gravity, electrostatic force, and magnetic force. Forces always come in pairs — Newton's third law states that every action has an equal and opposite reaction.",
-        "<strong>Weight</strong> is the force of gravity on an object and acts downward towards the centre of the Earth. It is calculated as W = mg, where m is mass in kg and g is gravitational field strength (10 N/kg on Earth). <strong>Mass</strong> is the amount of matter in an object and does not change with location. Weight changes with gravitational field strength — an object weighs less on the Moon than on Earth because the Moon's <strong>gravitational field</strong> is weaker.",
-        "When two surfaces are in contact and one moves relative to the other, <strong>friction</strong> acts opposing motion. Friction converts kinetic energy to thermal energy. <strong>Air resistance</strong> (drag) acts on objects moving through air. The magnitude of drag increases with speed. When drag equals the driving force on a falling object, it reaches <strong>terminal velocity</strong> — a constant speed where forces are balanced and acceleration is zero."
+        "A <strong>force</strong> is a push or pull that can change the shape, speed, or direction of an object. Forces are measured in <strong>newtons</strong> (N). Contact forces include <strong>friction</strong>, normal contact force, and tension. Non-contact forces include gravity, electrostatic force, and magnetic force. Forces always come in pairs \u2014 Newton's third law states that every action has an equal and opposite reaction.",
+        "<strong>Weight</strong> is the force of gravity on an object and acts downward towards the centre of the Earth. It is calculated as W = mg, where m is mass in kg and g is gravitational field strength (10 N/kg on Earth). <strong>Mass</strong> is the amount of matter in an object and does not change with location. Weight changes with gravitational field strength \u2014 an object weighs less on the Moon than on Earth because the Moon's <strong>gravitational field</strong> is weaker.",
+        "When two surfaces are in contact and one moves relative to the other, <strong>friction</strong> acts opposing motion. Friction converts kinetic energy to thermal energy. <strong>Air resistance</strong> (drag) acts on objects moving through air. The magnitude of drag increases with speed. When drag equals the driving force on a falling object, it reaches <strong>terminal velocity</strong> \u2014 a constant speed where forces are balanced and acceleration is zero."
       ]
     },
     "Work Done": {
       "intro": "Work is done when a force causes an object to move. It is a measure of energy transferred.",
-      "mnemonic": "\"Work = Force × Distance; Powerful Workers Do it Fast\" — W = Fd, and Power P = W/t. A 'powerful' worker does the same job in less time.",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Work Done</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "\"Work = Force \u00d7 Distance; Powerful Workers Do it Fast\" \u2014 W = Fd, and Power P = W/t. A 'powerful' worker does the same job in less time.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Work Done</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Work Done Formula",
-          "icon": "📐",
+          "icon": "\ud83d\udcd0",
           "text": "Work done equals energy transferred. It depends on the force applied and the distance moved in the direction of the force.",
           "callout": {
             "type": "exam",
             "label": "Formula",
-            "text": "W = F × d (Work done = Force × distance moved in direction of force). Units: joules (J). 1 J = 1 N × 1 m."
+            "text": "W = F \u00d7 d (Work done = Force \u00d7 distance moved in direction of force). Units: joules (J). 1 J = 1 N \u00d7 1 m."
           },
           "points": [
-            "<strong>W = Fd</strong> — work done (J) = force (N) × distance (m) in direction of force",
-            "<strong>Work done = energy transferred</strong> — they are numerically identical and have the same unit (joules)",
-            "<strong>No movement = no work</strong> — holding a heavy box stationary does NO work (no displacement)",
-            "<strong>Perpendicular force</strong> — no work done if force is at 90° to displacement (e.g. gravity on horizontal motion)",
-            "<strong>Worked example</strong> — pushing 200 N force over 5 m: W = 200 × 5 = 1000 J"
+            "<strong>W = Fd</strong> \u2014 work done (J) = force (N) \u00d7 distance (m) in direction of force",
+            "<strong>Work done = energy transferred</strong> \u2014 they are numerically identical and have the same unit (joules)",
+            "<strong>No movement = no work</strong> \u2014 holding a heavy box stationary does NO work (no displacement)",
+            "<strong>Perpendicular force</strong> \u2014 no work done if force is at 90\u00b0 to displacement (e.g. gravity on horizontal motion)",
+            "<strong>Worked example</strong> \u2014 pushing 200 N force over 5 m: W = 200 \u00d7 5 = 1000 J"
           ]
         },
         {
           "title": "Power",
-          "icon": "⚡",
+          "icon": "\u26a1",
           "text": "Power is the rate of doing work or the rate of energy transfer. A more powerful machine does the same work in less time.",
           "callout": {
             "type": "exam",
             "label": "Power Formula",
-            "text": "P = W/t (Power = Work done ÷ time). Units: watts (W). Also P = Fv (Power = Force × velocity)."
+            "text": "P = W/t (Power = Work done \u00f7 time). Units: watts (W). Also P = Fv (Power = Force \u00d7 velocity)."
           },
           "points": [
-            "<strong>P = W/t</strong> — power (W) = work done (J) ÷ time (s); 1 watt = 1 joule per second",
-            "<strong>P = Fv</strong> — power = force × velocity; useful when force and speed are given",
-            "<strong>Worked example</strong> — 600 J done in 3 s: P = 600 ÷ 3 = 200 W",
-            "<strong>Units</strong> — power in watts (W) or kilowatts (kW); 1 kW = 1000 W",
-            "<strong>High power</strong> — does more work per second; same total work in less time"
+            "<strong>P = W/t</strong> \u2014 power (W) = work done (J) \u00f7 time (s); 1 watt = 1 joule per second",
+            "<strong>P = Fv</strong> \u2014 power = force \u00d7 velocity; useful when force and speed are given",
+            "<strong>Worked example</strong> \u2014 600 J done in 3 s: P = 600 \u00f7 3 = 200 W",
+            "<strong>Units</strong> \u2014 power in watts (W) or kilowatts (kW); 1 kW = 1000 W",
+            "<strong>High power</strong> \u2014 does more work per second; same total work in less time"
           ]
         },
         {
           "title": "Work Done Against Gravity",
-          "icon": "🏋️",
+          "icon": "\ud83c\udfcb\ufe0f",
           "text": "When an object is lifted, work is done against gravity and stored as gravitational potential energy.",
           "points": [
-            "<strong>GPE = mgh</strong> — gravitational potential energy (J) = mass (kg) × g (N/kg) × height (m)",
-            "<strong>Work done lifting = GPE gained</strong> — W = mgh (assuming no energy lost to friction or air resistance)",
-            "<strong>Worked example</strong> — lifting 5 kg box by 2 m: W = 5 × 9.8 × 2 = 98 J",
-            "<strong>Ramp vs vertical lift</strong> — same work done against gravity either way; ramp reduces force needed but increases distance",
-            "<strong>Energy conservation</strong> — total energy is always conserved; work done = useful energy out + wasted energy"
+            "<strong>GPE = mgh</strong> \u2014 gravitational potential energy (J) = mass (kg) \u00d7 g (N/kg) \u00d7 height (m)",
+            "<strong>Work done lifting = GPE gained</strong> \u2014 W = mgh (assuming no energy lost to friction or air resistance)",
+            "<strong>Worked example</strong> \u2014 lifting 5 kg box by 2 m: W = 5 \u00d7 9.8 \u00d7 2 = 98 J",
+            "<strong>Ramp vs vertical lift</strong> \u2014 same work done against gravity either way; ramp reduces force needed but increases distance",
+            "<strong>Energy conservation</strong> \u2014 total energy is always conserved; work done = useful energy out + wasted energy"
           ]
         }
       ],
@@ -271,11 +286,11 @@
         },
         {
           "term": "Joule",
-          "def": "Unit of energy and work — 1 J = 1 N × 1 m; energy transferred when 1 N force moves 1 m"
+          "def": "Unit of energy and work \u2014 1 J = 1 N \u00d7 1 m; energy transferred when 1 N force moves 1 m"
         },
         {
           "term": "Watt",
-          "def": "Unit of power — 1 W = 1 J/s; 1 watt means 1 joule of work done per second"
+          "def": "Unit of power \u2014 1 W = 1 J/s; 1 watt means 1 joule of work done per second"
         },
         {
           "term": "Gravitational potential energy",
@@ -287,263 +302,273 @@
         }
       ],
       "examTips": [
-        "Work done = energy transferred — they are equivalent. AQA may ask you to calculate one when given information for the other.",
-        "P = W/t and P = Fv are both on the formula sheet — choose the one that matches the given data. If you know force and velocity, use P = Fv directly.",
+        "Work done = energy transferred \u2014 they are equivalent. AQA may ask you to calculate one when given information for the other.",
+        "P = W/t and P = Fv are both on the formula sheet \u2014 choose the one that matches the given data. If you know force and velocity, use P = Fv directly.",
         "No movement = no work done. A person holding a heavy bag stationary does no work on the bag (no displacement in direction of force)."
       ],
       "commonMistakes": [
-        "Forgetting that work requires movement — a force applied without displacement does zero work, even if the person feels tired.",
-        "Using total distance instead of distance in the direction of the force — if a force acts at an angle to displacement, only the component in the direction of motion counts.",
-        "Confusing work (J) and power (W) — work is energy transferred; power is the rate at which work is done."
+        "Forgetting that work requires movement \u2014 a force applied without displacement does zero work, even if the person feels tired.",
+        "Using total distance instead of distance in the direction of the force \u2014 if a force acts at an angle to displacement, only the component in the direction of motion counts.",
+        "Confusing work (J) and power (W) \u2014 work is energy transferred; power is the rate at which work is done."
       ],
       "videos": [
         {
-          "title": "Work Done GCSE Physics",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=2oHBmLABcZw"
+          "url": "https://www.youtube.com/watch?v=Pf5EHVxc4XI",
+          "videoId": "Pf5EHVxc4XI",
+          "channel": "Cognito"
         },
         {
-          "title": "Work and Power",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=2oHBmLABcZw"
+          "url": "https://www.youtube.com/watch?v=KbrqbW0um0Y",
+          "videoId": "KbrqbW0um0Y",
+          "channel": "Cognito"
         },
         {
-          "title": "Work Done",
-          "channel": "Fuse School",
-          "url": "https://www.youtube.com/watch?v=P-B5T3ZEw8E"
+          "url": "https://www.youtube.com/watch?v=PY80j_iNT9Y",
+          "videoId": "PY80j_iNT9Y",
+          "channel": "Free Science Lessons"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=JHEmPZ-YnrU",
+          "videoId": "JHEmPZ-YnrU",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
         "<strong>Work done</strong> is the energy transferred when a force causes an object to move in the direction of the force. The formula is: W = Fs, where F is force in newtons and s is distance in metres. Work done is measured in <strong>joules</strong> (J). One joule of work is done when a force of one newton moves an object one metre in the direction of the force. Work done equals the energy transferred to the object.",
-        "The <strong>work done</strong> against gravity when lifting an object equals its gain in gravitational potential energy: W = mgh. When a force acts on an object and causes it to move in the direction of the force, the work done equals the gain in <strong>kinetic energy</strong> (assuming no friction). In practice, some work is done against friction and is converted to <strong>thermal energy</strong>. The principle of conservation of energy still applies — total energy is conserved.",
-        "<strong>Power</strong> is the rate of doing work — the amount of work done per second. P = W/t, where W is work done in joules and t is time in seconds. Power is measured in <strong>watts</strong> (W). A more powerful engine can do the same work in less time, or more work in the same time. <strong>Efficiency</strong> relates useful work output to total work input. Reducing friction and air resistance increases efficiency by reducing unwanted energy transfers."
+        "The <strong>work done</strong> against gravity when lifting an object equals its gain in gravitational potential energy: W = mgh. When a force acts on an object and causes it to move in the direction of the force, the work done equals the gain in <strong>kinetic energy</strong> (assuming no friction). In practice, some work is done against friction and is converted to <strong>thermal energy</strong>. The principle of conservation of energy still applies \u2014 total energy is conserved.",
+        "<strong>Power</strong> is the rate of doing work \u2014 the amount of work done per second. P = W/t, where W is work done in joules and t is time in seconds. Power is measured in <strong>watts</strong> (W). A more powerful engine can do the same work in less time, or more work in the same time. <strong>Efficiency</strong> relates useful work output to total work input. Reducing friction and air resistance increases efficiency by reducing unwanted energy transfers."
       ]
     },
     "Elasticity": {
       "intro": "Elastic materials return to their original shape after a force is removed. Hooke's Law describes the relationship between force and extension.",
-      "mnemonic": "\"Force = k × extension: Fairly knobbly elastic\" — F = ke. A stiffer spring has a larger k value. Remember: 'Elastic energy = half k e squared': Ee = ½ke².",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Elasticity</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "\"Force = k \u00d7 extension: Fairly knobbly elastic\" \u2014 F = ke. A stiffer spring has a larger k value. Remember: 'Elastic energy = half k e squared': Ee = \u00bdke\u00b2.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Elasticity</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Hooke's Law",
-          "icon": "🔧",
+          "icon": "\ud83d\udd27",
           "text": "Hooke's Law states that extension is directly proportional to force, up to the limit of proportionality.",
           "callout": {
             "type": "exam",
             "label": "Formula",
-            "text": "F = k × e (Force = spring constant × extension). Spring constant k is in N/m. Hooke's Law applies up to the LIMIT OF PROPORTIONALITY."
+            "text": "F = k \u00d7 e (Force = spring constant \u00d7 extension). Spring constant k is in N/m. Hooke's Law applies up to the LIMIT OF PROPORTIONALITY."
           },
           "points": [
-            "<strong>F = ke</strong> — force (N) = spring constant (N/m) × extension (m)",
-            "<strong>Spring constant k</strong> — measures stiffness; larger k = stiffer spring; gradient of F-e graph",
-            "<strong>Proportional region</strong> — straight line through origin on F-e graph; extension ∝ force",
-            "<strong>Limit of proportionality</strong> — point beyond which F-e graph curves; Hooke's Law no longer applies",
-            "<strong>Worked example</strong> — spring with k = 40 N/m, force = 8 N: extension = F/k = 8/40 = 0.2 m"
+            "<strong>F = ke</strong> \u2014 force (N) = spring constant (N/m) \u00d7 extension (m)",
+            "<strong>Spring constant k</strong> \u2014 measures stiffness; larger k = stiffer spring; gradient of F-e graph",
+            "<strong>Proportional region</strong> \u2014 straight line through origin on F-e graph; extension \u221d force",
+            "<strong>Limit of proportionality</strong> \u2014 point beyond which F-e graph curves; Hooke's Law no longer applies",
+            "<strong>Worked example</strong> \u2014 spring with k = 40 N/m, force = 8 N: extension = F/k = 8/40 = 0.2 m"
           ]
         },
         {
           "title": "Elastic and Inelastic Deformation",
-          "icon": "⚡",
+          "icon": "\u26a1",
           "text": "Materials can undergo elastic deformation (reversible) or inelastic deformation (permanent) depending on the force applied.",
           "points": [
-            "<strong>Elastic deformation</strong> — returns to original shape and size when force removed; no permanent change",
-            "<strong>Inelastic (plastic) deformation</strong> — does not return to original shape; permanently changed; beyond elastic limit",
-            "<strong>Elastic potential energy stored</strong> — Ee = ½ke² (energy stored in a stretched or compressed spring)",
-            "<strong>Energy conversion</strong> — when released, elastic PE converts to kinetic energy",
-            "<strong>Elastic limit</strong> — maximum extension for elastic behaviour; beyond this, material is permanently deformed"
+            "<strong>Elastic deformation</strong> \u2014 returns to original shape and size when force removed; no permanent change",
+            "<strong>Inelastic (plastic) deformation</strong> \u2014 does not return to original shape; permanently changed; beyond elastic limit",
+            "<strong>Elastic potential energy stored</strong> \u2014 Ee = \u00bdke\u00b2 (energy stored in a stretched or compressed spring)",
+            "<strong>Energy conversion</strong> \u2014 when released, elastic PE converts to kinetic energy",
+            "<strong>Elastic limit</strong> \u2014 maximum extension for elastic behaviour; beyond this, material is permanently deformed"
           ]
         },
         {
           "title": "Investigating Hooke's Law",
-          "icon": "🧪",
+          "icon": "\ud83e\uddea",
           "text": "The spring constant can be measured experimentally by recording the extension for different loads and plotting a force-extension graph.",
           "points": [
-            "<strong>Method</strong> — hang masses on spring; measure natural length; record extension for each mass added",
-            "<strong>Graph</strong> — plot force (y-axis) against extension (x-axis); gradient = spring constant k",
-            "<strong>Reading off k</strong> — k = ΔF/Δe = gradient of the straight-line portion",
-            "<strong>Beyond elastic limit</strong> — line curves; spring does not return to original length when masses removed",
-            "<strong>Safety</strong> — clamp stand securely; use eye protection; do not add masses beyond elastic limit"
+            "<strong>Method</strong> \u2014 hang masses on spring; measure natural length; record extension for each mass added",
+            "<strong>Graph</strong> \u2014 plot force (y-axis) against extension (x-axis); gradient = spring constant k",
+            "<strong>Reading off k</strong> \u2014 k = \u0394F/\u0394e = gradient of the straight-line portion",
+            "<strong>Beyond elastic limit</strong> \u2014 line curves; spring does not return to original length when masses removed",
+            "<strong>Safety</strong> \u2014 clamp stand securely; use eye protection; do not add masses beyond elastic limit"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Hooke's Law",
-          "def": "Extension is proportional to force: F = ke — valid only up to the limit of proportionality"
+          "def": "Extension is proportional to force: F = ke \u2014 valid only up to the limit of proportionality"
         },
         {
           "term": "Spring constant (k)",
-          "def": "Measure of stiffness of a spring: k = F/e, measured in N/m — higher k = stiffer spring"
+          "def": "Measure of stiffness of a spring: k = F/e, measured in N/m \u2014 higher k = stiffer spring"
         },
         {
           "term": "Elastic deformation",
-          "def": "Reversible deformation — object returns to original shape when force is removed"
+          "def": "Reversible deformation \u2014 object returns to original shape when force is removed"
         },
         {
           "term": "Limit of proportionality",
-          "def": "Point beyond which Hooke's Law no longer applies — force and extension are no longer proportional"
+          "def": "Point beyond which Hooke's Law no longer applies \u2014 force and extension are no longer proportional"
         },
         {
           "term": "Elastic potential energy",
-          "def": "Energy stored in a stretched or compressed elastic object: Ee = ½ke²"
+          "def": "Energy stored in a stretched or compressed elastic object: Ee = \u00bdke\u00b2"
         },
         {
           "term": "Inelastic deformation",
-          "def": "Permanent deformation — object does not return to its original shape after force is removed"
+          "def": "Permanent deformation \u2014 object does not return to its original shape after force is removed"
         }
       ],
       "examTips": [
-        "F = ke — on the AQA formula sheet. The gradient of a force-extension graph equals the spring constant k. Steeper gradient = larger k = stiffer spring.",
-        "Elastic potential energy: Ee = ½ke² — also on the formula sheet. The extension must be in metres when using this formula.",
-        "Elastic means it RETURNS to original shape; inelastic (plastic) means permanent deformation. 'Elastic' does NOT mean stretchy — rubber can be elastic and spring steel can be inelastic if overstretched."
+        "F = ke \u2014 on the AQA formula sheet. The gradient of a force-extension graph equals the spring constant k. Steeper gradient = larger k = stiffer spring.",
+        "Elastic potential energy: Ee = \u00bdke\u00b2 \u2014 also on the formula sheet. The extension must be in metres when using this formula.",
+        "Elastic means it RETURNS to original shape; inelastic (plastic) means permanent deformation. 'Elastic' does NOT mean stretchy \u2014 rubber can be elastic and spring steel can be inelastic if overstretched."
       ],
       "commonMistakes": [
-        "Saying elastic means stretchy — elastic means the object RETURNS to original shape. A spring can be elastic; an overstretched spring is inelastic.",
-        "Forgetting that Hooke's Law only applies up to the limit of proportionality — beyond this point, doubling the force gives more than double the extension.",
-        "Using cm instead of m in Ee = ½ke² — always convert extension to metres before calculating elastic potential energy."
+        "Saying elastic means stretchy \u2014 elastic means the object RETURNS to original shape. A spring can be elastic; an overstretched spring is inelastic.",
+        "Forgetting that Hooke's Law only applies up to the limit of proportionality \u2014 beyond this point, doubling the force gives more than double the extension.",
+        "Using cm instead of m in Ee = \u00bdke\u00b2 \u2014 always convert extension to metres before calculating elastic potential energy."
       ],
       "videos": [
         {
-          "title": "Hooke's Law GCSE Physics",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=GF4zzLSk38I"
+          "url": "https://www.youtube.com/watch?v=ZG2XJut8TeU",
+          "videoId": "ZG2XJut8TeU",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Elasticity and Springs",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=GF4zzLSk38I"
+          "url": "https://www.youtube.com/watch?v=abWi5y6bJ9k",
+          "videoId": "abWi5y6bJ9k",
+          "channel": "Cognito"
         },
         {
-          "title": "Hooke's Law",
-          "channel": "Fuse School",
-          "url": "https://www.youtube.com/watch?v=ZCcCT7VZANU"
+          "url": "https://www.youtube.com/watch?v=nbFjz4eiJHQ",
+          "videoId": "nbFjz4eiJHQ",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=ACDbJ8rsQDo",
+          "videoId": "ACDbJ8rsQDo",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
-        "<strong>Hooke's Law</strong> states that the extension of a spring is directly proportional to the force applied, provided the <strong>elastic limit</strong> is not exceeded. The relationship is F = ke, where F is force in newtons, k is the spring constant in N/m, and e is extension in metres. The spring constant measures the stiffness of the spring — a larger k means a stiffer spring. Beyond the elastic limit, the spring is permanently deformed.",
-        "A spring stores <strong>elastic potential energy</strong> when stretched or compressed. The energy stored is given by E = ½ke², where k is the spring constant and e is the extension. When released, this stored energy is converted to <strong>kinetic energy</strong>. Elastic materials return to their original shape when the force is removed. Inelastic (plastic) deformation is permanent — the material does not return to its original shape after the force is removed.",
-        "<strong>Hooke's Law</strong> applies to elastic objects up to the elastic limit. A graph of force against extension is a straight line with gradient equal to the <strong>spring constant</strong>. Beyond the elastic limit, the line curves — the extension increases more rapidly for the same force. This graph can be used to determine whether the material obeys Hooke's Law and to calculate the spring constant. Materials that obey Hooke's Law are said to be <strong>elastic</strong>."
+        "<strong>Hooke's Law</strong> states that the extension of a spring is directly proportional to the force applied, provided the <strong>elastic limit</strong> is not exceeded. The relationship is F = ke, where F is force in newtons, k is the spring constant in N/m, and e is extension in metres. The spring constant measures the stiffness of the spring \u2014 a larger k means a stiffer spring. Beyond the elastic limit, the spring is permanently deformed.",
+        "A spring stores <strong>elastic potential energy</strong> when stretched or compressed. The energy stored is given by E = \u00bdke\u00b2, where k is the spring constant and e is the extension. When released, this stored energy is converted to <strong>kinetic energy</strong>. Elastic materials return to their original shape when the force is removed. Inelastic (plastic) deformation is permanent \u2014 the material does not return to its original shape after the force is removed.",
+        "<strong>Hooke's Law</strong> applies to elastic objects up to the elastic limit. A graph of force against extension is a straight line with gradient equal to the <strong>spring constant</strong>. Beyond the elastic limit, the line curves \u2014 the extension increases more rapidly for the same force. This graph can be used to determine whether the material obeys Hooke's Law and to calculate the spring constant. Materials that obey Hooke's Law are said to be <strong>elastic</strong>."
       ]
     },
     "Motion": {
       "intro": "Motion can be described using distance, displacement, speed, velocity and acceleration. Distance-time and velocity-time graphs are essential tools.",
-      "mnemonic": "\"SUVAT: Silly Unicorns Visit Alien Towns\" — s (displacement), u (initial velocity), v (final velocity), a (acceleration), t (time). All five are used in the equations of motion.",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Motion</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "\"SUVAT: Silly Unicorns Visit Alien Towns\" \u2014 s (displacement), u (initial velocity), v (final velocity), a (acceleration), t (time). All five are used in the equations of motion.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Motion</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Key Definitions",
-          "icon": "🏃",
+          "icon": "\ud83c\udfc3",
           "text": "Motion is described using five key quantities: displacement, speed, velocity, acceleration and time.",
           "points": [
-            "<strong>Speed</strong> — distance ÷ time (m/s); scalar; does not specify direction",
-            "<strong>Velocity</strong> — displacement ÷ time (m/s); vector; specifies direction",
-            "<strong>Acceleration</strong> — change in velocity ÷ time (m/s²); vector; can be positive or negative (deceleration)",
-            "<strong>Average speed</strong> — total distance ÷ total time; different from instantaneous speed",
-            "<strong>Deceleration</strong> — negative acceleration; velocity decreasing; e.g. braking car"
+            "<strong>Speed</strong> \u2014 distance \u00f7 time (m/s); scalar; does not specify direction",
+            "<strong>Velocity</strong> \u2014 displacement \u00f7 time (m/s); vector; specifies direction",
+            "<strong>Acceleration</strong> \u2014 change in velocity \u00f7 time (m/s\u00b2); vector; can be positive or negative (deceleration)",
+            "<strong>Average speed</strong> \u2014 total distance \u00f7 total time; different from instantaneous speed",
+            "<strong>Deceleration</strong> \u2014 negative acceleration; velocity decreasing; e.g. braking car"
           ]
         },
         {
           "title": "Distance-Time Graphs",
-          "icon": "📈",
+          "icon": "\ud83d\udcc8",
           "text": "Distance-time graphs show how position changes with time. The gradient gives the speed at any point.",
           "points": [
-            "<strong>Gradient = speed</strong> — steeper line = greater speed",
-            "<strong>Flat (horizontal) line</strong> — stationary; no movement",
-            "<strong>Straight line</strong> — constant speed",
-            "<strong>Curved line</strong> — changing speed (acceleration or deceleration)",
-            "<strong>Worked example</strong> — travel 120 m in 30 s: speed = 120/30 = 4 m/s; gradient on graph = 4"
+            "<strong>Gradient = speed</strong> \u2014 steeper line = greater speed",
+            "<strong>Flat (horizontal) line</strong> \u2014 stationary; no movement",
+            "<strong>Straight line</strong> \u2014 constant speed",
+            "<strong>Curved line</strong> \u2014 changing speed (acceleration or deceleration)",
+            "<strong>Worked example</strong> \u2014 travel 120 m in 30 s: speed = 120/30 = 4 m/s; gradient on graph = 4"
           ]
         },
         {
           "title": "Velocity-Time Graphs",
-          "icon": "📊",
+          "icon": "\ud83d\udcca",
           "text": "Velocity-time graphs show how velocity changes with time. Gradient gives acceleration; area gives distance.",
           "points": [
-            "<strong>Gradient = acceleration</strong> — a = Δv/Δt; steeper gradient = greater acceleration",
-            "<strong>Area under graph = distance</strong> — for any shape (triangle, rectangle, trapezium)",
-            "<strong>Flat line</strong> — constant velocity (zero acceleration)",
-            "<strong>Positive gradient</strong> — acceleration; <strong>negative gradient</strong> — deceleration",
-            "<strong>SUVAT equations</strong> — v = u + at; s = ut + ½at²; v² = u² + 2as; s = (u+v)/2 × t"
+            "<strong>Gradient = acceleration</strong> \u2014 a = \u0394v/\u0394t; steeper gradient = greater acceleration",
+            "<strong>Area under graph = distance</strong> \u2014 for any shape (triangle, rectangle, trapezium)",
+            "<strong>Flat line</strong> \u2014 constant velocity (zero acceleration)",
+            "<strong>Positive gradient</strong> \u2014 acceleration; <strong>negative gradient</strong> \u2014 deceleration",
+            "<strong>SUVAT equations</strong> \u2014 v = u + at; s = ut + \u00bdat\u00b2; v\u00b2 = u\u00b2 + 2as; s = (u+v)/2 \u00d7 t"
           ]
         },
         {
           "title": "SUVAT Equations",
-          "icon": "📐",
+          "icon": "\ud83d\udcd0",
           "text": "The equations of motion apply to uniform (constant) acceleration. They link the five quantities: s, u, v, a, t.",
           "callout": {
             "type": "exam",
             "label": "Key Equations",
-            "text": "v = u + at | s = ut + ½at² | v² = u² + 2as | s = (u+v)/2 × t. (s=displacement, u=initial velocity, v=final velocity, a=acceleration, t=time)"
+            "text": "v = u + at | s = ut + \u00bdat\u00b2 | v\u00b2 = u\u00b2 + 2as | s = (u+v)/2 \u00d7 t. (s=displacement, u=initial velocity, v=final velocity, a=acceleration, t=time)"
           }
         }
       ],
       "keyTerms": [
         {
           "term": "Acceleration",
-          "def": "Rate of change of velocity: a = Δv/Δt; measured in m/s²; vector quantity"
+          "def": "Rate of change of velocity: a = \u0394v/\u0394t; measured in m/s\u00b2; vector quantity"
         },
         {
           "term": "Velocity",
-          "def": "Speed in a given direction — a vector quantity measured in m/s"
+          "def": "Speed in a given direction \u2014 a vector quantity measured in m/s"
         },
         {
           "term": "Displacement",
-          "def": "Distance in a specified direction from a reference point — a vector quantity"
+          "def": "Distance in a specified direction from a reference point \u2014 a vector quantity"
         },
         {
           "term": "Uniform acceleration",
-          "def": "Constant rate of change of velocity — SUVAT equations apply"
+          "def": "Constant rate of change of velocity \u2014 SUVAT equations apply"
         },
         {
           "term": "Instantaneous speed",
-          "def": "Speed at a particular moment in time — given by gradient of d-t graph at that point"
+          "def": "Speed at a particular moment in time \u2014 given by gradient of d-t graph at that point"
         },
         {
           "term": "Deceleration",
-          "def": "Negative acceleration — velocity decreasing; shown as negative gradient on v-t graph"
+          "def": "Negative acceleration \u2014 velocity decreasing; shown as negative gradient on v-t graph"
         }
       ],
       "examTips": [
-        "v-t graph: gradient = acceleration (use Δv/Δt); area under graph = distance. AQA may ask you to calculate area under a non-rectangular shape — split into triangles and rectangles.",
+        "v-t graph: gradient = acceleration (use \u0394v/\u0394t); area under graph = distance. AQA may ask you to calculate area under a non-rectangular shape \u2014 split into triangles and rectangles.",
         "d-t graph: gradient = speed only (NOT acceleration). Flat section = stationary. A curved d-t graph means changing speed.",
         "In SUVAT problems: write down what you know (s, u, v, a, t); identify what is unknown; choose the equation that includes both the unknown and all knowns."
       ],
       "commonMistakes": [
-        "Reading gradient of a d-t graph as acceleration — gradient of a d-t graph gives SPEED, not acceleration. Only a v-t graph gives acceleration.",
-        "Forgetting that the area under a v-t graph gives distance — for a triangle, area = ½ × base × height; for a trapezium, use the trapezium area formula.",
-        "Using the final velocity instead of the change in velocity when calculating acceleration — a = Δv/Δt = (v − u)/t, not v/t."
+        "Reading gradient of a d-t graph as acceleration \u2014 gradient of a d-t graph gives SPEED, not acceleration. Only a v-t graph gives acceleration.",
+        "Forgetting that the area under a v-t graph gives distance \u2014 for a triangle, area = \u00bd \u00d7 base \u00d7 height; for a trapezium, use the trapezium area formula.",
+        "Using the final velocity instead of the change in velocity when calculating acceleration \u2014 a = \u0394v/\u0394t = (v \u2212 u)/t, not v/t."
       ],
       "videos": [
         {
-          "title": "Motion and Velocity GCSE Physics",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=hq2hJkGq_P8"
+          "url": "https://www.youtube.com/watch?v=F_XlATPLvac",
+          "videoId": "F_XlATPLvac",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Distance-Time Graphs",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=j-kMGFDFKaM"
+          "url": "https://www.youtube.com/watch?v=NZvMXcIztuU",
+          "videoId": "NZvMXcIztuU",
+          "channel": "Cognito"
         },
         {
-          "title": "Velocity-Time Graphs",
-          "channel": "Science with Hazel",
-          "url": "https://www.youtube.com/watch?v=j-kMGFDFKaM"
+          "url": "https://www.youtube.com/watch?v=VJefeYJL3uE",
+          "videoId": "VJefeYJL3uE",
+          "channel": "Cognito"
         }
       ],
       "clozePassages": [
-        "<strong>Speed</strong> is the distance travelled per unit time, measured in m/s. <strong>Velocity</strong> is speed in a given direction. <strong>Acceleration</strong> is the rate of change of velocity: a = Δv/Δt. Acceleration is measured in m/s². On a distance-time graph, the gradient gives speed. On a velocity-time graph, the gradient gives acceleration and the area under the graph gives distance. A straight line on a velocity-time graph shows constant acceleration.",
-        "The <strong>equations of motion</strong> (SUVAT equations) apply to uniform acceleration. The key equations are: v = u + at and s = ½(u+v)t, where s is displacement, u is initial velocity, v is final velocity, a is acceleration, and t is time. These equations can be used to solve problems involving objects accelerating uniformly, such as cars braking or objects in <strong>free fall</strong> (ignoring air resistance).",
+        "<strong>Speed</strong> is the distance travelled per unit time, measured in m/s. <strong>Velocity</strong> is speed in a given direction. <strong>Acceleration</strong> is the rate of change of velocity: a = \u0394v/\u0394t. Acceleration is measured in m/s\u00b2. On a distance-time graph, the gradient gives speed. On a velocity-time graph, the gradient gives acceleration and the area under the graph gives distance. A straight line on a velocity-time graph shows constant acceleration.",
+        "The <strong>equations of motion</strong> (SUVAT equations) apply to uniform acceleration. The key equations are: v = u + at and s = \u00bd(u+v)t, where s is displacement, u is initial velocity, v is final velocity, a is acceleration, and t is time. These equations can be used to solve problems involving objects accelerating uniformly, such as cars braking or objects in <strong>free fall</strong> (ignoring air resistance).",
         "The velocity of an object changes if its <strong>speed</strong> changes, its direction changes, or both. Circular motion involves constant change of direction, so the object is always accelerating towards the centre even if its speed is constant. This centripetal acceleration is caused by a <strong>centripetal force</strong> directed towards the centre. Examples include planets orbiting the Sun, cars going around bends, and satellites in orbit."
       ]
     },
     "Newton's Laws": {
       "intro": "Newton's three laws of motion describe the relationship between force, mass and acceleration. They are fundamental to understanding how objects move.",
-      "mnemonic": "\"1: Inertia keeps things the same. 2: F = ma. 3: Every action has a Reaction\" — 1-I, 2-Fma, 3-R. Or: 'Inertia, F=ma, Reaction' for the three laws in order.",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Newton's Laws</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "\"1: Inertia keeps things the same. 2: F = ma. 3: Every action has a Reaction\" \u2014 1-I, 2-Fma, 3-R. Or: 'Inertia, F=ma, Reaction' for the three laws in order.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Newton's Laws</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Newton's First Law",
-          "icon": "1️⃣",
+          "icon": "1\ufe0f\u20e3",
           "text": "Newton's First Law: an object remains at rest or moves at constant velocity unless acted upon by a resultant force.",
           "callout": {
             "type": "exam",
@@ -551,45 +576,45 @@
             "text": "An object remains at rest or moves at constant velocity unless acted upon by a resultant force."
           },
           "points": [
-            "<strong>Inertia</strong> — tendency of objects to resist changes in motion; more massive objects have more inertia",
-            "<strong>Balanced forces → no acceleration</strong> — object stays at rest OR continues at constant velocity",
-            "<strong>Unbalanced forces needed to change velocity</strong> — to speed up, slow down, or change direction",
-            "<strong>Example</strong> — car at constant speed on motorway: engine force = friction + air resistance (balanced)",
-            "<strong>Space travel</strong> — spacecraft in deep space with engines off moves at constant velocity (no friction)"
+            "<strong>Inertia</strong> \u2014 tendency of objects to resist changes in motion; more massive objects have more inertia",
+            "<strong>Balanced forces \u2192 no acceleration</strong> \u2014 object stays at rest OR continues at constant velocity",
+            "<strong>Unbalanced forces needed to change velocity</strong> \u2014 to speed up, slow down, or change direction",
+            "<strong>Example</strong> \u2014 car at constant speed on motorway: engine force = friction + air resistance (balanced)",
+            "<strong>Space travel</strong> \u2014 spacecraft in deep space with engines off moves at constant velocity (no friction)"
           ]
         },
         {
           "title": "Newton's Second Law",
-          "icon": "2️⃣",
+          "icon": "2\ufe0f\u20e3",
           "text": "Newton's Second Law: resultant force equals mass times acceleration. Larger force or smaller mass means greater acceleration.",
           "callout": {
             "type": "exam",
             "label": "Second Law",
-            "text": "F = ma (Resultant force = mass × acceleration). Units: F in N, m in kg, a in m/s²."
+            "text": "F = ma (Resultant force = mass \u00d7 acceleration). Units: F in N, m in kg, a in m/s\u00b2."
           },
           "points": [
-            "<strong>F = ma</strong> — resultant force (N) = mass (kg) × acceleration (m/s²)",
-            "<strong>Rearrangements</strong> — a = F/m; m = F/a",
-            "<strong>Larger force</strong> — greater acceleration (for same mass)",
-            "<strong>Larger mass</strong> — smaller acceleration (for same force); greater inertia",
-            "<strong>Worked example</strong> — 1200 kg car, resultant force 3600 N: a = F/m = 3600/1200 = 3 m/s²"
+            "<strong>F = ma</strong> \u2014 resultant force (N) = mass (kg) \u00d7 acceleration (m/s\u00b2)",
+            "<strong>Rearrangements</strong> \u2014 a = F/m; m = F/a",
+            "<strong>Larger force</strong> \u2014 greater acceleration (for same mass)",
+            "<strong>Larger mass</strong> \u2014 smaller acceleration (for same force); greater inertia",
+            "<strong>Worked example</strong> \u2014 1200 kg car, resultant force 3600 N: a = F/m = 3600/1200 = 3 m/s\u00b2"
           ]
         },
         {
           "title": "Newton's Third Law",
-          "icon": "3️⃣",
+          "icon": "3\ufe0f\u20e3",
           "text": "Newton's Third Law: for every action force there is an equal and opposite reaction force acting on a different object.",
           "callout": {
             "type": "exam",
             "label": "Third Law",
-            "text": "For every action there is an equal and opposite reaction. Forces act on DIFFERENT objects — they cannot cancel each other out."
+            "text": "For every action there is an equal and opposite reaction. Forces act on DIFFERENT objects \u2014 they cannot cancel each other out."
           },
           "points": [
-            "<strong>Equal and opposite pairs</strong> — same magnitude, opposite direction, same type of force",
-            "<strong>Different objects</strong> — each force acts on a different object; they CANNOT cancel each other",
-            "<strong>Example: walking</strong> — foot pushes back on Earth; Earth pushes foot forward (reaction propels person)",
-            "<strong>Example: rocket</strong> — gases pushed down; rocket pushed up by equal and opposite force",
-            "<strong>Third law ≠ balanced forces</strong> — third law pairs act on different objects; balanced forces act on the same object"
+            "<strong>Equal and opposite pairs</strong> \u2014 same magnitude, opposite direction, same type of force",
+            "<strong>Different objects</strong> \u2014 each force acts on a different object; they CANNOT cancel each other",
+            "<strong>Example: walking</strong> \u2014 foot pushes back on Earth; Earth pushes foot forward (reaction propels person)",
+            "<strong>Example: rocket</strong> \u2014 gases pushed down; rocket pushed up by equal and opposite force",
+            "<strong>Third law \u2260 balanced forces</strong> \u2014 third law pairs act on different objects; balanced forces act on the same object"
           ]
         }
       ],
@@ -600,7 +625,7 @@
         },
         {
           "term": "Newton's Second Law",
-          "def": "Resultant force = mass × acceleration: F = ma (N = kg × m/s²)"
+          "def": "Resultant force = mass \u00d7 acceleration: F = ma (N = kg \u00d7 m/s\u00b2)"
         },
         {
           "term": "Newton's Third Law",
@@ -608,106 +633,131 @@
         },
         {
           "term": "Inertia",
-          "def": "Tendency of an object to resist changes in its state of motion — related to mass"
+          "def": "Tendency of an object to resist changes in its state of motion \u2014 related to mass"
         },
         {
           "term": "Inertial mass",
-          "def": "A measure of how difficult it is to accelerate an object — defined as F/a"
+          "def": "A measure of how difficult it is to accelerate an object \u2014 defined as F/a"
         },
         {
           "term": "Newton (N)",
-          "def": "Unit of force — 1 N is the force that gives a 1 kg mass an acceleration of 1 m/s²"
+          "def": "Unit of force \u2014 1 N is the force that gives a 1 kg mass an acceleration of 1 m/s\u00b2"
         }
       ],
       "examTips": [
-        "F = ma — rearrange for a = F/m or m = F/a. The resultant force (not just one force) must be used. If two forces act, find the resultant first.",
+        "F = ma \u2014 rearrange for a = F/m or m = F/a. The resultant force (not just one force) must be used. If two forces act, find the resultant first.",
         "Third law pairs: act on DIFFERENT objects; same type of force; equal magnitude; opposite direction. AQA often asks you to identify the third law pair of a named force.",
-        "Balanced forces mean ZERO resultant force, not zero forces. A car at constant speed has many forces acting on it — they are balanced."
+        "Balanced forces mean ZERO resultant force, not zero forces. A car at constant speed has many forces acting on it \u2014 they are balanced."
       ],
       "commonMistakes": [
-        "Saying third law forces cancel each other out — they cannot, because they act on different objects. Each object accelerates according to its own resultant force.",
+        "Saying third law forces cancel each other out \u2014 they cannot, because they act on different objects. Each object accelerates according to its own resultant force.",
         "Confusing balanced forces (same object, resultant = 0) with Newton's third law pairs (different objects, equal and opposite).",
-        "Using the wrong force in F = ma — always use the RESULTANT force, not just the applied force."
+        "Using the wrong force in F = ma \u2014 always use the RESULTANT force, not just the applied force."
       ],
       "videos": [
         {
-          "title": "Newton's Laws GCSE Physics",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=hq2hJkGq_P8"
+          "url": "https://www.youtube.com/watch?v=2nUuvm5H12Q",
+          "videoId": "2nUuvm5H12Q",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Newton's Second Law",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=_sr7A0tkHgI"
+          "url": "https://www.youtube.com/watch?v=0efXaBr_JcU",
+          "videoId": "0efXaBr_JcU",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Newton's Three Laws",
-          "channel": "Fuse School",
-          "url": "https://www.youtube.com/watch?v=zWR-sG-WTJQ"
+          "url": "https://www.youtube.com/watch?v=eU3ULRgS8Vk",
+          "videoId": "eU3ULRgS8Vk",
+          "channel": "FuseSchools"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=Kh87NMaZ0fo",
+          "videoId": "Kh87NMaZ0fo",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=A_Dh7EstGwU",
+          "videoId": "A_Dh7EstGwU",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=_W3VbonFNcw",
+          "videoId": "_W3VbonFNcw",
+          "channel": "Free Science Lessons"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=SqdCCxv9YzI",
+          "videoId": "SqdCCxv9YzI",
+          "channel": "Free Science Lessons"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=wANmggaC9pY",
+          "videoId": "wANmggaC9pY",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
-        "<strong>Newton's First Law</strong> states that an object remains at rest or moves at constant velocity unless acted upon by a resultant force. This means a resultant force is needed to change the velocity of an object — either its speed or direction. Objects resist changes to their state of motion — this is called <strong>inertia</strong>. The greater the mass, the greater the inertia and the harder it is to change the object's velocity.",
+        "<strong>Newton's First Law</strong> states that an object remains at rest or moves at constant velocity unless acted upon by a resultant force. This means a resultant force is needed to change the velocity of an object \u2014 either its speed or direction. Objects resist changes to their state of motion \u2014 this is called <strong>inertia</strong>. The greater the mass, the greater the inertia and the harder it is to change the object's velocity.",
         "<strong>Newton's Second Law</strong> states that the acceleration of an object is directly proportional to the resultant force and inversely proportional to its mass: F = ma. A larger force produces greater acceleration; a larger mass produces less acceleration for the same force. This equation allows us to calculate the <strong>resultant force</strong> needed to produce a given acceleration, or the acceleration that results from a given force.",
         "<strong>Newton's Third Law</strong> states that for every action there is an equal and opposite reaction. When object A exerts a force on object B, object B exerts an equal force on A in the opposite direction. These forces act on different objects. For example, when you push on a wall, the wall pushes back on you with the same force. When a rocket expels gas downward, the gas exerts an equal upward <strong>thrust</strong> on the rocket."
       ]
     },
     "Momentum": {
       "intro": "Momentum is the product of mass and velocity. It is conserved in all collisions and explosions (in the absence of external forces).",
-      "mnemonic": "\"p = mv: Penguins Moving Very fast have lots of momentum\" — p is the symbol for momentum, mv is mass × velocity. Conservation: 'Before = After, always.'",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Momentum</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "\"p = mv: Penguins Moving Very fast have lots of momentum\" \u2014 p is the symbol for momentum, mv is mass \u00d7 velocity. Conservation: 'Before = After, always.'",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Momentum</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Momentum Formula",
-          "icon": "📐",
-          "text": "Momentum is a vector quantity — it depends on both mass and velocity, so direction matters in calculations.",
+          "icon": "\ud83d\udcd0",
+          "text": "Momentum is a vector quantity \u2014 it depends on both mass and velocity, so direction matters in calculations.",
           "callout": {
             "type": "exam",
             "label": "Formula",
-            "text": "p = m × v (Momentum = mass × velocity). Units: kg m/s. Momentum is a vector quantity."
+            "text": "p = m \u00d7 v (Momentum = mass \u00d7 velocity). Units: kg m/s. Momentum is a vector quantity."
           },
           "points": [
-            "<strong>p = mv</strong> — momentum (kg m/s) = mass (kg) × velocity (m/s)",
-            "<strong>Vector quantity</strong> — direction must be stated or accounted for with signs (+/−)",
-            "<strong>Worked example</strong> — 1500 kg car at 20 m/s: p = 1500 × 20 = 30 000 kg m/s",
-            "<strong>Larger momentum</strong> — either larger mass or larger velocity (or both)",
-            "<strong>Units</strong> — kg m/s (same as N s); both are acceptable"
+            "<strong>p = mv</strong> \u2014 momentum (kg m/s) = mass (kg) \u00d7 velocity (m/s)",
+            "<strong>Vector quantity</strong> \u2014 direction must be stated or accounted for with signs (+/\u2212)",
+            "<strong>Worked example</strong> \u2014 1500 kg car at 20 m/s: p = 1500 \u00d7 20 = 30 000 kg m/s",
+            "<strong>Larger momentum</strong> \u2014 either larger mass or larger velocity (or both)",
+            "<strong>Units</strong> \u2014 kg m/s (same as N s); both are acceptable"
           ]
         },
         {
           "title": "Conservation of Momentum",
-          "icon": "♾️",
+          "icon": "\u267e\ufe0f",
           "text": "In a closed system (no external forces), the total momentum before an event equals the total momentum after.",
           "points": [
-            "<strong>Conservation law</strong> — total momentum before = total momentum after (closed system)",
-            "<strong>Applies to</strong> — all collisions and explosions, elastic and inelastic",
-            "<strong>Collision example</strong> — 2 kg ball at 5 m/s hits stationary 3 kg ball; they stick: (2×5) = (2+3)×v → v = 2 m/s",
-            "<strong>Explosion from rest</strong> — initial momentum = 0; products move in opposite directions with equal and opposite momenta",
-            "<strong>Direction matters</strong> — choose positive direction; momentum in opposite direction is negative"
+            "<strong>Conservation law</strong> \u2014 total momentum before = total momentum after (closed system)",
+            "<strong>Applies to</strong> \u2014 all collisions and explosions, elastic and inelastic",
+            "<strong>Collision example</strong> \u2014 2 kg ball at 5 m/s hits stationary 3 kg ball; they stick: (2\u00d75) = (2+3)\u00d7v \u2192 v = 2 m/s",
+            "<strong>Explosion from rest</strong> \u2014 initial momentum = 0; products move in opposite directions with equal and opposite momenta",
+            "<strong>Direction matters</strong> \u2014 choose positive direction; momentum in opposite direction is negative"
           ]
         },
         {
           "title": "Impulse and Force",
-          "icon": "⚡",
+          "icon": "\u26a1",
           "text": "Force equals rate of change of momentum. Impulse is the product of force and time, equal to the change in momentum.",
           "callout": {
             "type": "exam",
             "label": "Force and Momentum",
-            "text": "F = Δp/Δt (Force = change in momentum ÷ time). Rearranged: F × t = Δp (impulse = change in momentum). Larger time → smaller force for same momentum change — explains crumple zones."
+            "text": "F = \u0394p/\u0394t (Force = change in momentum \u00f7 time). Rearranged: F \u00d7 t = \u0394p (impulse = change in momentum). Larger time \u2192 smaller force for same momentum change \u2014 explains crumple zones."
           },
           "points": [
-            "<strong>F = Δp/Δt</strong> — force (N) = change in momentum (kg m/s) ÷ time (s)",
-            "<strong>Impulse = FΔt = Δp</strong> — impulse equals change in momentum; units: N s or kg m/s",
-            "<strong>Crumple zones</strong> — increase collision time → smaller force for same Δp → less injury",
-            "<strong>Airbags</strong> — extend time of impact; reduce force on driver for same change in momentum",
-            "<strong>Sports applications</strong> — 'follow through' in cricket/tennis extends contact time → increases impulse → faster ball"
+            "<strong>F = \u0394p/\u0394t</strong> \u2014 force (N) = change in momentum (kg m/s) \u00f7 time (s)",
+            "<strong>Impulse = F\u0394t = \u0394p</strong> \u2014 impulse equals change in momentum; units: N s or kg m/s",
+            "<strong>Crumple zones</strong> \u2014 increase collision time \u2192 smaller force for same \u0394p \u2192 less injury",
+            "<strong>Airbags</strong> \u2014 extend time of impact; reduce force on driver for same change in momentum",
+            "<strong>Sports applications</strong> \u2014 'follow through' in cricket/tennis extends contact time \u2192 increases impulse \u2192 faster ball"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Momentum",
-          "def": "Mass × velocity — a vector quantity measured in kg m/s; symbol p"
+          "def": "Mass \u00d7 velocity \u2014 a vector quantity measured in kg m/s; symbol p"
         },
         {
           "term": "Conservation of momentum",
@@ -715,11 +765,11 @@
         },
         {
           "term": "Impulse",
-          "def": "Change in momentum = force × time (N s or kg m/s)"
+          "def": "Change in momentum = force \u00d7 time (N s or kg m/s)"
         },
         {
           "term": "Closed system",
-          "def": "A system with no external forces acting — total momentum is conserved"
+          "def": "A system with no external forces acting \u2014 total momentum is conserved"
         },
         {
           "term": "Elastic collision",
@@ -727,55 +777,60 @@
         },
         {
           "term": "Inelastic collision",
-          "def": "Collision in which momentum is conserved but kinetic energy is not — some KE converted to thermal energy"
+          "def": "Collision in which momentum is conserved but kinetic energy is not \u2014 some KE converted to thermal energy"
         }
       ],
       "examTips": [
-        "Momentum is conserved in ALL collisions — elastic and inelastic. Kinetic energy is only conserved in elastic collisions. AQA often asks which quantity is always conserved.",
-        "Crumple zones increase collision time → smaller force for same change in momentum. This is the key explanation for many car safety features. Use F = Δp/Δt.",
+        "Momentum is conserved in ALL collisions \u2014 elastic and inelastic. Kinetic energy is only conserved in elastic collisions. AQA often asks which quantity is always conserved.",
+        "Crumple zones increase collision time \u2192 smaller force for same change in momentum. This is the key explanation for many car safety features. Use F = \u0394p/\u0394t.",
         "In explosion from rest: total initial momentum = 0 (at rest); so momenta of products are equal and opposite (sum = 0). This is a common calculation question."
       ],
       "commonMistakes": [
-        "Forgetting momentum is a vector — direction matters. If two objects move in opposite directions, one momentum is negative. Add with signs, not just magnitudes.",
-        "Saying kinetic energy is conserved in all collisions — kinetic energy is only conserved in perfectly elastic collisions. Most real collisions are inelastic.",
-        "Confusing momentum (p = mv) with kinetic energy (KE = ½mv²) — they are different quantities with different formulas and units."
+        "Forgetting momentum is a vector \u2014 direction matters. If two objects move in opposite directions, one momentum is negative. Add with signs, not just magnitudes.",
+        "Saying kinetic energy is conserved in all collisions \u2014 kinetic energy is only conserved in perfectly elastic collisions. Most real collisions are inelastic.",
+        "Confusing momentum (p = mv) with kinetic energy (KE = \u00bdmv\u00b2) \u2014 they are different quantities with different formulas and units."
       ],
       "videos": [
         {
-          "title": "Momentum GCSE Physics",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=sTdPjxNOCOY"
+          "url": "https://www.youtube.com/watch?v=DxKelGugDa8",
+          "videoId": "DxKelGugDa8",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Conservation of Momentum",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=sTdPjxNOCOY"
+          "url": "https://www.youtube.com/watch?v=Bw2OuSr9d9I",
+          "videoId": "Bw2OuSr9d9I",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Momentum and Impulse",
-          "channel": "Fuse School",
-          "url": "https://www.youtube.com/watch?v=Uqf4vJHF8mU"
+          "url": "https://www.youtube.com/watch?v=mjeOuh0G-gw",
+          "videoId": "mjeOuh0G-gw",
+          "channel": "Cognito"
         },
         {
-          "title": "Momentum Calculations",
-          "channel": "Science with Hazel",
-          "url": "https://www.youtube.com/watch?v=sTdPjxNOCOY"
+          "url": "https://www.youtube.com/watch?v=KjFA2Zvdn6I",
+          "videoId": "KjFA2Zvdn6I",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=ZtQhlwPxE28",
+          "videoId": "ZtQhlwPxE28",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
-        "<strong>Momentum</strong> is defined as mass × velocity and is measured in kg m/s. It is a vector quantity — it has both magnitude and direction. The <strong>conservation of momentum</strong> states that in a closed system, the total momentum before a collision equals the total momentum after. Momentum is conserved in all collisions and explosions, provided no external forces act. This principle is fundamental to understanding how objects interact.",
-        "The <strong>impulse</strong> of a force is equal to the change in momentum: impulse = F × t = Δ(mv). A large force acting for a short time produces the same change in momentum as a smaller force acting for a longer time. This is why safety features such as <strong>airbags</strong> and crumple zones are effective — they increase the time of collision, reducing the force. <strong>Helmets</strong> work on the same principle, extending the time of impact to reduce force on the skull.",
-        "<strong>Newton's Second Law</strong> can be expressed in terms of momentum: F = Δ(mv)/Δt — force equals rate of change of momentum. This is a more general statement than F = ma, which applies only when mass is constant. In an explosion, momentum is conserved — the total momentum is zero before and after, so the products move in opposite directions with equal and opposite momenta. <strong>Rockets</strong> work by expelling gas backwards, gaining an equal and opposite momentum forwards."
+        "<strong>Momentum</strong> is defined as mass \u00d7 velocity and is measured in kg m/s. It is a vector quantity \u2014 it has both magnitude and direction. The <strong>conservation of momentum</strong> states that in a closed system, the total momentum before a collision equals the total momentum after. Momentum is conserved in all collisions and explosions, provided no external forces act. This principle is fundamental to understanding how objects interact.",
+        "The <strong>impulse</strong> of a force is equal to the change in momentum: impulse = F \u00d7 t = \u0394(mv). A large force acting for a short time produces the same change in momentum as a smaller force acting for a longer time. This is why safety features such as <strong>airbags</strong> and crumple zones are effective \u2014 they increase the time of collision, reducing the force. <strong>Helmets</strong> work on the same principle, extending the time of impact to reduce force on the skull.",
+        "<strong>Newton's Second Law</strong> can be expressed in terms of momentum: F = \u0394(mv)/\u0394t \u2014 force equals rate of change of momentum. This is a more general statement than F = ma, which applies only when mass is constant. In an explosion, momentum is conserved \u2014 the total momentum is zero before and after, so the products move in opposite directions with equal and opposite momenta. <strong>Rockets</strong> work by expelling gas backwards, gaining an equal and opposite momentum forwards."
       ]
     },
     "Stopping Distances": {
       "intro": "The total stopping distance of a vehicle is the sum of thinking distance and braking distance. Both are affected by different factors.",
-      "mnemonic": "\"Think Before Braking: Tired Drunk Distracted drivers have longer Thinking distances; Bad roads and Worn brakes make Braking distances worse\" — T-D-D for thinking; B-W for braking.",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Stopping Distances</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "\"Think Before Braking: Tired Drunk Distracted drivers have longer Thinking distances; Bad roads and Worn brakes make Braking distances worse\" \u2014 T-D-D for thinking; B-W for braking.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Stopping Distances</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Stopping Distance",
-          "icon": "🚗",
+          "icon": "\ud83d\ude97",
           "text": "Total stopping distance is split into two parts: thinking distance (during reaction time) and braking distance (during braking).",
           "callout": {
             "type": "exam",
@@ -783,50 +838,50 @@
             "text": "Total stopping distance = thinking distance + braking distance."
           },
           "points": [
-            "<strong>Thinking distance</strong> — distance travelled while driver reacts; driver still at full speed",
-            "<strong>Braking distance</strong> — distance travelled while brakes are applied; speed decreases to zero",
-            "<strong>Total stopping distance</strong> — thinking distance + braking distance",
-            "<strong>Speed affects BOTH</strong> — doubling speed doubles thinking distance and quadruples braking distance",
-            "<strong>Units</strong> — typically in metres; reaction time in seconds"
+            "<strong>Thinking distance</strong> \u2014 distance travelled while driver reacts; driver still at full speed",
+            "<strong>Braking distance</strong> \u2014 distance travelled while brakes are applied; speed decreases to zero",
+            "<strong>Total stopping distance</strong> \u2014 thinking distance + braking distance",
+            "<strong>Speed affects BOTH</strong> \u2014 doubling speed doubles thinking distance and quadruples braking distance",
+            "<strong>Units</strong> \u2014 typically in metres; reaction time in seconds"
           ]
         },
         {
           "title": "Factors Affecting Each",
-          "icon": "📊",
+          "icon": "\ud83d\udcca",
           "text": "Thinking distance and braking distance are affected by different factors. Speed affects both.",
           "points": [
-            "<strong>Thinking distance increases with</strong> — higher speed, driver tiredness, alcohol, drugs, distraction (phone use)",
-            "<strong>Braking distance increases with</strong> — higher speed, worn tyres, wet/icy road surface, worn/overheated brakes, heavier vehicle",
-            "<strong>Speed dominates braking</strong> — braking distance ∝ v² (kinetic energy ∝ v²); doubling speed quadruples braking distance",
-            "<strong>Road conditions</strong> — ice reduces friction coefficient dramatically; wet roads also reduce grip",
-            "<strong>Tyre tread</strong> — channels water away from contact patch; worn tyres = aquaplaning risk"
+            "<strong>Thinking distance increases with</strong> \u2014 higher speed, driver tiredness, alcohol, drugs, distraction (phone use)",
+            "<strong>Braking distance increases with</strong> \u2014 higher speed, worn tyres, wet/icy road surface, worn/overheated brakes, heavier vehicle",
+            "<strong>Speed dominates braking</strong> \u2014 braking distance \u221d v\u00b2 (kinetic energy \u221d v\u00b2); doubling speed quadruples braking distance",
+            "<strong>Road conditions</strong> \u2014 ice reduces friction coefficient dramatically; wet roads also reduce grip",
+            "<strong>Tyre tread</strong> \u2014 channels water away from contact patch; worn tyres = aquaplaning risk"
           ]
         },
         {
           "title": "Reaction Time",
-          "icon": "⏱️",
+          "icon": "\u23f1\ufe0f",
           "text": "Reaction time is the delay between a stimulus and a response. It determines thinking distance.",
           "points": [
-            "<strong>Typical reaction time</strong> — 0.2 to 0.9 seconds for a sober, alert driver",
-            "<strong>Measurement</strong> — ruler drop test (measure distance fallen); computer-based reaction tests",
-            "<strong>Increased by</strong> — alcohol, drugs (prescription and recreational), tiredness, distraction, mobile phone use",
-            "<strong>Thinking distance calculation</strong> — thinking distance = speed × reaction time (e.g. 20 m/s × 0.5 s = 10 m)",
-            "<strong>Braking force</strong> — large braking force = large deceleration; KE removed by friction in brakes (heat generated)"
+            "<strong>Typical reaction time</strong> \u2014 0.2 to 0.9 seconds for a sober, alert driver",
+            "<strong>Measurement</strong> \u2014 ruler drop test (measure distance fallen); computer-based reaction tests",
+            "<strong>Increased by</strong> \u2014 alcohol, drugs (prescription and recreational), tiredness, distraction, mobile phone use",
+            "<strong>Thinking distance calculation</strong> \u2014 thinking distance = speed \u00d7 reaction time (e.g. 20 m/s \u00d7 0.5 s = 10 m)",
+            "<strong>Braking force</strong> \u2014 large braking force = large deceleration; KE removed by friction in brakes (heat generated)"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Thinking distance",
-          "def": "Distance travelled during the driver's reaction time — proportional to speed"
+          "def": "Distance travelled during the driver's reaction time \u2014 proportional to speed"
         },
         {
           "term": "Braking distance",
-          "def": "Distance travelled after brakes are applied until vehicle stops — proportional to speed²"
+          "def": "Distance travelled after brakes are applied until vehicle stops \u2014 proportional to speed\u00b2"
         },
         {
           "term": "Reaction time",
-          "def": "Time between a stimulus and a response — typically 0.2–0.9 s; increased by alcohol, drugs, tiredness"
+          "def": "Time between a stimulus and a response \u2014 typically 0.2\u20130.9 s; increased by alcohol, drugs, tiredness"
         },
         {
           "term": "Stopping distance",
@@ -842,36 +897,41 @@
         }
       ],
       "examTips": [
-        "Speed affects BOTH thinking distance (proportional to v) AND braking distance (proportional to v²). AQA examiners frequently test whether students know that speed affects both components.",
-        "Braking distance ∝ v² because KE = ½mv² must be removed by braking. Doubling speed quadruples braking distance (and therefore total stopping distance approximately quadruples).",
-        "In the ruler drop test for reaction time: the further the ruler falls before being caught, the longer the reaction time. Use s = ½gt² to calculate time from distance fallen."
+        "Speed affects BOTH thinking distance (proportional to v) AND braking distance (proportional to v\u00b2). AQA examiners frequently test whether students know that speed affects both components.",
+        "Braking distance \u221d v\u00b2 because KE = \u00bdmv\u00b2 must be removed by braking. Doubling speed quadruples braking distance (and therefore total stopping distance approximately quadruples).",
+        "In the ruler drop test for reaction time: the further the ruler falls before being caught, the longer the reaction time. Use s = \u00bdgt\u00b2 to calculate time from distance fallen."
       ],
       "commonMistakes": [
-        "Saying only road conditions affect stopping distance — road conditions affect braking distance only; reaction time affects thinking distance regardless of road conditions.",
-        "Forgetting that speed affects BOTH components of stopping distance — many students only mention braking distance when asked about the effect of speed.",
-        "Saying braking distance doubles when speed doubles — braking distance is proportional to v², so doubling speed QUADRUPLES braking distance."
+        "Saying only road conditions affect stopping distance \u2014 road conditions affect braking distance only; reaction time affects thinking distance regardless of road conditions.",
+        "Forgetting that speed affects BOTH components of stopping distance \u2014 many students only mention braking distance when asked about the effect of speed.",
+        "Saying braking distance doubles when speed doubles \u2014 braking distance is proportional to v\u00b2, so doubling speed QUADRUPLES braking distance."
       ],
       "videos": [
         {
-          "title": "Stopping Distances GCSE Physics",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=hq2hJkGq_P8"
+          "url": "https://www.youtube.com/watch?v=HTANxqGQcfI",
+          "videoId": "HTANxqGQcfI",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Stopping Distances",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=K0TxvxU4QhY"
+          "url": "https://www.youtube.com/watch?v=q0yjYZdTS3I",
+          "videoId": "q0yjYZdTS3I",
+          "channel": "Cognito"
         },
         {
-          "title": "Thinking and Braking Distance",
-          "channel": "Science with Hazel",
-          "url": "https://www.youtube.com/watch?v=K0TxvxU4QhY"
+          "url": "https://www.youtube.com/watch?v=drMKdcMq3o0",
+          "videoId": "drMKdcMq3o0",
+          "channel": "Free Science Lessons"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=AiXhR2eZxgo",
+          "videoId": "AiXhR2eZxgo",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
         "The <strong>stopping distance</strong> of a vehicle is the distance it travels from when the driver first sees a hazard to when the vehicle stops. It is the sum of the <strong>thinking distance</strong> (distance travelled during the driver's reaction time) and the <strong>braking distance</strong> (distance travelled while braking). Reaction time can be increased by tiredness, alcohol, drugs, and distractions. Braking distance depends on speed, road conditions, and vehicle condition.",
-        "<strong>Thinking distance</strong> is directly proportional to speed — if speed doubles, thinking distance doubles. <strong>Braking distance</strong> is proportional to speed squared — if speed doubles, braking distance quadruples. This is because kinetic energy (which must be removed by braking) is proportional to v². Wet or icy roads reduce friction between tyres and road, increasing braking distance. Worn tyres and brakes also increase <strong>braking distance</strong>.",
-        "During braking, the <strong>kinetic energy</strong> of the vehicle is converted to thermal energy in the brakes by friction. The braking force needed is related to deceleration by Newton's Second Law (F = ma). Very large braking forces cause rapid deceleration which can be dangerous — <strong>anti-lock braking systems</strong> (ABS) prevent wheel lock to maintain steering control during emergency stops. Crumple zones in cars increase the time of impact, reducing the force on passengers."
+        "<strong>Thinking distance</strong> is directly proportional to speed \u2014 if speed doubles, thinking distance doubles. <strong>Braking distance</strong> is proportional to speed squared \u2014 if speed doubles, braking distance quadruples. This is because kinetic energy (which must be removed by braking) is proportional to v\u00b2. Wet or icy roads reduce friction between tyres and road, increasing braking distance. Worn tyres and brakes also increase <strong>braking distance</strong>.",
+        "During braking, the <strong>kinetic energy</strong> of the vehicle is converted to thermal energy in the brakes by friction. The braking force needed is related to deceleration by Newton's Second Law (F = ma). Very large braking forces cause rapid deceleration which can be dangerous \u2014 <strong>anti-lock braking systems</strong> (ABS) prevent wheel lock to maintain steering control during emergency stops. Crumple zones in cars increase the time of impact, reducing the force on passengers."
       ]
     }
   }

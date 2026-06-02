@@ -3,49 +3,49 @@
   "topics": {
     "Wave Properties": {
       "intro": "Waves transfer energy without transferring matter. Understanding the properties and types of waves is essential for all of P6.",
-      "mnemonic": "\"Tall Waves Frequently Travel Long\" — Transverse, Wavelength, Frequency, Time period, Longitudinal. For the wave equation v = fλ: 'Very Fast Lamborghinis' (v = f × λ).",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Wave Properties</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "\"Tall Waves Frequently Travel Long\" \u2014 Transverse, Wavelength, Frequency, Time period, Longitudinal. For the wave equation v = f\u03bb: 'Very Fast Lamborghinis' (v = f \u00d7 \u03bb).",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Wave Properties</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Types of Wave",
-          "icon": "〰️",
+          "icon": "\u3030\ufe0f",
           "text": "Waves are disturbances that transfer energy from one place to another. There are two main types depending on the direction of oscillation relative to energy transfer.",
           "points": [
-            "<strong>Transverse waves</strong> — oscillation perpendicular to direction of travel; e.g. light, water, seismic S-waves",
-            "<strong>Longitudinal waves</strong> — oscillation parallel to direction of travel; e.g. sound, seismic P-waves; have compressions and rarefactions",
-            "<strong>Compressions</strong> — regions of high pressure in a longitudinal wave where particles are pushed together",
-            "<strong>Rarefactions</strong> — regions of low pressure in a longitudinal wave where particles spread apart",
-            "<strong>Energy transfer</strong> — waves transfer energy but the medium itself does not move with the wave"
+            "<strong>Transverse waves</strong> \u2014 oscillation perpendicular to direction of travel; e.g. light, water, seismic S-waves",
+            "<strong>Longitudinal waves</strong> \u2014 oscillation parallel to direction of travel; e.g. sound, seismic P-waves; have compressions and rarefactions",
+            "<strong>Compressions</strong> \u2014 regions of high pressure in a longitudinal wave where particles are pushed together",
+            "<strong>Rarefactions</strong> \u2014 regions of low pressure in a longitudinal wave where particles spread apart",
+            "<strong>Energy transfer</strong> \u2014 waves transfer energy but the medium itself does not move with the wave"
           ]
         },
         {
           "title": "Wave Properties",
-          "icon": "📊",
+          "icon": "\ud83d\udcca",
           "text": "Every wave can be described by a set of measurable properties. These properties are related by the wave equation.",
           "points": [
-            "<strong>Amplitude (A)</strong> — maximum displacement from equilibrium (m); larger amplitude = more energy carried",
-            "<strong>Wavelength (λ)</strong> — distance from one point to the next identical point, e.g. crest to crest (m)",
-            "<strong>Frequency (f)</strong> — number of complete waves passing a point per second, measured in hertz (Hz)",
-            "<strong>Time period (T)</strong> — time for one complete wave to pass a point: T = 1/f (s); e.g. f = 50 Hz → T = 0.02 s",
-            "<strong>Wave speed (v)</strong> — speed at which the wave pattern travels through the medium (m/s)"
+            "<strong>Amplitude (A)</strong> \u2014 maximum displacement from equilibrium (m); larger amplitude = more energy carried",
+            "<strong>Wavelength (\u03bb)</strong> \u2014 distance from one point to the next identical point, e.g. crest to crest (m)",
+            "<strong>Frequency (f)</strong> \u2014 number of complete waves passing a point per second, measured in hertz (Hz)",
+            "<strong>Time period (T)</strong> \u2014 time for one complete wave to pass a point: T = 1/f (s); e.g. f = 50 Hz \u2192 T = 0.02 s",
+            "<strong>Wave speed (v)</strong> \u2014 speed at which the wave pattern travels through the medium (m/s)"
           ]
         },
         {
           "title": "Wave Equation",
-          "icon": "📐",
-          "text": "The wave equation links wave speed, frequency and wavelength. It applies to all waves — sound, light and all EM waves.",
+          "icon": "\ud83d\udcd0",
+          "text": "The wave equation links wave speed, frequency and wavelength. It applies to all waves \u2014 sound, light and all EM waves.",
           "points": [
-            "<strong>v = f × λ</strong> — wave speed (m/s) = frequency (Hz) × wavelength (m)",
-            "<strong>Worked example</strong> — a wave has f = 200 Hz and λ = 1.7 m: v = 200 × 1.7 = 340 m/s (speed of sound in air)",
-            "<strong>Rearranging for frequency</strong> — f = v ÷ λ; e.g. v = 3×10⁸ m/s, λ = 0.01 m → f = 3×10¹⁰ Hz",
-            "<strong>Rearranging for wavelength</strong> — λ = v ÷ f; e.g. radio station at 100 MHz: λ = 3×10⁸ ÷ 10⁸ = 3 m",
-            "<strong>T = 1/f</strong> — period and frequency are reciprocals; e.g. f = 440 Hz (musical A) → T = 0.00227 s",
-            "<strong>All EM waves in vacuum</strong> — speed = 3 × 10⁸ m/s regardless of frequency or wavelength"
+            "<strong>v = f \u00d7 \u03bb</strong> \u2014 wave speed (m/s) = frequency (Hz) \u00d7 wavelength (m)",
+            "<strong>Worked example</strong> \u2014 a wave has f = 200 Hz and \u03bb = 1.7 m: v = 200 \u00d7 1.7 = 340 m/s (speed of sound in air)",
+            "<strong>Rearranging for frequency</strong> \u2014 f = v \u00f7 \u03bb; e.g. v = 3\u00d710\u2078 m/s, \u03bb = 0.01 m \u2192 f = 3\u00d710\u00b9\u2070 Hz",
+            "<strong>Rearranging for wavelength</strong> \u2014 \u03bb = v \u00f7 f; e.g. radio station at 100 MHz: \u03bb = 3\u00d710\u2078 \u00f7 10\u2078 = 3 m",
+            "<strong>T = 1/f</strong> \u2014 period and frequency are reciprocals; e.g. f = 440 Hz (musical A) \u2192 T = 0.00227 s",
+            "<strong>All EM waves in vacuum</strong> \u2014 speed = 3 \u00d7 10\u2078 m/s regardless of frequency or wavelength"
           ],
           "callout": {
             "type": "exam",
             "label": "Formula",
-            "text": "v = f × λ (Wave speed = frequency × wavelength). Units: v in m/s, f in Hz, λ in m."
+            "text": "v = f \u00d7 \u03bb (Wave speed = frequency \u00d7 wavelength). Units: v in m/s, f in Hz, \u03bb in m."
           }
         }
       ],
@@ -56,11 +56,11 @@
         },
         {
           "term": "Wavelength",
-          "def": "Distance between two adjacent points in phase on a wave, e.g. crest to crest (symbol λ, unit: m)"
+          "def": "Distance between two adjacent points in phase on a wave, e.g. crest to crest (symbol \u03bb, unit: m)"
         },
         {
           "term": "Frequency",
-          "def": "Number of complete wave cycles per second — measured in hertz (Hz)"
+          "def": "Number of complete wave cycles per second \u2014 measured in hertz (Hz)"
         },
         {
           "term": "Time period",
@@ -76,7 +76,7 @@
         },
         {
           "term": "Wave speed",
-          "def": "The speed at which the wave pattern moves through a medium, related by v = fλ"
+          "def": "The speed at which the wave pattern moves through a medium, related by v = f\u03bb"
         },
         {
           "term": "Compression",
@@ -84,84 +84,99 @@
         }
       ],
       "examTips": [
-        "v = fλ — the most important wave equation. Rearrange to find f or λ. Always check units: speed in m/s, frequency in Hz, wavelength in m.",
-        "T = 1/f — period and frequency are inversely related. If f = 50 Hz then T = 0.02 s. Show this working in calculation questions.",
-        "Amplitude affects intensity/loudness/brightness; frequency affects pitch (sound) or colour (light) — AQA often asks you to state which property is changed.",
-        "In transverse waves, oscillation is at 90° to the direction of travel. In longitudinal waves, oscillation is along the direction of travel — use these exact phrases in AQA 6-mark questions."
+        "v = f\u03bb \u2014 the most important wave equation. Rearrange to find f or \u03bb. Always check units: speed in m/s, frequency in Hz, wavelength in m.",
+        "T = 1/f \u2014 period and frequency are inversely related. If f = 50 Hz then T = 0.02 s. Show this working in calculation questions.",
+        "Amplitude affects intensity/loudness/brightness; frequency affects pitch (sound) or colour (light) \u2014 AQA often asks you to state which property is changed.",
+        "In transverse waves, oscillation is at 90\u00b0 to the direction of travel. In longitudinal waves, oscillation is along the direction of travel \u2014 use these exact phrases in AQA 6-mark questions."
       ],
       "commonMistakes": [
-        "Confusing transverse (perpendicular) and longitudinal (parallel) waves — remember: Trans = across, Long = along.",
-        "Confusing amplitude (maximum displacement from equilibrium) with wavelength (distance between peaks) — amplitude is height of wave, wavelength is length along it.",
-        "Writing the wave equation as v = f/λ or v = λ/f — it is always v = f × λ (multiplication, not division).",
-        "Assuming wave speed changes when frequency changes — in the same medium, wave speed is constant; only wavelength changes."
+        "Confusing transverse (perpendicular) and longitudinal (parallel) waves \u2014 remember: Trans = across, Long = along.",
+        "Confusing amplitude (maximum displacement from equilibrium) with wavelength (distance between peaks) \u2014 amplitude is height of wave, wavelength is length along it.",
+        "Writing the wave equation as v = f/\u03bb or v = \u03bb/f \u2014 it is always v = f \u00d7 \u03bb (multiplication, not division).",
+        "Assuming wave speed changes when frequency changes \u2014 in the same medium, wave speed is constant; only wavelength changes."
       ],
       "videos": [
         {
-          "title": "Wave Properties GCSE Physics",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=TXoSb0EXPw4"
+          "url": "https://www.youtube.com/watch?v=CVsdXKO9xlk",
+          "videoId": "CVsdXKO9xlk",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Waves GCSE",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=TXoSb0EXPw4"
+          "url": "https://www.youtube.com/watch?v=BL2MtP7j-xk",
+          "videoId": "BL2MtP7j-xk",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Wave Properties",
-          "channel": "Fuse School",
-          "url": "https://www.youtube.com/watch?v=IICR1UWqTgk"
+          "url": "https://www.youtube.com/watch?v=zx0UIMA2-bA",
+          "videoId": "zx0UIMA2-bA",
+          "channel": "Cognito"
         },
         {
-          "title": "Wave Equation",
-          "channel": "Science with Hazel",
-          "url": "https://www.youtube.com/watch?v=TXoSb0EXPw4"
+          "url": "https://www.youtube.com/watch?v=1DFAy8MXkMA",
+          "videoId": "1DFAy8MXkMA",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=ITe6snlZBp8",
+          "videoId": "ITe6snlZBp8",
+          "channel": "Free Science Lessons"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=3qCmEHRFRH8",
+          "videoId": "3qCmEHRFRH8",
+          "channel": "Free Science Lessons"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=0f5iYCNCnow",
+          "videoId": "0f5iYCNCnow",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
-        "Waves transfer <strong>energy</strong> from one place to another without transferring matter. <strong>Transverse waves</strong> oscillate perpendicular to the direction of energy transfer — examples include light and water waves. <strong>Longitudinal waves</strong> oscillate parallel to the direction of energy transfer — sound waves are longitudinal. All waves have amplitude, wavelength, frequency, and wave speed. The wave equation is v = fλ, where v is speed, f is frequency, and λ is wavelength.",
+        "Waves transfer <strong>energy</strong> from one place to another without transferring matter. <strong>Transverse waves</strong> oscillate perpendicular to the direction of energy transfer \u2014 examples include light and water waves. <strong>Longitudinal waves</strong> oscillate parallel to the direction of energy transfer \u2014 sound waves are longitudinal. All waves have amplitude, wavelength, frequency, and wave speed. The wave equation is v = f\u03bb, where v is speed, f is frequency, and \u03bb is wavelength.",
         "The <strong>amplitude</strong> of a wave is the maximum displacement from the rest position. A larger amplitude means more energy is being transferred. The <strong>wavelength</strong> is the distance between successive crests or compressions. The <strong>frequency</strong> is the number of complete waves passing a point per second, measured in hertz (Hz). <strong>Period</strong> is the time for one complete wave. Frequency and period are related by: f = 1/T.",
-        "The wave equation v = fλ relates wave speed, frequency, and <strong>wavelength</strong>. If frequency increases and speed remains constant, wavelength decreases. All electromagnetic waves travel at the same speed in a vacuum (3 × 10⁸ m/s). Sound travels much more slowly — about 340 m/s in air. Waves can be <strong>reflected</strong>, refracted, diffracted, and can show interference. These behaviours are explained by the wave model."
+        "The wave equation v = f\u03bb relates wave speed, frequency, and <strong>wavelength</strong>. If frequency increases and speed remains constant, wavelength decreases. All electromagnetic waves travel at the same speed in a vacuum (3 \u00d7 10\u2078 m/s). Sound travels much more slowly \u2014 about 340 m/s in air. Waves can be <strong>reflected</strong>, refracted, diffracted, and can show interference. These behaviours are explained by the wave model."
       ]
     },
     "Reflection and Refraction": {
       "intro": "Waves change direction when they reflect off surfaces or refract as they change speed at a boundary. These phenomena are key to how lenses, mirrors and optical fibres work.",
-      "mnemonic": "\"Normal Incidence Reflects, Changes Direction\" — Angles from Normal, Incidence = Reflection, Refraction Changes Direction. For TIR: 'Denser to Less dense, Critical angle, Total reflection' = DLC-T.",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Reflection and Refraction</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "\"Normal Incidence Reflects, Changes Direction\" \u2014 Angles from Normal, Incidence = Reflection, Refraction Changes Direction. For TIR: 'Denser to Less dense, Critical angle, Total reflection' = DLC-T.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Reflection and Refraction</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Reflection",
-          "icon": "🪞",
+          "icon": "\ud83e\ude9e",
           "text": "When a wave hits a surface it bounces back. The law of reflection governs exactly how it bounces.",
           "points": [
-            "<strong>Law of reflection</strong> — angle of incidence = angle of reflection; both measured from the normal",
-            "<strong>Normal</strong> — imaginary line perpendicular to surface at point of incidence; all angles measured from this",
-            "<strong>Specular reflection</strong> — smooth surface (e.g. mirror); parallel rays stay parallel after reflection",
-            "<strong>Diffuse reflection</strong> — rough surface; parallel rays scatter in all directions — allows us to see non-shiny objects",
-            "<strong>Plane mirror image</strong> — virtual (cannot be projected), upright, laterally inverted, same size as object, same distance behind mirror as object is in front"
+            "<strong>Law of reflection</strong> \u2014 angle of incidence = angle of reflection; both measured from the normal",
+            "<strong>Normal</strong> \u2014 imaginary line perpendicular to surface at point of incidence; all angles measured from this",
+            "<strong>Specular reflection</strong> \u2014 smooth surface (e.g. mirror); parallel rays stay parallel after reflection",
+            "<strong>Diffuse reflection</strong> \u2014 rough surface; parallel rays scatter in all directions \u2014 allows us to see non-shiny objects",
+            "<strong>Plane mirror image</strong> \u2014 virtual (cannot be projected), upright, laterally inverted, same size as object, same distance behind mirror as object is in front"
           ]
         },
         {
           "title": "Refraction",
-          "icon": "💎",
+          "icon": "\ud83d\udc8e",
           "text": "Refraction occurs when waves cross a boundary between two media and change speed, causing a change in direction.",
           "points": [
-            "<strong>Cause of refraction</strong> — waves change speed at a boundary between media; change in speed → change in direction",
-            "<strong>Towards normal</strong> — light entering denser medium (e.g. air → glass) slows down and bends towards normal",
-            "<strong>Away from normal</strong> — light entering less dense medium (e.g. glass → air) speeds up and bends away from normal",
-            "<strong>Frequency unchanged</strong> — refraction changes speed and wavelength but NOT frequency",
-            "<strong>No bend if normal incidence</strong> — if light hits boundary at exactly 90° (along normal) it slows but does not change direction"
+            "<strong>Cause of refraction</strong> \u2014 waves change speed at a boundary between media; change in speed \u2192 change in direction",
+            "<strong>Towards normal</strong> \u2014 light entering denser medium (e.g. air \u2192 glass) slows down and bends towards normal",
+            "<strong>Away from normal</strong> \u2014 light entering less dense medium (e.g. glass \u2192 air) speeds up and bends away from normal",
+            "<strong>Frequency unchanged</strong> \u2014 refraction changes speed and wavelength but NOT frequency",
+            "<strong>No bend if normal incidence</strong> \u2014 if light hits boundary at exactly 90\u00b0 (along normal) it slows but does not change direction"
           ]
         },
         {
           "title": "Total Internal Reflection",
-          "icon": "💡",
-          "text": "When light in a denser medium hits the boundary at a large enough angle, it reflects completely instead of refracting — this is total internal reflection (TIR).",
+          "icon": "\ud83d\udca1",
+          "text": "When light in a denser medium hits the boundary at a large enough angle, it reflects completely instead of refracting \u2014 this is total internal reflection (TIR).",
           "points": [
-            "<strong>Critical angle</strong> — the angle of incidence above which TIR occurs; for glass ≈ 42°",
-            "<strong>Conditions for TIR</strong> — must travel from denser to less dense medium AND angle of incidence must exceed critical angle",
-            "<strong>Optical fibres</strong> — use TIR to carry light signals; used in telecommunications (faster than electrical signals) and medicine",
-            "<strong>Endoscopes</strong> — bundles of optical fibres used by doctors to see inside the body without surgery",
-            "<strong>Periscopes and binoculars</strong> — use glass prisms to achieve TIR and redirect light through 90° or 180°"
+            "<strong>Critical angle</strong> \u2014 the angle of incidence above which TIR occurs; for glass \u2248 42\u00b0",
+            "<strong>Conditions for TIR</strong> \u2014 must travel from denser to less dense medium AND angle of incidence must exceed critical angle",
+            "<strong>Optical fibres</strong> \u2014 use TIR to carry light signals; used in telecommunications (faster than electrical signals) and medicine",
+            "<strong>Endoscopes</strong> \u2014 bundles of optical fibres used by doctors to see inside the body without surgery",
+            "<strong>Periscopes and binoculars</strong> \u2014 use glass prisms to achieve TIR and redirect light through 90\u00b0 or 180\u00b0"
           ]
         }
       ],
@@ -200,91 +215,101 @@
         }
       ],
       "examTips": [
-        "All angles measured from the NORMAL, not the surface — a very common error that loses marks. Draw the normal first before drawing rays in diagrams.",
+        "All angles measured from the NORMAL, not the surface \u2014 a very common error that loses marks. Draw the normal first before drawing rays in diagrams.",
         "Refraction: towards normal = slower (denser medium). Away from normal = faster (less dense medium). Use this as a memory check when drawing refraction diagrams.",
         "Total internal reflection requires TWO conditions: (1) denser to less dense medium AND (2) angle of incidence > critical angle. Stating only one condition loses a mark.",
         "AQA may ask you to explain why optical fibres use TIR. State: light hits the inner boundary at an angle greater than the critical angle, so it is totally internally reflected and travels along the fibre."
       ],
       "commonMistakes": [
-        "Measuring angles from the surface instead of the normal — always draw the normal as a dashed line perpendicular to the surface and measure from that.",
-        "Saying refraction changes frequency — it changes speed and wavelength but NOT frequency. Frequency is determined by the source.",
+        "Measuring angles from the surface instead of the normal \u2014 always draw the normal as a dashed line perpendicular to the surface and measure from that.",
+        "Saying refraction changes frequency \u2014 it changes speed and wavelength but NOT frequency. Frequency is determined by the source.",
         "Forgetting that TIR can only happen when going from a denser medium to a less dense medium (e.g. glass to air), not the other way round.",
-        "Drawing refraction diagrams with the ray bending the wrong way — check: slower medium = bends towards normal; faster medium = bends away."
+        "Drawing refraction diagrams with the ray bending the wrong way \u2014 check: slower medium = bends towards normal; faster medium = bends away."
       ],
       "videos": [
         {
-          "title": "Reflection and Refraction GCSE",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=nBaUoFSdRrA"
+          "url": "https://www.youtube.com/watch?v=CYY_RJgmvAc",
+          "videoId": "CYY_RJgmvAc",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Refraction of Light",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=nBaUoFSdRrA"
+          "url": "https://www.youtube.com/watch?v=0Anh9HthWgQ",
+          "videoId": "0Anh9HthWgQ",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Total Internal Reflection",
-          "channel": "Fuse School",
-          "url": "https://www.youtube.com/watch?v=NAaHPRsveJk"
+          "url": "https://www.youtube.com/watch?v=WDBtOeXUdWQ",
+          "videoId": "WDBtOeXUdWQ",
+          "channel": "Cognito"
         },
         {
-          "title": "Reflection",
-          "channel": "Science with Hazel",
-          "url": "https://www.youtube.com/watch?v=nBaUoFSdRrA"
+          "url": "https://www.youtube.com/watch?v=UUc44Vg5pCI",
+          "videoId": "UUc44Vg5pCI",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=8K6gOST8pZk",
+          "videoId": "8K6gOST8pZk",
+          "channel": "Free Science Lessons"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=wO49W5lsP0s",
+          "videoId": "wO49W5lsP0s",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
         "<strong>Reflection</strong> occurs when a wave bounces off a surface. The law of reflection states that the angle of incidence equals the angle of <strong>reflection</strong>, both measured from the normal (a line perpendicular to the surface). Smooth surfaces produce regular (specular) reflection; rough surfaces produce <strong>diffuse</strong> reflection. Mirrors use regular reflection. The image in a plane mirror is virtual, upright, laterally inverted, and the same size as the object.",
         "<strong>Refraction</strong> is the change in direction of a wave as it passes from one medium to another with a different speed. When light passes from air to glass, it slows down and bends <strong>towards the normal</strong>. When passing from glass to air, it speeds up and bends away from the normal. The greater the change in speed, the greater the <strong>angle</strong> of refraction. Refraction explains why objects appear displaced when viewed through water or glass.",
-        "<strong>Total internal reflection</strong> occurs when light travels from a denser to a less dense medium at an angle greater than the <strong>critical angle</strong>. The light is completely reflected back into the denser medium. This principle is used in <strong>optical fibres</strong> — light travels along the fibre by repeated total internal reflection. Optical fibres are used in telecommunications to transmit data at high speed over long distances, and in medicine for <strong>endoscopes</strong>."
+        "<strong>Total internal reflection</strong> occurs when light travels from a denser to a less dense medium at an angle greater than the <strong>critical angle</strong>. The light is completely reflected back into the denser medium. This principle is used in <strong>optical fibres</strong> \u2014 light travels along the fibre by repeated total internal reflection. Optical fibres are used in telecommunications to transmit data at high speed over long distances, and in medicine for <strong>endoscopes</strong>."
       ]
     },
     "Sound": {
       "intro": "Sound is a longitudinal wave that requires a medium to travel through. Understanding its properties and how it is heard is required for P6.",
-      "mnemonic": "\"Loud Parrots Can't Understand Silence\" — Longitudinal, Pressure waves, Compressions, Ultrasound (>20kHz), Speed ~340 m/s in air. For sonar: 'Half the time, full the distance' (d = v × t/2).",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Sound</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "\"Loud Parrots Can't Understand Silence\" \u2014 Longitudinal, Pressure waves, Compressions, Ultrasound (>20kHz), Speed ~340 m/s in air. For sonar: 'Half the time, full the distance' (d = v \u00d7 t/2).",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Sound</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Nature of Sound",
-          "icon": "🔊",
+          "icon": "\ud83d\udd0a",
           "text": "Sound is a mechanical, longitudinal wave that travels as pressure variations through a medium. It cannot exist without particles to vibrate.",
           "points": [
-            "<strong>Longitudinal wave</strong> — particles vibrate parallel to the direction of travel; creates compressions and rarefactions",
-            "<strong>Requires a medium</strong> — sound cannot travel through a vacuum (no particles to vibrate); proven by bell-in-jar experiment",
-            "<strong>Speed in air</strong> — approximately 340 m/s; increases in liquids (≈1500 m/s in water) and solids (≈5000 m/s in steel)",
-            "<strong>Pitch</strong> — determined by frequency; higher frequency = higher pitch",
-            "<strong>Loudness</strong> — determined by amplitude; greater amplitude = louder sound = more energy transferred"
+            "<strong>Longitudinal wave</strong> \u2014 particles vibrate parallel to the direction of travel; creates compressions and rarefactions",
+            "<strong>Requires a medium</strong> \u2014 sound cannot travel through a vacuum (no particles to vibrate); proven by bell-in-jar experiment",
+            "<strong>Speed in air</strong> \u2014 approximately 340 m/s; increases in liquids (\u22481500 m/s in water) and solids (\u22485000 m/s in steel)",
+            "<strong>Pitch</strong> \u2014 determined by frequency; higher frequency = higher pitch",
+            "<strong>Loudness</strong> \u2014 determined by amplitude; greater amplitude = louder sound = more energy transferred"
           ]
         },
         {
           "title": "Hearing Range and Ultrasound",
-          "icon": "👂",
+          "icon": "\ud83d\udc42",
           "text": "Humans can hear a limited range of frequencies. Sound beyond this range still obeys the same wave rules and has important practical uses.",
           "points": [
-            "<strong>Human hearing range</strong> — 20 Hz to 20,000 Hz (20 kHz); varies with age (upper limit decreases with age)",
-            "<strong>Ultrasound</strong> — frequency above 20,000 Hz; too high for humans to hear; used in medicine and industry",
-            "<strong>Medical scanning</strong> — ultrasound pulses reflect off tissue boundaries; timing of reflections builds up an image (safer than X-rays, no ionising radiation)",
-            "<strong>Industrial uses</strong> — detecting cracks in materials, cleaning delicate instruments",
-            "<strong>Infrasound</strong> — below 20 Hz; used by elephants and whales for long-distance communication; generated by earthquakes"
+            "<strong>Human hearing range</strong> \u2014 20 Hz to 20,000 Hz (20 kHz); varies with age (upper limit decreases with age)",
+            "<strong>Ultrasound</strong> \u2014 frequency above 20,000 Hz; too high for humans to hear; used in medicine and industry",
+            "<strong>Medical scanning</strong> \u2014 ultrasound pulses reflect off tissue boundaries; timing of reflections builds up an image (safer than X-rays, no ionising radiation)",
+            "<strong>Industrial uses</strong> \u2014 detecting cracks in materials, cleaning delicate instruments",
+            "<strong>Infrasound</strong> \u2014 below 20 Hz; used by elephants and whales for long-distance communication; generated by earthquakes"
           ]
         },
         {
           "title": "Echoes and Sonar",
-          "icon": "🌊",
+          "icon": "\ud83c\udf0a",
           "text": "Reflected sound creates echoes. This principle is exploited in sonar systems to measure distances underwater.",
           "points": [
-            "<strong>Echo</strong> — reflection of a sound wave from a surface; heard as a delayed copy of original sound",
-            "<strong>Sonar formula</strong> — distance = (wave speed × time) ÷ 2; the ÷2 accounts for sound travelling to object and back: d = v × t/2",
-            "<strong>Worked example</strong> — echo returns after 0.4 s, v = 1500 m/s in water: d = 1500 × 0.4 / 2 = 300 m depth",
-            "<strong>Applications</strong> — mapping sea floor, locating submarines, fish finders, measuring distance to objects",
-            "<strong>Oscilloscope</strong> — used to display sound waves; amplitude shown by height, frequency by how many waves fit in a given time"
+            "<strong>Echo</strong> \u2014 reflection of a sound wave from a surface; heard as a delayed copy of original sound",
+            "<strong>Sonar formula</strong> \u2014 distance = (wave speed \u00d7 time) \u00f7 2; the \u00f72 accounts for sound travelling to object and back: d = v \u00d7 t/2",
+            "<strong>Worked example</strong> \u2014 echo returns after 0.4 s, v = 1500 m/s in water: d = 1500 \u00d7 0.4 / 2 = 300 m depth",
+            "<strong>Applications</strong> \u2014 mapping sea floor, locating submarines, fish finders, measuring distance to objects",
+            "<strong>Oscilloscope</strong> \u2014 used to display sound waves; amplitude shown by height, frequency by how many waves fit in a given time"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Sound wave",
-          "def": "Longitudinal pressure wave — requires a medium to travel; cannot pass through a vacuum"
+          "def": "Longitudinal pressure wave \u2014 requires a medium to travel; cannot pass through a vacuum"
         },
         {
           "term": "Compression",
@@ -296,11 +321,11 @@
         },
         {
           "term": "Ultrasound",
-          "def": "Sound with frequency above 20,000 Hz — above human hearing range; used in medical imaging and sonar"
+          "def": "Sound with frequency above 20,000 Hz \u2014 above human hearing range; used in medical imaging and sonar"
         },
         {
           "term": "Infrasound",
-          "def": "Sound with frequency below 20 Hz — below human hearing range; used by some large animals"
+          "def": "Sound with frequency below 20 Hz \u2014 below human hearing range; used by some large animals"
         },
         {
           "term": "Echo",
@@ -308,101 +333,106 @@
         },
         {
           "term": "Pitch",
-          "def": "Perceived highness or lowness of a sound — determined by frequency"
+          "def": "Perceived highness or lowness of a sound \u2014 determined by frequency"
         },
         {
           "term": "Sonar",
-          "def": "System using reflected ultrasound pulses to measure distances underwater; d = v × t/2"
+          "def": "System using reflected ultrasound pulses to measure distances underwater; d = v \u00d7 t/2"
         }
       ],
       "examTips": [
-        "Sound is longitudinal; light is transverse — AQA frequently asks you to state the type of wave and explain what this means in terms of particle oscillation direction.",
-        "Speed of sound in air ≈ 340 m/s. Sound travels faster in denser materials (liquids > gases; solids > liquids) because particles are closer together and transmit vibrations more quickly.",
-        "Ultrasound: f > 20,000 Hz. Infrasound: f < 20 Hz. Use the sonar equation d = v × t/2 and remember to halve the time because the pulse makes a return journey.",
+        "Sound is longitudinal; light is transverse \u2014 AQA frequently asks you to state the type of wave and explain what this means in terms of particle oscillation direction.",
+        "Speed of sound in air \u2248 340 m/s. Sound travels faster in denser materials (liquids > gases; solids > liquids) because particles are closer together and transmit vibrations more quickly.",
+        "Ultrasound: f > 20,000 Hz. Infrasound: f < 20 Hz. Use the sonar equation d = v \u00d7 t/2 and remember to halve the time because the pulse makes a return journey.",
         "When comparing sound on an oscilloscope: louder = taller waves (greater amplitude); higher pitch = more waves in same space (higher frequency). AQA often gives oscilloscope diagrams to interpret."
       ],
       "commonMistakes": [
-        "Saying sound travels faster in less dense materials — it is the opposite. Sound travels fastest in solids because particles are closest together and can transmit vibrations quickly.",
-        "Confusing pitch (frequency) with loudness (amplitude) — higher frequency = higher pitch; greater amplitude = louder.",
-        "Forgetting to divide by 2 in sonar/echo calculations — sound travels to the object AND back, so the total distance is twice the one-way distance.",
-        "Saying sound can travel through a vacuum — it cannot. Space is (nearly) silent because there are no particles to carry the vibration."
+        "Saying sound travels faster in less dense materials \u2014 it is the opposite. Sound travels fastest in solids because particles are closest together and can transmit vibrations quickly.",
+        "Confusing pitch (frequency) with loudness (amplitude) \u2014 higher frequency = higher pitch; greater amplitude = louder.",
+        "Forgetting to divide by 2 in sonar/echo calculations \u2014 sound travels to the object AND back, so the total distance is twice the one-way distance.",
+        "Saying sound can travel through a vacuum \u2014 it cannot. Space is (nearly) silent because there are no particles to carry the vibration."
       ],
       "videos": [
         {
-          "title": "Sound Waves GCSE Physics",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=oTj-9KCelRg"
+          "url": "https://www.youtube.com/watch?v=TgJKf3G6LuE",
+          "videoId": "TgJKf3G6LuE",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Sound",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=oTj-9KCelRg"
+          "url": "https://www.youtube.com/watch?v=2mlBh5d1IUY",
+          "videoId": "2mlBh5d1IUY",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Sound Waves",
-          "channel": "Fuse School",
-          "url": "https://www.youtube.com/watch?v=IICR1UWqTgk"
+          "url": "https://www.youtube.com/watch?v=s9wZkP64rAc",
+          "videoId": "s9wZkP64rAc",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=N_07EkzEhVQ",
+          "videoId": "N_07EkzEhVQ",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
         "<strong>Sound</strong> is a longitudinal wave caused by vibrating objects. It travels as alternating regions of high pressure (<strong>compressions</strong>) and low pressure (rarefactions) through a medium. Sound cannot travel through a vacuum because there are no particles to vibrate. The speed of sound is approximately 340 m/s in air, faster in liquids, and fastest in solids. Sound waves can be reflected as <strong>echoes</strong> and refracted at boundaries between media.",
-        "The <strong>frequency</strong> of a sound wave determines its pitch. High frequency sounds have high pitch. The typical range of human hearing is 20 Hz to 20,000 Hz. Sounds below 20 Hz are <strong>infrasound</strong>; sounds above 20,000 Hz are <strong>ultrasound</strong>. Ultrasound is used in medical imaging, sonar, and measuring distances. The amplitude of a sound wave determines its loudness — a larger amplitude means a louder sound and more energy.",
-        "<strong>Ultrasound</strong> has frequencies above the upper limit of human hearing (20,000 Hz). It is used in medicine for <strong>prenatal scanning</strong> — ultrasound pulses are sent into the body and reflected at boundaries between tissues. The reflected pulses are detected and used to build up an image. Ultrasound is safer than X-rays for imaging soft tissue. It is also used in <strong>sonar</strong> to map the sea floor, and in industrial applications to detect cracks in materials."
+        "The <strong>frequency</strong> of a sound wave determines its pitch. High frequency sounds have high pitch. The typical range of human hearing is 20 Hz to 20,000 Hz. Sounds below 20 Hz are <strong>infrasound</strong>; sounds above 20,000 Hz are <strong>ultrasound</strong>. Ultrasound is used in medical imaging, sonar, and measuring distances. The amplitude of a sound wave determines its loudness \u2014 a larger amplitude means a louder sound and more energy.",
+        "<strong>Ultrasound</strong> has frequencies above the upper limit of human hearing (20,000 Hz). It is used in medicine for <strong>prenatal scanning</strong> \u2014 ultrasound pulses are sent into the body and reflected at boundaries between tissues. The reflected pulses are detected and used to build up an image. Ultrasound is safer than X-rays for imaging soft tissue. It is also used in <strong>sonar</strong> to map the sea floor, and in industrial applications to detect cracks in materials."
       ]
     },
     "Electromagnetic Spectrum": {
       "intro": "The electromagnetic spectrum is a family of transverse waves that all travel at the speed of light in a vacuum. They differ in frequency and wavelength.",
-      "mnemonic": "\"Raging Martians Invaded Venus Using X-ray Guns\" — Radio, Microwave, Infrared, Visible, Ultraviolet, X-ray, Gamma. Going from Radio to Gamma: frequency increases, wavelength decreases, energy increases, more ionising.",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Electromagnetic Spectrum</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "\"Raging Martians Invaded Venus Using X-ray Guns\" \u2014 Radio, Microwave, Infrared, Visible, Ultraviolet, X-ray, Gamma. Going from Radio to Gamma: frequency increases, wavelength decreases, energy increases, more ionising.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Electromagnetic Spectrum</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "The EM Spectrum",
-          "icon": "🌈",
+          "icon": "\ud83c\udf08",
           "text": "The electromagnetic spectrum is a continuous range of transverse waves. All types share common properties but differ in frequency and wavelength.",
           "points": [
-            "<strong>Common properties</strong> — all EM waves: travel at 3 × 10⁸ m/s in vacuum; are transverse; can travel through a vacuum; transfer energy",
-            "<strong>Order (low to high frequency)</strong> — Radio → Microwave → Infrared → Visible → Ultraviolet → X-ray → Gamma",
-            "<strong>Visible light range</strong> — wavelengths from ~700 nm (red) to ~400 nm (violet); ROY G BIV (Red Orange Yellow Green Blue Indigo Violet)",
-            "<strong>Energy and frequency</strong> — higher frequency = more energy per photon = more ionising radiation",
-            "<strong>Wave equation applies</strong> — v = fλ applies to all EM waves; e.g. radio at 100 MHz: λ = 3×10⁸ / 10⁸ = 3 m"
+            "<strong>Common properties</strong> \u2014 all EM waves: travel at 3 \u00d7 10\u2078 m/s in vacuum; are transverse; can travel through a vacuum; transfer energy",
+            "<strong>Order (low to high frequency)</strong> \u2014 Radio \u2192 Microwave \u2192 Infrared \u2192 Visible \u2192 Ultraviolet \u2192 X-ray \u2192 Gamma",
+            "<strong>Visible light range</strong> \u2014 wavelengths from ~700 nm (red) to ~400 nm (violet); ROY G BIV (Red Orange Yellow Green Blue Indigo Violet)",
+            "<strong>Energy and frequency</strong> \u2014 higher frequency = more energy per photon = more ionising radiation",
+            "<strong>Wave equation applies</strong> \u2014 v = f\u03bb applies to all EM waves; e.g. radio at 100 MHz: \u03bb = 3\u00d710\u2078 / 10\u2078 = 3 m"
           ]
         },
         {
           "title": "Uses of EM Waves",
-          "icon": "📡",
-          "text": "Each part of the EM spectrum has specific uses based on its properties — particularly its ability to penetrate materials and carry information.",
+          "icon": "\ud83d\udce1",
+          "text": "Each part of the EM spectrum has specific uses based on its properties \u2014 particularly its ability to penetrate materials and carry information.",
           "points": [
-            "<strong>Radio waves</strong> — TV, radio broadcasting, mobile communications; long wavelength passes around obstacles",
-            "<strong>Microwaves</strong> — satellite communications, cooking (absorbed by water molecules in food), radar",
-            "<strong>Infrared</strong> — thermal imaging cameras, remote controls, optical fibre communications, grills and heaters",
-            "<strong>Visible light</strong> — human vision, photography, lasers, optical fibres",
-            "<strong>Ultraviolet</strong> — sterilisation of water and surfaces, detecting forged banknotes (fluorescence), sunbeds, insect vision",
-            "<strong>X-rays</strong> — medical imaging of bones and teeth (absorbed by dense tissue), airport security scanners, checking welds",
-            "<strong>Gamma rays</strong> — treating cancer (radiotherapy — kills tumour cells), sterilising medical equipment, detecting tumours (PET scans)"
+            "<strong>Radio waves</strong> \u2014 TV, radio broadcasting, mobile communications; long wavelength passes around obstacles",
+            "<strong>Microwaves</strong> \u2014 satellite communications, cooking (absorbed by water molecules in food), radar",
+            "<strong>Infrared</strong> \u2014 thermal imaging cameras, remote controls, optical fibre communications, grills and heaters",
+            "<strong>Visible light</strong> \u2014 human vision, photography, lasers, optical fibres",
+            "<strong>Ultraviolet</strong> \u2014 sterilisation of water and surfaces, detecting forged banknotes (fluorescence), sunbeds, insect vision",
+            "<strong>X-rays</strong> \u2014 medical imaging of bones and teeth (absorbed by dense tissue), airport security scanners, checking welds",
+            "<strong>Gamma rays</strong> \u2014 treating cancer (radiotherapy \u2014 kills tumour cells), sterilising medical equipment, detecting tumours (PET scans)"
           ]
         },
         {
           "title": "Hazards of EM Radiation",
-          "icon": "⚠️",
-          "text": "Higher-frequency EM waves are ionising — they can damage living cells by removing electrons from atoms, potentially causing mutations and cancer.",
+          "icon": "\u26a0\ufe0f",
+          "text": "Higher-frequency EM waves are ionising \u2014 they can damage living cells by removing electrons from atoms, potentially causing mutations and cancer.",
           "points": [
-            "<strong>Ionising radiation</strong> — UV, X-rays and gamma rays can ionise atoms, damaging DNA and causing cancer",
-            "<strong>Ultraviolet hazards</strong> — causes sunburn, premature skin ageing, eye damage (cataracts), skin cancer; more at higher frequencies",
-            "<strong>X-ray hazards</strong> — ionising; repeated exposure increases cancer risk; minimised by lead shielding and limiting dose",
-            "<strong>Gamma ray hazards</strong> — most ionising; controlled use in medicine; lead and thick concrete used for shielding",
-            "<strong>Non-ionising</strong> — radio waves, microwaves and infrared are non-ionising; microwaves heat tissue (mobile phone concerns unproven)",
-            "<strong>Dose matters</strong> — the risk depends on frequency, intensity and duration of exposure"
+            "<strong>Ionising radiation</strong> \u2014 UV, X-rays and gamma rays can ionise atoms, damaging DNA and causing cancer",
+            "<strong>Ultraviolet hazards</strong> \u2014 causes sunburn, premature skin ageing, eye damage (cataracts), skin cancer; more at higher frequencies",
+            "<strong>X-ray hazards</strong> \u2014 ionising; repeated exposure increases cancer risk; minimised by lead shielding and limiting dose",
+            "<strong>Gamma ray hazards</strong> \u2014 most ionising; controlled use in medicine; lead and thick concrete used for shielding",
+            "<strong>Non-ionising</strong> \u2014 radio waves, microwaves and infrared are non-ionising; microwaves heat tissue (mobile phone concerns unproven)",
+            "<strong>Dose matters</strong> \u2014 the risk depends on frequency, intensity and duration of exposure"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Electromagnetic spectrum",
-          "def": "Family of transverse waves ranging from radio waves to gamma rays, all travelling at 3 × 10⁸ m/s in vacuum"
+          "def": "Family of transverse waves ranging from radio waves to gamma rays, all travelling at 3 \u00d7 10\u2078 m/s in vacuum"
         },
         {
           "term": "Speed of light",
-          "def": "3 × 10⁸ m/s — the speed of all EM waves in a vacuum (also written as c)"
+          "def": "3 \u00d7 10\u2078 m/s \u2014 the speed of all EM waves in a vacuum (also written as c)"
         },
         {
           "term": "Ionising radiation",
@@ -430,97 +460,112 @@
         }
       ],
       "examTips": [
-        "All EM waves travel at 3 × 10⁸ m/s in vacuum — this is given in the AQA equation sheet but you must know when to apply it. Use v = fλ with v = 3 × 10⁸ for any EM wave calculation.",
-        "Higher frequency = shorter wavelength = more energy per photon = more ionising — you can be asked for any one of these for any part of the spectrum. Learn the chain.",
+        "All EM waves travel at 3 \u00d7 10\u2078 m/s in vacuum \u2014 this is given in the AQA equation sheet but you must know when to apply it. Use v = f\u03bb with v = 3 \u00d7 10\u2078 for any EM wave calculation.",
+        "Higher frequency = shorter wavelength = more energy per photon = more ionising \u2014 you can be asked for any one of these for any part of the spectrum. Learn the chain.",
         "Learn the mnemonic for order: 'Raging Martians Invaded Venus Using X-ray Guns'. AQA frequently asks you to place EM waves in order and identify which has greatest frequency, energy or shortest wavelength.",
         "For hazards questions: state whether the radiation is ionising, what it can do to cells (damage DNA, cause mutations, cancer), and one safety precaution (lead shielding, limiting exposure time, sunscreen)."
       ],
       "commonMistakes": [
-        "Saying radio waves are the most energetic — gamma rays have the highest frequency and most energy; radio waves have the least.",
-        "Forgetting that all EM waves travel at the same speed in vacuum — students often say gamma rays travel faster because they have more energy. Speed is constant; energy depends on frequency.",
-        "Confusing wavelength order with frequency order — higher frequency = shorter wavelength. Radio waves have the LONGEST wavelength but LOWEST frequency.",
-        "Listing the EM spectrum in the wrong order — use the mnemonic and practise writing it out (Radio, Microwave, Infrared, Visible, UV, X-ray, Gamma)."
+        "Saying radio waves are the most energetic \u2014 gamma rays have the highest frequency and most energy; radio waves have the least.",
+        "Forgetting that all EM waves travel at the same speed in vacuum \u2014 students often say gamma rays travel faster because they have more energy. Speed is constant; energy depends on frequency.",
+        "Confusing wavelength order with frequency order \u2014 higher frequency = shorter wavelength. Radio waves have the LONGEST wavelength but LOWEST frequency.",
+        "Listing the EM spectrum in the wrong order \u2014 use the mnemonic and practise writing it out (Radio, Microwave, Infrared, Visible, UV, X-ray, Gamma)."
       ],
       "videos": [
         {
-          "title": "Electromagnetic Spectrum GCSE",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=cfXzwh3KadE"
+          "url": "https://www.youtube.com/watch?v=508ZsmsIlno",
+          "videoId": "508ZsmsIlno",
+          "channel": "FuseSchools"
         },
         {
-          "title": "EM Spectrum",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=cfXzwh3KadE"
+          "url": "https://www.youtube.com/watch?v=zx0UIMA2-bA",
+          "videoId": "zx0UIMA2-bA",
+          "channel": "Cognito"
         },
         {
-          "title": "Electromagnetic Waves",
-          "channel": "Fuse School",
-          "url": "https://www.youtube.com/watch?v=9Y0dvqe7p9U"
+          "url": "https://www.youtube.com/watch?v=kp8sBmEqY28",
+          "videoId": "kp8sBmEqY28",
+          "channel": "Cognito"
         },
         {
-          "title": "EM Spectrum Uses",
-          "channel": "Science with Hazel",
-          "url": "https://www.youtube.com/watch?v=cfXzwh3KadE"
+          "url": "https://www.youtube.com/watch?v=JUWfr251540",
+          "videoId": "JUWfr251540",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=a272XhMzzCI",
+          "videoId": "a272XhMzzCI",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=u5vkYjV1V1A",
+          "videoId": "u5vkYjV1V1A",
+          "channel": "Free Science Lessons"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=L0iivb-acqU",
+          "videoId": "L0iivb-acqU",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
-        "The <strong>electromagnetic spectrum</strong> is a family of transverse waves that all travel at the same speed in a vacuum (3 × 10⁸ m/s). In order of increasing frequency: <strong>radio waves</strong>, microwaves, infrared, visible light, ultraviolet, X-rays, and gamma rays. Higher frequency means shorter wavelength and more energy. All electromagnetic waves can be reflected, refracted, and diffracted, and can travel through a vacuum.",
-        "<strong>Radio waves</strong> are used for communication — broadcasting, TV, and mobile phones. <strong>Microwaves</strong> are used for satellite communication and cooking. <strong>Infrared</strong> radiation is emitted by warm objects and used in remote controls and thermal imaging. <strong>Ultraviolet</strong> radiation from the sun causes sunburn and can lead to skin cancer. <strong>X-rays</strong> pass through soft tissue but are absorbed by bone, making them useful for medical imaging. Gamma rays are used to sterilise medical equipment and treat cancer.",
+        "The <strong>electromagnetic spectrum</strong> is a family of transverse waves that all travel at the same speed in a vacuum (3 \u00d7 10\u2078 m/s). In order of increasing frequency: <strong>radio waves</strong>, microwaves, infrared, visible light, ultraviolet, X-rays, and gamma rays. Higher frequency means shorter wavelength and more energy. All electromagnetic waves can be reflected, refracted, and diffracted, and can travel through a vacuum.",
+        "<strong>Radio waves</strong> are used for communication \u2014 broadcasting, TV, and mobile phones. <strong>Microwaves</strong> are used for satellite communication and cooking. <strong>Infrared</strong> radiation is emitted by warm objects and used in remote controls and thermal imaging. <strong>Ultraviolet</strong> radiation from the sun causes sunburn and can lead to skin cancer. <strong>X-rays</strong> pass through soft tissue but are absorbed by bone, making them useful for medical imaging. Gamma rays are used to sterilise medical equipment and treat cancer.",
         "Different parts of the <strong>electromagnetic spectrum</strong> interact with matter in different ways. <strong>X-rays</strong> and gamma rays are ionising and can damage living cells, causing mutations and cancer. <strong>Ultraviolet</strong> radiation can cause skin cancer by damaging DNA. Infrared radiation is felt as heat. Microwaves can heat water molecules in food. <strong>Radio waves</strong> are non-ionising and pose no known health risk at normal exposure levels. The ozone layer protects Earth from most harmful ultraviolet radiation."
       ]
     },
     "Black Body Radiation": {
       "intro": "All objects absorb and emit radiation. The balance between these processes determines an object's temperature.",
-      "mnemonic": "\"Hotter objects Emit More, Shift Shorter\" — as temperature increases: more radiation emitted, peak shifts to Shorter wavelengths (Higher frequency). 'HEMSS' — Hotter → Emit More → Shift Shorter.",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Black Body Radiation</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "\"Hotter objects Emit More, Shift Shorter\" \u2014 as temperature increases: more radiation emitted, peak shifts to Shorter wavelengths (Higher frequency). 'HEMSS' \u2014 Hotter \u2192 Emit More \u2192 Shift Shorter.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Black Body Radiation</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Absorbing and Emitting Radiation",
-          "icon": "🌡️",
+          "icon": "\ud83c\udf21\ufe0f",
           "text": "Every object continuously absorbs and emits electromagnetic radiation. The temperature of an object depends on the balance between these two processes.",
           "points": [
-            "<strong>All objects emit infrared</strong> — every object above absolute zero emits EM radiation due to its temperature",
-            "<strong>Temperature equilibrium</strong> — temperature is constant when rate of absorption = rate of emission",
-            "<strong>Temperature rising</strong> — if absorbing more than emitting (e.g. object placed in sunlight), temperature rises",
-            "<strong>Temperature falling</strong> — if emitting more than absorbing (e.g. object in cold environment), temperature falls",
-            "<strong>Hotter objects</strong> — emit more radiation overall AND the peak of emission moves to shorter wavelengths (higher frequency)"
+            "<strong>All objects emit infrared</strong> \u2014 every object above absolute zero emits EM radiation due to its temperature",
+            "<strong>Temperature equilibrium</strong> \u2014 temperature is constant when rate of absorption = rate of emission",
+            "<strong>Temperature rising</strong> \u2014 if absorbing more than emitting (e.g. object placed in sunlight), temperature rises",
+            "<strong>Temperature falling</strong> \u2014 if emitting more than absorbing (e.g. object in cold environment), temperature falls",
+            "<strong>Hotter objects</strong> \u2014 emit more radiation overall AND the peak of emission moves to shorter wavelengths (higher frequency)"
           ]
         },
         {
           "title": "Black Body Radiation",
-          "icon": "⚫",
+          "icon": "\u26ab",
           "text": "A black body is a theoretical perfect absorber and emitter. Real objects approximate this behaviour to varying degrees.",
           "points": [
-            "<strong>Perfect black body</strong> — absorbs ALL incident radiation (none reflected or transmitted); emits maximum radiation for its temperature",
-            "<strong>Black body spectrum</strong> — the emission spectrum has a characteristic shape; peak wavelength depends only on temperature",
-            "<strong>Stefan's law</strong> — total power emitted increases sharply with temperature (proportional to T⁴)",
-            "<strong>Peak wavelength shift</strong> — hotter object: peak shifts to shorter wavelength; red-hot → orange → white as temperature increases",
-            "<strong>The Sun</strong> — behaves approximately as a black body at ~5500°C; peak emission in visible light",
-            "<strong>Earth</strong> — behaves as a black body at ~15°C; peak emission in infrared (longer wavelength than the Sun)"
+            "<strong>Perfect black body</strong> \u2014 absorbs ALL incident radiation (none reflected or transmitted); emits maximum radiation for its temperature",
+            "<strong>Black body spectrum</strong> \u2014 the emission spectrum has a characteristic shape; peak wavelength depends only on temperature",
+            "<strong>Stefan's law</strong> \u2014 total power emitted increases sharply with temperature (proportional to T\u2074)",
+            "<strong>Peak wavelength shift</strong> \u2014 hotter object: peak shifts to shorter wavelength; red-hot \u2192 orange \u2192 white as temperature increases",
+            "<strong>The Sun</strong> \u2014 behaves approximately as a black body at ~5500\u00b0C; peak emission in visible light",
+            "<strong>Earth</strong> \u2014 behaves as a black body at ~15\u00b0C; peak emission in infrared (longer wavelength than the Sun)"
           ]
         },
         {
           "title": "The Earth's Temperature and Greenhouse Effect",
-          "icon": "🌍",
+          "icon": "\ud83c\udf0d",
           "text": "Earth's temperature is determined by the balance between absorbed solar radiation and emitted infrared. Greenhouse gases disrupt this balance.",
           "points": [
-            "<strong>Energy balance</strong> — Earth's temperature stable when energy absorbed from Sun = energy emitted by Earth as infrared",
-            "<strong>Greenhouse gases</strong> — CO₂, methane, water vapour absorb infrared emitted by Earth's surface and re-emit it in all directions",
-            "<strong>Greenhouse effect</strong> — gases reduce the rate of emission to space → Earth warms until a new, higher equilibrium temperature is reached",
-            "<strong>Enhanced greenhouse effect</strong> — increasing CO₂ from burning fossil fuels increases trapping of infrared → global warming",
-            "<strong>Albedo</strong> — reflective surfaces (ice, clouds) reflect sunlight, reducing absorption; melting ice reduces albedo, causing further warming"
+            "<strong>Energy balance</strong> \u2014 Earth's temperature stable when energy absorbed from Sun = energy emitted by Earth as infrared",
+            "<strong>Greenhouse gases</strong> \u2014 CO\u2082, methane, water vapour absorb infrared emitted by Earth's surface and re-emit it in all directions",
+            "<strong>Greenhouse effect</strong> \u2014 gases reduce the rate of emission to space \u2192 Earth warms until a new, higher equilibrium temperature is reached",
+            "<strong>Enhanced greenhouse effect</strong> \u2014 increasing CO\u2082 from burning fossil fuels increases trapping of infrared \u2192 global warming",
+            "<strong>Albedo</strong> \u2014 reflective surfaces (ice, clouds) reflect sunlight, reducing absorption; melting ice reduces albedo, causing further warming"
           ],
           "callout": {
             "type": "exam",
             "label": "Energy Balance",
-            "text": "Earth's temperature is stable when energy absorbed from the Sun = energy emitted by Earth. Greenhouse gases reduce emission → temperature rises to establish new balance."
+            "text": "Earth's temperature is stable when energy absorbed from the Sun = energy emitted by Earth. Greenhouse gases reduce emission \u2192 temperature rises to establish new balance."
           }
         }
       ],
       "keyTerms": [
         {
           "term": "Black body",
-          "def": "A perfect absorber and emitter of radiation — absorbs all incident radiation and emits maximum radiation for its temperature"
+          "def": "A perfect absorber and emitter of radiation \u2014 absorbs all incident radiation and emits maximum radiation for its temperature"
         },
         {
           "term": "Infrared radiation",
@@ -536,7 +581,7 @@
         },
         {
           "term": "Greenhouse gas",
-          "def": "Gas (e.g. CO₂, CH₄) that absorbs infrared radiation emitted by Earth's surface, reducing the rate of heat loss to space"
+          "def": "Gas (e.g. CO\u2082, CH\u2084) that absorbs infrared radiation emitted by Earth's surface, reducing the rate of heat loss to space"
         },
         {
           "term": "Greenhouse effect",
@@ -552,38 +597,38 @@
         }
       ],
       "examTips": [
-        "Temperature is stable when absorption rate = emission rate — AQA asks you to explain what happens if one side of this balance changes (e.g. more greenhouse gases). Always say the temperature rises until a new equilibrium is reached.",
-        "Hotter objects emit more radiation at shorter wavelengths — you may be given a graph of emission spectra at different temperatures. The peak moves left (to shorter wavelength) and the curve is higher as temperature increases.",
-        "Greenhouse effect: gases absorb Earth's infrared → reduce rate of emission to space → Earth warms. You must use the phrase 'rate of emission' not just 'traps heat' for full marks.",
+        "Temperature is stable when absorption rate = emission rate \u2014 AQA asks you to explain what happens if one side of this balance changes (e.g. more greenhouse gases). Always say the temperature rises until a new equilibrium is reached.",
+        "Hotter objects emit more radiation at shorter wavelengths \u2014 you may be given a graph of emission spectra at different temperatures. The peak moves left (to shorter wavelength) and the curve is higher as temperature increases.",
+        "Greenhouse effect: gases absorb Earth's infrared \u2192 reduce rate of emission to space \u2192 Earth warms. You must use the phrase 'rate of emission' not just 'traps heat' for full marks.",
         "For 6-mark questions on climate change: mention energy balance, role of greenhouse gases absorbing infrared, re-emission in all directions, reduced rate of energy loss, rise in temperature, and enhanced effect from burning fossil fuels."
       ],
       "commonMistakes": [
-        "Saying black objects always absorb radiation — this is about black bodies (theoretical perfect absorbers), not the colour black. A black body is a scientific concept, not a physical colour.",
-        "Forgetting that all objects emit infrared — not just hot ones. Even cold objects emit radiation; hotter objects just emit more and at higher frequencies.",
-        "Saying the greenhouse effect is bad — the natural greenhouse effect keeps Earth warm enough for life. It is the ENHANCED greenhouse effect (from human activity) that causes concern.",
-        "Confusing the greenhouse effect with the ozone layer — the greenhouse effect relates to infrared retention; the ozone layer blocks UV. They are separate phenomena."
+        "Saying black objects always absorb radiation \u2014 this is about black bodies (theoretical perfect absorbers), not the colour black. A black body is a scientific concept, not a physical colour.",
+        "Forgetting that all objects emit infrared \u2014 not just hot ones. Even cold objects emit radiation; hotter objects just emit more and at higher frequencies.",
+        "Saying the greenhouse effect is bad \u2014 the natural greenhouse effect keeps Earth warm enough for life. It is the ENHANCED greenhouse effect (from human activity) that causes concern.",
+        "Confusing the greenhouse effect with the ozone layer \u2014 the greenhouse effect relates to infrared retention; the ozone layer blocks UV. They are separate phenomena."
       ],
       "videos": [
         {
-          "title": "Black Body Radiation GCSE Physics",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=cfXzwh3KadE"
+          "url": "https://www.youtube.com/watch?v=sdAymZ4DMQU",
+          "videoId": "sdAymZ4DMQU",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Infrared Radiation",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=TXoSb0EXPw4"
+          "url": "https://www.youtube.com/watch?v=je-qc7sxYzU",
+          "videoId": "je-qc7sxYzU",
+          "channel": "Cognito"
         },
         {
-          "title": "Black Body Radiation",
-          "channel": "Fuse School",
-          "url": "https://www.youtube.com/watch?v=9Y0dvqe7p9U"
+          "url": "https://www.youtube.com/watch?v=SvVQAg_oA2A",
+          "videoId": "SvVQAg_oA2A",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
-        "All objects emit <strong>electromagnetic radiation</strong> — the hotter the object, the more radiation it emits and the higher the frequency of the peak emission. A <strong>black body</strong> is an ideal absorber and emitter of radiation. It absorbs all radiation that falls on it and emits the maximum possible radiation at each wavelength for its temperature. The Sun behaves approximately like a black body at about 5500°C and emits most strongly in the <strong>visible</strong> part of the spectrum.",
-        "The <strong>Earth</strong> absorbs radiation from the Sun and also emits radiation. The balance between absorbed and emitted radiation determines Earth's temperature. <strong>Greenhouse gases</strong> in the atmosphere absorb some of the infrared radiation emitted by Earth's surface and re-emit it in all directions, warming the planet. Increasing greenhouse gas concentrations trap more radiation, causing the Earth's average <strong>temperature</strong> to rise — this is the enhanced greenhouse effect.",
-        "The intensity and <strong>wavelength</strong> distribution of radiation emitted by a body depends only on its temperature. As temperature increases, the peak of the emission shifts to shorter wavelengths (higher frequencies). This is why objects glow red, then orange, then white as they get hotter. The concept of <strong>black body radiation</strong> was crucial in developing quantum theory — classical physics could not explain the observed emission spectrum, leading Planck to propose that energy is emitted in discrete packets called <strong>quanta</strong>."
+        "All objects emit <strong>electromagnetic radiation</strong> \u2014 the hotter the object, the more radiation it emits and the higher the frequency of the peak emission. A <strong>black body</strong> is an ideal absorber and emitter of radiation. It absorbs all radiation that falls on it and emits the maximum possible radiation at each wavelength for its temperature. The Sun behaves approximately like a black body at about 5500\u00b0C and emits most strongly in the <strong>visible</strong> part of the spectrum.",
+        "The <strong>Earth</strong> absorbs radiation from the Sun and also emits radiation. The balance between absorbed and emitted radiation determines Earth's temperature. <strong>Greenhouse gases</strong> in the atmosphere absorb some of the infrared radiation emitted by Earth's surface and re-emit it in all directions, warming the planet. Increasing greenhouse gas concentrations trap more radiation, causing the Earth's average <strong>temperature</strong> to rise \u2014 this is the enhanced greenhouse effect.",
+        "The intensity and <strong>wavelength</strong> distribution of radiation emitted by a body depends only on its temperature. As temperature increases, the peak of the emission shifts to shorter wavelengths (higher frequencies). This is why objects glow red, then orange, then white as they get hotter. The concept of <strong>black body radiation</strong> was crucial in developing quantum theory \u2014 classical physics could not explain the observed emission spectrum, leading Planck to propose that energy is emitted in discrete packets called <strong>quanta</strong>."
       ]
     }
   }

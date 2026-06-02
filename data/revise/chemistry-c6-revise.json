@@ -3,51 +3,51 @@
   "topics": {
     "Rate of Reaction": {
       "intro": "The rate of a reaction measures how quickly reactants are converted to products. It can be measured by how quickly a reactant is used up or a product is formed.",
-      "mnemonic": "Rate = change ÷ time. Think of a CAR speeding: Concentration, Area (surface), Rate goes up with Temperature too! CART = Concentration, Area, Rate, Temperature.",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Rate of Reaction</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "Rate = change \u00f7 time. Think of a CAR speeding: Concentration, Area (surface), Rate goes up with Temperature too! CART = Concentration, Area, Rate, Temperature.",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Rate of Reaction</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Measuring Rate",
-          "icon": "📊",
+          "icon": "\ud83d\udcca",
           "text": "Rate of reaction can be found by measuring how fast a reactant is used up or a product is formed over time.",
           "points": [
-            "<strong>Rate formula</strong> — Rate = amount of product formed (or reactant used) ÷ time taken",
-            "<strong>Gas syringe method</strong> — collect gas produced; record volume at intervals; plot volume vs time",
-            "<strong>Mass loss method</strong> — place on balance; record mass at intervals as gas escapes",
-            "<strong>Colorimetry/colour change</strong> — measure colour intensity as reactant is consumed",
-            "<strong>Disappearing cross method</strong> — time how long until a cross under the flask is no longer visible (precipitation)",
-            "<strong>Rate decreases over time</strong> — as reactants are used up, fewer collisions occur, so rate falls"
+            "<strong>Rate formula</strong> \u2014 Rate = amount of product formed (or reactant used) \u00f7 time taken",
+            "<strong>Gas syringe method</strong> \u2014 collect gas produced; record volume at intervals; plot volume vs time",
+            "<strong>Mass loss method</strong> \u2014 place on balance; record mass at intervals as gas escapes",
+            "<strong>Colorimetry/colour change</strong> \u2014 measure colour intensity as reactant is consumed",
+            "<strong>Disappearing cross method</strong> \u2014 time how long until a cross under the flask is no longer visible (precipitation)",
+            "<strong>Rate decreases over time</strong> \u2014 as reactants are used up, fewer collisions occur, so rate falls"
           ]
         },
         {
           "title": "Rate from a Graph",
-          "icon": "📈",
+          "icon": "\ud83d\udcc8",
           "text": "Rate-time graphs and concentration-time graphs both give information about how the rate changes during a reaction.",
           "points": [
-            "<strong>Steeper gradient</strong> — faster rate of reaction at that point",
-            "<strong>Flat line</strong> — reaction has stopped (reactant fully used up, not just slow)",
-            "<strong>Initial rate</strong> — steepest at the start; highest concentration of reactants",
-            "<strong>Tangent method</strong> — draw a tangent to the curve at the required point; gradient = rise ÷ run = rate",
-            "<strong>Mean rate</strong> — total change in quantity ÷ total time; gives an average, not instantaneous rate",
-            "<strong>Comparing experiments</strong> — steeper curve AND same final amount reached = faster rate, same amount of product"
+            "<strong>Steeper gradient</strong> \u2014 faster rate of reaction at that point",
+            "<strong>Flat line</strong> \u2014 reaction has stopped (reactant fully used up, not just slow)",
+            "<strong>Initial rate</strong> \u2014 steepest at the start; highest concentration of reactants",
+            "<strong>Tangent method</strong> \u2014 draw a tangent to the curve at the required point; gradient = rise \u00f7 run = rate",
+            "<strong>Mean rate</strong> \u2014 total change in quantity \u00f7 total time; gives an average, not instantaneous rate",
+            "<strong>Comparing experiments</strong> \u2014 steeper curve AND same final amount reached = faster rate, same amount of product"
           ],
           "callout": {
             "type": "exam",
             "label": "Calculating Rate",
-            "text": "Draw a tangent to the curve at the point of interest. Rate = gradient = rise ÷ run. For mean rate: total change ÷ total time."
+            "text": "Draw a tangent to the curve at the point of interest. Rate = gradient = rise \u00f7 run. For mean rate: total change \u00f7 total time."
           }
         },
         {
           "title": "Units and Calculations",
-          "icon": "🧮",
+          "icon": "\ud83e\uddee",
           "text": "Understanding how to calculate and express rate correctly is essential for exam success.",
           "points": [
-            "<strong>Units of rate</strong> — depend on what is measured: cm³/s (gas volume), g/s (mass), mol/dm³/s (concentration)",
-            "<strong>Worked example</strong> — if 48 cm³ of gas is collected in 60 s: mean rate = 48 ÷ 60 = 0.8 cm³/s",
-            "<strong>Instantaneous rate</strong> — rate at one specific moment; found using a tangent to the curve",
-            "<strong>Mean rate</strong> — average over the whole reaction or a time interval",
-            "<strong>Comparing rates</strong> — steeper gradient = faster rate; a reaction finishing sooner does NOT mean it produced more product",
-            "<strong>Limiting reagent</strong> — the reactant that runs out first; determines when the reaction stops"
+            "<strong>Units of rate</strong> \u2014 depend on what is measured: cm\u00b3/s (gas volume), g/s (mass), mol/dm\u00b3/s (concentration)",
+            "<strong>Worked example</strong> \u2014 if 48 cm\u00b3 of gas is collected in 60 s: mean rate = 48 \u00f7 60 = 0.8 cm\u00b3/s",
+            "<strong>Instantaneous rate</strong> \u2014 rate at one specific moment; found using a tangent to the curve",
+            "<strong>Mean rate</strong> \u2014 average over the whole reaction or a time interval",
+            "<strong>Comparing rates</strong> \u2014 steeper gradient = faster rate; a reaction finishing sooner does NOT mean it produced more product",
+            "<strong>Limiting reagent</strong> \u2014 the reactant that runs out first; determines when the reaction stops"
           ]
         }
       ],
@@ -58,15 +58,15 @@
         },
         {
           "term": "Mean rate",
-          "def": "Total amount of change divided by total time taken — gives an average across the whole reaction"
+          "def": "Total amount of change divided by total time taken \u2014 gives an average across the whole reaction"
         },
         {
           "term": "Instantaneous rate",
-          "def": "The rate at one specific moment in time — found by drawing a tangent to a concentration-time graph"
+          "def": "The rate at one specific moment in time \u2014 found by drawing a tangent to a concentration-time graph"
         },
         {
           "term": "Tangent",
-          "def": "A straight line that touches a curve at one point — its gradient gives the instantaneous rate"
+          "def": "A straight line that touches a curve at one point \u2014 its gradient gives the instantaneous rate"
         },
         {
           "term": "Limiting reagent",
@@ -79,84 +79,99 @@
       ],
       "examTips": [
         "Steeper gradient on a graph = faster rate. Always state this when comparing curves.",
-        "A flat line on a graph means the reaction is complete — not that it is slow. The limiting reagent has been used up.",
+        "A flat line on a graph means the reaction is complete \u2014 not that it is slow. The limiting reagent has been used up.",
         "Initial rate (start of graph) is always the fastest because reactant concentration is highest at the beginning.",
-        "When calculating mean rate, always specify the time interval: e.g. mean rate between 0 and 30 s = change in volume ÷ 30."
+        "When calculating mean rate, always specify the time interval: e.g. mean rate between 0 and 30 s = change in volume \u00f7 30."
       ],
       "commonMistakes": [
-        "Confusing a flat line (reaction complete, limiting reagent used up) with a slow rate — the reaction has stopped, not slowed.",
-        "Calculating mean rate instead of instantaneous rate when asked for the rate at a specific point — you must draw a tangent.",
-        "Mixing up the units of rate — check what is being measured (gas volume, mass, concentration) and use appropriate units per second."
+        "Confusing a flat line (reaction complete, limiting reagent used up) with a slow rate \u2014 the reaction has stopped, not slowed.",
+        "Calculating mean rate instead of instantaneous rate when asked for the rate at a specific point \u2014 you must draw a tangent.",
+        "Mixing up the units of rate \u2014 check what is being measured (gas volume, mass, concentration) and use appropriate units per second."
       ],
       "videos": [
         {
-          "title": "Rate of Reaction GCSE Chemistry",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=8XeSV5MHieI"
+          "url": "https://www.youtube.com/watch?v=NhdtqnEfa9w",
+          "videoId": "NhdtqnEfa9w",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Measuring Rate of Reaction",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=8XeSV5MHieI"
+          "url": "https://www.youtube.com/watch?v=ExHV_cFWYSM",
+          "videoId": "ExHV_cFWYSM",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Reaction Rates",
-          "channel": "Fuse School",
-          "url": "https://www.youtube.com/watch?v=L-qlpXGpZ4Y"
+          "url": "https://www.youtube.com/watch?v=HaQm4pNMZug",
+          "videoId": "HaQm4pNMZug",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=JK7yPzO9POU",
+          "videoId": "JK7yPzO9POU",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=aanZzrUPEDw",
+          "videoId": "aanZzrUPEDw",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=UkrBJ6-uGFA",
+          "videoId": "UkrBJ6-uGFA",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
-        "The <strong>rate of reaction</strong> measures how quickly reactants are converted to products. It can be measured by monitoring the change in mass, volume of gas produced, or concentration of a reactant or product over time. Rate = change in quantity ÷ time. A steeper gradient on a graph means a faster rate. The rate decreases over time as <strong>reactants</strong> are used up and their concentration falls.",
-        "Reaction rates can be explained using <strong>collision theory</strong>. For a reaction to occur, particles must collide with sufficient <strong>energy</strong> — at least the activation energy. More frequent successful collisions lead to a faster reaction. Factors that increase the frequency or energy of collisions — such as increasing temperature, concentration, surface area, or adding a <strong>catalyst</strong> — all increase the rate of reaction.",
-        "The rate of reaction can be measured in several ways. If a gas is produced, its <strong>volume</strong> can be measured over time using a gas syringe. If a precipitate forms, the time taken for a cross to become obscured can be measured. The mass of the reaction flask can be measured if a gas escapes. Plotting mass or volume against time gives a curve that flattens when the reaction stops — at this point the <strong>limiting reagent</strong> is used up."
+        "The <strong>rate of reaction</strong> measures how quickly reactants are converted to products. It can be measured by monitoring the change in mass, volume of gas produced, or concentration of a reactant or product over time. Rate = change in quantity \u00f7 time. A steeper gradient on a graph means a faster rate. The rate decreases over time as <strong>reactants</strong> are used up and their concentration falls.",
+        "Reaction rates can be explained using <strong>collision theory</strong>. For a reaction to occur, particles must collide with sufficient <strong>energy</strong> \u2014 at least the activation energy. More frequent successful collisions lead to a faster reaction. Factors that increase the frequency or energy of collisions \u2014 such as increasing temperature, concentration, surface area, or adding a <strong>catalyst</strong> \u2014 all increase the rate of reaction.",
+        "The rate of reaction can be measured in several ways. If a gas is produced, its <strong>volume</strong> can be measured over time using a gas syringe. If a precipitate forms, the time taken for a cross to become obscured can be measured. The mass of the reaction flask can be measured if a gas escapes. Plotting mass or volume against time gives a curve that flattens when the reaction stops \u2014 at this point the <strong>limiting reagent</strong> is used up."
       ]
     },
     "Factors Affecting Rate": {
       "intro": "Several factors affect how quickly a reaction occurs. All explanations should be linked to collision theory.",
-      "mnemonic": "TESCP — Temperature, (surface) area, concentration, pressure, catalyst. Remember: 'Terrific Elephants Can't Possibly Stop' chemical reactions speeding up!",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Factors Affecting Rate</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "mnemonic": "TESCP \u2014 Temperature, (surface) area, concentration, pressure, catalyst. Remember: 'Terrific Elephants Can't Possibly Stop' chemical reactions speeding up!",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Factors Affecting Rate</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Collision Theory",
-          "icon": "💥",
+          "icon": "\ud83d\udca5",
           "text": "For a reaction to occur, particles must collide with energy greater than or equal to the activation energy. More frequent, higher-energy collisions = faster rate.",
           "points": [
-            "<strong>Successful collision</strong> — particles must meet AND have energy ≥ activation energy",
-            "<strong>Activation energy</strong> — the minimum energy needed; if collision energy is below this, no reaction occurs",
-            "<strong>Frequency of collisions</strong> — more collisions per second = more chance of successful reactions",
-            "<strong>Energy of collisions</strong> — higher energy = more collisions exceed activation energy threshold",
-            "<strong>Particle size matters</strong> — smaller particles have greater surface area for collisions",
-            "<strong>Maxwell-Boltzmann</strong> — the distribution of kinetic energies in particles; only those above Ea react"
+            "<strong>Successful collision</strong> \u2014 particles must meet AND have energy \u2265 activation energy",
+            "<strong>Activation energy</strong> \u2014 the minimum energy needed; if collision energy is below this, no reaction occurs",
+            "<strong>Frequency of collisions</strong> \u2014 more collisions per second = more chance of successful reactions",
+            "<strong>Energy of collisions</strong> \u2014 higher energy = more collisions exceed activation energy threshold",
+            "<strong>Particle size matters</strong> \u2014 smaller particles have greater surface area for collisions",
+            "<strong>Maxwell-Boltzmann</strong> \u2014 the distribution of kinetic energies in particles; only those above Ea react"
           ]
         },
         {
           "title": "The Five Factors",
-          "icon": "⚡",
-          "text": "Five key factors can change the rate of a reaction — always link each one back to collision theory in exam answers.",
+          "icon": "\u26a1",
+          "text": "Five key factors can change the rate of a reaction \u2014 always link each one back to collision theory in exam answers.",
           "points": [
-            "<strong>Temperature</strong> — higher temp gives particles more kinetic energy; collide more frequently AND with more energy; a greater proportion exceed activation energy; rate increases significantly",
-            "<strong>Concentration</strong> (solutions) — more particles in the same volume; more frequent collisions per unit time",
-            "<strong>Pressure</strong> (gases) — same effect as concentration — particles are closer together, so collide more frequently",
-            "<strong>Surface area</strong> — smaller pieces (powder vs lumps) expose more particles at the surface; more frequent collisions",
-            "<strong>Catalyst</strong> — provides an alternative reaction pathway with lower activation energy; not consumed; more collisions are successful"
+            "<strong>Temperature</strong> \u2014 higher temp gives particles more kinetic energy; collide more frequently AND with more energy; a greater proportion exceed activation energy; rate increases significantly",
+            "<strong>Concentration</strong> (solutions) \u2014 more particles in the same volume; more frequent collisions per unit time",
+            "<strong>Pressure</strong> (gases) \u2014 same effect as concentration \u2014 particles are closer together, so collide more frequently",
+            "<strong>Surface area</strong> \u2014 smaller pieces (powder vs lumps) expose more particles at the surface; more frequent collisions",
+            "<strong>Catalyst</strong> \u2014 provides an alternative reaction pathway with lower activation energy; not consumed; more collisions are successful"
           ]
         },
         {
           "title": "Catalysts in Detail",
-          "icon": "🔬",
+          "icon": "\ud83d\udd2c",
           "text": "Catalysts speed up reactions by providing a lower-energy route for the reaction, shown as a lower activation energy peak on an energy profile.",
           "points": [
-            "<strong>Lower activation energy</strong> — more particle collisions have sufficient energy to react",
-            "<strong>Not consumed</strong> — the catalyst is unchanged at the end of the reaction",
-            "<strong>Specific to reactions</strong> — different reactions require different catalysts",
-            "<strong>Industrial importance</strong> — iron in Haber process, vanadium pentoxide in Contact process, platinum in catalytic converters",
-            "<strong>Enzymes</strong> — biological catalysts; work at body temperature; e.g. amylase breaks down starch",
-            "<strong>Energy profile</strong> — catalysed pathway shown as a lower peak; ΔH of reaction is UNCHANGED"
+            "<strong>Lower activation energy</strong> \u2014 more particle collisions have sufficient energy to react",
+            "<strong>Not consumed</strong> \u2014 the catalyst is unchanged at the end of the reaction",
+            "<strong>Specific to reactions</strong> \u2014 different reactions require different catalysts",
+            "<strong>Industrial importance</strong> \u2014 iron in Haber process, vanadium pentoxide in Contact process, platinum in catalytic converters",
+            "<strong>Enzymes</strong> \u2014 biological catalysts; work at body temperature; e.g. amylase breaks down starch",
+            "<strong>Energy profile</strong> \u2014 catalysed pathway shown as a lower peak; \u0394H of reaction is UNCHANGED"
           ],
           "callout": {
             "type": "tip",
             "label": "Catalysts",
-            "text": "A catalyst lowers the activation energy — shown on an energy profile as a lower peak. It does NOT change the overall energy change (ΔH) or the equilibrium position."
+            "text": "A catalyst lowers the activation energy \u2014 shown on an energy profile as a lower peak. It does NOT change the overall energy change (\u0394H) or the equilibrium position."
           }
         }
       ],
@@ -183,97 +198,92 @@
         },
         {
           "term": "Enzyme",
-          "def": "A biological catalyst — a protein that speeds up a specific reaction in living organisms"
+          "def": "A biological catalyst \u2014 a protein that speeds up a specific reaction in living organisms"
         }
       ],
       "examTips": [
-        "Always explain using collision theory — don't just say 'more collisions'. State WHY: 'particles have more kinetic energy so collide more frequently AND with more energy, so more collisions exceed the activation energy'.",
-        "Catalyst lowers the activation energy — it does NOT affect the overall energy change (ΔH) or shift equilibrium position.",
-        "Temperature affects BOTH the frequency AND the energy of collisions — mention both in exam answers for full marks.",
+        "Always explain using collision theory \u2014 don't just say 'more collisions'. State WHY: 'particles have more kinetic energy so collide more frequently AND with more energy, so more collisions exceed the activation energy'.",
+        "Catalyst lowers the activation energy \u2014 it does NOT affect the overall energy change (\u0394H) or shift equilibrium position.",
+        "Temperature affects BOTH the frequency AND the energy of collisions \u2014 mention both in exam answers for full marks.",
         "When asked to compare two experiments: state which is faster AND explain why using collision theory."
       ],
       "commonMistakes": [
-        "Saying 'more collisions' without explaining why the factor causes this — always link to particle movement, concentration, or energy.",
-        "Thinking catalysts change the overall ΔH of the reaction — they only lower the activation energy.",
-        "Forgetting that catalysts are not used up — they are regenerated at the end and can be reused."
+        "Saying 'more collisions' without explaining why the factor causes this \u2014 always link to particle movement, concentration, or energy.",
+        "Thinking catalysts change the overall \u0394H of the reaction \u2014 they only lower the activation energy.",
+        "Forgetting that catalysts are not used up \u2014 they are regenerated at the end and can be reused."
       ],
       "videos": [
         {
-          "title": "Factors Affecting Rate of Reaction",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=8XeSV5MHieI"
+          "url": "https://www.youtube.com/watch?v=JK7yPzO9POU",
+          "videoId": "JK7yPzO9POU",
+          "channel": "Cognito"
         },
         {
-          "title": "Collision Theory GCSE",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=JxjI2QVqjOI"
+          "url": "https://www.youtube.com/watch?v=u4Co4N-Jmbs",
+          "videoId": "u4Co4N-Jmbs",
+          "channel": "Free Science Lessons"
         },
         {
-          "title": "Catalysts",
-          "channel": "Fuse School",
-          "url": "https://www.youtube.com/watch?v=heTEocXTUSU"
-        },
-        {
-          "title": "Rate of Reaction Factors",
-          "channel": "Science with Hazel",
-          "url": "https://www.youtube.com/watch?v=8XeSV5MHieI"
+          "url": "https://www.youtube.com/watch?v=G2TEfhwgq84",
+          "videoId": "G2TEfhwgq84",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
-        "<strong>Temperature</strong> increases the rate of reaction because particles move faster, collide more frequently, and have more energy. A higher proportion of collisions exceed the <strong>activation energy</strong>. A 10°C rise in temperature approximately doubles the reaction rate. This is why food stored in a refrigerator lasts longer — the lower temperature reduces the rate of <strong>enzyme</strong>-controlled reactions in bacteria that cause food to spoil.",
+        "<strong>Temperature</strong> increases the rate of reaction because particles move faster, collide more frequently, and have more energy. A higher proportion of collisions exceed the <strong>activation energy</strong>. A 10\u00b0C rise in temperature approximately doubles the reaction rate. This is why food stored in a refrigerator lasts longer \u2014 the lower temperature reduces the rate of <strong>enzyme</strong>-controlled reactions in bacteria that cause food to spoil.",
         "<strong>Concentration</strong> affects the rate of reaction. A higher concentration means more particles in a given volume, leading to more frequent <strong>collisions</strong>. Increasing concentration increases the probability of successful collisions per unit time. For reactions in solution, increasing the concentration of reactants increases the rate. For gaseous reactions, increasing <strong>pressure</strong> has the same effect as increasing concentration.",
-        "A <strong>catalyst</strong> increases the rate of reaction without being used up itself. It provides an alternative reaction pathway with a lower <strong>activation energy</strong>, so more collisions are successful. Catalysts are specific — different reactions need different catalysts. <strong>Enzymes</strong> are biological catalysts. Industrial catalysts include iron in the Haber process and vanadium pentoxide in the Contact process. Catalysts are economically important as they reduce energy costs."
+        "A <strong>catalyst</strong> increases the rate of reaction without being used up itself. It provides an alternative reaction pathway with a lower <strong>activation energy</strong>, so more collisions are successful. Catalysts are specific \u2014 different reactions need different catalysts. <strong>Enzymes</strong> are biological catalysts. Industrial catalysts include iron in the Haber process and vanadium pentoxide in the Contact process. Catalysts are economically important as they reduce energy costs."
       ]
     },
     "Equilibrium": {
-      "intro": "Some reactions are reversible — they can proceed in both directions. At equilibrium the forward and reverse rates are equal and concentrations remain constant.",
+      "intro": "Some reactions are reversible \u2014 they can proceed in both directions. At equilibrium the forward and reverse rates are equal and concentrations remain constant.",
       "mnemonic": "Le Chatelier's Principle: 'If you STRESS the system, it will do its BEST to RESIST.' Higher temperature? It shifts to use up heat. More pressure? It shifts to reduce moles of gas.",
-      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">🖼️</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Equilibrium</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
+      "diagram": "<div style=\"text-align:center;padding:2rem;background:#f8fafc;border:2px dashed #cbd5e1;border-radius:8px;margin:0.5rem 0\"><div style=\"font-size:2rem\">\ud83d\uddbc\ufe0f</div><div style=\"color:#64748b;font-size:0.85rem;margin-top:0.5rem\"><strong>Diagram: Equilibrium</strong><br><span style=\"font-size:0.75rem;color:#94a3b8\">Image coming soon</span></div></div>",
       "sections": [
         {
           "title": "Reversible Reactions",
-          "icon": "⇌",
-          "text": "A reversible reaction can proceed in both the forward and reverse directions simultaneously, represented by the ⇌ symbol.",
+          "icon": "\u21cc",
+          "text": "A reversible reaction can proceed in both the forward and reverse directions simultaneously, represented by the \u21cc symbol.",
           "points": [
-            "<strong>⇌ symbol</strong> — indicates a reversible reaction that can go in both directions",
-            "<strong>Forward and reverse reactions</strong> — both occur simultaneously in a closed system",
-            "<strong>Dynamic equilibrium</strong> — forward rate = reverse rate; concentrations are constant but NOT necessarily equal",
-            "<strong>Closed system</strong> — no substances enter or leave; equilibrium can only be reached in a closed system",
-            "<strong>Position of equilibrium</strong> — describes whether more product or more reactant is present at equilibrium",
-            "<strong>Real example</strong> — N₂O₄ ⇌ 2NO₂ (colourless ⇌ brown); colour shows where equilibrium lies"
+            "<strong>\u21cc symbol</strong> \u2014 indicates a reversible reaction that can go in both directions",
+            "<strong>Forward and reverse reactions</strong> \u2014 both occur simultaneously in a closed system",
+            "<strong>Dynamic equilibrium</strong> \u2014 forward rate = reverse rate; concentrations are constant but NOT necessarily equal",
+            "<strong>Closed system</strong> \u2014 no substances enter or leave; equilibrium can only be reached in a closed system",
+            "<strong>Position of equilibrium</strong> \u2014 describes whether more product or more reactant is present at equilibrium",
+            "<strong>Real example</strong> \u2014 N\u2082O\u2084 \u21cc 2NO\u2082 (colourless \u21cc brown); colour shows where equilibrium lies"
           ]
         },
         {
           "title": "Le Chatelier's Principle",
-          "icon": "⚖️",
+          "icon": "\u2696\ufe0f",
           "text": "If the conditions of a system at equilibrium are changed, the equilibrium shifts to oppose that change.",
           "points": [
-            "<strong>Increase temperature</strong> → shifts towards endothermic direction (absorbs the extra heat)",
-            "<strong>Decrease temperature</strong> → shifts towards exothermic direction (releases more heat)",
-            "<strong>Increase pressure</strong> → shifts towards side with fewer moles of gas (reduces pressure)",
-            "<strong>Decrease pressure</strong> → shifts towards side with more moles of gas",
-            "<strong>Increase concentration of a substance</strong> → equilibrium shifts away from that substance to use it up",
-            "<strong>Catalyst</strong> → equilibrium reached faster but position is UNCHANGED"
+            "<strong>Increase temperature</strong> \u2192 shifts towards endothermic direction (absorbs the extra heat)",
+            "<strong>Decrease temperature</strong> \u2192 shifts towards exothermic direction (releases more heat)",
+            "<strong>Increase pressure</strong> \u2192 shifts towards side with fewer moles of gas (reduces pressure)",
+            "<strong>Decrease pressure</strong> \u2192 shifts towards side with more moles of gas",
+            "<strong>Increase concentration of a substance</strong> \u2192 equilibrium shifts away from that substance to use it up",
+            "<strong>Catalyst</strong> \u2192 equilibrium reached faster but position is UNCHANGED"
           ]
         },
         {
-          "title": "Industrial Applications — The Haber Process",
-          "icon": "🏭",
+          "title": "Industrial Applications \u2014 The Haber Process",
+          "icon": "\ud83c\udfed",
           "text": "The Haber process uses equilibrium principles to manufacture ammonia as a compromise between yield and rate.",
           "points": [
-            "<strong>Equation</strong> — N₂ + 3H₂ ⇌ 2NH₃ (forward reaction is exothermic)",
-            "<strong>Pressure used</strong> — 200 atm; high pressure favours right side (4 mol gas → 2 mol gas)",
-            "<strong>Temperature used</strong> — 450°C; low temp gives better yield but slower rate; 450°C is a compromise",
-            "<strong>Catalyst</strong> — iron; speeds up reaching equilibrium but does not change position",
-            "<strong>Recycling unreacted gases</strong> — N₂ and H₂ that don't react are recycled back into the reactor",
-            "<strong>Yield at 450°C</strong> — only about 15% ammonia in equilibrium mixture, but rate is acceptable"
+            "<strong>Equation</strong> \u2014 N\u2082 + 3H\u2082 \u21cc 2NH\u2083 (forward reaction is exothermic)",
+            "<strong>Pressure used</strong> \u2014 200 atm; high pressure favours right side (4 mol gas \u2192 2 mol gas)",
+            "<strong>Temperature used</strong> \u2014 450\u00b0C; low temp gives better yield but slower rate; 450\u00b0C is a compromise",
+            "<strong>Catalyst</strong> \u2014 iron; speeds up reaching equilibrium but does not change position",
+            "<strong>Recycling unreacted gases</strong> \u2014 N\u2082 and H\u2082 that don't react are recycled back into the reactor",
+            "<strong>Yield at 450\u00b0C</strong> \u2014 only about 15% ammonia in equilibrium mixture, but rate is acceptable"
           ]
         }
       ],
       "keyTerms": [
         {
           "term": "Reversible reaction",
-          "def": "A reaction that can proceed in both the forward and reverse directions, shown by the ⇌ symbol"
+          "def": "A reaction that can proceed in both the forward and reverse directions, shown by the \u21cc symbol"
         },
         {
           "term": "Dynamic equilibrium",
@@ -289,45 +299,65 @@
         },
         {
           "term": "Closed system",
-          "def": "A system where no matter can enter or leave — required for equilibrium to be established"
+          "def": "A system where no matter can enter or leave \u2014 required for equilibrium to be established"
         },
         {
           "term": "Haber process",
-          "def": "Industrial manufacture of ammonia: N₂ + 3H₂ ⇌ 2NH₃, using iron catalyst at 450°C and 200 atm"
+          "def": "Industrial manufacture of ammonia: N\u2082 + 3H\u2082 \u21cc 2NH\u2083, using iron catalyst at 450\u00b0C and 200 atm"
         }
       ],
       "examTips": [
-        "Catalyst speeds up reaching equilibrium but does NOT shift the position — it speeds up both forward and reverse equally.",
+        "Catalyst speeds up reaching equilibrium but does NOT shift the position \u2014 it speeds up both forward and reverse equally.",
         "Changing pressure only affects equilibrium if there are DIFFERENT numbers of gas moles on each side of the equation. Count them carefully.",
-        "'Dynamic' means both reactions are still occurring at equal rates — NOT that no reaction is taking place.",
-        "In the Haber process, explain why 450°C is used rather than a lower temperature: a lower temperature gives higher yield but too slow a rate; 450°C is the compromise."
+        "'Dynamic' means both reactions are still occurring at equal rates \u2014 NOT that no reaction is taking place.",
+        "In the Haber process, explain why 450\u00b0C is used rather than a lower temperature: a lower temperature gives higher yield but too slow a rate; 450\u00b0C is the compromise."
       ],
       "commonMistakes": [
-        "Saying a catalyst shifts the equilibrium position — it does not; it only speeds up reaching equilibrium.",
+        "Saying a catalyst shifts the equilibrium position \u2014 it does not; it only speeds up reaching equilibrium.",
         "Confusing dynamic equilibrium (reactions still occurring in both directions) with no reaction happening.",
-        "Saying concentrations are equal at equilibrium — they are constant (unchanging) but not necessarily the same as each other."
+        "Saying concentrations are equal at equilibrium \u2014 they are constant (unchanging) but not necessarily the same as each other."
       ],
       "videos": [
         {
-          "title": "Reversible Reactions and Equilibrium",
-          "channel": "Cognito",
-          "url": "https://www.youtube.com/watch?v=QKDIe6GrMUY"
+          "url": "https://www.youtube.com/watch?v=wlD_ImYQAgQ",
+          "videoId": "wlD_ImYQAgQ",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Le Chatelier's Principle GCSE",
-          "channel": "Freesciencelessons",
-          "url": "https://www.youtube.com/watch?v=GdBhPm-z0HU"
+          "url": "https://www.youtube.com/watch?v=7zuUV455zFs",
+          "videoId": "7zuUV455zFs",
+          "channel": "FuseSchools"
         },
         {
-          "title": "Chemical Equilibrium",
-          "channel": "Fuse School",
-          "url": "https://www.youtube.com/watch?v=J5jtIMv2QLU"
+          "url": "https://www.youtube.com/watch?v=XhQ02egUs5Y",
+          "videoId": "XhQ02egUs5Y",
+          "channel": "FuseSchools"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=5rC6f_P_A48",
+          "videoId": "5rC6f_P_A48",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=KZPO23kia_o",
+          "videoId": "KZPO23kia_o",
+          "channel": "Cognito"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=utmV4Q0t6MI",
+          "videoId": "utmV4Q0t6MI",
+          "channel": "Free Science Lessons"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=66qcNNJFy6E",
+          "videoId": "66qcNNJFy6E",
+          "channel": "Free Science Lessons"
         }
       ],
       "clozePassages": [
         "In a <strong>reversible reaction</strong>, products can react to reform the original reactants. When the rate of the forward reaction equals the rate of the reverse reaction in a closed system, <strong>dynamic equilibrium</strong> is reached. At equilibrium, the concentrations of reactants and products remain constant, but both reactions are still occurring. The position of equilibrium indicates whether there are more reactants or products present.",
         "<strong>Le Chatelier's principle</strong> states that if conditions are changed, the equilibrium will shift to oppose that change. Increasing <strong>temperature</strong> shifts equilibrium in the endothermic direction. Increasing <strong>concentration</strong> of reactants shifts it towards products. Increasing <strong>pressure</strong> shifts equilibrium towards the side with fewer moles of gas. This principle is used in industrial processes to maximise the yield of products.",
-        "The <strong>Haber process</strong> is an industrial application of equilibrium. Nitrogen and hydrogen react to form <strong>ammonia</strong>: N₂ + 3H₂ ⇌ 2NH₃. The reaction is exothermic. High pressure favours the forward reaction (fewer moles of gas on the right). Low temperature favours the forward reaction but slows the rate. A compromise temperature of 450°C and pressure of 200 atm is used, along with an iron <strong>catalyst</strong> to increase the rate."
+        "The <strong>Haber process</strong> is an industrial application of equilibrium. Nitrogen and hydrogen react to form <strong>ammonia</strong>: N\u2082 + 3H\u2082 \u21cc 2NH\u2083. The reaction is exothermic. High pressure favours the forward reaction (fewer moles of gas on the right). Low temperature favours the forward reaction but slows the rate. A compromise temperature of 450\u00b0C and pressure of 200 atm is used, along with an iron <strong>catalyst</strong> to increase the rate."
       ]
     }
   }
