@@ -1609,7 +1609,7 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
     btn.style.borderColor = active ? 'var(--navy)' : '#e2e8f0';
   }
 
-  function _modRenderCreator(channel, topicName, videos, overlay) {
+  window._modRenderCreator = function _modRenderCreator(channel, topicName, videos, overlay) {
     overlay.querySelectorAll('.mod-creator-tab').forEach(b => _modTabStyle(b, b.dataset.ch === channel));
     const vids = videos.filter(v => v.channel === channel);
     const pickerEl = overlay.querySelector('#mod-vid-picker');
@@ -1623,7 +1623,7 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
         <span style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.82rem;color:var(--navy);flex:1">Video ${i + 1}</span>
         <button onclick="event.stopPropagation();submitModReport('${v.videoId}','${topicName.replace(/'/g,"\\'")}','prompt')" style="background:none;border:none;font-size:0.7rem;color:#94a3b8;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:700">⚑</button>
       </div>`).join('');
-  }
+  };
 
   window._modLaunchVideo = function(videoId, topicName, channel, overlay) {
     const playerEl = overlay.querySelector('#mod-vid-player');
