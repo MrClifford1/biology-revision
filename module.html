@@ -118,7 +118,8 @@
     .btn-revise-watch:hover { background: #fef2f2; }
     /* Video modal */
     .video-modal-overlay { position: fixed; inset: 0; background: rgba(15,29,61,0.55); z-index: 300; display: flex; align-items: center; justify-content: center; padding: 1rem; backdrop-filter: blur(2px); }
-    .video-modal { background: white; border-radius: 16px; padding: 1.25rem; width: 100%; max-width: 520px; max-height: 85vh; overflow-y: auto; }
+    .video-modal { background: white; border-radius: 16px; padding: 1.25rem; width: 100%; max-width: 520px; max-height: 85vh; overflow-y: auto; transition: max-width 0.2s; }
+    .video-modal.playing { max-width: 800px; }
     .video-modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
     .video-modal-title { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.95rem; color: var(--navy); }
     .video-modal-close { background: none; border: none; font-size: 1.3rem; cursor: pointer; color: var(--subtext); }
@@ -1626,11 +1627,12 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
     const tabRow = overlay.querySelector('#mod-tab-row');
     const pickerEl = overlay.querySelector('#mod-vid-picker');
     const playerEl = overlay.querySelector('#mod-vid-player');
-    // Show picker, show tabs, hide player
+    // Show picker, show tabs, hide player, shrink modal
     if (tabRow) tabRow.style.display = 'flex';
     pickerEl.style.display = 'block';
     playerEl.style.display = 'none';
     playerEl.innerHTML = '';
+    overlay.querySelector('.video-modal')?.classList.remove('playing');
     // Render picker with placeholder titles, then update async
     pickerEl.innerHTML = vids.map((v, i) => `
       <div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 0.75rem;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;cursor:pointer;margin-bottom:0.4rem"
@@ -1655,10 +1657,11 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
     const tabRow = overlay.querySelector('#mod-tab-row');
     const pickerEl = overlay.querySelector('#mod-vid-picker');
     const playerEl = overlay.querySelector('#mod-vid-player');
-    // Hide picker and tabs, show only player
+    // Hide picker and tabs, show only player, expand modal
     if (tabRow) tabRow.style.display = 'none';
     pickerEl.style.display = 'none';
     playerEl.style.display = 'block';
+    overlay.querySelector('.video-modal')?.classList.add('playing');
     const title = _vidTitleCache[videoId] || '';
     playerEl.innerHTML = `
       <button onclick="_modRenderCreator('${channel}','${topicName.replace(/'/g,"\\'")}',window._reviseData?.topics?.['${topicName.replace(/'/g,"\\'")}']?.videos||[],this.closest('.video-modal-overlay'))"
@@ -3147,6 +3150,17 @@ function buildLearnReading(topic) {
       html += `<li><strong>${kt.term}</strong> — ${kt.def}</li>`;
     });
     html += `</ul></div>`;
+  }
+
+  // 10. Videos button
+  const topicVideos = window._reviseData?.topics?.[topic.name]?.videos || [];
+  if (topicVideos.length) {
+    html += `<div style="margin-top:1rem;text-align:center">
+      <button onclick="openVideoModal('${topic.name.replace(/'/g,"\\'")}');return false;"
+        style="background:#f0f4ff;border:1.5px solid #c7d2fe;border-radius:12px;padding:0.6rem 1.5rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.85rem;color:#3730a3;cursor:pointer;display:inline-flex;align-items:center;gap:0.5rem">
+        🎬 Watch Videos for this Topic
+      </button>
+    </div>`;
   }
 
   html += `</div>`; // end .learn-card-wrap
