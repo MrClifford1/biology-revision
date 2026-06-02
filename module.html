@@ -118,7 +118,7 @@
     .btn-revise-watch:hover { background: #fef2f2; }
     /* Video modal */
     .video-modal-overlay { position: fixed; inset: 0; background: rgba(15,29,61,0.55); z-index: 300; display: flex; align-items: center; justify-content: center; padding: 1rem; backdrop-filter: blur(2px); }
-    .learn-card-video-section { margin-top: 1.25rem; background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 1rem; }
+    .learn-card-video-section { margin-top: 1.25rem; background: #eef2ff; border: 2px solid #c7d2fe; border-radius: 14px; padding: 1rem; }
     .video-modal { background: white; border-radius: 16px; padding: 1.25rem; width: 100%; max-width: 520px; max-height: 85vh; overflow-y: auto; transition: max-width 0.2s; }
     .video-modal.playing { max-width: 800px; }
     .video-modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
@@ -1684,18 +1684,15 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
     overlay.querySelector('.video-modal')?.classList.add('playing');
     const title = _vidTitleCache[videoId] || '';
     playerEl.innerHTML = `
-      <button onclick="_modRenderCreator('${channel}','${topicName.replace(/'/g,"\\'")}',window._reviseData?.topics?.['${topicName.replace(/'/g,"\\'")}']?.videos||[],this.closest('.video-modal-overlay'))"
-        style="display:flex;align-items:center;gap:0.4rem;background:none;border:none;font-size:0.82rem;color:#64748b;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:800;margin-bottom:0.75rem;padding:0">
-        ← Back to videos
-      </button>
       ${title ? `<div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.88rem;color:#1a2a4f;margin-bottom:0.6rem">${title}</div>` : ''}
-      <div style="position:relative;padding-top:56.25%;background:#000;border-radius:10px;overflow:hidden;margin-bottom:0.5rem">
+      <div style="position:relative;padding-top:56.25%;background:#000;border-radius:10px;overflow:hidden;margin-bottom:0.75rem">
         <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1"
           allow="autoplay;fullscreen" style="position:absolute;inset:0;width:100%;height:100%;border:none"></iframe>
       </div>
-      <div style="font-size:0.72rem;color:#d97706;font-family:'Nunito',sans-serif;font-weight:800;text-align:center">
-        Visit the <a href="revise.html?subject=${window._revSubject}&module=${window._revModule}&topic=${encodeURIComponent(topicName)}" style="color:#d97706">Revision page</a> to earn XP ✨
-      </div>`;
+      <button onclick="_modRenderCreator('${channel}','${topicName.replace(/'/g,"\\'")}',window._reviseData?.topics?.['${topicName.replace(/'/g,"\\'")}']?.videos||[],this.closest('.video-modal-overlay'))"
+        style="display:flex;align-items:center;gap:0.4rem;background:none;border:none;font-size:0.82rem;color:#64748b;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:800;padding:0">
+        ← Back to videos
+      </button>`;
   };
 
   window.openVideoModal = (topicName) => {
@@ -1709,9 +1706,6 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
         <div class="video-modal-title">🎬 Videos — ${topicName}</div>
         <button class="video-modal-close" onclick="this.closest('.video-modal-overlay').remove()">✕</button>
       </div>
-      <p style="font-size:0.75rem;color:var(--subtext);margin-bottom:0.75rem">
-        Go to <a href="revise.html?subject=${window._revSubject}&module=${window._revModule}&topic=${encodeURIComponent(topicName)}" style="color:var(--navy);font-weight:800">Revision page</a> to watch and earn XP.
-      </p>
       <div id="mod-tab-row" style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.75rem">
         ${available.map(c => `<button class="mod-creator-tab" data-ch="${c}"
           onclick="_modRenderCreator('${c}','${topicName.replace(/'/g,"\\'")}',window._reviseData?.topics?.['${topicName.replace(/'/g,"\\'")}']?.videos||[],this.closest('.video-modal-overlay'))"
