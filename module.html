@@ -1466,6 +1466,8 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
   const _sp = new URLSearchParams(window.location.search);
   const revSubject = _sp.get('subject') || '';
   const revModule  = _sp.get('module')  || '';
+  window._revSubject = revSubject;
+  window._revModule  = revModule;
 
   const TIER_COLOURS = { not_started:'#cbd5e1', beginning:'#ef4444', developing:'#f97316', approaching:'#eab308', confident:'#22c55e', mastered:'#3b82f6' };
   const TIER_EMOJIS  = { not_started:'⚪', beginning:'🔴', developing:'🟠', approaching:'🟡', confident:'🟢', mastered:'⭐' };
@@ -1553,7 +1555,7 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
       const tier = getTier(score);
       const colour = TIER_COLOURS[tier];
       const emoji = TIER_EMOJIS[tier];
-      const hasVideos = false; // videos coming soon
+      const hasVideos = (reviseData.topics[topic]?.videos || []).length > 0;
       const encodedTopic = encodeURIComponent(topic);
       const xpLabel = score > 0 ? `${emoji} ${score} XP` : `⚪ No XP`;
 
@@ -1576,7 +1578,7 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
         </div>
         <div class="revise-card-actions">
           <a href="revise.html?subject=${revSubject}&module=${revModule}&topic=${encodedTopic}" class="btn-revise-read">📖 Read</a>
-          <span style="font-size:0.7rem;color:#94a3b8;padding:0.25rem 0.5rem;background:#f1f5f9;border-radius:6px;font-family:'Nunito',sans-serif;font-weight:700;" title="Video resources coming soon">🎬 Soon</span>
+          ${hasVideos ? `<button class="btn-revise-watch" onclick="openVideoModal('${topic.replace(/'/g,"\\'")}')">🎬 Watch</button>` : `<span style="font-size:0.7rem;color:#94a3b8;padding:0.25rem 0.5rem;background:#f1f5f9;border-radius:6px;font-family:'Nunito',sans-serif;font-weight:700;">🎬 Soon</span>`}
         </div>
       </div>`;
     });
@@ -1599,6 +1601,7 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
   }, 300);
   setTimeout(() => clearInterval(ragPoll), 5000);
 
+  const _chBadge = { 'FuseSchools': 'background:#fef3c7;color:#92400e', 'Cognito': 'background:#ede9fe;color:#5b21b6', 'Free Science Lessons': 'background:#dcfce7;color:#166534' };
   window.openVideoModal = (topicName) => {
     const videos = window._reviseData?.topics?.[topicName]?.videos || [];
     if (!videos.length) return;
@@ -1606,18 +1609,52 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
     overlay.className = 'video-modal-overlay';
     overlay.innerHTML = `<div class="video-modal">
       <div class="video-modal-header">
-        <div class="video-modal-title">▶ Videos — ${topicName}</div>
+        <div class="video-modal-title">🎬 Videos — ${topicName}</div>
         <button class="video-modal-close" onclick="this.closest('.video-modal-overlay').remove()">✕</button>
       </div>
-      <p style="font-size:0.78rem;color:var(--subtext);margin-bottom:0.75rem">Click a video to open it on YouTube in a new tab.</p>
-      ${videos.map(v => `<a href="${v.url}" target="_blank" rel="noopener" class="video-list-item">
-        <div class="video-play-icon">▶️</div>
-        <div><div class="video-item-title">${v.title}</div><div class="video-item-channel">${v.channel}</div></div>
-        <span style="margin-left:auto;color:var(--subtext)">↗</span>
-      </a>`).join('')}
+      <p style="font-size:0.78rem;color:var(--subtext);margin-bottom:0.75rem">Tap a video to play it inline, or go to <a href="revise.html?subject=${window._revSubject}&module=${window._revModule}&topic=${encodeURIComponent(topicName)}" style="color:var(--navy)">Revision page</a> to watch and earn XP.</p>
+      ${videos.map((v, i) => `
+        <div style="margin-bottom:0.75rem">
+          <div style="position:relative;padding-top:56.25%;background:#000;border-radius:10px;overflow:hidden" id="mod-vwrap-${i}">
+            <img src="https://img.youtube.com/vi/${v.videoId}/mqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.7;cursor:pointer" onclick="
+              var w=document.getElementById('mod-vwrap-${i}');
+              var f=document.createElement('iframe');
+              f.src='https://www.youtube.com/embed/${v.videoId}?autoplay=1';
+              f.allow='autoplay;fullscreen';
+              f.style='position:absolute;inset:0;width:100%;height:100%;border:none';
+              this.replaceWith(f);
+            ">
+            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+              <div style="width:48px;height:48px;background:#ef4444;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.35rem;padding:0 0.1rem">
+            <span style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.72rem;padding:0.15rem 0.5rem;border-radius:100px;${_chBadge[v.channel]||''}">${v.channel}</span>
+            <button onclick="
+              var vr=document.createElement('div');
+              vr.className='video-modal-overlay';
+              vr.style='z-index:400';
+              vr.innerHTML='<div class=\\'video-modal\\'><div class=\\'video-modal-header\\'><div class=\\'video-modal-title\\'>⚑ Report Video</div><button class=\\'video-modal-close\\' onclick=\\'this.closest(\\'.video-modal-overlay\\').remove()\\'>✕</button></div>${['Broken link / video removed','Not relevant to this topic','Too advanced / wrong level','Inappropriate content','Other'].map(r=>`<button class=\\'report-reason\\' onclick=\\'submitModReport(\\'${v.videoId}\\',\\'${topicName.replace(/'/g,"\\'")}\\'\\,\\'`+r+`\\')\\;this.closest(\\'.video-modal-overlay\\').remove()\\'>${r}</button>`).join('')}</div>';
+              document.body.appendChild(vr);
+            " style="background:none;border:none;font-size:0.7rem;color:#94a3b8;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:700">⚑ Report</button>
+          </div>
+        </div>`).join('')}
     </div>`;
     overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
     document.body.appendChild(overlay);
+  };
+
+  window.submitModReport = async (videoId, topicName, reason) => {
+    try {
+      const { getFirestore, collection, addDoc, serverTimestamp } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js');
+      const db2 = getFirestore();
+      await addDoc(collection(db2, 'videoReports'), { videoId, topicName, reason, reportedAt: serverTimestamp() });
+    } catch(e) {}
+    const t = document.createElement('div');
+    t.style.cssText = 'position:fixed;bottom:5rem;left:50%;transform:translateX(-50%);background:#64748b;color:white;font-family:Nunito,sans-serif;font-weight:900;font-size:0.85rem;padding:0.5rem 1.2rem;border-radius:100px;z-index:700';
+    t.textContent = 'Report submitted — thank you';
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 2000);
   };
 })();
 // useful-links-btn/dropdown now handled by ssh-nav (sshToggleLinks)

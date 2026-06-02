@@ -854,7 +854,7 @@
   const ACTIVITY_TIMES = {
     mock: 10, paper: 15, flashcards: 5, words: 3,
     flashcard: 5, mini_mock: 10, keywords: 3, learn: 5,
-    scribble: 5, cloze: 3,
+    scribble: 5, cloze: 3, video: 3,
   };
 
   let _timeWindowMins = 60; // default 1 hour
@@ -961,8 +961,8 @@
   }
 
   // ── HISTORY MODAL ───────────────────────────────────────────────────────────
-  const TYPE_ICONS = { mock:'📝', mini_mock:'📝', paper:'📄', flashcards:'🃏', flashcard:'🃏', words:'🔤', keywords:'🔤', learn:'🎓', scribble:'✏️', cloze:'🔡' };
-  const TYPE_NAMES = { mock:'Mini Mock', mini_mock:'Mini Mock', paper:'Practice Paper', flashcards:'Flashcards', flashcard:'Flashcards', words:'Keywords Game', keywords:'Keywords Game', learn:'Learn', scribble:'Scribble', cloze:'Fill the Gaps' };
+  const TYPE_ICONS = { mock:'📝', mini_mock:'📝', paper:'📄', flashcards:'🃏', flashcard:'🃏', words:'🔤', keywords:'🔤', learn:'🎓', scribble:'✏️', cloze:'🔡', video:'🎬' };
+  const TYPE_NAMES = { mock:'Mini Mock', mini_mock:'Mini Mock', paper:'Practice Paper', flashcards:'Flashcards', flashcard:'Flashcards', words:'Keywords Game', keywords:'Keywords Game', learn:'Learn', scribble:'Scribble', cloze:'Fill the Gaps', video:'Video' };
 
   window.openHistoryModal = async (uid, name) => {
     const modal = document.getElementById('history-modal');
@@ -1246,7 +1246,7 @@
       // Compute XP from activity logs — total and recent window
       const now = Date.now();
       const cutoffRecent = now - _xpWindowMins * 60 * 1000;
-      const XP_PER_ACTIVITY = { mock: 10, mini_mock: 10, paper: 15, flashcards: 5, flashcard: 5, words: 3, keywords: 3, learn: 5, scribble: 5, cloze: 3 };
+      const XP_PER_ACTIVITY = { mock: 10, mini_mock: 10, paper: 15, flashcards: 5, flashcard: 5, words: 3, keywords: 3, learn: 5, scribble: 5, cloze: 3, video: 10 };
 
       const rows = await Promise.all(students.map(async s => {
         let totalXp = 0, recentXp = 0;
