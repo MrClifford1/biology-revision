@@ -1756,7 +1756,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 (function() {
   const tabParam = new URLSearchParams(window.location.search).get('tab');
   if (!tabParam) return;
-  const tabMap = { mock:'practice', flashcards:'flashcards', words:'keywords', cloze:'cloze', scribble:'scribble', paper:'paper', learn:'learn' };
+  const tabMap = { mock:'practice', mini_mock:'practice', flashcards:'flashcards', words:'keywords', cloze:'cloze', scribble:'scribble', paper:'paper', learn:'learn', revise:'revision' };
   const target = tabMap[tabParam] || tabParam;
 
   // Switch tab immediately

@@ -149,7 +149,13 @@
     .xp-toast { position: fixed; bottom: 5rem; left: 50%; transform: translateX(-50%); background: #d97706; color: white; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 0.9rem; padding: 0.6rem 1.5rem; border-radius: 100px; z-index: 600; box-shadow: 0 4px 20px rgba(217,119,6,0.4); animation: toastIn 0.3s ease; pointer-events: none; }
     @keyframes toastIn { from { opacity:0; transform: translateX(-50%) translateY(10px); } to { opacity:1; transform: translateX(-50%) translateY(0); } }
 
-    /* ── LOADING / ERROR ── */
+    /* ── ACTIVITY NAV BAR ── */
+    .activity-nav { background: #f8fafc; border-bottom: 1px solid var(--border); overflow-x: auto; scrollbar-width: none; }
+    .activity-nav::-webkit-scrollbar { display: none; }
+    .activity-nav-inner { max-width: 820px; margin: 0 auto; padding: 0 1rem; display: flex; gap: 0.25rem; align-items: center; }
+    .activity-nav-btn { display: flex; align-items: center; gap: 0.3rem; padding: 0.5rem 0.75rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.75rem; color: #64748b; background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; white-space: nowrap; text-decoration: none; transition: color 0.15s; }
+    .activity-nav-btn:hover { color: var(--navy); }
+    .activity-nav-btn.current { color: var(--navy); border-bottom-color: var(--navy); }
     .loading-state { text-align: center; padding: 3rem; color: var(--subtext); }
     .error-state { text-align: center; padding: 3rem; color: var(--red); }
 
@@ -344,6 +350,20 @@
   <div class="topic-nav-inner" id="topic-nav"></div>
 </div>
 
+<!-- Activity nav — links back to module.html tabs -->
+<div class="activity-nav" id="activity-nav" style="display:none">
+  <div class="activity-nav-inner">
+    <a class="activity-nav-btn" id="anav-learn" href="#">🎓 Learn</a>
+    <a class="activity-nav-btn current" id="anav-revise" href="#">📖 Revise</a>
+    <a class="activity-nav-btn" id="anav-flashcards" href="#">🃏 Flashcards</a>
+    <a class="activity-nav-btn" id="anav-words" href="#">🔤 Words</a>
+    <a class="activity-nav-btn" id="anav-cloze" href="#">🧩 Cloze</a>
+    <a class="activity-nav-btn" id="anav-scribble" href="#">✏️ Scribble</a>
+    <a class="activity-nav-btn" id="anav-minimock" href="#">🧠 Mini Mock</a>
+    <a class="activity-nav-btn" id="anav-paper" href="#">📄 Paper</a>
+  </div>
+</div>
+
 <div class="content-wrap" id="content-wrap">
   <div class="loading-state">Loading revision content...</div>
 </div>
@@ -390,6 +410,16 @@
   const meta = MODULE_META[moduleId] || { title: moduleId.toUpperCase(), colour: '#1a2a4f' };
   const subjectLabel = subject.charAt(0).toUpperCase() + subject.slice(1);
   const moduleKey = `${subject}-${moduleId}`;
+
+  // Wire up activity nav bar
+  const _modBase = `module.html?subject=${subject}&module=${moduleId}`;
+  const _anavTabs = { learn:'learn', flashcards:'flashcards', words:'words', cloze:'cloze', scribble:'scribble', minimock:'mini_mock', paper:'paper' };
+  Object.entries(_anavTabs).forEach(([id, tab]) => {
+    const el = document.getElementById(`anav-${id}`);
+    if (el) el.href = `${_modBase}&tab=${tab}`;
+  });
+  document.getElementById('anav-revise').href = `${_modBase}&tab=revise`;
+  document.getElementById('activity-nav').style.display = 'block';
 
   // Set up navigation
   // back-link replaced by ssh-back-btn (set below)
