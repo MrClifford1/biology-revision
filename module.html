@@ -118,6 +118,7 @@
     .btn-revise-watch:hover { background: #fef2f2; }
     /* Video modal */
     .video-modal-overlay { position: fixed; inset: 0; background: rgba(15,29,61,0.55); z-index: 300; display: flex; align-items: center; justify-content: center; padding: 1rem; backdrop-filter: blur(2px); }
+    .learn-card-video-section { margin-top: 1.25rem; background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 1rem; }
     .video-modal { background: white; border-radius: 16px; padding: 1.25rem; width: 100%; max-width: 520px; max-height: 85vh; overflow-y: auto; transition: max-width 0.2s; }
     .video-modal.playing { max-width: 800px; }
     .video-modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
@@ -1620,6 +1621,25 @@ document.documentElement.style.setProperty('--accent-light', meta.colourLight);
     } catch(e) {}
     return null;
   }
+
+  // Switch embedded video in learn tab
+  window.learnSwitchVideo = function(topicName, channel, uniqueId) {
+    const videos = window._reviseData?.topics?.[topicName]?.videos || [];
+    const vid = videos.find(v => v.channel === channel);
+    if (!vid) return;
+    const player = document.getElementById(`${uniqueId}-player`);
+    if (player) {
+      player.innerHTML = `<iframe src="https://www.youtube.com/embed/${vid.videoId}?autoplay=1&rel=0&modestbranding=1"
+        allow="autoplay;fullscreen" style="position:absolute;inset:0;width:100%;height:100%;border:none"></iframe>`;
+    }
+    // Update tab styles
+    document.querySelectorAll(`[id^="${uniqueId}-tab-"]`).forEach(b => {
+      const active = b.id === `${uniqueId}-tab-${channel.replace(/\s/g,'')}`;
+      b.style.background = active ? '#1a2a4f' : '#f1f5f9';
+      b.style.color = active ? '#fff' : '#64748b';
+      b.style.borderColor = active ? '#1a2a4f' : '#e2e8f0';
+    });
+  };
 
   window._modRenderCreator = function _modRenderCreator(channel, topicName, videos, overlay) {
     overlay.querySelectorAll('.mod-creator-tab').forEach(b => _modTabStyle(b, b.dataset.ch === channel));
@@ -3152,14 +3172,29 @@ function buildLearnReading(topic) {
     html += `</ul></div>`;
   }
 
-  // 10. Videos button
+  // 10. Embedded video — FuseSchools first, change creator option
   const topicVideos = window._reviseData?.topics?.[topic.name]?.videos || [];
   if (topicVideos.length) {
-    html += `<div style="margin-top:1rem;text-align:center">
-      <button onclick="openVideoModal('${topic.name.replace(/'/g,"\\'")}');return false;"
-        style="background:#f0f4ff;border:1.5px solid #c7d2fe;border-radius:12px;padding:0.6rem 1.5rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.85rem;color:#3730a3;cursor:pointer;display:inline-flex;align-items:center;gap:0.5rem">
-        🎬 Watch Videos for this Topic
-      </button>
+    const CREATOR_ORDER = ['FuseSchools', 'Cognito', 'Free Science Lessons'];
+    const safeT = topic.name.replace(/'/g, "\\'");
+    const defaultCreator = CREATOR_ORDER.find(c => topicVideos.some(v => v.channel === c));
+    const defaultVid = topicVideos.find(v => v.channel === defaultCreator);
+    const availableCreators = CREATOR_ORDER.filter(c => topicVideos.some(v => v.channel === c));
+    const uniqueId = `lv-${topic.name.replace(/\W/g,'').toLowerCase()}`;
+    html += `<div class="learn-card-video-section" id="${uniqueId}-wrap">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem">
+        <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:0.85rem;color:#1a2a4f">🎬 Watch</div>
+        ${availableCreators.length > 1 ? `<div style="display:flex;gap:0.3rem">
+          ${availableCreators.map(c => `<button
+            onclick="learnSwitchVideo('${safeT}','${c}','${uniqueId}')"
+            id="${uniqueId}-tab-${c.replace(/\s/g,'')}"
+            style="border:1.5px solid #e2e8f0;border-radius:100px;padding:0.2rem 0.65rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;cursor:pointer;background:${c===defaultCreator?'#1a2a4f':'#f1f5f9'};color:${c===defaultCreator?'#fff':'#64748b'}">${c}</button>`).join('')}
+        </div>` : ''}
+      </div>
+      <div id="${uniqueId}-player" style="position:relative;padding-top:56.25%;background:#000;border-radius:12px;overflow:hidden">
+        <iframe src="https://www.youtube.com/embed/${defaultVid.videoId}?rel=0&modestbranding=1"
+          allow="fullscreen" style="position:absolute;inset:0;width:100%;height:100%;border:none" loading="lazy"></iframe>
+      </div>
     </div>`;
   }
 
