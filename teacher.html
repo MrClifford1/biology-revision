@@ -125,6 +125,21 @@
     .form-msg { font-size:0.8rem;font-weight:700;margin-top:0.4rem;display:none; }
     .form-msg.success { color:#16a34a;display:block; }
     .form-msg.error { color:var(--red);display:block; }
+    /* ── Blitz ── */
+    .blitz-q-display { background:linear-gradient(135deg,#1a2a4f,#2d3a6f);border-radius:16px;padding:1.5rem;color:white;margin-bottom:1rem;text-align:center; }
+    .blitz-q-text { font-family:'Nunito',sans-serif;font-weight:900;font-size:1.1rem;line-height:1.4;margin-bottom:1rem; }
+    .blitz-countdown-ring { font-family:'Nunito',sans-serif;font-weight:900;font-size:2rem;color:#d4a534;margin:0.25rem 0; }
+    .blitz-options-grid { display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:1rem; }
+    .blitz-opt-bar { border-radius:10px;padding:0.65rem 0.85rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.85rem;display:flex;align-items:center;gap:0.5rem;transition:all 0.3s;position:relative;overflow:hidden;border:2px solid transparent; }
+    .blitz-opt-bar .bar-fill { position:absolute;left:0;top:0;height:100%;opacity:0.18;transition:width 0.5s ease;border-radius:8px; }
+    .blitz-opt-bar.correct { border-color:#22c55e;background:#dcfce7; }
+    .blitz-opt-bar.wrong   { border-color:#ef4444;background:#fef2f2;opacity:0.6; }
+    .blitz-answer-counts { display:grid;grid-template-columns:repeat(4,1fr);gap:0.4rem;margin-bottom:0.75rem; }
+    .blitz-ans-col { text-align:center;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem; }
+    .blitz-joined-grid { display:flex;flex-wrap:wrap;gap:0.35rem;margin:0.5rem 0 1rem; }
+    .blitz-joined-chip { font-size:0.78rem;font-weight:700;font-family:'Nunito',sans-serif;padding:0.2rem 0.55rem;border-radius:6px;background:#eef2ff;color:#4f46e5;border:1.5px solid #c7d2fe; }
+    .blitz-leaderboard { width:100%;border-collapse:collapse; }
+    .blitz-leaderboard td { padding:0.45rem 0.6rem;border-bottom:1px solid var(--border);font-size:0.85rem; }
     /* ── Activity builder ── */
     .act-row { background:#f8fafc;border:1.5px solid var(--border);border-radius:10px;padding:0.75rem; }
     .act-row-top { display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap; }
@@ -232,7 +247,7 @@
     .battle-groups { display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.85rem;margin-top:1rem; }
     .battle-group-card { border-radius:14px;padding:1rem;border:2px solid transparent;transition:all 0.3s;position:relative;overflow:hidden; }
     .battle-group-card.leading { border-width:3px;transform:scale(1.02); }
-    .battle-group-name { font-family:'Nunito',sans-serif;font-weight:900;font-size:1rem;margin-bottom:0.25rem; }
+    .battle-group-name { font-family:'Nunito',sans-serif;font-weight:900;font-size:1.35rem;margin-bottom:0.25rem; }
     .battle-group-xp { font-family:'Nunito',sans-serif;font-weight:900;font-size:1.8rem;margin:0.25rem 0; }
     .battle-group-members { font-size:0.72rem;color:var(--subtext);margin-top:0.3rem;line-height:1.5; }
     .battle-winner-banner { text-align:center;padding:2rem;background:linear-gradient(135deg,#fef9c3,#fef3c7);border-radius:16px;border:2px solid #d97706;margin-bottom:1rem; }
@@ -452,6 +467,7 @@
       <button class="tab-btn" data-tab="assignments">📌 Assignments</button>
       <button class="tab-btn" data-tab="assessments">📅 Assessment Dates</button>
       <button class="tab-btn" data-tab="xpwars">⚔️ XP Battles</button>
+      <button class="tab-btn" data-tab="blitz">⚡ Blitz</button>
     </div>
   </div>
 
@@ -619,6 +635,89 @@
       </div>
     </div>
 
+    <!-- ── TAB: BLITZ ───────────────────────────────────────────────────────────── -->
+    <div class="tab-panel" id="tab-blitz">
+      <!-- Setup card -->
+      <div class="card" id="blitz-setup-card">
+        <div class="section-label">⚡ Blitz</div>
+        <p style="font-size:0.82rem;color:var(--subtext);margin-bottom:1rem">Launch a live quiz for your class. Students answer on their devices in real time — questions appear one at a time with a countdown timer.</p>
+        <div class="assignment-form">
+          <div class="form-field">
+            <label class="form-label">Class</label>
+            <select class="form-input" id="blitz-class"><option value="">— Select class —</option></select>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Subject</label>
+            <select class="form-input" id="blitz-subject" onchange="blitzSubjectChanged()">
+              <option value="biology">Biology</option>
+              <option value="chemistry">Chemistry</option>
+              <option value="physics">Physics</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Module</label>
+            <select class="form-input" id="blitz-module"><option value="">— Select module —</option></select>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Questions</label>
+            <select class="form-input" id="blitz-numq">
+              <option value="5">5 questions</option>
+              <option value="10" selected>10 questions</option>
+              <option value="15">15 questions</option>
+              <option value="20">20 questions</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Time per question</label>
+            <select class="form-input" id="blitz-timeperq">
+              <option value="10">10 seconds</option>
+              <option value="15">15 seconds</option>
+              <option value="20" selected>20 seconds</option>
+              <option value="30">30 seconds</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn-create" onclick="launchBlitz()" style="background:#d97706">⚡ Launch Blitz</button>
+        <div class="form-msg" id="blitz-msg"></div>
+      </div>
+      <!-- Lobby card -->
+      <div class="card" id="blitz-lobby-card" style="display:none">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem">
+          <div class="section-label" style="margin:0">⚡ Blitz — Lobby</div>
+          <button onclick="cancelBlitz()" style="background:none;border:1.5px solid #ef4444;color:#ef4444;border-radius:8px;padding:0.3rem 0.75rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.78rem;cursor:pointer">✕ Cancel</button>
+        </div>
+        <p style="font-size:0.82rem;color:var(--subtext)">Students who open the Blitz banner on their screen will appear here.</p>
+        <div class="blitz-joined-grid" id="blitz-joined-list"><span style="font-size:0.8rem;color:var(--subtext)">Waiting for students...</span></div>
+        <button class="btn-create" onclick="startBlitzQuestion()" style="background:#16a34a">▶ Start Blitz</button>
+      </div>
+      <!-- Live question card -->
+      <div class="card" id="blitz-live-card" style="display:none">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem">
+          <div class="section-label" style="margin:0" id="blitz-q-counter">Question 1 of 10</div>
+          <button onclick="endBlitzEarly()" style="background:none;border:1.5px solid #ef4444;color:#ef4444;border-radius:8px;padding:0.3rem 0.75rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.78rem;cursor:pointer">■ End</button>
+        </div>
+        <div class="blitz-q-display">
+          <div class="blitz-q-text" id="blitz-q-text"></div>
+          <div class="blitz-countdown-ring" id="blitz-timer">20</div>
+          <div style="font-size:0.72rem;opacity:0.7" id="blitz-answered-count">0 answered</div>
+        </div>
+        <div class="blitz-options-grid" id="blitz-opts-display"></div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
+          <button class="btn-create" id="blitz-reveal-btn" onclick="revealBlitzAnswer()" style="background:#6366f1">👁 Reveal Answer</button>
+          <button class="btn-create" id="blitz-next-btn" onclick="nextBlitzQuestion()" style="display:none;background:#16a34a">Next Question →</button>
+          <button class="btn-create" id="blitz-finish-btn" onclick="finishBlitz()" style="display:none;background:#d97706">🏆 Show Results</button>
+        </div>
+      </div>
+      <!-- Results card -->
+      <div class="card" id="blitz-results-card" style="display:none">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem">
+          <div class="section-label" style="margin:0">⚡ Blitz — Results</div>
+          <button onclick="resetBlitz()" style="background:var(--purple);color:white;border:none;border-radius:8px;padding:0.4rem 0.85rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.78rem;cursor:pointer">New Blitz</button>
+        </div>
+        <table class="blitz-leaderboard" id="blitz-leaderboard"></table>
+      </div>
+    </div>
+
     <!-- ── TAB: XP BATTLES ──────────────────────────────────────────────────────── -->
     <div class="tab-panel" id="tab-xpwars">
       <div class="card" id="battle-setup-card">
@@ -646,6 +745,21 @@
             <input type="range" id="battle-duration" min="1" max="20" value="5" oninput="document.getElementById('battle-dur-label').textContent=this.value+' min'" style="width:100%;accent-color:var(--purple)">
             <span id="battle-dur-label" style="font-size:0.8rem;font-weight:700;color:var(--purple)">5 min</span>
           </div>
+          <div class="form-field">
+            <label class="form-label">Subject filter <span style="font-weight:400;color:var(--subtext)">(optional)</span></label>
+            <select class="form-input" id="battle-subject" onchange="battleSubjectChanged()">
+              <option value="">All subjects</option>
+              <option value="biology">Biology</option>
+              <option value="chemistry">Chemistry</option>
+              <option value="physics">Physics</option>
+            </select>
+          </div>
+          <div class="form-field" id="battle-module-field" style="display:none">
+            <label class="form-label">Module filter <span style="font-weight:400;color:var(--subtext)">(optional)</span></label>
+            <select class="form-input" id="battle-module">
+              <option value="">All modules</option>
+            </select>
+          </div>
           <div class="form-field full">
             <label class="form-label">Students <span style="font-weight:400;color:var(--subtext)">(click to mark absent)</span></label>
             <div class="battle-roster" id="battle-roster"><span style="font-size:0.8rem;color:var(--subtext)">Select a class above</span></div>
@@ -654,11 +768,13 @@
         <button class="btn-create" onclick="startBattle()" id="battle-start-btn" disabled>⚔️ Start Battle</button>
       </div>
       <div class="card" id="battle-live-card" style="display:none">
-        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.25rem">
           <div class="section-label" style="margin:0" id="battle-live-title">⚔️ XP Battle in Progress</div>
           <button onclick="endBattleEarly()" style="background:none;border:1.5px solid #ef4444;color:#ef4444;border-radius:8px;padding:0.3rem 0.75rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.78rem;cursor:pointer">■ End Early</button>
         </div>
+        <div id="battle-scope-label" style="font-size:0.78rem;color:var(--subtext);margin-bottom:0.5rem;font-family:'Nunito',sans-serif;font-weight:700"></div>
         <div class="battle-countdown" id="battle-countdown">5:00</div>
+        <p style="text-align:center;font-size:0.72rem;color:var(--subtext);margin:-0.25rem 0 0.5rem;font-family:'Nunito',sans-serif">Updates every 30 seconds · Click a student to remove them</p>
         <div class="battle-groups" id="battle-groups-display"></div>
       </div>
     </div>
@@ -688,7 +804,8 @@
     createAssignment, updateAssignment, getAllAssignments, deleteAssignment,
     getAssignmentCompletions,
     isSuperAdmin, saveAssessmentDate, getAssessmentDates, deleteAssessmentDate,
-    getActivityLog, getAllStudents
+    getActivityLog, getAllStudents,
+    createBlitzSession, updateBlitzSession, onBlitzSnapshot
   } from './firebase.js';
 
 
@@ -760,6 +877,8 @@
     myClasses = await getTeacherClasses(user.uid);
     populateClassSelector();
     populateBattleClassSelector();
+    populateBlitzClassSelector();
+    blitzSubjectChanged();
     buildAssignClassGrid();
     loadAssignments();
     adLoadList();
@@ -1329,7 +1448,7 @@
       // Compute XP from activity logs — total and recent window
       const now = Date.now();
       const cutoffRecent = now - _xpWindowMins * 60 * 1000;
-      const XP_PER_ACTIVITY = { mock: 10, mini_mock: 10, paper: 15, flashcards: 5, flashcard: 5, words: 3, keywords: 3, learn: 5, scribble: 5, cloze: 3, video: 10, revise: 5, video_quiz: 5 };
+      const XP_PER_ACTIVITY = { mock: 10, mini_mock: 10, paper: 15, flashcards: 5, flashcard: 5, words: 3, keywords: 3, learn: 5, scribble: 5, cloze: 3, video: 10, revise: 5, video_quiz: 5, blitz: 5 };
 
       const rows = await Promise.all(students.map(async s => {
         let totalXp = 0, recentXp = 0;
@@ -1403,14 +1522,223 @@
     }, 300000); // 5 min — reduce Firestore reads
   }
 
+  // ── BLITZ ───────────────────────────────────────────────────────────────────
+  let _blitz = null; // { id, questions, currentQ, timePerQ, timer, unsub }
+
+  window.blitzSubjectChanged = () => {
+    const subj = document.getElementById('blitz-subject').value;
+    const sel  = document.getElementById('blitz-module');
+    const mods = ASSIGN_MODULES[subj] || [];
+    sel.innerHTML = '<option value="">— Select module —</option>' + mods.map(m=>`<option value="${m.id}">${m.label}</option>`).join('');
+  };
+
+  function populateBlitzClassSelector() {
+    const sel = document.getElementById('blitz-class');
+    if (!sel) return;
+    sel.innerHTML = '<option value="">— Select class —</option>' + myClasses.map(c=>`<option value="${c}">${c}</option>`).join('');
+  }
+
+  async function fetchBlitzQuestions(subject, moduleId, num) {
+    const r = await fetch(`data/mcq/${subject}-${moduleId}-mcq.json`);
+    if (!r.ok) return [];
+    const data = await r.json();
+    const all = [];
+    Object.values(data.topics || {}).forEach(qs => {
+      qs.forEach(q => {
+        const opts = [q.a, ...q.d].sort(() => Math.random()-0.5);
+        all.push({ question: q.q, options: opts, correct: opts.indexOf(q.a) });
+      });
+    });
+    return all.sort(() => Math.random()-0.5).slice(0, num);
+  }
+
+  window.launchBlitz = async () => {
+    const cls      = document.getElementById('blitz-class').value;
+    const subject  = document.getElementById('blitz-subject').value;
+    const moduleId = document.getElementById('blitz-module').value;
+    const num      = parseInt(document.getElementById('blitz-numq').value);
+    const timePerQ = parseInt(document.getElementById('blitz-timeperq').value);
+    const msg      = document.getElementById('blitz-msg');
+    if (!cls || !moduleId) { msg.className='form-msg error'; msg.textContent='Select a class and module first.'; return; }
+    msg.className='form-msg'; msg.textContent='';
+    const questions = await fetchBlitzQuestions(subject, moduleId, num);
+    if (!questions.length) { msg.className='form-msg error'; msg.textContent='No questions found for that module.'; return; }
+    const id = await createBlitzSession({
+      class: cls, subject, moduleId, questions,
+      currentQ: 0, state: 'lobby', timePerQ,
+      joined: {}, answers: {}, scores: {},
+    });
+    _blitz = { id, questions, currentQ: 0, timePerQ, unsub: null };
+    document.getElementById('blitz-setup-card').style.display = 'none';
+    document.getElementById('blitz-lobby-card').style.display = 'block';
+    // Listen for join events
+    _blitz.unsub = onBlitzSnapshot(id, sess => {
+      const joined = sess.joined || {};
+      const el = document.getElementById('blitz-joined-list');
+      if (!el) return;
+      const names = Object.values(joined);
+      el.innerHTML = names.length
+        ? names.map(n=>`<span class="blitz-joined-chip">✓ ${n}</span>`).join('')
+        : '<span style="font-size:0.8rem;color:var(--subtext)">Waiting for students...</span>';
+    });
+  };
+
+  window.cancelBlitz = async () => {
+    if (_blitz) { if (_blitz.unsub) _blitz.unsub(); await updateBlitzSession(_blitz.id, { active:false, state:'ended' }); _blitz=null; }
+    resetBlitz();
+  };
+
+  window.startBlitzQuestion = async () => {
+    if (!_blitz) return;
+    if (_blitz.unsub) _blitz.unsub();
+    document.getElementById('blitz-lobby-card').style.display = 'none';
+    await _pushBlitzQuestion(0);
+  };
+
+  async function _pushBlitzQuestion(idx) {
+    if (!_blitz) return;
+    _blitz.currentQ = idx;
+    const q = _blitz.questions[idx];
+    const startTs = Date.now();
+    await updateBlitzSession(_blitz.id, {
+      currentQ: idx, state: 'active',
+      questionStartTs: startTs, answers: {},
+    });
+    // Show teacher UI
+    document.getElementById('blitz-live-card').style.display = 'block';
+    document.getElementById('blitz-q-counter').textContent = `Question ${idx+1} of ${_blitz.questions.length}`;
+    document.getElementById('blitz-q-text').textContent = q.question;
+    document.getElementById('blitz-reveal-btn').style.display = 'inline-block';
+    document.getElementById('blitz-next-btn').style.display   = 'none';
+    document.getElementById('blitz-finish-btn').style.display = 'none';
+    renderBlitzOptions(q, null);
+    // Subscribe for live answer updates
+    _blitz.unsub = onBlitzSnapshot(_blitz.id, sess => {
+      const answers = sess.answers || {};
+      const count = Object.keys(answers).length;
+      const el = document.getElementById('blitz-answered-count');
+      if (el) el.textContent = `${count} answered`;
+      renderBlitzAnswerBars(q, answers);
+    });
+    // Countdown timer
+    let remaining = _blitz.timePerQ;
+    document.getElementById('blitz-timer').textContent = remaining;
+    clearInterval(_blitz.timer);
+    _blitz.timer = setInterval(() => {
+      remaining--;
+      const el = document.getElementById('blitz-timer');
+      if (el) { el.textContent = remaining; el.style.color = remaining <= 5 ? '#ef4444' : '#d4a534'; }
+      if (remaining <= 0) { clearInterval(_blitz.timer); revealBlitzAnswer(); }
+    }, 1000);
+  }
+
+  function renderBlitzOptions(q, revealed) {
+    const LETTERS = ['A','B','C','D'];
+    const OPT_COLOURS = ['#6366f1','#16a34a','#ef4444','#d97706'];
+    document.getElementById('blitz-opts-display').innerHTML = q.options.map((opt,i) => {
+      const isCorrect = revealed && i === q.correct;
+      const isWrong   = revealed && i !== q.correct;
+      return `<div class="blitz-opt-bar${isCorrect?' correct':isWrong?' wrong':''}" style="background:${OPT_COLOURS[i]}18;border-color:${isCorrect?'#22c55e':isWrong?'#ef444422':OPT_COLOURS[i]+'44'}">
+        <span style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1rem;color:${OPT_COLOURS[i]}">${LETTERS[i]}</span>
+        <span style="flex:1">${opt}</span>
+        ${isCorrect?'<span style="font-size:1rem">✅</span>':''}
+      </div>`;
+    }).join('');
+  }
+
+  function renderBlitzAnswerBars(q, answers) {
+    const counts = [0,0,0,0];
+    const total  = Object.keys(answers).length || 1;
+    Object.values(answers).forEach(a => { if (a.answer>=0 && a.answer<4) counts[a.answer]++; });
+    const LETTERS = ['A','B','C','D'];
+    const OPT_COLOURS = ['#6366f1','#16a34a','#ef4444','#d97706'];
+    const el = document.getElementById('blitz-opts-display');
+    if (!el) return;
+    const opts = el.querySelectorAll('.blitz-opt-bar');
+    opts.forEach((opt, i) => {
+      let fill = opt.querySelector('.bar-fill');
+      if (!fill) { fill = document.createElement('div'); fill.className='bar-fill'; fill.style.background=OPT_COLOURS[i]; opt.prepend(fill); }
+      fill.style.width = Math.round(counts[i]/total*100)+'%';
+      // Show count badge
+      let badge = opt.querySelector('.ans-count');
+      if (!badge) { badge = document.createElement('span'); badge.className='ans-count'; badge.style.cssText='font-size:0.72rem;font-weight:800;font-family:Nunito,sans-serif;opacity:0.8'; opt.appendChild(badge); }
+      badge.textContent = counts[i] > 0 ? counts[i] : '';
+    });
+  }
+
+  window.revealBlitzAnswer = async () => {
+    if (!_blitz) return;
+    clearInterval(_blitz.timer);
+    if (_blitz.unsub) _blitz.unsub();
+    const q = _blitz.questions[_blitz.currentQ];
+    const sess = await (async()=>{ const {getBlitzSession} = await import('./firebase.js'); return getBlitzSession(_blitz.id); })().catch(()=>null);
+    const answers = sess?.answers || {};
+    // Award points to correct answerers
+    const scores = { ...(sess?.scores || {}) };
+    const startTs = sess?.questionStartTs || Date.now();
+    Object.entries(answers).forEach(([uid, a]) => {
+      if (!scores[uid]) scores[uid] = { name: a.name||uid, points:0, correct:0 };
+      if (a.answer === q.correct) {
+        const elapsed = Math.min((a.ts||Date.now()) - startTs, _blitz.timePerQ*1000);
+        const speed   = Math.max(0, 1 - elapsed/(_blitz.timePerQ*1000));
+        scores[uid].points  += Math.round(500 + 500*speed);
+        scores[uid].correct += 1;
+      }
+    });
+    await updateBlitzSession(_blitz.id, { state:'reveal', scores, answers });
+    renderBlitzOptions(q, true);
+    renderBlitzAnswerBars(q, answers);
+    document.getElementById('blitz-reveal-btn').style.display = 'none';
+    const isLast = _blitz.currentQ >= _blitz.questions.length - 1;
+    document.getElementById('blitz-next-btn').style.display   = isLast ? 'none' : 'inline-block';
+    document.getElementById('blitz-finish-btn').style.display = isLast ? 'inline-block' : 'none';
+  };
+
+  window.nextBlitzQuestion = () => _pushBlitzQuestion(_blitz.currentQ + 1);
+
+  window.finishBlitz = async () => {
+    if (!_blitz) return;
+    clearInterval(_blitz.timer);
+    if (_blitz.unsub) _blitz.unsub();
+    const {getBlitzSession} = await import('./firebase.js');
+    const sess = await getBlitzSession(_blitz.id);
+    await updateBlitzSession(_blitz.id, { state:'ended', active:false });
+    document.getElementById('blitz-live-card').style.display = 'none';
+    document.getElementById('blitz-results-card').style.display = 'block';
+    const scores = Object.values(sess?.scores || {}).sort((a,b)=>b.points-a.points);
+    const MEDALS = ['🥇','🥈','🥉'];
+    document.getElementById('blitz-leaderboard').innerHTML =
+      `<thead><tr><th style="font-family:'Nunito',sans-serif;font-size:0.72rem;font-weight:800;color:var(--subtext);padding:0.4rem 0.6rem;text-align:left;border-bottom:2px solid var(--border)">Rank</th><th style="font-family:'Nunito',sans-serif;font-size:0.72rem;font-weight:800;color:var(--subtext);padding:0.4rem 0.6rem;text-align:left;border-bottom:2px solid var(--border)">Student</th><th style="font-family:'Nunito',sans-serif;font-size:0.72rem;font-weight:800;color:var(--subtext);padding:0.4rem 0.6rem;text-align:right;border-bottom:2px solid var(--border)">Score</th><th style="font-family:'Nunito',sans-serif;font-size:0.72rem;font-weight:800;color:var(--subtext);padding:0.4rem 0.6rem;text-align:right;border-bottom:2px solid var(--border)">Correct</th></tr></thead><tbody>`+
+      scores.map((s,i)=>`<tr><td>${MEDALS[i]||i+1}</td><td style="font-weight:700">${s.name}</td><td style="font-weight:900;font-family:'Nunito',sans-serif;color:var(--navy);text-align:right">${s.points.toLocaleString()}</td><td style="text-align:right;color:var(--subtext)">${s.correct}/${_blitz.questions.length}</td></tr>`).join('')+
+      '</tbody>';
+    _blitz = null;
+  };
+
+  window.endBlitzEarly = async () => { if (confirm('End the Blitz and show results?')) await finishBlitz(); };
+
+  window.resetBlitz = async () => {
+    if (_blitz) { clearInterval(_blitz.timer); if (_blitz.unsub) _blitz.unsub(); _blitz=null; }
+    ['blitz-setup-card','blitz-results-card'].forEach(id => { const el=document.getElementById(id); if(el) el.style.display = id==='blitz-setup-card'?'block':'none'; });
+    ['blitz-lobby-card','blitz-live-card'].forEach(id => { const el=document.getElementById(id); if(el) el.style.display='none'; });
+    document.getElementById('blitz-timer').style.color = '#d4a534';
+    blitzSubjectChanged();
+  };
+
+  function populateBlitzClassSelector() {
+    const sel = document.getElementById('blitz-class');
+    if (!sel) return;
+    sel.innerHTML = '<option value="">— Select class —</option>' + myClasses.map(c=>`<option value="${c}">${c}</option>`).join('');
+  }
+
   // ── XP BATTLES ──────────────────────────────────────────────────────────────
   const BATTLE_ADJECTIVES = ['Crazy','Scary','Mighty','Sneaky','Fluffy','Grumpy','Zippy','Bouncy','Spooky','Cheeky','Wobbly','Dizzy','Fiery','Frosty','Speedy','Slimy','Brave','Wacky','Funky','Jumpy'];
   const BATTLE_ANIMALS    = ['Pandas','Geese','Tigers','Penguins','Foxes','Wolves','Hedgehogs','Otters','Raccoons','Narwhals','Axolotls','Capybaras','Sloths','Platypuses','Badgers','Llamas','Wombats','Geckos','Piranhas','Quokkas'];
   const BATTLE_COLOURS    = ['#6366f1','#16a34a','#ef4444','#d97706','#0891b2','#9333ea'];
   const BATTLE_BG         = ['#eef2ff','#dcfce7','#fef2f2','#fef9c3','#e0f2fe','#f3e8ff'];
+  const XP_PER_TYPE       = { mock:10,mini_mock:10,paper:15,flashcards:5,flashcard:5,words:3,keywords:3,learn:5,scribble:5,cloze:3,video:10,revise:5,video_quiz:5 };
 
-  let _battle = null; // { groups:[{name,colour,bg,members:[{uid,name}],baseXp}], endTs, timer, pollTimer }
-  let _battleStudents = []; // [{uid,name,absent}]
+  let _battle = null;
+  let _battleStudents = [];
 
   window.battleClassChanged = async () => {
     const cls = document.getElementById('battle-class').value;
@@ -1424,6 +1752,16 @@
       renderBattleRoster();
       btn.disabled = _battleStudents.length < 2;
     } catch(e) { roster.innerHTML = '<span style="font-size:0.8rem;color:#ef4444">Could not load students</span>'; }
+  };
+
+  window.battleSubjectChanged = () => {
+    const subj = document.getElementById('battle-subject').value;
+    const modField = document.getElementById('battle-module-field');
+    const modSel = document.getElementById('battle-module');
+    if (!subj) { modField.style.display='none'; return; }
+    modField.style.display='block';
+    const mods = ASSIGN_MODULES[subj] || [];
+    modSel.innerHTML = '<option value="">All modules</option>' + mods.map(m=>`<option value="${m.id}">${m.label}</option>`).join('');
   };
 
   function renderBattleRoster() {
@@ -1441,52 +1779,52 @@
   function generateBattleNames(n) {
     const adjs = [...BATTLE_ADJECTIVES].sort(()=>Math.random()-0.5);
     const ants = [...BATTLE_ANIMALS].sort(()=>Math.random()-0.5);
-    const names = [];
-    for (let i=0; i<n; i++) names.push(`${adjs[i]} ${ants[i]}`);
-    return names;
+    return Array.from({length:n}, (_,i) => `${adjs[i]} ${ants[i]}`);
+  }
+
+  function calcModifier(groupSize, maxSize) {
+    return groupSize < maxSize ? Math.round((maxSize / groupSize) * 10) / 10 : 1;
   }
 
   window.startBattle = async () => {
     const present = _battleStudents.filter(s => !s.absent);
     if (present.length < 2) { alert('Need at least 2 present students to start a battle.'); return; }
-    const numGroups = parseInt(document.getElementById('battle-groups').value);
-    const durMins   = parseInt(document.getElementById('battle-duration').value);
-    const names     = generateBattleNames(numGroups);
+    const numGroups  = parseInt(document.getElementById('battle-groups').value);
+    const durMins    = parseInt(document.getElementById('battle-duration').value);
+    const filterSubj = document.getElementById('battle-subject').value;
+    const filterMod  = document.getElementById('battle-module').value;
+    const names      = generateBattleNames(numGroups);
 
-    // Shuffle students and split into groups
     const shuffled = [...present].sort(() => Math.random() - 0.5);
     const groups = Array.from({length: numGroups}, (_, i) => ({
       name: names[i], colour: BATTLE_COLOURS[i], bg: BATTLE_BG[i],
-      members: [], baseXp: 0, currentXp: 0,
+      members: [], rawXp: 0, currentXp: 0, modifier: 1,
     }));
-    shuffled.forEach((s, i) => groups[i % numGroups].members.push(s));
-
-    // Snapshot baseline XP for each student
-    const XP_PER = { mock:10,mini_mock:10,paper:15,flashcards:5,flashcard:5,words:3,keywords:3,learn:5,scribble:5,cloze:3,video:10,revise:5,video_quiz:5 };
-    await Promise.all(groups.map(async g => {
-      let base = 0;
-      await Promise.all(g.members.map(async s => {
-        try {
-          const { entries } = await getActivityLog(s.uid, 200);
-          entries.forEach(e => { base += XP_PER[e.type] || 5; });
-        } catch(e) {}
-      }));
-      g.baseXp = base;
-    }));
+    shuffled.forEach((s, i) => groups[i % numGroups].members.push({ ...s, earnedXp: 0 }));
 
     const endTs = Date.now() + durMins * 60 * 1000;
-    _battle = { groups, endTs, durMins };
+    _battle = { groups, endTs, durMins, filterSubj, filterMod };
+
+    // Show scope label
+    const scopeEl = document.getElementById('battle-scope-label');
+    if (scopeEl) {
+      const subjLabel = filterSubj ? filterSubj.charAt(0).toUpperCase()+filterSubj.slice(1) : null;
+      const modLabel  = filterMod ? filterMod.toUpperCase() : null;
+      scopeEl.textContent = subjLabel
+        ? `📚 Counting XP from: ${subjLabel}${modLabel?' — '+modLabel:' (all modules)'}`
+        : '📚 Counting XP from: all activities';
+    }
 
     document.getElementById('battle-setup-card').style.display = 'none';
     document.getElementById('battle-live-card').style.display = 'block';
 
-    renderBattleLive();
     _battle.countdownTimer = setInterval(tickBattleCountdown, 1000);
     _battle.pollTimer = setInterval(pollBattleXp, 30000);
-    pollBattleXp(); // immediate first poll
+    await pollBattleXp();
   };
 
   function tickBattleCountdown() {
+    if (!_battle) return;
     const remaining = _battle.endTs - Date.now();
     const el = document.getElementById('battle-countdown');
     if (!el) return;
@@ -1499,71 +1837,157 @@
 
   async function pollBattleXp() {
     if (!_battle) return;
-    const XP_PER = { mock:10,mini_mock:10,paper:15,flashcards:5,flashcard:5,words:3,keywords:3,learn:5,scribble:5,cloze:3,video:10,revise:5,video_quiz:5 };
     const battleStart = _battle.endTs - _battle.durMins * 60 * 1000;
-    const maxSize = Math.max(..._battle.groups.map(g => g.members.length));
+    const maxSize = Math.max(..._battle.groups.map(g => g.members.length), 1);
     await Promise.all(_battle.groups.map(async g => {
-      let earned = 0;
+      let groupRaw = 0;
       await Promise.all(g.members.map(async s => {
+        let sXp = 0;
         try {
           const { entries } = await getActivityLog(s.uid, 200);
           entries.forEach(e => {
             const ts = typeof e.timestamp === 'number' ? e.timestamp : (e.timestamp ? new Date(e.timestamp).getTime() : 0);
-            if (ts >= battleStart) earned += XP_PER[e.type] || 5;
+            if (ts < battleStart) return;
+            if (_battle.filterSubj && e.subject && e.subject !== _battle.filterSubj) return;
+            if (_battle.filterMod && e.moduleId && e.moduleId !== _battle.filterMod) return;
+            sXp += XP_PER_TYPE[e.type] || 5;
           });
         } catch(e) {}
+        s.earnedXp = sXp;
+        groupRaw += sXp;
       }));
-      // Fairness modifier: teams smaller than the largest get a boost
-      const modifier = g.members.length < maxSize ? maxSize / g.members.length : 1;
-      g.rawXp = earned;
-      g.modifier = Math.round(modifier * 10) / 10; // round to 1dp
-      g.currentXp = Math.round(earned * modifier);
+      g.rawXp = groupRaw;
+      g.modifier = calcModifier(g.members.length, maxSize);
+      g.currentXp = Math.round(groupRaw * g.modifier);
     }));
     renderBattleLive();
   }
 
+  // Remove a student mid-battle — modifier change is weighted by time remaining
+  // so late removals don't retroactively inflate past XP
+  window.battleRemoveMember = (groupIdx, memberIdx) => {
+    if (!_battle) return;
+    const g = _battle.groups[groupIdx];
+    if (!g || g.members.length <= 1) return;
+    g.members.splice(memberIdx, 1);
+    const totalMs = _battle.durMins * 60 * 1000;
+    const remaining = Math.max(0, _battle.endTs - Date.now());
+    const timeFrac = remaining / totalMs; // 0 = no time left, 1 = just started
+    const maxSize = Math.max(..._battle.groups.map(gr => gr.members.length), 1);
+    _battle.groups.forEach(grp => {
+      const newMod = calcModifier(grp.members.length, maxSize);
+      // Blend: modifier shifts only proportionally to time remaining
+      grp.modifier = grp.modifier + (newMod - grp.modifier) * timeFrac;
+      grp.modifier = Math.round(grp.modifier * 10) / 10;
+      grp.currentXp = Math.round(grp.rawXp * grp.modifier);
+    });
+    renderBattleLive();
+  };
+
   function renderBattleLive() {
     if (!_battle) return;
     const maxXp = Math.max(..._battle.groups.map(g => g.currentXp), 1);
-    const sorted = [..._battle.groups].sort((a,b) => b.currentXp - a.currentXp);
+    const sorted = [..._battle.groups].map((g,i) => ({...g, origIdx:i})).sort((a,b) => b.currentXp - a.currentXp);
     document.getElementById('battle-groups-display').innerHTML = sorted.map((g, rank) => `
       <div class="battle-group-card${rank===0?' leading':''}" style="background:${g.bg};border-color:${rank===0?g.colour:'transparent'}">
         ${rank===0?`<div style="position:absolute;top:0.5rem;right:0.5rem;font-size:0.7rem;font-weight:800;background:${g.colour};color:white;padding:0.1rem 0.4rem;border-radius:100px">LEADING</div>`:''}
         <div class="battle-group-name" style="color:${g.colour}">${rank===0?'🏆 ':''}${g.name}</div>
-        <div class="battle-group-xp" style="color:${g.colour}">+${g.currentXp} XP ${g.modifier>1?`<span style="font-size:0.65rem;font-weight:700;opacity:0.75">(×${g.modifier} boost)</span>`:''}</div>
-        <div style="height:6px;background:#e2e8f0;border-radius:100px;margin:0.4rem 0;overflow:hidden">
+        <div class="battle-group-xp" style="color:${g.colour}">+${g.currentXp} XP ${g.modifier>1?`<span style="font-size:0.65rem;font-weight:700;opacity:0.7">(×${g.modifier} boost)</span>`:''}</div>
+        <div style="height:6px;background:#e2e8f0;border-radius:100px;margin:0.4rem 0 0.6rem;overflow:hidden">
           <div style="height:100%;width:${Math.round(g.currentXp/maxXp*100)}%;background:${g.colour};border-radius:100px;transition:width 0.5s ease"></div>
         </div>
-        <div class="battle-group-members">${g.members.map(m=>m.name).join(' · ')}</div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.3rem">
+          ${g.members.map((m,mi) => `<span onclick="battleRemoveMember(${g.origIdx},${mi})" title="Click to remove" style="font-size:0.82rem;font-weight:800;font-family:'Nunito',sans-serif;padding:0.2rem 0.5rem;background:white;border:1.5px solid ${g.colour}44;border-radius:6px;cursor:pointer;color:${g.colour};transition:all 0.15s" onmouseover="this.style.borderColor='#ef4444';this.style.color='#ef4444'" onmouseout="this.style.borderColor='${g.colour}44';this.style.color='${g.colour}'">${m.name}</span>`).join('')}
+        </div>
       </div>`).join('');
+  }
+
+  function playerLabel(xp, isTeamTop, isOverallTop) {
+    if (isOverallTop && xp > 0) return { icon:'🚀', label:'MVP' };
+    if (isTeamTop && xp > 0) return { icon:'💪', label:'Team Carrier' };
+    if (xp > 10) return { icon:'⭐', label:'Star Player' };
+    if (xp > 0)  return { icon:'👍', label:'Tried Their Best' };
+    return { icon:'😴', label:'Slacker' };
+  }
+
+  function launchConfetti() {
+    const canvas = document.createElement('canvas');
+    canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;pointer-events:none';
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+    const pieces = Array.from({length:180}, () => ({
+      x: Math.random()*canvas.width, y: -30,
+      size: Math.random()*10+4,
+      colour: BATTLE_COLOURS[Math.floor(Math.random()*BATTLE_COLOURS.length)],
+      speed: Math.random()*4+2, angle: Math.random()*360,
+      spin: (Math.random()-0.5)*8, drift: (Math.random()-0.5)*2.5,
+    }));
+    let frame;
+    const draw = () => {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      let alive = false;
+      pieces.forEach(p => {
+        p.y+=p.speed; p.x+=p.drift; p.angle+=p.spin;
+        if (p.y < canvas.height+30) alive = true;
+        ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.angle*Math.PI/180);
+        ctx.fillStyle=p.colour; ctx.fillRect(-p.size/2,-p.size/4,p.size,p.size*0.45); ctx.restore();
+      });
+      frame = alive ? requestAnimationFrame(draw) : (canvas.remove(), null);
+    };
+    draw();
+    setTimeout(() => { cancelAnimationFrame(frame); canvas.remove(); }, 5000);
   }
 
   function endBattle() {
     if (!_battle) return;
     clearInterval(_battle.countdownTimer);
     clearInterval(_battle.pollTimer);
-    const sorted = [..._battle.groups].sort((a,b) => b.currentXp - a.currentXp);
+    const groups = _battle.groups;
+    const sorted = [...groups].sort((a,b) => b.currentXp - a.currentXp);
     const winner = sorted[0];
-    const isTie = sorted.length > 1 && sorted[1].currentXp === winner.currentXp;
+    const isTie  = sorted.length > 1 && sorted[1].currentXp === winner.currentXp;
+
+    // Find overall MVP (highest individual XP across all students)
+    let topEarner = null, topXp = -1;
+    groups.forEach(g => g.members.forEach(m => { if (m.earnedXp > topXp) { topXp = m.earnedXp; topEarner = m; } }));
+
     document.getElementById('battle-countdown').textContent = '0:00';
     document.getElementById('battle-live-title').textContent = '⚔️ Battle Complete!';
-    const display = document.getElementById('battle-groups-display');
+
     const banner = `<div class="battle-winner-banner" style="grid-column:1/-1">
-      <div style="font-size:2rem;margin-bottom:0.4rem">${isTie?'🤝':'🏆'}</div>
-      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.3rem;color:var(--navy)">${isTie?'It\'s a tie!':winner.name+' wins!'}</div>
-      ${isTie?'':'<div style="font-size:0.85rem;color:var(--subtext);margin-top:0.25rem">+'+winner.currentXp+' XP earned</div>'}
-      <button onclick="resetBattle()" style="margin-top:1rem;background:var(--purple);color:white;border:none;border-radius:10px;padding:0.55rem 1.25rem;font-family:\'Nunito\',sans-serif;font-weight:800;font-size:0.875rem;cursor:pointer">New Battle</button>
+      <div style="font-size:2.5rem;margin-bottom:0.4rem">${isTie?'🤝':'🏆'}</div>
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.4rem;color:var(--navy);margin-bottom:0.25rem">${isTie?"It's a tie!":`${winner.name} wins!`}</div>
+      ${!isTie?`<div style="font-size:0.9rem;color:var(--subtext)">+${winner.currentXp} XP earned</div>`:''}
+      <button onclick="resetBattle()" style="margin-top:1rem;background:var(--purple);color:white;border:none;border-radius:10px;padding:0.55rem 1.25rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.875rem;cursor:pointer">⚔️ New Battle</button>
     </div>`;
-    display.innerHTML = banner + sorted.map((g, rank) => `
-      <div class="battle-group-card" style="background:${g.bg};border-color:${g.colour}">
-        <div class="battle-group-name" style="color:${g.colour}">${['🥇','🥈','🥉'][rank]||'#'+(rank+1)} ${g.name}</div>
-        <div class="battle-group-xp" style="color:${g.colour}">+${g.currentXp} XP</div>
-        <div class="battle-group-members">${g.members.map(m=>m.name).join(' · ')}</div>
-      </div>`).join('');
+
+    const groupCards = sorted.map((g, rank) => {
+      const teamTopXp = Math.max(...g.members.map(m=>m.earnedXp), 0);
+      const memberRows = g.members.sort((a,b)=>b.earnedXp-a.earnedXp).map(m => {
+        const isOverall = m === topEarner && topXp > 0;
+        const isTeamTop = m.earnedXp === teamTopXp && teamTopXp > 0;
+        const { icon, label } = playerLabel(m.earnedXp, isTeamTop, isOverall);
+        return `<div style="display:flex;align-items:center;gap:0.5rem;padding:0.25rem 0;border-bottom:1px solid ${g.colour}22">
+          <span style="font-size:1rem">${icon}</span>
+          <span style="flex:1;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;color:${g.colour}">${m.name}</span>
+          <span style="font-size:0.72rem;font-weight:700;color:var(--subtext)">${label}</span>
+          <span style="font-family:'Nunito',sans-serif;font-weight:900;font-size:0.85rem;color:${g.colour}">+${m.earnedXp} XP</span>
+        </div>`;
+      }).join('');
+      return `<div class="battle-group-card" style="background:${g.bg};border-color:${g.colour};border-width:2px">
+        <div class="battle-group-name" style="color:${g.colour}">${['🥇','🥈','🥉'][rank]||rank+1+'.'} ${g.name}</div>
+        <div class="battle-group-xp" style="color:${g.colour};font-size:1.4rem">+${g.currentXp} XP ${g.modifier>1?`<span style="font-size:0.65rem;opacity:0.7">(×${g.modifier} boost)</span>`:''}</div>
+        <div style="margin-top:0.5rem">${memberRows}</div>
+      </div>`;
+    }).join('');
+
+    document.getElementById('battle-groups-display').innerHTML = banner + groupCards;
     _battle = null;
+    launchConfetti();
   }
 
-  window.endBattleEarly = () => { if (confirm('End the battle now?')) endBattle(); };
+  window.endBattleEarly = () => { if (confirm('End the battle now and show results?')) endBattle(); };
 
   window.resetBattle = () => {
     _battle = null;
@@ -1572,6 +1996,7 @@
     document.getElementById('battle-countdown').textContent = '5:00';
     document.getElementById('battle-countdown').className = 'battle-countdown';
     document.getElementById('battle-live-title').textContent = '⚔️ XP Battle in Progress';
+    document.getElementById('battle-scope-label').textContent = '';
   };
 
   function populateBattleClassSelector() {
