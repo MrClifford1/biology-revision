@@ -64,6 +64,22 @@
     .stat-icon { width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0; }
     .stat-num { font-family:'Nunito',sans-serif;font-weight:900;font-size:1.6rem;color:var(--navy);line-height:1; }
     .stat-label { font-size:0.72rem;color:var(--subtext);margin-top:0.1rem; }
+
+    .sar-result { margin-top:1.25rem;display:none; }
+    .sar-section { margin-bottom:1rem; }
+    .sar-section-title { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.85rem;color:var(--navy);margin-bottom:0.4rem;padding-bottom:0.3rem;border-bottom:1px solid var(--border); }
+    .sar-row { display:flex;gap:0.5rem;font-size:0.82rem;padding:0.25rem 0; }
+    .sar-key { color:var(--subtext);min-width:160px;flex-shrink:0; }
+    .sar-val { color:var(--text);font-weight:600;word-break:break-all; }
+    .sar-module-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.5rem; }
+    .sar-module-card { background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:0.6rem 0.8rem;font-size:0.78rem; }
+    .sar-module-name { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;color:var(--navy);text-transform:uppercase;margin-bottom:0.3rem; }
+    .sar-log-table { width:100%;border-collapse:collapse;font-size:0.78rem; }
+    .sar-log-table th { text-align:left;padding:0.35rem 0.5rem;background:var(--bg);color:var(--subtext);font-weight:700;border-bottom:1px solid var(--border); }
+    .sar-log-table td { padding:0.3rem 0.5rem;border-bottom:1px solid var(--border);color:var(--text); }
+    .sar-log-table tr:last-child td { border-bottom:none; }
+    .btn-download { background:#16a34a;color:white;border:none;border-radius:10px;padding:0.6rem 1.25rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.875rem;cursor:pointer;margin-top:1rem; }
+    .btn-download:hover { background:#15803d; }
   </style>
 </head>
 <body>
@@ -151,11 +167,48 @@
       </div>
     </div>
 
+    <!-- SAR EXPORT -->
+    <div class="section-title">📋 Subject Access Request (SAR) Export</div>
+    <div class="card">
+      <div class="add-row">
+        <input type="email" class="input-email" id="sar-email-input" placeholder="student@thestreetlyacademy.co.uk" />
+        <button class="btn-add" id="sar-btn" onclick="sarHandler()">🔍 Export Data</button>
+      </div>
+      <div class="form-hint">Enter a student's email address to export all personal data held in the app. For handover to your DPO in response to a GDPR Subject Access Request.</div>
+      <div class="form-msg" id="sar-msg"></div>
+
+      <div class="sar-result" id="sar-result">
+        <hr style="border:none;border-top:1px solid var(--border);margin:1.25rem 0">
+
+        <div class="sar-section">
+          <div class="sar-section-title">👤 Profile &amp; Account</div>
+          <div id="sar-profile"></div>
+        </div>
+
+        <div class="sar-section">
+          <div class="sar-section-title">📊 Progress &amp; RAG Scores (per module)</div>
+          <div class="sar-module-grid" id="sar-progress"></div>
+        </div>
+
+        <div class="sar-section">
+          <div class="sar-section-title">📝 Activity Log (most recent 100 entries)</div>
+          <div style="overflow-x:auto">
+            <table class="sar-log-table">
+              <thead><tr><th>Date/Time</th><th>Activity</th><th>Module</th><th>Topic</th><th>XP</th></tr></thead>
+              <tbody id="sar-log"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <button class="btn-download" id="sar-download-btn">⬇️ Download as JSON</button>
+      </div>
+    </div>
+
   </main>
 </div>
 
 <script type="module">
-  import { onAuthChange, signOutUser, getAllStaff, getAllStudents, addRole, removeRole, isSuperAdmin } from './firebase.js';
+  import { onAuthChange, signOutUser, getAllStaff, getAllStudents, addRole, removeRole, isSuperAdmin, getSARData } from './firebase.js';
 
   let currentUser = null;
 
@@ -256,6 +309,119 @@
   // Enter key support
   document.getElementById('admin-email-input').addEventListener('keydown', e => { if (e.key === 'Enter') window.addAdminHandler(); });
   document.getElementById('teacher-email-input').addEventListener('keydown', e => { if (e.key === 'Enter') window.addTeacherHandler(); });
+  document.getElementById('sar-email-input').addEventListener('keydown', e => { if (e.key === 'Enter') window.sarHandler(); });
+
+  let _sarData = null;
+
+  window.sarHandler = async () => {
+    const input = document.getElementById('sar-email-input');
+    const msg = document.getElementById('sar-msg');
+    const btn = document.getElementById('sar-btn');
+    const result = document.getElementById('sar-result');
+    const email = input.value.trim().toLowerCase();
+
+    msg.className = 'form-msg';
+    msg.textContent = '';
+    result.style.display = 'none';
+    _sarData = null;
+
+    if (!email || !email.includes('@')) {
+      msg.className = 'form-msg error';
+      msg.textContent = 'Please enter a valid email address.';
+      return;
+    }
+
+    btn.disabled = true; btn.textContent = 'Searching...';
+
+    try {
+      const data = await getSARData(email);
+      if (!data) {
+        msg.className = 'form-msg error';
+        msg.textContent = `No account found for ${email}.`;
+        btn.disabled = false; btn.textContent = '🔍 Export Data';
+        return;
+      }
+
+      _sarData = data;
+
+      // Profile
+      const p = data.profile;
+      const profileFields = [
+        ['UID (internal)', data.uid],
+        ['Email', p.email || '—'],
+        ['Name', p.name || '—'],
+        ['Year Group', p.yearGroup || '—'],
+        ['Class', p.class || '—'],
+        ['Exam Target', p.examTarget || '—'],
+        ['Role', p.role || 'student'],
+        ['Account created', p.createdAt ? new Date(p.createdAt.seconds ? p.createdAt.seconds*1000 : p.createdAt).toLocaleDateString('en-GB') : '—'],
+      ];
+      document.getElementById('sar-profile').innerHTML = profileFields.map(([k,v]) =>
+        `<div class="sar-row"><span class="sar-key">${k}</span><span class="sar-val">${v}</span></div>`
+      ).join('');
+
+      // Progress
+      const progressEl = document.getElementById('sar-progress');
+      const modules = Object.keys(data.progress);
+      if (modules.length === 0) {
+        progressEl.innerHTML = '<div style="color:var(--subtext);font-size:0.82rem">No progress data recorded.</div>';
+      } else {
+        progressEl.innerHTML = modules.map(m => {
+          const d = data.progress[m];
+          const topics = d.topics ? Object.keys(d.topics).length : 0;
+          const mocks = d.mocks ? d.mocks.length : 0;
+          const xp = d.xp || 0;
+          return `<div class="sar-module-card">
+            <div class="sar-module-name">${m.toUpperCase()}</div>
+            <div style="color:var(--subtext);font-size:0.75rem">${topics} topic(s) tracked</div>
+            <div style="color:var(--subtext);font-size:0.75rem">${mocks} mock attempt(s)</div>
+            ${xp ? `<div style="color:var(--subtext);font-size:0.75rem">${xp} XP</div>` : ''}
+          </div>`;
+        }).join('');
+      }
+
+      // Activity log
+      const sorted = [...data.activityLog]
+        .sort((a,b) => new Date(b.timestamp||0) - new Date(a.timestamp||0))
+        .slice(0, 100);
+      const tbody = document.getElementById('sar-log');
+      if (sorted.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="5" style="color:var(--subtext);text-align:center;padding:1rem">No activity recorded.</td></tr>';
+      } else {
+        tbody.innerHTML = sorted.map(e => {
+          const ts = e.timestamp ? new Date(e.timestamp).toLocaleString('en-GB', {day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'}) : '—';
+          return `<tr>
+            <td>${ts}</td>
+            <td>${e.type || e.activity || '—'}</td>
+            <td>${e.moduleId || '—'}</td>
+            <td>${e.topic || '—'}</td>
+            <td>${e.xp != null ? e.xp : '—'}</td>
+          </tr>`;
+        }).join('');
+      }
+
+      result.style.display = 'block';
+      msg.className = 'form-msg success';
+      msg.textContent = `✅ Data loaded for ${email}.`;
+
+    } catch(e) {
+      msg.className = 'form-msg error';
+      msg.textContent = 'Error fetching data. Check the console for details.';
+      console.error(e);
+    }
+
+    btn.disabled = false; btn.textContent = '🔍 Export Data';
+  };
+
+  document.getElementById('sar-download-btn').addEventListener('click', () => {
+    if (!_sarData) return;
+    const email = document.getElementById('sar-email-input').value.trim().toLowerCase();
+    const filename = `SAR_${email.replace('@','_at_')}_${new Date().toISOString().slice(0,10)}.json`;
+    const blob = new Blob([JSON.stringify(_sarData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = filename; a.click();
+    URL.revokeObjectURL(url);
+  });
 
   window.handleSignOut = async () => {
     await signOutUser();

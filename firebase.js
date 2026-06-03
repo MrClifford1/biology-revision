@@ -834,4 +834,29 @@ export async function getActiveBlitzForClass(className) {
   return { id: d.id, ...d.data() };
 }
 
+// ── SAR (SUBJECT ACCESS REQUEST) ──────────────────────────────────────────────
+export async function getSARData(email) {
+  // Step 1: find the user by email
+  const usersSnap = await getDocs(query(collection(db, 'users'), where('email', '==', email)));
+  if (usersSnap.empty) return null;
+
+  const userDoc = usersSnap.docs[0];
+  const uid = userDoc.id;
+  const profile = userDoc.data();
+
+  // Step 2: all progress (RAG + mocks)
+  const modules = ['b1','b2','b3','b4','b5','b6','b7','p1','p2','p3','p4','p5','p6','p7','c1','c2','c3','c4','c5','c6','c7','c8','c9','c10'];
+  const progress = {};
+  await Promise.all(modules.map(async m => {
+    const snap = await getDoc(doc(db, 'users', uid, 'progress', m));
+    if (snap.exists()) progress[m] = snap.data();
+  }));
+
+  // Step 3: activity log (all entries)
+  const actSnap = await getDocs(collection(db, 'users', uid, 'activityLog'));
+  const activityLog = actSnap.docs.map(d => d.data());
+
+  return { uid, profile, progress, activityLog };
+}
+
 export { auth, db };
