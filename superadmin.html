@@ -216,8 +216,7 @@
         <div class="sar-actions">
           <button class="btn-print" id="sar-print-btn">🖨️ Print / Save as PDF</button>
           <button class="btn-download" id="sar-download-btn">⬇️ Download as JSON</button>
-          <button class="btn-hide" id="sar-hide-btn">🙈 Hide Account</button>
-          <button class="btn-delete" id="sar-delete-btn">🗑️ Delete All Data</button>
+          <button class="btn-delete" id="sar-clear-btn">✖️ Clear Report</button>
         </div>
       </div>
     </div>
@@ -226,7 +225,7 @@
 </div>
 
 <script type="module">
-  import { onAuthChange, signOutUser, getAllStaff, getAllStudents, addRole, removeRole, isSuperAdmin, getSARData, deleteStudentData, setUserHidden } from './firebase.js';
+  import { onAuthChange, signOutUser, getAllStaff, getAllStudents, addRole, removeRole, isSuperAdmin, getSARData } from './firebase.js';
 
   let currentUser = null;
 
@@ -419,7 +418,6 @@
       }
 
       result.style.display = 'block';
-      updateHideBtn();
       msg.className = 'form-msg success';
       msg.textContent = `✅ Data loaded for ${email}.`;
 
@@ -447,59 +445,14 @@
     window.print();
   });
 
-  document.getElementById('sar-hide-btn').addEventListener('click', async () => {
+  document.getElementById('sar-clear-btn').addEventListener('click', () => {
     if (!_sarData) return;
-    const isHidden = !!_sarData.profile.hidden;
-    const action = isHidden ? 'un-hide' : 'hide';
-    const msg = isHidden
-      ? `Un-hide ${_sarData.profile.email}?\n\nTheir account will reappear in dashboards and leaderboards. No data is changed.`
-      : `Hide ${_sarData.profile.email}?\n\nTheir account will be excluded from dashboards and leaderboards, but ALL their data is preserved. This is reversible.`;
-    if (!confirm(msg)) return;
-    const btn = document.getElementById('sar-hide-btn');
-    btn.disabled = true; btn.textContent = 'Working...';
-    try {
-      await setUserHidden(_sarData.uid, !isHidden);
-      _sarData.profile.hidden = !isHidden;
-      alert(`✅ ${_sarData.profile.email} has been ${isHidden ? 'un-hidden' : 'hidden'}.`);
-      updateHideBtn();
-    } catch(e) {
-      console.error(e);
-      alert(`Could not ${action} the account. Please try again.`);
-    }
-    btn.disabled = false;
-  });
-
-  function updateHideBtn() {
-    const btn = document.getElementById('sar-hide-btn');
-    if (!_sarData) return;
-    btn.textContent = _sarData.profile.hidden ? '👁️ Un-hide Account' : '🙈 Hide Account';
-  }
-
-  document.getElementById('sar-delete-btn').addEventListener('click', async () => {
-    if (!_sarData) return;
-    const email = _sarData.profile.email;
-    const warn = `⚠️ PERMANENTLY DELETE all data for:\n\n${email}\n\nThis erases their profile, all progress/RAG scores, mock results and activity log. This CANNOT be undone.\n\nFor GDPR records, download the JSON export FIRST.\n\nClick OK to continue.`;
-    if (!confirm(warn)) return;
-    const typed = prompt(`To confirm permanent deletion, type the student's email exactly:\n${email}`);
-    if (typed == null) return;
-    if (typed.trim().toLowerCase() !== email.toLowerCase()) {
-      alert('Email did not match. Deletion cancelled.');
-      return;
-    }
-    const btn = document.getElementById('sar-delete-btn');
-    btn.disabled = true; btn.textContent = 'Deleting...';
-    try {
-      await deleteStudentData(_sarData.uid);
-      alert(`✅ All data for ${email} has been permanently deleted.`);
-      document.getElementById('sar-result').style.display = 'none';
-      document.getElementById('sar-email-input').value = '';
-      _sarData = null;
-      loadAll();
-    } catch(e) {
-      console.error(e);
-      alert('Deletion failed. Please try again.');
-      btn.disabled = false; btn.textContent = '🗑️ Delete All Data';
-    }
+    if (!confirm('Clear this report from the screen?\n\nThis only closes the on-screen view — the student\'s account and data are NOT affected. Make sure you have downloaded or printed it first if you still need it.')) return;
+    document.getElementById('sar-result').style.display = 'none';
+    document.getElementById('sar-email-input').value = '';
+    document.getElementById('sar-msg').className = 'form-msg';
+    document.getElementById('sar-msg').textContent = '';
+    _sarData = null;
   });
 
   window.handleSignOut = async () => {
