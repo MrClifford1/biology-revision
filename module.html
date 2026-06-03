@@ -2060,6 +2060,14 @@ function weightedShuffle(arr) {
 }
 
 // ── FLASHCARDS ────────────────────────────────────────────────────────────────
+const FC_MULTIPLIERS = [1, 0.5, 0.25, 0]; // diminishing returns for easy mode repeat runs
+let fcXpMultiplier = 1;
+
+function getFCEasyRunsToday() {
+  const key = `fc_easy_runs_${subjectId}-${moduleId}_${new Date().toISOString().slice(0,10)}`;
+  return { count: parseInt(localStorage.getItem(key) || '0', 10), key };
+}
+
 let fcMode = 'easy';
 let fcTopicFilter = 'all';
 let fcDeck = [];
@@ -2119,6 +2127,12 @@ function startFlashcards() {
   if (!keywords.length) return;
   fcDeck = pickFCDeck();
   fcIndex = 0; fcCorrect = 0; fcWrong = 0;
+  if (fcMode === 'easy') {
+    const { count } = getFCEasyRunsToday();
+    fcXpMultiplier = FC_MULTIPLIERS[Math.min(count, FC_MULTIPLIERS.length - 1)];
+  } else {
+    fcXpMultiplier = 1;
+  }
   document.getElementById('fc-controls').style.display = 'none';
   document.getElementById('fc-results').style.display = 'none';
   document.getElementById('fc-session').style.display = 'block';
@@ -2236,8 +2250,8 @@ async function recordFCAnswer(isCorrect) {
       const topicName = meta.topics[idx];
       const entry = ragState[topicName] || {};
       const currentScore = entry.score ?? 0;
-      if (currentScore < 35) {
-        const xp = Math.min(1, 35 - currentScore);
+      if (currentScore < 35 && fcXpMultiplier > 0) {
+        const xp = Math.min(fcXpMultiplier, 35 - currentScore);
         ragState[topicName] = { ...entry, score: currentScore + xp, lastActivity: new Date().toISOString() };
         renderChecklist(ragState);
         if (window._saveRAG) window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState).catch(()=>{});
@@ -2262,10 +2276,24 @@ function showFCResults() {
   document.getElementById('fc-results').style.display = 'block';
   const total = fcDeck.length;
   const pct = total > 0 ? Math.round((fcCorrect/total)*100) : 0;
+  let xpNote = '';
+  if (fcMode === 'easy') {
+    const { count, key } = getFCEasyRunsToday();
+    localStorage.setItem(key, count + 1);
+    const nextMultiplier = FC_MULTIPLIERS[Math.min(count + 1, FC_MULTIPLIERS.length - 1)];
+    if (fcXpMultiplier < 1 && fcXpMultiplier > 0) {
+      xpNote = `<div style="margin-top:0.5rem;font-size:0.75rem;color:#f97316">⚡ XP reduced to ${fcXpMultiplier * 100}% — revisit tomorrow for full rewards.</div>`;
+    } else if (fcXpMultiplier === 0) {
+      xpNote = `<div style="margin-top:0.5rem;font-size:0.75rem;color:#ef4444">⚡ No XP awarded — daily easy mode limit reached. Try hard mode or come back tomorrow.</div>`;
+    } else if (nextMultiplier < 1) {
+      xpNote = `<div style="margin-top:0.5rem;font-size:0.75rem;color:#94a3b8">⚡ XP will reduce on your next easy mode run today.</div>`;
+    }
+  }
   document.getElementById('fc-results-stats').innerHTML = `
     <div style="font-size:2.5rem;font-weight:900;font-family:'Nunito',sans-serif;color:var(--accent)">${pct}%</div>
     <div>✅ Correct: <strong>${fcCorrect}</strong> &nbsp;&nbsp; ❌ Wrong: <strong>${fcWrong}</strong></div>
-    <div style="margin-top:0.5rem;font-size:0.8rem">Topic scores updated. Next round will pick 5 new weighted cards.</div>`;
+    <div style="margin-top:0.5rem;font-size:0.8rem">Topic scores updated. Next round will pick 5 new weighted cards.</div>
+    ${xpNote}`;
   // Log flashcard round to activity history
   window._logActivity({
     type: 'flashcard',
