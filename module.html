@@ -3082,6 +3082,7 @@ async function loadLearnData() {
         readingHTML += `<h4>${sec.icon || ''} ${sec.title || ''}</h4>`;
         if (sec.text) readingHTML += `<p>${sec.text}</p>`;
         if (sec.points?.length) readingHTML += '<ul>' + sec.points.map(p => `<li>${p}</li>`).join('') + '</ul>';
+        if (sec.image) readingHTML += `<div style="margin:0.75rem 0;"><img src="${sec.image}" alt="${sec.imageCaption || sec.title || ''}" style="max-width:100%;border-radius:10px;"><p style="font-size:0.75rem;color:var(--subtext);margin-top:0.25rem;">${sec.imageCaption || ''}</p></div>`;
       });
       return { name, readingHTML, keyTerms: data.keyTerms || [], clozePassages: data.clozePassages || [], _rawData: data };
     });

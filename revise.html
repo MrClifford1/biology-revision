@@ -574,6 +574,9 @@
           <p>${section.callout.text}</p>
         </div>`;
       }
+      if (section.image) {
+        html += `<div class="diagram-wrap"><img src="${section.image}" alt="${section.imageCaption || section.title || ''}" style="max-width:100%;border-radius:10px;margin:0.5rem 0;"><p class="diagram-caption">${section.imageCaption || ''}</p></div>`;
+      }
       if (section.diagram) {
         html += `<div class="diagram-wrap">${section.diagram}<p class="diagram-caption">${section.diagramCaption || ''}</p></div>`;
       }
