@@ -1724,12 +1724,6 @@
     blitzSubjectChanged();
   };
 
-  function populateBlitzClassSelector() {
-    const sel = document.getElementById('blitz-class');
-    if (!sel) return;
-    sel.innerHTML = '<option value="">— Select class —</option>' + myClasses.map(c=>`<option value="${c}">${c}</option>`).join('');
-  }
-
   // ── XP BATTLES ──────────────────────────────────────────────────────────────
   const BATTLE_ADJECTIVES = ['Crazy','Scary','Mighty','Sneaky','Fluffy','Grumpy','Zippy','Bouncy','Spooky','Cheeky','Wobbly','Dizzy','Fiery','Frosty','Speedy','Slimy','Brave','Wacky','Funky','Jumpy'];
   const BATTLE_ANIMALS    = ['Pandas','Geese','Tigers','Penguins','Foxes','Wolves','Hedgehogs','Otters','Raccoons','Narwhals','Axolotls','Capybaras','Sloths','Platypuses','Badgers','Llamas','Wombats','Geckos','Piranhas','Quokkas'];
