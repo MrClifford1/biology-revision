@@ -1564,13 +1564,28 @@
     const msg      = document.getElementById('blitz-msg');
     if (!cls || !moduleId) { msg.className='form-msg error'; msg.textContent='Select a class and module first.'; return; }
     msg.className='form-msg'; msg.textContent='';
-    const questions = await fetchBlitzQuestions(subject, moduleId, num);
+    let questions;
+    try {
+      questions = await fetchBlitzQuestions(subject, moduleId, num);
+    } catch (e) {
+      msg.className='form-msg error'; msg.textContent='Could not load questions: ' + (e.message || e); return;
+    }
     if (!questions.length) { msg.className='form-msg error'; msg.textContent='No questions found for that module.'; return; }
-    const id = await createBlitzSession({
-      class: cls, subject, moduleId, questions,
-      currentQ: 0, state: 'lobby', timePerQ,
-      joined: {}, answers: {}, scores: {},
-    });
+    let id;
+    try {
+      id = await createBlitzSession({
+        class: cls, subject, moduleId, questions,
+        currentQ: 0, state: 'lobby', timePerQ,
+        joined: {}, answers: {}, scores: {},
+      });
+    } catch (e) {
+      console.error('createBlitzSession failed', e);
+      msg.className='form-msg error';
+      msg.textContent = (e.code === 'permission-denied' || /permission/i.test(e.message||''))
+        ? 'Permission denied writing to Firestore. The blitzSessions security rule is missing — add it in the Firebase console.'
+        : 'Could not start Blitz: ' + (e.message || e);
+      return;
+    }
     _blitz = { id, questions, currentQ: 0, timePerQ, unsub: null };
     document.getElementById('blitz-setup-card').style.display = 'none';
     document.getElementById('blitz-lobby-card').style.display = 'block';
