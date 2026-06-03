@@ -1,7 +1,7 @@
 // Firebase configuration for Streetly Science Hub
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, serverTimestamp, collection, getDocs, deleteDoc, query, where } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, serverTimestamp, collection, getDocs, deleteDoc, query, where, onSnapshot, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBNVM9Dx8vAYOtt79BVwKK1u3St5BsIxsY",
@@ -803,6 +803,35 @@ export async function backfillStudentProfiles() {
     }
   }
   return patched;
+}
+
+// ── BLITZ SESSIONS ────────────────────────────────────────────────────────────
+export async function createBlitzSession(data) {
+  const ref = await addDoc(collection(db, 'blitzSessions'), { ...data, createdAt: serverTimestamp(), active: true });
+  return ref.id;
+}
+
+export async function updateBlitzSession(id, data) {
+  await updateDoc(doc(db, 'blitzSessions', id), data);
+}
+
+export async function getBlitzSession(id) {
+  const snap = await getDoc(doc(db, 'blitzSessions', id));
+  return snap.exists() ? { id: snap.id, ...snap.data() } : null;
+}
+
+export function onBlitzSnapshot(id, cb) {
+  return onSnapshot(doc(db, 'blitzSessions', id), snap => {
+    if (snap.exists()) cb({ id: snap.id, ...snap.data() });
+  });
+}
+
+export async function getActiveBlitzForClass(className) {
+  const q = query(collection(db, 'blitzSessions'), where('class','==',className), where('active','==',true));
+  const snap = await getDocs(q);
+  if (snap.empty) return null;
+  const d = snap.docs[0];
+  return { id: d.id, ...d.data() };
 }
 
 export { auth, db };
