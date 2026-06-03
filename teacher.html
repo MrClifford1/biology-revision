@@ -1813,7 +1813,7 @@
     document.getElementById('battle-live-card').style.display = 'block';
 
     _battle.countdownTimer = setInterval(tickBattleCountdown, 1000);
-    _battle.pollTimer = setInterval(pollBattleXp, 30000);
+    _battle.pollTimer = setInterval(pollBattleXp, 10000);
     await pollBattleXp();
   };
 
