@@ -464,6 +464,7 @@
     <div class="tabs">
       <button class="tab-btn active" data-tab="overview">📋 Class Overview</button>
       <button class="tab-btn" data-tab="heatmap">📊 Intervention View</button>
+      <button class="tab-btn" data-tab="xpleague">🏆 XP League</button>
       <button class="tab-btn" data-tab="assignments">📌 Assignments</button>
       <button class="tab-btn" data-tab="assessments">📅 Assessment Dates</button>
       <button class="tab-btn" data-tab="xpwars">⚔️ XP Battles</button>
@@ -499,8 +500,10 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- ── XP LEAGUE TABLE ──────────────────────────────────────────────────── -->
+    <!-- ── TAB: XP LEAGUE ───────────────────────────────────────────────────────── -->
+    <div class="tab-panel" id="tab-xpleague">
       <div class="card" id="xp-league-card">
         <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem">
           <div class="section-label" style="margin-bottom:0">🏆 XP League Table</div>
@@ -1519,7 +1522,7 @@
     if (_xpRefreshTimer) clearInterval(_xpRefreshTimer);
     _xpRefreshTimer = setInterval(() => {
       if (document.visibilityState === 'visible') loadXpLeague();
-    }, 300000); // 5 min — reduce Firestore reads
+    }, 30000); // 30 sec
   }
 
   // ── BLITZ ───────────────────────────────────────────────────────────────────
