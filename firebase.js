@@ -402,8 +402,17 @@ export async function deleteStudentData(uid) {
   // Delete all sub-collections under users/{uid}/progress
   const progressSnap = await getDocs(collection(db, 'users', uid, 'progress'));
   await Promise.all(progressSnap.docs.map(d => deleteDoc(d.ref)));
+  // Delete the activity log sub-collection
+  const actSnap = await getDocs(collection(db, 'users', uid, 'activityLog'));
+  await Promise.all(actSnap.docs.map(d => deleteDoc(d.ref)));
   // Delete the user document itself
   await deleteDoc(doc(db, 'users', uid));
+}
+
+// Hide (soft-archive) a user without deleting their data — excludes them from
+// dashboards/leaderboards while preserving records.
+export async function setUserHidden(uid, hidden) {
+  await setDoc(doc(db, 'users', uid), { hidden: !!hidden }, { merge: true });
 }
 
 // ── ROLE HELPERS ──────────────────────────────────────────────────────────────
