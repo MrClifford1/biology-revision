@@ -3082,7 +3082,7 @@ async function loadLearnData() {
         readingHTML += `<h4>${sec.icon || ''} ${sec.title || ''}</h4>`;
         if (sec.text) readingHTML += `<p>${sec.text}</p>`;
         if (sec.points?.length) readingHTML += '<ul>' + sec.points.map(p => `<li>${p}</li>`).join('') + '</ul>';
-        if (sec.image) readingHTML += `<div style="margin:0.75rem 0;"><img src="${sec.image}" alt="${sec.imageCaption || sec.title || ''}" style="max-width:100%;border-radius:10px;"><p style="font-size:0.75rem;color:var(--subtext);margin-top:0.25rem;">${sec.imageCaption || ''}</p></div>`;
+        if (sec.image) readingHTML += `<div style="margin:0.75rem 0;"><img src="${sec.image}" alt="${sec.imageCaption || sec.title || ''}" style="max-width:100%;border-radius:10px;" onerror="this.parentElement.style.display='none'"><p style="font-size:0.75rem;color:var(--subtext);margin-top:0.25rem;">${sec.imageCaption || ''}</p></div>`;
       });
       return { name, readingHTML, keyTerms: data.keyTerms || [], clozePassages: data.clozePassages || [], _rawData: data };
     });
@@ -4065,7 +4065,14 @@ function buildClozeHtml(paragraph, terms, mode) {
   return html;
 }
 
-window.startCloze = () => {
+window.startCloze = async () => {
+  if (!window._reviseData) {
+    try {
+      let r = await fetch(`data/revise/${subjectId}-${moduleId}-revise.json`);
+      if (!r.ok) r = await fetch(`data/revise/${moduleId}-revise.json`);
+      if (r.ok) { window._reviseData = await r.json(); buildClozeTopicBtns(); }
+    } catch(e) {}
+  }
   const rd = window._reviseData;
   if (!rd) { alert('Revision data not loaded yet — try again in a moment.'); return; }
 
