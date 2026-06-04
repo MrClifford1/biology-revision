@@ -1,212 +1,41 @@
 [
-  {
-    "word": "Wave",
-    "definition": "A disturbance that transfers energy from one place to another without transferring matter.",
-    "sub_topic": "Wave Properties"
-  },
-  {
-    "word": "Transverse wave",
-    "definition": "A wave where the oscillations are perpendicular (at right angles) to the direction of energy transfer. Examples: light, water waves, all EM waves.",
-    "sub_topic": "Wave Properties"
-  },
-  {
-    "word": "Longitudinal wave",
-    "definition": "A wave where the oscillations are parallel to the direction of energy transfer. Example: sound waves.",
-    "sub_topic": "Wave Properties"
-  },
-  {
-    "word": "Amplitude",
-    "definition": "The maximum displacement of a point on a wave from its rest position. Measured in metres (m). Larger amplitude = more energy.",
-    "sub_topic": "Wave Properties"
-  },
-  {
-    "word": "Wavelength",
-    "definition": "The distance between two successive identical points on a wave, e.g. crest to crest or compression to compression. Symbol: \u03bb, measured in metres (m).",
-    "sub_topic": "Wave Properties"
-  },
-  {
-    "word": "Frequency",
-    "definition": "The number of complete waves passing a point per second. Symbol: f, measured in hertz (Hz).",
-    "sub_topic": "Wave Properties"
-  },
-  {
-    "word": "Period",
-    "definition": "The time taken for one complete wave to pass a point. T = 1/f. Measured in seconds (s).",
-    "sub_topic": "Wave Properties"
-  },
-  {
-    "word": "Wave speed",
-    "definition": "The speed at which a wave travels through a medium. Calculated using: v = f\u03bb (wave speed = frequency \u00d7 wavelength). Measured in m/s.",
-    "sub_topic": "Wave Properties"
-  },
-  {
-    "word": "Crest",
-    "definition": "The highest point of a transverse wave, where displacement is at its maximum positive value.",
-    "sub_topic": "Wave Properties"
-  },
-  {
-    "word": "Trough",
-    "definition": "The lowest point of a transverse wave, where displacement is at its maximum negative value.",
-    "sub_topic": "Wave Properties"
-  },
-  {
-    "word": "Compression",
-    "definition": "A region in a longitudinal wave where particles are pushed closer together, creating a high-pressure region.",
-    "sub_topic": "Wave Properties"
-  },
-  {
-    "word": "Rarefaction",
-    "definition": "A region in a longitudinal wave where particles are spread further apart, creating a low-pressure region.",
-    "sub_topic": "Wave Properties"
-  },
-  {
-    "word": "Reflection",
-    "definition": "The bouncing of a wave off a surface. The angle of incidence equals the angle of reflection. The wave changes direction but not speed or frequency.",
-    "sub_topic": "Reflection and Refraction"
-  },
-  {
-    "word": "Angle of incidence",
-    "definition": "The angle between the incoming wave (or ray) and the normal to the surface at the point of incidence.",
-    "sub_topic": "Reflection and Refraction"
-  },
-  {
-    "word": "Angle of reflection",
-    "definition": "The angle between the reflected wave (or ray) and the normal to the surface. Always equals the angle of incidence.",
-    "sub_topic": "Reflection and Refraction"
-  },
-  {
-    "word": "Normal",
-    "definition": "An imaginary line drawn perpendicular to a surface at the point where a wave meets it. Angles of incidence and reflection are measured from the normal.",
-    "sub_topic": "Reflection and Refraction"
-  },
-  {
-    "word": "Refraction",
-    "definition": "The change in direction of a wave as it passes from one medium to another, caused by a change in wave speed.",
-    "sub_topic": "Reflection and Refraction"
-  },
-  {
-    "word": "Angle of refraction",
-    "definition": "The angle between the refracted ray and the normal at the point where the wave enters the new medium.",
-    "sub_topic": "Reflection and Refraction"
-  },
-  {
-    "word": "Optical density",
-    "definition": "A property of a medium that determines how fast light travels through it. A denser medium slows light down more and causes greater refraction.",
-    "sub_topic": "Reflection and Refraction"
-  },
-  {
-    "word": "Total internal reflection",
-    "definition": "When a wave travelling in a denser medium hits the boundary at an angle greater than the critical angle and is completely reflected back into the medium.",
-    "sub_topic": "Reflection and Refraction"
-  },
-  {
-    "word": "Critical angle",
-    "definition": "The angle of incidence above which total internal reflection occurs. At this angle, the refracted ray travels along the boundary.",
-    "sub_topic": "Reflection and Refraction"
-  },
-  {
-    "word": "Sound wave",
-    "definition": "A longitudinal wave produced by vibrating objects that travels as compressions and rarefactions through a medium. Cannot travel through a vacuum.",
-    "sub_topic": "Sound"
-  },
-  {
-    "word": "Pitch",
-    "definition": "How high or low a sound seems \u2014 determined by its frequency. Higher frequency = higher pitch.",
-    "sub_topic": "Sound"
-  },
-  {
-    "word": "Loudness",
-    "definition": "How loud or quiet a sound seems \u2014 determined by its amplitude. Larger amplitude = louder sound.",
-    "sub_topic": "Sound"
-  },
-  {
-    "word": "Ultrasound",
-    "definition": "Sound waves with a frequency above the upper limit of human hearing (above 20,000 Hz). Used in medical imaging and sonar.",
-    "sub_topic": "Sound"
-  },
-  {
-    "word": "Echo",
-    "definition": "A reflected sound wave. Used to measure distances \u2014 the time taken for an echo to return can be used to calculate the distance to a surface.",
-    "sub_topic": "Sound"
-  },
-  {
-    "word": "Oscilloscope",
-    "definition": "A device used to display waveforms of sound waves, showing amplitude, frequency and wave shape on a screen.",
-    "sub_topic": "Sound"
-  },
-  {
-    "word": "Electromagnetic spectrum",
-    "definition": "The family of transverse waves that all travel at the speed of light (3 \u00d7 10\u2078 m/s) in a vacuum. Arranged in order of frequency/wavelength: radio, microwave, infrared, visible, UV, X-ray, gamma.",
-    "sub_topic": "Electromagnetic Spectrum"
-  },
-  {
-    "word": "Radio waves",
-    "definition": "The longest wavelength, lowest frequency part of the EM spectrum. Used for TV and radio broadcasting and satellite communication.",
-    "sub_topic": "Electromagnetic Spectrum"
-  },
-  {
-    "word": "Microwaves",
-    "definition": "EM waves used in cooking (absorbed by water molecules) and in mobile phone and satellite communication.",
-    "sub_topic": "Electromagnetic Spectrum"
-  },
-  {
-    "word": "Infrared radiation",
-    "definition": "EM waves emitted by all objects as heat. Used in thermal imaging cameras, remote controls, and optical fibre communication.",
-    "sub_topic": "Electromagnetic Spectrum"
-  },
-  {
-    "word": "Visible light",
-    "definition": "The narrow band of the EM spectrum that the human eye can detect. Ranges from red (longest wavelength) to violet (shortest wavelength).",
-    "sub_topic": "Electromagnetic Spectrum"
-  },
-  {
-    "word": "Ultraviolet (UV)",
-    "definition": "EM waves with shorter wavelengths than visible light. Causes tanning and skin damage. Used in sterilisation and detecting forged banknotes.",
-    "sub_topic": "Electromagnetic Spectrum"
-  },
-  {
-    "word": "X-rays",
-    "definition": "High-frequency EM waves that pass through soft tissue but are absorbed by bone and dense materials. Used in medical imaging.",
-    "sub_topic": "Electromagnetic Spectrum"
-  },
-  {
-    "word": "Gamma rays",
-    "definition": "The shortest wavelength, highest frequency part of the EM spectrum. Emitted by radioactive nuclei. Used in cancer treatment and sterilising medical equipment.",
-    "sub_topic": "Electromagnetic Spectrum"
-  },
-  {
-    "word": "Speed of light",
-    "definition": "The speed at which all EM waves travel in a vacuum: 3 \u00d7 10\u2078 m/s (300,000,000 m/s).",
-    "sub_topic": "Electromagnetic Spectrum"
-  },
-  {
-    "word": "Ionising radiation",
-    "definition": "Radiation with enough energy to remove electrons from atoms, creating ions. UV, X-rays and gamma rays are ionising. Can damage cells and DNA.",
-    "sub_topic": "Electromagnetic Spectrum"
-  },
-  {
-    "word": "Absorb",
-    "definition": "When a surface takes in the energy of a wave rather than reflecting or transmitting it. Dark, matt surfaces are good absorbers of infrared radiation.",
-    "sub_topic": "Electromagnetic Spectrum"
-  },
-  {
-    "word": "Transmit",
-    "definition": "When a wave passes through a material without being absorbed or reflected.",
-    "sub_topic": "Electromagnetic Spectrum"
-  },
-  {
-    "word": "Black body radiation",
-    "definition": "Radiation emitted by a perfect absorber and emitter of all wavelengths. The hotter the object, the more radiation emitted and the shorter the peak wavelength.",
-    "sub_topic": "Black Body Radiation"
-  },
-  {
-    "word": "Emitter",
-    "definition": "An object that gives out radiation. All objects emit infrared radiation \u2014 hotter objects emit more and at shorter wavelengths.",
-    "sub_topic": "Black Body Radiation"
-  },
-  {
-    "word": "Temperature and radiation",
-    "definition": "As the temperature of an object increases, the intensity of radiation emitted increases and the peak wavelength decreases (shifts towards shorter wavelengths).",
-    "sub_topic": "Black Body Radiation"
-  }
+  { "word": "Wave", "definition": "A disturbance that transfers energy from one place to another without transferring matter.", "sub_topic": "Wave Properties", "clues": ["This is a way energy travels", "It transfers energy but not matter", "Light and sound are examples", "A periodic disturbance that carries energy from place to place — the medium vibrates but overall doesn't move with the wave"] },
+  { "word": "Transverse wave", "definition": "A wave where the oscillations are perpendicular (at right angles) to the direction of energy transfer. Examples: light, water waves, all EM waves.", "sub_topic": "Wave Properties", "clues": ["This is a type of wave", "The vibrations are at right angles to the direction of travel", "Light and water waves are examples", "A wave where displacement is perpendicular to the direction of energy transfer — all EM waves and water waves are this type"] },
+  { "word": "Longitudinal wave", "definition": "A wave where the oscillations are parallel to the direction of energy transfer. Example: sound waves.", "sub_topic": "Wave Properties", "clues": ["This is a type of wave", "The vibrations are parallel to the direction of travel", "Sound waves are an example", "A wave where displacement is parallel to the direction of energy transfer — sound waves travel as compressions and rarefactions"] },
+  { "word": "Amplitude", "definition": "The maximum displacement of a point on a wave from its rest position. Measured in metres (m). Larger amplitude = more energy.", "sub_topic": "Wave Properties", "clues": ["This is a property of a wave", "It is measured from the rest position to the maximum displacement", "A larger value means more energy", "The maximum displacement from equilibrium — larger amplitude means a louder sound or a brighter light"] },
+  { "word": "Wavelength", "definition": "The distance between two successive identical points on a wave, e.g. crest to crest or compression to compression. Symbol: λ, measured in metres (m).", "sub_topic": "Wave Properties", "clues": ["This is a property of a wave", "It is the distance from one point to the next identical point", "Its symbol is the Greek letter lambda (λ)", "The distance between two successive crests (or compressions) — measured in metres; longer wavelength = lower frequency"] },
+  { "word": "Frequency", "definition": "The number of complete waves passing a point per second. Symbol: f, measured in hertz (Hz).", "sub_topic": "Wave Properties", "clues": ["This is a property of a wave", "It is measured in hertz", "It is the number of complete waves per second", "The number of complete oscillations per second — measured in Hz; related to wavelength by the wave equation v = fλ"] },
+  { "word": "Period", "definition": "The time taken for one complete wave to pass a point. T = 1/f. Measured in seconds (s).", "sub_topic": "Wave Properties", "clues": ["This is a property of a wave", "It is measured in seconds", "It is the reciprocal of frequency", "The time for one complete oscillation — T = 1/f; if frequency is 50 Hz, the period is 0.02 s"] },
+  { "word": "Wave speed", "definition": "The speed at which a wave travels through a medium. Calculated using: v = fλ (wave speed = frequency × wavelength). Measured in m/s.", "sub_topic": "Wave Properties", "clues": ["This is a property of a wave", "It is calculated from frequency and wavelength", "Its equation is v = fλ", "The speed at which the wave pattern moves — v = fλ; for EM waves in a vacuum this is always 3 × 10⁸ m/s"] },
+  { "word": "Crest", "definition": "The highest point of a transverse wave, where displacement is at its maximum positive value.", "sub_topic": "Wave Properties", "clues": ["This is a feature of a transverse wave", "It is the highest point of the wave", "It is the point of maximum positive displacement", "The peak of a transverse wave — the point where displacement is at its maximum upward value"] },
+  { "word": "Trough", "definition": "The lowest point of a transverse wave, where displacement is at its maximum negative value.", "sub_topic": "Wave Properties", "clues": ["This is a feature of a transverse wave", "It is the lowest point of the wave", "It is the point of maximum negative displacement", "The valley of a transverse wave — the point where displacement is at its maximum downward value"] },
+  { "word": "Compression", "definition": "A region in a longitudinal wave where particles are pushed closer together, creating a high-pressure region.", "sub_topic": "Wave Properties", "clues": ["This is a feature of a longitudinal wave", "Particles are pushed closer together in this region", "It is a high-pressure region", "A high-pressure region in a longitudinal wave where particles are bunched together — the equivalent of a crest in a transverse wave"] },
+  { "word": "Rarefaction", "definition": "A region in a longitudinal wave where particles are spread further apart, creating a low-pressure region.", "sub_topic": "Wave Properties", "clues": ["This is a feature of a longitudinal wave", "Particles are spread further apart in this region", "It is a low-pressure region", "A low-pressure region in a longitudinal wave where particles are spread apart — the equivalent of a trough in a transverse wave"] },
+  { "word": "Reflection", "definition": "The bouncing of a wave off a surface. The angle of incidence equals the angle of reflection. The wave changes direction but not speed or frequency.", "sub_topic": "Reflection and Refraction", "clues": ["This is a wave behaviour", "A wave bounces off a surface", "The angle in equals the angle out", "When a wave hits a surface and bounces back — angle of incidence = angle of reflection; the wave does not change speed or frequency"] },
+  { "word": "Angle of incidence", "definition": "The angle between the incoming wave (or ray) and the normal to the surface at the point of incidence.", "sub_topic": "Reflection and Refraction", "clues": ["This is an angle measured in ray diagrams", "It is measured between the incoming ray and the normal", "It is always measured from the normal, not the surface", "The angle between the incident ray and the normal at the surface — always measured from the normal, not from the surface itself"] },
+  { "word": "Angle of reflection", "definition": "The angle between the reflected wave (or ray) and the normal to the surface. Always equals the angle of incidence.", "sub_topic": "Reflection and Refraction", "clues": ["This is an angle measured in ray diagrams", "It is measured between the reflected ray and the normal", "It is always equal to another angle in the same diagram", "The angle between the reflected ray and the normal — always equals the angle of incidence (the law of reflection)"] },
+  { "word": "Normal", "definition": "An imaginary line drawn perpendicular to a surface at the point where a wave meets it. Angles of incidence and reflection are measured from the normal.", "sub_topic": "Reflection and Refraction", "clues": ["This is an imaginary line used in ray diagrams", "It is perpendicular to the surface", "All angles of incidence and reflection are measured from it", "A line at 90° to the surface at the point of incidence — all ray angles are measured from this line, not from the surface"] },
+  { "word": "Refraction", "definition": "The change in direction of a wave as it passes from one medium to another, caused by a change in wave speed.", "sub_topic": "Reflection and Refraction", "clues": ["This is a wave behaviour", "A wave changes direction as it crosses a boundary", "It is caused by a change in wave speed", "Bending of a wave as it crosses from one medium to another — caused by a change in speed; a faster medium bends away from the normal"] },
+  { "word": "Angle of refraction", "definition": "The angle between the refracted ray and the normal at the point where the wave enters the new medium.", "sub_topic": "Reflection and Refraction", "clues": ["This is an angle measured in refraction diagrams", "It is on the transmitted side of the boundary", "It is measured from the normal", "The angle between the refracted (transmitted) ray and the normal — smaller than the angle of incidence when entering a denser medium"] },
+  { "word": "Optical density", "definition": "A property of a medium that determines how fast light travels through it. A denser medium slows light down more and causes greater refraction.", "sub_topic": "Reflection and Refraction", "clues": ["This is a property of transparent materials", "It determines how much light slows down in the material", "A higher value means light travels more slowly", "A measure of how much a medium slows light — higher optical density = slower light = greater bending at the boundary"] },
+  { "word": "Total internal reflection", "definition": "When a wave travelling in a denser medium hits the boundary at an angle greater than the critical angle and is completely reflected back into the medium.", "sub_topic": "Reflection and Refraction", "clues": ["This is a phenomenon in optics", "It occurs when light hits a boundary at too steep an angle", "The light is completely reflected back into the denser medium", "When the angle of incidence exceeds the critical angle, all light is reflected back — the basis of optical fibres and diamond brilliance"] },
+  { "word": "Critical angle", "definition": "The angle of incidence above which total internal reflection occurs. At this angle, the refracted ray travels along the boundary.", "sub_topic": "Reflection and Refraction", "clues": ["This is a threshold angle in optics", "Beyond this angle, total internal reflection occurs", "At exactly this angle, the refracted ray travels along the boundary", "The angle of incidence at which the refracted ray lies along the boundary — above this angle, total internal reflection occurs"] },
+  { "word": "Sound wave", "definition": "A longitudinal wave produced by vibrating objects that travels as compressions and rarefactions through a medium. Cannot travel through a vacuum.", "sub_topic": "Sound", "clues": ["This is a type of longitudinal wave", "It requires a medium to travel through", "It cannot travel through a vacuum", "A longitudinal wave of alternating compressions and rarefactions — travels through solids, liquids and gases but not through a vacuum"] },
+  { "word": "Pitch", "definition": "How high or low a sound seems — determined by its frequency. Higher frequency = higher pitch.", "sub_topic": "Sound", "clues": ["This is a property of sound", "It is determined by frequency", "Higher frequency gives a higher value", "The perceived highness or lowness of a sound — determined by frequency; a violin has higher pitch than a bass guitar"] },
+  { "word": "Loudness", "definition": "How loud or quiet a sound seems — determined by its amplitude. Larger amplitude = louder sound.", "sub_topic": "Sound", "clues": ["This is a property of sound", "It is determined by amplitude", "Larger amplitude gives a louder sound", "The perceived volume of a sound — determined by the amplitude of the wave; shouting has larger amplitude than whispering"] },
+  { "word": "Ultrasound", "definition": "Sound waves with a frequency above the upper limit of human hearing (above 20,000 Hz). Used in medical imaging and sonar.", "sub_topic": "Sound", "clues": ["This is a type of sound wave", "Its frequency is above the range of human hearing", "It is used in medical scanning and sonar", "Sound with frequency above 20,000 Hz — beyond human hearing; used in baby scans, sonar and cleaning delicate instruments"] },
+  { "word": "Echo", "definition": "A reflected sound wave. Used to measure distances — the time taken for an echo to return can be used to calculate the distance to a surface.", "sub_topic": "Sound", "clues": ["This is a phenomenon involving sound waves", "It is caused by reflection of sound", "It can be used to measure distances", "A reflected sound wave — the time delay between the original sound and the echo allows distance calculation using speed of sound"] },
+  { "word": "Oscilloscope", "definition": "A device used to display waveforms of sound waves, showing amplitude, frequency and wave shape on a screen.", "sub_topic": "Sound", "clues": ["This is a piece of laboratory equipment", "It displays wave patterns on a screen", "It shows amplitude and frequency of sound waves", "An electronic device displaying voltage vs time — used to show the waveform of a sound; amplitude and frequency can be read from the trace"] },
+  { "word": "Electromagnetic spectrum", "definition": "The family of transverse waves that all travel at the speed of light (3 × 10⁸ m/s) in a vacuum. Arranged in order of frequency/wavelength: radio, microwave, infrared, visible, UV, X-ray, gamma.", "sub_topic": "Electromagnetic Spectrum", "clues": ["This is a family of waves in physics", "All members travel at the same speed in a vacuum", "They are ordered by frequency and wavelength", "A continuous range of transverse EM waves from radio (low frequency) to gamma (high frequency) — all travel at 3×10⁸ m/s in a vacuum"] },
+  { "word": "Radio waves", "definition": "The longest wavelength, lowest frequency part of the EM spectrum. Used for TV and radio broadcasting and satellite communication.", "sub_topic": "Electromagnetic Spectrum", "clues": ["This is a type of EM wave", "It has the longest wavelength in the EM spectrum", "It is used in broadcasting and communication", "The lowest frequency EM waves — used for radio and TV broadcasting, satellite communication and MRI scanners"] },
+  { "word": "Microwaves", "definition": "EM waves used in cooking (absorbed by water molecules) and in mobile phone and satellite communication.", "sub_topic": "Electromagnetic Spectrum", "clues": ["This is a type of EM wave", "It is used in cooking and mobile communication", "It is absorbed by water molecules", "EM waves between radio and infrared — absorbed by water molecules in food (cooking) and used in mobile phone and satellite communication"] },
+  { "word": "Infrared radiation", "definition": "EM waves emitted by all objects as heat. Used in thermal imaging cameras, remote controls, and optical fibre communication.", "sub_topic": "Electromagnetic Spectrum", "clues": ["This is a type of EM wave", "It is emitted by all warm objects", "It is detected as heat", "EM radiation between microwaves and visible light — all objects emit it; used in thermal cameras, remote controls and optical fibres"] },
+  { "word": "Visible light", "definition": "The narrow band of the EM spectrum that the human eye can detect. Ranges from red (longest wavelength) to violet (shortest wavelength).", "sub_topic": "Electromagnetic Spectrum", "clues": ["This is the part of the EM spectrum we can see", "It spans from red to violet", "Red has the longest wavelength in this range", "The small portion of the EM spectrum detected by the human eye — red has the longest wavelength, violet the shortest"] },
+  { "word": "Ultraviolet (UV)", "definition": "EM waves with shorter wavelengths than visible light. Causes tanning and skin damage. Used in sterilisation and detecting forged banknotes.", "sub_topic": "Electromagnetic Spectrum", "clues": ["This is a type of EM wave", "It has shorter wavelength than visible light", "It causes tanning and can damage skin", "EM waves just beyond violet light — causes tanning and skin cancer; used in sterilisation and security marking detection"] },
+  { "word": "X-rays", "definition": "High-frequency EM waves that pass through soft tissue but are absorbed by bone and dense materials. Used in medical imaging.", "sub_topic": "Electromagnetic Spectrum", "clues": ["This is a type of EM wave used in medicine", "It passes through soft tissue but is absorbed by bone", "It is used for medical imaging", "High-frequency EM radiation that penetrates soft tissue but not bone — used in medical X-ray imaging and airport security scanners"] },
+  { "word": "Gamma rays", "definition": "The shortest wavelength, highest frequency part of the EM spectrum. Emitted by radioactive nuclei. Used in cancer treatment and sterilising medical equipment.", "sub_topic": "Electromagnetic Spectrum", "clues": ["This is a type of EM wave", "It has the highest frequency in the EM spectrum", "It is emitted by radioactive nuclei", "The most energetic EM waves — emitted from radioactive nuclei; used in cancer radiotherapy, sterilisation and PET scanners"] },
+  { "word": "Speed of light", "definition": "The speed at which all EM waves travel in a vacuum: 3 × 10⁸ m/s (300,000,000 m/s).", "sub_topic": "Electromagnetic Spectrum", "clues": ["This is a fundamental constant in physics", "All EM waves travel at this speed in a vacuum", "It is approximately 3 × 10⁸ m/s", "3 × 10⁸ m/s — the speed of all electromagnetic waves in a vacuum; the fastest anything can travel"] },
+  { "word": "Ionising radiation", "definition": "Radiation with enough energy to remove electrons from atoms, creating ions. UV, X-rays and gamma rays are ionising. Can damage cells and DNA.", "sub_topic": "Electromagnetic Spectrum", "clues": ["This is a type of radiation", "It can remove electrons from atoms", "UV, X-rays and gamma rays are examples", "High-energy radiation that ionises atoms by removing electrons — can damage living cells and DNA; UV, X-rays and gamma rays are ionising"] },
+  { "word": "Black body radiation", "definition": "Radiation emitted by a perfect absorber and emitter of all wavelengths. The hotter the object, the more radiation emitted and the shorter the peak wavelength.", "sub_topic": "Black Body Radiation", "clues": ["This is radiation emitted by a perfect absorber", "Hotter objects emit more of it at shorter wavelengths", "The Sun approximates this type of emitter", "Radiation from a perfect emitter — hotter objects emit more radiation and at shorter peak wavelengths; explains why stars have different colours"] },
+  { "word": "Temperature and radiation", "definition": "As the temperature of an object increases, the intensity of radiation emitted increases and the peak wavelength decreases (shifts towards shorter wavelengths).", "sub_topic": "Black Body Radiation", "clues": ["This describes a relationship in physics", "As an object gets hotter, its peak radiation wavelength decreases", "Hotter objects emit more radiation overall", "Higher temperature → more radiation emitted + peak wavelength shifts shorter — explains why very hot objects glow blue-white, cooler ones glow red"] }
 ]
