@@ -490,9 +490,15 @@
     .cloze-word-chip.selected-chip { outline: 3px solid var(--gold); transform: scale(1.05); }
     .cloze-result-row {
       display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0;
-      border-bottom: 1px solid #f1f5f9; font-size: 0.85rem;
+      border-bottom: 1px solid #f1f5f9; font-size: 0.85rem; flex-wrap: wrap;
     }
     .cloze-result-row:last-child { border-bottom: none; }
+    .remark-btn { font-size:0.7rem;padding:0.18rem 0.5rem;border-radius:6px;border:1.5px solid #6366f1;color:#6366f1;background:none;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:700;white-space:nowrap;flex-shrink:0; }
+    .remark-btn:disabled { opacity:0.5;cursor:default; }
+    .remark-panel { display:none;flex-basis:100%;margin-top:0.3rem;padding:0.6rem 0.75rem;background:#f5f3ff;border:1px solid #c4b5fd;border-radius:8px;font-size:0.78rem; }
+    .remark-panel select,.remark-panel input[type=text] { width:100%;margin-top:0.35rem;padding:0.3rem 0.5rem;border:1px solid #c4b5fd;border-radius:6px;font-family:'Nunito',sans-serif;font-size:0.78rem;box-sizing:border-box; }
+    .remark-submit { padding:0.28rem 0.7rem;border-radius:6px;border:none;background:#6366f1;color:white;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.78rem;cursor:pointer; }
+    .remark-submit:disabled { opacity:0.5;cursor:default; }
     .cloze-blank.drag-over { background: #fef9c3; border-color: var(--gold); transform: scale(1.05); }
     .cloze-word-chip.dragging { opacity: 0.4; transform: scale(0.95); }
     /* ── END CLOZE ──────────────────────────────────────────────────────────────── */
@@ -2766,7 +2772,8 @@ function collectWrittenAnswers(qs) {
 function collectFIBAnswers(qs) {
   qs.filter(q => q.type === 'fill_in_blank').forEach(q => {
     const val = document.getElementById(`fib-${q.id}`)?.value?.trim().toLowerCase()||'';
-    const ok  = q.acceptable.some(a => val === a.toLowerCase());
+    const ok  = q.acceptable.some(a => val === a.toLowerCase())
+              || (window._acceptedAnswersMap[(q.question||'').toLowerCase()]?.has(val) ?? false);
     autoMarkedResults[q.id] = { marks_awarded: ok ? q.marks : 0, marks_available: q.marks, type:'auto', fib_correct: ok, correct_answer: q.correct, student_answer: val };
   });
 }
@@ -2811,7 +2818,13 @@ function displayResults(qs, writtenResults, writtenAnswers, overallId, container
         const ok = r.selected_answer === q.correct;
         body = `<div class="student-answer-text">Your answer: <em>${r.selected_answer||'No answer'}</em></div><div class="feedback-grid"><div class="feedback-section"><div class="feedback-label">${ok?'✅ Correct!':'❌ Incorrect'}</div><div class="feedback-text">Correct answer: <strong>${q.correct}</strong></div></div></div>`;
       } else if (q.type === 'fill_in_blank') {
-        body = `<div class="student-answer-text">Your answer: <em>${r.student_answer||'No answer'}</em></div>${r.marks_awarded===0?`<div class="feedback-grid"><div class="feedback-section"><div class="feedback-label">❌ Incorrect</div><div class="feedback-text">Correct answer: <strong>${q.correct}</strong></div></div></div>`:`<div class="auto-result auto-correct" style="margin-top:0.5rem">✅ Correct!</div>`}`;
+        if (r.marks_awarded === 0 && r.student_answer) {
+          const ri = window._remarkData.length;
+          window._remarkData.push({ term: q.question, correctAnswer: q.correct, studentAnswer: r.student_answer, topic: q.topic });
+          body = `<div class="student-answer-text">Your answer: <em>${r.student_answer}</em></div><div class="feedback-grid"><div class="feedback-section"><div class="feedback-label"><span id="remark-icon-${ri}">❌</span> Incorrect</div><div class="feedback-text">Correct answer: <strong>${q.correct}</strong></div></div></div><div style="margin-top:0.4rem"><button class="remark-btn" data-remark-idx="${ri}" onclick="toggleRemarkPanel(this)">🤖 Remark</button>${_remarkPanelHTML(ri)}</div>`;
+        } else {
+          body = `<div class="student-answer-text">Your answer: <em>${r.student_answer||'No answer'}</em></div>${r.marks_awarded===0?`<div class="feedback-grid"><div class="feedback-section"><div class="feedback-label">❌ Incorrect</div><div class="feedback-text">Correct answer: <strong>${q.correct}</strong></div></div></div>`:`<div class="auto-result auto-correct" style="margin-top:0.5rem">✅ Correct!</div>`}`;
+        }
       } else if (q.type === 'match') {
         const pairs = q.pairs.map(p => { const sa = r.matchMap?.[p.term]; const ok = sa===p.term; return `<div style="padding:0.3rem 0;font-size:0.82rem;color:${ok?'#16a34a':'#dc2626'}">${ok?'✅':'❌'} <strong>${p.term}</strong> → ${p.definition}${!ok&&sa?`<span style="color:#64748b;font-size:0.75rem"> (you matched: ${sa})</span>`:''}${!ok&&!sa?`<span style="color:#64748b;font-size:0.75rem"> (not matched)</span>`:''}</div>`; }).join('');
         body = `<div class="student-answer-text">${r.correct||0}/${r.total||q.pairs.length} pairs matched correctly</div><div class="feedback-section" style="margin-top:0.5rem"><div class="feedback-label">Results</div><div class="feedback-text">${pairs}</div></div>`;
@@ -4273,6 +4286,105 @@ function fillBlankWithChip(blankIdx, chipIdx) {
   _clozeSelectedBlank = null;
 }
 
+// ── AI REMARK ─────────────────────────────────────────────────────────────────
+window._remarkData = [];
+
+function _remarkPanelHTML(idx) {
+  return `<div class="remark-panel" id="remark-panel-${idx}">
+    <div style="font-weight:700;margin-bottom:0.3rem;color:#4f46e5">Why should your answer be accepted?</div>
+    <select class="remark-reason" onchange="this.nextElementSibling.style.display=this.value==='Other'?'block':'none'">
+      <option value="">Select a reason...</option>
+      <option>Spelling error</option>
+      <option>Missed a word (e.g. 'xylem' vs 'xylem cells')</option>
+      <option>Used a different term</option>
+      <option>Wrong word order</option>
+      <option>Other</option>
+    </select>
+    <input type="text" class="remark-other" placeholder="Describe your reason..." style="display:none">
+    <div style="display:flex;align-items:center;gap:0.5rem;margin-top:0.5rem">
+      <button class="remark-submit" data-remark-idx="${idx}" onclick="submitRemark(this)">Submit remark</button>
+      <span class="remark-msg" style="font-size:0.72rem;color:#64748b"></span>
+    </div>
+    <div class="remark-result" style="margin-top:0.35rem"></div>
+  </div>`;
+}
+
+window.toggleRemarkPanel = function(btn) {
+  const panel = document.getElementById('remark-panel-' + btn.dataset.remarkIdx);
+  const open = panel.style.display === 'block';
+  panel.style.display = open ? 'none' : 'block';
+  btn.textContent = open ? '🤖 Remark' : '✕ Close';
+};
+
+window.submitRemark = async function(btn) {
+  const idx = parseInt(btn.dataset.remarkIdx);
+  const entry = window._remarkData[idx];
+  const panel = document.getElementById('remark-panel-' + idx);
+  const reasonEl = panel.querySelector('.remark-reason');
+  const otherEl  = panel.querySelector('.remark-other');
+  const msgEl    = panel.querySelector('.remark-msg');
+  const resultEl = panel.querySelector('.remark-result');
+
+  const reason = reasonEl.value;
+  if (!reason) { msgEl.textContent = 'Please select a reason.'; return; }
+
+  const today = new Date().toISOString().slice(0, 10);
+  const countKey = 'remark_count_' + today;
+  const count = parseInt(localStorage.getItem(countKey) || '0');
+  if (count >= 5) {
+    msgEl.textContent = "You've used all 5 AI remarks today — come back tomorrow.";
+    return;
+  }
+
+  btn.disabled = true; btn.textContent = 'Checking…'; msgEl.textContent = '';
+  try {
+    const res = await fetch('/.netlify/functions/mark-answer', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ _remarkMode: true, term: entry.term, correctAnswer: entry.correctAnswer, studentAnswer: entry.studentAnswer, reason, otherDetail: otherEl.value.trim() })
+    });
+    const data = await res.json();
+    localStorage.setItem(countKey, String(count + 1));
+    const remaining = 4 - count;
+
+    if (data.awarded) {
+      resultEl.innerHTML = `<span style="color:#16a34a;font-weight:700">✅ Mark awarded!</span> ${data.reason}`;
+      msgEl.textContent = remaining > 0 ? `${remaining} remark${remaining!==1?'s':''} left today` : "No remarks left today";
+      // Flip the icon in the result row
+      const iconEl = document.getElementById('remark-icon-' + idx);
+      if (iconEl) iconEl.textContent = '✅';
+      // Hide remark button
+      const remarkBtn = document.querySelector(`[data-remark-idx="${idx}"].remark-btn`);
+      if (remarkBtn) remarkBtn.style.display = 'none';
+      panel.style.display = 'none';
+      // Award 1 XP
+      if (window._currentUser && entry.topic) {
+        try {
+          const te = ragState[entry.topic] || {};
+          const cs = te.score ?? 0;
+          if (cs < 35) {
+            ragState[entry.topic] = { ...te, score: cs + 1, lastActivity: new Date().toISOString() };
+            if (window._saveRAG) await window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState).catch(()=>{});
+            renderChecklist(ragState);
+            showXPToast(1);
+          }
+        } catch(e) {}
+      }
+      // Persist accepted answer globally
+      if (window._currentUser && window._saveAcceptedAnswer) {
+        window._saveAcceptedAnswer({ term: entry.term, studentAnswer: entry.studentAnswer, addedBy: window._currentUser.uid }).catch(()=>{});
+      }
+    } else {
+      resultEl.innerHTML = `<span style="color:#dc2626;font-weight:700">❌ Not awarded.</span> ${data.reason}`;
+      msgEl.textContent = remaining > 0 ? `${remaining} remark${remaining!==1?'s':''} left today` : "No remarks left today";
+      btn.disabled = false; btn.textContent = 'Submit remark';
+    }
+  } catch(e) {
+    resultEl.textContent = 'Error contacting AI — please try again.';
+    btn.disabled = false; btn.textContent = 'Submit remark';
+  }
+};
+// ── END AI REMARK ─────────────────────────────────────────────────────────────
+
 window.submitCloze = async () => {
   const diff = _clozeSelectedDiff;
   let correct = 0;
@@ -4288,7 +4400,8 @@ window.submitCloze = async () => {
       const el = document.getElementById(b.id);
       given = (el?.value || '').trim();
     }
-    const isCorrect = given.toLowerCase() === b.answer.toLowerCase();
+    const isCorrect = given.toLowerCase() === b.answer.toLowerCase()
+      || (window._acceptedAnswersMap[b.term.toLowerCase()]?.has(given.toLowerCase()) ?? false);
     if (isCorrect) correct++;
 
     // Mark the blank
@@ -4298,7 +4411,7 @@ window.submitCloze = async () => {
       if (diff !== 'easy') el.disabled = true;
     }
 
-    resultRows.push({ term: b.term, given, isCorrect });
+    resultRows.push({ term: b.term, given, isCorrect, answer: b.answer });
   });
 
   document.getElementById('cloze-submit-btn').disabled = true;
@@ -4342,12 +4455,24 @@ window.submitCloze = async () => {
     ${clozeXPGained > 0 ? `<div style="font-size:0.75rem;color:var(--subtext);text-align:center;margin-bottom:0.75rem">+${clozeXPGained} XP added to ${_clozeCurrentTopic}</div>` : clozeXP > 0 ? `<div style="font-size:0.75rem;color:var(--subtext);text-align:center;margin-bottom:0.75rem">Already at max Cloze XP — try Scribble or Mock to level up</div>` : ''}
     <div style="background:white;border:1px solid var(--border);border-radius:12px;padding:1rem;margin-bottom:0.75rem">
       <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.75rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem">Results</div>
-      ${resultRows.map(r => `
-        <div class="cloze-result-row">
+      ${resultRows.map(r => {
+        if (!r.isCorrect && r.given) {
+          const ri = window._remarkData.length;
+          window._remarkData.push({ term: r.term, correctAnswer: r.answer, studentAnswer: r.given, topic: _clozeCurrentTopic });
+          return `<div class="cloze-result-row">
+            <span id="remark-icon-${ri}" style="font-size:1rem">❌</span>
+            <span style="flex:1;font-weight:600">${r.term}</span>
+            <span style="font-size:0.78rem;color:#dc2626">You wrote: "${r.given}"</span>
+            <button class="remark-btn" data-remark-idx="${ri}" onclick="toggleRemarkPanel(this)">🤖 Remark</button>
+            ${_remarkPanelHTML(ri)}
+          </div>`;
+        }
+        return `<div class="cloze-result-row">
           <span style="font-size:1rem">${r.isCorrect ? '✅' : '❌'}</span>
           <span style="flex:1;font-weight:600">${r.term}</span>
-          ${!r.isCorrect ? `<span style="font-size:0.78rem;color:#dc2626">You wrote: "${r.given || '(blank)'}"</span>` : ''}
-        </div>`).join('')}
+          ${!r.isCorrect ? `<span style="font-size:0.78rem;color:#dc2626">You wrote: "(blank)"</span>` : ''}
+        </div>`;
+      }).join('')}
     </div>
     <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
       <button class="btn-primary" onclick="startCloze()">🔄 Try again — same topic</button>
@@ -4371,7 +4496,8 @@ window.resetCloze = () => {
 <!-- ── FIREBASE ───────────────────────────────────────────────────────────────── -->
 <script type="module">
   import {
-  onAuthChange, saveRAG, loadRAG, saveMockScore, getModuleScheduleStatus, getUserProfile, logActivity, saveAssignmentCompletion, getUpcomingAssessmentsForStudent, isStaffRole } from './firebase.js';
+  onAuthChange, saveRAG, loadRAG, saveMockScore, getModuleScheduleStatus, getUserProfile, logActivity, saveAssignmentCompletion, getUpcomingAssessmentsForStudent, isStaffRole,
+  getAcceptedAnswers, saveAcceptedAnswer } from './firebase.js';
 
 
 
@@ -4392,6 +4518,18 @@ window.resetCloze = () => {
   window._saveRAG = async (uid, moduleKey, state) => {
     try { await saveRAG(uid, moduleKey, state); } catch(e) {}
   };
+  window._saveAcceptedAnswer = async (entry) => {
+    try { await saveAcceptedAnswer(entry); } catch(e) {}
+  };
+  // Load accepted answers once at startup for use in Cloze/FIB marking
+  window._acceptedAnswersMap = {};
+  getAcceptedAnswers().then(entries => {
+    entries.forEach(e => {
+      const k = (e.term || '').toLowerCase();
+      if (!window._acceptedAnswersMap[k]) window._acceptedAnswersMap[k] = new Set();
+      window._acceptedAnswersMap[k].add((e.studentAnswer || '').toLowerCase());
+    });
+  }).catch(() => {});
   // Per-type cooldown to prevent rapid repeat logging (e.g. 50 flashcards in 2 mins)
   const _logCooldowns = {};
   const LOG_COOLDOWN_MS = { flashcard: 60000, flashcards: 60000, words: 60000, keywords: 60000, cloze: 30000 };

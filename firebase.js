@@ -881,4 +881,14 @@ export async function getSARData(email) {
   return { uid, profile, progress, activityLog };
 }
 
+// ── ACCEPTED ANSWERS (AI-remarked answers, global by term) ───────────────────
+export async function getAcceptedAnswers() {
+  const snap = await getDocs(collection(db, 'acceptedAnswers'));
+  return snap.docs.map(d => d.data());
+}
+
+export async function saveAcceptedAnswer(entry) {
+  await addDoc(collection(db, 'acceptedAnswers'), { ...entry, addedAt: serverTimestamp() });
+}
+
 export { auth, db };
