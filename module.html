@@ -2106,13 +2106,13 @@ async function reloadRAGFromHistory(uid) {
 // ── QUESTION WEIGHTING ────────────────────────────────────────────────────────
 function ragWeight(topic) {
   const idx = fuzzyMatchTopic(topic, meta.topics);
-  if (idx < 0) return 4;
+  if (idx < 0) return 8; // unknown topic → treat as weak
   const topicName = meta.topics[idx];
   const entry = ragState[topicName];
   const score = applyDecay(entry)?.score ?? 0;
-  const tier = computeTier(score);
-  // Higher weight = more likely to appear (prioritise weaker topics)
-  return tier === 'not_started' ? 5 : tier === 'beginning' ? 4 : tier === 'developing' ? 3 : tier === 'approaching' ? 2 : 1;
+  // Continuous inverse weighting: low score → high weight
+  // Score 0 → 10, Score 35 → 3, Score 75+ → 1
+  return Math.max(1, Math.round(10 - (score / 5)));
 }
 
 function weightedShuffle(arr) {
@@ -5070,8 +5070,8 @@ window.resetCloze = () => {
     if (btn) btn.style.color = '';
   });
   window.sshSignOut = function() {
-    if (window._sshSignOutFn) { window._sshSignOutFn(); }
-    else { window.location.href = 'login.html'; }
+    if (window._sshSignOutFn) { window._sshSignOutFn(); return; }
+    import('./firebase.js').then(function(m) { m.signOutUser().finally(function() { window.location.href = 'login.html'; }); }).catch(function() { window.location.href = 'login.html'; });
   };
 </script>
 <footer style="background:#1e2a4a;color:#6b7a9c;padding:1rem;text-align:center;font-family:'Nunito',sans-serif;font-size:0.75rem;margin-top:2rem">
