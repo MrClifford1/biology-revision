@@ -705,8 +705,8 @@ export async function getUpcomingAssessmentsForStudent(classId) {
         snap.docs.forEach(d => {
           const data = d.data();
           if (!data.date || data.date < today) return;
-          // Deduplicate: same label + date + subject = same assessment
-          const key = `${subject}|${data.date}|${data.label || ''}`;
+          // Deduplicate: same label + date + subject = same assessment (case-insensitive)
+          const key = `${subject}|${data.date}|${(data.label || '').toLowerCase().trim()}`;
           if (seen.has(key)) return;
           seen.add(key);
           results.push({ id: d.id, subject, ...data });

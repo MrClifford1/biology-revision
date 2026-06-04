@@ -2724,7 +2724,10 @@
     list.innerHTML = Object.entries(yearGroups).map(([yearLabel, classes]) => {
       const classesHtml = classes.map(cls => {
         const items = allByClass[cls] || [];
-        const rowsHtml = items.map(a => {
+        const myItems = items.filter(a => !a.createdBy || a.createdBy === currentUser.uid);
+        const othersItems = items.filter(a => a.createdBy && a.createdBy !== currentUser.uid);
+
+        const makeRow = (a, isOwn) => {
           const daysLeft = a.date ? Math.ceil((new Date(a.date) - new Date()) / 86400000) : null;
           const pillCls = a.subject === 'Biology' ? 'adate-pill-bio' : a.subject === 'Chemistry' ? 'adate-pill-chem' : 'adate-pill-phys';
           const cdCls = daysLeft !== null ? (daysLeft <= 7 ? 'soon' : daysLeft <= 21 ? 'upcoming' : 'future') : 'future';
@@ -2734,19 +2737,24 @@
             const pt = a.partialTopics?.[m];
             return `<span class="adate-mod-tag">${m}${pt?.length ? ` (${pt.length} topics)` : ''}</span>`;
           }).join('');
-          return `<div class="adate-row">
+          return `<div class="adate-row"${!isOwn ? ' style="opacity:0.85;border-style:dashed"' : ''}>
             <span class="adate-subj-pill ${pillCls}">${a.subject}</span>
             <div class="adate-info">
               <div class="adate-label">${a.label||'Assessment'}</div>
-              <div class="adate-meta">${dateStr}${a.scheduleLink ? ` · ${a.scheduleLink}` : ''}</div>
+              <div class="adate-meta">${dateStr}${a.scheduleLink ? ` · ${a.scheduleLink}` : ''}${!isOwn ? ' · <em>set by another teacher</em>' : ''}</div>
               <div class="adate-mods">${modTags}</div>
             </div>
             ${cdText ? `<span class="adate-countdown ${cdCls}">${cdText}</span>` : ''}
-            <button class="btn-delete" style="border-color:#6366f1;color:#6366f1" onclick="adEdit('${cls}','${a.subject}','${a.id}')">✏️ Edit</button>
+            ${isOwn ? `<button class="btn-delete" style="border-color:#6366f1;color:#6366f1" onclick="adEdit('${cls}','${a.subject}','${a.id}')">✏️ Edit</button>` : ''}
             <button class="btn-delete" style="border-color:#0891b2;color:#0891b2" onclick="adCopyTo('${a.subject}','${a.id}','${cls}')">⧉ Copy to</button>
-            <button class="btn-delete" onclick="adDelete('${cls}','${a.subject}','${a.id}')">Remove</button>
+            ${isOwn ? `<button class="btn-delete" onclick="adDelete('${cls}','${a.subject}','${a.id}')">Remove</button>` : ''}
           </div>`;
-        }).join('');
+        };
+
+        const rowsHtml = [
+          ...myItems.map(a => makeRow(a, true)),
+          ...(othersItems.length ? [`<div style="font-size:0.7rem;font-weight:700;color:var(--subtext);text-transform:uppercase;letter-spacing:0.06em;margin:0.5rem 0 0.25rem;padding-top:0.4rem;border-top:1px dashed var(--border)">From other teachers</div>`, ...othersItems.map(a => makeRow(a, false))] : [])
+        ].join('');
         return `<div style="margin-bottom:1rem">
           <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:0.78rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;padding-bottom:0.3rem;border-bottom:1px solid var(--border)">${cls}</div>
           ${rowsHtml}
