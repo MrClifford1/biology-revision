@@ -83,6 +83,45 @@ Assess what the student recalled. Be encouraging but honest. Respond ONLY with a
       };
     }
 
+    // ── REMARK MODE ───────────────────────────────────────────────────────────
+    if (body._remarkMode) {
+      const { term, correctAnswer, studentAnswer, reason, otherDetail } = body;
+      const reasonStr = reason === 'Other'
+        ? `Other: ${otherDetail || '(no detail provided)'}`
+        : reason;
+      const remarkPrompt = `You are an AQA GCSE Science teacher. A student has challenged a mark on a fill-in-the-blank or keyword question.
+
+Question/term: "${term}"
+Expected answer: "${correctAnswer}"
+Student wrote: "${studentAnswer}"
+Student's reason for challenge: "${reasonStr}"
+
+Should the student's answer be awarded the mark? Consider:
+- Minor spelling errors (1-2 letters off)
+- Partial terms that are scientifically acceptable (e.g. "xylem" when answer is "xylem cells")
+- Word order differences in multi-word answers
+- Equivalent scientific terms or abbreviations
+- The student's stated reason for the challenge
+
+Be consistent with AQA GCSE marking — do not award marks for vague or incorrect answers, but do award for answers that demonstrate clear understanding despite minor differences.
+
+Respond ONLY with JSON (no markdown): {"awarded": true or false, "reason": "<one sentence explanation>"}`;
+
+      const remarkResp = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01' },
+        body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: 200, messages: [{ role: 'user', content: remarkPrompt }] }),
+      });
+      if (!remarkResp.ok) return { statusCode: 502, body: JSON.stringify({ error: 'Remark service error' }) };
+      const remarkData = await remarkResp.json();
+      const rawRemark = remarkData?.content?.[0]?.text || '';
+      const cleanRemark = rawRemark.replace(/```json|```/g, '').trim();
+      let parsedRemark;
+      try { parsedRemark = JSON.parse(cleanRemark); }
+      catch(e) { parsedRemark = { awarded: false, reason: 'Could not process remark. Please try again.' }; }
+      return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(parsedRemark) };
+    }
+
     // ── MARKING MODE (existing logic) ─────────────────────────────────────────
     const { answers } = body;
 
