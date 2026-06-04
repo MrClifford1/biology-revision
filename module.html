@@ -1216,11 +1216,11 @@
         </div>
         <div style="display:flex;gap:0.5rem;margin-bottom:0.6rem">
           <input type="text" id="clue-input" placeholder="Type the keyword…" style="flex:1;font-size:0.95rem;padding:0.75rem 1rem;border:2px solid #e2e8f0;border-radius:12px;background:#f8fafc;color:var(--text);outline:none;font-family:'Nunito',sans-serif;transition:border-color 0.15s" onfocus="this.style.borderColor='#6366f1';this.style.background='white'" onblur="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'" onkeydown="if(event.key==='Enter')submitClueGuess()" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-          <button class="btn-primary" style="white-space:nowrap;padding:0 1.1rem" onclick="submitClueGuess()">Check →</button>
+          <button id="clue-check-btn" class="btn-primary" style="white-space:nowrap;padding:0 1.1rem" onclick="submitClueGuess()">Check →</button>
+          <button id="clue-next-btn" class="btn-primary" style="display:none;white-space:nowrap;padding:0 1.1rem;background:#059669" onclick="clueNextWord()">Next →</button>
         </div>
         <div id="clue-feedback" style="display:none;padding:0.65rem 1rem;border-radius:10px;font-size:0.85rem;font-weight:700;margin-bottom:0.75rem"></div>
         <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
-          <button id="clue-next-btn" class="btn-primary" style="display:none;background:var(--navy)" onclick="clueNextWord()">Next word →</button>
           <button id="clue-skip-btn" style="background:none;border:1.5px solid var(--border);color:var(--subtext);border-radius:10px;padding:0.5rem 1rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.8rem;cursor:pointer" onclick="clueReveal()">🔍 Reveal &amp; skip</button>
         </div>
       </div>
@@ -2362,6 +2362,7 @@ function showClueCard() {
   document.getElementById('clue-input').value = '';
   document.getElementById('clue-input').disabled = false;
   document.getElementById('clue-feedback').style.display = 'none';
+  document.getElementById('clue-check-btn').style.display = 'inline-flex';
   document.getElementById('clue-next-btn').style.display = 'none';
   document.getElementById('clue-skip-btn').style.display = 'inline-block';
   setTimeout(() => document.getElementById('clue-input').focus(), 50);
@@ -2415,6 +2416,7 @@ function showClueFeedback(correct, xp, correctWord) {
     fb.textContent = `❌ The answer was: ${correctWord}`;
   }
   document.getElementById('clue-input').disabled = true;
+  document.getElementById('clue-check-btn').style.display = 'none';
   document.getElementById('clue-next-btn').style.display = 'inline-flex';
   document.getElementById('clue-skip-btn').style.display = 'none';
 }
@@ -2437,7 +2439,7 @@ async function awardClueXP(word, xp) {
   ragState[topicName] = { ...entry, score: current + award, lastActivity: new Date().toISOString() };
   renderChecklist(ragState);
   if (window._saveRAG) window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState).catch(() => {});
-  showXPToast(`+${award} XP`);
+  showXPToast(award);
 }
 
 function showClueResults() {
