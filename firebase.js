@@ -309,10 +309,17 @@ export async function getAllProgress(uid) {
     'p1','p2','p3','p4','p5','p6','p7',
     'c1','c2','c3','c4','c5','c6','c7','c8','c9','c10',
   ];
+  const subjectPrefix = { b:'biology', p:'physics', c:'chemistry' };
   const progress = {};
   for (const m of modules) {
-    const snap = await getDoc(doc(db, 'users', uid, 'progress', m));
-    if (snap.exists()) progress[m] = snap.data();
+    // Data may be stored as 'b1' (short) or 'biology-b1' (long) — check both
+    const shortSnap = await getDoc(doc(db, 'users', uid, 'progress', m));
+    if (shortSnap.exists()) { progress[m] = shortSnap.data(); continue; }
+    const subj = subjectPrefix[m[0]];
+    if (subj) {
+      const longSnap = await getDoc(doc(db, 'users', uid, 'progress', `${subj}-${m}`));
+      if (longSnap.exists()) progress[m] = longSnap.data();
+    }
   }
   return progress;
 }
@@ -853,12 +860,18 @@ export async function getSARData(email) {
   const uid = userDoc.id;
   const profile = userDoc.data();
 
-  // Step 2: all progress (RAG + mocks)
+  // Step 2: all progress (RAG + mocks) — check both short ('b1') and long ('biology-b1') key formats
   const modules = ['b1','b2','b3','b4','b5','b6','b7','p1','p2','p3','p4','p5','p6','p7','c1','c2','c3','c4','c5','c6','c7','c8','c9','c10'];
+  const sarSubjPrefix = { b:'biology', p:'physics', c:'chemistry' };
   const progress = {};
   await Promise.all(modules.map(async m => {
-    const snap = await getDoc(doc(db, 'users', uid, 'progress', m));
-    if (snap.exists()) progress[m] = snap.data();
+    const shortSnap = await getDoc(doc(db, 'users', uid, 'progress', m));
+    if (shortSnap.exists()) { progress[m] = shortSnap.data(); return; }
+    const subj = sarSubjPrefix[m[0]];
+    if (subj) {
+      const longSnap = await getDoc(doc(db, 'users', uid, 'progress', `${subj}-${m}`));
+      if (longSnap.exists()) progress[m] = longSnap.data();
+    }
   }));
 
   // Step 3: activity log (all entries)
