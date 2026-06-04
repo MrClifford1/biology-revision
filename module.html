@@ -1291,7 +1291,8 @@
             <span style="background:var(--accent-light);color:var(--accent);font-family:'Nunito',sans-serif;font-weight:800;font-size:0.78rem;padding:0.2rem 0.7rem;border-radius:100px;" id="scribble-mode-badge"></span>
           </div>
           <p style="color:var(--subtext);font-size:0.825rem;margin-bottom:0.75rem;">Write down everything you can remember — key terms, definitions, processes, examples. Don't worry about perfect sentences.</p>
-          <textarea class="scribble-textarea" id="scribble-textarea" placeholder="Start writing here..."></textarea>
+          <textarea class="scribble-textarea" id="scribble-textarea" placeholder="Start writing here..." onpaste="event.preventDefault();document.getElementById('scribble-paste-warn').style.display='block';setTimeout(()=>document.getElementById('scribble-paste-warn').style.display='none',2500)"></textarea>
+          <div id="scribble-paste-warn" style="display:none;margin-top:0.4rem;padding:0.5rem 0.85rem;background:#fef2f2;border:1.5px solid #fca5a5;border-radius:8px;font-size:0.8rem;font-weight:700;color:#991b1b">⛔ Pasting is disabled — this is a recall exercise. Type from memory!</div>
           <div id="scribble-cooldown-display" style="display:none;" class="scribble-cooldown-bar">⏳ You can submit again in <span id="scribble-cooldown-timer"></span></div>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-top:0.75rem;flex-wrap:wrap;gap:0.5rem;">
             <button class="btn-secondary" id="scribble-cancel-btn" style="background:white;border:1.5px solid var(--border);color:var(--subtext);font-family:'Nunito',sans-serif;font-weight:700;padding:0.55rem 1.25rem;border-radius:10px;cursor:pointer;font-size:0.875rem;">✕ Cancel</button>
