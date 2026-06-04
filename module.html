@@ -4294,6 +4294,7 @@ function _remarkPanelHTML(idx) {
     <div style="font-weight:700;margin-bottom:0.3rem;color:#4f46e5">Why should your answer be accepted?</div>
     <select class="remark-reason" onchange="this.nextElementSibling.style.display=this.value==='Other'?'block':'none'">
       <option value="">Select a reason...</option>
+      <option>Typo / typing error</option>
       <option>Spelling error</option>
       <option>Missed a word (e.g. 'xylem' vs 'xylem cells')</option>
       <option>Used a different term</option>
@@ -4343,12 +4344,10 @@ window.submitRemark = async function(btn) {
       body: JSON.stringify({ _remarkMode: true, term: entry.term, correctAnswer: entry.correctAnswer, studentAnswer: entry.studentAnswer, reason, otherDetail: otherEl.value.trim() })
     });
     const data = await res.json();
-    localStorage.setItem(countKey, String(count + 1));
-    const remaining = 4 - count;
 
     if (data.awarded) {
       resultEl.innerHTML = `<span style="color:#16a34a;font-weight:700">✅ Mark awarded!</span> ${data.reason}`;
-      msgEl.textContent = remaining > 0 ? `${remaining} remark${remaining!==1?'s':''} left today` : "No remarks left today";
+      msgEl.textContent = '';
       // Flip the icon in the result row
       const iconEl = document.getElementById('remark-icon-' + idx);
       if (iconEl) iconEl.textContent = '✅';
@@ -4374,6 +4373,8 @@ window.submitRemark = async function(btn) {
         window._saveAcceptedAnswer({ term: entry.term, studentAnswer: entry.studentAnswer, addedBy: window._currentUser.uid }).catch(()=>{});
       }
     } else {
+      localStorage.setItem(countKey, String(count + 1));
+      const remaining = 4 - count;
       resultEl.innerHTML = `<span style="color:#dc2626;font-weight:700">❌ Not awarded.</span> ${data.reason}`;
       msgEl.textContent = remaining > 0 ? `${remaining} remark${remaining!==1?'s':''} left today` : "No remarks left today";
       btn.disabled = false; btn.textContent = 'Submit remark';
