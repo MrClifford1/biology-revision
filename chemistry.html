@@ -166,6 +166,9 @@
     @media (max-width: 600px) {
       .ssh-nav-title { display: none; }
       .ssh-nav-badge { display: none; }
+      .ssh-nav-label { display: none; }
+      .ssh-nav-icon-btn { padding: 0.25rem 0.45rem; font-size: 0.82rem; }
+      .ssh-nav-right { gap: 0.2rem; }
     }
     /* ── END SHARED NAV ──────────────────────────────────────────────────────── */
 
@@ -178,13 +181,13 @@
   <span class="ssh-nav-title" id="ssh-nav-title">Chemistry</span>
   <div class="ssh-nav-right" id="ssh-nav-right">
     <span class="ssh-nav-welcome" id="ssh-nav-welcome" style="display:none"></span>
-    <a href="progress.html" class="ssh-nav-icon-btn" id="ssh-progress-link" style="display:none;text-decoration:none">📊 My Progress</a>
-    <a href="help.html" class="ssh-nav-icon-btn" style="text-decoration:none">❓ Help</a>
+    <a href="progress.html" class="ssh-nav-icon-btn" id="ssh-progress-link" style="display:none;text-decoration:none">📊<span class="ssh-nav-label"> My Progress</span></a>
+    <a href="help.html" class="ssh-nav-icon-btn" style="text-decoration:none">❓<span class="ssh-nav-label"> Help</span></a>
     <a href="teacher.html" class="ssh-nav-badge ssh-badge-teacher" id="ssh-badge-teacher" style="display:none">👨‍🏫 Teacher</a>
     <a href="admin.html"   class="ssh-nav-badge ssh-badge-admin"   id="ssh-badge-admin"   style="display:none">🏫 Admin</a>
     <a href="superadmin.html" class="ssh-nav-badge ssh-badge-super" id="ssh-badge-super"  style="display:none">🛡️ Super</a>
     <div class="ssh-ul-wrap">
-      <button class="ssh-nav-icon-btn" id="ssh-ul-btn" onclick="sshToggleLinks(event)">🔗 Links ▾</button>
+      <button class="ssh-nav-icon-btn" id="ssh-ul-btn" onclick="sshToggleLinks(event)">🔗<span class="ssh-nav-label"> Links ▾</span></button>
       <div class="ssh-ul-dropdown" id="ssh-ul-dropdown">
         <div class="ssh-ul-header">Resources</div>
         <a href="https://www.streetly.academy/" target="_blank" class="ssh-ul-item"><div class="ssh-ul-icon">🏫</div><div><div>School Website</div><div class="ssh-ul-sub">The Streetly Academy</div></div></a>
@@ -196,7 +199,7 @@
       </div>
     </div>
     <button class="ssh-nav-icon-btn" onclick="openSettings ? openSettings() : null" title="Settings">⚙️</button>
-    <button class="ssh-nav-icon-btn" onclick="sshSignOut()">↩ Out</button>
+    <button class="ssh-nav-icon-btn" onclick="sshSignOut()">↩<span class="ssh-nav-label"> Out</span></button>
   </div>
 </nav>
 

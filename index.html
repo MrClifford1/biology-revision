@@ -338,8 +338,6 @@
 
 
 
-<!-- BLITZ BANNER -->
-<div id="blitz-banner"></div>
 <!-- ASSESSMENT BANNER -->
 <div id="assessment-banners"></div>
 <!-- ASSIGNMENT BANNER -->
@@ -547,7 +545,7 @@
 
 <script type="module">
   import {
- onAuthChange, signOutUser, getUserProfile, saveClass, isClassValid, getUserRole, getActiveAssignmentsForClass, getUpcomingAssessmentsForStudent, isStaffRole, canAccessAdmin, isSuperAdmin, getActiveBlitzForClass, onBlitzSnapshot, updateBlitzSession, updateTopicScore, logActivity } from './firebase.js';
+ onAuthChange, signOutUser, getUserProfile, saveClass, isClassValid, getUserRole, getActiveAssignmentsForClass, getUpcomingAssessmentsForStudent, isStaffRole, canAccessAdmin, isSuperAdmin } from './firebase.js';
 
 
 
@@ -694,13 +692,6 @@
     // Load immediately
     if (profile?.class) reloadAssignmentBanners();
     if (profile?.class) loadAssessmentBanners(profile.class);
-
-    // Start blitz polling (students only)
-    if (profile?.class && profile.class !== 'Teachers') {
-      const displayName = profile.displayName || profile.name || user.displayName || 'Student';
-      window._currentProfile = profile;
-      startBlitzPoll(profile.class, user.uid, displayName);
-    }
 
   });
 
@@ -880,203 +871,6 @@
     window.location.href = 'login.html';
   };
 
-  // ── BLITZ BANNER ────────────────────────────────────────────────────────────
-  let _blitzPollTimer = null;
-  let _blitzUnsub = null;
-  let _blitzActive = null; // current session being displayed
-  let _blitzAnswered = {}; // qIdx -> optionIndex answered
-
-  async function pollBlitz(cls, uid, displayName) {
-    try {
-      const sess = await getActiveBlitzForClass(cls);
-      if (!sess || sess.state === 'ended') {
-        if (_blitzActive) dismissBlitzBanner();
-        return;
-      }
-      if (_blitzActive && _blitzActive.id === sess.id) return; // already subscribed
-      _blitzActive = sess;
-      showBlitzBanner(sess, uid, displayName);
-      // subscribe to live updates
-      if (_blitzUnsub) _blitzUnsub();
-      _blitzUnsub = onBlitzSnapshot(sess.id, s => handleBlitzUpdate(s, uid, displayName));
-    } catch(e) { /* ignore network errors */ }
-  }
-
-  function showBlitzBanner(sess, uid, displayName) {
-    const banner = document.getElementById('blitz-banner');
-    banner.innerHTML = `<div style="background:linear-gradient(90deg,#1a2a4f,#2d3a6f);border-bottom:3px solid #d4a534;cursor:pointer" onclick="openBlitzOverlay()">
-      <div style="max-width:1000px;margin:0 auto;padding:0.65rem 1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
-        <span style="font-size:1.1rem">⚡</span>
-        <div style="flex:1;min-width:0">
-          <span style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.75rem;color:#d4a534;text-transform:uppercase;letter-spacing:0.07em">Live Blitz — your teacher has started a quiz!</span>
-          <div style="color:white;font-size:0.875rem;font-weight:600">${sess.state === 'lobby' ? 'Waiting in lobby…' : 'Question ' + (sess.currentQ + 1) + ' of ' + sess.questions.length + ' in progress'}</div>
-        </div>
-        <button onclick="event.stopPropagation();openBlitzOverlay()" style="background:#d4a534;color:#1a2a4f;border:none;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.85rem;padding:0.4rem 1rem;border-radius:8px;cursor:pointer">Join ⚡</button>
-      </div>
-    </div>`;
-  }
-
-  window.dismissBlitzBanner = function dismissBlitzBanner() {
-    _blitzActive = null;
-    _blitzAnswered = {};
-    if (_blitzUnsub) { _blitzUnsub(); _blitzUnsub = null; }
-    document.getElementById('blitz-banner').innerHTML = '';
-    document.getElementById('blitz-overlay').style.display = 'none';
-  }
-
-  function handleBlitzUpdate(sess, uid, displayName) {
-    if (!_blitzActive) return;
-    _blitzActive = sess;
-    if (sess.state === 'ended') { dismissBlitzBanner(); return; }
-    // Update banner text
-    const banner = document.getElementById('blitz-banner');
-    if (banner.innerHTML) showBlitzBanner(sess, uid, displayName);
-    // If overlay is open, update it
-    const overlay = document.getElementById('blitz-overlay');
-    if (overlay.style.display !== 'none') renderBlitzOverlay(sess, uid, displayName);
-  }
-
-  window.openBlitzOverlay = function() {
-    if (!_blitzActive) return;
-    // join session
-    const uid = currentUser?.uid;
-    if (uid && _blitzActive.state === 'lobby') {
-      const displayName = window._currentProfile?.displayName || window._currentProfile?.name || currentUser?.displayName || 'Student';
-      updateBlitzSession(_blitzActive.id, { [`joined.${uid}`]: displayName }).catch(()=>{});
-    }
-    document.getElementById('blitz-overlay').style.display = 'flex';
-    renderBlitzOverlay(_blitzActive, uid, window._currentProfile?.displayName || currentUser?.displayName || 'Student');
-  };
-
-  function renderBlitzOverlay(sess, uid, displayName) {
-    const overlay = document.getElementById('blitz-overlay');
-    if (sess.state === 'lobby') {
-      overlay.innerHTML = `<div style="background:white;border-radius:20px;padding:2rem;max-width:440px;width:100%;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,0.3)">
-        <div style="font-size:2.5rem;margin-bottom:0.5rem">⚡</div>
-        <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.3rem;color:#1a2a4f;margin-bottom:0.5rem">Blitz Lobby</div>
-        <div style="font-size:0.875rem;color:#5a6885;margin-bottom:1.5rem">Your teacher is about to start.<br>Get ready — questions will appear here!</div>
-        <div style="background:#f0f4ff;border-radius:10px;padding:0.75rem 1rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.875rem;color:#4f46e5;margin-bottom:1.5rem">
-          ✓ Joined as <strong>${displayName}</strong>
-        </div>
-        <div style="font-size:0.78rem;color:#94a3b8">Keep this open — the first question will appear automatically.</div>
-      </div>`;
-      if (uid) updateBlitzSession(sess.id, { [`joined.${uid}`]: displayName }).catch(()=>{});
-      return;
-    }
-
-    if (sess.state === 'ended') {
-      clearTimeout(window._blitzTick);
-      const scores = sess.scores || {};
-      const myEntry = scores[uid];
-      const myCorrect = myEntry?.correct ?? 0;
-      const total = sess.questions.length;
-      const sorted = Object.values(scores).sort((a,b)=>b.points-a.points);
-      const myRank = sorted.findIndex(s => s === myEntry || s.name === myEntry?.name) + 1;
-      overlay.innerHTML = `<div style="background:white;border-radius:20px;padding:2rem;max-width:440px;width:100%;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,0.3)">
-        <div style="font-size:2.5rem;margin-bottom:0.5rem">🏆</div>
-        <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.3rem;color:#1a2a4f;margin-bottom:0.25rem">Blitz Complete!</div>
-        <div style="font-size:0.875rem;color:#5a6885;margin-bottom:1rem">You got <strong>${myCorrect}/${total}</strong> correct${myRank > 0 ? ' — Rank #' + myRank : ''}</div>
-        <div style="background:#fefce8;border:1.5px solid #fde68a;border-radius:10px;padding:0.6rem 1rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.82rem;color:#92400e;margin-bottom:1.25rem">⚡ 1.5× XP awarded for correct answers</div>
-        <button onclick="document.getElementById('blitz-overlay').style.display='none';dismissBlitzBanner()" style="background:#1a2a4f;color:white;border:none;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;padding:0.7rem 1.5rem;border-radius:10px;cursor:pointer">Close</button>
-      </div>`;
-      return;
-    }
-
-    // active or reveal state
-    const q = sess.questions[sess.currentQ];
-    const answered = _blitzAnswered[sess.currentQ];
-    const revealed = sess.state === 'reveal';
-
-    // time remaining (only shown during active)
-    const elapsed = sess.questionStartTs ? Math.floor((Date.now() - sess.questionStartTs) / 1000) : 0;
-    const remaining = Math.max(0, (sess.timePerQ || 20) - elapsed);
-
-    const opts = q.options || [];
-    const optHtml = opts.map((o, i) => {
-      let bg = '#f0f4ff'; let color = '#1a2a4f'; let border = '#c7d2fe';
-      if (revealed) {
-        // Show correct/wrong only after teacher reveals
-        if (i === q.correct) { bg='#dcfce7'; color='#14532d'; border='#86efac'; }
-        else if (i === answered && answered !== q.correct) { bg='#fef2f2'; color='#7f1d1d'; border='#fca5a5'; }
-        else { bg='#f8fafc'; color='#94a3b8'; border='#e2e6f0'; }
-      } else if (answered === i) {
-        // Student has answered but not yet revealed — just highlight their choice neutrally
-        bg='#eff6ff'; color='#1d4ed8'; border='#93c5fd';
-      }
-      return `<button onclick="submitBlitzAnswer(${i})" ${answered!==undefined||revealed?'disabled':''} style="background:${bg};color:${color};border:2px solid ${border};border-radius:10px;padding:0.65rem 0.85rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.88rem;cursor:${answered!==undefined||revealed?'default':'pointer'};width:100%;text-align:left">${['A','B','C','D'][i]}. ${o}${revealed && i===q.correct?' ✅':''}</button>`;
-    }).join('');
-
-    let feedbackHtml = '';
-    if (revealed) {
-      const wasCorrect = answered === q.correct;
-      feedbackHtml = `<div style="margin-top:1rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;color:${wasCorrect?'#16a34a':answered!==undefined?'#dc2626':'#5a6885'}">
-        ${wasCorrect ? '✅ Correct! Well done!' : answered!==undefined ? '❌ Not quite — the correct answer is highlighted above' : '⏱ Time\'s up — the correct answer is highlighted above'}
-      </div>
-      <div id="blitz-next-countdown" style="margin-top:0.5rem;font-size:0.78rem;color:#94a3b8;font-family:'Nunito',sans-serif">Next question in <span id="blitz-next-secs">5</span>s…</div>`;
-    } else if (answered !== undefined) {
-      feedbackHtml = `<div style="margin-top:1rem;font-size:0.82rem;color:#5a6885;font-family:'Nunito',sans-serif">✓ Answer locked in — waiting for teacher to reveal…</div>`;
-    }
-
-    const timerHtml = !revealed
-      ? `<span id="blitz-timer-display" style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.4rem;color:${remaining<=5?'#ef4444':'#d4a534'}">${remaining}s</span>`
-      : `<span style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;color:#6366f1;background:#eef2ff;padding:0.2rem 0.6rem;border-radius:6px">Revealed</span>`;
-
-    overlay.innerHTML = `<div style="background:white;border-radius:20px;padding:1.75rem;max-width:500px;width:100%;box-shadow:0 24px 60px rgba(0,0,0,0.3)">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
-        <span style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;color:#5a6885">Question ${sess.currentQ+1} of ${sess.questions.length}</span>
-        ${timerHtml}
-      </div>
-      <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.05rem;color:#1a2a4f;margin-bottom:1.25rem;line-height:1.4">${q.question}</div>
-      <div style="display:grid;gap:0.5rem">${optHtml}</div>
-      ${feedbackHtml}
-    </div>`;
-
-    clearTimeout(window._blitzTick);
-    if (!revealed && remaining > 0) {
-      // tick the countdown timer
-      window._blitzTick = setTimeout(() => {
-        if (_blitzActive) renderBlitzOverlay(_blitzActive, uid, displayName);
-      }, 1000);
-    } else if (revealed) {
-      // 5s auto-advance countdown display
-      let secs = 5;
-      window._blitzTick = setInterval(() => {
-        secs--;
-        const el = document.getElementById('blitz-next-secs');
-        if (el) el.textContent = secs;
-        if (secs <= 0) clearInterval(window._blitzTick);
-      }, 1000);
-    }
-  }
-
-  window.submitBlitzAnswer = async function(optIdx) {
-    if (!_blitzActive || !currentUser) return;
-    const sess = _blitzActive;
-    const uid = currentUser.uid;
-    const q = sess.questions[sess.currentQ];
-    if (_blitzAnswered[sess.currentQ] !== undefined) return;
-    if (sess.state === 'reveal') return;
-    _blitzAnswered[sess.currentQ] = optIdx;
-    const correct = optIdx === q.correct ? 1 : 0;
-    const displayName = window._currentProfile?.displayName || window._currentProfile?.name || currentUser.displayName || 'Student';
-    await updateBlitzSession(sess.id, {
-      [`answers.${uid}`]: { q: sess.currentQ, answer: optIdx, correct, name: displayName, ts: Date.now() },
-    }).catch(()=>{});
-    // Award 1.5x XP for correct answers (2 XP)
-    if (correct && q.topic && sess.moduleId) {
-      updateTopicScore(uid, sess.moduleId, q.topic, 2, 'blitz').catch(()=>{});
-      logActivity(uid, { type:'blitz', moduleId:sess.moduleId, topic:q.topic, xp:2, ts:Date.now() }).catch(()=>{});
-    }
-    renderBlitzOverlay(sess, uid, displayName);
-  };
-
-  // Start polling once auth resolves
-  function startBlitzPoll(cls, uid, displayName) {
-    if (_blitzPollTimer) clearInterval(_blitzPollTimer);
-    pollBlitz(cls, uid, displayName);
-    _blitzPollTimer = setInterval(() => pollBlitz(cls, uid, displayName), 6000);
-  }
-
 </script>
 
 <!-- NAME PROMPT MODAL — shown to Other accounts with no display name -->
@@ -1148,9 +942,5 @@
     sshSetWelcome(user);
   };
 </script>
-
-<!-- BLITZ OVERLAY -->
-<div id="blitz-overlay" style="display:none;position:fixed;inset:0;background:rgba(15,29,61,0.85);z-index:2000;backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:1rem;flex-direction:column;gap:1rem">
-</div>
 </body>
 </html>
