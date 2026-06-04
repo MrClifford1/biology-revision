@@ -1604,7 +1604,7 @@
   };
 
   window.cancelBlitz = async () => {
-    if (_blitz) { if (_blitz.unsub) _blitz.unsub(); await updateBlitzSession(_blitz.id, { active:false, state:'ended' }); _blitz=null; }
+    if (_blitz) { clearInterval(_blitz.autoTimer); if (_blitz.unsub) _blitz.unsub(); await updateBlitzSession(_blitz.id, { active:false, state:'ended' }); _blitz=null; }
     resetBlitz();
   };
 
@@ -1712,13 +1712,29 @@
     const isLast = _blitz.currentQ >= _blitz.questions.length - 1;
     document.getElementById('blitz-next-btn').style.display   = isLast ? 'none' : 'inline-block';
     document.getElementById('blitz-finish-btn').style.display = isLast ? 'inline-block' : 'none';
+
+    // Auto-advance after 5 seconds — show countdown on button
+    clearInterval(_blitz.autoTimer);
+    let autoSecs = 5;
+    const advBtn = document.getElementById(isLast ? 'blitz-finish-btn' : 'blitz-next-btn');
+    const advLabel = isLast ? '🏆 Show Results' : 'Next Question →';
+    if (advBtn) advBtn.textContent = `${advLabel} (${autoSecs}s)`;
+    _blitz.autoTimer = setInterval(() => {
+      autoSecs--;
+      if (advBtn) advBtn.textContent = autoSecs > 0 ? `${advLabel} (${autoSecs}s)` : advLabel;
+      if (autoSecs <= 0) {
+        clearInterval(_blitz.autoTimer);
+        if (isLast) finishBlitz(); else nextBlitzQuestion();
+      }
+    }, 1000);
   };
 
-  window.nextBlitzQuestion = () => _pushBlitzQuestion(_blitz.currentQ + 1);
+  window.nextBlitzQuestion = () => { clearInterval(_blitz?.autoTimer); _pushBlitzQuestion(_blitz.currentQ + 1); };
 
   window.finishBlitz = async () => {
     if (!_blitz) return;
     clearInterval(_blitz.timer);
+    clearInterval(_blitz.autoTimer);
     if (_blitz.unsub) _blitz.unsub();
     const {getBlitzSession} = await import('./firebase.js');
     const sess = await getBlitzSession(_blitz.id);
