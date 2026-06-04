@@ -1215,7 +1215,7 @@
           <div id="clue-list"></div>
         </div>
         <div style="display:flex;gap:0.5rem;margin-bottom:0.6rem">
-          <input type="text" id="clue-input" class="form-input" placeholder="Type the keyword…" style="flex:1;font-size:0.92rem;border-radius:10px" onkeydown="if(event.key==='Enter')submitClueGuess()" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          <input type="text" id="clue-input" placeholder="Type the keyword…" style="flex:1;font-size:0.95rem;padding:0.75rem 1rem;border:2px solid #e2e8f0;border-radius:12px;background:#f8fafc;color:var(--text);outline:none;font-family:'Nunito',sans-serif;transition:border-color 0.15s" onfocus="this.style.borderColor='#6366f1';this.style.background='white'" onblur="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'" onkeydown="if(event.key==='Enter')submitClueGuess()" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
           <button class="btn-primary" style="white-space:nowrap;padding:0 1.1rem" onclick="submitClueGuess()">Check →</button>
         </div>
         <div id="clue-feedback" style="display:none;padding:0.65rem 1rem;border-radius:10px;font-size:0.85rem;font-weight:700;margin-bottom:0.75rem"></div>
@@ -2452,13 +2452,18 @@ function showClueResults() {
       <span style="color:var(--subtext);font-size:0.75rem">${r.cluesUsed} clue${r.cluesUsed !== 1 ? 's' : ''}</span>
       <span style="font-weight:800;color:var(--purple);min-width:3rem;text-align:right">${r.xp > 0 ? '+' + r.xp + ' XP' : '—'}</span>
     </div>`).join('');
+  const emoji = correct === clueDeck.length ? '🎉' : correct >= 3 ? '👍' : '💪';
   screen.innerHTML = `
-    <div style="text-align:center;margin-bottom:1.25rem">
-      <div style="font-size:2rem;font-weight:900;color:var(--navy)">${correct}/${clueDeck.length}</div>
-      <div style="font-size:0.85rem;color:var(--subtext);margin-top:0.2rem">${clueScore} XP earned this round</div>
+    <div style="background:linear-gradient(135deg,#6366f1 0%,#4f46e5 100%);border-radius:16px;padding:1.5rem;text-align:center;color:white;margin-bottom:1.25rem">
+      <div style="font-size:2rem;margin-bottom:0.3rem">${emoji}</div>
+      <div style="font-size:2.2rem;font-weight:900;font-family:'Nunito',sans-serif;line-height:1">${correct}/${clueDeck.length}</div>
+      <div style="font-size:0.85rem;opacity:0.9;margin-top:0.3rem">${clueScore} XP earned this round</div>
     </div>
-    <div style="margin-bottom:1.25rem">${rows}</div>
-    <button class="btn-primary" onclick="startClue()">▶ Play again</button>`;
+    <div style="background:white;border:1.5px solid var(--border);border-radius:12px;padding:0.75rem 1rem;margin-bottom:1.25rem">${rows}</div>
+    <div style="display:flex;gap:0.6rem">
+      <button class="btn-primary" style="flex:1;padding:0.75rem" onclick="startClue()">▶ Play again</button>
+      <button style="flex:1;padding:0.75rem;background:white;border:2px solid #6366f1;color:#6366f1;border-radius:10px;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;cursor:pointer" onclick="document.getElementById('clue-game-screen').style.display='none';document.getElementById('clue-results-screen').style.display='none';document.getElementById('clue-start-screen').style.display='block'">🏠 Main menu</button>
+    </div>`;
 }
 // ── END CLUE GAME ─────────────────────────────────────────────────────────────
 
