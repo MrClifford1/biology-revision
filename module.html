@@ -1180,26 +1180,52 @@
   <!-- ── CLUE TAB ──────────────────────────────────────────────────────────── -->
   <div class="tab-panel" id="tab-clue">
     <div class="practice-panel-inner" id="clue-panel">
+
+      <!-- Start screen -->
       <div id="clue-start-screen">
-        <p style="font-size:0.9rem;color:var(--subtext);margin-bottom:1.25rem">Guess the keyword from progressive clues. Fewer clues = more XP. 5 words per round.</p>
-        <button class="btn-primary" onclick="startClue()">▶ Start Clues Game</button>
+        <div style="background:linear-gradient(135deg,#6366f1 0%,#4f46e5 100%);border-radius:16px;padding:2rem;text-align:center;color:white;margin-bottom:1.25rem">
+          <div style="font-size:2.5rem;margin-bottom:0.5rem">🔍</div>
+          <h2 style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.3rem;margin:0 0 0.4rem">Clues Game</h2>
+          <p style="font-size:0.85rem;opacity:0.9;margin:0">Guess the keyword from progressive clues.<br>Fewer clues = more XP. 5 words per round.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-bottom:1.5rem">
+          <div style="background:#f0fdf4;border:1.5px solid #86efac;border-radius:12px;padding:0.85rem;text-align:center">
+            <div style="font-size:1.5rem;font-weight:900;color:#166534">3 XP</div>
+            <div style="font-size:0.72rem;color:#166534;font-weight:700">1st clue</div>
+          </div>
+          <div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:12px;padding:0.85rem;text-align:center">
+            <div style="font-size:1.5rem;font-weight:900;color:#c2410c">2 XP</div>
+            <div style="font-size:0.72rem;color:#c2410c;font-weight:700">2nd clue</div>
+          </div>
+          <div style="background:#f0f4ff;border:1.5px solid #c4b5fd;border-radius:12px;padding:0.85rem;text-align:center">
+            <div style="font-size:1.5rem;font-weight:900;color:#4f46e5">1 XP</div>
+            <div style="font-size:0.72rem;color:#4f46e5;font-weight:700">3rd+ clue</div>
+          </div>
+        </div>
+        <button class="btn-primary" style="width:100%;padding:0.8rem;font-size:0.95rem" onclick="startClue()">▶ Start Game</button>
       </div>
+
+      <!-- Game screen -->
       <div id="clue-game-screen" style="display:none">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
-          <span id="clue-progress" style="font-size:0.8rem;font-weight:700;color:var(--subtext)">Word 1 of 5</span>
-          <span id="clue-score-badge" style="font-size:0.8rem;font-weight:700;background:#f0f4ff;color:var(--purple);padding:0.25rem 0.7rem;border-radius:20px">Score: 0</span>
+          <span id="clue-progress" style="font-size:0.82rem;font-weight:700;color:var(--subtext)">Word 1 of 5</span>
+          <span id="clue-score-badge" style="font-size:0.82rem;font-weight:800;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;padding:0.3rem 0.85rem;border-radius:20px">0 XP</span>
         </div>
-        <div id="clue-card" style="background:white;border:2px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem">
-          <div id="clue-list" style="display:flex;flex-direction:column;gap:0.5rem"></div>
+        <div id="clue-card" style="background:white;border:2px solid var(--border);border-radius:16px;padding:1.5rem;margin-bottom:1rem;min-height:90px">
+          <div id="clue-list"></div>
         </div>
-        <div style="display:flex;gap:0.5rem;margin-bottom:0.75rem">
-          <input type="text" id="clue-input" class="form-input" placeholder="Type your answer…" style="flex:1;font-size:0.9rem" onkeydown="if(event.key==='Enter')submitClueGuess()" autocomplete="off" autocorrect="off" spellcheck="false" />
-          <button class="btn-primary" onclick="submitClueGuess()">Check →</button>
+        <div style="display:flex;gap:0.5rem;margin-bottom:0.6rem">
+          <input type="text" id="clue-input" class="form-input" placeholder="Type the keyword…" style="flex:1;font-size:0.92rem;border-radius:10px" onkeydown="if(event.key==='Enter')submitClueGuess()" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          <button class="btn-primary" style="white-space:nowrap;padding:0 1.1rem" onclick="submitClueGuess()">Check →</button>
         </div>
-        <div id="clue-feedback" style="display:none;padding:0.6rem 0.9rem;border-radius:9px;font-size:0.85rem;font-weight:700;margin-bottom:0.75rem"></div>
-        <button id="clue-next-btn" class="btn-primary" style="display:none;background:var(--navy)" onclick="clueNextWord()">Next word →</button>
-        <button id="clue-skip-btn" style="background:none;border:1.5px solid var(--border);color:var(--subtext);border-radius:10px;padding:0.5rem 1rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.8rem;cursor:pointer;margin-top:0.25rem" onclick="clueReveal()">🔍 Reveal &amp; skip</button>
+        <div id="clue-feedback" style="display:none;padding:0.65rem 1rem;border-radius:10px;font-size:0.85rem;font-weight:700;margin-bottom:0.75rem"></div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
+          <button id="clue-next-btn" class="btn-primary" style="display:none;background:var(--navy)" onclick="clueNextWord()">Next word →</button>
+          <button id="clue-skip-btn" style="background:none;border:1.5px solid var(--border);color:var(--subtext);border-radius:10px;padding:0.5rem 1rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.8rem;cursor:pointer" onclick="clueReveal()">🔍 Reveal &amp; skip</button>
+        </div>
       </div>
+
+      <!-- Results screen -->
       <div id="clue-results-screen" style="display:none"></div>
     </div>
   </div>
@@ -2342,10 +2368,11 @@ function showClueCard() {
 }
 
 function submitClueGuess() {
+  const clueNorm = s => s.toLowerCase().replace(/[^a-z0-9]/g, '');
   const word = clueDeck[clueIndex];
   const typed = (document.getElementById('clue-input').value || '').trim();
   if (!typed) return;
-  const correct = norm(typed) === norm(word.word) || levenshtein(norm(typed), norm(word.word)) <= 2;
+  const correct = clueNorm(typed) === clueNorm(word.word) || levenshtein(clueNorm(typed), clueNorm(word.word)) <= 2;
   if (correct) {
     const xpEarned = clueCluesShown === 1 ? 3 : clueCluesShown === 2 ? 2 : 1;
     clueScore += xpEarned;
