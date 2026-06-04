@@ -2506,6 +2506,17 @@ function showClueResults() {
   const screen = document.getElementById('clue-results-screen');
   screen.style.display = 'block';
   const correct = clueResults.filter(r => r.correct).length;
+  // Log to activity history so XP battles pick it up
+  if (window._logActivity) {
+    window._logActivity({
+      type: 'clue',
+      score: correct,
+      total: clueDeck.length,
+      pct: clueDeck.length ? Math.round(correct / clueDeck.length * 100) : 0,
+      xp: clueScore,
+      topics: [...new Set(clueResults.map(r => r.sub_topic).filter(Boolean))],
+    });
+  }
   const rows = clueResults.map(r => `
     <div style="display:flex;align-items:center;gap:0.6rem;padding:0.4rem 0;border-bottom:1px solid var(--border);font-size:0.82rem">
       <span>${r.correct ? '✅' : '❌'}</span>
