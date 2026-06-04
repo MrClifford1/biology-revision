@@ -2008,7 +2008,7 @@ function renderChecklist(state) {
       <div class="topic-bar-wrap">
         <div class="topic-bar-fill" style="width:${score}%;background:${tm.colour}"></div>
       </div>
-      <span class="topic-pct">${score > 0 ? Math.round(score) + '%' : ''}</span>
+      <span class="topic-pct">${score > 0 ? Math.round(score) + ' XP' : ''}</span>
       <span class="topic-tier-label" style="color:${tm.colour}">${tm.emoji} ${tm.label}</span>
       <span class="topic-icons">${isRetained ? '⭐' : ''}${isDecaying ? ' 📉' : ''}</span>
     `;
