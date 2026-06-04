@@ -653,6 +653,7 @@
   }
 
   let currentUser=null, currentProfile=null, allProgress={}, upcomingAssessments=[], scheduleStatuses={};
+  let recentActivityLog=[]; // last 50 entries, loaded at auth time
   let _assignFilter = 'all'; // 'all' | 'active' | 'completed' | 'expired'
   let _currentRole = 'student'; // cached after auth
   let _dataReady=false;
@@ -689,11 +690,13 @@
     renderHeader(user);
 
     // Load all data in parallel
-    const [profile, progress, role] = await Promise.all([
+    const [profile, progress, role, actLog] = await Promise.all([
       getUserProfile(user.uid),
       getAllProgress(user.uid),
       getUserRole(user.email),
+      getActivityLog(user.uid, 50).catch(()=>({entries:[]})),
     ]);
+    recentActivityLog = actLog.entries || [];
     currentProfile=profile;
     allProgress=progress;
     window.currentProfile=profile;
@@ -743,8 +746,19 @@
   // ── OVERVIEW TAB ─────────────────────────────────────────────────────────────
   function renderOverview() {
     const panel=document.getElementById('panel-overview');
-    let totalMocks=0, totalScore=0, totalPossible=0, allMocks=[], totalAttempts=0;
+    let totalMocks=0, totalScore=0, totalPossible=0, allMocks=[], totalActivities=0;
+    const subjectXP={biology:0,chemistry:0,physics:0};
     const subjectScores={biology:[],chemistry:[],physics:[]};
+
+    // Tally XP from activity log
+    recentActivityLog.forEach(e=>{
+      const subj=(e.subjectId||'').toLowerCase();
+      if (subjectXP[subj]!==undefined) {
+        const xp=(e.xpAwarded||e.xp||0);
+        subjectXP[subj]+=xp;
+      }
+      totalActivities++;
+    });
 
     Object.entries(allProgress).forEach(([id,data])=>{
       const meta=MODULE_META[id];
@@ -755,12 +769,13 @@
       }
       Object.values(data.rag||{}).forEach(e=>{
         const s=typeof e==='object'?(e?.score??0):0;
-        if (s>0) { subjectScores[meta.subject].push(s); totalAttempts+=(e?.attempts||0); }
+        if (s>0) subjectScores[meta.subject].push(s);
       });
     });
 
     const avgPct=totalPossible>0?Math.round((totalScore/totalPossible)*100):0;
     allMocks.sort((a,b)=>new Date(b.date)-new Date(a.date));
+    const totalXP=subjectXP.biology+subjectXP.chemistry+subjectXP.physics;
 
     // Decay warnings
     const decayItems=[];
@@ -773,14 +788,13 @@
     });
     decayItems.sort((a,b)=>b.days-a.days);
 
-    // Subject avg
     function subjAvg(arr){ return arr.length?Math.round(arr.reduce((a,b)=>a+b,0)/arr.length):0; }
     const bAvg=subjAvg(subjectScores.biology);
     const cAvg=subjAvg(subjectScores.chemistry);
     const pAvg=subjAvg(subjectScores.physics);
+    const maxXP=Math.max(subjectXP.biology,subjectXP.chemistry,subjectXP.physics,1);
 
     panel.innerHTML=`
-      <!-- Exam target — auto-derived from schedule/assessments, editable as fallback -->
       <div class="target-card">
         <label>🎯 Currently revising for:</label>
         <span id="exam-target-auto" style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.88rem;color:var(--navy);flex:1">${autoExamTarget(currentProfile)}</span>
@@ -794,22 +808,34 @@
         <span class="target-saved" id="target-saved">✅ Saved!</span>
       </div>
 
-      <!-- Summary stats -->
-      <div class="summary-grid" style="margin-bottom:1.5rem">
-        <div class="summary-card"><div class="summary-number">${totalMocks}</div><div class="summary-label">Mocks completed</div></div>
-        <div class="summary-card"><div class="summary-number">${avgPct}%</div><div class="summary-label">Average score</div></div>
-        <div class="summary-card"><div class="summary-number">${Object.keys(allProgress).length}</div><div class="summary-label">Modules started</div></div>
-        <div class="summary-card"><div class="summary-number">${totalAttempts}</div><div class="summary-label">Total activities</div></div>
+      <!-- XP headline -->
+      <div class="section-title">⚡ Your XP</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.6rem;margin-bottom:1.25rem">
+        ${[['🧬 Biology','#0d9488','biology'],['🧪 Chemistry','#0ea5e9','chemistry'],['⚡ Physics','#f97316','physics']].map(([label,colour,key])=>`
+          <div style="background:white;border:1.5px solid var(--border);border-radius:12px;padding:0.75rem 0.6rem;text-align:center">
+            <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.5rem;color:${colour}">${subjectXP[key]}</div>
+            <div style="font-size:0.65rem;font-weight:800;color:var(--subtext);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:0.35rem">XP</div>
+            <div style="font-size:0.72rem;font-weight:700;color:${colour}">${label}</div>
+            <div style="height:4px;border-radius:4px;background:#f1f5f9;margin-top:0.4rem"><div style="height:4px;border-radius:4px;background:${colour};width:${Math.round(subjectXP[key]/maxXP*100)}%"></div></div>
+          </div>`).join('')}
       </div>
 
-      <!-- Subject balance -->
-      <div class="section-title">Subject Balance</div>
+      <!-- Summary stats -->
+      <div class="summary-grid" style="margin-bottom:1.5rem">
+        <div class="summary-card"><div class="summary-number">${totalXP}</div><div class="summary-label">Total XP</div></div>
+        <div class="summary-card"><div class="summary-number">${totalActivities}</div><div class="summary-label">Activities done</div></div>
+        <div class="summary-card"><div class="summary-number">${totalMocks}</div><div class="summary-label">Mocks completed</div></div>
+        <div class="summary-card"><div class="summary-number">${avgPct>0?avgPct+'%':'—'}</div><div class="summary-label">Avg mock score</div></div>
+      </div>
+
+      <!-- Subject topic score balance -->
+      <div class="section-title">📊 Topic Score Balance</div>
       <div class="subject-balance" style="margin-bottom:1.5rem">
-        ${[['🧬 Biology','#0d9488',bAvg],['🧪 Chemistry','#0ea5e9',cAvg],['⚡ Physics','#f97316',pAvg]].map(([label,colour,avg])=>`
+        ${[['🧬 Biology','#0d9488',bAvg,'biology'],['🧪 Chemistry','#0ea5e9',cAvg,'chemistry'],['⚡ Physics','#f97316',pAvg,'physics']].map(([label,colour,a,key])=>`
           <div class="balance-card">
             <div class="balance-label" style="color:${colour}">${label}</div>
-            <div class="balance-bar-wrap"><div class="balance-bar-fill" style="width:${avg}%;background:${colour}"></div></div>
-            <div class="balance-stat">${avg>0?`Avg topic score: ${avg}%`:'No activity yet'}</div>
+            <div class="balance-bar-wrap"><div class="balance-bar-fill" style="width:${a}%;background:${colour}"></div></div>
+            <div class="balance-stat">${a>0?`Avg topic score: ${a}%`:'No topics tracked yet'}</div>
           </div>`).join('')}
       </div>
 
@@ -848,16 +874,22 @@
   async function renderModules() {
     const panel=document.getElementById('panel-modules');
 
-    // Determine which modules are relevant: scheduled (current/past) + assessment modules
+    // XP per module from activity log
+    const moduleXP={};
+    recentActivityLog.forEach(e=>{
+      const mid=(e.moduleId||'').toLowerCase();
+      if (mid) moduleXP[mid]=(moduleXP[mid]||0)+(e.xpAwarded||e.xp||0);
+    });
+
     const asmtModules=new Set();
     upcomingAssessments.forEach(a=>(a.modules||[]).forEach(m=>asmtModules.add(m.toLowerCase())));
 
-    // A module is shown if: has any progress, or is current/past in schedule, or is in an upcoming assessment
     function isRelevant(id) {
       const status=scheduleStatuses[id];
       if (allProgress[id]) return true;
       if (status==='current'||status==='past') return true;
       if (asmtModules.has(id)) return true;
+      if (moduleXP[id]) return true;
       return false;
     }
 
@@ -880,7 +912,6 @@
         else if (status==='past') flag=`<span class="schedule-flag flag-past">🔄 Consolidation</span>`;
         if (isAsmt) flag+=`<span class="schedule-flag flag-asmt" style="margin-left:0.25rem">📋 In upcoming test</span>`;
 
-        // Topic stats
         const topicEntries=Object.entries(rag);
         let sumScore=0, topicCount=0, weakCount=0;
         topicEntries.forEach(([,e])=>{
@@ -891,13 +922,22 @@
         const avgScore=topicCount>0?Math.round(sumScore/topicCount):0;
         const tier=getTier(avgScore);
         const mocks=data.mocks||[];
+        const xp=moduleXP[id]||0;
 
-        // Topic detail rows
+        // XP breakdown by activity type for this module
+        const xpByType={};
+        recentActivityLog.filter(e=>(e.moduleId||'').toLowerCase()===id).forEach(e=>{
+          const t=e.type||'other';
+          xpByType[t]=(xpByType[t]||0)+(e.xpAwarded||e.xp||0);
+        });
+        const xpBreakdown=Object.entries(xpByType).filter(([,v])=>v>0)
+          .map(([t,v])=>`<span style="font-size:0.72rem;font-weight:700;color:var(--subtext);margin-right:0.5rem">${t}: <strong>${v} XP</strong></span>`).join('');
+
         const topicRows=topicEntries.map(([topic,e])=>{
           const s=typeof e==='object'?(e?.score??0):0;
           const t=getTier(s);
           const days=e?.lastActivity?Math.floor((Date.now()-new Date(e.lastActivity).getTime())/86400000):null;
-          const decayFlag=days>7&&s>0?`<span style="font-size:0.6rem;color:#c2410c;font-weight:700">📉 ${days}d</span>`:'';
+          const decayFlag=days>7&&s>0?`<span style="font-size:0.6rem;color:#c2410c;font-weight:700">📉 ${days}d ago</span>`:'';
           return `<div class="topic-expand-row">
             <span class="topic-name">${topic}</span>
             <div class="topic-bar-wrap"><div class="topic-bar-fill" style="width:${s}%;background:${TIER_META[t].colour}"></div></div>
@@ -911,13 +951,14 @@
             <div class="mec-badge" style="background:${meta.colour}">${id.toUpperCase()}</div>
             <div style="flex:1">
               <div class="mec-title">${meta.title} ${flag}</div>
-              <div class="mec-summary">${mocks.length} mock${mocks.length!==1?'s':''} · ${topicCount} topics tracked</div>
+              <div class="mec-summary">${mocks.length} mock${mocks.length!==1?'s':''} · ${topicCount} topic${topicCount!==1?'s':''} tracked${xp>0?` · <strong style="color:#d97706">⚡ ${xp} XP</strong>`:''}</div>
             </div>
             ${topicCount>0?`<span class="mec-tier" style="color:${TIER_META[tier].colour}">${TIER_META[tier].emoji} ${avgScore}%</span>`:''}
             ${weakCount>0?`<span style="font-size:0.7rem;font-weight:800;background:#fef2f2;color:#dc2626;padding:0.1rem 0.4rem;border-radius:100px;margin-left:0.25rem">${weakCount} weak</span>`:''}
             <span class="mec-chevron">▼</span>
           </div>
           <div class="module-expand-body">
+            ${xpBreakdown?`<div style="margin-bottom:0.6rem;padding-bottom:0.5rem;border-bottom:1px solid #f1f5f9">${xpBreakdown}</div>`:''}
             ${topicRows||'<div style="font-size:0.8rem;color:var(--subtext)">No topic data yet — complete some activities to see your scores here.</div>'}
             <div style="margin-top:0.75rem">
               <a href="module.html?subject=${subj}&module=${id}" class="btn-take-me">Go to ${id.toUpperCase()} →</a>
@@ -1048,7 +1089,16 @@
     // Mastered topics celebration
     let masteredCount=0;
     Object.values(allProgress).forEach(d=>Object.values(d.rag||{}).forEach(e=>{ if(typeof e==='object'&&(e?.score??0)>=90) masteredCount++; }));
-    if (masteredCount>0) bullets.push({icon:'💙',text:`You've mastered <strong>${masteredCount} topic${masteredCount!==1?'s':''}</strong> — fantastic work! Keep revisiting them so they stay at the top.`});
+    if (masteredCount>0) bullets.push({icon:'💙',text:`You've mastered <strong>${masteredCount} topic${masteredCount!==1?'s':''}</strong> — fantastic work! Keep revisiting them so they stay sharp.`});
+
+    // XP milestone nudge
+    const totalXp=recentActivityLog.reduce((a,e)=>a+(e.xpAwarded||e.xp||0),0);
+    if (totalXp>0) {
+      const xpBySubj={biology:0,chemistry:0,physics:0};
+      recentActivityLog.forEach(e=>{ const s=(e.subjectId||'').toLowerCase(); if(xpBySubj[s]!==undefined) xpBySubj[s]+=(e.xpAwarded||e.xp||0); });
+      const lowest=Object.entries(xpBySubj).filter(([,v])=>v===0).map(([k])=>k.charAt(0).toUpperCase()+k.slice(1));
+      if (lowest.length) bullets.push({icon:'⚡',text:`You've earned <strong>${totalXp} XP</strong> so far — great effort! You haven't earned any XP in <strong>${lowest.join(' or ')}</strong> yet. Try a quick Flashcard or Keywords session there to get started.`,link:`${lowest[0].toLowerCase()}.html`});
+    }
 
     if (!bullets.length) bullets.push({icon:'👋',text:'Welcome! Start by trying a Mini Mock or some Flashcards in any module. Your personalised insights will appear here as you build up your scores.',link:'index.html'});
 
@@ -1114,7 +1164,7 @@
     btn.disabled=true;
     area.innerHTML=`<div class="ai-insight-wrap"><div class="ai-loading"><div class="ai-spinner"></div> Generating your personalised insight…</div></div>`;
 
-    // Build context for the AI
+    // Module progress summary
     const modulesSummary=Object.entries(allProgress).map(([id,data])=>{
       const rag=data.rag||{};
       const topicSummary=Object.entries(rag).map(([t,e])=>{
@@ -1123,48 +1173,77 @@
       }).join(', ');
       const mocks=data.mocks||[];
       const avgM=mocks.length?Math.round(mocks.reduce((a,m)=>a+m.pct,0)/mocks.length):0;
-      return `${id.toUpperCase()} (${MODULE_META[id]?.title}): mock avg ${avgM}%, topics: ${topicSummary||'none tracked'}`;
+      return `${id.toUpperCase()} (${MODULE_META[id]?.title||id}): mock avg ${avgM}%, topics: ${topicSummary||'none tracked'}`;
     }).join('\n');
 
-    const asmtContext=upcomingAssessments.map(a=>`${a.subject} ${a.label} on ${a.date} covering ${(a.modules||[]).join(', ')}`).join('; ');
-    const schedContext=Object.entries(scheduleStatuses).filter(([,s])=>s==='current').map(([id])=>`${id.toUpperCase()} (${MODULE_META[id]?.title})`).join(', ');
+    // Recent activity (last 10 entries)
+    const recentSummary=recentActivityLog.slice(0,10).map(e=>{
+      const d=e.timestamp?new Date(e.timestamp).toLocaleDateString('en-GB',{day:'numeric',month:'short'}):'recently';
+      const xp=e.xpAwarded||e.xp||0;
+      return `${d}: ${e.type||'activity'} on ${(e.moduleId||'').toUpperCase()||'unknown module'}${xp?' (+'+xp+' XP)':''}${e.pct!=null?' — score '+e.pct+'%':''}`;
+    }).join('\n') || 'No recent activity recorded.';
 
-    const prompt=`You are a friendly, encouraging GCSE science revision assistant for a student at Streetly Academy. Write a short personalised insight paragraph (3-5 sentences) based on their progress data. Be warm and positive — acknowledge effort, give specific actionable advice, and avoid any language that feels like a telling off. Focus on what they can do next, not what they haven't done. Do not use markdown formatting, headings, or bullet points — just plain flowing text.
+    // XP totals per subject
+    const xpTotals={biology:0,chemistry:0,physics:0};
+    recentActivityLog.forEach(e=>{ const s=(e.subjectId||'').toLowerCase(); if(xpTotals[s]!==undefined) xpTotals[s]+=(e.xpAwarded||e.xp||0); });
+    const xpSummary=`Biology: ${xpTotals.biology} XP, Chemistry: ${xpTotals.chemistry} XP, Physics: ${xpTotals.physics} XP`;
 
-Student progress:
+    // Upcoming assessments
+    const asmtContext=upcomingAssessments.map(a=>{
+      const days=a.date?Math.ceil((new Date(a.date)-new Date())/86400000):null;
+      return `${a.subject} "${a.label}" in ${days!=null?days+' days':'unknown time'}, covering modules: ${(a.modules||[]).join(', ')}`;
+    }).join('; ') || 'None set.';
+
+    // Currently studying
+    const schedContext=Object.entries(scheduleStatuses).filter(([,s])=>s==='current').map(([id])=>`${id.toUpperCase()} (${MODULE_META[id]?.title||id})`).join(', ') || 'Not set';
+
+    // Pending assignments
+    const pendingAssignments=[];
+    try {
+      if (currentProfile?.class) {
+        const assigns=await getActiveAssignmentsForClass(currentProfile.class);
+        const completions=await Promise.all(assigns.map(a=>getMyAssignmentCompletion(a.id,currentUser.uid).catch(()=>null)));
+        assigns.forEach((a,i)=>{ if (!completions[i]) pendingAssignments.push(`"${a.title}" (${a.subject}, ${a.type})`); });
+      }
+    } catch(_) {}
+
+    const prompt=`You are a friendly, encouraging GCSE science revision assistant for a student at Streetly Academy. Write a personalised insight of 4-6 sentences to help this student know what to focus on next. Be warm, specific, and positive — mention actual module names and topics. Don't lecture or repeat the same advice. Format as plain flowing sentences — no bullet points, no markdown, no headings.
+
+Student: Year ${currentProfile?.yearGroup||'unknown'}
+Total XP earned: ${xpSummary}
+
+Module progress:
 ${modulesSummary||'No activity recorded yet.'}
 
-Currently studying: ${schedContext||'Not set'}
-Upcoming assessments: ${asmtContext||'None set'}
-Year group: Year ${currentProfile?.yearGroup||'unknown'}
+Recent activity (last 10):
+${recentSummary}
 
-Write a helpful, encouraging insight for this student. Mention specific modules or topics by name where relevant. Keep it under 100 words.`;
+Currently studying: ${schedContext}
+Upcoming assessments: ${asmtContext}
+Pending assignments: ${pendingAssignments.length?pendingAssignments.join('; '):'None outstanding.'}
+
+Give specific, actionable advice. If they have weak topics in an upcoming assessment, name them. If they haven't done something recently, suggest it. Keep it under 120 words.`;
 
     try {
       const res = await fetch('/.netlify/functions/mark-answer', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          _insightMode: true,
-          prompt,
-        })
+        body: JSON.stringify({ _insightMode: true, prompt })
       });
       const data = await res.json();
-      // Netlify function returns { feedback } for marking, or { insight } for insight mode
       const text = data.insight || data.content?.map(c=>c.text||'').join('') || 'Could not generate insight.';
 
-      // Save cooldown timestamp and persist insight text
+      // Fix bug: define cleanText before using it
+      const cleanText = text
+        .replace(/^#+\s+.*/gm, '')
+        .replace(/\*\*(.*?)\*\*/g, '$1')
+        .replace(/\*(.*?)\*/g, '$1')
+        .trim();
+
       await Promise.all([
         saveInsightTimestamp(currentUser.uid),
         saveLastInsight(currentUser.uid, cleanText),
       ]);
-
-      // Strip markdown formatting the AI sometimes adds
-      const cleanText = text
-        .replace(/^#+\s+.*/gm, '')   // remove # headings
-        .replace(/\*\*(.*?)\*\*/g, '$1')  // remove **bold**
-        .replace(/\*(.*?)\*/g, '$1')       // remove *italic*
-        .trim();
 
       area.innerHTML=`<div class="ai-insight-wrap">
         <div class="ai-insight-header">✨ Your Personalised Insight</div>
