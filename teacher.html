@@ -922,6 +922,7 @@
       document.getElementById('overview-content').innerHTML = '<div class="empty-state">Select a class above to view student data.</div>';
       document.getElementById('scatter-content').innerHTML = '<div class="empty-state">Select a class above to view the heatmap.</div>';
       loadAssignments(); // refresh assignments with no filter
+      if (window.adLoadList) window.adLoadList(); // refresh assessment dates with no filter
       return;
     }
     selectedClass = cls;
@@ -930,6 +931,7 @@
     });
     loadClassData();
     loadAssignments(); // refresh assignments filtered to this class
+    if (window.adLoadList) window.adLoadList(); // refresh assessment dates filtered to this class
   };
 
   window.loadClassData = async () => {
@@ -2705,7 +2707,9 @@
     }
 
     // Sort classes by year group: 9x first, then 10x, then 11x
-    const sortedClasses = [...myClasses].sort((a, b) => {
+    // If a class is selected in the top bar, show only that class
+    const classesToShow = selectedClass ? [selectedClass] : myClasses;
+    const sortedClasses = [...classesToShow].sort((a, b) => {
       const ya = parseInt(a.match(/^(\d+)/)?.[1] || 99);
       const yb = parseInt(b.match(/^(\d+)/)?.[1] || 99);
       if (ya !== yb) return ya - yb;
