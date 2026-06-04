@@ -2682,6 +2682,10 @@
       list.innerHTML = '<div class="empty-state">No classes assigned — set up your classes in My Classes first.</div>';
       return;
     }
+    if (!selectedClass) {
+      list.innerHTML = '<div class="empty-state">Select a class above to view assessment dates.</div>';
+      return;
+    }
     list.innerHTML = '<div class="loading-state">Loading...</div>';
 
     const subjects = ['Biology','Chemistry','Physics'];
