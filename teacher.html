@@ -469,6 +469,7 @@
       <button class="tab-btn" data-tab="assessments">📅 Assessment Dates</button>
       <button class="tab-btn" data-tab="xpwars">⚔️ XP Battles</button>
       <button class="tab-btn" data-tab="blitz">⚡ Blitz</button>
+      <button class="tab-btn" data-tab="bingo">🎯 Bingo</button>
     </div>
   </div>
 
@@ -721,6 +722,92 @@
       </div>
     </div>
 
+    <!-- ── TAB: BINGO ────────────────────────────────────────────────────────────── -->
+    <div class="tab-panel" id="tab-bingo">
+
+      <!-- Setup card -->
+      <div class="card" id="bingo-setup-card">
+        <div class="section-label">🎯 Keyword Bingo</div>
+        <p style="font-size:0.82rem;color:var(--subtext);margin-bottom:1rem">Create a bingo session for your class. Each student gets a unique card. Read out the definition shown on screen — students mark the matching keyword.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1rem;">
+          <div>
+            <label class="paper-setup-label">Class</label>
+            <select id="bingo-class" class="paper-setup-select" style="width:100%"></select>
+          </div>
+          <div>
+            <label class="paper-setup-label">Subject</label>
+            <select id="bingo-subject" class="paper-setup-select" style="width:100%" onchange="populateBingoModules()">
+              <option value="biology">Biology</option>
+              <option value="chemistry">Chemistry</option>
+              <option value="physics">Physics</option>
+            </select>
+          </div>
+          <div>
+            <label class="paper-setup-label">Module</label>
+            <select id="bingo-module" class="paper-setup-select" style="width:100%"></select>
+          </div>
+          <div>
+            <label class="paper-setup-label">Grid Size</label>
+            <select id="bingo-grid" class="paper-setup-select" style="width:100%">
+              <option value="3">3×3 (9 squares)</option>
+              <option value="4" selected>4×4 (16 squares) — recommended</option>
+              <option value="5">5×5 (25 squares)</option>
+            </select>
+          </div>
+          <div>
+            <label class="paper-setup-label">Win Condition</label>
+            <select id="bingo-winmode" class="paper-setup-select" style="width:100%">
+              <option value="line">Line only</option>
+              <option value="full">Full house only</option>
+              <option value="both" selected>Line then Full House</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn-create" onclick="launchBingo()" style="background:#7c3aed">🎯 Launch Bingo</button>
+      </div>
+
+      <!-- Caller card -->
+      <div class="card" id="bingo-caller-card" style="display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;flex-wrap:wrap;gap:0.5rem;">
+          <div>
+            <div class="section-label" style="margin-bottom:0">🎯 Bingo — Live</div>
+            <div id="bingo-session-info" style="font-size:0.75rem;color:var(--subtext);margin-top:0.2rem;"></div>
+          </div>
+          <button onclick="endBingo()" style="background:#dc2626;color:white;border:none;border-radius:8px;padding:0.4rem 0.85rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.78rem;cursor:pointer;">End Session</button>
+        </div>
+
+        <!-- Current call display -->
+        <div id="bingo-current-call" style="background:#f5f3ff;border:2px solid #7c3aed;border-radius:14px;padding:1.5rem;text-align:center;margin-bottom:1rem;min-height:100px;display:flex;align-items:center;justify-content:center;">
+          <p style="color:#6b7280;font-size:0.9rem;font-family:'Nunito',sans-serif;">Press "Call Next" to begin</p>
+        </div>
+
+        <div style="display:flex;gap:0.65rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem;">
+          <button id="bingo-next-btn" onclick="callNextBingo()" style="background:#7c3aed;color:white;border:none;border-radius:8px;padding:0.55rem 1.25rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;cursor:pointer;">▶ Call Next</button>
+          <span id="bingo-progress" style="font-size:0.82rem;color:var(--subtext);font-family:'Nunito',sans-serif;"></span>
+        </div>
+
+        <!-- Claims -->
+        <div id="bingo-claims-section" style="display:none;margin-bottom:1rem;">
+          <div class="section-label" style="margin-bottom:0.5rem;">🎉 Bingo Claims</div>
+          <div id="bingo-claims-list" style="display:flex;flex-wrap:wrap;gap:0.5rem;"></div>
+        </div>
+
+        <!-- Called words log -->
+        <div>
+          <div class="section-label" style="margin-bottom:0.4rem;">Called so far</div>
+          <div id="bingo-called-log" style="display:flex;flex-wrap:wrap;gap:0.4rem;"></div>
+        </div>
+      </div>
+
+      <!-- Ended card -->
+      <div class="card" id="bingo-ended-card" style="display:none;">
+        <div class="section-label">Session Ended</div>
+        <div id="bingo-winners-list" style="margin-bottom:1rem;"></div>
+        <button onclick="resetBingo()" style="background:#7c3aed;color:white;border:none;border-radius:8px;padding:0.4rem 0.85rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.78rem;cursor:pointer;">New Bingo</button>
+      </div>
+
+    </div>
+
     <!-- ── TAB: XP BATTLES ──────────────────────────────────────────────────────── -->
     <div class="tab-panel" id="tab-xpwars">
       <div class="card" id="battle-setup-card">
@@ -808,7 +895,8 @@
     getAssignmentCompletions,
     isSuperAdmin, saveAssessmentDate, getAssessmentDates, deleteAssessmentDate,
     getActivityLog, getAllStudents,
-    createBlitzSession, updateBlitzSession, onBlitzSnapshot
+    createBlitzSession, updateBlitzSession, onBlitzSnapshot,
+    createBingoSession, updateBingoSession, onBingoSnapshot
   } from './firebase.js';
 
 
@@ -881,6 +969,8 @@
     populateClassSelector();
     populateBattleClassSelector();
     populateBlitzClassSelector();
+    populateBingoClassSelector();
+    populateBingoModules();
     blitzSubjectChanged();
     buildAssignClassGrid();
     loadAssignments();
@@ -1759,6 +1849,159 @@
     document.getElementById('blitz-timer').style.color = '#d4a534';
     blitzSubjectChanged();
   };
+
+  // ── BINGO ────────────────────────────────────────────────────────────────────
+
+  const BINGO_MODULES = {
+    biology:  ['b1','b2','b3','b4','b5','b6','b7'],
+    chemistry:['c1','c2','c3','c4','c5','c6','c7','c8','c9','c10'],
+    physics:  ['p1','p2','p3','p4','p5','p6','p7'],
+  };
+  const BINGO_MODULE_NAMES = {
+    b1:'B1 Cell Biology',b2:'B2 Organisation',b3:'B3 Infection',b4:'B4 Bioenergetics',b5:'B5 Homeostasis',b6:'B6 Inheritance',b7:'B7 Ecology',
+    c1:'C1 Atomic Structure',c2:'C2 Bonding',c3:'C3 Quantitative',c4:'C4 Chemical Changes',c5:'C5 Energy Changes',c6:'C6 Rate & Equilibrium',c7:'C7 Organic',c8:'C8 Analysis',c9:'C9 Chemistry of Atmosphere',c10:'C10 Using Resources',
+    p1:'P1 Energy',p2:'P2 Electricity',p3:'P3 Particle Model',p4:'P4 Atomic Structure',p5:'P5 Forces',p6:'P6 Waves',p7:'P7 Magnetism',
+  };
+
+  let _bingo = null;
+
+  window.populateBingoModules = () => {
+    const subj = document.getElementById('bingo-subject').value;
+    const sel  = document.getElementById('bingo-module');
+    sel.innerHTML = (BINGO_MODULES[subj] || []).map(m => `<option value="${m}">${BINGO_MODULE_NAMES[m] || m}</option>`).join('');
+  };
+
+  window.launchBingo = async () => {
+    const cls     = document.getElementById('bingo-class').value;
+    const subject = document.getElementById('bingo-subject').value;
+    const moduleId= document.getElementById('bingo-module').value;
+    const gridSize= parseInt(document.getElementById('bingo-grid').value, 10);
+    const winMode = document.getElementById('bingo-winmode').value;
+    if (!cls) { alert('Select a class first.'); return; }
+
+    // Load keywords for this module
+    let keywords = [];
+    try {
+      const r = await fetch(`data/${subject[0]}${moduleId.slice(1)}-keywords.json`);
+      const arr = await r.json();
+      keywords = arr.map(k => ({ word: k.word, definition: k.definition }));
+    } catch(e) { alert('Could not load keywords for this module.'); return; }
+
+    if (keywords.length < gridSize * gridSize) {
+      alert(`Not enough keywords (${keywords.length}) for a ${gridSize}×${gridSize} grid. Choose a smaller grid.`);
+      return;
+    }
+
+    // Pick 25 (or all if fewer), shuffle for call order
+    const pool = shuffleArray([...keywords]).slice(0, 25);
+    const callOrder = shuffleArray(pool.map((_, i) => i)); // pre-shuffled call order
+
+    let id;
+    try {
+      id = await createBingoSession({ class: cls, subject, moduleId, gridSize, winMode, keywords: pool, callOrder, calledCount: 0, claims: {}, status: 'waiting' });
+    } catch(e) { alert('Failed to create session.'); return; }
+
+    _bingo = { id, gridSize, winMode, keywords: pool, callOrder, calledCount: 0, unsub: null };
+    _bingo.unsub = onBingoSnapshot(id, sess => {
+      _bingo.calledCount = sess.calledCount || 0;
+      renderBingoClaims(sess.claims || {});
+    });
+
+    document.getElementById('bingo-setup-card').style.display   = 'none';
+    document.getElementById('bingo-caller-card').style.display  = 'block';
+    document.getElementById('bingo-session-info').textContent   = `Class: ${cls} · ${BINGO_MODULE_NAMES[moduleId] || moduleId} · ${gridSize}×${gridSize} · ${winMode === 'both' ? 'Line then Full House' : winMode === 'line' ? 'Line' : 'Full House'}`;
+    updateBingoCallerUI();
+  };
+
+  window.callNextBingo = async () => {
+    if (!_bingo) return;
+    const next = _bingo.calledCount + 1;
+    if (next > _bingo.callOrder.length) return;
+    _bingo.calledCount = next;
+    await updateBingoSession(_bingo.id, { calledCount: next }).catch(() => {});
+    updateBingoCallerUI();
+  };
+
+  function updateBingoCallerUI() {
+    if (!_bingo) return;
+    const { keywords, callOrder, calledCount } = _bingo;
+    const total = callOrder.length;
+    document.getElementById('bingo-progress').textContent = `${calledCount} / ${total} called`;
+    const nextBtn = document.getElementById('bingo-next-btn');
+    if (nextBtn) nextBtn.disabled = calledCount >= total;
+
+    const callEl = document.getElementById('bingo-current-call');
+    if (calledCount === 0) {
+      callEl.innerHTML = `<p style="color:#6b7280;font-size:0.9rem;font-family:'Nunito',sans-serif;">Press "Call Next" to begin</p>`;
+    } else {
+      const kw = keywords[callOrder[calledCount - 1]];
+      callEl.innerHTML = `
+        <div>
+          <div style="font-size:0.7rem;font-family:'Nunito',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#7c3aed;margin-bottom:0.35rem;">Definition</div>
+          <div style="font-size:1.35rem;font-family:'Nunito',sans-serif;font-weight:800;color:#1e1b4b;line-height:1.4;">${kw.definition}</div>
+          <div style="font-size:0.75rem;color:#7c3aed;margin-top:0.5rem;font-family:'Nunito',sans-serif;">(Answer: <strong>${kw.word}</strong> — only reveal after students have marked)</div>
+        </div>`;
+    }
+
+    // Called log
+    const log = document.getElementById('bingo-called-log');
+    if (log) {
+      log.innerHTML = callOrder.slice(0, calledCount).map(i =>
+        `<span style="background:#ede9fe;border:1px solid #c4b5fd;border-radius:6px;padding:0.18rem 0.5rem;font-size:0.72rem;font-family:'Nunito',sans-serif;font-weight:700;color:#4c1d95;">${keywords[i].word}</span>`
+      ).join('');
+    }
+  }
+
+  function renderBingoClaims(claims) {
+    const section = document.getElementById('bingo-claims-section');
+    const list    = document.getElementById('bingo-claims-list');
+    if (!section || !list) return;
+    const entries = Object.values(claims);
+    section.style.display = entries.length ? 'block' : 'none';
+    list.innerHTML = entries.map(c =>
+      `<span style="background:${c.type==='full'?'#fef9c3':'#dcfce7'};border:1.5px solid ${c.type==='full'?'#fde68a':'#86efac'};border-radius:8px;padding:0.3rem 0.75rem;font-size:0.8rem;font-family:'Nunito',sans-serif;font-weight:800;color:${c.type==='full'?'#78350f':'#166534'};">
+        ${c.type === 'full' ? '🏆' : '🎉'} ${c.name} — ${c.type === 'full' ? 'FULL HOUSE' : 'LINE'}
+      </span>`
+    ).join('');
+  }
+
+  function shuffleArray(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  window.endBingo = async () => {
+    if (!_bingo) return;
+    await updateBingoSession(_bingo.id, { active: false, status: 'ended' }).catch(() => {});
+    if (_bingo.unsub) _bingo.unsub();
+    document.getElementById('bingo-caller-card').style.display = 'none';
+    document.getElementById('bingo-ended-card').style.display  = 'block';
+  };
+
+  window.resetBingo = () => {
+    if (_bingo?.unsub) _bingo.unsub();
+    _bingo = null;
+    document.getElementById('bingo-ended-card').style.display  = 'none';
+    document.getElementById('bingo-caller-card').style.display = 'none';
+    document.getElementById('bingo-setup-card').style.display  = 'block';
+  };
+
+  // Populate bingo class selector alongside other selectors
+  function populateBingoClassSelector() {
+    const sel = document.getElementById('bingo-class');
+    if (!sel) return;
+    sel.innerHTML = '<option value="">— Select class —</option>' + (myClasses||[]).map(c=>`<option value="${c}">${c}</option>`).join('');
+  }
+
+  // Init bingo module dropdown on load
+  document.addEventListener('DOMContentLoaded', () => {
+    populateBingoModules();
+    populateBingoClassSelector();
+  });
 
   // ── XP BATTLES ──────────────────────────────────────────────────────────────
   const BATTLE_ADJECTIVES = ['Crazy','Scary','Mighty','Sneaky','Fluffy','Grumpy','Zippy','Bouncy','Spooky','Cheeky','Wobbly','Dizzy','Fiery','Frosty','Speedy','Slimy','Brave','Wacky','Funky','Jumpy'];

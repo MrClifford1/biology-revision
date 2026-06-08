@@ -980,6 +980,12 @@
   .s6-interim-dot { width: 10px; height: 10px; border-radius: 50%; background: #d1d5db; display: inline-block; transition: background 0.2s; }
   .s6-interim-dot.used { background: #f59e0b; }
   .s6-result-banner { border-radius: 12px; padding: 0.85rem 1rem; margin-bottom: 0.75rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.9rem; }
+  /* ── Bingo ── */
+  .bingo-cell { background: white; border: 2px solid #c4b5fd; border-radius: 8px; padding: 0.4rem 0.25rem; font-size: 0.72rem; font-family: 'Nunito', sans-serif; font-weight: 800; color: #4c1d95; cursor: pointer; text-align: center; line-height: 1.2; min-height: 52px; display: flex; align-items: center; justify-content: center; transition: background 0.15s, border-color 0.15s; word-break: break-word; }
+  .bingo-cell:hover { background: #ede9fe; }
+  .bingo-cell-called { background: #f5f3ff; border-color: #7c3aed; }
+  .bingo-cell-marked { background: #7c3aed; border-color: #5b21b6; color: white; }
+  .bingo-cell-marked.bingo-cell-called { background: #5b21b6; }
   .s6-result-full { background: #f0fdf4; border: 1px solid #bbf7d0; color: #15803d; }
   .s6-result-partial { background: #fefce8; border: 1px solid #fde68a; color: #92400e; }
   .s6-result-low { background: #fff1f2; border: 1px solid #fecdd3; color: #be123c; }
@@ -1065,6 +1071,7 @@
     <button class="tab-btn" data-tab="scribble" title="Write everything you know from memory — high-effort, high-reward retrieval practice · Up to 10 XP · Max 50 XP total">✍️ Scribble</button>
     <button class="tab-btn" data-tab="who" title="Who Wants to Be a Scientist? — 15 questions of rising difficulty. Climb the scientist ladder! · XP per correct answer">🧪 WHO</button>
     <button class="tab-btn" data-tab="super6" title="Scaffolded extended writing — 4, 5 and 6 mark questions with structure strips, sentence starters and AI marking · XP per mark awarded">🪜 Super 6</button>
+    <button class="tab-btn" data-tab="bingo" title="Keyword Bingo — join a teacher-led bingo session">🎯 Bingo</button>
     <button class="tab-btn" data-tab="practice" title="Practise exam-style questions with mark scheme feedback — builds exam technique · Up to 15 XP · No XP cap">✏️ Mini Mock</button>
     <button class="tab-btn" data-tab="paper" title="Full past paper · Up to 15 XP · No XP cap">📝 Paper</button>
   </div>
@@ -1640,6 +1647,56 @@
     </div>
   </div>
 
+  <!-- ── BINGO TAB ─────────────────────────────────────────────────────────── -->
+  <div class="tab-panel" id="tab-bingo">
+    <div class="practice-panel-inner">
+
+      <!-- Lobby screen -->
+      <div id="bingo-lobby">
+        <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;">
+          <h2 style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.15rem;margin-bottom:0.35rem;">🎯 Keyword Bingo</h2>
+          <p style="color:var(--subtext);font-size:0.875rem;line-height:1.5;">Your teacher will start a bingo session. When one is active for your class, your card will appear here automatically. Listen for the definition — find the matching keyword and mark it!</p>
+        </div>
+        <div id="bingo-waiting-msg" style="text-align:center;padding:2rem;color:var(--subtext);font-family:'Nunito',sans-serif;font-size:0.9rem;">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">🎯</div>
+          Waiting for your teacher to start a session…
+          <div style="margin-top:1rem;"><button onclick="checkForBingoSession()" style="background:#7c3aed;color:white;border:none;border-radius:8px;padding:0.4rem 1rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.82rem;cursor:pointer;">Check for Session</button></div>
+        </div>
+      </div>
+
+      <!-- Card screen -->
+      <div id="bingo-card-screen" style="display:none;">
+        <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:0.9rem 1.25rem;margin-bottom:0.9rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
+          <div>
+            <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1rem;">🎯 Bingo</div>
+            <div id="bingo-card-info" style="font-size:0.75rem;color:var(--subtext);"></div>
+          </div>
+          <div id="bingo-claim-btns" style="display:flex;gap:0.5rem;"></div>
+        </div>
+
+        <!-- Current definition -->
+        <div id="bingo-student-call" style="background:#f5f3ff;border:2px solid #7c3aed;border-radius:14px;padding:1rem 1.25rem;margin-bottom:0.9rem;min-height:60px;font-family:'Nunito',sans-serif;">
+          <div style="font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#7c3aed;margin-bottom:0.3rem;">Current Definition</div>
+          <div id="bingo-student-def" style="font-size:1rem;font-weight:700;color:#1e1b4b;line-height:1.4;">Waiting for teacher to call…</div>
+        </div>
+
+        <!-- Bingo card grid -->
+        <div id="bingo-card-grid" style="display:grid;gap:0.4rem;margin-bottom:0.9rem;"></div>
+
+        <!-- Called count -->
+        <div id="bingo-student-progress" style="font-size:0.78rem;color:var(--subtext);font-family:'Nunito',sans-serif;text-align:center;"></div>
+      </div>
+
+      <!-- Won screen -->
+      <div id="bingo-won-screen" style="display:none;text-align:center;padding:2rem 1rem;">
+        <div style="font-size:3rem;margin-bottom:0.5rem;" id="bingo-win-emoji">🎉</div>
+        <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.4rem;color:#166534;margin-bottom:0.5rem;" id="bingo-win-msg">BINGO!</div>
+        <p style="color:var(--subtext);font-size:0.875rem;">Your teacher has been notified. Keep listening — the game may continue for Full House!</p>
+      </div>
+
+    </div>
+  </div>
+
   <!-- ── MINI MOCK TAB ───────────────────────────────────────────────────────── -->
   <div class="tab-panel" id="tab-practice">
     <div class="practice-panel-inner">
@@ -2125,7 +2182,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 (function() {
   const tabParam = new URLSearchParams(window.location.search).get('tab');
   if (!tabParam) return;
-  const tabMap = { mock:'practice', mini_mock:'practice', flashcards:'flashcards', words:'keywords', cloze:'cloze', scribble:'scribble', super6:'super6', paper:'paper', learn:'learn', revise:'revision', who:'who' };
+  const tabMap = { mock:'practice', mini_mock:'practice', flashcards:'flashcards', words:'keywords', cloze:'cloze', scribble:'scribble', super6:'super6', paper:'paper', learn:'learn', revise:'revision', who:'who', bingo:'bingo' };
   const target = tabMap[tabParam] || tabParam;
 
   // Switch tab immediately
@@ -6337,6 +6394,197 @@ window.resetCloze = () => {
 };
 
 // ── END CLOZE ─────────────────────────────────────────────────────────────────
+
+// ── BINGO (student side) ──────────────────────────────────────────────────────
+
+let _bingoSession   = null;
+let _bingoCard      = [];   // array of keyword indices (into session.keywords)
+let _bingoMarked    = new Set();
+let _bingoUnsub     = null;
+let _bingoLineClaimed = false;
+let _bingoFullClaimed = false;
+
+// Seeded PRNG (mulberry32) for deterministic card generation
+function _bingoRng(seed) {
+  return function() {
+    seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+    let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+
+function _bingoGenerateCard(sessionId, uid, poolSize, gridSize) {
+  const n = gridSize * gridSize;
+  const seed = [...(sessionId + uid)].reduce((acc, c) => acc + c.charCodeAt(0), 0);
+  const rng  = _bingoRng(seed);
+  const indices = Array.from({ length: poolSize }, (_, i) => i);
+  // Fisher-Yates with seeded rng
+  for (let i = indices.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [indices[i], indices[j]] = [indices[j], indices[i]];
+  }
+  return indices.slice(0, n);
+}
+
+function _bingoCheckWin(card, marked, gridSize) {
+  const n = gridSize;
+  const hasRow    = Array.from({length:n}, (_, r) => Array.from({length:n}, (_, c) => r*n+c).every(i => marked.has(card[i])));
+  const hasCol    = Array.from({length:n}, (_, c) => Array.from({length:n}, (_, r) => r*n+c).every(i => marked.has(card[i])));
+  const hasDiag1  = Array.from({length:n}, (_, i) => i*n+i).every(i => marked.has(card[i]));
+  const hasDiag2  = Array.from({length:n}, (_, i) => i*n+(n-1-i)).every(i => marked.has(card[i]));
+  const hasLine   = hasRow.some(Boolean) || hasCol.some(Boolean) || hasDiag1 || hasDiag2;
+  const hasFull   = card.every(i => marked.has(i));
+  return { hasLine, hasFull };
+}
+
+window.checkForBingoSession = async function() {
+  if (!window._currentUser) return;
+  try {
+    const { getActiveBingoForClass } = await import('./firebase.js');
+    const profile = window._userProfile;
+    const className = profile?.class || profile?.className || '';
+    if (!className) {
+      document.getElementById('bingo-waiting-msg').innerHTML = '<div style="color:#dc2626;font-family:Nunito,sans-serif;font-size:0.85rem;">Your profile doesn\'t have a class set — ask your teacher.</div>';
+      return;
+    }
+    const sess = await getActiveBingoForClass(className);
+    if (!sess) {
+      document.getElementById('bingo-waiting-msg').innerHTML = `<div style="font-size:2rem;margin-bottom:0.5rem;">🎯</div>No active bingo session for ${className} right now.<div style="margin-top:1rem;"><button onclick="checkForBingoSession()" style="background:#7c3aed;color:white;border:none;border-radius:8px;padding:0.4rem 1rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.82rem;cursor:pointer;">Check Again</button></div>`;
+      return;
+    }
+    joinBingoSession(sess);
+  } catch(e) { console.error('Bingo check failed', e); }
+};
+
+function joinBingoSession(sess) {
+  if (_bingoUnsub) _bingoUnsub();
+  _bingoSession     = sess;
+  _bingoMarked      = new Set();
+  _bingoLineClaimed = false;
+  _bingoFullClaimed = false;
+
+  const uid  = window._currentUser?.uid || 'anon';
+  _bingoCard = _bingoGenerateCard(sess.id, uid, sess.keywords.length, sess.gridSize);
+
+  renderBingoCard(sess);
+  document.getElementById('bingo-lobby').style.display       = 'none';
+  document.getElementById('bingo-card-screen').style.display = 'block';
+  document.getElementById('bingo-won-screen').style.display  = 'none';
+
+  import('./firebase.js').then(({ onBingoSnapshot }) => {
+    _bingoUnsub = onBingoSnapshot(sess.id, updated => {
+      _bingoSession = updated;
+      if (updated.status === 'ended') {
+        // Session ended — just freeze the card
+        document.getElementById('bingo-student-def').textContent = 'Session ended by teacher.';
+        return;
+      }
+      updateBingoStudentView(updated);
+    });
+  });
+}
+
+function renderBingoCard(sess) {
+  const grid = document.getElementById('bingo-card-grid');
+  const size = sess.gridSize;
+  grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  grid.innerHTML = _bingoCard.map((kwIdx, cellIdx) => {
+    const kw = sess.keywords[kwIdx];
+    return `<button class="bingo-cell" id="bingo-cell-${cellIdx}" data-idx="${kwIdx}" onclick="toggleBingoCell(${cellIdx},${kwIdx})" title="${kw.definition}">${kw.word}</button>`;
+  }).join('');
+  document.getElementById('bingo-card-info').textContent = `${sess.gridSize}×${sess.gridSize} · Win: ${sess.winMode === 'both' ? 'Line then Full House' : sess.winMode}`;
+  updateBingoClaimButtons();
+}
+
+function updateBingoStudentView(sess) {
+  const { callOrder, calledCount, keywords } = sess;
+  // Highlight called cells
+  _bingoCard.forEach((kwIdx, cellIdx) => {
+    const called = (callOrder || []).slice(0, calledCount || 0).includes(kwIdx);
+    const cell   = document.getElementById(`bingo-cell-${cellIdx}`);
+    if (cell) cell.classList.toggle('bingo-cell-called', called);
+  });
+  // Show current definition
+  const defEl = document.getElementById('bingo-student-def');
+  if (defEl && calledCount > 0 && callOrder?.length) {
+    defEl.textContent = keywords[callOrder[calledCount - 1]]?.definition || '';
+  }
+  const prog = document.getElementById('bingo-student-progress');
+  if (prog) prog.textContent = `${calledCount || 0} of ${callOrder?.length || 0} called`;
+}
+
+window.toggleBingoCell = function(cellIdx, kwIdx) {
+  if (_bingoMarked.has(kwIdx)) {
+    _bingoMarked.delete(kwIdx);
+  } else {
+    _bingoMarked.add(kwIdx);
+  }
+  const cell = document.getElementById(`bingo-cell-${cellIdx}`);
+  if (cell) cell.classList.toggle('bingo-cell-marked', _bingoMarked.has(kwIdx));
+
+  if (!_bingoSession) return;
+  const { hasLine, hasFull } = _bingoCheckWin(_bingoCard, _bingoMarked, _bingoSession.gridSize);
+  const wm = _bingoSession.winMode;
+  const lineEligible = (wm === 'line' || wm === 'both') && hasLine && !_bingoLineClaimed;
+  const fullEligible = (wm === 'full' || wm === 'both') && hasFull && !_bingoFullClaimed;
+  updateBingoClaimButtons(lineEligible, fullEligible);
+};
+
+function updateBingoClaimButtons(lineEligible, fullEligible) {
+  const el = document.getElementById('bingo-claim-btns');
+  if (!el) return;
+  el.innerHTML = '';
+  if (lineEligible) {
+    const btn = document.createElement('button');
+    btn.textContent = '🎉 Claim Line!';
+    btn.style.cssText = 'background:#16a34a;color:white;border:none;border-radius:8px;padding:0.45rem 1rem;font-family:Nunito,sans-serif;font-weight:800;font-size:0.85rem;cursor:pointer;';
+    btn.onclick = () => submitBingoClaim('line');
+    el.appendChild(btn);
+  }
+  if (fullEligible) {
+    const btn = document.createElement('button');
+    btn.textContent = '🏆 Claim Full House!';
+    btn.style.cssText = 'background:#d97706;color:white;border:none;border-radius:8px;padding:0.45rem 1rem;font-family:Nunito,sans-serif;font-weight:800;font-size:0.85rem;cursor:pointer;';
+    btn.onclick = () => submitBingoClaim('full');
+    el.appendChild(btn);
+  }
+}
+
+async function submitBingoClaim(type) {
+  if (!_bingoSession || !window._currentUser) return;
+  const name = window._userProfile?.name || window._currentUser.displayName || 'Student';
+  if (type === 'line') _bingoLineClaimed = true;
+  if (type === 'full') _bingoFullClaimed = true;
+  updateBingoClaimButtons(false, false);
+  try {
+    const { claimBingo } = await import('./firebase.js');
+    await claimBingo(_bingoSession.id, window._currentUser.uid, name, type);
+  } catch(e) { console.error('Claim failed', e); }
+  // Show win screen briefly then return to card
+  const wonEl = document.getElementById('bingo-won-screen');
+  const cardEl = document.getElementById('bingo-card-screen');
+  if (wonEl && cardEl) {
+    document.getElementById('bingo-win-emoji').textContent = type === 'full' ? '🏆' : '🎉';
+    document.getElementById('bingo-win-msg').textContent   = type === 'full' ? 'FULL HOUSE!' : 'BINGO! Line complete!';
+    cardEl.style.display = 'none';
+    wonEl.style.display  = 'block';
+    if (_bingoSession.winMode === 'both' && type === 'line') {
+      setTimeout(() => { wonEl.style.display = 'none'; cardEl.style.display = 'block'; }, 3000);
+    }
+  }
+}
+
+// Auto-check for bingo session when the tab is opened
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.tab-btn[data-tab="bingo"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (!_bingoSession) checkForBingoSession();
+    });
+  });
+});
+
+// ── END BINGO ─────────────────────────────────────────────────────────────────
 
 </script>
 

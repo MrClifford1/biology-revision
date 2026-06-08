@@ -850,6 +850,41 @@ export async function getActiveBlitzForClass(className) {
   return { id: d.id, ...d.data() };
 }
 
+// ── BINGO SESSIONS ────────────────────────────────────────────────────────────
+export async function createBingoSession(data) {
+  const ref = await addDoc(collection(db, 'bingoSessions'), { ...data, createdAt: serverTimestamp(), active: true });
+  return ref.id;
+}
+
+export async function updateBingoSession(id, data) {
+  await updateDoc(doc(db, 'bingoSessions', id), data);
+}
+
+export async function getBingoSession(id) {
+  const snap = await getDoc(doc(db, 'bingoSessions', id));
+  return snap.exists() ? { id: snap.id, ...snap.data() } : null;
+}
+
+export function onBingoSnapshot(id, cb) {
+  return onSnapshot(doc(db, 'bingoSessions', id), snap => {
+    if (snap.exists()) cb({ id: snap.id, ...snap.data() });
+  });
+}
+
+export async function getActiveBingoForClass(className) {
+  const q = query(collection(db, 'bingoSessions'), where('class','==',className), where('active','==',true));
+  const snap = await getDocs(q);
+  if (snap.empty) return null;
+  const d = snap.docs[0];
+  return { id: d.id, ...d.data() };
+}
+
+export async function claimBingo(sessionId, uid, name, claimType) {
+  await updateDoc(doc(db, 'bingoSessions', sessionId), {
+    [`claims.${uid}`]: { name, type: claimType, claimedAt: serverTimestamp() }
+  });
+}
+
 // ── SAR (SUBJECT ACCESS REQUEST) ──────────────────────────────────────────────
 export async function getSARData(email) {
   // Step 1: find the user by email
