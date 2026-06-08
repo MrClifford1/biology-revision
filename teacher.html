@@ -466,9 +466,7 @@
       <button class="tab-btn" data-tab="xpleague">🏆 XP League</button>
       <button class="tab-btn" data-tab="assignments">📌 Assignments</button>
       <button class="tab-btn" data-tab="assessments">📅 Assessment Dates</button>
-      <button class="tab-btn" data-tab="xpwars">⚔️ XP Battles</button>
-      <button class="tab-btn" data-tab="blitz">⚡ Blitz</button>
-      <button class="tab-btn" data-tab="bingo">🎯 Bingo</button>
+      <button class="tab-btn" data-tab="games">🎮 Teacher Games</button>
     </div>
   </div>
 
@@ -638,8 +636,12 @@
       </div>
     </div>
 
-    <!-- ── TAB: BLITZ ───────────────────────────────────────────────────────────── -->
-    <div class="tab-panel" id="tab-blitz">
+    <!-- ── TAB: TEACHER GAMES (Blitz + Bingo + XP Battles) ──────────────────────── -->
+    <div class="tab-panel" id="tab-games">
+
+    <!-- ── BLITZ ─────────────────────────────────────────────────────────────── -->
+    <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--subtext);padding:0.5rem 0 0.35rem;margin-top:0.25rem;">⚡ Blitz</div>
+    <div id="tab-blitz">
       <!-- Setup card -->
       <div class="card" id="blitz-setup-card">
         <div class="section-label">⚡ Blitz</div>
@@ -721,8 +723,11 @@
       </div>
     </div>
 
-    <!-- ── TAB: BINGO ────────────────────────────────────────────────────────────── -->
-    <div class="tab-panel" id="tab-bingo">
+    </div><!-- end blitz -->
+
+    <!-- ── BINGO ─────────────────────────────────────────────────────────────── -->
+    <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--subtext);padding:0.5rem 0 0.35rem;margin-top:1rem;">🎯 Bingo</div>
+    <div id="tab-bingo">
 
       <!-- Setup card -->
       <div class="card" id="bingo-setup-card">
@@ -805,10 +810,11 @@
         <button onclick="resetBingo()" style="background:#7c3aed;color:white;border:none;border-radius:8px;padding:0.4rem 0.85rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.78rem;cursor:pointer;">New Bingo</button>
       </div>
 
-    </div>
+    </div><!-- end bingo -->
 
-    <!-- ── TAB: XP BATTLES ──────────────────────────────────────────────────────── -->
-    <div class="tab-panel" id="tab-xpwars">
+    <!-- ── XP BATTLES ────────────────────────────────────────────────────────── -->
+    <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--subtext);padding:0.5rem 0 0.35rem;margin-top:1rem;">⚔️ XP Battles</div>
+    <div id="tab-xpwars">
       <div class="card" id="battle-setup-card">
         <div class="section-label">⚔️ XP Battles</div>
         <p style="font-size:0.82rem;color:var(--subtext);margin-bottom:1rem">Split your class into teams. XP earned during the battle window adds to each team's score. Uncheck any absent students before starting.</p>
@@ -866,7 +872,9 @@
         <p style="text-align:center;font-size:0.72rem;color:var(--subtext);margin:-0.25rem 0 0.5rem;font-family:'Nunito',sans-serif">Updates every 30 seconds · Click a student to remove them</p>
         <div class="battle-groups" id="battle-groups-display"></div>
       </div>
-    </div>
+    </div><!-- end xpwars -->
+
+    </div><!-- end tab-games -->
 
   </main>
 </div>
