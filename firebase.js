@@ -1,7 +1,7 @@
 // Firebase configuration for Streetly Science Hub
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, serverTimestamp, collection, getDocs, deleteDoc, query, where, onSnapshot, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, serverTimestamp, collection, getDocs, deleteDoc, query, where, onSnapshot, addDoc, orderBy, limit, startAfter } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBNVM9Dx8vAYOtt79BVwKK1u3St5BsIxsY",
@@ -737,42 +737,42 @@ export async function logActivity(uid, entry) {
 
 // Load activity log — ordered by timestamp desc, paginated
 // Returns { entries: [...], hasMore: bool, lastDoc }
-export async function getActivityLog(uid, limitCount = 30, startAfterDoc = null) {
-  // Simple collection fetch — sort client-side to avoid needing a composite index
-  const snap = await getDocs(collection(db, 'users', uid, 'activityLog'));
+export async function getActivityLog(uid, limitCount = 20, startAfterDoc = null) {
   const tsToMs = t => {
     if (!t) return 0;
     if (typeof t === 'number') return t;
-    if (typeof t.toMillis === 'function') return t.toMillis(); // Firestore Timestamp
+    if (typeof t.toMillis === 'function') return t.toMillis();
     if (typeof t === 'string') return new Date(t).getTime();
     return 0;
   };
-  const all = snap.docs
-    .map(d => {
-      const data = d.data();
-      // Normalise timestamp to ISO string for consistency downstream
-      const rawTs = data.timestamp;
-      const ms = tsToMs(rawTs);
-      return { id: d.id, _doc: d, ...data, timestamp: ms ? new Date(ms).toISOString() : data.timestamp };
-    })
-    .filter(e => e.timestamp)
-    .sort((a, b) => tsToMs(b.timestamp) - tsToMs(a.timestamp));
 
-  // Manual pagination using the last doc's timestamp as a cursor
-  let startIdx = 0;
-  if (startAfterDoc) {
-    const cursorTs = startAfterDoc.timestamp;
-    startIdx = all.findIndex(e => e.timestamp < cursorTs);
-    if (startIdx === -1) startIdx = all.length;
+  // Build server-side paginated query — only fetches limitCount+1 docs at a time
+  const constraints = [orderBy('timestamp', 'desc'), limit(limitCount + 1)];
+  if (startAfterDoc?._firestoreDoc) constraints.push(startAfter(startAfterDoc._firestoreDoc));
+
+  let snap;
+  try {
+    snap = await getDocs(query(collection(db, 'users', uid, 'activityLog'), ...constraints));
+  } catch (e) {
+    // Index not yet built — fall back to full fetch sorted client-side
+    const fallback = await getDocs(collection(db, 'users', uid, 'activityLog'));
+    const all = fallback.docs
+      .map(d => { const data = d.data(); const ms = tsToMs(data.timestamp); return { id: d.id, _firestoreDoc: d, ...data, timestamp: ms ? new Date(ms).toISOString() : data.timestamp }; })
+      .filter(e => e.timestamp)
+      .sort((a, b) => tsToMs(b.timestamp) - tsToMs(a.timestamp));
+    const page = all.slice(0, limitCount);
+    return { entries: page, hasMore: all.length > limitCount, lastDoc: page[page.length - 1] || null };
   }
 
-  const page = all.slice(startIdx, startIdx + limitCount);
-  const hasMore = startIdx + limitCount < all.length;
-  return {
-    entries: page,
-    hasMore,
-    lastDoc: page[page.length - 1] || null,
-  };
+  const docs = snap.docs.map(d => {
+    const data = d.data();
+    const ms = tsToMs(data.timestamp);
+    return { id: d.id, _firestoreDoc: d, ...data, timestamp: ms ? new Date(ms).toISOString() : data.timestamp };
+  }).filter(e => e.timestamp);
+
+  const hasMore = docs.length > limitCount;
+  const page = docs.slice(0, limitCount);
+  return { entries: page, hasMore, lastDoc: page[page.length - 1] || null };
 }
 // Stored on the user profile so it persists across devices.
 // lastInsightAt: ISO timestamp string
