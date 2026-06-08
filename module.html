@@ -4217,7 +4217,7 @@ function showWHOQuestion() {
         <div class="who-level-badge">Question ${whoQIndex + 1} of 15 · ${spec.marks} marks</div>
         <div style="font-family:'Nunito',sans-serif;font-weight:700;font-size:0.7rem;color:rgba(255,255,255,0.5);margin-bottom:0.35rem;">${q.topic || ''}</div>
         <div class="who-q-text">${q.question}</div>
-        <textarea class="who-written-area" id="who-written-ans" rows="5" placeholder="Write your answer here…"></textarea>
+        <textarea class="who-written-area" id="who-written-ans" rows="5" placeholder="Write your answer here…" onpaste="event.preventDefault();this.insertAdjacentHTML('afterend','<div style=\'font-size:0.7rem;color:#f87171;margin-top:0.25rem\'>✋ Paste disabled — write your answer in your own words.</div>');setTimeout(()=>this.nextElementSibling?.remove(),2500)" oncopy="event.preventDefault()" oncut="event.preventDefault()"></textarea>
         <div class="who-threshold-note">${thresholdNote}</div>
         <button class="who-btn-gold" id="who-final-btn" onclick="confirmWHOFinalAnswer()">Final Answer →</button>
         <div id="who-marking-msg" class="who-marking-msg" style="display:none;"><div class="spinner" style="border-top-color:#fbbf24;margin:0 auto 0.5rem;"></div>Marking…</div>
