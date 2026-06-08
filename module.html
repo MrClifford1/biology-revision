@@ -959,8 +959,10 @@
   .s6-conn-dim { opacity: 0.55; }
   /* Key term chips */
   .s6-term-grid { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .s6-term-chip { position: relative; background: #f5f3ff; border: 1.5px solid #a5b4fc; border-radius: 8px; padding: 0.3rem 0.65rem; font-size: 0.78rem; font-family: 'Nunito', sans-serif; font-weight: 800; color: #3730a3; cursor: pointer; transition: background 0.15s; }
+  .s6-term-chip { position: relative; background: #f5f3ff; border: 1.5px solid #a5b4fc; border-radius: 8px; padding: 0.3rem 0.65rem; font-size: 0.78rem; font-family: 'Nunito', sans-serif; font-weight: 800; color: #3730a3; cursor: pointer; transition: background 0.15s, border-color 0.15s; }
   .s6-term-chip:hover, .s6-term-chip.s6-term-open { background: #ede9fe; border-color: #6366f1; }
+  .s6-term-chip.s6-term-found { background: #dcfce7; border-color: #4ade80; color: #166534; }
+  .s6-term-chip.s6-term-found::after { content: ' ✓'; font-size: 0.7rem; }
   .s6-term-def { display: none; position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); background: #1e1b4b; color: white; border-radius: 8px; padding: 0.4rem 0.65rem; font-size: 0.71rem; font-weight: 600; white-space: normal; width: 200px; z-index: 50; line-height: 1.4; pointer-events: none; }
   .s6-term-chip:hover .s6-term-def, .s6-term-chip.s6-term-open .s6-term-def { display: block; }
   .s6-textarea { width: 100%; box-sizing: border-box; border: 1.5px solid var(--border); border-radius: 10px; padding: 0.75rem; font-size: 0.875rem; font-family: inherit; line-height: 1.65; resize: vertical; outline: none; min-height: 140px; }
@@ -5025,19 +5027,20 @@ async function buildS6ScaffoldPanel(type, panel, btn) {
 
   if (type === 'connectives') {
     const recommended = new Set(S6_RECOMMENDED_CONNECTIVES[cwKey] || S6_RECOMMENDED_CONNECTIVES.default);
-    const sections = Object.entries(S6_CONNECTIVES).map(([cat, words]) =>
-      `<div style="margin-bottom:0.6rem">
+    // Only show recommended connectives, grouped by category
+    const sections = Object.entries(S6_CONNECTIVES).map(([cat, words]) => {
+      const recWords = words.filter(w => recommended.has(w));
+      if (!recWords.length) return '';
+      return `<div style="margin-bottom:0.6rem">
         <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.07em;color:#4f46e5;margin-bottom:0.25rem">${cat}</div>
-        <div class="s6-connective-grid">${words.map(w =>
-          recommended.has(w)
-            ? `<span class="s6-connective-chip s6-conn-recommended" title="Recommended for ${cwKey} answers">⭐ ${w}</span>`
-            : `<span class="s6-connective-chip s6-conn-dim">${w}</span>`
+        <div class="s6-connective-grid">${recWords.map(w =>
+          `<span class="s6-connective-chip s6-conn-recommended">${w}</span>`
         ).join('')}</div>
-      </div>`
-    ).join('');
+      </div>`;
+    }).join('');
     panel.innerHTML = `
-      <h4>🔗 Connectives Bank</h4>
-      <p style="font-size:0.72rem;color:var(--subtext);margin:0 0 0.5rem">⭐ highlighted connectives are especially useful for <strong>${cwKey}</strong> questions.</p>
+      <h4>🔗 Connectives</h4>
+      <p style="font-size:0.72rem;color:var(--subtext);margin:0 0 0.5rem">These connectives work best for <strong>${cwKey}</strong> questions.</p>
       ${sections}`;
   }
 
@@ -5088,12 +5091,30 @@ function renderS6KeyTerms(panel, terms) {
   const chips = terms.map(t => {
     const term = typeof t === 'string' ? t : t.term;
     const def  = typeof t === 'string' ? '' : (t.definition || t.def || '');
-    return `<span class="s6-term-chip" tabindex="0" title="${def.replace(/"/g,'&quot;')}" onclick="this.classList.toggle('s6-term-open')">${term}${def ? `<span class="s6-term-def">${def}</span>` : ''}</span>`;
+    return `<span class="s6-term-chip" data-term="${term.toLowerCase().replace(/"/g,'&quot;')}" tabindex="0" title="${def.replace(/"/g,'&quot;')}" onclick="this.classList.toggle('s6-term-open')">${term}${def ? `<span class="s6-term-def">${def}</span>` : ''}</span>`;
   }).join('');
   panel.innerHTML = `
     <h4>🔑 Key Terms</h4>
-    <p style="font-size:0.72rem;color:var(--subtext);margin:0 0 0.5rem">Tap a term to see its definition. These are the concepts your answer must cover.</p>
+    <p style="font-size:0.72rem;color:var(--subtext);margin:0 0 0.5rem">Tap a term to see its definition. Green = already in your answer ✓</p>
     <div class="s6-term-grid">${chips}</div>`;
+  // Attach live-highlight listener (only once)
+  const ta = document.getElementById('s6-textarea');
+  if (ta && !ta._s6TermListener) {
+    ta._s6TermListener = true;
+    ta.addEventListener('input', s6UpdateTermHighlights);
+  }
+  s6UpdateTermHighlights();
+}
+
+function s6UpdateTermHighlights() {
+  const ta   = document.getElementById('s6-textarea');
+  const grid = document.querySelector('#s6-panel-keypoints .s6-term-grid');
+  if (!ta || !grid) return;
+  const text = ta.value.toLowerCase();
+  grid.querySelectorAll('.s6-term-chip').forEach(chip => {
+    const term = chip.dataset.term || '';
+    chip.classList.toggle('s6-term-found', !!term && text.includes(term));
+  });
 }
 
 function s6ToggleCheck(idx, checked) {
