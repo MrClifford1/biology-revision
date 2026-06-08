@@ -1162,8 +1162,8 @@
   }
 
   // ── HISTORY MODAL ───────────────────────────────────────────────────────────
-  const TYPE_ICONS = { mock:'📝', mini_mock:'📝', paper:'📄', flashcards:'🃏', flashcard:'🃏', words:'🔤', keywords:'🔤', learn:'🎓', scribble:'✏️', cloze:'🔡', clue:'🔍', video:'🎬' };
-  const TYPE_NAMES = { mock:'Mini Mock', mini_mock:'Mini Mock', paper:'Practice Paper', flashcards:'Flashcards', flashcard:'Flashcards', words:'Keywords Game', keywords:'Keywords Game', learn:'Learn', scribble:'Scribble', cloze:'Fill the Gaps', clue:'Clues Game', video:'Video' };
+  const TYPE_ICONS = { mock:'📝', mini_mock:'📝', paper:'📄', flashcards:'🃏', flashcard:'🃏', words:'🔤', keywords:'🔤', learn:'🎓', scribble:'✏️', cloze:'🔡', clue:'🔍', who:'🧪', video:'🎬' };
+  const TYPE_NAMES = { mock:'Mini Mock', mini_mock:'Mini Mock', paper:'Practice Paper', flashcards:'Flashcards', flashcard:'Flashcards', words:'Keywords Game', keywords:'Keywords Game', learn:'Learn', scribble:'Scribble', cloze:'Fill the Gaps', clue:'Clues Game', who:'Who Wants to Be a Scientist?', video:'Video' };
 
   window.openHistoryModal = async (uid, name) => {
     const modal = document.getElementById('history-modal');
@@ -1453,7 +1453,7 @@
       // Compute XP from activity logs — total and recent window
       const now = Date.now();
       const cutoffRecent = now - _xpWindowMins * 60 * 1000;
-      const XP_PER_ACTIVITY = { mock: 10, mini_mock: 10, paper: 15, flashcards: 5, flashcard: 5, words: 3, keywords: 3, learn: 5, scribble: 5, cloze: 3, clue: 5, video: 10, revise: 5, video_quiz: 5, blitz: 5 };
+      const XP_PER_ACTIVITY = { mock: 10, mini_mock: 10, paper: 15, flashcards: 5, flashcard: 5, words: 3, keywords: 3, learn: 5, scribble: 5, cloze: 3, clue: 5, who: 15, video: 10, revise: 5, video_quiz: 5, blitz: 5 };
 
       const rows = await Promise.all(students.map(async s => {
         let totalXp = 0, recentXp = 0;
@@ -1765,7 +1765,7 @@
   const BATTLE_ANIMALS    = ['Pandas','Geese','Tigers','Penguins','Foxes','Wolves','Hedgehogs','Otters','Raccoons','Narwhals','Axolotls','Capybaras','Sloths','Platypuses','Badgers','Llamas','Wombats','Geckos','Piranhas','Quokkas'];
   const BATTLE_COLOURS    = ['#6366f1','#16a34a','#ef4444','#d97706','#0891b2','#9333ea'];
   const BATTLE_BG         = ['#eef2ff','#dcfce7','#fef2f2','#fef9c3','#e0f2fe','#f3e8ff'];
-  const XP_PER_TYPE       = { mock:10,mini_mock:10,paper:15,flashcards:5,flashcard:5,words:3,keywords:3,learn:5,scribble:5,cloze:3,clue:5,video:10,revise:5,video_quiz:5,blitz:2 };
+  const XP_PER_TYPE       = { mock:10,mini_mock:10,paper:15,flashcards:5,flashcard:5,words:3,keywords:3,learn:5,scribble:5,cloze:3,clue:5,who:15,video:10,revise:5,video_quiz:5,blitz:2 };
 
   let _battle = null;
   let _battleStudents = [];
@@ -2069,13 +2069,14 @@
     chemistry: [{id:'c1',label:'C1 Atomic Structure'},{id:'c2',label:'C2 Bonding'},{id:'c3',label:'C3 Quantitative Chemistry'},{id:'c4',label:'C4 Chemical Changes'},{id:'c5',label:'C5 Energy Changes'},{id:'c6',label:'C6 Rate of Reaction'},{id:'c7',label:'C7 Organic Chemistry'},{id:'c8',label:'C8 Chemical Analysis'},{id:'c9',label:'C9 Atmosphere'},{id:'c10',label:'C10 Using Resources'}],
     physics:   [{id:'p1',label:'P1 Energy'},{id:'p2',label:'P2 Electricity'},{id:'p3',label:'P3 Particle Model'},{id:'p4',label:'P4 Atomic Structure'},{id:'p5',label:'P5 Forces'},{id:'p6',label:'P6 Waves'},{id:'p7',label:'P7 Magnetism'}],
   };
-  const TYPE_TABS   = { mini_mock:'mock', flashcards:'flashcards', keywords:'words', learn:'learn', scribble:'scribble', cloze:'cloze', clue:'clue', video:'revision', paper:'paper' };
-  const TYPE_LABELS = { mini_mock:'Mini Mock', flashcards:'Flashcards', keywords:'Keywords Game', learn:'Learn', scribble:'Scribble', cloze:'Fill the Gaps', clue:'Clues Game', video:'Watch Videos', paper:'Practice Paper', custom:'Custom Task' };
+  const TYPE_TABS   = { mini_mock:'mock', flashcards:'flashcards', keywords:'words', learn:'learn', scribble:'scribble', cloze:'cloze', clue:'clue', who:'who', video:'revision', paper:'paper' };
+  const TYPE_LABELS = { mini_mock:'Mini Mock', flashcards:'Flashcards', keywords:'Keywords Game', learn:'Learn', scribble:'Scribble', cloze:'Fill the Gaps', clue:'Clues Game', who:'Who Wants to Be a Scientist?', video:'Watch Videos', paper:'Practice Paper', custom:'Custom Task' };
   const ALL_ACTIVITY_TYPES = [
     {value:'mini_mock',  label:'🧠 Mini Mock'},
     {value:'flashcards', label:'🃏 Flashcards'},
     {value:'keywords',   label:'🔤 Keywords Game'},
     {value:'clue',       label:'🔍 Clues Game'},
+    {value:'who',        label:'🧪 Who Wants to Be a Scientist?'},
     {value:'learn',      label:'🎓 Learn'},
     {value:'scribble',   label:'✏️ Scribble'},
     {value:'cloze',      label:'🧩 Fill the Gaps'},
@@ -2293,6 +2294,7 @@
             <span>${typeLabel}${modLabel?' · '+modLabel:''}</span>
             <span>📅 Due ${due}</span>
             <span>📚 ${(a.subject||'').charAt(0).toUpperCase()+(a.subject||'').slice(1)}</span>
+            ${a.teacherEmail?`<span>👤 ${a.teacherEmail.split('@')[0]}</span>`:''}
             ${a.note?`<span>💬 ${a.note}</span>`:''}
           </div>
           <div class="assignment-classes">${(a.classes||[]).map(c=>`<span class="class-tag">${c}</span>`).join('')}</div>
@@ -2375,7 +2377,7 @@
       note: note||null,
       link: legacyLink,
       customText: firstAct.type==='custom' ? (firstAct.customText||null) : null,
-      createdBy: currentUser.uid, active: true
+      createdBy: currentUser.uid, teacherEmail: currentUser.email, active: true
     };
 
     try {
@@ -2559,7 +2561,7 @@
       await saveAssessmentDate(saveCls, saveSubj, id, {
         label, date, scheduleLink: schedLink || null,
         modules: selMods, partialTopics,
-        createdBy: currentUser.uid,
+        createdBy: currentUser.uid, teacherEmail: currentUser.email,
       });
       msg.className = 'form-msg success';
       msg.textContent = adEditState ? '✅ Assessment updated!' : '✅ Assessment date saved!';
@@ -2765,7 +2767,7 @@
             <span class="adate-subj-pill ${pillCls}">${a.subject}</span>
             <div class="adate-info">
               <div class="adate-label">${a.label||'Assessment'}</div>
-              <div class="adate-meta">${dateStr}${a.scheduleLink ? ` · ${a.scheduleLink}` : ''}${!isOwn ? ' · <em>set by another teacher</em>' : ''}</div>
+              <div class="adate-meta">${dateStr}${a.scheduleLink ? ` · ${a.scheduleLink}` : ''} · 👤 ${a.teacherEmail ? a.teacherEmail.split('@')[0] : (isOwn ? currentUser.email.split('@')[0] : 'another teacher')}</div>
               <div class="adate-mods">${modTags}</div>
             </div>
             ${cdText ? `<span class="adate-countdown ${cdCls}">${cdText}</span>` : ''}

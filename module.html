@@ -864,6 +864,54 @@
   }
   .xp-toast-label { letter-spacing: 0.03em; text-shadow: 0 1px 3px rgba(0,0,0,0.25); }
 
+  /* ── WHO WANTS TO BE A SCIENTIST ─────────────────────────────────────── */
+  #tab-who .practice-panel-inner { background: transparent; }
+  .who-arena { background: linear-gradient(160deg, #0f1729 0%, #1a2a5e 60%, #0d1f4a 100%); border-radius: 18px; padding: 1rem; margin-bottom: 0.75rem; box-shadow: 0 8px 32px rgba(10,20,70,0.35), inset 0 1px 0 rgba(255,255,255,0.06); }
+  .who-layout { display: flex; gap: 0.75rem; align-items: flex-start; }
+  .who-ladder { flex: 0 0 148px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden; }
+  .who-ladder-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); padding: 0.5rem 0.6rem 0.35rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .who-rung { display: flex; align-items: center; gap: 0.3rem; padding: 0.28rem 0.5rem; font-size: 0.68rem; font-family: 'Nunito', sans-serif; font-weight: 700; color: rgba(255,255,255,0.38); border-left: 3px solid transparent; cursor: default; transition: background 0.15s; position: relative; }
+  .who-rung:hover .who-rung-tooltip { display: block; }
+  .who-rung.who-rung-done { color: #4ade80; border-left-color: #4ade80; background: rgba(74,222,128,0.08); }
+  .who-rung.who-rung-current { color: #fbbf24; border-left-color: #fbbf24; background: rgba(251,191,36,0.12); font-weight: 900; animation: who-pulse 1.8s ease-in-out infinite; }
+  .who-rung.who-rung-future { opacity: 0.35; }
+  @keyframes who-pulse { 0%,100% { background: rgba(251,191,36,0.08); } 50% { background: rgba(251,191,36,0.2); } }
+  .who-rung-emoji { font-size: 0.82rem; flex-shrink: 0; }
+  .who-rung-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+  .who-rung-num { font-size: 0.6rem; color: rgba(255,255,255,0.25); flex-shrink: 0; }
+  .who-rung-tooltip { display: none; position: absolute; left: calc(100% + 8px); top: 50%; transform: translateY(-50%); background: #1e293b; border: 1px solid rgba(255,255,255,0.12); color: #e2e8f0; font-size: 0.72rem; font-family: 'Nunito', sans-serif; font-weight: 600; line-height: 1.5; padding: 0.5rem 0.7rem; border-radius: 8px; white-space: normal; width: 190px; z-index: 30; pointer-events: none; box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+  .who-rung-tooltip strong { color: #fbbf24; display: block; margin-bottom: 0.15rem; }
+  .who-rung-tooltip::before { content: ''; position: absolute; right: 100%; top: 50%; transform: translateY(-50%); border: 5px solid transparent; border-right-color: #1e293b; }
+  .who-main { flex: 1; min-width: 0; }
+  .who-q-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; padding: 1.1rem 1.25rem; margin-bottom: 0.65rem; box-shadow: 0 0 0 1px rgba(251,191,36,0.08), 0 4px 20px rgba(0,0,0,0.25); }
+  .who-level-badge { display: inline-flex; align-items: center; gap: 0.3rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: #1e1b4b; background: linear-gradient(90deg, #fbbf24, #f59e0b); border-radius: 20px; padding: 0.18rem 0.6rem; margin-bottom: 0.5rem; }
+  .who-q-text { font-size: 0.9rem; line-height: 1.65; font-weight: 600; color: white; margin-bottom: 0.65rem; }
+  .who-mc-options { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 0.65rem; }
+  .who-mc-btn { text-align: left; padding: 0.55rem 0.85rem; border: 1.5px solid rgba(255,255,255,0.18); border-radius: 10px; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.85); font-size: 0.85rem; font-family: inherit; font-weight: 600; cursor: pointer; transition: border-color 0.15s, background 0.15s, transform 0.1s; }
+  .who-mc-btn:hover:not(:disabled) { border-color: #fbbf24; background: rgba(251,191,36,0.1); color: white; transform: translateX(2px); }
+  .who-mc-btn.who-correct { border-color: #4ade80; background: rgba(74,222,128,0.15); color: #4ade80; }
+  .who-mc-btn.who-wrong { border-color: #f87171; background: rgba(248,113,113,0.15); color: #f87171; }
+  .who-mc-btn.who-reveal { border-color: #4ade80; background: rgba(74,222,128,0.1); color: #4ade80; }
+  .who-written-area { width: 100%; box-sizing: border-box; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 0.75rem; font-size: 0.875rem; font-family: inherit; line-height: 1.6; resize: vertical; outline: none; margin-bottom: 0.45rem; background: rgba(255,255,255,0.06); color: white; }
+  .who-written-area::placeholder { color: rgba(255,255,255,0.35); }
+  .who-written-area:focus { border-color: #fbbf24; }
+  .who-threshold-note { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 0.65rem; }
+  .who-btn-gold { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.55rem 1.2rem; background: linear-gradient(90deg, #fbbf24, #f59e0b); color: #1e1b4b; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.875rem; border: none; border-radius: 10px; cursor: pointer; transition: opacity 0.15s, transform 0.1s; }
+  .who-btn-gold:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+  .who-btn-gold:disabled { opacity: 0.5; cursor: default; }
+  .who-final-answer-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.72); z-index: 200; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
+  .who-final-answer-box { background: linear-gradient(160deg, #0f1729 0%, #1a2a5e 100%); border: 1px solid rgba(251,191,36,0.35); border-radius: 20px; padding: 2rem 1.75rem; max-width: 360px; width: 92%; text-align: center; box-shadow: 0 0 60px rgba(251,191,36,0.12), 0 20px 60px rgba(0,0,0,0.5); }
+  .who-final-answer-box h3 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.25rem; color: #fbbf24; margin-bottom: 0.4rem; }
+  .who-final-answer-box p { color: rgba(255,255,255,0.65); font-size: 0.875rem; margin-bottom: 1.5rem; line-height: 1.5; }
+  .who-final-answer-box .who-preview { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 0.75rem; font-size: 0.8rem; color: rgba(255,255,255,0.8); text-align: left; margin-bottom: 1.25rem; line-height: 1.5; max-height: 100px; overflow-y: auto; font-style: italic; }
+  .who-final-btns { display: flex; gap: 0.6rem; justify-content: center; }
+  .who-btn-cancel { padding: 0.5rem 1rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.7); border-radius: 10px; font-family: inherit; font-size: 0.85rem; cursor: pointer; }
+  .who-btn-cancel:hover { background: rgba(255,255,255,0.14); }
+  .who-marking-msg { color: rgba(255,255,255,0.55); font-size: 0.85rem; text-align: center; padding: 1rem 0; }
+  .who-game-over { background: linear-gradient(135deg, #1a0a0a, #2d0f0f); border: 1px solid rgba(248,113,113,0.3); border-radius: 14px; padding: 1.5rem; text-align: center; margin-bottom: 0.75rem; color: white; }
+  .who-complete-arena { background: linear-gradient(135deg, #0f172a, #1e1b4b, #14532d); border-radius: 18px; padding: 2rem 1.5rem; text-align: center; color: white; margin-bottom: 0.75rem; box-shadow: 0 0 80px rgba(74,222,128,0.15); }
+  @media (max-width: 540px) { .who-layout { flex-direction: column; } .who-ladder { flex: none; width: 100%; } .who-rung-tooltip { left: auto; right: 0; top: auto; bottom: calc(100% + 6px); transform: none; width: 210px; } .who-rung-tooltip::before { display: none; } }
+
   </style>
 </head>
 <body>
@@ -941,6 +989,7 @@
     <button class="tab-btn" data-tab="clue" title="Guess the keyword from progressive clues — fewer clues used = more XP · Up to 3 XP per word · Max 35 XP total">🔍 Clues</button>
     <button class="tab-btn" data-tab="cloze" title="Fill in the missing words from memory — strengthens retrieval of key terms · 1 XP per correct blank · Max 35 XP total">🧩 Gaps</button>
     <button class="tab-btn" data-tab="scribble" title="Write everything you know from memory — high-effort, high-reward retrieval practice · Up to 10 XP · Max 50 XP total">✍️ Scribble</button>
+    <button class="tab-btn" data-tab="who" title="Who Wants to Be a Scientist? — 15 questions of rising difficulty. Climb the scientist ladder! · XP per correct answer">🧪 WHO</button>
     <button class="tab-btn" data-tab="practice" title="Practise exam-style questions with mark scheme feedback — builds exam technique · Up to 15 XP · No XP cap">✏️ Mini Mock</button>
     <button class="tab-btn" data-tab="paper" title="Full past paper · Up to 15 XP · No XP cap">📝 Paper</button>
   </div>
@@ -1326,6 +1375,82 @@
         <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;margin-top:1.25rem;">
           <button class="btn-primary" id="scribble-try-again-btn">🔄 Try Another Topic</button>
           <button class="btn-secondary" id="scribble-go-revise-btn" style="background:white;border:2px solid var(--accent);color:var(--accent);font-family:'Nunito',sans-serif;font-weight:800;padding:0.65rem 1.5rem;border-radius:12px;cursor:pointer;font-size:0.95rem;transition:opacity 0.18s;">📖 Go to Revise</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── WHO WANTS TO BE A SCIENTIST TAB ──────────────────────────────────── -->
+  <div class="tab-panel" id="tab-who">
+    <div class="practice-panel-inner">
+
+      <!-- INTRO SCREEN -->
+      <div id="who-intro-section">
+        <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;">
+          <h2 style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.15rem;margin-bottom:0.35rem;">🧪 Who Wants to Be a Scientist?</h2>
+          <p style="color:var(--subtext);font-size:0.875rem;line-height:1.5;">Answer 15 questions of rising difficulty to climb the ladder from apprentice to legend. Start with 5 multiple choice questions, then face longer and harder written questions. One wrong answer and you're back to the start!</p>
+          <ul style="color:var(--subtext);font-size:0.8rem;line-height:1.7;margin:0.5rem 0 0;padding-left:1.2rem;">
+            <li>Questions 1–5: Multiple choice (select your answer)</li>
+            <li>Questions 6–15: Written answers — meet the minimum mark to advance</li>
+            <li>Hover over scientists on the ladder to learn what they're famous for</li>
+          </ul>
+        </div>
+        <button class="btn-primary" onclick="startWHO()">Start →</button>
+      </div>
+
+      <!-- GAME SCREEN -->
+      <div id="who-game-section" style="display:none;">
+        <div class="who-arena">
+          <div class="who-layout">
+
+            <!-- Scientist ladder (sidebar) -->
+            <div class="who-ladder">
+              <div class="who-ladder-title">🔬 Scientist Ladder</div>
+              <div id="who-ladder-list"></div>
+            </div>
+
+            <!-- Main question area -->
+            <div class="who-main">
+              <div id="who-q-container"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- GAME OVER SCREEN -->
+      <div id="who-gameover-section" style="display:none;">
+        <div class="who-arena">
+          <div class="who-game-over">
+            <div style="font-size:2.5rem;margin-bottom:0.5rem;">💥</div>
+            <h3 style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.15rem;margin-bottom:0.4rem;color:#f87171;">Wrong answer — back to the start!</h3>
+            <p id="who-gameover-text" style="color:rgba(255,255,255,0.6);font-size:0.875rem;margin-bottom:0.75rem;"></p>
+            <div id="who-gameover-model" style="text-align:left;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:0.75rem 1rem;font-size:0.8rem;line-height:1.6;margin-bottom:1rem;display:none;">
+              <strong style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.07em;color:rgba(255,255,255,0.45);">Model answer</strong>
+              <p id="who-gameover-model-text" style="margin:0.3rem 0 0;color:rgba(255,255,255,0.8);"></p>
+            </div>
+          </div>
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;padding:0 0.25rem;">
+            <button class="who-btn-gold" onclick="startWHO()">Try Again →</button>
+            <button class="btn-secondary" onclick="showWHOIntro()">← Back</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPLETE SCREEN -->
+      <div id="who-complete-section" style="display:none;">
+        <div class="who-arena">
+          <div class="who-complete-arena">
+            <div style="font-size:3rem;margin-bottom:0.5rem;">🏆</div>
+            <h3 style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.4rem;margin-bottom:0.4rem;color:#fbbf24;">You Want to Be a Scientist!</h3>
+            <p id="who-complete-scientist" style="font-size:1rem;color:rgba(255,255,255,0.85);margin-bottom:0.5rem;"></p>
+            <p id="who-complete-xp" style="font-size:0.875rem;color:rgba(255,255,255,0.55);"></p>
+          </div>
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;padding:0 0.25rem;">
+            <button class="who-btn-gold" onclick="startWHO()">Play Again →</button>
+            <button class="btn-secondary" onclick="showWHOIntro()">← Back</button>
+          </div>
         </div>
       </div>
 
@@ -3889,6 +4014,339 @@ document.getElementById('learn-refresh-btn')?.addEventListener('click', () => {
   if (banner) banner.style.display = 'none';
 });
 
+// ── WHO WANTS TO BE A SCIENTIST ──────────────────────────────────────────────
+
+const WHO_SCIENTISTS = [
+  { name: 'William Beaumont',    emoji: '🔬', fact: 'Pioneer of gastric physiology — studied digestion through a patient\'s open stomach wound (1820s).' },
+  { name: 'Jan van Helmont',     emoji: '🌱', fact: 'Early plant scientist who showed plants don\'t get mass from soil — a step toward photosynthesis.' },
+  { name: 'Francesco Redi',      emoji: '🪲', fact: 'Disproved spontaneous generation with fly larvae experiments (1668).' },
+  { name: 'Robert Hooke',        emoji: '🔭', fact: 'First person to use the word "cell" after observing cork under a microscope (1665).' },
+  { name: 'Antonie van Leeuwenhoek', emoji: '💧', fact: 'Built powerful microscopes and was first to observe bacteria and microorganisms (1670s).' },
+  { name: 'Carl Linnaeus',       emoji: '🌿', fact: 'Created the binomial naming system for classifying all living things — still used today.' },
+  { name: 'Luigi Galvani',       emoji: '⚡', fact: 'Discovered bioelectricity by making frog legs twitch with electric current (1780s).' },
+  { name: 'Antoine Lavoisier',   emoji: '⚗️', fact: 'Father of modern chemistry — established conservation of mass and named oxygen and hydrogen.' },
+  { name: 'John Dalton',         emoji: '⚛️', fact: 'Proposed the first modern atomic theory and created the first table of atomic weights (1803).' },
+  { name: 'Humphry Davy',        emoji: '🔋', fact: 'Used electrolysis to discover sodium, potassium, calcium and other elements.' },
+  { name: 'Michael Faraday',     emoji: '🧲', fact: 'Discovered electromagnetic induction and laws of electrolysis — foundation of electric motors.' },
+  { name: 'Gregor Mendel',       emoji: '🫘', fact: 'Father of genetics — discovered dominant and recessive inheritance through pea plant experiments.' },
+  { name: 'Louis Pasteur',       emoji: '🦠', fact: 'Proved germ theory, developed pasteurisation, and created early vaccines for rabies and anthrax.' },
+  { name: 'Robert Koch',         emoji: '🧫', fact: 'Identified bacteria causing tuberculosis and cholera — established Koch\'s postulates for disease.' },
+  { name: 'James Clerk Maxwell', emoji: '🌊', fact: 'Unified electricity, magnetism and light into Maxwell\'s equations — one of physics\' greatest achievements.' },
+  { name: 'Dmitri Mendeleev',    emoji: '📊', fact: 'Created the periodic table in 1869 and predicted undiscovered elements from gaps in the pattern.' },
+  { name: 'Charles Darwin',      emoji: '🦕', fact: 'Proposed natural selection as the mechanism of evolution in On the Origin of Species (1859).' },
+  { name: 'Ernest Rutherford',   emoji: '💥', fact: 'Discovered the atomic nucleus by firing alpha particles at gold foil — transformed atomic theory.' },
+  { name: 'Niels Bohr',          emoji: '🪐', fact: 'Proposed electrons orbit nuclei in fixed energy shells — the foundation of the electronic model.' },
+  { name: 'Lise Meitner',        emoji: '☢️', fact: 'Co-discovered nuclear fission — one of the most significant discoveries of the 20th century.' },
+  { name: 'Rosalind Franklin',   emoji: '🧬', fact: 'Her X-ray crystallography of DNA provided crucial evidence for the double helix structure.' },
+  { name: 'Marie Curie',         emoji: '🏅', fact: 'Only person to win Nobel Prizes in two sciences (Physics and Chemistry) — pioneered radioactivity.' },
+  { name: 'Werner Heisenberg',   emoji: '🌀', fact: 'Formulated the uncertainty principle — you cannot know both position and momentum of a particle exactly.' },
+  { name: 'Erwin Schrödinger',   emoji: '🐱', fact: 'Developed quantum wave mechanics; famous for his thought experiment involving a cat in a box.' },
+  { name: 'Dorothy Hodgkin',     emoji: '💎', fact: 'Used X-ray crystallography to determine the 3D structures of penicillin, vitamin B12 and insulin.' },
+  { name: 'Francis Crick',       emoji: '🔗', fact: 'Co-discovered the double helix structure of DNA with Watson (using Franklin\'s data) in 1953.' },
+  { name: 'Max Planck',          emoji: '🌡️', fact: 'Founded quantum theory by proposing energy is emitted in discrete packets called quanta (1900).' },
+  { name: 'Stephen Hawking',     emoji: '🌌', fact: 'Discovered Hawking radiation from black holes and advanced our understanding of the Big Bang.' },
+  { name: 'Albert Einstein',     emoji: '💡', fact: 'Developed relativity (E=mc²), explained the photoelectric effect, and revolutionised physics.' },
+  { name: 'Isaac Newton',        emoji: '🍎', fact: 'Formulated laws of motion and gravity, invented calculus, and transformed our understanding of the universe.' },
+];
+
+// 15-question ladder: [marks, type, threshold]
+// type: 'mcq' | 'written'  threshold: minimum marks to pass
+const WHO_LADDER = [
+  { marks: 1, type: 'mcq',     threshold: 1 },
+  { marks: 1, type: 'mcq',     threshold: 1 },
+  { marks: 1, type: 'mcq',     threshold: 1 },
+  { marks: 1, type: 'mcq',     threshold: 1 },
+  { marks: 1, type: 'mcq',     threshold: 1 },
+  { marks: 2, type: 'written', threshold: 1 },
+  { marks: 3, type: 'written', threshold: 1 },
+  { marks: 2, type: 'written', threshold: 2 },
+  { marks: 4, type: 'written', threshold: 2 },
+  { marks: 3, type: 'written', threshold: 3 },
+  { marks: 4, type: 'written', threshold: 2 },
+  { marks: 5, type: 'written', threshold: 2 },
+  { marks: 5, type: 'written', threshold: 4 },
+  { marks: 6, type: 'written', threshold: 3 },
+  { marks: 6, type: 'written', threshold: 6 },
+];
+
+let whoScientists = [];   // 15 picked & sorted scientists for this game
+let whoQIndex = 0;        // current question index (0–14)
+let whoSessionXP = 0;
+let whoUsedQIds = new Set();
+let whoCurrentQ = null;
+let whoMarkingActive = false;
+
+function shuffleArr(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function startWHO() {
+  if (!questions.length) { alert('Questions are still loading — please try again in a moment.'); return; }
+  // Pick 15 scientists in original rank order
+  const indices = shuffleArr([...Array(WHO_SCIENTISTS.length).keys()]).slice(0, 15).sort((a, b) => a - b);
+  whoScientists = indices.map(i => WHO_SCIENTISTS[i]);
+  whoQIndex = 0;
+  whoSessionXP = 0;
+  whoUsedQIds = new Set();
+  whoMarkingActive = false;
+
+  document.getElementById('who-intro-section').style.display = 'none';
+  document.getElementById('who-gameover-section').style.display = 'none';
+  document.getElementById('who-complete-section').style.display = 'none';
+  document.getElementById('who-game-section').style.display = 'block';
+
+  buildWHOLadder();
+  showWHOQuestion();
+}
+
+function showWHOIntro() {
+  document.getElementById('who-intro-section').style.display = 'block';
+  document.getElementById('who-game-section').style.display = 'none';
+  document.getElementById('who-gameover-section').style.display = 'none';
+  document.getElementById('who-complete-section').style.display = 'none';
+}
+
+function buildWHOLadder() {
+  const list = document.getElementById('who-ladder-list');
+  list.innerHTML = [...whoScientists].reverse().map((sci, ri) => {
+    const i = whoScientists.length - 1 - ri; // actual index
+    const cls = i < whoQIndex ? 'who-rung-done' : i === whoQIndex ? 'who-rung-current' : 'who-rung-future';
+    return `<div class="who-rung ${cls}" data-idx="${i}">
+      <span class="who-rung-emoji">${sci.emoji}</span>
+      <span class="who-rung-name">${sci.name}</span>
+      <span class="who-rung-num">${i + 1}</span>
+      <div class="who-rung-tooltip"><strong>${sci.name}</strong>${sci.fact}</div>
+    </div>`;
+  }).join('');
+}
+
+function getWHOQuestion(level) {
+  const spec = WHO_LADDER[level];
+  const pool = questions.filter(q => {
+    if (q.marks !== spec.marks) return false;
+    if (spec.type === 'mcq' && q.type !== 'multiple_choice') return false;
+    if (spec.type === 'written' && q.type !== 'written') return false;
+    if (whoUsedQIds.has(q.id)) return false;
+    return true;
+  });
+  if (!pool.length) return null;
+  const q = pool[Math.floor(Math.random() * pool.length)];
+  whoUsedQIds.add(q.id);
+  return q;
+}
+
+function showWHOQuestion() {
+  buildWHOLadder();
+  const spec = WHO_LADDER[whoQIndex];
+  const q = getWHOQuestion(whoQIndex);
+  whoCurrentQ = q;
+
+  if (!q) {
+    // Fallback: no question of that mark value — skip to next level
+    whoQIndex++;
+    if (whoQIndex >= WHO_LADDER.length) { whoComplete(); return; }
+    showWHOQuestion();
+    return;
+  }
+
+  const sci = whoScientists[whoQIndex];
+  const container = document.getElementById('who-q-container');
+
+  if (spec.type === 'mcq') {
+    const opts = shuffleArr(q.options || []);
+    container.innerHTML = `
+      <div class="who-q-card">
+        <div class="who-level-badge">Question ${whoQIndex + 1} of 15</div>
+        <div style="font-family:'Nunito',sans-serif;font-weight:700;font-size:0.7rem;color:rgba(255,255,255,0.5);margin-bottom:0.35rem;">${q.topic || ''}</div>
+        <div class="who-q-text">${q.question}</div>
+        <div class="who-mc-options" id="who-mc-opts">
+          ${opts.map((opt, i) => `<button class="who-mc-btn" id="who-mc-${i}" onclick="selectWHOMC(this,'${opt.replace(/'/g,"&#39;").replace(/"/g,"&quot;")}','${q.correct.replace(/'/g,"&#39;").replace(/"/g,"&quot;")}')">
+            <span style="font-weight:800;margin-right:0.4rem;opacity:0.6">${['A','B','C','D'][i]}.</span>${opt}
+          </button>`).join('')}
+        </div>
+        <div id="who-mc-feedback" style="display:none;font-size:0.8rem;margin-bottom:0.5rem;"></div>
+      </div>
+      <div style="padding:0 0.1rem;">
+        <p style="font-size:0.72rem;color:rgba(255,255,255,0.4);margin-bottom:0.4rem;">Reach <strong style="color:#fbbf24">${sci.name}</strong> by answering correctly</p>
+      </div>`;
+  } else {
+    const thresholdNote = spec.threshold === spec.marks
+      ? `You need all ${spec.marks} marks to advance.`
+      : `You need at least ${spec.threshold} out of ${spec.marks} marks to advance.`;
+    container.innerHTML = `
+      <div class="who-q-card">
+        <div class="who-level-badge">Question ${whoQIndex + 1} of 15 · ${spec.marks} marks</div>
+        <div style="font-family:'Nunito',sans-serif;font-weight:700;font-size:0.7rem;color:rgba(255,255,255,0.5);margin-bottom:0.35rem;">${q.topic || ''}</div>
+        <div class="who-q-text">${q.question}</div>
+        <textarea class="who-written-area" id="who-written-ans" rows="5" placeholder="Write your answer here…"></textarea>
+        <div class="who-threshold-note">${thresholdNote}</div>
+        <button class="who-btn-gold" id="who-final-btn" onclick="confirmWHOFinalAnswer()">Final Answer →</button>
+        <div id="who-marking-msg" class="who-marking-msg" style="display:none;"><div class="spinner" style="border-top-color:#fbbf24;margin:0 auto 0.5rem;"></div>Marking…</div>
+      </div>
+      <div style="padding:0 0.1rem;">
+        <p style="font-size:0.72rem;color:rgba(255,255,255,0.4);margin-bottom:0.4rem;">Reach <strong style="color:#fbbf24">${sci.name}</strong> — need ${spec.threshold}/${spec.marks} marks</p>
+      </div>`;
+  }
+}
+
+function selectWHOMC(btn, chosen, correct) {
+  if (whoMarkingActive) return;
+  whoMarkingActive = true;
+  const opts = document.querySelectorAll('.who-mc-btn');
+  opts.forEach(b => { b.disabled = true; });
+  const isCorrect = chosen === correct;
+  btn.classList.add(isCorrect ? 'who-correct' : 'who-wrong');
+  if (!isCorrect) {
+    opts.forEach(b => {
+      if (b.textContent.trim().replace(/^[ABCD]\.\s*/,'') === correct || b.innerHTML.includes(correct)) {
+        b.classList.add('who-reveal');
+      }
+    });
+  }
+  const fb = document.getElementById('who-mc-feedback');
+  if (fb) {
+    fb.style.display = 'block';
+    fb.style.color = isCorrect ? '#4ade80' : '#f87171';
+    fb.textContent = isCorrect ? '✅ Correct!' : `❌ The answer was: ${correct}`;
+  }
+  setTimeout(() => {
+    whoMarkingActive = false;
+    if (isCorrect) {
+      whoAdvance(1);
+    } else {
+      whoFail(null, null);
+    }
+  }, 1200);
+}
+
+function confirmWHOFinalAnswer() {
+  const ans = (document.getElementById('who-written-ans')?.value || '').trim();
+  if (!ans) return;
+  // Show WWTBAM-style confirmation overlay
+  const overlay = document.createElement('div');
+  overlay.className = 'who-final-answer-overlay';
+  overlay.id = 'who-fa-overlay';
+  overlay.innerHTML = `
+    <div class="who-final-answer-box">
+      <h3>Is that your final answer?</h3>
+      <p>Once you confirm, your answer will be sent for marking. Wrong answers send you back to the start!</p>
+      <div class="who-preview">${ans.length > 200 ? ans.slice(0, 200) + '…' : ans}</div>
+      <div class="who-final-btns">
+        <button class="who-btn-cancel" onclick="document.getElementById('who-fa-overlay').remove()">← Go Back</button>
+        <button class="who-btn-gold" onclick="submitWHOWritten()">Final Answer ✓</button>
+      </div>
+    </div>`;
+  document.body.appendChild(overlay);
+}
+
+async function submitWHOWritten() {
+  const overlay = document.getElementById('who-fa-overlay');
+  if (overlay) overlay.remove();
+  const ans = (document.getElementById('who-written-ans')?.value || '').trim();
+  const finalBtn = document.getElementById('who-final-btn');
+  const markingMsg = document.getElementById('who-marking-msg');
+  if (finalBtn) finalBtn.style.display = 'none';
+  if (markingMsg) markingMsg.style.display = 'block';
+  whoMarkingActive = true;
+  const q = whoCurrentQ;
+  try {
+    const resp = await fetch('/.netlify/functions/mark-answer', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ answers: [{
+        question: q.question,
+        marks: q.marks,
+        command_word: q.command_word || '',
+        mark_scheme: q.mark_scheme || '',
+        student_answer: ans,
+      }] }),
+    });
+    const results = await resp.json();
+    const result = Array.isArray(results) ? results[0] : results;
+    const awarded = typeof result.marks_awarded === 'number' ? result.marks_awarded : 0;
+    const spec = WHO_LADDER[whoQIndex];
+    if (awarded >= spec.threshold) {
+      whoAdvance(awarded, result);
+    } else {
+      whoFail(awarded, result);
+    }
+  } catch(e) {
+    if (markingMsg) markingMsg.style.display = 'none';
+    if (finalBtn) { finalBtn.style.display = 'inline-flex'; finalBtn.textContent = 'Final Answer →'; }
+    whoMarkingActive = false;
+    alert('Marking failed — please check your connection and try again.');
+  }
+}
+
+function whoAdvance(marksAwarded, result) {
+  whoMarkingActive = false;
+  const spec = WHO_LADDER[whoQIndex];
+  // Award XP for this question
+  const xpEarned = typeof marksAwarded === 'number' ? Math.max(1, marksAwarded) : 1;
+  if (window._currentUser && spec.type !== 'mcq') {
+    const q = whoCurrentQ;
+    const idx = q ? fuzzyMatchTopic(q.topic, meta.topics) : -1;
+    if (idx >= 0) {
+      const topicName = meta.topics[idx];
+      const entry = ragState[topicName] || {};
+      const cur = entry.score ?? 0;
+      if (cur < 35) {
+        const xp = Math.min(xpEarned, 35 - cur);
+        ragState[topicName] = { ...entry, score: cur + xp, lastActivity: new Date().toISOString() };
+        renderChecklist(ragState);
+        if (window._saveRAG) window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState).catch(()=>{});
+        whoSessionXP += xp;
+        showXPToast(xp);
+      }
+    }
+  } else if (spec.type === 'mcq') {
+    whoSessionXP += 1;
+  }
+  whoQIndex++;
+  if (whoQIndex >= WHO_LADDER.length) {
+    whoComplete();
+  } else {
+    showWHOQuestion();
+  }
+}
+
+function whoFail(marksAwarded, result) {
+  whoMarkingActive = false;
+  document.getElementById('who-game-section').style.display = 'none';
+  const section = document.getElementById('who-gameover-section');
+  section.style.display = 'block';
+  const spec = WHO_LADDER[whoQIndex];
+  const needStr = spec.type === 'mcq' ? 'You needed to select the correct option.' : `You needed at least ${spec.threshold}/${spec.marks} marks (got ${marksAwarded ?? 0}).`;
+  document.getElementById('who-gameover-text').textContent = `You fell at question ${whoQIndex + 1}. ${needStr} You earned ${whoSessionXP} XP this run.`;
+  const modelDiv = document.getElementById('who-gameover-model');
+  const modelText = document.getElementById('who-gameover-model-text');
+  if (result?.model_answer && modelDiv && modelText) {
+    modelText.textContent = result.model_answer;
+    modelDiv.style.display = 'block';
+  } else if (modelDiv) {
+    modelDiv.style.display = 'none';
+  }
+  if (whoSessionXP > 0 && window._logActivity) {
+    window._logActivity({ type: 'who', score: whoQIndex, total: WHO_LADDER.length, pct: Math.round(whoQIndex / WHO_LADDER.length * 100), xp: whoSessionXP });
+  }
+}
+
+function whoComplete() {
+  document.getElementById('who-game-section').style.display = 'none';
+  document.getElementById('who-complete-section').style.display = 'block';
+  const topSci = whoScientists[whoScientists.length - 1];
+  document.getElementById('who-complete-scientist').textContent = `You reached the level of ${topSci.emoji} ${topSci.name}!`;
+  document.getElementById('who-complete-xp').textContent = `Total XP earned this game: +${whoSessionXP} XP`;
+  if (window._logActivity) {
+    window._logActivity({ type: 'who', score: WHO_LADDER.length, total: WHO_LADDER.length, pct: 100, xp: whoSessionXP });
+  }
+}
+
 // ── SCRIBBLE ACTIVITY ─────────────────────────────────────────────────────────
 
 let _scribbleTopicData   = {};   // topicName -> { keyTerms, bulletPoints, readingHTML }
@@ -4816,7 +5274,7 @@ window.resetCloze = () => {
       await logActivity(window._currentUser.uid, fullEntry);
       const assignId = window._assignmentId;
       const assignDue = window._assignmentDue;
-      if (assignId && entry.type && ['mock','paper','flashcard','words'].includes(entry.type)) {
+      if (assignId && entry.type && ['mock','paper','flashcard','words','who','clue','cloze','scribble','learn'].includes(entry.type)) {
         const today = new Date().toISOString().split('T')[0];
         const isLate = assignDue && today > assignDue;
         await saveAssignmentCompletion(assignId, window._currentUser.uid, {
