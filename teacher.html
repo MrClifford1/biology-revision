@@ -137,6 +137,14 @@
     .blitz-ans-col { text-align:center;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem; }
     .blitz-joined-grid { display:flex;flex-wrap:wrap;gap:0.35rem;margin:0.5rem 0 1rem; }
     .blitz-joined-chip { font-size:0.78rem;font-weight:700;font-family:'Nunito',sans-serif;padding:0.2rem 0.55rem;border-radius:6px;background:#eef2ff;color:#4f46e5;border:1.5px solid #c7d2fe; }
+    .games-lobby-card { background:white;border:1.5px solid var(--border);border-radius:14px;padding:1.25rem;cursor:pointer;transition:border-color 0.15s,box-shadow 0.15s;display:flex;flex-direction:column;gap:0.4rem; }
+    .games-lobby-card:hover { border-color:var(--purple);box-shadow:0 4px 16px rgba(99,102,241,0.12); }
+    .games-lobby-icon { font-size:2rem;line-height:1; }
+    .games-lobby-name { font-family:'Nunito',sans-serif;font-weight:800;font-size:1.05rem;color:#1e1b4b; }
+    .games-lobby-desc { font-size:0.8rem;color:var(--subtext);line-height:1.5;flex:1; }
+    .games-lobby-btn { display:inline-block;margin-top:0.5rem;background:var(--purple);color:white;border-radius:8px;padding:0.35rem 0.85rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem; }
+    .games-back-btn { background:none;border:1.5px solid var(--border);border-radius:8px;padding:0.35rem 0.85rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.8rem;cursor:pointer;color:var(--subtext);margin-bottom:0.75rem;transition:border-color 0.15s; }
+    .games-back-btn:hover { border-color:var(--purple);color:var(--purple); }
     .blitz-leaderboard { width:100%;border-collapse:collapse; }
     .blitz-leaderboard td { padding:0.45rem 0.6rem;border-bottom:1px solid var(--border);font-size:0.85rem; }
     /* ── Activity builder ── */
@@ -639,8 +647,37 @@
     <!-- ── TAB: TEACHER GAMES (Blitz + Bingo + XP Battles) ──────────────────────── -->
     <div class="tab-panel" id="tab-games">
 
+    <!-- Games lobby -->
+    <div id="games-lobby">
+      <div class="card" style="margin-bottom:1rem;">
+        <div class="section-label">🎮 Teacher Games</div>
+        <p style="font-size:0.82rem;color:var(--subtext);">Choose a game to launch for your class.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem;">
+          <div class="games-lobby-card" onclick="openGame('blitz')">
+            <div class="games-lobby-icon">⚡</div>
+            <div class="games-lobby-name">Blitz</div>
+            <div class="games-lobby-desc">Live MCQ quiz — questions appear one at a time with a countdown. Students answer on their devices.</div>
+            <div class="games-lobby-btn">Launch →</div>
+          </div>
+          <div class="games-lobby-card" onclick="openGame('bingo')">
+            <div class="games-lobby-icon">🎯</div>
+            <div class="games-lobby-name">Bingo</div>
+            <div class="games-lobby-desc">Keyword bingo — read out definitions, students mark matching keywords on their unique cards.</div>
+            <div class="games-lobby-btn">Launch →</div>
+          </div>
+          <div class="games-lobby-card" onclick="openGame('xpwars')">
+            <div class="games-lobby-icon">⚔️</div>
+            <div class="games-lobby-name">XP Battles</div>
+            <div class="games-lobby-desc">Split your class into teams. XP earned during the window adds to each team's score.</div>
+            <div class="games-lobby-btn">Launch →</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- ── BLITZ ─────────────────────────────────────────────────────────────── -->
-    <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--subtext);padding:0.5rem 0 0.35rem;margin-top:0.25rem;">⚡ Blitz</div>
+    <div id="games-section-blitz" style="display:none;">
+    <button class="games-back-btn" onclick="closeGame()">← Back to Games</button>
     <div id="tab-blitz">
       <!-- Setup card -->
       <div class="card" id="blitz-setup-card">
@@ -723,10 +760,12 @@
       </div>
     </div>
 
-    </div><!-- end blitz -->
+    </div><!-- end tab-blitz inner -->
+    </div><!-- end games-section-blitz -->
 
     <!-- ── BINGO ─────────────────────────────────────────────────────────────── -->
-    <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--subtext);padding:0.5rem 0 0.35rem;margin-top:1rem;">🎯 Bingo</div>
+    <div id="games-section-bingo" style="display:none;">
+    <button class="games-back-btn" onclick="closeGame()">← Back to Games</button>
     <div id="tab-bingo">
 
       <!-- Setup card -->
@@ -810,10 +849,12 @@
         <button onclick="resetBingo()" style="background:#7c3aed;color:white;border:none;border-radius:8px;padding:0.4rem 0.85rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.78rem;cursor:pointer;">New Bingo</button>
       </div>
 
-    </div><!-- end bingo -->
+    </div><!-- end tab-bingo inner -->
+    </div><!-- end games-section-bingo -->
 
     <!-- ── XP BATTLES ────────────────────────────────────────────────────────── -->
-    <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--subtext);padding:0.5rem 0 0.35rem;margin-top:1rem;">⚔️ XP Battles</div>
+    <div id="games-section-xpwars" style="display:none;">
+    <button class="games-back-btn" onclick="closeGame()">← Back to Games</button>
     <div id="tab-xpwars">
       <div class="card" id="battle-setup-card">
         <div class="section-label">⚔️ XP Battles</div>
@@ -872,7 +913,8 @@
         <p style="text-align:center;font-size:0.72rem;color:var(--subtext);margin:-0.25rem 0 0.5rem;font-family:'Nunito',sans-serif">Updates every 30 seconds · Click a student to remove them</p>
         <div class="battle-groups" id="battle-groups-display"></div>
       </div>
-    </div><!-- end xpwars -->
+    </div><!-- end tab-xpwars inner -->
+    </div><!-- end games-section-xpwars -->
 
     </div><!-- end tab-games -->
 
@@ -985,6 +1027,22 @@
     adLoadList();
   });
 
+  // ── TEACHER GAMES LOBBY ──────────────────────────────────────────────────────
+  window.openGame = function(name) {
+    document.getElementById('games-lobby').style.display = 'none';
+    ['blitz','bingo','xpwars'].forEach(g => {
+      const el = document.getElementById(`games-section-${g}`);
+      if (el) el.style.display = g === name ? 'block' : 'none';
+    });
+  };
+  window.closeGame = function() {
+    ['blitz','bingo','xpwars'].forEach(g => {
+      const el = document.getElementById(`games-section-${g}`);
+      if (el) el.style.display = 'none';
+    });
+    document.getElementById('games-lobby').style.display = 'block';
+  };
+
   // ── TABS ────────────────────────────────────────────────────────────────────
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -992,6 +1050,8 @@
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       btn.classList.add('active');
       document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      // Always return to lobby when re-opening Teacher Games tab
+      if (btn.dataset.tab === 'games') closeGame();
     });
   });
 
