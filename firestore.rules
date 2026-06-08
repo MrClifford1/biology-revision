@@ -1,0 +1,132 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ─── HELPERS ──────────────────────────────────────────────────────────────
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // The super admin is hard-coded (matches firebase.js isSuperAdmin)
+    function isSuper() {
+      return isSignedIn()
+        && request.auth.token.email == 'n.clifford@thestreetlyacademy.co.uk';
+    }
+
+    // A staff member has a doc in /roles keyed by their email with role
+    // teacher or admin. Reading that doc here is what makes the check secure —
+    // it can't be faked from the client.
+    function roleOf(email) {
+      return get(/databases/$(database)/documents/roles/$(email)).data.role;
+    }
+    function isStaff() {
+      return isSignedIn()
+        && exists(/databases/$(database)/documents/roles/$(request.auth.token.email))
+        && roleOf(request.auth.token.email) in ['teacher', 'admin'];
+    }
+    function isStaffOrSuper() {
+      return isStaff() || isSuper();
+    }
+
+    // ─── USER PROFILES & THEIR SUB-DATA ───────────────────────────────────────
+    // A student can read/write ONLY their own profile.
+    // Staff and the super admin can read any profile (for dashboards / SAR).
+    // Only the super admin can write to other people's profiles (hide / delete).
+    match /users/{uid} {
+      allow read:  if request.auth.uid == uid || isStaffOrSuper();
+      allow write: if request.auth.uid == uid || isSuper();
+
+      // Progress / RAG scores / mock results
+      match /progress/{moduleId} {
+        allow read:  if request.auth.uid == uid || isStaffOrSuper();
+        allow write: if request.auth.uid == uid || isSuper();
+      }
+
+      // Activity log
+      match /activityLog/{entryId} {
+        allow read:  if request.auth.uid == uid || isStaffOrSuper();
+        allow write: if request.auth.uid == uid || isSuper();
+      }
+    }
+
+    // ─── TEACHER CONFIG (saved classes per teacher) ───────────────────────────
+    // A teacher reads/writes ONLY their own config doc; staff/super may read all.
+    match /teachers/{uid} {
+      allow read:  if request.auth.uid == uid || isStaffOrSuper();
+      allow write: if request.auth.uid == uid || isSuper();
+    }
+
+    // ─── ROLES (the security-critical collection) ─────────────────────────────
+    // Anyone signed in may read their OWN role doc (needed at login).
+    // Staff/super may read the whole collection (staff management screens).
+    // ONLY the super admin may create/modify/delete role docs — this is what
+    // stops a student granting themselves teacher access from the client.
+    match /roles/{email} {
+      allow read:  if (isSignedIn() && request.auth.token.email == email)
+                   || isStaffOrSuper();
+      allow write: if isSuper();
+    }
+
+    // ─── ASSIGNMENTS ──────────────────────────────────────────────────────────
+    // Everyone signed in can read assignments; only staff can create/edit them.
+    match /assignments/{assignmentId} {
+      allow read:  if isSignedIn();
+      allow write: if isStaffOrSuper();
+
+      // A student writes ONLY their own completion record; staff read all.
+      match /completions/{uid} {
+        allow read:  if request.auth.uid == uid || isStaffOrSuper();
+        allow write: if request.auth.uid == uid;
+      }
+    }
+
+    // ─── BLITZ / XP BATTLE SESSIONS ───────────────────────────────────────────
+    // Staff create and control sessions; students can read and write their own
+    // joined/answers/scores fields (but cannot create or delete sessions).
+    match /blitzSessions/{sessionId} {
+      allow read:   if isSignedIn();
+      allow create, delete: if isStaffOrSuper();
+      allow update: if isSignedIn();
+    }
+
+    // ─── VIDEO REPORTS (students flag a broken / wrong video) ─────────────────
+    // Any signed-in user may submit a report; only staff/super may read them.
+    match /videoReports/{reportId} {
+      allow create: if isSignedIn();
+      allow read:   if isStaffOrSuper();
+      allow update, delete: if isStaffOrSuper();
+    }
+
+    // ─── SCHEDULE & ASSESSMENT DATES ──────────────────────────────────────────
+    // Read-only for students; staff manage them.
+    match /schedule/{yearGroup} {
+      allow read:  if isSignedIn();
+      allow write: if isStaffOrSuper();
+    }
+    match /assessmentDates/{classId}/{subject}/{assessmentId} {
+      allow read:  if isSignedIn();
+      allow write: if isStaffOrSuper();
+    }
+
+    // ─── ACCEPTED ANSWERS (AI-remarked answers saved globally by term) ───────
+    // ─── SUPER 6 SCAFFOLD CACHE (AI key points, globally shared) ─────────────
+    match /super6Cache/{questionId} {
+      allow read:   if isSignedIn();
+      allow create: if isSignedIn();
+      allow update, delete: if isSuper();
+    }
+
+    match /acceptedAnswers/{docId} {
+      allow read:   if isSignedIn();
+      allow create: if isSignedIn();
+      allow update, delete: if isSuper();
+    }
+
+    // ─── DEFAULT DENY ─────────────────────────────────────────────────────────
+    // Anything not matched above is denied. (Implicit, but stated for clarity.)
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

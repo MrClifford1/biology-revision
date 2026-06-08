@@ -919,6 +919,39 @@
   .who-complete-arena { background: linear-gradient(135deg, #0f172a, #1e1b4b, #14532d); border-radius: 18px; padding: 2rem 1.5rem; text-align: center; color: white; margin-bottom: 0.75rem; box-shadow: 0 0 80px rgba(74,222,128,0.15); }
   @media (max-width: 540px) { .who-layout { flex-direction: column; } .who-ladder { flex: none; width: 100%; } }
 
+  /* ── SUPER 6 ──────────────────────────────────────────────────────────────── */
+  .s6-topic-grid { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.6rem; }
+  .s6-topic-chip { padding: 0.3rem 0.8rem; border: 1.5px solid var(--border); border-radius: 20px; background: white; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.78rem; color: var(--text); cursor: pointer; transition: border-color 0.15s, background 0.15s; }
+  .s6-topic-chip:hover { border-color: #6366f1; }
+  .s6-topic-chip.active { border-color: #6366f1; background: #ede9fe; color: #4f46e5; }
+  .s6-q-card { background: white; border: 1.5px solid var(--border); border-radius: 14px; padding: 1.1rem 1.25rem; margin-bottom: 0.75rem; }
+  .s6-marks-badge { display: inline-flex; align-items: center; gap: 0.3rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.07em; color: white; background: #6366f1; border-radius: 20px; padding: 0.18rem 0.65rem; margin-bottom: 0.55rem; }
+  .s6-q-text { font-size: 0.95rem; line-height: 1.65; font-weight: 600; color: var(--text); }
+  .s6-cw-highlight { background: #fef9c3; border-bottom: 2px solid #f59e0b; border-radius: 3px; padding: 0 2px; font-style: italic; }
+  .s6-scaffold-bar { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.65rem; }
+  .s6-scaffold-btn { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.3rem 0.75rem; background: white; border: 1.5px solid var(--border); border-radius: 20px; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.72rem; color: var(--subtext); cursor: pointer; transition: all 0.15s; }
+  .s6-scaffold-btn:hover { border-color: #6366f1; color: #4f46e5; }
+  .s6-scaffold-btn.active { background: #ede9fe; border-color: #6366f1; color: #4f46e5; }
+  .s6-scaffold-btn.loading { opacity: 0.6; cursor: wait; }
+  .s6-scaffold-panel { background: #f8faff; border: 1px solid #c7d2fe; border-radius: 12px; padding: 0.85rem 1rem; margin-bottom: 0.65rem; font-size: 0.8rem; line-height: 1.6; }
+  .s6-scaffold-panel h4 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: #4f46e5; margin-bottom: 0.45rem; }
+  .s6-scaffold-panel ul { margin: 0; padding-left: 1.1rem; }
+  .s6-scaffold-panel ul li { margin-bottom: 0.2rem; color: var(--text); }
+  .s6-scaffold-panel .s6-strip { display: flex; flex-direction: column; gap: 0.3rem; }
+  .s6-scaffold-panel .s6-strip-step { background: white; border: 1px solid #c7d2fe; border-radius: 8px; padding: 0.4rem 0.65rem; font-size: 0.78rem; font-family: 'Nunito', sans-serif; font-weight: 700; color: #312e81; }
+  .s6-scaffold-panel .s6-strip-step span { color: #6366f1; font-weight: 900; margin-right: 0.35rem; }
+  .s6-connective-grid { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+  .s6-connective-chip { background: white; border: 1px solid #c7d2fe; border-radius: 6px; padding: 0.18rem 0.5rem; font-size: 0.72rem; font-family: 'Nunito', sans-serif; font-weight: 700; color: #4338ca; cursor: pointer; transition: background 0.1s; user-select: all; }
+  .s6-connective-chip:hover { background: #ede9fe; }
+  .s6-textarea { width: 100%; box-sizing: border-box; border: 1.5px solid var(--border); border-radius: 10px; padding: 0.75rem; font-size: 0.875rem; font-family: inherit; line-height: 1.65; resize: vertical; outline: none; min-height: 140px; }
+  .s6-textarea:focus { border-color: #6366f1; }
+  .s6-result-banner { border-radius: 12px; padding: 0.85rem 1rem; margin-bottom: 0.75rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.9rem; }
+  .s6-result-full { background: #f0fdf4; border: 1px solid #bbf7d0; color: #15803d; }
+  .s6-result-partial { background: #fefce8; border: 1px solid #fde68a; color: #92400e; }
+  .s6-result-low { background: #fff1f2; border: 1px solid #fecdd3; color: #be123c; }
+  .s6-feedback-box { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.1rem; margin-bottom: 0.75rem; font-size: 0.83rem; line-height: 1.6; }
+  .s6-feedback-box h4 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--subtext); margin-bottom: 0.35rem; }
+
   </style>
 </head>
 <body>
@@ -997,6 +1030,7 @@
     <button class="tab-btn" data-tab="cloze" title="Fill in the missing words from memory — strengthens retrieval of key terms · 1 XP per correct blank · Max 35 XP total">🧩 Gaps</button>
     <button class="tab-btn" data-tab="scribble" title="Write everything you know from memory — high-effort, high-reward retrieval practice · Up to 10 XP · Max 50 XP total">✍️ Scribble</button>
     <button class="tab-btn" data-tab="who" title="Who Wants to Be a Scientist? — 15 questions of rising difficulty. Climb the scientist ladder! · XP per correct answer">🧪 WHO</button>
+    <button class="tab-btn" data-tab="super6" title="Scaffolded extended writing — 4, 5 and 6 mark questions with structure strips, sentence starters and AI marking · XP per mark awarded">🪜 Super 6</button>
     <button class="tab-btn" data-tab="practice" title="Practise exam-style questions with mark scheme feedback — builds exam technique · Up to 15 XP · No XP cap">✏️ Mini Mock</button>
     <button class="tab-btn" data-tab="paper" title="Full past paper · Up to 15 XP · No XP cap">📝 Paper</button>
   </div>
@@ -1471,6 +1505,83 @@
             <button class="who-btn-gold" onclick="startWHO()">Play Again →</button>
             <button class="btn-secondary" onclick="showWHOIntro()">← Back</button>
           </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── SUPER 6 TAB ──────────────────────────────────────────────────────────── -->
+  <div class="tab-panel" id="tab-super6">
+    <div class="practice-panel-inner">
+
+      <!-- SETUP SCREEN -->
+      <div id="s6-setup-section">
+        <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;">
+          <h2 style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.15rem;margin-bottom:0.35rem;">🪜 Super 6</h2>
+          <p style="color:var(--subtext);font-size:0.875rem;line-height:1.5;">Practise extended writing with scaffolded support. Tackle 4, 5 and 6 mark questions with structure strips, sentence starters and connective banks — then submit for AI marking.</p>
+        </div>
+        <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;">
+          <div class="paper-setup-label">Choose a topic</div>
+          <div class="s6-topic-grid" id="s6-topic-grid"></div>
+        </div>
+        <button class="btn-primary" id="s6-start-btn" onclick="startSuper6()">Start →</button>
+      </div>
+
+      <!-- WRITE SCREEN -->
+      <div id="s6-write-section" style="display:none;">
+        <div class="s6-q-card" id="s6-q-card">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Scaffolding toggles -->
+        <div class="s6-scaffold-bar" id="s6-scaffold-bar">
+          <span style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--subtext);align-self:center;">Scaffold:</span>
+          <button class="s6-scaffold-btn" id="s6-btn-structure"   onclick="toggleS6Scaffold('structure')">📋 Structure Strip</button>
+          <button class="s6-scaffold-btn" id="s6-btn-starters"    onclick="toggleS6Scaffold('starters')">💬 Sentence Starters</button>
+          <button class="s6-scaffold-btn" id="s6-btn-connectives" onclick="toggleS6Scaffold('connectives')">🔗 Connectives</button>
+          <button class="s6-scaffold-btn" id="s6-btn-keypoints"   onclick="toggleS6Scaffold('keypoints')">🔑 Key Points</button>
+        </div>
+
+        <!-- Scaffold panels (toggled) -->
+        <div id="s6-panel-structure"   class="s6-scaffold-panel" style="display:none;"></div>
+        <div id="s6-panel-starters"    class="s6-scaffold-panel" style="display:none;"></div>
+        <div id="s6-panel-connectives" class="s6-scaffold-panel" style="display:none;"></div>
+        <div id="s6-panel-keypoints"   class="s6-scaffold-panel" style="display:none;"></div>
+
+        <textarea class="s6-textarea" id="s6-textarea" placeholder="Write your answer here…"
+          onpaste="event.preventDefault();this.insertAdjacentHTML('afterend','<div style=\'font-size:0.7rem;color:#dc2626;margin-top:0.25rem\'>✋ Paste disabled — write in your own words.</div>');setTimeout(()=>this.nextElementSibling?.remove(),2500)"
+          oncopy="event.preventDefault()" oncut="event.preventDefault()"></textarea>
+
+        <div id="s6-loading" style="display:none;text-align:center;padding:1.5rem 0;">
+          <div class="spinner" style="margin:0 auto 0.5rem;"></div>
+          <span style="font-size:0.85rem;color:var(--subtext)">Marking your answer…</span>
+        </div>
+
+        <div style="display:flex;gap:0.65rem;flex-wrap:wrap;margin-top:0.75rem;">
+          <button class="btn-primary" id="s6-submit-btn" onclick="submitSuper6()">Submit for Marking →</button>
+          <button class="btn-secondary" onclick="showS6Setup()">← Change Question</button>
+        </div>
+      </div>
+
+      <!-- RESULTS SCREEN -->
+      <div id="s6-results-section" style="display:none;">
+        <div id="s6-result-banner" class="s6-result-banner"></div>
+        <div class="s6-feedback-box">
+          <h4>What you covered</h4>
+          <p id="s6-covered" style="margin:0;color:var(--text)"></p>
+        </div>
+        <div class="s6-feedback-box">
+          <h4>What you missed</h4>
+          <p id="s6-missed" style="margin:0;color:var(--text)"></p>
+        </div>
+        <div class="s6-feedback-box">
+          <h4>Feedback</h4>
+          <p id="s6-feedback" style="margin:0;color:var(--text)"></p>
+        </div>
+        <div style="display:flex;gap:0.65rem;flex-wrap:wrap;margin-top:0.75rem;">
+          <button class="btn-primary" onclick="retrySuper6()">Try Again →</button>
+          <button class="btn-secondary" onclick="showS6Setup()">← New Question</button>
         </div>
       </div>
 
@@ -1962,7 +2073,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 (function() {
   const tabParam = new URLSearchParams(window.location.search).get('tab');
   if (!tabParam) return;
-  const tabMap = { mock:'practice', mini_mock:'practice', flashcards:'flashcards', words:'keywords', cloze:'cloze', scribble:'scribble', paper:'paper', learn:'learn', revise:'revision' };
+  const tabMap = { mock:'practice', mini_mock:'practice', flashcards:'flashcards', words:'keywords', cloze:'cloze', scribble:'scribble', super6:'super6', paper:'paper', learn:'learn', revise:'revision', who:'who' };
   const target = tabMap[tabParam] || tabParam;
 
   // Switch tab immediately
@@ -4561,6 +4672,398 @@ function whoComplete() {
   if (window._logActivity) {
     window._logActivity({ type: 'who', score: WHO_LADDER.length, total: WHO_LADDER.length, pct: 100, xp: whoSessionXP });
   }
+}
+
+// ── SUPER 6 ──────────────────────────────────────────────────────────────────
+
+let _s6Questions    = [];   // all 4/5/6-mark written questions for this module
+let _s6CurrentQ     = null; // the active question object
+let _s6SelectedTopic = null; // null = RAG-weighted
+let _s6ScaffoldCache = null; // loaded from Firestore or generated by AI
+
+const S6_STRUCTURE_STRIPS = {
+  describe: [
+    { n: 1, text: 'State what it is / what it looks like' },
+    { n: 2, text: 'Add a key feature or characteristic' },
+    { n: 3, text: 'Give another feature or detail' },
+    { n: 4, text: 'Link to function or significance (if marks allow)' },
+  ],
+  explain: [
+    { n: 1, text: 'State the observation or fact' },
+    { n: 2, text: 'Give the reason WHY (because…)' },
+    { n: 3, text: 'Describe the mechanism or process' },
+    { n: 4, text: 'State the outcome or effect (therefore…)' },
+  ],
+  evaluate: [
+    { n: 1, text: 'Evidence / argument FOR' },
+    { n: 2, text: 'Evidence / argument AGAINST' },
+    { n: 3, text: 'Consider a limitation or counter-point' },
+    { n: 4, text: 'Overall judgement — state your conclusion clearly' },
+  ],
+  compare: [
+    { n: 1, text: 'State a SIMILARITY between X and Y' },
+    { n: 2, text: 'State another similarity (if marks allow)' },
+    { n: 3, text: 'State a DIFFERENCE between X and Y' },
+    { n: 4, text: 'State another difference' },
+  ],
+  suggest: [
+    { n: 1, text: 'Identify what is happening in the scenario' },
+    { n: 2, text: 'Apply relevant scientific knowledge' },
+    { n: 3, text: 'Give a reason to justify your suggestion' },
+  ],
+  calculate: [
+    { n: 1, text: 'Write down the formula you will use' },
+    { n: 2, text: 'Substitute the values into the formula' },
+    { n: 3, text: 'Show your working clearly' },
+    { n: 4, text: 'State your final answer with correct units' },
+  ],
+  default: [
+    { n: 1, text: 'Make your first point clearly' },
+    { n: 2, text: 'Develop or explain your point further' },
+    { n: 3, text: 'Add a second distinct point' },
+    { n: 4, text: 'Support with evidence or example' },
+  ],
+};
+
+const S6_SENTENCE_STARTERS = {
+  describe: ['This is…', 'It can be seen that…', 'The [X] is…', 'One feature is…', 'Another feature is…'],
+  explain:  ['This happens because…', 'This is caused by…', 'As a result of…', 'This means that…', 'Therefore…'],
+  evaluate: ['The evidence suggests…', 'This is supported by…', 'However, a limitation is…', 'On the other hand…', 'Overall, I conclude that…'],
+  compare:  ['Both X and Y…', 'Unlike X, Y…', 'A key similarity is…', 'A key difference is…', 'In contrast…'],
+  suggest:  ['I think that…', 'Based on [X], it is possible that…', 'This could be because…', 'The evidence indicates…'],
+  default:  ['Firstly…', 'This is because…', 'Furthermore…', 'In addition…', 'Therefore…'],
+};
+
+const S6_CONNECTIVES = {
+  'Cause / Reason':   ['because', 'since', 'due to', 'as a result of', 'caused by'],
+  'Effect / Outcome': ['therefore', 'so', 'this means that', 'consequently', 'which leads to', 'as a result'],
+  'Contrast':         ['however', 'in contrast', 'whereas', 'on the other hand', 'but', 'although'],
+  'Addition':         ['furthermore', 'in addition', 'also', 'moreover', 'as well as'],
+  'Sequence':         ['firstly', 'secondly', 'then', 'next', 'finally', 'after this'],
+};
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+
+(async function initSuper6() {
+  // Wait for questions to load
+  const waitForQs = () => new Promise(res => {
+    if (questions.length) return res();
+    const t = setInterval(() => { if (questions.length) { clearInterval(t); res(); } }, 200);
+    setTimeout(() => { clearInterval(t); res(); }, 5000);
+  });
+  await waitForQs();
+
+  _s6Questions = questions.filter(q => q.type === 'written' && q.marks >= 4);
+
+  // Build topic chips
+  const grid = document.getElementById('s6-topic-grid');
+  if (!grid) return;
+
+  const ragChip = document.createElement('button');
+  ragChip.className = 's6-topic-chip active';
+  ragChip.dataset.topic = '__rag__';
+  ragChip.textContent = '🎯 Weakest Topic';
+  ragChip.addEventListener('click', () => selectS6Topic(null, ragChip));
+  grid.appendChild(ragChip);
+
+  const topicSet = [...new Set(_s6Questions.map(q => q.topic).filter(Boolean))].sort();
+  topicSet.forEach(t => {
+    const chip = document.createElement('button');
+    chip.className = 's6-topic-chip';
+    chip.dataset.topic = t;
+    chip.textContent = t;
+    chip.addEventListener('click', () => selectS6Topic(t, chip));
+    grid.appendChild(chip);
+  });
+})();
+
+function selectS6Topic(topic, btn) {
+  _s6SelectedTopic = topic;
+  document.querySelectorAll('.s6-topic-chip').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function showS6Setup() {
+  document.getElementById('s6-setup-section').style.display  = 'block';
+  document.getElementById('s6-write-section').style.display  = 'none';
+  document.getElementById('s6-results-section').style.display = 'none';
+  _s6CurrentQ = null;
+  _s6ScaffoldCache = null;
+  // Close all scaffold panels
+  ['structure','starters','connectives','keypoints'].forEach(k => {
+    const p = document.getElementById(`s6-panel-${k}`);
+    const b = document.getElementById(`s6-btn-${k}`);
+    if (p) p.style.display = 'none';
+    if (b) b.classList.remove('active');
+  });
+}
+
+function startSuper6() {
+  let pool = _s6Questions;
+  if (_s6SelectedTopic) {
+    pool = pool.filter(q => q.topic === _s6SelectedTopic);
+  } else {
+    // RAG-weighted: pick from weakest topic
+    const topicScores = {};
+    meta.topics.forEach(t => { topicScores[t] = ragState[t]?.score ?? 0; });
+    const sorted = Object.entries(topicScores).sort((a, b) => a[1] - b[1]);
+    const weakTopics = sorted.slice(0, 3).map(([t]) => t);
+    const weakPool = pool.filter(q => weakTopics.some(t => fuzzyMatchTopic(q.topic, [t]) >= 0));
+    if (weakPool.length) pool = weakPool;
+  }
+
+  if (!pool.length) {
+    alert('No extended writing questions found for this selection. Try a different topic.');
+    return;
+  }
+
+  _s6CurrentQ = pool[Math.floor(Math.random() * pool.length)];
+  _s6ScaffoldCache = null;
+
+  renderS6Question();
+  document.getElementById('s6-setup-section').style.display  = 'none';
+  document.getElementById('s6-write-section').style.display  = 'block';
+  document.getElementById('s6-results-section').style.display = 'none';
+  document.getElementById('s6-textarea').value = '';
+  // Close scaffold panels on new question
+  ['structure','starters','connectives','keypoints'].forEach(k => {
+    const p = document.getElementById(`s6-panel-${k}`);
+    const b = document.getElementById(`s6-btn-${k}`);
+    if (p) p.style.display = 'none';
+    if (b) b.classList.remove('active', 'loading');
+  });
+}
+
+function renderS6Question() {
+  const q = _s6CurrentQ;
+  if (!q) return;
+  const cw = (q.command_word || q.question.split(' ')[0] || '').trim();
+  // Highlight command word in question text
+  const highlighted = cw
+    ? q.question.replace(new RegExp(`(${cw})`, 'i'), `<span class="s6-cw-highlight">$1</span>`)
+    : q.question;
+  const card = document.getElementById('s6-q-card');
+  card.innerHTML = `
+    <div class="s6-marks-badge">🪜 ${q.marks} marks · ${q.topic || ''}</div>
+    <div class="s6-q-text">${highlighted}</div>
+    ${cw ? `<div style="font-size:0.72rem;color:var(--subtext);margin-top:0.4rem;font-family:'Nunito',sans-serif;font-weight:700;">Command word: <strong style="color:#6366f1">${cw}</strong> — ${getCommandWordDef(cw)}</div>` : ''}`;
+}
+
+function getCommandWordDef(cw) {
+  const defs = {
+    describe:  'state what something is like — facts, features, observations.',
+    explain:   'give reasons WHY — use because, so, therefore.',
+    evaluate:  'weigh up evidence and come to a supported conclusion.',
+    compare:   'state similarities AND differences.',
+    suggest:   'use your knowledge to propose a reason for an unfamiliar situation.',
+    calculate: 'work out a numerical answer — show your working.',
+    state:     'give a short factual answer — no explanation needed.',
+    outline:   'give the main points without full detail.',
+    discuss:   'present different viewpoints or aspects.',
+    justify:   'give evidence or reasons to support a conclusion.',
+    predict:   'say what you think will happen and why.',
+  };
+  return defs[cw.toLowerCase()] || 'read carefully and answer fully.';
+}
+
+// ── Scaffold toggles ──────────────────────────────────────────────────────────
+
+async function toggleS6Scaffold(type) {
+  const panel = document.getElementById(`s6-panel-${type}`);
+  const btn   = document.getElementById(`s6-btn-${type}`);
+  if (!panel || !btn) return;
+
+  const isOpen = panel.style.display !== 'none';
+  if (isOpen) {
+    panel.style.display = 'none';
+    btn.classList.remove('active');
+    return;
+  }
+
+  // Build content if needed
+  if (!panel.innerHTML || type === 'keypoints') {
+    buildS6ScaffoldPanel(type, panel, btn);
+  }
+  panel.style.display = 'block';
+  btn.classList.add('active');
+}
+
+async function buildS6ScaffoldPanel(type, panel, btn) {
+  const q  = _s6CurrentQ;
+  const cw = (q?.command_word || q?.question?.split(' ')?.[0] || '').toLowerCase();
+  const cwKey = Object.keys(S6_STRUCTURE_STRIPS).find(k => cw.startsWith(k)) || 'default';
+
+  if (type === 'structure') {
+    const steps = S6_STRUCTURE_STRIPS[cwKey];
+    const shown = steps.slice(0, q?.marks || 4);
+    panel.innerHTML = `<h4>📋 Structure Strip — ${cwKey}</h4><div class="s6-strip">${
+      shown.map(s => `<div class="s6-strip-step"><span>${s.n}.</span>${s.text}</div>`).join('')
+    }</div>`;
+  }
+
+  if (type === 'starters') {
+    const list = S6_SENTENCE_STARTERS[cwKey] || S6_SENTENCE_STARTERS.default;
+    panel.innerHTML = `<h4>💬 Sentence Starters</h4><ul>${list.map(s => `<li>${s}</li>`).join('')}</ul>`;
+  }
+
+  if (type === 'connectives') {
+    const sections = Object.entries(S6_CONNECTIVES).map(([cat, words]) =>
+      `<div style="margin-bottom:0.5rem"><div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.07em;color:#4f46e5;margin-bottom:0.25rem">${cat}</div>
+      <div class="s6-connective-grid">${words.map(w => `<span class="s6-connective-chip" title="Click to select">${w}</span>`).join('')}</div></div>`
+    ).join('');
+    panel.innerHTML = `<h4>🔗 Connectives Bank</h4>${sections}`;
+  }
+
+  if (type === 'keypoints') {
+    panel.innerHTML = `<h4>🔑 Key Points to Include</h4><p style="color:var(--subtext);font-size:0.78rem">Loading…</p>`;
+    btn.classList.add('loading');
+
+    // Try Firestore cache first
+    const cached = await loadS6Cache(q.id);
+    if (cached?.keyPoints) {
+      btn.classList.remove('loading');
+      panel.innerHTML = `<h4>🔑 Key Points to Include</h4><ul>${cached.keyPoints.map(p => `<li>${p}</li>`).join('')}</ul>`;
+      _s6ScaffoldCache = cached;
+      return;
+    }
+
+    // Generate via AI
+    try {
+      const resp = await fetch('/.netlify/functions/mark-answer', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          _scaffoldMode: true,
+          questionId: q.id,
+          question: q.question,
+          marks: q.marks,
+          mark_scheme: q.mark_scheme || '',
+          command_word: q.command_word || '',
+        }),
+      });
+      const data = await resp.json();
+      _s6ScaffoldCache = data;
+      // Save to Firestore for next time
+      if (window._currentUser) saveS6Cache(q.id, data);
+      btn.classList.remove('loading');
+      panel.innerHTML = `<h4>🔑 Key Points to Include</h4><ul>${(data.keyPoints || []).map(p => `<li>${p}</li>`).join('')}</ul>`;
+    } catch(e) {
+      btn.classList.remove('loading');
+      panel.innerHTML = `<h4>🔑 Key Points to Include</h4><p style="color:#dc2626;font-size:0.78rem">Could not load hints — check your connection.</p>`;
+    }
+  }
+}
+
+async function loadS6Cache(qId) {
+  try {
+    const { getDoc, doc, getFirestore } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js');
+    const db = getFirestore();
+    const snap = await getDoc(doc(db, 'super6Cache', qId));
+    return snap.exists() ? snap.data() : null;
+  } catch(e) { return null; }
+}
+
+async function saveS6Cache(qId, data) {
+  try {
+    const { setDoc, doc, getFirestore, serverTimestamp } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js');
+    const db = getFirestore();
+    await setDoc(doc(db, 'super6Cache', qId), { ...data, cachedAt: serverTimestamp() }, { merge: false });
+  } catch(e) {}
+}
+
+// ── Submit & mark ─────────────────────────────────────────────────────────────
+
+async function submitSuper6() {
+  const text = document.getElementById('s6-textarea')?.value?.trim();
+  if (!text) { alert('Please write something before submitting.'); return; }
+  const q = _s6CurrentQ;
+  if (!q) return;
+
+  document.getElementById('s6-textarea').disabled = true;
+  document.getElementById('s6-submit-btn').disabled = true;
+  document.getElementById('s6-loading').style.display = 'block';
+
+  try {
+    const resp = await fetch('/.netlify/functions/mark-answer', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ answers: [{
+        question:     q.question,
+        marks:        q.marks,
+        command_word: q.command_word || '',
+        mark_scheme:  q.mark_scheme  || '',
+        student_answer: text,
+      }] }),
+    });
+    const results = await resp.json();
+    const result  = Array.isArray(results) ? results[0] : results;
+    const awarded = typeof result.marks_awarded === 'number' ? result.marks_awarded : 0;
+
+    document.getElementById('s6-loading').style.display = 'none';
+
+    // XP
+    let xpGained = 0;
+    if (window._currentUser && q.topic) {
+      const idx = fuzzyMatchTopic(q.topic, meta.topics);
+      if (idx >= 0) {
+        const topicName = meta.topics[idx];
+        const entry = ragState[topicName] || {};
+        const cur = entry.score ?? 0;
+        if (cur < 35 && awarded > 0) {
+          xpGained = Math.min(awarded, 35 - cur);
+          ragState[topicName] = { ...entry, score: cur + xpGained, lastActivity: new Date().toISOString() };
+          renderChecklist(ragState);
+          if (window._saveRAG) window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState).catch(() => {});
+          showXPToast(xpGained);
+        }
+      }
+    }
+
+    if (window._logActivity) {
+      window._logActivity({
+        type: 'super6',
+        topic: q.topic || '',
+        score: awarded, total: q.marks,
+        pct: q.marks ? Math.round((awarded / q.marks) * 100) : 0,
+        topics: [{ topic: q.topic || '', awarded, marks: q.marks }],
+      });
+    }
+
+    showSuper6Results(result, awarded, q.marks, xpGained);
+  } catch(e) {
+    document.getElementById('s6-loading').style.display = 'none';
+    document.getElementById('s6-textarea').disabled = false;
+    document.getElementById('s6-submit-btn').disabled = false;
+    alert('Marking failed — please check your connection and try again.');
+  }
+}
+
+function showSuper6Results(result, awarded, total, xpGained) {
+  const pct = total ? Math.round((awarded / total) * 100) : 0;
+  const cls = pct === 100 ? 's6-result-full' : pct >= 50 ? 's6-result-partial' : 's6-result-low';
+  const msg = pct === 100 ? `🌟 Full marks! ${awarded}/${total}` : pct >= 50 ? `👍 ${awarded}/${total} marks` : `💪 ${awarded}/${total} marks — keep practising`;
+
+  document.getElementById('s6-result-banner').className = `s6-result-banner ${cls}`;
+  document.getElementById('s6-result-banner').innerHTML = `${msg}${xpGained > 0 ? ` &nbsp;·&nbsp; +${xpGained} XP` : ''}`;
+
+  // Extract feedback from result
+  const fb = result.feedback || result.overall_feedback || '';
+  const awarded_text = result.awarded_criteria || result.what_was_good || '';
+  const missed_text  = result.missed_criteria  || result.what_to_improve || '';
+  document.getElementById('s6-covered').textContent  = awarded_text || (awarded > 0 ? 'You included some relevant scientific points.' : '—');
+  document.getElementById('s6-missed').textContent   = missed_text  || (awarded < total ? 'Review the mark scheme to see what was missing.' : 'Nothing — excellent answer!');
+  document.getElementById('s6-feedback').textContent = fb || '';
+
+  document.getElementById('s6-write-section').style.display   = 'none';
+  document.getElementById('s6-results-section').style.display = 'block';
+}
+
+function retrySuper6() {
+  document.getElementById('s6-results-section').style.display = 'none';
+  document.getElementById('s6-write-section').style.display   = 'block';
+  document.getElementById('s6-textarea').value    = '';
+  document.getElementById('s6-textarea').disabled = false;
+  document.getElementById('s6-submit-btn').disabled = false;
 }
 
 // ── SCRIBBLE ACTIVITY ─────────────────────────────────────────────────────────
