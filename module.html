@@ -879,6 +879,12 @@
   .who-rung-emoji { font-size: 0.82rem; flex-shrink: 0; }
   .who-rung-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
   .who-rung-num { font-size: 0.6rem; color: rgba(255,255,255,0.25); flex-shrink: 0; }
+  .who-lifelines { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.65rem; }
+  .who-ll-btn { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.3rem 0.7rem; background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.8); font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.7rem; border-radius: 20px; cursor: pointer; transition: border-color 0.15s, background 0.15s, opacity 0.15s; white-space: nowrap; }
+  .who-ll-btn:hover:not(:disabled):not(.who-ll-used) { border-color: #fbbf24; background: rgba(251,191,36,0.12); color: #fbbf24; }
+  .who-ll-btn.who-ll-used { opacity: 0.3; cursor: default; text-decoration: line-through; }
+  .who-ll-result { background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.3); border-radius: 10px; padding: 0.65rem 0.9rem; margin-bottom: 0.6rem; font-size: 0.8rem; color: rgba(255,255,255,0.85); line-height: 1.55; font-family: 'Nunito', sans-serif; font-weight: 600; }
+  .who-ll-result strong { color: #fbbf24; display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.2rem; }
   .who-sci-info { border-top: 1px solid rgba(255,255,255,0.12); padding: 0.6rem 0.7rem; background: rgba(251,191,36,0.08); }
   .who-sci-info-name { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.72rem; color: #fbbf24; margin-bottom: 0.25rem; }
   .who-sci-info-fact { font-size: 0.68rem; color: rgba(255,255,255,0.7); line-height: 1.45; font-family: 'Nunito', sans-serif; font-weight: 600; }
@@ -1417,6 +1423,15 @@
 
             <!-- Main question area -->
             <div class="who-main">
+              <!-- Lifeline bar -->
+              <div class="who-lifelines" id="who-lifelines">
+                <span style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4);margin-right:0.5rem;">Lifelines:</span>
+                <button class="who-ll-btn" id="who-ll-lab"    onclick="useWHOLifeline('lab')"   title="Ask the Lab — get a one-sentence AI hint">🔬 Ask the Lab</button>
+                <button class="who-ll-btn" id="who-ll-class"  onclick="useWHOLifeline('class')" title="Ask the Class — 50:50 on MCQ, command word help on written">👥 Ask the Class</button>
+                <button class="who-ll-btn" id="who-ll-skip"   onclick="useWHOLifeline('skip')"  title="Skip — swap this question for a different one">⏭️ Skip</button>
+              </div>
+              <!-- Lifeline result panel -->
+              <div class="who-ll-result" id="who-ll-result" style="display:none"></div>
               <div id="who-q-container"></div>
             </div>
 
@@ -4114,6 +4129,7 @@ let whoSessionXP = 0;
 let whoUsedQIds = new Set();
 let whoCurrentQ = null;
 let whoMarkingActive = false;
+let whoLifelines = { lab: true, class: true, skip: true }; // true = available
 
 function shuffleArr(arr) {
   const a = [...arr];
@@ -4133,6 +4149,8 @@ function startWHO() {
   whoSessionXP = 0;
   whoUsedQIds = new Set();
   whoMarkingActive = false;
+  whoLifelines = { lab: true, class: true, skip: true };
+  updateWHOLifelineUI();
 
   document.getElementById('who-intro-section').style.display = 'none';
   document.getElementById('who-gameover-section').style.display = 'none';
@@ -4177,6 +4195,119 @@ function hideWHOSciInfo() {
   if (panel) panel.style.display = 'none';
 }
 
+// ── WHO LIFELINES ─────────────────────────────────────────────────────────────
+
+function updateWHOLifelineUI() {
+  ['lab', 'class', 'skip'].forEach(id => {
+    const btn = document.getElementById(`who-ll-${id}`);
+    if (!btn) return;
+    if (whoLifelines[id]) {
+      btn.classList.remove('who-ll-used');
+      btn.disabled = false;
+    } else {
+      btn.classList.add('who-ll-used');
+      btn.disabled = true;
+    }
+  });
+}
+
+function showWHOLifelineResult(html) {
+  const el = document.getElementById('who-ll-result');
+  if (!el) return;
+  el.innerHTML = html;
+  el.style.display = 'block';
+}
+
+function clearWHOLifelineResult() {
+  const el = document.getElementById('who-ll-result');
+  if (el) el.style.display = 'none';
+}
+
+async function useWHOLifeline(type) {
+  if (!whoLifelines[type] || whoMarkingActive) return;
+  const q = whoCurrentQ;
+  const spec = WHO_LADDER[whoQIndex];
+  if (!q) return;
+
+  // Mark as used immediately
+  whoLifelines[type] = false;
+  updateWHOLifelineUI();
+
+  if (type === 'skip') {
+    // Replace question with a different one of the same spec
+    clearWHOLifelineResult();
+    const replacement = getWHOQuestion(whoQIndex);
+    if (!replacement) {
+      // No replacement available — restore lifeline
+      whoLifelines[type] = true;
+      updateWHOLifelineUI();
+      showWHOLifelineResult('<strong>⏭️ Skip</strong>No alternative question available for this level — lifeline restored.');
+      return;
+    }
+    whoCurrentQ = replacement;
+    clearWHOLifelineResult();
+    showWHOQuestion(true); // re-render without consuming a new question
+    return;
+  }
+
+  if (type === 'class') {
+    if (spec.type === 'mcq') {
+      // 50:50 — hide two wrong options
+      const opts = document.querySelectorAll('.who-mc-btn');
+      const wrongBtns = [...opts].filter(b => {
+        const txt = b.textContent.trim().replace(/^[ABCD]\.\s*/, '');
+        return txt !== q.correct && !b.innerHTML.includes(q.correct);
+      });
+      shuffleArr([...wrongBtns]).slice(0, 2).forEach(b => {
+        b.style.visibility = 'hidden';
+      });
+      showWHOLifelineResult('<strong>👥 Ask the Class</strong>Two wrong answers have been removed. Two options remain.');
+    } else {
+      // Written — show command word definition + mark count
+      const cmdDefs = {
+        'describe': 'State what something is like or what happens — recall facts or observations.',
+        'explain': 'Give reasons why something happens — use because, so, therefore.',
+        'evaluate': 'Weigh up evidence or ideas and come to a supported conclusion.',
+        'compare': 'State similarities AND differences between two things.',
+        'suggest': 'Use your knowledge to propose a reason or answer for an unfamiliar situation.',
+        'calculate': 'Work out a numerical answer, showing your working.',
+        'state': 'Give a short factual answer — no explanation needed.',
+        'outline': 'Give the main points without going into full detail.',
+        'discuss': 'Present different sides of an argument or issue.',
+        'justify': 'Give evidence or reasons to support a conclusion.',
+        'predict': 'Say what you think will happen and why.',
+      };
+      const cw = (q.command_word || q.question.split(' ')[0] || '').toLowerCase();
+      const def = cmdDefs[cw] || 'Read the question carefully and make sure each point you write earns a separate mark.';
+      showWHOLifelineResult(`<strong>👥 Ask the Class</strong>Command word: <em>${cw || 'N/A'}</em> — ${def}<br><br>This question is worth <strong>${spec.marks} mark${spec.marks > 1 ? 's' : ''}</strong> — aim for ${spec.marks} separate, distinct point${spec.marks > 1 ? 's' : ''}.`);
+    }
+    return;
+  }
+
+  if (type === 'lab') {
+    showWHOLifelineResult('<strong>🔬 Ask the Lab</strong><span style="opacity:0.6">Getting a hint…</span>');
+    try {
+      const resp = await fetch('/.netlify/functions/mark-answer', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          _hintMode: true,
+          question: q.question,
+          marks: spec.marks,
+          mark_scheme: q.mark_scheme || '',
+          command_word: q.command_word || '',
+        }),
+      });
+      const data = await resp.json();
+      const hint = data.hint || data.feedback || 'Think carefully about the key scientific concepts involved in this topic.';
+      showWHOLifelineResult(`<strong>🔬 Ask the Lab</strong>${hint}`);
+    } catch(e) {
+      showWHOLifelineResult('<strong>🔬 Ask the Lab</strong>Hint unavailable — check your connection and try again. Lifeline has been used.');
+    }
+  }
+}
+
+
 function getWHOQuestion(level) {
   const spec = WHO_LADDER[level];
   const pool = questions.filter(q => {
@@ -4192,11 +4323,16 @@ function getWHOQuestion(level) {
   return q;
 }
 
-function showWHOQuestion() {
+function showWHOQuestion(skipFetch) {
   buildWHOLadder();
+  clearWHOLifelineResult();
+  whoMCPending = null;
   const spec = WHO_LADDER[whoQIndex];
-  const q = getWHOQuestion(whoQIndex);
-  whoCurrentQ = q;
+  if (!skipFetch) {
+    const q = getWHOQuestion(whoQIndex);
+    whoCurrentQ = q;
+  }
+  const q = whoCurrentQ;
 
   if (!q) {
     // Fallback: no question of that mark value — skip to next level
