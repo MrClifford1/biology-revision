@@ -965,6 +965,12 @@
   .s6-term-chip:hover .s6-term-def, .s6-term-chip.s6-term-open .s6-term-def { display: block; }
   .s6-textarea { width: 100%; box-sizing: border-box; border: 1.5px solid var(--border); border-radius: 10px; padding: 0.75rem; font-size: 0.875rem; font-family: inherit; line-height: 1.65; resize: vertical; outline: none; min-height: 140px; }
   .s6-textarea:focus { border-color: #6366f1; }
+  .s6-whats-next-btn { background: #f5f3ff; border: 1.5px solid #a5b4fc; border-radius: 8px; padding: 0.35rem 0.85rem; font-size: 0.78rem; font-family: 'Nunito', sans-serif; font-weight: 800; color: #4338ca; cursor: pointer; transition: background 0.15s; }
+  .s6-whats-next-btn:hover { background: #ede9fe; border-color: #6366f1; }
+  .s6-nudge { background: #f5f3ff; border: 1.5px solid #a5b4fc; border-radius: 10px; padding: 0.75rem 1rem; margin-top: 0.5rem; font-size: 0.83rem; line-height: 1.6; color: #3730a3; font-family: 'Nunito', sans-serif; font-weight: 700; }
+  .s6-nudge .s6-nudge-action { display: inline-block; margin-top: 0.4rem; background: #6366f1; color: white; border: none; border-radius: 6px; padding: 0.25rem 0.65rem; font-size: 0.75rem; font-family: 'Nunito', sans-serif; font-weight: 800; cursor: pointer; }
+  .s6-nudge .s6-nudge-action:hover { background: #4f46e5; }
+  .s6-nudge-done { background: #f0fdf4; border-color: #86efac; color: #166534; }
   .s6-result-banner { border-radius: 12px; padding: 0.85rem 1rem; margin-bottom: 0.75rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.9rem; }
   .s6-result-full { background: #f0fdf4; border: 1px solid #bbf7d0; color: #15803d; }
   .s6-result-partial { background: #fefce8; border: 1px solid #fde68a; color: #92400e; }
@@ -1572,6 +1578,12 @@
         <textarea class="s6-textarea" id="s6-textarea" placeholder="Write your answer here…"
           onpaste="event.preventDefault();this.insertAdjacentHTML('afterend','<div style=\'font-size:0.7rem;color:#dc2626;margin-top:0.25rem\'>✋ Paste disabled — write in your own words.</div>');setTimeout(()=>this.nextElementSibling?.remove(),2500)"
           oncopy="event.preventDefault()" oncut="event.preventDefault()"></textarea>
+
+        <!-- What's Next nudge -->
+        <div style="margin-top:0.65rem;">
+          <button class="s6-whats-next-btn" id="s6-whats-next-btn" onclick="s6WhatsNext()">💡 What's next?</button>
+        </div>
+        <div id="s6-nudge" class="s6-nudge" style="display:none;"></div>
 
         <div id="s6-loading" style="display:none;text-align:center;padding:1.5rem 0;">
           <div class="spinner" style="margin:0 auto 0.5rem;"></div>
@@ -4860,6 +4872,8 @@ function startSuper6() {
   document.getElementById('s6-write-section').style.display  = 'block';
   document.getElementById('s6-results-section').style.display = 'none';
   document.getElementById('s6-textarea').value = '';
+  const nudgeEl = document.getElementById('s6-nudge');
+  if (nudgeEl) nudgeEl.style.display = 'none';
   // Close scaffold panels on new question
   ['structure','starters','connectives','keypoints'].forEach(k => {
     const p = document.getElementById(`s6-panel-${k}`);
@@ -5049,6 +5063,92 @@ function insertS6Starter(btn, text) {
   // Flash the button green briefly
   btn.classList.add('s6-starter-used');
   setTimeout(() => btn.classList.remove('s6-starter-used'), 800);
+}
+
+// ── What's Next? guided nudge ─────────────────────────────────────────────────
+
+function s6WhatsNext() {
+  const ta   = document.getElementById('s6-textarea');
+  const nudge = document.getElementById('s6-nudge');
+  if (!ta || !nudge) return;
+
+  const text = ta.value.trim();
+  const q    = _s6CurrentQ;
+  if (!q) return;
+
+  const cw    = (q.command_word || q.question.split(' ')[0] || '').toLowerCase();
+  const cwKey = Object.keys(S6_STRUCTURE_STRIPS).find(k => cw.startsWith(k)) || 'default';
+
+  // All connectives flattened for detection
+  const allConnectives = Object.values(S6_CONNECTIVES).flat();
+  const recommended    = S6_RECOMMENDED_CONNECTIVES[cwKey] || S6_RECOMMENDED_CONNECTIVES.default;
+
+  // ── Stage 1: nothing written ─────────────────────────────────────────────
+  if (!text) {
+    const starters = S6_SENTENCE_STARTERS[cwKey] || S6_SENTENCE_STARTERS.default;
+    const pick = starters[0];
+    nudge.className = 's6-nudge';
+    nudge.style.display = 'block';
+    nudge.innerHTML = `✏️ <strong>Start writing!</strong> Your answer is blank. Try opening with a sentence starter to get going.
+      <br><button class="s6-nudge-action" onclick="s6NudgeInsertStarter(${JSON.stringify(pick)})">Insert "${pick}"</button>`;
+    return;
+  }
+
+  // ── Stage 2: written something, no connectives yet ───────────────────────
+  const textLower = text.toLowerCase();
+  const usedConn  = allConnectives.filter(c => textLower.includes(c.toLowerCase()));
+  const usedRecommended = recommended.filter(c => textLower.includes(c.toLowerCase()));
+
+  if (!usedConn.length) {
+    const suggest = recommended.slice(0, 3).join(', ');
+    nudge.className = 's6-nudge';
+    nudge.style.display = 'block';
+    nudge.innerHTML = `🔗 <strong>Add a connective.</strong> You've made a start — now develop your point. Try linking your ideas with a connective like <em>${suggest}</em>.
+      <br><button class="s6-nudge-action" onclick="toggleS6Scaffold('connectives');document.getElementById('s6-nudge').style.display='none'">Open Connectives Bank</button>`;
+    return;
+  }
+
+  // ── Stage 3: has connectives — check key terms coverage ──────────────────
+  const terms = _s6ScaffoldCache?.keyTerms;
+  if (terms && terms.length) {
+    const missing = terms.filter(t => {
+      const term = (typeof t === 'string' ? t : t.term).toLowerCase();
+      return !textLower.includes(term);
+    });
+    if (missing.length) {
+      const missingNames = missing.map(t => typeof t === 'string' ? t : t.term);
+      nudge.className = 's6-nudge';
+      nudge.style.display = 'block';
+      nudge.innerHTML = `🔑 <strong>Cover your key terms.</strong> Good use of connectives! You haven't mentioned: <em>${missingNames.join(', ')}</em>. Try to work ${missingNames.length === 1 ? 'it' : 'them'} into your answer.
+        <br><button class="s6-nudge-action" onclick="toggleS6Scaffold('keypoints');document.getElementById('s6-nudge').style.display='none'">Open Key Terms</button>`;
+      return;
+    }
+  }
+
+  // ── Stage 4: check structure checklist ───────────────────────────────────
+  const steps    = S6_STRUCTURE_STRIPS[cwKey].slice(0, q.marks || 4);
+  const unchecked = steps.filter((_, i) => !_s6ChecklistState[i]);
+  if (unchecked.length) {
+    nudge.className = 's6-nudge';
+    nudge.style.display = 'block';
+    nudge.innerHTML = `📋 <strong>Tick your checklist.</strong> Have you covered: <em>${unchecked[0].text}</em>? Open the Structure Strip and tick each step you've completed.
+      <br><button class="s6-nudge-action" onclick="toggleS6Scaffold('structure');document.getElementById('s6-nudge').style.display='none'">Open Checklist</button>`;
+    return;
+  }
+
+  // ── Stage 5: all done ─────────────────────────────────────────────────────
+  nudge.className = 's6-nudge s6-nudge-done';
+  nudge.style.display = 'block';
+  nudge.innerHTML = `✅ <strong>Looking great!</strong> You've used connectives, covered your key terms, and ticked your checklist. You're ready to submit!`;
+}
+
+function s6NudgeInsertStarter(text) {
+  const ta = document.getElementById('s6-textarea');
+  if (!ta) return;
+  ta.value = text;
+  ta.focus();
+  ta.setSelectionRange(ta.value.length, ta.value.length);
+  document.getElementById('s6-nudge').style.display = 'none';
 }
 
 async function loadS6Cache(qId) {
