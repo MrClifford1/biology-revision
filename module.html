@@ -865,12 +865,12 @@
   .xp-toast-label { letter-spacing: 0.03em; text-shadow: 0 1px 3px rgba(0,0,0,0.25); }
 
   /* ── WHO WANTS TO BE A SCIENTIST ─────────────────────────────────────── */
-  #tab-who .practice-panel-inner { background: transparent; }
-  .who-arena { background: linear-gradient(160deg, #0f1729 0%, #1a2a5e 60%, #0d1f4a 100%); border-radius: 18px; padding: 1rem; margin-bottom: 0.75rem; box-shadow: 0 8px 32px rgba(10,20,70,0.35), inset 0 1px 0 rgba(255,255,255,0.06); }
-  .who-layout { display: flex; gap: 0.75rem; align-items: flex-start; }
-  .who-ladder { flex: 0 0 148px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden; }
+  #tab-who .practice-panel-inner { background: transparent; max-width: none; padding: 0.75rem; }
+  .who-arena { background: linear-gradient(160deg, #0f1729 0%, #1a2a5e 60%, #0d1f4a 100%); border-radius: 18px; padding: 1.25rem 1.5rem; margin-bottom: 0.75rem; box-shadow: 0 8px 32px rgba(10,20,70,0.35), inset 0 1px 0 rgba(255,255,255,0.06); }
+  .who-layout { display: flex; gap: 1rem; align-items: flex-start; }
+  .who-ladder { flex: 0 0 180px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: visible; position: relative; }
   .who-ladder-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); padding: 0.5rem 0.6rem 0.35rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
-  .who-rung { display: flex; align-items: center; gap: 0.3rem; padding: 0.28rem 0.5rem; font-size: 0.68rem; font-family: 'Nunito', sans-serif; font-weight: 700; color: rgba(255,255,255,0.38); border-left: 3px solid transparent; cursor: default; transition: background 0.15s; position: relative; }
+  .who-rung { display: flex; align-items: center; gap: 0.3rem; padding: 0.32rem 0.6rem; font-size: 0.72rem; font-family: 'Nunito', sans-serif; font-weight: 700; color: rgba(255,255,255,0.38); border-left: 3px solid transparent; cursor: default; transition: background 0.15s; position: relative; overflow: visible; }
   .who-rung:hover .who-rung-tooltip { display: block; }
   .who-rung.who-rung-done { color: #4ade80; border-left-color: #4ade80; background: rgba(74,222,128,0.08); }
   .who-rung.who-rung-current { color: #fbbf24; border-left-color: #fbbf24; background: rgba(251,191,36,0.12); font-weight: 900; animation: who-pulse 1.8s ease-in-out infinite; }
@@ -879,7 +879,7 @@
   .who-rung-emoji { font-size: 0.82rem; flex-shrink: 0; }
   .who-rung-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
   .who-rung-num { font-size: 0.6rem; color: rgba(255,255,255,0.25); flex-shrink: 0; }
-  .who-rung-tooltip { display: none; position: absolute; left: calc(100% + 8px); top: 50%; transform: translateY(-50%); background: #1e293b; border: 1px solid rgba(255,255,255,0.12); color: #e2e8f0; font-size: 0.72rem; font-family: 'Nunito', sans-serif; font-weight: 600; line-height: 1.5; padding: 0.5rem 0.7rem; border-radius: 8px; white-space: normal; width: 190px; z-index: 30; pointer-events: none; box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+  .who-rung-tooltip { display: none; position: absolute; left: calc(100% + 10px); top: 50%; transform: translateY(-50%); background: #1e293b; border: 1px solid rgba(255,255,255,0.2); color: #e2e8f0; font-size: 0.75rem; font-family: 'Nunito', sans-serif; font-weight: 600; line-height: 1.5; padding: 0.6rem 0.85rem; border-radius: 10px; white-space: normal; width: 210px; z-index: 9999; pointer-events: none; box-shadow: 0 6px 24px rgba(0,0,0,0.5); }
   .who-rung-tooltip strong { color: #fbbf24; display: block; margin-bottom: 0.15rem; }
   .who-rung-tooltip::before { content: ''; position: absolute; right: 100%; top: 50%; transform: translateY(-50%); border: 5px solid transparent; border-right-color: #1e293b; }
   .who-main { flex: 1; min-width: 0; }
@@ -4017,36 +4017,70 @@ document.getElementById('learn-refresh-btn')?.addEventListener('click', () => {
 // ── WHO WANTS TO BE A SCIENTIST ──────────────────────────────────────────────
 
 const WHO_SCIENTISTS = [
-  { name: 'William Beaumont',    emoji: '🔬', fact: 'Pioneer of gastric physiology — studied digestion through a patient\'s open stomach wound (1820s).' },
-  { name: 'Jan van Helmont',     emoji: '🌱', fact: 'Early plant scientist who showed plants don\'t get mass from soil — a step toward photosynthesis.' },
-  { name: 'Francesco Redi',      emoji: '🪲', fact: 'Disproved spontaneous generation with fly larvae experiments (1668).' },
-  { name: 'Robert Hooke',        emoji: '🔭', fact: 'First person to use the word "cell" after observing cork under a microscope (1665).' },
-  { name: 'Antonie van Leeuwenhoek', emoji: '💧', fact: 'Built powerful microscopes and was first to observe bacteria and microorganisms (1670s).' },
-  { name: 'Carl Linnaeus',       emoji: '🌿', fact: 'Created the binomial naming system for classifying all living things — still used today.' },
-  { name: 'Luigi Galvani',       emoji: '⚡', fact: 'Discovered bioelectricity by making frog legs twitch with electric current (1780s).' },
-  { name: 'Antoine Lavoisier',   emoji: '⚗️', fact: 'Father of modern chemistry — established conservation of mass and named oxygen and hydrogen.' },
-  { name: 'John Dalton',         emoji: '⚛️', fact: 'Proposed the first modern atomic theory and created the first table of atomic weights (1803).' },
-  { name: 'Humphry Davy',        emoji: '🔋', fact: 'Used electrolysis to discover sodium, potassium, calcium and other elements.' },
-  { name: 'Michael Faraday',     emoji: '🧲', fact: 'Discovered electromagnetic induction and laws of electrolysis — foundation of electric motors.' },
-  { name: 'Gregor Mendel',       emoji: '🫘', fact: 'Father of genetics — discovered dominant and recessive inheritance through pea plant experiments.' },
-  { name: 'Louis Pasteur',       emoji: '🦠', fact: 'Proved germ theory, developed pasteurisation, and created early vaccines for rabies and anthrax.' },
-  { name: 'Robert Koch',         emoji: '🧫', fact: 'Identified bacteria causing tuberculosis and cholera — established Koch\'s postulates for disease.' },
-  { name: 'James Clerk Maxwell', emoji: '🌊', fact: 'Unified electricity, magnetism and light into Maxwell\'s equations — one of physics\' greatest achievements.' },
-  { name: 'Dmitri Mendeleev',    emoji: '📊', fact: 'Created the periodic table in 1869 and predicted undiscovered elements from gaps in the pattern.' },
-  { name: 'Charles Darwin',      emoji: '🦕', fact: 'Proposed natural selection as the mechanism of evolution in On the Origin of Species (1859).' },
-  { name: 'Ernest Rutherford',   emoji: '💥', fact: 'Discovered the atomic nucleus by firing alpha particles at gold foil — transformed atomic theory.' },
-  { name: 'Niels Bohr',          emoji: '🪐', fact: 'Proposed electrons orbit nuclei in fixed energy shells — the foundation of the electronic model.' },
-  { name: 'Lise Meitner',        emoji: '☢️', fact: 'Co-discovered nuclear fission — one of the most significant discoveries of the 20th century.' },
-  { name: 'Rosalind Franklin',   emoji: '🧬', fact: 'Her X-ray crystallography of DNA provided crucial evidence for the double helix structure.' },
-  { name: 'Marie Curie',         emoji: '🏅', fact: 'Only person to win Nobel Prizes in two sciences (Physics and Chemistry) — pioneered radioactivity.' },
-  { name: 'Werner Heisenberg',   emoji: '🌀', fact: 'Formulated the uncertainty principle — you cannot know both position and momentum of a particle exactly.' },
-  { name: 'Erwin Schrödinger',   emoji: '🐱', fact: 'Developed quantum wave mechanics; famous for his thought experiment involving a cat in a box.' },
-  { name: 'Dorothy Hodgkin',     emoji: '💎', fact: 'Used X-ray crystallography to determine the 3D structures of penicillin, vitamin B12 and insulin.' },
-  { name: 'Francis Crick',       emoji: '🔗', fact: 'Co-discovered the double helix structure of DNA with Watson (using Franklin\'s data) in 1953.' },
-  { name: 'Max Planck',          emoji: '🌡️', fact: 'Founded quantum theory by proposing energy is emitted in discrete packets called quanta (1900).' },
-  { name: 'Stephen Hawking',     emoji: '🌌', fact: 'Discovered Hawking radiation from black holes and advanced our understanding of the Big Bang.' },
-  { name: 'Albert Einstein',     emoji: '💡', fact: 'Developed relativity (E=mc²), explained the photoelectric effect, and revolutionised physics.' },
-  { name: 'Isaac Newton',        emoji: '🍎', fact: 'Formulated laws of motion and gravity, invented calculus, and transformed our understanding of the universe.' },
+  // Tier 1 — early/niche contributors
+  { name: 'William Beaumont',       emoji: '🔬', fact: 'Pioneer of gastric physiology — studied digestion through a patient\'s open stomach wound (1820s).' },
+  { name: 'Jan van Helmont',        emoji: '🌱', fact: 'Early plant scientist who showed plants don\'t get mass from soil — a step toward photosynthesis.' },
+  { name: 'Francesco Redi',         emoji: '🪲', fact: 'Disproved spontaneous generation with fly larvae experiments (1668).' },
+  { name: 'Nicolaus Steno',         emoji: '🦷', fact: 'Founder of stratigraphy — first to correctly explain how fossils form in rock layers (1669).' },
+  { name: 'Stephen Hales',          emoji: '🌿', fact: 'First to measure blood pressure and study how plants move water and gases (1727).' },
+  { name: 'René Antoine de Réaumur',emoji: '🌡️', fact: 'Invented the Réaumur temperature scale and made early discoveries about digestion and insect behaviour.' },
+  { name: 'Henry Cavendish',        emoji: '⚗️', fact: 'Discovered hydrogen and measured the gravitational constant — one of science\'s most reclusive geniuses.' },
+  { name: 'Joseph Priestley',       emoji: '💨', fact: 'Discovered oxygen (independently of Lavoisier) and invented carbonated water.' },
+  { name: 'Georg Ohm',              emoji: '🔌', fact: 'Discovered Ohm\'s Law — the relationship between voltage, current and resistance.' },
+  { name: 'Alessandro Volta',       emoji: '🔋', fact: 'Invented the first electric battery (the voltaic pile) — the unit Volt is named after him.' },
+  { name: 'Anders Celsius',         emoji: '🌡️', fact: 'Proposed the Celsius temperature scale based on the freezing and boiling points of water.' },
+  { name: 'Carl Wilhelm Scheele',   emoji: '🧪', fact: 'Discovered chlorine, manganese and oxygen (before Priestley) — one of chemistry\'s unsung heroes.' },
+  { name: 'John Snow',              emoji: '🗺️', fact: 'Father of epidemiology — traced the 1854 Broad Street cholera outbreak to a contaminated water pump.' },
+  { name: 'Florence Nightingale',   emoji: '🏥', fact: 'Pioneer of modern nursing and medical statistics — used data visualisation to save lives in war hospitals.' },
+  // Tier 2 — well known contributors
+  { name: 'Robert Hooke',           emoji: '🔭', fact: 'First person to use the word "cell" after observing cork under a microscope (1665).' },
+  { name: 'Antonie van Leeuwenhoek',emoji: '💧', fact: 'Built powerful microscopes and was first to observe bacteria and microorganisms (1670s).' },
+  { name: 'Carl Linnaeus',          emoji: '🌿', fact: 'Created the binomial naming system for classifying all living things — still used today.' },
+  { name: 'Luigi Galvani',          emoji: '⚡', fact: 'Discovered bioelectricity by making frog legs twitch with electric current (1780s).' },
+  { name: 'Antoine Lavoisier',      emoji: '⚗️', fact: 'Father of modern chemistry — established conservation of mass and named oxygen and hydrogen.' },
+  { name: 'John Dalton',            emoji: '⚛️', fact: 'Proposed the first modern atomic theory and created the first table of atomic weights (1803).' },
+  { name: 'Humphry Davy',           emoji: '🔋', fact: 'Used electrolysis to discover sodium, potassium, calcium and other elements.' },
+  { name: 'Michael Faraday',        emoji: '🧲', fact: 'Discovered electromagnetic induction and laws of electrolysis — foundation of electric motors.' },
+  { name: 'James Joule',            emoji: '⚡', fact: 'Showed heat is a form of energy transfer — the unit of energy (joule) is named after him.' },
+  { name: 'William Thomson (Kelvin)',emoji: '🌡️', fact: 'Established absolute zero and the Kelvin temperature scale — fundamental to thermodynamics.' },
+  { name: 'Gregor Mendel',          emoji: '🫘', fact: 'Father of genetics — discovered dominant and recessive inheritance through pea plant experiments.' },
+  { name: 'Louis Pasteur',          emoji: '🦠', fact: 'Proved germ theory, developed pasteurisation, and created early vaccines for rabies and anthrax.' },
+  { name: 'Robert Koch',            emoji: '🧫', fact: 'Identified bacteria causing tuberculosis and cholera — established Koch\'s postulates for disease.' },
+  { name: 'James Clerk Maxwell',    emoji: '🌊', fact: 'Unified electricity, magnetism and light into Maxwell\'s equations — one of physics\' greatest achievements.' },
+  { name: 'Dmitri Mendeleev',       emoji: '📊', fact: 'Created the periodic table in 1869 and predicted undiscovered elements from gaps in the pattern.' },
+  { name: 'Charles Darwin',         emoji: '🦕', fact: 'Proposed natural selection as the mechanism of evolution in On the Origin of Species (1859).' },
+  { name: 'Alfred Wegener',         emoji: '🌍', fact: 'Proposed the theory of continental drift — that continents were once joined as Pangaea.' },
+  { name: 'Santiago Ramón y Cajal', emoji: '🧠', fact: 'Founded modern neuroscience by proving the brain is made of individual nerve cells (neurons).' },
+  { name: 'Nikola Tesla',           emoji: '⚡', fact: 'Pioneered alternating current (AC) electricity — his system powers homes and industry worldwide.' },
+  // Tier 3 — famous scientists
+  { name: 'Ernest Rutherford',      emoji: '💥', fact: 'Discovered the atomic nucleus by firing alpha particles at gold foil — transformed atomic theory.' },
+  { name: 'Niels Bohr',             emoji: '🪐', fact: 'Proposed electrons orbit nuclei in fixed energy shells — the foundation of the electronic model.' },
+  { name: 'Lise Meitner',           emoji: '☢️', fact: 'Co-discovered nuclear fission — one of the most significant discoveries of the 20th century.' },
+  { name: 'Rosalind Franklin',      emoji: '🧬', fact: 'Her X-ray crystallography of DNA provided crucial evidence for the double helix structure.' },
+  { name: 'Marie Curie',            emoji: '🏅', fact: 'Only person to win Nobel Prizes in two sciences (Physics and Chemistry) — pioneered radioactivity.' },
+  { name: 'Werner Heisenberg',      emoji: '🌀', fact: 'Formulated the uncertainty principle — you cannot know both position and momentum of a particle exactly.' },
+  { name: 'Erwin Schrödinger',      emoji: '🐱', fact: 'Developed quantum wave mechanics; famous for his thought experiment involving a cat in a box.' },
+  { name: 'Dorothy Hodgkin',        emoji: '💎', fact: 'Used X-ray crystallography to determine the 3D structures of penicillin, vitamin B12 and insulin.' },
+  { name: 'Francis Crick',          emoji: '🔗', fact: 'Co-discovered the double helix structure of DNA with Watson (using Franklin\'s data) in 1953.' },
+  { name: 'Barbara McClintock',     emoji: '🌽', fact: 'Discovered genetic transposition ("jumping genes") — revolutionary genetics work earning a Nobel Prize in 1983.' },
+  { name: 'Lynn Margulis',          emoji: '🔬', fact: 'Proposed the endosymbiotic theory — that mitochondria and chloroplasts were once free-living bacteria.' },
+  { name: 'Nettie Stevens',         emoji: '🧬', fact: 'Discovered sex chromosomes (X and Y) in 1905 — a landmark in genetics.' },
+  { name: 'Jocelyn Bell Burnell',   emoji: '🌟', fact: 'Discovered pulsars (rapidly rotating neutron stars) as a PhD student in 1967.' },
+  { name: 'Fred Sanger',            emoji: '🔢', fact: 'Only Briton to win two Nobel Prizes in Chemistry — developed DNA sequencing methods still used today.' },
+  { name: 'James Watson',           emoji: '🧬', fact: 'Co-discovered the double helix structure of DNA with Crick in 1953.' },
+  { name: 'Crick & Watson (team)',   emoji: '🔬', fact: 'Together proposed the double helix model of DNA structure in 1953, transforming biology.' },
+  // Tier 4 — legends
+  { name: 'Max Planck',             emoji: '📡', fact: 'Founded quantum theory by proposing energy is emitted in discrete packets called quanta (1900).' },
+  { name: 'Stephen Hawking',        emoji: '🌌', fact: 'Discovered Hawking radiation from black holes and advanced our understanding of the Big Bang.' },
+  { name: 'Richard Feynman',        emoji: '📐', fact: 'Developed quantum electrodynamics (QED) and was famous for making physics accessible and joyful.' },
+  { name: 'Paul Dirac',             emoji: '🔢', fact: 'Predicted the existence of antimatter using quantum mechanics alone — confirmed in 1932.' },
+  { name: 'Enrico Fermi',           emoji: '⚛️', fact: 'Built the first nuclear reactor and made pivotal contributions to nuclear physics and quantum theory.' },
+  { name: 'Linus Pauling',          emoji: '🧪', fact: 'Won Nobel Prizes in both Chemistry and Peace — pioneered the study of chemical bonding.' },
+  { name: 'Carl Sagan',             emoji: '🌌', fact: 'Astrophysicist and science communicator who made astronomy and the cosmos accessible to millions.' },
+  { name: 'Ada Lovelace',           emoji: '💻', fact: 'Often called the first computer programmer — wrote the first algorithm intended for a machine in 1843.' },
+  { name: 'Alan Turing',            emoji: '🤖', fact: 'Father of computer science and AI — cracked the Enigma code and conceptualised the modern computer.' },
+  { name: 'Albert Einstein',        emoji: '💡', fact: 'Developed relativity (E=mc²), explained the photoelectric effect, and revolutionised physics.' },
+  { name: 'Isaac Newton',           emoji: '🍎', fact: 'Formulated laws of motion and gravity, invented calculus, and transformed our understanding of the universe.' },
 ];
 
 // 15-question ladder: [marks, type, threshold]
@@ -4304,8 +4338,23 @@ function whoAdvance(marksAwarded, result) {
         showXPToast(xp);
       }
     }
-  } else if (spec.type === 'mcq') {
-    whoSessionXP += 1;
+  } else if (spec.type === 'mcq' && window._currentUser) {
+    const q = whoCurrentQ;
+    const idx = q ? fuzzyMatchTopic(q.topic, meta.topics) : -1;
+    if (idx >= 0) {
+      const topicName = meta.topics[idx];
+      const entry = ragState[topicName] || {};
+      const cur = entry.score ?? 0;
+      if (cur < 35) {
+        ragState[topicName] = { ...entry, score: cur + 1, lastActivity: new Date().toISOString() };
+        renderChecklist(ragState);
+        if (window._saveRAG) window._saveRAG(window._currentUser.uid, `${subjectId}-${moduleId}`, ragState).catch(()=>{});
+        whoSessionXP += 1;
+        showXPToast(1);
+      }
+    } else {
+      whoSessionXP += 1;
+    }
   }
   whoQIndex++;
   if (whoQIndex >= WHO_LADDER.length) {
