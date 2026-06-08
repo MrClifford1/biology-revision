@@ -122,6 +122,40 @@ Respond ONLY with JSON (no markdown): {"awarded": true or false, "reason": "<one
       return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(parsedRemark) };
     }
 
+    // ── SCAFFOLD MODE (Super 6 key points cache) ──────────────────────────────
+    if (body._scaffoldMode) {
+      const scaffoldPrompt = `You are an AQA GCSE Science teacher. A student is about to answer this exam question and needs scaffolding hints — NOT a model answer.
+
+Question: "${body.question}"
+Command word: ${body.command_word || 'not specified'}
+Marks available: ${body.marks}
+Mark scheme: ${body.mark_scheme || 'not provided'}
+
+Generate a JSON object with exactly this structure:
+{
+  "keyPoints": ["point 1", "point 2", "point 3", ...]
+}
+
+Rules:
+- keyPoints: ${body.marks} bullet points, one per mark, stating WHAT to include (not how to phrase it)
+- Each point should be a short noun phrase, not a full sentence
+- Do not give away wording from the mark scheme directly — paraphrase
+- Keep each point under 12 words
+
+Respond ONLY with the JSON object.`;
+      const scaffResp = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'x-api-key': process.env.ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
+        body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: 400, messages: [{ role: 'user', content: scaffoldPrompt }] }),
+      });
+      if (!scaffResp.ok) return { statusCode: 502, body: JSON.stringify({ keyPoints: [] }) };
+      const scaffData = await scaffResp.json();
+      const raw = scaffData?.content?.[0]?.text?.trim() || '{}';
+      let parsed = { keyPoints: [] };
+      try { parsed = JSON.parse(raw); } catch(e) { try { parsed = JSON.parse(raw.replace(/```json|```/g, '').trim()); } catch(e2) {} }
+      return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(parsed) };
+    }
+
     // ── HINT MODE (Ask the Lab lifeline) ─────────────────────────────────────
     if (body._hintMode) {
       const hintPrompt = `You are an AQA GCSE Science teacher. A student is stuck on a question and needs a helpful nudge — NOT the answer.
