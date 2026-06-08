@@ -122,9 +122,9 @@ Respond ONLY with JSON (no markdown): {"awarded": true or false, "reason": "<one
       return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(parsedRemark) };
     }
 
-    // ── SCAFFOLD MODE (Super 6 key points cache) ──────────────────────────────
+    // ── SCAFFOLD MODE (Super 6 key terms cache) ──────────────────────────────
     if (body._scaffoldMode) {
-      const scaffoldPrompt = `You are an AQA GCSE Science teacher. A student is about to answer this exam question and needs scaffolding hints — NOT a model answer.
+      const scaffoldPrompt = `You are an AQA GCSE Science teacher. A student is about to answer this exam question and needs vocabulary scaffolding — NOT a model answer.
 
 Question: "${body.question}"
 Command word: ${body.command_word || 'not specified'}
@@ -133,25 +133,30 @@ Mark scheme: ${body.mark_scheme || 'not provided'}
 
 Generate a JSON object with exactly this structure:
 {
-  "keyPoints": ["point 1", "point 2", "point 3", ...]
+  "keyTerms": [
+    { "term": "short scientific term (1-4 words)", "definition": "brief student-friendly definition (1 sentence)" },
+    ...
+  ]
 }
 
 Rules:
-- keyPoints: ${body.marks} bullet points, one per mark, stating WHAT to include (not how to phrase it)
-- Each point should be a short noun phrase, not a full sentence
-- Do not give away wording from the mark scheme directly — paraphrase
-- Keep each point under 12 words
+- keyTerms: ${body.marks} entries, one per mark
+- Each term should be a scientific keyword or concept the student MUST include in their answer
+- The definition must NOT give away the answer — it should help them recall the concept
+- Terms should be nouns or short noun phrases (e.g. "mitosis", "spindle fibres", "cell membrane")
+- Definitions must be under 15 words
+- Do NOT use the term itself in its definition
 
 Respond ONLY with the JSON object.`;
       const scaffResp = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
         headers: { 'x-api-key': process.env.ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
-        body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: 400, messages: [{ role: 'user', content: scaffoldPrompt }] }),
+        body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: 500, messages: [{ role: 'user', content: scaffoldPrompt }] }),
       });
-      if (!scaffResp.ok) return { statusCode: 502, body: JSON.stringify({ keyPoints: [] }) };
+      if (!scaffResp.ok) return { statusCode: 502, body: JSON.stringify({ keyTerms: [] }) };
       const scaffData = await scaffResp.json();
       const raw = scaffData?.content?.[0]?.text?.trim() || '{}';
-      let parsed = { keyPoints: [] };
+      let parsed = { keyTerms: [] };
       try { parsed = JSON.parse(raw); } catch(e) { try { parsed = JSON.parse(raw.replace(/```json|```/g, '').trim()); } catch(e2) {} }
       return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(parsed) };
     }
@@ -191,6 +196,7 @@ Marks available: ${a.marks}
 Command word: ${a.command_word}
 ${a.mark_scheme ? `Mark scheme: ${a.mark_scheme}` : 'Use AQA GCSE Combined Science Biology knowledge to mark.'}
 Student answer: "${a.student_answer || '[No answer given]'}"
+${a.checked_steps && a.checked_steps.length ? `Student self-assessed these steps as completed: ${a.checked_steps.join('; ')}` : ''}
 `).join('\n---\n');
 
     const prompt = `You are an AQA GCSE Biology examiner. Mark all of the following student answers. Mark leniently but fairly — reward understanding even if wording is not perfect.
