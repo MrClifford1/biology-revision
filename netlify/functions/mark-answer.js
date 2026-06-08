@@ -122,7 +122,7 @@ Respond ONLY with JSON (no markdown): {"awarded": true or false, "reason": "<one
       return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(parsedRemark) };
     }
 
-    // ── SCAFFOLD MODE (Super 6 key terms cache) ──────────────────────────────
+    // ── SCAFFOLD MODE (Super 6 key terms + AI starters cache) ────────────────
     if (body._scaffoldMode) {
       const scaffoldPrompt = `You are an AQA GCSE Science teacher. A student is about to answer this exam question and needs vocabulary scaffolding — NOT a model answer.
 
@@ -134,34 +134,78 @@ Mark scheme: ${body.mark_scheme || 'not provided'}
 Generate a JSON object with exactly this structure:
 {
   "keyTerms": [
-    { "term": "short scientific term (1-4 words)", "definition": "brief student-friendly definition (1 sentence)" },
-    ...
+    { "term": "short scientific term (1-4 words)", "definition": "brief student-friendly definition (1 sentence)" }
+  ],
+  "starters": [
+    "Question-specific sentence starter 1...",
+    "Question-specific sentence starter 2...",
+    "Question-specific sentence starter 3..."
   ]
 }
 
-Rules:
-- keyTerms: ${body.marks} entries, one per mark
-- Each term should be a scientific keyword or concept the student MUST include in their answer
-- The definition must NOT give away the answer — it should help them recall the concept
-- Terms should be nouns or short noun phrases (e.g. "mitosis", "spindle fibres", "cell membrane")
-- Definitions must be under 15 words
-- Do NOT use the term itself in its definition
+Rules for keyTerms:
+- ${body.marks} entries, one per mark
+- Each term: a scientific keyword the student MUST include
+- Definition must NOT give away the answer — help them recall the concept
+- Terms are nouns/short noun phrases (e.g. "mitosis", "active transport", "concentration gradient")
+- Definitions under 15 words; do NOT use the term in its own definition
+
+Rules for starters:
+- Exactly 3 starters, each tailored specifically to THIS question (not generic)
+- Each starter begins a sentence the student could use to open their answer
+- Each starter ends with "..." so students continue writing
+- They must reference specific scientific content from the question (e.g. named cells, processes, structures)
+- They must match the command word: ${body.command_word || 'describe/explain'}
+- Do NOT complete the sentence — leave it open for the student
 
 Respond ONLY with the JSON object.`;
       const scaffResp = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
         headers: { 'x-api-key': process.env.ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
-        body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: 500, messages: [{ role: 'user', content: scaffoldPrompt }] }),
+        body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: 700, messages: [{ role: 'user', content: scaffoldPrompt }] }),
       });
-      if (!scaffResp.ok) return { statusCode: 502, body: JSON.stringify({ keyTerms: [] }) };
+      if (!scaffResp.ok) return { statusCode: 502, body: JSON.stringify({ keyTerms: [], starters: [] }) };
       const scaffData = await scaffResp.json();
       const raw = scaffData?.content?.[0]?.text?.trim() || '{}';
-      let parsed = { keyTerms: [] };
+      let parsed = { keyTerms: [], starters: [] };
       try { parsed = JSON.parse(raw); } catch(e) { try { parsed = JSON.parse(raw.replace(/```json|```/g, '').trim()); } catch(e2) {} }
       return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(parsed) };
     }
 
-    // ── HINT MODE (Ask the Lab lifeline) ─────────────────────────────────────
+    // ── INTERIM MODE (How am I doing? partial marking) ───────────────────────
+    if (body._interimMode) {
+      const interimPrompt = `You are an AQA GCSE Science teacher giving mid-answer coaching to a student.
+
+Question: "${body.question}"
+Marks available: ${body.marks}
+Mark scheme: ${body.mark_scheme || 'Use your AQA GCSE Biology knowledge'}
+Command word: ${body.command_word || 'not specified'}
+
+Student's answer so far:
+"${body.student_answer || '[Nothing written yet]'}"
+
+This is a PARTIAL answer — the student hasn't finished yet. Give brief, encouraging coaching.
+
+Respond ONLY with JSON (no markdown):
+{
+  "covered": "<one sentence: what the student has correctly included so far>",
+  "still_needed": "<one or two specific points still missing to get full marks>",
+  "tip": "<one concrete suggestion for what to write next — be specific to this question>"
+}`;
+      const interimResp = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'x-api-key': process.env.ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
+        body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: 300, messages: [{ role: 'user', content: interimPrompt }] }),
+      });
+      if (!interimResp.ok) return { statusCode: 502, body: JSON.stringify({ covered: '', still_needed: 'Could not analyse — try again.', tip: '' }) };
+      const interimData = await interimResp.json();
+      const rawInterim = interimData?.content?.[0]?.text?.trim() || '{}';
+      let parsedInterim = { covered: '', still_needed: '', tip: '' };
+      try { parsedInterim = JSON.parse(rawInterim); } catch(e) { try { parsedInterim = JSON.parse(rawInterim.replace(/```json|```/g, '').trim()); } catch(e2) {} }
+      return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(parsedInterim) };
+    }
+
+
     if (body._hintMode) {
       const hintPrompt = `You are an AQA GCSE Science teacher. A student is stuck on a question and needs a helpful nudge — NOT the answer.
 
