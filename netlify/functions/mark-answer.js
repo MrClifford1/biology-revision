@@ -122,6 +122,26 @@ Respond ONLY with JSON (no markdown): {"awarded": true or false, "reason": "<one
       return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(parsedRemark) };
     }
 
+    // ── HINT MODE (Ask the Lab lifeline) ─────────────────────────────────────
+    if (body._hintMode) {
+      const hintPrompt = `You are an AQA GCSE Science teacher. A student is stuck on a question and needs a helpful nudge — NOT the answer.
+
+Question: "${body.question}"
+Marks: ${body.marks}
+Command word: ${body.command_word || 'not specified'}
+
+Give ONE sentence that steers the student in the right direction without giving away the answer. Focus on the key scientific concept or process they need to think about. Start with "Think about..." or "Consider...".`;
+      const hintResp = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'x-api-key': process.env.ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
+        body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: 120, messages: [{ role: 'user', content: hintPrompt }] }),
+      });
+      if (!hintResp.ok) return { statusCode: 502, body: JSON.stringify({ hint: 'Think carefully about the key scientific concepts in this topic.' }) };
+      const hintData = await hintResp.json();
+      const hint = hintData?.content?.[0]?.text?.trim() || 'Think carefully about the key scientific concepts in this topic.';
+      return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ hint }) };
+    }
+
     // ── MARKING MODE (existing logic) ─────────────────────────────────────────
     const { answers } = body;
 
