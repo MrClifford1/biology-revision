@@ -632,8 +632,8 @@
       if (!entries.length) return; // no data yet — don't show bar
 
       const avgScore = entries.reduce((sum, [, e]) => sum + (e?.score || 0), 0) / entries.length;
-      const pct      = Math.min(100, Math.round(avgScore));
-      if (pct === 0) return; // nothing recorded yet
+      const pct      = Math.min(100, Math.round((avgScore / 35) * 100));
+ // nothing recorded yet
 
       // Pick colour based on score
       const colour = pct >= 76 ? '#22c55e'

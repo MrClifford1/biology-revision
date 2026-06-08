@@ -389,8 +389,8 @@
       const entries  = Object.entries(ragState).filter(([k]) => !k.startsWith('_'));
       if (!entries.length) return;
       const avgScore = entries.reduce((sum, [, e]) => sum + (e?.score || 0), 0) / entries.length;
-      const pct      = Math.min(100, Math.round(avgScore));
-      if (pct === 0) return;
+      const pct      = Math.min(100, Math.round((avgScore / 35) * 100));
+
       const colour    = pct >= 76 ? '#22c55e' : pct >= 56 ? '#84cc16' : pct >= 31 ? '#eab308' : '#ef4444';
       const tierLabel = pct >= 76 ? 'Expert' : pct >= 56 ? 'Scholar' : pct >= 31 ? 'Apprentice' : 'Rookie';
       const wrap = document.createElement('div');
