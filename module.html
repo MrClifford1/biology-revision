@@ -5144,13 +5144,26 @@ function s6WhatsNext() {
 
   // ── Stage 1: nothing written ─────────────────────────────────────────────
   if (!text) {
-    const starters = S6_SENTENCE_STARTERS[cwKey] || S6_SENTENCE_STARTERS.default;
-    const pick = starters[0];
-    nudge.className = 's6-nudge';
-    nudge.style.display = 'block';
-    window._s6NudgeStarter = pick;
-    nudge.innerHTML = `✏️ <strong>Start writing!</strong> Your answer is blank. Try opening with a sentence starter to get going.
-      <br><button class="s6-nudge-action" onclick="s6NudgeInsertStarter()">Insert "${pick}"</button>`;
+    const aiStarters = _s6ScaffoldCache?.starters;
+    if (aiStarters && aiStarters.length) {
+      // Show all AI starters as clickable chips
+      nudge.className = 's6-nudge';
+      nudge.style.display = 'block';
+      nudge.innerHTML = `✏️ <strong>Start writing!</strong> Click one of these starters to begin your answer:
+        <div style="display:flex;flex-direction:column;gap:0.35rem;margin-top:0.45rem;">
+          ${aiStarters.map(s => `<button class="s6-nudge-action" style="text-align:left;white-space:normal;height:auto;padding:0.35rem 0.65rem;" data-starter="${s.replace(/"/g,'&quot;')}" onclick="insertS6StarterFromNudge(this)">${s}</button>`).join('')}
+        </div>`;
+    } else {
+      // Fall back to generic — but also open starters panel so AI loads
+      const starters = S6_SENTENCE_STARTERS[cwKey] || S6_SENTENCE_STARTERS.default;
+      const pick = starters[0];
+      nudge.className = 's6-nudge';
+      nudge.style.display = 'block';
+      window._s6NudgeStarter = pick;
+      nudge.innerHTML = `✏️ <strong>Start writing!</strong> Open the Sentence Starters panel for question-specific suggestions, or click below to begin:
+        <br><button class="s6-nudge-action" onclick="s6NudgeInsertStarter()">Insert "${pick}"</button>
+        <button class="s6-nudge-action" style="margin-left:0.4rem;background:#a5b4fc;color:#1e1b4b;" onclick="toggleS6Scaffold('starters');document.getElementById('s6-nudge').style.display='none'">Load AI Starters</button>`;
+    }
     return;
   }
 
@@ -5204,6 +5217,16 @@ function s6WhatsNext() {
 
 function s6NudgeInsertStarter() {
   const text = window._s6NudgeStarter || '';
+  const ta = document.getElementById('s6-textarea');
+  if (!ta || !text) return;
+  ta.value = text;
+  ta.focus();
+  ta.setSelectionRange(ta.value.length, ta.value.length);
+  document.getElementById('s6-nudge').style.display = 'none';
+}
+
+function insertS6StarterFromNudge(btn) {
+  const text = btn.dataset.starter || '';
   const ta = document.getElementById('s6-textarea');
   if (!ta || !text) return;
   ta.value = text;
