@@ -879,9 +879,9 @@
   .who-rung-emoji { font-size: 0.82rem; flex-shrink: 0; }
   .who-rung-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
   .who-rung-num { font-size: 0.6rem; color: rgba(255,255,255,0.25); flex-shrink: 0; }
-  .who-rung-tooltip { display: none; position: absolute; left: calc(100% + 10px); top: 50%; transform: translateY(-50%); background: #1e293b; border: 1px solid rgba(255,255,255,0.2); color: #e2e8f0; font-size: 0.75rem; font-family: 'Nunito', sans-serif; font-weight: 600; line-height: 1.5; padding: 0.6rem 0.85rem; border-radius: 10px; white-space: normal; width: 210px; z-index: 9999; pointer-events: none; box-shadow: 0 6px 24px rgba(0,0,0,0.5); }
-  .who-rung-tooltip strong { color: #fbbf24; display: block; margin-bottom: 0.15rem; }
-  .who-rung-tooltip::before { content: ''; position: absolute; right: 100%; top: 50%; transform: translateY(-50%); border: 5px solid transparent; border-right-color: #1e293b; }
+  .who-sci-info { border-top: 1px solid rgba(255,255,255,0.12); padding: 0.6rem 0.7rem; background: rgba(251,191,36,0.08); }
+  .who-sci-info-name { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.72rem; color: #fbbf24; margin-bottom: 0.25rem; }
+  .who-sci-info-fact { font-size: 0.68rem; color: rgba(255,255,255,0.7); line-height: 1.45; font-family: 'Nunito', sans-serif; font-weight: 600; }
   .who-main { flex: 1; min-width: 0; }
   .who-q-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; padding: 1.1rem 1.25rem; margin-bottom: 0.65rem; box-shadow: 0 0 0 1px rgba(251,191,36,0.08), 0 4px 20px rgba(0,0,0,0.25); }
   .who-level-badge { display: inline-flex; align-items: center; gap: 0.3rem; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: #1e1b4b; background: linear-gradient(90deg, #fbbf24, #f59e0b); border-radius: 20px; padding: 0.18rem 0.6rem; margin-bottom: 0.5rem; }
@@ -889,6 +889,7 @@
   .who-mc-options { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 0.65rem; }
   .who-mc-btn { text-align: left; padding: 0.55rem 0.85rem; border: 1.5px solid rgba(255,255,255,0.18); border-radius: 10px; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.85); font-size: 0.85rem; font-family: inherit; font-weight: 600; cursor: pointer; transition: border-color 0.15s, background 0.15s, transform 0.1s; }
   .who-mc-btn:hover:not(:disabled) { border-color: #fbbf24; background: rgba(251,191,36,0.1); color: white; transform: translateX(2px); }
+  .who-mc-btn.who-selected { border-color: #f97316; background: rgba(249,115,22,0.15); color: #fb923c; }
   .who-mc-btn.who-correct { border-color: #4ade80; background: rgba(74,222,128,0.15); color: #4ade80; }
   .who-mc-btn.who-wrong { border-color: #f87171; background: rgba(248,113,113,0.15); color: #f87171; }
   .who-mc-btn.who-reveal { border-color: #4ade80; background: rgba(74,222,128,0.1); color: #4ade80; }
@@ -910,7 +911,7 @@
   .who-marking-msg { color: rgba(255,255,255,0.55); font-size: 0.85rem; text-align: center; padding: 1rem 0; }
   .who-game-over { background: linear-gradient(135deg, #1a0a0a, #2d0f0f); border: 1px solid rgba(248,113,113,0.3); border-radius: 14px; padding: 1.5rem; text-align: center; margin-bottom: 0.75rem; color: white; }
   .who-complete-arena { background: linear-gradient(135deg, #0f172a, #1e1b4b, #14532d); border-radius: 18px; padding: 2rem 1.5rem; text-align: center; color: white; margin-bottom: 0.75rem; box-shadow: 0 0 80px rgba(74,222,128,0.15); }
-  @media (max-width: 540px) { .who-layout { flex-direction: column; } .who-ladder { flex: none; width: 100%; } .who-rung-tooltip { left: auto; right: 0; top: auto; bottom: calc(100% + 6px); transform: none; width: 210px; } .who-rung-tooltip::before { display: none; } }
+  @media (max-width: 540px) { .who-layout { flex-direction: column; } .who-ladder { flex: none; width: 100%; } }
 
   </style>
 </head>
@@ -1408,6 +1409,10 @@
             <div class="who-ladder">
               <div class="who-ladder-title">🔬 Scientist Ladder</div>
               <div id="who-ladder-list"></div>
+              <div class="who-sci-info" id="who-sci-info" style="display:none">
+                <div class="who-sci-info-name" id="who-sci-info-name"></div>
+                <div class="who-sci-info-fact" id="who-sci-info-fact"></div>
+              </div>
             </div>
 
             <!-- Main question area -->
@@ -4148,15 +4153,28 @@ function showWHOIntro() {
 function buildWHOLadder() {
   const list = document.getElementById('who-ladder-list');
   list.innerHTML = [...whoScientists].reverse().map((sci, ri) => {
-    const i = whoScientists.length - 1 - ri; // actual index
+    const i = whoScientists.length - 1 - ri;
     const cls = i < whoQIndex ? 'who-rung-done' : i === whoQIndex ? 'who-rung-current' : 'who-rung-future';
-    return `<div class="who-rung ${cls}" data-idx="${i}">
+    return `<div class="who-rung ${cls}" data-idx="${i}" onmouseenter="showWHOSciInfo(${i})" onmouseleave="hideWHOSciInfo()">
       <span class="who-rung-emoji">${sci.emoji}</span>
       <span class="who-rung-name">${sci.name}</span>
       <span class="who-rung-num">${i + 1}</span>
-      <div class="who-rung-tooltip"><strong>${sci.name}</strong>${sci.fact}</div>
     </div>`;
   }).join('');
+}
+
+function showWHOSciInfo(idx) {
+  const sci = whoScientists[idx];
+  if (!sci) return;
+  const panel = document.getElementById('who-sci-info');
+  document.getElementById('who-sci-info-name').textContent = sci.name;
+  document.getElementById('who-sci-info-fact').textContent = sci.fact;
+  if (panel) panel.style.display = 'block';
+}
+
+function hideWHOSciInfo() {
+  const panel = document.getElementById('who-sci-info');
+  if (panel) panel.style.display = 'none';
 }
 
 function getWHOQuestion(level) {
@@ -4199,11 +4217,14 @@ function showWHOQuestion() {
         <div style="font-family:'Nunito',sans-serif;font-weight:700;font-size:0.7rem;color:rgba(255,255,255,0.5);margin-bottom:0.35rem;">${q.topic || ''}</div>
         <div class="who-q-text">${q.question}</div>
         <div class="who-mc-options" id="who-mc-opts">
-          ${opts.map((opt, i) => `<button class="who-mc-btn" id="who-mc-${i}" onclick="selectWHOMC(this,'${opt.replace(/'/g,"&#39;").replace(/"/g,"&quot;")}','${q.correct.replace(/'/g,"&#39;").replace(/"/g,"&quot;")}')">
+          ${opts.map((opt, i) => `<button class="who-mc-btn" id="who-mc-${i}" onclick="selectWHOMCPending(this,'${opt.replace(/'/g,"&#39;").replace(/"/g,"&quot;")}','${q.correct.replace(/'/g,"&#39;").replace(/"/g,"&quot;")}')">
             <span style="font-weight:800;margin-right:0.4rem;opacity:0.6">${['A','B','C','D'][i]}.</span>${opt}
           </button>`).join('')}
         </div>
-        <div id="who-mc-feedback" style="display:none;font-size:0.8rem;margin-bottom:0.5rem;"></div>
+        <div id="who-mc-final-row" style="display:none;margin-top:0.5rem;">
+          <button class="who-btn-gold" id="who-mc-final-btn" onclick="confirmWHOMC()">Final Answer →</button>
+        </div>
+        <div id="who-mc-feedback" style="display:none;font-size:0.8rem;margin-top:0.5rem;"></div>
       </div>
       <div style="padding:0 0.1rem;">
         <p style="font-size:0.72rem;color:rgba(255,255,255,0.4);margin-bottom:0.4rem;">Reach <strong style="color:#fbbf24">${sci.name}</strong> by answering correctly</p>
@@ -4228,20 +4249,34 @@ function showWHOQuestion() {
   }
 }
 
-function selectWHOMC(btn, chosen, correct) {
+let whoMCPending = null; // { chosen, correct }
+
+function selectWHOMCPending(btn, chosen, correct) {
   if (whoMarkingActive) return;
+  // Clear previous selection highlight
+  document.querySelectorAll('.who-mc-btn').forEach(b => b.classList.remove('who-selected'));
+  btn.classList.add('who-selected');
+  whoMCPending = { chosen, correct };
+  const row = document.getElementById('who-mc-final-row');
+  if (row) row.style.display = 'block';
+}
+
+function confirmWHOMC() {
+  if (!whoMCPending || whoMarkingActive) return;
   whoMarkingActive = true;
+  const { chosen, correct } = whoMCPending;
+  whoMCPending = null;
   const opts = document.querySelectorAll('.who-mc-btn');
-  opts.forEach(b => { b.disabled = true; });
+  opts.forEach(b => { b.disabled = true; b.classList.remove('who-selected'); });
+  const finalRow = document.getElementById('who-mc-final-row');
+  if (finalRow) finalRow.style.display = 'none';
   const isCorrect = chosen === correct;
-  btn.classList.add(isCorrect ? 'who-correct' : 'who-wrong');
-  if (!isCorrect) {
-    opts.forEach(b => {
-      if (b.textContent.trim().replace(/^[ABCD]\.\s*/,'') === correct || b.innerHTML.includes(correct)) {
-        b.classList.add('who-reveal');
-      }
-    });
-  }
+  // Highlight chosen button
+  opts.forEach(b => {
+    const txt = b.textContent.trim().replace(/^[ABCD]\.\s*/, '');
+    if (txt === chosen || b.innerHTML.includes(chosen)) b.classList.add(isCorrect ? 'who-correct' : 'who-wrong');
+    if (!isCorrect && (txt === correct || b.innerHTML.includes(correct))) b.classList.add('who-reveal');
+  });
   const fb = document.getElementById('who-mc-feedback');
   if (fb) {
     fb.style.display = 'block';
@@ -4250,11 +4285,7 @@ function selectWHOMC(btn, chosen, correct) {
   }
   setTimeout(() => {
     whoMarkingActive = false;
-    if (isCorrect) {
-      whoAdvance(1);
-    } else {
-      whoFail(null, null);
-    }
+    if (isCorrect) whoAdvance(1); else whoFail(null, null);
   }, 1200);
 }
 
