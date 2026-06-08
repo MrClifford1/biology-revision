@@ -965,8 +965,9 @@
   .s6-term-chip:hover .s6-term-def, .s6-term-chip.s6-term-open .s6-term-def { display: block; }
   .s6-textarea { width: 100%; box-sizing: border-box; border: 1.5px solid var(--border); border-radius: 10px; padding: 0.75rem; font-size: 0.875rem; font-family: inherit; line-height: 1.65; resize: vertical; outline: none; min-height: 140px; }
   .s6-textarea:focus { border-color: #6366f1; }
-  .s6-whats-next-btn { background: #f5f3ff; border: 1.5px solid #a5b4fc; border-radius: 8px; padding: 0.35rem 0.85rem; font-size: 0.78rem; font-family: 'Nunito', sans-serif; font-weight: 800; color: #4338ca; cursor: pointer; transition: background 0.15s; }
-  .s6-whats-next-btn:hover { background: #ede9fe; border-color: #6366f1; }
+  .s6-whats-next-btn { background: #6366f1; border: none; border-radius: 8px; padding: 0.45rem 1.1rem; font-size: 0.85rem; font-family: 'Nunito', sans-serif; font-weight: 800; color: white; cursor: pointer; transition: background 0.15s; box-shadow: 0 2px 6px rgba(99,102,241,0.3); }
+  .s6-whats-next-btn:hover { background: #4f46e5; }
+  .s6-whats-next-prominent { display: block; width: 100%; text-align: left; padding: 0.6rem 1.1rem; font-size: 0.9rem; }
   .s6-nudge { background: #f5f3ff; border: 1.5px solid #a5b4fc; border-radius: 10px; padding: 0.75rem 1rem; margin-top: 0.5rem; font-size: 0.83rem; line-height: 1.6; color: #3730a3; font-family: 'Nunito', sans-serif; font-weight: 700; }
   .s6-nudge .s6-nudge-action { display: inline-block; margin-top: 0.4rem; background: #6366f1; color: white; border: none; border-radius: 6px; padding: 0.25rem 0.65rem; font-size: 0.75rem; font-family: 'Nunito', sans-serif; font-weight: 800; cursor: pointer; }
   .s6-nudge .s6-nudge-action:hover { background: #4f46e5; }
@@ -1575,15 +1576,15 @@
         <div id="s6-panel-connectives" class="s6-scaffold-panel" style="display:none;"></div>
         <div id="s6-panel-keypoints"   class="s6-scaffold-panel" style="display:none;"></div>
 
-        <textarea class="s6-textarea" id="s6-textarea" placeholder="Write your answer here…"
-          onpaste="event.preventDefault();this.insertAdjacentHTML('afterend','<div style=\'font-size:0.7rem;color:#dc2626;margin-top:0.25rem\'>✋ Paste disabled — write in your own words.</div>');setTimeout(()=>this.nextElementSibling?.remove(),2500)"
-          oncopy="event.preventDefault()" oncut="event.preventDefault()"></textarea>
-
-        <!-- What's Next nudge -->
-        <div style="margin-top:0.65rem;">
-          <button class="s6-whats-next-btn" id="s6-whats-next-btn" onclick="s6WhatsNext()">💡 What's next?</button>
+        <!-- What's Next nudge (above textarea) -->
+        <div style="margin-bottom:0.5rem;">
+          <button class="s6-whats-next-btn s6-whats-next-prominent" id="s6-whats-next-btn" onclick="s6WhatsNext()">💡 What's next?</button>
         </div>
         <div id="s6-nudge" class="s6-nudge" style="display:none;"></div>
+
+        <textarea class="s6-textarea" id="s6-textarea" placeholder="Write your answer here…" style="margin-top:0.5rem;"
+          onpaste="event.preventDefault();this.insertAdjacentHTML('afterend','<div style=\'font-size:0.7rem;color:#dc2626;margin-top:0.25rem\'>✋ Paste disabled — write in your own words.</div>');setTimeout(()=>this.nextElementSibling?.remove(),2500)"
+          oncopy="event.preventDefault()" oncut="event.preventDefault()"></textarea>
 
         <div id="s6-loading" style="display:none;text-align:center;padding:1.5rem 0;">
           <div class="spinner" style="margin:0 auto 0.5rem;"></div>
@@ -5089,8 +5090,9 @@ function s6WhatsNext() {
     const pick = starters[0];
     nudge.className = 's6-nudge';
     nudge.style.display = 'block';
+    window._s6NudgeStarter = pick;
     nudge.innerHTML = `✏️ <strong>Start writing!</strong> Your answer is blank. Try opening with a sentence starter to get going.
-      <br><button class="s6-nudge-action" onclick="s6NudgeInsertStarter(${JSON.stringify(pick)})">Insert "${pick}"</button>`;
+      <br><button class="s6-nudge-action" onclick="s6NudgeInsertStarter()">Insert "${pick}"</button>`;
     return;
   }
 
@@ -5142,9 +5144,10 @@ function s6WhatsNext() {
   nudge.innerHTML = `✅ <strong>Looking great!</strong> You've used connectives, covered your key terms, and ticked your checklist. You're ready to submit!`;
 }
 
-function s6NudgeInsertStarter(text) {
+function s6NudgeInsertStarter() {
+  const text = window._s6NudgeStarter || '';
   const ta = document.getElementById('s6-textarea');
-  if (!ta) return;
+  if (!ta || !text) return;
   ta.value = text;
   ta.focus();
   ta.setSelectionRange(ta.value.length, ta.value.length);
