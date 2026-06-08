@@ -338,6 +338,31 @@
 
 
 
+<!-- BLITZ BANNER -->
+<div id="blitz-banner"></div>
+<!-- BINGO BANNER -->
+<div id="bingo-banner"></div>
+<!-- BINGO OVERLAY -->
+<div id="bingo-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;display:none;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:white;border-radius:18px;max-width:520px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.4);">
+    <div style="background:linear-gradient(135deg,#5b21b6,#7c3aed);padding:1.25rem 1.5rem;border-radius:18px 18px 0 0;display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.1rem;color:white;">🎯 Keyword Bingo</div>
+        <div id="bingo-overlay-info" style="font-size:0.75rem;color:rgba(255,255,255,0.8);margin-top:0.2rem;"></div>
+      </div>
+      <button onclick="dismissBingoBanner()" style="background:rgba(255,255,255,0.15);border:none;color:white;border-radius:8px;padding:0.3rem 0.7rem;font-family:'Nunito',sans-serif;font-weight:700;cursor:pointer;">✕ Close</button>
+    </div>
+    <div style="padding:1.25rem 1.5rem;">
+      <div id="bingo-overlay-call" style="background:#f5f3ff;border:2px solid #7c3aed;border-radius:12px;padding:1rem;margin-bottom:1rem;min-height:56px;">
+        <div style="font-size:0.62rem;font-family:'Nunito',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#7c3aed;margin-bottom:0.3rem;">Current Definition</div>
+        <div id="bingo-overlay-def" style="font-size:0.95rem;font-family:'Nunito',sans-serif;font-weight:700;color:#1e1b4b;line-height:1.4;">Waiting for teacher to call…</div>
+      </div>
+      <div id="bingo-overlay-grid" style="display:grid;gap:0.35rem;margin-bottom:1rem;"></div>
+      <div id="bingo-overlay-claim-btns" style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.5rem;"></div>
+      <div id="bingo-overlay-progress" style="font-size:0.75rem;color:#6b7280;font-family:'Nunito',sans-serif;text-align:center;"></div>
+    </div>
+  </div>
+</div>
 <!-- ASSESSMENT BANNER -->
 <div id="assessment-banners"></div>
 <!-- ASSIGNMENT BANNER -->
@@ -545,7 +570,8 @@
 
 <script type="module">
   import {
- onAuthChange, signOutUser, getUserProfile, saveClass, isClassValid, getUserRole, getActiveAssignmentsForClass, getUpcomingAssessmentsForStudent, isStaffRole, canAccessAdmin, isSuperAdmin } from './firebase.js';
+ onAuthChange, signOutUser, getUserProfile, saveClass, isClassValid, getUserRole, getActiveAssignmentsForClass, getUpcomingAssessmentsForStudent, isStaffRole, canAccessAdmin, isSuperAdmin, getActiveBlitzForClass, onBlitzSnapshot, updateBlitzSession, updateTopicScore, logActivity,
+  getActiveBingoForClass, onBingoSnapshot, claimBingo } from './firebase.js';
 
 
 
@@ -692,6 +718,14 @@
     // Load immediately
     if (profile?.class) reloadAssignmentBanners();
     if (profile?.class) loadAssessmentBanners(profile.class);
+
+    // Start blitz polling (students only)
+    if (profile?.class && profile.class !== 'Teachers') {
+      const displayName = profile.displayName || profile.name || user.displayName || 'Student';
+      window._currentProfile = profile;
+      startBlitzPoll(profile.class, user.uid, displayName);
+      startBingoPoll(profile.class, user.uid, displayName);
+    }
 
   });
 
@@ -871,6 +905,390 @@
     window.location.href = 'login.html';
   };
 
+  // ── BLITZ BANNER ────────────────────────────────────────────────────────────
+  let _blitzPollTimer = null;
+  let _blitzUnsub = null;
+  let _blitzActive = null; // current session being displayed
+  let _blitzAnswered = {}; // qIdx -> optionIndex answered
+
+  async function pollBlitz(cls, uid, displayName) {
+    try {
+      const sess = await getActiveBlitzForClass(cls);
+      if (!sess || sess.state === 'ended') {
+        if (_blitzActive) dismissBlitzBanner();
+        return;
+      }
+      if (_blitzActive && _blitzActive.id === sess.id) return; // already subscribed
+      _blitzActive = sess;
+      showBlitzBanner(sess, uid, displayName);
+      // subscribe to live updates
+      if (_blitzUnsub) _blitzUnsub();
+      _blitzUnsub = onBlitzSnapshot(sess.id, s => handleBlitzUpdate(s, uid, displayName));
+    } catch(e) { /* ignore network errors */ }
+  }
+
+  function showBlitzBanner(sess, uid, displayName) {
+    const banner = document.getElementById('blitz-banner');
+    banner.innerHTML = `<div style="background:linear-gradient(90deg,#1a2a4f,#2d3a6f);border-bottom:3px solid #d4a534;cursor:pointer" onclick="openBlitzOverlay()">
+      <div style="max-width:1000px;margin:0 auto;padding:0.65rem 1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+        <span style="font-size:1.1rem">⚡</span>
+        <div style="flex:1;min-width:0">
+          <span style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.75rem;color:#d4a534;text-transform:uppercase;letter-spacing:0.07em">Live Blitz — your teacher has started a quiz!</span>
+          <div style="color:white;font-size:0.875rem;font-weight:600">${sess.state === 'lobby' ? 'Waiting in lobby…' : 'Question ' + (sess.currentQ + 1) + ' of ' + sess.questions.length + ' in progress'}</div>
+        </div>
+        <button onclick="event.stopPropagation();openBlitzOverlay()" style="background:#d4a534;color:#1a2a4f;border:none;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.85rem;padding:0.4rem 1rem;border-radius:8px;cursor:pointer">Join ⚡</button>
+      </div>
+    </div>`;
+  }
+
+  window.dismissBlitzBanner = function dismissBlitzBanner() {
+    _blitzActive = null;
+    _blitzAnswered = {};
+    if (_blitzUnsub) { _blitzUnsub(); _blitzUnsub = null; }
+    document.getElementById('blitz-banner').innerHTML = '';
+    document.getElementById('blitz-overlay').style.display = 'none';
+  }
+
+  function handleBlitzUpdate(sess, uid, displayName) {
+    if (!_blitzActive) return;
+    _blitzActive = sess;
+    if (sess.state === 'ended') { dismissBlitzBanner(); return; }
+    // Update banner text
+    const banner = document.getElementById('blitz-banner');
+    if (banner.innerHTML) showBlitzBanner(sess, uid, displayName);
+    // If overlay is open, update it
+    const overlay = document.getElementById('blitz-overlay');
+    if (overlay.style.display !== 'none') renderBlitzOverlay(sess, uid, displayName);
+  }
+
+  window.openBlitzOverlay = function() {
+    if (!_blitzActive) return;
+    // join session
+    const uid = currentUser?.uid;
+    if (uid && _blitzActive.state === 'lobby') {
+      const displayName = window._currentProfile?.displayName || window._currentProfile?.name || currentUser?.displayName || 'Student';
+      updateBlitzSession(_blitzActive.id, { [`joined.${uid}`]: displayName }).catch(()=>{});
+    }
+    document.getElementById('blitz-overlay').style.display = 'flex';
+    renderBlitzOverlay(_blitzActive, uid, window._currentProfile?.displayName || currentUser?.displayName || 'Student');
+  };
+
+  function renderBlitzOverlay(sess, uid, displayName) {
+    const overlay = document.getElementById('blitz-overlay');
+    if (sess.state === 'lobby') {
+      overlay.innerHTML = `<div style="background:white;border-radius:20px;padding:2rem;max-width:440px;width:100%;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,0.3)">
+        <div style="font-size:2.5rem;margin-bottom:0.5rem">⚡</div>
+        <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.3rem;color:#1a2a4f;margin-bottom:0.5rem">Blitz Lobby</div>
+        <div style="font-size:0.875rem;color:#5a6885;margin-bottom:1.5rem">Your teacher is about to start.<br>Get ready — questions will appear here!</div>
+        <div style="background:#f0f4ff;border-radius:10px;padding:0.75rem 1rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.875rem;color:#4f46e5;margin-bottom:1.5rem">
+          ✓ Joined as <strong>${displayName}</strong>
+        </div>
+        <div style="font-size:0.78rem;color:#94a3b8">Keep this open — the first question will appear automatically.</div>
+      </div>`;
+      if (uid) updateBlitzSession(sess.id, { [`joined.${uid}`]: displayName }).catch(()=>{});
+      return;
+    }
+
+    if (sess.state === 'ended') {
+      clearTimeout(window._blitzTick);
+      const scores = sess.scores || {};
+      const myEntry = scores[uid];
+      const myCorrect = myEntry?.correct ?? 0;
+      const total = sess.questions.length;
+      const sorted = Object.values(scores).sort((a,b)=>b.points-a.points);
+      const myRank = sorted.findIndex(s => s === myEntry || s.name === myEntry?.name) + 1;
+      overlay.innerHTML = `<div style="background:white;border-radius:20px;padding:2rem;max-width:440px;width:100%;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,0.3)">
+        <div style="font-size:2.5rem;margin-bottom:0.5rem">🏆</div>
+        <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.3rem;color:#1a2a4f;margin-bottom:0.25rem">Blitz Complete!</div>
+        <div style="font-size:0.875rem;color:#5a6885;margin-bottom:1rem">You got <strong>${myCorrect}/${total}</strong> correct${myRank > 0 ? ' — Rank #' + myRank : ''}</div>
+        <div style="background:#fefce8;border:1.5px solid #fde68a;border-radius:10px;padding:0.6rem 1rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.82rem;color:#92400e;margin-bottom:1.25rem">⚡ 1.5× XP awarded for correct answers</div>
+        <button onclick="document.getElementById('blitz-overlay').style.display='none';dismissBlitzBanner()" style="background:#1a2a4f;color:white;border:none;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;padding:0.7rem 1.5rem;border-radius:10px;cursor:pointer">Close</button>
+      </div>`;
+      return;
+    }
+
+    // active or reveal state
+    const q = sess.questions[sess.currentQ];
+    const answered = _blitzAnswered[sess.currentQ];
+    const revealed = sess.state === 'reveal';
+
+    // time remaining (only shown during active)
+    const elapsed = sess.questionStartTs ? Math.floor((Date.now() - sess.questionStartTs) / 1000) : 0;
+    const remaining = Math.max(0, (sess.timePerQ || 20) - elapsed);
+
+    const opts = q.options || [];
+    const optHtml = opts.map((o, i) => {
+      let bg = '#f0f4ff'; let color = '#1a2a4f'; let border = '#c7d2fe';
+      if (revealed) {
+        // Show correct/wrong only after teacher reveals
+        if (i === q.correct) { bg='#dcfce7'; color='#14532d'; border='#86efac'; }
+        else if (i === answered && answered !== q.correct) { bg='#fef2f2'; color='#7f1d1d'; border='#fca5a5'; }
+        else { bg='#f8fafc'; color='#94a3b8'; border='#e2e6f0'; }
+      } else if (answered === i) {
+        // Student has answered but not yet revealed — just highlight their choice neutrally
+        bg='#eff6ff'; color='#1d4ed8'; border='#93c5fd';
+      }
+      return `<button onclick="submitBlitzAnswer(${i})" ${answered!==undefined||revealed?'disabled':''} style="background:${bg};color:${color};border:2px solid ${border};border-radius:10px;padding:0.65rem 0.85rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.88rem;cursor:${answered!==undefined||revealed?'default':'pointer'};width:100%;text-align:left">${['A','B','C','D'][i]}. ${o}${revealed && i===q.correct?' ✅':''}</button>`;
+    }).join('');
+
+    let feedbackHtml = '';
+    if (revealed) {
+      const wasCorrect = answered === q.correct;
+      feedbackHtml = `<div style="margin-top:1rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;color:${wasCorrect?'#16a34a':answered!==undefined?'#dc2626':'#5a6885'}">
+        ${wasCorrect ? '✅ Correct! Well done!' : answered!==undefined ? '❌ Not quite — the correct answer is highlighted above' : '⏱ Time\'s up — the correct answer is highlighted above'}
+      </div>
+      <div id="blitz-next-countdown" style="margin-top:0.5rem;font-size:0.78rem;color:#94a3b8;font-family:'Nunito',sans-serif">Next question in <span id="blitz-next-secs">5</span>s…</div>`;
+    } else if (answered !== undefined) {
+      feedbackHtml = `<div style="margin-top:1rem;font-size:0.82rem;color:#5a6885;font-family:'Nunito',sans-serif">✓ Answer locked in — waiting for teacher to reveal…</div>`;
+    }
+
+    const timerHtml = !revealed
+      ? `<span id="blitz-timer-display" style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.4rem;color:${remaining<=5?'#ef4444':'#d4a534'}">${remaining}s</span>`
+      : `<span style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;color:#6366f1;background:#eef2ff;padding:0.2rem 0.6rem;border-radius:6px">Revealed</span>`;
+
+    overlay.innerHTML = `<div style="background:white;border-radius:20px;padding:1.75rem;max-width:500px;width:100%;box-shadow:0 24px 60px rgba(0,0,0,0.3)">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+        <span style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.8rem;color:#5a6885">Question ${sess.currentQ+1} of ${sess.questions.length}</span>
+        ${timerHtml}
+      </div>
+      <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.05rem;color:#1a2a4f;margin-bottom:1.25rem;line-height:1.4">${q.question}</div>
+      <div style="display:grid;gap:0.5rem">${optHtml}</div>
+      ${feedbackHtml}
+    </div>`;
+
+    clearTimeout(window._blitzTick);
+    if (!revealed && remaining > 0) {
+      // tick the countdown timer
+      window._blitzTick = setTimeout(() => {
+        if (_blitzActive) renderBlitzOverlay(_blitzActive, uid, displayName);
+      }, 1000);
+    } else if (revealed) {
+      // 5s auto-advance countdown display
+      let secs = 5;
+      window._blitzTick = setInterval(() => {
+        secs--;
+        const el = document.getElementById('blitz-next-secs');
+        if (el) el.textContent = secs;
+        if (secs <= 0) clearInterval(window._blitzTick);
+      }, 1000);
+    }
+  }
+
+  window.submitBlitzAnswer = async function(optIdx) {
+    if (!_blitzActive || !currentUser) return;
+    const sess = _blitzActive;
+    const uid = currentUser.uid;
+    const q = sess.questions[sess.currentQ];
+    if (_blitzAnswered[sess.currentQ] !== undefined) return;
+    if (sess.state === 'reveal') return;
+    _blitzAnswered[sess.currentQ] = optIdx;
+    const correct = optIdx === q.correct ? 1 : 0;
+    const displayName = window._currentProfile?.displayName || window._currentProfile?.name || currentUser.displayName || 'Student';
+    await updateBlitzSession(sess.id, {
+      [`answers.${uid}`]: { q: sess.currentQ, answer: optIdx, correct, name: displayName, ts: Date.now() },
+    }).catch(()=>{});
+    // Award 1.5x XP for correct answers (2 XP)
+    if (correct && q.topic && sess.moduleId) {
+      updateTopicScore(uid, sess.moduleId, q.topic, 2, 'blitz').catch(()=>{});
+      logActivity(uid, { type:'blitz', moduleId:sess.moduleId, topic:q.topic, xp:2, ts:Date.now() }).catch(()=>{});
+    }
+    renderBlitzOverlay(sess, uid, displayName);
+  };
+
+  // Start polling once auth resolves
+  function startBlitzPoll(cls, uid, displayName) {
+    if (_blitzPollTimer) clearInterval(_blitzPollTimer);
+    pollBlitz(cls, uid, displayName);
+    _blitzPollTimer = setInterval(() => pollBlitz(cls, uid, displayName), 6000);
+  }
+
+  // ── BINGO BANNER ────────────────────────────────────────────────────────────
+  let _bingoPollTimer = null;
+  let _bingoUnsub = null;
+  let _bingoActive = null;
+  let _bingoCard = null;     // { words: [{word,definition},...], gridSize }
+  let _bingoMarked = [];     // indices of marked cells
+  let _bingoUid = null;
+  let _bingoName = null;
+  let _bingoClaimed = null;  // 'line' | 'full' | null
+
+  function _bingoRng(seed) {
+    let s = seed >>> 0;
+    return () => { s ^= s << 13; s ^= s >> 17; s ^= s << 5; return (s >>> 0) / 4294967296; };
+  }
+
+  function _bingoGenerateCard(sessionId, uid, pool, gridSize) {
+    const cells = gridSize * gridSize;
+    const seed = (sessionId + uid).split('').reduce((a, c) => (a * 31 + c.charCodeAt(0)) | 0, 0);
+    const rng = _bingoRng(seed);
+    const idxs = pool.map((_, i) => i);
+    for (let i = idxs.length - 1; i > 0; i--) {
+      const j = Math.floor(rng() * (i + 1));
+      [idxs[i], idxs[j]] = [idxs[j], idxs[i]];
+    }
+    return idxs.slice(0, cells).map(i => pool[i]);
+  }
+
+  function _bingoCheckWin(marked, gridSize) {
+    const cells = gridSize * gridSize;
+    const g = Array.from({ length: cells }, (_, i) => marked.includes(i));
+    for (let r = 0; r < gridSize; r++) {
+      if (Array.from({ length: gridSize }, (_, c) => g[r * gridSize + c]).every(Boolean)) return 'line';
+    }
+    for (let c = 0; c < gridSize; c++) {
+      if (Array.from({ length: gridSize }, (_, r) => g[r * gridSize + c]).every(Boolean)) return 'line';
+    }
+    if (Array.from({ length: gridSize }, (_, i) => g[i * gridSize + i]).every(Boolean)) return 'line';
+    if (Array.from({ length: gridSize }, (_, i) => g[i * gridSize + (gridSize - 1 - i)]).every(Boolean)) return 'line';
+    if (g.every(Boolean)) return 'full';
+    return null;
+  }
+
+  async function pollBingo(cls, uid, displayName) {
+    try {
+      const sess = await getActiveBingoForClass(cls);
+      if (!sess || !sess.active) {
+        if (_bingoActive) dismissBingoBanner();
+        return;
+      }
+      if (_bingoActive && _bingoActive.id === sess.id) return;
+      _bingoActive = sess;
+      _bingoUid = uid;
+      _bingoName = displayName;
+      showBingoBanner(sess);
+      if (_bingoUnsub) _bingoUnsub();
+      _bingoUnsub = onBingoSnapshot(sess.id, s => handleBingoUpdate(s));
+    } catch(e) { /* ignore */ }
+  }
+
+  function showBingoBanner(sess) {
+    const banner = document.getElementById('bingo-banner');
+    banner.innerHTML = `<div style="background:linear-gradient(90deg,#4c1d95,#6d28d9);border-bottom:3px solid #a78bfa;cursor:pointer" onclick="openBingoOverlay()">
+      <div style="max-width:1000px;margin:0 auto;padding:0.65rem 1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+        <span style="font-size:1.1rem">🎯</span>
+        <div style="flex:1;min-width:0">
+          <span style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.75rem;color:#c4b5fd;text-transform:uppercase;letter-spacing:0.07em">Live Bingo — your teacher has started a game!</span>
+          <div style="color:white;font-size:0.875rem;font-weight:600">Tap to open your bingo card</div>
+        </div>
+        <button onclick="event.stopPropagation();openBingoOverlay()" style="background:#a78bfa;color:#1e1b4b;border:none;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.85rem;padding:0.4rem 1rem;border-radius:8px;cursor:pointer">Play 🎯</button>
+      </div>
+    </div>`;
+  }
+
+  window.dismissBingoBanner = function() {
+    _bingoActive = null; _bingoCard = null; _bingoMarked = []; _bingoClaimed = null;
+    if (_bingoUnsub) { _bingoUnsub(); _bingoUnsub = null; }
+    document.getElementById('bingo-banner').innerHTML = '';
+    document.getElementById('bingo-overlay').style.display = 'none';
+  };
+
+  function handleBingoUpdate(sess) {
+    if (!_bingoActive) return;
+    _bingoActive = sess;
+    if (!sess.active) { dismissBingoBanner(); return; }
+    const overlay = document.getElementById('bingo-overlay');
+    if (overlay.style.display !== 'none') renderBingoOverlay();
+    else showBingoBanner(sess);
+  }
+
+  window.openBingoOverlay = function() {
+    if (!_bingoActive) return;
+    if (!_bingoCard) {
+      const pool = _bingoActive.keywords || [];
+      const gridSize = _bingoActive.gridSize || 4;
+      _bingoCard = { words: _bingoGenerateCard(_bingoActive.id, _bingoUid, pool, gridSize), gridSize };
+      _bingoMarked = [];
+    }
+    document.getElementById('bingo-overlay').style.display = 'flex';
+    renderBingoOverlay();
+  };
+
+  function renderBingoOverlay() {
+    if (!_bingoActive || !_bingoCard) return;
+    const sess = _bingoActive;
+    const { words, gridSize } = _bingoCard;
+    const calledCount = sess.calledCount || 0;
+    const callOrder = sess.callOrder || [];
+    const calledKwIdxs = new Set(callOrder.slice(0, calledCount));
+
+    // current definition
+    const defEl = document.getElementById('bingo-overlay-def');
+    if (calledCount > 0 && callOrder[calledCount - 1] !== undefined) {
+      const kws = sess.keywords || [];
+      const kw = kws[callOrder[calledCount - 1]];
+      defEl.textContent = kw ? kw.definition : 'Waiting…';
+    } else {
+      defEl.textContent = 'Waiting for teacher to call…';
+    }
+
+    // grid
+    const grid = document.getElementById('bingo-overlay-grid');
+    grid.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+    grid.innerHTML = words.map((kw, cellIdx) => {
+      const kwIdx = (sess.keywords || []).findIndex(k => k.word === kw.word);
+      const isCalled = kwIdx >= 0 && calledKwIdxs.has(kwIdx);
+      const isMarked = _bingoMarked.includes(cellIdx);
+      const bg = isMarked ? '#7c3aed' : isCalled ? '#ede9fe' : '#f8fafc';
+      const color = isMarked ? 'white' : isCalled ? '#4c1d95' : '#1a2a4f';
+      const border = isMarked ? '#5b21b6' : isCalled ? '#a78bfa' : '#e2e8f0';
+      return `<button onclick="toggleBingoCellOverlay(${cellIdx})" style="background:${bg};color:${color};border:2px solid ${border};border-radius:8px;padding:0.45rem 0.2rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.7rem;text-align:center;cursor:pointer;min-height:52px;line-height:1.2;">${kw.word}</button>`;
+    }).join('');
+
+    // progress
+    document.getElementById('bingo-overlay-progress').textContent = `${calledCount} / ${(sess.keywords||[]).length} called`;
+
+    // claim buttons
+    renderBingoClaimBtns();
+  }
+
+  function renderBingoClaimBtns() {
+    if (!_bingoActive) return;
+    const winMode = _bingoActive.winMode || 'both';
+    const win = _bingoCheckWin(_bingoMarked, _bingoCard.gridSize);
+    const container = document.getElementById('bingo-overlay-claim-btns');
+    if (!win || _bingoClaimed === 'full') { container.innerHTML = ''; return; }
+    const btns = [];
+    if (win === 'line' && (winMode === 'line' || winMode === 'both') && _bingoClaimed !== 'line') {
+      btns.push(`<button onclick="submitBingoClaimOverlay('line')" style="background:#7c3aed;color:white;border:none;border-radius:10px;padding:0.55rem 1.25rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;cursor:pointer;">🎯 Claim Line!</button>`);
+    }
+    if (win === 'full' && (winMode === 'full' || winMode === 'both')) {
+      btns.push(`<button onclick="submitBingoClaimOverlay('full')" style="background:#dc2626;color:white;border:none;border-radius:10px;padding:0.55rem 1.25rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;cursor:pointer;">🏆 Full House!</button>`);
+    }
+    container.innerHTML = btns.join('');
+  }
+
+  window.toggleBingoCellOverlay = function(cellIdx) {
+    if (!_bingoActive || !_bingoCard) return;
+    const { words, gridSize } = _bingoCard;
+    const kw = words[cellIdx];
+    const callOrder = _bingoActive.callOrder || [];
+    const calledKwIdxs = new Set(callOrder.slice(0, _bingoActive.calledCount || 0));
+    const kwIdx = (_bingoActive.keywords || []).findIndex(k => k.word === kw.word);
+    if (kwIdx < 0 || !calledKwIdxs.has(kwIdx)) return; // not yet called
+    const idx = _bingoMarked.indexOf(cellIdx);
+    if (idx >= 0) _bingoMarked.splice(idx, 1); else _bingoMarked.push(cellIdx);
+    renderBingoOverlay();
+  };
+
+  window.submitBingoClaimOverlay = async function(type) {
+    if (!_bingoActive || !_bingoUid) return;
+    _bingoClaimed = type;
+    try {
+      await claimBingo(_bingoActive.id, _bingoUid, _bingoName, type);
+      document.getElementById('bingo-overlay-claim-btns').innerHTML =
+        `<div style="font-family:'Nunito',sans-serif;font-weight:800;color:#7c3aed;font-size:0.9rem;">${type === 'full' ? '🏆 Full House claimed!' : '🎯 Line claimed!'} Waiting for teacher to verify…</div>`;
+    } catch(e) {
+      _bingoClaimed = null;
+      renderBingoClaimBtns();
+    }
+  };
+
+  function startBingoPoll(cls, uid, displayName) {
+    if (_bingoPollTimer) clearInterval(_bingoPollTimer);
+    pollBingo(cls, uid, displayName);
+    _bingoPollTimer = setInterval(() => pollBingo(cls, uid, displayName), 15000);
+  }
+
 </script>
 
 <!-- NAME PROMPT MODAL — shown to Other accounts with no display name -->
@@ -942,5 +1360,9 @@
     sshSetWelcome(user);
   };
 </script>
+
+<!-- BLITZ OVERLAY -->
+<div id="blitz-overlay" style="display:none;position:fixed;inset:0;background:rgba(15,29,61,0.85);z-index:2000;backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:1rem;flex-direction:column;gap:1rem">
+</div>
 </body>
 </html>

@@ -1050,8 +1050,8 @@
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       btn.classList.add('active');
       document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
-      // Always return to lobby when re-opening Teacher Games tab
-      if (btn.dataset.tab === 'games') closeGame();
+      // Reset game sections on every tab switch (keeps bingo/blitz from bleeding into other tabs)
+      closeGame();
     });
   });
 

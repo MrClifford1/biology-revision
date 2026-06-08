@@ -678,41 +678,16 @@ export async function getUpcomingAssessmentsForStudent(classId) {
   const subjects = ['Biology', 'Chemistry', 'Physics'];
   const today = new Date().toISOString().split('T')[0];
   const results = [];
-  const seen = new Set(); // deduplicate by label+date+subject
 
-  // Derive year group from classId — e.g. '10S1' -> '10', '9A/Sc1' -> '9'
-  const yearMatch = classId.match(/^(\d+)/);
-  const yearPrefix = yearMatch ? yearMatch[1] : null;
-
-  // Build list of classIds to check: exact class + all same-year classes
-  // We query exact class first, then broaden to year group so one assessment
-  // set for e.g. '10N4' is visible to all Year 10 students
-  const classIdsToCheck = new Set([classId]);
-  if (yearPrefix) {
-    // Add common Year X class patterns used at Streetly
-    const patterns = ['S1','S2','S3','S4','N1','N2','N3','N4','A1','A2','A3','B1','B2','B3'];
-    patterns.forEach(p => classIdsToCheck.add(`${yearPrefix}${p}`));
-    // Also handle slash format e.g. 10A/Sc1
-    ['A','B','C','D','E'].forEach(band => {
-      [1,2,3].forEach(n => classIdsToCheck.add(`${yearPrefix}${band}/Sc${n}`));
-    });
-  }
-
-  await Promise.all([...classIdsToCheck].map(async cid => {
-    await Promise.all(subjects.map(async subject => {
-      try {
-        const snap = await getDocs(collection(db, 'assessmentDates', cid, subject));
-        snap.docs.forEach(d => {
-          const data = d.data();
-          if (!data.date || data.date < today) return;
-          // Deduplicate: same label + date + subject = same assessment (case-insensitive)
-          const key = `${subject}|${data.date}|${(data.label || '').toLowerCase().trim()}`;
-          if (seen.has(key)) return;
-          seen.add(key);
-          results.push({ id: d.id, subject, ...data });
-        });
-      } catch(e) { /* no assessments for this class/subject combo */ }
-    }));
+  await Promise.all(subjects.map(async subject => {
+    try {
+      const snap = await getDocs(collection(db, 'assessmentDates', classId, subject));
+      snap.docs.forEach(d => {
+        const data = d.data();
+        if (!data.date || data.date < today) return;
+        results.push({ id: d.id, subject, ...data });
+      });
+    } catch(e) { /* no assessments for this class/subject combo */ }
   }));
 
   return results.sort((a, b) => (a.date || '').localeCompare(b.date || ''));
