@@ -694,7 +694,7 @@
       getUserProfile(user.uid),
       getAllProgress(user.uid),
       getUserRole(user.email),
-      getActivityLog(user.uid, 50).catch(()=>({entries:[]})),
+      getActivityLog(user.uid, 20).catch(()=>({entries:[]})),
     ]);
     recentActivityLog = actLog.entries || [];
     currentProfile=profile;
@@ -1299,6 +1299,7 @@ Give specific, actionable advice. If they have weak topics in an upcoming assess
           <span class="asmt-subj-pill ${pillCls}">${a.subject}</span>
           <span style="font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;color:var(--navy);flex:1">${a.label||'Assessment'}</span>
           <span style="font-size:0.75rem;color:var(--subtext)">${dateStr}</span>
+          ${a.teacherEmail?`<span style="font-size:0.68rem;font-weight:700;color:var(--subtext);background:#f1f5f9;padding:0.1rem 0.45rem;border-radius:100px">👤 ${a.teacherEmail.split('@')[0]}</span>`:''}
           ${cdText?`<span class="asmt-countdown ${cdCls}">${cdText}</span>`:''}
         </div>
         ${topicRows.length?`
@@ -1374,7 +1375,7 @@ Give specific, actionable advice. If they have weak topics in an upcoming assess
     }
 
     try {
-      const { entries, hasMore, lastDoc } = await getActivityLog(currentUser.uid, 30, loadMore ? _historyLastDoc : null);
+      const { entries, hasMore, lastDoc } = await getActivityLog(currentUser.uid, 20, loadMore ? _historyLastDoc : null);
       _historyLastDoc = lastDoc;
       _historyHasMore = hasMore;
 
