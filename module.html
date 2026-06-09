@@ -1071,7 +1071,6 @@
     <button class="tab-btn" data-tab="scribble" title="Write everything you know from memory — high-effort, high-reward retrieval practice · Up to 10 XP · Max 50 XP total">✍️ Scribble</button>
     <button class="tab-btn" data-tab="who" title="Who Wants to Be a Scientist? — 15 questions of rising difficulty. Climb the scientist ladder! · XP per correct answer">🧪 WHO</button>
     <button class="tab-btn" data-tab="super6" title="Scaffolded extended writing — 4, 5 and 6 mark questions with structure strips, sentence starters and AI marking · XP per mark awarded">🪜 Super 6</button>
-    <button class="tab-btn" data-tab="bingo" title="Keyword Bingo — join a teacher-led bingo session">🎯 Bingo</button>
     <button class="tab-btn" data-tab="practice" title="Practise exam-style questions with mark scheme feedback — builds exam technique · Up to 15 XP · No XP cap">✏️ Mini Mock</button>
     <button class="tab-btn" data-tab="paper" title="Full past paper · Up to 15 XP · No XP cap">📝 Paper</button>
   </div>
@@ -1647,56 +1646,6 @@
     </div>
   </div>
 
-  <!-- ── BINGO TAB ─────────────────────────────────────────────────────────── -->
-  <div class="tab-panel" id="tab-bingo">
-    <div class="practice-panel-inner">
-
-      <!-- Lobby screen -->
-      <div id="bingo-lobby">
-        <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;">
-          <h2 style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.15rem;margin-bottom:0.35rem;">🎯 Keyword Bingo</h2>
-          <p style="color:var(--subtext);font-size:0.875rem;line-height:1.5;">Your teacher will start a bingo session. When one is active for your class, your card will appear here automatically. Listen for the definition — find the matching keyword and mark it!</p>
-        </div>
-        <div id="bingo-waiting-msg" style="text-align:center;padding:2rem;color:var(--subtext);font-family:'Nunito',sans-serif;font-size:0.9rem;">
-          <div style="font-size:2rem;margin-bottom:0.5rem;">🎯</div>
-          Waiting for your teacher to start a session…
-          <div style="margin-top:1rem;"><button onclick="checkForBingoSession()" style="background:#7c3aed;color:white;border:none;border-radius:8px;padding:0.4rem 1rem;font-family:'Nunito',sans-serif;font-weight:700;font-size:0.82rem;cursor:pointer;">Check for Session</button></div>
-        </div>
-      </div>
-
-      <!-- Card screen -->
-      <div id="bingo-card-screen" style="display:none;">
-        <div style="background:white;border:1px solid var(--border);border-radius:14px;padding:0.9rem 1.25rem;margin-bottom:0.9rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
-          <div>
-            <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1rem;">🎯 Bingo</div>
-            <div id="bingo-card-info" style="font-size:0.75rem;color:var(--subtext);"></div>
-          </div>
-          <div id="bingo-claim-btns" style="display:flex;gap:0.5rem;"></div>
-        </div>
-
-        <!-- Current definition -->
-        <div id="bingo-student-call" style="background:#f5f3ff;border:2px solid #7c3aed;border-radius:14px;padding:1rem 1.25rem;margin-bottom:0.9rem;min-height:60px;font-family:'Nunito',sans-serif;">
-          <div style="font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#7c3aed;margin-bottom:0.3rem;">Current Definition</div>
-          <div id="bingo-student-def" style="font-size:1rem;font-weight:700;color:#1e1b4b;line-height:1.4;">Waiting for teacher to call…</div>
-        </div>
-
-        <!-- Bingo card grid -->
-        <div id="bingo-card-grid" style="display:grid;gap:0.4rem;margin-bottom:0.9rem;"></div>
-
-        <!-- Called count -->
-        <div id="bingo-student-progress" style="font-size:0.78rem;color:var(--subtext);font-family:'Nunito',sans-serif;text-align:center;"></div>
-      </div>
-
-      <!-- Won screen -->
-      <div id="bingo-won-screen" style="display:none;text-align:center;padding:2rem 1rem;">
-        <div style="font-size:3rem;margin-bottom:0.5rem;" id="bingo-win-emoji">🎉</div>
-        <div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.4rem;color:#166534;margin-bottom:0.5rem;" id="bingo-win-msg">BINGO!</div>
-        <p style="color:var(--subtext);font-size:0.875rem;">Your teacher has been notified. Keep listening — the game may continue for Full House!</p>
-      </div>
-
-    </div>
-  </div>
-
   <!-- ── MINI MOCK TAB ───────────────────────────────────────────────────────── -->
   <div class="tab-panel" id="tab-practice">
     <div class="practice-panel-inner">
@@ -2182,7 +2131,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 (function() {
   const tabParam = new URLSearchParams(window.location.search).get('tab');
   if (!tabParam) return;
-  const tabMap = { mock:'practice', mini_mock:'practice', flashcards:'flashcards', words:'keywords', cloze:'cloze', scribble:'scribble', super6:'super6', paper:'paper', learn:'learn', revise:'revision', who:'who', bingo:'bingo' };
+  const tabMap = { mock:'practice', mini_mock:'practice', flashcards:'flashcards', words:'keywords', cloze:'cloze', scribble:'scribble', super6:'super6', paper:'paper', learn:'learn', revise:'revision', who:'who' };
   const target = tabMap[tabParam] || tabParam;
 
   // Switch tab immediately

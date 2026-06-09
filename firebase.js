@@ -851,7 +851,14 @@ export async function getActiveBingoForClass(className) {
   const snap = await getDocs(q);
   if (snap.empty) return null;
   const d = snap.docs[0];
-  return { id: d.id, ...d.data() };
+  const data = d.data();
+  // Auto-expire sessions older than 4 hours
+  const createdAt = data.createdAt?.toMillis?.() || 0;
+  if (createdAt && Date.now() - createdAt > 4 * 60 * 60 * 1000) {
+    await updateDoc(doc(db, 'bingoSessions', d.id), { active: false, status: 'expired' }).catch(() => {});
+    return null;
+  }
+  return { id: d.id, ...data };
 }
 
 export async function claimBingo(sessionId, uid, name, claimType) {
