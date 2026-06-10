@@ -191,6 +191,38 @@
       .add-teacher-row { flex-direction: column; }
     }
 
+    /* ── ANALYTICS ───────────────────────────────────────────────────────────── */
+    .analytics-sub-tabs { display:flex;border-bottom:1px solid var(--border);margin-bottom:1.25rem; }
+    .analytics-sub-tab { flex:1;padding:0.75rem;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.875rem;border:none;background:none;cursor:pointer;color:var(--subtext);border-bottom:3px solid transparent;margin-bottom:-1px;transition:all 0.15s; }
+    .analytics-sub-tab.active { color:var(--navy);border-bottom-color:var(--navy); }
+    .analytics-sub-tab:hover:not(.active) { background:var(--bg); }
+    .analytics-sub-panel { display:none; }
+    .analytics-sub-panel.active { display:block; }
+    .analytics-controls { display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap;margin-bottom:1.25rem; }
+    .analytics-select { border:1.5px solid var(--border);border-radius:10px;padding:0.6rem 1rem;font-family:'Nunito Sans',sans-serif;font-size:0.875rem;color:var(--text);background:white;outline:none;min-width:160px; }
+    .analytics-select:focus { border-color:var(--navy); }
+    .analytics-stat-row { display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.5rem; }
+    @media(max-width:600px){ .analytics-stat-row { grid-template-columns:1fr 1fr; } }
+
+    .topic-table, .engage-table { width:100%;border-collapse:collapse;font-size:0.82rem; }
+    .topic-table th, .engage-table th { text-align:left;padding:0.5rem 0.75rem;background:var(--bg);color:var(--subtext);font-weight:700;border-bottom:2px solid var(--border);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em; }
+    .topic-table td, .engage-table td { padding:0.5rem 0.75rem;border-bottom:1px solid var(--border);vertical-align:middle; }
+    .topic-table tr:last-child td, .engage-table tr:last-child td { border-bottom:none; }
+    .topic-table tr:hover td, .engage-table tr:hover td { background:#f8faff; }
+
+    .score-bar-wrap { display:flex;align-items:center;gap:0.5rem;min-width:120px; }
+    .score-bar { height:8px;border-radius:4px;background:var(--border);flex:1;overflow:hidden; }
+    .score-bar-fill { height:100%;border-radius:4px; }
+    .score-pill { font-family:'Nunito',sans-serif;font-weight:800;font-size:0.72rem;padding:0.15rem 0.55rem;border-radius:100px;white-space:nowrap; }
+    .pill-red { background:#fee2e2;color:#b91c1c; }
+    .pill-amber { background:#fef3c7;color:#92400e; }
+    .pill-green { background:#dcfce7;color:#166534; }
+    .pill-grey { background:#f1f5f9;color:#64748b; }
+    .seen-today { color:#16a34a;font-weight:700; }
+    .seen-week { color:#d97706;font-weight:600; }
+    .seen-old { color:#94a3b8; }
+    .analytics-msg { text-align:center;padding:2rem;color:var(--subtext);font-size:0.875rem; }
+
     /* ── ADMIN TABS ──────────────────────────────────────────────────────────── */
     .admin-tabs { display: flex; gap: .5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
     .admin-tab { border: 1.5px solid var(--border); border-radius: 10px; padding: .45rem 1.1rem; font-family: 'Nunito', sans-serif; font-size: .82rem; font-weight: 800; color: var(--subtext); cursor: pointer; background: white; transition: all .15s; }
@@ -327,6 +359,7 @@
     <div class="admin-tabs">
       <button class="admin-tab active" onclick="switchAdminTab('accounts',this)">👨‍🏫 Accounts</button>
       <button class="admin-tab" onclick="switchAdminTab('students',this)">🧑‍🎓 Students</button>
+      <button class="admin-tab" onclick="switchAdminTab('analytics',this)">📊 Analytics</button>
       <button class="admin-tab" onclick="switchAdminTab('schedule',this)">📅 Curriculum Schedule</button>
     </div>
 
@@ -414,6 +447,14 @@
         <button class="filter-btn" onclick="filterStudents('10', this)">Year 10</button>
         <button class="filter-btn" onclick="filterStudents('11', this)">Year 11</button>
         <button class="filter-btn" onclick="filterStudents('none', this)">No class set</button>
+        <select class="search-input" style="min-width:160px;cursor:pointer" onchange="filterByLogin(this.value)" id="login-filter">
+          <option value="all">Last login: Any</option>
+          <option value="today">Last login: Today</option>
+          <option value="7">Last login: Last 7 days</option>
+          <option value="30">Last login: Last 30 days</option>
+          <option value="never">Never logged in</option>
+          <option value="inactive">Inactive (90+ days)</option>
+        </select>
         <input type="text" class="search-input" placeholder="Search name or email..." oninput="searchStudents(this.value)" />
       </div>
       <div style="overflow-x:auto">
@@ -435,6 +476,57 @@
     </div>
 
     </div><!-- /panel-students -->
+
+    <!-- PANEL: ANALYTICS -->
+    <div class="admin-panel" id="panel-analytics">
+
+      <!-- Quick stats row -->
+      <div class="analytics-stat-row">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#fef3c7">⚡</div>
+          <div><div class="stat-num" id="astat-today">—</div><div class="stat-label">Active Today</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#dcfce7">📅</div>
+          <div><div class="stat-num" id="astat-week">—</div><div class="stat-label">Active This Week</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#fee2e2">😴</div>
+          <div><div class="stat-num" id="astat-inactive">—</div><div class="stat-label">Inactive 30+ days</div></div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:0;overflow:hidden">
+        <div class="analytics-sub-tabs">
+          <button class="analytics-sub-tab active" id="asub-class" onclick="switchAnalyticsSub('class')">By Class — Topic Weaknesses</button>
+          <button class="analytics-sub-tab" id="asub-students" onclick="switchAnalyticsSub('students')">By Student — Engagement</button>
+        </div>
+
+        <!-- By Class -->
+        <div class="analytics-sub-panel active" id="asub-panel-class" style="padding:1.5rem">
+          <div class="analytics-controls">
+            <select id="analytics-class-select" class="analytics-select">
+              <option value="">— Select a class —</option>
+            </select>
+            <button class="btn-add" onclick="analyseClass()">Analyse</button>
+          </div>
+          <div id="class-analysis-result"><div class="analytics-msg">Select a class to see which topics students are struggling with most.</div></div>
+        </div>
+
+        <!-- By Student -->
+        <div class="analytics-sub-panel" id="asub-panel-students" style="padding:1.5rem">
+          <div class="analytics-controls">
+            <select id="analytics-student-class" class="analytics-select">
+              <option value="">All classes</option>
+            </select>
+            <button class="btn-add" onclick="loadEngagementTable()">Load Data</button>
+            <span style="font-size:0.78rem;color:var(--subtext)">Loads progress for all students — may take a moment.</span>
+          </div>
+          <div id="engagement-result"><div class="analytics-msg">Click "Load Data" to view the student engagement table.</div></div>
+        </div>
+      </div>
+
+    </div><!-- /panel-analytics -->
 
     <!-- PANEL: SCHEDULE -->
     <div class="admin-panel" id="panel-schedule">
@@ -463,12 +555,20 @@
 </div>
 
 <script type="module">
-  import { onAuthChange, signOutUser, getAllStaff, getAllStudents, deleteStudentData, addRole, addTeacherRole, removeRole, removeTeacherRole, getUserRole, canAccessAdmin, isSuperAdmin } from './firebase.js';
+  import { onAuthChange, signOutUser, getAllStaff, getAllStudents, deleteStudentData, addRole, addTeacherRole, removeRole, removeTeacherRole, getUserRole, canAccessAdmin, isSuperAdmin, getUsersSeenToday, getProgressForStudents } from './firebase.js';
 
   const SUPER_ADMIN_EMAIL = 'n.clifford@thestreetlyacademy.co.uk';
 
+  const MODULE_LABELS = {
+    b1:'Biology B1',b2:'Biology B2',b3:'Biology B3',b4:'Biology B4',b5:'Biology B5',b6:'Biology B6',b7:'Biology B7',
+    c1:'Chemistry C1',c2:'Chemistry C2',c3:'Chemistry C3',c4:'Chemistry C4',c5:'Chemistry C5',
+    c6:'Chemistry C6',c7:'Chemistry C7',c8:'Chemistry C8',c9:'Chemistry C9',c10:'Chemistry C10',
+    p1:'Physics P1',p2:'Physics P2',p3:'Physics P3',p4:'Physics P4',p5:'Physics P5',p6:'Physics P6',p7:'Physics P7',
+  };
+
   let allStudents = [];
   let activeFilter = 'all';
+  let loginFilter = 'all';
   let searchTerm = '';
   let currentUserRole = 'student';
 
@@ -669,6 +769,12 @@
     document.getElementById('stat-classes').textContent = Object.keys(classCounts).length;
     renderClassGrid(classCounts);
 
+    // Populate analytics class dropdowns
+    const classes = [...new Set(allStudents.map(s => s.class).filter(Boolean))].sort();
+    const opts = classes.map(c => `<option value="${c}">${c}</option>`).join('');
+    document.getElementById('analytics-class-select').insertAdjacentHTML('beforeend', opts);
+    document.getElementById('analytics-student-class').insertAdjacentHTML('beforeend', opts);
+
     renderStudentTable();
   }
 
@@ -701,6 +807,21 @@
       filtered = filtered.filter(s => !s.class);
     } else if (activeFilter !== 'all') {
       filtered = filtered.filter(s => s.class?.startsWith(activeFilter));
+    }
+
+    if (loginFilter !== 'all') {
+      const now = new Date();
+      filtered = filtered.filter(s => {
+        const ll = s.lastLoginAt?.toDate ? s.lastLoginAt.toDate() : (s.lastLoginAt ? new Date(s.lastLoginAt) : null);
+        if (loginFilter === 'never') return !ll;
+        if (!ll) return false;
+        const days = (now - ll) / 86400000;
+        if (loginFilter === 'today') return days < 1;
+        if (loginFilter === '7') return days <= 7;
+        if (loginFilter === '30') return days <= 30;
+        if (loginFilter === 'inactive') return days >= 90;
+        return true;
+      });
     }
 
     if (searchTerm) {
@@ -774,9 +895,165 @@
     renderStudentTable();
   };
 
+  window.filterByLogin = (val) => {
+    loginFilter = val;
+    renderStudentTable();
+  };
+
   window.searchStudents = (val) => {
     searchTerm = val;
     renderStudentTable();
+  };
+
+  // ── ANALYTICS ────────────────────────────────────────────────────────────────
+  window.switchAnalyticsSub = (tab) => {
+    ['class','students'].forEach(t => {
+      document.getElementById(`asub-${t}`).classList.toggle('active', t === tab);
+      document.getElementById(`asub-panel-${t}`).classList.toggle('active', t === tab);
+    });
+  };
+
+  async function loadAnalyticsStats() {
+    const now = new Date();
+    const startToday = new Date(); startToday.setHours(0,0,0,0);
+    const startWeek = new Date(now - 7 * 86400000);
+    const cutoff30 = new Date(now - 30 * 86400000);
+
+    let today = 0, week = 0, inactive = 0;
+    allStudents.forEach(s => {
+      const ll = s.lastLoginAt?.toDate ? s.lastLoginAt.toDate() : (s.lastLoginAt ? new Date(s.lastLoginAt) : null);
+      if (!ll) { inactive++; return; }
+      if (ll >= startToday) today++;
+      if (ll >= startWeek) week++;
+      if (ll < cutoff30) inactive++;
+    });
+    document.getElementById('astat-today').textContent = today;
+    document.getElementById('astat-week').textContent = week;
+    document.getElementById('astat-inactive').textContent = inactive;
+  }
+
+  window.analyseClass = async () => {
+    const cls = document.getElementById('analytics-class-select').value;
+    const resultEl = document.getElementById('class-analysis-result');
+    if (!cls) { resultEl.innerHTML = '<div class="analytics-msg">Please select a class first.</div>'; return; }
+
+    const classStudents = allStudents.filter(s => s.class === cls);
+    if (!classStudents.length) { resultEl.innerHTML = '<div class="analytics-msg">No students found in this class.</div>'; return; }
+
+    resultEl.innerHTML = `<div class="analytics-msg">Loading progress for ${classStudents.length} students…</div>`;
+
+    const progress = await getProgressForStudents(classStudents.map(s => s.uid));
+
+    // Aggregate topic scores across all students in the class
+    const topicAgg = {};
+    for (const { uid } of classStudents) {
+      for (const [moduleId, modData] of Object.entries(progress[uid] || {})) {
+        const rag = modData.rag || modData.topics || {};
+        for (const [topic, entry] of Object.entries(rag)) {
+          if (typeof entry !== 'object' || entry === null) continue;
+          const score = entry.score ?? entry.xp ?? null;
+          if (score === null) continue;
+          const key = `${moduleId}::${topic}`;
+          if (!topicAgg[key]) topicAgg[key] = { moduleId, topic, total: 0, count: 0 };
+          topicAgg[key].total += score;
+          topicAgg[key].count += 1;
+        }
+      }
+    }
+
+    const rows = Object.values(topicAgg)
+      .filter(t => t.count >= Math.max(1, Math.floor(classStudents.length * 0.2)))
+      .map(t => ({ ...t, avg: Math.round(t.total / t.count) }))
+      .sort((a, b) => a.avg - b.avg)
+      .slice(0, 20);
+
+    if (!rows.length) {
+      resultEl.innerHTML = '<div class="analytics-msg">No topic data yet for this class. Students need to attempt activities first.</div>';
+      return;
+    }
+
+    resultEl.innerHTML = `
+      <div style="font-size:0.78rem;color:var(--subtext);margin-bottom:0.75rem">${classStudents.length} students · up to 20 weakest topics, sorted by average score</div>
+      <div style="overflow-x:auto">
+      <table class="topic-table">
+        <thead><tr><th>Topic</th><th>Module</th><th style="min-width:150px">Avg Score</th><th>Attempted by</th></tr></thead>
+        <tbody>${rows.map(r => {
+          const pc = r.avg < 40 ? 'pill-red' : r.avg < 70 ? 'pill-amber' : 'pill-green';
+          const bc = r.avg < 40 ? '#ef4444' : r.avg < 70 ? '#f59e0b' : '#22c55e';
+          return `<tr>
+            <td style="font-weight:600">${r.topic}</td>
+            <td style="color:var(--subtext)">${MODULE_LABELS[r.moduleId] || r.moduleId.toUpperCase()}</td>
+            <td><div class="score-bar-wrap"><div class="score-bar"><div class="score-bar-fill" style="width:${r.avg}%;background:${bc}"></div></div><span class="score-pill ${pc}">${r.avg}%</span></div></td>
+            <td style="color:var(--subtext)">${r.count} / ${classStudents.length}</td>
+          </tr>`;
+        }).join('')}</tbody>
+      </table></div>`;
+  };
+
+  window.loadEngagementTable = async () => {
+    const filterCls = document.getElementById('analytics-student-class').value;
+    const resultEl = document.getElementById('engagement-result');
+    const students = filterCls ? allStudents.filter(s => s.class === filterCls) : allStudents;
+    if (!students.length) { resultEl.innerHTML = '<div class="analytics-msg">No students found.</div>'; return; }
+
+    resultEl.innerHTML = `<div class="analytics-msg">Loading progress for ${students.length} students — please wait…</div>`;
+
+    const progress = await getProgressForStudents(students.map(s => s.uid));
+    const now = new Date();
+
+    const rows = students.map(s => {
+      let totalScore = 0, totalTopics = 0, weakTopics = 0, bestModule = '—', bestScore = -1;
+      for (const [moduleId, modData] of Object.entries(progress[s.uid] || {})) {
+        const rag = modData.rag || modData.topics || {};
+        let ms = 0, mc = 0;
+        for (const entry of Object.values(rag)) {
+          if (typeof entry !== 'object' || entry === null) continue;
+          const score = entry.score ?? entry.xp ?? null;
+          if (score === null) continue;
+          totalScore += score; totalTopics++; ms += score; mc++;
+          if (score < 50) weakTopics++;
+        }
+        if (mc > 0 && ms/mc > bestScore) { bestScore = ms/mc; bestModule = MODULE_LABELS[moduleId] || moduleId.toUpperCase(); }
+      }
+      const avg = totalTopics > 0 ? Math.round(totalScore / totalTopics) : null;
+
+      let seenLabel = '—', seenCls = 'seen-old';
+      const ll = s.lastLoginAt?.toDate ? s.lastLoginAt.toDate() : (s.lastLoginAt ? new Date(s.lastLoginAt) : null);
+      if (ll) {
+        const days = Math.floor((now - ll) / 86400000);
+        if (days === 0) { seenLabel = 'Today'; seenCls = 'seen-today'; }
+        else if (days === 1) { seenLabel = 'Yesterday'; seenCls = 'seen-today'; }
+        else if (days <= 7) { seenLabel = `${days}d ago`; seenCls = 'seen-week'; }
+        else seenLabel = ll.toLocaleDateString('en-GB', { day:'numeric', month:'short' });
+      }
+      return { s, avg, totalTopics, weakTopics, bestModule, seenLabel, seenCls };
+    }).sort((a, b) => {
+      const al = a.s.lastLoginAt?.toDate ? a.s.lastLoginAt.toDate() : null;
+      const bl = b.s.lastLoginAt?.toDate ? b.s.lastLoginAt.toDate() : null;
+      if (!al && !bl) return 0; if (!al) return 1; if (!bl) return -1;
+      return bl - al;
+    });
+
+    resultEl.innerHTML = `
+      <div style="font-size:0.78rem;color:var(--subtext);margin-bottom:0.75rem">${students.length} students${filterCls ? ` in ${filterCls}` : ''} · sorted by most recently active</div>
+      <div style="overflow-x:auto">
+      <table class="engage-table">
+        <thead><tr><th>Name</th><th>Class</th><th>Year</th><th>Last Login</th><th>Topics Practised</th><th>Avg Score</th><th>Weak Topics</th><th>Strongest Module</th></tr></thead>
+        <tbody>${rows.map(({ s, avg, totalTopics, weakTopics, bestModule, seenLabel, seenCls }) => {
+          const pc = avg === null ? 'pill-grey' : avg < 40 ? 'pill-red' : avg < 70 ? 'pill-amber' : 'pill-green';
+          const wc = weakTopics > 5 ? 'pill-red' : weakTopics > 0 ? 'pill-amber' : 'pill-green';
+          return `<tr>
+            <td style="font-weight:600">${s.name || '—'}</td>
+            <td><span class="class-chip">${s.class || '—'}</span></td>
+            <td style="color:var(--subtext)">${s.yearGroup || '—'}</td>
+            <td class="${seenCls}">${seenLabel}</td>
+            <td style="color:var(--subtext)">${totalTopics || '—'}</td>
+            <td>${avg !== null ? `<span class="score-pill ${pc}">${avg}%</span>` : '<span class="score-pill pill-grey">—</span>'}</td>
+            <td>${totalTopics > 0 ? `<span class="score-pill ${wc}">${weakTopics}</span>` : '—'}</td>
+            <td style="color:var(--subtext);font-size:0.78rem">${bestModule}</td>
+          </tr>`;
+        }).join('')}</tbody>
+      </table></div>`;
   };
 
   window.handleSignOut = async () => {
@@ -793,6 +1070,10 @@
     if (name === 'schedule' && !window._schedLoaded) {
       window._schedLoaded = true;
       schedInit();
+    }
+    if (name === 'analytics' && !window._analyticsLoaded) {
+      window._analyticsLoaded = true;
+      loadAnalyticsStats();
     }
   };
 </script>
