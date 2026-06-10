@@ -1588,14 +1588,16 @@
     loadXpLeague();
   };
 
-  async function loadXpLeague() {
+  async function loadXpLeague(isAutoRefresh = false) {
     const content = document.getElementById('xp-league-content');
     const earnerEl = document.getElementById('xp-top-earner');
     if (!selectedClass && _xpScope === 'class') {
       content.innerHTML = '<div class="empty-state">Select a class to view the league.</div>';
       return;
     }
-    content.innerHTML = '<div class="loading-state">Loading XP data...</div>';
+    // On auto-refresh, skip the loading flash and preserve scroll position
+    const savedScroll = isAutoRefresh ? window.scrollY : null;
+    if (!isAutoRefresh) content.innerHTML = '<div class="loading-state">Loading XP data...</div>';
 
     try {
       let students;
@@ -1672,6 +1674,10 @@
           </tr>`).join('')}
         </tbody>
       </table>`;
+
+      if (savedScroll !== null) {
+        window.scrollTo({ top: savedScroll, behavior: 'instant' });
+      }
     } catch(e) {
       content.innerHTML = '<div class="empty-state">Could not load XP data.</div>';
     }
@@ -1680,7 +1686,7 @@
   function _startXpRefresh() {
     if (_xpRefreshTimer) clearInterval(_xpRefreshTimer);
     _xpRefreshTimer = setInterval(() => {
-      if (document.visibilityState === 'visible') loadXpLeague();
+      if (document.visibilityState === 'visible') loadXpLeague(true);
     }, 30000); // 30 sec
   }
 
