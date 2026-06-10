@@ -5338,15 +5338,30 @@ async function submitS6Interim() {
 }
 
 async function loadS6Cache(qId) {
+  // Check localStorage first — instant, works offline
+  try {
+    const ls = localStorage.getItem(`s6cache_${qId}`);
+    if (ls) {
+      const parsed = JSON.parse(ls);
+      if (parsed?.keyTerms || parsed?.starters) return parsed;
+    }
+  } catch(e) {}
+  // Fall back to Firestore
   try {
     const { getDoc, doc, getFirestore } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js');
     const db = getFirestore();
     const snap = await getDoc(doc(db, 'super6Cache', qId));
-    return snap.exists() ? snap.data() : null;
+    if (snap.exists()) {
+      const data = snap.data();
+      try { localStorage.setItem(`s6cache_${qId}`, JSON.stringify(data)); } catch(e) {}
+      return data;
+    }
+    return null;
   } catch(e) { return null; }
 }
 
 async function saveS6Cache(qId, data) {
+  try { localStorage.setItem(`s6cache_${qId}`, JSON.stringify(data)); } catch(e) {}
   try {
     const { setDoc, doc, getFirestore, serverTimestamp } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js');
     const db = getFirestore();
