@@ -2554,7 +2554,7 @@ function flipFCCard() {
     const distractors = others.sort(() => Math.random() - 0.5).slice(0, 3);
     const options = [...distractors, card].sort(() => Math.random() - 0.5);
     backContent.innerHTML = '<div class="fc-mc-grid">' + options.map(opt =>
-      `<button class="fc-mc-btn" onclick="checkMCAnswer(this,'${opt.word.replace(/'/g, "&#39;")}','${card.word.replace(/'/g, "&#39;")}')">${opt.word}</button>`
+      `<button class="fc-mc-btn" data-chosen="${opt.word.replace(/"/g, '&quot;')}" data-correct="${card.word.replace(/"/g, '&quot;')}" onclick="checkMCAnswer(this,this.dataset.chosen,this.dataset.correct)">${opt.word}</button>`
     ).join('') + '</div>';
   } else {
     // Type mode
@@ -4522,7 +4522,7 @@ function showWHOQuestion(skipFetch) {
         <div style="font-family:'Nunito',sans-serif;font-weight:700;font-size:0.7rem;color:rgba(255,255,255,0.5);margin-bottom:0.35rem;">${q.topic || ''}</div>
         <div class="who-q-text">${q.question}</div>
         <div class="who-mc-options" id="who-mc-opts">
-          ${opts.map((opt, i) => `<button class="who-mc-btn" id="who-mc-${i}" onclick="selectWHOMCPending(this,'${opt.replace(/'/g,"&#39;").replace(/"/g,"&quot;")}','${q.correct.replace(/'/g,"&#39;").replace(/"/g,"&quot;")}')">
+          ${opts.map((opt, i) => `<button class="who-mc-btn" id="who-mc-${i}" data-chosen="${opt.replace(/"/g,'&quot;')}" data-correct="${q.correct.replace(/"/g,'&quot;')}" onclick="selectWHOMCPending(this,this.dataset.chosen,this.dataset.correct)">
             <span style="font-weight:800;margin-right:0.4rem;opacity:0.6">${['A','B','C','D'][i]}.</span>${opt}
           </button>`).join('')}
         </div>
