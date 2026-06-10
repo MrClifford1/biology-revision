@@ -96,6 +96,19 @@ export async function getUserProfile(uid) {
   return snap.exists() ? snap.data() : null;
 }
 
+export async function updateLastSeen(uid) {
+  await setDoc(doc(db, 'users', uid), { lastSeen: serverTimestamp() }, { merge: true });
+}
+
+export async function getUsersSeenToday() {
+  const startOfDay = new Date();
+  startOfDay.setHours(0, 0, 0, 0);
+  const snap = await getDocs(
+    query(collection(db, 'users'), where('lastSeen', '>=', startOfDay))
+  );
+  return snap.docs.map(d => ({ uid: d.id, ...d.data() }));
+}
+
 // Returns array of missing field names — empty means profile is complete.
 // Used by index.html to prompt students to complete their profile on login.
 export function getMissingProfileFields(profile) {
