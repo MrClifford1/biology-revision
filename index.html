@@ -571,7 +571,7 @@
 <script type="module">
   import {
  onAuthChange, signOutUser, getUserProfile, saveClass, isClassValid, getUserRole, getActiveAssignmentsForClass, getUpcomingAssessmentsForStudent, isStaffRole, canAccessAdmin, isSuperAdmin, getActiveBlitzForClass, onBlitzSnapshot, updateBlitzSession, updateTopicScore, logActivity,
-  getActiveBingoForClass, onBingoSnapshot, claimBingo } from './firebase.js';
+  getActiveBingoForClass, onBingoSnapshot, claimBingo, updateLastSeen } from './firebase.js';
 
 
 
@@ -624,6 +624,7 @@
       }
       document.getElementById('drawer-class-display').textContent = 'Teachers';
       window._currentProfile = { ...profile, class: 'Teachers' };
+      updateLastSeen(user.uid).catch(() => {});
       // Load assignments for teachers too (they may have set their own)
       return;
     }
@@ -725,6 +726,7 @@
       window._currentProfile = profile;
       startBlitzPoll(profile.class, user.uid, displayName);
       startBingoPoll(profile.class, user.uid, displayName);
+      updateLastSeen(user.uid).catch(() => {});
     }
 
   });
@@ -900,10 +902,11 @@
   }
 
   window.handleSignOut = async () => {
-    const { signOutUser } = await import('./firebase.js');
     await signOutUser();
     window.location.href = 'login.html';
   };
+
+  window._sshSignOutFn = () => signOutUser().then(() => { window.location.href = 'login.html'; }).catch(() => { window.location.href = 'login.html'; });
 
   // ── BLITZ BANNER ────────────────────────────────────────────────────────────
   let _blitzPollTimer = null;
