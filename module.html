@@ -3410,8 +3410,6 @@ function displayResults(qs, writtenResults, writtenAnswers, overallId, container
       const r = wm[q.id]; const pctQ = r.marks_available > 0 ? r.marks_awarded/r.marks_available : 0;
       const cls = pctQ===1?'marks-full':pctQ>0?'marks-partial':'marks-zero';
       const fullMark = pctQ === 1;
-      const expandId = `expand-${q.id}`;
-      const panelId  = `panel-${q.id}`;
 
       if (fullMark) {
         // Full marks — just confirm, no need to show anything else
@@ -3419,10 +3417,10 @@ function displayResults(qs, writtenResults, writtenAnswers, overallId, container
           <div class="student-answer-text">Your answer: ${r.student_answer||'<em>No answer given</em>'}</div>
           <div class="feedback-full-mark">✅ Full marks — great work!</div>`;
       } else {
-        // Partial/zero — show "what you missed" first, full detail behind toggle
+        // Partial/zero — show all feedback immediately
         const missedHTML = r.missed_points
           ? `<div class="feedback-missed-label">What you missed</div><div class="feedback-missed">${r.missed_points}</div>`
-          : `<div class="feedback-missed-label">What you missed</div><div class="feedback-missed">Review the model answer to identify your gaps.</div>`;
+          : '';
 
         const fullDetailHTML = `<div class="feedback-grid">
             <div class="feedback-section"><div class="feedback-label">Feedback</div><div class="feedback-text">${r.feedback||'No feedback available.'}</div></div>
@@ -3430,17 +3428,21 @@ function displayResults(qs, writtenResults, writtenAnswers, overallId, container
             ${r.command_word_check?`<div class="feedback-section"><div class="feedback-label">Command word</div><div class="feedback-text">${r.command_word_check}</div></div>`:''}
           </div>`;
 
+        // AI remark button for partial/zero written answers with a student response
+        const hasAnswer = r.student_answer && r.student_answer.trim();
+        const notFullMark = r.marks_awarded < r.marks_available;
+        let remarkBtn = '';
+        if (hasAnswer && notFullMark) {
+          const ri = window._remarkData.length;
+          window._remarkData.push({ term: q.question, correctAnswer: r.model_answer || '', studentAnswer: r.student_answer, topic: q.topic || '' });
+          remarkBtn = `<div style="margin-top:0.5rem"><button class="remark-btn" data-remark-idx="${ri}" onclick="toggleRemarkPanel(this)">🤖 Remark</button>${_remarkPanelHTML(ri)}</div>`;
+        }
+
         card.innerHTML = `<div class="result-header"><div class="result-q-text">Q${i+1}. ${q.question}</div><span class="marks-awarded ${cls}">${r.marks_awarded}/${r.marks_available}</span></div>
           <div class="student-answer-text">Your answer: ${r.student_answer||'<em>No answer given</em>'}</div>
           ${missedHTML}
-          <button class="feedback-expand-btn" id="${expandId}">▼ Show full feedback</button>
-          <div class="feedback-expand-panel" id="${panelId}">${fullDetailHTML}</div>`;
-
-        card.querySelector(`#${expandId}`).addEventListener('click', function() {
-          const panel = card.querySelector(`#${panelId}`);
-          const open = panel.classList.toggle('open');
-          this.textContent = open ? '▲ Hide full feedback' : '▼ Show full feedback';
-        });
+          ${fullDetailHTML}
+          ${remarkBtn}`;
       }
     }
     container.appendChild(card);
