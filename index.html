@@ -692,12 +692,27 @@
             </div>` : '';
           const btnStyle = `font-family:'Nunito',sans-serif;font-weight:800;font-size:0.75rem;padding:0.35rem 0.75rem;border-radius:8px;text-decoration:none;white-space:nowrap;display:inline-block;margin:0.15rem 0.1rem`;
           const btnText = comp ? 'Try again →' : isExpired ? 'Late →' : 'Go →';
+          // Map assignment activity types to the logged activity types used in module.html
+          const ACT_TYPE_MAP = {flashcards:'flashcard',keywords:'words',mini_mock:'mock',scribble:'scribble',cloze:'cloze',learn:'learn',paper:'paper',who:'who',clue:'clue'};
+          // Build the list of AND-required logged types (excluding OR-connected and custom)
+          const requiredLogTypes = acts.reduce((acc, act, i) => {
+            const lt = ACT_TYPE_MAP[act.type];
+            if (!lt) return acc;
+            // Include if no connector (last item) or connector is 'and'
+            const prevConnector = i > 0 ? acts[i-1].connector : null;
+            if (i === 0 || prevConnector === 'and' || prevConnector === null) acc.push(lt);
+            return acc;
+          }, []);
           const goButtons = acts.map(act => {
             if (act.type === 'custom') return act.customText ? `<span style="font-size:0.75rem;color:${labelColor};font-weight:700;flex-shrink:0;max-width:180px">${act.customText}</span>` : '';
             if (!act.link || act.link === '#') return '';
             const lbl = TYPE_LBL[act.type]||act.type;
             const bg = isExpired ? '#ef4444' : borderColor;
-            return `<a href="${act.link}" style="background:${bg};color:#1a2a4f;${btnStyle}">${lbl} ${btnText}</a>`;
+            // Append acttype and required params so module.html knows what's needed
+            const logType = ACT_TYPE_MAP[act.type] || act.type;
+            const sep = act.link.includes('?') ? '&' : '?';
+            const href = `${act.link}${sep}acttype=${logType}&required=${requiredLogTypes.join(',')}`;
+            return `<a href="${href}" style="background:${bg};color:#1a2a4f;${btnStyle}">${lbl} ${btnText}</a>`;
           }).filter(Boolean).join('');
           const goSection = goButtons || (a.link && a.link !== '#' ? `<a href="${a.link}" style="background:${isExpired?'#ef4444':borderColor};color:#1a2a4f;${btnStyle}">${btnText}</a>` : '');
           return `<div style="background:${bgColor};border-bottom:3px solid ${borderColor}">

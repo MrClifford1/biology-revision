@@ -6563,9 +6563,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Detect if opened from an assignment link
   const _assignmentId = new URLSearchParams(window.location.search).get('assignment') || null;
   const _assignmentDue = new URLSearchParams(window.location.search).get('due') || null;
+  // Required activity types for AND completion (comma-separated logged types e.g. "flashcard,words,mock")
+  const _assignmentRequired = (new URLSearchParams(window.location.search).get('required') || '').split(',').filter(Boolean);
   // Expose on window so the completion check in _logActivity works
   window._assignmentId = _assignmentId;
   window._assignmentDue = _assignmentDue;
+  window._assignmentRequired = _assignmentRequired;
 
   window._currentUser = null;
   window._pendingRAGUpdates = [];
@@ -6612,16 +6615,24 @@ document.addEventListener('DOMContentLoaded', () => {
       await logActivity(window._currentUser.uid, fullEntry);
       const assignId = window._assignmentId;
       const assignDue = window._assignmentDue;
+      const required = window._assignmentRequired || [];
       if (assignId && entry.type && ['mock','paper','flashcard','words','who','clue','cloze','scribble','learn'].includes(entry.type)) {
         const today = new Date().toISOString().split('T')[0];
         const isLate = assignDue && today > assignDue;
-        await saveAssignmentCompletion(assignId, window._currentUser.uid, {
-          score: entry.score || 0,
-          total: entry.total || 0,
-          pct: entry.pct || 0,
-          isLate,
-          name: window._currentUser.displayName || window.currentProfile?.name || null,
-        });
+        // Track which activities have been completed in this session
+        if (!window._completedAssignActTypes) window._completedAssignActTypes = new Set();
+        window._completedAssignActTypes.add(entry.type);
+        // Only mark the whole assignment done when all AND-required activities are completed
+        const allDone = required.length === 0 || required.every(t => window._completedAssignActTypes.has(t));
+        if (allDone) {
+          await saveAssignmentCompletion(assignId, window._currentUser.uid, {
+            score: entry.score || 0,
+            total: entry.total || 0,
+            pct: entry.pct || 0,
+            isLate,
+            name: window._currentUser.displayName || window.currentProfile?.name || null,
+          });
+        }
       }
     } catch(e) { /* non-critical */ }
   };
