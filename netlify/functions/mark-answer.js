@@ -1,4 +1,4 @@
-const GEMINI_MODEL = 'gemini-2.0-flash';
+const GEMINI_MODEL = 'gemini-2.5-flash';
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
 async function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
@@ -12,7 +12,7 @@ async function callAI(prompt, maxTokens) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: { maxOutputTokens: maxTokens, temperature: 0.2 },
+          generationConfig: { maxOutputTokens: maxTokens, temperature: 0.2, thinkingConfig: { thinkingBudget: 0 } },
         }),
       });
       if (resp.ok) {
@@ -31,7 +31,7 @@ async function callAI(prompt, maxTokens) {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             contents: [{ parts: [{ text: prompt }] }],
-            generationConfig: { maxOutputTokens: maxTokens, temperature: 0.2 },
+            generationConfig: { maxOutputTokens: maxTokens, temperature: 0.2, thinkingConfig: { thinkingBudget: 0 } },
           }),
         });
         if (retry.ok) {
@@ -84,7 +84,7 @@ exports.handler = async function (event, context) {
         const r = await fetch(`${GEMINI_URL}?key=${geminiKey}`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ contents: [{ parts: [{ text: 'Reply with the single word OK' }] }], generationConfig: { maxOutputTokens: 5 } }),
+          body: JSON.stringify({ contents: [{ parts: [{ text: 'Reply with the single word OK' }] }], generationConfig: { maxOutputTokens: 50, thinkingConfig: { thinkingBudget: 0 } } }),
         });
         diag.gemini = { status: r.status, ok: r.ok, body: (await r.text()).slice(0, 600) };
       } catch (e) { diag.gemini = { fetchError: e.message }; }
