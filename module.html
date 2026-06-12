@@ -3468,11 +3468,17 @@ document.getElementById('submit-btn').addEventListener('click', async () => {
   document.getElementById('loading-overlay').style.display = 'block';
   try {
     const wr = wa.length ? await markAnswers(wa) : [];
-    displayResults(selectedQuestions, wr, wa, 'overall-result', 'results-container', 'marking-section', 'loading-overlay');
+    try {
+      displayResults(selectedQuestions, wr, wa, 'overall-result', 'results-container', 'marking-section', 'loading-overlay');
+    } catch(displayErr) {
+      console.error('displayResults error:', displayErr);
+      document.getElementById('loading-overlay').style.display = 'none';
+      document.getElementById('marking-section').style.display = 'block';
+    }
   } catch(e) {
     document.getElementById('loading-overlay').style.display = 'none';
     document.getElementById('questions-section').style.display = 'block';
-    alert('Marking failed. Please check your internet connection and try again.');
+    alert('Smart marking is busy right now (the AI server may be overloaded). Your answers are still here — please wait a few seconds and try submitting again.');
   }
 });
 
