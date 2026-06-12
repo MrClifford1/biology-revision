@@ -415,10 +415,10 @@
   if (_sshBack) { _sshBack.href = `module.html?subject=${subject}&module=${moduleId}`; _sshBack.textContent = '← Module'; }
   const _sshT = document.getElementById('ssh-nav-title');
   if (_sshT) _sshT.textContent = `${moduleId.toUpperCase()} Revision`;
-  document.getElementById('module-link').href = `module.html?subject=${subject}&module=${moduleId}`;
-  document.getElementById('module-link').textContent = `${moduleId.toUpperCase()} ${meta.title}`;
-  document.getElementById('subject-link').href = `${subject}.html`;
-  document.getElementById('subject-link').textContent = subjectLabel;
+  const _ml = document.getElementById('module-link');
+  if (_ml) { _ml.href = `module.html?subject=${subject}&module=${moduleId}`; _ml.textContent = `${moduleId.toUpperCase()} ${meta.title}`; }
+  const _sl = document.getElementById('subject-link');
+  if (_sl) { _sl.href = `${subject}.html`; _sl.textContent = subjectLabel; }
   // nav-title replaced by ssh-nav-title (set above)
   document.getElementById('hero-badge').textContent = moduleId.toUpperCase();
   document.getElementById('hero-badge').style.background = meta.colour;
@@ -530,7 +530,7 @@
     // Update hero
     document.getElementById('hero-title').textContent = topicName;
     document.getElementById('hero-sub').textContent = `${moduleId.toUpperCase()} ${meta.title} · ${subjectLabel}`;
-    document.getElementById('breadcrumb-topic').textContent = topicName;
+    const _bc = document.getElementById('breadcrumb-topic'); if (_bc) _bc.textContent = topicName;
 
     // RAG state for this topic
     const entry = ragState[topicName];
