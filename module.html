@@ -3354,10 +3354,20 @@ function collectFIBAnswers(qs) {
   });
 }
 async function markAnswers(answers) {
-  const res = await fetch('/.netlify/functions/mark-answer', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ answers }) });
-  if (!res.ok) throw new Error('Marking API failed');
-  const results = await res.json();
-  return results.map((r, i) => ({ ...r, id: answers[i].id, marks_available: answers[i].marks }));
+  const body = JSON.stringify({ answers });
+  const attempt = async () => {
+    const res = await fetch('/.netlify/functions/mark-answer', { method:'POST', headers:{'Content-Type':'application/json'}, body });
+    if (!res.ok) throw new Error('Marking API failed');
+    const results = await res.json();
+    return results.map((r, i) => ({ ...r, id: answers[i].id, marks_available: answers[i].marks }));
+  };
+  try {
+    return await attempt();
+  } catch(e) {
+    // Wait 4s and retry once before giving up
+    await new Promise(r => setTimeout(r, 4000));
+    return await attempt();
+  }
 }
 
 function displayResults(qs, writtenResults, writtenAnswers, overallId, containerId, sectionId, loadingId) {

@@ -4,6 +4,9 @@
 [functions]
   directory = "netlify/functions"
 
+[functions."mark-answer"]
+  timeout = 26
+
 [[redirects]]
   from = "/.netlify/functions/*"
   to = "/.netlify/functions/:splat"
